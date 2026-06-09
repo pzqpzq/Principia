@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Principia Idea</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="idea-page">
+    <main class="idea-shell">
+      <section class="idea-hero">
+        <p class="eyebrow">My Idea</p>
+        <h1 id="ideaTitle">Loading</h1>
+        <p id="ideaThesis" class="subtle"></p>
+        <div class="idea-toolbar">
+          <label class="version-field">
+            <span>Version</span>
+            <select id="ideaVersionSelect"></select>
+          </label>
+          <label class="model-field">
+            <span>Target LLM</span>
+            <select id="ideaModelMode">
+              <option value="auto">Auto router</option>
+              <option value="efficient">Qwen2.5-7B</option>
+              <option value="qwen_35b">Qwen3.6-35B-A3B</option>
+              <option value="strong">DeepSeek-V3</option>
+              <option value="deepseek_pro">DeepSeek-V4-Pro</option>
+              <option value="kimi">Kimi-K2.6 Pro</option>
+              <option value="qwen_122b">Qwen3.5-122B-A10B</option>
+              <option value="glm">GLM-5.1 Pro</option>
+              <option value="openai_gpt52_pro">OpenAI GPT-5.2 Pro</option>
+              <option value="openai_gpt5_pro">OpenAI GPT-5 Pro</option>
+              <option value="openai_gpt55">OpenAI GPT-5.5</option>
+              <option value="openai_gpt55_pro_20260423">OpenAI GPT-5.5 Pro 2026-04-23</option>
+            </select>
+          </label>
+          <button id="editIdeaBtn" type="button" class="secondary-btn">Edit</button>
+          <button id="regenerateIdeaBtn" type="button" class="primary-btn">Regenerate</button>
+          <button id="cancelRegenerateBtn" type="button" class="secondary-btn danger-btn" data-allow-busy="true" hidden>Cancel</button>
+          <button id="deleteIdeaBtn" type="button" class="secondary-btn danger-btn">Delete</button>
+        </div>
+        <div id="ideaRunStatus" class="research-status">Ready</div>
+      </section>
+      <form id="ideaEditForm" class="idea-section detail-edit" hidden>
+        <h2>Edit Current Idea</h2>
+        <div id="ideaEditFields" class="edit-field-grid"></div>
+        <details class="advanced-json">
+          <summary>Advanced JSON</summary>
+          <label class="full-field">
+            <span>Active payload</span>
+            <textarea id="ideaEditInput" rows="10"></textarea>
+          </label>
+        </details>
+        <div class="modal-actions">
+          <button id="cancelIdeaEditBtn" type="button" class="secondary-btn">Cancel</button>
+          <button type="submit" class="primary-btn">Save Manual Version</button>
+        </div>
+      </form>
+      <section id="ideaCore" class="idea-grid"></section>
+      <section class="idea-section">
+        <h2>Related Existed Ideas</h2>
+        <div id="relatedTable"></div>
+      </section>
+      <section class="idea-section">
+        <h2>Principle Map</h2>
+        <div id="principleMap" class="principle-map"></div>
+      </section>
+      <section class="idea-section">
+        <h2>Source Evidence</h2>
+        <div id="sourceEvidence" class="principle-map"></div>
+      </section>
+    </main>
+
+    <section id="existedIdeaModal" class="modal-backdrop" hidden>
+      <article class="detail-modal" role="dialog" aria-modal="true">
+        <header>
+          <div>
+            <p id="existedIdeaKind" class="eyebrow">Details</p>
+            <h2 id="existedIdeaTitle">Idea</h2>
+          </div>
+          <div class="header-actions">
+            <button id="openModalDetailBtn" type="button" class="primary-btn" hidden>Details</button>
+            <button id="closeExistedIdeaBtn" type="button" class="secondary-btn">Close</button>
+          </div>
+        </header>
+        <div id="existedIdeaBody" class="detail-body"></div>
+      </article>
+    </section>
+
+    <script src="/idea.js"></script>
+  </body>
+</html>
