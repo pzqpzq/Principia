@@ -60,7 +60,10 @@ The central thesis:
 
 > **A research idea is stronger when its principles, evidence, assumptions, risks, and validation path are visible.**
 
-Principia v1.0 is a product-oriented local release that upgrades the earlier 0.x demo into a normalized research-memory system with project workspaces, concept-level retrieval, LLM extraction cache logic, lineage-backed idea generation, and an MVP of **Principia Calculus**.
+Principia v1.0 is a product-oriented local release that upgrades the earlier 0.x demo into a normalized research-memory system with project workspaces, concept-level retrieval, LLM extraction cache logic, lineage-backed idea generation, and an MVP of **Principia Calculus**, which interprets the reasoning process as recursive interaction of LLM-invented Language Symbolism Framework (LSF).
+We introduce LSF in our ICML 2026 paper **[“When LLMs Develop Languages: Symbolic Communication for Efficient Multi-Agent Reasoning”](https://icml.cc/virtual/2026/poster/61557)**. 
+The paper introduces **Communicative Language Symbolism Routing (CLSR)** as a test-time framework where multiple LLM agents autonomously invent, evolve, share, and route compact **Language Symbolism Frameworks (LSFs)** to improve the accuracy–token trade-off.
+
 
 ---
 
