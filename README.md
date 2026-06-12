@@ -29,7 +29,7 @@
 ---
 
 <p align="center">
-  <img src="docs/screenshots/main_goal.png" width="88%" alt="Principia research workspace">
+  <img src="docs/screenshots/main_query.png" width="88%" alt="Principia research workspace">
 </p>
 
 <p align="center">
@@ -86,7 +86,7 @@ Project-first workspace, goal input, target work count, LLM selection, run statu
 
 | Goal intake | Works library |
 |---|---|
-| <img src="docs/screenshots/main_goal.png" alt="Research goal and project workspace"> | <img src="docs/screenshots/main_works.png" alt="Works tab with research records"> |
+| <img src="docs/screenshots/main_query.png" alt="Research goal and project workspace"> | <img src="docs/screenshots/main_works.png" alt="Works tab with research records"> |
 
 ### Evidence composer and generated ideas
 
