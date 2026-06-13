@@ -1,0 +1,28 @@
+name: principia-cloud-validate
+
+on:
+  pull_request:
+    paths:
+      - "cloud/**"
+      - "principia/cloud/**"
+      - "tests/test_cloud*.py"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pypdf
+      - name: Run cloud and regression tests
+        run: |
+          python -m unittest discover -s tests -v
+      - name: Validate contribution examples
+        run: |
+          python principia.py cloud validate-contribution cloud/examples/contribution.example.json

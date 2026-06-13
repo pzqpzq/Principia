@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Principia Cloud Relation Record",
+  "type": "object",
+  "required": ["record_type", "relation_id", "subject_id", "predicate", "object_id"],
+  "properties": {
+    "record_type": { "const": "relation" },
+    "relation_id": { "type": "string" },
+    "subject_id": { "type": "string" },
+    "predicate": { "type": "string" },
+    "object_id": { "type": "string" },
+    "evidence_ids": { "type": "array", "items": { "type": "string" } },
+    "confidence": { "type": "number" },
+    "source": { "type": "string" },
+    "model_key": { "type": "string" },
+    "created_at": { "type": "string" }
+  }
+}

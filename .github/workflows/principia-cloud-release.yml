@@ -1,0 +1,91 @@
+name: principia-cloud-release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag"
+        required: true
+      db:
+        description: "SQLite database to export"
+        default: "data/principia.sqlite"
+      output_dir:
+        description: "Generated cloud snapshot directory"
+        default: "dist/cloud"
+      work_shards:
+        description: "Work route shard count"
+        default: "256"
+      concept_shards:
+        description: "Concept route shard count"
+        default: "64"
+      limit:
+        description: "Optional max works to export; 0 means all"
+        default: "0"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Export cloud snapshot
+        run: |
+          python principia.py cloud export-snapshot \
+            --db "${{ inputs.db }}" \
+            --out "${{ inputs.output_dir }}" \
+            --work-shards "${{ inputs.work_shards }}" \
+            --concept-shards "${{ inputs.concept_shards }}" \
+            --limit "${{ inputs.limit }}"
+      - name: Rewrite manifest URLs and pointer
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          tag = os.environ["PRINCIPIA_CLOUD_TAG"]
+          repo = os.environ["GITHUB_REPOSITORY"]
+          out_dir = Path(os.environ["PRINCIPIA_CLOUD_OUTPUT_DIR"])
+          manifest_path = out_dir / "manifest.json"
+          manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+          release_base = f"https://github.com/{repo}/releases/download/{tag}/"
+          for asset in manifest.get("assets", []):
+              asset["url"] = release_base + Path(asset["url"]).name
+          manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+          raw = manifest_path.read_bytes()
+          pointer = {
+              "schema_version": "principia-cloud-pointer-1.1",
+              "latest_snapshot_id": manifest.get("snapshot_id", ""),
+              "latest_manifest_url": release_base + "manifest.json",
+              "latest_manifest_sha256": hashlib.sha256(raw).hexdigest(),
+              "updated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+          }
+          pointer_path = Path("cloud/manifests/latest.json")
+          pointer_path.parent.mkdir(parents=True, exist_ok=True)
+          pointer_path.write_text(json.dumps(pointer, ensure_ascii=False, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+          PY
+        env:
+          PRINCIPIA_CLOUD_TAG: "${{ inputs.tag }}"
+          PRINCIPIA_CLOUD_OUTPUT_DIR: "${{ inputs.output_dir }}"
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: "${{ inputs.tag }}"
+          files: |
+            ${{ inputs.output_dir }}/manifest.json
+            ${{ inputs.output_dir }}/stats.json
+            ${{ inputs.output_dir }}/checksums.sha256
+            ${{ inputs.output_dir }}/packs/*
+            ${{ inputs.output_dir }}/indexes/*
+      - name: Commit latest manifest pointer
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cloud/manifests/latest.json
+          git commit -m "Update Principia cloud manifest pointer for ${{ inputs.tag }}" || exit 0
+          git push

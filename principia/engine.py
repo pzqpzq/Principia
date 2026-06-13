@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from .arxiv import fallback_seed_work, search_arxiv
+from .cloud.resolver import CloudResolver
 from .global_store import GlobalStore, LEGACY_CONCEPT_BUCKETS
 from .hybrid_retriever import HybridRetriever
 from .lineage_graph import LineageGraphBuilder
@@ -57,6 +58,7 @@ from .utils import (
     tokenize,
     validation_number,
 )
+from .work_versioning import model_key as build_model_key
 
 
 OPERATORS = [
@@ -691,6 +693,44 @@ class PrincipiaEngine:
             goal,
             [self._enrich_work_record(goal, work) for work in works],
         )
+        cloud_skip_ids: set[str] = set()
+        if persist and not force_refresh:
+            try:
+                current_model_key = self._cloud_model_key(model_mode)
+                self._emit_progress(
+                    progress_callback,
+                    "cloud_lookup",
+                    progress_found_offset + len(works),
+                    progress_target or max_works,
+                    "Resolving candidate works against the Principia Cloud Library.",
+                )
+                decisions = CloudResolver(self.store).resolve_batch(
+                    works,
+                    current_model_key,
+                    hydrate=True,
+                    project_id=str((constraints or {}).get("project_id") or "default"),
+                )
+                cloud_skip_ids = {
+                    str(decision.get("candidate_work_id") or decision.get("work_id") or "")
+                    for decision in decisions
+                    if not decision.get("should_extract")
+                }
+                if cloud_skip_ids:
+                    self._emit_progress(
+                        progress_callback,
+                        "cloud_hydration",
+                        progress_found_offset + len(works),
+                        progress_target or max_works,
+                        f"Hydrated {len(cloud_skip_ids)} cloud records; local LLM extraction will skip fresh hits.",
+                    )
+            except Exception as exc:
+                self._emit_progress(
+                    progress_callback,
+                    "cloud_lookup_skipped",
+                    progress_found_offset + len(works),
+                    progress_target or max_works,
+                    f"Cloud lookup was skipped and local extraction will continue: {exc}",
+                )
         works_to_mine = works
         refreshing_work_ids: set[str] = set()
         if refresh_existing:
@@ -698,12 +738,16 @@ class PrincipiaEngine:
             works_to_mine = []
             for work in works:
                 wid = work.get("work_id", "")
+                if wid in cloud_skip_ids:
+                    continue
                 local = self.store.get_item("source_works", wid) if wid else None
                 is_stale = self._work_needs_refresh(work, local)
                 if local and is_stale:
                     refreshing_work_ids.add(wid)
                 if force_refresh or is_stale or wid not in rich_work_ids:
                     works_to_mine.append(work)
+        elif cloud_skip_ids:
+            works_to_mine = [work for work in works if str(work.get("work_id") or "") not in cloud_skip_ids]
         mining_message = (
             f"Mining principles from {len(works_to_mine)} updated or unseen works."
             if works_to_mine
@@ -2837,6 +2881,20 @@ class PrincipiaEngine:
                 self._update_run_progress(run_id, stage, message, **counts)
 
         self._raise_if_cancelled(run_id)
+        if not force:
+            try:
+                update("cloud_lookup", "Resolving this work against the Principia Cloud Library.", work_id=work_id)
+                decision = CloudResolver(self.store).resolve_batch(
+                    [work],
+                    self._cloud_model_key(model_mode),
+                    hydrate=True,
+                    project_id=field_id,
+                )[0]
+                if not decision.get("should_extract"):
+                    counts = self.v2_work_extraction_counts(work_id)
+                    return {"ok": True, "cloud_cache_hit": True, "decision": decision, "counts": counts, "work": work}
+            except Exception as exc:
+                update("cloud_lookup_skipped", f"Cloud lookup was skipped and local extraction will continue: {exc}", work_id=work_id)
         update("full_text_fetch", "Fetching transient full text for this work.", work_id=work_id)
         full_text = ""
         try:
@@ -3438,6 +3496,17 @@ class PrincipiaEngine:
         except Exception:
             resolved = {"provider": "offline", "model": model_mode or "auto"}
         return {"model_mode": model_mode or "auto", "provider": resolved.get("provider", "offline"), "model_name": resolved.get("model", model_mode or "auto")}
+
+    def _cloud_model_key(self, model_mode: str, *, task_type: str = "work_concepts") -> str:
+        meta = self._v2_model_meta(model_mode)
+        return build_model_key(
+            meta.get("provider", "offline"),
+            meta.get("model_name", model_mode or "auto"),
+            meta.get("model_mode", model_mode or "auto"),
+            "principia-work-extract-v1",
+            "principia-cloud-1.1",
+            task_type,
+        )
 
     def _v2_research_query(self, goal_text: str) -> str:
         terms = keyword_terms(goal_text, 10)
@@ -9859,27 +9928,40 @@ class PrincipiaEngine:
         margin = 48
         line_height = 13
         pages = [lines[i : i + 52] for i in range(0, len(lines), 52)] or [[]]
+        chars = self._pdf_char_codes(lines)
         objects: list[bytes] = []
         objects.append(b"<< /Type /Catalog /Pages 2 0 R >>")
         kids = " ".join(f"{3 + idx * 2} 0 R" for idx in range(len(pages)))
         objects.append(f"<< /Type /Pages /Kids [{kids}] /Count {len(pages)} >>".encode("latin-1"))
+        font_obj = 3 + len(pages) * 2
+        cid_font_obj = font_obj + 1
+        cmap_obj = font_obj + 2
         for idx, page_lines in enumerate(pages):
             page_obj = 3 + idx * 2
             content_obj = page_obj + 1
             objects.append(
-                f"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> >> >> /Contents {content_obj} 0 R >>".encode(
+                f"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 {font_obj} 0 R >> >> /Contents {content_obj} 0 R >>".encode(
                     "latin-1"
                 )
             )
             commands = ["BT", "/F1 10 Tf", f"{margin} {page_height - margin} Td"]
             for line_no, line in enumerate(page_lines):
-                escaped = line.encode("latin-1", errors="replace").decode("latin-1").replace("\\", "\\\\").replace("(", "\\(").replace(")", "\\)")
                 if line_no:
                     commands.append(f"0 -{line_height} Td")
-                commands.append(f"({escaped}) Tj")
+                commands.append(f"<{self._pdf_hex_line(line, chars)}> Tj")
             commands.append("ET")
             stream = "\n".join(commands).encode("latin-1")
             objects.append(f"<< /Length {len(stream)} >>\nstream\n".encode("latin-1") + stream + b"\nendstream")
+        cmap = self._pdf_to_unicode_cmap(chars)
+        objects.append(
+            f"<< /Type /Font /Subtype /Type0 /BaseFont /PrincipiaUnicode /Encoding /Identity-H /DescendantFonts [{cid_font_obj} 0 R] /ToUnicode {cmap_obj} 0 R >>".encode(
+                "latin-1"
+            )
+        )
+        objects.append(
+            b"<< /Type /Font /Subtype /CIDFontType0 /BaseFont /PrincipiaUnicode /CIDSystemInfo << /Registry (Adobe) /Ordering (Identity) /Supplement 0 >> /DW 1000 >>"
+        )
+        objects.append(f"<< /Length {len(cmap)} >>\nstream\n".encode("latin-1") + cmap + b"\nendstream")
         out = bytearray(b"%PDF-1.4\n")
         offsets = [0]
         for idx, obj in enumerate(objects, start=1):
@@ -9893,6 +9975,48 @@ class PrincipiaEngine:
             out.extend(f"{offset:010d} 00000 n \n".encode("latin-1"))
         out.extend(f"trailer << /Size {len(objects)+1} /Root 1 0 R >>\nstartxref\n{xref}\n%%EOF\n".encode("latin-1"))
         return bytes(out)
+
+    def _pdf_char_codes(self, lines: list[str]) -> dict[str, int]:
+        chars: dict[str, int] = {}
+        for line in lines:
+            for char in line:
+                if char not in chars:
+                    chars[char] = len(chars) + 1
+        return chars or {" ": 1}
+
+    def _pdf_hex_line(self, line: str, chars: dict[str, int]) -> str:
+        return "".join(f"{chars[char]:04X}" for char in line if char in chars)
+
+    def _pdf_to_unicode_cmap(self, chars: dict[str, int]) -> bytes:
+        entries = sorted(chars.items(), key=lambda item: item[1])
+        blocks: list[str] = []
+        for idx in range(0, len(entries), 100):
+            chunk = entries[idx : idx + 100]
+            blocks.append(f"{len(chunk)} beginbfchar")
+            for char, code in chunk:
+                unicode_hex = char.encode("utf-16-be").hex().upper()
+                blocks.append(f"<{code:04X}> <{unicode_hex}>")
+            blocks.append("endbfchar")
+        cmap = "\n".join(
+            [
+                "/CIDInit /ProcSet findresource begin",
+                "12 dict begin",
+                "begincmap",
+                "/CIDSystemInfo << /Registry (Adobe) /Ordering (UCS) /Supplement 0 >> def",
+                "/CMapName /PrincipiaUnicode def",
+                "/CMapType 2 def",
+                "1 begincodespacerange",
+                "<0000> <FFFF>",
+                "endcodespacerange",
+                *blocks,
+                "endcmap",
+                "CMapName currentdict /CMap defineresource pop",
+                "end",
+                "end",
+                "",
+            ]
+        )
+        return cmap.encode("latin-1")
 
     def _emit_progress(
         self,
