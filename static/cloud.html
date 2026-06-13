@@ -15,6 +15,8 @@
           <h1>Cloud Library</h1>
         </div>
         <nav class="cloud-actions">
+          <a class="ghost-button" href="#cloudCrawler">Crawler</a>
+          <a class="ghost-button" href="#cloudSearch">Search</a>
           <a class="ghost-button" href="/">Workspace</a>
           <button id="refreshStats" type="button">Refresh</button>
         </nav>
@@ -45,6 +47,40 @@
           <span>Admin Mode</span>
           <strong id="adminMode">-</strong>
         </div>
+      </section>
+
+      <section id="cloudCrawler" class="cloud-band crawler-band" aria-label="Cloud crawler">
+        <div class="crawler-head">
+          <div>
+            <h2>Auto Crawler</h2>
+            <span id="crawlCount">0 candidates</span>
+          </div>
+          <div id="crawlRunStatus" class="run-status">Idle</div>
+        </div>
+        <form id="crawlForm" class="crawler-form">
+          <div class="crawler-actions">
+            <label class="checkbox-row">
+              <input id="crawlForce" type="checkbox" />
+              <span>Force refresh</span>
+            </label>
+            <div class="button-row">
+              <button id="planCrawl" type="submit">Plan Crawl</button>
+              <button id="runCrawl" type="button">Run Research</button>
+            </div>
+          </div>
+          <div class="crawler-grid">
+            <input id="crawlKey" type="password" placeholder="Admin key" autocomplete="off" />
+            <input id="crawlVenues" type="search" value="ICLR,NeurIPS,ICML,CVPR,ACL" placeholder="Venues" autocomplete="off" />
+            <input id="crawlYears" type="search" value="2024,2025,2026" placeholder="Years" autocomplete="off" />
+            <input id="crawlTopics" type="search" placeholder="Topics" autocomplete="off" />
+            <input id="crawlRules" type="search" value="venue,recency,topic,citation" placeholder="Priority rules" autocomplete="off" />
+            <input id="crawlMax" type="number" min="1" max="1000" value="100" aria-label="Max papers" />
+            <input id="crawlModelMode" type="search" value="auto" placeholder="Model mode" autocomplete="off" />
+            <input id="crawlModelKey" type="search" placeholder="Model key" autocomplete="off" />
+            <input id="crawlFieldId" type="search" value="cloud-crawl" placeholder="Project ID" autocomplete="off" />
+            <input id="crawlTimeout" type="number" min="3" max="30" value="12" aria-label="Metadata timeout seconds" />
+          </div>
+        </form>
       </section>
 
       <section class="cloud-band search-band" aria-label="Cloud search">
@@ -102,25 +138,6 @@
       </section>
 
       <section class="cloud-grid ops-grid">
-        <div class="cloud-panel">
-          <div class="panel-head">
-            <h2>Crawler</h2>
-            <span id="crawlCount">0</span>
-          </div>
-          <form id="crawlForm" class="panel-form">
-            <input id="crawlKey" type="password" placeholder="Admin key" autocomplete="off" />
-            <input id="crawlVenues" type="search" value="ICLR,NeurIPS,ICML,CVPR,ACL" placeholder="Venues" autocomplete="off" />
-            <input id="crawlYears" type="search" value="2024,2025,2026" placeholder="Years" autocomplete="off" />
-            <input id="crawlTopics" type="search" placeholder="Topics" autocomplete="off" />
-            <input id="crawlRules" type="search" value="venue,recency,topic,citation" placeholder="Priority rules" autocomplete="off" />
-            <input id="crawlMax" type="number" min="1" max="1000" value="100" />
-            <input id="crawlModelKey" type="search" placeholder="Model key" autocomplete="off" />
-            <div class="button-row">
-              <button id="planCrawl" type="submit">Plan</button>
-              <button id="runCrawl" type="button">Export Run</button>
-            </div>
-          </form>
-        </div>
         <div class="cloud-panel">
           <div class="panel-head">
             <h2>Admin Operation</h2>

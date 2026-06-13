@@ -27,7 +27,10 @@ body {
 .panel-head,
 .upload-band,
 .operation-row,
-.button-row {
+.button-row,
+.crawler-head,
+.crawler-actions,
+.checkbox-row {
   display: flex;
   align-items: center;
 }
@@ -48,7 +51,8 @@ body {
 
 .cloud-header h1,
 .cloud-panel h2,
-.upload-band h2 {
+.upload-band h2,
+.crawler-band h2 {
   margin: 0;
 }
 
@@ -58,12 +62,15 @@ body {
 
 .cloud-actions {
   gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .cloud-actions button,
 .search-row button,
 .operation-row button,
 .panel-form button,
+.crawler-form button,
 #prepareContribution,
 .ghost-button {
   border: 1px solid var(--cloud-accent);
@@ -138,7 +145,8 @@ body {
 .panel-form select,
 .operation-row input,
 .panel-form input,
-.panel-form textarea {
+.panel-form textarea,
+.crawler-form input {
   min-height: 38px;
   border: 1px solid var(--cloud-line);
   border-radius: 6px;
@@ -242,6 +250,52 @@ body {
   color: var(--cloud-muted);
 }
 
+.crawler-band {
+  border-color: #9ccac4;
+}
+
+.crawler-head {
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.crawler-head span,
+.run-status {
+  display: block;
+  margin-top: 5px;
+  color: var(--cloud-muted);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.crawler-form {
+  display: grid;
+  gap: 12px;
+}
+
+.crawler-grid {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.8fr) repeat(3, minmax(130px, 1fr)) minmax(90px, 0.5fr);
+  gap: 10px;
+}
+
+.crawler-actions {
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.checkbox-row {
+  gap: 8px;
+  color: var(--cloud-muted);
+  font-size: 13px;
+}
+
+.checkbox-row input {
+  width: 16px;
+  height: 16px;
+}
+
 .operation-row {
   align-items: stretch;
   gap: 10px;
@@ -300,7 +354,9 @@ body {
   .upload-band,
   .search-row,
   .operation-row,
-  .button-row {
+  .button-row,
+  .crawler-head,
+  .crawler-actions {
     align-items: stretch;
     flex-direction: column;
   }
@@ -308,5 +364,14 @@ body {
   .stats-band,
   .cloud-grid {
     grid-template-columns: 1fr;
+  }
+
+  .stats-band,
+  .crawler-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .crawler-grid input {
+    min-width: 0;
   }
 }

@@ -8,6 +8,7 @@ import time
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+from typing import Any
 from urllib.parse import parse_qs, urlparse
 
 from .cloud.admin_ops import create_admin_operation, write_admin_operation
@@ -19,7 +20,7 @@ from .cloud.manifest import CloudManifestClient
 from .cloud.resolver import CloudResolver
 from .cloud.search import CloudSearch
 from .config import ROOT_DIR, STATIC_DIR, get_settings
-from .engine import PrincipiaEngine
+from .engine import CancelledRun, PrincipiaEngine
 from .llm_client import LLMClient
 from .models import to_dict, utc_now
 from .storage import Store
@@ -36,6 +37,16 @@ def _mask_secret(value: str) -> str:
     if len(value) <= 10:
         return value[:2] + "..." + value[-2:]
     return value[:6] + "..." + value[-4:]
+
+
+def _cloud_crawl_goal_text(plan: dict[str, object], payload: dict[str, object]) -> str:
+    topics = ", ".join(str(item) for item in (plan.get("topics") or []) if item) or "AI research"
+    venues = ", ".join(str(item) for item in (plan.get("venues") or []) if item) or "public metadata venues"
+    years = ", ".join(str(item) for item in (plan.get("years") or []) if item) or "recent years"
+    rules = ", ".join(str(item) for item in (plan.get("priority_rules") or []) if item) or "venue, recency, topic"
+    reason = str(payload.get("reason") or "").strip()
+    text = f"Cloud crawl research for {topics}. Venues: {venues}. Years: {years}. Priority: {rules}."
+    return f"{text} Reason: {reason}" if reason else text
 
 
 def _read_env_lines(path: Path) -> list[str]:
@@ -1492,14 +1503,17 @@ class PrincipiaRequestHandler(BaseHTTPRequestHandler):
             return {**status, "authorization": auth, "pr_export": pr_export_instructions(contribution_path)}
         if path == "/api/v1/cloud/admin/crawl/plan" or path == "/api/v1/cloud/admin/crawl/run":
             auth = require_admin_key(str(payload.get("admin_key") or ""), purpose="cloud_crawl") if path.endswith("/run") else cloud_admin_status()
+            model_mode = str(payload.get("model_mode") or payload.get("model_key") or "auto")
             plan = plan_crawl(
                 venues=list(payload.get("venues") or []),
                 years=[int(item) for item in (payload.get("years") or [])],
                 topics=list(payload.get("topics") or []),
                 priority_rules=list(payload.get("priority_rules") or []),
                 max_papers=int(payload.get("max_papers") or 100),
-                model_key=str(payload.get("model_key") or ""),
+                model_key=str(payload.get("model_key") or self.engine._cloud_model_key(model_mode)),
                 dry_run=path.endswith("/plan") or bool(payload.get("dry_run", True)),
+                live=True,
+                timeout=int(payload.get("timeout") or 12),
             )
             if path.endswith("/run"):
                 operation = create_admin_operation(
@@ -1510,7 +1524,8 @@ class PrincipiaRequestHandler(BaseHTTPRequestHandler):
                     actor=str(payload.get("admin_actor") or ""),
                 )
                 out_path = write_admin_operation(self.store.path.parent / "artifacts" / "cloud" / "contributions", operation)
-                return {**plan, "authorization": auth, "operation": operation, "path": str(out_path)}
+                run = self._start_cloud_crawl_run(plan, payload, str(out_path))
+                return {**plan, "authorization": auth, "operation": operation, "path": str(out_path), **run}
             return {**plan, "authorization": auth}
         if path in {
             "/api/v1/cloud/admin/edit",
@@ -1530,6 +1545,136 @@ class PrincipiaRequestHandler(BaseHTTPRequestHandler):
             out_path = write_admin_operation(self.store.path.parent / "artifacts" / "cloud" / "contributions", operation)
             return {"authorization": auth, "operation": operation, "path": str(out_path)}
         raise ValueError(f"Unknown cloud endpoint: {path}")
+
+    def _start_cloud_crawl_run(self, plan: dict[str, Any], payload: dict[str, Any], operation_path: str) -> dict[str, Any]:
+        candidates = [dict(item) for item in plan.get("candidates") or []]
+        if not candidates:
+            raise ValueError("Crawler plan has no candidates to run.")
+        run_id = f"V1CLOUDCRAWL-{int(time.time() * 1000)}"
+        field_id = str(payload.get("field_id") or "cloud-crawl").strip() or "cloud-crawl"
+        model_mode = str(payload.get("model_mode") or payload.get("model_key") or "auto").strip() or "auto"
+        goal_text = _cloud_crawl_goal_text(plan, payload)
+        model = self.engine._v2_model_meta(model_mode)
+        self.engine._cancelled_runs.discard(run_id)
+        self.engine._ensure_field_profile(field_id, goal_text)
+        run = {
+            "run_id": run_id,
+            "field_id": field_id,
+            "type": "v1_cloud_crawl_research",
+            "status": "queued",
+            "stage": "queued",
+            "message": "Queued cloud crawler research run.",
+            "goal_text": goal_text,
+            "model_mode": model_mode,
+            "model_name": model.get("model_name", model_mode),
+            "provider": model.get("provider", "offline"),
+            "target_works": len(candidates),
+            "plan_id": plan.get("plan_id", ""),
+            "operation_path": operation_path,
+            "counts": {"planned": len(candidates), "stored_works": 0, "extracted_works": 0, "cloud_hits": 0, "failed_works": 0},
+            "errors": [],
+            "warnings": list(plan.get("metadata_warnings") or []),
+            "started_at": utc_now(),
+            "updated_at": utc_now(),
+        }
+        self.store.upsert("research_runs", run, "run_id")
+        threading.Thread(
+            target=self._run_cloud_crawl_job,
+            args=(run_id, field_id, goal_text, model_mode, candidates, bool(payload.get("force", False))),
+            name=f"principia-cloud-crawl-{run_id}",
+            daemon=True,
+        ).start()
+        return {"ok": True, "run_id": run_id, "status_url": f"/api/v1/research/status?run_id={run_id}"}
+
+    def _run_cloud_crawl_job(
+        self,
+        run_id: str,
+        field_id: str,
+        goal_text: str,
+        model_mode: str,
+        candidates: list[dict[str, Any]],
+        force: bool,
+    ) -> None:
+        work_ids: list[str] = []
+        errors: list[str] = []
+        warnings: list[str] = []
+        counts = {"planned": len(candidates), "stored_works": 0, "extracted_works": 0, "cloud_hits": 0, "skipped_works": 0, "failed_works": 0}
+
+        def update(stage: str, message: str, **extra: Any) -> dict[str, Any]:
+            run = self.store.get_item("research_runs", run_id) or {"run_id": run_id}
+            merged = {**counts, **dict(run.get("counts") or {}), **{key: value for key, value in extra.items() if value is not None}}
+            run.update(
+                {
+                    "status": "running" if stage not in {"complete", "error", "cancelled"} else stage,
+                    "stage": stage,
+                    "message": message,
+                    "counts": merged,
+                    "errors": errors[:20],
+                    "warnings": self.engine._ordered_unique([*list(run.get("warnings") or []), *warnings])[:20],
+                    "updated_at": utc_now(),
+                }
+            )
+            self.store.upsert("research_runs", run, "run_id")
+            return run
+
+        try:
+            update("metadata_store", "Storing public metadata candidates from the crawler plan.")
+            for candidate in candidates:
+                self.engine._raise_if_cancelled(run_id)
+                work = self.engine._v2_upsert_work(candidate, model_mode="metadata")
+                work_ids.append(work["work_id"])
+                counts["stored_works"] = len(work_ids)
+            self.engine.add_project_memberships(field_id, "source_works", self.engine._ordered_unique(work_ids), source="cloud_crawl", prepend=True)
+            update("metadata_store", f"Stored {len(work_ids)} crawler work candidate(s).", stored_works=len(work_ids))
+            if not self.engine.llm.available():
+                warnings.append("LLM is not configured; crawler stored metadata but skipped extraction.")
+                run = update("complete", "Crawler metadata import complete. Configure an LLM to extract Principles, ideas, benchmarks, baselines, and takeaways.", stored_works=len(work_ids))
+                run["completed_at"] = utc_now()
+                self.store.upsert("research_runs", run, "run_id")
+                return
+            for idx, work_id in enumerate(work_ids, start=1):
+                self.engine._raise_if_cancelled(run_id)
+                work = self.store.get_item("source_works", work_id) or {}
+                update(
+                    "llm_extraction",
+                    f"Extracting crawler work {idx}/{len(work_ids)}: {work.get('title') or work_id}",
+                    current_work_id=work_id,
+                    current_index=idx,
+                )
+                try:
+                    result = self.engine.v2_extract_single_work(
+                        work_id,
+                        field_id=field_id,
+                        goal_text=goal_text,
+                        model_mode=model_mode,
+                        run_id=run_id,
+                        force=force,
+                    )
+                    if result.get("cloud_cache_hit"):
+                        counts["cloud_hits"] += 1
+                    elif result.get("already_extracted"):
+                        counts["skipped_works"] += 1
+                    else:
+                        counts["extracted_works"] += 1
+                except CancelledRun:
+                    raise
+                except Exception as exc:
+                    counts["failed_works"] += 1
+                    errors.append(f"{work_id}: {exc}")
+                update("llm_extraction", f"Processed {idx}/{len(work_ids)} crawler work candidate(s).")
+            final_status = "complete" if not errors else "error"
+            final_message = "Cloud crawler research complete." if not errors else "Cloud crawler research finished with per-work failures."
+            run = update(final_status, final_message)
+            run["completed_at"] = utc_now()
+            self.store.upsert("research_runs", run, "run_id")
+        except CancelledRun:
+            run = self.store.get_item("research_runs", run_id) or {"run_id": run_id}
+            self.engine._mark_run_cancelled(run)
+        except Exception as exc:
+            errors.append(str(exc))
+            run = update("error", str(exc))
+            run["completed_at"] = utc_now()
+            self.store.upsert("research_runs", run, "run_id")
 
     def _cloud_payload(self, record_id: str) -> dict | None:
         with self.store._connect() as conn:

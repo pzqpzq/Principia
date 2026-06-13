@@ -1,6 +1,8 @@
 const state = {
   results: [],
   lastContributionPath: "",
+  crawlRunId: "",
+  crawlPollTimer: null,
 };
 
 const $ = (id) => document.getElementById(id);
@@ -134,7 +136,9 @@ async function runCrawl() {
 }
 
 async function submitCrawl(path) {
-  setStatus(path.endsWith("/run") ? "Exporting crawler operation..." : "Planning crawler batch...");
+  const isRun = path.endsWith("/run");
+  setStatus(isRun ? "Starting cloud crawler research..." : "Planning crawler batch...");
+  $("crawlRunStatus").textContent = isRun ? "Starting" : "Planning";
   try {
     const data = await api(path, {
       method: "POST",
@@ -146,15 +150,50 @@ async function submitCrawl(path) {
         priority_rules: splitList($("crawlRules").value),
         max_papers: Number($("crawlMax").value || 100),
         model_key: $("crawlModelKey").value.trim(),
-        dry_run: path.endsWith("/plan"),
+        model_mode: $("crawlModelMode").value.trim() || "auto",
+        field_id: $("crawlFieldId").value.trim() || "cloud-crawl",
+        timeout: Number($("crawlTimeout").value || 12),
+        force: $("crawlForce").checked,
+        dry_run: !isRun,
       }),
     });
-    $("crawlCount").textContent = String((data.candidates || []).length);
+    const count = (data.candidates || []).length;
+    $("crawlCount").textContent = `${count} candidate${count === 1 ? "" : "s"}`;
     showDetail(data);
-    setStatus(path.endsWith("/run") ? `Crawler operation exported: ${data.path || data.plan_id}` : `Crawler plan ready: ${data.plan_id}`);
+    if (isRun && data.run_id) {
+      state.crawlRunId = data.run_id;
+      $("crawlRunStatus").textContent = `Queued ${data.run_id}`;
+      pollCrawlRun();
+      setStatus(`Cloud crawler research started: ${data.run_id}`);
+    } else {
+      $("crawlRunStatus").textContent = "Plan ready";
+      setStatus(`Crawler plan ready: ${data.plan_id}`);
+    }
   } catch (error) {
+    $("crawlRunStatus").textContent = "Error";
     setStatus(error.message, true);
   }
+}
+
+async function pollCrawlRun() {
+  if (!state.crawlRunId) return;
+  if (state.crawlPollTimer) window.clearTimeout(state.crawlPollTimer);
+  try {
+    const data = await api(`/api/v1/research/status?run_id=${encodeURIComponent(state.crawlRunId)}`);
+    const run = data.run || {};
+    const counts = run.counts || {};
+    const label = [run.status || "running", run.stage || "", `${counts.stored_works || 0}/${counts.planned || 0}`].filter(Boolean).join(" · ");
+    $("crawlRunStatus").textContent = label;
+    showDetail(data);
+    if (["complete", "error", "cancelled"].includes(run.status)) {
+      setStatus(run.message || `Cloud crawler ${run.status}.`, run.status === "error");
+      state.crawlRunId = "";
+      return;
+    }
+  } catch (error) {
+    $("crawlRunStatus").textContent = error.message;
+  }
+  state.crawlPollTimer = window.setTimeout(pollCrawlRun, 1500);
 }
 
 async function exportAdminOperation(event) {

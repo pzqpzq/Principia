@@ -8,6 +8,7 @@ import unittest
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
+import principia.cloud.crawler as crawler_module
 from principia.cloud.compactor import export_snapshot
 from principia.cloud.crawler import plan_crawl
 from principia.cloud.manifest import CloudManifestClient
@@ -191,6 +192,44 @@ class CloudV11Tests(unittest.TestCase):
         self.assertEqual(plan["venues"][0], "Nature Machine Intelligence")
         self.assertEqual(len(plan["candidates"]), 5)
         self.assertTrue(plan["dry_run"])
+
+    def test_crawler_live_mode_uses_metadata_candidates(self) -> None:
+        original = crawler_module.search_hybrid_sources
+        calls: list[str] = []
+
+        def fake_search(query: str, max_results: int = 100, timeout: int = 12) -> list[dict[str, object]]:
+            calls.append(query)
+            return [
+                {
+                    "work_id": "W_REAL",
+                    "title": "Real Metadata Paper",
+                    "abstract": "Agent benchmark paper from public metadata.",
+                    "year": 2025,
+                    "venue_or_source": "ICLR",
+                    "source_type": "paper",
+                    "source_provider": "fake_public_metadata",
+                    "citation_count": 42,
+                }
+            ]
+
+        crawler_module.search_hybrid_sources = fake_search
+        try:
+            plan = crawler_module.plan_crawl(
+                venues=["ICLR"],
+                years=[2025],
+                topics=["agents"],
+                max_papers=3,
+                model_key="fake:model:auto:prompt:schema:work_concepts",
+                live=True,
+                timeout=3,
+            )
+        finally:
+            crawler_module.search_hybrid_sources = original
+
+        self.assertTrue(calls)
+        self.assertTrue(plan["live_metadata"])
+        self.assertEqual(plan["candidates"][0]["title"], "Real Metadata Paper")
+        self.assertEqual(plan["candidates"][0]["crawl_status"], "metadata_candidate")
 
     def test_100k_synthetic_snapshot_scale_is_opt_in(self) -> None:
         if os.getenv("PRINCIPIA_RUN_SCALE_TESTS") != "1":
