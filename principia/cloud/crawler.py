@@ -1,5 +1,9 @@
 from __future__ import annotations
 
+import json
+import ssl
+import urllib.parse
+import urllib.request
 from dataclasses import dataclass
 from typing import Any
 
@@ -10,19 +14,42 @@ from ..utils import compact_text, lexical_score, stable_id
 
 VENUE_ALIASES = {
     "acl": "ACL",
+    "annual meeting of the association for computational linguistics": "ACL",
     "cvpr": "CVPR",
+    "computer vision and pattern recognition": "CVPR",
     "eccv": "ECCV",
+    "european conference on computer vision": "ECCV",
     "emnlp": "EMNLP",
+    "empirical methods in natural language processing": "EMNLP",
     "iccv": "ICCV",
+    "international conference on computer vision": "ICCV",
     "iclr": "ICLR",
+    "international conference on learning representations": "ICLR",
     "icml": "ICML",
+    "international conference on machine learning": "ICML",
     "jmlr": "JMLR",
+    "journal of machine learning research": "JMLR",
     "nmi": "Nature Machine Intelligence",
     "ncs": "Nature Computational Science",
+    "nature machine intelligence": "Nature Machine Intelligence",
+    "nature computational science": "Nature Computational Science",
     "neurips": "NeurIPS",
+    "nips": "NeurIPS",
+    "neural information processing systems": "NeurIPS",
+    "conference on neural information processing systems": "NeurIPS",
     "tpami": "TPAMI",
     "pami": "TPAMI",
+    "ieee transactions on pattern analysis and machine intelligence": "TPAMI",
 }
+
+OPENREVIEW_VENUE_PREFIXES = {
+    "ICLR": "ICLR.cc",
+    "NeurIPS": "NeurIPS.cc",
+    "ICML": "ICML.cc",
+}
+
+OPENREVIEW_API = "https://api2.openreview.net/notes"
+OPENREVIEW_USER_AGENT = "Principia-v1.1-cloud-crawler (local research workspace)"
 
 
 @dataclass
@@ -62,7 +89,13 @@ def plan_crawl(
         timeout=timeout,
         warnings=metadata_warnings,
     ) if live else []
-    if not candidates:
+    candidates = _filter_candidates(candidates, normalized, years)
+    if live and not candidates:
+        metadata_warnings.append(
+            "No public metadata candidates matched the selected venue/year filters. "
+            "The live crawler will not fabricate template papers."
+        )
+    if not live and not candidates:
         candidates = _fallback_candidates(normalized, years, topics, priority_rules, max_papers, live=live)
     candidates.sort(key=lambda item: item["priority_score"], reverse=True)
     candidates = candidates[:max_papers]
@@ -100,6 +133,16 @@ def _live_metadata_candidates(
         return []
     seen: set[str] = set()
     candidates: list[dict[str, Any]] = []
+    for venue in venues:
+        for year in [int(item) for item in years if _safe_int(item)]:
+            for candidate in _openreview_candidates(venue, year, topics, priority_rules, max_papers=max_papers, timeout=timeout, warnings=warnings):
+                key = str(candidate.get("work_id") or "").strip() or str(candidate.get("title") or "").lower()
+                if key in seen:
+                    continue
+                seen.add(key)
+                candidates.append(candidate)
+                if len(candidates) >= max_papers * 5:
+                    return candidates
     per_query = max(20, min(100, max_papers * 3))
     for query in queries:
         try:
@@ -116,8 +159,15 @@ def _live_metadata_candidates(
                 continue
             seen.add(dedupe_key)
             candidate = dict(work)
-            venue = str(candidate.get("venue_or_source") or query["venue"] or "").strip()
-            year = _safe_int(candidate.get("year")) or _safe_int(query["year"])
+            raw_venue = str(candidate.get("venue_or_source") or candidate.get("venue") or candidate.get("source") or "").strip()
+            year = _safe_int(candidate.get("year"))
+            query_year = _safe_int(query["year"])
+            if query_year and year and year != query_year:
+                continue
+            year = year or query_year
+            if query.get("venue") and not _candidate_matches_venue(raw_venue, title, candidate.get("abstract") or "", str(query["venue"])):
+                continue
+            venue = _best_candidate_venue(raw_venue, str(query.get("venue") or ""))
             candidate.update(
                 {
                     "work_id": candidate.get("work_id") or stable_id("W", title),
@@ -140,6 +190,140 @@ def _live_metadata_candidates(
             if len(candidates) >= max_papers * 5:
                 return candidates
     return candidates
+
+
+def _openreview_candidates(
+    venue: str,
+    year: int,
+    topics: list[str],
+    priority_rules: list[str],
+    *,
+    max_papers: int,
+    timeout: int,
+    warnings: list[str],
+) -> list[dict[str, Any]]:
+    canonical = normalize_venue(venue)
+    prefix = OPENREVIEW_VENUE_PREFIXES.get(canonical)
+    if not prefix or not year:
+        return []
+    venue_id = f"{prefix}/{year}/Conference"
+    limit = max(20, min(200, max_papers * 8))
+    params = urllib.parse.urlencode({"content.venueid": venue_id, "limit": limit})
+    try:
+        data = _fetch_openreview_json(f"{OPENREVIEW_API}?{params}", timeout=max(3, min(int(timeout or 12), 30)))
+    except Exception as exc:
+        warnings.append(f"OpenReview metadata failed for {canonical} {year}: {exc}")
+        return []
+    notes = data.get("notes") if isinstance(data, dict) else []
+    output: list[dict[str, Any]] = []
+    topic_text = " ".join(topics)
+    for idx, note in enumerate(notes or []):
+        if not isinstance(note, dict):
+            continue
+        content = note.get("content") if isinstance(note.get("content"), dict) else {}
+        title = compact_text(str(_openreview_value(content, "title") or ""), 240)
+        if not title:
+            continue
+        abstract = compact_text(str(_openreview_value(content, "abstract") or ""), 2400)
+        authors = _openreview_value(content, "authors") or []
+        keywords = _openreview_value(content, "keywords") or []
+        forum_id = str(note.get("forum") or note.get("id") or "")
+        text = " ".join([title, abstract, " ".join(keywords if isinstance(keywords, list) else [])])
+        topic_score = lexical_score(topic_text, text) if topic_text else 0.1
+        candidate = {
+            "work_id": stable_id("W", title),
+            "title": title,
+            "authors": authors if isinstance(authors, list) else [],
+            "abstract": abstract,
+            "year": year,
+            "venue_or_source": canonical,
+            "url_or_doi": f"https://openreview.net/forum?id={forum_id}" if forum_id else "",
+            "source_type": "paper",
+            "source_provider": "openreview",
+            "source_record_id": forum_id or stable_id("OR", title, venue_id),
+            "source_urls": [f"https://openreview.net/forum?id={forum_id}"] if forum_id else [],
+            "source_updated_at": str(note.get("mdate") or note.get("tmdate") or ""),
+            "community_signals": {"source": "openreview", "venueid": venue_id, "keywords": keywords},
+            "priority_score": round(_priority_score(canonical, year, idx, topics, priority_rules) + 0.35 * topic_score, 4),
+            "priority_reason": _priority_reason({"venue_or_source": canonical}, {"venue": canonical, "year": year}, topics, priority_rules),
+            "target_venue": canonical,
+            "target_year": year,
+            "crawl_status": "metadata_candidate",
+            "cloud_crawl_query": f"OpenReview {venue_id} {' '.join(topics)}".strip(),
+        }
+        output.append(candidate)
+    output.sort(key=lambda item: item.get("priority_score", 0), reverse=True)
+    return output[: max_papers * 5]
+
+
+def _openreview_value(content: dict[str, Any], key: str) -> Any:
+    value = content.get(key)
+    if isinstance(value, dict) and "value" in value:
+        return value.get("value")
+    return value
+
+
+def _fetch_openreview_json(url: str, timeout: int) -> dict[str, Any]:
+    request = urllib.request.Request(url, headers={"User-Agent": OPENREVIEW_USER_AGENT, "Accept": "application/json"})
+    try:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            return json.loads(response.read().decode("utf-8", errors="replace"))
+    except Exception as exc:
+        if "CERTIFICATE_VERIFY_FAILED" not in repr(exc):
+            raise
+        with urllib.request.urlopen(request, timeout=timeout, context=ssl._create_unverified_context()) as response:
+            return json.loads(response.read().decode("utf-8", errors="replace"))
+
+
+def _filter_candidates(candidates: list[dict[str, Any]], venues: list[str], years: list[int]) -> list[dict[str, Any]]:
+    if not candidates:
+        return []
+    selected_years = {_safe_int(year) for year in years if _safe_int(year)}
+    output = []
+    for candidate in candidates:
+        venue_text = str(candidate.get("venue_or_source") or candidate.get("venue") or candidate.get("target_venue") or "")
+        title = str(candidate.get("title") or "")
+        abstract = str(candidate.get("abstract") or "")
+        if venues and not any(_candidate_matches_venue(venue_text, title, abstract, venue) for venue in venues):
+            continue
+        year = _safe_int(candidate.get("year") or candidate.get("target_year"))
+        if selected_years and year and year not in selected_years:
+            continue
+        output.append(candidate)
+    return output
+
+
+def _best_candidate_venue(raw_venue: str, target_venue: str) -> str:
+    raw = str(raw_venue or "").strip()
+    target = normalize_venue(target_venue)
+    if raw and _candidate_matches_venue(raw, "", "", target):
+        return normalize_venue(raw)
+    return target or normalize_venue(raw)
+
+
+def _candidate_matches_venue(raw_venue: str, title: str, abstract: str, target_venue: str) -> bool:
+    target = normalize_venue(target_venue)
+    if not target:
+        return True
+    target_keys = _venue_match_keys(target)
+    text = _venue_key(" ".join([str(raw_venue or ""), str(title or ""), str(abstract or "")]))
+    if any(key and key in text for key in target_keys):
+        return True
+    raw = normalize_venue(raw_venue)
+    return bool(raw and _venue_key(raw) in target_keys)
+
+
+def _venue_match_keys(value: str) -> set[str]:
+    normalized = normalize_venue(value)
+    keys = {_venue_key(value), _venue_key(normalized)}
+    for alias, canonical in VENUE_ALIASES.items():
+        if normalize_venue(canonical).lower() == normalized.lower():
+            keys.add(_venue_key(alias))
+    return {key for key in keys if key}
+
+
+def _venue_key(value: str) -> str:
+    return "".join(char.lower() for char in str(value or "") if char.isalnum())
 
 
 def _metadata_queries(venues: list[str], years: list[int], topics: list[str]) -> list[dict[str, Any]]:

@@ -640,6 +640,7 @@ function renderWork(item) {
       <div class="record-actions">
         <button type="button" data-action="add-material">Add Material</button>
         <button type="button" data-action="extract-work" class="${extractClass}" title="${escapeHtml(extractTitle)}">${escapeHtml(extractLabel)}</button>
+        ${cloudSyncButton(item)}
         <button type="button" data-action="details">Details</button>
       </div>
     `
@@ -686,6 +687,13 @@ function rowShell(tabKey, item, body) {
   return `<article class="record-row record-${escapeHtml(tabKey)}" data-tab="${escapeHtml(tabKey)}" data-id="${escapeHtml(id)}">${body}</article>`;
 }
 
+function cloudSyncButton(item) {
+  if (item.cloud_sync_status === "synced") {
+    return `<button type="button" class="work-extract-done" disabled>Cloud Synced</button>`;
+  }
+  return `<button type="button" data-action="sync-cloud">Sync Cloud</button>`;
+}
+
 function renderSymbolBadges(item) {
   const symbol = item.symbol_code || item.active_variant?.payload?.symbol || item.symbol?.short_code || "";
   const badges = [];
@@ -711,6 +719,7 @@ function renderExistedIdea(item) {
       </div>
       <div class="record-actions">
         <button type="button" data-action="add-material">Add Material</button>
+        ${cloudSyncButton(item)}
         <button type="button" data-action="details">Details</button>
       </div>
     `
@@ -733,6 +742,7 @@ function renderPrinciple(item) {
       </div>
       <div class="record-actions">
         <button type="button" data-action="add-material">Add Material</button>
+        ${cloudSyncButton(item)}
         <button type="button" data-action="details">Details</button>
       </div>
     `
@@ -755,6 +765,7 @@ function renderTakeawayMessage(item) {
       </div>
       <div class="record-actions">
         <button type="button" data-action="add-material">Add Material</button>
+        ${cloudSyncButton(item)}
         <button type="button" data-action="details">Details</button>
       </div>
     `
@@ -774,6 +785,7 @@ function renderBenchmark(item) {
       </div>
       <div class="record-actions">
         <button type="button" data-action="add-material">Add Material</button>
+        ${cloudSyncButton(item)}
         <button type="button" data-action="details">Details</button>
       </div>
     `
@@ -796,6 +808,7 @@ function renderBaseline(item) {
       </div>
       <div class="record-actions">
         <button type="button" data-action="add-material">Add Material</button>
+        ${cloudSyncButton(item)}
         <button type="button" data-action="details">Details</button>
       </div>
     `
@@ -1292,6 +1305,36 @@ async function extractWorkFromRow(workId, force = false) {
     counts: { work_id: workId },
   });
   pollWorkExtraction();
+}
+
+async function syncRecordToCloud(tabKey, id, button) {
+  const tab = tabs.find((entry) => entry.key === tabKey);
+  if (!tab || !id) return;
+  const prior = button.textContent;
+  button.disabled = true;
+  button.textContent = "Syncing...";
+  try {
+    const data = await post("/api/v1/cloud/upload/record", {
+      field_id: state.activeProjectId,
+      bucket: tab.bucket,
+      id,
+      model_mode: getModelMode(),
+      upload_mode: "normal",
+    });
+    const pushed = data.direct_push && data.direct_push.pushed;
+    if (pushed) {
+      showToast("Synced to Principia Cloud.");
+      await loadSummary();
+      await loadTab({ reset: true, preserveScroll: true, silent: true });
+      return;
+    }
+    showToast(data.prepared?.path ? "Cloud contribution prepared; direct push did not complete." : "Cloud sync was not allowed for this record.", "error");
+  } catch (error) {
+    showToast(error.message || "Unable to sync this record.", "error");
+  } finally {
+    button.disabled = false;
+    button.textContent = prior;
+  }
 }
 
 async function pollWorkExtraction() {
@@ -1831,6 +1874,11 @@ function bindEvents() {
     }
     if (event.target.closest("[data-action='add-material']")) {
       addMaterialFromRow(row.dataset.tab, row.dataset.id);
+      return;
+    }
+    const syncCloudButton = event.target.closest("[data-action='sync-cloud']");
+    if (syncCloudButton) {
+      syncRecordToCloud(row.dataset.tab, row.dataset.id, syncCloudButton);
       return;
     }
     const extractButton = event.target.closest("[data-action='extract-work']");

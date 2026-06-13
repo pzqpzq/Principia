@@ -2690,6 +2690,219 @@ class PrincipiaEngine:
             "work_extraction_runs": work_extraction_runs,
         }
 
+    def build_cloud_local_tab(
+        self,
+        field_id: str = "cloud-crawl",
+        tab: str = "works",
+        *,
+        offset: int = 0,
+        limit: int = 10,
+        query: str = "",
+        model_mode: str = "auto",
+        sync_state: str = "unsynced",
+    ) -> dict[str, Any]:
+        bucket = {
+            "works": "source_works",
+            "existed_ideas": "existed_ideas",
+            "benchmarks": "benchmark_records",
+            "baselines": "baseline_records",
+            "principles": "principles",
+            "takeaway_messages": "takeaway_messages",
+        }.get(tab, tab)
+        sync_state = str(sync_state or "unsynced").lower()
+        items = self._v2_project_records_fast(field_id, bucket, query=query)
+        work_sync = self._cloud_work_sync_map(field_id)
+        if sync_state in {"synced", "unsynced"}:
+            want_synced = sync_state == "synced"
+            items = [
+                item
+                for item in items
+                if self._cloud_record_is_synced(bucket, item, work_sync) == want_synced
+            ]
+        profile = self.store.get_item("field_profiles", field_id) or {}
+        sort_query = query or profile.get("goal_text") or profile.get("query") or profile.get("name", "")
+        if bucket == "source_works":
+            items.sort(
+                key=lambda item: (
+                    float(item.get("priority_score") or 0),
+                    int(item.get("year") or 0) if str(item.get("year") or "").isdigit() else 0,
+                    str(item.get("updated_at") or ""),
+                ),
+                reverse=True,
+            )
+        else:
+            items.sort(key=lambda item: self._v2_sort_score(item, sort_query), reverse=True)
+        total = len(items)
+        page = [self._v2_present_item(item, model_mode=model_mode, compact=True) for item in items[offset : offset + limit]]
+        work_extraction_runs = self.v2_active_work_extraction_runs(field_id) if bucket == "source_works" else {}
+        if work_extraction_runs:
+            for item in page:
+                work_id = str(item.get("work_id") or "")
+                if work_id in work_extraction_runs:
+                    item["work_extraction_run"] = work_extraction_runs[work_id]
+        return {
+            "items": page,
+            "total": total,
+            "offset": offset,
+            "limit": limit,
+            "has_more": offset + limit < total,
+            "counts": self.cloud_local_counts(field_id),
+            "sync_state": sync_state,
+            "work_extraction_runs": work_extraction_runs,
+        }
+
+    def cloud_local_counts(self, field_id: str = "cloud-crawl") -> dict[str, Any]:
+        work_sync = self._cloud_work_sync_map(field_id)
+        counts: dict[str, Any] = {}
+        for tab, bucket in {
+            "works": "source_works",
+            "existed_ideas": "existed_ideas",
+            "benchmarks": "benchmark_records",
+            "baselines": "baseline_records",
+            "principles": "principles",
+            "takeaway_messages": "takeaway_messages",
+        }.items():
+            items = self._v2_project_records_fast(field_id, bucket)
+            synced = sum(1 for item in items if self._cloud_record_is_synced(bucket, item, work_sync))
+            counts[tab] = {"total": len(items), "synced": synced, "unsynced": max(0, len(items) - synced)}
+        return counts
+
+    def mark_cloud_synced(
+        self,
+        work_ids: list[str],
+        *,
+        field_id: str = "cloud-crawl",
+        contribution_path: str = "",
+        upload_id: str = "",
+        status: str = "synced",
+    ) -> dict[str, Any]:
+        now = utc_now()
+        updated: dict[str, int] = {"source_works": 0}
+        unique_work_ids = self._ordered_unique([str(work_id) for work_id in work_ids if work_id])
+        for work_id in unique_work_ids:
+            work = self.store.get_item("source_works", work_id)
+            if not work:
+                continue
+            work.update(
+                {
+                    "cloud_sync_status": status,
+                    "cloud_synced_at": now,
+                    "cloud_contribution_path": contribution_path,
+                    "cloud_upload_id": upload_id,
+                }
+            )
+            self.store.upsert("source_works", work, "work_id")
+            updated["source_works"] += 1
+        work_sync = self._cloud_work_sync_map(field_id)
+        for bucket in ("existed_ideas", "principles", "takeaway_messages", "benchmark_records", "baseline_records"):
+            id_key = self._record_id_key(bucket)
+            changed = 0
+            for item in self._v2_project_records_fast(field_id, bucket):
+                ids = set(self._cloud_record_work_ids(bucket, item))
+                if not ids.intersection(unique_work_ids):
+                    continue
+                if ids and all(work_sync.get(work_id) == "synced" or work_id in unique_work_ids for work_id in ids):
+                    item.update(
+                        {
+                            "cloud_sync_status": status,
+                            "cloud_synced_at": now,
+                            "cloud_contribution_path": contribution_path,
+                            "cloud_upload_id": upload_id,
+                        }
+                    )
+                    self.store.upsert(bucket, item, id_key)
+                    changed += 1
+            updated[bucket] = changed
+        return {"ok": True, "updated": updated, "work_ids": unique_work_ids, "counts": self.cloud_local_counts(field_id)}
+
+    def clear_cloud_synced_cache(self, field_id: str = "cloud-crawl") -> dict[str, Any]:
+        work_sync = self._cloud_work_sync_map(field_id)
+        deleted: dict[str, int] = {"project_memberships": 0, "records": 0}
+        protected_work_ids = self._project_work_ids_except(field_id)
+        buckets = ("existed_ideas", "principles", "takeaway_messages", "benchmark_records", "baseline_records")
+        for bucket in buckets:
+            id_key = self._record_id_key(bucket)
+            for item in list(self._v2_project_records_fast(field_id, bucket)):
+                record_id = str(item.get(id_key) or item.get("canonical_id") or "")
+                if not record_id or not self._cloud_record_is_synced(bucket, item, work_sync):
+                    continue
+                if self._record_is_project_referenced_elsewhere(bucket, record_id, field_id):
+                    self._hide_cloud_membership(field_id, bucket, record_id)
+                    deleted["project_memberships"] += 1
+                    continue
+                self._hide_cloud_membership(field_id, bucket, record_id)
+                self.store.delete_item(bucket, record_id)
+                deleted["project_memberships"] += 1
+                deleted["records"] += 1
+        for work in list(self._v2_project_records_fast(field_id, "source_works")):
+            work_id = str(work.get("work_id") or "")
+            if not work_id or work_sync.get(work_id) != "synced":
+                continue
+            if work_id in protected_work_ids or self._record_is_project_referenced_elsewhere("source_works", work_id, field_id):
+                self._hide_cloud_membership(field_id, "source_works", work_id)
+                deleted["project_memberships"] += 1
+                continue
+            self._hide_cloud_membership(field_id, "source_works", work_id)
+            self.store.delete_item("source_works", work_id)
+            deleted["project_memberships"] += 1
+            deleted["records"] += 1
+        self.store.vacuum()
+        return {"ok": True, "field_id": field_id, "deleted": deleted, "counts": self.cloud_local_counts(field_id)}
+
+    def _cloud_work_sync_map(self, field_id: str) -> dict[str, str]:
+        return {
+            str(item.get("work_id") or ""): str(item.get("cloud_sync_status") or "")
+            for item in self._v2_project_records_fast(field_id, "source_works")
+            if item.get("work_id")
+        }
+
+    def _cloud_record_is_synced(self, bucket: str, item: dict[str, Any], work_sync: dict[str, str]) -> bool:
+        if bucket == "source_works":
+            return str(item.get("cloud_sync_status") or "") == "synced"
+        if str(item.get("cloud_sync_status") or "") == "synced":
+            return True
+        work_ids = self._cloud_record_work_ids(bucket, item)
+        return bool(work_ids) and all(work_sync.get(work_id) == "synced" for work_id in work_ids)
+
+    def _cloud_record_work_ids(self, bucket: str, item: dict[str, Any]) -> list[str]:
+        _ = bucket
+        ids: list[str] = []
+        for value in (item.get("source_work_ids"), item.get("source_works")):
+            if isinstance(value, list):
+                ids.extend(str(work_id) for work_id in value if work_id)
+            elif value:
+                ids.append(str(value))
+        for key in ("work_id", "source_id"):
+            if item.get(key):
+                ids.append(str(item.get(key)))
+        return self._ordered_unique(ids)
+
+    def _project_work_ids_except(self, field_id: str) -> set[str]:
+        ids: set[str] = set()
+        for member in self.store.list_items("project_memberships", limit=100000):
+            if member.get("field_id") == field_id or member.get("bucket") != "source_works" or member.get("hidden"):
+                continue
+            if member.get("record_id"):
+                ids.add(str(member.get("record_id")))
+        return ids
+
+    def _record_is_project_referenced_elsewhere(self, bucket: str, record_id: str, field_id: str) -> bool:
+        for member in self.store.list_items("project_memberships", limit=100000):
+            if member.get("field_id") == field_id or member.get("hidden"):
+                continue
+            if member.get("bucket") == bucket and str(member.get("record_id") or "") == record_id:
+                return True
+        return False
+
+    def _hide_cloud_membership(self, field_id: str, bucket: str, record_id: str) -> bool:
+        membership = self.store.get_item("project_memberships", self._membership_id(field_id, bucket, record_id))
+        if not membership:
+            return False
+        membership["hidden"] = True
+        membership["updated_at"] = utc_now()
+        self.store.upsert("project_memberships", membership, "membership_id")
+        return True
+
     def _v2_project_records_fast(self, field_id: str, bucket: str, query: str = "") -> list[dict[str, Any]]:
         bucket = self._v2_bucket(bucket)
         if field_id == "default":
@@ -3577,6 +3790,15 @@ class PrincipiaEngine:
             "work_principles": work.get("work_principles") or [],
             "work_insights": work.get("work_insights") or [],
             "work_novelty": work.get("work_novelty") or [],
+            "cloud_local_origin": work.get("cloud_local_origin") or work.get("source_origin") or "",
+            "cloud_sync_status": work.get("cloud_sync_status") or "",
+            "cloud_synced_at": work.get("cloud_synced_at") or "",
+            "crawl_status": work.get("crawl_status") or "",
+            "target_venue": work.get("target_venue") or "",
+            "target_year": work.get("target_year") or "",
+            "priority_score": work.get("priority_score"),
+            "priority_reason": work.get("priority_reason") or "",
+            "cloud_crawl_query": work.get("cloud_crawl_query") or "",
         }
         return self._v2_upsert_canonical("source_works", title, payload, model_mode=model_mode, existing_id=work.get("work_id") or "")
 

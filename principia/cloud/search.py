@@ -19,9 +19,12 @@ class CloudSearch:
         query: str,
         *,
         limit: int = 20,
+        offset: int = 0,
         model_key: str = "",
         venue: str = "",
+        venues: list[str] | None = None,
         year: int | None = None,
+        years: list[int] | None = None,
         source_type: str = "",
         concept_type: str = "",
     ) -> dict[str, Any]:
@@ -32,16 +35,19 @@ class CloudSearch:
             manifest,
             query,
             limit=limit,
+            offset=offset,
             model_key=model_key,
             venue=venue,
+            venues=venues or [],
             year=year,
+            years=years or [],
             source_type=source_type,
             concept_type=concept_type,
         )
         if items:
-            return {"items": items[:limit], "snapshot_id": manifest.get("snapshot_id", ""), "query": query, "facets": manifest.get("facets") or {}}
-        if any([venue, year, source_type, concept_type]):
-            return {"items": [], "snapshot_id": manifest.get("snapshot_id", ""), "query": query, "facets": manifest.get("facets") or {}}
+            return {"items": items[:limit], "offset": offset, "limit": limit, "has_more": len(items) >= limit, "snapshot_id": manifest.get("snapshot_id", ""), "query": query, "facets": manifest.get("facets") or {}}
+        if any([venue, venues, year, years, source_type, concept_type]):
+            return {"items": [], "offset": offset, "limit": limit, "has_more": False, "snapshot_id": manifest.get("snapshot_id", ""), "query": query, "facets": manifest.get("facets") or {}}
         items = []
         for asset in manifest.get("assets") or []:
             if asset.get("kind") != "route_index" or asset.get("route_type") != "work":
@@ -54,7 +60,7 @@ class CloudSearch:
             if len(items) >= limit:
                 break
         items.sort(key=lambda row: row.get("_score", 0), reverse=True)
-        return {"items": items[:limit], "snapshot_id": manifest.get("snapshot_id", ""), "query": query, "facets": manifest.get("facets") or {}}
+        return {"items": items[:limit], "offset": offset, "limit": limit, "has_more": len(items) >= limit, "snapshot_id": manifest.get("snapshot_id", ""), "query": query, "facets": manifest.get("facets") or {}}
 
     def _search_index_assets(
         self,
@@ -62,9 +68,12 @@ class CloudSearch:
         query: str,
         *,
         limit: int,
+        offset: int,
         model_key: str,
         venue: str,
+        venues: list[str],
         year: int | None,
+        years: list[int],
         source_type: str,
         concept_type: str,
     ) -> list[dict[str, Any]]:
@@ -79,9 +88,12 @@ class CloudSearch:
                         path,
                         query,
                         limit=limit,
+                        offset=offset,
                         model_key=model_key,
                         venue=venue,
+                        venues=venues,
                         year=year,
+                        years=years,
                         source_type=source_type,
                         concept_type=concept_type,
                     )
@@ -99,21 +111,26 @@ class CloudSearch:
         query: str,
         *,
         limit: int,
+        offset: int,
         model_key: str,
         venue: str,
+        venues: list[str],
         year: int | None,
+        years: list[int],
         source_type: str,
         concept_type: str,
     ) -> list[dict[str, Any]]:
         query = str(query or "").strip()
         clauses = []
         params: list[Any] = []
-        if venue:
-            clauses.append("w.venue = ?")
-            params.append(venue)
-        if year:
-            clauses.append("w.year = ?")
-            params.append(int(year))
+        selected_venues = _unique([*(venues or []), venue])
+        if selected_venues:
+            clauses.append("w.venue IN (%s)" % ",".join("?" for _ in selected_venues))
+            params.extend(selected_venues)
+        selected_years = _unique_int([*(years or []), year])
+        if selected_years:
+            clauses.append("w.year IN (%s)" % ",".join("?" for _ in selected_years))
+            params.extend(selected_years)
         if source_type:
             clauses.append("w.source_type = ?")
             params.append(source_type)
@@ -133,9 +150,9 @@ class CloudSearch:
                     "SELECT w.*, bm25(cloud_search_work_fts) * -1.0 AS _score "
                     "FROM cloud_search_work_fts JOIN cloud_search_work w ON w.rowid = cloud_search_work_fts.rowid "
                     f"{where_sql + (' AND ' if where_sql else ' WHERE ')} cloud_search_work_fts MATCH ? "
-                    "ORDER BY _score DESC LIMIT ?"
+                    "ORDER BY _score DESC LIMIT ? OFFSET ?"
                 )
-                rows = conn.execute(sql, [*params, fts_query, int(limit)]).fetchall()
+                rows = conn.execute(sql, [*params, fts_query, int(limit), int(offset)]).fetchall()
             else:
                 clauses = [clause.removeprefix("w.") for clause in clauses]
                 like_clauses = []
@@ -149,8 +166,8 @@ class CloudSearch:
                 sql = "SELECT *, 0.1 AS _score FROM cloud_search_work"
                 if full_where:
                     sql += " WHERE " + " AND ".join(full_where)
-                sql += " ORDER BY year DESC, title ASC LIMIT ?"
-                rows = conn.execute(sql, [*params, int(limit)]).fetchall()
+                sql += " ORDER BY year DESC, title ASC LIMIT ? OFFSET ?"
+                rows = conn.execute(sql, [*params, int(limit), int(offset)]).fetchall()
         return [_normalize_work_row(dict(row), query) for row in rows]
 
     def _search_route(self, path: Path, query: str, *, limit: int, model_key: str = "") -> list[dict[str, Any]]:
@@ -192,3 +209,30 @@ def _normalize_work_row(row: dict[str, Any], query: str) -> dict[str, Any]:
 def _table_exists(conn: sqlite3.Connection, table: str) -> bool:
     row = conn.execute("SELECT 1 FROM sqlite_master WHERE type IN ('table', 'view') AND name = ?", (table,)).fetchone()
     return bool(row)
+
+
+def _unique(values: list[Any]) -> list[str]:
+    output: list[str] = []
+    seen: set[str] = set()
+    for value in values:
+        text = str(value or "").strip()
+        if not text or text in seen:
+            continue
+        seen.add(text)
+        output.append(text)
+    return output
+
+
+def _unique_int(values: list[Any]) -> list[int]:
+    output: list[int] = []
+    seen: set[int] = set()
+    for value in values:
+        try:
+            number = int(value)
+        except Exception:
+            continue
+        if number in seen:
+            continue
+        seen.add(number)
+        output.append(number)
+    return output

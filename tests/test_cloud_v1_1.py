@@ -23,6 +23,7 @@ from principia.cloud.search import CloudSearch
 from principia.cloud.search_index import build_work_search_index
 from principia.cloud.contribution import prepare_contribution
 from principia.cloud.validator import validate_contribution
+from principia.engine import PrincipiaEngine
 from principia.global_store import GlobalStore
 from principia.models import utc_now
 from principia.storage import Store
@@ -233,6 +234,7 @@ class CloudV11Tests(unittest.TestCase):
 
     def test_crawler_live_mode_uses_metadata_candidates(self) -> None:
         original = crawler_module.search_hybrid_sources
+        original_openreview = crawler_module._openreview_candidates
         calls: list[str] = []
 
         def fake_search(query: str, max_results: int = 100, timeout: int = 12) -> list[dict[str, object]]:
@@ -251,6 +253,7 @@ class CloudV11Tests(unittest.TestCase):
             ]
 
         crawler_module.search_hybrid_sources = fake_search
+        crawler_module._openreview_candidates = lambda *args, **kwargs: []
         try:
             plan = crawler_module.plan_crawl(
                 venues=["ICLR"],
@@ -263,11 +266,122 @@ class CloudV11Tests(unittest.TestCase):
             )
         finally:
             crawler_module.search_hybrid_sources = original
+            crawler_module._openreview_candidates = original_openreview
 
         self.assertTrue(calls)
         self.assertTrue(plan["live_metadata"])
         self.assertEqual(plan["candidates"][0]["title"], "Real Metadata Paper")
         self.assertEqual(plan["candidates"][0]["crawl_status"], "metadata_candidate")
+
+    def test_crawler_live_mode_enforces_selected_venue_and_year(self) -> None:
+        original = crawler_module.search_hybrid_sources
+        original_openreview = crawler_module._openreview_candidates
+
+        def fake_search(query: str, max_results: int = 100, timeout: int = 12) -> list[dict[str, object]]:
+            _ = (query, max_results, timeout)
+            return [
+                {
+                    "work_id": "W_OFF",
+                    "title": "Off venue paper",
+                    "abstract": "A public metadata result from the wrong venue.",
+                    "year": 2025,
+                    "venue_or_source": "AAAI",
+                    "source_type": "paper",
+                },
+                {
+                    "work_id": "W_ON",
+                    "title": "On venue paper",
+                    "abstract": "A public metadata result from the selected venue.",
+                    "year": 2025,
+                    "venue_or_source": "ICLR",
+                    "source_type": "paper",
+                },
+            ]
+
+        crawler_module.search_hybrid_sources = fake_search
+        crawler_module._openreview_candidates = lambda *args, **kwargs: []
+        try:
+            plan = crawler_module.plan_crawl(
+                venues=["ICLR"],
+                years=[2025],
+                topics=["agents"],
+                max_papers=5,
+                model_key="fake:model:auto:prompt:schema:work_concepts",
+                live=True,
+                timeout=3,
+            )
+        finally:
+            crawler_module.search_hybrid_sources = original
+            crawler_module._openreview_candidates = original_openreview
+
+        self.assertEqual([item["work_id"] for item in plan["candidates"]], ["W_ON"])
+        self.assertTrue(all(item["venue_or_source"] == "ICLR" for item in plan["candidates"]))
+
+    def test_openreview_candidates_parse_real_venue_records_without_templates(self) -> None:
+        original_fetch = crawler_module._fetch_openreview_json
+
+        def fake_fetch(url: str, timeout: int) -> dict[str, object]:
+            self.assertIn("ICLR.cc%2F2025%2FConference", url)
+            return {
+                "notes": [
+                    {
+                        "id": "OR123",
+                        "forum": "OR123",
+                        "content": {
+                            "title": {"value": "Agent Memory via Retrieval Planning"},
+                            "authors": {"value": ["A. Author"]},
+                            "keywords": {"value": ["agents", "memory"]},
+                            "abstract": {"value": "We study retrieval planning for agent memory."},
+                        },
+                    }
+                ]
+            }
+
+        crawler_module._fetch_openreview_json = fake_fetch
+        try:
+            items = crawler_module._openreview_candidates(
+                "ICLR",
+                2025,
+                ["agents"],
+                ["venue", "topic"],
+                max_papers=3,
+                timeout=3,
+                warnings=[],
+            )
+        finally:
+            crawler_module._fetch_openreview_json = original_fetch
+
+        self.assertEqual(len(items), 1)
+        self.assertEqual(items[0]["venue_or_source"], "ICLR")
+        self.assertEqual(items[0]["source_provider"], "openreview")
+        self.assertNotIn("candidate", items[0]["title"].lower())
+
+    def test_cloud_local_tabs_mark_sync_and_cleanup_preserves_project_works(self) -> None:
+        tmpdir, store = self.make_store()
+        self.addCleanup(tmpdir.cleanup)
+        engine = PrincipiaEngine(store=store)
+        engine.create_project(name="Cloud Crawl", field_id="cloud-crawl", query="cloud")
+        engine.create_project(name="Saved Project", field_id="saved-project", query="saved")
+        store.upsert("source_works", {"work_id": "W_SYNCED", "title": "Synced Paper", "cloud_sync_status": "synced"}, "work_id")
+        store.upsert("source_works", {"work_id": "W_NEW", "title": "New Paper", "cloud_sync_status": "unsynced"}, "work_id")
+        store.upsert("principles", {"principle_id": "P_SYNCED", "name": "Synced principle", "source_works": ["W_SYNCED"], "cloud_sync_status": "synced"}, "principle_id")
+        store.upsert("principles", {"principle_id": "P_NEW", "name": "New principle", "source_works": ["W_NEW"], "cloud_sync_status": "unsynced"}, "principle_id")
+        engine.add_project_memberships("cloud-crawl", "source_works", ["W_SYNCED", "W_NEW"], source="test")
+        engine.add_project_memberships("cloud-crawl", "principles", ["P_SYNCED", "P_NEW"], source="test")
+        engine.add_project_memberships("saved-project", "source_works", ["W_SYNCED"], source="test")
+
+        unsynced = engine.build_cloud_local_tab("cloud-crawl", "works", sync_state="unsynced")
+        self.assertEqual([item["work_id"] for item in unsynced["items"]], ["W_NEW"])
+
+        marked = engine.mark_cloud_synced(["W_NEW"], field_id="cloud-crawl", contribution_path="/tmp/contrib.json", upload_id="UPLOAD_1")
+        self.assertEqual(marked["updated"]["source_works"], 1)
+        self.assertEqual(store.get_item("source_works", "W_NEW")["cloud_sync_status"], "synced")
+
+        cleanup = engine.clear_cloud_synced_cache("cloud-crawl")
+        self.assertTrue(cleanup["ok"])
+        self.assertIsNotNone(store.get_item("source_works", "W_SYNCED"))
+        self.assertIsNone(store.get_item("source_works", "W_NEW"))
+        self.assertIsNone(store.get_item("principles", "P_NEW"))
 
     def test_100k_synthetic_snapshot_scale_is_opt_in(self) -> None:
         if os.getenv("PRINCIPIA_RUN_SCALE_TESTS") != "1":
