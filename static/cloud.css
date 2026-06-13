@@ -734,6 +734,10 @@ textarea {
   font-weight: 800;
 }
 
+.raw-details:not([open]) pre {
+  display: none;
+}
+
 .raw-details pre {
   max-height: 260px;
   overflow: auto;
