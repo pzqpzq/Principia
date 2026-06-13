@@ -1,0 +1,30 @@
+name: principia-cloud-release
+
+on:
+  workflow_dispatch:
+    inputs:
+      snapshot_dir:
+        description: "Prepared cloud snapshot directory"
+        default: "dist/cloud"
+      tag:
+        description: "Release tag"
+        required: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify snapshot directory
+        run: test -f "${{ inputs.snapshot_dir }}/manifest.json" && test -f "${{ inputs.snapshot_dir }}/checksums.sha256"
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: "${{ inputs.tag }}"
+          files: |
+            ${{ inputs.snapshot_dir }}/manifest.json
+            ${{ inputs.snapshot_dir }}/stats.json
+            ${{ inputs.snapshot_dir }}/checksums.sha256
+            ${{ inputs.snapshot_dir }}/packs/*
+            ${{ inputs.snapshot_dir }}/indexes/*

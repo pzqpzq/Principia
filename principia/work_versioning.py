@@ -53,3 +53,42 @@ def version_decision(remote_work: dict[str, Any], latest_version: dict[str, Any]
     if new_modified and old_modified and new_modified != old_modified:
         return "metadata_update"
     return "unchanged"
+
+
+def model_key(
+    llm_provider: str,
+    llm_model: str,
+    model_mode: str,
+    prompt_version: str,
+    schema_version: str,
+    extraction_task_type: str,
+) -> str:
+    return ":".join(
+        [
+            str(llm_provider or "unknown"),
+            str(llm_model or "unknown"),
+            str(model_mode or "auto"),
+            str(prompt_version or "principia-work-extract-v1"),
+            str(schema_version or "principia-cloud-1.1"),
+            str(extraction_task_type or "work_concepts"),
+        ]
+    )
+
+
+def cloud_freshness_decision(candidate: dict[str, Any], cloud_work: dict[str, Any] | None, current_model_key: str) -> dict[str, Any]:
+    if not cloud_work:
+        return {"should_extract": True, "reason": "not_in_cloud"}
+    latest_by_model = cloud_work.get("latest_by_model") or {}
+    if current_model_key and current_model_key not in latest_by_model:
+        return {"should_extract": True, "reason": "model_version_missing"}
+    source_state = cloud_work.get("source_state") or {}
+    candidate_modified = str(candidate.get("source_modified_at") or candidate.get("source_updated_at") or "")
+    cloud_modified = str(source_state.get("source_modified_at") or source_state.get("source_updated_at") or "")
+    if candidate_modified and cloud_modified and candidate_modified > cloud_modified:
+        return {"should_extract": True, "reason": "source_newer_than_cloud"}
+    sig = work_content_signature(candidate)
+    if sig.get("abstract_hash") and source_state.get("abstract_hash") and sig["abstract_hash"] != source_state.get("abstract_hash"):
+        return {"should_extract": True, "reason": "abstract_hash_changed"}
+    if sig.get("content_hash") and source_state.get("content_hash") and sig["content_hash"] != source_state.get("content_hash"):
+        return {"should_extract": True, "reason": "content_hash_changed"}
+    return {"should_extract": False, "reason": "cloud_cache_hit"}

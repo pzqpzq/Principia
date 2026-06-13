@@ -10,6 +10,14 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
+from .cloud.admin_ops import create_admin_operation, write_admin_operation
+from .cloud.auth import cloud_admin_status, require_admin_key
+from .cloud.contribution import log_upload_status, prepare_contribution, upload_status
+from .cloud.crawler import plan_crawl
+from .cloud.github_client import pr_export_instructions
+from .cloud.manifest import CloudManifestClient
+from .cloud.resolver import CloudResolver
+from .cloud.search import CloudSearch
 from .config import ROOT_DIR, STATIC_DIR, get_settings
 from .engine import PrincipiaEngine
 from .llm_client import LLMClient
@@ -552,6 +560,8 @@ class PrincipiaRequestHandler(BaseHTTPRequestHandler):
         raise ValueError(f"Unknown v2 endpoint: {path}")
 
     def _handle_v1_post(self, path: str, payload: dict) -> dict:
+        if path.startswith("/api/v1/cloud/"):
+            return self._handle_cloud_post(path, payload)
         if path == "/api/v1/research/start":
             field_id = str(payload.get("field_id") or "default")
             goal_text = str(payload.get("goal_text") or payload.get("query") or "")
@@ -1293,6 +1303,9 @@ class PrincipiaRequestHandler(BaseHTTPRequestHandler):
     def _handle_v1_get(self, path: str, params: dict[str, list[str]]) -> None:
         field_id = params.get("field_id", ["default"])[0]
         query = params.get("query", [""])[0]
+        if path.startswith("/api/v1/cloud"):
+            self._handle_cloud_get(path, params)
+            return
         if path in {"/api/v1/research/status", "/api/v1/llm/status", "/api/v1/ideas/generate/status"}:
             run_id = params.get("run_id", [""])[0]
             run = self.store.get_item("research_runs", run_id)
@@ -1376,6 +1389,8 @@ class PrincipiaRequestHandler(BaseHTTPRequestHandler):
             return
         if path in {"", "/"}:
             target = STATIC_DIR / "index.html"
+        elif path == "/cloud":
+            target = STATIC_DIR / "cloud.html"
         else:
             clean = path.lstrip("/")
             target = (STATIC_DIR / clean).resolve()
@@ -1393,6 +1408,138 @@ class PrincipiaRequestHandler(BaseHTTPRequestHandler):
         self.send_header("Cache-Control", "no-store")
         self.end_headers()
         self.wfile.write(content)
+
+    def _handle_cloud_get(self, path: str, params: dict[str, list[str]]) -> None:
+        resolver = CloudResolver(self.store)
+        if path == "/api/v1/cloud/manifest":
+            try:
+                self._send_json({"manifest": CloudManifestClient().load_manifest(refresh=params.get("refresh", ["0"])[0] in {"1", "true", "yes"})})
+            except Exception as exc:
+                self._send_json({"error": str(exc)}, HTTPStatus.BAD_GATEWAY)
+            return
+        if path == "/api/v1/cloud/stats":
+            self._send_json(resolver.stats())
+            return
+        if path == "/api/v1/cloud/admin/status":
+            self._send_json(cloud_admin_status())
+            return
+        if path.startswith("/api/v1/cloud/work/"):
+            work_id = path.removeprefix("/api/v1/cloud/work/")
+            local = self.store.get_item("source_works", work_id)
+            cached = self._cloud_payload(work_id)
+            if not local and not cached:
+                self._send_json({"error": "Not found"}, HTTPStatus.NOT_FOUND)
+                return
+            self._send_json({"item": local or cached, "cached_payload": cached})
+            return
+        if path.startswith("/api/v1/cloud/concept/"):
+            concept_id = path.removeprefix("/api/v1/cloud/concept/")
+            concept = self.engine.global_store.get_concept(concept_id)
+            cached = self._cloud_payload(concept_id)
+            if not concept and not cached:
+                self._send_json({"error": "Not found"}, HTTPStatus.NOT_FOUND)
+                return
+            self._send_json({"item": concept or cached, "cached_payload": cached})
+            return
+        if path == "/api/v1/cloud/upload/status":
+            self._send_json(upload_status(self.store.path, params.get("upload_id", [""])[0]))
+            return
+        self._send_json({"error": "Not found"}, HTTPStatus.NOT_FOUND)
+
+    def _handle_cloud_post(self, path: str, payload: dict) -> dict:
+        resolver = CloudResolver(self.store)
+        if path == "/api/v1/cloud/resolve":
+            return {
+                "items": resolver.resolve_batch(
+                    list(payload.get("candidates") or payload.get("items") or []),
+                    str(payload.get("model_key") or ""),
+                    hydrate=bool(payload.get("hydrate", True)),
+                    project_id=str(payload.get("project_id") or payload.get("field_id") or "default"),
+                )
+            }
+        if path == "/api/v1/cloud/prefetch" or path == "/api/v1/cloud/search":
+            return CloudSearch(resolver).search(
+                str(payload.get("query") or ""),
+                limit=int(payload.get("limit") or 20),
+                model_key=str(payload.get("model_key") or ""),
+                venue=str(payload.get("venue") or ""),
+                year=int(payload["year"]) if str(payload.get("year") or "").strip() else None,
+                source_type=str(payload.get("source_type") or ""),
+                concept_type=str(payload.get("concept_type") or ""),
+            )
+        if path == "/api/v1/cloud/hydrate":
+            items = []
+            snapshot_id = str(payload.get("snapshot_id") or "")
+            model_key = str(payload.get("model_key") or "")
+            project_id = str(payload.get("project_id") or payload.get("field_id") or "default")
+            for record in payload.get("records") or []:
+                items.append(self.engine.global_store.hydrate_cloud_work(record, snapshot_id=snapshot_id, model_key=model_key, project_id=project_id))
+            return {"items": items}
+        if path == "/api/v1/cloud/upload/prepare":
+            return prepare_contribution(
+                self.store.path,
+                self.store.path.parent / "artifacts" / "cloud" / "contributions",
+                model_key=str(payload.get("model_key") or ""),
+                work_ids=list(payload.get("work_ids") or []),
+                created_by=dict(payload.get("created_by") or {}),
+                upload_mode=str(payload.get("upload_mode") or "normal"),
+                admin_key=str(payload.get("admin_key") or ""),
+            )
+        if path == "/api/v1/cloud/upload/submit":
+            contribution_path = str(payload.get("contribution_path") or payload.get("path") or "")
+            auth = require_admin_key(str(payload.get("admin_key") or ""), purpose="cloud_upload_submit")
+            status = log_upload_status(self.store.path, contribution_path=contribution_path, status="prepared", upload_mode=str(payload.get("upload_mode") or "normal"))
+            return {**status, "authorization": auth, "pr_export": pr_export_instructions(contribution_path)}
+        if path == "/api/v1/cloud/admin/crawl/plan" or path == "/api/v1/cloud/admin/crawl/run":
+            auth = require_admin_key(str(payload.get("admin_key") or ""), purpose="cloud_crawl") if path.endswith("/run") else cloud_admin_status()
+            plan = plan_crawl(
+                venues=list(payload.get("venues") or []),
+                years=[int(item) for item in (payload.get("years") or [])],
+                topics=list(payload.get("topics") or []),
+                priority_rules=list(payload.get("priority_rules") or []),
+                max_papers=int(payload.get("max_papers") or 100),
+                model_key=str(payload.get("model_key") or ""),
+                dry_run=path.endswith("/plan") or bool(payload.get("dry_run", True)),
+            )
+            if path.endswith("/run"):
+                operation = create_admin_operation(
+                    "crawl_run",
+                    "crawl_plan",
+                    plan,
+                    reason=str(payload.get("reason") or "Cloud Library admin crawler run"),
+                    actor=str(payload.get("admin_actor") or ""),
+                )
+                out_path = write_admin_operation(self.store.path.parent / "artifacts" / "cloud" / "contributions", operation)
+                return {**plan, "authorization": auth, "operation": operation, "path": str(out_path)}
+            return {**plan, "authorization": auth}
+        if path in {
+            "/api/v1/cloud/admin/edit",
+            "/api/v1/cloud/admin/delete",
+            "/api/v1/cloud/admin/merge-concepts",
+            "/api/v1/cloud/admin/split-concept",
+        }:
+            auth = require_admin_key(str(payload.get("admin_key") or ""), purpose="cloud_admin_operation")
+            op_type = path.rsplit("/", 1)[-1].replace("-", "_")
+            operation = create_admin_operation(
+                op_type,
+                str(payload.get("target_type") or "record"),
+                dict(payload.get("payload") or payload),
+                reason=str(payload.get("reason") or ""),
+                actor=str(payload.get("admin_actor") or ""),
+            )
+            out_path = write_admin_operation(self.store.path.parent / "artifacts" / "cloud" / "contributions", operation)
+            return {"authorization": auth, "operation": operation, "path": str(out_path)}
+        raise ValueError(f"Unknown cloud endpoint: {path}")
+
+    def _cloud_payload(self, record_id: str) -> dict | None:
+        with self.store._connect() as conn:
+            row = conn.execute("SELECT payload_json FROM cloud_payload_cache WHERE record_id = ?", (record_id,)).fetchone()
+            if not row:
+                return None
+            try:
+                return json.loads(row["payload_json"] or "{}")
+            except Exception:
+                return None
 
     def _send_json(self, data: object, status: int = 200) -> None:
         status_code, body, content_type = _json_bytes(data, status)

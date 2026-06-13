@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Principia Cloud Work Record",
+  "type": "object",
+  "required": ["record_type", "work_id", "identity"],
+  "properties": {
+    "record_type": { "const": "work" },
+    "work_id": { "type": "string" },
+    "identity": { "type": "object" },
+    "source_state": { "type": "object" },
+    "latest_by_model": { "type": "object" },
+    "relations": { "type": "object" },
+    "quality": { "type": "object" },
+    "timestamps": { "type": "object" }
+  }
+}

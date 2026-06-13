@@ -590,6 +590,48 @@ class GlobalStore:
                 counts["memberships"] += 1
         return counts
 
+    def hydrate_cloud_work(self, record: dict[str, Any], *, snapshot_id: str = "", model_key: str = "", project_id: str = "default") -> dict[str, Any]:
+        from .cloud.hydrate import CloudHydrator
+
+        return CloudHydrator(self).hydrate_work_bundle(record, snapshot_id=snapshot_id, model_key=model_key, project_id=project_id)
+
+    def hydrate_cloud_concept(self, record: dict[str, Any], *, snapshot_id: str = "", model_key: str = "", project_id: str = "default") -> dict[str, Any]:
+        from .cloud.hydrate import CloudHydrator
+
+        return CloudHydrator(self).hydrate_concept(record, snapshot_id=snapshot_id, model_key=model_key, project_id=project_id)
+
+    def hydrate_cloud_relation(self, record: dict[str, Any], *, snapshot_id: str = "") -> dict[str, Any]:
+        from .cloud.hydrate import CloudHydrator
+
+        return CloudHydrator(self).hydrate_relation(record, snapshot_id=snapshot_id)
+
+    def hydrate_cloud_evidence(self, record: dict[str, Any], *, snapshot_id: str = "", model_key: str = "", project_id: str = "default") -> dict[str, Any]:
+        concept = {
+            "record_type": "concept",
+            "concept_id": record.get("concept_id") or stable_id("CLOUDC", record.get("evidence_id") or "", record.get("claim_text") or ""),
+            "concept_type": record.get("concept_type") or "takeaway_message",
+            "canonical_key": record.get("claim_text") or record.get("snippet") or record.get("evidence_id") or "",
+            "canonical_label": record.get("claim_text") or record.get("snippet") or "Cloud evidence",
+            "payload": {"title": record.get("claim_text") or "Cloud evidence", "summary": record.get("snippet") or ""},
+            "evidence": [record],
+        }
+        return self.hydrate_cloud_concept(concept, snapshot_id=snapshot_id, model_key=model_key, project_id=project_id)
+
+    def mark_cloud_origin(self, local_id: str, snapshot_id: str, payload_hash: str) -> None:
+        payload = {"cloud_snapshot_id": snapshot_id, "cloud_payload_sha256": payload_hash, "cloud_marked_at": utc_now()}
+        with self._connect() as conn:
+            row = conn.execute("SELECT metadata_json FROM global_work WHERE work_id = ?", (local_id,)).fetchone()
+            if row:
+                metadata = self._loads(row["metadata_json"])
+                metadata.update(payload)
+                conn.execute("UPDATE global_work SET metadata_json = ?, updated_at = ? WHERE work_id = ?", (json.dumps(metadata, ensure_ascii=False), utc_now(), local_id))
+                return
+            row = conn.execute("SELECT payload_json FROM concept_version WHERE concept_id = ? AND is_active = 1", (local_id,)).fetchone()
+            if row:
+                data = self._loads(row["payload_json"])
+                data.setdefault("cloud_origin", {}).update(payload)
+                conn.execute("UPDATE concept_version SET payload_json = ? WHERE concept_id = ? AND is_active = 1", (json.dumps(data, ensure_ascii=False), local_id))
+
     def log_run_event(self, run_id: str, event_type: str, message: str = "", payload: dict[str, Any] | None = None) -> dict[str, Any]:
         event_id = stable_id("RE", run_id, event_type, message, utc_now())
         with self._connect() as conn:

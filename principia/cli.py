@@ -2,8 +2,16 @@ from __future__ import annotations
 
 import argparse
 import json
+from pathlib import Path
 from typing import Any
 
+from .cloud.compactor import compact_contributions, export_snapshot
+from .cloud.contribution import log_upload_status, prepare_contribution, upload_status
+from .cloud.crawler import plan_crawl
+from .cloud.manifest import CloudManifestClient
+from .cloud.resolver import CloudResolver
+from .cloud.search import CloudSearch
+from .cloud.validator import validate_contribution_file, validate_manifest
 from .engine import PrincipiaEngine
 from .server import run_server
 from .storage import Store
@@ -98,6 +106,57 @@ def build_parser() -> argparse.ArgumentParser:
     serve = sub.add_parser("serve", help="Run the local web UI and API.")
     serve.add_argument("--host", default="127.0.0.1")
     serve.add_argument("--port", type=int, default=8790)
+
+    cloud = sub.add_parser("cloud", help="Principia Cloud Library commands.")
+    cloud_sub = cloud.add_subparsers(dest="cloud_command", required=True)
+
+    cloud_stats = cloud_sub.add_parser("stats", help="Print cloud manifest/cache stats.")
+    cloud_stats.add_argument("--manifest", default="")
+
+    cloud_manifest = cloud_sub.add_parser("manifest", help="Print the current cloud manifest.")
+    cloud_manifest.add_argument("--refresh", action="store_true")
+    cloud_manifest.add_argument("--manifest", default="")
+
+    cloud_resolve = cloud_sub.add_parser("resolve", help="Resolve candidate works against the Cloud Library.")
+    cloud_resolve.add_argument("--input", required=True)
+    cloud_resolve.add_argument("--model-key", required=True)
+    cloud_resolve.add_argument("--project-id", default="default")
+    cloud_resolve.add_argument("--no-hydrate", action="store_true")
+
+    cloud_prefetch = cloud_sub.add_parser("prefetch", help="Search/prefetch Cloud Library route shards.")
+    cloud_prefetch.add_argument("--query", default="")
+    cloud_prefetch.add_argument("--limit", type=int, default=100)
+    cloud_prefetch.add_argument("--model-key", default="")
+
+    cloud_export = cloud_sub.add_parser("export-snapshot", help="Export local SQLite memory as cloud release assets.")
+    cloud_export.add_argument("--db", default="")
+    cloud_export.add_argument("--out", required=True)
+    cloud_export.add_argument("--limit", type=int, default=0)
+    cloud_export.add_argument("--work-shards", type=int, default=256)
+    cloud_export.add_argument("--concept-shards", type=int, default=64)
+
+    cloud_validate = cloud_sub.add_parser("validate-contribution", help="Validate a contribution JSON file.")
+    cloud_validate.add_argument("path")
+
+    cloud_upload = cloud_sub.add_parser("upload", help="Prepare or mark a PR-export upload.")
+    cloud_upload.add_argument("path", nargs="?")
+    cloud_upload.add_argument("--mode", default="normal")
+    cloud_upload.add_argument("--model-key", default="")
+    cloud_upload.add_argument("--work-id", action="append", default=[])
+    cloud_upload.add_argument("--prepare", action="store_true")
+
+    cloud_crawl = cloud_sub.add_parser("crawl", help="Build an admin crawler dry-run plan.")
+    cloud_crawl.add_argument("--venues", default="ICLR,NeurIPS,ICML")
+    cloud_crawl.add_argument("--years", default="2024-2026")
+    cloud_crawl.add_argument("--topics", default="")
+    cloud_crawl.add_argument("--priority-rules", default="venue,recency,topic")
+    cloud_crawl.add_argument("--max-papers", type=int, default=100)
+    cloud_crawl.add_argument("--model-key", default="")
+    cloud_crawl.add_argument("--dry-run", action="store_true")
+
+    cloud_compact = cloud_sub.add_parser("compact", help="Compact contribution files into a validation report.")
+    cloud_compact.add_argument("--input", required=True)
+    cloud_compact.add_argument("--out", required=True)
 
     return parser
 
@@ -206,6 +265,76 @@ def main(argv: list[str] | None = None) -> int:
             print_json({key: len(value) for key, value in data.items() if isinstance(value, dict) and key != "meta"})
         return 0
 
+    if args.command == "cloud":
+        if args.cloud_command == "stats":
+            client = CloudManifestClient(Path(args.manifest) if args.manifest else None)
+            print_json(client.stats())
+            return 0
+        if args.cloud_command == "manifest":
+            client = CloudManifestClient(Path(args.manifest) if args.manifest else None)
+            manifest = client.load_manifest(refresh=args.refresh)
+            print_json({"manifest": manifest, "validation": validate_manifest(manifest) if manifest.get("snapshot_id") else {"ok": True, "errors": []}})
+            return 0
+        if args.cloud_command == "resolve":
+            candidates = json.loads(Path(args.input).read_text(encoding="utf-8"))
+            if isinstance(candidates, dict):
+                candidates = candidates.get("candidates") or candidates.get("items") or []
+            print_json(
+                {
+                    "items": CloudResolver(store).resolve_batch(
+                        list(candidates),
+                        args.model_key,
+                        hydrate=not args.no_hydrate,
+                        project_id=args.project_id,
+                    )
+                }
+            )
+            return 0
+        if args.cloud_command == "prefetch":
+            print_json(CloudSearch(CloudResolver(store)).search(args.query, limit=args.limit, model_key=args.model_key))
+            return 0
+        if args.cloud_command == "export-snapshot":
+            db_path = Path(args.db) if args.db else store.path
+            print_json(
+                export_snapshot(
+                    db_path,
+                    Path(args.out),
+                    limit=args.limit or None,
+                    work_shards=args.work_shards,
+                    concept_shards=args.concept_shards,
+                )
+            )
+            return 0
+        if args.cloud_command == "validate-contribution":
+            print_json(validate_contribution_file(Path(args.path)))
+            return 0
+        if args.cloud_command == "upload":
+            if args.prepare:
+                print_json(
+                    prepare_contribution(
+                        store.path,
+                        store.path.parent / "artifacts" / "cloud" / "contributions",
+                        model_key=args.model_key,
+                        work_ids=list(args.work_id or []),
+                        upload_mode=args.mode,
+                    )
+                )
+            elif args.path:
+                print_json(log_upload_status(store.path, contribution_path=args.path, status="prepared", upload_mode=args.mode))
+            else:
+                print_json(upload_status(store.path))
+            return 0
+        if args.cloud_command == "crawl":
+            years = _parse_years(args.years)
+            venues = [item.strip() for item in args.venues.split(",") if item.strip()]
+            topics = [item.strip() for item in args.topics.split(",") if item.strip()]
+            priority_rules = [item.strip() for item in args.priority_rules.split(",") if item.strip()]
+            print_json(plan_crawl(venues=venues, years=years, topics=topics, priority_rules=priority_rules, max_papers=args.max_papers, model_key=args.model_key, dry_run=True))
+            return 0
+        if args.cloud_command == "compact":
+            print_json(compact_contributions(Path(args.input), Path(args.out)))
+            return 0
+
     if args.command == "export":
         filename, body, content_type = engine.export_report(
             args.query,
@@ -229,6 +358,15 @@ def main(argv: list[str] | None = None) -> int:
 
     parser.error("Unknown command")
     return 2
+
+
+def _parse_years(value: str) -> list[int]:
+    text = str(value or "").strip()
+    if "-" in text:
+        left, right = text.split("-", 1)
+        start, end = int(left), int(right)
+        return list(range(start, end + 1))
+    return [int(item.strip()) for item in text.split(",") if item.strip()]
 
 
 if __name__ == "__main__":

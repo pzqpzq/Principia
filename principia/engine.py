@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from .arxiv import fallback_seed_work, search_arxiv
+from .cloud.resolver import CloudResolver
 from .global_store import GlobalStore, LEGACY_CONCEPT_BUCKETS
 from .hybrid_retriever import HybridRetriever
 from .lineage_graph import LineageGraphBuilder
@@ -57,6 +58,7 @@ from .utils import (
     tokenize,
     validation_number,
 )
+from .work_versioning import model_key as build_model_key
 
 
 OPERATORS = [
@@ -691,6 +693,44 @@ class PrincipiaEngine:
             goal,
             [self._enrich_work_record(goal, work) for work in works],
         )
+        cloud_skip_ids: set[str] = set()
+        if persist and not force_refresh:
+            try:
+                current_model_key = self._cloud_model_key(model_mode)
+                self._emit_progress(
+                    progress_callback,
+                    "cloud_lookup",
+                    progress_found_offset + len(works),
+                    progress_target or max_works,
+                    "Resolving candidate works against the Principia Cloud Library.",
+                )
+                decisions = CloudResolver(self.store).resolve_batch(
+                    works,
+                    current_model_key,
+                    hydrate=True,
+                    project_id=str((constraints or {}).get("project_id") or "default"),
+                )
+                cloud_skip_ids = {
+                    str(decision.get("candidate_work_id") or decision.get("work_id") or "")
+                    for decision in decisions
+                    if not decision.get("should_extract")
+                }
+                if cloud_skip_ids:
+                    self._emit_progress(
+                        progress_callback,
+                        "cloud_hydration",
+                        progress_found_offset + len(works),
+                        progress_target or max_works,
+                        f"Hydrated {len(cloud_skip_ids)} cloud records; local LLM extraction will skip fresh hits.",
+                    )
+            except Exception as exc:
+                self._emit_progress(
+                    progress_callback,
+                    "cloud_lookup_skipped",
+                    progress_found_offset + len(works),
+                    progress_target or max_works,
+                    f"Cloud lookup was skipped and local extraction will continue: {exc}",
+                )
         works_to_mine = works
         refreshing_work_ids: set[str] = set()
         if refresh_existing:
@@ -698,12 +738,16 @@ class PrincipiaEngine:
             works_to_mine = []
             for work in works:
                 wid = work.get("work_id", "")
+                if wid in cloud_skip_ids:
+                    continue
                 local = self.store.get_item("source_works", wid) if wid else None
                 is_stale = self._work_needs_refresh(work, local)
                 if local and is_stale:
                     refreshing_work_ids.add(wid)
                 if force_refresh or is_stale or wid not in rich_work_ids:
                     works_to_mine.append(work)
+        elif cloud_skip_ids:
+            works_to_mine = [work for work in works if str(work.get("work_id") or "") not in cloud_skip_ids]
         mining_message = (
             f"Mining principles from {len(works_to_mine)} updated or unseen works."
             if works_to_mine
@@ -2837,6 +2881,20 @@ class PrincipiaEngine:
                 self._update_run_progress(run_id, stage, message, **counts)
 
         self._raise_if_cancelled(run_id)
+        if not force:
+            try:
+                update("cloud_lookup", "Resolving this work against the Principia Cloud Library.", work_id=work_id)
+                decision = CloudResolver(self.store).resolve_batch(
+                    [work],
+                    self._cloud_model_key(model_mode),
+                    hydrate=True,
+                    project_id=field_id,
+                )[0]
+                if not decision.get("should_extract"):
+                    counts = self.v2_work_extraction_counts(work_id)
+                    return {"ok": True, "cloud_cache_hit": True, "decision": decision, "counts": counts, "work": work}
+            except Exception as exc:
+                update("cloud_lookup_skipped", f"Cloud lookup was skipped and local extraction will continue: {exc}", work_id=work_id)
         update("full_text_fetch", "Fetching transient full text for this work.", work_id=work_id)
         full_text = ""
         try:
@@ -3438,6 +3496,17 @@ class PrincipiaEngine:
         except Exception:
             resolved = {"provider": "offline", "model": model_mode or "auto"}
         return {"model_mode": model_mode or "auto", "provider": resolved.get("provider", "offline"), "model_name": resolved.get("model", model_mode or "auto")}
+
+    def _cloud_model_key(self, model_mode: str, *, task_type: str = "work_concepts") -> str:
+        meta = self._v2_model_meta(model_mode)
+        return build_model_key(
+            meta.get("provider", "offline"),
+            meta.get("model_name", model_mode or "auto"),
+            meta.get("model_mode", model_mode or "auto"),
+            "principia-work-extract-v1",
+            "principia-cloud-1.1",
+            task_type,
+        )
 
     def _v2_research_query(self, goal_text: str) -> str:
         terms = keyword_terms(goal_text, 10)

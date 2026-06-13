@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Principia Cloud Admin Operation",
+  "type": "object",
+  "required": ["operation_id", "operation_type", "target_type", "created_at"],
+  "properties": {
+    "operation_id": { "type": "string" },
+    "operation_type": {
+      "enum": ["edit", "delete", "manual_add", "merge_concepts", "split_concept"]
+    },
+    "target_id": { "type": "string" },
+    "target_type": { "type": "string" },
+    "payload": { "type": "object" },
+    "reason": { "type": "string" },
+    "admin_actor": { "type": "string" },
+    "created_at": { "type": "string" }
+  }
+}

@@ -5,10 +5,26 @@ from pathlib import Path
 
 
 V1_SCHEMA_VERSION = "principia-v1.0"
+V11_CLOUD_SCHEMA_VERSION = "principia-cloud-1.1"
 
 
 def ensure_artifact_dirs(root: Path) -> None:
-    for name in ("sources", "pdfs", "prompt_packs", "run_logs", "exports", "cache/embeddings", "cache/source_json"):
+    for name in (
+        "sources",
+        "pdfs",
+        "prompt_packs",
+        "run_logs",
+        "exports",
+        "cache/embeddings",
+        "cache/source_json",
+        "cloud/manifests",
+        "cloud/indexes",
+        "cloud/packs",
+        "cloud/contributions",
+        "cloud/releases",
+        "cloud/tmp",
+        "cloud/assets",
+    ):
         (root / "data" / "artifacts" / name).mkdir(parents=True, exist_ok=True)
 
 
@@ -304,7 +320,118 @@ def ensure_v1_schema(conn: sqlite3.Connection) -> None:
         """
     )
     conn.execute("INSERT OR REPLACE INTO meta(key, value) VALUES('v1_schema_version', ?)", (V1_SCHEMA_VERSION,))
+    ensure_cloud_schema(conn)
     _ensure_fts(conn)
+
+
+def ensure_cloud_schema(conn: sqlite3.Connection) -> None:
+    conn.execute(
+        """
+        CREATE TABLE IF NOT EXISTS cloud_manifest_cache (
+            snapshot_id TEXT PRIMARY KEY,
+            manifest_json TEXT NOT NULL,
+            manifest_url TEXT,
+            manifest_sha256 TEXT,
+            fetched_at TEXT NOT NULL,
+            active INTEGER DEFAULT 1
+        )
+        """
+    )
+    conn.execute(
+        """
+        CREATE TABLE IF NOT EXISTS cloud_asset_cache (
+            asset_id TEXT PRIMARY KEY,
+            snapshot_id TEXT NOT NULL,
+            kind TEXT NOT NULL,
+            record_type TEXT,
+            url TEXT NOT NULL,
+            local_path TEXT,
+            sha256 TEXT,
+            bytes INTEGER,
+            fetched_at TEXT,
+            cache_status TEXT DEFAULT 'missing'
+        )
+        """
+    )
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_cloud_asset_snapshot ON cloud_asset_cache(snapshot_id, kind, record_type)")
+    conn.execute(
+        """
+        CREATE TABLE IF NOT EXISTS cloud_route_shard_cache (
+            shard_id TEXT PRIMARY KEY,
+            snapshot_id TEXT NOT NULL,
+            route_type TEXT NOT NULL,
+            local_path TEXT NOT NULL,
+            sha256 TEXT NOT NULL,
+            fetched_at TEXT NOT NULL
+        )
+        """
+    )
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_cloud_route_snapshot ON cloud_route_shard_cache(snapshot_id, route_type)")
+    conn.execute(
+        """
+        CREATE TABLE IF NOT EXISTS cloud_resolution_cache (
+            cache_key TEXT PRIMARY KEY,
+            snapshot_id TEXT NOT NULL,
+            work_id TEXT,
+            resolution_json TEXT NOT NULL,
+            model_key TEXT,
+            source_state_hash TEXT,
+            decision TEXT,
+            created_at TEXT NOT NULL
+        )
+        """
+    )
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_cloud_resolution_work ON cloud_resolution_cache(work_id, model_key, snapshot_id)")
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_cloud_resolution_decision ON cloud_resolution_cache(decision, created_at)")
+    conn.execute(
+        """
+        CREATE TABLE IF NOT EXISTS cloud_payload_cache (
+            record_id TEXT PRIMARY KEY,
+            snapshot_id TEXT NOT NULL,
+            record_type TEXT NOT NULL,
+            payload_json TEXT NOT NULL,
+            payload_sha256 TEXT NOT NULL,
+            fetched_at TEXT NOT NULL
+        )
+        """
+    )
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_cloud_payload_snapshot ON cloud_payload_cache(snapshot_id, record_type)")
+    conn.execute(
+        """
+        CREATE TABLE IF NOT EXISTS cloud_upload_log (
+            upload_id TEXT PRIMARY KEY,
+            work_id TEXT,
+            model_key TEXT,
+            contribution_path TEXT,
+            github_pr_url TEXT,
+            upload_mode TEXT,
+            status TEXT,
+            created_at TEXT NOT NULL,
+            completed_at TEXT
+        )
+        """
+    )
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_cloud_upload_status ON cloud_upload_log(status, created_at)")
+    conn.execute(
+        """
+        CREATE TABLE IF NOT EXISTS cloud_relation (
+            relation_id TEXT PRIMARY KEY,
+            subject_id TEXT NOT NULL,
+            predicate TEXT NOT NULL,
+            object_id TEXT NOT NULL,
+            evidence_ids_json TEXT DEFAULT '[]',
+            confidence REAL DEFAULT 0.5,
+            source TEXT,
+            model_key TEXT,
+            snapshot_id TEXT,
+            payload_json TEXT DEFAULT '{}',
+            created_at TEXT NOT NULL
+        )
+        """
+    )
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_cloud_relation_subject ON cloud_relation(subject_id, predicate)")
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_cloud_relation_object ON cloud_relation(object_id, predicate)")
+    conn.execute("INSERT OR REPLACE INTO meta(key, value) VALUES('cloud_schema_version', ?)", (V11_CLOUD_SCHEMA_VERSION,))
 
 
 def _ensure_fts(conn: sqlite3.Connection) -> None:

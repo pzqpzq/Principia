@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Principia Cloud Concept Record",
+  "type": "object",
+  "required": ["record_type", "concept_id", "concept_type", "canonical_key", "payload"],
+  "properties": {
+    "record_type": { "const": "concept" },
+    "concept_id": { "type": "string" },
+    "concept_type": { "type": "string" },
+    "canonical_key": { "type": "string" },
+    "canonical_label": { "type": "string" },
+    "aliases": { "type": "array", "items": { "type": "string" } },
+    "payload": { "type": "object" },
+    "support": { "type": "object" },
+    "versioning": { "type": "object" },
+    "timestamps": { "type": "object" }
+  }
+}
