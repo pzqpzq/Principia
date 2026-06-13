@@ -1,0 +1,1434 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "gsm8k gsm8k gsm8k w c9bdb4c87028",
+      "canonical_label": "GSM8K",
+      "concept_id": "B-4060CE162489",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-935C98BE3266",
+        "benchmark_id": "B-112D1E9A342A",
+        "benchmark_name": "GSM8K",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-112D1E9A342A",
+        "canonical_key": "gsm8k",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-12T08:54:08+00:00",
+        "data_form": "Natural-language math word problems with worked answers.",
+        "dataset": "GSM8K",
+        "description": "Grade-school math reasoning benchmark.",
+        "entered_at": "2026-06-12T08:54:08+00:00",
+        "evidence": "{\"benchmark_id\": \"B-B0F78492D6F2\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-B2629AEE97CA\", \"task\": \"compute scaling test-time inference-time\", \"dataset\": \"GSM8K\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"T1: Tool-integrated Verification for Test-time C...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-13T13:44:09+00:00",
+        "extractor": "deterministic",
+        "metric": "accuracy",
+        "metrics": [
+          "accuracy",
+          "F1",
+          "Mathematical accuracy"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/openai/gsm8k",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "8.5K multi-step arithmetic problems.",
+        "source": "OpenAI / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2504.04718v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2508.05311v1",
+          "http://arxiv.org/abs/2602.09801v1",
+          "http://arxiv.org/abs/2401.17169v4",
+          "http://arxiv.org/abs/2604.27251v2",
+          "http://arxiv.org/abs/2510.09709v1",
+          "http://arxiv.org/abs/2504.04718v2"
+        ],
+        "source_paper_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-C9BDB4C87028"
+        ],
+        "source_work_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+        "source_works": [
+          "W-C9BDB4C87028"
+        ],
+        "task": "compute scaling test-time inference-time",
+        "updated_at": "2026-06-13T13:44:09+00:00",
+        "variants": {
+          "VER-935C98BE3266": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-12T08:54:08+00:00",
+            "extracted_at": "2026-06-13T13:44:09+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "GSM8K",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Natural-language math word problems with worked answers.",
+              "dataset": "GSM8K",
+              "description": "Grade-school math reasoning benchmark.",
+              "evidence": "{\"benchmark_id\": \"B-B0F78492D6F2\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-B2629AEE97CA\", \"task\": \"compute scaling test-time inference-time\", \"dataset\": \"GSM8K\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"T1: Tool-integrated Verification for Test-time C...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "accuracy",
+              "metrics": [
+                "accuracy",
+                "F1",
+                "Mathematical accuracy"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/openai/gsm8k",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "8.5K multi-step arithmetic problems.",
+              "source": "OpenAI / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2504.04718v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2508.05311v1",
+                "http://arxiv.org/abs/2602.09801v1",
+                "http://arxiv.org/abs/2401.17169v4",
+                "http://arxiv.org/abs/2604.27251v2",
+                "http://arxiv.org/abs/2510.09709v1",
+                "http://arxiv.org/abs/2504.04718v2"
+              ],
+              "source_paper_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-DD77F8BE6170",
+                "W-3FD22D147568",
+                "W-3E845F01221C",
+                "W-996C5129930F",
+                "W-E52F130637B9",
+                "W-B2629AEE97CA"
+              ],
+              "source_work_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+              "source_works": [],
+              "task": "compute scaling test-time inference-time",
+              "venue_or_source": "ICLR",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2504.04718v2",
+              "https://huggingface.co/datasets/openai/gsm8k"
+            ],
+            "version_id": "VER-935C98BE3266"
+          }
+        },
+        "venue_or_source": "ICLR",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-C9BDB4C87028"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-13T13:47:46+00:00",
+        "updated_at": "2026-06-13T13:47:46+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-C0968D8A2E61",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "math math math w c9bdb4c87028",
+      "canonical_label": "MATH",
+      "concept_id": "B-4253A35BABB3",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-19136C0392DD",
+        "benchmark_id": "B-7A488390A939",
+        "benchmark_name": "MATH",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-7A488390A939",
+        "canonical_key": "math",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-12T08:54:08+00:00",
+        "data_form": "Natural-language math problems with final answers and solutions.",
+        "dataset": "MATH",
+        "description": "Competition-style mathematical reasoning benchmark covering algebra, geometry, counting, probability, number theory, and precalculus.",
+        "entered_at": "2026-06-12T08:54:08+00:00",
+        "evidence": "{\"benchmark_id\": \"B-EF3E2D4F65CA\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-B2629AEE97CA\", \"task\": \"compute scaling test-time inference-time\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"T1: Tool-integrated Verification for Test-time Co...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-13T13:44:09+00:00",
+        "extractor": "deterministic",
+        "metric": "accuracy",
+        "metrics": [
+          "F1",
+          "accuracy",
+          "primary reported metric",
+          "mAP",
+          "BLEU",
+          "ROUGE"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://github.com/hendrycks/math",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "12.5K problems across multiple difficulty levels and subject areas.",
+        "source": "Hendrycks et al.",
+        "source_paper_link": "http://arxiv.org/abs/2504.04718v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2602.09801v1",
+          "http://arxiv.org/abs/2603.25111v2",
+          "http://arxiv.org/abs/2412.11427v2",
+          "http://arxiv.org/abs/2406.11050v2",
+          "http://arxiv.org/abs/2308.04371v11",
+          "http://arxiv.org/abs/2604.27251v2",
+          "http://arxiv.org/abs/2510.09709v1",
+          "http://arxiv.org/abs/2601.01982v1",
+          "http://arxiv.org/abs/2510.09782v2",
+          "http://arxiv.org/abs/2406.13892v2",
+          "https://openreview.net/forum?id=U8GUmxnzXn",
+          "https://doi.org/10.1007/s43681-026-01042-1",
+          "http://arxiv.org/abs/2504.04718v2"
+        ],
+        "source_paper_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-C9BDB4C87028"
+        ],
+        "source_work_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+        "source_works": [
+          "W-C9BDB4C87028"
+        ],
+        "task": "compute scaling test-time inference-time",
+        "updated_at": "2026-06-13T13:44:09+00:00",
+        "variants": {
+          "VER-19136C0392DD": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-12T08:54:08+00:00",
+            "extracted_at": "2026-06-13T13:44:09+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "MATH",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Natural-language math problems with final answers and solutions.",
+              "dataset": "MATH",
+              "description": "Competition-style mathematical reasoning benchmark covering algebra, geometry, counting, probability, number theory, and precalculus.",
+              "evidence": "{\"benchmark_id\": \"B-EF3E2D4F65CA\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-B2629AEE97CA\", \"task\": \"compute scaling test-time inference-time\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"T1: Tool-integrated Verification for Test-time Co...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "accuracy",
+              "metrics": [
+                "F1",
+                "accuracy",
+                "primary reported metric",
+                "mAP",
+                "BLEU",
+                "ROUGE"
+              ],
+              "needs_review": false,
+              "official_url": "https://github.com/hendrycks/math",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "12.5K problems across multiple difficulty levels and subject areas.",
+              "source": "Hendrycks et al.",
+              "source_paper_link": "http://arxiv.org/abs/2504.04718v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2602.09801v1",
+                "http://arxiv.org/abs/2603.25111v2",
+                "http://arxiv.org/abs/2412.11427v2",
+                "http://arxiv.org/abs/2406.11050v2",
+                "http://arxiv.org/abs/2308.04371v11",
+                "http://arxiv.org/abs/2604.27251v2",
+                "http://arxiv.org/abs/2510.09709v1",
+                "http://arxiv.org/abs/2601.01982v1",
+                "http://arxiv.org/abs/2510.09782v2",
+                "http://arxiv.org/abs/2406.13892v2",
+                "https://openreview.net/forum?id=U8GUmxnzXn",
+                "https://doi.org/10.1007/s43681-026-01042-1",
+                "http://arxiv.org/abs/2504.04718v2"
+              ],
+              "source_paper_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-3FD22D147568",
+                "W-0CB6DC2F0457",
+                "W-7E6DF19A7E3F",
+                "W-D5C57268E64E",
+                "W-F6FBA288BECF",
+                "W-996C5129930F",
+                "W-E52F130637B9",
+                "W-4BCB27BB25AC",
+                "W-BEC3E54E563C",
+                "W-9F68C6C3FB38",
+                "W-06F4B81340E8",
+                "W-A41AD12F1753",
+                "W-B2629AEE97CA"
+              ],
+              "source_work_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+              "source_works": [],
+              "task": "compute scaling test-time inference-time",
+              "venue_or_source": "ICLR",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2504.04718v2",
+              "https://github.com/hendrycks/math"
+            ],
+            "version_id": "VER-19136C0392DD"
+          }
+        },
+        "venue_or_source": "ICLR",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-C9BDB4C87028"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-13T13:47:46+00:00",
+        "updated_at": "2026-06-13T13:47:46+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-D6C476E02B1D",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "aime aime aime w c9bdb4c87028",
+      "canonical_label": "AIME",
+      "concept_id": "B-43C3D5212364",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-4798A9F6F151",
+        "benchmark_id": "B-2C85AF572F23",
+        "benchmark_name": "AIME",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-2C85AF572F23",
+        "canonical_key": "aime",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-13T13:44:09+00:00",
+        "data_form": "Competition math questions with integer answers.",
+        "dataset": "AIME",
+        "description": "Mathematical problem-solving benchmark based on American Invitational Mathematics Examination problems.",
+        "entered_at": "2026-06-13T13:44:09+00:00",
+        "evidence": "{\"benchmark_id\": \"B-BDC6A7EBF62F\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-B2629AEE97CA\", \"task\": \"compute scaling test-time inference-time\", \"dataset\": \"AIME\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"T1: Tool-integrated Verification for Test-time Co...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-13T13:44:09+00:00",
+        "extractor": "deterministic",
+        "metric": "accuracy",
+        "metrics": [
+          "accuracy"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/Maxwell-Jia/AIME_2024",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Annual problem sets; commonly evaluated as curated benchmark splits.",
+        "source": "AIME / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2504.04718v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2504.04718v2"
+        ],
+        "source_paper_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-C9BDB4C87028"
+        ],
+        "source_work_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+        "source_works": [
+          "W-C9BDB4C87028"
+        ],
+        "task": "compute scaling test-time inference-time",
+        "updated_at": "2026-06-13T13:44:09+00:00",
+        "variants": {
+          "VER-4798A9F6F151": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-13T13:44:09+00:00",
+            "extracted_at": "2026-06-13T13:44:09+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "AIME",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Competition math questions with integer answers.",
+              "dataset": "AIME",
+              "description": "Mathematical problem-solving benchmark based on American Invitational Mathematics Examination problems.",
+              "evidence": "{\"benchmark_id\": \"B-BDC6A7EBF62F\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-B2629AEE97CA\", \"task\": \"compute scaling test-time inference-time\", \"dataset\": \"AIME\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"T1: Tool-integrated Verification for Test-time Co...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "accuracy",
+              "metrics": [
+                "accuracy"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/Maxwell-Jia/AIME_2024",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Annual problem sets; commonly evaluated as curated benchmark splits.",
+              "source": "AIME / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2504.04718v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2504.04718v2"
+              ],
+              "source_paper_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-B2629AEE97CA"
+              ],
+              "source_work_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+              "source_works": [],
+              "task": "compute scaling test-time inference-time",
+              "venue_or_source": "ICLR",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2504.04718v2",
+              "https://huggingface.co/datasets/Maxwell-Jia/AIME_2024"
+            ],
+            "version_id": "VER-4798A9F6F151"
+          }
+        },
+        "venue_or_source": "ICLR",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-C9BDB4C87028"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-13T13:47:46+00:00",
+        "updated_at": "2026-06-13T13:47:46+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-E2E9DE19D5CA",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "drop drop drop w c9bdb4c87028",
+      "canonical_label": "DROP",
+      "concept_id": "B-DE6DBF4131E5",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-996666835726",
+        "benchmark_id": "B-AA20C3BF5ECA",
+        "benchmark_name": "DROP",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-AA20C3BF5ECA",
+        "canonical_key": "drop",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-12T08:54:10+00:00",
+        "data_form": "Paragraph-question-answer examples with numerical, counting, and span reasoning.",
+        "dataset": "DROP",
+        "description": "Reading comprehension benchmark requiring discrete reasoning over paragraphs.",
+        "entered_at": "2026-06-12T08:54:10+00:00",
+        "evidence": "{\"benchmark_id\": \"B-0964E8E8D55C\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-B2629AEE97CA\", \"task\": \"compute scaling test-time inference-time\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"T1: Tool-integrated Verification for Test-time Co...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-13T13:44:09+00:00",
+        "extractor": "deterministic",
+        "metric": "accuracy",
+        "metrics": [
+          "accuracy",
+          "memory",
+          "exact match",
+          "F1",
+          "mAP"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/ucinlp/drop",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "96K question-answer pairs.",
+        "source": "DROP / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2504.04718v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2603.25111v2",
+          "http://arxiv.org/abs/2512.15790v1",
+          "http://arxiv.org/abs/2603.09200v1",
+          "http://arxiv.org/abs/2509.15587v3",
+          "http://arxiv.org/abs/2604.27251v2",
+          "http://arxiv.org/abs/2601.01982v1",
+          "http://arxiv.org/abs/2504.04718v2"
+        ],
+        "source_paper_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-C9BDB4C87028"
+        ],
+        "source_work_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+        "source_works": [
+          "W-C9BDB4C87028"
+        ],
+        "task": "compute scaling test-time inference-time",
+        "updated_at": "2026-06-13T13:44:09+00:00",
+        "variants": {
+          "VER-996666835726": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-12T08:54:10+00:00",
+            "extracted_at": "2026-06-13T13:44:09+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "DROP",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Paragraph-question-answer examples with numerical, counting, and span reasoning.",
+              "dataset": "DROP",
+              "description": "Reading comprehension benchmark requiring discrete reasoning over paragraphs.",
+              "evidence": "{\"benchmark_id\": \"B-0964E8E8D55C\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-B2629AEE97CA\", \"task\": \"compute scaling test-time inference-time\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"T1: Tool-integrated Verification for Test-time Co...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "accuracy",
+              "metrics": [
+                "accuracy",
+                "memory",
+                "exact match",
+                "F1",
+                "mAP"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/ucinlp/drop",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "96K question-answer pairs.",
+              "source": "DROP / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2504.04718v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2603.25111v2",
+                "http://arxiv.org/abs/2512.15790v1",
+                "http://arxiv.org/abs/2603.09200v1",
+                "http://arxiv.org/abs/2509.15587v3",
+                "http://arxiv.org/abs/2604.27251v2",
+                "http://arxiv.org/abs/2601.01982v1",
+                "http://arxiv.org/abs/2504.04718v2"
+              ],
+              "source_paper_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-0CB6DC2F0457",
+                "W-BE9F6B5E1FE3",
+                "W-B886EA767F8E",
+                "W-429E5CB9B133",
+                "W-996C5129930F",
+                "W-4BCB27BB25AC",
+                "W-B2629AEE97CA"
+              ],
+              "source_work_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+              "source_works": [],
+              "task": "compute scaling test-time inference-time",
+              "venue_or_source": "ICLR",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2504.04718v2",
+              "https://huggingface.co/datasets/ucinlp/drop"
+            ],
+            "version_id": "VER-996666835726"
+          }
+        },
+        "venue_or_source": "ICLR",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-C9BDB4C87028"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-13T13:47:46+00:00",
+        "updated_at": "2026-06-13T13:47:46+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-32C62814CD4F",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "mmlu mmlu mmlu w c9bdb4c87028",
+      "canonical_label": "MMLU",
+      "concept_id": "B-F9235EAA7BA9",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-5964595F47AF",
+        "benchmark_id": "B-82630D34D2EE",
+        "benchmark_name": "MMLU",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-82630D34D2EE",
+        "canonical_key": "mmlu",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-12T10:00:54+00:00",
+        "data_form": "Multiple-choice questions spanning many subject areas.",
+        "dataset": "MMLU",
+        "description": "Massive Multitask Language Understanding benchmark for broad academic and professional knowledge.",
+        "entered_at": "2026-06-12T10:00:54+00:00",
+        "evidence": "{\"benchmark_id\": \"B-7F2EDFB86527\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-B2629AEE97CA\", \"task\": \"compute scaling test-time inference-time\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"T1: Tool-integrated Verification for Test-time Co...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-13T13:44:09+00:00",
+        "extractor": "deterministic",
+        "metric": "accuracy",
+        "metrics": [
+          "accuracy"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/cais/mmlu",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Roughly 14K questions across 57 tasks.",
+        "source": "CAIS / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2504.04718v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2401.17169v4",
+          "http://arxiv.org/abs/2504.04718v2"
+        ],
+        "source_paper_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-C9BDB4C87028"
+        ],
+        "source_work_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+        "source_works": [
+          "W-C9BDB4C87028"
+        ],
+        "task": "compute scaling test-time inference-time",
+        "updated_at": "2026-06-13T13:44:09+00:00",
+        "variants": {
+          "VER-5964595F47AF": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-12T10:00:54+00:00",
+            "extracted_at": "2026-06-13T13:44:09+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "MMLU",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Multiple-choice questions spanning many subject areas.",
+              "dataset": "MMLU",
+              "description": "Massive Multitask Language Understanding benchmark for broad academic and professional knowledge.",
+              "evidence": "{\"benchmark_id\": \"B-7F2EDFB86527\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-B2629AEE97CA\", \"task\": \"compute scaling test-time inference-time\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"T1: Tool-integrated Verification for Test-time Co...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "accuracy",
+              "metrics": [
+                "accuracy"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/cais/mmlu",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Roughly 14K questions across 57 tasks.",
+              "source": "CAIS / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2504.04718v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2401.17169v4",
+                "http://arxiv.org/abs/2504.04718v2"
+              ],
+              "source_paper_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-3E845F01221C",
+                "W-B2629AEE97CA"
+              ],
+              "source_work_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+              "source_works": [],
+              "task": "compute scaling test-time inference-time",
+              "venue_or_source": "ICLR",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2504.04718v2",
+              "https://huggingface.co/datasets/cais/mmlu"
+            ],
+            "version_id": "VER-5964595F47AF"
+          }
+        },
+        "venue_or_source": "ICLR",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-C9BDB4C87028"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-13T13:47:46+00:00",
+        "updated_at": "2026-06-13T13:47:46+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-2406572F7112",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "memorization offloading principle memorization offloading principle if a verification task requires high precision memorization e g arithmetic specific facts then delegating the execution of these specific steps to deterministic external tools significantly improves the reliability of a w c9bdb4c870",
+      "canonical_label": "Memorization Offloading Principle",
+      "concept_id": "P-503A73B2FAE5",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "If a verification task requires high-precision memorization (e.g., arithmetic, specific facts), then delegating the execution of these specific steps to deterministic external tools significantly improves the reliability of a small language model verifier compared to relying solely on its parametric knowledge.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-E0BC51BC0619",
+        "argument": "If a verification task requires high-precision memorization (e.g., arithmetic, specific facts), then delegating the execution of these specific steps to deterministic external tools significantly improves the reliability of a small language model verifier compared to relying solely on its parametric knowledge.",
+        "benchmarks": [],
+        "canonical_id": "P-848EE2A8B3AC",
+        "canonical_key": "if verification task requires high precision memorization e g arithmetic specific facts then delegating execution of specific steps to deterministic external tools significantly im",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-13T13:44:09+00:00",
+        "discussion": "The principle suggests that the capacity gap between small and large models is most pronounced in tasks demanding exact recall rather than abstract reasoning. By identifying and isolating memorization-heavy components of a verification pipeline, system designers can augment resource-constrained models with minimal overhead. The success of T1 on the MATH benchmark confirms that removing the need for internal fact-checking allows small models to apply their reasoning strengths more effectively, turning a weakness in memory into a strength in guided reasoning.",
+        "entered_at": "2026-06-13T13:44:09+00:00",
+        "evidence": "The work finds that even with knowledge distillation, sLMs struggle with verification tasks requiring memorization. The proposed T1 framework explicitly offloads these steps to tools, resulting in improved test-time scaling performance and outperforming larger models that lack tool integration.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-13T13:44:09+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Memorization Offloading Principle",
+        "performance": [],
+        "principle_id": "P-848EE2A8B3AC",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2504.04718v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2504.04718v2"
+        ],
+        "source_paper_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-C9BDB4C87028"
+        ],
+        "source_work_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+        "source_works": [
+          "W-C9BDB4C87028"
+        ],
+        "updated_at": "2026-06-13T13:44:09+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-E0BC51BC0619": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-13T13:44:09+00:00",
+            "extracted_at": "2026-06-13T13:44:09+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "If a verification task requires high-precision memorization (e.g., arithmetic, specific facts), then delegating the execution of these specific steps to deterministic external tools significantly improves the reliability of a small language model verifier compared to relying solely on its parametric knowledge.",
+              "argument": "If a verification task requires high-precision memorization (e.g., arithmetic, specific facts), then delegating the execution of these specific steps to deterministic external tools significantly improves the reliability of a small language model verifier compared to relying solely on its parametric knowledge.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle suggests that the capacity gap between small and large models is most pronounced in tasks demanding exact recall rather than abstract reasoning. By identifying and isolating memorization-heavy components of a verification pipeline, system designers can augment resource-constrained models with minimal overhead. The success of T1 on the MATH benchmark confirms that removing the need for internal fact-checking allows small models to apply their reasoning strengths more effectively, turning a weakness in memory into a strength in guided reasoning.",
+              "evidence": "The work finds that even with knowledge distillation, sLMs struggle with verification tasks requiring memorization. The proposed T1 framework explicitly offloads these steps to tools, resulting in improved test-time scaling performance and outperforming larger models that lack tool integration.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Memorization Offloading Principle",
+              "performance": [],
+              "problem_pressure": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+              "source_paper_link": "http://arxiv.org/abs/2504.04718v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2504.04718v2"
+              ],
+              "source_paper_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-B2629AEE97CA"
+              ],
+              "source_work_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+              "source_works": [
+                "W-B2629AEE97CA"
+              ],
+              "venue_or_source": "ICLR",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2504.04718v2"
+            ],
+            "version_id": "VER-E0BC51BC0619"
+          }
+        },
+        "venue_or_source": "ICLR",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-C9BDB4C87028"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-13T13:47:46+00:00",
+        "updated_at": "2026-06-13T13:47:46+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-9E1AC0B0978D",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "small models with tools outperform larger standalone models in verification small models with tools outperform larger standalone models in verification a 1b parameter language model utilizing tool integrated verification under test time scaling achieves higher accuracy on mathematical benchmarks tha",
+      "canonical_label": "Small Models with Tools Outperform Larger Standalone Models in Verification",
+      "concept_id": "TM-03C1B1AB4830",
+      "concept_type": "takeaway_message",
+      "payload": {
+        "active_version_id": "VER-D2A750543626",
+        "benchmarks": [],
+        "canonical_id": "TM-33F5375BBCAF",
+        "canonical_key": "1b parameter language model utilizing tool integrated verification under test time scaling achieves higher accuracy on mathematical benchmarks than standalone 8b parameter model",
+        "condition": "The result holds specifically in domains requiring precise calculation or factual grounding, such as the MATH benchmark, where the small model is augmented with a code interpreter and allowed multiple verification attempts via test-time compute scaling.",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-13T13:44:09+00:00",
+        "discussion": "This finding challenges the assumption that larger models are inherently necessary for high-quality verification. It suggests a cost-effective pathway for deploying capable reasoning systems on edge devices or low-latency environments by combining small, fast models with reliable external utilities.",
+        "entered_at": "2026-06-13T13:44:09+00:00",
+        "evidence": "Within the Tool-integrated verification framework, a Llama-3.2 1B model under test-time scaling outperforms the significantly larger Llama-3.1 8B model on the MATH benchmark. The framework also improves the verification accuracy of both process reward models and critic models.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-13T13:44:09+00:00",
+        "extraction_method": "llm_extracted",
+        "finding": "A 1B-parameter language model utilizing tool-integrated verification under test-time scaling achieves higher accuracy on mathematical benchmarks than a standalone 8B-parameter model.",
+        "main_results": "A 1B-parameter language model utilizing tool-integrated verification under test-time scaling achieves higher accuracy on mathematical benchmarks than a standalone 8B-parameter model.",
+        "message_text": "A 1B-parameter language model utilizing tool-integrated verification under test-time scaling achieves higher accuracy on mathematical benchmarks than a standalone 8B-parameter model.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2504.04718v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2504.04718v2"
+        ],
+        "source_paper_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-C9BDB4C87028"
+        ],
+        "source_work_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+        "source_works": [
+          "W-C9BDB4C87028"
+        ],
+        "title": "Small Models with Tools Outperform Larger Standalone Models in Verification",
+        "updated_at": "2026-06-13T13:44:09+00:00",
+        "variants": {
+          "VER-D2A750543626": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-13T13:44:09+00:00",
+            "extracted_at": "2026-06-13T13:44:09+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "condition": "The result holds specifically in domains requiring precise calculation or factual grounding, such as the MATH benchmark, where the small model is augmented with a code interpreter and allowed multiple verification attempts via test-time compute scaling.",
+              "confidence_score": 0.7,
+              "discussion": "This finding challenges the assumption that larger models are inherently necessary for high-quality verification. It suggests a cost-effective pathway for deploying capable reasoning systems on edge devices or low-latency environments by combining small, fast models with reliable external utilities.",
+              "evidence": "Within the Tool-integrated verification framework, a Llama-3.2 1B model under test-time scaling outperforms the significantly larger Llama-3.1 8B model on the MATH benchmark. The framework also improves the verification accuracy of both process reward models and critic models.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "finding": "A 1B-parameter language model utilizing tool-integrated verification under test-time scaling achieves higher accuracy on mathematical benchmarks than a standalone 8B-parameter model.",
+              "main_results": "A 1B-parameter language model utilizing tool-integrated verification under test-time scaling achieves higher accuracy on mathematical benchmarks than a standalone 8B-parameter model.",
+              "message_text": "A 1B-parameter language model utilizing tool-integrated verification under test-time scaling achieves higher accuracy on mathematical benchmarks than a standalone 8B-parameter model.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "http://arxiv.org/abs/2504.04718v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2504.04718v2"
+              ],
+              "source_paper_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-B2629AEE97CA"
+              ],
+              "source_work_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+              "source_works": [],
+              "title": "Small Models with Tools Outperform Larger Standalone Models in Verification",
+              "venue_or_source": "ICLR",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2504.04718v2"
+            ],
+            "version_id": "VER-D2A750543626"
+          }
+        },
+        "venue_or_source": "ICLR",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-C9BDB4C87028"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-13T13:47:46+00:00",
+        "updated_at": "2026-06-13T13:47:46+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-BAADB5936495",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "tool integrated verification t1 framework tool integrated verification t1 framework the t1 framework enhances small language model verification by offloading memorization heavy tasks to external tools before the model performs final validation this two stage process filters candidate solutions usin ",
+      "canonical_label": "Tool-Integrated Verification (T1) Framework",
+      "concept_id": "XI-C61A90CE3501",
+      "concept_type": "existed_idea",
+      "payload": {
+        "active_version_id": "VER-525C67182F4B",
+        "benchmarks": [],
+        "canonical_id": "XI-EAEE505B143E",
+        "canonical_key": "t1 framework enhances small language model verification by offloading memorization heavy tasks to external tools before model performs final validation two stage process filters ca",
+        "confidence_score": 0.72,
+        "core_idea": "The T1 framework enhances small language model verification by offloading memorization-heavy tasks to external tools before the model performs final validation. This two-stage process filters candidate solutions using tools like code interpreters to reduce the cognitive burden on the small model.",
+        "created_at": "2026-06-13T13:44:09+00:00",
+        "discussion": "The mechanism fundamentally shifts the verification paradigm from purely parametric reliance to a hybrid neuro-symbolic execution. It demonstrates that the bottleneck for small models in test-time scaling is not reasoning capacity per se, but rather the inability to reliably recall specific facts or perform exact arithmetic without hallucination. By outsourcing these specific sub-tasks, the small model can achieve verification accuracy comparable to or exceeding that of much larger standalone models, validating the efficiency of tool augmentation over parameter scaling for verification tasks.",
+        "entered_at": "2026-06-13T13:44:09+00:00",
+        "evidence": "The abstract and introduction state that T1 is a two-stage framework that first filters candidates with external tools and then uses an sLM for final verification, offloading memorization-heavy steps. Experiments show a Llama-3.2 1B model with T1 outperforms a Llama-3.1 8B model on the MATH benchmark.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-13T13:44:09+00:00",
+        "extraction_method": "llm_extracted",
+        "idea_text": "The T1 framework enhances small language model verification by offloading memorization-heavy tasks to external tools before the model performs final validation. This two-stage process filters candidate solutions using tools like code interpreters to reduce the cognitive burden on the small model.",
+        "mechanism": "The mechanism operates in two distinct stages: first, external tools (e.g., code interpreters) execute candidate solutions to verify factual or numerical correctness, effectively filtering out obviously wrong answers. Second, the small language model receives the tool-validated candidates and performs a final verification step, leveraging its reasoning capabilities on a reduced and pre-validated search space. This division of labor ensures that the small model is not penalized for its limited parametric memory.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2504.04718v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2504.04718v2"
+        ],
+        "source_paper_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-C9BDB4C87028"
+        ],
+        "source_work_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+        "source_works": [
+          "W-C9BDB4C87028"
+        ],
+        "summary": "The T1 framework enhances small language model verification by offloading memorization-heavy tasks to external tools before the model performs final validation. This two-stage process filters candidate solutions using tools like code int...",
+        "title": "Tool-Integrated Verification (T1) Framework",
+        "updated_at": "2026-06-13T13:44:09+00:00",
+        "variants": {
+          "VER-525C67182F4B": {
+            "confidence_score": 0.72,
+            "entered_at": "2026-06-13T13:44:09+00:00",
+            "extracted_at": "2026-06-13T13:44:09+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "confidence_score": 0.72,
+              "core_idea": "The T1 framework enhances small language model verification by offloading memorization-heavy tasks to external tools before the model performs final validation. This two-stage process filters candidate solutions using tools like code interpreters to reduce the cognitive burden on the small model.",
+              "discussion": "The mechanism fundamentally shifts the verification paradigm from purely parametric reliance to a hybrid neuro-symbolic execution. It demonstrates that the bottleneck for small models in test-time scaling is not reasoning capacity per se, but rather the inability to reliably recall specific facts or perform exact arithmetic without hallucination. By outsourcing these specific sub-tasks, the small model can achieve verification accuracy comparable to or exceeding that of much larger standalone models, validating the efficiency of tool augmentation over parameter scaling for verification tasks.",
+              "evidence": "The abstract and introduction state that T1 is a two-stage framework that first filters candidates with external tools and then uses an sLM for final verification, offloading memorization-heavy steps. Experiments show a Llama-3.2 1B model with T1 outperforms a Llama-3.1 8B model on the MATH benchmark.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "idea_text": "The T1 framework enhances small language model verification by offloading memorization-heavy tasks to external tools before the model performs final validation. This two-stage process filters candidate solutions using tools like code interpreters to reduce the cognitive burden on the small model.",
+              "mechanism": "The mechanism operates in two distinct stages: first, external tools (e.g., code interpreters) execute candidate solutions to verify factual or numerical correctness, effectively filtering out obviously wrong answers. Second, the small language model receives the tool-validated candidates and performs a final verification step, leveraging its reasoning capabilities on a reduced and pre-validated search space. This division of labor ensures that the small model is not penalized for its limited parametric memory.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "http://arxiv.org/abs/2504.04718v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2504.04718v2"
+              ],
+              "source_paper_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-B2629AEE97CA"
+              ],
+              "source_work_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+              "source_works": [],
+              "summary": "The T1 framework enhances small language model verification by offloading memorization-heavy tasks to external tools before the model performs final validation. This two-stage process filters candidate solutions using tools like code int...",
+              "title": "Tool-Integrated Verification (T1) Framework",
+              "venue_or_source": "ICLR",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2504.04718v2"
+            ],
+            "version_id": "VER-525C67182F4B"
+          }
+        },
+        "venue_or_source": "ICLR",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.72,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-C9BDB4C87028"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-13T13:47:46+00:00",
+        "updated_at": "2026-06-13T13:47:46+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-FA8E4FE6ABDC",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-D63AA4FE7771",
+  "created_at": "2026-06-13T13:47:46+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "The abstract and introduction state that T1 is a two-stage framework that first filters candidates with external tools and then uses an sLM for final verification, offloading memorization-heavy steps. Experiments show a Llama-3.2 1B model with T1 outperforms a Llama-3.1 8B model on the MATH benchmark.",
+      "concept_id": "XI-C61A90CE3501",
+      "confidence": 0.72,
+      "created_at": "2026-06-13T13:47:46+00:00",
+      "evidence_id": "EV-575D2EDA6CA0",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The abstract and introduction state that T1 is a two-stage framework that first filters candidates with external tools and then uses an sLM for final verification, offloading memorization-heavy steps. Experiments show a Llama-3.2 1B model with T1 outperforms a Llama-3.1 8B model on the MATH benchmark.",
+      "work_id": "W-C9BDB4C87028",
+      "work_version_id": "WV-BE9FA872FD5E"
+    },
+    {
+      "claim_text": "The work finds that even with knowledge distillation, sLMs struggle with verification tasks requiring memorization. The proposed T1 framework explicitly offloads these steps to tools, resulting in improved test-time scaling performance and outperforming larger models that lack tool integration.",
+      "concept_id": "P-503A73B2FAE5",
+      "confidence": 0.68,
+      "created_at": "2026-06-13T13:47:46+00:00",
+      "evidence_id": "EV-4164DFBD9ADE",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work finds that even with knowledge distillation, sLMs struggle with verification tasks requiring memorization. The proposed T1 framework explicitly offloads these steps to tools, resulting in improved test-time scaling performance and outperforming larger models that lack tool integration.",
+      "work_id": "W-C9BDB4C87028",
+      "work_version_id": "WV-BE9FA872FD5E"
+    },
+    {
+      "claim_text": "Within the Tool-integrated verification framework, a Llama-3.2 1B model under test-time scaling outperforms the significantly larger Llama-3.1 8B model on the MATH benchmark. The framework also improves the verification accuracy of both process reward models and critic models.",
+      "concept_id": "TM-03C1B1AB4830",
+      "confidence": 0.7,
+      "created_at": "2026-06-13T13:47:46+00:00",
+      "evidence_id": "EV-8509529ADF0E",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "Within the Tool-integrated verification framework, a Llama-3.2 1B model under test-time scaling outperforms the significantly larger Llama-3.1 8B model on the MATH benchmark. The framework also improves the verification accuracy of both process reward models and critic models.",
+      "work_id": "W-C9BDB4C87028",
+      "work_version_id": "WV-BE9FA872FD5E"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-EF3E2D4F65CA\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-B2629AEE97CA\", \"task\": \"compute scaling test-time inference-time\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"T1: Tool-integrated Verification for Test-time Co...",
+      "concept_id": "B-4253A35BABB3",
+      "confidence": 0.7,
+      "created_at": "2026-06-13T13:47:46+00:00",
+      "evidence_id": "EV-FF6F0CF95667",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-EF3E2D4F65CA\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-B2629AEE97CA\", \"task\": \"compute scaling test-time inference-time\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"T1: Tool-integrated Verification for Test-time Co...",
+      "work_id": "W-C9BDB4C87028",
+      "work_version_id": "WV-BE9FA872FD5E"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-B0F78492D6F2\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-B2629AEE97CA\", \"task\": \"compute scaling test-time inference-time\", \"dataset\": \"GSM8K\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"T1: Tool-integrated Verification for Test-time C...",
+      "concept_id": "B-4060CE162489",
+      "confidence": 0.7,
+      "created_at": "2026-06-13T13:47:46+00:00",
+      "evidence_id": "EV-A792C1F48118",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-B0F78492D6F2\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-B2629AEE97CA\", \"task\": \"compute scaling test-time inference-time\", \"dataset\": \"GSM8K\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"T1: Tool-integrated Verification for Test-time C...",
+      "work_id": "W-C9BDB4C87028",
+      "work_version_id": "WV-BE9FA872FD5E"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-7F2EDFB86527\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-B2629AEE97CA\", \"task\": \"compute scaling test-time inference-time\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"T1: Tool-integrated Verification for Test-time Co...",
+      "concept_id": "B-F9235EAA7BA9",
+      "confidence": 0.7,
+      "created_at": "2026-06-13T13:47:46+00:00",
+      "evidence_id": "EV-32929D3C36B5",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-7F2EDFB86527\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-B2629AEE97CA\", \"task\": \"compute scaling test-time inference-time\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"T1: Tool-integrated Verification for Test-time Co...",
+      "work_id": "W-C9BDB4C87028",
+      "work_version_id": "WV-BE9FA872FD5E"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-BDC6A7EBF62F\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-B2629AEE97CA\", \"task\": \"compute scaling test-time inference-time\", \"dataset\": \"AIME\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"T1: Tool-integrated Verification for Test-time Co...",
+      "concept_id": "B-43C3D5212364",
+      "confidence": 0.7,
+      "created_at": "2026-06-13T13:47:46+00:00",
+      "evidence_id": "EV-4E04647CBD0B",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-BDC6A7EBF62F\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-B2629AEE97CA\", \"task\": \"compute scaling test-time inference-time\", \"dataset\": \"AIME\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"T1: Tool-integrated Verification for Test-time Co...",
+      "work_id": "W-C9BDB4C87028",
+      "work_version_id": "WV-BE9FA872FD5E"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-0964E8E8D55C\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-B2629AEE97CA\", \"task\": \"compute scaling test-time inference-time\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"T1: Tool-integrated Verification for Test-time Co...",
+      "concept_id": "B-DE6DBF4131E5",
+      "confidence": 0.7,
+      "created_at": "2026-06-13T13:47:46+00:00",
+      "evidence_id": "EV-9DC131148CB0",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-0964E8E8D55C\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-B2629AEE97CA\", \"task\": \"compute scaling test-time inference-time\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"T1: Tool-integrated Verification for Test-time Co...",
+      "work_id": "W-C9BDB4C87028",
+      "work_version_id": "WV-BE9FA872FD5E"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-13T13:47:46+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-13T13:47:46+00:00",
+      "extraction_run_id": "XRUN-BA47EB714B7B",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 9,
+        "existed_ideas": 1,
+        "principles": 1,
+        "takeaway_messages": 1,
+        "total": 12
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-C9BDB4C87028",
+      "work_version_id": "WV-BE9FA872FD5E"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "local_pr_export",
+    "secret_exposed_to_browser": false,
+    "warning": "Server admin key is not configured; output is a local PR-export artifact, not a direct GitHub write."
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 1,
+        "principle": 1,
+        "takeaway_message": 1
+      },
+      "title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-C9BDB4C87028"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "2504.04718",
+        "authors": [
+          "Minki Kang",
+          "Jongwon Jeong",
+          "Jaewoong Cho"
+        ],
+        "canonical_title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "http://arxiv.org/abs/2504.04718v2"
+        ],
+        "title_hash": "b247e6be5ae6f0dd",
+        "title_norm": "t1 tool integrated verification for test time compute scaling in small language models",
+        "venue_or_source": "ICLR",
+        "year": 2025
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "2026-06-01T08:01:37Z",
+        "title_hash": "b247e6be5ae6f0dd"
+      },
+      "timestamps": {
+        "created_at": "2026-06-13T13:47:46+00:00",
+        "updated_at": "2026-06-13T13:47:46+00:00"
+      },
+      "work_id": "W-C9BDB4C87028"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": "Recent studies have demonstrated that test-time compute scaling effectively improves the performance of small language models (sLMs). However, prior research has mainly examined test-time compute scaling with an additional larger model as a verifier, leaving verification by sLMs underexplored. In this work, we investigate whether sLMs can reliably verify the output candidates under test-time scaling. We find that even with knowledge distillation from larger verifiers, sLMs struggle with verification tasks requiring memorization, such as numerical calculations and fact-checking. To address this limitation, we propose Tool-integrated verification (T1), a two-stage framework that first filters candidates with external tools and then uses an sLM for final verification, offloading memorization-heavy steps to tools such as a code interpreter. Within T1, we prove that offloading to external tools reduces the memorization burden on sLMs and improves test-time scaling performance. Experiments on the MATH benchmark demonstrate that, with T1, a Llama-3.2 1B model under test-time scaling outperforms the significantly larger Llama-3.1 8B model. Moreover, T1 improves the verification accuracy of both process reward models (PRMs) and critic models. Our findings highlight the potential of tool integration to substantially improve the verification abilities of sLMs.",
+      "abstract_hash": "98c57b69a8e7c20b",
+      "content_hash": "366b97d62e69bf43",
+      "created_at": "2026-06-13T13:47:46+00:00",
+      "metadata": {
+        "abstract": "Recent studies have demonstrated that test-time compute scaling effectively improves the performance of small language models (sLMs). However, prior research has mainly examined test-time compute scaling with an additional larger model as a verifier, leaving verification by sLMs underexplored. In this work, we investigate whether sLMs can reliably verify the output candidates under test-time scaling. We find that even with knowledge distillation from larger verifiers, sLMs struggle with verification tasks requiring memorization, such as numerical calculations and fact-checking. To address this limitation, we propose Tool-integrated verification (T1), a two-stage framework that first filters candidates with external tools and then uses an sLM for final verification, offloading memorization-heavy steps to tools such as a code interpreter. Within T1, we prove that offloading to external tools reduces the memorization burden on sLMs and improves test-time scaling performance. Experiments on the MATH benchmark demonstrate that, with T1, a Llama-3.2 1B model under test-time scaling outperforms the significantly larger Llama-3.1 8B model. Moreover, T1 improves the verification accuracy of both process reward models (PRMs) and critic models. Our findings highlight the potential of tool integration to substantially improve the verification abilities of sLMs.",
+        "active_version_id": "VER-D96BCB933016",
+        "authors": [
+          "Minki Kang",
+          "Jongwon Jeong",
+          "Jaewoong Cho"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-B2629AEE97CA",
+        "canonical_key": "t1 tool integrated verification for test time compute scaling in small language models",
+        "cloud_local_origin": "cloud_crawl",
+        "cloud_research_by_model": {
+          "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts": {
+            "cloud_required_counts": {
+              "existed_ideas": 1,
+              "principles": 1,
+              "takeaway_messages": 1
+            },
+            "cloud_required_missing": [],
+            "cloud_research_index": 1,
+            "cloud_research_total": 1,
+            "completed_at": "2026-06-13T13:44:09+00:00",
+            "message": "Extraction complete and ready to sync.",
+            "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+            "model_mode": "qwen_397b",
+            "run_id": "V1CLOUDCRAWL-1781358207941",
+            "started_at": "2026-06-13T13:43:28+00:00",
+            "state": "ready",
+            "updated_at": "2026-06-13T13:44:09+00:00"
+          }
+        },
+        "cloud_research_completed_at": "2026-06-13T13:44:09+00:00",
+        "cloud_research_message": "Extraction complete and ready to sync.",
+        "cloud_research_model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+        "cloud_research_run_id": "V1CLOUDCRAWL-1781358207941",
+        "cloud_research_started_at": "2026-06-13T13:43:28+00:00",
+        "cloud_research_state": "ready",
+        "cloud_research_updated_at": "2026-06-13T13:44:09+00:00",
+        "cloud_sync_status": "unsynced",
+        "community_signals": {},
+        "confidence_score": 0.62,
+        "created_at": "2026-06-13T13:43:27+00:00",
+        "entered_at": "2026-06-13T13:43:27+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-13T13:43:27+00:00",
+        "metrics": [],
+        "model_mode": "metadata",
+        "model_name": "metadata",
+        "paper_link": "http://arxiv.org/abs/2504.04718v2",
+        "performance": [],
+        "priority_reason": "venue/recency/topic/citation/oral / topic_match / target=ICLR 2025",
+        "priority_score": 1.1298,
+        "provider": "metadata",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "2026-06-01T08:01:37Z",
+        "source_urls": [
+          "http://arxiv.org/abs/2504.04718v2"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "target_venue": "ICLR",
+        "target_year": 2025,
+        "title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+        "updated_at": "2026-06-13T13:44:09+00:00",
+        "url_or_doi": "http://arxiv.org/abs/2504.04718v2",
+        "validation_level": "L1",
+        "variants": {
+          "VER-D96BCB933016": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-13T13:43:27+00:00",
+            "extracted_at": "2026-06-13T13:43:27+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Recent studies have demonstrated that test-time compute scaling effectively improves the performance of small language models (sLMs). However, prior research has mainly examined test-time compute scaling with an additional larger model as a verifier, leaving verification by sLMs underexplored. In this work, we investigate whether sLMs can reliably verify the output candidates under test-time scaling. We find that even with knowledge distillation from larger verifiers, sLMs struggle with verification tasks requiring memorization, such as numerical calculations and fact-checking. To address this limitation, we propose Tool-integrated verification (T1), a two-stage framework that first filters candidates with external tools and then uses an sLM for final verification, offloading memorization-heavy steps to tools such as a code interpreter. Within T1, we prove that offloading to external tools reduces the memorization burden on sLMs and improves test-time scaling performance. Experiments on the MATH benchmark demonstrate that, with T1, a Llama-3.2 1B model under test-time scaling outperforms the significantly larger Llama-3.1 8B model. Moreover, T1 improves the verification accuracy of both process reward models (PRMs) and critic models. Our findings highlight the potential of tool integration to substantially improve the verification abilities of sLMs.",
+              "authors": [
+                "Minki Kang",
+                "Jongwon Jeong",
+                "Jaewoong Cho"
+              ],
+              "benchmarks": [],
+              "cloud_local_origin": "cloud_crawl",
+              "cloud_sync_status": "unsynced",
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/2504.04718v2",
+              "performance": [],
+              "priority_reason": "venue/recency/topic/citation/oral / topic_match / target=ICLR 2025",
+              "priority_score": 1.1298,
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2026-06-01T08:01:37Z",
+              "source_urls": [
+                "http://arxiv.org/abs/2504.04718v2"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "target_venue": "ICLR",
+              "target_year": 2025,
+              "title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+              "url_or_doi": "http://arxiv.org/abs/2504.04718v2",
+              "validation_level": "L1",
+              "venue_or_source": "ICLR",
+              "year": 2025
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "http://arxiv.org/abs/2504.04718v2"
+            ],
+            "version_id": "VER-D96BCB933016"
+          }
+        },
+        "venue_or_source": "ICLR",
+        "work_id": "W-B2629AEE97CA",
+        "year": 2025
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "",
+      "source_record_id": "W-B2629AEE97CA",
+      "source_updated_at": "2026-06-01T08:01:37Z",
+      "title": "T1: Tool-integrated Verification for Test-time Compute Scaling in Small Language Models",
+      "title_hash": "b247e6be5ae6f0dd",
+      "work_id": "W-C9BDB4C87028",
+      "work_version_id": "WV-BE9FA872FD5E"
+    }
+  ]
+}
