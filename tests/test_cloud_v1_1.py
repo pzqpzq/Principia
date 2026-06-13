@@ -175,6 +175,51 @@ class CloudV11Tests(unittest.TestCase):
         data = json.loads(Path(result["path"]).read_text(encoding="utf-8"))
         self.assertEqual(data["upload_decisions"][0]["work_id"], result["allowed_work_ids"][0])
 
+    def test_prepare_contribution_rejects_missing_required_extractions(self) -> None:
+        tmpdir, store = self.make_store()
+        self.addCleanup(tmpdir.cleanup)
+        global_store = GlobalStore(store.path)
+        work = global_store.upsert_work(
+            {
+                "title": "Partial extraction paper",
+                "abstract": "Only one extraction category exists.",
+                "year": 2026,
+                "venue_or_source": "ICLR",
+                "source_type": "paper",
+            }
+        )
+        current_model_key = model_key("fake", "fake-model", "auto", "principia-work-extract-v1", "principia-cloud-1.1", "work_concepts")
+        run = global_store.ensure_extraction_run(
+            work["work_id"],
+            work["work_version_id"],
+            llm_provider="fake",
+            llm_model="fake-model",
+            model_mode="auto",
+            prompt_version="principia-work-extract-v1",
+            schema_version="principia-cloud-1.1",
+            extraction_task_type="work_concepts",
+        )
+        global_store.complete_extraction_run(run["extraction_run_id"], result={"principle_count": 1})
+        global_store.upsert_concept(
+            "principle",
+            {"name": "Partial principle", "argument": "A partial principle.", "source_works": [work["work_id"]]},
+            key_text="Partial principle",
+            public_scope="public_cloud",
+            extraction_run_id=run["extraction_run_id"],
+            llm_provider="fake",
+            llm_model="fake-model",
+            model_mode="auto",
+            prompt_version="principia-work-extract-v1",
+            schema_version="principia-cloud-1.1",
+            evidence=[{"work_id": work["work_id"], "work_version_id": work["work_version_id"], "evidence_span": "Only one extraction category exists."}],
+        )
+
+        result = prepare_contribution(store.path, Path(tmpdir.name) / "contributions", model_key=current_model_key, work_ids=[work["work_id"]])
+        self.assertFalse(result["ok"])
+        self.assertEqual(result["upload_decisions"][0]["cloud_decision"], "missing_required_extractions")
+        self.assertIn("existed_idea", result["upload_decisions"][0]["missing_required_extractions"])
+        self.assertIn("takeaway_message", result["upload_decisions"][0]["missing_required_extractions"])
+
     def test_contribution_validation_rejects_full_text(self) -> None:
         result = validate_contribution(
             {
@@ -383,6 +428,37 @@ class CloudV11Tests(unittest.TestCase):
         self.assertIsNone(store.get_item("source_works", "W_NEW"))
         self.assertIsNone(store.get_item("principles", "P_NEW"))
 
+    def test_cloud_ready_tab_requires_core_extractions(self) -> None:
+        tmpdir, store = self.make_store()
+        self.addCleanup(tmpdir.cleanup)
+        engine = PrincipiaEngine(store=store)
+        engine.create_project(name="Cloud Crawl", field_id="cloud-crawl", query="cloud")
+        store.upsert("source_works", {"work_id": "W_READY", "title": "Ready Paper", "cloud_sync_status": "unsynced"}, "work_id")
+        store.upsert("source_works", {"work_id": "W_PARTIAL", "title": "Partial Paper", "cloud_sync_status": "unsynced"}, "work_id")
+        records = [
+            ("existed_ideas", "XI_READY", {"canonical_id": "XI_READY", "title": "Ready idea", "idea_text": "A reusable idea.", "source_works": ["W_READY"]}),
+            ("principles", "P_READY", {"principle_id": "P_READY", "name": "Ready principle", "source_works": ["W_READY"]}),
+            ("takeaway_messages", "TM_READY", {"canonical_id": "TM_READY", "title": "Ready takeaway", "message_text": "A reusable takeaway.", "source_works": ["W_READY"]}),
+            ("principles", "P_PARTIAL", {"principle_id": "P_PARTIAL", "name": "Partial principle", "source_works": ["W_PARTIAL"]}),
+        ]
+        id_keys = {"existed_ideas": "canonical_id", "principles": "principle_id", "takeaway_messages": "canonical_id"}
+        for bucket, record_id, payload in records:
+            store.upsert(bucket, payload, id_keys[bucket])
+            source_work_id = (payload.get("source_works") or [""])[0]
+            store.upsert(
+                "evidence_links",
+                engine._v2_evidence_link("cloud-crawl", bucket, record_id, source_work_id, "evidence"),
+                "link_id",
+            )
+            engine.add_project_memberships("cloud-crawl", bucket, [record_id], source="test")
+        engine.add_project_memberships("cloud-crawl", "source_works", ["W_READY", "W_PARTIAL"], source="test")
+
+        status = engine.cloud_work_research_status("W_READY", field_id="cloud-crawl")
+        self.assertTrue(status["ready_to_sync"])
+        self.assertFalse(engine.cloud_work_research_status("W_PARTIAL", field_id="cloud-crawl")["ready_to_sync"])
+        ready = engine.build_cloud_local_tab("cloud-crawl", "ready_works", sync_state="unsynced")
+        self.assertEqual([item["work_id"] for item in ready["items"]], ["W_READY"])
+
     def test_100k_synthetic_snapshot_scale_is_opt_in(self) -> None:
         if os.getenv("PRINCIPIA_RUN_SCALE_TESTS") != "1":
             self.skipTest("Set PRINCIPIA_RUN_SCALE_TESTS=1 to run the 100k synthetic warm-cache snapshot check.")
@@ -533,7 +609,32 @@ class CloudV11Tests(unittest.TestCase):
             schema_version="principia-cloud-1.1",
             extraction_task_type="work_concepts",
         )
-        global_store.complete_extraction_run(run["extraction_run_id"], result={"principle_count": 1})
+        global_store.complete_extraction_run(run["extraction_run_id"], result={"existed_idea_count": 1, "principle_count": 1, "takeaway_message_count": 1})
+        idea = global_store.upsert_concept(
+            "existed_idea",
+            {
+                "title": "Cache reuse idea",
+                "idea_text": "Cloud cache reuse avoids repeated extraction when paper identity and model coverage are unchanged.",
+                "source_works": [work["work_id"]],
+            },
+            key_text="Cache reuse idea",
+            public_scope="public_cloud",
+            extraction_run_id=run["extraction_run_id"],
+            llm_provider="fake",
+            llm_model="fake-model",
+            model_mode="auto",
+            prompt_version="principia-work-extract-v1",
+            schema_version="principia-cloud-1.1",
+            evidence=[
+                {
+                    "work_id": work["work_id"],
+                    "work_version_id": work["work_version_id"],
+                    "evidence_span": "A reusable extraction target.",
+                    "evidence_type": "abstract",
+                    "confidence": 0.9,
+                }
+            ],
+        )
         concept = global_store.upsert_concept(
             "principle",
             {
@@ -560,8 +661,35 @@ class CloudV11Tests(unittest.TestCase):
                 }
             ],
         )
+        takeaway = global_store.upsert_concept(
+            "takeaway_message",
+            {
+                "title": "Reuse cached extraction",
+                "message_text": "If source identity and model coverage are unchanged, reuse cached paper extraction before calling the LLM again.",
+                "source_works": [work["work_id"]],
+            },
+            key_text="Reuse cached extraction",
+            public_scope="public_cloud",
+            extraction_run_id=run["extraction_run_id"],
+            llm_provider="fake",
+            llm_model="fake-model",
+            model_mode="auto",
+            prompt_version="principia-work-extract-v1",
+            schema_version="principia-cloud-1.1",
+            evidence=[
+                {
+                    "work_id": work["work_id"],
+                    "work_version_id": work["work_version_id"],
+                    "evidence_span": "A reusable extraction target.",
+                    "evidence_type": "abstract",
+                    "confidence": 0.9,
+                }
+            ],
+        )
         store.upsert("source_works", {"work_id": work["work_id"], "title": "Cloud cache paper", "abstract": "A reusable extraction target."}, "work_id")
+        store.upsert("existed_ideas", {"canonical_id": idea["concept_id"], "title": "Cache reuse idea", "idea_text": "Cloud cache reuse avoids repeated extraction when paper identity and model coverage are unchanged.", "source_works": [work["work_id"]]}, "canonical_id")
         store.upsert("principles", {"principle_id": concept["concept_id"], "name": "Cache reuse principle", "source_works": [work["work_id"]]}, "principle_id")
+        store.upsert("takeaway_messages", {"canonical_id": takeaway["concept_id"], "title": "Reuse cached extraction", "message_text": "If source identity and model coverage are unchanged, reuse cached paper extraction before calling the LLM again.", "source_works": [work["work_id"]]}, "canonical_id")
         return current_model_key
 
 

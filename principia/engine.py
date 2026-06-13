@@ -2701,14 +2701,16 @@ class PrincipiaEngine:
         model_mode: str = "auto",
         sync_state: str = "unsynced",
     ) -> dict[str, Any]:
+        requested_tab = str(tab or "works")
         bucket = {
             "works": "source_works",
+            "ready_works": "source_works",
             "existed_ideas": "existed_ideas",
             "benchmarks": "benchmark_records",
             "baselines": "baseline_records",
             "principles": "principles",
             "takeaway_messages": "takeaway_messages",
-        }.get(tab, tab)
+        }.get(requested_tab, requested_tab)
         sync_state = str(sync_state or "unsynced").lower()
         items = self._v2_project_records_fast(field_id, bucket, query=query)
         work_sync = self._cloud_work_sync_map(field_id)
@@ -2718,6 +2720,12 @@ class PrincipiaEngine:
                 item
                 for item in items
                 if self._cloud_record_is_synced(bucket, item, work_sync) == want_synced
+            ]
+        if requested_tab == "ready_works":
+            items = [
+                item
+                for item in items
+                if self.cloud_work_research_status(str(item.get("work_id") or "")).get("ready_to_sync")
             ]
         profile = self.store.get_item("field_profiles", field_id) or {}
         sort_query = query or profile.get("goal_text") or profile.get("query") or profile.get("name", "")
@@ -2735,9 +2743,10 @@ class PrincipiaEngine:
         total = len(items)
         page = [self._v2_present_item(item, model_mode=model_mode, compact=True) for item in items[offset : offset + limit]]
         work_extraction_runs = self.v2_active_work_extraction_runs(field_id) if bucket == "source_works" else {}
-        if work_extraction_runs:
+        if bucket == "source_works":
             for item in page:
                 work_id = str(item.get("work_id") or "")
+                item["cloud_research_status"] = self.cloud_work_research_status(work_id, field_id=field_id)
                 if work_id in work_extraction_runs:
                     item["work_extraction_run"] = work_extraction_runs[work_id]
         return {
@@ -2754,6 +2763,7 @@ class PrincipiaEngine:
     def cloud_local_counts(self, field_id: str = "cloud-crawl") -> dict[str, Any]:
         work_sync = self._cloud_work_sync_map(field_id)
         counts: dict[str, Any] = {}
+        ready_unsynced = 0
         for tab, bucket in {
             "works": "source_works",
             "existed_ideas": "existed_ideas",
@@ -2765,7 +2775,223 @@ class PrincipiaEngine:
             items = self._v2_project_records_fast(field_id, bucket)
             synced = sum(1 for item in items if self._cloud_record_is_synced(bucket, item, work_sync))
             counts[tab] = {"total": len(items), "synced": synced, "unsynced": max(0, len(items) - synced)}
+            if tab == "works":
+                ready_unsynced = sum(
+                    1
+                    for item in items
+                    if not self._cloud_record_is_synced(bucket, item, work_sync)
+                    and self.cloud_work_research_status(str(item.get("work_id") or ""), field_id=field_id).get("ready_to_sync")
+                )
+        counts["ready_works"] = {"total": ready_unsynced, "synced": 0, "unsynced": ready_unsynced}
         return counts
+
+    def cloud_work_research_status(self, work_id: str, *, field_id: str = "cloud-crawl") -> dict[str, Any]:
+        work_id = str(work_id or "")
+        work = self.store.get_item("source_works", work_id) if work_id else {}
+        counts = self.v2_work_extraction_counts(work_id)
+        required = {
+            "existed_ideas": int(counts.get("existed_ideas") or 0),
+            "principles": int(counts.get("principles") or 0),
+            "takeaway_messages": int(counts.get("takeaway_messages") or 0),
+        }
+        missing = [bucket for bucket, count in required.items() if count <= 0]
+        synced = str((work or {}).get("cloud_sync_status") or "") == "synced"
+        stored_state = str((work or {}).get("cloud_research_state") or "").strip()
+        state = stored_state
+        active_run_id = ""
+        active_message = ""
+        for run in self.store.list_items("research_runs", limit=100000):
+            if (
+                run.get("type") == "v1_cloud_crawl_research"
+                and run.get("field_id") == field_id
+                and run.get("status") in {"queued", "running"}
+                and str((run.get("counts") or {}).get("current_work_id") or run.get("current_work_id") or "") == work_id
+            ):
+                active_run_id = str(run.get("run_id") or "")
+                active_message = str(run.get("message") or "")
+                state = "researching"
+                break
+        ready = not missing
+        if synced:
+            state = "synced"
+        elif ready and state not in {"researching", "failed"}:
+            state = "ready"
+        elif not state:
+            state = "metadata_only" if counts.get("total", 0) <= 0 else "needs_review"
+        return {
+            "work_id": work_id,
+            "state": state,
+            "ready_to_sync": bool(ready and not synced),
+            "synced": synced,
+            "missing_required": missing,
+            "required_counts": required,
+            "counts": counts,
+            "run_id": active_run_id or str((work or {}).get("cloud_research_run_id") or ""),
+            "message": active_message or str((work or {}).get("cloud_research_message") or ""),
+            "updated_at": str((work or {}).get("cloud_research_updated_at") or (work or {}).get("updated_at") or ""),
+        }
+
+    def _set_cloud_work_research_state(
+        self,
+        work_id: str,
+        state: str,
+        *,
+        run_id: str = "",
+        message: str = "",
+        extra: dict[str, Any] | None = None,
+    ) -> None:
+        work_id = str(work_id or "")
+        if not work_id:
+            return
+        work = self.store.get_item("source_works", work_id)
+        if not work:
+            return
+        now = utc_now()
+        update = {
+            "cloud_research_state": state,
+            "cloud_research_run_id": run_id,
+            "cloud_research_message": message,
+            "cloud_research_updated_at": now,
+            "updated_at": now,
+        }
+        if state == "researching":
+            update.setdefault("cloud_research_started_at", now)
+        if state in {"ready", "failed", "metadata_only", "stopped", "synced"}:
+            update["cloud_research_completed_at"] = now
+        if extra:
+            update.update(extra)
+        work.update(update)
+        self.store.upsert("source_works", work, "work_id")
+
+    def sync_cloud_legacy_records_for_upload(
+        self,
+        work_ids: list[str],
+        *,
+        field_id: str = "cloud-crawl",
+        model_mode: str = "auto",
+    ) -> dict[str, Any]:
+        unique_work_ids = self._ordered_unique([str(work_id) for work_id in work_ids if work_id])
+        if not unique_work_ids:
+            return {"work_ids": [], "work_id_map": {}, "concepts": 0}
+        model = self._v2_model_meta(model_mode)
+        work_id_map: dict[str, str] = {}
+        work_version_map: dict[str, str] = {}
+        for work_id in unique_work_ids:
+            work = self.store.get_item("source_works", work_id)
+            if not work:
+                continue
+            saved = self.global_store.upsert_work(work)
+            global_work_id = str(saved.get("work_id") or "")
+            if not global_work_id:
+                continue
+            work_id_map[work_id] = global_work_id
+            work_version_map[work_id] = str(saved.get("work_version_id") or "")
+        concepts_synced = 0
+        for legacy_work_id, global_work_id in work_id_map.items():
+            version_id = work_version_map.get(legacy_work_id, "")
+            if version_id:
+                run = self.global_store.ensure_extraction_run(
+                    global_work_id,
+                    version_id,
+                    llm_provider=model.get("provider", ""),
+                    llm_model=model.get("model_name", ""),
+                    model_mode=model.get("model_mode", model_mode),
+                    prompt_version="principia-work-extract-v1",
+                    schema_version="principia-cloud-1.1",
+                    extraction_task_type="work_concepts",
+                )
+                run_id = str(run.get("extraction_run_id") or "")
+            else:
+                run_id = ""
+            counts = self.v2_work_extraction_counts(legacy_work_id)
+            if run_id:
+                self.global_store.complete_extraction_run(run_id, result=counts)
+            concepts_synced += self._sync_cloud_legacy_concepts_for_upload(
+                legacy_work_id,
+                global_work_id,
+                version_id,
+                run_id,
+                field_id=field_id,
+                model_mode=model_mode,
+                model=model,
+            )
+            self.global_store.add_project_membership(field_id, "work", global_work_id, source="cloud_upload_sync")
+        return {"work_ids": list(work_id_map.values()), "work_id_map": work_id_map, "concepts": concepts_synced}
+
+    def _sync_cloud_legacy_concepts_for_upload(
+        self,
+        legacy_work_id: str,
+        global_work_id: str,
+        work_version_id: str,
+        extraction_run_id: str,
+        *,
+        field_id: str,
+        model_mode: str,
+        model: dict[str, Any],
+    ) -> int:
+        synced = 0
+        bucket_types = {
+            "existed_ideas": "existed_idea",
+            "principles": "principle",
+            "takeaway_messages": "takeaway_message",
+            "benchmark_records": "benchmark",
+            "baseline_records": "baseline",
+        }
+        for bucket, concept_type in bucket_types.items():
+            for item in self._v2_project_records_fast(field_id, bucket):
+                source_ids = set(self._cloud_record_work_ids(bucket, item))
+                if legacy_work_id not in source_ids:
+                    continue
+                payload = dict(item)
+                payload["source_work_ids"] = [global_work_id]
+                payload["source_works"] = [global_work_id]
+                key_text = str(
+                    payload.get("title")
+                    or payload.get("name")
+                    or payload.get("benchmark_name")
+                    or payload.get("baseline_name")
+                    or payload.get("idea_text")
+                    or payload.get("core_idea")
+                    or payload.get("message_text")
+                    or payload.get("argument")
+                    or payload.get("summary")
+                    or ""
+                )
+                evidence_span = str(
+                    payload.get("evidence")
+                    or payload.get("abstract_signature")
+                    or payload.get("idea_text")
+                    or payload.get("core_idea")
+                    or payload.get("message_text")
+                    or payload.get("argument")
+                    or payload.get("summary")
+                    or ""
+                )
+                concept = self.global_store.upsert_concept(
+                    concept_type,
+                    payload,
+                    key_text=key_text,
+                    public_scope="public_cloud",
+                    extraction_run_id=extraction_run_id,
+                    llm_provider=model.get("provider", ""),
+                    llm_model=model.get("model_name", ""),
+                    model_mode=model.get("model_mode", model_mode),
+                    prompt_version="principia-work-extract-v1",
+                    schema_version="principia-cloud-1.1",
+                    evidence=[
+                        {
+                            "work_id": global_work_id,
+                            "work_version_id": work_version_id,
+                            "evidence_span": evidence_span,
+                            "evidence_type": "principia_local_extraction",
+                            "confidence": payload.get("confidence_score", 0.7),
+                        }
+                    ],
+                )
+                if concept.get("concept_id"):
+                    self.global_store.add_project_membership(field_id, concept_type, concept["concept_id"], source="cloud_upload_sync")
+                    synced += 1
+        return synced
 
     def mark_cloud_synced(
         self,
@@ -2789,6 +3015,9 @@ class PrincipiaEngine:
                     "cloud_synced_at": now,
                     "cloud_contribution_path": contribution_path,
                     "cloud_upload_id": upload_id,
+                    "cloud_research_state": "synced" if status == "synced" else work.get("cloud_research_state", ""),
+                    "cloud_research_message": "Synced to cloud." if status == "synced" else work.get("cloud_research_message", ""),
+                    "cloud_research_updated_at": now,
                 }
             )
             self.store.upsert("source_works", work, "work_id")

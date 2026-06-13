@@ -22,12 +22,19 @@ def prepare_contribution(
     created_by: dict[str, Any] | None = None,
     upload_mode: str = "normal",
     admin_key: str = "",
+    require_complete_extraction: bool = True,
 ) -> dict[str, Any]:
     out_dir.mkdir(parents=True, exist_ok=True)
     auth = check_admin_key(admin_key, purpose="cloud_upload")
     upload_mode = upload_mode if upload_mode in {"normal", "force"} else "normal"
     requested_work_ids = work_ids or []
-    decisions = evaluate_upload_candidates(db_path, requested_work_ids, model_key=model_key, upload_mode=upload_mode)
+    decisions = evaluate_upload_candidates(
+        db_path,
+        requested_work_ids,
+        model_key=model_key,
+        upload_mode=upload_mode,
+        require_complete_extraction=require_complete_extraction,
+    )
     allowed_work_ids = [item["work_id"] for item in decisions if item.get("upload_allowed")]
     export_work_ids = allowed_work_ids if allowed_work_ids else ["__principia_no_allowed_work__"]
     contribution = export_contribution(
@@ -102,12 +109,20 @@ def export_contribution(
     }
 
 
-def evaluate_upload_candidates(db_path: Path, work_ids: list[str] | None, *, model_key: str = "", upload_mode: str = "normal") -> list[dict[str, Any]]:
+def evaluate_upload_candidates(
+    db_path: Path,
+    work_ids: list[str] | None,
+    *,
+    model_key: str = "",
+    upload_mode: str = "normal",
+    require_complete_extraction: bool = True,
+) -> list[dict[str, Any]]:
     work_ids = work_ids or []
     with sqlite3.connect(db_path) as conn:
         conn.row_factory = sqlite3.Row
         works = _rows(conn, "SELECT * FROM global_work" + _where_work_ids(work_ids), work_ids)
         versions = _latest_versions(conn, [row["work_id"] for row in works])
+        extraction_status = _required_extraction_status(conn, [row["work_id"] for row in works])
     candidates = [_candidate_for_upload(row, versions.get(row["work_id"])) for row in works]
     if not candidates:
         return []
@@ -125,17 +140,63 @@ def evaluate_upload_candidates(db_path: Path, work_ids: list[str] | None, *, mod
             "abstract_hash_changed",
             "content_hash_changed",
         }
+        completeness = extraction_status.get(str(candidate.get("work_id") or ""), {})
+        missing = list(completeness.get("missing_required") or [])
+        if require_complete_extraction and missing:
+            allowed = False
+            cloud_decision = "missing_required_extractions"
+        else:
+            cloud_decision = "force_upload" if upload_mode == "force" else reason
         output.append(
             {
                 "work_id": candidate.get("work_id") or "",
                 "title": candidate.get("title") or "",
                 "cloud_work_id": decision.get("work_id") or "",
-                "cloud_decision": "force_upload" if upload_mode == "force" else reason,
+                "cloud_decision": cloud_decision,
                 "upload_allowed": bool(allowed),
                 "upload_mode": upload_mode,
+                "required_extraction_counts": completeness.get("counts") or {},
+                "missing_required_extractions": missing,
             }
         )
     return output
+
+
+def _required_extraction_status(conn: sqlite3.Connection, work_ids: list[str]) -> dict[str, dict[str, Any]]:
+    required = ("existed_idea", "principle", "takeaway_message")
+    status = {
+        str(work_id): {"counts": {key: 0 for key in required}, "missing_required": list(required)}
+        for work_id in work_ids
+        if str(work_id or "")
+    }
+    if not status:
+        return status
+    placeholders = ",".join("?" for _ in status)
+    rows = conn.execute(
+        f"""
+        SELECT evidence_link.work_id AS work_id, concept_card.concept_type AS concept_type, COUNT(DISTINCT concept_card.concept_id) AS count
+        FROM evidence_link
+        JOIN concept_card ON concept_card.concept_id = evidence_link.concept_id
+        WHERE evidence_link.work_id IN ({placeholders})
+        GROUP BY evidence_link.work_id, concept_card.concept_type
+        """,
+        list(status.keys()),
+    ).fetchall()
+    aliases = {
+        "existed_ideas": "existed_idea",
+        "idea": "existed_idea",
+        "takeaway": "takeaway_message",
+        "takeaway_messages": "takeaway_message",
+        "principles": "principle",
+    }
+    for row in rows:
+        work_id = str(row["work_id"] or "")
+        concept_type = aliases.get(str(row["concept_type"] or ""), str(row["concept_type"] or ""))
+        if work_id in status and concept_type in status[work_id]["counts"]:
+            status[work_id]["counts"][concept_type] += int(row["count"] or 0)
+    for item in status.values():
+        item["missing_required"] = [key for key, count in item["counts"].items() if count <= 0]
+    return status
 
 
 def log_upload_status(db_path: Path, *, contribution_path: str, status: str, github_pr_url: str = "", upload_mode: str = "normal") -> dict[str, Any]:

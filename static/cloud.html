@@ -94,26 +94,25 @@
             </label>
 
             <div class="button-row">
-              <button id="planCrawl" type="submit">Preview Papers</button>
-              <button id="runResearch" type="button" class="primary-action">Research Selected</button>
+              <button id="planCrawl" type="submit">Add Matching Papers to Queue</button>
             </div>
           </form>
 
           <aside class="candidate-panel">
             <div class="panel-head">
               <div>
-                <h3>Candidate Papers</h3>
-                <span id="crawlCount">0 selected</span>
+                <h3>Queued Papers</h3>
+                <span id="crawlCount">0 queued</span>
               </div>
               <div class="mini-actions">
-                <button id="selectAllCandidates" type="button">All</button>
-                <button id="clearCandidateSelection" type="button">None</button>
+                <button id="selectAllCandidates" type="button">Refresh</button>
+                <button id="clearCandidateSelection" type="button">Clear Queue</button>
               </div>
             </div>
             <div id="candidateList" class="candidate-list">
               <div class="empty-state compact">
-                <strong>No candidate papers yet.</strong>
-                <span>Choose filters and preview papers.</span>
+                <strong>No queued papers yet.</strong>
+                <span>Choose filters and add matching papers to the queue.</span>
               </div>
             </div>
           </aside>
@@ -142,6 +141,12 @@
             <span id="runProgressDetail">Unsynced tabs update as each paper finishes.</span>
           </div>
           <div class="progress-track"><div id="runProgressBar" class="progress-bar"></div></div>
+        </div>
+
+        <div class="research-action-row">
+          <button id="runResearch" type="button" class="primary-action">Start Research on Queued Works</button>
+          <button id="stopResearch" type="button" class="danger-light" hidden data-allow-busy="true">Stop Research</button>
+          <span id="queueResearchHint">Research only runs on queued papers that are not already ready or synced.</span>
         </div>
 
         <nav id="localTabRow" class="tab-row cloud-tabs" aria-label="Unsynced local tabs"></nav>

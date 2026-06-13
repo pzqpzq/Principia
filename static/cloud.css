@@ -410,15 +410,25 @@ textarea {
 
 .candidate-card {
   display: grid;
-  grid-template-columns: 28px minmax(0, 1fr);
-  gap: 10px;
+  grid-template-columns: minmax(0, 1fr) 136px;
+  gap: 14px;
+  align-items: start;
   padding: 13px 16px;
   border-bottom: 1px solid var(--cloud-line);
   background: #fff;
 }
 
-.candidate-card.selected {
+.candidate-card.status-ready {
   background: #fbfefd;
+}
+
+.candidate-card.status-researching {
+  background: #fbfdff;
+}
+
+.candidate-card.status-failed,
+.candidate-card.status-stopped {
+  background: #fffafa;
 }
 
 .candidate-card h4 {
@@ -434,12 +444,53 @@ textarea {
   line-height: 1.45;
 }
 
-.candidate-check input {
-  width: 17px;
-  height: 17px;
-  min-height: 0;
-  margin-top: 2px;
-  accent-color: var(--cloud-teal);
+.candidate-side {
+  display: grid;
+  justify-items: end;
+  gap: 8px;
+}
+
+.queue-status,
+.inline-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 26px;
+  border-radius: 999px;
+  padding: 0 9px;
+  background: var(--cloud-soft);
+  color: var(--cloud-muted);
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.status-ready .queue-status {
+  background: var(--cloud-teal-soft);
+  color: var(--cloud-teal);
+}
+
+.status-researching .queue-status {
+  background: var(--cloud-blue-soft);
+  color: var(--cloud-blue);
+}
+
+.status-needs_review .queue-status,
+.status-metadata_only .queue-status,
+.status-stopped .queue-status {
+  background: var(--cloud-amber-soft);
+  color: var(--cloud-amber);
+}
+
+.status-failed .queue-status {
+  background: #fae8e8;
+  color: var(--cloud-danger);
+}
+
+.candidate-side button {
+  min-height: 30px;
+  padding: 0 10px;
+  font-size: 12px;
 }
 
 .run-progress {
@@ -478,6 +529,19 @@ textarea {
   border-radius: inherit;
   background: linear-gradient(90deg, var(--cloud-teal), var(--cloud-blue));
   transition: width 0.2s ease;
+}
+
+.research-action-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 14px;
+}
+
+.research-action-row span {
+  color: var(--cloud-muted);
+  font-size: 13px;
 }
 
 .sync-actions {
@@ -827,6 +891,16 @@ textarea {
 
   .benchmark-row-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .candidate-card {
+    grid-template-columns: 1fr;
+  }
+
+  .candidate-side {
+    justify-items: start;
+    grid-template-columns: auto auto;
+    align-items: center;
   }
 }
 

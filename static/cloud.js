@@ -1,11 +1,13 @@
 const tabs = [
   { key: "works", label: "Works", idKey: "work_id", bucket: "source_works" },
+  { key: "ready_works", label: "Ready Papers", idKey: "work_id", bucket: "source_works", workTab: true },
   { key: "existed_ideas", label: "Existed Ideas", idKey: "canonical_id", bucket: "existed_ideas", conceptType: "existed_idea" },
   { key: "benchmarks", label: "Benchmarks", idKey: "benchmark_id", bucket: "benchmark_records", conceptType: "benchmark" },
   { key: "baselines", label: "Baselines", idKey: "baseline_id", bucket: "baseline_records", conceptType: "baseline" },
   { key: "principles", label: "Principles", idKey: "principle_id", bucket: "principles", conceptType: "principle" },
   { key: "takeaway_messages", label: "Takeaways", idKey: "canonical_id", bucket: "takeaway_messages", conceptType: "takeaway_message" },
 ];
+const cloudTabs = tabs.filter((tab) => tab.key !== "ready_works");
 
 const modelOptions = [
   ["auto", "Auto router"],
@@ -54,6 +56,7 @@ const state = {
   fieldId: "cloud-crawl",
   candidates: [],
   selectedCandidates: new Set(),
+  queueAdding: false,
   crawlRunId: "",
   crawlPollTimer: null,
   activeLocalTab: "works",
@@ -208,8 +211,7 @@ async function loadStats() {
   }
 }
 
-function crawlPayload({ selectedOnly = false } = {}) {
-  const candidates = selectedOnly ? state.candidates.filter((item) => state.selectedCandidates.has(candidateKey(item))) : [];
+function crawlPayload({ candidates = [] } = {}) {
   return {
     admin_key: $("adminKey").value,
     venues: checkedValues("venueChoices"),
@@ -221,32 +223,85 @@ function crawlPayload({ selectedOnly = false } = {}) {
     field_id: state.fieldId,
     timeout: Number($("crawlTimeout").value || 12),
     force: $("crawlForce").checked,
-    dry_run: !selectedOnly,
+    dry_run: !candidates.length,
     candidates,
   };
 }
 
-async function previewPapers(event) {
+function crawlPlanSlices(payload) {
+  const venues = payload.venues.length ? payload.venues : [""];
+  const years = payload.years.length ? payload.years : [""];
+  const combos = [];
+  for (const venue of venues) {
+    for (const year of years) combos.push({ venue, year });
+  }
+  const perSlice = Math.max(1, Math.ceil(Number(payload.max_papers || 100) / Math.max(1, combos.length)));
+  return combos.map(({ venue, year }) => ({
+    ...payload,
+    venues: venue ? [venue] : [],
+    years: year ? [year] : [],
+    max_papers: perSlice,
+    dry_run: true,
+    candidates: [],
+  }));
+}
+
+async function addToQueue(event) {
   if (event) event.preventDefault();
   setWorkflow("discover");
+  state.queueAdding = true;
   setLoading($("crawlForm"), true);
-  $("candidateList").innerHTML = loadingRows(5);
-  $("crawlRunStatus").textContent = "Planning";
+  if (!state.candidates.length) $("candidateList").innerHTML = loadingRows(5);
+  $("crawlRunStatus").textContent = "Adding to queue";
+  const basePayload = crawlPayload();
+  const targetCount = Number(basePayload.max_papers || 100);
+  const slices = crawlPlanSlices(basePayload);
+  const seen = new Set(state.candidates.map(candidateKey));
+  let added = 0;
+  let completed = 0;
+  const warnings = [];
+  let cursor = 0;
+
+  async function runSlice() {
+    while (cursor < slices.length && added < targetCount) {
+      const slice = slices[cursor++];
+      try {
+        const data = await post("/api/v1/cloud/admin/crawl/plan", slice);
+        completed += 1;
+        for (const item of filterCandidates(data.candidates || [])) {
+          if (added >= targetCount) break;
+          const key = candidateKey(item);
+          if (!key || seen.has(key)) continue;
+          seen.add(key);
+          state.candidates.push({
+            ...item,
+            queue_status: item.queue_status || "queued",
+            queue_added_at: new Date().toISOString(),
+          });
+          state.selectedCandidates.add(key);
+          added += 1;
+          $("crawlRunStatus").textContent = `Adding ${added}/${targetCount}`;
+          renderCandidates();
+          await new Promise((resolve) => window.requestAnimationFrame(resolve));
+        }
+        for (const warning of data.metadata_warnings || []) warnings.push(warning);
+        $("crawlRunStatus").textContent = `Checked ${completed}/${slices.length}`;
+      } catch (error) {
+        completed += 1;
+        warnings.push(error.message);
+      }
+    }
+  }
+
   try {
-    const data = await post("/api/v1/cloud/admin/crawl/plan", crawlPayload());
-    state.candidates = filterCandidates(data.candidates || []);
-    state.selectedCandidates = new Set(state.candidates.map(candidateKey));
+    const workers = Array.from({ length: Math.min(3, Math.max(1, slices.length)) }, () => runSlice());
+    await Promise.all(workers);
     renderCandidates();
-    $("crawlRunStatus").textContent = "Plan ready";
-    const warning = (data.metadata_warnings || [])[0];
+    $("crawlRunStatus").textContent = added ? "Queue ready" : "No matches";
+    const warning = warnings.filter(Boolean)[0];
     if (warning) showToast(warning, "warn");
-  } catch (error) {
-    state.candidates = [];
-    state.selectedCandidates.clear();
-    renderCandidates();
-    $("crawlRunStatus").textContent = "Plan failed";
-    showToast(error.message, "error");
   } finally {
+    state.queueAdding = false;
     setLoading($("crawlForm"), false);
   }
 }
@@ -268,14 +323,82 @@ function candidateKey(item) {
   return String(item.work_id || item.source_record_id || item.title || "");
 }
 
+function queueStatus(item) {
+  const status = item.cloud_research_status || {};
+  return String(status.state || item.queue_status || "queued");
+}
+
+function queueStatusLabel(status) {
+  return {
+    queued: "Queued",
+    researching: "Researching",
+    ready: "Ready to Sync",
+    needs_review: "Needs Review",
+    metadata_only: "Metadata Only",
+    failed: "Failed",
+    stopped: "Stopped",
+    synced: "Synced",
+  }[status] || status.replaceAll("_", " ");
+}
+
+function queuedResearchCandidates() {
+  return state.candidates.filter((item) => {
+    const status = queueStatus(item);
+    return !["researching", "ready", "synced"].includes(status);
+  });
+}
+
+function setCandidateStatus(workId, status, message = "") {
+  const key = String(workId || "");
+  for (const item of state.candidates) {
+    if (candidateKey(item) !== key && String(item.work_id || "") !== key) continue;
+    item.queue_status = status;
+    if (message) item.queue_message = message;
+  }
+}
+
+async function refreshQueueStatuses({ silent = false } = {}) {
+  if (!state.candidates.length) return;
+  try {
+    const params = new URLSearchParams({
+      field_id: state.fieldId,
+      tab: "works",
+      offset: "0",
+      limit: "1000",
+      query: "",
+      model_mode: $("crawlModelMode").value || "auto",
+      sync_state: "all",
+    });
+    const data = await api(`/api/v1/cloud/local/tab?${params.toString()}`);
+    state.localCounts = data.counts || state.localCounts;
+    const byId = new Map();
+    for (const item of data.items || []) {
+      if (item.work_id) byId.set(String(item.work_id), item);
+    }
+    for (const item of state.candidates) {
+      const local = byId.get(String(item.work_id || candidateKey(item)));
+      if (!local) continue;
+      item.work_id = local.work_id || item.work_id;
+      item.cloud_research_status = local.cloud_research_status || item.cloud_research_status;
+      item.queue_status = queueStatus(item);
+      item.queue_message = item.cloud_research_status?.message || item.queue_message || "";
+    }
+    renderLocalTabs();
+    renderCandidates();
+  } catch (error) {
+    if (!silent) showToast(error.message, "error");
+  }
+}
+
 function renderCandidates() {
-  const selected = state.candidates.filter((item) => state.selectedCandidates.has(candidateKey(item))).length;
-  $("crawlCount").textContent = `${selected}/${state.candidates.length} selected`;
+  const ready = state.candidates.filter((item) => queueStatus(item) === "ready").length;
+  const running = state.candidates.filter((item) => queueStatus(item) === "researching").length;
+  $("crawlCount").textContent = `${state.candidates.length} queued${running ? ` · ${running} running` : ""}${ready ? ` · ${ready} ready` : ""}`;
   if (!state.candidates.length) {
     $("candidateList").innerHTML = `
       <div class="empty-state compact">
-        <strong>No matching papers.</strong>
-        <span>Adjust venue, year, or topic filters.</span>
+        <strong>No queued papers.</strong>
+        <span>Choose filters and add matching papers to the queue.</span>
       </div>
     `;
     return;
@@ -283,21 +406,23 @@ function renderCandidates() {
   $("candidateList").innerHTML = state.candidates
     .map((item) => {
       const key = candidateKey(item);
-      const checked = state.selectedCandidates.has(key);
+      const status = queueStatus(item);
       const meta = [item.venue_or_source || item.target_venue, item.year || item.target_year, item.citation_count != null ? `${item.citation_count} citations` : "", item.source_provider].filter(Boolean).join(" · ");
+      const missing = item.cloud_research_status?.missing_required || [];
       return `
-        <article class="candidate-card ${checked ? "selected" : ""}" data-candidate="${escapeHtml(key)}">
-          <label class="candidate-check">
-            <input type="checkbox" ${checked ? "checked" : ""} />
-            <span></span>
-          </label>
+        <article class="candidate-card status-${escapeHtml(status)}" data-candidate="${escapeHtml(key)}">
           <div>
             <h4>${escapeHtml(item.title || "Untitled paper")}</h4>
             <p>${escapeHtml(compact(item.abstract || "No abstract available.", 260))}</p>
             <div class="record-meta">
               <span>${escapeHtml(meta || "metadata")}</span>
               <span>${escapeHtml(item.priority_reason || "")}</span>
+              ${missing.length ? `<span>Missing ${escapeHtml(missing.join(", "))}</span>` : ""}
             </div>
+          </div>
+          <div class="candidate-side">
+            <span class="queue-status">${escapeHtml(queueStatusLabel(status))}</span>
+            <button type="button" data-action="remove-queue" ${status === "researching" ? "disabled" : ""}>Remove</button>
           </div>
         </article>
       `;
@@ -306,12 +431,9 @@ function renderCandidates() {
 }
 
 async function runResearch() {
-  if (!state.candidates.length) {
-    await previewPapers();
-  }
-  const selected = state.candidates.filter((item) => state.selectedCandidates.has(candidateKey(item)));
+  const selected = queuedResearchCandidates();
   if (!selected.length) {
-    showToast("Select at least one paper before research.", "warn");
+    showToast("Add papers to the queue first, or remove ready/synced papers from the queue.", "warn");
     return;
   }
   setWorkflow("research");
@@ -319,15 +441,36 @@ async function runResearch() {
   $("runProgressLabel").textContent = `Queued ${selected.length} paper(s).`;
   $("runProgressDetail").textContent = "Waiting for extraction to start.";
   setLoading($("crawlForm"), true);
+  setResearchControls(true);
   try {
-    const data = await post("/api/v1/cloud/admin/crawl/run", { ...crawlPayload({ selectedOnly: true }), max_papers: selected.length });
+    const data = await post("/api/v1/cloud/admin/crawl/run", { ...crawlPayload({ candidates: selected }), max_papers: selected.length, dry_run: false });
     state.crawlRunId = data.run_id || "";
     $("crawlRunStatus").textContent = state.crawlRunId ? "Running" : "Queued";
+    for (const item of selected) item.queue_status = "queued";
+    renderCandidates();
     if (state.crawlRunId) pollCrawlRun();
   } catch (error) {
     $("crawlRunStatus").textContent = "Run failed";
     showToast(error.message, "error");
     setLoading($("crawlForm"), false);
+    setResearchControls(false);
+  }
+}
+
+function setResearchControls(running) {
+  $("runResearch").disabled = Boolean(running);
+  $("stopResearch").hidden = !running;
+}
+
+async function stopResearch() {
+  if (!state.crawlRunId) return;
+  $("runProgressLabel").textContent = "Stopping research.";
+  $("runProgressDetail").textContent = "Completed papers will remain in the local results tabs.";
+  try {
+    await post("/api/v1/research/cancel", { run_id: state.crawlRunId });
+    $("crawlRunStatus").textContent = "Stopping";
+  } catch (error) {
+    showToast(error.message, "error");
   }
 }
 
@@ -351,18 +494,26 @@ async function pollCrawlRun() {
       counts.failed_works ? `${counts.failed_works} failed` : "",
     ].filter(Boolean).join(" · ") || (run.stage || "running");
     $("crawlRunStatus").textContent = run.status || "running";
-    await loadLocalTab({ reset: true, silent: true });
-    await loadStats();
-    if (["complete", "error", "cancelled"].includes(run.status)) {
+    if (counts.current_work_id) setCandidateStatus(counts.current_work_id, "researching", run.message || "Researching.");
+    const terminal = ["complete", "error", "cancelled"].includes(run.status);
+    if (terminal) {
       setLoading($("crawlForm"), false);
+      setResearchControls(false);
+      state.crawlRunId = "";
+    }
+    await loadLocalTab({ reset: true, silent: true });
+    await refreshQueueStatuses({ silent: true });
+    await loadStats();
+    if (terminal) {
       setWorkflow("review");
       if (run.status === "complete") showToast("Research run complete.");
       if (run.status === "error") showToast(run.message || "Research finished with errors.", "error");
-      state.crawlRunId = "";
+      if (run.status === "cancelled") showToast("Research stopped. Completed papers were saved.", "warn");
       return;
     }
   } catch (error) {
     $("crawlRunStatus").textContent = error.message;
+    if (!state.crawlRunId) return;
   }
   state.crawlPollTimer = window.setTimeout(pollCrawlRun, 1800);
 }
@@ -428,7 +579,7 @@ function idFor(tabKey, item) {
 }
 
 function renderRecordCard(tabKey, item, { local = false, cloud = false } = {}) {
-  if (tabKey === "works") return renderWorkCard(item, { local, cloud });
+  if (tabKey === "works" || tabKey === "ready_works") return renderWorkCard(item, { local, cloud, tabKey });
   if (tabKey === "benchmarks") return renderBenchmarkCard(item, { local, cloud });
   if (tabKey === "baselines") return renderBaselineCard(item, { local, cloud });
   if (tabKey === "principles") return renderTextCard(tabKey, item, "Principle", item.name || item.title, item.argument || item.abstract_signature || item.summary, { local, cloud });
@@ -443,13 +594,17 @@ function cardAttrs(tabKey, item, local, cloud) {
 function renderWorkCard(item, opts) {
   const links = [item.url_or_doi, item.paper_link, ...(item.source_urls || [])].filter(isUrl);
   const meta = [item.venue_or_source || item.venue || item.target_venue || item.source_type, item.year || item.target_year || "n.d.", item.model_name || "", item.work_extracted ? "extracted" : ""].filter(Boolean).join(" · ");
+  const status = item.cloud_research_status || {};
+  const missing = status.missing_required || [];
   return `
-    <article class="record-row record-works" ${cardAttrs("works", item, opts.local, opts.cloud)}>
+    <article class="record-row record-works" ${cardAttrs(opts.tabKey || "works", item, opts.local, opts.cloud)}>
       <div>
         <h3>${escapeHtml(item.title || item.canonical_title || "Untitled Work")}</h3>
         <p>${escapeHtml(compact(item.abstract || item.summary || "No abstract available.", 320))}</p>
         <div class="record-meta">
           <span>${escapeHtml(meta)}</span>
+          ${status.state ? `<span class="inline-status">${escapeHtml(queueStatusLabel(status.state))}</span>` : ""}
+          ${missing.length ? `<span>Missing ${escapeHtml(missing.join(", "))}</span>` : ""}
           ${links[0] ? `<a href="${escapeHtml(links[0])}" target="_blank" rel="noreferrer">Paper</a>` : ""}
         </div>
       </div>
@@ -511,13 +666,13 @@ function recordButtons(opts) {
 
 async function syncUnsynced() {
   setWorkflow("sync");
-  $("syncStatus").textContent = "Preparing unsynced works for cloud contribution.";
+  $("syncStatus").textContent = "Preparing ready papers for cloud contribution.";
   try {
-    const allWorks = await api(`/api/v1/cloud/local/tab?${new URLSearchParams({ field_id: state.fieldId, tab: "works", offset: "0", limit: "1000", sync_state: "unsynced", model_mode: $("crawlModelMode").value || "auto" }).toString()}`);
+    const allWorks = await api(`/api/v1/cloud/local/tab?${new URLSearchParams({ field_id: state.fieldId, tab: "ready_works", offset: "0", limit: "1000", sync_state: "unsynced", model_mode: $("crawlModelMode").value || "auto" }).toString()}`);
     const workIds = (allWorks.items || []).map((item) => item.work_id).filter(Boolean);
     if (!workIds.length) {
-      $("syncStatus").textContent = "No unsynced works to upload.";
-      showToast("No unsynced works to upload.", "warn");
+      $("syncStatus").textContent = "No ready papers to upload. A paper needs existed ideas, principles, and takeaways first.";
+      showToast("No ready papers to upload.", "warn");
       return;
     }
     const prepared = await post("/api/v1/cloud/upload/prepare", {
@@ -525,10 +680,15 @@ async function syncUnsynced() {
       upload_mode: $("uploadMode").value,
       model_mode: $("crawlModelMode").value || "auto",
       work_ids: workIds,
+      field_id: state.fieldId,
     });
     state.lastContributionPath = prepared.path || "";
     if (!prepared.ok || !state.lastContributionPath) {
-      $("syncStatus").textContent = `Prepared with ${prepared.rejected_work_ids?.length || 0} rejected work(s).`;
+      const rejected = prepared.upload_decisions?.filter((item) => !item.upload_allowed) || [];
+      const missing = rejected.flatMap((item) => item.missing_required_extractions || []);
+      $("syncStatus").textContent = missing.length
+        ? `Upload blocked: missing ${[...new Set(missing)].join(", ")}.`
+        : `Prepared with ${prepared.rejected_work_ids?.length || 0} rejected work(s).`;
       showToast("Contribution prepared but no work passed upload rules.", "warn");
       return;
     }
@@ -538,14 +698,18 @@ async function syncUnsynced() {
       upload_mode: $("uploadMode").value,
       contribution_path: state.lastContributionPath,
       field_id: state.fieldId,
+      work_ids: workIds,
+      local_work_ids: prepared.local_work_ids || workIds,
     });
     const pushed = submitted.direct_push && submitted.direct_push.pushed;
     $("syncStatus").textContent = pushed
       ? `Synced ${formatNumber(submitted.sync_result?.work_ids?.length || prepared.allowed_work_ids.length)} work(s) to ${submitted.direct_push.branch}.`
       : "Contribution file is prepared; direct push did not complete.";
     showToast(pushed ? "Cloud sync complete." : "Cloud contribution prepared.", pushed ? "success" : "warn");
+    state.candidates = state.candidates.filter((item) => !workIds.includes(String(item.work_id || candidateKey(item))));
     await loadStats();
     await loadLocalTab({ reset: true });
+    renderCandidates();
   } catch (error) {
     $("syncStatus").textContent = error.message;
     showToast(error.message, "error");
@@ -571,14 +735,14 @@ async function clearSyncedCache() {
 
 function renderCloudResultTabs() {
   const counts = cloudResultCounts();
-  $("cloudResultTabRow").innerHTML = tabs
+  $("cloudResultTabRow").innerHTML = cloudTabs
     .map((tab) => `<button type="button" class="${state.activeCloudTab === tab.key ? "active" : ""}" data-cloud-tab="${escapeHtml(tab.key)}">${escapeHtml(tab.label)} <span>${formatNumber(counts[tab.key] || 0)}</span></button>`)
     .join("");
 }
 
 function cloudResultCounts() {
   const counts = { works: state.cloudItems.length };
-  for (const tab of tabs.slice(1)) counts[tab.key] = derivedConceptRows(tab.key).length;
+  for (const tab of cloudTabs.slice(1)) counts[tab.key] = derivedConceptRows(tab.key).length;
   return counts;
 }
 
@@ -704,7 +868,7 @@ function detailSections(item, tabKey) {
     ${detailBlock("Evidence", item.evidence || item.snippet)}
     ${detailBlock("Version", [item.provider || item.model_name, item.extracted_at || item.updated_at].filter(Boolean).join(" / "))}
   `;
-  if (tabKey === "works") {
+  if (tabKey === "works" || tabKey === "ready_works") {
     return `
       ${detailBlock("Abstract", item.abstract || item.summary)}
       ${detailKeyValues({
@@ -817,20 +981,27 @@ function wireEvents() {
     loadStats();
     loadLocalTab({ reset: true });
   });
-  $("crawlForm").addEventListener("submit", previewPapers);
+  $("crawlForm").addEventListener("submit", addToQueue);
   $("runResearch").addEventListener("click", runResearch);
-  $("candidateList").addEventListener("change", (event) => {
+  $("stopResearch").addEventListener("click", stopResearch);
+  $("candidateList").addEventListener("click", (event) => {
     const card = event.target.closest("[data-candidate]");
     if (!card) return;
-    if (event.target.checked) state.selectedCandidates.add(card.dataset.candidate);
-    else state.selectedCandidates.delete(card.dataset.candidate);
-    renderCandidates();
+    if (event.target.closest("[data-action='remove-queue']")) {
+      state.candidates = state.candidates.filter((item) => candidateKey(item) !== card.dataset.candidate);
+      state.selectedCandidates.delete(card.dataset.candidate);
+      renderCandidates();
+    }
   });
   $("selectAllCandidates").addEventListener("click", () => {
-    state.selectedCandidates = new Set(state.candidates.map(candidateKey));
-    renderCandidates();
+    refreshQueueStatuses();
   });
   $("clearCandidateSelection").addEventListener("click", () => {
+    if (state.crawlRunId) {
+      showToast("Stop the active research run before clearing the queue.", "warn");
+      return;
+    }
+    state.candidates = [];
     state.selectedCandidates.clear();
     renderCandidates();
   });
