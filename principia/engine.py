@@ -9928,27 +9928,40 @@ class PrincipiaEngine:
         margin = 48
         line_height = 13
         pages = [lines[i : i + 52] for i in range(0, len(lines), 52)] or [[]]
+        chars = self._pdf_char_codes(lines)
         objects: list[bytes] = []
         objects.append(b"<< /Type /Catalog /Pages 2 0 R >>")
         kids = " ".join(f"{3 + idx * 2} 0 R" for idx in range(len(pages)))
         objects.append(f"<< /Type /Pages /Kids [{kids}] /Count {len(pages)} >>".encode("latin-1"))
+        font_obj = 3 + len(pages) * 2
+        cid_font_obj = font_obj + 1
+        cmap_obj = font_obj + 2
         for idx, page_lines in enumerate(pages):
             page_obj = 3 + idx * 2
             content_obj = page_obj + 1
             objects.append(
-                f"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> >> >> /Contents {content_obj} 0 R >>".encode(
+                f"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 {font_obj} 0 R >> >> /Contents {content_obj} 0 R >>".encode(
                     "latin-1"
                 )
             )
             commands = ["BT", "/F1 10 Tf", f"{margin} {page_height - margin} Td"]
             for line_no, line in enumerate(page_lines):
-                escaped = line.encode("latin-1", errors="replace").decode("latin-1").replace("\\", "\\\\").replace("(", "\\(").replace(")", "\\)")
                 if line_no:
                     commands.append(f"0 -{line_height} Td")
-                commands.append(f"({escaped}) Tj")
+                commands.append(f"<{self._pdf_hex_line(line, chars)}> Tj")
             commands.append("ET")
             stream = "\n".join(commands).encode("latin-1")
             objects.append(f"<< /Length {len(stream)} >>\nstream\n".encode("latin-1") + stream + b"\nendstream")
+        cmap = self._pdf_to_unicode_cmap(chars)
+        objects.append(
+            f"<< /Type /Font /Subtype /Type0 /BaseFont /PrincipiaUnicode /Encoding /Identity-H /DescendantFonts [{cid_font_obj} 0 R] /ToUnicode {cmap_obj} 0 R >>".encode(
+                "latin-1"
+            )
+        )
+        objects.append(
+            b"<< /Type /Font /Subtype /CIDFontType0 /BaseFont /PrincipiaUnicode /CIDSystemInfo << /Registry (Adobe) /Ordering (Identity) /Supplement 0 >> /DW 1000 >>"
+        )
+        objects.append(f"<< /Length {len(cmap)} >>\nstream\n".encode("latin-1") + cmap + b"\nendstream")
         out = bytearray(b"%PDF-1.4\n")
         offsets = [0]
         for idx, obj in enumerate(objects, start=1):
@@ -9962,6 +9975,48 @@ class PrincipiaEngine:
             out.extend(f"{offset:010d} 00000 n \n".encode("latin-1"))
         out.extend(f"trailer << /Size {len(objects)+1} /Root 1 0 R >>\nstartxref\n{xref}\n%%EOF\n".encode("latin-1"))
         return bytes(out)
+
+    def _pdf_char_codes(self, lines: list[str]) -> dict[str, int]:
+        chars: dict[str, int] = {}
+        for line in lines:
+            for char in line:
+                if char not in chars:
+                    chars[char] = len(chars) + 1
+        return chars or {" ": 1}
+
+    def _pdf_hex_line(self, line: str, chars: dict[str, int]) -> str:
+        return "".join(f"{chars[char]:04X}" for char in line if char in chars)
+
+    def _pdf_to_unicode_cmap(self, chars: dict[str, int]) -> bytes:
+        entries = sorted(chars.items(), key=lambda item: item[1])
+        blocks: list[str] = []
+        for idx in range(0, len(entries), 100):
+            chunk = entries[idx : idx + 100]
+            blocks.append(f"{len(chunk)} beginbfchar")
+            for char, code in chunk:
+                unicode_hex = char.encode("utf-16-be").hex().upper()
+                blocks.append(f"<{code:04X}> <{unicode_hex}>")
+            blocks.append("endbfchar")
+        cmap = "\n".join(
+            [
+                "/CIDInit /ProcSet findresource begin",
+                "12 dict begin",
+                "begincmap",
+                "/CIDSystemInfo << /Registry (Adobe) /Ordering (UCS) /Supplement 0 >> def",
+                "/CMapName /PrincipiaUnicode def",
+                "/CMapType 2 def",
+                "1 begincodespacerange",
+                "<0000> <FFFF>",
+                "endcodespacerange",
+                *blocks,
+                "endcmap",
+                "CMapName currentdict /CMap defineresource pop",
+                "end",
+                "end",
+                "",
+            ]
+        )
+        return cmap.encode("latin-1")
 
     def _emit_progress(
         self,

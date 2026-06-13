@@ -18,8 +18,6 @@ jobs:
           python-version: "3.12"
       - name: Install test dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y cups-filters cups-client fonts-noto-cjk
           python -m pip install --upgrade pip
           python -m pip install pypdf
       - name: Run cloud and regression tests
