@@ -1,0 +1,3250 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "prontoqa prontoqa prontoqa w 0cf109b37dae",
+      "canonical_label": "PrOntoQA",
+      "concept_id": "B-0BAEEB566A11",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-D4A5A32E4294",
+        "benchmark_id": "B-C66C0A852BB0",
+        "benchmark_name": "PrOntoQA",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-C66C0A852BB0",
+        "canonical_key": "prontoqa",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-12T10:00:51+00:00",
+        "data_form": "Natural-language logical rules and queries.",
+        "dataset": "PrOntoQA",
+        "description": "Synthetic logical reasoning benchmark for testing chain-of-thought and formal reasoning behavior.",
+        "entered_at": "2026-06-12T10:00:51+00:00",
+        "evidence": "{\"benchmark_id\": \"B-AC50BB1E1534\", \"field_id\": \"PRJ-28B4CA742446\", \"work_id\": \"W-429E5CB9B133\", \"task\": \"logical patterns accuracy-token during\", \"dataset\": \"PrOntoQA\", \"split\": \"unspecified\", \"metric\": \"exact match\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DivLogicEval: A Framework for Benchmarking Logic...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T10:09:51+00:00",
+        "extractor": "deterministic",
+        "metric": "exact match",
+        "metrics": [
+          "F1",
+          "accuracy",
+          "exact match",
+          "Accuracy"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://github.com/asaparov/prontoqa",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Synthetic reasoning instances with controlled proof structure.",
+        "source": "PrOntoQA",
+        "source_paper_link": "http://arxiv.org/abs/2509.15587v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2305.12295v2",
+          "http://arxiv.org/abs/2404.15522v2",
+          "http://arxiv.org/abs/2509.15587v3"
+        ],
+        "source_paper_title": "DivLogicEval: A Framework for Benchmarking Logical Reasoning Evaluation in Large Language Models",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-0CF109B37DAE"
+        ],
+        "source_work_title": "DivLogicEval: A Framework for Benchmarking Logical Reasoning Evaluation in Large Language Models",
+        "source_works": [
+          "W-0CF109B37DAE"
+        ],
+        "task": "logical patterns accuracy-token during",
+        "updated_at": "2026-06-12T10:09:51+00:00",
+        "variants": {
+          "VER-D4A5A32E4294": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-12T10:00:51+00:00",
+            "extracted_at": "2026-06-12T10:09:51+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "PrOntoQA",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Natural-language logical rules and queries.",
+              "dataset": "PrOntoQA",
+              "description": "Synthetic logical reasoning benchmark for testing chain-of-thought and formal reasoning behavior.",
+              "evidence": "{\"benchmark_id\": \"B-AC50BB1E1534\", \"field_id\": \"PRJ-28B4CA742446\", \"work_id\": \"W-429E5CB9B133\", \"task\": \"logical patterns accuracy-token during\", \"dataset\": \"PrOntoQA\", \"split\": \"unspecified\", \"metric\": \"exact match\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DivLogicEval: A Framework for Benchmarking Logic...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "exact match",
+              "metrics": [
+                "F1",
+                "accuracy",
+                "exact match",
+                "Accuracy"
+              ],
+              "needs_review": false,
+              "official_url": "https://github.com/asaparov/prontoqa",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Synthetic reasoning instances with controlled proof structure.",
+              "source": "PrOntoQA",
+              "source_paper_link": "http://arxiv.org/abs/2509.15587v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2305.12295v2",
+                "http://arxiv.org/abs/2404.15522v2",
+                "http://arxiv.org/abs/2509.15587v3"
+              ],
+              "source_paper_title": "DivLogicEval: A Framework for Benchmarking Logical Reasoning Evaluation in Large Language Models",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E0B808CFBB48",
+                "W-FB9BBEC70985",
+                "W-429E5CB9B133"
+              ],
+              "source_work_title": "DivLogicEval: A Framework for Benchmarking Logical Reasoning Evaluation in Large Language Models",
+              "source_works": [],
+              "task": "logical patterns accuracy-token during",
+              "venue_or_source": "EMNLP 2025",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2509.15587v3",
+              "https://github.com/asaparov/prontoqa"
+            ],
+            "version_id": "VER-D4A5A32E4294"
+          }
+        },
+        "venue_or_source": "EMNLP 2025",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-0CF109B37DAE"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-14T11:59:23+00:00",
+        "updated_at": "2026-06-14T11:59:23+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-745F5B78013E",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "prontoqa prontoqa prontoqa w e0b808cfbb48 w fb9bbec70985 w 429e5cb9b133",
+      "canonical_label": "PrOntoQA",
+      "concept_id": "B-2E3D76595359",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-D4A5A32E4294",
+        "benchmark_id": "B-C66C0A852BB0",
+        "benchmark_name": "PrOntoQA",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-C66C0A852BB0",
+        "canonical_key": "prontoqa",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-12T10:00:51+00:00",
+        "data_form": "Natural-language logical rules and queries.",
+        "dataset": "PrOntoQA",
+        "description": "Synthetic logical reasoning benchmark for testing chain-of-thought and formal reasoning behavior.",
+        "entered_at": "2026-06-12T10:00:51+00:00",
+        "evidence": "{\"benchmark_id\": \"B-AC50BB1E1534\", \"field_id\": \"PRJ-28B4CA742446\", \"work_id\": \"W-429E5CB9B133\", \"task\": \"logical patterns accuracy-token during\", \"dataset\": \"PrOntoQA\", \"split\": \"unspecified\", \"metric\": \"exact match\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DivLogicEval: A Framework for Benchmarking Logic...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T10:09:51+00:00",
+        "extractor": "deterministic",
+        "metric": "exact match",
+        "metrics": [
+          "F1",
+          "accuracy",
+          "exact match",
+          "Accuracy"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://github.com/asaparov/prontoqa",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Synthetic reasoning instances with controlled proof structure.",
+        "source": "PrOntoQA",
+        "source_paper_link": "http://arxiv.org/abs/2509.15587v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2305.12295v2",
+          "http://arxiv.org/abs/2404.15522v2",
+          "http://arxiv.org/abs/2509.15587v3"
+        ],
+        "source_paper_title": "DivLogicEval: A Framework for Benchmarking Logical Reasoning Evaluation in Large Language Models",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-E0B808CFBB48",
+          "W-FB9BBEC70985",
+          "W-429E5CB9B133"
+        ],
+        "source_work_title": "DivLogicEval: A Framework for Benchmarking Logical Reasoning Evaluation in Large Language Models",
+        "source_works": [],
+        "task": "logical patterns accuracy-token during",
+        "updated_at": "2026-06-12T10:09:51+00:00",
+        "variants": {
+          "VER-D4A5A32E4294": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-12T10:00:51+00:00",
+            "extracted_at": "2026-06-12T10:09:51+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "PrOntoQA",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Natural-language logical rules and queries.",
+              "dataset": "PrOntoQA",
+              "description": "Synthetic logical reasoning benchmark for testing chain-of-thought and formal reasoning behavior.",
+              "evidence": "{\"benchmark_id\": \"B-AC50BB1E1534\", \"field_id\": \"PRJ-28B4CA742446\", \"work_id\": \"W-429E5CB9B133\", \"task\": \"logical patterns accuracy-token during\", \"dataset\": \"PrOntoQA\", \"split\": \"unspecified\", \"metric\": \"exact match\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DivLogicEval: A Framework for Benchmarking Logic...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "exact match",
+              "metrics": [
+                "F1",
+                "accuracy",
+                "exact match",
+                "Accuracy"
+              ],
+              "needs_review": false,
+              "official_url": "https://github.com/asaparov/prontoqa",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Synthetic reasoning instances with controlled proof structure.",
+              "source": "PrOntoQA",
+              "source_paper_link": "http://arxiv.org/abs/2509.15587v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2305.12295v2",
+                "http://arxiv.org/abs/2404.15522v2",
+                "http://arxiv.org/abs/2509.15587v3"
+              ],
+              "source_paper_title": "DivLogicEval: A Framework for Benchmarking Logical Reasoning Evaluation in Large Language Models",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E0B808CFBB48",
+                "W-FB9BBEC70985",
+                "W-429E5CB9B133"
+              ],
+              "source_work_title": "DivLogicEval: A Framework for Benchmarking Logical Reasoning Evaluation in Large Language Models",
+              "source_works": [],
+              "task": "logical patterns accuracy-token during",
+              "venue_or_source": "EMNLP 2025",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2509.15587v3",
+              "https://github.com/asaparov/prontoqa"
+            ],
+            "version_id": "VER-D4A5A32E4294"
+          }
+        },
+        "venue_or_source": "EMNLP 2025",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-E0B808CFBB48",
+          "W-FB9BBEC70985",
+          "W-429E5CB9B133"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T10:10:23+00:00",
+        "updated_at": "2026-06-14T08:38:47+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-710B3890B48D",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "ar lsat ar lsat ar lsat w e0b808cfbb48",
+      "canonical_label": "AR-LSAT",
+      "concept_id": "B-4FEE2B7460AB",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-3B9D757999B0",
+        "benchmark_id": "B-EE4BB584FACD",
+        "benchmark_name": "AR-LSAT",
+        "benchmarks": [],
+        "candidate_dataset_pages": [
+          "https://huggingface.co/datasets?search=AR-LSAT"
+        ],
+        "canonical_id": "B-EE4BB584FACD",
+        "canonical_key": "ar lsat",
+        "confidence_score": 0.58,
+        "created_at": "2026-06-12T10:09:47+00:00",
+        "data_form": "Real-world exam questions involving complex constraints and logic games.",
+        "dataset": "AR-LSAT",
+        "description": "AR-LSAT appears in local source evidence. Add official metadata when you curate this project.",
+        "entered_at": "2026-06-12T10:09:47+00:00",
+        "evidence": "Listed as the fifth dataset used to evaluate the framework, representing a challenging real-world logical reasoning scenario.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T10:09:47+00:00",
+        "metric": "Accuracy",
+        "metrics": [
+          "Accuracy"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": false,
+        "scale": "Standardized test questions.",
+        "source": "local extraction",
+        "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2305.12295v2"
+        ],
+        "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-E0B808CFBB48"
+        ],
+        "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_works": [],
+        "task": "Analytical Reasoning questions from the Law School Admission Test.",
+        "updated_at": "2026-06-12T10:09:47+00:00",
+        "variants": {
+          "VER-3B9D757999B0": {
+            "confidence_score": 0.58,
+            "entered_at": "2026-06-12T10:09:47+00:00",
+            "extracted_at": "2026-06-12T10:09:47+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "benchmark_name": "AR-LSAT",
+              "benchmarks": [],
+              "candidate_dataset_pages": [
+                "https://huggingface.co/datasets?search=AR-LSAT"
+              ],
+              "confidence_score": 0.58,
+              "data_form": "Real-world exam questions involving complex constraints and logic games.",
+              "dataset": "AR-LSAT",
+              "description": "AR-LSAT appears in local source evidence. Add official metadata when you curate this project.",
+              "evidence": "Listed as the fifth dataset used to evaluate the framework, representing a challenging real-world logical reasoning scenario.",
+              "evidence_items": [],
+              "metric": "Accuracy",
+              "metrics": [
+                "Accuracy"
+              ],
+              "needs_review": true,
+              "performance": [],
+              "public_dataset": false,
+              "scale": "Standardized test questions.",
+              "source": "local extraction",
+              "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2305.12295v2"
+              ],
+              "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E0B808CFBB48"
+              ],
+              "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_works": [],
+              "task": "Analytical Reasoning questions from the Law School Admission Test.",
+              "venue_or_source": "EMNLP 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2305.12295v2"
+            ],
+            "version_id": "VER-3B9D757999B0"
+          }
+        },
+        "venue_or_source": "EMNLP 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.58,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-E0B808CFBB48"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T10:10:23+00:00",
+        "updated_at": "2026-06-14T08:38:47+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-77D3E69E9C4C",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "logicaldeduction logicaldeduction logicaldeduction w e0b808cfbb48",
+      "canonical_label": "LogicalDeduction",
+      "concept_id": "B-62C315843EE3",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-0A99BD29E251",
+        "benchmark_id": "B-7A48A3FADE4F",
+        "benchmark_name": "LogicalDeduction",
+        "benchmarks": [],
+        "candidate_dataset_pages": [
+          "https://huggingface.co/datasets?search=LogicalDeduction"
+        ],
+        "canonical_id": "B-7A48A3FADE4F",
+        "canonical_key": "logicaldeduction",
+        "confidence_score": 0.58,
+        "created_at": "2026-06-12T10:09:47+00:00",
+        "data_form": "Multiple-choice questions requiring logical deduction.",
+        "dataset": "LogicalDeduction",
+        "description": "LogicalDeduction appears in local source evidence. Add official metadata when you curate this project.",
+        "entered_at": "2026-06-12T10:09:47+00:00",
+        "evidence": "Cited as a benchmark where the proposed method demonstrated effectiveness.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T10:09:47+00:00",
+        "metric": "Accuracy",
+        "metrics": [
+          "Accuracy"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": false,
+        "scale": "Varied number of entities and constraints.",
+        "source": "local extraction",
+        "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2305.12295v2"
+        ],
+        "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-E0B808CFBB48"
+        ],
+        "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_works": [],
+        "task": "Deductive reasoning tasks involving ordering and spatial relationships.",
+        "updated_at": "2026-06-12T10:09:47+00:00",
+        "variants": {
+          "VER-0A99BD29E251": {
+            "confidence_score": 0.58,
+            "entered_at": "2026-06-12T10:09:47+00:00",
+            "extracted_at": "2026-06-12T10:09:47+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "benchmark_name": "LogicalDeduction",
+              "benchmarks": [],
+              "candidate_dataset_pages": [
+                "https://huggingface.co/datasets?search=LogicalDeduction"
+              ],
+              "confidence_score": 0.58,
+              "data_form": "Multiple-choice questions requiring logical deduction.",
+              "dataset": "LogicalDeduction",
+              "description": "LogicalDeduction appears in local source evidence. Add official metadata when you curate this project.",
+              "evidence": "Cited as a benchmark where the proposed method demonstrated effectiveness.",
+              "evidence_items": [],
+              "metric": "Accuracy",
+              "metrics": [
+                "Accuracy"
+              ],
+              "needs_review": true,
+              "performance": [],
+              "public_dataset": false,
+              "scale": "Varied number of entities and constraints.",
+              "source": "local extraction",
+              "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2305.12295v2"
+              ],
+              "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E0B808CFBB48"
+              ],
+              "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_works": [],
+              "task": "Deductive reasoning tasks involving ordering and spatial relationships.",
+              "venue_or_source": "EMNLP 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2305.12295v2"
+            ],
+            "version_id": "VER-0A99BD29E251"
+          }
+        },
+        "venue_or_source": "EMNLP 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.58,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-E0B808CFBB48"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T10:10:23+00:00",
+        "updated_at": "2026-06-14T08:38:47+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-77518946D981",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "folio folio folio w 0cf109b37dae",
+      "canonical_label": "FOLIO",
+      "concept_id": "B-691031DE517A",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-FCB68DB86C01",
+        "benchmark_id": "B-6C5DF139289C",
+        "benchmark_name": "FOLIO",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-6C5DF139289C",
+        "canonical_key": "folio",
+        "confidence_score": 0.58,
+        "created_at": "2026-06-12T10:00:51+00:00",
+        "data_form": "Human-annotated logical problems",
+        "dataset": "FOLIO",
+        "description": "Natural-language reasoning benchmark grounded in first-order logic.",
+        "entered_at": "2026-06-12T10:00:51+00:00",
+        "evidence": "Described as equipped with human annotations of classical logic but limited to about two hundred instances due to annotation cost.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T10:09:51+00:00",
+        "extractor": "deterministic",
+        "metric": "Accuracy",
+        "metrics": [
+          "F1",
+          "accuracy",
+          "exact match",
+          "Accuracy"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/yale-nlp/FOLIO",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Approximately 200 instances",
+        "source": "Yale NLP / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2509.15587v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2305.12295v2",
+          "http://arxiv.org/abs/2404.15522v2",
+          "http://arxiv.org/abs/2509.15587v3",
+          "http://arxiv.org/abs/2308.04371v11",
+          "http://arxiv.org/abs/2604.27251v2"
+        ],
+        "source_paper_title": "DivLogicEval: A Framework for Benchmarking Logical Reasoning Evaluation in Large Language Models",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-0CF109B37DAE"
+        ],
+        "source_work_title": "DivLogicEval: A Framework for Benchmarking Logical Reasoning Evaluation in Large Language Models",
+        "source_works": [
+          "W-0CF109B37DAE"
+        ],
+        "task": "First-Order Logic Inference",
+        "updated_at": "2026-06-12T10:09:51+00:00",
+        "variants": {
+          "VER-FCB68DB86C01": {
+            "confidence_score": 0.58,
+            "entered_at": "2026-06-12T10:00:51+00:00",
+            "extracted_at": "2026-06-12T10:09:51+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "FOLIO",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.58,
+              "data_form": "Human-annotated logical problems",
+              "dataset": "FOLIO",
+              "description": "Natural-language reasoning benchmark grounded in first-order logic.",
+              "evidence": "Described as equipped with human annotations of classical logic but limited to about two hundred instances due to annotation cost.",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "Accuracy",
+              "metrics": [
+                "F1",
+                "accuracy",
+                "exact match",
+                "Accuracy"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/yale-nlp/FOLIO",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Approximately 200 instances",
+              "source": "Yale NLP / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2509.15587v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2305.12295v2",
+                "http://arxiv.org/abs/2404.15522v2",
+                "http://arxiv.org/abs/2509.15587v3",
+                "http://arxiv.org/abs/2308.04371v11",
+                "http://arxiv.org/abs/2604.27251v2"
+              ],
+              "source_paper_title": "DivLogicEval: A Framework for Benchmarking Logical Reasoning Evaluation in Large Language Models",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E0B808CFBB48",
+                "W-FB9BBEC70985",
+                "W-429E5CB9B133",
+                "W-F6FBA288BECF",
+                "W-996C5129930F"
+              ],
+              "source_work_title": "DivLogicEval: A Framework for Benchmarking Logical Reasoning Evaluation in Large Language Models",
+              "source_works": [],
+              "task": "First-Order Logic Inference",
+              "venue_or_source": "EMNLP 2025",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2509.15587v3",
+              "https://huggingface.co/datasets/yale-nlp/FOLIO"
+            ],
+            "version_id": "VER-FCB68DB86C01"
+          }
+        },
+        "venue_or_source": "EMNLP 2025",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.58,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-0CF109B37DAE"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-14T11:59:23+00:00",
+        "updated_at": "2026-06-14T11:59:23+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-E39BAFB373DF",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "logic lm on five com mon logical reasoning logic lm on five com mon logical reasoning logic lm on five com mon logical reasoning w e0b808cfbb48",
+      "canonical_label": "LOGIC -LM on five com- mon logical reasoning",
+      "concept_id": "B-874A0657FE8C",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-1A2AADDCACB9",
+        "benchmark_id": "B-6F5135B72F4E",
+        "benchmark_name": "LOGIC -LM on five com- mon logical reasoning",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "candidate_dataset_pages": [
+          "https://huggingface.co/datasets?search=LOGIC%20-LM%20on%20five%20com-%20mon%20logical%20reasoning"
+        ],
+        "canonical_id": "B-6F5135B72F4E",
+        "canonical_key": "logic lm on five common logical reasoning",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-12T10:00:52+00:00",
+        "data_form": "Unknown from local metadata; inspect the source work or benchmark page.",
+        "dataset": "LOGIC -LM on five com- mon logical reasoning",
+        "description": "LOGIC -LM on five com- mon logical reasoning appears in local source evidence. Add official metadata when you curate this project.",
+        "entered_at": "2026-06-12T10:00:52+00:00",
+        "evidence": "{\"benchmark_id\": \"B-AB71670E466B\", \"field_id\": \"PRJ-28B4CA742446\", \"work_id\": \"W-E0B808CFBB48\", \"task\": \"logical patterns accuracy-token during\", \"dataset\": \"LOGIC -LM on five com- mon logical reasoning\", \"split\": \"few-shot split\", \"metric\": \"F1\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Logic-LM:...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T10:09:47+00:00",
+        "extractor": "deterministic",
+        "metric": "F1",
+        "metrics": [
+          "F1"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": false,
+        "scale": "Unknown from local metadata.",
+        "source": "local extraction",
+        "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2305.12295v2"
+        ],
+        "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-E0B808CFBB48"
+        ],
+        "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_works": [],
+        "task": "logical patterns accuracy-token during",
+        "updated_at": "2026-06-12T10:09:47+00:00",
+        "variants": {
+          "VER-1A2AADDCACB9": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-12T10:00:52+00:00",
+            "extracted_at": "2026-06-12T10:09:47+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "LOGIC -LM on five com- mon logical reasoning",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "candidate_dataset_pages": [
+                "https://huggingface.co/datasets?search=LOGIC%20-LM%20on%20five%20com-%20mon%20logical%20reasoning"
+              ],
+              "confidence_score": 0.7,
+              "data_form": "Unknown from local metadata; inspect the source work or benchmark page.",
+              "dataset": "LOGIC -LM on five com- mon logical reasoning",
+              "description": "LOGIC -LM on five com- mon logical reasoning appears in local source evidence. Add official metadata when you curate this project.",
+              "evidence": "{\"benchmark_id\": \"B-AB71670E466B\", \"field_id\": \"PRJ-28B4CA742446\", \"work_id\": \"W-E0B808CFBB48\", \"task\": \"logical patterns accuracy-token during\", \"dataset\": \"LOGIC -LM on five com- mon logical reasoning\", \"split\": \"few-shot split\", \"metric\": \"F1\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Logic-LM:...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "F1",
+              "metrics": [
+                "F1"
+              ],
+              "needs_review": false,
+              "performance": [],
+              "public_dataset": false,
+              "scale": "Unknown from local metadata.",
+              "source": "local extraction",
+              "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2305.12295v2"
+              ],
+              "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E0B808CFBB48"
+              ],
+              "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_works": [],
+              "task": "logical patterns accuracy-token during",
+              "venue_or_source": "EMNLP 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2305.12295v2"
+            ],
+            "version_id": "VER-1A2AADDCACB9"
+          }
+        },
+        "venue_or_source": "EMNLP 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-E0B808CFBB48"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T10:10:23+00:00",
+        "updated_at": "2026-06-14T08:38:47+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-D6B245068107",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "folio folio folio w e0b808cfbb48 w fb9bbec70985 w 429e5cb9b133 w f6fba288becf w 996c5129930f",
+      "canonical_label": "FOLIO",
+      "concept_id": "B-951583663443",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-FCB68DB86C01",
+        "benchmark_id": "B-6C5DF139289C",
+        "benchmark_name": "FOLIO",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-6C5DF139289C",
+        "canonical_key": "folio",
+        "confidence_score": 0.58,
+        "created_at": "2026-06-12T10:00:51+00:00",
+        "data_form": "Human-annotated logical problems",
+        "dataset": "FOLIO",
+        "description": "Natural-language reasoning benchmark grounded in first-order logic.",
+        "entered_at": "2026-06-12T10:00:51+00:00",
+        "evidence": "Described as equipped with human annotations of classical logic but limited to about two hundred instances due to annotation cost.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T10:09:51+00:00",
+        "extractor": "deterministic",
+        "metric": "Accuracy",
+        "metrics": [
+          "F1",
+          "accuracy",
+          "exact match",
+          "Accuracy"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/yale-nlp/FOLIO",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Approximately 200 instances",
+        "source": "Yale NLP / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2509.15587v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2305.12295v2",
+          "http://arxiv.org/abs/2404.15522v2",
+          "http://arxiv.org/abs/2509.15587v3",
+          "http://arxiv.org/abs/2308.04371v11",
+          "http://arxiv.org/abs/2604.27251v2"
+        ],
+        "source_paper_title": "DivLogicEval: A Framework for Benchmarking Logical Reasoning Evaluation in Large Language Models",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-E0B808CFBB48",
+          "W-FB9BBEC70985",
+          "W-429E5CB9B133",
+          "W-F6FBA288BECF",
+          "W-996C5129930F"
+        ],
+        "source_work_title": "DivLogicEval: A Framework for Benchmarking Logical Reasoning Evaluation in Large Language Models",
+        "source_works": [],
+        "task": "First-Order Logic Inference",
+        "updated_at": "2026-06-12T10:09:51+00:00",
+        "variants": {
+          "VER-FCB68DB86C01": {
+            "confidence_score": 0.58,
+            "entered_at": "2026-06-12T10:00:51+00:00",
+            "extracted_at": "2026-06-12T10:09:51+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "FOLIO",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.58,
+              "data_form": "Human-annotated logical problems",
+              "dataset": "FOLIO",
+              "description": "Natural-language reasoning benchmark grounded in first-order logic.",
+              "evidence": "Described as equipped with human annotations of classical logic but limited to about two hundred instances due to annotation cost.",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "Accuracy",
+              "metrics": [
+                "F1",
+                "accuracy",
+                "exact match",
+                "Accuracy"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/yale-nlp/FOLIO",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Approximately 200 instances",
+              "source": "Yale NLP / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2509.15587v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2305.12295v2",
+                "http://arxiv.org/abs/2404.15522v2",
+                "http://arxiv.org/abs/2509.15587v3",
+                "http://arxiv.org/abs/2308.04371v11",
+                "http://arxiv.org/abs/2604.27251v2"
+              ],
+              "source_paper_title": "DivLogicEval: A Framework for Benchmarking Logical Reasoning Evaluation in Large Language Models",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E0B808CFBB48",
+                "W-FB9BBEC70985",
+                "W-429E5CB9B133",
+                "W-F6FBA288BECF",
+                "W-996C5129930F"
+              ],
+              "source_work_title": "DivLogicEval: A Framework for Benchmarking Logical Reasoning Evaluation in Large Language Models",
+              "source_works": [],
+              "task": "First-Order Logic Inference",
+              "venue_or_source": "EMNLP 2025",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2509.15587v3",
+              "https://huggingface.co/datasets/yale-nlp/FOLIO"
+            ],
+            "version_id": "VER-FCB68DB86C01"
+          }
+        },
+        "venue_or_source": "EMNLP 2025",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.58,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-E0B808CFBB48",
+          "W-FB9BBEC70985",
+          "W-429E5CB9B133",
+          "W-F6FBA288BECF",
+          "W-996C5129930F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T10:10:23+00:00",
+        "updated_at": "2026-06-14T08:38:47+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-0441E2623BAB",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "proofwriter proofwriter proofwriter w dd77f8be6170 w e0b808cfbb48 w fb9bbec70985",
+      "canonical_label": "ProofWriter",
+      "concept_id": "B-F8B91ED23D6B",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-107436AE3BEE",
+        "benchmark_id": "B-B45CBFE5F71D",
+        "benchmark_name": "ProofWriter",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-B45CBFE5F71D",
+        "canonical_key": "proofwriter",
+        "cloud_origin": {
+          "cloud_model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+          "cloud_payload_sha256": "",
+          "cloud_record_id": "B-F8B91ED23D6B",
+          "cloud_snapshot_id": "SNAP-125AB8DCC9C4",
+          "cloud_updated_at": "2026-06-12T10:11:54+00:00"
+        },
+        "concept_id": "B-F8B91ED23D6B",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-12T08:54:08+00:00",
+        "data_form": "Facts, rules, questions, and proof labels.",
+        "dataset": "ProofWriter",
+        "description": "Rule-based logical reasoning benchmark requiring multi-hop proof construction.",
+        "entered_at": "2026-06-12T08:54:08+00:00",
+        "evidence": "{\"benchmark_id\": \"B-A129D4819D18\", \"field_id\": \"PRJ-28B4CA742446\", \"work_id\": \"W-FB9BBEC70985\", \"task\": \"logical patterns accuracy-token during\", \"dataset\": \"ProofWriter\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"LogicBench: Towards Systematic Evaluati...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T10:09:48+00:00",
+        "extractor": "deterministic",
+        "metric": "accuracy",
+        "metrics": [
+          "accuracy",
+          "Entailment consistency accuracy",
+          "F1",
+          "Accuracy"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/tasksource/proofwriter",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Synthetic datasets across proof depths.",
+        "source": "ProofWriter / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2404.15522v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2508.05311v1",
+          "http://arxiv.org/abs/2305.12295v2",
+          "http://arxiv.org/abs/2404.15522v2"
+        ],
+        "source_paper_title": "LogicBench: Towards Systematic Evaluation of Logical Reasoning Ability of Large Language Models",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-DD77F8BE6170",
+          "W-E0B808CFBB48",
+          "W-FB9BBEC70985"
+        ],
+        "source_work_title": "LogicBench: Towards Systematic Evaluation of Logical Reasoning Ability of Large Language Models",
+        "source_works": [],
+        "task": "logical patterns accuracy-token during",
+        "title": "ProofWriter",
+        "updated_at": "2026-06-12T10:09:48+00:00",
+        "variants": {
+          "VER-107436AE3BEE": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-12T08:54:08+00:00",
+            "extracted_at": "2026-06-12T10:09:48+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "ProofWriter",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Facts, rules, questions, and proof labels.",
+              "dataset": "ProofWriter",
+              "description": "Rule-based logical reasoning benchmark requiring multi-hop proof construction.",
+              "evidence": "{\"benchmark_id\": \"B-A129D4819D18\", \"field_id\": \"PRJ-28B4CA742446\", \"work_id\": \"W-FB9BBEC70985\", \"task\": \"logical patterns accuracy-token during\", \"dataset\": \"ProofWriter\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"LogicBench: Towards Systematic Evaluati...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "accuracy",
+              "metrics": [
+                "accuracy",
+                "Entailment consistency accuracy",
+                "F1",
+                "Accuracy"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/tasksource/proofwriter",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Synthetic datasets across proof depths.",
+              "source": "ProofWriter / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2404.15522v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2508.05311v1",
+                "http://arxiv.org/abs/2305.12295v2",
+                "http://arxiv.org/abs/2404.15522v2"
+              ],
+              "source_paper_title": "LogicBench: Towards Systematic Evaluation of Logical Reasoning Ability of Large Language Models",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-DD77F8BE6170",
+                "W-E0B808CFBB48",
+                "W-FB9BBEC70985"
+              ],
+              "source_work_title": "LogicBench: Towards Systematic Evaluation of Logical Reasoning Ability of Large Language Models",
+              "source_works": [],
+              "task": "logical patterns accuracy-token during",
+              "venue_or_source": "ACL 2024",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2404.15522v2",
+              "https://huggingface.co/datasets/tasksource/proofwriter"
+            ],
+            "version_id": "VER-107436AE3BEE"
+          }
+        },
+        "venue_or_source": "ACL 2024",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-DD77F8BE6170",
+          "W-E0B808CFBB48",
+          "W-FB9BBEC70985"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T10:10:23+00:00",
+        "updated_at": "2026-06-14T08:29:13+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-B83E28019C11",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "chain of thought prompting chain of thought prompting w e0b808cfbb48",
+      "canonical_label": "Chain-of-Thought Prompting",
+      "concept_id": "BL-B7CA18E95935",
+      "concept_type": "baseline",
+      "payload": {
+        "active_version_id": "VER-298ABE65FBCE",
+        "baseline_id": "BL-540826E12734",
+        "baseline_name": "Chain-of-Thought Prompting",
+        "baseline_type": "compared_method",
+        "benchmarks": [
+          "Average across 5"
+        ],
+        "canonical_id": "BL-540826E12734",
+        "canonical_key": "chain of thought prompting",
+        "confidence_score": 0.55,
+        "core_idea": "Prompting the language model to generate intermediate reasoning steps before producing the final answer.",
+        "created_at": "2026-06-12T10:09:47+00:00",
+        "description": "Prompting baseline that elicits intermediate reasoning steps before the final answer.",
+        "discussion": "Chain-of-Thought Prompting is informative only when it is reported under the same benchmark protocol, metric, and resource budget as the evaluated method. The comparison tests whether the source work's gains come from the proposed mechanism rather than from the established baseline mechanism: Expose a serial reasoning trace and measure whether explicit steps improve accuracy at an added token cost.",
+        "entered_at": "2026-06-12T10:09:47+00:00",
+        "evidence": "Represents an improved baseline that still suffers from unfaithful reasoning despite generating intermediate steps, against which the 18.4% improvement is measured.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T10:09:47+00:00",
+        "methodology": "Uses prompts such as 'Let's think step by step' or provides few-shot examples of step-by-step reasoning to guide the model's output, attempting to mimic human reasoning processes.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "performance": [
+          {
+            "benchmark_name": "Average across 5",
+            "metric": "Performance Gap",
+            "value_text": "18.4% lower than the proposed neuro-symbolic framework."
+          }
+        ],
+        "principle": "Expose a serial reasoning trace and measure whether explicit steps improve accuracy at an added token cost.",
+        "provider": "siliconflow",
+        "source": "Chain-of-Thought prompting",
+        "source_paper_link": "https://arxiv.org/abs/2201.11903",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2305.12295v2"
+        ],
+        "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-E0B808CFBB48"
+        ],
+        "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_works": [],
+        "updated_at": "2026-06-12T10:09:47+00:00",
+        "variants": {
+          "VER-298ABE65FBCE": {
+            "confidence_score": 0.55,
+            "entered_at": "2026-06-12T10:09:47+00:00",
+            "extracted_at": "2026-06-12T10:09:47+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "baseline_name": "Chain-of-Thought Prompting",
+              "baseline_type": "compared_method",
+              "benchmarks": [
+                "Average across 5"
+              ],
+              "confidence_score": 0.55,
+              "core_idea": "Prompting the language model to generate intermediate reasoning steps before producing the final answer.",
+              "description": "Prompting baseline that elicits intermediate reasoning steps before the final answer.",
+              "discussion": "Chain-of-Thought Prompting is informative only when it is reported under the same benchmark protocol, metric, and resource budget as the evaluated method. The comparison tests whether the source work's gains come from the proposed mechanism rather than from the established baseline mechanism: Expose a serial reasoning trace and measure whether explicit steps improve accuracy at an added token cost.",
+              "evidence": "Represents an improved baseline that still suffers from unfaithful reasoning despite generating intermediate steps, against which the 18.4% improvement is measured.",
+              "evidence_items": [],
+              "methodology": "Uses prompts such as 'Let's think step by step' or provides few-shot examples of step-by-step reasoning to guide the model's output, attempting to mimic human reasoning processes.",
+              "metrics": [],
+              "needs_review": false,
+              "performance": [
+                {
+                  "benchmark_name": "Average across 5",
+                  "metric": "Performance Gap",
+                  "value_text": "18.4% lower than the proposed neuro-symbolic framework."
+                }
+              ],
+              "principle": "Expose a serial reasoning trace and measure whether explicit steps improve accuracy at an added token cost.",
+              "source": "Chain-of-Thought prompting",
+              "source_paper_link": "https://arxiv.org/abs/2201.11903",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2305.12295v2"
+              ],
+              "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E0B808CFBB48"
+              ],
+              "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_works": [],
+              "venue_or_source": "EMNLP 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2305.12295v2"
+            ],
+            "version_id": "VER-298ABE65FBCE"
+          }
+        },
+        "venue_or_source": "EMNLP 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.55,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-E0B808CFBB48"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T10:10:24+00:00",
+        "updated_at": "2026-06-14T08:38:48+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-E6A14C45BB3C",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "chain of thought prompting chain of thought prompting w 0cf109b37dae",
+      "canonical_label": "Chain-of-Thought Prompting",
+      "concept_id": "BL-CE9B1820ECAC",
+      "concept_type": "baseline",
+      "payload": {
+        "active_version_id": "VER-298ABE65FBCE",
+        "baseline_id": "BL-540826E12734",
+        "baseline_name": "Chain-of-Thought Prompting",
+        "baseline_type": "compared_method",
+        "benchmarks": [
+          "Average across 5"
+        ],
+        "canonical_id": "BL-540826E12734",
+        "canonical_key": "chain of thought prompting",
+        "confidence_score": 0.55,
+        "core_idea": "Prompting the language model to generate intermediate reasoning steps before producing the final answer.",
+        "created_at": "2026-06-12T10:09:47+00:00",
+        "description": "Prompting baseline that elicits intermediate reasoning steps before the final answer.",
+        "discussion": "Chain-of-Thought Prompting is informative only when it is reported under the same benchmark protocol, metric, and resource budget as the evaluated method. The comparison tests whether the source work's gains come from the proposed mechanism rather than from the established baseline mechanism: Expose a serial reasoning trace and measure whether explicit steps improve accuracy at an added token cost.",
+        "entered_at": "2026-06-12T10:09:47+00:00",
+        "evidence": "Represents an improved baseline that still suffers from unfaithful reasoning despite generating intermediate steps, against which the 18.4% improvement is measured.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T10:09:47+00:00",
+        "methodology": "Uses prompts such as 'Let's think step by step' or provides few-shot examples of step-by-step reasoning to guide the model's output, attempting to mimic human reasoning processes.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "performance": [
+          {
+            "benchmark_name": "Average across 5",
+            "metric": "Performance Gap",
+            "value_text": "18.4% lower than the proposed neuro-symbolic framework."
+          }
+        ],
+        "principle": "Expose a serial reasoning trace and measure whether explicit steps improve accuracy at an added token cost.",
+        "provider": "siliconflow",
+        "source": "Chain-of-Thought prompting",
+        "source_paper_link": "https://arxiv.org/abs/2201.11903",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2305.12295v2"
+        ],
+        "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-0CF109B37DAE"
+        ],
+        "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_works": [
+          "W-0CF109B37DAE"
+        ],
+        "updated_at": "2026-06-12T10:09:47+00:00",
+        "variants": {
+          "VER-298ABE65FBCE": {
+            "confidence_score": 0.55,
+            "entered_at": "2026-06-12T10:09:47+00:00",
+            "extracted_at": "2026-06-12T10:09:47+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "baseline_name": "Chain-of-Thought Prompting",
+              "baseline_type": "compared_method",
+              "benchmarks": [
+                "Average across 5"
+              ],
+              "confidence_score": 0.55,
+              "core_idea": "Prompting the language model to generate intermediate reasoning steps before producing the final answer.",
+              "description": "Prompting baseline that elicits intermediate reasoning steps before the final answer.",
+              "discussion": "Chain-of-Thought Prompting is informative only when it is reported under the same benchmark protocol, metric, and resource budget as the evaluated method. The comparison tests whether the source work's gains come from the proposed mechanism rather than from the established baseline mechanism: Expose a serial reasoning trace and measure whether explicit steps improve accuracy at an added token cost.",
+              "evidence": "Represents an improved baseline that still suffers from unfaithful reasoning despite generating intermediate steps, against which the 18.4% improvement is measured.",
+              "evidence_items": [],
+              "methodology": "Uses prompts such as 'Let's think step by step' or provides few-shot examples of step-by-step reasoning to guide the model's output, attempting to mimic human reasoning processes.",
+              "metrics": [],
+              "needs_review": false,
+              "performance": [
+                {
+                  "benchmark_name": "Average across 5",
+                  "metric": "Performance Gap",
+                  "value_text": "18.4% lower than the proposed neuro-symbolic framework."
+                }
+              ],
+              "principle": "Expose a serial reasoning trace and measure whether explicit steps improve accuracy at an added token cost.",
+              "source": "Chain-of-Thought prompting",
+              "source_paper_link": "https://arxiv.org/abs/2201.11903",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2305.12295v2"
+              ],
+              "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E0B808CFBB48"
+              ],
+              "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_works": [],
+              "venue_or_source": "EMNLP 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2305.12295v2"
+            ],
+            "version_id": "VER-298ABE65FBCE"
+          }
+        },
+        "venue_or_source": "EMNLP 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.55,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-0CF109B37DAE"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-14T11:59:23+00:00",
+        "updated_at": "2026-06-14T11:59:23+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-1D1EAF6DAC4D",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "error driven self refinement loop error driven self refinement loop if a symbolic solver rejects a formalization due to syntax or consistency errors then the specific error message must be fed back to the language model to iteratively revise the symbolic representation until a valid execution w e0b8",
+      "canonical_label": "Error-Driven Self-Refinement Loop",
+      "concept_id": "P-05BCAACB411B",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "If a symbolic solver rejects a formalization due to syntax or consistency errors, then the specific error message must be fed back to the language model to iteratively revise the symbolic representation until a valid execution is achieved.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-8BEE06E5D861",
+        "argument": "If a symbolic solver rejects a formalization due to syntax or consistency errors, then the specific error message must be fed back to the language model to iteratively revise the symbolic representation until a valid execution is achieved.",
+        "benchmarks": [],
+        "canonical_id": "P-F1A1DE51319A",
+        "canonical_key": "if symbolic solver rejects formalization due to syntax or consistency errors then specific error message must be fed back to language model to iteratively revise symbolic represent",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-12T10:03:34+00:00",
+        "discussion": "This mechanism treats the symbolic solver not just as an inference engine but as a rigorous validator that provides actionable feedback. By appending solver error messages to the prompt, the language model is guided to correct specific logical or syntactic flaws in its translation, effectively learning from its immediate failures within the inference context. This iterative process mitigates the risk of the pipeline failing due to minor formatting issues or initial misinterpretations of complex constraints.",
+        "entered_at": "2026-06-12T10:03:34+00:00",
+        "evidence": "The abstract and introduction explicitly describe a 'self-refinement module' that utilizes the symbolic solver's error messages to revise symbolic formalizations. This loop continues to correct the output of the problem formulation stage.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T10:09:47+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Error-Driven Self-Refinement Loop",
+        "performance": [],
+        "principle_id": "P-F1A1DE51319A",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "I would like to design a framework that lets LLMs extract logical patterns from other exemplars during inference and use the logical patterns to improve the reasoning accuracy-token frontier.",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2305.12295v2"
+        ],
+        "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-E0B808CFBB48"
+        ],
+        "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_works": [
+          "W-E0B808CFBB48"
+        ],
+        "updated_at": "2026-06-12T10:09:47+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-8BEE06E5D861": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-12T10:03:34+00:00",
+            "extracted_at": "2026-06-12T10:09:47+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "If a symbolic solver rejects a formalization due to syntax or consistency errors, then the specific error message must be fed back to the language model to iteratively revise the symbolic representation until a valid execution is achieved.",
+              "argument": "If a symbolic solver rejects a formalization due to syntax or consistency errors, then the specific error message must be fed back to the language model to iteratively revise the symbolic representation until a valid execution is achieved.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "This mechanism treats the symbolic solver not just as an inference engine but as a rigorous validator that provides actionable feedback. By appending solver error messages to the prompt, the language model is guided to correct specific logical or syntactic flaws in its translation, effectively learning from its immediate failures within the inference context. This iterative process mitigates the risk of the pipeline failing due to minor formatting issues or initial misinterpretations of complex constraints.",
+              "evidence": "The abstract and introduction explicitly describe a 'self-refinement module' that utilizes the symbolic solver's error messages to revise symbolic formalizations. This loop continues to correct the output of the problem formulation stage.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Error-Driven Self-Refinement Loop",
+              "performance": [],
+              "problem_pressure": "I would like to design a framework that lets LLMs extract logical patterns from other exemplars during inference and use the logical patterns to improve the reasoning accuracy-token frontier.",
+              "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2305.12295v2"
+              ],
+              "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E0B808CFBB48"
+              ],
+              "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_works": [
+                "W-E0B808CFBB48"
+              ],
+              "venue_or_source": "EMNLP 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2305.12295v2"
+            ],
+            "version_id": "VER-8BEE06E5D861"
+          }
+        },
+        "venue_or_source": "EMNLP 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-E0B808CFBB48"
+        ],
+        "validation_level": "L1",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T10:10:20+00:00",
+        "updated_at": "2026-06-14T08:38:45+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-62CE7795218C",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "error driven self refinement loop error driven self refinement loop if a symbolic solver rejects a formalization due to syntax or consistency errors then the specific error message must be fed back to the language model to iteratively revise the symbolic representation until a valid execution w 0cf1",
+      "canonical_label": "Error-Driven Self-Refinement Loop",
+      "concept_id": "P-2BEDA9E6B75E",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "If a symbolic solver rejects a formalization due to syntax or consistency errors, then the specific error message must be fed back to the language model to iteratively revise the symbolic representation until a valid execution is achieved.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-8BEE06E5D861",
+        "argument": "If a symbolic solver rejects a formalization due to syntax or consistency errors, then the specific error message must be fed back to the language model to iteratively revise the symbolic representation until a valid execution is achieved.",
+        "benchmarks": [],
+        "canonical_id": "P-F1A1DE51319A",
+        "canonical_key": "if symbolic solver rejects formalization due to syntax or consistency errors then specific error message must be fed back to language model to iteratively revise symbolic represent",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-12T10:03:34+00:00",
+        "discussion": "This mechanism treats the symbolic solver not just as an inference engine but as a rigorous validator that provides actionable feedback. By appending solver error messages to the prompt, the language model is guided to correct specific logical or syntactic flaws in its translation, effectively learning from its immediate failures within the inference context. This iterative process mitigates the risk of the pipeline failing due to minor formatting issues or initial misinterpretations of complex constraints.",
+        "entered_at": "2026-06-12T10:03:34+00:00",
+        "evidence": "The abstract and introduction explicitly describe a 'self-refinement module' that utilizes the symbolic solver's error messages to revise symbolic formalizations. This loop continues to correct the output of the problem formulation stage.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T10:09:47+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Error-Driven Self-Refinement Loop",
+        "performance": [],
+        "principle_id": "P-F1A1DE51319A",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "I would like to design a framework that lets LLMs extract logical patterns from other exemplars during inference and use the logical patterns to improve the reasoning accuracy-token frontier.",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2305.12295v2"
+        ],
+        "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-0CF109B37DAE"
+        ],
+        "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_works": [
+          "W-0CF109B37DAE"
+        ],
+        "updated_at": "2026-06-12T10:09:47+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-8BEE06E5D861": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-12T10:03:34+00:00",
+            "extracted_at": "2026-06-12T10:09:47+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "If a symbolic solver rejects a formalization due to syntax or consistency errors, then the specific error message must be fed back to the language model to iteratively revise the symbolic representation until a valid execution is achieved.",
+              "argument": "If a symbolic solver rejects a formalization due to syntax or consistency errors, then the specific error message must be fed back to the language model to iteratively revise the symbolic representation until a valid execution is achieved.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "This mechanism treats the symbolic solver not just as an inference engine but as a rigorous validator that provides actionable feedback. By appending solver error messages to the prompt, the language model is guided to correct specific logical or syntactic flaws in its translation, effectively learning from its immediate failures within the inference context. This iterative process mitigates the risk of the pipeline failing due to minor formatting issues or initial misinterpretations of complex constraints.",
+              "evidence": "The abstract and introduction explicitly describe a 'self-refinement module' that utilizes the symbolic solver's error messages to revise symbolic formalizations. This loop continues to correct the output of the problem formulation stage.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Error-Driven Self-Refinement Loop",
+              "performance": [],
+              "problem_pressure": "I would like to design a framework that lets LLMs extract logical patterns from other exemplars during inference and use the logical patterns to improve the reasoning accuracy-token frontier.",
+              "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2305.12295v2"
+              ],
+              "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E0B808CFBB48"
+              ],
+              "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_works": [
+                "W-E0B808CFBB48"
+              ],
+              "venue_or_source": "EMNLP 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2305.12295v2"
+            ],
+            "version_id": "VER-8BEE06E5D861"
+          }
+        },
+        "venue_or_source": "EMNLP 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-0CF109B37DAE"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-14T11:59:22+00:00",
+        "updated_at": "2026-06-14T11:59:22+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-331B557BD1CA",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "semantic to symbolic translation with deterministic verification semantic to symbolic translation with deterministic verification if a reasoning task requires guaranteed logical faithfulness then the probabilistic generation of reasoning steps must be replaced by a deterministic symbolic inference e",
+      "canonical_label": "Semantic-to-Symbolic Translation with Deterministic Verification",
+      "concept_id": "P-A32A053FF7E8",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "If a reasoning task requires guaranteed logical faithfulness, then the probabilistic generation of reasoning steps must be replaced by a deterministic symbolic inference engine, preceded by a semantic-to-symbolic translation layer handled by a language model.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-1B4BFB4070A2",
+        "argument": "If a reasoning task requires guaranteed logical faithfulness, then the probabilistic generation of reasoning steps must be replaced by a deterministic symbolic inference engine, preceded by a semantic-to-symbolic translation layer handled by a language model.",
+        "benchmarks": [],
+        "canonical_id": "P-CCEB180BEA15",
+        "canonical_key": "if reasoning task requires guaranteed logical faithfulness then probabilistic generation of reasoning steps must be replaced by deterministic symbolic inference engine preceded by ",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-12T10:03:34+00:00",
+        "discussion": "The principle establishes a strict division of labor where the language model acts solely as a parser for ambiguous natural language, while the actual logical deduction is offloaded to a system that adheres to formal logic rules. This architecture ensures that any error in the final conclusion stems from either a translation error or a lack of knowledge in the premises, rather than a hallucinated inference step. The deterministic nature of the solver provides a verifiable chain of logic that probabilistic models cannot inherently offer.",
+        "entered_at": "2026-06-12T10:03:34+00:00",
+        "evidence": "The text states that while LLMs can imitate reasoning, they lack a mechanism to guarantee faithfulness. In contrast, symbolic inference engines are faithful because they follow well-defined inference rules. The proposed framework addresses this by having an LLM convert natural language into symbolic formulation, which a deterministic solver then processes.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T10:09:47+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Semantic-to-Symbolic Translation with Deterministic Verification",
+        "performance": [],
+        "principle_id": "P-CCEB180BEA15",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "I would like to design a framework that lets LLMs extract logical patterns from other exemplars during inference and use the logical patterns to improve the reasoning accuracy-token frontier.",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2305.12295v2"
+        ],
+        "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-E0B808CFBB48"
+        ],
+        "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_works": [
+          "W-E0B808CFBB48"
+        ],
+        "updated_at": "2026-06-12T10:09:47+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-1B4BFB4070A2": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-12T10:03:34+00:00",
+            "extracted_at": "2026-06-12T10:09:47+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "If a reasoning task requires guaranteed logical faithfulness, then the probabilistic generation of reasoning steps must be replaced by a deterministic symbolic inference engine, preceded by a semantic-to-symbolic translation layer handled by a language model.",
+              "argument": "If a reasoning task requires guaranteed logical faithfulness, then the probabilistic generation of reasoning steps must be replaced by a deterministic symbolic inference engine, preceded by a semantic-to-symbolic translation layer handled by a language model.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle establishes a strict division of labor where the language model acts solely as a parser for ambiguous natural language, while the actual logical deduction is offloaded to a system that adheres to formal logic rules. This architecture ensures that any error in the final conclusion stems from either a translation error or a lack of knowledge in the premises, rather than a hallucinated inference step. The deterministic nature of the solver provides a verifiable chain of logic that probabilistic models cannot inherently offer.",
+              "evidence": "The text states that while LLMs can imitate reasoning, they lack a mechanism to guarantee faithfulness. In contrast, symbolic inference engines are faithful because they follow well-defined inference rules. The proposed framework addresses this by having an LLM convert natural language into symbolic formulation, which a deterministic solver then processes.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Semantic-to-Symbolic Translation with Deterministic Verification",
+              "performance": [],
+              "problem_pressure": "I would like to design a framework that lets LLMs extract logical patterns from other exemplars during inference and use the logical patterns to improve the reasoning accuracy-token frontier.",
+              "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2305.12295v2"
+              ],
+              "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E0B808CFBB48"
+              ],
+              "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_works": [
+                "W-E0B808CFBB48"
+              ],
+              "venue_or_source": "EMNLP 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2305.12295v2"
+            ],
+            "version_id": "VER-1B4BFB4070A2"
+          }
+        },
+        "venue_or_source": "EMNLP 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-E0B808CFBB48"
+        ],
+        "validation_level": "L1",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T10:10:20+00:00",
+        "updated_at": "2026-06-14T08:38:45+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-ABE81C83C227",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "semantic to symbolic translation with deterministic verification semantic to symbolic translation with deterministic verification if a reasoning task requires guaranteed logical faithfulness then the probabilistic generation of reasoning steps must be replaced by a deterministic symbolic inference e",
+      "canonical_label": "Semantic-to-Symbolic Translation with Deterministic Verification",
+      "concept_id": "P-F88F84D3CEC8",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "If a reasoning task requires guaranteed logical faithfulness, then the probabilistic generation of reasoning steps must be replaced by a deterministic symbolic inference engine, preceded by a semantic-to-symbolic translation layer handled by a language model.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-1B4BFB4070A2",
+        "argument": "If a reasoning task requires guaranteed logical faithfulness, then the probabilistic generation of reasoning steps must be replaced by a deterministic symbolic inference engine, preceded by a semantic-to-symbolic translation layer handled by a language model.",
+        "benchmarks": [],
+        "canonical_id": "P-CCEB180BEA15",
+        "canonical_key": "if reasoning task requires guaranteed logical faithfulness then probabilistic generation of reasoning steps must be replaced by deterministic symbolic inference engine preceded by ",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-12T10:03:34+00:00",
+        "discussion": "The principle establishes a strict division of labor where the language model acts solely as a parser for ambiguous natural language, while the actual logical deduction is offloaded to a system that adheres to formal logic rules. This architecture ensures that any error in the final conclusion stems from either a translation error or a lack of knowledge in the premises, rather than a hallucinated inference step. The deterministic nature of the solver provides a verifiable chain of logic that probabilistic models cannot inherently offer.",
+        "entered_at": "2026-06-12T10:03:34+00:00",
+        "evidence": "The text states that while LLMs can imitate reasoning, they lack a mechanism to guarantee faithfulness. In contrast, symbolic inference engines are faithful because they follow well-defined inference rules. The proposed framework addresses this by having an LLM convert natural language into symbolic formulation, which a deterministic solver then processes.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T10:09:47+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Semantic-to-Symbolic Translation with Deterministic Verification",
+        "performance": [],
+        "principle_id": "P-CCEB180BEA15",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "I would like to design a framework that lets LLMs extract logical patterns from other exemplars during inference and use the logical patterns to improve the reasoning accuracy-token frontier.",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2305.12295v2"
+        ],
+        "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-0CF109B37DAE"
+        ],
+        "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_works": [
+          "W-0CF109B37DAE"
+        ],
+        "updated_at": "2026-06-12T10:09:47+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-1B4BFB4070A2": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-12T10:03:34+00:00",
+            "extracted_at": "2026-06-12T10:09:47+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "If a reasoning task requires guaranteed logical faithfulness, then the probabilistic generation of reasoning steps must be replaced by a deterministic symbolic inference engine, preceded by a semantic-to-symbolic translation layer handled by a language model.",
+              "argument": "If a reasoning task requires guaranteed logical faithfulness, then the probabilistic generation of reasoning steps must be replaced by a deterministic symbolic inference engine, preceded by a semantic-to-symbolic translation layer handled by a language model.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle establishes a strict division of labor where the language model acts solely as a parser for ambiguous natural language, while the actual logical deduction is offloaded to a system that adheres to formal logic rules. This architecture ensures that any error in the final conclusion stems from either a translation error or a lack of knowledge in the premises, rather than a hallucinated inference step. The deterministic nature of the solver provides a verifiable chain of logic that probabilistic models cannot inherently offer.",
+              "evidence": "The text states that while LLMs can imitate reasoning, they lack a mechanism to guarantee faithfulness. In contrast, symbolic inference engines are faithful because they follow well-defined inference rules. The proposed framework addresses this by having an LLM convert natural language into symbolic formulation, which a deterministic solver then processes.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Semantic-to-Symbolic Translation with Deterministic Verification",
+              "performance": [],
+              "problem_pressure": "I would like to design a framework that lets LLMs extract logical patterns from other exemplars during inference and use the logical patterns to improve the reasoning accuracy-token frontier.",
+              "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2305.12295v2"
+              ],
+              "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E0B808CFBB48"
+              ],
+              "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_works": [
+                "W-E0B808CFBB48"
+              ],
+              "venue_or_source": "EMNLP 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2305.12295v2"
+            ],
+            "version_id": "VER-1B4BFB4070A2"
+          }
+        },
+        "venue_or_source": "EMNLP 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-0CF109B37DAE"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-14T11:59:22+00:00",
+        "updated_at": "2026-06-14T11:59:22+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-3C94D699CEAA",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "logic lm on five com mon logical reasoning logic lm on five com mon logical reasoning",
+      "canonical_label": "LOGIC -LM on five com- mon logical reasoning",
+      "concept_id": "RF-BA0630BAD34D",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-AB71670E466B",
+        "benchmark_name": "LOGIC -LM on five com- mon logical reasoning",
+        "code_url": "https://github.com/teacherpeterpan/Logic-LLM.",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-12T10:00:51+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "ing. Recently, large language models (LLMs) (Brown et al., 2020; Ouyang et al., 2022a; OpenAI, 2023) have exhibited emergent ability to “reason” like human (Wei et"
+        },
+        "extracted_at": "2026-06-12T10:00:51+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-28B4CA742446",
+        "method_name": "Logic-LM",
+        "metric": "EM",
+        "needs_llm_review": false,
+        "result_id": "RR-E1D489422535",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": true,
+          "has_compute_accounting": false,
+          "needs_verification": false
+        },
+        "source_hash": "f3e2f0c123f2b9b6",
+        "source_work_id": "W-E0B808CFBB48",
+        "unit": "",
+        "updated_at": "2026-06-12T10:09:47+00:00",
+        "value": 2022.0,
+        "value_text": "ing. Recently, large language models (LLMs) (Brown et al., 2020; Ouyang et al., 2022a; OpenAI, 2023) have exhibited emergent ability to “reason” like human (Wei et",
+        "work_id": "W-E0B808CFBB48"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T10:10:35+00:00",
+        "updated_at": "2026-06-14T08:39:00+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-CE91D0BF0B3F",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "folio folio",
+      "canonical_label": "FOLIO",
+      "concept_id": "RF-D70DE3387352",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-8A6A564FE0F8",
+        "benchmark_name": "FOLIO",
+        "code_url": "",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-12T10:00:55+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "enchmarking Logical Reasoning Evaluation in Large Language Models Tsz Ting Chung1 Lemao Liu2 Mo Yu3 Dit-Yan Yeung1 1The Hong Kong University of Science and Techno"
+        },
+        "extracted_at": "2026-06-12T10:00:55+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-28B4CA742446",
+        "method_name": "DivLogicEval",
+        "metric": "EM",
+        "needs_llm_review": false,
+        "result_id": "RR-B738D744E851",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": false,
+          "has_compute_accounting": false,
+          "needs_verification": false
+        },
+        "source_hash": "e639761a0ae47f7c",
+        "source_work_id": "W-429E5CB9B133",
+        "unit": "",
+        "updated_at": "2026-06-12T10:09:51+00:00",
+        "value": 1.0,
+        "value_text": "enchmarking Logical Reasoning Evaluation in Large Language Models Tsz Ting Chung1 Lemao Liu2 Mo Yu3 Dit-Yan Yeung1 1The Hong Kong University of Science and Techno",
+        "work_id": "W-429E5CB9B133"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T10:10:31+00:00",
+        "updated_at": "2026-06-14T08:39:01+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-4CB708895F50",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "proofwriter proofwriter",
+      "canonical_label": "ProofWriter",
+      "concept_id": "RF-E0B0F26A151E",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-A129D4819D18",
+        "benchmark_name": "ProofWriter",
+        "cloud_origin": {
+          "cloud_model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+          "cloud_payload_sha256": "",
+          "cloud_record_id": "RF-E0B0F26A151E",
+          "cloud_snapshot_id": "SNAP-125AB8DCC9C4",
+          "cloud_updated_at": "2026-06-12T10:12:10+00:00"
+        },
+        "code_url": "https://github.com/Mihir3009/LogicBench.",
+        "compute_budget": "",
+        "concept_id": "RF-E0B0F26A151E",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-12T10:00:53+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "e inference rule. We conduct detailed analysis with a range of LLMs such as GPT-4, ChatGPT, Gemini, Llama-2, and Mistral using chain-of-thought prompting. Experi"
+        },
+        "extracted_at": "2026-06-12T10:00:53+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-8B787C9A917C",
+        "method_name": "LogicBench",
+        "metric": "EM",
+        "needs_llm_review": false,
+        "result_id": "RR-BD871776433B",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": true,
+          "has_compute_accounting": false,
+          "needs_verification": false
+        },
+        "source_hash": "d7e4eaf76ae56fac",
+        "source_work_id": "W-FB9BBEC70985",
+        "title": "ProofWriter",
+        "unit": "",
+        "updated_at": "2026-06-14T08:29:13+00:00",
+        "value": 4.0,
+        "value_text": "e inference rule. We conduct detailed analysis with a range of LLMs such as GPT-4, ChatGPT, Gemini, Llama-2, and Mistral using chain-of-thought prompting. Experi",
+        "work_id": "W-FB9BBEC70985"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T09:08:37+00:00",
+        "updated_at": "2026-06-14T08:39:11+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-4387AD016D72",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "prontoqa prontoqa",
+      "canonical_label": "PrOntoQA",
+      "concept_id": "RF-E63F0278EE94",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-AC50BB1E1534",
+        "benchmark_name": "PrOntoQA",
+        "code_url": "",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-12T10:00:55+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "luation in Large Language Models Tsz Ting Chung1 Lemao Liu2 Mo Yu3 Dit-Yan Yeung1 1The Hong Kong University of Science and Technology 2Fudan University 3WeChat AI"
+        },
+        "extracted_at": "2026-06-12T10:00:55+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-28B4CA742446",
+        "method_name": "DivLogicEval",
+        "metric": "EM",
+        "needs_llm_review": false,
+        "result_id": "RR-F43D140C13D0",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": false,
+          "has_compute_accounting": false,
+          "needs_verification": false
+        },
+        "source_hash": "e639761a0ae47f7c",
+        "source_work_id": "W-429E5CB9B133",
+        "unit": "",
+        "updated_at": "2026-06-12T10:09:51+00:00",
+        "value": 1.0,
+        "value_text": "luation in Large Language Models Tsz Ting Chung1 Lemao Liu2 Mo Yu3 Dit-Yan Yeung1 1The Hong Kong University of Science and Technology 2Fudan University 3WeChat AI",
+        "work_id": "W-429E5CB9B133"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T10:10:35+00:00",
+        "updated_at": "2026-06-14T08:39:01+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-2925D1547286",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "faithfulness requires external verification mechanisms faithfulness requires external verification mechanisms standard chain of thought prompting still suffers from unfaithful reasoning where conclusions do not follow generated steps whereas the proposed method guarantees faithfulness through determ",
+      "canonical_label": "Faithfulness Requires External Verification Mechanisms",
+      "concept_id": "TM-8DA82F5D193D",
+      "concept_type": "takeaway_message",
+      "payload": {
+        "active_version_id": "VER-BA169C56D7EA",
+        "benchmarks": [],
+        "canonical_id": "TM-3B0C7727630A",
+        "canonical_key": "standard chain of thought prompting still suffers from unfaithful reasoning where conclusions do not follow generated steps whereas proposed method guarantees faithfulness through ",
+        "condition": "Necessary when the application demands that every step of the reasoning process be logically valid and verifiable, rather than just statistically likely.",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-12T10:03:34+00:00",
+        "discussion": "The work highlights that while Chain-of-Thought improves performance by encouraging step-by-step generation, it does not solve the fundamental issue of unfaithful reasoning where the model's conclusion contradicts its own stated premises. The proposed framework addresses this by ensuring that the reasoning steps executed by the symbolic solver are mathematically guaranteed to follow from the premises. This distinction is crucial for domains where explainability and logical rigor are non-negotiable.",
+        "entered_at": "2026-06-12T10:03:34+00:00",
+        "evidence": "The introduction notes that recent studies found LLMs occasionally make unfaithful reasoning even with chain-of-thought, as they lack a mechanism to guarantee faithfulness, unlike symbolic inference engines which follow well-defined rules.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T10:09:47+00:00",
+        "extraction_method": "llm_extracted",
+        "finding": "Standard Chain-of-Thought prompting still suffers from unfaithful reasoning where conclusions do not follow generated steps, whereas the proposed method guarantees faithfulness through deterministic solving.",
+        "main_results": "Standard Chain-of-Thought prompting still suffers from unfaithful reasoning where conclusions do not follow generated steps, whereas the proposed method guarantees faithfulness through deterministic solving.",
+        "message_text": "Standard Chain-of-Thought prompting still suffers from unfaithful reasoning where conclusions do not follow generated steps, whereas the proposed method guarantees faithfulness through deterministic solving.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2305.12295v2"
+        ],
+        "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-E0B808CFBB48"
+        ],
+        "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_works": [],
+        "title": "Faithfulness Requires External Verification Mechanisms",
+        "updated_at": "2026-06-12T10:09:47+00:00",
+        "variants": {
+          "VER-BA169C56D7EA": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-12T10:03:34+00:00",
+            "extracted_at": "2026-06-12T10:09:47+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "condition": "Necessary when the application demands that every step of the reasoning process be logically valid and verifiable, rather than just statistically likely.",
+              "confidence_score": 0.7,
+              "discussion": "The work highlights that while Chain-of-Thought improves performance by encouraging step-by-step generation, it does not solve the fundamental issue of unfaithful reasoning where the model's conclusion contradicts its own stated premises. The proposed framework addresses this by ensuring that the reasoning steps executed by the symbolic solver are mathematically guaranteed to follow from the premises. This distinction is crucial for domains where explainability and logical rigor are non-negotiable.",
+              "evidence": "The introduction notes that recent studies found LLMs occasionally make unfaithful reasoning even with chain-of-thought, as they lack a mechanism to guarantee faithfulness, unlike symbolic inference engines which follow well-defined rules.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "finding": "Standard Chain-of-Thought prompting still suffers from unfaithful reasoning where conclusions do not follow generated steps, whereas the proposed method guarantees faithfulness through deterministic solving.",
+              "main_results": "Standard Chain-of-Thought prompting still suffers from unfaithful reasoning where conclusions do not follow generated steps, whereas the proposed method guarantees faithfulness through deterministic solving.",
+              "message_text": "Standard Chain-of-Thought prompting still suffers from unfaithful reasoning where conclusions do not follow generated steps, whereas the proposed method guarantees faithfulness through deterministic solving.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2305.12295v2"
+              ],
+              "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E0B808CFBB48"
+              ],
+              "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_works": [],
+              "title": "Faithfulness Requires External Verification Mechanisms",
+              "venue_or_source": "EMNLP 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2305.12295v2"
+            ],
+            "version_id": "VER-BA169C56D7EA"
+          }
+        },
+        "venue_or_source": "EMNLP 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-E0B808CFBB48"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T10:10:20+00:00",
+        "updated_at": "2026-06-14T08:38:45+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-9818AC64C4ED",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "faithfulness requires external verification mechanisms faithfulness requires external verification mechanisms standard chain of thought prompting still suffers from unfaithful reasoning where conclusions do not follow generated steps whereas the proposed method guarantees faithfulness through determ",
+      "canonical_label": "Faithfulness Requires External Verification Mechanisms",
+      "concept_id": "TM-972B75554E26",
+      "concept_type": "takeaway_message",
+      "payload": {
+        "active_version_id": "VER-BA169C56D7EA",
+        "benchmarks": [],
+        "canonical_id": "TM-3B0C7727630A",
+        "canonical_key": "standard chain of thought prompting still suffers from unfaithful reasoning where conclusions do not follow generated steps whereas proposed method guarantees faithfulness through ",
+        "condition": "Necessary when the application demands that every step of the reasoning process be logically valid and verifiable, rather than just statistically likely.",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-12T10:03:34+00:00",
+        "discussion": "The work highlights that while Chain-of-Thought improves performance by encouraging step-by-step generation, it does not solve the fundamental issue of unfaithful reasoning where the model's conclusion contradicts its own stated premises. The proposed framework addresses this by ensuring that the reasoning steps executed by the symbolic solver are mathematically guaranteed to follow from the premises. This distinction is crucial for domains where explainability and logical rigor are non-negotiable.",
+        "entered_at": "2026-06-12T10:03:34+00:00",
+        "evidence": "The introduction notes that recent studies found LLMs occasionally make unfaithful reasoning even with chain-of-thought, as they lack a mechanism to guarantee faithfulness, unlike symbolic inference engines which follow well-defined rules.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T10:09:47+00:00",
+        "extraction_method": "llm_extracted",
+        "finding": "Standard Chain-of-Thought prompting still suffers from unfaithful reasoning where conclusions do not follow generated steps, whereas the proposed method guarantees faithfulness through deterministic solving.",
+        "main_results": "Standard Chain-of-Thought prompting still suffers from unfaithful reasoning where conclusions do not follow generated steps, whereas the proposed method guarantees faithfulness through deterministic solving.",
+        "message_text": "Standard Chain-of-Thought prompting still suffers from unfaithful reasoning where conclusions do not follow generated steps, whereas the proposed method guarantees faithfulness through deterministic solving.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2305.12295v2"
+        ],
+        "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-0CF109B37DAE"
+        ],
+        "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_works": [
+          "W-0CF109B37DAE"
+        ],
+        "title": "Faithfulness Requires External Verification Mechanisms",
+        "updated_at": "2026-06-12T10:09:47+00:00",
+        "variants": {
+          "VER-BA169C56D7EA": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-12T10:03:34+00:00",
+            "extracted_at": "2026-06-12T10:09:47+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "condition": "Necessary when the application demands that every step of the reasoning process be logically valid and verifiable, rather than just statistically likely.",
+              "confidence_score": 0.7,
+              "discussion": "The work highlights that while Chain-of-Thought improves performance by encouraging step-by-step generation, it does not solve the fundamental issue of unfaithful reasoning where the model's conclusion contradicts its own stated premises. The proposed framework addresses this by ensuring that the reasoning steps executed by the symbolic solver are mathematically guaranteed to follow from the premises. This distinction is crucial for domains where explainability and logical rigor are non-negotiable.",
+              "evidence": "The introduction notes that recent studies found LLMs occasionally make unfaithful reasoning even with chain-of-thought, as they lack a mechanism to guarantee faithfulness, unlike symbolic inference engines which follow well-defined rules.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "finding": "Standard Chain-of-Thought prompting still suffers from unfaithful reasoning where conclusions do not follow generated steps, whereas the proposed method guarantees faithfulness through deterministic solving.",
+              "main_results": "Standard Chain-of-Thought prompting still suffers from unfaithful reasoning where conclusions do not follow generated steps, whereas the proposed method guarantees faithfulness through deterministic solving.",
+              "message_text": "Standard Chain-of-Thought prompting still suffers from unfaithful reasoning where conclusions do not follow generated steps, whereas the proposed method guarantees faithfulness through deterministic solving.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2305.12295v2"
+              ],
+              "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E0B808CFBB48"
+              ],
+              "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_works": [],
+              "title": "Faithfulness Requires External Verification Mechanisms",
+              "venue_or_source": "EMNLP 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2305.12295v2"
+            ],
+            "version_id": "VER-BA169C56D7EA"
+          }
+        },
+        "venue_or_source": "EMNLP 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-0CF109B37DAE"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-14T11:59:22+00:00",
+        "updated_at": "2026-06-14T11:59:22+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-82809EEB608A",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "neuro symbolic decomposition with self refinement neuro symbolic decomposition with self refinement logical reasoning accuracy is enhanced by separating natural language translation from logical inference assigning the former to a large language model and the latter to a deterministic symbolic solve",
+      "canonical_label": "Neuro-Symbolic Decomposition with Self-Refinement",
+      "concept_id": "XI-84F6C2C0E824",
+      "concept_type": "existed_idea",
+      "payload": {
+        "active_version_id": "VER-88BA87FB27C0",
+        "benchmarks": [],
+        "canonical_id": "XI-65287E8D0B78",
+        "canonical_key": "logical reasoning accuracy is enhanced by separating natural language translation from logical inference assigning former to large language model and latter to deterministic symbol",
+        "confidence_score": 0.72,
+        "core_idea": "Logical reasoning accuracy is enhanced by separating natural language translation from logical inference, assigning the former to a large language model and the latter to a deterministic symbolic solver, while employing a feedback loop that uses solver error messages to iteratively correct symbolic formalizations.",
+        "created_at": "2026-06-12T10:03:34+00:00",
+        "discussion": "The mechanism mitigates the risk of hallucinated reasoning steps common in probabilistic models by enforcing a separation of concerns. The language model leverages its strength in semantic understanding to parse ambiguous natural language, while the symbolic solver guarantees the mathematical validity of the inference. The self-refinement module is essential for handling the initial imperfections in the model's translation, effectively using the solver as a rigorous validator. However, the efficacy of this method depends on the ability to map the problem domain into a formal logic system that the solver can process.",
+        "entered_at": "2026-06-12T10:03:34+00:00",
+        "evidence": "The text describes a framework that decomposes logical reasoning into problem formulation, symbolic reasoning, and result interpretation. It explicitly mentions a self-refinement module that utilizes symbolic solver error messages to revise formalizations, contrasting this with the black-box nature of standard chain-of-thought prompting which lacks mechanisms to guarantee faithfulness.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T10:09:47+00:00",
+        "extraction_method": "llm_extracted",
+        "idea_text": "Logical reasoning accuracy is enhanced by separating natural language translation from logical inference, assigning the former to a large language model and the latter to a deterministic symbolic solver, while employing a feedback loop that uses solver error messages to iteratively correct symbolic formalizations.",
+        "mechanism": "The process begins with the language model converting a natural language problem into a symbolic formulation containing entities, facts, and rules. This formulation is passed to an external deterministic symbolic solver. Upon successful execution, the result is interpreted and mapped to an answer. If the solver fails due to syntax or inconsistency, it generates an error message. This message is appended to the original prompt, instructing the language model to revise the symbolic formulation. This loop continues until the solver produces a valid result or a maximum attempt limit is reached.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2305.12295v2"
+        ],
+        "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-0CF109B37DAE"
+        ],
+        "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_works": [
+          "W-0CF109B37DAE"
+        ],
+        "summary": "Logical reasoning accuracy is enhanced by separating natural language translation from logical inference, assigning the former to a large language model and the latter to a deterministic symbolic solver, while employing a feedback loop t...",
+        "title": "Neuro-Symbolic Decomposition with Self-Refinement",
+        "updated_at": "2026-06-12T10:09:47+00:00",
+        "variants": {
+          "VER-88BA87FB27C0": {
+            "confidence_score": 0.72,
+            "entered_at": "2026-06-12T10:03:34+00:00",
+            "extracted_at": "2026-06-12T10:09:47+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "confidence_score": 0.72,
+              "core_idea": "Logical reasoning accuracy is enhanced by separating natural language translation from logical inference, assigning the former to a large language model and the latter to a deterministic symbolic solver, while employing a feedback loop that uses solver error messages to iteratively correct symbolic formalizations.",
+              "discussion": "The mechanism mitigates the risk of hallucinated reasoning steps common in probabilistic models by enforcing a separation of concerns. The language model leverages its strength in semantic understanding to parse ambiguous natural language, while the symbolic solver guarantees the mathematical validity of the inference. The self-refinement module is essential for handling the initial imperfections in the model's translation, effectively using the solver as a rigorous validator. However, the efficacy of this method depends on the ability to map the problem domain into a formal logic system that the solver can process.",
+              "evidence": "The text describes a framework that decomposes logical reasoning into problem formulation, symbolic reasoning, and result interpretation. It explicitly mentions a self-refinement module that utilizes symbolic solver error messages to revise formalizations, contrasting this with the black-box nature of standard chain-of-thought prompting which lacks mechanisms to guarantee faithfulness.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "idea_text": "Logical reasoning accuracy is enhanced by separating natural language translation from logical inference, assigning the former to a large language model and the latter to a deterministic symbolic solver, while employing a feedback loop that uses solver error messages to iteratively correct symbolic formalizations.",
+              "mechanism": "The process begins with the language model converting a natural language problem into a symbolic formulation containing entities, facts, and rules. This formulation is passed to an external deterministic symbolic solver. Upon successful execution, the result is interpreted and mapped to an answer. If the solver fails due to syntax or inconsistency, it generates an error message. This message is appended to the original prompt, instructing the language model to revise the symbolic formulation. This loop continues until the solver produces a valid result or a maximum attempt limit is reached.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2305.12295v2"
+              ],
+              "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E0B808CFBB48"
+              ],
+              "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_works": [],
+              "summary": "Logical reasoning accuracy is enhanced by separating natural language translation from logical inference, assigning the former to a large language model and the latter to a deterministic symbolic solver, while employing a feedback loop t...",
+              "title": "Neuro-Symbolic Decomposition with Self-Refinement",
+              "venue_or_source": "EMNLP 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2305.12295v2"
+            ],
+            "version_id": "VER-88BA87FB27C0"
+          }
+        },
+        "venue_or_source": "EMNLP 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.72,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-0CF109B37DAE"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-14T11:59:22+00:00",
+        "updated_at": "2026-06-14T11:59:22+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-C990ABE9C864",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "neuro symbolic decomposition with self refinement neuro symbolic decomposition with self refinement logical reasoning accuracy is enhanced by separating natural language translation from logical inference assigning the former to a large language model and the latter to a deterministic symbolic solve",
+      "canonical_label": "Neuro-Symbolic Decomposition with Self-Refinement",
+      "concept_id": "XI-BFA8C99552C9",
+      "concept_type": "existed_idea",
+      "payload": {
+        "active_version_id": "VER-88BA87FB27C0",
+        "benchmarks": [],
+        "canonical_id": "XI-65287E8D0B78",
+        "canonical_key": "logical reasoning accuracy is enhanced by separating natural language translation from logical inference assigning former to large language model and latter to deterministic symbol",
+        "confidence_score": 0.72,
+        "core_idea": "Logical reasoning accuracy is enhanced by separating natural language translation from logical inference, assigning the former to a large language model and the latter to a deterministic symbolic solver, while employing a feedback loop that uses solver error messages to iteratively correct symbolic formalizations.",
+        "created_at": "2026-06-12T10:03:34+00:00",
+        "discussion": "The mechanism mitigates the risk of hallucinated reasoning steps common in probabilistic models by enforcing a separation of concerns. The language model leverages its strength in semantic understanding to parse ambiguous natural language, while the symbolic solver guarantees the mathematical validity of the inference. The self-refinement module is essential for handling the initial imperfections in the model's translation, effectively using the solver as a rigorous validator. However, the efficacy of this method depends on the ability to map the problem domain into a formal logic system that the solver can process.",
+        "entered_at": "2026-06-12T10:03:34+00:00",
+        "evidence": "The text describes a framework that decomposes logical reasoning into problem formulation, symbolic reasoning, and result interpretation. It explicitly mentions a self-refinement module that utilizes symbolic solver error messages to revise formalizations, contrasting this with the black-box nature of standard chain-of-thought prompting which lacks mechanisms to guarantee faithfulness.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T10:09:47+00:00",
+        "extraction_method": "llm_extracted",
+        "idea_text": "Logical reasoning accuracy is enhanced by separating natural language translation from logical inference, assigning the former to a large language model and the latter to a deterministic symbolic solver, while employing a feedback loop that uses solver error messages to iteratively correct symbolic formalizations.",
+        "mechanism": "The process begins with the language model converting a natural language problem into a symbolic formulation containing entities, facts, and rules. This formulation is passed to an external deterministic symbolic solver. Upon successful execution, the result is interpreted and mapped to an answer. If the solver fails due to syntax or inconsistency, it generates an error message. This message is appended to the original prompt, instructing the language model to revise the symbolic formulation. This loop continues until the solver produces a valid result or a maximum attempt limit is reached.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2305.12295v2"
+        ],
+        "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-E0B808CFBB48"
+        ],
+        "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "source_works": [],
+        "summary": "Logical reasoning accuracy is enhanced by separating natural language translation from logical inference, assigning the former to a large language model and the latter to a deterministic symbolic solver, while employing a feedback loop t...",
+        "title": "Neuro-Symbolic Decomposition with Self-Refinement",
+        "updated_at": "2026-06-12T10:09:47+00:00",
+        "variants": {
+          "VER-88BA87FB27C0": {
+            "confidence_score": 0.72,
+            "entered_at": "2026-06-12T10:03:34+00:00",
+            "extracted_at": "2026-06-12T10:09:47+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "confidence_score": 0.72,
+              "core_idea": "Logical reasoning accuracy is enhanced by separating natural language translation from logical inference, assigning the former to a large language model and the latter to a deterministic symbolic solver, while employing a feedback loop that uses solver error messages to iteratively correct symbolic formalizations.",
+              "discussion": "The mechanism mitigates the risk of hallucinated reasoning steps common in probabilistic models by enforcing a separation of concerns. The language model leverages its strength in semantic understanding to parse ambiguous natural language, while the symbolic solver guarantees the mathematical validity of the inference. The self-refinement module is essential for handling the initial imperfections in the model's translation, effectively using the solver as a rigorous validator. However, the efficacy of this method depends on the ability to map the problem domain into a formal logic system that the solver can process.",
+              "evidence": "The text describes a framework that decomposes logical reasoning into problem formulation, symbolic reasoning, and result interpretation. It explicitly mentions a self-refinement module that utilizes symbolic solver error messages to revise formalizations, contrasting this with the black-box nature of standard chain-of-thought prompting which lacks mechanisms to guarantee faithfulness.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "idea_text": "Logical reasoning accuracy is enhanced by separating natural language translation from logical inference, assigning the former to a large language model and the latter to a deterministic symbolic solver, while employing a feedback loop that uses solver error messages to iteratively correct symbolic formalizations.",
+              "mechanism": "The process begins with the language model converting a natural language problem into a symbolic formulation containing entities, facts, and rules. This formulation is passed to an external deterministic symbolic solver. Upon successful execution, the result is interpreted and mapped to an answer. If the solver fails due to syntax or inconsistency, it generates an error message. This message is appended to the original prompt, instructing the language model to revise the symbolic formulation. This loop continues until the solver produces a valid result or a maximum attempt limit is reached.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "http://arxiv.org/abs/2305.12295v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2305.12295v2"
+              ],
+              "source_paper_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E0B808CFBB48"
+              ],
+              "source_work_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "source_works": [],
+              "summary": "Logical reasoning accuracy is enhanced by separating natural language translation from logical inference, assigning the former to a large language model and the latter to a deterministic symbolic solver, while employing a feedback loop t...",
+              "title": "Neuro-Symbolic Decomposition with Self-Refinement",
+              "venue_or_source": "EMNLP 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2305.12295v2"
+            ],
+            "version_id": "VER-88BA87FB27C0"
+          }
+        },
+        "venue_or_source": "EMNLP 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.72,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-E0B808CFBB48"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T10:10:20+00:00",
+        "updated_at": "2026-06-14T08:38:44+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-28D9518E65D4",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-8E0504E63F12",
+  "created_at": "2026-06-14T11:59:23+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "The text describes a framework that decomposes logical reasoning into problem formulation, symbolic reasoning, and result interpretation. It explicitly mentions a self-refinement module that utilizes symbolic solver error messages to revise formalizations, contrasting this with the black-box nature of standard chain-of-thought prompting which lacks mechanisms to guarantee faithfulness.",
+      "concept_id": "XI-BFA8C99552C9",
+      "confidence": 0.72,
+      "created_at": "2026-06-12T10:10:20+00:00",
+      "evidence_id": "EV-FA0CEB954997",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text describes a framework that decomposes logical reasoning into problem formulation, symbolic reasoning, and result interpretation. It explicitly mentions a self-refinement module that utilizes symbolic solver error messages to revise formalizations, contrasting this with the black-box nature of standard chain-of-thought prompting which lacks mechanisms to guarantee faithfulness.",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "The text states that while LLMs can imitate reasoning, they lack a mechanism to guarantee faithfulness. In contrast, symbolic inference engines are faithful because they follow well-defined inference rules. The proposed framework addresses this by having an LLM convert natural language into symbolic formulation, which a deterministic solver then processes.",
+      "concept_id": "P-A32A053FF7E8",
+      "confidence": 0.68,
+      "created_at": "2026-06-12T10:10:20+00:00",
+      "evidence_id": "EV-A1F37F3A3121",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text states that while LLMs can imitate reasoning, they lack a mechanism to guarantee faithfulness. In contrast, symbolic inference engines are faithful because they follow well-defined inference rules. The proposed framework addresses this by having an LLM convert natural language into symbolic formulation, which a deterministic solver then processes.",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "The abstract and introduction explicitly describe a 'self-refinement module' that utilizes the symbolic solver's error messages to revise symbolic formalizations. This loop continues to correct the output of the problem formulation stage.",
+      "concept_id": "P-05BCAACB411B",
+      "confidence": 0.68,
+      "created_at": "2026-06-12T10:10:20+00:00",
+      "evidence_id": "EV-4247FC8C1A0D",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The abstract and introduction explicitly describe a 'self-refinement module' that utilizes the symbolic solver's error messages to revise symbolic formalizations. This loop continues to correct the output of the problem formulation stage.",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "The introduction notes that recent studies found LLMs occasionally make unfaithful reasoning even with chain-of-thought, as they lack a mechanism to guarantee faithfulness, unlike symbolic inference engines which follow well-defined rules.",
+      "concept_id": "TM-8DA82F5D193D",
+      "confidence": 0.7,
+      "created_at": "2026-06-12T10:10:20+00:00",
+      "evidence_id": "EV-73E7F792424A",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The introduction notes that recent studies found LLMs occasionally make unfaithful reasoning even with chain-of-thought, as they lack a mechanism to guarantee faithfulness, unlike symbolic inference engines which follow well-defined rules.",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-AB71670E466B\", \"field_id\": \"PRJ-28B4CA742446\", \"work_id\": \"W-E0B808CFBB48\", \"task\": \"logical patterns accuracy-token during\", \"dataset\": \"LOGIC -LM on five com- mon logical reasoning\", \"split\": \"few-shot split\", \"metric\": \"F1\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Logic-LM:...",
+      "concept_id": "B-874A0657FE8C",
+      "confidence": 0.7,
+      "created_at": "2026-06-12T10:10:23+00:00",
+      "evidence_id": "EV-4B945ECAE2BE",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-AB71670E466B\", \"field_id\": \"PRJ-28B4CA742446\", \"work_id\": \"W-E0B808CFBB48\", \"task\": \"logical patterns accuracy-token during\", \"dataset\": \"LOGIC -LM on five com- mon logical reasoning\", \"split\": \"few-shot split\", \"metric\": \"F1\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Logic-LM:...",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "Cited as a benchmark where the proposed method demonstrated effectiveness.",
+      "concept_id": "B-62C315843EE3",
+      "confidence": 0.58,
+      "created_at": "2026-06-12T10:10:23+00:00",
+      "evidence_id": "EV-DEC23B1FB617",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "Cited as a benchmark where the proposed method demonstrated effectiveness.",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "Listed as the fifth dataset used to evaluate the framework, representing a challenging real-world logical reasoning scenario.",
+      "concept_id": "B-4FEE2B7460AB",
+      "confidence": 0.58,
+      "created_at": "2026-06-12T10:10:23+00:00",
+      "evidence_id": "EV-A861805EAD55",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "Listed as the fifth dataset used to evaluate the framework, representing a challenging real-world logical reasoning scenario.",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-A129D4819D18\", \"field_id\": \"PRJ-28B4CA742446\", \"work_id\": \"W-FB9BBEC70985\", \"task\": \"logical patterns accuracy-token during\", \"dataset\": \"ProofWriter\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"LogicBench: Towards Systematic Evaluati...",
+      "concept_id": "B-F8B91ED23D6B",
+      "confidence": 0.7,
+      "created_at": "2026-06-12T10:10:23+00:00",
+      "evidence_id": "EV-37C0BF62EAF1",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-A129D4819D18\", \"field_id\": \"PRJ-28B4CA742446\", \"work_id\": \"W-FB9BBEC70985\", \"task\": \"logical patterns accuracy-token during\", \"dataset\": \"ProofWriter\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"LogicBench: Towards Systematic Evaluati...",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "Described as equipped with human annotations of classical logic but limited to about two hundred instances due to annotation cost.",
+      "concept_id": "B-951583663443",
+      "confidence": 0.58,
+      "created_at": "2026-06-12T10:10:23+00:00",
+      "evidence_id": "EV-1B9BC9D5F7E0",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "Described as equipped with human annotations of classical logic but limited to about two hundred instances due to annotation cost.",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-AC50BB1E1534\", \"field_id\": \"PRJ-28B4CA742446\", \"work_id\": \"W-429E5CB9B133\", \"task\": \"logical patterns accuracy-token during\", \"dataset\": \"PrOntoQA\", \"split\": \"unspecified\", \"metric\": \"exact match\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DivLogicEval: A Framework for Benchmarking Logic...",
+      "concept_id": "B-2E3D76595359",
+      "confidence": 0.7,
+      "created_at": "2026-06-12T10:10:23+00:00",
+      "evidence_id": "EV-D0FE9A215326",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-AC50BB1E1534\", \"field_id\": \"PRJ-28B4CA742446\", \"work_id\": \"W-429E5CB9B133\", \"task\": \"logical patterns accuracy-token during\", \"dataset\": \"PrOntoQA\", \"split\": \"unspecified\", \"metric\": \"exact match\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DivLogicEval: A Framework for Benchmarking Logic...",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "Represents an improved baseline that still suffers from unfaithful reasoning despite generating intermediate steps, against which the 18.4% improvement is measured.",
+      "concept_id": "BL-B7CA18E95935",
+      "confidence": 0.55,
+      "created_at": "2026-06-12T10:10:24+00:00",
+      "evidence_id": "EV-10027FCFD565",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "Represents an improved baseline that still suffers from unfaithful reasoning despite generating intermediate steps, against which the 18.4% improvement is measured.",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E0B0F26A151E",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T10:10:35+00:00",
+      "evidence_id": "EV-BDF452F6AFDA",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-BA0630BAD34D",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T10:10:35+00:00",
+      "evidence_id": "EV-BE89E7D45940",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E63F0278EE94",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T10:10:35+00:00",
+      "evidence_id": "EV-E6DB64B5AC34",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-D70DE3387352",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T10:10:35+00:00",
+      "evidence_id": "EV-6B9983F0B28C",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-BA0630BAD34D",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T10:10:35+00:00",
+      "evidence_id": "EV-16D301DF238E",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-D70DE3387352",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T10:10:35+00:00",
+      "evidence_id": "EV-B84D111D612A",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E63F0278EE94",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T10:10:35+00:00",
+      "evidence_id": "EV-A4290C1B9C04",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-D70DE3387352",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T10:10:35+00:00",
+      "evidence_id": "EV-4E7609639DCC",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E0B0F26A151E",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T10:10:35+00:00",
+      "evidence_id": "EV-74BD99A31579",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E63F0278EE94",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T10:10:35+00:00",
+      "evidence_id": "EV-DC29897FCB91",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E0B0F26A151E",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T10:10:35+00:00",
+      "evidence_id": "EV-0BF1647C060E",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-BA0630BAD34D",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T10:10:36+00:00",
+      "evidence_id": "EV-046C1EC97AB6",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-D70DE3387352",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T10:10:36+00:00",
+      "evidence_id": "EV-70F4A3CFA91E",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E63F0278EE94",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T10:10:36+00:00",
+      "evidence_id": "EV-A2C61206734E",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-BA0630BAD34D",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T10:10:36+00:00",
+      "evidence_id": "EV-7D8603F48BC9",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E0B0F26A151E",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T10:10:36+00:00",
+      "evidence_id": "EV-7B7A6469B6C7",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "The text describes a framework that decomposes logical reasoning into problem formulation, symbolic reasoning, and result interpretation. It explicitly mentions a self-refinement module that utilizes symbolic solver error messages to revise formalizations, contrasting this with the black-box nature of standard chain-of-thought prompting which lacks mechanisms to guarantee faithfulness.",
+      "concept_id": "XI-84F6C2C0E824",
+      "confidence": 0.72,
+      "created_at": "2026-06-14T11:59:22+00:00",
+      "evidence_id": "EV-98C2E9133A1C",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text describes a framework that decomposes logical reasoning into problem formulation, symbolic reasoning, and result interpretation. It explicitly mentions a self-refinement module that utilizes symbolic solver error messages to revise formalizations, contrasting this with the black-box nature of standard chain-of-thought prompting which lacks mechanisms to guarantee faithfulness.",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": "WV-26C994749A23"
+    },
+    {
+      "claim_text": "The text states that while LLMs can imitate reasoning, they lack a mechanism to guarantee faithfulness. In contrast, symbolic inference engines are faithful because they follow well-defined inference rules. The proposed framework addresses this by having an LLM convert natural language into symbolic formulation, which a deterministic solver then processes.",
+      "concept_id": "P-F88F84D3CEC8",
+      "confidence": 0.68,
+      "created_at": "2026-06-14T11:59:22+00:00",
+      "evidence_id": "EV-45390B72F4F3",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text states that while LLMs can imitate reasoning, they lack a mechanism to guarantee faithfulness. In contrast, symbolic inference engines are faithful because they follow well-defined inference rules. The proposed framework addresses this by having an LLM convert natural language into symbolic formulation, which a deterministic solver then processes.",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": "WV-26C994749A23"
+    },
+    {
+      "claim_text": "The abstract and introduction explicitly describe a 'self-refinement module' that utilizes the symbolic solver's error messages to revise symbolic formalizations. This loop continues to correct the output of the problem formulation stage.",
+      "concept_id": "P-2BEDA9E6B75E",
+      "confidence": 0.68,
+      "created_at": "2026-06-14T11:59:22+00:00",
+      "evidence_id": "EV-6370054B4811",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The abstract and introduction explicitly describe a 'self-refinement module' that utilizes the symbolic solver's error messages to revise symbolic formalizations. This loop continues to correct the output of the problem formulation stage.",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": "WV-26C994749A23"
+    },
+    {
+      "claim_text": "The introduction notes that recent studies found LLMs occasionally make unfaithful reasoning even with chain-of-thought, as they lack a mechanism to guarantee faithfulness, unlike symbolic inference engines which follow well-defined rules.",
+      "concept_id": "TM-972B75554E26",
+      "confidence": 0.7,
+      "created_at": "2026-06-14T11:59:22+00:00",
+      "evidence_id": "EV-AAD833A66725",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The introduction notes that recent studies found LLMs occasionally make unfaithful reasoning even with chain-of-thought, as they lack a mechanism to guarantee faithfulness, unlike symbolic inference engines which follow well-defined rules.",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": "WV-26C994749A23"
+    },
+    {
+      "claim_text": "Described as equipped with human annotations of classical logic but limited to about two hundred instances due to annotation cost.",
+      "concept_id": "B-691031DE517A",
+      "confidence": 0.58,
+      "created_at": "2026-06-14T11:59:23+00:00",
+      "evidence_id": "EV-60D03E8EACA9",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "Described as equipped with human annotations of classical logic but limited to about two hundred instances due to annotation cost.",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": "WV-26C994749A23"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-AC50BB1E1534\", \"field_id\": \"PRJ-28B4CA742446\", \"work_id\": \"W-429E5CB9B133\", \"task\": \"logical patterns accuracy-token during\", \"dataset\": \"PrOntoQA\", \"split\": \"unspecified\", \"metric\": \"exact match\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DivLogicEval: A Framework for Benchmarking Logic...",
+      "concept_id": "B-0BAEEB566A11",
+      "confidence": 0.7,
+      "created_at": "2026-06-14T11:59:23+00:00",
+      "evidence_id": "EV-D836A6B41409",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-AC50BB1E1534\", \"field_id\": \"PRJ-28B4CA742446\", \"work_id\": \"W-429E5CB9B133\", \"task\": \"logical patterns accuracy-token during\", \"dataset\": \"PrOntoQA\", \"split\": \"unspecified\", \"metric\": \"exact match\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DivLogicEval: A Framework for Benchmarking Logic...",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": "WV-26C994749A23"
+    },
+    {
+      "claim_text": "Represents an improved baseline that still suffers from unfaithful reasoning despite generating intermediate steps, against which the 18.4% improvement is measured.",
+      "concept_id": "BL-CE9B1820ECAC",
+      "confidence": 0.55,
+      "created_at": "2026-06-14T11:59:23+00:00",
+      "evidence_id": "EV-C2D4731B32BA",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "Represents an improved baseline that still suffers from unfaithful reasoning despite generating intermediate steps, against which the 18.4% improvement is measured.",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": "WV-26C994749A23"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-14T11:59:22+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-14T11:59:22+00:00",
+      "extraction_run_id": "XRUN-C6084E5871F4",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 1,
+        "benchmark_records": 5,
+        "existed_ideas": 1,
+        "principles": 2,
+        "takeaway_messages": 1,
+        "total": 10
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": "WV-26C994749A23"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "local_pr_export",
+    "secret_exposed_to_browser": false,
+    "warning": "Server admin key is not configured; output is a local PR-export artifact, not a direct GitHub write."
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 1,
+        "principle": 2
+      },
+      "title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-0CF109B37DAE"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "2305.12295",
+        "authors": [
+          "Liangming Pan",
+          "Alon Albalak",
+          "Xinyi Wang",
+          "William Yang Wang"
+        ],
+        "canonical_title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "http://arxiv.org/abs/2305.12295v2"
+        ],
+        "title_hash": "6931462e8f82b8d0",
+        "title_norm": "logic lm empowering large language models with symbolic solvers for faithful logical reasoning",
+        "venue_or_source": "EMNLP 2023",
+        "year": 2023
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "2023-10-19T01:54:27Z",
+        "title_hash": "6931462e8f82b8d0"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T10:10:19+00:00",
+        "updated_at": "2026-06-14T11:59:22+00:00"
+      },
+      "work_id": "W-0CF109B37DAE"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": "Large Language Models (LLMs) have shown human-like reasoning abilities but still struggle with complex logical problems. This paper introduces a novel framework, Logic-LM, which integrates LLMs with symbolic solvers to improve logical problem-solving. Our method first utilizes LLMs to translate a natural language problem into a symbolic formulation. Afterward, a deterministic symbolic solver performs inference on the formulated problem. We also introduce a self-refinement module, which utilizes the symbolic solver's error messages to revise symbolic formalizations. We demonstrate Logic-LM's effectiveness on five logical reasoning datasets: ProofWriter, PrOntoQA, FOLIO, LogicalDeduction, and AR-LSAT. On average, Logic-LM achieves a significant performance boost of 39.2% over using LLM alone with standard prompting and 18.4% over LLM with chain-of-thought prompting. Our findings suggest that Logic-LM, by combining LLMs with symbolic logic, offers a promising avenue for faithful logical reasoning. Code and data are publicly available at https://github.com/teacherpeterpan/Logic-LLM.",
+      "abstract_hash": "b62087b0f0fc60d8",
+      "content_hash": "edd6843f1bc29fcc",
+      "created_at": "2026-06-12T10:10:19+00:00",
+      "metadata": {
+        "abstract": "Large Language Models (LLMs) have shown human-like reasoning abilities but still struggle with complex logical problems. This paper introduces a novel framework, Logic-LM, which integrates LLMs with symbolic solvers to improve logical problem-solving. Our method first utilizes LLMs to translate a natural language problem into a symbolic formulation. Afterward, a deterministic symbolic solver performs inference on the formulated problem. We also introduce a self-refinement module, which utilizes the symbolic solver's error messages to revise symbolic formalizations. We demonstrate Logic-LM's effectiveness on five logical reasoning datasets: ProofWriter, PrOntoQA, FOLIO, LogicalDeduction, and AR-LSAT. On average, Logic-LM achieves a significant performance boost of 39.2% over using LLM alone with standard prompting and 18.4% over LLM with chain-of-thought prompting. Our findings suggest that Logic-LM, by combining LLMs with symbolic logic, offers a promising avenue for faithful logical reasoning. Code and data are publicly available at https://github.com/teacherpeterpan/Logic-LLM.",
+        "active_version_id": "VER-EF0919485AFA",
+        "authors": [
+          "Liangming Pan",
+          "Alon Albalak",
+          "Xinyi Wang",
+          "William Yang Wang"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-E0B808CFBB48",
+        "canonical_key": "logic lm empowering large language models with symbolic solvers for faithful logical reasoning",
+        "community_signals": {},
+        "confidence_score": 0.62,
+        "created_at": "2026-06-12T10:00:01+00:00",
+        "entered_at": "2026-06-12T10:00:51+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T10:09:46+00:00",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "paper_link": "http://arxiv.org/abs/2305.12295v2",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "2023-10-19T01:54:27Z",
+        "source_urls": [
+          "http://arxiv.org/abs/2305.12295v2"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+        "updated_at": "2026-06-12T10:09:46+00:00",
+        "url_or_doi": "http://arxiv.org/abs/2305.12295v2",
+        "validation_level": "L1",
+        "variants": {
+          "VER-E89C668183C0": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-12T10:00:01+00:00",
+            "extracted_at": "2026-06-12T10:00:01+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "Qwen/Qwen3.6-27B",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Large Language Models (LLMs) have shown human-like reasoning abilities but still struggle with complex logical problems. This paper introduces a novel framework, Logic-LM, which integrates LLMs with symbolic solvers to improve logical problem-solving. Our method first utilizes LLMs to translate a natural language problem into a symbolic formulation. Afterward, a deterministic symbolic solver performs inference on the formulated problem. We also introduce a self-refinement module, which utilizes the symbolic solver's error messages to revise symbolic formalizations. We demonstrate Logic-LM's effectiveness on five logical reasoning datasets: ProofWriter, PrOntoQA, FOLIO, LogicalDeduction, and AR-LSAT. On average, Logic-LM achieves a significant performance boost of 39.2% over using LLM alone with standard prompting and 18.4% over LLM with chain-of-thought prompting. Our findings suggest that Logic-LM, by combining LLMs with symbolic logic, offers a promising avenue for faithful logical reasoning. Code and data are publicly available at https://github.com/teacherpeterpan/Logic-LLM.",
+              "authors": [
+                "Liangming Pan",
+                "Alon Albalak",
+                "Xinyi Wang",
+                "William Yang Wang"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/2305.12295v2",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2023-10-19T01:54:27Z",
+              "source_urls": [
+                "http://arxiv.org/abs/2305.12295v2"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "url_or_doi": "http://arxiv.org/abs/2305.12295v2",
+              "validation_level": "L1",
+              "venue_or_source": "EMNLP 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2305.12295v2"
+            ],
+            "version_id": "VER-E89C668183C0"
+          },
+          "VER-EF0919485AFA": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-12T10:00:51+00:00",
+            "extracted_at": "2026-06-12T10:09:46+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Large Language Models (LLMs) have shown human-like reasoning abilities but still struggle with complex logical problems. This paper introduces a novel framework, Logic-LM, which integrates LLMs with symbolic solvers to improve logical problem-solving. Our method first utilizes LLMs to translate a natural language problem into a symbolic formulation. Afterward, a deterministic symbolic solver performs inference on the formulated problem. We also introduce a self-refinement module, which utilizes the symbolic solver's error messages to revise symbolic formalizations. We demonstrate Logic-LM's effectiveness on five logical reasoning datasets: ProofWriter, PrOntoQA, FOLIO, LogicalDeduction, and AR-LSAT. On average, Logic-LM achieves a significant performance boost of 39.2% over using LLM alone with standard prompting and 18.4% over LLM with chain-of-thought prompting. Our findings suggest that Logic-LM, by combining LLMs with symbolic logic, offers a promising avenue for faithful logical reasoning. Code and data are publicly available at https://github.com/teacherpeterpan/Logic-LLM.",
+              "authors": [
+                "Liangming Pan",
+                "Alon Albalak",
+                "Xinyi Wang",
+                "William Yang Wang"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/2305.12295v2",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2023-10-19T01:54:27Z",
+              "source_urls": [
+                "http://arxiv.org/abs/2305.12295v2"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+              "url_or_doi": "http://arxiv.org/abs/2305.12295v2",
+              "validation_level": "L1",
+              "venue_or_source": "EMNLP 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2305.12295v2"
+            ],
+            "version_id": "VER-EF0919485AFA"
+          }
+        },
+        "venue_or_source": "EMNLP 2023",
+        "work_id": "W-E0B808CFBB48",
+        "year": 2023
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "",
+      "source_record_id": "W-E0B808CFBB48",
+      "source_updated_at": "2023-10-19T01:54:27Z",
+      "title": "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning",
+      "title_hash": "6931462e8f82b8d0",
+      "work_id": "W-0CF109B37DAE",
+      "work_version_id": "WV-26C994749A23"
+    }
+  ]
+}
