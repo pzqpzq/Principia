@@ -1,0 +1,2848 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "math math math w 591adfd1650f",
+      "canonical_label": "MATH",
+      "concept_id": "B-1A6F507BBC89",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-19136C0392DD",
+        "benchmark_id": "B-7A488390A939",
+        "benchmark_name": "MATH",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-7A488390A939",
+        "canonical_key": "math",
+        "confidence_score": 0.32,
+        "created_at": "2026-06-12T08:54:08+00:00",
+        "data_form": "Natural-language math problems with final answers and solutions.",
+        "dataset": "MATH",
+        "description": "Competition-style mathematical reasoning benchmark covering algebra, geometry, counting, probability, number theory, and precalculus.",
+        "entered_at": "2026-06-12T08:54:08+00:00",
+        "evidence": "{\"benchmark_id\": \"B-C0E8D8DD1772\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-06F4B81340E8\", \"task\": \"initialization models space state\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"UnHiPPO: Uncertainty-aware Initialization for Stat...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-13T17:28:05+00:00",
+        "extractor": "deterministic",
+        "metric": "primary reported metric",
+        "metrics": [
+          "F1",
+          "accuracy",
+          "primary reported metric",
+          "mAP",
+          "BLEU",
+          "ROUGE"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "official_url": "https://github.com/hendrycks/math",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "12.5K problems across multiple difficulty levels and subject areas.",
+        "source": "Hendrycks et al.",
+        "source_paper_link": "https://openreview.net/forum?id=U8GUmxnzXn",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2602.09801v1",
+          "http://arxiv.org/abs/2603.25111v2",
+          "http://arxiv.org/abs/2412.11427v2",
+          "http://arxiv.org/abs/2406.11050v2",
+          "http://arxiv.org/abs/2308.04371v11",
+          "http://arxiv.org/abs/2604.27251v2",
+          "http://arxiv.org/abs/2510.09709v1",
+          "http://arxiv.org/abs/2601.01982v1",
+          "http://arxiv.org/abs/2510.09782v2",
+          "http://arxiv.org/abs/2406.13892v2",
+          "https://openreview.net/forum?id=U8GUmxnzXn",
+          "https://doi.org/10.1007/s43681-026-01042-1",
+          "http://arxiv.org/abs/2504.04718v2"
+        ],
+        "source_paper_title": "UnHiPPO: Uncertainty-aware Initialization for State Space Models",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-591ADFD1650F"
+        ],
+        "source_work_title": "UnHiPPO: Uncertainty-aware Initialization for State Space Models",
+        "source_works": [
+          "W-591ADFD1650F"
+        ],
+        "task": "initialization models space state",
+        "updated_at": "2026-06-13T17:28:05+00:00",
+        "variants": {
+          "VER-19136C0392DD": {
+            "confidence_score": 0.32,
+            "entered_at": "2026-06-12T08:54:08+00:00",
+            "extracted_at": "2026-06-13T17:28:05+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "benchmark_name": "MATH",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.32,
+              "data_form": "Natural-language math problems with final answers and solutions.",
+              "dataset": "MATH",
+              "description": "Competition-style mathematical reasoning benchmark covering algebra, geometry, counting, probability, number theory, and precalculus.",
+              "evidence": "{\"benchmark_id\": \"B-C0E8D8DD1772\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-06F4B81340E8\", \"task\": \"initialization models space state\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"UnHiPPO: Uncertainty-aware Initialization for Stat...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "primary reported metric",
+              "metrics": [
+                "F1",
+                "accuracy",
+                "primary reported metric",
+                "mAP",
+                "BLEU",
+                "ROUGE"
+              ],
+              "needs_review": true,
+              "official_url": "https://github.com/hendrycks/math",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "12.5K problems across multiple difficulty levels and subject areas.",
+              "source": "Hendrycks et al.",
+              "source_paper_link": "https://openreview.net/forum?id=U8GUmxnzXn",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2602.09801v1",
+                "http://arxiv.org/abs/2603.25111v2",
+                "http://arxiv.org/abs/2412.11427v2",
+                "http://arxiv.org/abs/2406.11050v2",
+                "http://arxiv.org/abs/2308.04371v11",
+                "http://arxiv.org/abs/2604.27251v2",
+                "http://arxiv.org/abs/2510.09709v1",
+                "http://arxiv.org/abs/2601.01982v1",
+                "http://arxiv.org/abs/2510.09782v2",
+                "http://arxiv.org/abs/2406.13892v2",
+                "https://openreview.net/forum?id=U8GUmxnzXn",
+                "https://doi.org/10.1007/s43681-026-01042-1",
+                "http://arxiv.org/abs/2504.04718v2"
+              ],
+              "source_paper_title": "UnHiPPO: Uncertainty-aware Initialization for State Space Models",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-3FD22D147568",
+                "W-0CB6DC2F0457",
+                "W-7E6DF19A7E3F",
+                "W-D5C57268E64E",
+                "W-F6FBA288BECF",
+                "W-996C5129930F",
+                "W-E52F130637B9",
+                "W-4BCB27BB25AC",
+                "W-BEC3E54E563C",
+                "W-9F68C6C3FB38",
+                "W-06F4B81340E8",
+                "W-A41AD12F1753",
+                "W-B2629AEE97CA"
+              ],
+              "source_work_title": "UnHiPPO: Uncertainty-aware Initialization for State Space Models",
+              "source_works": [],
+              "task": "initialization models space state",
+              "venue_or_source": "ICML",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://openreview.net/forum?id=U8GUmxnzXn",
+              "https://github.com/hendrycks/math"
+            ],
+            "version_id": "VER-19136C0392DD"
+          }
+        },
+        "venue_or_source": "ICML",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.32,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-591ADFD1650F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-13T17:36:00+00:00",
+        "updated_at": "2026-06-13T17:36:00+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-BED96B8B017A",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "math math math w 3fd22d147568 w 0cb6dc2f0457 w 7e6df19a7e3f w d5c57268e64e w f6fba288becf w 996c5129930f w e52f130637b9 w 4bcb27bb25ac w bec3e54e563c w 9f68c6c3fb38",
+      "canonical_label": "MATH",
+      "concept_id": "B-38089AECA9E8",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-19136C0392DD",
+        "benchmark_id": "B-7A488390A939",
+        "benchmark_name": "MATH",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-7A488390A939",
+        "canonical_key": "math",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-12T08:54:08+00:00",
+        "data_form": "Natural-language math problems with final answers and solutions.",
+        "dataset": "MATH",
+        "description": "Competition-style mathematical reasoning benchmark covering algebra, geometry, counting, probability, number theory, and precalculus.",
+        "entered_at": "2026-06-12T08:54:08+00:00",
+        "evidence": "{\"benchmark_id\": \"B-9F3418BF5625\", \"field_id\": \"PRJ-28B4CA742446\", \"work_id\": \"W-D5C57268E64E\", \"task\": \"logical patterns accuracy-token during\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"A Peek into Token Bias: Large Language Models...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T10:09:46+00:00",
+        "extractor": "deterministic",
+        "metric": "accuracy",
+        "metrics": [
+          "F1",
+          "accuracy",
+          "primary reported metric",
+          "mAP",
+          "BLEU",
+          "ROUGE"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://github.com/hendrycks/math",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "12.5K problems across multiple difficulty levels and subject areas.",
+        "source": "Hendrycks et al.",
+        "source_paper_link": "http://arxiv.org/abs/2406.11050v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2602.09801v1",
+          "http://arxiv.org/abs/2603.25111v2",
+          "http://arxiv.org/abs/2412.11427v2",
+          "http://arxiv.org/abs/2406.11050v2",
+          "http://arxiv.org/abs/2308.04371v11",
+          "http://arxiv.org/abs/2604.27251v2",
+          "http://arxiv.org/abs/2510.09709v1",
+          "http://arxiv.org/abs/2601.01982v1",
+          "http://arxiv.org/abs/2510.09782v2",
+          "http://arxiv.org/abs/2406.13892v2"
+        ],
+        "source_paper_title": "A Peek into Token Bias: Large Language Models Are Not Yet Genuine Reasoners",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-3FD22D147568",
+          "W-0CB6DC2F0457",
+          "W-7E6DF19A7E3F",
+          "W-D5C57268E64E",
+          "W-F6FBA288BECF",
+          "W-996C5129930F",
+          "W-E52F130637B9",
+          "W-4BCB27BB25AC",
+          "W-BEC3E54E563C",
+          "W-9F68C6C3FB38"
+        ],
+        "source_work_title": "A Peek into Token Bias: Large Language Models Are Not Yet Genuine Reasoners",
+        "source_works": [],
+        "task": "logical patterns accuracy-token during",
+        "updated_at": "2026-06-12T10:09:46+00:00",
+        "variants": {
+          "VER-19136C0392DD": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-12T08:54:08+00:00",
+            "extracted_at": "2026-06-12T10:09:46+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "MATH",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Natural-language math problems with final answers and solutions.",
+              "dataset": "MATH",
+              "description": "Competition-style mathematical reasoning benchmark covering algebra, geometry, counting, probability, number theory, and precalculus.",
+              "evidence": "{\"benchmark_id\": \"B-9F3418BF5625\", \"field_id\": \"PRJ-28B4CA742446\", \"work_id\": \"W-D5C57268E64E\", \"task\": \"logical patterns accuracy-token during\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"A Peek into Token Bias: Large Language Models...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "accuracy",
+              "metrics": [
+                "F1",
+                "accuracy",
+                "primary reported metric",
+                "mAP",
+                "BLEU",
+                "ROUGE"
+              ],
+              "needs_review": false,
+              "official_url": "https://github.com/hendrycks/math",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "12.5K problems across multiple difficulty levels and subject areas.",
+              "source": "Hendrycks et al.",
+              "source_paper_link": "http://arxiv.org/abs/2406.11050v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2602.09801v1",
+                "http://arxiv.org/abs/2603.25111v2",
+                "http://arxiv.org/abs/2412.11427v2",
+                "http://arxiv.org/abs/2406.11050v2",
+                "http://arxiv.org/abs/2308.04371v11",
+                "http://arxiv.org/abs/2604.27251v2",
+                "http://arxiv.org/abs/2510.09709v1",
+                "http://arxiv.org/abs/2601.01982v1",
+                "http://arxiv.org/abs/2510.09782v2",
+                "http://arxiv.org/abs/2406.13892v2"
+              ],
+              "source_paper_title": "A Peek into Token Bias: Large Language Models Are Not Yet Genuine Reasoners",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-3FD22D147568",
+                "W-0CB6DC2F0457",
+                "W-7E6DF19A7E3F",
+                "W-D5C57268E64E",
+                "W-F6FBA288BECF",
+                "W-996C5129930F",
+                "W-E52F130637B9",
+                "W-4BCB27BB25AC",
+                "W-BEC3E54E563C",
+                "W-9F68C6C3FB38"
+              ],
+              "source_work_title": "A Peek into Token Bias: Large Language Models Are Not Yet Genuine Reasoners",
+              "source_works": [],
+              "task": "logical patterns accuracy-token during",
+              "venue_or_source": "EMNLP 2024",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2406.11050v2",
+              "https://github.com/hendrycks/math"
+            ],
+            "version_id": "VER-19136C0392DD"
+          }
+        },
+        "venue_or_source": "EMNLP 2024",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-3FD22D147568",
+          "W-0CB6DC2F0457",
+          "W-7E6DF19A7E3F",
+          "W-D5C57268E64E",
+          "W-F6FBA288BECF",
+          "W-996C5129930F",
+          "W-E52F130637B9",
+          "W-4BCB27BB25AC",
+          "W-BEC3E54E563C",
+          "W-9F68C6C3FB38"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T10:10:23+00:00",
+        "updated_at": "2026-06-12T10:11:53+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-2548F6A8ADE9",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "ai driven scien tific equation discovery ai driven scien tific equation discovery ai driven scien tific equation discovery w 7e6df19a7e3f",
+      "canonical_label": "AI-driven scien- tific equation discovery",
+      "concept_id": "B-44154A11DADF",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-70C118EDCCAC",
+        "benchmark_id": "B-CF972200F646",
+        "benchmark_name": "AI-driven scien- tific equation discovery",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "candidate_dataset_pages": [
+          "https://huggingface.co/datasets?search=AI-driven%20scien-%20tific%20equation%20discovery"
+        ],
+        "canonical_id": "B-CF972200F646",
+        "canonical_key": "ai driven scientific equation discovery",
+        "confidence_score": 0.32,
+        "created_at": "2026-06-12T08:54:11+00:00",
+        "data_form": "Unknown from local metadata; inspect the source work or benchmark page.",
+        "dataset": "AI-driven scien- tific equation discovery",
+        "description": "AI-driven scien- tific equation discovery appears in local source evidence. Add official metadata when you curate this project.",
+        "entered_at": "2026-06-12T08:54:11+00:00",
+        "evidence": "{\"benchmark_id\": \"B-BBC8784F89FC\", \"field_id\": \"PRJ-722905D32942\", \"work_id\": \"W-7E6DF19A7E3F\", \"task\": \"symbolic-compactness reward for MAS scientific discovery\", \"dataset\": \"AI-driven scien- tific equation discovery\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_t...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T09:08:21+00:00",
+        "extractor": "deterministic",
+        "metric": "primary reported metric",
+        "metrics": [
+          "primary reported metric"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": false,
+        "scale": "Unknown from local metadata.",
+        "source": "local extraction",
+        "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2412.11427v2"
+        ],
+        "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-7E6DF19A7E3F"
+        ],
+        "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_works": [],
+        "task": "symbolic-compactness reward for MAS scientific discovery",
+        "updated_at": "2026-06-12T09:08:21+00:00",
+        "variants": {
+          "VER-70C118EDCCAC": {
+            "confidence_score": 0.32,
+            "entered_at": "2026-06-12T08:54:11+00:00",
+            "extracted_at": "2026-06-12T09:08:21+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "benchmark_name": "AI-driven scien- tific equation discovery",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "candidate_dataset_pages": [
+                "https://huggingface.co/datasets?search=AI-driven%20scien-%20tific%20equation%20discovery"
+              ],
+              "confidence_score": 0.32,
+              "data_form": "Unknown from local metadata; inspect the source work or benchmark page.",
+              "dataset": "AI-driven scien- tific equation discovery",
+              "description": "AI-driven scien- tific equation discovery appears in local source evidence. Add official metadata when you curate this project.",
+              "evidence": "{\"benchmark_id\": \"B-BBC8784F89FC\", \"field_id\": \"PRJ-722905D32942\", \"work_id\": \"W-7E6DF19A7E3F\", \"task\": \"symbolic-compactness reward for MAS scientific discovery\", \"dataset\": \"AI-driven scien- tific equation discovery\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_t...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "primary reported metric",
+              "metrics": [
+                "primary reported metric"
+              ],
+              "needs_review": true,
+              "performance": [],
+              "public_dataset": false,
+              "scale": "Unknown from local metadata.",
+              "source": "local extraction",
+              "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2412.11427v2"
+              ],
+              "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7E6DF19A7E3F"
+              ],
+              "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_works": [],
+              "task": "symbolic-compactness reward for MAS scientific discovery",
+              "venue_or_source": "AAAI 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2412.11427v2"
+            ],
+            "version_id": "VER-70C118EDCCAC"
+          }
+        },
+        "venue_or_source": "AAAI 2025",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.32,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-7E6DF19A7E3F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T09:08:31+00:00",
+        "updated_at": "2026-06-12T10:11:53+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-67F407D4728F",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "scien tific tools scien tific tools scien tific tools w 7e6df19a7e3f",
+      "canonical_label": "scien- tific tools",
+      "concept_id": "B-467DC3291908",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-D7B4455297E2",
+        "benchmark_id": "B-D5DB125A49AB",
+        "benchmark_name": "scien- tific tools",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "candidate_dataset_pages": [
+          "https://huggingface.co/datasets?search=scien-%20tific%20tools"
+        ],
+        "canonical_id": "B-D5DB125A49AB",
+        "canonical_key": "scientific tools",
+        "confidence_score": 0.32,
+        "created_at": "2026-06-12T08:54:11+00:00",
+        "data_form": "Unknown from local metadata; inspect the source work or benchmark page.",
+        "dataset": "scien- tific tools",
+        "description": "scien- tific tools appears in local source evidence. Add official metadata when you curate this project.",
+        "entered_at": "2026-06-12T08:54:11+00:00",
+        "evidence": "{\"benchmark_id\": \"B-16C515D955B1\", \"field_id\": \"PRJ-722905D32942\", \"work_id\": \"W-7E6DF19A7E3F\", \"task\": \"symbolic-compactness reward for MAS scientific discovery\", \"dataset\": \"scien- tific tools\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Towards...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T09:08:21+00:00",
+        "extractor": "deterministic",
+        "metric": "primary reported metric",
+        "metrics": [
+          "primary reported metric"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": false,
+        "scale": "Unknown from local metadata.",
+        "source": "local extraction",
+        "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2412.11427v2"
+        ],
+        "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-7E6DF19A7E3F"
+        ],
+        "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_works": [],
+        "task": "symbolic-compactness reward for MAS scientific discovery",
+        "updated_at": "2026-06-12T09:08:21+00:00",
+        "variants": {
+          "VER-D7B4455297E2": {
+            "confidence_score": 0.32,
+            "entered_at": "2026-06-12T08:54:11+00:00",
+            "extracted_at": "2026-06-12T09:08:21+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "benchmark_name": "scien- tific tools",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "candidate_dataset_pages": [
+                "https://huggingface.co/datasets?search=scien-%20tific%20tools"
+              ],
+              "confidence_score": 0.32,
+              "data_form": "Unknown from local metadata; inspect the source work or benchmark page.",
+              "dataset": "scien- tific tools",
+              "description": "scien- tific tools appears in local source evidence. Add official metadata when you curate this project.",
+              "evidence": "{\"benchmark_id\": \"B-16C515D955B1\", \"field_id\": \"PRJ-722905D32942\", \"work_id\": \"W-7E6DF19A7E3F\", \"task\": \"symbolic-compactness reward for MAS scientific discovery\", \"dataset\": \"scien- tific tools\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Towards...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "primary reported metric",
+              "metrics": [
+                "primary reported metric"
+              ],
+              "needs_review": true,
+              "performance": [],
+              "public_dataset": false,
+              "scale": "Unknown from local metadata.",
+              "source": "local extraction",
+              "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2412.11427v2"
+              ],
+              "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7E6DF19A7E3F"
+              ],
+              "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_works": [],
+              "task": "symbolic-compactness reward for MAS scientific discovery",
+              "venue_or_source": "AAAI 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2412.11427v2"
+            ],
+            "version_id": "VER-D7B4455297E2"
+          }
+        },
+        "venue_or_source": "AAAI 2025",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.32,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-7E6DF19A7E3F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T09:08:31+00:00",
+        "updated_at": "2026-06-12T10:11:53+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-8A9A71A543ED",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "mathematical problem solving abilities mathematical problem solving abilities mathematical problem solving abilities w 591adfd1650f",
+      "canonical_label": "mathematical problem-solving abilities",
+      "concept_id": "B-7BA791A86A34",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-9962C8675F41",
+        "benchmark_id": "B-085B96989BE4",
+        "benchmark_name": "mathematical problem-solving abilities",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-085B96989BE4",
+        "canonical_key": "mathematical problem solving abilities",
+        "confidence_score": 0.32,
+        "created_at": "2026-06-12T08:54:11+00:00",
+        "data_form": "Natural-language math problems with final answers and solutions.",
+        "dataset": "mathematical problem-solving abilities",
+        "description": "Competition-style mathematical reasoning benchmark covering algebra, geometry, counting, probability, number theory, and precalculus.",
+        "entered_at": "2026-06-12T08:54:11+00:00",
+        "evidence": "{\"benchmark_id\": \"B-CAFCD5E13B37\", \"field_id\": \"PRJ-722905D32942\", \"work_id\": \"W-7E6DF19A7E3F\", \"task\": \"symbolic-compactness reward for MAS scientific discovery\", \"dataset\": \"mathematical problem-solving abilities\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T09:08:21+00:00",
+        "extractor": "deterministic",
+        "metric": "primary reported metric",
+        "metrics": [
+          "primary reported metric"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "official_url": "https://github.com/hendrycks/math",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "12.5K problems across multiple difficulty levels and subject areas.",
+        "source": "Hendrycks et al.",
+        "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2412.11427v2"
+        ],
+        "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-591ADFD1650F"
+        ],
+        "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_works": [
+          "W-591ADFD1650F"
+        ],
+        "task": "symbolic-compactness reward for MAS scientific discovery",
+        "updated_at": "2026-06-12T09:08:21+00:00",
+        "variants": {
+          "VER-9962C8675F41": {
+            "confidence_score": 0.32,
+            "entered_at": "2026-06-12T08:54:11+00:00",
+            "extracted_at": "2026-06-12T09:08:21+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "benchmark_name": "mathematical problem-solving abilities",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.32,
+              "data_form": "Natural-language math problems with final answers and solutions.",
+              "dataset": "mathematical problem-solving abilities",
+              "description": "Competition-style mathematical reasoning benchmark covering algebra, geometry, counting, probability, number theory, and precalculus.",
+              "evidence": "{\"benchmark_id\": \"B-CAFCD5E13B37\", \"field_id\": \"PRJ-722905D32942\", \"work_id\": \"W-7E6DF19A7E3F\", \"task\": \"symbolic-compactness reward for MAS scientific discovery\", \"dataset\": \"mathematical problem-solving abilities\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "primary reported metric",
+              "metrics": [
+                "primary reported metric"
+              ],
+              "needs_review": true,
+              "official_url": "https://github.com/hendrycks/math",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "12.5K problems across multiple difficulty levels and subject areas.",
+              "source": "Hendrycks et al.",
+              "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2412.11427v2"
+              ],
+              "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7E6DF19A7E3F"
+              ],
+              "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_works": [],
+              "task": "symbolic-compactness reward for MAS scientific discovery",
+              "venue_or_source": "AAAI 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2412.11427v2",
+              "https://github.com/hendrycks/math"
+            ],
+            "version_id": "VER-9962C8675F41"
+          }
+        },
+        "venue_or_source": "AAAI 2025",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.32,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-591ADFD1650F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-13T17:36:00+00:00",
+        "updated_at": "2026-06-14T07:29:16+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-70BF0602B505",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "mathematical problem solving abilities mathematical problem solving abilities mathematical problem solving abilities w 7e6df19a7e3f",
+      "canonical_label": "mathematical problem-solving abilities",
+      "concept_id": "B-8997ED8B49E0",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-9962C8675F41",
+        "benchmark_id": "B-085B96989BE4",
+        "benchmark_name": "mathematical problem-solving abilities",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-085B96989BE4",
+        "canonical_key": "mathematical problem solving abilities",
+        "confidence_score": 0.32,
+        "created_at": "2026-06-12T08:54:11+00:00",
+        "data_form": "Natural-language math problems with final answers and solutions.",
+        "dataset": "mathematical problem-solving abilities",
+        "description": "Competition-style mathematical reasoning benchmark covering algebra, geometry, counting, probability, number theory, and precalculus.",
+        "entered_at": "2026-06-12T08:54:11+00:00",
+        "evidence": "{\"benchmark_id\": \"B-CAFCD5E13B37\", \"field_id\": \"PRJ-722905D32942\", \"work_id\": \"W-7E6DF19A7E3F\", \"task\": \"symbolic-compactness reward for MAS scientific discovery\", \"dataset\": \"mathematical problem-solving abilities\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T09:08:21+00:00",
+        "extractor": "deterministic",
+        "metric": "primary reported metric",
+        "metrics": [
+          "primary reported metric"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "official_url": "https://github.com/hendrycks/math",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "12.5K problems across multiple difficulty levels and subject areas.",
+        "source": "Hendrycks et al.",
+        "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2412.11427v2"
+        ],
+        "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-7E6DF19A7E3F"
+        ],
+        "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_works": [],
+        "task": "symbolic-compactness reward for MAS scientific discovery",
+        "updated_at": "2026-06-12T09:08:21+00:00",
+        "variants": {
+          "VER-9962C8675F41": {
+            "confidence_score": 0.32,
+            "entered_at": "2026-06-12T08:54:11+00:00",
+            "extracted_at": "2026-06-12T09:08:21+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "benchmark_name": "mathematical problem-solving abilities",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.32,
+              "data_form": "Natural-language math problems with final answers and solutions.",
+              "dataset": "mathematical problem-solving abilities",
+              "description": "Competition-style mathematical reasoning benchmark covering algebra, geometry, counting, probability, number theory, and precalculus.",
+              "evidence": "{\"benchmark_id\": \"B-CAFCD5E13B37\", \"field_id\": \"PRJ-722905D32942\", \"work_id\": \"W-7E6DF19A7E3F\", \"task\": \"symbolic-compactness reward for MAS scientific discovery\", \"dataset\": \"mathematical problem-solving abilities\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "primary reported metric",
+              "metrics": [
+                "primary reported metric"
+              ],
+              "needs_review": true,
+              "official_url": "https://github.com/hendrycks/math",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "12.5K problems across multiple difficulty levels and subject areas.",
+              "source": "Hendrycks et al.",
+              "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2412.11427v2"
+              ],
+              "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7E6DF19A7E3F"
+              ],
+              "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_works": [],
+              "task": "symbolic-compactness reward for MAS scientific discovery",
+              "venue_or_source": "AAAI 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2412.11427v2",
+              "https://github.com/hendrycks/math"
+            ],
+            "version_id": "VER-9962C8675F41"
+          }
+        },
+        "venue_or_source": "AAAI 2025",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.32,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-7E6DF19A7E3F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T09:08:31+00:00",
+        "updated_at": "2026-06-12T10:11:52+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-7A8B7FE134EB",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "math math math w 3fd22d147568 w 0cb6dc2f0457 w 7e6df19a7e3f",
+      "canonical_label": "MATH",
+      "concept_id": "B-A8A4A585C12D",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-19136C0392DD",
+        "benchmark_id": "B-7A488390A939",
+        "benchmark_name": "MATH",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-7A488390A939",
+        "canonical_key": "math",
+        "confidence_score": 0.32,
+        "created_at": "2026-06-12T08:54:08+00:00",
+        "data_form": "Natural-language math problems with final answers and solutions.",
+        "dataset": "MATH",
+        "description": "Competition-style mathematical reasoning benchmark covering algebra, geometry, counting, probability, number theory, and precalculus.",
+        "entered_at": "2026-06-12T08:54:08+00:00",
+        "evidence": "{\"benchmark_id\": \"B-1DACC151A208\", \"field_id\": \"PRJ-722905D32942\", \"work_id\": \"W-7E6DF19A7E3F\", \"task\": \"symbolic-compactness reward for MAS scientific discovery\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Towards Scientific Dis...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T09:08:21+00:00",
+        "extractor": "deterministic",
+        "metric": "primary reported metric",
+        "metrics": [
+          "F1",
+          "accuracy",
+          "primary reported metric"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "official_url": "https://github.com/hendrycks/math",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "12.5K problems across multiple difficulty levels and subject areas.",
+        "source": "Hendrycks et al.",
+        "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2602.09801v1",
+          "http://arxiv.org/abs/2603.25111v2",
+          "http://arxiv.org/abs/2412.11427v2"
+        ],
+        "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-3FD22D147568",
+          "W-0CB6DC2F0457",
+          "W-7E6DF19A7E3F"
+        ],
+        "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_works": [],
+        "task": "symbolic-compactness reward for MAS scientific discovery",
+        "updated_at": "2026-06-12T09:08:21+00:00",
+        "variants": {
+          "VER-19136C0392DD": {
+            "confidence_score": 0.32,
+            "entered_at": "2026-06-12T08:54:08+00:00",
+            "extracted_at": "2026-06-12T09:08:21+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "benchmark_name": "MATH",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.32,
+              "data_form": "Natural-language math problems with final answers and solutions.",
+              "dataset": "MATH",
+              "description": "Competition-style mathematical reasoning benchmark covering algebra, geometry, counting, probability, number theory, and precalculus.",
+              "evidence": "{\"benchmark_id\": \"B-1DACC151A208\", \"field_id\": \"PRJ-722905D32942\", \"work_id\": \"W-7E6DF19A7E3F\", \"task\": \"symbolic-compactness reward for MAS scientific discovery\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Towards Scientific Dis...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "primary reported metric",
+              "metrics": [
+                "F1",
+                "accuracy",
+                "primary reported metric"
+              ],
+              "needs_review": true,
+              "official_url": "https://github.com/hendrycks/math",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "12.5K problems across multiple difficulty levels and subject areas.",
+              "source": "Hendrycks et al.",
+              "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2602.09801v1",
+                "http://arxiv.org/abs/2603.25111v2",
+                "http://arxiv.org/abs/2412.11427v2"
+              ],
+              "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-3FD22D147568",
+                "W-0CB6DC2F0457",
+                "W-7E6DF19A7E3F"
+              ],
+              "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_works": [],
+              "task": "symbolic-compactness reward for MAS scientific discovery",
+              "venue_or_source": "AAAI 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2412.11427v2",
+              "https://github.com/hendrycks/math"
+            ],
+            "version_id": "VER-19136C0392DD"
+          }
+        },
+        "venue_or_source": "AAAI 2025",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.32,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-3FD22D147568",
+          "W-0CB6DC2F0457",
+          "W-7E6DF19A7E3F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T09:08:31+00:00",
+        "updated_at": "2026-06-12T09:24:06+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-5C21D24161B0",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "multimodal representation necessity multimodal representation necessity if a scientific discovery system relies solely on text based representations it will fail to capture the full spectrum of empirical data required for robust hypothesis validation therefore the system must integrate multim w 7e6d",
+      "canonical_label": "Multimodal Representation Necessity",
+      "concept_id": "P-2310AA4A89FC",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "If a scientific discovery system relies solely on text-based representations, it will fail to capture the full spectrum of empirical data required for robust hypothesis validation; therefore, the system must integrate multimodal inputs including simulations, images, and structured data alongside textual literature.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-9E068938B5DD",
+        "argument": "If a scientific discovery system relies solely on text-based representations, it will fail to capture the full spectrum of empirical data required for robust hypothesis validation; therefore, the system must integrate multimodal inputs including simulations, images, and structured data alongside textual literature.",
+        "benchmarks": [],
+        "canonical_id": "P-ACCF62C5702D",
+        "canonical_key": "if scientific discovery system relies solely on text based representations it will fail to capture full spectrum of empirical data required for robust hypothesis validation therefo",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-12T09:08:21+00:00",
+        "discussion": "Scientific data inherently exists in diverse formats such as microscopy images, spectral data, and simulation outputs, which cannot be fully encoded or understood through text alone. A principle of multimodal integration ensures that the AI agent can perceive and reason over the same rich data streams that human scientists utilize. Without this capability, the discovery process remains abstract and disconnected from the physical realities that experiments measure, limiting the system's ability to propose viable, testable theories that align with empirical evidence.",
+        "entered_at": "2026-06-12T09:08:21+00:00",
+        "evidence": "The work identifies 'Advancing multimodal scientific representations beyond text' as a key research direction and challenge, implying that current text-centric approaches are insufficient for comprehensive discovery.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T09:08:21+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Multimodal Representation Necessity",
+        "performance": [],
+        "principle_id": "P-ACCF62C5702D",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2412.11427v2"
+        ],
+        "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-7E6DF19A7E3F"
+        ],
+        "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_works": [
+          "W-7E6DF19A7E3F"
+        ],
+        "updated_at": "2026-06-12T09:08:21+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-9E068938B5DD": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-12T09:08:21+00:00",
+            "extracted_at": "2026-06-12T09:08:21+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "If a scientific discovery system relies solely on text-based representations, it will fail to capture the full spectrum of empirical data required for robust hypothesis validation; therefore, the system must integrate multimodal inputs including simulations, images, and structured data alongside textual literature.",
+              "argument": "If a scientific discovery system relies solely on text-based representations, it will fail to capture the full spectrum of empirical data required for robust hypothesis validation; therefore, the system must integrate multimodal inputs including simulations, images, and structured data alongside textual literature.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "Scientific data inherently exists in diverse formats such as microscopy images, spectral data, and simulation outputs, which cannot be fully encoded or understood through text alone. A principle of multimodal integration ensures that the AI agent can perceive and reason over the same rich data streams that human scientists utilize. Without this capability, the discovery process remains abstract and disconnected from the physical realities that experiments measure, limiting the system's ability to propose viable, testable theories that align with empirical evidence.",
+              "evidence": "The work identifies 'Advancing multimodal scientific representations beyond text' as a key research direction and challenge, implying that current text-centric approaches are insufficient for comprehensive discovery.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Multimodal Representation Necessity",
+              "performance": [],
+              "problem_pressure": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2412.11427v2"
+              ],
+              "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7E6DF19A7E3F"
+              ],
+              "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_works": [
+                "W-7E6DF19A7E3F"
+              ],
+              "venue_or_source": "AAAI 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2412.11427v2"
+            ],
+            "version_id": "VER-9E068938B5DD"
+          }
+        },
+        "venue_or_source": "AAAI 2025",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-7E6DF19A7E3F"
+        ],
+        "validation_level": "L1",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T09:08:30+00:00",
+        "updated_at": "2026-06-12T10:11:50+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-7ABAA2368EFE",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "multimodal representation necessity multimodal representation necessity if an ai system aims to perform comprehensive scientific discovery it must process and integrate multimodal scientific representations beyond text only inputs to capture the full spectrum of empirical data and theoretical s w 7e",
+      "canonical_label": "Multimodal Representation Necessity",
+      "concept_id": "P-36F703B4FB75",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "If an AI system aims to perform comprehensive scientific discovery, it must process and integrate multimodal scientific representations beyond text-only inputs to capture the full spectrum of empirical data and theoretical structures.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-E3C9F1FFB0FF",
+        "argument": "If an AI system aims to perform comprehensive scientific discovery, it must process and integrate multimodal scientific representations beyond text-only inputs to capture the full spectrum of empirical data and theoretical structures.",
+        "benchmarks": [],
+        "canonical_id": "P-D86C08A1E4EF",
+        "canonical_key": "if ai system aims to perform comprehensive scientific discovery it must process and integrate multimodal scientific representations beyond text only inputs to capture full spectrum",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-12T08:58:41+00:00",
+        "discussion": "Scientific knowledge is inherently multimodal, encompassing textual descriptions, visual data from microscopy or astronomy, structural chemical formulas, and numerical datasets. Relying solely on text limits the AI's ability to reason about physical phenomena or interpret complex experimental results. A principle of multimodal integration ensures that the discovery system can access and correlate diverse data sources, which is essential for formulating accurate hypotheses and designing valid experiments in fields like biology, physics, and chemistry.",
+        "entered_at": "2026-06-12T08:58:41+00:00",
+        "evidence": "The work explicitly identifies 'Advancing multimodal scientific representations beyond text' as a key research direction required for developing more comprehensive AI systems.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T09:00:13+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Multimodal Representation Necessity",
+        "performance": [],
+        "principle_id": "P-D86C08A1E4EF",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "I would like use symbolic compactness as an intrinsic rewards for an MAS in scientific discovery.",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2412.11427v2"
+        ],
+        "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-7E6DF19A7E3F"
+        ],
+        "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_works": [
+          "W-7E6DF19A7E3F"
+        ],
+        "updated_at": "2026-06-12T09:00:13+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-E3C9F1FFB0FF": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-12T08:58:41+00:00",
+            "extracted_at": "2026-06-12T09:00:13+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "If an AI system aims to perform comprehensive scientific discovery, it must process and integrate multimodal scientific representations beyond text-only inputs to capture the full spectrum of empirical data and theoretical structures.",
+              "argument": "If an AI system aims to perform comprehensive scientific discovery, it must process and integrate multimodal scientific representations beyond text-only inputs to capture the full spectrum of empirical data and theoretical structures.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "Scientific knowledge is inherently multimodal, encompassing textual descriptions, visual data from microscopy or astronomy, structural chemical formulas, and numerical datasets. Relying solely on text limits the AI's ability to reason about physical phenomena or interpret complex experimental results. A principle of multimodal integration ensures that the discovery system can access and correlate diverse data sources, which is essential for formulating accurate hypotheses and designing valid experiments in fields like biology, physics, and chemistry.",
+              "evidence": "The work explicitly identifies 'Advancing multimodal scientific representations beyond text' as a key research direction required for developing more comprehensive AI systems.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Multimodal Representation Necessity",
+              "performance": [],
+              "problem_pressure": "I would like use symbolic compactness as an intrinsic rewards for an MAS in scientific discovery.",
+              "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2412.11427v2"
+              ],
+              "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7E6DF19A7E3F"
+              ],
+              "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_works": [
+                "W-7E6DF19A7E3F"
+              ],
+              "venue_or_source": "AAAI 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2412.11427v2"
+            ],
+            "version_id": "VER-E3C9F1FFB0FF"
+          }
+        },
+        "venue_or_source": "AAAI 2025",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-7E6DF19A7E3F"
+        ],
+        "validation_level": "L1",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T09:08:30+00:00",
+        "updated_at": "2026-06-12T10:11:50+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-FF8C3E70BD57",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "multimodal representation necessity multimodal representation necessity if a scientific discovery system relies solely on text based representations it will fail to capture the full spectrum of empirical data required for robust hypothesis validation therefore the system must integrate multim w 591a",
+      "canonical_label": "Multimodal Representation Necessity",
+      "concept_id": "P-47699F3390A2",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "If a scientific discovery system relies solely on text-based representations, it will fail to capture the full spectrum of empirical data required for robust hypothesis validation; therefore, the system must integrate multimodal inputs including simulations, images, and structured data alongside textual literature.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-9E068938B5DD",
+        "argument": "If a scientific discovery system relies solely on text-based representations, it will fail to capture the full spectrum of empirical data required for robust hypothesis validation; therefore, the system must integrate multimodal inputs including simulations, images, and structured data alongside textual literature.",
+        "benchmarks": [],
+        "canonical_id": "P-ACCF62C5702D",
+        "canonical_key": "if scientific discovery system relies solely on text based representations it will fail to capture full spectrum of empirical data required for robust hypothesis validation therefo",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-12T09:08:21+00:00",
+        "discussion": "Scientific data inherently exists in diverse formats such as microscopy images, spectral data, and simulation outputs, which cannot be fully encoded or understood through text alone. A principle of multimodal integration ensures that the AI agent can perceive and reason over the same rich data streams that human scientists utilize. Without this capability, the discovery process remains abstract and disconnected from the physical realities that experiments measure, limiting the system's ability to propose viable, testable theories that align with empirical evidence.",
+        "entered_at": "2026-06-12T09:08:21+00:00",
+        "evidence": "The work identifies 'Advancing multimodal scientific representations beyond text' as a key research direction and challenge, implying that current text-centric approaches are insufficient for comprehensive discovery.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T09:08:21+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Multimodal Representation Necessity",
+        "performance": [],
+        "principle_id": "P-ACCF62C5702D",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2412.11427v2"
+        ],
+        "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-591ADFD1650F"
+        ],
+        "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_works": [
+          "W-591ADFD1650F"
+        ],
+        "updated_at": "2026-06-12T09:08:21+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-9E068938B5DD": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-12T09:08:21+00:00",
+            "extracted_at": "2026-06-12T09:08:21+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "If a scientific discovery system relies solely on text-based representations, it will fail to capture the full spectrum of empirical data required for robust hypothesis validation; therefore, the system must integrate multimodal inputs including simulations, images, and structured data alongside textual literature.",
+              "argument": "If a scientific discovery system relies solely on text-based representations, it will fail to capture the full spectrum of empirical data required for robust hypothesis validation; therefore, the system must integrate multimodal inputs including simulations, images, and structured data alongside textual literature.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "Scientific data inherently exists in diverse formats such as microscopy images, spectral data, and simulation outputs, which cannot be fully encoded or understood through text alone. A principle of multimodal integration ensures that the AI agent can perceive and reason over the same rich data streams that human scientists utilize. Without this capability, the discovery process remains abstract and disconnected from the physical realities that experiments measure, limiting the system's ability to propose viable, testable theories that align with empirical evidence.",
+              "evidence": "The work identifies 'Advancing multimodal scientific representations beyond text' as a key research direction and challenge, implying that current text-centric approaches are insufficient for comprehensive discovery.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Multimodal Representation Necessity",
+              "performance": [],
+              "problem_pressure": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2412.11427v2"
+              ],
+              "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7E6DF19A7E3F"
+              ],
+              "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_works": [
+                "W-7E6DF19A7E3F"
+              ],
+              "venue_or_source": "AAAI 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2412.11427v2"
+            ],
+            "version_id": "VER-9E068938B5DD"
+          }
+        },
+        "venue_or_source": "AAAI 2025",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-591ADFD1650F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-13T17:36:00+00:00",
+        "updated_at": "2026-06-14T07:29:16+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-C488D0D933C3",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "integrated reasoning and modeling integrated reasoning and modeling a discovery framework achieves higher validity when it unifies symbolic automated reasoning and theorem proving with statistical data driven modeling rather than employing either approach in isolation w 7e6df19a7e3f",
+      "canonical_label": "Integrated Reasoning and Modeling",
+      "concept_id": "P-71798826D6E2",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "A discovery framework achieves higher validity when it unifies symbolic automated reasoning and theorem proving with statistical data-driven modeling, rather than employing either approach in isolation.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-B5A33CAB7DD6",
+        "argument": "A discovery framework achieves higher validity when it unifies symbolic automated reasoning and theorem proving with statistical data-driven modeling, rather than employing either approach in isolation.",
+        "benchmarks": [],
+        "canonical_id": "P-CE227E769AEC",
+        "canonical_key": "discovery framework achieves higher validity when it unifies symbolic automated reasoning and theorem proving with statistical data driven modeling rather than employing either app",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-12T09:08:21+00:00",
+        "discussion": "Symbolic reasoning provides the logical rigor necessary for deriving laws and ensuring consistency with established theories, while data-driven modeling offers the flexibility to identify patterns in noisy, high-dimensional empirical data. Combining these distinct methodologies allows the system to generate hypotheses that are both statistically grounded in data and logically consistent with known physical laws. This hybrid approach mitigates the hallucination risks of pure generative models and the rigidity of purely symbolic systems, creating a more resilient engine for navigating the complex search space of scientific possibilities.",
+        "entered_at": "2026-06-12T09:08:21+00:00",
+        "evidence": "The text explicitly lists 'Unifying automated reasoning, theorem proving, and data-driven modeling' as a critical direction for developing comprehensive AI systems for scientific discovery.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T09:08:21+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Integrated Reasoning and Modeling",
+        "performance": [],
+        "principle_id": "P-CE227E769AEC",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2412.11427v2"
+        ],
+        "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-7E6DF19A7E3F"
+        ],
+        "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_works": [
+          "W-7E6DF19A7E3F"
+        ],
+        "updated_at": "2026-06-12T09:08:21+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-B5A33CAB7DD6": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-12T09:08:21+00:00",
+            "extracted_at": "2026-06-12T09:08:21+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "A discovery framework achieves higher validity when it unifies symbolic automated reasoning and theorem proving with statistical data-driven modeling, rather than employing either approach in isolation.",
+              "argument": "A discovery framework achieves higher validity when it unifies symbolic automated reasoning and theorem proving with statistical data-driven modeling, rather than employing either approach in isolation.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "Symbolic reasoning provides the logical rigor necessary for deriving laws and ensuring consistency with established theories, while data-driven modeling offers the flexibility to identify patterns in noisy, high-dimensional empirical data. Combining these distinct methodologies allows the system to generate hypotheses that are both statistically grounded in data and logically consistent with known physical laws. This hybrid approach mitigates the hallucination risks of pure generative models and the rigidity of purely symbolic systems, creating a more resilient engine for navigating the complex search space of scientific possibilities.",
+              "evidence": "The text explicitly lists 'Unifying automated reasoning, theorem proving, and data-driven modeling' as a critical direction for developing comprehensive AI systems for scientific discovery.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Integrated Reasoning and Modeling",
+              "performance": [],
+              "problem_pressure": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2412.11427v2"
+              ],
+              "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7E6DF19A7E3F"
+              ],
+              "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_works": [
+                "W-7E6DF19A7E3F"
+              ],
+              "venue_or_source": "AAAI 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2412.11427v2"
+            ],
+            "version_id": "VER-B5A33CAB7DD6"
+          }
+        },
+        "venue_or_source": "AAAI 2025",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-7E6DF19A7E3F"
+        ],
+        "validation_level": "L1",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T09:08:30+00:00",
+        "updated_at": "2026-06-12T10:11:50+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-D7545775F9F9",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "integrated reasoning and modeling integrated reasoning and modeling a discovery framework achieves higher validity when it unifies symbolic automated reasoning and theorem proving with statistical data driven modeling rather than employing either approach in isolation w 591adfd1650f",
+      "canonical_label": "Integrated Reasoning and Modeling",
+      "concept_id": "P-898237646C5A",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "A discovery framework achieves higher validity when it unifies symbolic automated reasoning and theorem proving with statistical data-driven modeling, rather than employing either approach in isolation.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-B5A33CAB7DD6",
+        "argument": "A discovery framework achieves higher validity when it unifies symbolic automated reasoning and theorem proving with statistical data-driven modeling, rather than employing either approach in isolation.",
+        "benchmarks": [],
+        "canonical_id": "P-CE227E769AEC",
+        "canonical_key": "discovery framework achieves higher validity when it unifies symbolic automated reasoning and theorem proving with statistical data driven modeling rather than employing either app",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-12T09:08:21+00:00",
+        "discussion": "Symbolic reasoning provides the logical rigor necessary for deriving laws and ensuring consistency with established theories, while data-driven modeling offers the flexibility to identify patterns in noisy, high-dimensional empirical data. Combining these distinct methodologies allows the system to generate hypotheses that are both statistically grounded in data and logically consistent with known physical laws. This hybrid approach mitigates the hallucination risks of pure generative models and the rigidity of purely symbolic systems, creating a more resilient engine for navigating the complex search space of scientific possibilities.",
+        "entered_at": "2026-06-12T09:08:21+00:00",
+        "evidence": "The text explicitly lists 'Unifying automated reasoning, theorem proving, and data-driven modeling' as a critical direction for developing comprehensive AI systems for scientific discovery.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T09:08:21+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Integrated Reasoning and Modeling",
+        "performance": [],
+        "principle_id": "P-CE227E769AEC",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2412.11427v2"
+        ],
+        "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-591ADFD1650F"
+        ],
+        "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_works": [
+          "W-591ADFD1650F"
+        ],
+        "updated_at": "2026-06-12T09:08:21+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-B5A33CAB7DD6": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-12T09:08:21+00:00",
+            "extracted_at": "2026-06-12T09:08:21+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "A discovery framework achieves higher validity when it unifies symbolic automated reasoning and theorem proving with statistical data-driven modeling, rather than employing either approach in isolation.",
+              "argument": "A discovery framework achieves higher validity when it unifies symbolic automated reasoning and theorem proving with statistical data-driven modeling, rather than employing either approach in isolation.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "Symbolic reasoning provides the logical rigor necessary for deriving laws and ensuring consistency with established theories, while data-driven modeling offers the flexibility to identify patterns in noisy, high-dimensional empirical data. Combining these distinct methodologies allows the system to generate hypotheses that are both statistically grounded in data and logically consistent with known physical laws. This hybrid approach mitigates the hallucination risks of pure generative models and the rigidity of purely symbolic systems, creating a more resilient engine for navigating the complex search space of scientific possibilities.",
+              "evidence": "The text explicitly lists 'Unifying automated reasoning, theorem proving, and data-driven modeling' as a critical direction for developing comprehensive AI systems for scientific discovery.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Integrated Reasoning and Modeling",
+              "performance": [],
+              "problem_pressure": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2412.11427v2"
+              ],
+              "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7E6DF19A7E3F"
+              ],
+              "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_works": [
+                "W-7E6DF19A7E3F"
+              ],
+              "venue_or_source": "AAAI 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2412.11427v2"
+            ],
+            "version_id": "VER-B5A33CAB7DD6"
+          }
+        },
+        "venue_or_source": "AAAI 2025",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-591ADFD1650F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-13T17:36:00+00:00",
+        "updated_at": "2026-06-14T07:29:16+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-CCCADFB5325D",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "benchmark driven evaluation framework benchmark driven evaluation framework progress in autonomous scientific discovery is contingent upon the establishment of improved benchmarks and evaluation metrics specifically designed to measure long term research capabilities rather than isolated task perf w",
+      "canonical_label": "Benchmark-Driven Evaluation Framework",
+      "concept_id": "P-C80A3C4721C3",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "Progress in autonomous scientific discovery is contingent upon the establishment of improved benchmarks and evaluation metrics specifically designed to measure long-term research capabilities rather than isolated task performance.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-4B973D47290E",
+        "argument": "Progress in autonomous scientific discovery is contingent upon the establishment of improved benchmarks and evaluation metrics specifically designed to measure long-term research capabilities rather than isolated task performance.",
+        "benchmarks": [],
+        "canonical_id": "P-FBB54004402B",
+        "canonical_key": "progress in autonomous scientific discovery is contingent upon establishment of improved benchmarks and evaluation metrics specifically designed to measure long term research capab",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-12T08:58:41+00:00",
+        "discussion": "Current evaluation methods often focus on narrow metrics such as accuracy in literature summarization or single-step hypothesis generation, which do not reflect the complexity of sustained scientific inquiry. Without benchmarks that assess the entire discovery cycle—including the ability to iterate, refine, and validate over time—it is impossible to quantify improvements in autonomous systems. This principle dictates that future development must prioritize the creation of rigorous, domain-specific evaluation standards that align with the goals of long-term research autonomy.",
+        "entered_at": "2026-06-12T08:58:41+00:00",
+        "evidence": "The text lists 'Creating improved benchmarks and evaluation frameworks for scientific discovery' as the first key challenge and research direction.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T09:00:13+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Benchmark-Driven Evaluation Framework",
+        "performance": [],
+        "principle_id": "P-FBB54004402B",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "I would like use symbolic compactness as an intrinsic rewards for an MAS in scientific discovery.",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2412.11427v2"
+        ],
+        "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-7E6DF19A7E3F"
+        ],
+        "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_works": [
+          "W-7E6DF19A7E3F"
+        ],
+        "updated_at": "2026-06-12T09:00:13+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-4B973D47290E": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-12T08:58:41+00:00",
+            "extracted_at": "2026-06-12T09:00:13+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "Progress in autonomous scientific discovery is contingent upon the establishment of improved benchmarks and evaluation metrics specifically designed to measure long-term research capabilities rather than isolated task performance.",
+              "argument": "Progress in autonomous scientific discovery is contingent upon the establishment of improved benchmarks and evaluation metrics specifically designed to measure long-term research capabilities rather than isolated task performance.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "Current evaluation methods often focus on narrow metrics such as accuracy in literature summarization or single-step hypothesis generation, which do not reflect the complexity of sustained scientific inquiry. Without benchmarks that assess the entire discovery cycle—including the ability to iterate, refine, and validate over time—it is impossible to quantify improvements in autonomous systems. This principle dictates that future development must prioritize the creation of rigorous, domain-specific evaluation standards that align with the goals of long-term research autonomy.",
+              "evidence": "The text lists 'Creating improved benchmarks and evaluation frameworks for scientific discovery' as the first key challenge and research direction.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Benchmark-Driven Evaluation Framework",
+              "performance": [],
+              "problem_pressure": "I would like use symbolic compactness as an intrinsic rewards for an MAS in scientific discovery.",
+              "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2412.11427v2"
+              ],
+              "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7E6DF19A7E3F"
+              ],
+              "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_works": [
+                "W-7E6DF19A7E3F"
+              ],
+              "venue_or_source": "AAAI 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2412.11427v2"
+            ],
+            "version_id": "VER-4B973D47290E"
+          }
+        },
+        "venue_or_source": "AAAI 2025",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-7E6DF19A7E3F"
+        ],
+        "validation_level": "L1",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T09:08:30+00:00",
+        "updated_at": "2026-06-12T10:11:50+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-A0FDCF4E3798",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "benchmark driven evaluation framework benchmark driven evaluation framework progress in autonomous scientific discovery is contingent upon the establishment of improved benchmarks and evaluation metrics specifically designed to measure long term research capabilities rather than isolated task perf w",
+      "canonical_label": "Benchmark-Driven Evaluation Framework",
+      "concept_id": "P-F144DB738CE8",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "Progress in autonomous scientific discovery is contingent upon the establishment of improved benchmarks and evaluation metrics specifically designed to measure long-term research capabilities rather than isolated task performance.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-4B973D47290E",
+        "argument": "Progress in autonomous scientific discovery is contingent upon the establishment of improved benchmarks and evaluation metrics specifically designed to measure long-term research capabilities rather than isolated task performance.",
+        "benchmarks": [],
+        "canonical_id": "P-FBB54004402B",
+        "canonical_key": "progress in autonomous scientific discovery is contingent upon establishment of improved benchmarks and evaluation metrics specifically designed to measure long term research capab",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-12T08:58:41+00:00",
+        "discussion": "Current evaluation methods often focus on narrow metrics such as accuracy in literature summarization or single-step hypothesis generation, which do not reflect the complexity of sustained scientific inquiry. Without benchmarks that assess the entire discovery cycle—including the ability to iterate, refine, and validate over time—it is impossible to quantify improvements in autonomous systems. This principle dictates that future development must prioritize the creation of rigorous, domain-specific evaluation standards that align with the goals of long-term research autonomy.",
+        "entered_at": "2026-06-12T08:58:41+00:00",
+        "evidence": "The text lists 'Creating improved benchmarks and evaluation frameworks for scientific discovery' as the first key challenge and research direction.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T09:00:13+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Benchmark-Driven Evaluation Framework",
+        "performance": [],
+        "principle_id": "P-FBB54004402B",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "I would like use symbolic compactness as an intrinsic rewards for an MAS in scientific discovery.",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2412.11427v2"
+        ],
+        "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-591ADFD1650F"
+        ],
+        "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_works": [
+          "W-591ADFD1650F"
+        ],
+        "updated_at": "2026-06-12T09:00:13+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-4B973D47290E": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-12T08:58:41+00:00",
+            "extracted_at": "2026-06-12T09:00:13+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "Progress in autonomous scientific discovery is contingent upon the establishment of improved benchmarks and evaluation metrics specifically designed to measure long-term research capabilities rather than isolated task performance.",
+              "argument": "Progress in autonomous scientific discovery is contingent upon the establishment of improved benchmarks and evaluation metrics specifically designed to measure long-term research capabilities rather than isolated task performance.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "Current evaluation methods often focus on narrow metrics such as accuracy in literature summarization or single-step hypothesis generation, which do not reflect the complexity of sustained scientific inquiry. Without benchmarks that assess the entire discovery cycle—including the ability to iterate, refine, and validate over time—it is impossible to quantify improvements in autonomous systems. This principle dictates that future development must prioritize the creation of rigorous, domain-specific evaluation standards that align with the goals of long-term research autonomy.",
+              "evidence": "The text lists 'Creating improved benchmarks and evaluation frameworks for scientific discovery' as the first key challenge and research direction.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Benchmark-Driven Evaluation Framework",
+              "performance": [],
+              "problem_pressure": "I would like use symbolic compactness as an intrinsic rewards for an MAS in scientific discovery.",
+              "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2412.11427v2"
+              ],
+              "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7E6DF19A7E3F"
+              ],
+              "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_works": [
+                "W-7E6DF19A7E3F"
+              ],
+              "venue_or_source": "AAAI 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2412.11427v2"
+            ],
+            "version_id": "VER-4B973D47290E"
+          }
+        },
+        "venue_or_source": "AAAI 2025",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-591ADFD1650F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-13T17:36:00+00:00",
+        "updated_at": "2026-06-14T07:29:16+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-BE3D73E24A9B",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "multimodal representation necessity multimodal representation necessity if an ai system aims to perform comprehensive scientific discovery it must process and integrate multimodal scientific representations beyond text only inputs to capture the full spectrum of empirical data and theoretical s w 59",
+      "canonical_label": "Multimodal Representation Necessity",
+      "concept_id": "P-F65854CC0A9E",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "If an AI system aims to perform comprehensive scientific discovery, it must process and integrate multimodal scientific representations beyond text-only inputs to capture the full spectrum of empirical data and theoretical structures.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-E3C9F1FFB0FF",
+        "argument": "If an AI system aims to perform comprehensive scientific discovery, it must process and integrate multimodal scientific representations beyond text-only inputs to capture the full spectrum of empirical data and theoretical structures.",
+        "benchmarks": [],
+        "canonical_id": "P-D86C08A1E4EF",
+        "canonical_key": "if ai system aims to perform comprehensive scientific discovery it must process and integrate multimodal scientific representations beyond text only inputs to capture full spectrum",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-12T08:58:41+00:00",
+        "discussion": "Scientific knowledge is inherently multimodal, encompassing textual descriptions, visual data from microscopy or astronomy, structural chemical formulas, and numerical datasets. Relying solely on text limits the AI's ability to reason about physical phenomena or interpret complex experimental results. A principle of multimodal integration ensures that the discovery system can access and correlate diverse data sources, which is essential for formulating accurate hypotheses and designing valid experiments in fields like biology, physics, and chemistry.",
+        "entered_at": "2026-06-12T08:58:41+00:00",
+        "evidence": "The work explicitly identifies 'Advancing multimodal scientific representations beyond text' as a key research direction required for developing more comprehensive AI systems.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T09:00:13+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Multimodal Representation Necessity",
+        "performance": [],
+        "principle_id": "P-D86C08A1E4EF",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "I would like use symbolic compactness as an intrinsic rewards for an MAS in scientific discovery.",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2412.11427v2"
+        ],
+        "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-591ADFD1650F"
+        ],
+        "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "source_works": [
+          "W-591ADFD1650F"
+        ],
+        "updated_at": "2026-06-12T09:00:13+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-E3C9F1FFB0FF": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-12T08:58:41+00:00",
+            "extracted_at": "2026-06-12T09:00:13+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "If an AI system aims to perform comprehensive scientific discovery, it must process and integrate multimodal scientific representations beyond text-only inputs to capture the full spectrum of empirical data and theoretical structures.",
+              "argument": "If an AI system aims to perform comprehensive scientific discovery, it must process and integrate multimodal scientific representations beyond text-only inputs to capture the full spectrum of empirical data and theoretical structures.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "Scientific knowledge is inherently multimodal, encompassing textual descriptions, visual data from microscopy or astronomy, structural chemical formulas, and numerical datasets. Relying solely on text limits the AI's ability to reason about physical phenomena or interpret complex experimental results. A principle of multimodal integration ensures that the discovery system can access and correlate diverse data sources, which is essential for formulating accurate hypotheses and designing valid experiments in fields like biology, physics, and chemistry.",
+              "evidence": "The work explicitly identifies 'Advancing multimodal scientific representations beyond text' as a key research direction required for developing more comprehensive AI systems.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Multimodal Representation Necessity",
+              "performance": [],
+              "problem_pressure": "I would like use symbolic compactness as an intrinsic rewards for an MAS in scientific discovery.",
+              "source_paper_link": "http://arxiv.org/abs/2412.11427v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2412.11427v2"
+              ],
+              "source_paper_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7E6DF19A7E3F"
+              ],
+              "source_work_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "source_works": [
+                "W-7E6DF19A7E3F"
+              ],
+              "venue_or_source": "AAAI 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2412.11427v2"
+            ],
+            "version_id": "VER-E3C9F1FFB0FF"
+          }
+        },
+        "venue_or_source": "AAAI 2025",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-591ADFD1650F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-13T17:36:00+00:00",
+        "updated_at": "2026-06-14T07:29:16+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-3D74986A8880",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "scien tific tools scien tific tools",
+      "canonical_label": "scien- tific tools",
+      "concept_id": "RF-41B4223442C6",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-16C515D955B1",
+        "benchmark_name": "scien- tific tools",
+        "code_url": "",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-12T08:54:11+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "ry sys- tems capable of supporting the full cycle of scientific in- Copyright © 2025, Association for the Advancement of Artificial Intelligence (www.aaai.org). All"
+        },
+        "extracted_at": "2026-06-12T08:54:11+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-722905D32942",
+        "method_name": "Towards Scientific Discovery with Generative AI",
+        "metric": "EM",
+        "needs_llm_review": false,
+        "result_id": "RR-E6F890105D1B",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": false,
+          "has_compute_accounting": false,
+          "needs_verification": false
+        },
+        "source_hash": "8b7a77f68a59b635",
+        "source_work_id": "W-7E6DF19A7E3F",
+        "unit": "",
+        "updated_at": "2026-06-12T09:08:21+00:00",
+        "value": 2025.0,
+        "value_text": "ry sys- tems capable of supporting the full cycle of scientific in- Copyright © 2025, Association for the Advancement of Artificial Intelligence (www.aaai.org). All",
+        "work_id": "W-7E6DF19A7E3F"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T09:08:38+00:00",
+        "updated_at": "2026-06-12T10:12:04+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-B4501FF1949E",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "math math",
+      "canonical_label": "MATH",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-9F3418BF5625",
+        "benchmark_name": "MATH",
+        "code_url": "https://github.com/bowen-upenn/llm_token_bias.",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-12T10:00:51+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "lo J. Taylor1, Dan Roth1 University of Pennsylvania1 Argonne National Laboratory2 Philadelphia, PA, 19104, USA Lemont, IL, 60439, USA {bwjiang@seas, xinyux@wharto"
+        },
+        "extracted_at": "2026-06-12T10:00:51+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-28B4CA742446",
+        "method_name": "Peek into Token Bias",
+        "metric": "EM",
+        "needs_llm_review": false,
+        "result_id": "RR-FAE83AB35DC0",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": true,
+          "has_compute_accounting": true,
+          "needs_verification": false
+        },
+        "source_hash": "340ae6d54a077af9",
+        "source_work_id": "W-D5C57268E64E",
+        "unit": "",
+        "updated_at": "2026-06-12T10:09:46+00:00",
+        "value": 2.0,
+        "value_text": "lo J. Taylor1, Dan Roth1 University of Pennsylvania1 Argonne National Laboratory2 Philadelphia, PA, 19104, USA Lemont, IL, 60439, USA {bwjiang@seas, xinyux@wharto",
+        "work_id": "W-D5C57268E64E"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T09:08:37+00:00",
+        "updated_at": "2026-06-12T10:12:09+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-A262284A1E16",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "ai driven scien tific equation discovery ai driven scien tific equation discovery",
+      "canonical_label": "AI-driven scien- tific equation discovery",
+      "concept_id": "RF-9E7D477A010F",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-BBC8784F89FC",
+        "benchmark_name": "AI-driven scien- tific equation discovery",
+        "code_url": "",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-12T08:54:11+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "tion (Wang et al. 2024; Ji et al. 2024), and equation discovery (Shojaee et al. 2024b; Ma et al. 2024). Despite this progress, we still lack AI systems capable of i"
+        },
+        "extracted_at": "2026-06-12T08:54:11+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-722905D32942",
+        "method_name": "Towards Scientific Discovery with Generative AI",
+        "metric": "EM",
+        "needs_llm_review": false,
+        "result_id": "RR-A0EF777DB0E3",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": false,
+          "has_compute_accounting": false,
+          "needs_verification": false
+        },
+        "source_hash": "8b7a77f68a59b635",
+        "source_work_id": "W-7E6DF19A7E3F",
+        "unit": "",
+        "updated_at": "2026-06-12T09:08:21+00:00",
+        "value": 2024.0,
+        "value_text": "tion (Wang et al. 2024; Ji et al. 2024), and equation discovery (Shojaee et al. 2024b; Ma et al. 2024). Despite this progress, we still lack AI systems capable of i",
+        "work_id": "W-7E6DF19A7E3F"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T09:08:38+00:00",
+        "updated_at": "2026-06-12T10:12:04+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-4B1F3BF96E37",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "mathematical problem solving abilities mathematical problem solving abilities",
+      "canonical_label": "mathematical problem-solving abilities",
+      "concept_id": "RF-B3C57C144476",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-CAFCD5E13B37",
+        "benchmark_name": "mathematical problem-solving abilities",
+        "code_url": "",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-12T08:54:11+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "ancement of Artificial Intelligence (www.aaai.org). All rights reserved. Figure 1: Overview of the AI-driven scientific discovery framework. The cycle illustrate"
+        },
+        "extracted_at": "2026-06-12T08:54:11+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-722905D32942",
+        "method_name": "Towards Scientific Discovery with Generative AI",
+        "metric": "EM",
+        "needs_llm_review": false,
+        "result_id": "RR-FC93D194A283",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": false,
+          "has_compute_accounting": false,
+          "needs_verification": false
+        },
+        "source_hash": "8b7a77f68a59b635",
+        "source_work_id": "W-7E6DF19A7E3F",
+        "unit": "",
+        "updated_at": "2026-06-12T09:08:21+00:00",
+        "value": 1.0,
+        "value_text": "ancement of Artificial Intelligence (www.aaai.org). All rights reserved. Figure 1: Overview of the AI-driven scientific discovery framework. The cycle illustrate",
+        "work_id": "W-7E6DF19A7E3F"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T09:08:38+00:00",
+        "updated_at": "2026-06-12T10:12:04+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-53E4E2720659",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-99CA02D3E227",
+  "created_at": "2026-06-14T07:29:16+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "The work explicitly identifies 'Advancing multimodal scientific representations beyond text' as a key research direction required for developing more comprehensive AI systems.",
+      "concept_id": "P-36F703B4FB75",
+      "confidence": 0.68,
+      "created_at": "2026-06-12T09:08:30+00:00",
+      "evidence_id": "EV-F846E8B4902A",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work explicitly identifies 'Advancing multimodal scientific representations beyond text' as a key research direction required for developing more comprehensive AI systems.",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "The text lists 'Creating improved benchmarks and evaluation frameworks for scientific discovery' as the first key challenge and research direction.",
+      "concept_id": "P-C80A3C4721C3",
+      "confidence": 0.68,
+      "created_at": "2026-06-12T09:08:30+00:00",
+      "evidence_id": "EV-18F896FC0E50",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text lists 'Creating improved benchmarks and evaluation frameworks for scientific discovery' as the first key challenge and research direction.",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "The work identifies 'Advancing multimodal scientific representations beyond text' as a key research direction and challenge, implying that current text-centric approaches are insufficient for comprehensive discovery.",
+      "concept_id": "P-2310AA4A89FC",
+      "confidence": 0.68,
+      "created_at": "2026-06-12T09:08:30+00:00",
+      "evidence_id": "EV-97324A268024",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work identifies 'Advancing multimodal scientific representations beyond text' as a key research direction and challenge, implying that current text-centric approaches are insufficient for comprehensive discovery.",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "The text explicitly lists 'Unifying automated reasoning, theorem proving, and data-driven modeling' as a critical direction for developing comprehensive AI systems for scientific discovery.",
+      "concept_id": "P-71798826D6E2",
+      "confidence": 0.68,
+      "created_at": "2026-06-12T09:08:30+00:00",
+      "evidence_id": "EV-7804FACCB8B9",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text explicitly lists 'Unifying automated reasoning, theorem proving, and data-driven modeling' as a critical direction for developing comprehensive AI systems for scientific discovery.",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-CAFCD5E13B37\", \"field_id\": \"PRJ-722905D32942\", \"work_id\": \"W-7E6DF19A7E3F\", \"task\": \"symbolic-compactness reward for MAS scientific discovery\", \"dataset\": \"mathematical problem-solving abilities\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text...",
+      "concept_id": "B-8997ED8B49E0",
+      "confidence": 0.32,
+      "created_at": "2026-06-12T09:08:31+00:00",
+      "evidence_id": "EV-800CD09DF641",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-CAFCD5E13B37\", \"field_id\": \"PRJ-722905D32942\", \"work_id\": \"W-7E6DF19A7E3F\", \"task\": \"symbolic-compactness reward for MAS scientific discovery\", \"dataset\": \"mathematical problem-solving abilities\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text...",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-1DACC151A208\", \"field_id\": \"PRJ-722905D32942\", \"work_id\": \"W-7E6DF19A7E3F\", \"task\": \"symbolic-compactness reward for MAS scientific discovery\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Towards Scientific Dis...",
+      "concept_id": "B-A8A4A585C12D",
+      "confidence": 0.32,
+      "created_at": "2026-06-12T09:08:31+00:00",
+      "evidence_id": "EV-97E2B7D26DF4",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-1DACC151A208\", \"field_id\": \"PRJ-722905D32942\", \"work_id\": \"W-7E6DF19A7E3F\", \"task\": \"symbolic-compactness reward for MAS scientific discovery\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Towards Scientific Dis...",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-BBC8784F89FC\", \"field_id\": \"PRJ-722905D32942\", \"work_id\": \"W-7E6DF19A7E3F\", \"task\": \"symbolic-compactness reward for MAS scientific discovery\", \"dataset\": \"AI-driven scien- tific equation discovery\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_t...",
+      "concept_id": "B-44154A11DADF",
+      "confidence": 0.32,
+      "created_at": "2026-06-12T09:08:31+00:00",
+      "evidence_id": "EV-8BE0226EE6B3",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-BBC8784F89FC\", \"field_id\": \"PRJ-722905D32942\", \"work_id\": \"W-7E6DF19A7E3F\", \"task\": \"symbolic-compactness reward for MAS scientific discovery\", \"dataset\": \"AI-driven scien- tific equation discovery\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_t...",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-16C515D955B1\", \"field_id\": \"PRJ-722905D32942\", \"work_id\": \"W-7E6DF19A7E3F\", \"task\": \"symbolic-compactness reward for MAS scientific discovery\", \"dataset\": \"scien- tific tools\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Towards...",
+      "concept_id": "B-467DC3291908",
+      "confidence": 0.32,
+      "created_at": "2026-06-12T09:08:31+00:00",
+      "evidence_id": "EV-E0368DB01053",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-16C515D955B1\", \"field_id\": \"PRJ-722905D32942\", \"work_id\": \"W-7E6DF19A7E3F\", \"task\": \"symbolic-compactness reward for MAS scientific discovery\", \"dataset\": \"scien- tific tools\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Towards...",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-41B4223442C6",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T09:08:38+00:00",
+      "evidence_id": "EV-335FD64EA34F",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-B3C57C144476",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T09:08:38+00:00",
+      "evidence_id": "EV-090413FD31F3",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-9E7D477A010F",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T09:08:38+00:00",
+      "evidence_id": "EV-BB0922028C94",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-B3C57C144476",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T09:08:38+00:00",
+      "evidence_id": "EV-7D251F72916E",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-B3C57C144476",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T09:08:38+00:00",
+      "evidence_id": "EV-C2578B6768DD",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-9E7D477A010F",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T09:08:38+00:00",
+      "evidence_id": "EV-1BDBB7EBEC20",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T09:08:38+00:00",
+      "evidence_id": "EV-02974B93C130",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-41B4223442C6",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T09:08:38+00:00",
+      "evidence_id": "EV-E26D84F65BDA",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-9E7D477A010F",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T09:08:38+00:00",
+      "evidence_id": "EV-501BE29B7218",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-9E7D477A010F",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T09:08:38+00:00",
+      "evidence_id": "EV-54EB8DDEFC5E",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T09:08:38+00:00",
+      "evidence_id": "EV-B5098A7AE57B",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-41B4223442C6",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T09:08:38+00:00",
+      "evidence_id": "EV-2226B3C32626",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-41B4223442C6",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T09:08:38+00:00",
+      "evidence_id": "EV-7929AEF0F026",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T09:08:38+00:00",
+      "evidence_id": "EV-24B3DE8A7FE8",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T09:08:38+00:00",
+      "evidence_id": "EV-1D577C3E46B0",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-B3C57C144476",
+      "confidence": 0.46,
+      "created_at": "2026-06-12T09:08:38+00:00",
+      "evidence_id": "EV-7296EF213A30",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-9F3418BF5625\", \"field_id\": \"PRJ-28B4CA742446\", \"work_id\": \"W-D5C57268E64E\", \"task\": \"logical patterns accuracy-token during\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"A Peek into Token Bias: Large Language Models...",
+      "concept_id": "B-38089AECA9E8",
+      "confidence": 0.7,
+      "created_at": "2026-06-12T10:10:23+00:00",
+      "evidence_id": "EV-0F7BAFDEF366",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-9F3418BF5625\", \"field_id\": \"PRJ-28B4CA742446\", \"work_id\": \"W-D5C57268E64E\", \"task\": \"logical patterns accuracy-token during\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"A Peek into Token Bias: Large Language Models...",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "The work explicitly identifies 'Advancing multimodal scientific representations beyond text' as a key research direction required for developing more comprehensive AI systems.",
+      "concept_id": "P-F65854CC0A9E",
+      "confidence": 0.68,
+      "created_at": "2026-06-13T17:36:00+00:00",
+      "evidence_id": "EV-6A1FF164C1AC",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work explicitly identifies 'Advancing multimodal scientific representations beyond text' as a key research direction required for developing more comprehensive AI systems.",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": "WV-683AF81A5C28"
+    },
+    {
+      "claim_text": "The text lists 'Creating improved benchmarks and evaluation frameworks for scientific discovery' as the first key challenge and research direction.",
+      "concept_id": "P-F144DB738CE8",
+      "confidence": 0.68,
+      "created_at": "2026-06-13T17:36:00+00:00",
+      "evidence_id": "EV-7C8183EE0A46",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text lists 'Creating improved benchmarks and evaluation frameworks for scientific discovery' as the first key challenge and research direction.",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": "WV-683AF81A5C28"
+    },
+    {
+      "claim_text": "The work identifies 'Advancing multimodal scientific representations beyond text' as a key research direction and challenge, implying that current text-centric approaches are insufficient for comprehensive discovery.",
+      "concept_id": "P-47699F3390A2",
+      "confidence": 0.68,
+      "created_at": "2026-06-13T17:36:00+00:00",
+      "evidence_id": "EV-D165231616EC",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work identifies 'Advancing multimodal scientific representations beyond text' as a key research direction and challenge, implying that current text-centric approaches are insufficient for comprehensive discovery.",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": "WV-683AF81A5C28"
+    },
+    {
+      "claim_text": "The text explicitly lists 'Unifying automated reasoning, theorem proving, and data-driven modeling' as a critical direction for developing comprehensive AI systems for scientific discovery.",
+      "concept_id": "P-898237646C5A",
+      "confidence": 0.68,
+      "created_at": "2026-06-13T17:36:00+00:00",
+      "evidence_id": "EV-F0988EB49966",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text explicitly lists 'Unifying automated reasoning, theorem proving, and data-driven modeling' as a critical direction for developing comprehensive AI systems for scientific discovery.",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": "WV-683AF81A5C28"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-C0E8D8DD1772\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-06F4B81340E8\", \"task\": \"initialization models space state\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"UnHiPPO: Uncertainty-aware Initialization for Stat...",
+      "concept_id": "B-1A6F507BBC89",
+      "confidence": 0.32,
+      "created_at": "2026-06-13T17:36:00+00:00",
+      "evidence_id": "EV-868BD5B20ADE",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-C0E8D8DD1772\", \"field_id\": \"cloud-crawl\", \"work_id\": \"W-06F4B81340E8\", \"task\": \"initialization models space state\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"UnHiPPO: Uncertainty-aware Initialization for Stat...",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": "WV-683AF81A5C28"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-CAFCD5E13B37\", \"field_id\": \"PRJ-722905D32942\", \"work_id\": \"W-7E6DF19A7E3F\", \"task\": \"symbolic-compactness reward for MAS scientific discovery\", \"dataset\": \"mathematical problem-solving abilities\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text...",
+      "concept_id": "B-7BA791A86A34",
+      "confidence": 0.32,
+      "created_at": "2026-06-13T17:36:00+00:00",
+      "evidence_id": "EV-D27965F15A43",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-CAFCD5E13B37\", \"field_id\": \"PRJ-722905D32942\", \"work_id\": \"W-7E6DF19A7E3F\", \"task\": \"symbolic-compactness reward for MAS scientific discovery\", \"dataset\": \"mathematical problem-solving abilities\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text...",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": "WV-683AF81A5C28"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-14T07:29:16+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-13T17:36:00+00:00",
+      "extraction_run_id": "XRUN-88AD315DCF72",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 3,
+        "existed_ideas": 0,
+        "principles": 4,
+        "takeaway_messages": 0,
+        "total": 7
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": "WV-683AF81A5C28"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "local_pr_export",
+    "secret_exposed_to_browser": false,
+    "warning": "Server admin key is not configured; output is a local PR-export artifact, not a direct GitHub write."
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 0,
+        "principle": 4
+      },
+      "title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-591ADFD1650F"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "2412.11427",
+        "authors": [
+          "Chandan K Reddy",
+          "Parshin Shojaee"
+        ],
+        "canonical_title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "http://arxiv.org/abs/2412.11427v2"
+        ],
+        "title_hash": "c2b6792cc72b6920",
+        "title_norm": "towards scientific discovery with generative ai progress opportunities and challenges",
+        "venue_or_source": "AAAI 2025",
+        "year": 2024
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "2024-12-21T19:22:53Z",
+        "title_hash": "c2b6792cc72b6920"
+      },
+      "timestamps": {
+        "created_at": "2026-06-12T09:08:30+00:00",
+        "updated_at": "2026-06-14T07:29:16+00:00"
+      },
+      "work_id": "W-591ADFD1650F"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": "Scientific discovery is a complex cognitive process that has driven human knowledge and technological progress for centuries. While artificial intelligence (AI) has made significant advances in automating aspects of scientific reasoning, simulation, and experimentation, we still lack integrated AI systems capable of performing autonomous long-term scientific research and discovery. This paper examines the current state of AI for scientific discovery, highlighting recent progress in large language models and other AI techniques applied to scientific tasks. We then outline key challenges and promising research directions toward developing more comprehensive AI systems for scientific discovery, including the need for science-focused AI agents, improved benchmarks and evaluation metrics, multimodal scientific representations, and unified frameworks combining reasoning, theorem proving, and data-driven modeling. Addressing these challenges could lead to transformative AI tools to accelerate progress across disciplines towards scientific discovery.",
+      "abstract_hash": "0f34a1490e8f06b7",
+      "content_hash": "fdbb2b5e678e0be1",
+      "created_at": "2026-06-12T09:08:30+00:00",
+      "metadata": {
+        "abstract": "Scientific discovery is a complex cognitive process that has driven human knowledge and technological progress for centuries. While artificial intelligence (AI) has made significant advances in automating aspects of scientific reasoning, simulation, and experimentation, we still lack integrated AI systems capable of performing autonomous long-term scientific research and discovery. This paper examines the current state of AI for scientific discovery, highlighting recent progress in large language models and other AI techniques applied to scientific tasks. We then outline key challenges and promising research directions toward developing more comprehensive AI systems for scientific discovery, including the need for science-focused AI agents, improved benchmarks and evaluation metrics, multimodal scientific representations, and unified frameworks combining reasoning, theorem proving, and data-driven modeling. Addressing these challenges could lead to transformative AI tools to accelerate progress across disciplines towards scientific discovery.",
+        "active_version_id": "VER-5DE832E9D26D",
+        "authors": [
+          "Chandan K Reddy",
+          "Parshin Shojaee"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-7E6DF19A7E3F",
+        "canonical_key": "towards scientific discovery with generative ai progress opportunities and challenges",
+        "community_signals": {},
+        "confidence_score": 0.62,
+        "created_at": "2026-06-12T08:53:30+00:00",
+        "entered_at": "2026-06-12T08:53:30+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-12T09:07:48+00:00",
+        "metrics": [],
+        "model_mode": "metadata",
+        "model_name": "Qwen/Qwen3.6-27B",
+        "paper_link": "http://arxiv.org/abs/2412.11427v2",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "2024-12-21T19:22:53Z",
+        "source_urls": [
+          "http://arxiv.org/abs/2412.11427v2"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+        "updated_at": "2026-06-12T09:07:48+00:00",
+        "url_or_doi": "http://arxiv.org/abs/2412.11427v2",
+        "validation_level": "L1",
+        "variants": {
+          "VER-5DE832E9D26D": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-12T08:53:30+00:00",
+            "extracted_at": "2026-06-12T09:07:48+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "Qwen/Qwen3.6-27B",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Scientific discovery is a complex cognitive process that has driven human knowledge and technological progress for centuries. While artificial intelligence (AI) has made significant advances in automating aspects of scientific reasoning, simulation, and experimentation, we still lack integrated AI systems capable of performing autonomous long-term scientific research and discovery. This paper examines the current state of AI for scientific discovery, highlighting recent progress in large language models and other AI techniques applied to scientific tasks. We then outline key challenges and promising research directions toward developing more comprehensive AI systems for scientific discovery, including the need for science-focused AI agents, improved benchmarks and evaluation metrics, multimodal scientific representations, and unified frameworks combining reasoning, theorem proving, and data-driven modeling. Addressing these challenges could lead to transformative AI tools to accelerate progress across disciplines towards scientific discovery.",
+              "authors": [
+                "Chandan K Reddy",
+                "Parshin Shojaee"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/2412.11427v2",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2024-12-21T19:22:53Z",
+              "source_urls": [
+                "http://arxiv.org/abs/2412.11427v2"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "url_or_doi": "http://arxiv.org/abs/2412.11427v2",
+              "validation_level": "L1",
+              "venue_or_source": "AAAI 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2412.11427v2"
+            ],
+            "version_id": "VER-5DE832E9D26D"
+          },
+          "VER-B9F666D05B4C": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-12T08:54:10+00:00",
+            "extracted_at": "2026-06-12T09:00:13+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Scientific discovery is a complex cognitive process that has driven human knowledge and technological progress for centuries. While artificial intelligence (AI) has made significant advances in automating aspects of scientific reasoning, simulation, and experimentation, we still lack integrated AI systems capable of performing autonomous long-term scientific research and discovery. This paper examines the current state of AI for scientific discovery, highlighting recent progress in large language models and other AI techniques applied to scientific tasks. We then outline key challenges and promising research directions toward developing more comprehensive AI systems for scientific discovery, including the need for science-focused AI agents, improved benchmarks and evaluation metrics, multimodal scientific representations, and unified frameworks combining reasoning, theorem proving, and data-driven modeling. Addressing these challenges could lead to transformative AI tools to accelerate progress across disciplines towards scientific discovery.",
+              "authors": [
+                "Chandan K Reddy",
+                "Parshin Shojaee"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/2412.11427v2",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2024-12-21T19:22:53Z",
+              "source_urls": [
+                "http://arxiv.org/abs/2412.11427v2"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+              "url_or_doi": "http://arxiv.org/abs/2412.11427v2",
+              "validation_level": "L1",
+              "venue_or_source": "AAAI 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2412.11427v2"
+            ],
+            "version_id": "VER-B9F666D05B4C"
+          }
+        },
+        "venue_or_source": "AAAI 2025",
+        "work_id": "W-7E6DF19A7E3F",
+        "year": 2024
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "",
+      "source_record_id": "W-7E6DF19A7E3F",
+      "source_updated_at": "2024-12-21T19:22:53Z",
+      "title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+      "title_hash": "c2b6792cc72b6920",
+      "work_id": "W-591ADFD1650F",
+      "work_version_id": "WV-683AF81A5C28"
+    }
+  ]
+}
