@@ -1,0 +1,1596 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "semantic grounding via discrete embedding alignment semantic grounding via discrete embedding alignment aligning continuous sensory inputs with the discrete semantic manifold of a language model preserves the model s reasoning capabilities better than projecting into an arbitrary continuous latent s",
+      "canonical_label": "Semantic Grounding via Discrete Embedding Alignment",
+      "concept_id": "P-00B5C49E01CC",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "Aligning continuous sensory inputs with the discrete semantic manifold of a language model preserves the model's reasoning capabilities better than projecting into an arbitrary continuous latent space because it leverages the pre-existing correlations between word embeddings.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-F639B0EF8D16",
+        "argument": "Aligning continuous sensory inputs with the discrete semantic manifold of a language model preserves the model's reasoning capabilities better than projecting into an arbitrary continuous latent space because it leverages the pre-existing correlations between word embeddings.",
+        "benchmarks": [],
+        "boundary_conditions": [
+          "The principle holds when the large language model is frozen and cannot be fine-tuned, and when the visual concepts have corresponding representations in the LLM's pre-trained vocabulary. Performance may degrade if the visual domain includes semantics entirely absent from the text training distribution."
+        ],
+        "canonical_id": "P-3CDE6A57D382",
+        "canonical_key": "aligning continuous sensory inputs with discrete semantic manifold of language model preserves model s reasoning capabilities better than projecting into arbitrary continuous laten",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-15T08:56:36+00:00",
+        "discussion": "The principle implies that multimodal integration should prioritize structural compatibility with the target model's internal representation geometry over simple dimensional matching. The approach is applicable to scenarios where a frozen foundation model must ingest new modalities, provided the target model possesses a sufficiently rich vocabulary to cover the semantic range of the input data. If the visual domain contains novel concepts not represented in the large language model's vocabulary, the optimal transport assignment may force incorrect semantic mappings.",
+        "entered_at": "2026-06-15T08:56:36+00:00",
+        "evidence": "The work demonstrates that enforcing consistent assignments between visual features and specific word embeddings allows the frozen large language model to apply its pre-existing linguistic correlations to visual data. Experimental comparisons show that this assignment-based strategy outperforms linear transformation approaches that map images to continuous prompt vectors, indicating that respecting the discrete nature of the token space is critical for effective multimodal grounding.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T08:56:36+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Semantic Grounding via Discrete Embedding Alignment",
+        "performance": [],
+        "principle_id": "P-3CDE6A57D382",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Bridging Vision and Language Spaces with Assignment Prediction",
+        "provider": "siliconflow",
+        "source_paper_link": "https://openreview.net/forum?id=lK2V2E2MNv",
+        "source_paper_links": [
+          "https://openreview.net/forum?id=lK2V2E2MNv"
+        ],
+        "source_paper_title": "Bridging Vision and Language Spaces with Assignment Prediction",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-38409259E892"
+        ],
+        "source_work_title": "Bridging Vision and Language Spaces with Assignment Prediction",
+        "source_works": [
+          "W-38409259E892"
+        ],
+        "updated_at": "2026-06-15T08:56:36+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-F639B0EF8D16": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-15T08:56:36+00:00",
+            "extracted_at": "2026-06-15T08:56:36+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "Aligning continuous sensory inputs with the discrete semantic manifold of a language model preserves the model's reasoning capabilities better than projecting into an arbitrary continuous latent space because it leverages the pre-existing correlations between word embeddings.",
+              "argument": "Aligning continuous sensory inputs with the discrete semantic manifold of a language model preserves the model's reasoning capabilities better than projecting into an arbitrary continuous latent space because it leverages the pre-existing correlations between word embeddings.",
+              "benchmarks": [],
+              "boundary_conditions": [
+                "The principle holds when the large language model is frozen and cannot be fine-tuned, and when the visual concepts have corresponding representations in the LLM's pre-trained vocabulary. Performance may degrade if the visual domain includes semantics entirely absent from the text training distribution."
+              ],
+              "confidence_score": 0.68,
+              "discussion": "The principle implies that multimodal integration should prioritize structural compatibility with the target model's internal representation geometry over simple dimensional matching. The approach is applicable to scenarios where a frozen foundation model must ingest new modalities, provided the target model possesses a sufficiently rich vocabulary to cover the semantic range of the input data. If the visual domain contains novel concepts not represented in the large language model's vocabulary, the optimal transport assignment may force incorrect semantic mappings.",
+              "evidence": "The work demonstrates that enforcing consistent assignments between visual features and specific word embeddings allows the frozen large language model to apply its pre-existing linguistic correlations to visual data. Experimental comparisons show that this assignment-based strategy outperforms linear transformation approaches that map images to continuous prompt vectors, indicating that respecting the discrete nature of the token space is critical for effective multimodal grounding.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Semantic Grounding via Discrete Embedding Alignment",
+              "performance": [],
+              "problem_pressure": "Bridging Vision and Language Spaces with Assignment Prediction",
+              "source_paper_link": "https://openreview.net/forum?id=lK2V2E2MNv",
+              "source_paper_links": [
+                "https://openreview.net/forum?id=lK2V2E2MNv"
+              ],
+              "source_paper_title": "Bridging Vision and Language Spaces with Assignment Prediction",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-0FD459D54566"
+              ],
+              "source_work_title": "Bridging Vision and Language Spaces with Assignment Prediction",
+              "source_works": [
+                "W-0FD459D54566"
+              ],
+              "venue_or_source": "ICLR",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://openreview.net/forum?id=lK2V2E2MNv"
+            ],
+            "version_id": "VER-F639B0EF8D16"
+          }
+        },
+        "venue_or_source": "ICLR",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-38409259E892"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T09:01:53+00:00",
+        "updated_at": "2026-06-15T09:01:53+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-2FE76839D425",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "proxy guided difficulty estimation proxy guided difficulty estimation when identifying difficult or noisy examples for curriculum scheduling an under trained proxy model provides a more reliable difficulty signal than a fully converged model as the latter may have already overfit to the noise w 6cbf",
+      "canonical_label": "Proxy-Guided Difficulty Estimation",
+      "concept_id": "P-5B8707F56CED",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "When identifying difficult or noisy examples for curriculum scheduling, an under-trained proxy model provides a more reliable difficulty signal than a fully converged model, as the latter may have already overfit to the noise.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-68EDCBA9D707",
+        "argument": "When identifying difficult or noisy examples for curriculum scheduling, an under-trained proxy model provides a more reliable difficulty signal than a fully converged model, as the latter may have already overfit to the noise.",
+        "benchmarks": [],
+        "canonical_id": "P-E50007942C31",
+        "canonical_key": "when identifying difficult or noisy examples for curriculum scheduling under trained proxy model provides more reliable difficulty signal than fully converged model as latter may h",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-15T08:56:34+00:00",
+        "discussion": "The reliance on an under-trained proxy highlights a counter-intuitive insight: a model that has not yet memorized the training data (including noise) is better suited to detect inherent sample difficulty. A fully trained model might assign low loss to a noisy example simply because it has memorized the incorrect label, thereby falsely categorizing it as 'easy'. The under-trained proxy, lacking this memorization capacity, will exhibit high loss on ambiguous or mislabeled examples, correctly flagging them as difficult. This mechanism ensures that the curriculum delays the introduction of potentially harmful noisy samples until the main model is robust enough to handle them.",
+        "entered_at": "2026-06-15T08:56:34+00:00",
+        "evidence": "The text specifies the use of 'an under-trained proxy model to form an example curriculum', implying that the state of the proxy is a deliberate design choice for effective sampling.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T08:56:34+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Proxy-Guided Difficulty Estimation",
+        "performance": [],
+        "principle_id": "P-E50007942C31",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+        "provider": "siliconflow",
+        "source_paper_link": "https://doi.org/10.1609/aaai.v38i13.29392",
+        "source_paper_links": [
+          "https://doi.org/10.1609/aaai.v38i13.29392"
+        ],
+        "source_paper_title": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-6CBF6FE618AC"
+        ],
+        "source_work_title": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+        "source_works": [
+          "W-6CBF6FE618AC"
+        ],
+        "updated_at": "2026-06-15T08:56:34+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-68EDCBA9D707": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-15T08:56:34+00:00",
+            "extracted_at": "2026-06-15T08:56:34+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "When identifying difficult or noisy examples for curriculum scheduling, an under-trained proxy model provides a more reliable difficulty signal than a fully converged model, as the latter may have already overfit to the noise.",
+              "argument": "When identifying difficult or noisy examples for curriculum scheduling, an under-trained proxy model provides a more reliable difficulty signal than a fully converged model, as the latter may have already overfit to the noise.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The reliance on an under-trained proxy highlights a counter-intuitive insight: a model that has not yet memorized the training data (including noise) is better suited to detect inherent sample difficulty. A fully trained model might assign low loss to a noisy example simply because it has memorized the incorrect label, thereby falsely categorizing it as 'easy'. The under-trained proxy, lacking this memorization capacity, will exhibit high loss on ambiguous or mislabeled examples, correctly flagging them as difficult. This mechanism ensures that the curriculum delays the introduction of potentially harmful noisy samples until the main model is robust enough to handle them.",
+              "evidence": "The text specifies the use of 'an under-trained proxy model to form an example curriculum', implying that the state of the proxy is a deliberate design choice for effective sampling.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Proxy-Guided Difficulty Estimation",
+              "performance": [],
+              "problem_pressure": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+              "source_paper_link": "https://doi.org/10.1609/aaai.v38i13.29392",
+              "source_paper_links": [
+                "https://doi.org/10.1609/aaai.v38i13.29392"
+              ],
+              "source_paper_title": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-ADBCE974A975"
+              ],
+              "source_work_title": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+              "source_works": [
+                "W-ADBCE974A975"
+              ],
+              "venue_or_source": "AAAI",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1609/aaai.v38i13.29392"
+            ],
+            "version_id": "VER-68EDCBA9D707"
+          }
+        },
+        "venue_or_source": "AAAI",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-6CBF6FE618AC"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T09:01:53+00:00",
+        "updated_at": "2026-06-15T09:01:53+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-2AB4B1A571B9",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "complexity progressive task formulation complexity progressive task formulation if a few shot learning task involves significant label noise then the training distribution should be dynamically reordered to present tasks with lower inter class boundary complexity and higher intra class sample confi ",
+      "canonical_label": "Complexity-Progressive Task Formulation",
+      "concept_id": "P-6751431759D5",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "If a few-shot learning task involves significant label noise, then the training distribution should be dynamically reordered to present tasks with lower inter-class boundary complexity and higher intra-class sample confidence before exposing the model to high-complexity, low-confidence scenarios.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-5572A45BC0D7",
+        "argument": "If a few-shot learning task involves significant label noise, then the training distribution should be dynamically reordered to present tasks with lower inter-class boundary complexity and higher intra-class sample confidence before exposing the model to high-complexity, low-confidence scenarios.",
+        "benchmarks": [],
+        "canonical_id": "P-B23F0D833AE4",
+        "canonical_key": "if few shot learning task involves significant label noise then training distribution should be dynamically reordered to present tasks with lower inter class boundary complexity an",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-15T08:56:34+00:00",
+        "discussion": "The principle asserts that the order of data presentation is as critical as the data itself when dealing with noisy labels in low-data regimes. By enforcing a progression from simple, well-separated classes to complex, overlapping ones, the model establishes a stable foundational embedding space. This prevents the optimization trajectory from being derailed early by noisy gradients derived from ambiguous class boundaries. The principle generalizes to any meta-learning scenario where data quality is heterogeneous, suggesting that static random sampling is suboptimal compared to complexity-aware sequencing.",
+        "entered_at": "2026-06-15T08:56:34+00:00",
+        "evidence": "The work proposes a 'curriculum meta-learning model' that creates a 'robust curriculum for adaptive task distribution formulation' specifically to counter the 'poor generalization capability' caused by limited examples and label noise.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T08:56:34+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Complexity-Progressive Task Formulation",
+        "performance": [],
+        "principle_id": "P-B23F0D833AE4",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+        "provider": "siliconflow",
+        "source_paper_link": "https://doi.org/10.1609/aaai.v38i13.29392",
+        "source_paper_links": [
+          "https://doi.org/10.1609/aaai.v38i13.29392"
+        ],
+        "source_paper_title": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-6CBF6FE618AC"
+        ],
+        "source_work_title": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+        "source_works": [
+          "W-6CBF6FE618AC"
+        ],
+        "updated_at": "2026-06-15T08:56:34+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-5572A45BC0D7": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-15T08:56:34+00:00",
+            "extracted_at": "2026-06-15T08:56:34+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "If a few-shot learning task involves significant label noise, then the training distribution should be dynamically reordered to present tasks with lower inter-class boundary complexity and higher intra-class sample confidence before exposing the model to high-complexity, low-confidence scenarios.",
+              "argument": "If a few-shot learning task involves significant label noise, then the training distribution should be dynamically reordered to present tasks with lower inter-class boundary complexity and higher intra-class sample confidence before exposing the model to high-complexity, low-confidence scenarios.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle asserts that the order of data presentation is as critical as the data itself when dealing with noisy labels in low-data regimes. By enforcing a progression from simple, well-separated classes to complex, overlapping ones, the model establishes a stable foundational embedding space. This prevents the optimization trajectory from being derailed early by noisy gradients derived from ambiguous class boundaries. The principle generalizes to any meta-learning scenario where data quality is heterogeneous, suggesting that static random sampling is suboptimal compared to complexity-aware sequencing.",
+              "evidence": "The work proposes a 'curriculum meta-learning model' that creates a 'robust curriculum for adaptive task distribution formulation' specifically to counter the 'poor generalization capability' caused by limited examples and label noise.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Complexity-Progressive Task Formulation",
+              "performance": [],
+              "problem_pressure": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+              "source_paper_link": "https://doi.org/10.1609/aaai.v38i13.29392",
+              "source_paper_links": [
+                "https://doi.org/10.1609/aaai.v38i13.29392"
+              ],
+              "source_paper_title": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-ADBCE974A975"
+              ],
+              "source_work_title": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+              "source_works": [
+                "W-ADBCE974A975"
+              ],
+              "venue_or_source": "AAAI",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1609/aaai.v38i13.29392"
+            ],
+            "version_id": "VER-5572A45BC0D7"
+          }
+        },
+        "venue_or_source": "AAAI",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-6CBF6FE618AC"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T09:01:53+00:00",
+        "updated_at": "2026-06-15T09:01:53+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-693D7444C47D",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "preference driven early stopping in multi fidelity optimization preference driven early stopping in multi fidelity optimization early stopping decisions in iterative optimization processes should be derived from a continuous utility function representing user specific cost performance preferences ra",
+      "canonical_label": "Preference-Driven Early Stopping in Multi-Fidelity Optimization",
+      "concept_id": "P-78972CCAEDC4",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "Early stopping decisions in iterative optimization processes should be derived from a continuous utility function representing user-specific cost-performance preferences rather than fixed performance thresholds or heuristic budgets.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-E2232FB8ED98",
+        "argument": "Early stopping decisions in iterative optimization processes should be derived from a continuous utility function representing user-specific cost-performance preferences rather than fixed performance thresholds or heuristic budgets.",
+        "benchmarks": [],
+        "boundary_conditions": [
+          "Requires accessible user preference data or a definable utility metric.",
+          "Dependent on the surrogate model's ability to accurately predict performance trajectories."
+        ],
+        "canonical_id": "P-3404CD3D4C1B",
+        "canonical_key": "early stopping decisions in iterative optimization processes should be derived from continuous utility function representing user specific cost performance preferences rather than ",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-15T08:57:29+00:00",
+        "discussion": "Applying this principle shifts the optimization objective from maximizing absolute performance to maximizing net value, which is critical in resource-limited environments where computational expenses must be justified by marginal gains.",
+        "entered_at": "2026-06-15T08:57:29+00:00",
+        "evidence": "The work assumes a scenario where users want to early-stop the hyperparameter optimization process when the expected performance improvement is not satisfactory with respect to the additional computational cost.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T08:57:29+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Preference-Driven Early Stopping in Multi-Fidelity Optimization",
+        "performance": [],
+        "principle_id": "P-3404CD3D4C1B",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning",
+        "provider": "siliconflow",
+        "source_paper_link": "https://openreview.net/forum?id=ZUb4JpNoJe",
+        "source_paper_links": [
+          "https://openreview.net/forum?id=ZUb4JpNoJe"
+        ],
+        "source_paper_title": "Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-12C2917D84D7"
+        ],
+        "source_work_title": "Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning",
+        "source_works": [
+          "W-12C2917D84D7"
+        ],
+        "updated_at": "2026-06-15T08:57:29+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-E2232FB8ED98": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-15T08:57:29+00:00",
+            "extracted_at": "2026-06-15T08:57:29+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "Early stopping decisions in iterative optimization processes should be derived from a continuous utility function representing user-specific cost-performance preferences rather than fixed performance thresholds or heuristic budgets.",
+              "argument": "Early stopping decisions in iterative optimization processes should be derived from a continuous utility function representing user-specific cost-performance preferences rather than fixed performance thresholds or heuristic budgets.",
+              "benchmarks": [],
+              "boundary_conditions": [
+                "Requires accessible user preference data or a definable utility metric.",
+                "Dependent on the surrogate model's ability to accurately predict performance trajectories."
+              ],
+              "confidence_score": 0.68,
+              "discussion": "Applying this principle shifts the optimization objective from maximizing absolute performance to maximizing net value, which is critical in resource-limited environments where computational expenses must be justified by marginal gains.",
+              "evidence": "The work assumes a scenario where users want to early-stop the hyperparameter optimization process when the expected performance improvement is not satisfactory with respect to the additional computational cost.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Preference-Driven Early Stopping in Multi-Fidelity Optimization",
+              "performance": [],
+              "problem_pressure": "Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning",
+              "source_paper_link": "https://openreview.net/forum?id=ZUb4JpNoJe",
+              "source_paper_links": [
+                "https://openreview.net/forum?id=ZUb4JpNoJe"
+              ],
+              "source_paper_title": "Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-B1076D67944C"
+              ],
+              "source_work_title": "Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning",
+              "source_works": [
+                "W-B1076D67944C"
+              ],
+              "venue_or_source": "NeurIPS",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://openreview.net/forum?id=ZUb4JpNoJe"
+            ],
+            "version_id": "VER-E2232FB8ED98"
+          }
+        },
+        "venue_or_source": "NeurIPS",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-12C2917D84D7"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T09:01:52+00:00",
+        "updated_at": "2026-06-15T09:01:52+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-5CFD65AE4641",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "superior cost performance trade off via utility modeling superior cost performance trade off via utility modeling the utility guided freeze thaw bayesian optimization method outperforms existing freeze thaw and transfer based baselines on established multi fidelity benchmarks achieving a significant",
+      "canonical_label": "Superior Cost-Performance Trade-off via Utility Modeling",
+      "concept_id": "TM-5E0BEE439A2C",
+      "concept_type": "takeaway_message",
+      "payload": {
+        "active_version_id": "VER-04707568999E",
+        "benchmarks": [],
+        "canonical_id": "TM-DBF125C29B8C",
+        "canonical_key": "utility guided freeze thaw bayesian optimization method outperforms existing freeze thaw and transfer based baselines on established multi fidelity benchmarks achieving significant",
+        "condition": "This benefit is realized when user preference data is available to estimate the cost-performance utility function and when the surrogate model can accurately predict performance trajectories to inform utility expectations.",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-15T08:57:29+00:00",
+        "discussion": "The results suggest that traditional multi-fidelity optimization strategies often overlook the specific cost sensitivity of the end-user, leading to suboptimal resource allocation. By formalizing the cost-performance trade-off as a utility function, the optimization process becomes aligned with practical deployment constraints. The observed outperformance of baselines indicates that explicit utility modeling provides a more robust signal for decision-making in iterative optimization than standard acquisition functions alone.",
+        "entered_at": "2026-06-15T08:57:29+00:00",
+        "evidence": "The abstract reports validation on 'established multi-fidelity HPO benchmarks' showing the algorithm 'outperforms all the previous freeze-thaw BO and transfer-BO baselines' while 'achieving a significantly better trade-off between the cost and performance'.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T08:57:29+00:00",
+        "extraction_method": "llm_extracted",
+        "finding": "The utility-guided freeze-thaw Bayesian optimization method outperforms existing freeze-thaw and transfer-based baselines on established multi-fidelity benchmarks, achieving a significantly better balance between computational cost and final model performance.",
+        "main_results": "The utility-guided freeze-thaw Bayesian optimization method outperforms existing freeze-thaw and transfer-based baselines on established multi-fidelity benchmarks, achieving a significantly better balance between computational cost and final model performance.",
+        "message_text": "The utility-guided freeze-thaw Bayesian optimization method outperforms existing freeze-thaw and transfer-based baselines on established multi-fidelity benchmarks, achieving a significantly better balance between computational cost and final model performance.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "https://openreview.net/forum?id=ZUb4JpNoJe",
+        "source_paper_links": [
+          "https://openreview.net/forum?id=ZUb4JpNoJe"
+        ],
+        "source_paper_title": "Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-12C2917D84D7"
+        ],
+        "source_work_title": "Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning",
+        "source_works": [
+          "W-12C2917D84D7"
+        ],
+        "title": "Superior Cost-Performance Trade-off via Utility Modeling",
+        "updated_at": "2026-06-15T08:57:29+00:00",
+        "variants": {
+          "VER-04707568999E": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-15T08:57:29+00:00",
+            "extracted_at": "2026-06-15T08:57:29+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "condition": "This benefit is realized when user preference data is available to estimate the cost-performance utility function and when the surrogate model can accurately predict performance trajectories to inform utility expectations.",
+              "confidence_score": 0.7,
+              "discussion": "The results suggest that traditional multi-fidelity optimization strategies often overlook the specific cost sensitivity of the end-user, leading to suboptimal resource allocation. By formalizing the cost-performance trade-off as a utility function, the optimization process becomes aligned with practical deployment constraints. The observed outperformance of baselines indicates that explicit utility modeling provides a more robust signal for decision-making in iterative optimization than standard acquisition functions alone.",
+              "evidence": "The abstract reports validation on 'established multi-fidelity HPO benchmarks' showing the algorithm 'outperforms all the previous freeze-thaw BO and transfer-BO baselines' while 'achieving a significantly better trade-off between the cost and performance'.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "finding": "The utility-guided freeze-thaw Bayesian optimization method outperforms existing freeze-thaw and transfer-based baselines on established multi-fidelity benchmarks, achieving a significantly better balance between computational cost and final model performance.",
+              "main_results": "The utility-guided freeze-thaw Bayesian optimization method outperforms existing freeze-thaw and transfer-based baselines on established multi-fidelity benchmarks, achieving a significantly better balance between computational cost and final model performance.",
+              "message_text": "The utility-guided freeze-thaw Bayesian optimization method outperforms existing freeze-thaw and transfer-based baselines on established multi-fidelity benchmarks, achieving a significantly better balance between computational cost and final model performance.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "https://openreview.net/forum?id=ZUb4JpNoJe",
+              "source_paper_links": [
+                "https://openreview.net/forum?id=ZUb4JpNoJe"
+              ],
+              "source_paper_title": "Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-B1076D67944C"
+              ],
+              "source_work_title": "Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning",
+              "source_works": [],
+              "title": "Superior Cost-Performance Trade-off via Utility Modeling",
+              "venue_or_source": "NeurIPS",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://openreview.net/forum?id=ZUb4JpNoJe"
+            ],
+            "version_id": "VER-04707568999E"
+          }
+        },
+        "venue_or_source": "NeurIPS",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-12C2917D84D7"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T09:01:52+00:00",
+        "updated_at": "2026-06-15T09:01:52+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-3000979CE062",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "dual level curriculum mitigates noise in few shot learning dual level curriculum mitigates noise in few shot learning the integration of class level boundary complexity and example level difficulty sampling creates a robust training environment that significantly improves generalization in the prese",
+      "canonical_label": "Dual-Level Curriculum Mitigates Noise in Few-Shot Learning",
+      "concept_id": "TM-BDC8DBE992C3",
+      "concept_type": "takeaway_message",
+      "payload": {
+        "active_version_id": "VER-C1229831075A",
+        "benchmarks": [],
+        "canonical_id": "TM-699DFBA4D932",
+        "canonical_key": "integration of class level boundary complexity and example level difficulty sampling creates robust training environment significantly improves generalization in presence of label ",
+        "condition": "Applicable when training meta-learning models on few-shot tasks where the support or query sets are suspected to contain significant label noise or when class boundaries are inherently complex.",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-15T08:56:34+00:00",
+        "discussion": "The key takeaway is that a single-dimensional curriculum (e.g., only by class or only by example) is insufficient for noisy few-shot learning. The synergy between ordering classes by their mutual separability and ordering examples by their individual learnability creates a compounding benefit. This strategy ensures that the model is never asked to solve a 'hard' problem (complex classes with noisy examples) before it has mastered 'easier' sub-problems. For practitioners, this suggests that implementing a proxy-based difficulty estimator and a boundary complexity metric should be a priority when deploying few-shot systems in real-world, imperfect data environments.",
+        "entered_at": "2026-06-15T08:56:34+00:00",
+        "evidence": "The abstract states the goal is to 'address this critical challenge' of label noise leading to 'poor generalization' by proposing a model that 'employs a novel dual-level class-example sampling strategy' for 'robust model training'.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T08:56:34+00:00",
+        "extraction_method": "llm_extracted",
+        "finding": "The integration of class-level boundary complexity and example-level difficulty sampling creates a robust training environment that significantly improves generalization in the presence of label noise.",
+        "main_results": "The integration of class-level boundary complexity and example-level difficulty sampling creates a robust training environment that significantly improves generalization in the presence of label noise.",
+        "message_text": "The integration of class-level boundary complexity and example-level difficulty sampling creates a robust training environment that significantly improves generalization in the presence of label noise.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "https://doi.org/10.1609/aaai.v38i13.29392",
+        "source_paper_links": [
+          "https://doi.org/10.1609/aaai.v38i13.29392"
+        ],
+        "source_paper_title": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-6CBF6FE618AC"
+        ],
+        "source_work_title": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+        "source_works": [
+          "W-6CBF6FE618AC"
+        ],
+        "title": "Dual-Level Curriculum Mitigates Noise in Few-Shot Learning",
+        "updated_at": "2026-06-15T08:56:34+00:00",
+        "variants": {
+          "VER-C1229831075A": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-15T08:56:34+00:00",
+            "extracted_at": "2026-06-15T08:56:34+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "condition": "Applicable when training meta-learning models on few-shot tasks where the support or query sets are suspected to contain significant label noise or when class boundaries are inherently complex.",
+              "confidence_score": 0.7,
+              "discussion": "The key takeaway is that a single-dimensional curriculum (e.g., only by class or only by example) is insufficient for noisy few-shot learning. The synergy between ordering classes by their mutual separability and ordering examples by their individual learnability creates a compounding benefit. This strategy ensures that the model is never asked to solve a 'hard' problem (complex classes with noisy examples) before it has mastered 'easier' sub-problems. For practitioners, this suggests that implementing a proxy-based difficulty estimator and a boundary complexity metric should be a priority when deploying few-shot systems in real-world, imperfect data environments.",
+              "evidence": "The abstract states the goal is to 'address this critical challenge' of label noise leading to 'poor generalization' by proposing a model that 'employs a novel dual-level class-example sampling strategy' for 'robust model training'.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "finding": "The integration of class-level boundary complexity and example-level difficulty sampling creates a robust training environment that significantly improves generalization in the presence of label noise.",
+              "main_results": "The integration of class-level boundary complexity and example-level difficulty sampling creates a robust training environment that significantly improves generalization in the presence of label noise.",
+              "message_text": "The integration of class-level boundary complexity and example-level difficulty sampling creates a robust training environment that significantly improves generalization in the presence of label noise.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "https://doi.org/10.1609/aaai.v38i13.29392",
+              "source_paper_links": [
+                "https://doi.org/10.1609/aaai.v38i13.29392"
+              ],
+              "source_paper_title": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-ADBCE974A975"
+              ],
+              "source_work_title": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+              "source_works": [],
+              "title": "Dual-Level Curriculum Mitigates Noise in Few-Shot Learning",
+              "venue_or_source": "AAAI",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1609/aaai.v38i13.29392"
+            ],
+            "version_id": "VER-C1229831075A"
+          }
+        },
+        "venue_or_source": "AAAI",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-6CBF6FE618AC"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T09:01:53+00:00",
+        "updated_at": "2026-06-15T09:01:53+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-9D3AC6CF11DE",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-70F272988939",
+  "created_at": "2026-06-15T09:01:53+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "The work assumes a scenario where users want to early-stop the hyperparameter optimization process when the expected performance improvement is not satisfactory with respect to the additional computational cost.",
+      "concept_id": "P-78972CCAEDC4",
+      "confidence": 0.68,
+      "created_at": "2026-06-15T09:01:52+00:00",
+      "evidence_id": "EV-06674D20324E",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work assumes a scenario where users want to early-stop the hyperparameter optimization process when the expected performance improvement is not satisfactory with respect to the additional computational cost.",
+      "work_id": "W-12C2917D84D7",
+      "work_version_id": "WV-F2FB2CA5F5DA"
+    },
+    {
+      "claim_text": "The abstract reports validation on 'established multi-fidelity HPO benchmarks' showing the algorithm 'outperforms all the previous freeze-thaw BO and transfer-BO baselines' while 'achieving a significantly better trade-off between the cost and performance'.",
+      "concept_id": "TM-5E0BEE439A2C",
+      "confidence": 0.7,
+      "created_at": "2026-06-15T09:01:52+00:00",
+      "evidence_id": "EV-3A7C5311A64E",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The abstract reports validation on 'established multi-fidelity HPO benchmarks' showing the algorithm 'outperforms all the previous freeze-thaw BO and transfer-BO baselines' while 'achieving a significantly better trade-off between the cost and performance'.",
+      "work_id": "W-12C2917D84D7",
+      "work_version_id": "WV-F2FB2CA5F5DA"
+    },
+    {
+      "claim_text": "The work demonstrates that enforcing consistent assignments between visual features and specific word embeddings allows the frozen large language model to apply its pre-existing linguistic correlations to visual data. Experimental comparisons show that this assignment-based strategy outperforms linear transformation approaches that map images to continuous prompt vectors, indicating that respecting the discrete nature of the token space is critical for effective multimodal grounding.",
+      "concept_id": "P-00B5C49E01CC",
+      "confidence": 0.68,
+      "created_at": "2026-06-15T09:01:53+00:00",
+      "evidence_id": "EV-6048E54344CF",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work demonstrates that enforcing consistent assignments between visual features and specific word embeddings allows the frozen large language model to apply its pre-existing linguistic correlations to visual data. Experimental comparisons show that this assignment-based strategy outperforms linear transformation approaches that map images to continuous prompt vectors, indicating that respecting the discrete nature of the token space is critical for effective multimodal grounding.",
+      "work_id": "W-38409259E892",
+      "work_version_id": "WV-BF9FC809232D"
+    },
+    {
+      "claim_text": "The work proposes a 'curriculum meta-learning model' that creates a 'robust curriculum for adaptive task distribution formulation' specifically to counter the 'poor generalization capability' caused by limited examples and label noise.",
+      "concept_id": "P-6751431759D5",
+      "confidence": 0.68,
+      "created_at": "2026-06-15T09:01:53+00:00",
+      "evidence_id": "EV-E73885A81C7B",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work proposes a 'curriculum meta-learning model' that creates a 'robust curriculum for adaptive task distribution formulation' specifically to counter the 'poor generalization capability' caused by limited examples and label noise.",
+      "work_id": "W-6CBF6FE618AC",
+      "work_version_id": "WV-58777CB733D3"
+    },
+    {
+      "claim_text": "The text specifies the use of 'an under-trained proxy model to form an example curriculum', implying that the state of the proxy is a deliberate design choice for effective sampling.",
+      "concept_id": "P-5B8707F56CED",
+      "confidence": 0.68,
+      "created_at": "2026-06-15T09:01:53+00:00",
+      "evidence_id": "EV-AC00633FF075",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text specifies the use of 'an under-trained proxy model to form an example curriculum', implying that the state of the proxy is a deliberate design choice for effective sampling.",
+      "work_id": "W-6CBF6FE618AC",
+      "work_version_id": "WV-58777CB733D3"
+    },
+    {
+      "claim_text": "The abstract states the goal is to 'address this critical challenge' of label noise leading to 'poor generalization' by proposing a model that 'employs a novel dual-level class-example sampling strategy' for 'robust model training'.",
+      "concept_id": "TM-BDC8DBE992C3",
+      "confidence": 0.7,
+      "created_at": "2026-06-15T09:01:53+00:00",
+      "evidence_id": "EV-912861B09560",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The abstract states the goal is to 'address this critical challenge' of label noise leading to 'poor generalization' by proposing a model that 'employs a novel dual-level class-example sampling strategy' for 'robust model training'.",
+      "work_id": "W-6CBF6FE618AC",
+      "work_version_id": "WV-58777CB733D3"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-15T09:01:52+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-15T09:01:52+00:00",
+      "extraction_run_id": "XRUN-D349DB378D3B",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 0,
+        "existed_ideas": 0,
+        "principles": 1,
+        "takeaway_messages": 1,
+        "total": 2
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-12C2917D84D7",
+      "work_version_id": "WV-F2FB2CA5F5DA"
+    },
+    {
+      "completed_at": "2026-06-15T09:01:53+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-15T09:01:52+00:00",
+      "extraction_run_id": "XRUN-0D158316ED99",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 0,
+        "existed_ideas": 0,
+        "principles": 1,
+        "takeaway_messages": 0,
+        "total": 1
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-38409259E892",
+      "work_version_id": "WV-BF9FC809232D"
+    },
+    {
+      "completed_at": "2026-06-15T09:01:53+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-15T09:01:53+00:00",
+      "extraction_run_id": "XRUN-B3CA4FB3483D",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 0,
+        "existed_ideas": 0,
+        "principles": 2,
+        "takeaway_messages": 1,
+        "total": 3
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-6CBF6FE618AC",
+      "work_version_id": "WV-58777CB733D3"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "local_pr_export",
+    "secret_exposed_to_browser": false,
+    "warning": "Server admin key is not configured; output is a local PR-export artifact, not a direct GitHub write."
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 0,
+        "principle": 1
+      },
+      "title": "Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-12C2917D84D7"
+    },
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 0,
+        "principle": 1
+      },
+      "title": "Bridging Vision and Language Spaces with Assignment Prediction",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-38409259E892"
+    },
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 0,
+        "principle": 2
+      },
+      "title": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-6CBF6FE618AC"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "",
+        "authors": [
+          "Dong Bok Lee",
+          "Aoxuan Silvia Zhang",
+          "Byungjoo Kim",
+          "Junhyeon Park",
+          "Steven Adriaensen",
+          "Juho Lee",
+          "Sung Ju Hwang",
+          "Hae Beom Lee"
+        ],
+        "canonical_title": "Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "https://openreview.net/forum?id=ZUb4JpNoJe"
+        ],
+        "title_hash": "7b43a087a08faad5",
+        "title_norm": "cost sensitive freeze thaw bayesian optimization for efficient hyperparameter tuning",
+        "venue_or_source": "NeurIPS",
+        "year": 2025
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "1776754793972",
+        "title_hash": "7b43a087a08faad5"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T09:01:52+00:00",
+        "updated_at": "2026-06-15T09:01:52+00:00"
+      },
+      "work_id": "W-12C2917D84D7"
+    },
+    {
+      "identity": {
+        "arxiv_id": "",
+        "authors": [
+          "Jungin Park",
+          "Jiyoung Lee",
+          "Kwanghoon Sohn"
+        ],
+        "canonical_title": "Bridging Vision and Language Spaces with Assignment Prediction",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "https://openreview.net/forum?id=lK2V2E2MNv"
+        ],
+        "title_hash": "2cfeac5305836606",
+        "title_norm": "bridging vision and language spaces with assignment prediction",
+        "venue_or_source": "ICLR",
+        "year": 2024
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "1713175069741",
+        "title_hash": "2cfeac5305836606"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T09:01:52+00:00",
+        "updated_at": "2026-06-15T09:01:52+00:00"
+      },
+      "work_id": "W-38409259E892"
+    },
+    {
+      "identity": {
+        "arxiv_id": "",
+        "authors": [
+          "Xiaofan Que",
+          "Qi Yu"
+        ],
+        "canonical_title": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "https://doi.org/10.1609/aaai.v38i13.29392",
+          "https://ojs.aaai.org/index.php/AAAI/article/view/29392"
+        ],
+        "title_hash": "96f99a19b4bdd990",
+        "title_norm": "dual level curriculum meta learning for noisy few shot learning tasks",
+        "venue_or_source": "AAAI",
+        "year": 2024
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "2026-02-23T23:43:17Z",
+        "title_hash": "96f99a19b4bdd990"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T09:01:52+00:00",
+        "updated_at": "2026-06-15T09:01:52+00:00"
+      },
+      "work_id": "W-6CBF6FE618AC"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": "In this paper, we address the problem of cost-sensitive hyperparameter optimization (HPO) built upon freeze-thaw Bayesian optimization (BO). Specifically, we assume a scenario where users want to early-stop the HPO process when the expected performance improvement is not satisfactory with respect to the additional computational cost. Motivated by this scenario, we introduce \\emph{utility} in the freeze-thaw framework, a function describing the trade-off between the cost and performance that can be estimated from the user's preference data. This utility function, combined with our novel acquisition function and stopping criterion, allows us to dynamically continue training the configuration that we expect to maximally improve the utility in the future, and also automatically stop the HPO process around the maximum utility. Further, we improve the sample efficiency of existing freeze-th...",
+      "abstract_hash": "608126822cf80593",
+      "content_hash": "13378a502c3507aa",
+      "created_at": "2026-06-15T09:01:52+00:00",
+      "metadata": {
+        "abstract": "In this paper, we address the problem of cost-sensitive hyperparameter optimization (HPO) built upon freeze-thaw Bayesian optimization (BO). Specifically, we assume a scenario where users want to early-stop the HPO process when the expected performance improvement is not satisfactory with respect to the additional computational cost. Motivated by this scenario, we introduce \\emph{utility} in the freeze-thaw framework, a function describing the trade-off between the cost and performance that can be estimated from the user's preference data. This utility function, combined with our novel acquisition function and stopping criterion, allows us to dynamically continue training the configuration that we expect to maximally improve the utility in the future, and also automatically stop the HPO process around the maximum utility. Further, we improve the sample efficiency of existing freeze-th...",
+        "active_version_id": "VER-372A0718BFBF",
+        "authors": [
+          "Dong Bok Lee",
+          "Aoxuan Silvia Zhang",
+          "Byungjoo Kim",
+          "Junhyeon Park",
+          "Steven Adriaensen",
+          "Juho Lee",
+          "Sung Ju Hwang",
+          "Hae Beom Lee"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-B1076D67944C",
+        "canonical_key": "cost sensitive freeze thaw bayesian optimization for efficient hyperparameter tuning",
+        "cloud_crawl_query": "OpenReview NeurIPS.cc/2025/Conference Vision LM and CLIP on few-shot learning for test-time training",
+        "cloud_local_origin": "cloud_crawl",
+        "cloud_lookup_checked_at": "2026-06-15T08:37:56+00:00",
+        "cloud_lookup_decision": "not_in_cloud",
+        "cloud_research_by_model": {
+          "all:All LLMs:all:principia-work-extract-v1:principia-cloud-1.1:work_concepts": {
+            "message": "Queued for cloud-page research.",
+            "model_key": "all:All LLMs:all:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+            "model_mode": "all",
+            "run_id": "V1CLOUDCRAWL-1781513755610",
+            "state": "queued",
+            "updated_at": "2026-06-15T08:55:55+00:00"
+          },
+          "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts": {
+            "cloud_required_counts": {
+              "existed_ideas": 0,
+              "principle_or_existed_idea": 1,
+              "principles": 1
+            },
+            "cloud_required_missing": [],
+            "cloud_research_index": 6,
+            "cloud_research_total": 8,
+            "completed_at": "2026-06-15T08:57:29+00:00",
+            "message": "Extraction complete and ready to sync.",
+            "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+            "model_mode": "qwen_397b",
+            "run_id": "V1CLOUDCRAWL-1781513755610",
+            "started_at": "2026-06-15T08:55:58+00:00",
+            "state": "ready",
+            "updated_at": "2026-06-15T08:57:29+00:00"
+          }
+        },
+        "cloud_research_completed_at": "2026-06-15T08:57:29+00:00",
+        "cloud_research_message": "Extraction complete and ready to sync.",
+        "cloud_research_model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+        "cloud_research_run_id": "V1CLOUDCRAWL-1781513755610",
+        "cloud_research_started_at": "2026-06-15T08:55:58+00:00",
+        "cloud_research_state": "ready",
+        "cloud_research_updated_at": "2026-06-15T08:57:29+00:00",
+        "cloud_sync_status": "unsynced",
+        "cloud_task_completed_at": "2026-06-15T08:57:29+00:00",
+        "cloud_task_message": "Extraction complete and ready to sync.",
+        "cloud_task_model_mode": "qwen_397b",
+        "cloud_task_run_id": "V1CLOUDCRAWL-1781513755610",
+        "cloud_task_started_at": "2026-06-15T08:55:58+00:00",
+        "cloud_task_state": "done",
+        "cloud_task_updated_at": "2026-06-15T08:57:29+00:00",
+        "community_signals": {
+          "keywords": [
+            "Cost-Sensitive",
+            "Bayesian Optimization",
+            "Multi-Fidelity HPO",
+            "PFNs",
+            "Transfer Learning"
+          ],
+          "source": "openreview",
+          "venueid": "NeurIPS.cc/2025/Conference"
+        },
+        "confidence_score": 0.62,
+        "crawl_status": "metadata_candidate",
+        "created_at": "2026-06-15T08:37:55+00:00",
+        "entered_at": "2026-06-15T08:37:55+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T08:55:55+00:00",
+        "metrics": [],
+        "model_mode": "metadata",
+        "model_name": "metadata",
+        "paper_link": "https://openreview.net/forum?id=ZUb4JpNoJe",
+        "performance": [],
+        "priority_reason": "venue/recency/topic/citation/oral / topic_match / target=NeurIPS 2025",
+        "priority_score": 1.0638,
+        "provider": "metadata",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "1776754793972",
+        "source_urls": [
+          "https://openreview.net/forum?id=ZUb4JpNoJe"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "target_venue": "NeurIPS",
+        "target_year": 2025,
+        "title": "Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning",
+        "updated_at": "2026-06-15T08:57:29+00:00",
+        "url_or_doi": "https://openreview.net/forum?id=ZUb4JpNoJe",
+        "validation_level": "L1",
+        "variants": {
+          "VER-372A0718BFBF": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-15T08:37:55+00:00",
+            "extracted_at": "2026-06-15T08:55:55+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "In this paper, we address the problem of cost-sensitive hyperparameter optimization (HPO) built upon freeze-thaw Bayesian optimization (BO). Specifically, we assume a scenario where users want to early-stop the HPO process when the expected performance improvement is not satisfactory with respect to the additional computational cost. Motivated by this scenario, we introduce \\emph{utility} in the freeze-thaw framework, a function describing the trade-off between the cost and performance that can be estimated from the user's preference data. This utility function, combined with our novel acquisition function and stopping criterion, allows us to dynamically continue training the configuration that we expect to maximally improve the utility in the future, and also automatically stop the HPO process around the maximum utility. Further, we improve the sample efficiency of existing freeze-th...",
+              "authors": [
+                "Dong Bok Lee",
+                "Aoxuan Silvia Zhang",
+                "Byungjoo Kim",
+                "Junhyeon Park",
+                "Steven Adriaensen",
+                "Juho Lee",
+                "Sung Ju Hwang",
+                "Hae Beom Lee"
+              ],
+              "benchmarks": [],
+              "cloud_crawl_query": "OpenReview NeurIPS.cc/2025/Conference Vision LM and CLIP on few-shot learning for test-time training",
+              "cloud_local_origin": "cloud_crawl",
+              "cloud_sync_status": "unsynced",
+              "community_signals": {
+                "keywords": [
+                  "Cost-Sensitive",
+                  "Bayesian Optimization",
+                  "Multi-Fidelity HPO",
+                  "PFNs",
+                  "Transfer Learning"
+                ],
+                "source": "openreview",
+                "venueid": "NeurIPS.cc/2025/Conference"
+              },
+              "crawl_status": "metadata_candidate",
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "https://openreview.net/forum?id=ZUb4JpNoJe",
+              "performance": [],
+              "priority_reason": "venue/recency/topic/citation/oral / topic_match / target=NeurIPS 2025",
+              "priority_score": 1.0638,
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "1776754793972",
+              "source_urls": [
+                "https://openreview.net/forum?id=ZUb4JpNoJe"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "target_venue": "NeurIPS",
+              "target_year": 2025,
+              "title": "Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning",
+              "url_or_doi": "https://openreview.net/forum?id=ZUb4JpNoJe",
+              "validation_level": "L1",
+              "venue_or_source": "NeurIPS",
+              "year": 2025
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "https://openreview.net/forum?id=ZUb4JpNoJe"
+            ],
+            "version_id": "VER-372A0718BFBF"
+          }
+        },
+        "venue_or_source": "NeurIPS",
+        "work_id": "W-B1076D67944C",
+        "year": 2025
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "openreview",
+      "source_record_id": "W-B1076D67944C",
+      "source_updated_at": "1776754793972",
+      "title": "Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning",
+      "title_hash": "7b43a087a08faad5",
+      "work_id": "W-12C2917D84D7",
+      "work_version_id": "WV-F2FB2CA5F5DA"
+    },
+    {
+      "abstract": "This paper introduces VLAP, a novel approach that bridges pretrained vision models and large language models (LLMs) to make frozen LLMs understand the visual world. VLAP transforms the embedding space of pretrained vision models into the LLMs' word embedding space using a single linear layer for efficient and general-purpose visual and language understanding. Specifically, we harness well-established word embeddings to bridge two modality embedding spaces. The visual and text representations are simultaneously assigned to a set of word embeddings within pretrained LLMs by formulating the assigning procedure as an optimal transport problem. We predict the assignment of one modality from the representation of another modality data, enforcing consistent assignments for paired multimodal data. This allows vision and language representations to contain the same information, grounding the f...",
+      "abstract_hash": "04137d23a52f5037",
+      "content_hash": "4273eff78399a8f6",
+      "created_at": "2026-06-15T09:01:52+00:00",
+      "metadata": {
+        "abstract": "This paper introduces VLAP, a novel approach that bridges pretrained vision models and large language models (LLMs) to make frozen LLMs understand the visual world. VLAP transforms the embedding space of pretrained vision models into the LLMs' word embedding space using a single linear layer for efficient and general-purpose visual and language understanding. Specifically, we harness well-established word embeddings to bridge two modality embedding spaces. The visual and text representations are simultaneously assigned to a set of word embeddings within pretrained LLMs by formulating the assigning procedure as an optimal transport problem. We predict the assignment of one modality from the representation of another modality data, enforcing consistent assignments for paired multimodal data. This allows vision and language representations to contain the same information, grounding the f...",
+        "active_version_id": "VER-1FF7976F71BE",
+        "authors": [
+          "Jungin Park",
+          "Jiyoung Lee",
+          "Kwanghoon Sohn"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-0FD459D54566",
+        "canonical_key": "bridging vision and language spaces with assignment prediction",
+        "cloud_crawl_query": "OpenReview ICLR.cc/2024/Conference Vision LM and CLIP on few-shot learning for test-time training",
+        "cloud_local_origin": "cloud_crawl",
+        "cloud_lookup_checked_at": "2026-06-15T08:37:54+00:00",
+        "cloud_lookup_decision": "not_in_cloud",
+        "cloud_research_by_model": {
+          "all:All LLMs:all:principia-work-extract-v1:principia-cloud-1.1:work_concepts": {
+            "message": "Queued for cloud-page research.",
+            "model_key": "all:All LLMs:all:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+            "model_mode": "all",
+            "run_id": "V1CLOUDCRAWL-1781513755610",
+            "state": "queued",
+            "updated_at": "2026-06-15T08:55:55+00:00"
+          },
+          "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts": {
+            "cloud_required_counts": {
+              "existed_ideas": 0,
+              "principle_or_existed_idea": 1,
+              "principles": 1
+            },
+            "cloud_required_missing": [],
+            "cloud_research_index": 7,
+            "cloud_research_total": 8,
+            "completed_at": "2026-06-15T08:56:36+00:00",
+            "message": "Extraction complete and ready to sync.",
+            "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+            "model_mode": "qwen_397b",
+            "run_id": "V1CLOUDCRAWL-1781513755610",
+            "started_at": "2026-06-15T08:55:58+00:00",
+            "state": "ready",
+            "updated_at": "2026-06-15T08:56:36+00:00"
+          }
+        },
+        "cloud_research_completed_at": "2026-06-15T08:56:36+00:00",
+        "cloud_research_message": "Extraction complete and ready to sync.",
+        "cloud_research_model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+        "cloud_research_run_id": "V1CLOUDCRAWL-1781513755610",
+        "cloud_research_started_at": "2026-06-15T08:55:58+00:00",
+        "cloud_research_state": "ready",
+        "cloud_research_updated_at": "2026-06-15T08:56:36+00:00",
+        "cloud_sync_status": "unsynced",
+        "cloud_task_completed_at": "2026-06-15T08:56:36+00:00",
+        "cloud_task_message": "Extraction complete and ready to sync.",
+        "cloud_task_model_mode": "qwen_397b",
+        "cloud_task_run_id": "V1CLOUDCRAWL-1781513755610",
+        "cloud_task_started_at": "2026-06-15T08:55:58+00:00",
+        "cloud_task_state": "done",
+        "cloud_task_updated_at": "2026-06-15T08:56:36+00:00",
+        "community_signals": {
+          "keywords": [
+            "Multimodal learning",
+            "vision-language tasks",
+            "frozen LLMs",
+            "optimal transport",
+            "assignment prediction"
+          ],
+          "source": "openreview",
+          "venueid": "ICLR.cc/2024/Conference"
+        },
+        "confidence_score": 0.62,
+        "crawl_status": "metadata_candidate",
+        "created_at": "2026-06-15T08:37:54+00:00",
+        "entered_at": "2026-06-15T08:37:54+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T08:55:55+00:00",
+        "metrics": [],
+        "model_mode": "metadata",
+        "model_name": "metadata",
+        "paper_link": "https://openreview.net/forum?id=lK2V2E2MNv",
+        "performance": [],
+        "priority_reason": "venue/recency/topic/citation/oral / topic_match / target=ICLR 2024",
+        "priority_score": 1.0466,
+        "provider": "metadata",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "1713175069741",
+        "source_urls": [
+          "https://openreview.net/forum?id=lK2V2E2MNv"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "target_venue": "ICLR",
+        "target_year": 2024,
+        "title": "Bridging Vision and Language Spaces with Assignment Prediction",
+        "updated_at": "2026-06-15T08:56:36+00:00",
+        "url_or_doi": "https://openreview.net/forum?id=lK2V2E2MNv",
+        "validation_level": "L1",
+        "variants": {
+          "VER-1FF7976F71BE": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-15T08:37:54+00:00",
+            "extracted_at": "2026-06-15T08:55:55+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "This paper introduces VLAP, a novel approach that bridges pretrained vision models and large language models (LLMs) to make frozen LLMs understand the visual world. VLAP transforms the embedding space of pretrained vision models into the LLMs' word embedding space using a single linear layer for efficient and general-purpose visual and language understanding. Specifically, we harness well-established word embeddings to bridge two modality embedding spaces. The visual and text representations are simultaneously assigned to a set of word embeddings within pretrained LLMs by formulating the assigning procedure as an optimal transport problem. We predict the assignment of one modality from the representation of another modality data, enforcing consistent assignments for paired multimodal data. This allows vision and language representations to contain the same information, grounding the f...",
+              "authors": [
+                "Jungin Park",
+                "Jiyoung Lee",
+                "Kwanghoon Sohn"
+              ],
+              "benchmarks": [],
+              "cloud_crawl_query": "OpenReview ICLR.cc/2024/Conference Vision LM and CLIP on few-shot learning for test-time training",
+              "cloud_local_origin": "cloud_crawl",
+              "cloud_sync_status": "unsynced",
+              "community_signals": {
+                "keywords": [
+                  "Multimodal learning",
+                  "vision-language tasks",
+                  "frozen LLMs",
+                  "optimal transport",
+                  "assignment prediction"
+                ],
+                "source": "openreview",
+                "venueid": "ICLR.cc/2024/Conference"
+              },
+              "crawl_status": "metadata_candidate",
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "https://openreview.net/forum?id=lK2V2E2MNv",
+              "performance": [],
+              "priority_reason": "venue/recency/topic/citation/oral / topic_match / target=ICLR 2024",
+              "priority_score": 1.0466,
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "1713175069741",
+              "source_urls": [
+                "https://openreview.net/forum?id=lK2V2E2MNv"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "target_venue": "ICLR",
+              "target_year": 2024,
+              "title": "Bridging Vision and Language Spaces with Assignment Prediction",
+              "url_or_doi": "https://openreview.net/forum?id=lK2V2E2MNv",
+              "validation_level": "L1",
+              "venue_or_source": "ICLR",
+              "year": 2024
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "https://openreview.net/forum?id=lK2V2E2MNv"
+            ],
+            "version_id": "VER-1FF7976F71BE"
+          }
+        },
+        "venue_or_source": "ICLR",
+        "work_id": "W-0FD459D54566",
+        "year": 2024
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "openreview",
+      "source_record_id": "W-0FD459D54566",
+      "source_updated_at": "1713175069741",
+      "title": "Bridging Vision and Language Spaces with Assignment Prediction",
+      "title_hash": "2cfeac5305836606",
+      "work_id": "W-38409259E892",
+      "work_version_id": "WV-BF9FC809232D"
+    },
+    {
+      "abstract": "Few-shot learning (FSL) is essential in many practical applications. However, the limited training examples make the models more vulnerable to label noise, which can lead to poor generalization capability. To address this critical challenge, we propose a curriculum meta-learning model that employs a novel dual-level class-example sampling strategy to create a robust curriculum for adaptive task distribution formulation and robust model training. The dual-level framework proposes a heuristic class sampling criterion that measures pairwise class boundary complexity to form a class curriculum; it uses effective example sampling through an under-trained proxy model to form an example curriculum. By utilizing both class-level and example-level information, our approach is more robust to handle limited training data and noisy labels that commonly occur in few-shot learning tasks. The model...",
+      "abstract_hash": "30334905323eea57",
+      "content_hash": "71b2368387a1a62c",
+      "created_at": "2026-06-15T09:01:52+00:00",
+      "metadata": {
+        "abstract": "Few-shot learning (FSL) is essential in many practical applications. However, the limited training examples make the models more vulnerable to label noise, which can lead to poor generalization capability. To address this critical challenge, we propose a curriculum meta-learning model that employs a novel dual-level class-example sampling strategy to create a robust curriculum for adaptive task distribution formulation and robust model training. The dual-level framework proposes a heuristic class sampling criterion that measures pairwise class boundary complexity to form a class curriculum; it uses effective example sampling through an under-trained proxy model to form an example curriculum. By utilizing both class-level and example-level information, our approach is more robust to handle limited training data and noisy labels that commonly occur in few-shot learning tasks. The model...",
+        "active_version_id": "VER-08118FF4A1E7",
+        "authors": [
+          "Xiaofan Que",
+          "Qi Yu"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-ADBCE974A975",
+        "canonical_key": "dual level curriculum meta learning for noisy few shot learning tasks",
+        "citation_count": 5,
+        "cloud_crawl_query": "Vision LM and CLIP on few-shot learning for test-time training AAAI 2024 AI machine learning research paper",
+        "cloud_local_origin": "cloud_crawl",
+        "cloud_lookup_checked_at": "2026-06-15T08:38:01+00:00",
+        "cloud_lookup_decision": "not_in_cloud",
+        "cloud_research_by_model": {
+          "all:All LLMs:all:principia-work-extract-v1:principia-cloud-1.1:work_concepts": {
+            "message": "Queued for cloud-page research.",
+            "model_key": "all:All LLMs:all:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+            "model_mode": "all",
+            "run_id": "V1CLOUDCRAWL-1781513755610",
+            "state": "queued",
+            "updated_at": "2026-06-15T08:55:55+00:00"
+          },
+          "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts": {
+            "cloud_required_counts": {
+              "existed_ideas": 0,
+              "principle_or_existed_idea": 1,
+              "principles": 2
+            },
+            "cloud_required_missing": [],
+            "cloud_research_index": 8,
+            "cloud_research_total": 8,
+            "completed_at": "2026-06-15T08:56:34+00:00",
+            "message": "Extraction complete and ready to sync.",
+            "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+            "model_mode": "qwen_397b",
+            "run_id": "V1CLOUDCRAWL-1781513755610",
+            "started_at": "2026-06-15T08:55:59+00:00",
+            "state": "ready",
+            "updated_at": "2026-06-15T08:56:34+00:00"
+          }
+        },
+        "cloud_research_completed_at": "2026-06-15T08:56:34+00:00",
+        "cloud_research_message": "Extraction complete and ready to sync.",
+        "cloud_research_model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+        "cloud_research_run_id": "V1CLOUDCRAWL-1781513755610",
+        "cloud_research_started_at": "2026-06-15T08:55:59+00:00",
+        "cloud_research_state": "ready",
+        "cloud_research_updated_at": "2026-06-15T08:56:34+00:00",
+        "cloud_sync_status": "unsynced",
+        "cloud_task_completed_at": "2026-06-15T08:56:34+00:00",
+        "cloud_task_message": "Extraction complete and ready to sync.",
+        "cloud_task_model_mode": "qwen_397b",
+        "cloud_task_run_id": "V1CLOUDCRAWL-1781513755610",
+        "cloud_task_started_at": "2026-06-15T08:55:59+00:00",
+        "cloud_task_state": "done",
+        "cloud_task_updated_at": "2026-06-15T08:56:34+00:00",
+        "community_signals": {
+          "source": "crossref",
+          "type": "journal-article"
+        },
+        "confidence_score": 0.62,
+        "crawl_status": "metadata_candidate",
+        "created_at": "2026-06-15T08:38:01+00:00",
+        "entered_at": "2026-06-15T08:38:01+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T08:55:55+00:00",
+        "metrics": [],
+        "model_mode": "metadata",
+        "model_name": "metadata",
+        "paper_link": "https://doi.org/10.1609/aaai.v38i13.29392",
+        "performance": [],
+        "priority_reason": "venue/recency/topic/citation/oral / citations=5 / topic_match / target=AAAI 2024",
+        "priority_score": 1.0005,
+        "provider": "metadata",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "2026-02-23T23:43:17Z",
+        "source_urls": [
+          "https://doi.org/10.1609/aaai.v38i13.29392",
+          "https://ojs.aaai.org/index.php/AAAI/article/view/29392"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "target_venue": "AAAI",
+        "target_year": 2024,
+        "title": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+        "updated_at": "2026-06-15T08:56:34+00:00",
+        "url_or_doi": "https://doi.org/10.1609/aaai.v38i13.29392",
+        "validation_level": "L1",
+        "variants": {
+          "VER-08118FF4A1E7": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-15T08:38:01+00:00",
+            "extracted_at": "2026-06-15T08:55:55+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Few-shot learning (FSL) is essential in many practical applications. However, the limited training examples make the models more vulnerable to label noise, which can lead to poor generalization capability. To address this critical challenge, we propose a curriculum meta-learning model that employs a novel dual-level class-example sampling strategy to create a robust curriculum for adaptive task distribution formulation and robust model training. The dual-level framework proposes a heuristic class sampling criterion that measures pairwise class boundary complexity to form a class curriculum; it uses effective example sampling through an under-trained proxy model to form an example curriculum. By utilizing both class-level and example-level information, our approach is more robust to handle limited training data and noisy labels that commonly occur in few-shot learning tasks. The model...",
+              "authors": [
+                "Xiaofan Que",
+                "Qi Yu"
+              ],
+              "benchmarks": [],
+              "citation_count": 5,
+              "cloud_crawl_query": "Vision LM and CLIP on few-shot learning for test-time training AAAI 2024 AI machine learning research paper",
+              "cloud_local_origin": "cloud_crawl",
+              "cloud_sync_status": "unsynced",
+              "community_signals": {
+                "source": "crossref",
+                "type": "journal-article"
+              },
+              "crawl_status": "metadata_candidate",
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "https://doi.org/10.1609/aaai.v38i13.29392",
+              "performance": [],
+              "priority_reason": "venue/recency/topic/citation/oral / citations=5 / topic_match / target=AAAI 2024",
+              "priority_score": 1.0005,
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2026-02-23T23:43:17Z",
+              "source_urls": [
+                "https://doi.org/10.1609/aaai.v38i13.29392",
+                "https://ojs.aaai.org/index.php/AAAI/article/view/29392"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "target_venue": "AAAI",
+              "target_year": 2024,
+              "title": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+              "url_or_doi": "https://doi.org/10.1609/aaai.v38i13.29392",
+              "validation_level": "L1",
+              "venue_or_source": "AAAI",
+              "year": 2024
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "https://doi.org/10.1609/aaai.v38i13.29392",
+              "https://ojs.aaai.org/index.php/AAAI/article/view/29392"
+            ],
+            "version_id": "VER-08118FF4A1E7"
+          }
+        },
+        "venue_or_source": "AAAI",
+        "work_id": "W-ADBCE974A975",
+        "year": 2024
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "crossref",
+      "source_record_id": "W-ADBCE974A975",
+      "source_updated_at": "2026-02-23T23:43:17Z",
+      "title": "Dual-Level Curriculum Meta-Learning for Noisy Few-Shot Learning Tasks",
+      "title_hash": "96f99a19b4bdd990",
+      "work_id": "W-6CBF6FE618AC",
+      "work_version_id": "WV-58777CB733D3"
+    }
+  ]
+}
