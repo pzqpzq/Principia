@@ -1,0 +1,2270 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "computational entanglement via recursive residual depth computational entanglement via recursive residual depth the complexity of computational paths in transformer models grows super exponentially with respect to recursive residual depth creating an inherent entanglement that resists simple modular",
+      "canonical_label": "Computational Entanglement via Recursive Residual Depth",
+      "concept_id": "P-23C444B7E598",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "The complexity of computational paths in transformer models grows super-exponentially with respect to recursive residual depth, creating an inherent entanglement that resists simple modularization. Effective interpretability requires operators capable of slicing through this exponential path structure rather than treating layers as independent modules.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-8F43E30879AD",
+        "argument": "The complexity of computational paths in transformer models grows super-exponentially with respect to recursive residual depth, creating an inherent entanglement that resists simple modularization. Effective interpretability requires operators capable of slicing through this exponential path structure rather than treating layers as independent modules.",
+        "benchmarks": [],
+        "canonical_id": "P-31C9EC9B5179",
+        "canonical_key": "complexity of computational paths in transformer models grows super exponentially with respect to recursive residual depth creating inherent entanglement resists simple modularizat",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-15T12:07:54+00:00",
+        "discussion": "The principle highlights a fundamental constraint in deep transformer architectures: depth introduces combinatorial complexity in information flow that cannot be ignored. Interpretability tools that assume linear or additive contributions from layers are theoretically insufficient for deep models because they underestimate the path explosion. The implication for model design is that architectures aiming for inherent interpretability might need to constrain residual connectivity or employ mechanisms that limit path proliferation. For analysis, it mandates the use of approximation techniques like jet truncation to make the path space finite and inspectable.",
+        "entered_at": "2026-06-15T12:07:54+00:00",
+        "evidence": "The work explicitly analyzes the structure of the computational graph under Jet Expansions, revealing that the number of distinct input-to-output paths increases super-exponentially as a function of the number of residual blocks. This structural property explains why naive attempts to isolate layer functions fail, as the output of any given layer is a complex aggregation of an exploding number of interaction paths from previous layers. The Jet Expansion method is designed specifically to manage this complexity by grouping these paths into tractable polynomial terms.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T12:07:54+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Computational Entanglement via Recursive Residual Depth",
+        "performance": [],
+        "principle_id": "P-31C9EC9B5179",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Decomposing LLM Computation with Jets",
+        "provider": "siliconflow",
+        "source_paper_link": "https://openreview.net/forum?id=u6JLh0BO5h",
+        "source_paper_links": [
+          "https://openreview.net/forum?id=u6JLh0BO5h"
+        ],
+        "source_paper_title": "Decomposing LLM Computation with Jets",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-EEBA1131A5B3"
+        ],
+        "source_work_title": "Decomposing LLM Computation with Jets",
+        "source_works": [
+          "W-EEBA1131A5B3"
+        ],
+        "updated_at": "2026-06-15T12:07:54+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-8F43E30879AD": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-15T12:07:54+00:00",
+            "extracted_at": "2026-06-15T12:07:54+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "The complexity of computational paths in transformer models grows super-exponentially with respect to recursive residual depth, creating an inherent entanglement that resists simple modularization. Effective interpretability requires operators capable of slicing through this exponential path structure rather than treating layers as independent modules.",
+              "argument": "The complexity of computational paths in transformer models grows super-exponentially with respect to recursive residual depth, creating an inherent entanglement that resists simple modularization. Effective interpretability requires operators capable of slicing through this exponential path structure rather than treating layers as independent modules.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle highlights a fundamental constraint in deep transformer architectures: depth introduces combinatorial complexity in information flow that cannot be ignored. Interpretability tools that assume linear or additive contributions from layers are theoretically insufficient for deep models because they underestimate the path explosion. The implication for model design is that architectures aiming for inherent interpretability might need to constrain residual connectivity or employ mechanisms that limit path proliferation. For analysis, it mandates the use of approximation techniques like jet truncation to make the path space finite and inspectable.",
+              "evidence": "The work explicitly analyzes the structure of the computational graph under Jet Expansions, revealing that the number of distinct input-to-output paths increases super-exponentially as a function of the number of residual blocks. This structural property explains why naive attempts to isolate layer functions fail, as the output of any given layer is a complex aggregation of an exploding number of interaction paths from previous layers. The Jet Expansion method is designed specifically to manage this complexity by grouping these paths into tractable polynomial terms.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Computational Entanglement via Recursive Residual Depth",
+              "performance": [],
+              "problem_pressure": "Decomposing LLM Computation with Jets",
+              "source_paper_link": "https://openreview.net/forum?id=u6JLh0BO5h",
+              "source_paper_links": [
+                "https://openreview.net/forum?id=u6JLh0BO5h"
+              ],
+              "source_paper_title": "Decomposing LLM Computation with Jets",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-A9F59C07FF82"
+              ],
+              "source_work_title": "Decomposing LLM Computation with Jets",
+              "source_works": [
+                "W-A9F59C07FF82"
+              ],
+              "venue_or_source": "ICLR",
+              "year": 2026
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://openreview.net/forum?id=u6JLh0BO5h"
+            ],
+            "version_id": "VER-8F43E30879AD"
+          }
+        },
+        "venue_or_source": "ICLR",
+        "year": 2026
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-EEBA1131A5B3"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T12:09:07+00:00",
+        "updated_at": "2026-06-15T12:09:07+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-096D0D4B50BF",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "structural constraints enable low sample consistency structural constraints enable low sample consistency imposing strong structural constraints such as total positivity m matrix property on precision matrices reduces the effective degrees of freedom allowing consistent maximum likelihood estimation",
+      "canonical_label": "Structural Constraints Enable Low-Sample Consistency",
+      "concept_id": "P-58A0C851DB2C",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "Imposing strong structural constraints such as total positivity (M-matrix property) on precision matrices reduces the effective degrees of freedom, allowing consistent maximum likelihood estimation with sample sizes far smaller than the dimensionality of the data.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-C784379ACF7D",
+        "argument": "Imposing strong structural constraints such as total positivity (M-matrix property) on precision matrices reduces the effective degrees of freedom, allowing consistent maximum likelihood estimation with sample sizes far smaller than the dimensionality of the data.",
+        "benchmarks": [],
+        "boundary_conditions": [
+          "The data must be generated from a distribution satisfying the total positivity condition.",
+          "The true precision matrix must strictly belong to the cone of M-matrices or diagonally dominant M-matrices.",
+          "The method assumes Gaussianity of the underlying graphical model."
+        ],
+        "canonical_id": "P-BC26F18F1363",
+        "canonical_key": "imposing strong structural constraints such as total positivity m matrix property on precision matrices reduces effective degrees of freedom allowing consistent maximum likelihood ",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-15T12:08:26+00:00",
+        "discussion": "The principle suggests that in domains where physical or theoretical laws dictate positive dependence structures (e.g., certain financial correlations or biological networks), enforcing these constraints is not just a regularization technique but a fundamental requirement for feasibility. The limitation lies in the rigidity of the assumption; mis-specification of the structural constraint can lead to severe model misspecification errors. Nevertheless, when applicable, this principle transforms data-scarce problems into tractable ones, offering a pathway for reliable inference in small-sample regimes.",
+        "entered_at": "2026-06-15T12:08:26+00:00",
+        "evidence": "The text states that for M-matrices, 'the maximum likelihood estimator exists with as little as two observations,' and for diagonally dominant M-matrices, it 'exists even with one observation.' This highlights the drastic reduction in sample complexity due to the structural constraints.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T12:08:26+00:00",
+        "extraction_method": "llm_extracted",
+        "mechanism": "In the context of Gaussian graphical models, restricting the precision matrix to the cone of M-matrices or diagonally dominant M-matrices ensures that the likelihood function possesses a unique maximum even when the number of observations is less than the number of variables. Specifically, the existence of the estimator is guaranteed with only two observations for general M-matrices and a single observation for diagonally dominant cases. This contrasts sharply with unconstrained settings where the sample covariance matrix is singular and the likelihood is unbounded when samples are fewer than dimensions.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Structural Constraints Enable Low-Sample Consistency",
+        "performance": [],
+        "principle_id": "P-BC26F18F1363",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Adaptive Estimation of Graphical Models under Total Positivity",
+        "provider": "siliconflow",
+        "source_paper_link": "https://openreview.net/forum?id=USiX9gmGRx",
+        "source_paper_links": [
+          "https://openreview.net/forum?id=USiX9gmGRx"
+        ],
+        "source_paper_title": "Adaptive Estimation of Graphical Models under Total Positivity",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-932AE0D6CAA1"
+        ],
+        "source_work_title": "Adaptive Estimation of Graphical Models under Total Positivity",
+        "source_works": [
+          "W-932AE0D6CAA1"
+        ],
+        "updated_at": "2026-06-15T12:08:26+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-C784379ACF7D": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-15T12:08:26+00:00",
+            "extracted_at": "2026-06-15T12:08:26+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "Imposing strong structural constraints such as total positivity (M-matrix property) on precision matrices reduces the effective degrees of freedom, allowing consistent maximum likelihood estimation with sample sizes far smaller than the dimensionality of the data.",
+              "argument": "Imposing strong structural constraints such as total positivity (M-matrix property) on precision matrices reduces the effective degrees of freedom, allowing consistent maximum likelihood estimation with sample sizes far smaller than the dimensionality of the data.",
+              "benchmarks": [],
+              "boundary_conditions": [
+                "The data must be generated from a distribution satisfying the total positivity condition.",
+                "The true precision matrix must strictly belong to the cone of M-matrices or diagonally dominant M-matrices.",
+                "The method assumes Gaussianity of the underlying graphical model."
+              ],
+              "confidence_score": 0.68,
+              "discussion": "The principle suggests that in domains where physical or theoretical laws dictate positive dependence structures (e.g., certain financial correlations or biological networks), enforcing these constraints is not just a regularization technique but a fundamental requirement for feasibility. The limitation lies in the rigidity of the assumption; mis-specification of the structural constraint can lead to severe model misspecification errors. Nevertheless, when applicable, this principle transforms data-scarce problems into tractable ones, offering a pathway for reliable inference in small-sample regimes.",
+              "evidence": "The text states that for M-matrices, 'the maximum likelihood estimator exists with as little as two observations,' and for diagonally dominant M-matrices, it 'exists even with one observation.' This highlights the drastic reduction in sample complexity due to the structural constraints.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "mechanism": "In the context of Gaussian graphical models, restricting the precision matrix to the cone of M-matrices or diagonally dominant M-matrices ensures that the likelihood function possesses a unique maximum even when the number of observations is less than the number of variables. Specifically, the existence of the estimator is guaranteed with only two observations for general M-matrices and a single observation for diagonally dominant cases. This contrasts sharply with unconstrained settings where the sample covariance matrix is singular and the likelihood is unbounded when samples are fewer than dimensions.",
+              "metrics": [],
+              "name": "Structural Constraints Enable Low-Sample Consistency",
+              "performance": [],
+              "problem_pressure": "Adaptive Estimation of Graphical Models under Total Positivity",
+              "source_paper_link": "https://openreview.net/forum?id=USiX9gmGRx",
+              "source_paper_links": [
+                "https://openreview.net/forum?id=USiX9gmGRx"
+              ],
+              "source_paper_title": "Adaptive Estimation of Graphical Models under Total Positivity",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-0E76E343239F"
+              ],
+              "source_work_title": "Adaptive Estimation of Graphical Models under Total Positivity",
+              "source_works": [
+                "W-0E76E343239F"
+              ],
+              "venue_or_source": "ICML",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://openreview.net/forum?id=USiX9gmGRx"
+            ],
+            "version_id": "VER-C784379ACF7D"
+          }
+        },
+        "venue_or_source": "ICML",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-932AE0D6CAA1"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T12:09:10+00:00",
+        "updated_at": "2026-06-15T12:09:10+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-6E75F6C73AFA",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "structural constraints enable low sample consistency structural constraints enable low sample consistency imposing strong structural constraints such as total positivity on precision matrices reduces the effective degrees of freedom allowing consistent maximum likelihood estimation with sample sizes",
+      "canonical_label": "Structural Constraints Enable Low-Sample Consistency",
+      "concept_id": "P-6842DCA84A63",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "Imposing strong structural constraints such as total positivity on precision matrices reduces the effective degrees of freedom, allowing consistent maximum likelihood estimation with sample sizes far smaller than the dimensionality of the data.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-932455FD4C43",
+        "argument": "Imposing strong structural constraints such as total positivity on precision matrices reduces the effective degrees of freedom, allowing consistent maximum likelihood estimation with sample sizes far smaller than the dimensionality of the data.",
+        "benchmarks": [],
+        "boundary_conditions": [
+          "The data must be generated from a distribution satisfying the total positivity condition.",
+          "The true precision matrix must strictly belong to the cone of M-matrices or diagonally dominant M-matrices.",
+          "The method assumes Gaussianity of the underlying graphical model."
+        ],
+        "canonical_id": "P-4B3AA1B82D1B",
+        "canonical_key": "imposing strong structural constraints such as total positivity on precision matrices reduces effective degrees of freedom allowing consistent maximum likelihood estimation with sa",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-15T12:08:26+00:00",
+        "discussion": "The principle suggests that in domains where physical or theoretical laws dictate positive dependence structures, enforcing these constraints is a fundamental requirement for feasibility rather than just a regularization technique. The limitation lies in the rigidity of the assumption, as mis-specification of the structural constraint can lead to severe model misspecification errors. Nevertheless, when applicable, this principle transforms data-scarce problems into tractable ones, offering a pathway for reliable inference in small-sample regimes.",
+        "entered_at": "2026-06-15T12:08:26+00:00",
+        "evidence": "The text states that for M-matrices, the maximum likelihood estimator exists with as little as two observations, and for diagonally dominant M-matrices, it exists even with one observation, highlighting the drastic reduction in sample complexity due to the structural constraints.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T12:08:26+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Structural Constraints Enable Low-Sample Consistency",
+        "performance": [],
+        "principle_id": "P-4B3AA1B82D1B",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Adaptive Estimation of Graphical Models under Total Positivity",
+        "provider": "siliconflow",
+        "source_paper_link": "https://openreview.net/forum?id=USiX9gmGRx",
+        "source_paper_links": [
+          "https://openreview.net/forum?id=USiX9gmGRx"
+        ],
+        "source_paper_title": "Adaptive Estimation of Graphical Models under Total Positivity",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-932AE0D6CAA1"
+        ],
+        "source_work_title": "Adaptive Estimation of Graphical Models under Total Positivity",
+        "source_works": [
+          "W-932AE0D6CAA1"
+        ],
+        "updated_at": "2026-06-15T12:08:26+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-932455FD4C43": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-15T12:08:26+00:00",
+            "extracted_at": "2026-06-15T12:08:26+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "Imposing strong structural constraints such as total positivity on precision matrices reduces the effective degrees of freedom, allowing consistent maximum likelihood estimation with sample sizes far smaller than the dimensionality of the data.",
+              "argument": "Imposing strong structural constraints such as total positivity on precision matrices reduces the effective degrees of freedom, allowing consistent maximum likelihood estimation with sample sizes far smaller than the dimensionality of the data.",
+              "benchmarks": [],
+              "boundary_conditions": [
+                "The data must be generated from a distribution satisfying the total positivity condition.",
+                "The true precision matrix must strictly belong to the cone of M-matrices or diagonally dominant M-matrices.",
+                "The method assumes Gaussianity of the underlying graphical model."
+              ],
+              "confidence_score": 0.68,
+              "discussion": "The principle suggests that in domains where physical or theoretical laws dictate positive dependence structures, enforcing these constraints is a fundamental requirement for feasibility rather than just a regularization technique. The limitation lies in the rigidity of the assumption, as mis-specification of the structural constraint can lead to severe model misspecification errors. Nevertheless, when applicable, this principle transforms data-scarce problems into tractable ones, offering a pathway for reliable inference in small-sample regimes.",
+              "evidence": "The text states that for M-matrices, the maximum likelihood estimator exists with as little as two observations, and for diagonally dominant M-matrices, it exists even with one observation, highlighting the drastic reduction in sample complexity due to the structural constraints.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Structural Constraints Enable Low-Sample Consistency",
+              "performance": [],
+              "problem_pressure": "Adaptive Estimation of Graphical Models under Total Positivity",
+              "source_paper_link": "https://openreview.net/forum?id=USiX9gmGRx",
+              "source_paper_links": [
+                "https://openreview.net/forum?id=USiX9gmGRx"
+              ],
+              "source_paper_title": "Adaptive Estimation of Graphical Models under Total Positivity",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-0E76E343239F"
+              ],
+              "source_work_title": "Adaptive Estimation of Graphical Models under Total Positivity",
+              "source_works": [
+                "W-0E76E343239F"
+              ],
+              "venue_or_source": "ICML",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://openreview.net/forum?id=USiX9gmGRx"
+            ],
+            "version_id": "VER-932455FD4C43"
+          }
+        },
+        "venue_or_source": "ICML",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-932AE0D6CAA1"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T12:09:10+00:00",
+        "updated_at": "2026-06-15T12:09:10+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-C403797A9C00",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "equilibrium via mutual co evolution equilibrium via mutual co evolution nonlinear systems where the operator depends on its own solution can be solved by framing them as a dynamic co evolution process that seeks an equilibrium state rather than a direct static fixed point w 5f18803d88f5",
+      "canonical_label": "Equilibrium via Mutual Co-Evolution",
+      "concept_id": "P-C8DFFE96F4C6",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "Nonlinear systems where the operator depends on its own solution can be solved by framing them as a dynamic co-evolution process that seeks an equilibrium state rather than a direct static fixed point.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-03FB9F10E01C",
+        "argument": "Nonlinear systems where the operator depends on its own solution can be solved by framing them as a dynamic co-evolution process that seeks an equilibrium state rather than a direct static fixed point.",
+        "benchmarks": [],
+        "boundary_conditions": [
+          "The mutual update process requires specific numerical adaptations to ensure stability and prevent divergence during the co-evolution phase.",
+          "The problem must possess a reachable equilibrium state that physically or mathematically corresponds to the desired solution of the nonlinear equation."
+        ],
+        "canonical_id": "P-691BE41B5052",
+        "canonical_key": "nonlinear systems where operator depends on its own solution can be solved by framing them as dynamic co evolution process seeks equilibrium state rather than direct static fixed p",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-15T12:08:13+00:00",
+        "discussion": "The principle generalizes the solution of nonlinear eigenvalue problems by introducing a temporal dimension to the dependency loop. By allowing the operator and the solution to adapt to each other incrementally, the method avoids the divergence often seen in direct fixed-point iterations. The approach implies that convergence is achieved through the stabilization of a dynamic process rather than the immediate satisfaction of a static constraint.",
+        "entered_at": "2026-06-15T12:08:13+00:00",
+        "evidence": "The text describes the method as one in which a distribution and its own top principal components are mutually updated over time, and the equilibrium state of the model corresponds to the solution of the SCF equations.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T12:08:13+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Equilibrium via Mutual Co-Evolution",
+        "performance": [],
+        "principle_id": "P-691BE41B5052",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Online PCA in Converging Self-consistent Field Equations",
+        "provider": "siliconflow",
+        "source_paper_link": "https://openreview.net/forum?id=vq11gurmUY",
+        "source_paper_links": [
+          "https://openreview.net/forum?id=vq11gurmUY"
+        ],
+        "source_paper_title": "Online PCA in Converging Self-consistent Field Equations",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-5F18803D88F5"
+        ],
+        "source_work_title": "Online PCA in Converging Self-consistent Field Equations",
+        "source_works": [
+          "W-5F18803D88F5"
+        ],
+        "updated_at": "2026-06-15T12:08:13+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-03FB9F10E01C": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-15T12:08:13+00:00",
+            "extracted_at": "2026-06-15T12:08:13+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "Nonlinear systems where the operator depends on its own solution can be solved by framing them as a dynamic co-evolution process that seeks an equilibrium state rather than a direct static fixed point.",
+              "argument": "Nonlinear systems where the operator depends on its own solution can be solved by framing them as a dynamic co-evolution process that seeks an equilibrium state rather than a direct static fixed point.",
+              "benchmarks": [],
+              "boundary_conditions": [
+                "The mutual update process requires specific numerical adaptations to ensure stability and prevent divergence during the co-evolution phase.",
+                "The problem must possess a reachable equilibrium state that physically or mathematically corresponds to the desired solution of the nonlinear equation."
+              ],
+              "confidence_score": 0.68,
+              "discussion": "The principle generalizes the solution of nonlinear eigenvalue problems by introducing a temporal dimension to the dependency loop. By allowing the operator and the solution to adapt to each other incrementally, the method avoids the divergence often seen in direct fixed-point iterations. The approach implies that convergence is achieved through the stabilization of a dynamic process rather than the immediate satisfaction of a static constraint.",
+              "evidence": "The text describes the method as one in which a distribution and its own top principal components are mutually updated over time, and the equilibrium state of the model corresponds to the solution of the SCF equations.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Equilibrium via Mutual Co-Evolution",
+              "performance": [],
+              "problem_pressure": "Online PCA in Converging Self-consistent Field Equations",
+              "source_paper_link": "https://openreview.net/forum?id=vq11gurmUY",
+              "source_paper_links": [
+                "https://openreview.net/forum?id=vq11gurmUY"
+              ],
+              "source_paper_title": "Online PCA in Converging Self-consistent Field Equations",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-CB11AB95845A"
+              ],
+              "source_work_title": "Online PCA in Converging Self-consistent Field Equations",
+              "source_works": [
+                "W-CB11AB95845A"
+              ],
+              "venue_or_source": "NeurIPS",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://openreview.net/forum?id=vq11gurmUY"
+            ],
+            "version_id": "VER-03FB9F10E01C"
+          }
+        },
+        "venue_or_source": "NeurIPS",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-5F18803D88F5"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T12:09:09+00:00",
+        "updated_at": "2026-06-15T12:09:09+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-8DA3CED70512",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "autocorrelation aware loss design autocorrelation aware loss design standard temporal mean squared error fails in time series forecasting because it treats time steps as independent ignoring inherent label autocorrelation and biasing the optimization away from the true sequence likelihood th w 7f29f",
+      "canonical_label": "Autocorrelation-Aware Loss Design",
+      "concept_id": "P-ECC5D8544823",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "Standard temporal Mean Squared Error fails in time-series forecasting because it treats time steps as independent, ignoring inherent label autocorrelation and biasing the optimization away from the true sequence likelihood.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-761163C02441",
+        "argument": "Standard temporal Mean Squared Error fails in time-series forecasting because it treats time steps as independent, ignoring inherent label autocorrelation and biasing the optimization away from the true sequence likelihood.",
+        "benchmarks": [],
+        "boundary_conditions": [
+          "Applicable to time-series data with strong temporal dependencies",
+          "Requires the transformation to be differentiable or have a defined gradient path for backpropagation",
+          "Most effective in long-term forecasting where autocorrelation bias accumulates"
+        ],
+        "canonical_id": "P-45FF1A99F555",
+        "canonical_key": "standard temporal mean squared error fails in time series forecasting because it treats time steps as independent ignoring inherent label autocorrelation and biasing optimization a",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-15T12:07:35+00:00",
+        "discussion": "Adopting this principle shifts the paradigm from minimizing point-wise errors to maximizing structural fidelity in a transformed domain. It implies that for any domain with high output correlation (e.g., video frames, spatial maps), pre-processing targets to remove redundancy before loss calculation yields better convergence. However, the effectiveness depends on the appropriateness of the chosen transformation for the specific data distribution.",
+        "entered_at": "2026-06-15T12:07:35+00:00",
+        "evidence": "The text identifies two critical limitations of existing approaches: ignoring 'label autocorrelation' which biases the 'true label sequence likelihood', and the 'excessive number of tasks' complicating optimization.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T12:07:35+00:00",
+        "extraction_method": "llm_extracted",
+        "mechanism": "The principle dictates that loss functions must incorporate a transformation step that diagonalizes the covariance structure of the target sequence. This converts the multi-task problem of predicting correlated time steps into a set of independent sub-tasks weighted by their informational significance. Optimization then focuses on high-variance, high-significance components while suppressing the influence of redundant or noisy correlations.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Autocorrelation-Aware Loss Design",
+        "performance": [],
+        "principle_id": "P-45FF1A99F555",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Time-o1: Time-Series Forecasting Needs Transformed Label Alignment",
+        "provider": "siliconflow",
+        "source_paper_link": "https://openreview.net/forum?id=RxWILaXuhb",
+        "source_paper_links": [
+          "https://openreview.net/forum?id=RxWILaXuhb"
+        ],
+        "source_paper_title": "Time-o1: Time-Series Forecasting Needs Transformed Label Alignment",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-7F29FB9798FF"
+        ],
+        "source_work_title": "Time-o1: Time-Series Forecasting Needs Transformed Label Alignment",
+        "source_works": [
+          "W-7F29FB9798FF"
+        ],
+        "updated_at": "2026-06-15T12:07:35+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-761163C02441": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-15T12:07:35+00:00",
+            "extracted_at": "2026-06-15T12:07:35+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "Standard temporal Mean Squared Error fails in time-series forecasting because it treats time steps as independent, ignoring inherent label autocorrelation and biasing the optimization away from the true sequence likelihood.",
+              "argument": "Standard temporal Mean Squared Error fails in time-series forecasting because it treats time steps as independent, ignoring inherent label autocorrelation and biasing the optimization away from the true sequence likelihood.",
+              "benchmarks": [],
+              "boundary_conditions": [
+                "Applicable to time-series data with strong temporal dependencies",
+                "Requires the transformation to be differentiable or have a defined gradient path for backpropagation",
+                "Most effective in long-term forecasting where autocorrelation bias accumulates"
+              ],
+              "confidence_score": 0.68,
+              "discussion": "Adopting this principle shifts the paradigm from minimizing point-wise errors to maximizing structural fidelity in a transformed domain. It implies that for any domain with high output correlation (e.g., video frames, spatial maps), pre-processing targets to remove redundancy before loss calculation yields better convergence. However, the effectiveness depends on the appropriateness of the chosen transformation for the specific data distribution.",
+              "evidence": "The text identifies two critical limitations of existing approaches: ignoring 'label autocorrelation' which biases the 'true label sequence likelihood', and the 'excessive number of tasks' complicating optimization.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "mechanism": "The principle dictates that loss functions must incorporate a transformation step that diagonalizes the covariance structure of the target sequence. This converts the multi-task problem of predicting correlated time steps into a set of independent sub-tasks weighted by their informational significance. Optimization then focuses on high-variance, high-significance components while suppressing the influence of redundant or noisy correlations.",
+              "metrics": [],
+              "name": "Autocorrelation-Aware Loss Design",
+              "performance": [],
+              "problem_pressure": "Time-o1: Time-Series Forecasting Needs Transformed Label Alignment",
+              "source_paper_link": "https://openreview.net/forum?id=RxWILaXuhb",
+              "source_paper_links": [
+                "https://openreview.net/forum?id=RxWILaXuhb"
+              ],
+              "source_paper_title": "Time-o1: Time-Series Forecasting Needs Transformed Label Alignment",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-1E6FE6A6C74C"
+              ],
+              "source_work_title": "Time-o1: Time-Series Forecasting Needs Transformed Label Alignment",
+              "source_works": [
+                "W-1E6FE6A6C74C"
+              ],
+              "venue_or_source": "NeurIPS",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://openreview.net/forum?id=RxWILaXuhb"
+            ],
+            "version_id": "VER-761163C02441"
+          }
+        },
+        "venue_or_source": "NeurIPS",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-7F29FB9798FF"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T12:09:08+00:00",
+        "updated_at": "2026-06-15T12:09:08+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-29DB82D05820",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "dynamic co evolution overcomes fixed point divergence dynamic co evolution overcomes fixed point divergence the proposed algorithm demonstrates high convergence capacity on both synthesized data and real electronic structure scenarios where traditional methods fail w 5f18803d88f5",
+      "canonical_label": "Dynamic Co-Evolution Overcomes Fixed-Point Divergence",
+      "concept_id": "TM-5BB2FBC9A131",
+      "concept_type": "takeaway_message",
+      "payload": {
+        "active_version_id": "VER-AD19B8B85D35",
+        "benchmarks": [],
+        "canonical_id": "TM-60714B489997",
+        "canonical_key": "proposed algorithm demonstrates high convergence capacity on both synthesized data and real electronic structure scenarios where traditional methods fail",
+        "condition": "This strategy is applicable when the target problem can be formulated as a nonlinear eigenvalue problem where the operator is a function of its own solution, and where an equilibrium state physically or mathematically exists.",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-15T12:08:13+00:00",
+        "discussion": "The key insight is that introducing a temporal dimension to the update rule allows the system to adapt incrementally rather than requiring immediate satisfaction of a static constraint. The numerical adaptations specific to online PCA ensure stability during this co-evolution phase, making the method robust for complex computational science applications such as solving the Schrödinger equation.",
+        "entered_at": "2026-06-15T12:08:13+00:00",
+        "evidence": "The text notes that traditional fixed-point iteration methods suffer from non-convergence issues, whereas the new algorithm, developed with numerical adaptations based on the online PCA perspective, demonstrated high convergence capacity in experiments on synthesized and real electronic structure scenarios.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T12:08:13+00:00",
+        "extraction_method": "llm_extracted",
+        "finding": "The proposed algorithm demonstrates high convergence capacity on both synthesized data and real electronic structure scenarios where traditional methods fail.",
+        "main_results": "The proposed algorithm demonstrates high convergence capacity on both synthesized data and real electronic structure scenarios where traditional methods fail.",
+        "message_text": "The proposed algorithm demonstrates high convergence capacity on both synthesized data and real electronic structure scenarios where traditional methods fail.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "https://openreview.net/forum?id=vq11gurmUY",
+        "source_paper_links": [
+          "https://openreview.net/forum?id=vq11gurmUY"
+        ],
+        "source_paper_title": "Online PCA in Converging Self-consistent Field Equations",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-5F18803D88F5"
+        ],
+        "source_work_title": "Online PCA in Converging Self-consistent Field Equations",
+        "source_works": [
+          "W-5F18803D88F5"
+        ],
+        "title": "Dynamic Co-Evolution Overcomes Fixed-Point Divergence",
+        "updated_at": "2026-06-15T12:08:13+00:00",
+        "variants": {
+          "VER-AD19B8B85D35": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-15T12:08:13+00:00",
+            "extracted_at": "2026-06-15T12:08:13+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "condition": "This strategy is applicable when the target problem can be formulated as a nonlinear eigenvalue problem where the operator is a function of its own solution, and where an equilibrium state physically or mathematically exists.",
+              "confidence_score": 0.7,
+              "discussion": "The key insight is that introducing a temporal dimension to the update rule allows the system to adapt incrementally rather than requiring immediate satisfaction of a static constraint. The numerical adaptations specific to online PCA ensure stability during this co-evolution phase, making the method robust for complex computational science applications such as solving the Schrödinger equation.",
+              "evidence": "The text notes that traditional fixed-point iteration methods suffer from non-convergence issues, whereas the new algorithm, developed with numerical adaptations based on the online PCA perspective, demonstrated high convergence capacity in experiments on synthesized and real electronic structure scenarios.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "finding": "The proposed algorithm demonstrates high convergence capacity on both synthesized data and real electronic structure scenarios where traditional methods fail.",
+              "main_results": "The proposed algorithm demonstrates high convergence capacity on both synthesized data and real electronic structure scenarios where traditional methods fail.",
+              "message_text": "The proposed algorithm demonstrates high convergence capacity on both synthesized data and real electronic structure scenarios where traditional methods fail.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "https://openreview.net/forum?id=vq11gurmUY",
+              "source_paper_links": [
+                "https://openreview.net/forum?id=vq11gurmUY"
+              ],
+              "source_paper_title": "Online PCA in Converging Self-consistent Field Equations",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-CB11AB95845A"
+              ],
+              "source_work_title": "Online PCA in Converging Self-consistent Field Equations",
+              "source_works": [],
+              "title": "Dynamic Co-Evolution Overcomes Fixed-Point Divergence",
+              "venue_or_source": "NeurIPS",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://openreview.net/forum?id=vq11gurmUY"
+            ],
+            "version_id": "VER-AD19B8B85D35"
+          }
+        },
+        "venue_or_source": "NeurIPS",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-5F18803D88F5"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T12:09:09+00:00",
+        "updated_at": "2026-06-15T12:09:09+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-19C3C1098F94",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "superiority of adaptive refinement in precision matrix recovery superiority of adaptive refinement in precision matrix recovery the adaptive multi stage weighted l1 regularization method outperforms state of the art baselines in both precision matrix estimation accuracy and graph edge identification",
+      "canonical_label": "Superiority of Adaptive Refinement in Precision Matrix Recovery",
+      "concept_id": "TM-8E60E51F7062",
+      "concept_type": "takeaway_message",
+      "payload": {
+        "active_version_id": "VER-90F3F2D85AFC",
+        "benchmarks": [],
+        "canonical_id": "TM-974227C33E6A",
+        "canonical_key": "adaptive multi stage weighted l1 regularization method outperforms state of art baselines in both precision matrix estimation accuracy and graph edge identification tasks",
+        "condition": "This finding holds for tasks involving the estimation of Gaussian graphical models where the precision matrix exhibits M-matrix or diagonally dominant M-matrix properties, as evaluated on synthetic datasets and real-world financial time-series data.",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-15T12:08:26+00:00",
+        "discussion": "The empirical success on financial time-series data suggests that market correlation structures often adhere to total positivity assumptions, making this method particularly valuable for quantitative finance applications. The lesson extends to other domains where similar monotonicity or positivity constraints exist, advocating for the integration of domain-specific structural knowledge into the optimization loop rather than treating it as a post-processing step.",
+        "entered_at": "2026-06-15T12:08:26+00:00",
+        "evidence": "The excerpt reports that the proposed method outperforms state-of-the-art methods in estimating precision matrices and identifying graph edges, as evidenced by synthetic and financial time-series data sets.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T12:08:26+00:00",
+        "extraction_method": "llm_extracted",
+        "finding": "The adaptive multi-stage weighted L1 regularization method outperforms state-of-the-art baselines in both precision matrix estimation accuracy and graph edge identification tasks.",
+        "main_results": "The adaptive multi-stage weighted L1 regularization method outperforms state-of-the-art baselines in both precision matrix estimation accuracy and graph edge identification tasks.",
+        "message_text": "The adaptive multi-stage weighted L1 regularization method outperforms state-of-the-art baselines in both precision matrix estimation accuracy and graph edge identification tasks.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "https://openreview.net/forum?id=USiX9gmGRx",
+        "source_paper_links": [
+          "https://openreview.net/forum?id=USiX9gmGRx"
+        ],
+        "source_paper_title": "Adaptive Estimation of Graphical Models under Total Positivity",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-932AE0D6CAA1"
+        ],
+        "source_work_title": "Adaptive Estimation of Graphical Models under Total Positivity",
+        "source_works": [
+          "W-932AE0D6CAA1"
+        ],
+        "title": "Superiority of Adaptive Refinement in Precision Matrix Recovery",
+        "updated_at": "2026-06-15T12:08:26+00:00",
+        "variants": {
+          "VER-90F3F2D85AFC": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-15T12:08:26+00:00",
+            "extracted_at": "2026-06-15T12:08:26+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "condition": "This finding holds for tasks involving the estimation of Gaussian graphical models where the precision matrix exhibits M-matrix or diagonally dominant M-matrix properties, as evaluated on synthetic datasets and real-world financial time-series data.",
+              "confidence_score": 0.7,
+              "discussion": "The empirical success on financial time-series data suggests that market correlation structures often adhere to total positivity assumptions, making this method particularly valuable for quantitative finance applications. The lesson extends to other domains where similar monotonicity or positivity constraints exist, advocating for the integration of domain-specific structural knowledge into the optimization loop rather than treating it as a post-processing step.",
+              "evidence": "The excerpt reports that the proposed method outperforms state-of-the-art methods in estimating precision matrices and identifying graph edges, as evidenced by synthetic and financial time-series data sets.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "finding": "The adaptive multi-stage weighted L1 regularization method outperforms state-of-the-art baselines in both precision matrix estimation accuracy and graph edge identification tasks.",
+              "main_results": "The adaptive multi-stage weighted L1 regularization method outperforms state-of-the-art baselines in both precision matrix estimation accuracy and graph edge identification tasks.",
+              "message_text": "The adaptive multi-stage weighted L1 regularization method outperforms state-of-the-art baselines in both precision matrix estimation accuracy and graph edge identification tasks.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "https://openreview.net/forum?id=USiX9gmGRx",
+              "source_paper_links": [
+                "https://openreview.net/forum?id=USiX9gmGRx"
+              ],
+              "source_paper_title": "Adaptive Estimation of Graphical Models under Total Positivity",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-0E76E343239F"
+              ],
+              "source_work_title": "Adaptive Estimation of Graphical Models under Total Positivity",
+              "source_works": [],
+              "title": "Superiority of Adaptive Refinement in Precision Matrix Recovery",
+              "venue_or_source": "ICML",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://openreview.net/forum?id=USiX9gmGRx"
+            ],
+            "version_id": "VER-90F3F2D85AFC"
+          }
+        },
+        "venue_or_source": "ICML",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-932AE0D6CAA1"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T12:09:10+00:00",
+        "updated_at": "2026-06-15T12:09:10+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-1E55072E5E55",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "scf as online pca on non stationary series scf as online pca on non stationary series reframing self consistent field equations as an online principal component analysis problem on a non stationary time series allows the use of dynamic update rules to find equilibrium this perspective replaces stati",
+      "canonical_label": "SCF as Online PCA on Non-Stationary Series",
+      "concept_id": "XI-AC5798307B68",
+      "concept_type": "existed_idea",
+      "payload": {
+        "active_version_id": "VER-BD9FC3B5A700",
+        "benchmarks": [],
+        "canonical_id": "XI-2A0956797F4F",
+        "canonical_key": "reframing self consistent field equations as online principal component analysis problem on non stationary time series allows use of dynamic update rules to find equilibrium perspe",
+        "confidence_score": 0.72,
+        "core_idea": "Reframing Self-consistent Field equations as an Online Principal Component Analysis problem on a non-stationary time series allows the use of dynamic update rules to find equilibrium. This perspective replaces static fixed-point iterations with a mutual co-evolution process between the data distribution and its principal components.",
+        "created_at": "2026-06-15T12:08:13+00:00",
+        "discussion": "The mechanism addresses the non-convergence issues prevalent in traditional fixed-point iteration methods by introducing numerical adaptations suited for online learning scenarios. By leveraging the stability properties of online PCA algorithms, the method ensures that the mutual updates between the distribution and the components converge to a stable equilibrium. This provides a new set of computational tools for electronic structure calculations and other domains governed by Schrödinger-like equations, offering higher convergence capacity in both synthesized and real-world scenarios.",
+        "entered_at": "2026-06-15T12:08:13+00:00",
+        "evidence": "The abstract explicitly states the presentation of SCF equations as a PCA for non-stationary time series where a distribution and its own top principal components are mutually updated over time, with the equilibrium state corresponding to the solution of the SCF equations.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T12:08:13+00:00",
+        "extraction_method": "llm_extracted",
+        "idea_text": "Reframing Self-consistent Field equations as an Online Principal Component Analysis problem on a non-stationary time series allows the use of dynamic update rules to find equilibrium. This perspective replaces static fixed-point iterations with a mutual co-evolution process between the data distribution and its principal components.",
+        "mechanism": "The mechanism operates by decoupling the direct dependency loop of the nonlinear operator through a temporal evolution process. Instead of attempting to solve for the eigenvectors of a matrix that is simultaneously defined by those same eigenvectors, the algorithm treats the matrix as a evolving distribution. It applies online PCA techniques to incrementally update the estimate of the principal components as the distribution shifts, effectively turning a static convergence problem into a dynamic stabilization task.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "https://openreview.net/forum?id=vq11gurmUY",
+        "source_paper_links": [
+          "https://openreview.net/forum?id=vq11gurmUY"
+        ],
+        "source_paper_title": "Online PCA in Converging Self-consistent Field Equations",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-5F18803D88F5"
+        ],
+        "source_work_title": "Online PCA in Converging Self-consistent Field Equations",
+        "source_works": [
+          "W-5F18803D88F5"
+        ],
+        "summary": "Reframing Self-consistent Field equations as an Online Principal Component Analysis problem on a non-stationary time series allows the use of dynamic update rules to find equilibrium. This perspective replaces static fixed-point iteratio...",
+        "title": "SCF as Online PCA on Non-Stationary Series",
+        "updated_at": "2026-06-15T12:08:13+00:00",
+        "variants": {
+          "VER-BD9FC3B5A700": {
+            "confidence_score": 0.72,
+            "entered_at": "2026-06-15T12:08:13+00:00",
+            "extracted_at": "2026-06-15T12:08:13+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "confidence_score": 0.72,
+              "core_idea": "Reframing Self-consistent Field equations as an Online Principal Component Analysis problem on a non-stationary time series allows the use of dynamic update rules to find equilibrium. This perspective replaces static fixed-point iterations with a mutual co-evolution process between the data distribution and its principal components.",
+              "discussion": "The mechanism addresses the non-convergence issues prevalent in traditional fixed-point iteration methods by introducing numerical adaptations suited for online learning scenarios. By leveraging the stability properties of online PCA algorithms, the method ensures that the mutual updates between the distribution and the components converge to a stable equilibrium. This provides a new set of computational tools for electronic structure calculations and other domains governed by Schrödinger-like equations, offering higher convergence capacity in both synthesized and real-world scenarios.",
+              "evidence": "The abstract explicitly states the presentation of SCF equations as a PCA for non-stationary time series where a distribution and its own top principal components are mutually updated over time, with the equilibrium state corresponding to the solution of the SCF equations.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "idea_text": "Reframing Self-consistent Field equations as an Online Principal Component Analysis problem on a non-stationary time series allows the use of dynamic update rules to find equilibrium. This perspective replaces static fixed-point iterations with a mutual co-evolution process between the data distribution and its principal components.",
+              "mechanism": "The mechanism operates by decoupling the direct dependency loop of the nonlinear operator through a temporal evolution process. Instead of attempting to solve for the eigenvectors of a matrix that is simultaneously defined by those same eigenvectors, the algorithm treats the matrix as a evolving distribution. It applies online PCA techniques to incrementally update the estimate of the principal components as the distribution shifts, effectively turning a static convergence problem into a dynamic stabilization task.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "https://openreview.net/forum?id=vq11gurmUY",
+              "source_paper_links": [
+                "https://openreview.net/forum?id=vq11gurmUY"
+              ],
+              "source_paper_title": "Online PCA in Converging Self-consistent Field Equations",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-CB11AB95845A"
+              ],
+              "source_work_title": "Online PCA in Converging Self-consistent Field Equations",
+              "source_works": [],
+              "summary": "Reframing Self-consistent Field equations as an Online Principal Component Analysis problem on a non-stationary time series allows the use of dynamic update rules to find equilibrium. This perspective replaces static fixed-point iteratio...",
+              "title": "SCF as Online PCA on Non-Stationary Series",
+              "venue_or_source": "NeurIPS",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://openreview.net/forum?id=vq11gurmUY"
+            ],
+            "version_id": "VER-BD9FC3B5A700"
+          }
+        },
+        "venue_or_source": "NeurIPS",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.72,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-5F18803D88F5"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T12:09:09+00:00",
+        "updated_at": "2026-06-15T12:09:09+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-436BC12A258A",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "jet expansions for functional decomposition of llms jet expansions for functional decomposition of llms jet expansions constitute a framework that applies jet operators which generalize truncated taylor series to decompose the entangled computational graphs of large language models into explicit inp",
+      "canonical_label": "Jet Expansions for Functional Decomposition of LLMs",
+      "concept_id": "XI-C568E7CE1524",
+      "concept_type": "existed_idea",
+      "payload": {
+        "active_version_id": "VER-1F0E579B1D1F",
+        "benchmarks": [],
+        "canonical_id": "XI-C33C1548D3EB",
+        "canonical_key": "jet expansions constitute framework applies jet operators which generalize truncated taylor series to decompose entangled computational graphs of large language models into explici",
+        "confidence_score": 0.72,
+        "core_idea": "Jet Expansions constitute a framework that applies jet operators, which generalize truncated Taylor series, to decompose the entangled computational graphs of large language models into explicit input-to-output paths and complementary remainders.",
+        "created_at": "2026-06-15T12:07:54+00:00",
+        "discussion": "The mechanism provides a rigorous calculus-based alternative to heuristic interpretability tools by grounding path analysis in mathematical approximation. The separation of specific computational contributions facilitates precise auditing of model behaviors, such as knowledge retrieval or toxicity, independent of curated benchmarks. The utility of the method relies on the convergence properties of the expansion, where effective truncation strategies are necessary to manage the super-exponential growth of paths relative to recursive depth while maintaining semantic fidelity.",
+        "entered_at": "2026-06-15T12:07:54+00:00",
+        "evidence": "The work introduces Jet Expansions as a framework for expanding computational graphs using jet operators that generalize truncated Taylor series. It explicitly states that the method systematically decomposes language models into explicit input-to-output computational paths and complementary remainders, providing a principled operator for cutting through entanglement to enable scalable model inspection.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T12:07:54+00:00",
+        "extraction_method": "llm_extracted",
+        "idea_text": "Jet Expansions constitute a framework that applies jet operators, which generalize truncated Taylor series, to decompose the entangled computational graphs of large language models into explicit input-to-output paths and complementary remainders.",
+        "mechanism": "The mechanism defines jet operators that act on the recursive residual structure of transformer computational graphs. These operators expand the model function around specific input points using derivatives to isolate distinct computational pathways. The process mathematically separates the non-linear computation into linear or polynomial segments that can be analyzed individually, allowing for the extraction of n-gram statistics directly from internal weight structures and activation patterns.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "https://openreview.net/forum?id=u6JLh0BO5h",
+        "source_paper_links": [
+          "https://openreview.net/forum?id=u6JLh0BO5h"
+        ],
+        "source_paper_title": "Decomposing LLM Computation with Jets",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-EEBA1131A5B3"
+        ],
+        "source_work_title": "Decomposing LLM Computation with Jets",
+        "source_works": [
+          "W-EEBA1131A5B3"
+        ],
+        "summary": "Jet Expansions constitute a framework that applies jet operators, which generalize truncated Taylor series, to decompose the entangled computational graphs of large language models into explicit input-to-output paths and complementary re...",
+        "title": "Jet Expansions for Functional Decomposition of LLMs",
+        "updated_at": "2026-06-15T12:07:54+00:00",
+        "variants": {
+          "VER-1F0E579B1D1F": {
+            "confidence_score": 0.72,
+            "entered_at": "2026-06-15T12:07:54+00:00",
+            "extracted_at": "2026-06-15T12:07:54+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "confidence_score": 0.72,
+              "core_idea": "Jet Expansions constitute a framework that applies jet operators, which generalize truncated Taylor series, to decompose the entangled computational graphs of large language models into explicit input-to-output paths and complementary remainders.",
+              "discussion": "The mechanism provides a rigorous calculus-based alternative to heuristic interpretability tools by grounding path analysis in mathematical approximation. The separation of specific computational contributions facilitates precise auditing of model behaviors, such as knowledge retrieval or toxicity, independent of curated benchmarks. The utility of the method relies on the convergence properties of the expansion, where effective truncation strategies are necessary to manage the super-exponential growth of paths relative to recursive depth while maintaining semantic fidelity.",
+              "evidence": "The work introduces Jet Expansions as a framework for expanding computational graphs using jet operators that generalize truncated Taylor series. It explicitly states that the method systematically decomposes language models into explicit input-to-output computational paths and complementary remainders, providing a principled operator for cutting through entanglement to enable scalable model inspection.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "idea_text": "Jet Expansions constitute a framework that applies jet operators, which generalize truncated Taylor series, to decompose the entangled computational graphs of large language models into explicit input-to-output paths and complementary remainders.",
+              "mechanism": "The mechanism defines jet operators that act on the recursive residual structure of transformer computational graphs. These operators expand the model function around specific input points using derivatives to isolate distinct computational pathways. The process mathematically separates the non-linear computation into linear or polynomial segments that can be analyzed individually, allowing for the extraction of n-gram statistics directly from internal weight structures and activation patterns.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "https://openreview.net/forum?id=u6JLh0BO5h",
+              "source_paper_links": [
+                "https://openreview.net/forum?id=u6JLh0BO5h"
+              ],
+              "source_paper_title": "Decomposing LLM Computation with Jets",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-A9F59C07FF82"
+              ],
+              "source_work_title": "Decomposing LLM Computation with Jets",
+              "source_works": [],
+              "summary": "Jet Expansions constitute a framework that applies jet operators, which generalize truncated Taylor series, to decompose the entangled computational graphs of large language models into explicit input-to-output paths and complementary re...",
+              "title": "Jet Expansions for Functional Decomposition of LLMs",
+              "venue_or_source": "ICLR",
+              "year": 2026
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://openreview.net/forum?id=u6JLh0BO5h"
+            ],
+            "version_id": "VER-1F0E579B1D1F"
+          }
+        },
+        "venue_or_source": "ICLR",
+        "year": 2026
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.72,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-EEBA1131A5B3"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T12:09:07+00:00",
+        "updated_at": "2026-06-15T12:09:07+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-DCDF9E8128C9",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-2BB3F805C04A",
+  "created_at": "2026-06-15T12:09:10+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "The abstract explicitly states the presentation of SCF equations as a PCA for non-stationary time series where a distribution and its own top principal components are mutually updated over time, with the equilibrium state corresponding to the solution of the SCF equations.",
+      "concept_id": "XI-AC5798307B68",
+      "confidence": 0.72,
+      "created_at": "2026-06-15T12:09:09+00:00",
+      "evidence_id": "EV-C4B3222D46E6",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The abstract explicitly states the presentation of SCF equations as a PCA for non-stationary time series where a distribution and its own top principal components are mutually updated over time, with the equilibrium state corresponding to the solution of the SCF equations.",
+      "work_id": "W-5F18803D88F5",
+      "work_version_id": "WV-BB15405BF0CC"
+    },
+    {
+      "claim_text": "The text describes the method as one in which a distribution and its own top principal components are mutually updated over time, and the equilibrium state of the model corresponds to the solution of the SCF equations.",
+      "concept_id": "P-C8DFFE96F4C6",
+      "confidence": 0.68,
+      "created_at": "2026-06-15T12:09:09+00:00",
+      "evidence_id": "EV-64B37C78DCE4",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text describes the method as one in which a distribution and its own top principal components are mutually updated over time, and the equilibrium state of the model corresponds to the solution of the SCF equations.",
+      "work_id": "W-5F18803D88F5",
+      "work_version_id": "WV-BB15405BF0CC"
+    },
+    {
+      "claim_text": "The text notes that traditional fixed-point iteration methods suffer from non-convergence issues, whereas the new algorithm, developed with numerical adaptations based on the online PCA perspective, demonstrated high convergence capacity in experiments on synthesized and real electronic structure scenarios.",
+      "concept_id": "TM-5BB2FBC9A131",
+      "confidence": 0.7,
+      "created_at": "2026-06-15T12:09:09+00:00",
+      "evidence_id": "EV-06725B32C163",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text notes that traditional fixed-point iteration methods suffer from non-convergence issues, whereas the new algorithm, developed with numerical adaptations based on the online PCA perspective, demonstrated high convergence capacity in experiments on synthesized and real electronic structure scenarios.",
+      "work_id": "W-5F18803D88F5",
+      "work_version_id": "WV-BB15405BF0CC"
+    },
+    {
+      "claim_text": "The text identifies two critical limitations of existing approaches: ignoring 'label autocorrelation' which biases the 'true label sequence likelihood', and the 'excessive number of tasks' complicating optimization.",
+      "concept_id": "P-ECC5D8544823",
+      "confidence": 0.68,
+      "created_at": "2026-06-15T12:09:08+00:00",
+      "evidence_id": "EV-AF5DE5C0CB75",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text identifies two critical limitations of existing approaches: ignoring 'label autocorrelation' which biases the 'true label sequence likelihood', and the 'excessive number of tasks' complicating optimization.",
+      "work_id": "W-7F29FB9798FF",
+      "work_version_id": "WV-C8116DFB2DAB"
+    },
+    {
+      "claim_text": "The text states that for M-matrices, 'the maximum likelihood estimator exists with as little as two observations,' and for diagonally dominant M-matrices, it 'exists even with one observation.' This highlights the drastic reduction in sample complexity due to the structural constraints.",
+      "concept_id": "P-58A0C851DB2C",
+      "confidence": 0.68,
+      "created_at": "2026-06-15T12:09:10+00:00",
+      "evidence_id": "EV-701AAC800AB5",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text states that for M-matrices, 'the maximum likelihood estimator exists with as little as two observations,' and for diagonally dominant M-matrices, it 'exists even with one observation.' This highlights the drastic reduction in sample complexity due to the structural constraints.",
+      "work_id": "W-932AE0D6CAA1",
+      "work_version_id": "WV-2A54C08486F0"
+    },
+    {
+      "claim_text": "The text states that for M-matrices, the maximum likelihood estimator exists with as little as two observations, and for diagonally dominant M-matrices, it exists even with one observation, highlighting the drastic reduction in sample complexity due to the structural constraints.",
+      "concept_id": "P-6842DCA84A63",
+      "confidence": 0.68,
+      "created_at": "2026-06-15T12:09:10+00:00",
+      "evidence_id": "EV-ACD240E71CAF",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text states that for M-matrices, the maximum likelihood estimator exists with as little as two observations, and for diagonally dominant M-matrices, it exists even with one observation, highlighting the drastic reduction in sample complexity due to the structural constraints.",
+      "work_id": "W-932AE0D6CAA1",
+      "work_version_id": "WV-2A54C08486F0"
+    },
+    {
+      "claim_text": "The excerpt reports that the proposed method outperforms state-of-the-art methods in estimating precision matrices and identifying graph edges, as evidenced by synthetic and financial time-series data sets.",
+      "concept_id": "TM-8E60E51F7062",
+      "confidence": 0.7,
+      "created_at": "2026-06-15T12:09:10+00:00",
+      "evidence_id": "EV-B2132D3693A9",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The excerpt reports that the proposed method outperforms state-of-the-art methods in estimating precision matrices and identifying graph edges, as evidenced by synthetic and financial time-series data sets.",
+      "work_id": "W-932AE0D6CAA1",
+      "work_version_id": "WV-2A54C08486F0"
+    },
+    {
+      "claim_text": "The work introduces Jet Expansions as a framework for expanding computational graphs using jet operators that generalize truncated Taylor series. It explicitly states that the method systematically decomposes language models into explicit input-to-output computational paths and complementary remainders, providing a principled operator for cutting through entanglement to enable scalable model inspection.",
+      "concept_id": "XI-C568E7CE1524",
+      "confidence": 0.72,
+      "created_at": "2026-06-15T12:09:07+00:00",
+      "evidence_id": "EV-8D51A165BC49",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work introduces Jet Expansions as a framework for expanding computational graphs using jet operators that generalize truncated Taylor series. It explicitly states that the method systematically decomposes language models into explicit input-to-output computational paths and complementary remainders, providing a principled operator for cutting through entanglement to enable scalable model inspection.",
+      "work_id": "W-EEBA1131A5B3",
+      "work_version_id": "WV-A7EE48FFFE56"
+    },
+    {
+      "claim_text": "The work explicitly analyzes the structure of the computational graph under Jet Expansions, revealing that the number of distinct input-to-output paths increases super-exponentially as a function of the number of residual blocks. This structural property explains why naive attempts to isolate layer functions fail, as the output of any given layer is a complex aggregation of an exploding number of interaction paths from previous layers. The Jet Expansion method is designed specifically to manage this complexity by grouping these paths into tractable polynomial terms.",
+      "concept_id": "P-23C444B7E598",
+      "confidence": 0.68,
+      "created_at": "2026-06-15T12:09:07+00:00",
+      "evidence_id": "EV-8CF234CBF517",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work explicitly analyzes the structure of the computational graph under Jet Expansions, revealing that the number of distinct input-to-output paths increases super-exponentially as a function of the number of residual blocks. This structural property explains why naive attempts to isolate layer functions fail, as the output of any given layer is a complex aggregation of an exploding number of interaction paths from previous layers. The Jet Expansion method is designed specifically to manage this complexity by grouping these paths into tractable polynomial terms.",
+      "work_id": "W-EEBA1131A5B3",
+      "work_version_id": "WV-A7EE48FFFE56"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-15T12:09:07+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-15T12:09:05+00:00",
+      "extraction_run_id": "XRUN-DBC06D805E8C",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 0,
+        "existed_ideas": 1,
+        "principles": 1,
+        "takeaway_messages": 0,
+        "total": 2
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-EEBA1131A5B3",
+      "work_version_id": "WV-A7EE48FFFE56"
+    },
+    {
+      "completed_at": "2026-06-15T12:09:08+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-15T12:09:07+00:00",
+      "extraction_run_id": "XRUN-49C2B443D0A2",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 0,
+        "existed_ideas": 0,
+        "principles": 1,
+        "takeaway_messages": 0,
+        "total": 1
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-7F29FB9798FF",
+      "work_version_id": "WV-C8116DFB2DAB"
+    },
+    {
+      "completed_at": "2026-06-15T12:09:09+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-15T12:09:08+00:00",
+      "extraction_run_id": "XRUN-636347E2DFE2",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 0,
+        "existed_ideas": 1,
+        "principles": 1,
+        "takeaway_messages": 1,
+        "total": 3
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-5F18803D88F5",
+      "work_version_id": "WV-BB15405BF0CC"
+    },
+    {
+      "completed_at": "2026-06-15T12:09:10+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-15T12:09:09+00:00",
+      "extraction_run_id": "XRUN-576AE785A0FA",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 0,
+        "existed_ideas": 0,
+        "principles": 2,
+        "takeaway_messages": 1,
+        "total": 3
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-932AE0D6CAA1",
+      "work_version_id": "WV-2A54C08486F0"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "local_pr_export",
+    "secret_exposed_to_browser": false,
+    "warning": "Server admin key is not configured; output is a local PR-export artifact, not a direct GitHub write."
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 1,
+        "principle": 1
+      },
+      "title": "Online PCA in Converging Self-consistent Field Equations",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-5F18803D88F5"
+    },
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 0,
+        "principle": 1
+      },
+      "title": "Time-o1: Time-Series Forecasting Needs Transformed Label Alignment",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-7F29FB9798FF"
+    },
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 0,
+        "principle": 2
+      },
+      "title": "Adaptive Estimation of Graphical Models under Total Positivity",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-932AE0D6CAA1"
+    },
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 1,
+        "principle": 1
+      },
+      "title": "Decomposing LLM Computation with Jets",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-EEBA1131A5B3"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "",
+        "authors": [
+          "Xihan Li",
+          "Xiang Chen",
+          "Rasul Tutunov",
+          "Haitham Bou Ammar",
+          "Lei Wang",
+          "Jun Wang"
+        ],
+        "canonical_title": "Online PCA in Converging Self-consistent Field Equations",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "https://openreview.net/forum?id=vq11gurmUY"
+        ],
+        "title_hash": "68bb63489c54ef0e",
+        "title_norm": "online pca in converging self consistent field equations",
+        "venue_or_source": "NeurIPS",
+        "year": 2023
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "1698949793552",
+        "title_hash": "68bb63489c54ef0e"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T12:09:05+00:00",
+        "updated_at": "2026-06-15T12:09:05+00:00"
+      },
+      "work_id": "W-5F18803D88F5"
+    },
+    {
+      "identity": {
+        "arxiv_id": "",
+        "authors": [
+          "Hao Wang",
+          "Licheng Pan",
+          "Zhichao Chen",
+          "Xu Chen",
+          "Qingyang Dai",
+          "Lei Wang",
+          "Haoxuan Li",
+          "Zhouchen Lin"
+        ],
+        "canonical_title": "Time-o1: Time-Series Forecasting Needs Transformed Label Alignment",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "https://openreview.net/forum?id=RxWILaXuhb"
+        ],
+        "title_hash": "89e5910f9283554f",
+        "title_norm": "time o1 time series forecasting needs transformed label alignment",
+        "venue_or_source": "NeurIPS",
+        "year": 2025
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "1776754794395",
+        "title_hash": "89e5910f9283554f"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T12:09:05+00:00",
+        "updated_at": "2026-06-15T12:09:05+00:00"
+      },
+      "work_id": "W-7F29FB9798FF"
+    },
+    {
+      "identity": {
+        "arxiv_id": "",
+        "authors": [
+          "Jiaxi Ying",
+          "José Vinícius De Miranda Cardoso",
+          "Daniel P. Palomar"
+        ],
+        "canonical_title": "Adaptive Estimation of Graphical Models under Total Positivity",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "https://openreview.net/forum?id=USiX9gmGRx"
+        ],
+        "title_hash": "e9bc56811741976c",
+        "title_norm": "adaptive estimation of graphical models under total positivity",
+        "venue_or_source": "ICML",
+        "year": 2023
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "1686841490893",
+        "title_hash": "e9bc56811741976c"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T12:09:05+00:00",
+        "updated_at": "2026-06-15T12:09:05+00:00"
+      },
+      "work_id": "W-932AE0D6CAA1"
+    },
+    {
+      "identity": {
+        "arxiv_id": "",
+        "authors": [
+          "Yihong Chen",
+          "Xiangxiang Xu",
+          "Pontus Stenetorp",
+          "Sebastian Riedel",
+          "Luca Franceschi"
+        ],
+        "canonical_title": "Decomposing LLM Computation with Jets",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "https://openreview.net/forum?id=u6JLh0BO5h"
+        ],
+        "title_hash": "18cdac5d34fb9656",
+        "title_norm": "decomposing llm computation with jets",
+        "venue_or_source": "ICLR",
+        "year": 2026
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "1775877388146",
+        "title_hash": "18cdac5d34fb9656"
+      },
+      "timestamps": {
+        "created_at": "2026-06-15T12:09:05+00:00",
+        "updated_at": "2026-06-15T12:09:05+00:00"
+      },
+      "work_id": "W-EEBA1131A5B3"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": "Self-consistent Field (SCF) equation is a type of nonlinear eigenvalue problem in which the matrix to be eigen-decomposed is a function of its own eigenvectors. It is of great significance in computational science for its connection to the Schrödinger equation. Traditional fixed-point iteration methods for solving such equations suffer from non-convergence issues. In this work, we present a novel perspective on such SCF equations as a principal component analysis (PCA) for non-stationary time series, in which a distribution and its own top principal components are mutually updated over time, and the equilibrium state of the model corresponds to the solution of the SCF equations. By the new perspective, online PCA techniques are able to engage in so as to enhance the convergence of the model towards the equilibrium state, acting as a new set of tools for converging the SCF equations. W...",
+      "abstract_hash": "916636c1f3aebbb7",
+      "content_hash": "dfe564b588e29e50",
+      "created_at": "2026-06-15T12:09:05+00:00",
+      "metadata": {
+        "abstract": "Self-consistent Field (SCF) equation is a type of nonlinear eigenvalue problem in which the matrix to be eigen-decomposed is a function of its own eigenvectors. It is of great significance in computational science for its connection to the Schrödinger equation. Traditional fixed-point iteration methods for solving such equations suffer from non-convergence issues. In this work, we present a novel perspective on such SCF equations as a principal component analysis (PCA) for non-stationary time series, in which a distribution and its own top principal components are mutually updated over time, and the equilibrium state of the model corresponds to the solution of the SCF equations. By the new perspective, online PCA techniques are able to engage in so as to enhance the convergence of the model towards the equilibrium state, acting as a new set of tools for converging the SCF equations. W...",
+        "active_version_id": "VER-35633E0C4121",
+        "authors": [
+          "Xihan Li",
+          "Xiang Chen",
+          "Rasul Tutunov",
+          "Haitham Bou Ammar",
+          "Lei Wang",
+          "Jun Wang"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-CB11AB95845A",
+        "canonical_key": "online pca in converging self consistent field equations",
+        "cloud_crawl_query": "OpenReview NeurIPS.cc/2023/Conference",
+        "cloud_local_origin": "cloud_crawl",
+        "cloud_lookup_checked_at": "2026-06-15T10:12:00+00:00",
+        "cloud_lookup_decision": "not_in_cloud",
+        "cloud_research_by_model": {
+          "all:All LLMs:all:principia-work-extract-v1:principia-cloud-1.1:work_concepts": {
+            "message": "Queued for cloud-page research.",
+            "model_key": "all:All LLMs:all:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+            "model_mode": "all",
+            "run_id": "V1CLOUDCRAWL-1781525208519",
+            "state": "queued",
+            "updated_at": "2026-06-15T12:06:48+00:00"
+          },
+          "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts": {
+            "cloud_required_counts": {
+              "existed_ideas": 1,
+              "principle_or_existed_idea": 1,
+              "principles": 1
+            },
+            "cloud_required_missing": [],
+            "cloud_research_index": 9,
+            "cloud_research_total": 12,
+            "completed_at": "2026-06-15T12:08:14+00:00",
+            "message": "Extraction complete and ready to sync.",
+            "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+            "model_mode": "qwen_397b",
+            "run_id": "V1CLOUDCRAWL-1781525208519",
+            "started_at": "2026-06-15T12:07:18+00:00",
+            "state": "ready",
+            "updated_at": "2026-06-15T12:08:14+00:00"
+          }
+        },
+        "cloud_research_completed_at": "2026-06-15T12:08:14+00:00",
+        "cloud_research_message": "Extraction complete and ready to sync.",
+        "cloud_research_model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+        "cloud_research_run_id": "V1CLOUDCRAWL-1781525208519",
+        "cloud_research_started_at": "2026-06-15T12:07:18+00:00",
+        "cloud_research_state": "ready",
+        "cloud_research_updated_at": "2026-06-15T12:08:14+00:00",
+        "cloud_sync_status": "unsynced",
+        "cloud_task_completed_at": "2026-06-15T12:08:14+00:00",
+        "cloud_task_message": "Extraction complete and ready to sync.",
+        "cloud_task_model_mode": "qwen_397b",
+        "cloud_task_run_id": "V1CLOUDCRAWL-1781525208519",
+        "cloud_task_started_at": "2026-06-15T12:07:18+00:00",
+        "cloud_task_state": "done",
+        "cloud_task_updated_at": "2026-06-15T12:08:14+00:00",
+        "community_signals": {
+          "keywords": [
+            "Self-consistent Field Equation",
+            "Computational Science",
+            "Online PCA"
+          ],
+          "source": "openreview",
+          "venueid": "NeurIPS.cc/2023/Conference"
+        },
+        "confidence_score": 0.62,
+        "crawl_status": "metadata_candidate",
+        "created_at": "2026-06-15T10:12:00+00:00",
+        "entered_at": "2026-06-15T10:12:00+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T12:06:48+00:00",
+        "metrics": [],
+        "model_mode": "metadata",
+        "model_name": "metadata",
+        "paper_link": "https://openreview.net/forum?id=vq11gurmUY",
+        "performance": [],
+        "priority_reason": "venue/recency/topic/citation/oral / target=NeurIPS 2023",
+        "priority_score": 0.795,
+        "provider": "metadata",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "1698949793552",
+        "source_urls": [
+          "https://openreview.net/forum?id=vq11gurmUY"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "target_venue": "NeurIPS",
+        "target_year": 2023,
+        "title": "Online PCA in Converging Self-consistent Field Equations",
+        "updated_at": "2026-06-15T12:08:14+00:00",
+        "url_or_doi": "https://openreview.net/forum?id=vq11gurmUY",
+        "validation_level": "L1",
+        "variants": {
+          "VER-35633E0C4121": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-15T10:12:00+00:00",
+            "extracted_at": "2026-06-15T12:06:48+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Self-consistent Field (SCF) equation is a type of nonlinear eigenvalue problem in which the matrix to be eigen-decomposed is a function of its own eigenvectors. It is of great significance in computational science for its connection to the Schrödinger equation. Traditional fixed-point iteration methods for solving such equations suffer from non-convergence issues. In this work, we present a novel perspective on such SCF equations as a principal component analysis (PCA) for non-stationary time series, in which a distribution and its own top principal components are mutually updated over time, and the equilibrium state of the model corresponds to the solution of the SCF equations. By the new perspective, online PCA techniques are able to engage in so as to enhance the convergence of the model towards the equilibrium state, acting as a new set of tools for converging the SCF equations. W...",
+              "authors": [
+                "Xihan Li",
+                "Xiang Chen",
+                "Rasul Tutunov",
+                "Haitham Bou Ammar",
+                "Lei Wang",
+                "Jun Wang"
+              ],
+              "benchmarks": [],
+              "cloud_crawl_query": "OpenReview NeurIPS.cc/2023/Conference",
+              "cloud_local_origin": "cloud_crawl",
+              "cloud_sync_status": "unsynced",
+              "community_signals": {
+                "keywords": [
+                  "Self-consistent Field Equation",
+                  "Computational Science",
+                  "Online PCA"
+                ],
+                "source": "openreview",
+                "venueid": "NeurIPS.cc/2023/Conference"
+              },
+              "crawl_status": "metadata_candidate",
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "https://openreview.net/forum?id=vq11gurmUY",
+              "performance": [],
+              "priority_reason": "venue/recency/topic/citation/oral / target=NeurIPS 2023",
+              "priority_score": 0.795,
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "1698949793552",
+              "source_urls": [
+                "https://openreview.net/forum?id=vq11gurmUY"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "target_venue": "NeurIPS",
+              "target_year": 2023,
+              "title": "Online PCA in Converging Self-consistent Field Equations",
+              "url_or_doi": "https://openreview.net/forum?id=vq11gurmUY",
+              "validation_level": "L1",
+              "venue_or_source": "NeurIPS",
+              "year": 2023
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "https://openreview.net/forum?id=vq11gurmUY"
+            ],
+            "version_id": "VER-35633E0C4121"
+          }
+        },
+        "venue_or_source": "NeurIPS",
+        "work_id": "W-CB11AB95845A",
+        "year": 2023
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "openreview",
+      "source_record_id": "W-CB11AB95845A",
+      "source_updated_at": "1698949793552",
+      "title": "Online PCA in Converging Self-consistent Field Equations",
+      "title_hash": "68bb63489c54ef0e",
+      "work_id": "W-5F18803D88F5",
+      "work_version_id": "WV-BB15405BF0CC"
+    },
+    {
+      "abstract": "Training time-series forecasting models poses unique challenges in loss function design. Most existing approaches adopt temporal mean squared error, but this study reveals two critical limitations: (1) it ignores the presence of label autocorrelation, which biases it from the true label sequence likelihood; (2) it involves excessive number of tasks, which complicates optimization, especially for long-term forecasting. To address these issues, we introduce Time-o1, a transform-enhanced loss function for time-series forecasting. The central idea is to transform the label sequence into decorrelated components with discriminated significance. Models are then trained to align the most significant components, thereby effectively mitigating label autocorrelation and reducing task amount. Experiments demonstrate that Time-o1 achieves state-of-the-art performance and is compatible with various...",
+      "abstract_hash": "b52094647ea7ebbc",
+      "content_hash": "b388ae915213a9e6",
+      "created_at": "2026-06-15T12:09:05+00:00",
+      "metadata": {
+        "abstract": "Training time-series forecasting models poses unique challenges in loss function design. Most existing approaches adopt temporal mean squared error, but this study reveals two critical limitations: (1) it ignores the presence of label autocorrelation, which biases it from the true label sequence likelihood; (2) it involves excessive number of tasks, which complicates optimization, especially for long-term forecasting. To address these issues, we introduce Time-o1, a transform-enhanced loss function for time-series forecasting. The central idea is to transform the label sequence into decorrelated components with discriminated significance. Models are then trained to align the most significant components, thereby effectively mitigating label autocorrelation and reducing task amount. Experiments demonstrate that Time-o1 achieves state-of-the-art performance and is compatible with various...",
+        "active_version_id": "VER-7CCE48D09219",
+        "authors": [
+          "Hao Wang",
+          "Licheng Pan",
+          "Zhichao Chen",
+          "Xu Chen",
+          "Qingyang Dai",
+          "Lei Wang",
+          "Haoxuan Li",
+          "Zhouchen Lin"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-1E6FE6A6C74C",
+        "canonical_key": "time o1 time series forecasting needs transformed label alignment",
+        "cloud_crawl_query": "OpenReview NeurIPS.cc/2025/Conference",
+        "cloud_local_origin": "cloud_crawl",
+        "cloud_lookup_checked_at": "2026-06-15T10:11:20+00:00",
+        "cloud_lookup_decision": "not_in_cloud",
+        "cloud_research_by_model": {
+          "all:All LLMs:all:principia-work-extract-v1:principia-cloud-1.1:work_concepts": {
+            "message": "Queued for cloud-page research.",
+            "model_key": "all:All LLMs:all:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+            "model_mode": "all",
+            "run_id": "V1CLOUDCRAWL-1781525208519",
+            "state": "queued",
+            "updated_at": "2026-06-15T12:06:48+00:00"
+          },
+          "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts": {
+            "cloud_required_counts": {
+              "existed_ideas": 0,
+              "principle_or_existed_idea": 1,
+              "principles": 1
+            },
+            "cloud_required_missing": [],
+            "cloud_research_index": 2,
+            "cloud_research_total": 12,
+            "completed_at": "2026-06-15T12:07:37+00:00",
+            "message": "Extraction complete and ready to sync.",
+            "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+            "model_mode": "qwen_397b",
+            "run_id": "V1CLOUDCRAWL-1781525208519",
+            "started_at": "2026-06-15T12:06:48+00:00",
+            "state": "ready",
+            "updated_at": "2026-06-15T12:07:37+00:00"
+          }
+        },
+        "cloud_research_completed_at": "2026-06-15T12:07:37+00:00",
+        "cloud_research_message": "Extraction complete and ready to sync.",
+        "cloud_research_model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+        "cloud_research_run_id": "V1CLOUDCRAWL-1781525208519",
+        "cloud_research_started_at": "2026-06-15T12:06:48+00:00",
+        "cloud_research_state": "ready",
+        "cloud_research_updated_at": "2026-06-15T12:07:37+00:00",
+        "cloud_sync_status": "unsynced",
+        "cloud_task_completed_at": "2026-06-15T12:07:37+00:00",
+        "cloud_task_message": "Extraction complete and ready to sync.",
+        "cloud_task_model_mode": "qwen_397b",
+        "cloud_task_run_id": "V1CLOUDCRAWL-1781525208519",
+        "cloud_task_started_at": "2026-06-15T12:06:48+00:00",
+        "cloud_task_state": "done",
+        "cloud_task_updated_at": "2026-06-15T12:07:37+00:00",
+        "community_signals": {
+          "keywords": [
+            "Time-Series",
+            "Label Autocorrelation",
+            "Orthogonalization"
+          ],
+          "source": "openreview",
+          "venueid": "NeurIPS.cc/2025/Conference"
+        },
+        "confidence_score": 0.62,
+        "crawl_status": "metadata_candidate",
+        "created_at": "2026-06-15T10:11:20+00:00",
+        "entered_at": "2026-06-15T10:11:20+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T12:06:48+00:00",
+        "metrics": [],
+        "model_mode": "metadata",
+        "model_name": "metadata",
+        "paper_link": "https://openreview.net/forum?id=RxWILaXuhb",
+        "performance": [],
+        "priority_reason": "venue/recency/topic/citation/oral / target=NeurIPS 2025",
+        "priority_score": 0.875,
+        "provider": "metadata",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "1776754794395",
+        "source_urls": [
+          "https://openreview.net/forum?id=RxWILaXuhb"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "target_venue": "NeurIPS",
+        "target_year": 2025,
+        "title": "Time-o1: Time-Series Forecasting Needs Transformed Label Alignment",
+        "updated_at": "2026-06-15T12:07:37+00:00",
+        "url_or_doi": "https://openreview.net/forum?id=RxWILaXuhb",
+        "validation_level": "L1",
+        "variants": {
+          "VER-7CCE48D09219": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-15T10:11:20+00:00",
+            "extracted_at": "2026-06-15T12:06:48+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Training time-series forecasting models poses unique challenges in loss function design. Most existing approaches adopt temporal mean squared error, but this study reveals two critical limitations: (1) it ignores the presence of label autocorrelation, which biases it from the true label sequence likelihood; (2) it involves excessive number of tasks, which complicates optimization, especially for long-term forecasting. To address these issues, we introduce Time-o1, a transform-enhanced loss function for time-series forecasting. The central idea is to transform the label sequence into decorrelated components with discriminated significance. Models are then trained to align the most significant components, thereby effectively mitigating label autocorrelation and reducing task amount. Experiments demonstrate that Time-o1 achieves state-of-the-art performance and is compatible with various...",
+              "authors": [
+                "Hao Wang",
+                "Licheng Pan",
+                "Zhichao Chen",
+                "Xu Chen",
+                "Qingyang Dai",
+                "Lei Wang",
+                "Haoxuan Li",
+                "Zhouchen Lin"
+              ],
+              "benchmarks": [],
+              "cloud_crawl_query": "OpenReview NeurIPS.cc/2025/Conference",
+              "cloud_local_origin": "cloud_crawl",
+              "cloud_sync_status": "unsynced",
+              "community_signals": {
+                "keywords": [
+                  "Time-Series",
+                  "Label Autocorrelation",
+                  "Orthogonalization"
+                ],
+                "source": "openreview",
+                "venueid": "NeurIPS.cc/2025/Conference"
+              },
+              "crawl_status": "metadata_candidate",
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "https://openreview.net/forum?id=RxWILaXuhb",
+              "performance": [],
+              "priority_reason": "venue/recency/topic/citation/oral / target=NeurIPS 2025",
+              "priority_score": 0.875,
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "1776754794395",
+              "source_urls": [
+                "https://openreview.net/forum?id=RxWILaXuhb"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "target_venue": "NeurIPS",
+              "target_year": 2025,
+              "title": "Time-o1: Time-Series Forecasting Needs Transformed Label Alignment",
+              "url_or_doi": "https://openreview.net/forum?id=RxWILaXuhb",
+              "validation_level": "L1",
+              "venue_or_source": "NeurIPS",
+              "year": 2025
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "https://openreview.net/forum?id=RxWILaXuhb"
+            ],
+            "version_id": "VER-7CCE48D09219"
+          }
+        },
+        "venue_or_source": "NeurIPS",
+        "work_id": "W-1E6FE6A6C74C",
+        "year": 2025
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "openreview",
+      "source_record_id": "W-1E6FE6A6C74C",
+      "source_updated_at": "1776754794395",
+      "title": "Time-o1: Time-Series Forecasting Needs Transformed Label Alignment",
+      "title_hash": "89e5910f9283554f",
+      "work_id": "W-7F29FB9798FF",
+      "work_version_id": "WV-C8116DFB2DAB"
+    },
+    {
+      "abstract": "We consider the problem of estimating (diagonally dominant) M-matrices as precision matrices in Gaussian graphical models. Such models have shown interesting properties, e.g., the maximum likelihood estimator exists with as little as two observations in the case of M-matrices, and exists even with one observation in the case of diagonally dominant M-matrices. We propose an adaptive multiple-stage estimation method, which refines the estimate by solving a weighted $\\ell_1$-regularized problem in each stage. We further design a unified framework based on gradient projection method to solve the regularized problem, equipped with different projections to handle the constraints of M-matrices and diagonally dominant M-matrices. Theoretical analysis of the estimation error is established. The proposed method outperforms state-of-the-art methods in estimating precision matrices and identifyin...",
+      "abstract_hash": "038f94a196279743",
+      "content_hash": "0cd4c5169f7dd079",
+      "created_at": "2026-06-15T12:09:05+00:00",
+      "metadata": {
+        "abstract": "We consider the problem of estimating (diagonally dominant) M-matrices as precision matrices in Gaussian graphical models. Such models have shown interesting properties, e.g., the maximum likelihood estimator exists with as little as two observations in the case of M-matrices, and exists even with one observation in the case of diagonally dominant M-matrices. We propose an adaptive multiple-stage estimation method, which refines the estimate by solving a weighted $\\ell_1$-regularized problem in each stage. We further design a unified framework based on gradient projection method to solve the regularized problem, equipped with different projections to handle the constraints of M-matrices and diagonally dominant M-matrices. Theoretical analysis of the estimation error is established. The proposed method outperforms state-of-the-art methods in estimating precision matrices and identifyin...",
+        "active_version_id": "VER-E1E78CAD92C7",
+        "authors": [
+          "Jiaxi Ying",
+          "José Vinícius De Miranda Cardoso",
+          "Daniel P. Palomar"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-0E76E343239F",
+        "canonical_key": "adaptive estimation of graphical models under total positivity",
+        "cloud_crawl_query": "OpenReview ICML.cc/2023/Conference",
+        "cloud_local_origin": "cloud_crawl",
+        "cloud_lookup_checked_at": "2026-06-15T10:17:33+00:00",
+        "cloud_lookup_decision": "not_in_cloud",
+        "cloud_research_by_model": {
+          "all:All LLMs:all:principia-work-extract-v1:principia-cloud-1.1:work_concepts": {
+            "message": "Queued for cloud-page research.",
+            "model_key": "all:All LLMs:all:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+            "model_mode": "all",
+            "run_id": "V1CLOUDCRAWL-1781525208519",
+            "state": "queued",
+            "updated_at": "2026-06-15T12:06:48+00:00"
+          },
+          "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts": {
+            "cloud_required_counts": {
+              "existed_ideas": 0,
+              "principle_or_existed_idea": 1,
+              "principles": 2
+            },
+            "cloud_required_missing": [],
+            "cloud_research_index": 10,
+            "cloud_research_total": 12,
+            "completed_at": "2026-06-15T12:08:28+00:00",
+            "message": "Extraction complete and ready to sync.",
+            "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+            "model_mode": "qwen_397b",
+            "run_id": "V1CLOUDCRAWL-1781525208519",
+            "started_at": "2026-06-15T12:07:21+00:00",
+            "state": "ready",
+            "updated_at": "2026-06-15T12:08:28+00:00"
+          }
+        },
+        "cloud_research_completed_at": "2026-06-15T12:08:28+00:00",
+        "cloud_research_message": "Extraction complete and ready to sync.",
+        "cloud_research_model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+        "cloud_research_run_id": "V1CLOUDCRAWL-1781525208519",
+        "cloud_research_started_at": "2026-06-15T12:07:21+00:00",
+        "cloud_research_state": "ready",
+        "cloud_research_updated_at": "2026-06-15T12:08:28+00:00",
+        "cloud_sync_status": "unsynced",
+        "cloud_task_completed_at": "2026-06-15T12:08:28+00:00",
+        "cloud_task_message": "Extraction complete and ready to sync.",
+        "cloud_task_model_mode": "qwen_397b",
+        "cloud_task_run_id": "V1CLOUDCRAWL-1781525208519",
+        "cloud_task_started_at": "2026-06-15T12:07:21+00:00",
+        "cloud_task_state": "done",
+        "cloud_task_updated_at": "2026-06-15T12:08:28+00:00",
+        "community_signals": {
+          "keywords": [],
+          "source": "openreview",
+          "venueid": "ICML.cc/2023/Conference"
+        },
+        "confidence_score": 0.62,
+        "crawl_status": "metadata_candidate",
+        "created_at": "2026-06-15T10:17:33+00:00",
+        "entered_at": "2026-06-15T10:17:33+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T12:06:48+00:00",
+        "metrics": [],
+        "model_mode": "metadata",
+        "model_name": "metadata",
+        "paper_link": "https://openreview.net/forum?id=USiX9gmGRx",
+        "performance": [],
+        "priority_reason": "venue/recency/topic/citation/oral / target=ICML 2023",
+        "priority_score": 0.771,
+        "provider": "metadata",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "1686841490893",
+        "source_urls": [
+          "https://openreview.net/forum?id=USiX9gmGRx"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "target_venue": "ICML",
+        "target_year": 2023,
+        "title": "Adaptive Estimation of Graphical Models under Total Positivity",
+        "updated_at": "2026-06-15T12:08:28+00:00",
+        "url_or_doi": "https://openreview.net/forum?id=USiX9gmGRx",
+        "validation_level": "L1",
+        "variants": {
+          "VER-E1E78CAD92C7": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-15T10:17:33+00:00",
+            "extracted_at": "2026-06-15T12:06:48+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "We consider the problem of estimating (diagonally dominant) M-matrices as precision matrices in Gaussian graphical models. Such models have shown interesting properties, e.g., the maximum likelihood estimator exists with as little as two observations in the case of M-matrices, and exists even with one observation in the case of diagonally dominant M-matrices. We propose an adaptive multiple-stage estimation method, which refines the estimate by solving a weighted $\\ell_1$-regularized problem in each stage. We further design a unified framework based on gradient projection method to solve the regularized problem, equipped with different projections to handle the constraints of M-matrices and diagonally dominant M-matrices. Theoretical analysis of the estimation error is established. The proposed method outperforms state-of-the-art methods in estimating precision matrices and identifyin...",
+              "authors": [
+                "Jiaxi Ying",
+                "José Vinícius De Miranda Cardoso",
+                "Daniel P. Palomar"
+              ],
+              "benchmarks": [],
+              "cloud_crawl_query": "OpenReview ICML.cc/2023/Conference",
+              "cloud_local_origin": "cloud_crawl",
+              "cloud_sync_status": "unsynced",
+              "community_signals": {
+                "keywords": [],
+                "source": "openreview",
+                "venueid": "ICML.cc/2023/Conference"
+              },
+              "crawl_status": "metadata_candidate",
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "https://openreview.net/forum?id=USiX9gmGRx",
+              "performance": [],
+              "priority_reason": "venue/recency/topic/citation/oral / target=ICML 2023",
+              "priority_score": 0.771,
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "1686841490893",
+              "source_urls": [
+                "https://openreview.net/forum?id=USiX9gmGRx"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "target_venue": "ICML",
+              "target_year": 2023,
+              "title": "Adaptive Estimation of Graphical Models under Total Positivity",
+              "url_or_doi": "https://openreview.net/forum?id=USiX9gmGRx",
+              "validation_level": "L1",
+              "venue_or_source": "ICML",
+              "year": 2023
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "https://openreview.net/forum?id=USiX9gmGRx"
+            ],
+            "version_id": "VER-E1E78CAD92C7"
+          }
+        },
+        "venue_or_source": "ICML",
+        "work_id": "W-0E76E343239F",
+        "year": 2023
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "openreview",
+      "source_record_id": "W-0E76E343239F",
+      "source_updated_at": "1686841490893",
+      "title": "Adaptive Estimation of Graphical Models under Total Positivity",
+      "title_hash": "e9bc56811741976c",
+      "work_id": "W-932AE0D6CAA1",
+      "work_version_id": "WV-2A54C08486F0"
+    },
+    {
+      "abstract": "Large language models are becoming general knowledge engines for diverse applications. However, their computations are deeply entangled after training, resisting modularization which complicates interpretability, auditing, and long-term maintenance. We introduce Jet Expansions, a framework for expanding computational graphs using jet operators that generalize truncated Taylor series. Our method systematically decomposes language models into explicit input-to-output computational paths and complementary remainders. This functional decomposition provides a principled, knife-like operator for cutting through entanglement in LLMs, enabling scalable model inspection. We demonstrate how Jet Expansions ground and subsume the popular interpretability technique Logit Lens, reveal a (super-)exponential path structure with respect to recursive residual depth, and support several interpretability...",
+      "abstract_hash": "7fb729ab3ed3d0ab",
+      "content_hash": "9bfca3a2d5d7cb48",
+      "created_at": "2026-06-15T12:09:05+00:00",
+      "metadata": {
+        "abstract": "Large language models are becoming general knowledge engines for diverse applications. However, their computations are deeply entangled after training, resisting modularization which complicates interpretability, auditing, and long-term maintenance. We introduce Jet Expansions, a framework for expanding computational graphs using jet operators that generalize truncated Taylor series. Our method systematically decomposes language models into explicit input-to-output computational paths and complementary remainders. This functional decomposition provides a principled, knife-like operator for cutting through entanglement in LLMs, enabling scalable model inspection. We demonstrate how Jet Expansions ground and subsume the popular interpretability technique Logit Lens, reveal a (super-)exponential path structure with respect to recursive residual depth, and support several interpretability...",
+        "active_version_id": "VER-34005DE4A399",
+        "authors": [
+          "Yihong Chen",
+          "Xiangxiang Xu",
+          "Pontus Stenetorp",
+          "Sebastian Riedel",
+          "Luca Franceschi"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-A9F59C07FF82",
+        "canonical_key": "decomposing llm computation with jets",
+        "cloud_crawl_query": "OpenReview ICLR.cc/2026/Conference",
+        "cloud_local_origin": "cloud_crawl",
+        "cloud_lookup_checked_at": "2026-06-15T10:11:19+00:00",
+        "cloud_lookup_decision": "not_in_cloud",
+        "cloud_research_by_model": {
+          "all:All LLMs:all:principia-work-extract-v1:principia-cloud-1.1:work_concepts": {
+            "message": "Queued for cloud-page research.",
+            "model_key": "all:All LLMs:all:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+            "model_mode": "all",
+            "run_id": "V1CLOUDCRAWL-1781525208519",
+            "state": "queued",
+            "updated_at": "2026-06-15T12:06:48+00:00"
+          },
+          "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts": {
+            "cloud_required_counts": {
+              "existed_ideas": 1,
+              "principle_or_existed_idea": 1,
+              "principles": 1
+            },
+            "cloud_required_missing": [],
+            "cloud_research_index": 1,
+            "cloud_research_total": 12,
+            "completed_at": "2026-06-15T12:07:56+00:00",
+            "message": "Extraction complete and ready to sync.",
+            "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+            "model_mode": "qwen_397b",
+            "run_id": "V1CLOUDCRAWL-1781525208519",
+            "started_at": "2026-06-15T12:06:49+00:00",
+            "state": "ready",
+            "updated_at": "2026-06-15T12:07:56+00:00"
+          }
+        },
+        "cloud_research_completed_at": "2026-06-15T12:07:56+00:00",
+        "cloud_research_message": "Extraction complete and ready to sync.",
+        "cloud_research_model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+        "cloud_research_run_id": "V1CLOUDCRAWL-1781525208519",
+        "cloud_research_started_at": "2026-06-15T12:06:49+00:00",
+        "cloud_research_state": "ready",
+        "cloud_research_updated_at": "2026-06-15T12:07:56+00:00",
+        "cloud_sync_status": "unsynced",
+        "cloud_task_completed_at": "2026-06-15T12:07:56+00:00",
+        "cloud_task_message": "Extraction complete and ready to sync.",
+        "cloud_task_model_mode": "qwen_397b",
+        "cloud_task_run_id": "V1CLOUDCRAWL-1781525208519",
+        "cloud_task_started_at": "2026-06-15T12:06:49+00:00",
+        "cloud_task_state": "done",
+        "cloud_task_updated_at": "2026-06-15T12:07:56+00:00",
+        "community_signals": {
+          "keywords": [
+            "decomposition",
+            "transformer",
+            "neural-symbolic",
+            "n-grams",
+            "interpretability",
+            "controllability"
+          ],
+          "source": "openreview",
+          "venueid": "ICLR.cc/2026/Conference"
+        },
+        "confidence_score": 0.62,
+        "crawl_status": "metadata_candidate",
+        "created_at": "2026-06-15T10:11:19+00:00",
+        "entered_at": "2026-06-15T10:11:19+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-15T12:06:48+00:00",
+        "metrics": [],
+        "model_mode": "metadata",
+        "model_name": "metadata",
+        "paper_link": "https://openreview.net/forum?id=u6JLh0BO5h",
+        "performance": [],
+        "priority_reason": "venue/recency/topic/citation/oral / target=ICLR 2026",
+        "priority_score": 0.891,
+        "provider": "metadata",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "1775877388146",
+        "source_urls": [
+          "https://openreview.net/forum?id=u6JLh0BO5h"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "target_venue": "ICLR",
+        "target_year": 2026,
+        "title": "Decomposing LLM Computation with Jets",
+        "updated_at": "2026-06-15T12:07:56+00:00",
+        "url_or_doi": "https://openreview.net/forum?id=u6JLh0BO5h",
+        "validation_level": "L1",
+        "variants": {
+          "VER-34005DE4A399": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-15T10:11:19+00:00",
+            "extracted_at": "2026-06-15T12:06:48+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Large language models are becoming general knowledge engines for diverse applications. However, their computations are deeply entangled after training, resisting modularization which complicates interpretability, auditing, and long-term maintenance. We introduce Jet Expansions, a framework for expanding computational graphs using jet operators that generalize truncated Taylor series. Our method systematically decomposes language models into explicit input-to-output computational paths and complementary remainders. This functional decomposition provides a principled, knife-like operator for cutting through entanglement in LLMs, enabling scalable model inspection. We demonstrate how Jet Expansions ground and subsume the popular interpretability technique Logit Lens, reveal a (super-)exponential path structure with respect to recursive residual depth, and support several interpretability...",
+              "authors": [
+                "Yihong Chen",
+                "Xiangxiang Xu",
+                "Pontus Stenetorp",
+                "Sebastian Riedel",
+                "Luca Franceschi"
+              ],
+              "benchmarks": [],
+              "cloud_crawl_query": "OpenReview ICLR.cc/2026/Conference",
+              "cloud_local_origin": "cloud_crawl",
+              "cloud_sync_status": "unsynced",
+              "community_signals": {
+                "keywords": [
+                  "decomposition",
+                  "transformer",
+                  "neural-symbolic",
+                  "n-grams",
+                  "interpretability",
+                  "controllability"
+                ],
+                "source": "openreview",
+                "venueid": "ICLR.cc/2026/Conference"
+              },
+              "crawl_status": "metadata_candidate",
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "https://openreview.net/forum?id=u6JLh0BO5h",
+              "performance": [],
+              "priority_reason": "venue/recency/topic/citation/oral / target=ICLR 2026",
+              "priority_score": 0.891,
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "1775877388146",
+              "source_urls": [
+                "https://openreview.net/forum?id=u6JLh0BO5h"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "target_venue": "ICLR",
+              "target_year": 2026,
+              "title": "Decomposing LLM Computation with Jets",
+              "url_or_doi": "https://openreview.net/forum?id=u6JLh0BO5h",
+              "validation_level": "L1",
+              "venue_or_source": "ICLR",
+              "year": 2026
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "https://openreview.net/forum?id=u6JLh0BO5h"
+            ],
+            "version_id": "VER-34005DE4A399"
+          }
+        },
+        "venue_or_source": "ICLR",
+        "work_id": "W-A9F59C07FF82",
+        "year": 2026
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "openreview",
+      "source_record_id": "W-A9F59C07FF82",
+      "source_updated_at": "1775877388146",
+      "title": "Decomposing LLM Computation with Jets",
+      "title_hash": "18cdac5d34fb9656",
+      "work_id": "W-EEBA1131A5B3",
+      "work_version_id": "WV-A7EE48FFFE56"
+    }
+  ]
+}
