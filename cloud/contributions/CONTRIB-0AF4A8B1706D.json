@@ -1,0 +1,844 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "drop drop drop w 931a92b2cbd0",
+      "canonical_label": "DROP",
+      "concept_id": "B-8C7A7CE9928D",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-996666835726",
+        "benchmark_id": "B-AA20C3BF5ECA",
+        "benchmark_name": "DROP",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-AA20C3BF5ECA",
+        "canonical_key": "drop",
+        "cloud_origin": {
+          "cloud_model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+          "cloud_payload_sha256": "",
+          "cloud_record_id": "B-8C7A7CE9928D",
+          "cloud_snapshot_id": "SNAP-1E83647E23AF",
+          "cloud_updated_at": "2026-06-17T07:05:01+00:00"
+        },
+        "concept_id": "B-8C7A7CE9928D",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T06:19:09+00:00",
+        "data_form": "Paragraph-question-answer examples with numerical, counting, and span reasoning.",
+        "dataset": "DROP",
+        "description": "Reading comprehension benchmark requiring discrete reasoning over paragraphs.",
+        "entered_at": "2026-06-17T06:19:09+00:00",
+        "evidence": "{\"benchmark_id\": \"B-A832065A9092\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-C56999C6F34A\", \"task\": \"images limited scene views\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Tangent Images for Mitigating Spherical Distortion In this work...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:12:59+00:00",
+        "extractor": "deterministic",
+        "field_id": "PRJ-6929CAF58133",
+        "metric": "mAP",
+        "metrics": [
+          "accuracy",
+          "memory",
+          "RMSE",
+          "mAP",
+          "primary reported metric"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/ucinlp/drop",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "96K question-answer pairs.",
+        "source": "DROP / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/1912.09390v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2406.07155v3",
+          "http://arxiv.org/abs/2512.15790v1",
+          "http://arxiv.org/abs/2603.25111v2",
+          "http://arxiv.org/abs/2605.29560v1",
+          "http://arxiv.org/abs/1912.07414v5",
+          "http://arxiv.org/abs/1912.09390v3"
+        ],
+        "source_paper_title": "Tangent Images for Mitigating Spherical Distortion",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-85B4D165A6DF"
+        ],
+        "source_work_title": "Tangent Images for Mitigating Spherical Distortion",
+        "source_works": [
+          "W-85B4D165A6DF"
+        ],
+        "task": "images limited scene views",
+        "title": "DROP",
+        "updated_at": "2026-06-17T11:12:59+00:00",
+        "variants": {
+          "VER-996666835726": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T06:19:09+00:00",
+            "extracted_at": "2026-06-17T11:12:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "DROP",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Paragraph-question-answer examples with numerical, counting, and span reasoning.",
+              "dataset": "DROP",
+              "description": "Reading comprehension benchmark requiring discrete reasoning over paragraphs.",
+              "evidence": "{\"benchmark_id\": \"B-A832065A9092\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-C56999C6F34A\", \"task\": \"images limited scene views\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Tangent Images for Mitigating Spherical Distortion In this work...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "mAP",
+              "metrics": [
+                "accuracy",
+                "memory",
+                "RMSE",
+                "mAP",
+                "primary reported metric"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/ucinlp/drop",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "96K question-answer pairs.",
+              "source": "DROP / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/1912.09390v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2406.07155v3",
+                "http://arxiv.org/abs/2512.15790v1",
+                "http://arxiv.org/abs/2603.25111v2",
+                "http://arxiv.org/abs/2605.29560v1",
+                "http://arxiv.org/abs/1912.07414v5",
+                "http://arxiv.org/abs/1912.09390v3"
+              ],
+              "source_paper_title": "Tangent Images for Mitigating Spherical Distortion",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-565BC95507DC",
+                "W-BE9F6B5E1FE3",
+                "W-0CB6DC2F0457",
+                "W-3DF3D42A24FD",
+                "W-A99D60F4394C",
+                "W-C56999C6F34A"
+              ],
+              "source_work_title": "Tangent Images for Mitigating Spherical Distortion",
+              "source_works": [],
+              "task": "images limited scene views",
+              "venue_or_source": "CVPR 2020",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1912.09390v3",
+              "https://huggingface.co/datasets/ucinlp/drop"
+            ],
+            "version_id": "VER-996666835726"
+          }
+        },
+        "venue_or_source": "CVPR 2020",
+        "year": 2019
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-85B4D165A6DF"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:04:54+00:00",
+        "updated_at": "2026-06-17T11:24:23+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-866AEC3D9A9E",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "mnist mnist mnist w 85b4d165a6df",
+      "canonical_label": "MNIST",
+      "concept_id": "B-C77D3D8F0A9E",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-B6882D5D1D19",
+        "benchmark_id": "B-9ED47AECD43A",
+        "benchmark_name": "MNIST",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-9ED47AECD43A",
+        "canonical_key": "mnist",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T09:35:22+00:00",
+        "data_form": "Grayscale handwritten digit images with digit labels.",
+        "dataset": "MNIST",
+        "description": "Handwritten digit classification benchmark.",
+        "entered_at": "2026-06-17T09:35:22+00:00",
+        "evidence": "{\"benchmark_id\": \"B-8C20FF64D9C6\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-F14A5EBB0EC4\", \"task\": \"images limited scene views\", \"dataset\": \"MNIST\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"A survey on Image Data Augmentation for Deep Learning Deep c...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:15:47+00:00",
+        "extractor": "deterministic",
+        "metric": "memory",
+        "metrics": [
+          "accuracy",
+          "mAP",
+          "memory"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "http://yann.lecun.com/exdb/mnist/",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "70K images across 10 digit classes.",
+        "source": "Yann LeCun / NYU",
+        "source_paper_link": "https://doi.org/10.1186/s40537-019-0197-0",
+        "source_paper_links": [
+          "https://doi.org/10.21203/rs.3.rs-7400540/v1",
+          "http://arxiv.org/abs/1912.09390v3",
+          "https://doi.org/10.1186/s40537-019-0197-0"
+        ],
+        "source_paper_title": "A survey on Image Data Augmentation for Deep Learning",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-85B4D165A6DF"
+        ],
+        "source_work_title": "A survey on Image Data Augmentation for Deep Learning",
+        "source_works": [
+          "W-85B4D165A6DF"
+        ],
+        "task": "images limited scene views",
+        "updated_at": "2026-06-17T11:15:47+00:00",
+        "variants": {
+          "VER-B6882D5D1D19": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T09:35:22+00:00",
+            "extracted_at": "2026-06-17T11:15:47+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "MNIST",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Grayscale handwritten digit images with digit labels.",
+              "dataset": "MNIST",
+              "description": "Handwritten digit classification benchmark.",
+              "evidence": "{\"benchmark_id\": \"B-8C20FF64D9C6\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-F14A5EBB0EC4\", \"task\": \"images limited scene views\", \"dataset\": \"MNIST\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"A survey on Image Data Augmentation for Deep Learning Deep c...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "memory",
+              "metrics": [
+                "accuracy",
+                "mAP",
+                "memory"
+              ],
+              "needs_review": false,
+              "official_url": "http://yann.lecun.com/exdb/mnist/",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "70K images across 10 digit classes.",
+              "source": "Yann LeCun / NYU",
+              "source_paper_link": "https://doi.org/10.1186/s40537-019-0197-0",
+              "source_paper_links": [
+                "https://doi.org/10.21203/rs.3.rs-7400540/v1",
+                "http://arxiv.org/abs/1912.09390v3",
+                "https://doi.org/10.1186/s40537-019-0197-0"
+              ],
+              "source_paper_title": "A survey on Image Data Augmentation for Deep Learning",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-5BEC5EC25AE4",
+                "W-C56999C6F34A",
+                "W-F14A5EBB0EC4"
+              ],
+              "source_work_title": "A survey on Image Data Augmentation for Deep Learning",
+              "source_works": [],
+              "task": "images limited scene views",
+              "venue_or_source": "Journal Of Big Data",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1186/s40537-019-0197-0",
+              "http://yann.lecun.com/exdb/mnist/"
+            ],
+            "version_id": "VER-B6882D5D1D19"
+          }
+        },
+        "venue_or_source": "Journal Of Big Data",
+        "year": 2019
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-85B4D165A6DF"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:24:24+00:00",
+        "updated_at": "2026-06-17T11:24:24+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-8751B2F6AE7D",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "decoupling manifold topology from signal resolution decoupling manifold topology from signal resolution effective processing of data on curved manifolds requires separating the discrete topological approximation of the geometry from the sampling density of the signal enabling the use of standard euc",
+      "canonical_label": "Decoupling Manifold Topology from Signal Resolution",
+      "concept_id": "P-727EE489640F",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "Effective processing of data on curved manifolds requires separating the discrete topological approximation of the geometry from the sampling density of the signal, enabling the use of standard Euclidean operators on locally planar projections while preserving global geometric consistency.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-985C20DA3571",
+        "argument": "Effective processing of data on curved manifolds requires separating the discrete topological approximation of the geometry from the sampling density of the signal, enabling the use of standard Euclidean operators on locally planar projections while preserving global geometric consistency.",
+        "benchmarks": [],
+        "boundary_conditions": [
+          "The method relies on the assumption that local regions of the sphere can be approximated as planar with minimal distortion within the bounds of each tangent grid. Performance may degrade if the subdivision level is too coarse relative to the curvature of features in the image, or if critical information spans across face boundaries where discontinuities occur."
+        ],
+        "canonical_id": "P-E709B81CB78E",
+        "canonical_key": "effective processing of data on curved manifolds requires separating discrete topological approximation of geometry from sampling density of signal enabling use of standard euclide",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T11:12:38+00:00",
+        "discussion": "The principle suggests that computational bottlenecks in non-Euclidean vision often arise from coupling operator definitions with mesh resolution. By isolating the topological structure from the sampling rate, one can leverage optimized planar image processing pipelines for curved domains. The approach is limited to manifolds that can be adequately approximated by planar patches with acceptable intra-patch distortion, which depends on the chosen subdivision level.",
+        "entered_at": "2026-06-17T11:12:38+00:00",
+        "evidence": "The text demonstrates that varying the resolution of tangent image grids independently of the icosahedron subdivision level allows the system to handle significantly higher spherical resolutions while benefiting from low-distortion approximations. This decoupling permits the use of standard CNNs without modifying their architecture for different resolution scales.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:12:59+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Decoupling Manifold Topology from Signal Resolution",
+        "performance": [],
+        "principle_id": "P-E709B81CB78E",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/1912.09390v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1912.09390v3"
+        ],
+        "source_paper_title": "Tangent Images for Mitigating Spherical Distortion",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-85B4D165A6DF"
+        ],
+        "source_work_title": "Tangent Images for Mitigating Spherical Distortion",
+        "source_works": [
+          "W-85B4D165A6DF"
+        ],
+        "updated_at": "2026-06-17T11:12:59+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-985C20DA3571": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T11:12:38+00:00",
+            "extracted_at": "2026-06-17T11:12:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "Effective processing of data on curved manifolds requires separating the discrete topological approximation of the geometry from the sampling density of the signal, enabling the use of standard Euclidean operators on locally planar projections while preserving global geometric consistency.",
+              "argument": "Effective processing of data on curved manifolds requires separating the discrete topological approximation of the geometry from the sampling density of the signal, enabling the use of standard Euclidean operators on locally planar projections while preserving global geometric consistency.",
+              "benchmarks": [],
+              "boundary_conditions": [
+                "The method relies on the assumption that local regions of the sphere can be approximated as planar with minimal distortion within the bounds of each tangent grid. Performance may degrade if the subdivision level is too coarse relative to the curvature of features in the image, or if critical information spans across face boundaries where discontinuities occur."
+              ],
+              "confidence_score": 0.68,
+              "discussion": "The principle suggests that computational bottlenecks in non-Euclidean vision often arise from coupling operator definitions with mesh resolution. By isolating the topological structure from the sampling rate, one can leverage optimized planar image processing pipelines for curved domains. The approach is limited to manifolds that can be adequately approximated by planar patches with acceptable intra-patch distortion, which depends on the chosen subdivision level.",
+              "evidence": "The text demonstrates that varying the resolution of tangent image grids independently of the icosahedron subdivision level allows the system to handle significantly higher spherical resolutions while benefiting from low-distortion approximations. This decoupling permits the use of standard CNNs without modifying their architecture for different resolution scales.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Decoupling Manifold Topology from Signal Resolution",
+              "performance": [],
+              "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+              "source_paper_link": "http://arxiv.org/abs/1912.09390v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1912.09390v3"
+              ],
+              "source_paper_title": "Tangent Images for Mitigating Spherical Distortion",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-C56999C6F34A"
+              ],
+              "source_work_title": "Tangent Images for Mitigating Spherical Distortion",
+              "source_works": [
+                "W-C56999C6F34A"
+              ],
+              "venue_or_source": "CVPR 2020",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1912.09390v3"
+            ],
+            "version_id": "VER-985C20DA3571"
+          }
+        },
+        "venue_or_source": "CVPR 2020",
+        "year": 2019
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-85B4D165A6DF"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:24:23+00:00",
+        "updated_at": "2026-06-17T11:24:23+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-FD6E7226ED25",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "enhanced sparse feature detection for slam enhanced sparse feature detection for slam using tangent images improves the quality of sparse feature detection on spherical images compared to direct processing of equirectangular or raw icosahedral projections w 85b4d165a6df",
+      "canonical_label": "Enhanced Sparse Feature Detection for SLAM",
+      "concept_id": "TM-4DA9B3648AF6",
+      "concept_type": "takeaway_message",
+      "payload": {
+        "active_version_id": "VER-DE75E2E0204E",
+        "benchmarks": [],
+        "canonical_id": "TM-74219D482BAE",
+        "canonical_key": "using tangent images improves quality of sparse feature detection on spherical images compared to direct processing of equirectangular or raw icosahedral projections",
+        "condition": "The improvement is observed in scenarios requiring precise geometric consistency for feature matching across wide-field-of-view spherical inputs.",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T11:12:38+00:00",
+        "discussion": "Standard feature detectors assume locally planar geometry, an assumption violated by high-curvature regions in equirectangular projections. By decomposing the sphere into locally planar tangent grids, the method restores the geometric conditions under which detectors like SIFT or ORB operate optimally. This extends the utility of tangent images beyond deep learning dense prediction to classical geometry-based pipelines.",
+        "entered_at": "2026-06-17T11:12:38+00:00",
+        "evidence": "The abstract and introduction demonstrate that tangent images improve the quality of sparse feature detection on spherical images, illustrating usefulness for SfM and SLAM.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:12:59+00:00",
+        "extraction_method": "llm_extracted",
+        "finding": "Using tangent images improves the quality of sparse feature detection on spherical images compared to direct processing of equirectangular or raw icosahedral projections.",
+        "main_results": "Using tangent images improves the quality of sparse feature detection on spherical images compared to direct processing of equirectangular or raw icosahedral projections.",
+        "message_text": "Using tangent images improves the quality of sparse feature detection on spherical images compared to direct processing of equirectangular or raw icosahedral projections.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/1912.09390v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1912.09390v3"
+        ],
+        "source_paper_title": "Tangent Images for Mitigating Spherical Distortion",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-85B4D165A6DF"
+        ],
+        "source_work_title": "Tangent Images for Mitigating Spherical Distortion",
+        "source_works": [
+          "W-85B4D165A6DF"
+        ],
+        "title": "Enhanced Sparse Feature Detection for SLAM",
+        "updated_at": "2026-06-17T11:12:59+00:00",
+        "variants": {
+          "VER-DE75E2E0204E": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T11:12:38+00:00",
+            "extracted_at": "2026-06-17T11:12:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "condition": "The improvement is observed in scenarios requiring precise geometric consistency for feature matching across wide-field-of-view spherical inputs.",
+              "confidence_score": 0.7,
+              "discussion": "Standard feature detectors assume locally planar geometry, an assumption violated by high-curvature regions in equirectangular projections. By decomposing the sphere into locally planar tangent grids, the method restores the geometric conditions under which detectors like SIFT or ORB operate optimally. This extends the utility of tangent images beyond deep learning dense prediction to classical geometry-based pipelines.",
+              "evidence": "The abstract and introduction demonstrate that tangent images improve the quality of sparse feature detection on spherical images, illustrating usefulness for SfM and SLAM.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "finding": "Using tangent images improves the quality of sparse feature detection on spherical images compared to direct processing of equirectangular or raw icosahedral projections.",
+              "main_results": "Using tangent images improves the quality of sparse feature detection on spherical images compared to direct processing of equirectangular or raw icosahedral projections.",
+              "message_text": "Using tangent images improves the quality of sparse feature detection on spherical images compared to direct processing of equirectangular or raw icosahedral projections.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "http://arxiv.org/abs/1912.09390v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1912.09390v3"
+              ],
+              "source_paper_title": "Tangent Images for Mitigating Spherical Distortion",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-C56999C6F34A"
+              ],
+              "source_work_title": "Tangent Images for Mitigating Spherical Distortion",
+              "source_works": [],
+              "title": "Enhanced Sparse Feature Detection for SLAM",
+              "venue_or_source": "CVPR 2020",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1912.09390v3"
+            ],
+            "version_id": "VER-DE75E2E0204E"
+          }
+        },
+        "venue_or_source": "CVPR 2020",
+        "year": 2019
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-85B4D165A6DF"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:24:23+00:00",
+        "updated_at": "2026-06-17T11:24:23+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-49EB121426E3",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-0AF4A8B1706D",
+  "created_at": "2026-06-17T11:24:24+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "The text demonstrates that varying the resolution of tangent image grids independently of the icosahedron subdivision level allows the system to handle significantly higher spherical resolutions while benefiting from low-distortion approximations. This decoupling permits the use of standard CNNs without modifying their architecture for different resolution scales.",
+      "concept_id": "P-727EE489640F",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T11:24:23+00:00",
+      "evidence_id": "EV-DFD724AFAC4F",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text demonstrates that varying the resolution of tangent image grids independently of the icosahedron subdivision level allows the system to handle significantly higher spherical resolutions while benefiting from low-distortion approximations. This decoupling permits the use of standard CNNs without modifying their architecture for different resolution scales.",
+      "work_id": "W-85B4D165A6DF",
+      "work_version_id": "WV-A4E5B878B585"
+    },
+    {
+      "claim_text": "The abstract and introduction demonstrate that tangent images improve the quality of sparse feature detection on spherical images, illustrating usefulness for SfM and SLAM.",
+      "concept_id": "TM-4DA9B3648AF6",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T11:24:23+00:00",
+      "evidence_id": "EV-EA67856B567E",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The abstract and introduction demonstrate that tangent images improve the quality of sparse feature detection on spherical images, illustrating usefulness for SfM and SLAM.",
+      "work_id": "W-85B4D165A6DF",
+      "work_version_id": "WV-A4E5B878B585"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-A832065A9092\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-C56999C6F34A\", \"task\": \"images limited scene views\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Tangent Images for Mitigating Spherical Distortion In this work...",
+      "concept_id": "B-8C7A7CE9928D",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T11:24:23+00:00",
+      "evidence_id": "EV-FA1C8983FC2F",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-A832065A9092\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-C56999C6F34A\", \"task\": \"images limited scene views\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Tangent Images for Mitigating Spherical Distortion In this work...",
+      "work_id": "W-85B4D165A6DF",
+      "work_version_id": "WV-A4E5B878B585"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-8C20FF64D9C6\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-F14A5EBB0EC4\", \"task\": \"images limited scene views\", \"dataset\": \"MNIST\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"A survey on Image Data Augmentation for Deep Learning Deep c...",
+      "concept_id": "B-C77D3D8F0A9E",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T11:24:24+00:00",
+      "evidence_id": "EV-458CB806381B",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-8C20FF64D9C6\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-F14A5EBB0EC4\", \"task\": \"images limited scene views\", \"dataset\": \"MNIST\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"A survey on Image Data Augmentation for Deep Learning Deep c...",
+      "work_id": "W-85B4D165A6DF",
+      "work_version_id": "WV-A4E5B878B585"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-17T11:24:23+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-17T11:24:22+00:00",
+      "extraction_run_id": "XRUN-E7130351290F",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 3,
+        "existed_ideas": 0,
+        "principles": 1,
+        "takeaway_messages": 1,
+        "total": 5
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-85B4D165A6DF",
+      "work_version_id": "WV-A4E5B878B585"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "",
+    "secret_exposed_to_browser": false,
+    "warning": ""
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 0,
+        "principle": 1
+      },
+      "title": "Tangent Images for Mitigating Spherical Distortion",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-85B4D165A6DF"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "1912.09390",
+        "authors": [
+          "Marc Eder",
+          "Mykhailo Shvets",
+          "John Lim",
+          "Jan-Michael Frahm"
+        ],
+        "canonical_title": "Tangent Images for Mitigating Spherical Distortion",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "http://arxiv.org/abs/1912.09390v3"
+        ],
+        "title_hash": "1d12d827085a502c",
+        "title_norm": "tangent images for mitigating spherical distortion",
+        "venue_or_source": "CVPR 2020",
+        "year": 2019
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "2020-05-22T14:43:39Z",
+        "title_hash": "1d12d827085a502c"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:24:22+00:00",
+        "updated_at": "2026-06-17T11:24:22+00:00"
+      },
+      "work_id": "W-85B4D165A6DF"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": "In this work, we propose \"tangent images,\" a spherical image representation that facilitates transferable and scalable $360^\\circ$ computer vision. Inspired by techniques in cartography and computer graphics, we render a spherical image to a set of distortion-mitigated, locally-planar image grids tangent to a subdivided icosahedron. By varying the resolution of these grids independently of the subdivision level, we can effectively represent high resolution spherical images while still benefiting from the low-distortion icosahedral spherical approximation. We show that training standard convolutional neural networks on tangent images compares favorably to the many specialized spherical convolutional kernels that have been developed, while also scaling efficiently to handle significantly higher spherical resolutions. Furthermore, because our approach does not require specialized kernels, we show that we can transfer networks trained on perspective images to spherical data without fine-tuning and with limited performance drop-off. Finally, we demonstrate that tangent images can be used to improve the quality of sparse feature detection on spherical images, illustrating its usefulness for traditional computer vision tasks like structure-from-motion and SLAM.",
+      "abstract_hash": "60bf30865f6aef45",
+      "content_hash": "43f09ae27d0771da",
+      "created_at": "2026-06-17T11:24:22+00:00",
+      "metadata": {
+        "abstract": "In this work, we propose \"tangent images,\" a spherical image representation that facilitates transferable and scalable $360^\\circ$ computer vision. Inspired by techniques in cartography and computer graphics, we render a spherical image to a set of distortion-mitigated, locally-planar image grids tangent to a subdivided icosahedron. By varying the resolution of these grids independently of the subdivision level, we can effectively represent high resolution spherical images while still benefiting from the low-distortion icosahedral spherical approximation. We show that training standard convolutional neural networks on tangent images compares favorably to the many specialized spherical convolutional kernels that have been developed, while also scaling efficiently to handle significantly higher spherical resolutions. Furthermore, because our approach does not require specialized kernels, we show that we can transfer networks trained on perspective images to spherical data without fine-tuning and with limited performance drop-off. Finally, we demonstrate that tangent images can be used to improve the quality of sparse feature detection on spherical images, illustrating its usefulness for traditional computer vision tasks like structure-from-motion and SLAM.",
+        "active_version_id": "VER-125BE4DCB81C",
+        "authors": [
+          "Marc Eder",
+          "Mykhailo Shvets",
+          "John Lim",
+          "Jan-Michael Frahm"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-C56999C6F34A",
+        "canonical_key": "tangent images for mitigating spherical distortion",
+        "community_signals": {},
+        "confidence_score": 0.62,
+        "created_at": "2026-06-17T10:49:59+00:00",
+        "entered_at": "2026-06-17T11:11:58+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:12:59+00:00",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "paper_link": "http://arxiv.org/abs/1912.09390v3",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "2020-05-22T14:43:39Z",
+        "source_urls": [
+          "http://arxiv.org/abs/1912.09390v3"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "title": "Tangent Images for Mitigating Spherical Distortion",
+        "updated_at": "2026-06-17T11:12:59+00:00",
+        "url_or_doi": "http://arxiv.org/abs/1912.09390v3",
+        "validation_level": "L1",
+        "variants": {
+          "VER-125BE4DCB81C": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T11:11:58+00:00",
+            "extracted_at": "2026-06-17T11:12:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract": "In this work, we propose \"tangent images,\" a spherical image representation that facilitates transferable and scalable $360^\\circ$ computer vision. Inspired by techniques in cartography and computer graphics, we render a spherical image to a set of distortion-mitigated, locally-planar image grids tangent to a subdivided icosahedron. By varying the resolution of these grids independently of the subdivision level, we can effectively represent high resolution spherical images while still benefiting from the low-distortion icosahedral spherical approximation. We show that training standard convolutional neural networks on tangent images compares favorably to the many specialized spherical convolutional kernels that have been developed, while also scaling efficiently to handle significantly higher spherical resolutions. Furthermore, because our approach does not require specialized kernels, we show that we can transfer networks trained on perspective images to spherical data without fine-tuning and with limited performance drop-off. Finally, we demonstrate that tangent images can be used to improve the quality of sparse feature detection on spherical images, illustrating its usefulness for traditional computer vision tasks like structure-from-motion and SLAM.",
+              "authors": [
+                "Marc Eder",
+                "Mykhailo Shvets",
+                "John Lim",
+                "Jan-Michael Frahm"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/1912.09390v3",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2020-05-22T14:43:39Z",
+              "source_urls": [
+                "http://arxiv.org/abs/1912.09390v3"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Tangent Images for Mitigating Spherical Distortion",
+              "url_or_doi": "http://arxiv.org/abs/1912.09390v3",
+              "validation_level": "L1",
+              "venue_or_source": "CVPR 2020",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1912.09390v3"
+            ],
+            "version_id": "VER-125BE4DCB81C"
+          },
+          "VER-FDCAE3D312DB": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T10:49:59+00:00",
+            "extracted_at": "2026-06-17T10:49:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "In this work, we propose \"tangent images,\" a spherical image representation that facilitates transferable and scalable $360^\\circ$ computer vision. Inspired by techniques in cartography and computer graphics, we render a spherical image to a set of distortion-mitigated, locally-planar image grids tangent to a subdivided icosahedron. By varying the resolution of these grids independently of the subdivision level, we can effectively represent high resolution spherical images while still benefiting from the low-distortion icosahedral spherical approximation. We show that training standard convolutional neural networks on tangent images compares favorably to the many specialized spherical convolutional kernels that have been developed, while also scaling efficiently to handle significantly higher spherical resolutions. Furthermore, because our approach does not require specialized kernels, we show that we can transfer networks trained on perspective images to spherical data without fine-tuning and with limited performance drop-off. Finally, we demonstrate that tangent images can be used to improve the quality of sparse feature detection on spherical images, illustrating its usefulness for traditional computer vision tasks like structure-from-motion and SLAM.",
+              "authors": [
+                "Marc Eder",
+                "Mykhailo Shvets",
+                "John Lim",
+                "Jan-Michael Frahm"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/1912.09390v3",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2020-05-22T14:43:39Z",
+              "source_urls": [
+                "http://arxiv.org/abs/1912.09390v3"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Tangent Images for Mitigating Spherical Distortion",
+              "url_or_doi": "http://arxiv.org/abs/1912.09390v3",
+              "validation_level": "L1",
+              "venue_or_source": "CVPR 2020",
+              "year": 2019
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "http://arxiv.org/abs/1912.09390v3"
+            ],
+            "version_id": "VER-FDCAE3D312DB"
+          }
+        },
+        "venue_or_source": "CVPR 2020",
+        "work_id": "W-C56999C6F34A",
+        "year": 2019
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "",
+      "source_record_id": "W-C56999C6F34A",
+      "source_updated_at": "2020-05-22T14:43:39Z",
+      "title": "Tangent Images for Mitigating Spherical Distortion",
+      "title_hash": "1d12d827085a502c",
+      "work_id": "W-85B4D165A6DF",
+      "work_version_id": "WV-A4E5B878B585"
+    }
+  ]
+}
