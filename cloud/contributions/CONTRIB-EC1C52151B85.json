@@ -1,0 +1,824 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "coco coco coco w 043131cd412f",
+      "canonical_label": "COCO",
+      "concept_id": "B-BC33380F30BF",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-ED4A652823AC",
+        "benchmark_id": "B-09F836894FC1",
+        "benchmark_name": "COCO",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-09F836894FC1",
+        "canonical_key": "coco",
+        "confidence_score": 0.32,
+        "created_at": "2026-06-17T11:03:49+00:00",
+        "data_form": "Images with object annotations, segmentations, captions, and task-specific labels.",
+        "dataset": "COCO",
+        "description": "Large-scale image benchmark for detection, segmentation, captioning, and keypoints.",
+        "entered_at": "2026-06-17T11:03:49+00:00",
+        "evidence": "{\"benchmark_id\": \"B-18A3C7AD5F6D\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-0DE8919CF549\", \"task\": \"images limited scene views\", \"dataset\": \"COCO\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"SynthText3D: synthesizing scene text images from 3D...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:19:59+00:00",
+        "extractor": "deterministic",
+        "metric": "primary reported metric",
+        "metrics": [
+          "primary reported metric",
+          "Image generation quality",
+          "accuracy",
+          "mAP",
+          "memory",
+          "mAP (mean Average Precision)",
+          "AP50",
+          "AP75",
+          "PSNR",
+          "SSIM"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "official_url": "https://cocodataset.org/#download",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Hundreds of thousands of labeled images depending on split/task.",
+        "source": "COCO Consortium",
+        "source_paper_link": "https://doi.org/10.1007/s11432-019-2737-0",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1905.03743v1",
+          "http://arxiv.org/abs/1804.01622v1",
+          "https://doi.org/10.1038/s41598-023-42891-8",
+          "http://arxiv.org/abs/1912.07414v5",
+          "http://arxiv.org/abs/2106.11952v2",
+          "http://arxiv.org/abs/1812.10889v2",
+          "http://arxiv.org/abs/2203.13131v1",
+          "http://arxiv.org/abs/2408.14819v1",
+          "http://arxiv.org/abs/2310.14025v1",
+          "https://doi.org/10.1007/s11432-019-2737-0"
+        ],
+        "source_paper_title": "SynthText3D: synthesizing scene text images from 3D virtual worlds",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-043131CD412F"
+        ],
+        "source_work_title": "SynthText3D: synthesizing scene text images from 3D virtual worlds",
+        "source_works": [
+          "W-043131CD412F"
+        ],
+        "task": "images limited scene views",
+        "updated_at": "2026-06-17T11:19:59+00:00",
+        "variants": {
+          "VER-ED4A652823AC": {
+            "confidence_score": 0.32,
+            "entered_at": "2026-06-17T11:03:49+00:00",
+            "extracted_at": "2026-06-17T11:19:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "benchmark_name": "COCO",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.32,
+              "data_form": "Images with object annotations, segmentations, captions, and task-specific labels.",
+              "dataset": "COCO",
+              "description": "Large-scale image benchmark for detection, segmentation, captioning, and keypoints.",
+              "evidence": "{\"benchmark_id\": \"B-18A3C7AD5F6D\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-0DE8919CF549\", \"task\": \"images limited scene views\", \"dataset\": \"COCO\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"SynthText3D: synthesizing scene text images from 3D...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "primary reported metric",
+              "metrics": [
+                "primary reported metric",
+                "Image generation quality",
+                "accuracy",
+                "mAP",
+                "memory",
+                "mAP (mean Average Precision)",
+                "AP50",
+                "AP75",
+                "PSNR",
+                "SSIM"
+              ],
+              "needs_review": true,
+              "official_url": "https://cocodataset.org/#download",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Hundreds of thousands of labeled images depending on split/task.",
+              "source": "COCO Consortium",
+              "source_paper_link": "https://doi.org/10.1007/s11432-019-2737-0",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1905.03743v1",
+                "http://arxiv.org/abs/1804.01622v1",
+                "https://doi.org/10.1038/s41598-023-42891-8",
+                "http://arxiv.org/abs/1912.07414v5",
+                "http://arxiv.org/abs/2106.11952v2",
+                "http://arxiv.org/abs/1812.10889v2",
+                "http://arxiv.org/abs/2203.13131v1",
+                "http://arxiv.org/abs/2408.14819v1",
+                "http://arxiv.org/abs/2310.14025v1",
+                "https://doi.org/10.1007/s11432-019-2737-0"
+              ],
+              "source_paper_title": "SynthText3D: synthesizing scene text images from 3D virtual worlds",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7B546F57F4BE",
+                "W-C269F7BBBCB8",
+                "W-E115EFD50D53",
+                "W-A99D60F4394C",
+                "W-6E21A2CF36E4",
+                "W-7FDF3A887A50",
+                "W-F8566C0F53EF",
+                "W-A18A379D7254",
+                "W-26C8A88D0F20",
+                "W-0DE8919CF549"
+              ],
+              "source_work_title": "SynthText3D: synthesizing scene text images from 3D virtual worlds",
+              "source_works": [],
+              "task": "images limited scene views",
+              "venue_or_source": "Science China Information Sciences",
+              "year": 2020
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1007/s11432-019-2737-0",
+              "https://cocodataset.org/#download"
+            ],
+            "version_id": "VER-ED4A652823AC"
+          }
+        },
+        "venue_or_source": "Science China Information Sciences",
+        "year": 2020
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.32,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-043131CD412F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:24:35+00:00",
+        "updated_at": "2026-06-17T11:24:35+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-74CD8A41C767",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "contextual prominence over visual bias contextual prominence over visual bias successful retrieval in ambiguous scenarios requires the system to prioritize the specific semantic constraints of the target word over the general visual features of the context word to avoid selecting images that match w",
+      "canonical_label": "Contextual Prominence over Visual Bias",
+      "concept_id": "P-BF189F07CCA8",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "Successful retrieval in ambiguous scenarios requires the system to prioritize the specific semantic constraints of the target word over the general visual features of the context word to avoid selecting images that match the context but miss the specific entity.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-67923A454D1A",
+        "argument": "Successful retrieval in ambiguous scenarios requires the system to prioritize the specific semantic constraints of the target word over the general visual features of the context word to avoid selecting images that match the context but miss the specific entity.",
+        "benchmarks": [],
+        "boundary_conditions": [
+          "This principle is critical when the target word represents a rare concept not frequently seen in training data, increasing the probability of the model relying exclusively on the well-known context word."
+        ],
+        "canonical_id": "P-FE9B0AFAEB2B",
+        "canonical_key": "successful retrieval in ambiguous scenarios requires system to prioritize specific semantic constraints of target word over general visual features of context word to avoid selecti",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T11:16:29+00:00",
+        "discussion": "The principle highlights the danger of statistical dominance in training data where common context words (like 'tree') correlate strongly with generic visual features (grass, leaves), potentially drowning out the signal from rare or specific target words. The retrieval mechanism must be fine-grained and highly sensitive to the contextualization of the ambiguous target to counteract this bias.",
+        "entered_at": "2026-06-17T11:16:29+00:00",
+        "evidence": "The text notes that images containing flowers and green grass induce expected visual bias, and a successful system must ensure the context word 'tree' is prominent enough to resolve ambiguity without ignoring the 'andromeda' attribute, preventing the selection of images based solely on high probability of containing a tree.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:16:43+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Contextual Prominence over Visual Bias",
+        "performance": [],
+        "principle_id": "P-FE9B0AFAEB2B",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2310.14025v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2310.14025v1"
+        ],
+        "source_paper_title": "Large Language Models and Multimodal Retrieval for Visual Word Sense Disambiguation",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-043131CD412F"
+        ],
+        "source_work_title": "Large Language Models and Multimodal Retrieval for Visual Word Sense Disambiguation",
+        "source_works": [
+          "W-043131CD412F"
+        ],
+        "updated_at": "2026-06-17T11:16:43+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-67923A454D1A": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T11:16:29+00:00",
+            "extracted_at": "2026-06-17T11:16:43+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "Successful retrieval in ambiguous scenarios requires the system to prioritize the specific semantic constraints of the target word over the general visual features of the context word to avoid selecting images that match the context but miss the specific entity.",
+              "argument": "Successful retrieval in ambiguous scenarios requires the system to prioritize the specific semantic constraints of the target word over the general visual features of the context word to avoid selecting images that match the context but miss the specific entity.",
+              "benchmarks": [],
+              "boundary_conditions": [
+                "This principle is critical when the target word represents a rare concept not frequently seen in training data, increasing the probability of the model relying exclusively on the well-known context word."
+              ],
+              "confidence_score": 0.68,
+              "discussion": "The principle highlights the danger of statistical dominance in training data where common context words (like 'tree') correlate strongly with generic visual features (grass, leaves), potentially drowning out the signal from rare or specific target words. The retrieval mechanism must be fine-grained and highly sensitive to the contextualization of the ambiguous target to counteract this bias.",
+              "evidence": "The text notes that images containing flowers and green grass induce expected visual bias, and a successful system must ensure the context word 'tree' is prominent enough to resolve ambiguity without ignoring the 'andromeda' attribute, preventing the selection of images based solely on high probability of containing a tree.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Contextual Prominence over Visual Bias",
+              "performance": [],
+              "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+              "source_paper_link": "http://arxiv.org/abs/2310.14025v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2310.14025v1"
+              ],
+              "source_paper_title": "Large Language Models and Multimodal Retrieval for Visual Word Sense Disambiguation",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-26C8A88D0F20"
+              ],
+              "source_work_title": "Large Language Models and Multimodal Retrieval for Visual Word Sense Disambiguation",
+              "source_works": [
+                "W-26C8A88D0F20"
+              ],
+              "venue_or_source": "EMNLP 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2310.14025v1"
+            ],
+            "version_id": "VER-67923A454D1A"
+          }
+        },
+        "venue_or_source": "EMNLP 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-043131CD412F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:24:35+00:00",
+        "updated_at": "2026-06-17T11:24:35+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-6960FCC7CA82",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "llms mitigate rarity induced randomness llms mitigate rarity induced randomness integrating large language models as knowledge bases significantly improves retrieval accuracy for ambiguous words that are rare or absent from the retrieval model s training vocabulary w 043131cd412f",
+      "canonical_label": "LLMs Mitigate Rarity-Induced Randomness",
+      "concept_id": "TM-41DD830FD2ED",
+      "concept_type": "takeaway_message",
+      "payload": {
+        "active_version_id": "VER-703308766515",
+        "benchmarks": [],
+        "canonical_id": "TM-426A1BD51E5A",
+        "canonical_key": "integrating large language models as knowledge bases significantly improves retrieval accuracy for ambiguous words are rare or absent from retrieval model s training vocabulary",
+        "condition": "Applicable when the target word vocabulary contains rare concepts or when the retrieval module has not been exposed to specific ambiguous terms during training.",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T11:16:29+00:00",
+        "discussion": "The rarity of concepts in the target word vocabulary increases the probability of the model ignoring the target attribute. LLMs provide a mechanism to inject external knowledge, effectively expanding the model's understanding beyond its training distribution and reducing randomness in selection.",
+        "entered_at": "2026-06-17T11:16:29+00:00",
+        "evidence": "The text explains that if a retrieval model has never been trained on the ambiguous word, the rarity of concepts increases the probability of exclusively relying on the well-known context word, resulting in significant randomness, which the LLM approach addresses.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:16:43+00:00",
+        "extraction_method": "llm_extracted",
+        "finding": "Integrating Large Language Models as knowledge bases significantly improves retrieval accuracy for ambiguous words that are rare or absent from the retrieval model's training vocabulary.",
+        "main_results": "Integrating Large Language Models as knowledge bases significantly improves retrieval accuracy for ambiguous words that are rare or absent from the retrieval model's training vocabulary.",
+        "message_text": "Integrating Large Language Models as knowledge bases significantly improves retrieval accuracy for ambiguous words that are rare or absent from the retrieval model's training vocabulary.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2310.14025v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2310.14025v1"
+        ],
+        "source_paper_title": "Large Language Models and Multimodal Retrieval for Visual Word Sense Disambiguation",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-043131CD412F"
+        ],
+        "source_work_title": "Large Language Models and Multimodal Retrieval for Visual Word Sense Disambiguation",
+        "source_works": [
+          "W-043131CD412F"
+        ],
+        "title": "LLMs Mitigate Rarity-Induced Randomness",
+        "updated_at": "2026-06-17T11:16:43+00:00",
+        "variants": {
+          "VER-703308766515": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T11:16:29+00:00",
+            "extracted_at": "2026-06-17T11:16:43+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "condition": "Applicable when the target word vocabulary contains rare concepts or when the retrieval module has not been exposed to specific ambiguous terms during training.",
+              "confidence_score": 0.7,
+              "discussion": "The rarity of concepts in the target word vocabulary increases the probability of the model ignoring the target attribute. LLMs provide a mechanism to inject external knowledge, effectively expanding the model's understanding beyond its training distribution and reducing randomness in selection.",
+              "evidence": "The text explains that if a retrieval model has never been trained on the ambiguous word, the rarity of concepts increases the probability of exclusively relying on the well-known context word, resulting in significant randomness, which the LLM approach addresses.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "finding": "Integrating Large Language Models as knowledge bases significantly improves retrieval accuracy for ambiguous words that are rare or absent from the retrieval model's training vocabulary.",
+              "main_results": "Integrating Large Language Models as knowledge bases significantly improves retrieval accuracy for ambiguous words that are rare or absent from the retrieval model's training vocabulary.",
+              "message_text": "Integrating Large Language Models as knowledge bases significantly improves retrieval accuracy for ambiguous words that are rare or absent from the retrieval model's training vocabulary.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "http://arxiv.org/abs/2310.14025v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2310.14025v1"
+              ],
+              "source_paper_title": "Large Language Models and Multimodal Retrieval for Visual Word Sense Disambiguation",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-26C8A88D0F20"
+              ],
+              "source_work_title": "Large Language Models and Multimodal Retrieval for Visual Word Sense Disambiguation",
+              "source_works": [],
+              "title": "LLMs Mitigate Rarity-Induced Randomness",
+              "venue_or_source": "EMNLP 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2310.14025v1"
+            ],
+            "version_id": "VER-703308766515"
+          }
+        },
+        "venue_or_source": "EMNLP 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-043131CD412F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:24:35+00:00",
+        "updated_at": "2026-06-17T11:24:35+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-A260119C851D",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "learn to rank fusion of multimodal and unimodal modules learn to rank fusion of multimodal and unimodal modules a learn to rank ltr model serves as a meta learner to optimally combine heterogeneous retrieval signals from multimodal transformers unimodal text to text conversions and image to image co",
+      "canonical_label": "Learn-to-Rank Fusion of Multimodal and Unimodal Modules",
+      "concept_id": "XI-1FBCBEACACF8",
+      "concept_type": "existed_idea",
+      "payload": {
+        "active_version_id": "VER-64EEB9BDFDEC",
+        "benchmarks": [],
+        "canonical_id": "XI-78B9846B71AB",
+        "canonical_key": "learn to rank ltr model serves as meta learner to optimally combine heterogeneous retrieval signals from multimodal transformers unimodal text to text conversions and image to imag",
+        "confidence_score": 0.72,
+        "core_idea": "A Learn-to-Rank (LTR) model serves as a meta-learner to optimally combine heterogeneous retrieval signals from multimodal transformers, unimodal text-to-text conversions, and image-to-image comparisons. This fusion architecture aggregates diverse evidence types to achieve competitive ranking performance that exceeds individual module capabilities.",
+        "created_at": "2026-06-17T11:16:29+00:00",
+        "discussion": "By training a dedicated ranking model, the work moves beyond simple averaging or heuristic selection, enabling a data-driven optimization of how different evidence sources contribute to the final decision. This is particularly valuable in complex disambiguation tasks where no single modality consistently dominates; for instance, text enrichment may resolve semantic ambiguity while image similarity confirms visual plausibility. The resulting system demonstrates that combining diverse architectural perspectives yields more robust and competitive results than isolated implementations.",
+        "entered_at": "2026-06-17T11:16:29+00:00",
+        "evidence": "The text describes training a learn to rank (LTR) model in order to combine different modules, achieving competitive ranking results after exploring transformer-based methods, unimodal conversions, and LLM-based knowledge enhancement.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:16:43+00:00",
+        "extraction_method": "llm_extracted",
+        "idea_text": "A Learn-to-Rank (LTR) model serves as a meta-learner to optimally combine heterogeneous retrieval signals from multimodal transformers, unimodal text-to-text conversions, and image-to-image comparisons. This fusion architecture aggregates diverse evidence types to achieve competitive ranking performance that exceeds individual module capabilities.",
+        "mechanism": "Individual modules process the input data according to their specific paradigms—some converting the problem to unimodal tasks while others perform direct cross-modal matching—and output relevance scores for candidate images. The Learn-to-Rank model takes these scores as features and trains on ground truth labels to predict the final ranking order. This mechanism effectively synthesizes the implicit knowledge captured by Chain-of-Thought prompting and the explicit visual-textual alignments from transformer models.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2310.14025v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2310.14025v1"
+        ],
+        "source_paper_title": "Large Language Models and Multimodal Retrieval for Visual Word Sense Disambiguation",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-043131CD412F"
+        ],
+        "source_work_title": "Large Language Models and Multimodal Retrieval for Visual Word Sense Disambiguation",
+        "source_works": [
+          "W-043131CD412F"
+        ],
+        "summary": "A Learn-to-Rank (LTR) model serves as a meta-learner to optimally combine heterogeneous retrieval signals from multimodal transformers, unimodal text-to-text conversions, and image-to-image comparisons. This fusion architecture aggregate...",
+        "title": "Learn-to-Rank Fusion of Multimodal and Unimodal Modules",
+        "updated_at": "2026-06-17T11:16:43+00:00",
+        "variants": {
+          "VER-64EEB9BDFDEC": {
+            "confidence_score": 0.72,
+            "entered_at": "2026-06-17T11:16:29+00:00",
+            "extracted_at": "2026-06-17T11:16:43+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "confidence_score": 0.72,
+              "core_idea": "A Learn-to-Rank (LTR) model serves as a meta-learner to optimally combine heterogeneous retrieval signals from multimodal transformers, unimodal text-to-text conversions, and image-to-image comparisons. This fusion architecture aggregates diverse evidence types to achieve competitive ranking performance that exceeds individual module capabilities.",
+              "discussion": "By training a dedicated ranking model, the work moves beyond simple averaging or heuristic selection, enabling a data-driven optimization of how different evidence sources contribute to the final decision. This is particularly valuable in complex disambiguation tasks where no single modality consistently dominates; for instance, text enrichment may resolve semantic ambiguity while image similarity confirms visual plausibility. The resulting system demonstrates that combining diverse architectural perspectives yields more robust and competitive results than isolated implementations.",
+              "evidence": "The text describes training a learn to rank (LTR) model in order to combine different modules, achieving competitive ranking results after exploring transformer-based methods, unimodal conversions, and LLM-based knowledge enhancement.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "idea_text": "A Learn-to-Rank (LTR) model serves as a meta-learner to optimally combine heterogeneous retrieval signals from multimodal transformers, unimodal text-to-text conversions, and image-to-image comparisons. This fusion architecture aggregates diverse evidence types to achieve competitive ranking performance that exceeds individual module capabilities.",
+              "mechanism": "Individual modules process the input data according to their specific paradigms—some converting the problem to unimodal tasks while others perform direct cross-modal matching—and output relevance scores for candidate images. The Learn-to-Rank model takes these scores as features and trains on ground truth labels to predict the final ranking order. This mechanism effectively synthesizes the implicit knowledge captured by Chain-of-Thought prompting and the explicit visual-textual alignments from transformer models.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "http://arxiv.org/abs/2310.14025v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2310.14025v1"
+              ],
+              "source_paper_title": "Large Language Models and Multimodal Retrieval for Visual Word Sense Disambiguation",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-26C8A88D0F20"
+              ],
+              "source_work_title": "Large Language Models and Multimodal Retrieval for Visual Word Sense Disambiguation",
+              "source_works": [],
+              "summary": "A Learn-to-Rank (LTR) model serves as a meta-learner to optimally combine heterogeneous retrieval signals from multimodal transformers, unimodal text-to-text conversions, and image-to-image comparisons. This fusion architecture aggregate...",
+              "title": "Learn-to-Rank Fusion of Multimodal and Unimodal Modules",
+              "venue_or_source": "EMNLP 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2310.14025v1"
+            ],
+            "version_id": "VER-64EEB9BDFDEC"
+          }
+        },
+        "venue_or_source": "EMNLP 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.72,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-043131CD412F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:24:35+00:00",
+        "updated_at": "2026-06-17T11:24:35+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-30D9D5BA8197",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-EC1C52151B85",
+  "created_at": "2026-06-17T11:24:35+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "The text describes training a learn to rank (LTR) model in order to combine different modules, achieving competitive ranking results after exploring transformer-based methods, unimodal conversions, and LLM-based knowledge enhancement.",
+      "concept_id": "XI-1FBCBEACACF8",
+      "confidence": 0.72,
+      "created_at": "2026-06-17T11:24:35+00:00",
+      "evidence_id": "EV-DE54F30F7842",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text describes training a learn to rank (LTR) model in order to combine different modules, achieving competitive ranking results after exploring transformer-based methods, unimodal conversions, and LLM-based knowledge enhancement.",
+      "work_id": "W-043131CD412F",
+      "work_version_id": "WV-7E5DEEB3CEC8"
+    },
+    {
+      "claim_text": "The text notes that images containing flowers and green grass induce expected visual bias, and a successful system must ensure the context word 'tree' is prominent enough to resolve ambiguity without ignoring the 'andromeda' attribute, preventing the selection of images based solely on high probability of containing a tree.",
+      "concept_id": "P-BF189F07CCA8",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T11:24:35+00:00",
+      "evidence_id": "EV-6DD6A6641F27",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text notes that images containing flowers and green grass induce expected visual bias, and a successful system must ensure the context word 'tree' is prominent enough to resolve ambiguity without ignoring the 'andromeda' attribute, preventing the selection of images based solely on high probability of containing a tree.",
+      "work_id": "W-043131CD412F",
+      "work_version_id": "WV-7E5DEEB3CEC8"
+    },
+    {
+      "claim_text": "The text explains that if a retrieval model has never been trained on the ambiguous word, the rarity of concepts increases the probability of exclusively relying on the well-known context word, resulting in significant randomness, which the LLM approach addresses.",
+      "concept_id": "TM-41DD830FD2ED",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T11:24:35+00:00",
+      "evidence_id": "EV-9C59F717A568",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text explains that if a retrieval model has never been trained on the ambiguous word, the rarity of concepts increases the probability of exclusively relying on the well-known context word, resulting in significant randomness, which the LLM approach addresses.",
+      "work_id": "W-043131CD412F",
+      "work_version_id": "WV-7E5DEEB3CEC8"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-18A3C7AD5F6D\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-0DE8919CF549\", \"task\": \"images limited scene views\", \"dataset\": \"COCO\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"SynthText3D: synthesizing scene text images from 3D...",
+      "concept_id": "B-BC33380F30BF",
+      "confidence": 0.32,
+      "created_at": "2026-06-17T11:24:35+00:00",
+      "evidence_id": "EV-727BECEBFCF4",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-18A3C7AD5F6D\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-0DE8919CF549\", \"task\": \"images limited scene views\", \"dataset\": \"COCO\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"SynthText3D: synthesizing scene text images from 3D...",
+      "work_id": "W-043131CD412F",
+      "work_version_id": "WV-7E5DEEB3CEC8"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-17T11:24:35+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-17T11:24:33+00:00",
+      "extraction_run_id": "XRUN-BBD6A23C28E1",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 3,
+        "existed_ideas": 1,
+        "principles": 1,
+        "takeaway_messages": 1,
+        "total": 6
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-043131CD412F",
+      "work_version_id": "WV-7E5DEEB3CEC8"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "",
+    "secret_exposed_to_browser": false,
+    "warning": ""
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 1,
+        "principle": 1
+      },
+      "title": "Large Language Models and Multimodal Retrieval for Visual Word Sense Disambiguation",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-043131CD412F"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "2310.14025",
+        "authors": [
+          "Anastasia Kritharoula",
+          "Maria Lymperaiou",
+          "Giorgos Stamou"
+        ],
+        "canonical_title": "Large Language Models and Multimodal Retrieval for Visual Word Sense Disambiguation",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "http://arxiv.org/abs/2310.14025v1"
+        ],
+        "title_hash": "4deae8e080e3a6cc",
+        "title_norm": "large language models and multimodal retrieval for visual word sense disambiguation",
+        "venue_or_source": "EMNLP 2023",
+        "year": 2023
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "2023-10-21T14:35:42Z",
+        "title_hash": "4deae8e080e3a6cc"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:24:33+00:00",
+        "updated_at": "2026-06-17T11:24:33+00:00"
+      },
+      "work_id": "W-043131CD412F"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": "Visual Word Sense Disambiguation (VWSD) is a novel challenging task with the goal of retrieving an image among a set of candidates, which better represents the meaning of an ambiguous word within a given context. In this paper, we make a substantial step towards unveiling this interesting task by applying a varying set of approaches. Since VWSD is primarily a text-image retrieval task, we explore the latest transformer-based methods for multimodal retrieval. Additionally, we utilize Large Language Models (LLMs) as knowledge bases to enhance the given phrases and resolve ambiguity related to the target word. We also study VWSD as a unimodal problem by converting to text-to-text and image-to-image retrieval, as well as question-answering (QA), to fully explore the capabilities of relevant models. To tap into the implicit knowledge of LLMs, we experiment with Chain-of-Thought (CoT) prompting to guide explainable answer generation. On top of all, we train a learn to rank (LTR) model in order to combine our different modules, achieving competitive ranking results. Extensive experiments on VWSD demonstrate valuable insights to effectively drive future directions.",
+      "abstract_hash": "f864f55f3052775f",
+      "content_hash": "24c31f069177be9f",
+      "created_at": "2026-06-17T11:24:33+00:00",
+      "metadata": {
+        "abstract": "Visual Word Sense Disambiguation (VWSD) is a novel challenging task with the goal of retrieving an image among a set of candidates, which better represents the meaning of an ambiguous word within a given context. In this paper, we make a substantial step towards unveiling this interesting task by applying a varying set of approaches. Since VWSD is primarily a text-image retrieval task, we explore the latest transformer-based methods for multimodal retrieval. Additionally, we utilize Large Language Models (LLMs) as knowledge bases to enhance the given phrases and resolve ambiguity related to the target word. We also study VWSD as a unimodal problem by converting to text-to-text and image-to-image retrieval, as well as question-answering (QA), to fully explore the capabilities of relevant models. To tap into the implicit knowledge of LLMs, we experiment with Chain-of-Thought (CoT) prompting to guide explainable answer generation. On top of all, we train a learn to rank (LTR) model in order to combine our different modules, achieving competitive ranking results. Extensive experiments on VWSD demonstrate valuable insights to effectively drive future directions.",
+        "active_version_id": "VER-0F55B5785360",
+        "authors": [
+          "Anastasia Kritharoula",
+          "Maria Lymperaiou",
+          "Giorgos Stamou"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-26C8A88D0F20",
+        "canonical_key": "large language models and multimodal retrieval for visual word sense disambiguation",
+        "community_signals": {},
+        "confidence_score": 0.62,
+        "created_at": "2026-06-17T10:49:59+00:00",
+        "entered_at": "2026-06-17T11:15:56+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:16:43+00:00",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "paper_link": "http://arxiv.org/abs/2310.14025v1",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "2023-10-21T14:35:42Z",
+        "source_urls": [
+          "http://arxiv.org/abs/2310.14025v1"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "title": "Large Language Models and Multimodal Retrieval for Visual Word Sense Disambiguation",
+        "updated_at": "2026-06-17T11:16:43+00:00",
+        "url_or_doi": "http://arxiv.org/abs/2310.14025v1",
+        "validation_level": "L1",
+        "variants": {
+          "VER-0F55B5785360": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T11:15:56+00:00",
+            "extracted_at": "2026-06-17T11:16:43+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Visual Word Sense Disambiguation (VWSD) is a novel challenging task with the goal of retrieving an image among a set of candidates, which better represents the meaning of an ambiguous word within a given context. In this paper, we make a substantial step towards unveiling this interesting task by applying a varying set of approaches. Since VWSD is primarily a text-image retrieval task, we explore the latest transformer-based methods for multimodal retrieval. Additionally, we utilize Large Language Models (LLMs) as knowledge bases to enhance the given phrases and resolve ambiguity related to the target word. We also study VWSD as a unimodal problem by converting to text-to-text and image-to-image retrieval, as well as question-answering (QA), to fully explore the capabilities of relevant models. To tap into the implicit knowledge of LLMs, we experiment with Chain-of-Thought (CoT) prompting to guide explainable answer generation. On top of all, we train a learn to rank (LTR) model in order to combine our different modules, achieving competitive ranking results. Extensive experiments on VWSD demonstrate valuable insights to effectively drive future directions.",
+              "authors": [
+                "Anastasia Kritharoula",
+                "Maria Lymperaiou",
+                "Giorgos Stamou"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/2310.14025v1",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2023-10-21T14:35:42Z",
+              "source_urls": [
+                "http://arxiv.org/abs/2310.14025v1"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Large Language Models and Multimodal Retrieval for Visual Word Sense Disambiguation",
+              "url_or_doi": "http://arxiv.org/abs/2310.14025v1",
+              "validation_level": "L1",
+              "venue_or_source": "EMNLP 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2310.14025v1"
+            ],
+            "version_id": "VER-0F55B5785360"
+          },
+          "VER-42FF64ED1D34": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T10:49:59+00:00",
+            "extracted_at": "2026-06-17T10:49:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Visual Word Sense Disambiguation (VWSD) is a novel challenging task with the goal of retrieving an image among a set of candidates, which better represents the meaning of an ambiguous word within a given context. In this paper, we make a substantial step towards unveiling this interesting task by applying a varying set of approaches. Since VWSD is primarily a text-image retrieval task, we explore the latest transformer-based methods for multimodal retrieval. Additionally, we utilize Large Language Models (LLMs) as knowledge bases to enhance the given phrases and resolve ambiguity related to the target word. We also study VWSD as a unimodal problem by converting to text-to-text and image-to-image retrieval, as well as question-answering (QA), to fully explore the capabilities of relevant models. To tap into the implicit knowledge of LLMs, we experiment with Chain-of-Thought (CoT) prompting to guide explainable answer generation. On top of all, we train a learn to rank (LTR) model in order to combine our different modules, achieving competitive ranking results. Extensive experiments on VWSD demonstrate valuable insights to effectively drive future directions.",
+              "authors": [
+                "Anastasia Kritharoula",
+                "Maria Lymperaiou",
+                "Giorgos Stamou"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/2310.14025v1",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2023-10-21T14:35:42Z",
+              "source_urls": [
+                "http://arxiv.org/abs/2310.14025v1"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Large Language Models and Multimodal Retrieval for Visual Word Sense Disambiguation",
+              "url_or_doi": "http://arxiv.org/abs/2310.14025v1",
+              "validation_level": "L1",
+              "venue_or_source": "EMNLP 2023",
+              "year": 2023
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "http://arxiv.org/abs/2310.14025v1"
+            ],
+            "version_id": "VER-42FF64ED1D34"
+          }
+        },
+        "venue_or_source": "EMNLP 2023",
+        "work_id": "W-26C8A88D0F20",
+        "year": 2023
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "",
+      "source_record_id": "W-26C8A88D0F20",
+      "source_updated_at": "2023-10-21T14:35:42Z",
+      "title": "Large Language Models and Multimodal Retrieval for Visual Word Sense Disambiguation",
+      "title_hash": "4deae8e080e3a6cc",
+      "work_id": "W-043131CD412F",
+      "work_version_id": "WV-7E5DEEB3CEC8"
+    }
+  ]
+}
