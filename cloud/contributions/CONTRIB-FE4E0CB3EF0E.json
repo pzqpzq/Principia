@@ -1,0 +1,3546 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "math math math math w 3fd22d147568 w 0cb6dc2f0457 w 7e6df19a7e3f w d5c57268e64e w f6fba288becf w 996c5129930f w e52f130637b9 w 4bcb27bb25ac w bec3e54e563c w 9f68c6c3fb38 w 06f4b81340e8 w a41ad12f1753 w b2629aee97ca w 591adfd1650f",
+      "canonical_label": "MATH",
+      "concept_id": "B-1A6F507BBC89",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-19136C0392DD",
+        "benchmark_id": "B-7A488390A939",
+        "benchmark_name": "MATH",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-7A488390A939",
+        "canonical_key": "math",
+        "cloud_origin": {
+          "cloud_model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+          "cloud_payload_sha256": "",
+          "cloud_record_id": "B-1A6F507BBC89",
+          "cloud_snapshot_id": "SNAP-1E83647E23AF",
+          "cloud_updated_at": "2026-06-15T11:52:51+00:00"
+        },
+        "concept_id": "B-1A6F507BBC89",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-12T08:54:08+00:00",
+        "data_form": "Natural-language math problems with final answers and solutions.",
+        "dataset": "MATH",
+        "description": "Competition-style mathematical reasoning benchmark covering algebra, geometry, counting, probability, number theory, and precalculus.",
+        "entered_at": "2026-06-12T08:54:08+00:00",
+        "evidence": "{\"benchmark_id\": \"B-641840FF963C\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-5C05CF1EB2D2\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"ACCURACY OF A HEURISTIC FOR TOTAL W...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T09:41:31+00:00",
+        "extractor": "deterministic",
+        "field_id": "PRJ-C3CE01A48103",
+        "metric": "accuracy",
+        "metrics": [
+          "F1",
+          "accuracy",
+          "primary reported metric",
+          "mAP",
+          "BLEU",
+          "ROUGE"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://github.com/hendrycks/math",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "12.5K problems across multiple difficulty levels and subject areas.",
+        "source": "Hendrycks et al.",
+        "source_paper_link": "https://doi.org/10.20535/kpi-sn.2019.3.164804",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2602.09801v1",
+          "http://arxiv.org/abs/2603.25111v2",
+          "http://arxiv.org/abs/2412.11427v2",
+          "http://arxiv.org/abs/2406.11050v2",
+          "http://arxiv.org/abs/2308.04371v11",
+          "http://arxiv.org/abs/2604.27251v2",
+          "http://arxiv.org/abs/2510.09709v1",
+          "http://arxiv.org/abs/2601.01982v1",
+          "http://arxiv.org/abs/2510.09782v2",
+          "http://arxiv.org/abs/2406.13892v2",
+          "https://openreview.net/forum?id=U8GUmxnzXn",
+          "https://doi.org/10.1007/s43681-026-01042-1",
+          "http://arxiv.org/abs/2504.04718v2",
+          "https://doi.org/10.1017/dsj.2025.10044",
+          "https://doi.org/10.18653/v1/2024.vardial-1.11",
+          "https://doi.org/10.20535/kpi-sn.2019.3.164804"
+        ],
+        "source_paper_title": "ACCURACY OF A HEURISTIC FOR TOTAL WEIGHTED COMPLETION TIME MINIMIZATION IN PREEMPTIVE SINGLE MACHINE SCHEDULING PROBLEM BY NO IDLE TIME INTERVALS",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-A482FD24BE59"
+        ],
+        "source_work_title": "ACCURACY OF A HEURISTIC FOR TOTAL WEIGHTED COMPLETION TIME MINIMIZATION IN PREEMPTIVE SINGLE MACHINE SCHEDULING PROBLEM BY NO IDLE TIME INTERVALS",
+        "source_works": [
+          "W-A482FD24BE59"
+        ],
+        "task": "machine-dialect MAS for token-efficient reasoning",
+        "title": "MATH",
+        "updated_at": "2026-06-17T09:41:31+00:00",
+        "variants": {
+          "VER-19136C0392DD": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-12T08:54:08+00:00",
+            "extracted_at": "2026-06-17T09:41:31+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "MATH",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Natural-language math problems with final answers and solutions.",
+              "dataset": "MATH",
+              "description": "Competition-style mathematical reasoning benchmark covering algebra, geometry, counting, probability, number theory, and precalculus.",
+              "evidence": "{\"benchmark_id\": \"B-641840FF963C\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-5C05CF1EB2D2\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"ACCURACY OF A HEURISTIC FOR TOTAL W...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "accuracy",
+              "metrics": [
+                "F1",
+                "accuracy",
+                "primary reported metric",
+                "mAP",
+                "BLEU",
+                "ROUGE"
+              ],
+              "needs_review": false,
+              "official_url": "https://github.com/hendrycks/math",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "12.5K problems across multiple difficulty levels and subject areas.",
+              "source": "Hendrycks et al.",
+              "source_paper_link": "https://doi.org/10.20535/kpi-sn.2019.3.164804",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2602.09801v1",
+                "http://arxiv.org/abs/2603.25111v2",
+                "http://arxiv.org/abs/2412.11427v2",
+                "http://arxiv.org/abs/2406.11050v2",
+                "http://arxiv.org/abs/2308.04371v11",
+                "http://arxiv.org/abs/2604.27251v2",
+                "http://arxiv.org/abs/2510.09709v1",
+                "http://arxiv.org/abs/2601.01982v1",
+                "http://arxiv.org/abs/2510.09782v2",
+                "http://arxiv.org/abs/2406.13892v2",
+                "https://openreview.net/forum?id=U8GUmxnzXn",
+                "https://doi.org/10.1007/s43681-026-01042-1",
+                "http://arxiv.org/abs/2504.04718v2",
+                "https://doi.org/10.1017/dsj.2025.10044",
+                "https://doi.org/10.18653/v1/2024.vardial-1.11",
+                "https://doi.org/10.20535/kpi-sn.2019.3.164804"
+              ],
+              "source_paper_title": "ACCURACY OF A HEURISTIC FOR TOTAL WEIGHTED COMPLETION TIME MINIMIZATION IN PREEMPTIVE SINGLE MACHINE SCHEDULING PROBLEM BY NO IDLE TIME INTERVALS",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-3FD22D147568",
+                "W-0CB6DC2F0457",
+                "W-7E6DF19A7E3F",
+                "W-D5C57268E64E",
+                "W-F6FBA288BECF",
+                "W-996C5129930F",
+                "W-E52F130637B9",
+                "W-4BCB27BB25AC",
+                "W-BEC3E54E563C",
+                "W-9F68C6C3FB38",
+                "W-06F4B81340E8",
+                "W-A41AD12F1753",
+                "W-B2629AEE97CA",
+                "W-591ADFD1650F",
+                "W-50A0DFAB12FB",
+                "W-BAFE1FB40AE7",
+                "W-5C05CF1EB2D2"
+              ],
+              "source_work_title": "ACCURACY OF A HEURISTIC FOR TOTAL WEIGHTED COMPLETION TIME MINIMIZATION IN PREEMPTIVE SINGLE MACHINE SCHEDULING PROBLEM BY NO IDLE TIME INTERVALS",
+              "source_works": [],
+              "task": "machine-dialect MAS for token-efficient reasoning",
+              "venue_or_source": "KPI Science News",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.20535/kpi-sn.2019.3.164804",
+              "https://github.com/hendrycks/math"
+            ],
+            "version_id": "VER-19136C0392DD"
+          }
+        },
+        "venue_or_source": "KPI Science News",
+        "year": 2019
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-A482FD24BE59"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:18:12+00:00",
+        "updated_at": "2026-06-17T10:36:06+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-474FEAB15DA5",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "downstream benchmarks unspecified in excerpt downstream benchmarks unspecified in excerpt downstream benchmarks unspecified in excerpt w 8db03b5f73d6",
+      "canonical_label": "Downstream Benchmarks (Unspecified in Excerpt",
+      "concept_id": "B-569BB7D86FA8",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-7D8E78EE1B19",
+        "benchmark_id": "B-63AF74E8142A",
+        "benchmark_name": "Downstream Benchmarks (Unspecified in Excerpt",
+        "benchmarks": [],
+        "candidate_dataset_pages": [
+          "https://huggingface.co/datasets?search=Downstream%20Benchmarks%20(Unspecified%20in%20Excerpt"
+        ],
+        "canonical_id": "B-63AF74E8142A",
+        "canonical_key": "downstream benchmarks unspecified in excerpt",
+        "confidence_score": 0.58,
+        "created_at": "2026-06-17T07:01:03+00:00",
+        "data_form": "Not specified in excerpt",
+        "dataset": "Downstream Benchmarks (Unspecified in Excerpt",
+        "description": "Downstream Benchmarks (Unspecified in Excerpt appears in local source evidence. Add official metadata when you curate this project.",
+        "entered_at": "2026-06-17T07:01:03+00:00",
+        "evidence": "The excerpt states that identified synergistic teams 'outperform random baselines on downstream benchmarks and achieve comparable accuracy to that of manually-curated teams'.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:03+00:00",
+        "metric": "Accuracy",
+        "metrics": [
+          "Accuracy"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": false,
+        "scale": "Not specified in excerpt",
+        "source": "local extraction",
+        "source_paper_link": "http://arxiv.org/abs/2510.26352v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2510.26352v2"
+        ],
+        "source_paper_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-8DB03B5F73D6"
+        ],
+        "source_work_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "source_works": [],
+        "task": "Evaluation of synergistic team performance on unspecified downstream tasks",
+        "updated_at": "2026-06-17T07:01:03+00:00",
+        "variants": {
+          "VER-7D8E78EE1B19": {
+            "confidence_score": 0.58,
+            "entered_at": "2026-06-17T07:01:03+00:00",
+            "extracted_at": "2026-06-17T07:01:03+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "benchmark_name": "Downstream Benchmarks (Unspecified in Excerpt",
+              "benchmarks": [],
+              "candidate_dataset_pages": [
+                "https://huggingface.co/datasets?search=Downstream%20Benchmarks%20(Unspecified%20in%20Excerpt"
+              ],
+              "confidence_score": 0.58,
+              "data_form": "Not specified in excerpt",
+              "dataset": "Downstream Benchmarks (Unspecified in Excerpt",
+              "description": "Downstream Benchmarks (Unspecified in Excerpt appears in local source evidence. Add official metadata when you curate this project.",
+              "evidence": "The excerpt states that identified synergistic teams 'outperform random baselines on downstream benchmarks and achieve comparable accuracy to that of manually-curated teams'.",
+              "evidence_items": [],
+              "metric": "Accuracy",
+              "metrics": [
+                "Accuracy"
+              ],
+              "needs_review": true,
+              "performance": [],
+              "public_dataset": false,
+              "scale": "Not specified in excerpt",
+              "source": "local extraction",
+              "source_paper_link": "http://arxiv.org/abs/2510.26352v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2510.26352v2"
+              ],
+              "source_paper_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-8DB03B5F73D6"
+              ],
+              "source_work_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "source_works": [],
+              "task": "Evaluation of synergistic team performance on unspecified downstream tasks",
+              "venue_or_source": "AAAI 2026",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2510.26352v2"
+            ],
+            "version_id": "VER-7D8E78EE1B19"
+          }
+        },
+        "venue_or_source": "AAAI 2026",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.58,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-8DB03B5F73D6"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:41:42+00:00",
+        "updated_at": "2026-06-17T10:29:34+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-C7A5624935F1",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "mmlu mmlu mmlu w 931a92b2cbd0",
+      "canonical_label": "MMLU",
+      "concept_id": "B-5A04BACF25E2",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-5964595F47AF",
+        "benchmark_id": "B-82630D34D2EE",
+        "benchmark_name": "MMLU",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-82630D34D2EE",
+        "canonical_key": "mmlu",
+        "cloud_origin": {
+          "cloud_model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+          "cloud_payload_sha256": "",
+          "cloud_record_id": "B-5A04BACF25E2",
+          "cloud_snapshot_id": "SNAP-1E83647E23AF",
+          "cloud_updated_at": "2026-06-17T07:05:01+00:00"
+        },
+        "concept_id": "B-5A04BACF25E2",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T06:19:09+00:00",
+        "data_form": "Multiple-choice questions spanning many subject areas.",
+        "dataset": "MMLU",
+        "description": "Massive Multitask Language Understanding benchmark for broad academic and professional knowledge.",
+        "entered_at": "2026-06-17T06:19:09+00:00",
+        "evidence": "{\"benchmark_id\": \"B-C1E25B16D8BA\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-F4B6C94FC69A\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"MALLM: Multi-Agent Large Language Models Framework Mult...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:18+00:00",
+        "extractor": "deterministic",
+        "metric": "memory",
+        "metrics": [
+          "accuracy",
+          "memory",
+          "mAP",
+          "BLEU",
+          "ROUGE"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/cais/mmlu",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Roughly 14K questions across 57 tasks.",
+        "source": "CAIS / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2509.11656v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2406.07155v3",
+          "http://arxiv.org/abs/2510.26352v2",
+          "http://arxiv.org/abs/2509.11656v3"
+        ],
+        "source_paper_title": "MALLM: Multi-Agent Large Language Models Framework",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-931A92B2CBD0"
+        ],
+        "source_work_title": "MALLM: Multi-Agent Large Language Models Framework",
+        "source_works": [
+          "W-931A92B2CBD0"
+        ],
+        "task": "LLM multi-agent reasoning system",
+        "title": "MMLU",
+        "updated_at": "2026-06-17T07:01:18+00:00",
+        "variants": {
+          "VER-5964595F47AF": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T06:19:09+00:00",
+            "extracted_at": "2026-06-17T07:01:18+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "MMLU",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Multiple-choice questions spanning many subject areas.",
+              "dataset": "MMLU",
+              "description": "Massive Multitask Language Understanding benchmark for broad academic and professional knowledge.",
+              "evidence": "{\"benchmark_id\": \"B-C1E25B16D8BA\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-F4B6C94FC69A\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"MALLM: Multi-Agent Large Language Models Framework Mult...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "memory",
+              "metrics": [
+                "accuracy",
+                "memory",
+                "mAP",
+                "BLEU",
+                "ROUGE"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/cais/mmlu",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Roughly 14K questions across 57 tasks.",
+              "source": "CAIS / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2509.11656v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2406.07155v3",
+                "http://arxiv.org/abs/2510.26352v2",
+                "http://arxiv.org/abs/2509.11656v3"
+              ],
+              "source_paper_title": "MALLM: Multi-Agent Large Language Models Framework",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-565BC95507DC",
+                "W-8DB03B5F73D6",
+                "W-F4B6C94FC69A"
+              ],
+              "source_work_title": "MALLM: Multi-Agent Large Language Models Framework",
+              "source_works": [],
+              "task": "LLM multi-agent reasoning system",
+              "venue_or_source": "EMNLP 2025",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2509.11656v3",
+              "https://huggingface.co/datasets/cais/mmlu"
+            ],
+            "version_id": "VER-5964595F47AF"
+          }
+        },
+        "venue_or_source": "EMNLP 2025",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-931A92B2CBD0"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:04:54+00:00",
+        "updated_at": "2026-06-17T10:36:11+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-22F2295147FC",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "gsm8k gsm8k gsm8k gsm8k w dd77f8be6170 w 3fd22d147568 w 3e845f01221c w 996c5129930f w e52f130637b9 w b2629aee97ca",
+      "canonical_label": "GSM8K",
+      "concept_id": "B-688938933F4F",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-935C98BE3266",
+        "benchmark_id": "B-112D1E9A342A",
+        "benchmark_name": "GSM8K",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-112D1E9A342A",
+        "canonical_key": "gsm8k",
+        "cloud_origin": {
+          "cloud_model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+          "cloud_payload_sha256": "",
+          "cloud_record_id": "B-688938933F4F",
+          "cloud_snapshot_id": "SNAP-1E83647E23AF",
+          "cloud_updated_at": "2026-06-15T11:52:51+00:00"
+        },
+        "concept_id": "B-688938933F4F",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-12T08:54:08+00:00",
+        "data_form": "Natural-language math word problems with worked answers.",
+        "dataset": "GSM8K",
+        "description": "Grade-school math reasoning benchmark.",
+        "entered_at": "2026-06-12T08:54:08+00:00",
+        "evidence": "{\"benchmark_id\": \"B-A629381B2912\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-3FD22D147568\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"GSM8K\", \"split\": \"unspecified\", \"metric\": \"F1\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Tiny Moves: Game-based Hypothesis Refine...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T09:35:07+00:00",
+        "extractor": "deterministic",
+        "field_id": "PRJ-6929CAF58133",
+        "metric": "F1",
+        "metrics": [
+          "accuracy",
+          "F1",
+          "Mathematical accuracy",
+          "mAP",
+          "BLEU",
+          "ROUGE",
+          "memory"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/openai/gsm8k",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "8.5K multi-step arithmetic problems.",
+        "source": "OpenAI / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2602.09801v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2508.05311v1",
+          "http://arxiv.org/abs/2602.09801v1",
+          "http://arxiv.org/abs/2401.17169v4",
+          "http://arxiv.org/abs/2604.27251v2",
+          "http://arxiv.org/abs/2510.09709v1",
+          "http://arxiv.org/abs/2504.04718v2",
+          "https://doi.org/10.1017/dsj.2025.10044",
+          "http://arxiv.org/abs/2509.11656v3"
+        ],
+        "source_paper_title": "Tiny Moves: Game-based Hypothesis Refinement",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-A482FD24BE59"
+        ],
+        "source_work_title": "Tiny Moves: Game-based Hypothesis Refinement",
+        "source_works": [
+          "W-A482FD24BE59"
+        ],
+        "task": "machine-dialect MAS for token-efficient reasoning",
+        "title": "GSM8K",
+        "updated_at": "2026-06-17T09:35:07+00:00",
+        "variants": {
+          "VER-935C98BE3266": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-12T08:54:08+00:00",
+            "extracted_at": "2026-06-17T09:35:07+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "GSM8K",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Natural-language math word problems with worked answers.",
+              "dataset": "GSM8K",
+              "description": "Grade-school math reasoning benchmark.",
+              "evidence": "{\"benchmark_id\": \"B-A629381B2912\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-3FD22D147568\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"GSM8K\", \"split\": \"unspecified\", \"metric\": \"F1\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Tiny Moves: Game-based Hypothesis Refine...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "F1",
+              "metrics": [
+                "accuracy",
+                "F1",
+                "Mathematical accuracy",
+                "mAP",
+                "BLEU",
+                "ROUGE",
+                "memory"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/openai/gsm8k",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "8.5K multi-step arithmetic problems.",
+              "source": "OpenAI / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2602.09801v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2508.05311v1",
+                "http://arxiv.org/abs/2602.09801v1",
+                "http://arxiv.org/abs/2401.17169v4",
+                "http://arxiv.org/abs/2604.27251v2",
+                "http://arxiv.org/abs/2510.09709v1",
+                "http://arxiv.org/abs/2504.04718v2",
+                "https://doi.org/10.1017/dsj.2025.10044",
+                "http://arxiv.org/abs/2509.11656v3"
+              ],
+              "source_paper_title": "Tiny Moves: Game-based Hypothesis Refinement",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-DD77F8BE6170",
+                "W-3FD22D147568",
+                "W-3E845F01221C",
+                "W-996C5129930F",
+                "W-E52F130637B9",
+                "W-B2629AEE97CA",
+                "W-50A0DFAB12FB",
+                "W-F4B6C94FC69A"
+              ],
+              "source_work_title": "Tiny Moves: Game-based Hypothesis Refinement",
+              "source_works": [],
+              "task": "machine-dialect MAS for token-efficient reasoning",
+              "venue_or_source": "arXiv",
+              "year": 2026
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2602.09801v1",
+              "https://huggingface.co/datasets/openai/gsm8k"
+            ],
+            "version_id": "VER-935C98BE3266"
+          }
+        },
+        "venue_or_source": "arXiv",
+        "year": 2026
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-A482FD24BE59"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:18:13+00:00",
+        "updated_at": "2026-06-17T10:36:06+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-41A8FEF94526",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "mmlu mmlu mmlu w 565bc95507dc w 8db03b5f73d6",
+      "canonical_label": "MMLU",
+      "concept_id": "B-6A7C1D0B9629",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-5964595F47AF",
+        "benchmark_id": "B-82630D34D2EE",
+        "benchmark_name": "MMLU",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-82630D34D2EE",
+        "canonical_key": "mmlu",
+        "cloud_origin": {
+          "cloud_model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+          "cloud_payload_sha256": "",
+          "cloud_record_id": "B-6A7C1D0B9629",
+          "cloud_snapshot_id": "SNAP-1E83647E23AF",
+          "cloud_updated_at": "2026-06-17T06:23:10+00:00"
+        },
+        "concept_id": "B-6A7C1D0B9629",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T06:19:09+00:00",
+        "data_form": "Multiple-choice questions spanning many subject areas.",
+        "dataset": "MMLU",
+        "description": "Massive Multitask Language Understanding benchmark for broad academic and professional knowledge.",
+        "entered_at": "2026-06-17T06:19:09+00:00",
+        "evidence": "{\"benchmark_id\": \"B-0B77A85A890E\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-565BC95507DC\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Scaling Large Language Model-based Multi-Agent Collabor...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T06:22:58+00:00",
+        "extractor": "deterministic",
+        "metric": "memory",
+        "metrics": [
+          "accuracy",
+          "memory",
+          "mAP"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/cais/mmlu",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Roughly 14K questions across 57 tasks.",
+        "source": "CAIS / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2406.07155v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2406.07155v3",
+          "http://arxiv.org/abs/2510.26352v2"
+        ],
+        "source_paper_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-565BC95507DC",
+          "W-8DB03B5F73D6"
+        ],
+        "source_work_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+        "source_works": [],
+        "task": "LLM multi-agent reasoning system",
+        "title": "MMLU",
+        "updated_at": "2026-06-17T06:22:58+00:00",
+        "variants": {
+          "VER-5964595F47AF": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T06:19:09+00:00",
+            "extracted_at": "2026-06-17T06:22:58+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "MMLU",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Multiple-choice questions spanning many subject areas.",
+              "dataset": "MMLU",
+              "description": "Massive Multitask Language Understanding benchmark for broad academic and professional knowledge.",
+              "evidence": "{\"benchmark_id\": \"B-0B77A85A890E\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-565BC95507DC\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Scaling Large Language Model-based Multi-Agent Collabor...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "memory",
+              "metrics": [
+                "accuracy",
+                "memory",
+                "mAP"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/cais/mmlu",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Roughly 14K questions across 57 tasks.",
+              "source": "CAIS / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2406.07155v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2406.07155v3",
+                "http://arxiv.org/abs/2510.26352v2"
+              ],
+              "source_paper_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-565BC95507DC",
+                "W-8DB03B5F73D6"
+              ],
+              "source_work_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+              "source_works": [],
+              "task": "LLM multi-agent reasoning system",
+              "venue_or_source": "ICLR 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2406.07155v3",
+              "https://huggingface.co/datasets/cais/mmlu"
+            ],
+            "version_id": "VER-5964595F47AF"
+          }
+        },
+        "venue_or_source": "ICLR 2025",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-565BC95507DC",
+          "W-8DB03B5F73D6"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:21:12+00:00",
+        "updated_at": "2026-06-17T09:29:11+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-BE8918E3C0D8",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "we used a suite of benchmark datasets under a zero shot inference setting we used a suite of benchmark datasets under a zero shot inference setting we used a suite of benchmark datasets under a zero shot inference setting w 8db03b5f73d6",
+      "canonical_label": "we used a suite of benchmark datasets under a zero-shot inference setting",
+      "concept_id": "B-B4966AFDC04C",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-A52C5819E74A",
+        "benchmark_id": "B-5AB41285A96D",
+        "benchmark_name": "we used a suite of benchmark datasets under a zero-shot inference setting",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "candidate_dataset_pages": [
+          "https://huggingface.co/datasets?search=we%20used%20a%20suite%20of%20benchmark%20datasets%20under%20a%20zero-shot%20inference%20setting"
+        ],
+        "canonical_id": "B-5AB41285A96D",
+        "canonical_key": "we used a suite of benchmark datasets under a zero shot inference setting",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T06:19:11+00:00",
+        "data_form": "Unknown from local metadata; inspect the source work or benchmark page.",
+        "dataset": "we used a suite of benchmark datasets under a zero-shot inference setting",
+        "description": "we used a suite of benchmark datasets under a zero-shot inference setting appears in local source evidence. Add official metadata when you curate this project.",
+        "entered_at": "2026-06-17T06:19:11+00:00",
+        "evidence": "{\"benchmark_id\": \"B-1FCFCC32FACA\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-8DB03B5F73D6\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"we used a suite of benchmark datasets under a zero-shot inference setting\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:03+00:00",
+        "extractor": "deterministic",
+        "metric": "mAP",
+        "metrics": [
+          "accuracy",
+          "mAP"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": false,
+        "scale": "Unknown from local metadata.",
+        "source": "local extraction",
+        "source_paper_link": "http://arxiv.org/abs/2510.26352v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2510.26352v2"
+        ],
+        "source_paper_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-8DB03B5F73D6"
+        ],
+        "source_work_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "source_works": [],
+        "task": "LLM multi-agent reasoning system",
+        "updated_at": "2026-06-17T07:01:03+00:00",
+        "variants": {
+          "VER-A52C5819E74A": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T06:19:11+00:00",
+            "extracted_at": "2026-06-17T07:01:03+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "we used a suite of benchmark datasets under a zero-shot inference setting",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "candidate_dataset_pages": [
+                "https://huggingface.co/datasets?search=we%20used%20a%20suite%20of%20benchmark%20datasets%20under%20a%20zero-shot%20inference%20setting"
+              ],
+              "confidence_score": 0.7,
+              "data_form": "Unknown from local metadata; inspect the source work or benchmark page.",
+              "dataset": "we used a suite of benchmark datasets under a zero-shot inference setting",
+              "description": "we used a suite of benchmark datasets under a zero-shot inference setting appears in local source evidence. Add official metadata when you curate this project.",
+              "evidence": "{\"benchmark_id\": \"B-1FCFCC32FACA\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-8DB03B5F73D6\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"we used a suite of benchmark datasets under a zero-shot inference setting\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "mAP",
+              "metrics": [
+                "accuracy",
+                "mAP"
+              ],
+              "needs_review": false,
+              "performance": [],
+              "public_dataset": false,
+              "scale": "Unknown from local metadata.",
+              "source": "local extraction",
+              "source_paper_link": "http://arxiv.org/abs/2510.26352v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2510.26352v2"
+              ],
+              "source_paper_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-8DB03B5F73D6"
+              ],
+              "source_work_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "source_works": [],
+              "task": "LLM multi-agent reasoning system",
+              "venue_or_source": "AAAI 2026",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2510.26352v2"
+            ],
+            "version_id": "VER-A52C5819E74A"
+          }
+        },
+        "venue_or_source": "AAAI 2026",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-8DB03B5F73D6"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:21:12+00:00",
+        "updated_at": "2026-06-17T10:29:34+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-2E3A3C3F8D09",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "manually curated teams manually curated teams w 628e4984257d",
+      "canonical_label": "Manually-Curated Teams",
+      "concept_id": "BL-1B5C5B58E704",
+      "concept_type": "baseline",
+      "payload": {
+        "active_version_id": "VER-C1515882188F",
+        "baseline_id": "BL-4CEE4293A531",
+        "baseline_name": "Manually-Curated Teams",
+        "baseline_type": "compared_method",
+        "benchmarks": [
+          "Downstream Benchmarks (Unspecified in Excerpt)"
+        ],
+        "canonical_id": "BL-4CEE4293A531",
+        "canonical_key": "manually curated teams",
+        "confidence_score": 0.55,
+        "core_idea": "Teams are assembled by human experts based on known model specializations and architectural knowledge.",
+        "created_at": "2026-06-17T07:01:03+00:00",
+        "description": "Represents the upper-bound or gold-standard performance that automated methods strive to match without requiring expensive human intervention or private model information.",
+        "discussion": "Achieving performance comparable to manually curated teams validates the efficacy of the interaction-centric framework as a scalable alternative to expert-driven team composition. It suggests that behavioral observation can substitute for deep internal knowledge of model architectures in many collaborative scenarios.",
+        "entered_at": "2026-06-17T07:01:03+00:00",
+        "evidence": "{\"baseline_name\": \"Manually-Curated Teams\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Teams are assembled by human experts based on known model specializations and architectural knowledge.\", \"methodology\": \"Human experts select models based on prior knowledge of their training data, architecture, and documented strengths to form task-specific grou...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:03+00:00",
+        "methodology": "Human experts select models based on prior knowledge of their training data, architecture, and documented strengths to form task-specific groups.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "performance": [
+          {
+            "benchmark_name": "Downstream Benchmarks (Unspecified in Excerpt",
+            "metric": "Accuracy",
+            "value_text": "Comparable to the proposed method."
+          }
+        ],
+        "principle": "Human intuition regarding model compatibility can be approximated by data-driven interaction metrics.",
+        "provider": "siliconflow",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2510.26352v2"
+        ],
+        "source_paper_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-628E4984257D"
+        ],
+        "source_work_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "source_works": [
+          "W-628E4984257D"
+        ],
+        "updated_at": "2026-06-17T07:01:03+00:00",
+        "variants": {
+          "VER-C1515882188F": {
+            "confidence_score": 0.55,
+            "entered_at": "2026-06-17T07:01:03+00:00",
+            "extracted_at": "2026-06-17T07:01:03+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "baseline_name": "Manually-Curated Teams",
+              "baseline_type": "compared_method",
+              "benchmarks": [
+                "Downstream Benchmarks (Unspecified in Excerpt)"
+              ],
+              "confidence_score": 0.55,
+              "core_idea": "Teams are assembled by human experts based on known model specializations and architectural knowledge.",
+              "description": "Represents the upper-bound or gold-standard performance that automated methods strive to match without requiring expensive human intervention or private model information.",
+              "discussion": "Achieving performance comparable to manually curated teams validates the efficacy of the interaction-centric framework as a scalable alternative to expert-driven team composition. It suggests that behavioral observation can substitute for deep internal knowledge of model architectures in many collaborative scenarios.",
+              "evidence": "{\"baseline_name\": \"Manually-Curated Teams\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Teams are assembled by human experts based on known model specializations and architectural knowledge.\", \"methodology\": \"Human experts select models based on prior knowledge of their training data, architecture, and documented strengths to form task-specific grou...",
+              "evidence_items": [],
+              "methodology": "Human experts select models based on prior knowledge of their training data, architecture, and documented strengths to form task-specific groups.",
+              "metrics": [],
+              "needs_review": true,
+              "performance": [
+                {
+                  "benchmark_name": "Downstream Benchmarks (Unspecified in Excerpt",
+                  "metric": "Accuracy",
+                  "value_text": "Comparable to the proposed method."
+                }
+              ],
+              "principle": "Human intuition regarding model compatibility can be approximated by data-driven interaction metrics.",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2510.26352v2"
+              ],
+              "source_paper_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-8DB03B5F73D6"
+              ],
+              "source_work_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "source_works": [],
+              "venue_or_source": "AAAI 2026",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2510.26352v2"
+            ],
+            "version_id": "VER-C1515882188F"
+          }
+        },
+        "venue_or_source": "AAAI 2026",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.55,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-628E4984257D"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T10:35:46+00:00",
+        "updated_at": "2026-06-17T10:36:11+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-8F978833960B",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "random baseline random baseline w 8db03b5f73d6",
+      "canonical_label": "Random Baseline",
+      "concept_id": "BL-85BE427B8D9F",
+      "concept_type": "baseline",
+      "payload": {
+        "active_version_id": "VER-CA313E05DFE6",
+        "baseline_id": "BL-FDBA838586E8",
+        "baseline_name": "Random Baseline",
+        "baseline_type": "compared_method",
+        "benchmarks": [
+          "Downstream Benchmarks (Unspecified in Excerpt)"
+        ],
+        "canonical_id": "BL-FDBA838586E8",
+        "canonical_key": "random baseline",
+        "confidence_score": 0.55,
+        "core_idea": "Teams are formed by randomly selecting models from the available pool without regard for interaction history or semantic coherence.",
+        "created_at": "2026-06-17T07:01:03+00:00",
+        "description": "Serves as a lower-bound performance reference to demonstrate that the proposed interaction-centric method yields statistically significant improvements over chance assembly.",
+        "discussion": "The random baseline establishes that the observed performance gains are due to the specific structural properties identified by the language model graph rather than simply the presence of multiple models. It highlights the necessity of structured composition strategies in multi-agent systems.",
+        "entered_at": "2026-06-17T07:01:03+00:00",
+        "evidence": "{\"baseline_name\": \"Random Baseline\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Teams are formed by randomly selecting models from the available pool without regard for interaction history or semantic coherence.\", \"methodology\": \"Random sampling of model subsets to serve as control groups for evaluating the proposed graph-based clustering method.\",...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:03+00:00",
+        "methodology": "Random sampling of model subsets to serve as control groups for evaluating the proposed graph-based clustering method.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "performance": [
+          {
+            "benchmark_name": "Downstream Benchmarks (Unspecified in Excerpt",
+            "metric": "Accuracy",
+            "value_text": "Outperformed by the proposed method."
+          }
+        ],
+        "principle": "Random assembly fails to capture latent synergies required for robust multi-agent collaboration.",
+        "provider": "siliconflow",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2510.26352v2"
+        ],
+        "source_paper_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-8DB03B5F73D6"
+        ],
+        "source_work_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "source_works": [],
+        "updated_at": "2026-06-17T07:01:03+00:00",
+        "variants": {
+          "VER-CA313E05DFE6": {
+            "confidence_score": 0.55,
+            "entered_at": "2026-06-17T07:01:03+00:00",
+            "extracted_at": "2026-06-17T07:01:03+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "baseline_name": "Random Baseline",
+              "baseline_type": "compared_method",
+              "benchmarks": [
+                "Downstream Benchmarks (Unspecified in Excerpt)"
+              ],
+              "confidence_score": 0.55,
+              "core_idea": "Teams are formed by randomly selecting models from the available pool without regard for interaction history or semantic coherence.",
+              "description": "Serves as a lower-bound performance reference to demonstrate that the proposed interaction-centric method yields statistically significant improvements over chance assembly.",
+              "discussion": "The random baseline establishes that the observed performance gains are due to the specific structural properties identified by the language model graph rather than simply the presence of multiple models. It highlights the necessity of structured composition strategies in multi-agent systems.",
+              "evidence": "{\"baseline_name\": \"Random Baseline\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Teams are formed by randomly selecting models from the available pool without regard for interaction history or semantic coherence.\", \"methodology\": \"Random sampling of model subsets to serve as control groups for evaluating the proposed graph-based clustering method.\",...",
+              "evidence_items": [],
+              "methodology": "Random sampling of model subsets to serve as control groups for evaluating the proposed graph-based clustering method.",
+              "metrics": [],
+              "needs_review": true,
+              "performance": [
+                {
+                  "benchmark_name": "Downstream Benchmarks (Unspecified in Excerpt",
+                  "metric": "Accuracy",
+                  "value_text": "Outperformed by the proposed method."
+                }
+              ],
+              "principle": "Random assembly fails to capture latent synergies required for robust multi-agent collaboration.",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2510.26352v2"
+              ],
+              "source_paper_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-8DB03B5F73D6"
+              ],
+              "source_work_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "source_works": [],
+              "venue_or_source": "AAAI 2026",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2510.26352v2"
+            ],
+            "version_id": "VER-CA313E05DFE6"
+          }
+        },
+        "venue_or_source": "AAAI 2026",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.55,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-8DB03B5F73D6"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:41:45+00:00",
+        "updated_at": "2026-06-17T10:29:39+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-3B76FA8D3366",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "manually curated teams manually curated teams w 8db03b5f73d6",
+      "canonical_label": "Manually-Curated Teams",
+      "concept_id": "BL-F5E87639E8D2",
+      "concept_type": "baseline",
+      "payload": {
+        "active_version_id": "VER-C1515882188F",
+        "baseline_id": "BL-4CEE4293A531",
+        "baseline_name": "Manually-Curated Teams",
+        "baseline_type": "compared_method",
+        "benchmarks": [
+          "Downstream Benchmarks (Unspecified in Excerpt)"
+        ],
+        "canonical_id": "BL-4CEE4293A531",
+        "canonical_key": "manually curated teams",
+        "confidence_score": 0.55,
+        "core_idea": "Teams are assembled by human experts based on known model specializations and architectural knowledge.",
+        "created_at": "2026-06-17T07:01:03+00:00",
+        "description": "Represents the upper-bound or gold-standard performance that automated methods strive to match without requiring expensive human intervention or private model information.",
+        "discussion": "Achieving performance comparable to manually curated teams validates the efficacy of the interaction-centric framework as a scalable alternative to expert-driven team composition. It suggests that behavioral observation can substitute for deep internal knowledge of model architectures in many collaborative scenarios.",
+        "entered_at": "2026-06-17T07:01:03+00:00",
+        "evidence": "{\"baseline_name\": \"Manually-Curated Teams\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Teams are assembled by human experts based on known model specializations and architectural knowledge.\", \"methodology\": \"Human experts select models based on prior knowledge of their training data, architecture, and documented strengths to form task-specific grou...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:03+00:00",
+        "methodology": "Human experts select models based on prior knowledge of their training data, architecture, and documented strengths to form task-specific groups.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "performance": [
+          {
+            "benchmark_name": "Downstream Benchmarks (Unspecified in Excerpt",
+            "metric": "Accuracy",
+            "value_text": "Comparable to the proposed method."
+          }
+        ],
+        "principle": "Human intuition regarding model compatibility can be approximated by data-driven interaction metrics.",
+        "provider": "siliconflow",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2510.26352v2"
+        ],
+        "source_paper_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-8DB03B5F73D6"
+        ],
+        "source_work_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "source_works": [],
+        "updated_at": "2026-06-17T07:01:03+00:00",
+        "variants": {
+          "VER-C1515882188F": {
+            "confidence_score": 0.55,
+            "entered_at": "2026-06-17T07:01:03+00:00",
+            "extracted_at": "2026-06-17T07:01:03+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "baseline_name": "Manually-Curated Teams",
+              "baseline_type": "compared_method",
+              "benchmarks": [
+                "Downstream Benchmarks (Unspecified in Excerpt)"
+              ],
+              "confidence_score": 0.55,
+              "core_idea": "Teams are assembled by human experts based on known model specializations and architectural knowledge.",
+              "description": "Represents the upper-bound or gold-standard performance that automated methods strive to match without requiring expensive human intervention or private model information.",
+              "discussion": "Achieving performance comparable to manually curated teams validates the efficacy of the interaction-centric framework as a scalable alternative to expert-driven team composition. It suggests that behavioral observation can substitute for deep internal knowledge of model architectures in many collaborative scenarios.",
+              "evidence": "{\"baseline_name\": \"Manually-Curated Teams\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Teams are assembled by human experts based on known model specializations and architectural knowledge.\", \"methodology\": \"Human experts select models based on prior knowledge of their training data, architecture, and documented strengths to form task-specific grou...",
+              "evidence_items": [],
+              "methodology": "Human experts select models based on prior knowledge of their training data, architecture, and documented strengths to form task-specific groups.",
+              "metrics": [],
+              "needs_review": true,
+              "performance": [
+                {
+                  "benchmark_name": "Downstream Benchmarks (Unspecified in Excerpt",
+                  "metric": "Accuracy",
+                  "value_text": "Comparable to the proposed method."
+                }
+              ],
+              "principle": "Human intuition regarding model compatibility can be approximated by data-driven interaction metrics.",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2510.26352v2"
+              ],
+              "source_paper_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-8DB03B5F73D6"
+              ],
+              "source_work_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "source_works": [],
+              "venue_or_source": "AAAI 2026",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2510.26352v2"
+            ],
+            "version_id": "VER-C1515882188F"
+          }
+        },
+        "venue_or_source": "AAAI 2026",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.55,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-8DB03B5F73D6"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:41:45+00:00",
+        "updated_at": "2026-06-17T10:29:39+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-3CA79465C303",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "random baseline random baseline w 628e4984257d",
+      "canonical_label": "Random Baseline",
+      "concept_id": "BL-FA1CE51FDCED",
+      "concept_type": "baseline",
+      "payload": {
+        "active_version_id": "VER-CA313E05DFE6",
+        "baseline_id": "BL-FDBA838586E8",
+        "baseline_name": "Random Baseline",
+        "baseline_type": "compared_method",
+        "benchmarks": [
+          "Downstream Benchmarks (Unspecified in Excerpt)"
+        ],
+        "canonical_id": "BL-FDBA838586E8",
+        "canonical_key": "random baseline",
+        "confidence_score": 0.55,
+        "core_idea": "Teams are formed by randomly selecting models from the available pool without regard for interaction history or semantic coherence.",
+        "created_at": "2026-06-17T07:01:03+00:00",
+        "description": "Serves as a lower-bound performance reference to demonstrate that the proposed interaction-centric method yields statistically significant improvements over chance assembly.",
+        "discussion": "The random baseline establishes that the observed performance gains are due to the specific structural properties identified by the language model graph rather than simply the presence of multiple models. It highlights the necessity of structured composition strategies in multi-agent systems.",
+        "entered_at": "2026-06-17T07:01:03+00:00",
+        "evidence": "{\"baseline_name\": \"Random Baseline\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Teams are formed by randomly selecting models from the available pool without regard for interaction history or semantic coherence.\", \"methodology\": \"Random sampling of model subsets to serve as control groups for evaluating the proposed graph-based clustering method.\",...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:03+00:00",
+        "methodology": "Random sampling of model subsets to serve as control groups for evaluating the proposed graph-based clustering method.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "performance": [
+          {
+            "benchmark_name": "Downstream Benchmarks (Unspecified in Excerpt",
+            "metric": "Accuracy",
+            "value_text": "Outperformed by the proposed method."
+          }
+        ],
+        "principle": "Random assembly fails to capture latent synergies required for robust multi-agent collaboration.",
+        "provider": "siliconflow",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2510.26352v2"
+        ],
+        "source_paper_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-628E4984257D"
+        ],
+        "source_work_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "source_works": [
+          "W-628E4984257D"
+        ],
+        "updated_at": "2026-06-17T07:01:03+00:00",
+        "variants": {
+          "VER-CA313E05DFE6": {
+            "confidence_score": 0.55,
+            "entered_at": "2026-06-17T07:01:03+00:00",
+            "extracted_at": "2026-06-17T07:01:03+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "baseline_name": "Random Baseline",
+              "baseline_type": "compared_method",
+              "benchmarks": [
+                "Downstream Benchmarks (Unspecified in Excerpt)"
+              ],
+              "confidence_score": 0.55,
+              "core_idea": "Teams are formed by randomly selecting models from the available pool without regard for interaction history or semantic coherence.",
+              "description": "Serves as a lower-bound performance reference to demonstrate that the proposed interaction-centric method yields statistically significant improvements over chance assembly.",
+              "discussion": "The random baseline establishes that the observed performance gains are due to the specific structural properties identified by the language model graph rather than simply the presence of multiple models. It highlights the necessity of structured composition strategies in multi-agent systems.",
+              "evidence": "{\"baseline_name\": \"Random Baseline\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Teams are formed by randomly selecting models from the available pool without regard for interaction history or semantic coherence.\", \"methodology\": \"Random sampling of model subsets to serve as control groups for evaluating the proposed graph-based clustering method.\",...",
+              "evidence_items": [],
+              "methodology": "Random sampling of model subsets to serve as control groups for evaluating the proposed graph-based clustering method.",
+              "metrics": [],
+              "needs_review": true,
+              "performance": [
+                {
+                  "benchmark_name": "Downstream Benchmarks (Unspecified in Excerpt",
+                  "metric": "Accuracy",
+                  "value_text": "Outperformed by the proposed method."
+                }
+              ],
+              "principle": "Random assembly fails to capture latent synergies required for robust multi-agent collaboration.",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2510.26352v2"
+              ],
+              "source_paper_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-8DB03B5F73D6"
+              ],
+              "source_work_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "source_works": [],
+              "venue_or_source": "AAAI 2026",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2510.26352v2"
+            ],
+            "version_id": "VER-CA313E05DFE6"
+          }
+        },
+        "venue_or_source": "AAAI 2026",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.55,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-628E4984257D"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T10:35:46+00:00",
+        "updated_at": "2026-06-17T10:36:11+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-A735EC6C2535",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "behavioral compatibility over individual competence behavioral compatibility over individual competence optimal multi agent performance is determined by the semantic coherence and interaction dynamics between agents rather than the aggregate individual benchmark scores of the constituent models w 8d",
+      "canonical_label": "Behavioral Compatibility Over Individual Competence",
+      "concept_id": "P-73C06A9FEC59",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "Optimal multi-agent performance is determined by the semantic coherence and interaction dynamics between agents rather than the aggregate individual benchmark scores of the constituent models.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-CEBEAAD2BFF3",
+        "argument": "Optimal multi-agent performance is determined by the semantic coherence and interaction dynamics between agents rather than the aggregate individual benchmark scores of the constituent models.",
+        "benchmarks": [],
+        "canonical_id": "P-EF2F7740D042",
+        "canonical_key": "optimal multi agent performance is determined by semantic coherence and interaction dynamics between agents rather than aggregate individual benchmark scores of constituent models",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T06:58:21+00:00",
+        "discussion": "The principle implies that quality control for autonomous coding agents should prioritize measuring dyadic or group interaction metrics (e.g., agreement rates, constructive critique frequency) over static capability assessments. In large-scale repositories, this suggests a calibration strategy where agents are paired based on historical interaction success rates rather than assigning the 'best' available model to every subtask. A limitation is that high coherence might sometimes indicate echo chambers rather than robust error checking, necessitating diversity constraints within the detected communities to ensure critical evaluation capabilities are retained.",
+        "entered_at": "2026-06-17T06:58:21+00:00",
+        "evidence": "The work demonstrates that naively assembling high-performing models can stifle cognitive diversity and degrade collective output, whereas teams formed via interaction-centric graph clustering outperform random baselines and match manually curated teams. The evidence rests on the observation that pairwise conversation coherence predicts downstream collaborative success better than individual model rankings, validating that synergy is an emergent property of interaction rather than a sum of parts.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:03+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Behavioral Compatibility Over Individual Competence",
+        "performance": [],
+        "principle_id": "P-EF2F7740D042",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "How can we provide real-time, calibrated, actionable process quality control for autonomous coding agents operating on large-scale repositories?",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2510.26352v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2510.26352v2"
+        ],
+        "source_paper_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-8DB03B5F73D6"
+        ],
+        "source_work_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "source_works": [
+          "W-8DB03B5F73D6"
+        ],
+        "updated_at": "2026-06-17T07:01:03+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-CEBEAAD2BFF3": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T06:58:21+00:00",
+            "extracted_at": "2026-06-17T07:01:03+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "Optimal multi-agent performance is determined by the semantic coherence and interaction dynamics between agents rather than the aggregate individual benchmark scores of the constituent models.",
+              "argument": "Optimal multi-agent performance is determined by the semantic coherence and interaction dynamics between agents rather than the aggregate individual benchmark scores of the constituent models.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle implies that quality control for autonomous coding agents should prioritize measuring dyadic or group interaction metrics (e.g., agreement rates, constructive critique frequency) over static capability assessments. In large-scale repositories, this suggests a calibration strategy where agents are paired based on historical interaction success rates rather than assigning the 'best' available model to every subtask. A limitation is that high coherence might sometimes indicate echo chambers rather than robust error checking, necessitating diversity constraints within the detected communities to ensure critical evaluation capabilities are retained.",
+              "evidence": "The work demonstrates that naively assembling high-performing models can stifle cognitive diversity and degrade collective output, whereas teams formed via interaction-centric graph clustering outperform random baselines and match manually curated teams. The evidence rests on the observation that pairwise conversation coherence predicts downstream collaborative success better than individual model rankings, validating that synergy is an emergent property of interaction rather than a sum of parts.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Behavioral Compatibility Over Individual Competence",
+              "performance": [],
+              "problem_pressure": "How can we provide real-time, calibrated, actionable process quality control for autonomous coding agents operating on large-scale repositories?",
+              "source_paper_link": "http://arxiv.org/abs/2510.26352v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2510.26352v2"
+              ],
+              "source_paper_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-8DB03B5F73D6"
+              ],
+              "source_work_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "source_works": [
+                "W-8DB03B5F73D6"
+              ],
+              "venue_or_source": "AAAI 2026",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2510.26352v2"
+            ],
+            "version_id": "VER-CEBEAAD2BFF3"
+          }
+        },
+        "venue_or_source": "AAAI 2026",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-8DB03B5F73D6"
+        ],
+        "validation_level": "L1",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:41:39+00:00",
+        "updated_at": "2026-06-17T10:29:30+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-0686E99E761E",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "behavioral compatibility over individual competence behavioral compatibility over individual competence optimal multi agent performance is determined by the semantic coherence and interaction dynamics between agents rather than the aggregate individual benchmark scores of the constituent models w 62",
+      "canonical_label": "Behavioral Compatibility Over Individual Competence",
+      "concept_id": "P-CED42DC4E602",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "Optimal multi-agent performance is determined by the semantic coherence and interaction dynamics between agents rather than the aggregate individual benchmark scores of the constituent models.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-CEBEAAD2BFF3",
+        "argument": "Optimal multi-agent performance is determined by the semantic coherence and interaction dynamics between agents rather than the aggregate individual benchmark scores of the constituent models.",
+        "benchmarks": [],
+        "canonical_id": "P-EF2F7740D042",
+        "canonical_key": "optimal multi agent performance is determined by semantic coherence and interaction dynamics between agents rather than aggregate individual benchmark scores of constituent models",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T06:58:21+00:00",
+        "discussion": "The principle implies that quality control for autonomous coding agents should prioritize measuring dyadic or group interaction metrics (e.g., agreement rates, constructive critique frequency) over static capability assessments. In large-scale repositories, this suggests a calibration strategy where agents are paired based on historical interaction success rates rather than assigning the 'best' available model to every subtask. A limitation is that high coherence might sometimes indicate echo chambers rather than robust error checking, necessitating diversity constraints within the detected communities to ensure critical evaluation capabilities are retained.",
+        "entered_at": "2026-06-17T06:58:21+00:00",
+        "evidence": "The work demonstrates that naively assembling high-performing models can stifle cognitive diversity and degrade collective output, whereas teams formed via interaction-centric graph clustering outperform random baselines and match manually curated teams. The evidence rests on the observation that pairwise conversation coherence predicts downstream collaborative success better than individual model rankings, validating that synergy is an emergent property of interaction rather than a sum of parts.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:03+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Behavioral Compatibility Over Individual Competence",
+        "performance": [],
+        "principle_id": "P-EF2F7740D042",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "How can we provide real-time, calibrated, actionable process quality control for autonomous coding agents operating on large-scale repositories?",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2510.26352v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2510.26352v2"
+        ],
+        "source_paper_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-628E4984257D"
+        ],
+        "source_work_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "source_works": [
+          "W-628E4984257D"
+        ],
+        "updated_at": "2026-06-17T07:01:03+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-CEBEAAD2BFF3": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T06:58:21+00:00",
+            "extracted_at": "2026-06-17T07:01:03+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "Optimal multi-agent performance is determined by the semantic coherence and interaction dynamics between agents rather than the aggregate individual benchmark scores of the constituent models.",
+              "argument": "Optimal multi-agent performance is determined by the semantic coherence and interaction dynamics between agents rather than the aggregate individual benchmark scores of the constituent models.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle implies that quality control for autonomous coding agents should prioritize measuring dyadic or group interaction metrics (e.g., agreement rates, constructive critique frequency) over static capability assessments. In large-scale repositories, this suggests a calibration strategy where agents are paired based on historical interaction success rates rather than assigning the 'best' available model to every subtask. A limitation is that high coherence might sometimes indicate echo chambers rather than robust error checking, necessitating diversity constraints within the detected communities to ensure critical evaluation capabilities are retained.",
+              "evidence": "The work demonstrates that naively assembling high-performing models can stifle cognitive diversity and degrade collective output, whereas teams formed via interaction-centric graph clustering outperform random baselines and match manually curated teams. The evidence rests on the observation that pairwise conversation coherence predicts downstream collaborative success better than individual model rankings, validating that synergy is an emergent property of interaction rather than a sum of parts.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Behavioral Compatibility Over Individual Competence",
+              "performance": [],
+              "problem_pressure": "How can we provide real-time, calibrated, actionable process quality control for autonomous coding agents operating on large-scale repositories?",
+              "source_paper_link": "http://arxiv.org/abs/2510.26352v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2510.26352v2"
+              ],
+              "source_paper_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-8DB03B5F73D6"
+              ],
+              "source_work_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "source_works": [
+                "W-8DB03B5F73D6"
+              ],
+              "venue_or_source": "AAAI 2026",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2510.26352v2"
+            ],
+            "version_id": "VER-CEBEAAD2BFF3"
+          }
+        },
+        "venue_or_source": "AAAI 2026",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-628E4984257D"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T10:35:46+00:00",
+        "updated_at": "2026-06-17T10:36:11+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-3DAE269BAA65",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "we used a suite of benchmark datasets under a zero shot inference setting we used a suite of benchmark datasets under a zero shot inference setting",
+      "canonical_label": "we used a suite of benchmark datasets under a zero-shot inference setting",
+      "concept_id": "RF-52E2FDDC8790",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-A4777CC2F75E",
+        "benchmark_name": "we used a suite of benchmark datasets under a zero-shot inference setting",
+        "code_url": "",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-17T06:19:10+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "semantic coherence between models forms edge weights. Subsequent analysis arXiv:2510.26352v2 [cs.CL] 19 Mar 2026 Figure 1: Overview of the proposed method. The method con"
+        },
+        "extracted_at": "2026-06-17T06:19:10+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-C3CE01A48103",
+        "method_name": "Geometry of Dialogue",
+        "metric": "EM",
+        "needs_llm_review": false,
+        "result_id": "RR-D88DE8A3A4D5",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": false,
+          "has_compute_accounting": true,
+          "needs_verification": false
+        },
+        "source_hash": "4ec8f2caeb97e778",
+        "source_work_id": "W-8DB03B5F73D6",
+        "unit": "",
+        "updated_at": "2026-06-17T07:01:03+00:00",
+        "value": 2510.26352,
+        "value_text": "semantic coherence between models forms edge weights. Subsequent analysis arXiv:2510.26352v2 [cs.CL] 19 Mar 2026 Figure 1: Overview of the proposed method. The method con",
+        "work_id": "W-8DB03B5F73D6"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:21:16+00:00",
+        "updated_at": "2026-06-17T10:29:45+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-F2B86A6F41D5",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "mmlu mmlu",
+      "canonical_label": "MMLU",
+      "concept_id": "RF-7CD1F6386DCB",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-48EF31FD4BC6",
+        "benchmark_name": "MMLU",
+        "code_url": "",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-17T09:26:42+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "g., Expert, Personality), (2) response generators (e.g., Critical, Reasoning), (3) discussion paradigms (e.g., Memory, Relay), and (4) decision protocols (e.g.,"
+        },
+        "extracted_at": "2026-06-17T09:26:42+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-6929CAF58133",
+        "method_name": "MALLM",
+        "metric": "memory",
+        "needs_llm_review": false,
+        "result_id": "RR-EAD2E44D56DA",
+        "result_quality": {
+          "has_ablation": true,
+          "has_code": false,
+          "has_compute_accounting": true,
+          "needs_verification": false
+        },
+        "source_hash": "474f86a815f07894",
+        "source_work_id": "W-F4B6C94FC69A",
+        "unit": "",
+        "updated_at": "2026-06-17T09:29:32+00:00",
+        "value": 3.0,
+        "value_text": "g., Expert, Personality), (2) response generators (e.g., Critical, Reasoning), (3) discussion paradigms (e.g., Memory, Relay), and (4) decision protocols (e.g.,",
+        "work_id": "W-F4B6C94FC69A"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:21:15+00:00",
+        "updated_at": "2026-06-17T10:29:57+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-E5A41163A064",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "math math math",
+      "canonical_label": "MATH",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-641840FF963C",
+        "benchmark_name": "MATH",
+        "code_url": "",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-17T09:40:53+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "tement Contact Search Search Register Login Search Search Home / Archives / No. 3 (2019) / articles ACCURACY OF A HEURISTIC FOR TOTAL WEIGHTED COMPLETION TIME MIN"
+        },
+        "extracted_at": "2026-06-17T09:40:53+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-6929CAF58133",
+        "method_name": "ACCURACY OF A HEURISTIC FOR TOTAL WEIGHTED COMPLETION TIME MINIMIZATION IN PR...",
+        "metric": "accuracy",
+        "needs_llm_review": false,
+        "result_id": "RR-FB33564F164D",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": false,
+          "has_compute_accounting": true,
+          "needs_verification": false
+        },
+        "source_hash": "aa26fa9021b28a51",
+        "source_work_id": "W-5C05CF1EB2D2",
+        "unit": "",
+        "updated_at": "2026-06-17T09:41:31+00:00",
+        "value": 3.0,
+        "value_text": "tement Contact Search Search Register Login Search Search Home / Archives / No. 3 (2019) / articles ACCURACY OF A HEURISTIC FOR TOTAL WEIGHTED COMPLETION TIME MIN",
+        "work_id": "W-5C05CF1EB2D2"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:18:12+00:00",
+        "updated_at": "2026-06-17T10:30:07+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-B86404C3874A",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "gsm8k gsm8k gsm8k",
+      "canonical_label": "GSM8K",
+      "concept_id": "RF-DBE34EBD64B7",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-A629381B2912",
+        "benchmark_name": "GSM8K",
+        "code_url": "",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-17T09:32:09+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "esigner, or experiment planner, to support parts of the scientific workflow [7, 21]. Systems such as the \"AI Co-Scientist\" [6] and \"Robin\" [5], as well as lab-in-"
+        },
+        "extracted_at": "2026-06-17T09:32:09+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-6929CAF58133",
+        "method_name": "Tiny Moves",
+        "metric": "EM",
+        "needs_llm_review": false,
+        "result_id": "RR-EF51E16CC38A",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": false,
+          "has_compute_accounting": false,
+          "needs_verification": false
+        },
+        "source_hash": "a44e1f38533f2d77",
+        "source_work_id": "W-3FD22D147568",
+        "unit": "",
+        "updated_at": "2026-06-17T09:35:07+00:00",
+        "value": 21.0,
+        "value_text": "esigner, or experiment planner, to support parts of the scientific workflow [7, 21]. Systems such as the \"AI Co-Scientist\" [6] and \"Robin\" [5], as well as lab-in-",
+        "work_id": "W-3FD22D147568"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:18:13+00:00",
+        "updated_at": "2026-06-17T10:30:01+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-66A7F27913D5",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "primed conversation topics drive specialized team discovery primed conversation topics drive specialized team discovery priming pairwise model conversations with specific topics successfully identifies synergistic teams that outperform random baselines and achieve accuracy comparable to manually cur",
+      "canonical_label": "Primed Conversation Topics Drive Specialized Team Discovery",
+      "concept_id": "TM-ADA123D41138",
+      "concept_type": "takeaway_message",
+      "payload": {
+        "active_version_id": "VER-0ADC9B645720",
+        "benchmarks": [],
+        "canonical_id": "TM-8256F409BC9D",
+        "canonical_key": "priming pairwise model conversations with specific topics successfully identifies synergistic teams outperform random baselines and achieve accuracy comparable to manually curated ",
+        "condition": "This finding holds when the priming topics are relevant to the latent specializations of the models and when the community detection algorithm is tuned to identify clusters of appropriate granularity. The models must be capable of engaging in multi-turn dialogue to generate sufficient signal for coherence scoring.",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T06:58:21+00:00",
+        "discussion": "For autonomous coding agents, this suggests that calibration can be achieved by running short, topic-specific diagnostic dialogues between candidate agents before deploying them on actual repository tasks. The resulting interaction profiles allow for the dynamic assembly of coding teams tailored to specific types of codebase issues. The actionable lesson is to maintain a matrix of pairwise interaction scores updated via periodic diagnostic probes rather than relying on static model versions.",
+        "entered_at": "2026-06-17T06:58:21+00:00",
+        "evidence": "The work reports that priming conversations with specific topics identified synergistic teams which outperform random baselines on downstream benchmarks and achieve comparable accuracy to that of manually-curated teams based on known model specializations.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:03+00:00",
+        "extraction_method": "llm_extracted",
+        "finding": "Priming pairwise model conversations with specific topics successfully identifies synergistic teams that outperform random baselines and achieve accuracy comparable to manually curated teams on downstream benchmarks.",
+        "main_results": "Priming pairwise model conversations with specific topics successfully identifies synergistic teams that outperform random baselines and achieve accuracy comparable to manually curated teams on downstream benchmarks.",
+        "message_text": "Priming pairwise model conversations with specific topics successfully identifies synergistic teams that outperform random baselines and achieve accuracy comparable to manually curated teams on downstream benchmarks.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2510.26352v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2510.26352v2"
+        ],
+        "source_paper_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-8DB03B5F73D6"
+        ],
+        "source_work_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "source_works": [],
+        "title": "Primed Conversation Topics Drive Specialized Team Discovery",
+        "updated_at": "2026-06-17T07:01:03+00:00",
+        "variants": {
+          "VER-0ADC9B645720": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T06:58:21+00:00",
+            "extracted_at": "2026-06-17T07:01:03+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "condition": "This finding holds when the priming topics are relevant to the latent specializations of the models and when the community detection algorithm is tuned to identify clusters of appropriate granularity. The models must be capable of engaging in multi-turn dialogue to generate sufficient signal for coherence scoring.",
+              "confidence_score": 0.7,
+              "discussion": "For autonomous coding agents, this suggests that calibration can be achieved by running short, topic-specific diagnostic dialogues between candidate agents before deploying them on actual repository tasks. The resulting interaction profiles allow for the dynamic assembly of coding teams tailored to specific types of codebase issues. The actionable lesson is to maintain a matrix of pairwise interaction scores updated via periodic diagnostic probes rather than relying on static model versions.",
+              "evidence": "The work reports that priming conversations with specific topics identified synergistic teams which outperform random baselines on downstream benchmarks and achieve comparable accuracy to that of manually-curated teams based on known model specializations.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "finding": "Priming pairwise model conversations with specific topics successfully identifies synergistic teams that outperform random baselines and achieve accuracy comparable to manually curated teams on downstream benchmarks.",
+              "main_results": "Priming pairwise model conversations with specific topics successfully identifies synergistic teams that outperform random baselines and achieve accuracy comparable to manually curated teams on downstream benchmarks.",
+              "message_text": "Priming pairwise model conversations with specific topics successfully identifies synergistic teams that outperform random baselines and achieve accuracy comparable to manually curated teams on downstream benchmarks.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "http://arxiv.org/abs/2510.26352v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2510.26352v2"
+              ],
+              "source_paper_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-8DB03B5F73D6"
+              ],
+              "source_work_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "source_works": [],
+              "title": "Primed Conversation Topics Drive Specialized Team Discovery",
+              "venue_or_source": "AAAI 2026",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2510.26352v2"
+            ],
+            "version_id": "VER-0ADC9B645720"
+          }
+        },
+        "venue_or_source": "AAAI 2026",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-8DB03B5F73D6"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:41:40+00:00",
+        "updated_at": "2026-06-17T10:29:33+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-999CBDD905DF",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "primed conversation topics drive specialized team discovery primed conversation topics drive specialized team discovery priming pairwise model conversations with specific topics successfully identifies synergistic teams that outperform random baselines and achieve accuracy comparable to manually cur",
+      "canonical_label": "Primed Conversation Topics Drive Specialized Team Discovery",
+      "concept_id": "TM-D6AB1A093F11",
+      "concept_type": "takeaway_message",
+      "payload": {
+        "active_version_id": "VER-0ADC9B645720",
+        "benchmarks": [],
+        "canonical_id": "TM-8256F409BC9D",
+        "canonical_key": "priming pairwise model conversations with specific topics successfully identifies synergistic teams outperform random baselines and achieve accuracy comparable to manually curated ",
+        "condition": "This finding holds when the priming topics are relevant to the latent specializations of the models and when the community detection algorithm is tuned to identify clusters of appropriate granularity. The models must be capable of engaging in multi-turn dialogue to generate sufficient signal for coherence scoring.",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T06:58:21+00:00",
+        "discussion": "For autonomous coding agents, this suggests that calibration can be achieved by running short, topic-specific diagnostic dialogues between candidate agents before deploying them on actual repository tasks. The resulting interaction profiles allow for the dynamic assembly of coding teams tailored to specific types of codebase issues. The actionable lesson is to maintain a matrix of pairwise interaction scores updated via periodic diagnostic probes rather than relying on static model versions.",
+        "entered_at": "2026-06-17T06:58:21+00:00",
+        "evidence": "The work reports that priming conversations with specific topics identified synergistic teams which outperform random baselines on downstream benchmarks and achieve comparable accuracy to that of manually-curated teams based on known model specializations.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:03+00:00",
+        "extraction_method": "llm_extracted",
+        "finding": "Priming pairwise model conversations with specific topics successfully identifies synergistic teams that outperform random baselines and achieve accuracy comparable to manually curated teams on downstream benchmarks.",
+        "main_results": "Priming pairwise model conversations with specific topics successfully identifies synergistic teams that outperform random baselines and achieve accuracy comparable to manually curated teams on downstream benchmarks.",
+        "message_text": "Priming pairwise model conversations with specific topics successfully identifies synergistic teams that outperform random baselines and achieve accuracy comparable to manually curated teams on downstream benchmarks.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2510.26352v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2510.26352v2"
+        ],
+        "source_paper_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-628E4984257D"
+        ],
+        "source_work_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "source_works": [
+          "W-628E4984257D"
+        ],
+        "title": "Primed Conversation Topics Drive Specialized Team Discovery",
+        "updated_at": "2026-06-17T07:01:03+00:00",
+        "variants": {
+          "VER-0ADC9B645720": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T06:58:21+00:00",
+            "extracted_at": "2026-06-17T07:01:03+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "condition": "This finding holds when the priming topics are relevant to the latent specializations of the models and when the community detection algorithm is tuned to identify clusters of appropriate granularity. The models must be capable of engaging in multi-turn dialogue to generate sufficient signal for coherence scoring.",
+              "confidence_score": 0.7,
+              "discussion": "For autonomous coding agents, this suggests that calibration can be achieved by running short, topic-specific diagnostic dialogues between candidate agents before deploying them on actual repository tasks. The resulting interaction profiles allow for the dynamic assembly of coding teams tailored to specific types of codebase issues. The actionable lesson is to maintain a matrix of pairwise interaction scores updated via periodic diagnostic probes rather than relying on static model versions.",
+              "evidence": "The work reports that priming conversations with specific topics identified synergistic teams which outperform random baselines on downstream benchmarks and achieve comparable accuracy to that of manually-curated teams based on known model specializations.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "finding": "Priming pairwise model conversations with specific topics successfully identifies synergistic teams that outperform random baselines and achieve accuracy comparable to manually curated teams on downstream benchmarks.",
+              "main_results": "Priming pairwise model conversations with specific topics successfully identifies synergistic teams that outperform random baselines and achieve accuracy comparable to manually curated teams on downstream benchmarks.",
+              "message_text": "Priming pairwise model conversations with specific topics successfully identifies synergistic teams that outperform random baselines and achieve accuracy comparable to manually curated teams on downstream benchmarks.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "http://arxiv.org/abs/2510.26352v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2510.26352v2"
+              ],
+              "source_paper_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-8DB03B5F73D6"
+              ],
+              "source_work_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "source_works": [],
+              "title": "Primed Conversation Topics Drive Specialized Team Discovery",
+              "venue_or_source": "AAAI 2026",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2510.26352v2"
+            ],
+            "version_id": "VER-0ADC9B645720"
+          }
+        },
+        "venue_or_source": "AAAI 2026",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-628E4984257D"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T10:35:46+00:00",
+        "updated_at": "2026-06-17T10:36:11+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-5C733010824F",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-FE4E0CB3EF0E",
+  "created_at": "2026-06-17T10:36:11+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "{\"benchmark_id\": \"B-9B4506F0EA3E\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-8DB03B5F73D6\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"GSM8K\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"The Geometry of Dialogue: Graphing Language Models to Re...",
+      "concept_id": "B-688938933F4F",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T06:21:12+00:00",
+      "evidence_id": "EV-019AE9FA1C91",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-9B4506F0EA3E\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-8DB03B5F73D6\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"GSM8K\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"The Geometry of Dialogue: Graphing Language Models to Re...",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-1FCFCC32FACA\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-8DB03B5F73D6\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"we used a suite of benchmark datasets under a zero-shot inference setting\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text...",
+      "concept_id": "B-B4966AFDC04C",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T06:21:12+00:00",
+      "evidence_id": "EV-482C4DF09D6C",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-1FCFCC32FACA\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-8DB03B5F73D6\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"we used a suite of benchmark datasets under a zero-shot inference setting\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text...",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-C43E6727FAAD\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-8DB03B5F73D6\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"The Geometry of Dialogue: Graphing Language Models to Rev...",
+      "concept_id": "B-6A7C1D0B9629",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T06:21:12+00:00",
+      "evidence_id": "EV-F284E9910A2A",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-C43E6727FAAD\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-8DB03B5F73D6\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"The Geometry of Dialogue: Graphing Language Models to Rev...",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-B3047910452C\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-9A70CDA52D4C\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Evolving Real-Time Local Agent Control for Large-Scale...",
+      "concept_id": "B-1A6F507BBC89",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T06:21:12+00:00",
+      "evidence_id": "EV-F49208912523",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-B3047910452C\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-9A70CDA52D4C\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Evolving Real-Time Local Agent Control for Large-Scale...",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-3C1F2F5E00C9",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-D8F8E4E0CC2D",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-F0767F19DF20",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-767DE1677A9B",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-C8BBC8B1B69D",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-52E2FDDC8790",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-E45CCF9EDD23",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-52E2FDDC8790",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-F43928EC921B",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-DBE34EBD64B7",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-BCF243D72B71",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-52E2FDDC8790",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-23E61C20ACDB",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-DBE34EBD64B7",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-23F2FCDF89D6",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-52E2FDDC8790",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-461970B398CF",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-48F33363968C",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-E8B4D4B06AE6",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-DBE34EBD64B7",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-A218B5A98A3C",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-F0FF7E1803EC",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-DBE34EBD64B7",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:17+00:00",
+      "evidence_id": "EV-0F38C4708131",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:17+00:00",
+      "evidence_id": "EV-6DDDD2DAA26F",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:17+00:00",
+      "evidence_id": "EV-0BB44A439F0F",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-52E2FDDC8790",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:17+00:00",
+      "evidence_id": "EV-BF15AF2FA48B",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:17+00:00",
+      "evidence_id": "EV-222770121803",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-DBE34EBD64B7",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:17+00:00",
+      "evidence_id": "EV-E74591B4BB67",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-52E2FDDC8790",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:17+00:00",
+      "evidence_id": "EV-2BBB8D8ADFC0",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:17+00:00",
+      "evidence_id": "EV-5F8E97DFC101",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:17+00:00",
+      "evidence_id": "EV-605EC2723387",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-52E2FDDC8790",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:17+00:00",
+      "evidence_id": "EV-A0AD2BD07C09",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-DBE34EBD64B7",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:17+00:00",
+      "evidence_id": "EV-1B7A1205CD88",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-DBE34EBD64B7",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:17+00:00",
+      "evidence_id": "EV-BD5CF6D20A6D",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:17+00:00",
+      "evidence_id": "EV-DFC838F85ACE",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-DBE34EBD64B7",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:17+00:00",
+      "evidence_id": "EV-A2D4E1AFE649",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-52E2FDDC8790",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:17+00:00",
+      "evidence_id": "EV-2D5D45F8DF0F",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:17+00:00",
+      "evidence_id": "EV-03FDBB51AF39",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:17+00:00",
+      "evidence_id": "EV-6C0AB7A66108",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-0B77A85A890E\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-565BC95507DC\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Scaling Large Language Model-based Multi-Agent Collabor...",
+      "concept_id": "B-6A7C1D0B9629",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T06:23:10+00:00",
+      "evidence_id": "EV-E49B3680D2D7",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-0B77A85A890E\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-565BC95507DC\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Scaling Large Language Model-based Multi-Agent Collabor...",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "The work demonstrates that naively assembling high-performing models can stifle cognitive diversity and degrade collective output, whereas teams formed via interaction-centric graph clustering outperform random baselines and match manually curated teams. The evidence rests on the observation that pairwise conversation coherence predicts downstream collaborative success better than individual model rankings, validating that synergy is an emergent property of interaction rather than a sum of parts.",
+      "concept_id": "P-73C06A9FEC59",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T07:41:39+00:00",
+      "evidence_id": "EV-5A5620820741",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work demonstrates that naively assembling high-performing models can stifle cognitive diversity and degrade collective output, whereas teams formed via interaction-centric graph clustering outperform random baselines and match manually curated teams. The evidence rests on the observation that pairwise conversation coherence predicts downstream collaborative success better than individual model rankings, validating that synergy is an emergent property of interaction rather than a sum of parts.",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "The work reports that priming conversations with specific topics identified synergistic teams which outperform random baselines on downstream benchmarks and achieve comparable accuracy to that of manually-curated teams based on known model specializations.",
+      "concept_id": "TM-ADA123D41138",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T07:41:40+00:00",
+      "evidence_id": "EV-DB6640E9B8AD",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work reports that priming conversations with specific topics identified synergistic teams which outperform random baselines on downstream benchmarks and achieve comparable accuracy to that of manually-curated teams based on known model specializations.",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-1FCFCC32FACA\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-8DB03B5F73D6\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"we used a suite of benchmark datasets under a zero-shot inference setting\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text...",
+      "concept_id": "B-B4966AFDC04C",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T07:41:42+00:00",
+      "evidence_id": "EV-24C11E2F81BE",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-1FCFCC32FACA\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-8DB03B5F73D6\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"we used a suite of benchmark datasets under a zero-shot inference setting\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text...",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "The excerpt states that identified synergistic teams 'outperform random baselines on downstream benchmarks and achieve comparable accuracy to that of manually-curated teams'.",
+      "concept_id": "B-569BB7D86FA8",
+      "confidence": 0.58,
+      "created_at": "2026-06-17T07:41:42+00:00",
+      "evidence_id": "EV-05B4CF4FE992",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The excerpt states that identified synergistic teams 'outperform random baselines on downstream benchmarks and achieve comparable accuracy to that of manually-curated teams'.",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"baseline_name\": \"Manually-Curated Teams\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Teams are assembled by human experts based on known model specializations and architectural knowledge.\", \"methodology\": \"Human experts select models based on prior knowledge of their training data, architecture, and documented strengths to form task-specific grou...",
+      "concept_id": "BL-F5E87639E8D2",
+      "confidence": 0.55,
+      "created_at": "2026-06-17T07:41:45+00:00",
+      "evidence_id": "EV-C22FD047D147",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"baseline_name\": \"Manually-Curated Teams\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Teams are assembled by human experts based on known model specializations and architectural knowledge.\", \"methodology\": \"Human experts select models based on prior knowledge of their training data, architecture, and documented strengths to form task-specific grou...",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"baseline_name\": \"Random Baseline\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Teams are formed by randomly selecting models from the available pool without regard for interaction history or semantic coherence.\", \"methodology\": \"Random sampling of model subsets to serve as control groups for evaluating the proposed graph-based clustering method.\",...",
+      "concept_id": "BL-85BE427B8D9F",
+      "confidence": 0.55,
+      "created_at": "2026-06-17T07:41:45+00:00",
+      "evidence_id": "EV-4F42AF50489A",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"baseline_name\": \"Random Baseline\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Teams are formed by randomly selecting models from the available pool without regard for interaction history or semantic coherence.\", \"methodology\": \"Random sampling of model subsets to serve as control groups for evaluating the proposed graph-based clustering method.\",...",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:50+00:00",
+      "evidence_id": "EV-7781701C70E8",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:50+00:00",
+      "evidence_id": "EV-AD12895F580A",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:50+00:00",
+      "evidence_id": "EV-94F28E0F9B56",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:50+00:00",
+      "evidence_id": "EV-E3DDFED165D0",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:50+00:00",
+      "evidence_id": "EV-EE1D540981C7",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-52E2FDDC8790",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:50+00:00",
+      "evidence_id": "EV-DB57D1CEED10",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-52E2FDDC8790",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:50+00:00",
+      "evidence_id": "EV-F9848E6331BE",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-DBE34EBD64B7",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:50+00:00",
+      "evidence_id": "EV-B86E79742644",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-52E2FDDC8790",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:50+00:00",
+      "evidence_id": "EV-89F226EC6796",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-DBE34EBD64B7",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:50+00:00",
+      "evidence_id": "EV-D1283C637974",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-52E2FDDC8790",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-D43EA24C6E88",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-49018B3C927C",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-500C341C75C5",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-DBE34EBD64B7",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-EF5F413F752B",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-BC19A8088744",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-DBE34EBD64B7",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-433DF5A88C17",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-2B501183E5F6",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-51181F7DC59C",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-52E2FDDC8790",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-C48024C20154",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-F4D815EFDB76",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-DBE34EBD64B7",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-894C476524BA",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-52E2FDDC8790",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-4A0CA3FD8B11",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-2479AD3BB360",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-67E21C775F37",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-52E2FDDC8790",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-3A35F14AFFE0",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-DBE34EBD64B7",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-060F3358E81B",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-DBE34EBD64B7",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-9AE2700223CA",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-E355C7E3E3D0",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-DBE34EBD64B7",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-254AD36B01A9",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-52E2FDDC8790",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-8CD57338EAEB",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-B1729C8CEB20",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-3CF76E4F7A61",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "MALLM can load any textual Hugging Face dataset including MMLU-Pro and provides an evaluation pipeline for easy comparison of MAD configurations.",
+      "concept_id": "B-5A04BACF25E2",
+      "confidence": 0.58,
+      "created_at": "2026-06-17T09:41:50+00:00",
+      "evidence_id": "EV-BB6D4C7F6DF5",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "MALLM can load any textual Hugging Face dataset including MMLU-Pro and provides an evaluation pipeline for easy comparison of MAD configurations.",
+      "work_id": "W-628E4984257D",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "The work demonstrates that naively assembling high-performing models can stifle cognitive diversity and degrade collective output, whereas teams formed via interaction-centric graph clustering outperform random baselines and match manually curated teams. The evidence rests on the observation that pairwise conversation coherence predicts downstream collaborative success better than individual model rankings, validating that synergy is an emergent property of interaction rather than a sum of parts.",
+      "concept_id": "P-CED42DC4E602",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T10:35:46+00:00",
+      "evidence_id": "EV-983D3DC478AF",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work demonstrates that naively assembling high-performing models can stifle cognitive diversity and degrade collective output, whereas teams formed via interaction-centric graph clustering outperform random baselines and match manually curated teams. The evidence rests on the observation that pairwise conversation coherence predicts downstream collaborative success better than individual model rankings, validating that synergy is an emergent property of interaction rather than a sum of parts.",
+      "work_id": "W-628E4984257D",
+      "work_version_id": "WV-67661493BAAD"
+    },
+    {
+      "claim_text": "The work reports that priming conversations with specific topics identified synergistic teams which outperform random baselines on downstream benchmarks and achieve comparable accuracy to that of manually-curated teams based on known model specializations.",
+      "concept_id": "TM-D6AB1A093F11",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T10:35:46+00:00",
+      "evidence_id": "EV-F83C99AEFD42",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work reports that priming conversations with specific topics identified synergistic teams which outperform random baselines on downstream benchmarks and achieve comparable accuracy to that of manually-curated teams based on known model specializations.",
+      "work_id": "W-628E4984257D",
+      "work_version_id": "WV-67661493BAAD"
+    },
+    {
+      "claim_text": "MALLM can load any textual Hugging Face dataset including MMLU-Pro and provides an evaluation pipeline for easy comparison of MAD configurations.",
+      "concept_id": "B-5A04BACF25E2",
+      "confidence": 0.58,
+      "created_at": "2026-06-17T10:35:46+00:00",
+      "evidence_id": "EV-71A98D2696AA",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "MALLM can load any textual Hugging Face dataset including MMLU-Pro and provides an evaluation pipeline for easy comparison of MAD configurations.",
+      "work_id": "W-628E4984257D",
+      "work_version_id": "WV-67661493BAAD"
+    },
+    {
+      "claim_text": "{\"baseline_name\": \"Manually-Curated Teams\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Teams are assembled by human experts based on known model specializations and architectural knowledge.\", \"methodology\": \"Human experts select models based on prior knowledge of their training data, architecture, and documented strengths to form task-specific grou...",
+      "concept_id": "BL-1B5C5B58E704",
+      "confidence": 0.55,
+      "created_at": "2026-06-17T10:35:46+00:00",
+      "evidence_id": "EV-1A584A191F6A",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"baseline_name\": \"Manually-Curated Teams\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Teams are assembled by human experts based on known model specializations and architectural knowledge.\", \"methodology\": \"Human experts select models based on prior knowledge of their training data, architecture, and documented strengths to form task-specific grou...",
+      "work_id": "W-628E4984257D",
+      "work_version_id": "WV-67661493BAAD"
+    },
+    {
+      "claim_text": "{\"baseline_name\": \"Random Baseline\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Teams are formed by randomly selecting models from the available pool without regard for interaction history or semantic coherence.\", \"methodology\": \"Random sampling of model subsets to serve as control groups for evaluating the proposed graph-based clustering method.\",...",
+      "concept_id": "BL-FA1CE51FDCED",
+      "confidence": 0.55,
+      "created_at": "2026-06-17T10:35:46+00:00",
+      "evidence_id": "EV-F4278EA9468D",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"baseline_name\": \"Random Baseline\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Teams are formed by randomly selecting models from the available pool without regard for interaction history or semantic coherence.\", \"methodology\": \"Random sampling of model subsets to serve as control groups for evaluating the proposed graph-based clustering method.\",...",
+      "work_id": "W-628E4984257D",
+      "work_version_id": "WV-67661493BAAD"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-17T10:36:11+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-17T10:35:45+00:00",
+      "extraction_run_id": "XRUN-2C13454447A5",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 2,
+        "benchmark_records": 5,
+        "existed_ideas": 0,
+        "principles": 1,
+        "takeaway_messages": 1,
+        "total": 9
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-628E4984257D",
+      "work_version_id": "WV-67661493BAAD"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "",
+    "secret_exposed_to_browser": false,
+    "warning": ""
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 0,
+        "principle": 1
+      },
+      "title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-628E4984257D"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "2510.26352",
+        "authors": [
+          "Kotaro Furuya",
+          "Yuichi Kitagawa"
+        ],
+        "canonical_title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "http://arxiv.org/abs/2510.26352v2"
+        ],
+        "title_hash": "adecb10a33ab3565",
+        "title_norm": "the geometry of dialogue graphing language models to reveal synergistic teams for multi agent collaboration",
+        "venue_or_source": "AAAI 2026",
+        "year": 2025
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "2026-03-19T09:40:13Z",
+        "title_hash": "adecb10a33ab3565"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:21:09+00:00",
+        "updated_at": "2026-06-17T10:36:10+00:00"
+      },
+      "work_id": "W-628E4984257D"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": "While a multi-agent approach based on large language models (LLMs) represents a promising strategy to surpass the capabilities of single models, its success is critically dependent on synergistic team composition. However, forming optimal teams is a significant challenge, as the inherent opacity of most models obscures the internal characteristics necessary for effective collaboration. In this paper, we propose an interaction-centric framework for automatic team composition that does not require any prior knowledge including their internal architectures, training data, or task performances. Our method constructs a \"language model graph\" that maps relationships between models from the semantic coherence of pairwise conversations, and then applies community detection to identify synergistic model clusters. Our experiments with diverse LLMs demonstrate that the proposed method discovers functionally coherent groups that reflect their latent specializations. Priming conversations with specific topics identified synergistic teams which outperform random baselines on downstream benchmarks and achieve comparable accuracy to that of manually-curated teams based on known model specializations. Our findings provide a new basis for the automated design of collaborative multi-agent LLM teams.",
+      "abstract_hash": "5519a2dd99e8f415",
+      "content_hash": "cbf8cd16a1854db7",
+      "created_at": "2026-06-17T06:21:09+00:00",
+      "metadata": {
+        "abstract": "While a multi-agent approach based on large language models (LLMs) represents a promising strategy to surpass the capabilities of single models, its success is critically dependent on synergistic team composition. However, forming optimal teams is a significant challenge, as the inherent opacity of most models obscures the internal characteristics necessary for effective collaboration. In this paper, we propose an interaction-centric framework for automatic team composition that does not require any prior knowledge including their internal architectures, training data, or task performances. Our method constructs a \"language model graph\" that maps relationships between models from the semantic coherence of pairwise conversations, and then applies community detection to identify synergistic model clusters. Our experiments with diverse LLMs demonstrate that the proposed method discovers functionally coherent groups that reflect their latent specializations. Priming conversations with specific topics identified synergistic teams which outperform random baselines on downstream benchmarks and achieve comparable accuracy to that of manually-curated teams based on known model specializations. Our findings provide a new basis for the automated design of collaborative multi-agent LLM teams.",
+        "active_version_id": "VER-4BD3316BA984",
+        "authors": [
+          "Kotaro Furuya",
+          "Yuichi Kitagawa"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-8DB03B5F73D6",
+        "canonical_key": "the geometry of dialogue graphing language models to reveal synergistic teams for multi agent collaboration",
+        "community_signals": {},
+        "confidence_score": 0.62,
+        "created_at": "2026-06-17T06:18:14+00:00",
+        "entered_at": "2026-06-17T06:19:10+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T06:19:10+00:00",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "paper_link": "http://arxiv.org/abs/2510.26352v2",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "2026-03-19T09:40:13Z",
+        "source_urls": [
+          "http://arxiv.org/abs/2510.26352v2"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+        "updated_at": "2026-06-17T06:19:10+00:00",
+        "url_or_doi": "http://arxiv.org/abs/2510.26352v2",
+        "validation_level": "L1",
+        "variants": {
+          "VER-4BD3316BA984": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T06:19:10+00:00",
+            "extracted_at": "2026-06-17T06:19:10+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract": "While a multi-agent approach based on large language models (LLMs) represents a promising strategy to surpass the capabilities of single models, its success is critically dependent on synergistic team composition. However, forming optimal teams is a significant challenge, as the inherent opacity of most models obscures the internal characteristics necessary for effective collaboration. In this paper, we propose an interaction-centric framework for automatic team composition that does not require any prior knowledge including their internal architectures, training data, or task performances. Our method constructs a \"language model graph\" that maps relationships between models from the semantic coherence of pairwise conversations, and then applies community detection to identify synergistic model clusters. Our experiments with diverse LLMs demonstrate that the proposed method discovers functionally coherent groups that reflect their latent specializations. Priming conversations with specific topics identified synergistic teams which outperform random baselines on downstream benchmarks and achieve comparable accuracy to that of manually-curated teams based on known model specializations. Our findings provide a new basis for the automated design of collaborative multi-agent LLM teams.",
+              "authors": [
+                "Kotaro Furuya",
+                "Yuichi Kitagawa"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/2510.26352v2",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2026-03-19T09:40:13Z",
+              "source_urls": [
+                "http://arxiv.org/abs/2510.26352v2"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "url_or_doi": "http://arxiv.org/abs/2510.26352v2",
+              "validation_level": "L1",
+              "venue_or_source": "AAAI 2026",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2510.26352v2"
+            ],
+            "version_id": "VER-4BD3316BA984"
+          },
+          "VER-D6977EE716E4": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T06:18:14+00:00",
+            "extracted_at": "2026-06-17T06:18:14+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "While a multi-agent approach based on large language models (LLMs) represents a promising strategy to surpass the capabilities of single models, its success is critically dependent on synergistic team composition. However, forming optimal teams is a significant challenge, as the inherent opacity of most models obscures the internal characteristics necessary for effective collaboration. In this paper, we propose an interaction-centric framework for automatic team composition that does not require any prior knowledge including their internal architectures, training data, or task performances. Our method constructs a \"language model graph\" that maps relationships between models from the semantic coherence of pairwise conversations, and then applies community detection to identify synergistic model clusters. Our experiments with diverse LLMs demonstrate that the proposed method discovers functionally coherent groups that reflect their latent specializations. Priming conversations with specific topics identified synergistic teams which outperform random baselines on downstream benchmarks and achieve comparable accuracy to that of manually-curated teams based on known model specializations. Our findings provide a new basis for the automated design of collaborative multi-agent LLM teams.",
+              "authors": [
+                "Kotaro Furuya",
+                "Yuichi Kitagawa"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/2510.26352v2",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2026-03-19T09:40:13Z",
+              "source_urls": [
+                "http://arxiv.org/abs/2510.26352v2"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+              "url_or_doi": "http://arxiv.org/abs/2510.26352v2",
+              "validation_level": "L1",
+              "venue_or_source": "AAAI 2026",
+              "year": 2025
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "http://arxiv.org/abs/2510.26352v2"
+            ],
+            "version_id": "VER-D6977EE716E4"
+          }
+        },
+        "venue_or_source": "AAAI 2026",
+        "work_id": "W-8DB03B5F73D6",
+        "year": 2025
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "",
+      "source_record_id": "W-8DB03B5F73D6",
+      "source_updated_at": "2026-03-19T09:40:13Z",
+      "title": "The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration",
+      "title_hash": "adecb10a33ab3565",
+      "work_id": "W-628E4984257D",
+      "work_version_id": "WV-67661493BAAD"
+    }
+  ]
+}
