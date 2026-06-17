@@ -1,0 +1,537 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "sparse prompt sufficiency vs pseudo label redundancy sparse prompt sufficiency vs pseudo label redundancy if a domain adaptation framework utilizes a limited set of unpaired prompt images instead of paired datasets then the quality of the resulting pseudo labels will inversely correlate with the red",
+      "canonical_label": "Sparse Prompt Sufficiency vs. Pseudo-Label Redundancy",
+      "concept_id": "P-C8E6ECF921BF",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "If a domain adaptation framework utilizes a limited set of unpaired prompt images instead of paired datasets, then the quality of the resulting pseudo-labels will inversely correlate with the redundancy introduced by the sparsity of those prompts unless an explicit redundancy mitigation mechanism is applied.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-7609F9832969",
+        "argument": "If a domain adaptation framework utilizes a limited set of unpaired prompt images instead of paired datasets, then the quality of the resulting pseudo-labels will inversely correlate with the redundancy introduced by the sparsity of those prompts unless an explicit redundancy mitigation mechanism is applied.",
+        "benchmarks": [],
+        "canonical_id": "P-3A6FF1DDF692",
+        "canonical_key": "if domain adaptation framework utilizes limited set of unpaired prompt images instead of paired datasets then quality of resulting pseudo labels will inversely correlate with redun",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T11:05:45+00:00",
+        "discussion": "The principle establishes a critical constraint for prompt-guided adaptation: reducing data requirements via sparse prompting inherently increases the risk of generating noisy training signals. The argument posits that architectural improvements alone are insufficient to counteract this effect; a dedicated strategy to identify and filter redundant pseudo-label information is a necessary condition for maintaining segmentation accuracy, particularly for difficult classes that lack strong day-night visual correlation.",
+        "entered_at": "2026-06-17T11:05:45+00:00",
+        "evidence": "The abstract explicitly notes that while limited prompt images solve data acquisition difficulties, they 'often lead to highly redundant pseudo-labels,' and that methods focusing solely on network architecture struggle to handle the resulting issues, especially for classes with low domain similarity.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:07:12+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Sparse Prompt Sufficiency vs. Pseudo-Label Redundancy",
+        "performance": [],
+        "principle_id": "P-3A6FF1DDF692",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+        "provider": "siliconflow",
+        "source_paper_link": "https://doi.org/10.2139/ssrn.6484865",
+        "source_paper_links": [
+          "https://doi.org/10.2139/ssrn.6484865"
+        ],
+        "source_paper_title": "EGLP: Efficient Guidance with Limited Prompt Images for Semantic Segmentation of Nighttime Scene",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-CA0D7F2A19FC"
+        ],
+        "source_work_title": "EGLP: Efficient Guidance with Limited Prompt Images for Semantic Segmentation of Nighttime Scene",
+        "source_works": [
+          "W-CA0D7F2A19FC"
+        ],
+        "updated_at": "2026-06-17T11:07:12+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-7609F9832969": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T11:05:45+00:00",
+            "extracted_at": "2026-06-17T11:07:12+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "If a domain adaptation framework utilizes a limited set of unpaired prompt images instead of paired datasets, then the quality of the resulting pseudo-labels will inversely correlate with the redundancy introduced by the sparsity of those prompts unless an explicit redundancy mitigation mechanism is applied.",
+              "argument": "If a domain adaptation framework utilizes a limited set of unpaired prompt images instead of paired datasets, then the quality of the resulting pseudo-labels will inversely correlate with the redundancy introduced by the sparsity of those prompts unless an explicit redundancy mitigation mechanism is applied.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle establishes a critical constraint for prompt-guided adaptation: reducing data requirements via sparse prompting inherently increases the risk of generating noisy training signals. The argument posits that architectural improvements alone are insufficient to counteract this effect; a dedicated strategy to identify and filter redundant pseudo-label information is a necessary condition for maintaining segmentation accuracy, particularly for difficult classes that lack strong day-night visual correlation.",
+              "evidence": "The abstract explicitly notes that while limited prompt images solve data acquisition difficulties, they 'often lead to highly redundant pseudo-labels,' and that methods focusing solely on network architecture struggle to handle the resulting issues, especially for classes with low domain similarity.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Sparse Prompt Sufficiency vs. Pseudo-Label Redundancy",
+              "performance": [],
+              "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+              "source_paper_link": "https://doi.org/10.2139/ssrn.6484865",
+              "source_paper_links": [
+                "https://doi.org/10.2139/ssrn.6484865"
+              ],
+              "source_paper_title": "EGLP: Efficient Guidance with Limited Prompt Images for Semantic Segmentation of Nighttime Scene",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-F6D0FDD2A36D"
+              ],
+              "source_work_title": "EGLP: Efficient Guidance with Limited Prompt Images for Semantic Segmentation of Nighttime Scene",
+              "source_works": [
+                "W-F6D0FDD2A36D"
+              ],
+              "venue_or_source": "Elsevier BV",
+              "year": 2026
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.2139/ssrn.6484865"
+            ],
+            "version_id": "VER-7609F9832969"
+          }
+        },
+        "venue_or_source": "Elsevier BV",
+        "year": 2026
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-CA0D7F2A19FC"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:05+00:00",
+        "updated_at": "2026-06-17T11:22:05+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-59079A1CA20E",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "trade off between data efficiency and pseudo label quality in prompt guided uda trade off between data efficiency and pseudo label quality in prompt guided uda adopting limited prompt images improves data acquisition efficiency and generalization potential but introduces the risk of generating highl",
+      "canonical_label": "Trade-off Between Data Efficiency and Pseudo-Label Quality in Prompt-Guided UDA",
+      "concept_id": "TM-CF05521FF11A",
+      "concept_type": "takeaway_message",
+      "payload": {
+        "active_version_id": "VER-E27FB84FF2FE",
+        "benchmarks": [],
+        "canonical_id": "TM-0A40FEEF6E9A",
+        "canonical_key": "adopting limited prompt images improves data acquisition efficiency and generalization potential but introduces risk of generating highly redundant pseudo labels",
+        "condition": "When applying unsupervised domain adaptation to nighttime scenes using only a few prompt images instead of paired datasets.",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T11:05:45+00:00",
+        "discussion": "The shift from paired data to limited prompts solves the data scarcity problem but creates a new optimization challenge where the model must distinguish useful signals from the redundant information generated by the sparse prompts.",
+        "entered_at": "2026-06-17T11:05:45+00:00",
+        "evidence": "The abstract notes that while limited prompt images alleviate data acquisition issues, they often lead to highly redundant pseudo-labels.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:07:12+00:00",
+        "extraction_method": "llm_extracted",
+        "finding": "Adopting limited prompt images improves data acquisition efficiency and generalization potential but introduces the risk of generating highly redundant pseudo-labels.",
+        "main_results": "Adopting limited prompt images improves data acquisition efficiency and generalization potential but introduces the risk of generating highly redundant pseudo-labels.",
+        "message_text": "Adopting limited prompt images improves data acquisition efficiency and generalization potential but introduces the risk of generating highly redundant pseudo-labels.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "https://doi.org/10.2139/ssrn.6484865",
+        "source_paper_links": [
+          "https://doi.org/10.2139/ssrn.6484865"
+        ],
+        "source_paper_title": "EGLP: Efficient Guidance with Limited Prompt Images for Semantic Segmentation of Nighttime Scene",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-CA0D7F2A19FC"
+        ],
+        "source_work_title": "EGLP: Efficient Guidance with Limited Prompt Images for Semantic Segmentation of Nighttime Scene",
+        "source_works": [
+          "W-CA0D7F2A19FC"
+        ],
+        "title": "Trade-off Between Data Efficiency and Pseudo-Label Quality in Prompt-Guided UDA",
+        "updated_at": "2026-06-17T11:07:12+00:00",
+        "variants": {
+          "VER-E27FB84FF2FE": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T11:05:45+00:00",
+            "extracted_at": "2026-06-17T11:07:12+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "condition": "When applying unsupervised domain adaptation to nighttime scenes using only a few prompt images instead of paired datasets.",
+              "confidence_score": 0.7,
+              "discussion": "The shift from paired data to limited prompts solves the data scarcity problem but creates a new optimization challenge where the model must distinguish useful signals from the redundant information generated by the sparse prompts.",
+              "evidence": "The abstract notes that while limited prompt images alleviate data acquisition issues, they often lead to highly redundant pseudo-labels.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "finding": "Adopting limited prompt images improves data acquisition efficiency and generalization potential but introduces the risk of generating highly redundant pseudo-labels.",
+              "main_results": "Adopting limited prompt images improves data acquisition efficiency and generalization potential but introduces the risk of generating highly redundant pseudo-labels.",
+              "message_text": "Adopting limited prompt images improves data acquisition efficiency and generalization potential but introduces the risk of generating highly redundant pseudo-labels.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "https://doi.org/10.2139/ssrn.6484865",
+              "source_paper_links": [
+                "https://doi.org/10.2139/ssrn.6484865"
+              ],
+              "source_paper_title": "EGLP: Efficient Guidance with Limited Prompt Images for Semantic Segmentation of Nighttime Scene",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-F6D0FDD2A36D"
+              ],
+              "source_work_title": "EGLP: Efficient Guidance with Limited Prompt Images for Semantic Segmentation of Nighttime Scene",
+              "source_works": [],
+              "title": "Trade-off Between Data Efficiency and Pseudo-Label Quality in Prompt-Guided UDA",
+              "venue_or_source": "Elsevier BV",
+              "year": 2026
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.2139/ssrn.6484865"
+            ],
+            "version_id": "VER-E27FB84FF2FE"
+          }
+        },
+        "venue_or_source": "Elsevier BV",
+        "year": 2026
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-CA0D7F2A19FC"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:05+00:00",
+        "updated_at": "2026-06-17T11:22:05+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-9746AF2483CD",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-31EFCA0F2C15",
+  "created_at": "2026-06-17T11:22:05+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "The abstract explicitly notes that while limited prompt images solve data acquisition difficulties, they 'often lead to highly redundant pseudo-labels,' and that methods focusing solely on network architecture struggle to handle the resulting issues, especially for classes with low domain similarity.",
+      "concept_id": "P-C8E6ECF921BF",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T11:22:05+00:00",
+      "evidence_id": "EV-649A91166405",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The abstract explicitly notes that while limited prompt images solve data acquisition difficulties, they 'often lead to highly redundant pseudo-labels,' and that methods focusing solely on network architecture struggle to handle the resulting issues, especially for classes with low domain similarity.",
+      "work_id": "W-CA0D7F2A19FC",
+      "work_version_id": "WV-A50A28FCFAFF"
+    },
+    {
+      "claim_text": "The abstract notes that while limited prompt images alleviate data acquisition issues, they often lead to highly redundant pseudo-labels.",
+      "concept_id": "TM-CF05521FF11A",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T11:22:05+00:00",
+      "evidence_id": "EV-F8DBEB11D7D3",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The abstract notes that while limited prompt images alleviate data acquisition issues, they often lead to highly redundant pseudo-labels.",
+      "work_id": "W-CA0D7F2A19FC",
+      "work_version_id": "WV-A50A28FCFAFF"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-17T11:22:05+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-17T11:21:59+00:00",
+      "extraction_run_id": "XRUN-4A4707E8A3F6",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 4,
+        "existed_ideas": 0,
+        "principles": 1,
+        "takeaway_messages": 1,
+        "total": 6
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-CA0D7F2A19FC",
+      "work_version_id": "WV-A50A28FCFAFF"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "",
+    "secret_exposed_to_browser": false,
+    "warning": ""
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 0,
+        "principle": 1
+      },
+      "title": "EGLP: Efficient Guidance with Limited Prompt Images for Semantic Segmentation of Nighttime Scene",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-CA0D7F2A19FC"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "",
+        "authors": [
+          "Xiyuan Liu",
+          "Jinlong Shi",
+          "Caisheng Liu",
+          "Suqin Bai",
+          "Qiang Qian",
+          "Ao Zhang"
+        ],
+        "canonical_title": "EGLP: Efficient Guidance with Limited Prompt Images for Semantic Segmentation of Nighttime Scene",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "https://doi.org/10.2139/ssrn.6484865",
+          "https://www.ssrn.com/abstract=6484865"
+        ],
+        "title_hash": "115a42889d672e58",
+        "title_norm": "eglp efficient guidance with limited prompt images for semantic segmentation of nighttime scene",
+        "venue_or_source": "Elsevier BV",
+        "year": 2026
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "2026-03-28T14:52:58Z",
+        "title_hash": "115a42889d672e58"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:21:59+00:00",
+        "updated_at": "2026-06-17T11:21:59+00:00"
+      },
+      "work_id": "W-CA0D7F2A19FC"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": "Nighttime scene parsing faces the challenge of limited labeled night image datasets, making unsupervised domain adaptation (UDA) the predominant method in this field. Traditional UDA methods rely on paired day-night images to guide domain adaptation, which increases the difficulty of data acquisition and limits adaptation generalization across different nighttime datasets. UDA methods assisted by a limited number of prompt images can alleviate this issue. However, the limited prompt images often lead to highly redundant pseudo-labels. Moreover, UDA methods that focus on network architecture and training strategies struggle to handle classes with low domain similarity and tend to neglect dynamic and small-scale objects, such as vehicles and traffic lights, resulting in suboptimal parsing accuracy. To address these challenges, we propose Efficient Guidance with Limited Prompt Images for semantic segmentation of nighttime scene (EGLP). We design a Rare Class Memory (RCM) module that enhances rare classes at both the label and image levels to improve segmentation performance. Furthermore, we propose the Fusion of Pseudo-labels via Image Similarity (FIS) method, which employs a Day-Night Image Similarity (DNIS) function to compute class-wise similarity between source and target domains. Classes with lower similarity are predicted by a Night-Focused Network (NFNet) trained specifically on night images, while classes with higher similarity are predicted by UDA with rich semantic supervision. A Dynamic Mixing Strategy (DMS) further integrates predictions based on DNIS scores and utilizes limited prompt images to generate high-quality pseudo-labels. We conduct extensive experiments on four nighttime datasets: NightCity, NightCity+, Dark Zurich, and ACDC. The results indicate...",
+      "abstract_hash": "b71aa5674c97f844",
+      "content_hash": "5c911087d623789e",
+      "created_at": "2026-06-17T11:21:59+00:00",
+      "metadata": {
+        "abstract": "Nighttime scene parsing faces the challenge of limited labeled night image datasets, making unsupervised domain adaptation (UDA) the predominant method in this field. Traditional UDA methods rely on paired day-night images to guide domain adaptation, which increases the difficulty of data acquisition and limits adaptation generalization across different nighttime datasets. UDA methods assisted by a limited number of prompt images can alleviate this issue. However, the limited prompt images often lead to highly redundant pseudo-labels. Moreover, UDA methods that focus on network architecture and training strategies struggle to handle classes with low domain similarity and tend to neglect dynamic and small-scale objects, such as vehicles and traffic lights, resulting in suboptimal parsing accuracy. To address these challenges, we propose Efficient Guidance with Limited Prompt Images for semantic segmentation of nighttime scene (EGLP). We design a Rare Class Memory (RCM) module that enhances rare classes at both the label and image levels to improve segmentation performance. Furthermore, we propose the Fusion of Pseudo-labels via Image Similarity (FIS) method, which employs a Day-Night Image Similarity (DNIS) function to compute class-wise similarity between source and target domains. Classes with lower similarity are predicted by a Night-Focused Network (NFNet) trained specifically on night images, while classes with higher similarity are predicted by UDA with rich semantic supervision. A Dynamic Mixing Strategy (DMS) further integrates predictions based on DNIS scores and utilizes limited prompt images to generate high-quality pseudo-labels. We conduct extensive experiments on four nighttime datasets: NightCity, NightCity+, Dark Zurich, and ACDC. The results indicate...",
+        "active_version_id": "VER-C0DC7A0FBC4B",
+        "authors": [
+          "Xiyuan Liu",
+          "Jinlong Shi",
+          "Caisheng Liu",
+          "Suqin Bai",
+          "Qiang Qian",
+          "Ao Zhang"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-F6D0FDD2A36D",
+        "canonical_key": "eglp efficient guidance with limited prompt images for semantic segmentation of nighttime scene",
+        "citation_count": 0,
+        "community_signals": {
+          "source": "crossref",
+          "type": "posted-content"
+        },
+        "confidence_score": 0.62,
+        "created_at": "2026-06-17T10:49:59+00:00",
+        "entered_at": "2026-06-17T11:05:45+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:07:12+00:00",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "paper_link": "https://doi.org/10.2139/ssrn.6484865",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "2026-03-28T14:52:58Z",
+        "source_urls": [
+          "https://doi.org/10.2139/ssrn.6484865",
+          "https://www.ssrn.com/abstract=6484865"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "title": "EGLP: Efficient Guidance with Limited Prompt Images for Semantic Segmentation of Nighttime Scene",
+        "updated_at": "2026-06-17T11:07:12+00:00",
+        "url_or_doi": "https://doi.org/10.2139/ssrn.6484865",
+        "validation_level": "L1",
+        "variants": {
+          "VER-80EE4E05A8FF": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T10:49:59+00:00",
+            "extracted_at": "2026-06-17T10:49:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Nighttime scene parsing faces the challenge of limited labeled night image datasets, making unsupervised domain adaptation (UDA) the predominant method in this field. Traditional UDA methods rely on paired day-night images to guide domain adaptation, which increases the difficulty of data acquisition and limits adaptation generalization across different nighttime datasets. UDA methods assisted by a limited number of prompt images can alleviate this issue. However, the limited prompt images often lead to highly redundant pseudo-labels. Moreover, UDA methods that focus on network architecture and training strategies struggle to handle classes with low domain similarity and tend to neglect dynamic and small-scale objects, such as vehicles and traffic lights, resulting in suboptimal parsing accuracy. To address these challenges, we propose Efficient Guidance with Limited Prompt Images for semantic segmentation of nighttime scene (EGLP). We design a Rare Class Memory (RCM) module that enhances rare classes at both the label and image levels to improve segmentation performance. Furthermore, we propose the Fusion of Pseudo-labels via Image Similarity (FIS) method, which employs a Day-Night Image Similarity (DNIS) function to compute class-wise similarity between source and target domains. Classes with lower similarity are predicted by a Night-Focused Network (NFNet) trained specifically on night images, while classes with higher similarity are predicted by UDA with rich semantic supervision. A Dynamic Mixing Strategy (DMS) further integrates predictions based on DNIS scores and utilizes limited prompt images to generate high-quality pseudo-labels. We conduct extensive experiments on four nighttime datasets: NightCity, NightCity+, Dark Zurich, and ACDC. The results indicate...",
+              "authors": [
+                "Xiyuan Liu",
+                "Jinlong Shi",
+                "Caisheng Liu",
+                "Suqin Bai",
+                "Qiang Qian",
+                "Ao Zhang"
+              ],
+              "benchmarks": [],
+              "citation_count": 0,
+              "community_signals": {
+                "source": "crossref",
+                "type": "posted-content"
+              },
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "https://doi.org/10.2139/ssrn.6484865",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2026-03-28T14:52:58Z",
+              "source_urls": [
+                "https://doi.org/10.2139/ssrn.6484865",
+                "https://www.ssrn.com/abstract=6484865"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "EGLP: Efficient Guidance with Limited Prompt Images for Semantic Segmentation of Nighttime Scene",
+              "url_or_doi": "https://doi.org/10.2139/ssrn.6484865",
+              "validation_level": "L1",
+              "venue_or_source": "Elsevier BV",
+              "year": 2026
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "https://doi.org/10.2139/ssrn.6484865",
+              "https://www.ssrn.com/abstract=6484865"
+            ],
+            "version_id": "VER-80EE4E05A8FF"
+          },
+          "VER-C0DC7A0FBC4B": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T11:05:45+00:00",
+            "extracted_at": "2026-06-17T11:07:12+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Nighttime scene parsing faces the challenge of limited labeled night image datasets, making unsupervised domain adaptation (UDA) the predominant method in this field. Traditional UDA methods rely on paired day-night images to guide domain adaptation, which increases the difficulty of data acquisition and limits adaptation generalization across different nighttime datasets. UDA methods assisted by a limited number of prompt images can alleviate this issue. However, the limited prompt images often lead to highly redundant pseudo-labels. Moreover, UDA methods that focus on network architecture and training strategies struggle to handle classes with low domain similarity and tend to neglect dynamic and small-scale objects, such as vehicles and traffic lights, resulting in suboptimal parsing accuracy. To address these challenges, we propose Efficient Guidance with Limited Prompt Images for semantic segmentation of nighttime scene (EGLP). We design a Rare Class Memory (RCM) module that enhances rare classes at both the label and image levels to improve segmentation performance. Furthermore, we propose the Fusion of Pseudo-labels via Image Similarity (FIS) method, which employs a Day-Night Image Similarity (DNIS) function to compute class-wise similarity between source and target domains. Classes with lower similarity are predicted by a Night-Focused Network (NFNet) trained specifically on night images, while classes with higher similarity are predicted by UDA with rich semantic supervision. A Dynamic Mixing Strategy (DMS) further integrates predictions based on DNIS scores and utilizes limited prompt images to generate high-quality pseudo-labels. We conduct extensive experiments on four nighttime datasets: NightCity, NightCity+, Dark Zurich, and ACDC. The results indicate...",
+              "authors": [
+                "Xiyuan Liu",
+                "Jinlong Shi",
+                "Caisheng Liu",
+                "Suqin Bai",
+                "Qiang Qian",
+                "Ao Zhang"
+              ],
+              "benchmarks": [],
+              "citation_count": 0,
+              "community_signals": {
+                "source": "crossref",
+                "type": "posted-content"
+              },
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "https://doi.org/10.2139/ssrn.6484865",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2026-03-28T14:52:58Z",
+              "source_urls": [
+                "https://doi.org/10.2139/ssrn.6484865",
+                "https://www.ssrn.com/abstract=6484865"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "EGLP: Efficient Guidance with Limited Prompt Images for Semantic Segmentation of Nighttime Scene",
+              "url_or_doi": "https://doi.org/10.2139/ssrn.6484865",
+              "validation_level": "L1",
+              "venue_or_source": "Elsevier BV",
+              "year": 2026
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.2139/ssrn.6484865",
+              "https://www.ssrn.com/abstract=6484865"
+            ],
+            "version_id": "VER-C0DC7A0FBC4B"
+          }
+        },
+        "venue_or_source": "Elsevier BV",
+        "work_id": "W-F6D0FDD2A36D",
+        "year": 2026
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "crossref",
+      "source_record_id": "W-F6D0FDD2A36D",
+      "source_updated_at": "2026-03-28T14:52:58Z",
+      "title": "EGLP: Efficient Guidance with Limited Prompt Images for Semantic Segmentation of Nighttime Scene",
+      "title_hash": "115a42889d672e58",
+      "work_id": "W-CA0D7F2A19FC",
+      "work_version_id": "WV-A50A28FCFAFF"
+    }
+  ]
+}
