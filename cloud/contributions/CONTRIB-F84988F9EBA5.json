@@ -1,0 +1,3540 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "humaneval humaneval humaneval w 931a92b2cbd0",
+      "canonical_label": "HumanEval",
+      "concept_id": "B-02F383F1AA40",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-5C7875A7E9F5",
+        "benchmark_id": "B-563D4A9FFB3C",
+        "benchmark_name": "HumanEval",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-563D4A9FFB3C",
+        "canonical_key": "humaneval",
+        "cloud_origin": {
+          "cloud_model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+          "cloud_payload_sha256": "",
+          "cloud_record_id": "B-02F383F1AA40",
+          "cloud_snapshot_id": "SNAP-1E83647E23AF",
+          "cloud_updated_at": "2026-06-17T07:05:01+00:00"
+        },
+        "concept_id": "B-02F383F1AA40",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T06:19:09+00:00",
+        "data_form": "Programming prompts with unit tests.",
+        "dataset": "HumanEval",
+        "description": "Python code-generation benchmark for function synthesis.",
+        "entered_at": "2026-06-17T06:19:09+00:00",
+        "evidence": "{\"benchmark_id\": \"B-FADC9ED492EB\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"HumanEval\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Analogical reasoning with large lan...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T09:29:30+00:00",
+        "extractor": "deterministic",
+        "field_id": "PRJ-6929CAF58133",
+        "metric": "mAP",
+        "metrics": [
+          "accuracy",
+          "memory",
+          "EM",
+          "mAP"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://github.com/openai/human-eval",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "164 programming problems.",
+        "source": "OpenAI",
+        "source_paper_link": "https://doi.org/10.1017/dsj.2025.10044",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2406.07155v3",
+          "http://arxiv.org/abs/2404.01023v1",
+          "https://doi.org/10.1017/dsj.2025.10044"
+        ],
+        "source_paper_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-A482FD24BE59"
+        ],
+        "source_work_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "source_works": [
+          "W-A482FD24BE59"
+        ],
+        "task": "machine-dialect MAS for token-efficient reasoning",
+        "title": "HumanEval",
+        "updated_at": "2026-06-17T09:29:30+00:00",
+        "variants": {
+          "VER-5C7875A7E9F5": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T06:19:09+00:00",
+            "extracted_at": "2026-06-17T09:29:30+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "HumanEval",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Programming prompts with unit tests.",
+              "dataset": "HumanEval",
+              "description": "Python code-generation benchmark for function synthesis.",
+              "evidence": "{\"benchmark_id\": \"B-FADC9ED492EB\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"HumanEval\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Analogical reasoning with large lan...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "mAP",
+              "metrics": [
+                "accuracy",
+                "memory",
+                "EM",
+                "mAP"
+              ],
+              "needs_review": false,
+              "official_url": "https://github.com/openai/human-eval",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "164 programming problems.",
+              "source": "OpenAI",
+              "source_paper_link": "https://doi.org/10.1017/dsj.2025.10044",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2406.07155v3",
+                "http://arxiv.org/abs/2404.01023v1",
+                "https://doi.org/10.1017/dsj.2025.10044"
+              ],
+              "source_paper_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-565BC95507DC",
+                "W-CCDDD020EEA0",
+                "W-50A0DFAB12FB"
+              ],
+              "source_work_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "source_works": [],
+              "task": "machine-dialect MAS for token-efficient reasoning",
+              "venue_or_source": "Design Science",
+              "year": 2026
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1017/dsj.2025.10044",
+              "https://github.com/openai/human-eval"
+            ],
+            "version_id": "VER-5C7875A7E9F5"
+          }
+        },
+        "venue_or_source": "Design Science",
+        "year": 2026
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-A482FD24BE59"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:04:54+00:00",
+        "updated_at": "2026-06-17T10:36:06+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-F548329E856C",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "turn taking turn taking turn taking w 50a0dfab12fb",
+      "canonical_label": "turn-taking",
+      "concept_id": "B-0D88A815C664",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-AD5862DA2021",
+        "benchmark_id": "B-8CFECBD5D573",
+        "benchmark_name": "turn-taking",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "candidate_dataset_pages": [
+          "https://huggingface.co/datasets?search=turn-taking"
+        ],
+        "canonical_id": "B-8CFECBD5D573",
+        "canonical_key": "turn taking",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T09:26:40+00:00",
+        "data_form": "Unknown from local metadata; inspect the source work or benchmark page.",
+        "dataset": "turn-taking",
+        "description": "turn-taking appears in local source evidence. Add official metadata when you curate this project.",
+        "entered_at": "2026-06-17T09:26:40+00:00",
+        "evidence": "{\"benchmark_id\": \"B-01C1B12A55A6\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"turn-taking\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Analogical reasoning with large l...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T09:29:30+00:00",
+        "extractor": "deterministic",
+        "metric": "mAP",
+        "metrics": [
+          "mAP"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": false,
+        "scale": "Unknown from local metadata.",
+        "source": "local extraction",
+        "source_paper_link": "https://doi.org/10.1017/dsj.2025.10044",
+        "source_paper_links": [
+          "https://doi.org/10.1017/dsj.2025.10044"
+        ],
+        "source_paper_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-50A0DFAB12FB"
+        ],
+        "source_work_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "source_works": [],
+        "task": "machine-dialect MAS for token-efficient reasoning",
+        "updated_at": "2026-06-17T09:29:30+00:00",
+        "variants": {
+          "VER-AD5862DA2021": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T09:26:40+00:00",
+            "extracted_at": "2026-06-17T09:29:30+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "turn-taking",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "candidate_dataset_pages": [
+                "https://huggingface.co/datasets?search=turn-taking"
+              ],
+              "confidence_score": 0.7,
+              "data_form": "Unknown from local metadata; inspect the source work or benchmark page.",
+              "dataset": "turn-taking",
+              "description": "turn-taking appears in local source evidence. Add official metadata when you curate this project.",
+              "evidence": "{\"benchmark_id\": \"B-01C1B12A55A6\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"turn-taking\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Analogical reasoning with large l...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "mAP",
+              "metrics": [
+                "mAP"
+              ],
+              "needs_review": false,
+              "performance": [],
+              "public_dataset": false,
+              "scale": "Unknown from local metadata.",
+              "source": "local extraction",
+              "source_paper_link": "https://doi.org/10.1017/dsj.2025.10044",
+              "source_paper_links": [
+                "https://doi.org/10.1017/dsj.2025.10044"
+              ],
+              "source_paper_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-50A0DFAB12FB"
+              ],
+              "source_work_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "source_works": [],
+              "task": "machine-dialect MAS for token-efficient reasoning",
+              "venue_or_source": "Design Science",
+              "year": 2026
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1017/dsj.2025.10044"
+            ],
+            "version_id": "VER-AD5862DA2021"
+          }
+        },
+        "venue_or_source": "Design Science",
+        "year": 2026
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-50A0DFAB12FB"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T09:41:49+00:00",
+        "updated_at": "2026-06-17T10:29:37+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-38765BB67A56",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "mbpp mbpp mbpp w a482fd24be59",
+      "canonical_label": "MBPP",
+      "concept_id": "B-135550388323",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-46657BCF842F",
+        "benchmark_id": "B-0E99873748E6",
+        "benchmark_name": "MBPP",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-0E99873748E6",
+        "canonical_key": "mbpp",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T07:01:15+00:00",
+        "data_form": "Natural-language programming tasks with Python tests.",
+        "dataset": "MBPP",
+        "description": "Mostly Basic Python Problems benchmark for code generation.",
+        "entered_at": "2026-06-17T07:01:15+00:00",
+        "evidence": "{\"benchmark_id\": \"B-308BAB37A080\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-FBBB81F205BE\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"MBPP\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"LMR-BENCH: Evaluating LLM Agent's Abilit...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T09:29:33+00:00",
+        "extractor": "deterministic",
+        "metric": "mAP",
+        "metrics": [
+          "accuracy",
+          "EM",
+          "mAP"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/google-research-datasets/mbpp",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Around 1K crowd-sourced Python programming tasks.",
+        "source": "Google Research / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2506.17335v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2404.01023v1",
+          "http://arxiv.org/abs/2506.17335v1",
+          "https://doi.org/10.1017/dsj.2025.10044"
+        ],
+        "source_paper_title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-A482FD24BE59"
+        ],
+        "source_work_title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+        "source_works": [
+          "W-A482FD24BE59"
+        ],
+        "task": "machine-dialect MAS for token-efficient reasoning",
+        "updated_at": "2026-06-17T09:29:33+00:00",
+        "variants": {
+          "VER-46657BCF842F": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T07:01:15+00:00",
+            "extracted_at": "2026-06-17T09:29:33+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "MBPP",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Natural-language programming tasks with Python tests.",
+              "dataset": "MBPP",
+              "description": "Mostly Basic Python Problems benchmark for code generation.",
+              "evidence": "{\"benchmark_id\": \"B-308BAB37A080\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-FBBB81F205BE\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"MBPP\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"LMR-BENCH: Evaluating LLM Agent's Abilit...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "mAP",
+              "metrics": [
+                "accuracy",
+                "EM",
+                "mAP"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/google-research-datasets/mbpp",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Around 1K crowd-sourced Python programming tasks.",
+              "source": "Google Research / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2506.17335v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2404.01023v1",
+                "http://arxiv.org/abs/2506.17335v1",
+                "https://doi.org/10.1017/dsj.2025.10044"
+              ],
+              "source_paper_title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-CCDDD020EEA0",
+                "W-FBBB81F205BE",
+                "W-50A0DFAB12FB"
+              ],
+              "source_work_title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+              "source_works": [],
+              "task": "machine-dialect MAS for token-efficient reasoning",
+              "venue_or_source": "arXiv",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2506.17335v1",
+              "https://huggingface.co/datasets/google-research-datasets/mbpp"
+            ],
+            "version_id": "VER-46657BCF842F"
+          }
+        },
+        "venue_or_source": "arXiv",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-A482FD24BE59"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T10:36:06+00:00",
+        "updated_at": "2026-06-17T10:36:06+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-EF3571469C98",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "mbpp mbpp mbpp w ccddd020eea0 w fbbb81f205be w 50a0dfab12fb",
+      "canonical_label": "MBPP",
+      "concept_id": "B-187B5959886C",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-46657BCF842F",
+        "benchmark_id": "B-0E99873748E6",
+        "benchmark_name": "MBPP",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-0E99873748E6",
+        "canonical_key": "mbpp",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T07:01:15+00:00",
+        "data_form": "Natural-language programming tasks with Python tests.",
+        "dataset": "MBPP",
+        "description": "Mostly Basic Python Problems benchmark for code generation.",
+        "entered_at": "2026-06-17T07:01:15+00:00",
+        "evidence": "{\"benchmark_id\": \"B-308BAB37A080\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-FBBB81F205BE\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"MBPP\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"LMR-BENCH: Evaluating LLM Agent's Abilit...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T09:29:33+00:00",
+        "extractor": "deterministic",
+        "metric": "mAP",
+        "metrics": [
+          "accuracy",
+          "EM",
+          "mAP"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/google-research-datasets/mbpp",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Around 1K crowd-sourced Python programming tasks.",
+        "source": "Google Research / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2506.17335v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2404.01023v1",
+          "http://arxiv.org/abs/2506.17335v1",
+          "https://doi.org/10.1017/dsj.2025.10044"
+        ],
+        "source_paper_title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-CCDDD020EEA0",
+          "W-FBBB81F205BE",
+          "W-50A0DFAB12FB"
+        ],
+        "source_work_title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+        "source_works": [],
+        "task": "machine-dialect MAS for token-efficient reasoning",
+        "updated_at": "2026-06-17T09:29:33+00:00",
+        "variants": {
+          "VER-46657BCF842F": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T07:01:15+00:00",
+            "extracted_at": "2026-06-17T09:29:33+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "MBPP",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Natural-language programming tasks with Python tests.",
+              "dataset": "MBPP",
+              "description": "Mostly Basic Python Problems benchmark for code generation.",
+              "evidence": "{\"benchmark_id\": \"B-308BAB37A080\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-FBBB81F205BE\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"MBPP\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"LMR-BENCH: Evaluating LLM Agent's Abilit...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "mAP",
+              "metrics": [
+                "accuracy",
+                "EM",
+                "mAP"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/google-research-datasets/mbpp",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Around 1K crowd-sourced Python programming tasks.",
+              "source": "Google Research / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2506.17335v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2404.01023v1",
+                "http://arxiv.org/abs/2506.17335v1",
+                "https://doi.org/10.1017/dsj.2025.10044"
+              ],
+              "source_paper_title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-CCDDD020EEA0",
+                "W-FBBB81F205BE",
+                "W-50A0DFAB12FB"
+              ],
+              "source_work_title": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+              "source_works": [],
+              "task": "machine-dialect MAS for token-efficient reasoning",
+              "venue_or_source": "arXiv",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2506.17335v1",
+              "https://huggingface.co/datasets/google-research-datasets/mbpp"
+            ],
+            "version_id": "VER-46657BCF842F"
+          }
+        },
+        "venue_or_source": "arXiv",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-CCDDD020EEA0",
+          "W-FBBB81F205BE",
+          "W-50A0DFAB12FB"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T09:41:50+00:00",
+        "updated_at": "2026-06-17T10:29:37+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-649A03C79A5D",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "controlled ideation experiment with design students controlled ideation experiment with design students controlled ideation experiment with design students w 50a0dfab12fb",
+      "canonical_label": "Controlled Ideation Experiment with Design Students",
+      "concept_id": "B-18C940CBDE5D",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-21CD212E8DBC",
+        "benchmark_id": "B-A7E365D1DFCF",
+        "benchmark_name": "Controlled Ideation Experiment with Design Students",
+        "benchmarks": [],
+        "candidate_dataset_pages": [
+          "https://huggingface.co/datasets?search=Controlled%20Ideation%20Experiment%20with%20Design%20Students"
+        ],
+        "canonical_id": "B-A7E365D1DFCF",
+        "canonical_key": "controlled ideation experiment with design students",
+        "confidence_score": 0.58,
+        "created_at": "2026-06-17T09:29:30+00:00",
+        "data_form": "Qualitative and quantitative assessment of design ideas generated by 24 undergraduate design students",
+        "dataset": "Controlled Ideation Experiment with Design Students",
+        "description": "Controlled Ideation Experiment with Design Students appears in local source evidence. Add official metadata when you curate this project.",
+        "entered_at": "2026-06-17T09:29:30+00:00",
+        "evidence": "The study conducted controlled experiments with 24 undergraduate design students, comparing groups using the proposed LLM-supported tool against those without. Performance was measured using standard creativity assessment metrics applied to the resulting design concepts, revealing significant differences in creative performance.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T09:29:30+00:00",
+        "metric": "Creativity ratings of generated ideas",
+        "metrics": [
+          "Creativity ratings of generated ideas",
+          "Novelty scores",
+          "Utility scores"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": false,
+        "scale": "24 participants divided into experimental and control groups",
+        "source": "local extraction",
+        "source_paper_link": "https://doi.org/10.1017/dsj.2025.10044",
+        "source_paper_links": [
+          "https://doi.org/10.1017/dsj.2025.10044"
+        ],
+        "source_paper_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-50A0DFAB12FB"
+        ],
+        "source_work_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "source_works": [],
+        "task": "Design ideation and concept generation using analogical reasoning",
+        "updated_at": "2026-06-17T09:29:30+00:00",
+        "variants": {
+          "VER-21CD212E8DBC": {
+            "confidence_score": 0.58,
+            "entered_at": "2026-06-17T09:29:30+00:00",
+            "extracted_at": "2026-06-17T09:29:30+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "benchmark_name": "Controlled Ideation Experiment with Design Students",
+              "benchmarks": [],
+              "candidate_dataset_pages": [
+                "https://huggingface.co/datasets?search=Controlled%20Ideation%20Experiment%20with%20Design%20Students"
+              ],
+              "confidence_score": 0.58,
+              "data_form": "Qualitative and quantitative assessment of design ideas generated by 24 undergraduate design students",
+              "dataset": "Controlled Ideation Experiment with Design Students",
+              "description": "Controlled Ideation Experiment with Design Students appears in local source evidence. Add official metadata when you curate this project.",
+              "evidence": "The study conducted controlled experiments with 24 undergraduate design students, comparing groups using the proposed LLM-supported tool against those without. Performance was measured using standard creativity assessment metrics applied to the resulting design concepts, revealing significant differences in creative performance.",
+              "evidence_items": [],
+              "metric": "Creativity ratings of generated ideas",
+              "metrics": [
+                "Creativity ratings of generated ideas",
+                "Novelty scores",
+                "Utility scores"
+              ],
+              "needs_review": true,
+              "performance": [],
+              "public_dataset": false,
+              "scale": "24 participants divided into experimental and control groups",
+              "source": "local extraction",
+              "source_paper_link": "https://doi.org/10.1017/dsj.2025.10044",
+              "source_paper_links": [
+                "https://doi.org/10.1017/dsj.2025.10044"
+              ],
+              "source_paper_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-50A0DFAB12FB"
+              ],
+              "source_work_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "source_works": [],
+              "task": "Design ideation and concept generation using analogical reasoning",
+              "venue_or_source": "Design Science",
+              "year": 2026
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1017/dsj.2025.10044"
+            ],
+            "version_id": "VER-21CD212E8DBC"
+          }
+        },
+        "venue_or_source": "Design Science",
+        "year": 2026
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.58,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-50A0DFAB12FB"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T09:41:50+00:00",
+        "updated_at": "2026-06-17T10:29:37+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-649C01B7FF3A",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "math math math math w 3fd22d147568 w 0cb6dc2f0457 w 7e6df19a7e3f w d5c57268e64e w f6fba288becf w 996c5129930f w e52f130637b9 w 4bcb27bb25ac w bec3e54e563c w 9f68c6c3fb38 w 06f4b81340e8 w a41ad12f1753 w b2629aee97ca w 591adfd1650f",
+      "canonical_label": "MATH",
+      "concept_id": "B-1A6F507BBC89",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-19136C0392DD",
+        "benchmark_id": "B-7A488390A939",
+        "benchmark_name": "MATH",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-7A488390A939",
+        "canonical_key": "math",
+        "cloud_origin": {
+          "cloud_model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+          "cloud_payload_sha256": "",
+          "cloud_record_id": "B-1A6F507BBC89",
+          "cloud_snapshot_id": "SNAP-1E83647E23AF",
+          "cloud_updated_at": "2026-06-15T11:52:51+00:00"
+        },
+        "concept_id": "B-1A6F507BBC89",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-12T08:54:08+00:00",
+        "data_form": "Natural-language math problems with final answers and solutions.",
+        "dataset": "MATH",
+        "description": "Competition-style mathematical reasoning benchmark covering algebra, geometry, counting, probability, number theory, and precalculus.",
+        "entered_at": "2026-06-12T08:54:08+00:00",
+        "evidence": "{\"benchmark_id\": \"B-641840FF963C\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-5C05CF1EB2D2\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"ACCURACY OF A HEURISTIC FOR TOTAL W...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T09:41:31+00:00",
+        "extractor": "deterministic",
+        "field_id": "PRJ-C3CE01A48103",
+        "metric": "accuracy",
+        "metrics": [
+          "F1",
+          "accuracy",
+          "primary reported metric",
+          "mAP",
+          "BLEU",
+          "ROUGE"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://github.com/hendrycks/math",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "12.5K problems across multiple difficulty levels and subject areas.",
+        "source": "Hendrycks et al.",
+        "source_paper_link": "https://doi.org/10.20535/kpi-sn.2019.3.164804",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2602.09801v1",
+          "http://arxiv.org/abs/2603.25111v2",
+          "http://arxiv.org/abs/2412.11427v2",
+          "http://arxiv.org/abs/2406.11050v2",
+          "http://arxiv.org/abs/2308.04371v11",
+          "http://arxiv.org/abs/2604.27251v2",
+          "http://arxiv.org/abs/2510.09709v1",
+          "http://arxiv.org/abs/2601.01982v1",
+          "http://arxiv.org/abs/2510.09782v2",
+          "http://arxiv.org/abs/2406.13892v2",
+          "https://openreview.net/forum?id=U8GUmxnzXn",
+          "https://doi.org/10.1007/s43681-026-01042-1",
+          "http://arxiv.org/abs/2504.04718v2",
+          "https://doi.org/10.1017/dsj.2025.10044",
+          "https://doi.org/10.18653/v1/2024.vardial-1.11",
+          "https://doi.org/10.20535/kpi-sn.2019.3.164804"
+        ],
+        "source_paper_title": "ACCURACY OF A HEURISTIC FOR TOTAL WEIGHTED COMPLETION TIME MINIMIZATION IN PREEMPTIVE SINGLE MACHINE SCHEDULING PROBLEM BY NO IDLE TIME INTERVALS",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-A482FD24BE59"
+        ],
+        "source_work_title": "ACCURACY OF A HEURISTIC FOR TOTAL WEIGHTED COMPLETION TIME MINIMIZATION IN PREEMPTIVE SINGLE MACHINE SCHEDULING PROBLEM BY NO IDLE TIME INTERVALS",
+        "source_works": [
+          "W-A482FD24BE59"
+        ],
+        "task": "machine-dialect MAS for token-efficient reasoning",
+        "title": "MATH",
+        "updated_at": "2026-06-17T09:41:31+00:00",
+        "variants": {
+          "VER-19136C0392DD": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-12T08:54:08+00:00",
+            "extracted_at": "2026-06-17T09:41:31+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "MATH",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Natural-language math problems with final answers and solutions.",
+              "dataset": "MATH",
+              "description": "Competition-style mathematical reasoning benchmark covering algebra, geometry, counting, probability, number theory, and precalculus.",
+              "evidence": "{\"benchmark_id\": \"B-641840FF963C\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-5C05CF1EB2D2\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"ACCURACY OF A HEURISTIC FOR TOTAL W...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "accuracy",
+              "metrics": [
+                "F1",
+                "accuracy",
+                "primary reported metric",
+                "mAP",
+                "BLEU",
+                "ROUGE"
+              ],
+              "needs_review": false,
+              "official_url": "https://github.com/hendrycks/math",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "12.5K problems across multiple difficulty levels and subject areas.",
+              "source": "Hendrycks et al.",
+              "source_paper_link": "https://doi.org/10.20535/kpi-sn.2019.3.164804",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2602.09801v1",
+                "http://arxiv.org/abs/2603.25111v2",
+                "http://arxiv.org/abs/2412.11427v2",
+                "http://arxiv.org/abs/2406.11050v2",
+                "http://arxiv.org/abs/2308.04371v11",
+                "http://arxiv.org/abs/2604.27251v2",
+                "http://arxiv.org/abs/2510.09709v1",
+                "http://arxiv.org/abs/2601.01982v1",
+                "http://arxiv.org/abs/2510.09782v2",
+                "http://arxiv.org/abs/2406.13892v2",
+                "https://openreview.net/forum?id=U8GUmxnzXn",
+                "https://doi.org/10.1007/s43681-026-01042-1",
+                "http://arxiv.org/abs/2504.04718v2",
+                "https://doi.org/10.1017/dsj.2025.10044",
+                "https://doi.org/10.18653/v1/2024.vardial-1.11",
+                "https://doi.org/10.20535/kpi-sn.2019.3.164804"
+              ],
+              "source_paper_title": "ACCURACY OF A HEURISTIC FOR TOTAL WEIGHTED COMPLETION TIME MINIMIZATION IN PREEMPTIVE SINGLE MACHINE SCHEDULING PROBLEM BY NO IDLE TIME INTERVALS",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-3FD22D147568",
+                "W-0CB6DC2F0457",
+                "W-7E6DF19A7E3F",
+                "W-D5C57268E64E",
+                "W-F6FBA288BECF",
+                "W-996C5129930F",
+                "W-E52F130637B9",
+                "W-4BCB27BB25AC",
+                "W-BEC3E54E563C",
+                "W-9F68C6C3FB38",
+                "W-06F4B81340E8",
+                "W-A41AD12F1753",
+                "W-B2629AEE97CA",
+                "W-591ADFD1650F",
+                "W-50A0DFAB12FB",
+                "W-BAFE1FB40AE7",
+                "W-5C05CF1EB2D2"
+              ],
+              "source_work_title": "ACCURACY OF A HEURISTIC FOR TOTAL WEIGHTED COMPLETION TIME MINIMIZATION IN PREEMPTIVE SINGLE MACHINE SCHEDULING PROBLEM BY NO IDLE TIME INTERVALS",
+              "source_works": [],
+              "task": "machine-dialect MAS for token-efficient reasoning",
+              "venue_or_source": "KPI Science News",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.20535/kpi-sn.2019.3.164804",
+              "https://github.com/hendrycks/math"
+            ],
+            "version_id": "VER-19136C0392DD"
+          }
+        },
+        "venue_or_source": "KPI Science News",
+        "year": 2019
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-A482FD24BE59"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:18:12+00:00",
+        "updated_at": "2026-06-17T10:36:06+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-474FEAB15DA5",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "mmlu mmlu mmlu w 931a92b2cbd0",
+      "canonical_label": "MMLU",
+      "concept_id": "B-5A04BACF25E2",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-5964595F47AF",
+        "benchmark_id": "B-82630D34D2EE",
+        "benchmark_name": "MMLU",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-82630D34D2EE",
+        "canonical_key": "mmlu",
+        "cloud_origin": {
+          "cloud_model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+          "cloud_payload_sha256": "",
+          "cloud_record_id": "B-5A04BACF25E2",
+          "cloud_snapshot_id": "SNAP-1E83647E23AF",
+          "cloud_updated_at": "2026-06-17T07:05:01+00:00"
+        },
+        "concept_id": "B-5A04BACF25E2",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T06:19:09+00:00",
+        "data_form": "Multiple-choice questions spanning many subject areas.",
+        "dataset": "MMLU",
+        "description": "Massive Multitask Language Understanding benchmark for broad academic and professional knowledge.",
+        "entered_at": "2026-06-17T06:19:09+00:00",
+        "evidence": "{\"benchmark_id\": \"B-C1E25B16D8BA\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-F4B6C94FC69A\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"MALLM: Multi-Agent Large Language Models Framework Mult...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:18+00:00",
+        "extractor": "deterministic",
+        "metric": "memory",
+        "metrics": [
+          "accuracy",
+          "memory",
+          "mAP",
+          "BLEU",
+          "ROUGE"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/cais/mmlu",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Roughly 14K questions across 57 tasks.",
+        "source": "CAIS / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2509.11656v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2406.07155v3",
+          "http://arxiv.org/abs/2510.26352v2",
+          "http://arxiv.org/abs/2509.11656v3"
+        ],
+        "source_paper_title": "MALLM: Multi-Agent Large Language Models Framework",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-931A92B2CBD0"
+        ],
+        "source_work_title": "MALLM: Multi-Agent Large Language Models Framework",
+        "source_works": [
+          "W-931A92B2CBD0"
+        ],
+        "task": "LLM multi-agent reasoning system",
+        "title": "MMLU",
+        "updated_at": "2026-06-17T07:01:18+00:00",
+        "variants": {
+          "VER-5964595F47AF": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T06:19:09+00:00",
+            "extracted_at": "2026-06-17T07:01:18+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "MMLU",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Multiple-choice questions spanning many subject areas.",
+              "dataset": "MMLU",
+              "description": "Massive Multitask Language Understanding benchmark for broad academic and professional knowledge.",
+              "evidence": "{\"benchmark_id\": \"B-C1E25B16D8BA\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-F4B6C94FC69A\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"MALLM: Multi-Agent Large Language Models Framework Mult...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "memory",
+              "metrics": [
+                "accuracy",
+                "memory",
+                "mAP",
+                "BLEU",
+                "ROUGE"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/cais/mmlu",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Roughly 14K questions across 57 tasks.",
+              "source": "CAIS / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2509.11656v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2406.07155v3",
+                "http://arxiv.org/abs/2510.26352v2",
+                "http://arxiv.org/abs/2509.11656v3"
+              ],
+              "source_paper_title": "MALLM: Multi-Agent Large Language Models Framework",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-565BC95507DC",
+                "W-8DB03B5F73D6",
+                "W-F4B6C94FC69A"
+              ],
+              "source_work_title": "MALLM: Multi-Agent Large Language Models Framework",
+              "source_works": [],
+              "task": "LLM multi-agent reasoning system",
+              "venue_or_source": "EMNLP 2025",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2509.11656v3",
+              "https://huggingface.co/datasets/cais/mmlu"
+            ],
+            "version_id": "VER-5964595F47AF"
+          }
+        },
+        "venue_or_source": "EMNLP 2025",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-931A92B2CBD0"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:04:54+00:00",
+        "updated_at": "2026-06-17T10:36:06+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-22F2295147FC",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "gsm8k gsm8k gsm8k gsm8k w dd77f8be6170 w 3fd22d147568 w 3e845f01221c w 996c5129930f w e52f130637b9 w b2629aee97ca",
+      "canonical_label": "GSM8K",
+      "concept_id": "B-688938933F4F",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-935C98BE3266",
+        "benchmark_id": "B-112D1E9A342A",
+        "benchmark_name": "GSM8K",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-112D1E9A342A",
+        "canonical_key": "gsm8k",
+        "cloud_origin": {
+          "cloud_model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+          "cloud_payload_sha256": "",
+          "cloud_record_id": "B-688938933F4F",
+          "cloud_snapshot_id": "SNAP-1E83647E23AF",
+          "cloud_updated_at": "2026-06-15T11:52:51+00:00"
+        },
+        "concept_id": "B-688938933F4F",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-12T08:54:08+00:00",
+        "data_form": "Natural-language math word problems with worked answers.",
+        "dataset": "GSM8K",
+        "description": "Grade-school math reasoning benchmark.",
+        "entered_at": "2026-06-12T08:54:08+00:00",
+        "evidence": "{\"benchmark_id\": \"B-A629381B2912\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-3FD22D147568\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"GSM8K\", \"split\": \"unspecified\", \"metric\": \"F1\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Tiny Moves: Game-based Hypothesis Refine...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T09:35:07+00:00",
+        "extractor": "deterministic",
+        "field_id": "PRJ-6929CAF58133",
+        "metric": "F1",
+        "metrics": [
+          "accuracy",
+          "F1",
+          "Mathematical accuracy",
+          "mAP",
+          "BLEU",
+          "ROUGE",
+          "memory"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/openai/gsm8k",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "8.5K multi-step arithmetic problems.",
+        "source": "OpenAI / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2602.09801v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2508.05311v1",
+          "http://arxiv.org/abs/2602.09801v1",
+          "http://arxiv.org/abs/2401.17169v4",
+          "http://arxiv.org/abs/2604.27251v2",
+          "http://arxiv.org/abs/2510.09709v1",
+          "http://arxiv.org/abs/2504.04718v2",
+          "https://doi.org/10.1017/dsj.2025.10044",
+          "http://arxiv.org/abs/2509.11656v3"
+        ],
+        "source_paper_title": "Tiny Moves: Game-based Hypothesis Refinement",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-A482FD24BE59"
+        ],
+        "source_work_title": "Tiny Moves: Game-based Hypothesis Refinement",
+        "source_works": [
+          "W-A482FD24BE59"
+        ],
+        "task": "machine-dialect MAS for token-efficient reasoning",
+        "title": "GSM8K",
+        "updated_at": "2026-06-17T09:35:07+00:00",
+        "variants": {
+          "VER-935C98BE3266": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-12T08:54:08+00:00",
+            "extracted_at": "2026-06-17T09:35:07+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "GSM8K",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Natural-language math word problems with worked answers.",
+              "dataset": "GSM8K",
+              "description": "Grade-school math reasoning benchmark.",
+              "evidence": "{\"benchmark_id\": \"B-A629381B2912\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-3FD22D147568\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"GSM8K\", \"split\": \"unspecified\", \"metric\": \"F1\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Tiny Moves: Game-based Hypothesis Refine...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "F1",
+              "metrics": [
+                "accuracy",
+                "F1",
+                "Mathematical accuracy",
+                "mAP",
+                "BLEU",
+                "ROUGE",
+                "memory"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/openai/gsm8k",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "8.5K multi-step arithmetic problems.",
+              "source": "OpenAI / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2602.09801v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2508.05311v1",
+                "http://arxiv.org/abs/2602.09801v1",
+                "http://arxiv.org/abs/2401.17169v4",
+                "http://arxiv.org/abs/2604.27251v2",
+                "http://arxiv.org/abs/2510.09709v1",
+                "http://arxiv.org/abs/2504.04718v2",
+                "https://doi.org/10.1017/dsj.2025.10044",
+                "http://arxiv.org/abs/2509.11656v3"
+              ],
+              "source_paper_title": "Tiny Moves: Game-based Hypothesis Refinement",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-DD77F8BE6170",
+                "W-3FD22D147568",
+                "W-3E845F01221C",
+                "W-996C5129930F",
+                "W-E52F130637B9",
+                "W-B2629AEE97CA",
+                "W-50A0DFAB12FB",
+                "W-F4B6C94FC69A"
+              ],
+              "source_work_title": "Tiny Moves: Game-based Hypothesis Refinement",
+              "source_works": [],
+              "task": "machine-dialect MAS for token-efficient reasoning",
+              "venue_or_source": "arXiv",
+              "year": 2026
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2602.09801v1",
+              "https://huggingface.co/datasets/openai/gsm8k"
+            ],
+            "version_id": "VER-935C98BE3266"
+          }
+        },
+        "venue_or_source": "arXiv",
+        "year": 2026
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-A482FD24BE59"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:18:13+00:00",
+        "updated_at": "2026-06-17T10:36:06+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-41A8FEF94526",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "hellaswag hellaswag hellaswag w a482fd24be59",
+      "canonical_label": "HellaSwag",
+      "concept_id": "B-849CE03DDB6B",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-CB520124DABF",
+        "benchmark_id": "B-9AF89211CB44",
+        "benchmark_name": "HellaSwag",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-9AF89211CB44",
+        "canonical_key": "hellaswag",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T09:26:40+00:00",
+        "data_form": "Multiple-choice context continuation examples.",
+        "dataset": "HellaSwag",
+        "description": "Commonsense natural-language inference benchmark for grounded situation completion.",
+        "entered_at": "2026-06-17T09:26:40+00:00",
+        "evidence": "{\"benchmark_id\": \"B-66B89F3A6674\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"HellaSwag\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Analogical reasoning with large lan...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T09:29:30+00:00",
+        "extractor": "deterministic",
+        "metric": "mAP",
+        "metrics": [
+          "mAP"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/Rowan/hellaswag",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Around 70K examples.",
+        "source": "HellaSwag / Hugging Face",
+        "source_paper_link": "https://doi.org/10.1017/dsj.2025.10044",
+        "source_paper_links": [
+          "https://doi.org/10.1017/dsj.2025.10044"
+        ],
+        "source_paper_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-A482FD24BE59"
+        ],
+        "source_work_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "source_works": [
+          "W-A482FD24BE59"
+        ],
+        "task": "machine-dialect MAS for token-efficient reasoning",
+        "updated_at": "2026-06-17T09:29:30+00:00",
+        "variants": {
+          "VER-CB520124DABF": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T09:26:40+00:00",
+            "extracted_at": "2026-06-17T09:29:30+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "HellaSwag",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Multiple-choice context continuation examples.",
+              "dataset": "HellaSwag",
+              "description": "Commonsense natural-language inference benchmark for grounded situation completion.",
+              "evidence": "{\"benchmark_id\": \"B-66B89F3A6674\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"HellaSwag\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Analogical reasoning with large lan...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "mAP",
+              "metrics": [
+                "mAP"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/Rowan/hellaswag",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Around 70K examples.",
+              "source": "HellaSwag / Hugging Face",
+              "source_paper_link": "https://doi.org/10.1017/dsj.2025.10044",
+              "source_paper_links": [
+                "https://doi.org/10.1017/dsj.2025.10044"
+              ],
+              "source_paper_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-50A0DFAB12FB"
+              ],
+              "source_work_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "source_works": [],
+              "task": "machine-dialect MAS for token-efficient reasoning",
+              "venue_or_source": "Design Science",
+              "year": 2026
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1017/dsj.2025.10044",
+              "https://huggingface.co/datasets/Rowan/hellaswag"
+            ],
+            "version_id": "VER-CB520124DABF"
+          }
+        },
+        "venue_or_source": "Design Science",
+        "year": 2026
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-A482FD24BE59"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T10:36:06+00:00",
+        "updated_at": "2026-06-17T10:36:06+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-AB2BEAE950FB",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "hellaswag hellaswag hellaswag w 50a0dfab12fb",
+      "canonical_label": "HellaSwag",
+      "concept_id": "B-A1CF94E9906E",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-CB520124DABF",
+        "benchmark_id": "B-9AF89211CB44",
+        "benchmark_name": "HellaSwag",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-9AF89211CB44",
+        "canonical_key": "hellaswag",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T09:26:40+00:00",
+        "data_form": "Multiple-choice context continuation examples.",
+        "dataset": "HellaSwag",
+        "description": "Commonsense natural-language inference benchmark for grounded situation completion.",
+        "entered_at": "2026-06-17T09:26:40+00:00",
+        "evidence": "{\"benchmark_id\": \"B-66B89F3A6674\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"HellaSwag\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Analogical reasoning with large lan...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T09:29:30+00:00",
+        "extractor": "deterministic",
+        "metric": "mAP",
+        "metrics": [
+          "mAP"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/Rowan/hellaswag",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Around 70K examples.",
+        "source": "HellaSwag / Hugging Face",
+        "source_paper_link": "https://doi.org/10.1017/dsj.2025.10044",
+        "source_paper_links": [
+          "https://doi.org/10.1017/dsj.2025.10044"
+        ],
+        "source_paper_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-50A0DFAB12FB"
+        ],
+        "source_work_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "source_works": [],
+        "task": "machine-dialect MAS for token-efficient reasoning",
+        "updated_at": "2026-06-17T09:29:30+00:00",
+        "variants": {
+          "VER-CB520124DABF": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T09:26:40+00:00",
+            "extracted_at": "2026-06-17T09:29:30+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "HellaSwag",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Multiple-choice context continuation examples.",
+              "dataset": "HellaSwag",
+              "description": "Commonsense natural-language inference benchmark for grounded situation completion.",
+              "evidence": "{\"benchmark_id\": \"B-66B89F3A6674\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"HellaSwag\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Analogical reasoning with large lan...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "mAP",
+              "metrics": [
+                "mAP"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/Rowan/hellaswag",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Around 70K examples.",
+              "source": "HellaSwag / Hugging Face",
+              "source_paper_link": "https://doi.org/10.1017/dsj.2025.10044",
+              "source_paper_links": [
+                "https://doi.org/10.1017/dsj.2025.10044"
+              ],
+              "source_paper_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-50A0DFAB12FB"
+              ],
+              "source_work_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "source_works": [],
+              "task": "machine-dialect MAS for token-efficient reasoning",
+              "venue_or_source": "Design Science",
+              "year": 2026
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1017/dsj.2025.10044",
+              "https://huggingface.co/datasets/Rowan/hellaswag"
+            ],
+            "version_id": "VER-CB520124DABF"
+          }
+        },
+        "venue_or_source": "Design Science",
+        "year": 2026
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-50A0DFAB12FB"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T09:41:50+00:00",
+        "updated_at": "2026-06-17T10:29:37+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-3C5F20F6AC0C",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "role of llm generated content in cross domain analogical reasoning role of llm generated content in cross domain analogical reasoning role of llm generated content in cross domain analogical reasoning w 50a0dfab12fb",
+      "canonical_label": "role of LLM-generated content in cross-domain analogical reasoning",
+      "concept_id": "B-BAC6EB8459D0",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-525E94845DB5",
+        "benchmark_id": "B-9AF845361419",
+        "benchmark_name": "role of LLM-generated content in cross-domain analogical reasoning",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "candidate_dataset_pages": [
+          "https://huggingface.co/datasets?search=role%20of%20LLM-generated%20content%20in%20cross-domain%20analogical%20reasoning"
+        ],
+        "canonical_id": "B-9AF845361419",
+        "canonical_key": "role of llm generated content in cross domain analogical reasoning",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T09:26:40+00:00",
+        "data_form": "Unknown from local metadata; inspect the source work or benchmark page.",
+        "dataset": "role of LLM-generated content in cross-domain analogical reasoning",
+        "description": "role of LLM-generated content in cross-domain analogical reasoning appears in local source evidence. Add official metadata when you curate this project.",
+        "entered_at": "2026-06-17T09:26:40+00:00",
+        "evidence": "{\"benchmark_id\": \"B-ABE1F9517252\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"role of LLM-generated content in cross-domain analogical reasoning\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T09:29:30+00:00",
+        "extractor": "deterministic",
+        "metric": "mAP",
+        "metrics": [
+          "mAP"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": false,
+        "scale": "Unknown from local metadata.",
+        "source": "local extraction",
+        "source_paper_link": "https://doi.org/10.1017/dsj.2025.10044",
+        "source_paper_links": [
+          "https://doi.org/10.1017/dsj.2025.10044"
+        ],
+        "source_paper_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-50A0DFAB12FB"
+        ],
+        "source_work_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "source_works": [],
+        "task": "machine-dialect MAS for token-efficient reasoning",
+        "updated_at": "2026-06-17T09:29:30+00:00",
+        "variants": {
+          "VER-525E94845DB5": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T09:26:40+00:00",
+            "extracted_at": "2026-06-17T09:29:30+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "role of LLM-generated content in cross-domain analogical reasoning",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "candidate_dataset_pages": [
+                "https://huggingface.co/datasets?search=role%20of%20LLM-generated%20content%20in%20cross-domain%20analogical%20reasoning"
+              ],
+              "confidence_score": 0.7,
+              "data_form": "Unknown from local metadata; inspect the source work or benchmark page.",
+              "dataset": "role of LLM-generated content in cross-domain analogical reasoning",
+              "description": "role of LLM-generated content in cross-domain analogical reasoning appears in local source evidence. Add official metadata when you curate this project.",
+              "evidence": "{\"benchmark_id\": \"B-ABE1F9517252\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"role of LLM-generated content in cross-domain analogical reasoning\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "mAP",
+              "metrics": [
+                "mAP"
+              ],
+              "needs_review": false,
+              "performance": [],
+              "public_dataset": false,
+              "scale": "Unknown from local metadata.",
+              "source": "local extraction",
+              "source_paper_link": "https://doi.org/10.1017/dsj.2025.10044",
+              "source_paper_links": [
+                "https://doi.org/10.1017/dsj.2025.10044"
+              ],
+              "source_paper_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-50A0DFAB12FB"
+              ],
+              "source_work_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "source_works": [],
+              "task": "machine-dialect MAS for token-efficient reasoning",
+              "venue_or_source": "Design Science",
+              "year": 2026
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1017/dsj.2025.10044"
+            ],
+            "version_id": "VER-525E94845DB5"
+          }
+        },
+        "venue_or_source": "Design Science",
+        "year": 2026
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-50A0DFAB12FB"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T09:41:49+00:00",
+        "updated_at": "2026-06-17T10:29:37+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-41020B5F0EEB",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "unassisted ideation unassisted ideation w 50a0dfab12fb",
+      "canonical_label": "Unassisted Ideation",
+      "concept_id": "BL-930677E40532",
+      "concept_type": "baseline",
+      "payload": {
+        "active_version_id": "VER-B6F2AF87ABD1",
+        "baseline_id": "BL-81437C0DD844",
+        "baseline_name": "Unassisted Ideation",
+        "baseline_type": "compared_method",
+        "benchmarks": [
+          "Controlled Ideation Experiment with Design Students"
+        ],
+        "canonical_id": "BL-81437C0DD844",
+        "canonical_key": "unassisted ideation",
+        "confidence_score": 0.55,
+        "core_idea": "Traditional design ideation performed by human designers without any AI-generated analogical stimuli or heuristic support.",
+        "created_at": "2026-06-17T09:29:30+00:00",
+        "description": "This baseline represents the standard human-only workflow, serving as a control to measure the incremental value added by the LLM-heuristic framework.",
+        "discussion": "The comparison highlights that while humans are capable of creative thought, they often struggle to spontaneously access distant domains required for high-level analogical reasoning. The LLM-assisted group outperformed this baseline, confirming that the machine's ability to rapidly retrieve and structure distant analogies provides a tangible boost to human creative performance.",
+        "entered_at": "2026-06-17T09:29:30+00:00",
+        "evidence": "{\"baseline_name\": \"Unassisted Ideation\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Traditional design ideation performed by human designers without any AI-generated analogical stimuli or heuristic support.\", \"methodology\": \"Participants performed design tasks relying solely on their own knowledge and cognitive processes, without access to the LLM-...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T09:29:30+00:00",
+        "methodology": "Participants performed design tasks relying solely on their own knowledge and cognitive processes, without access to the LLM-based support tool or structured analogical prompts.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "performance": [
+          {
+            "benchmark_name": "Controlled Ideation Experiment with Design Students",
+            "metric": "Creativity ratings",
+            "value_text": "Lower ratings compared to the LLM-assisted group."
+          }
+        ],
+        "principle": "Human cognitive capacity alone is limited in accessing distant analogical domains compared to human-AI collaborative systems.",
+        "provider": "siliconflow",
+        "source_paper_links": [
+          "https://doi.org/10.1017/dsj.2025.10044"
+        ],
+        "source_paper_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-50A0DFAB12FB"
+        ],
+        "source_work_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "source_works": [],
+        "updated_at": "2026-06-17T09:29:30+00:00",
+        "variants": {
+          "VER-B6F2AF87ABD1": {
+            "confidence_score": 0.55,
+            "entered_at": "2026-06-17T09:29:30+00:00",
+            "extracted_at": "2026-06-17T09:29:30+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "baseline_name": "Unassisted Ideation",
+              "baseline_type": "compared_method",
+              "benchmarks": [
+                "Controlled Ideation Experiment with Design Students"
+              ],
+              "confidence_score": 0.55,
+              "core_idea": "Traditional design ideation performed by human designers without any AI-generated analogical stimuli or heuristic support.",
+              "description": "This baseline represents the standard human-only workflow, serving as a control to measure the incremental value added by the LLM-heuristic framework.",
+              "discussion": "The comparison highlights that while humans are capable of creative thought, they often struggle to spontaneously access distant domains required for high-level analogical reasoning. The LLM-assisted group outperformed this baseline, confirming that the machine's ability to rapidly retrieve and structure distant analogies provides a tangible boost to human creative performance.",
+              "evidence": "{\"baseline_name\": \"Unassisted Ideation\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Traditional design ideation performed by human designers without any AI-generated analogical stimuli or heuristic support.\", \"methodology\": \"Participants performed design tasks relying solely on their own knowledge and cognitive processes, without access to the LLM-...",
+              "evidence_items": [],
+              "methodology": "Participants performed design tasks relying solely on their own knowledge and cognitive processes, without access to the LLM-based support tool or structured analogical prompts.",
+              "metrics": [],
+              "needs_review": true,
+              "performance": [
+                {
+                  "benchmark_name": "Controlled Ideation Experiment with Design Students",
+                  "metric": "Creativity ratings",
+                  "value_text": "Lower ratings compared to the LLM-assisted group."
+                }
+              ],
+              "principle": "Human cognitive capacity alone is limited in accessing distant analogical domains compared to human-AI collaborative systems.",
+              "source_paper_links": [
+                "https://doi.org/10.1017/dsj.2025.10044"
+              ],
+              "source_paper_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-50A0DFAB12FB"
+              ],
+              "source_work_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "source_works": [],
+              "venue_or_source": "Design Science",
+              "year": 2026
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1017/dsj.2025.10044"
+            ],
+            "version_id": "VER-B6F2AF87ABD1"
+          }
+        },
+        "venue_or_source": "Design Science",
+        "year": 2026
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.55,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-50A0DFAB12FB"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T09:41:52+00:00",
+        "updated_at": "2026-06-17T10:29:40+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-F72A4BABF31B",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "unassisted ideation unassisted ideation w a482fd24be59",
+      "canonical_label": "Unassisted Ideation",
+      "concept_id": "BL-DBCFFE84BBA6",
+      "concept_type": "baseline",
+      "payload": {
+        "active_version_id": "VER-B6F2AF87ABD1",
+        "baseline_id": "BL-81437C0DD844",
+        "baseline_name": "Unassisted Ideation",
+        "baseline_type": "compared_method",
+        "benchmarks": [
+          "Controlled Ideation Experiment with Design Students"
+        ],
+        "canonical_id": "BL-81437C0DD844",
+        "canonical_key": "unassisted ideation",
+        "confidence_score": 0.55,
+        "core_idea": "Traditional design ideation performed by human designers without any AI-generated analogical stimuli or heuristic support.",
+        "created_at": "2026-06-17T09:29:30+00:00",
+        "description": "This baseline represents the standard human-only workflow, serving as a control to measure the incremental value added by the LLM-heuristic framework.",
+        "discussion": "The comparison highlights that while humans are capable of creative thought, they often struggle to spontaneously access distant domains required for high-level analogical reasoning. The LLM-assisted group outperformed this baseline, confirming that the machine's ability to rapidly retrieve and structure distant analogies provides a tangible boost to human creative performance.",
+        "entered_at": "2026-06-17T09:29:30+00:00",
+        "evidence": "{\"baseline_name\": \"Unassisted Ideation\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Traditional design ideation performed by human designers without any AI-generated analogical stimuli or heuristic support.\", \"methodology\": \"Participants performed design tasks relying solely on their own knowledge and cognitive processes, without access to the LLM-...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T09:29:30+00:00",
+        "methodology": "Participants performed design tasks relying solely on their own knowledge and cognitive processes, without access to the LLM-based support tool or structured analogical prompts.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "performance": [
+          {
+            "benchmark_name": "Controlled Ideation Experiment with Design Students",
+            "metric": "Creativity ratings",
+            "value_text": "Lower ratings compared to the LLM-assisted group."
+          }
+        ],
+        "principle": "Human cognitive capacity alone is limited in accessing distant analogical domains compared to human-AI collaborative systems.",
+        "provider": "siliconflow",
+        "source_paper_links": [
+          "https://doi.org/10.1017/dsj.2025.10044"
+        ],
+        "source_paper_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-A482FD24BE59"
+        ],
+        "source_work_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "source_works": [
+          "W-A482FD24BE59"
+        ],
+        "updated_at": "2026-06-17T09:29:30+00:00",
+        "variants": {
+          "VER-B6F2AF87ABD1": {
+            "confidence_score": 0.55,
+            "entered_at": "2026-06-17T09:29:30+00:00",
+            "extracted_at": "2026-06-17T09:29:30+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "baseline_name": "Unassisted Ideation",
+              "baseline_type": "compared_method",
+              "benchmarks": [
+                "Controlled Ideation Experiment with Design Students"
+              ],
+              "confidence_score": 0.55,
+              "core_idea": "Traditional design ideation performed by human designers without any AI-generated analogical stimuli or heuristic support.",
+              "description": "This baseline represents the standard human-only workflow, serving as a control to measure the incremental value added by the LLM-heuristic framework.",
+              "discussion": "The comparison highlights that while humans are capable of creative thought, they often struggle to spontaneously access distant domains required for high-level analogical reasoning. The LLM-assisted group outperformed this baseline, confirming that the machine's ability to rapidly retrieve and structure distant analogies provides a tangible boost to human creative performance.",
+              "evidence": "{\"baseline_name\": \"Unassisted Ideation\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Traditional design ideation performed by human designers without any AI-generated analogical stimuli or heuristic support.\", \"methodology\": \"Participants performed design tasks relying solely on their own knowledge and cognitive processes, without access to the LLM-...",
+              "evidence_items": [],
+              "methodology": "Participants performed design tasks relying solely on their own knowledge and cognitive processes, without access to the LLM-based support tool or structured analogical prompts.",
+              "metrics": [],
+              "needs_review": true,
+              "performance": [
+                {
+                  "benchmark_name": "Controlled Ideation Experiment with Design Students",
+                  "metric": "Creativity ratings",
+                  "value_text": "Lower ratings compared to the LLM-assisted group."
+                }
+              ],
+              "principle": "Human cognitive capacity alone is limited in accessing distant analogical domains compared to human-AI collaborative systems.",
+              "source_paper_links": [
+                "https://doi.org/10.1017/dsj.2025.10044"
+              ],
+              "source_paper_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-50A0DFAB12FB"
+              ],
+              "source_work_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "source_works": [],
+              "venue_or_source": "Design Science",
+              "year": 2026
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1017/dsj.2025.10044"
+            ],
+            "version_id": "VER-B6F2AF87ABD1"
+          }
+        },
+        "venue_or_source": "Design Science",
+        "year": 2026
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.55,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-A482FD24BE59"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T10:36:06+00:00",
+        "updated_at": "2026-06-17T10:36:06+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-9E229B20167F",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "structured prompting for domain transfer structured prompting for domain transfer explicitly embedding domain transfer rules and creativity heuristics into prompt instructions significantly improves the relevance and novelty of llm generated analogies compared to unstructured generation requests w 5",
+      "canonical_label": "Structured Prompting for Domain Transfer",
+      "concept_id": "P-3C44AED174B2",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "Explicitly embedding domain-transfer rules and creativity heuristics into prompt instructions significantly improves the relevance and novelty of LLM-generated analogies compared to unstructured generation requests.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-82398031A768",
+        "argument": "Explicitly embedding domain-transfer rules and creativity heuristics into prompt instructions significantly improves the relevance and novelty of LLM-generated analogies compared to unstructured generation requests.",
+        "benchmarks": [],
+        "canonical_id": "P-C8AB054946E4",
+        "canonical_key": "explicitly embedding domain transfer rules and creativity heuristics into prompt instructions significantly improves relevance and novelty of llm generated analogies compared to un",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T09:27:43+00:00",
+        "discussion": "The principle suggests that in Multi-Agent Systems (MAS), agents should not merely converse in natural language but should adopt specific 'machine dialects' defined by logical constraints or reasoning protocols. By enforcing a structured interaction protocol (the heuristic), the system reduces token waste on irrelevant explorations and increases the density of useful reasoning steps. The limitation is that defining effective heuristics requires domain expertise, and the principle may not generalize to tasks requiring purely divergent thinking without any structural anchor.",
+        "entered_at": "2026-06-17T09:27:43+00:00",
+        "evidence": "The study validates this by comparing ideation sessions where LLMs were prompted with specific creativity heuristics against baseline conditions. The results showed that groups assisted by the heuristic-guided tool produced ideas with higher creativity ratings. The evidence indicates that without these structural constraints, LLMs tend to produce common or superficial associations, whereas the heuristic constraints force the model to traverse latent spaces between semantically distant concepts, thereby fulfilling the requirement for true analogical reasoning.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T09:29:30+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Structured Prompting for Domain Transfer",
+        "performance": [],
+        "principle_id": "P-C8AB054946E4",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Please design an MAS framework where LLMs are interacting machine dialects like social interaction to improve the reasoning accuracy and reducing the tokens completion and cost.",
+        "provider": "siliconflow",
+        "source_paper_link": "https://doi.org/10.1017/dsj.2025.10044",
+        "source_paper_links": [
+          "https://doi.org/10.1017/dsj.2025.10044"
+        ],
+        "source_paper_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-50A0DFAB12FB"
+        ],
+        "source_work_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "source_works": [
+          "W-50A0DFAB12FB"
+        ],
+        "updated_at": "2026-06-17T09:29:30+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-82398031A768": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T09:27:43+00:00",
+            "extracted_at": "2026-06-17T09:29:30+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "Explicitly embedding domain-transfer rules and creativity heuristics into prompt instructions significantly improves the relevance and novelty of LLM-generated analogies compared to unstructured generation requests.",
+              "argument": "Explicitly embedding domain-transfer rules and creativity heuristics into prompt instructions significantly improves the relevance and novelty of LLM-generated analogies compared to unstructured generation requests.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle suggests that in Multi-Agent Systems (MAS), agents should not merely converse in natural language but should adopt specific 'machine dialects' defined by logical constraints or reasoning protocols. By enforcing a structured interaction protocol (the heuristic), the system reduces token waste on irrelevant explorations and increases the density of useful reasoning steps. The limitation is that defining effective heuristics requires domain expertise, and the principle may not generalize to tasks requiring purely divergent thinking without any structural anchor.",
+              "evidence": "The study validates this by comparing ideation sessions where LLMs were prompted with specific creativity heuristics against baseline conditions. The results showed that groups assisted by the heuristic-guided tool produced ideas with higher creativity ratings. The evidence indicates that without these structural constraints, LLMs tend to produce common or superficial associations, whereas the heuristic constraints force the model to traverse latent spaces between semantically distant concepts, thereby fulfilling the requirement for true analogical reasoning.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Structured Prompting for Domain Transfer",
+              "performance": [],
+              "problem_pressure": "Please design an MAS framework where LLMs are interacting machine dialects like social interaction to improve the reasoning accuracy and reducing the tokens completion and cost.",
+              "source_paper_link": "https://doi.org/10.1017/dsj.2025.10044",
+              "source_paper_links": [
+                "https://doi.org/10.1017/dsj.2025.10044"
+              ],
+              "source_paper_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-50A0DFAB12FB"
+              ],
+              "source_work_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "source_works": [
+                "W-50A0DFAB12FB"
+              ],
+              "venue_or_source": "Design Science",
+              "year": 2026
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1017/dsj.2025.10044"
+            ],
+            "version_id": "VER-82398031A768"
+          }
+        },
+        "venue_or_source": "Design Science",
+        "year": 2026
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-50A0DFAB12FB"
+        ],
+        "validation_level": "L1",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T09:41:45+00:00",
+        "updated_at": "2026-06-17T10:29:31+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-BBBA2EB6C9FA",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "structured prompting for domain transfer structured prompting for domain transfer explicitly embedding domain transfer rules and creativity heuristics into prompt instructions significantly improves the relevance and novelty of llm generated analogies compared to unstructured generation requests w a",
+      "canonical_label": "Structured Prompting for Domain Transfer",
+      "concept_id": "P-82EB35780417",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "Explicitly embedding domain-transfer rules and creativity heuristics into prompt instructions significantly improves the relevance and novelty of LLM-generated analogies compared to unstructured generation requests.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-82398031A768",
+        "argument": "Explicitly embedding domain-transfer rules and creativity heuristics into prompt instructions significantly improves the relevance and novelty of LLM-generated analogies compared to unstructured generation requests.",
+        "benchmarks": [],
+        "canonical_id": "P-C8AB054946E4",
+        "canonical_key": "explicitly embedding domain transfer rules and creativity heuristics into prompt instructions significantly improves relevance and novelty of llm generated analogies compared to un",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T09:27:43+00:00",
+        "discussion": "The principle suggests that in Multi-Agent Systems (MAS), agents should not merely converse in natural language but should adopt specific 'machine dialects' defined by logical constraints or reasoning protocols. By enforcing a structured interaction protocol (the heuristic), the system reduces token waste on irrelevant explorations and increases the density of useful reasoning steps. The limitation is that defining effective heuristics requires domain expertise, and the principle may not generalize to tasks requiring purely divergent thinking without any structural anchor.",
+        "entered_at": "2026-06-17T09:27:43+00:00",
+        "evidence": "The study validates this by comparing ideation sessions where LLMs were prompted with specific creativity heuristics against baseline conditions. The results showed that groups assisted by the heuristic-guided tool produced ideas with higher creativity ratings. The evidence indicates that without these structural constraints, LLMs tend to produce common or superficial associations, whereas the heuristic constraints force the model to traverse latent spaces between semantically distant concepts, thereby fulfilling the requirement for true analogical reasoning.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T09:29:30+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Structured Prompting for Domain Transfer",
+        "performance": [],
+        "principle_id": "P-C8AB054946E4",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Please design an MAS framework where LLMs are interacting machine dialects like social interaction to improve the reasoning accuracy and reducing the tokens completion and cost.",
+        "provider": "siliconflow",
+        "source_paper_link": "https://doi.org/10.1017/dsj.2025.10044",
+        "source_paper_links": [
+          "https://doi.org/10.1017/dsj.2025.10044"
+        ],
+        "source_paper_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-A482FD24BE59"
+        ],
+        "source_work_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "source_works": [
+          "W-A482FD24BE59"
+        ],
+        "updated_at": "2026-06-17T09:29:30+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-82398031A768": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T09:27:43+00:00",
+            "extracted_at": "2026-06-17T09:29:30+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "Explicitly embedding domain-transfer rules and creativity heuristics into prompt instructions significantly improves the relevance and novelty of LLM-generated analogies compared to unstructured generation requests.",
+              "argument": "Explicitly embedding domain-transfer rules and creativity heuristics into prompt instructions significantly improves the relevance and novelty of LLM-generated analogies compared to unstructured generation requests.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle suggests that in Multi-Agent Systems (MAS), agents should not merely converse in natural language but should adopt specific 'machine dialects' defined by logical constraints or reasoning protocols. By enforcing a structured interaction protocol (the heuristic), the system reduces token waste on irrelevant explorations and increases the density of useful reasoning steps. The limitation is that defining effective heuristics requires domain expertise, and the principle may not generalize to tasks requiring purely divergent thinking without any structural anchor.",
+              "evidence": "The study validates this by comparing ideation sessions where LLMs were prompted with specific creativity heuristics against baseline conditions. The results showed that groups assisted by the heuristic-guided tool produced ideas with higher creativity ratings. The evidence indicates that without these structural constraints, LLMs tend to produce common or superficial associations, whereas the heuristic constraints force the model to traverse latent spaces between semantically distant concepts, thereby fulfilling the requirement for true analogical reasoning.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Structured Prompting for Domain Transfer",
+              "performance": [],
+              "problem_pressure": "Please design an MAS framework where LLMs are interacting machine dialects like social interaction to improve the reasoning accuracy and reducing the tokens completion and cost.",
+              "source_paper_link": "https://doi.org/10.1017/dsj.2025.10044",
+              "source_paper_links": [
+                "https://doi.org/10.1017/dsj.2025.10044"
+              ],
+              "source_paper_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-50A0DFAB12FB"
+              ],
+              "source_work_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "source_works": [
+                "W-50A0DFAB12FB"
+              ],
+              "venue_or_source": "Design Science",
+              "year": 2026
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1017/dsj.2025.10044"
+            ],
+            "version_id": "VER-82398031A768"
+          }
+        },
+        "venue_or_source": "Design Science",
+        "year": 2026
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-A482FD24BE59"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T10:36:06+00:00",
+        "updated_at": "2026-06-17T10:36:06+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-89CD6AE6192F",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "role of llm generated content in cross domain analogical reasoning role of llm generated content in cross domain analogical reasoning",
+      "canonical_label": "role of LLM-generated content in cross-domain analogical reasoning",
+      "concept_id": "RF-3B522AD7C4CB",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-ABE1F9517252",
+        "benchmark_name": "role of LLM-generated content in cross-domain analogical reasoning",
+        "code_url": "",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-17T09:26:40+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "review Methodology Results Discussion Conclusion References Save PDF Save PDF (3 mb) View PDF [Opens in a new window] Save to Dropbox Save to Google Drive Save t"
+        },
+        "extracted_at": "2026-06-17T09:26:40+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-6929CAF58133",
+        "method_name": "Analogical reasoning with large language models",
+        "metric": "mAP",
+        "needs_llm_review": false,
+        "result_id": "RR-C64C332736F4",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": false,
+          "has_compute_accounting": false,
+          "needs_verification": false
+        },
+        "source_hash": "97448324c17f34fb",
+        "source_work_id": "W-50A0DFAB12FB",
+        "unit": "",
+        "updated_at": "2026-06-17T09:29:30+00:00",
+        "value": 3.0,
+        "value_text": "review Methodology Results Discussion Conclusion References Save PDF Save PDF (3 mb) View PDF [Opens in a new window] Save to Dropbox Save to Google Drive Save t",
+        "work_id": "W-50A0DFAB12FB"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T09:42:06+00:00",
+        "updated_at": "2026-06-17T10:29:56+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-976F34D9EB56",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "mbpp mbpp",
+      "canonical_label": "MBPP",
+      "concept_id": "RF-5EB327A2D6C5",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-308BAB37A080",
+        "benchmark_name": "MBPP",
+        "code_url": "https://github.com/du-nlp-lab/LMR-Bench",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-17T09:26:43+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "; Baek et al., 2025) to implementing code (Jiang et al., 2024a,b; Zhang et al., 2024), drafting academic papers (Lee et al., 2022; Wang et al., 2024; Ifargan et al."
+        },
+        "extracted_at": "2026-06-17T09:26:43+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-6929CAF58133",
+        "method_name": "LMR-BENCH",
+        "metric": "EM",
+        "needs_llm_review": false,
+        "result_id": "RR-DC49D332747E",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": true,
+          "has_compute_accounting": true,
+          "needs_verification": false
+        },
+        "source_hash": "d0f3c917c1e411b0",
+        "source_work_id": "W-FBBB81F205BE",
+        "unit": "",
+        "updated_at": "2026-06-17T09:29:33+00:00",
+        "value": 2024.0,
+        "value_text": "; Baek et al., 2025) to implementing code (Jiang et al., 2024a,b; Zhang et al., 2024), drafting academic papers (Lee et al., 2022; Wang et al., 2024; Ifargan et al.",
+        "work_id": "W-FBBB81F205BE"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:41:54+00:00",
+        "updated_at": "2026-06-17T10:29:58+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-AC4A174E130A",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "mmlu mmlu",
+      "canonical_label": "MMLU",
+      "concept_id": "RF-7CD1F6386DCB",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-48EF31FD4BC6",
+        "benchmark_name": "MMLU",
+        "code_url": "",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-17T09:26:42+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "g., Expert, Personality), (2) response generators (e.g., Critical, Reasoning), (3) discussion paradigms (e.g., Memory, Relay), and (4) decision protocols (e.g.,"
+        },
+        "extracted_at": "2026-06-17T09:26:42+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-6929CAF58133",
+        "method_name": "MALLM",
+        "metric": "memory",
+        "needs_llm_review": false,
+        "result_id": "RR-EAD2E44D56DA",
+        "result_quality": {
+          "has_ablation": true,
+          "has_code": false,
+          "has_compute_accounting": true,
+          "needs_verification": false
+        },
+        "source_hash": "474f86a815f07894",
+        "source_work_id": "W-F4B6C94FC69A",
+        "unit": "",
+        "updated_at": "2026-06-17T09:29:32+00:00",
+        "value": 3.0,
+        "value_text": "g., Expert, Personality), (2) response generators (e.g., Critical, Reasoning), (3) discussion paradigms (e.g., Memory, Relay), and (4) decision protocols (e.g.,",
+        "work_id": "W-F4B6C94FC69A"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:21:15+00:00",
+        "updated_at": "2026-06-17T10:29:57+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-E5A41163A064",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "math math math",
+      "canonical_label": "MATH",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-641840FF963C",
+        "benchmark_name": "MATH",
+        "code_url": "",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-17T09:40:53+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "tement Contact Search Search Register Login Search Search Home / Archives / No. 3 (2019) / articles ACCURACY OF A HEURISTIC FOR TOTAL WEIGHTED COMPLETION TIME MIN"
+        },
+        "extracted_at": "2026-06-17T09:40:53+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-6929CAF58133",
+        "method_name": "ACCURACY OF A HEURISTIC FOR TOTAL WEIGHTED COMPLETION TIME MINIMIZATION IN PR...",
+        "metric": "accuracy",
+        "needs_llm_review": false,
+        "result_id": "RR-FB33564F164D",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": false,
+          "has_compute_accounting": true,
+          "needs_verification": false
+        },
+        "source_hash": "aa26fa9021b28a51",
+        "source_work_id": "W-5C05CF1EB2D2",
+        "unit": "",
+        "updated_at": "2026-06-17T09:41:31+00:00",
+        "value": 3.0,
+        "value_text": "tement Contact Search Search Register Login Search Search Home / Archives / No. 3 (2019) / articles ACCURACY OF A HEURISTIC FOR TOTAL WEIGHTED COMPLETION TIME MIN",
+        "work_id": "W-5C05CF1EB2D2"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:18:12+00:00",
+        "updated_at": "2026-06-17T10:30:07+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-B86404C3874A",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "humaneval humaneval",
+      "canonical_label": "HumanEval",
+      "concept_id": "RF-920F4AF87271",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-FADC9ED492EB",
+        "benchmark_name": "HumanEval",
+        "code_url": "",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-17T09:26:40+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "cross-domain inspirations (Jia et al. Reference Jia, Becattini, Cascini and Tan 2020 ). In recent years, there have been significant advancements in Design-by-Analog"
+        },
+        "extracted_at": "2026-06-17T09:26:40+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-6929CAF58133",
+        "method_name": "Analogical reasoning with large language models",
+        "metric": "EM",
+        "needs_llm_review": false,
+        "result_id": "RR-6A2B7B331329",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": false,
+          "has_compute_accounting": false,
+          "needs_verification": false
+        },
+        "source_hash": "97448324c17f34fb",
+        "source_work_id": "W-50A0DFAB12FB",
+        "unit": "",
+        "updated_at": "2026-06-17T09:29:30+00:00",
+        "value": 2020.0,
+        "value_text": "cross-domain inspirations (Jia et al. Reference Jia, Becattini, Cascini and Tan 2020 ). In recent years, there have been significant advancements in Design-by-Analog",
+        "work_id": "W-50A0DFAB12FB"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:21:15+00:00",
+        "updated_at": "2026-06-17T10:29:56+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-A2EEF7A42675",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "turn taking turn taking",
+      "canonical_label": "turn-taking",
+      "concept_id": "RF-AFFD4DFA923C",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-01C1B12A55A6",
+        "benchmark_name": "turn-taking",
+        "code_url": "",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-17T09:26:40+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "review Methodology Results Discussion Conclusion References Save PDF Save PDF (3 mb) View PDF [Opens in a new window] Save to Dropbox Save to Google Drive Save t"
+        },
+        "extracted_at": "2026-06-17T09:26:40+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-6929CAF58133",
+        "method_name": "Analogical reasoning with large language models",
+        "metric": "mAP",
+        "needs_llm_review": false,
+        "result_id": "RR-E9F08D10A4BC",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": false,
+          "has_compute_accounting": false,
+          "needs_verification": false
+        },
+        "source_hash": "97448324c17f34fb",
+        "source_work_id": "W-50A0DFAB12FB",
+        "unit": "",
+        "updated_at": "2026-06-17T09:29:30+00:00",
+        "value": 3.0,
+        "value_text": "review Methodology Results Discussion Conclusion References Save PDF Save PDF (3 mb) View PDF [Opens in a new window] Save to Dropbox Save to Google Drive Save t",
+        "work_id": "W-50A0DFAB12FB"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T09:42:06+00:00",
+        "updated_at": "2026-06-17T10:29:56+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-4932A988D9E6",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "hellaswag hellaswag",
+      "canonical_label": "HellaSwag",
+      "concept_id": "RF-CDF2172D23BB",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-66B89F3A6674",
+        "benchmark_name": "HellaSwag",
+        "code_url": "",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-17T09:26:40+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "cross-domain inspirations (Jia et al. Reference Jia, Becattini, Cascini and Tan 2020 ). In recent years, there have been significant advancements in Design-by-Analog"
+        },
+        "extracted_at": "2026-06-17T09:26:40+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-6929CAF58133",
+        "method_name": "Analogical reasoning with large language models",
+        "metric": "EM",
+        "needs_llm_review": false,
+        "result_id": "RR-DA1AD5989AD8",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": false,
+          "has_compute_accounting": false,
+          "needs_verification": false
+        },
+        "source_hash": "97448324c17f34fb",
+        "source_work_id": "W-50A0DFAB12FB",
+        "unit": "",
+        "updated_at": "2026-06-17T09:29:30+00:00",
+        "value": 2020.0,
+        "value_text": "cross-domain inspirations (Jia et al. Reference Jia, Becattini, Cascini and Tan 2020 ). In recent years, there have been significant advancements in Design-by-Analog",
+        "work_id": "W-50A0DFAB12FB"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T09:42:06+00:00",
+        "updated_at": "2026-06-17T10:29:56+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-3E26E399A1CD",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "gsm8k gsm8k gsm8k",
+      "canonical_label": "GSM8K",
+      "concept_id": "RF-DBE34EBD64B7",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-A629381B2912",
+        "benchmark_name": "GSM8K",
+        "code_url": "",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-17T09:32:09+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "esigner, or experiment planner, to support parts of the scientific workflow [7, 21]. Systems such as the \"AI Co-Scientist\" [6] and \"Robin\" [5], as well as lab-in-"
+        },
+        "extracted_at": "2026-06-17T09:32:09+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-6929CAF58133",
+        "method_name": "Tiny Moves",
+        "metric": "EM",
+        "needs_llm_review": false,
+        "result_id": "RR-EF51E16CC38A",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": false,
+          "has_compute_accounting": false,
+          "needs_verification": false
+        },
+        "source_hash": "a44e1f38533f2d77",
+        "source_work_id": "W-3FD22D147568",
+        "unit": "",
+        "updated_at": "2026-06-17T09:35:07+00:00",
+        "value": 21.0,
+        "value_text": "esigner, or experiment planner, to support parts of the scientific workflow [7, 21]. Systems such as the \"AI Co-Scientist\" [6] and \"Robin\" [5], as well as lab-in-",
+        "work_id": "W-3FD22D147568"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:18:13+00:00",
+        "updated_at": "2026-06-17T10:30:01+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-66A7F27913D5",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-F84988F9EBA5",
+  "created_at": "2026-06-17T10:36:06+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "The study validates this by comparing ideation sessions where LLMs were prompted with specific creativity heuristics against baseline conditions. The results showed that groups assisted by the heuristic-guided tool produced ideas with higher creativity ratings. The evidence indicates that without these structural constraints, LLMs tend to produce common or superficial associations, whereas the heuristic constraints force the model to traverse latent spaces between semantically distant concepts, thereby fulfilling the requirement for true analogical reasoning.",
+      "concept_id": "P-3C44AED174B2",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T09:41:45+00:00",
+      "evidence_id": "EV-3D4540A95C8A",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The study validates this by comparing ideation sessions where LLMs were prompted with specific creativity heuristics against baseline conditions. The results showed that groups assisted by the heuristic-guided tool produced ideas with higher creativity ratings. The evidence indicates that without these structural constraints, LLMs tend to produce common or superficial associations, whereas the heuristic constraints force the model to traverse latent spaces between semantically distant concepts, thereby fulfilling the requirement for true analogical reasoning.",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-FADC9ED492EB\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"HumanEval\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Analogical reasoning with large lan...",
+      "concept_id": "B-02F383F1AA40",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T09:41:49+00:00",
+      "evidence_id": "EV-88B07AFFC003",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-FADC9ED492EB\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"HumanEval\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Analogical reasoning with large lan...",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-01C1B12A55A6\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"turn-taking\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Analogical reasoning with large l...",
+      "concept_id": "B-0D88A815C664",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T09:41:49+00:00",
+      "evidence_id": "EV-E81DA3372470",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-01C1B12A55A6\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"turn-taking\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Analogical reasoning with large l...",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-ABE1F9517252\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"role of LLM-generated content in cross-domain analogical reasoning\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient...",
+      "concept_id": "B-BAC6EB8459D0",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T09:41:50+00:00",
+      "evidence_id": "EV-58DF0CFD2CE7",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-ABE1F9517252\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"role of LLM-generated content in cross-domain analogical reasoning\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient...",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-66B89F3A6674\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"HellaSwag\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Analogical reasoning with large lan...",
+      "concept_id": "B-A1CF94E9906E",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T09:41:50+00:00",
+      "evidence_id": "EV-04677C134D4A",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-66B89F3A6674\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"HellaSwag\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Analogical reasoning with large lan...",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "The study conducted controlled experiments with 24 undergraduate design students, comparing groups using the proposed LLM-supported tool against those without. Performance was measured using standard creativity assessment metrics applied to the resulting design concepts, revealing significant differences in creative performance.",
+      "concept_id": "B-18C940CBDE5D",
+      "confidence": 0.58,
+      "created_at": "2026-06-17T09:41:50+00:00",
+      "evidence_id": "EV-458BF8325F68",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The study conducted controlled experiments with 24 undergraduate design students, comparing groups using the proposed LLM-supported tool against those without. Performance was measured using standard creativity assessment metrics applied to the resulting design concepts, revealing significant differences in creative performance.",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "MALLM can load any textual Hugging Face dataset including MMLU-Pro and provides an evaluation pipeline for easy comparison of MAD configurations.",
+      "concept_id": "B-5A04BACF25E2",
+      "confidence": 0.58,
+      "created_at": "2026-06-17T09:41:50+00:00",
+      "evidence_id": "EV-19F23A9D5ED4",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "MALLM can load any textual Hugging Face dataset including MMLU-Pro and provides an evaluation pipeline for easy comparison of MAD configurations.",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-308BAB37A080\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-FBBB81F205BE\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"MBPP\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"LMR-BENCH: Evaluating LLM Agent's Abilit...",
+      "concept_id": "B-187B5959886C",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T09:41:50+00:00",
+      "evidence_id": "EV-7F7747319244",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-308BAB37A080\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-FBBB81F205BE\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"MBPP\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"LMR-BENCH: Evaluating LLM Agent's Abilit...",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-A629381B2912\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-3FD22D147568\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"GSM8K\", \"split\": \"unspecified\", \"metric\": \"F1\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Tiny Moves: Game-based Hypothesis Refine...",
+      "concept_id": "B-688938933F4F",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T09:41:51+00:00",
+      "evidence_id": "EV-6F5EEB32C7EC",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-A629381B2912\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-3FD22D147568\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"GSM8K\", \"split\": \"unspecified\", \"metric\": \"F1\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Tiny Moves: Game-based Hypothesis Refine...",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-641840FF963C\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-5C05CF1EB2D2\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"ACCURACY OF A HEURISTIC FOR TOTAL W...",
+      "concept_id": "B-1A6F507BBC89",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T09:41:52+00:00",
+      "evidence_id": "EV-6BC2A97C93F1",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-641840FF963C\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-5C05CF1EB2D2\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"ACCURACY OF A HEURISTIC FOR TOTAL W...",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"baseline_name\": \"Unassisted Ideation\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Traditional design ideation performed by human designers without any AI-generated analogical stimuli or heuristic support.\", \"methodology\": \"Participants performed design tasks relying solely on their own knowledge and cognitive processes, without access to the LLM-...",
+      "concept_id": "BL-930677E40532",
+      "confidence": 0.55,
+      "created_at": "2026-06-17T09:41:52+00:00",
+      "evidence_id": "EV-CCEBC345FB7A",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"baseline_name\": \"Unassisted Ideation\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Traditional design ideation performed by human designers without any AI-generated analogical stimuli or heuristic support.\", \"methodology\": \"Participants performed design tasks relying solely on their own knowledge and cognitive processes, without access to the LLM-...",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-ED8B05A5A4F6",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-D3C61943A202",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-3B522AD7C4CB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-DB80F3D64E8F",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-4C274761BAD3",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-CDF2172D23BB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-F83B41F8C3F2",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-DBE34EBD64B7",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-8F89FA14D104",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-AFFD4DFA923C",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-3EFC9AE29DA9",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-920F4AF87271",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-A3BF1E2C4941",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-3B522AD7C4CB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-C7C2DE4B8748",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-92C6D2D30358",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-920F4AF87271",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-443AF2AA0E7C",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-A9B056445EB0",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-920F4AF87271",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-F7D43E1040D0",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-5EB327A2D6C5",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-9646F2797C88",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-920F4AF87271",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-3D60061AD902",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-AFFD4DFA923C",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-7FEB209CE461",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-88F4F5AF5620",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-5EB327A2D6C5",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-6C73A7183104",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-AFFD4DFA923C",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-80792BE9657D",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-5EB327A2D6C5",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-09B1408E62FE",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-CDF2172D23BB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-C66AB0CE407D",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-3B522AD7C4CB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-3575C5D3997C",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-9674049AF4EF",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-DBE34EBD64B7",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-2790F41B4004",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-CDF2172D23BB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-5AB980402B41",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-88FB4AAA3F2F",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-FFA429A7434E",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-DBE34EBD64B7",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-F38C192BCA15",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-DBE34EBD64B7",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-0B10C66245CF",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-3B522AD7C4CB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-8A61C35B4426",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-5EB327A2D6C5",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-C6292F67814C",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-CDF2172D23BB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-FDE490A98586",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-AFFD4DFA923C",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T09:42:06+00:00",
+      "evidence_id": "EV-70CAB2D3D18D",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "The study validates this by comparing ideation sessions where LLMs were prompted with specific creativity heuristics against baseline conditions. The results showed that groups assisted by the heuristic-guided tool produced ideas with higher creativity ratings. The evidence indicates that without these structural constraints, LLMs tend to produce common or superficial associations, whereas the heuristic constraints force the model to traverse latent spaces between semantically distant concepts, thereby fulfilling the requirement for true analogical reasoning.",
+      "concept_id": "P-82EB35780417",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T10:36:06+00:00",
+      "evidence_id": "EV-6E03370F9DDA",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The study validates this by comparing ideation sessions where LLMs were prompted with specific creativity heuristics against baseline conditions. The results showed that groups assisted by the heuristic-guided tool produced ideas with higher creativity ratings. The evidence indicates that without these structural constraints, LLMs tend to produce common or superficial associations, whereas the heuristic constraints force the model to traverse latent spaces between semantically distant concepts, thereby fulfilling the requirement for true analogical reasoning.",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": "WV-3A880476DE85"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-A629381B2912\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-3FD22D147568\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"GSM8K\", \"split\": \"unspecified\", \"metric\": \"F1\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Tiny Moves: Game-based Hypothesis Refine...",
+      "concept_id": "B-688938933F4F",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T10:36:06+00:00",
+      "evidence_id": "EV-85AE80728263",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-A629381B2912\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-3FD22D147568\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"GSM8K\", \"split\": \"unspecified\", \"metric\": \"F1\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Tiny Moves: Game-based Hypothesis Refine...",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": "WV-3A880476DE85"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-FADC9ED492EB\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"HumanEval\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Analogical reasoning with large lan...",
+      "concept_id": "B-02F383F1AA40",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T10:36:06+00:00",
+      "evidence_id": "EV-D3FA66740161",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-FADC9ED492EB\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"HumanEval\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Analogical reasoning with large lan...",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": "WV-3A880476DE85"
+    },
+    {
+      "claim_text": "MALLM can load any textual Hugging Face dataset including MMLU-Pro and provides an evaluation pipeline for easy comparison of MAD configurations.",
+      "concept_id": "B-5A04BACF25E2",
+      "confidence": 0.58,
+      "created_at": "2026-06-17T10:36:06+00:00",
+      "evidence_id": "EV-3CD648BC3F1F",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "MALLM can load any textual Hugging Face dataset including MMLU-Pro and provides an evaluation pipeline for easy comparison of MAD configurations.",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": "WV-3A880476DE85"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-641840FF963C\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-5C05CF1EB2D2\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"ACCURACY OF A HEURISTIC FOR TOTAL W...",
+      "concept_id": "B-1A6F507BBC89",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T10:36:06+00:00",
+      "evidence_id": "EV-9216D4BF8E35",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-641840FF963C\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-5C05CF1EB2D2\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"MATH\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"ACCURACY OF A HEURISTIC FOR TOTAL W...",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": "WV-3A880476DE85"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-308BAB37A080\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-FBBB81F205BE\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"MBPP\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"LMR-BENCH: Evaluating LLM Agent's Abilit...",
+      "concept_id": "B-135550388323",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T10:36:06+00:00",
+      "evidence_id": "EV-4484FA202CE9",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-308BAB37A080\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-FBBB81F205BE\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"MBPP\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"LMR-BENCH: Evaluating LLM Agent's Abilit...",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": "WV-3A880476DE85"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-66B89F3A6674\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"HellaSwag\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Analogical reasoning with large lan...",
+      "concept_id": "B-849CE03DDB6B",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T10:36:06+00:00",
+      "evidence_id": "EV-6283461B7182",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-66B89F3A6674\", \"field_id\": \"PRJ-6929CAF58133\", \"work_id\": \"W-50A0DFAB12FB\", \"task\": \"machine-dialect MAS for token-efficient reasoning\", \"dataset\": \"HellaSwag\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Analogical reasoning with large lan...",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": "WV-3A880476DE85"
+    },
+    {
+      "claim_text": "{\"baseline_name\": \"Unassisted Ideation\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Traditional design ideation performed by human designers without any AI-generated analogical stimuli or heuristic support.\", \"methodology\": \"Participants performed design tasks relying solely on their own knowledge and cognitive processes, without access to the LLM-...",
+      "concept_id": "BL-DBCFFE84BBA6",
+      "confidence": 0.55,
+      "created_at": "2026-06-17T10:36:06+00:00",
+      "evidence_id": "EV-81845380A532",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"baseline_name\": \"Unassisted Ideation\", \"baseline_type\": \"compared_method\", \"core_idea\": \"Traditional design ideation performed by human designers without any AI-generated analogical stimuli or heuristic support.\", \"methodology\": \"Participants performed design tasks relying solely on their own knowledge and cognitive processes, without access to the LLM-...",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": "WV-3A880476DE85"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-17T10:36:06+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-17T10:36:05+00:00",
+      "extraction_run_id": "XRUN-C8A6DF50039B",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 1,
+        "benchmark_records": 9,
+        "existed_ideas": 0,
+        "principles": 1,
+        "takeaway_messages": 0,
+        "total": 11
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": "WV-3A880476DE85"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "",
+    "secret_exposed_to_browser": false,
+    "warning": ""
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 0,
+        "principle": 1
+      },
+      "title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-A482FD24BE59"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "",
+        "authors": [
+          "Rutvik Kokate",
+          "Prasad Onkar"
+        ],
+        "canonical_title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "https://doi.org/10.1017/dsj.2025.10044",
+          "https://www.cambridge.org/core/product/identifier/S2053470125100449/type/journal_article"
+        ],
+        "title_hash": "b3c3dc25098c557d",
+        "title_norm": "analogical reasoning with large language models a co creative framework and benchmarking of llms in design ideation",
+        "venue_or_source": "Design Science",
+        "year": 2026
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 0.99,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "2026-01-28T19:15:20Z",
+        "title_hash": "b3c3dc25098c557d"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T09:41:39+00:00",
+        "updated_at": "2026-06-17T10:36:05+00:00"
+      },
+      "work_id": "W-A482FD24BE59"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": "Abstract Creative thinking is a crucial step in the design ideation process, where analogical reasoning plays a vital role in expanding the design concept space. The emergence of Generative AI has brought a significant revolution in co-creative systems, with a growing number of studies on Design-by-Analogy support tools. However, there is a lack of studies investigating the creative performance of Large Language Model (LLM)-generated analogical content and benchmarking of language models in creative tasks such as design ideation. Through this study, we aim to (i) investigate the effect of creativity heuristics by leveraging LLMs to generate analogical stimuli for novice designers in ideation tasks and (ii) evaluate and benchmark language models across analogical creative tasks. We developed a support tool based on the proposed conceptual framework and validated it by conducting controlled ideation experiments with 24 undergraduate design students. Groups assisted with the support tool generated higher-rated ideas, thus validating the proposed framework and the effectiveness of analogical reasoning for augmenting creative output with LLMs. Benchmarking of the models revealed significant differences in the creative performance of analogies across various language models, suggesting that future studies should focus on evaluating language models across creative, subjective tasks.",
+      "abstract_hash": "52e9f63db8c3b7d6",
+      "content_hash": "d173b83cbc440860",
+      "created_at": "2026-06-17T09:41:39+00:00",
+      "metadata": {
+        "abstract": "Abstract Creative thinking is a crucial step in the design ideation process, where analogical reasoning plays a vital role in expanding the design concept space. The emergence of Generative AI has brought a significant revolution in co-creative systems, with a growing number of studies on Design-by-Analogy support tools. However, there is a lack of studies investigating the creative performance of Large Language Model (LLM)-generated analogical content and benchmarking of language models in creative tasks such as design ideation. Through this study, we aim to (i) investigate the effect of creativity heuristics by leveraging LLMs to generate analogical stimuli for novice designers in ideation tasks and (ii) evaluate and benchmark language models across analogical creative tasks. We developed a support tool based on the proposed conceptual framework and validated it by conducting controlled ideation experiments with 24 undergraduate design students. Groups assisted with the support tool generated higher-rated ideas, thus validating the proposed framework and the effectiveness of analogical reasoning for augmenting creative output with LLMs. Benchmarking of the models revealed significant differences in the creative performance of analogies across various language models, suggesting that future studies should focus on evaluating language models across creative, subjective tasks.",
+        "active_version_id": "VER-0C623A57F2BE",
+        "authors": [
+          "Rutvik Kokate",
+          "Prasad Onkar"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-50A0DFAB12FB",
+        "canonical_key": "analogical reasoning with large language models a co creative framework and benchmarking of llms in design ideation",
+        "citation_count": 0,
+        "community_signals": {
+          "source": "crossref",
+          "type": "journal-article"
+        },
+        "confidence_score": 0.62,
+        "created_at": "2026-06-17T09:24:44+00:00",
+        "entered_at": "2026-06-17T09:26:39+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T09:29:30+00:00",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "paper_link": "https://doi.org/10.1017/dsj.2025.10044",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "2026-01-28T19:15:20Z",
+        "source_urls": [
+          "https://doi.org/10.1017/dsj.2025.10044",
+          "https://www.cambridge.org/core/product/identifier/S2053470125100449/type/journal_article"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+        "updated_at": "2026-06-17T09:29:30+00:00",
+        "url_or_doi": "https://doi.org/10.1017/dsj.2025.10044",
+        "validation_level": "L1",
+        "variants": {
+          "VER-0C623A57F2BE": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T09:26:39+00:00",
+            "extracted_at": "2026-06-17T09:29:30+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Abstract Creative thinking is a crucial step in the design ideation process, where analogical reasoning plays a vital role in expanding the design concept space. The emergence of Generative AI has brought a significant revolution in co-creative systems, with a growing number of studies on Design-by-Analogy support tools. However, there is a lack of studies investigating the creative performance of Large Language Model (LLM)-generated analogical content and benchmarking of language models in creative tasks such as design ideation. Through this study, we aim to (i) investigate the effect of creativity heuristics by leveraging LLMs to generate analogical stimuli for novice designers in ideation tasks and (ii) evaluate and benchmark language models across analogical creative tasks. We developed a support tool based on the proposed conceptual framework and validated it by conducting controlled ideation experiments with 24 undergraduate design students. Groups assisted with the support tool generated higher-rated ideas, thus validating the proposed framework and the effectiveness of analogical reasoning for augmenting creative output with LLMs. Benchmarking of the models revealed significant differences in the creative performance of analogies across various language models, suggesting that future studies should focus on evaluating language models across creative, subjective tasks.",
+              "authors": [
+                "Rutvik Kokate",
+                "Prasad Onkar"
+              ],
+              "benchmarks": [],
+              "citation_count": 0,
+              "community_signals": {
+                "source": "crossref",
+                "type": "journal-article"
+              },
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "https://doi.org/10.1017/dsj.2025.10044",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2026-01-28T19:15:20Z",
+              "source_urls": [
+                "https://doi.org/10.1017/dsj.2025.10044",
+                "https://www.cambridge.org/core/product/identifier/S2053470125100449/type/journal_article"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "url_or_doi": "https://doi.org/10.1017/dsj.2025.10044",
+              "validation_level": "L1",
+              "venue_or_source": "Design Science",
+              "year": 2026
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1017/dsj.2025.10044",
+              "https://www.cambridge.org/core/product/identifier/S2053470125100449/type/journal_article"
+            ],
+            "version_id": "VER-0C623A57F2BE"
+          },
+          "VER-86ADEC3DAB8F": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T09:24:44+00:00",
+            "extracted_at": "2026-06-17T09:24:44+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Abstract Creative thinking is a crucial step in the design ideation process, where analogical reasoning plays a vital role in expanding the design concept space. The emergence of Generative AI has brought a significant revolution in co-creative systems, with a growing number of studies on Design-by-Analogy support tools. However, there is a lack of studies investigating the creative performance of Large Language Model (LLM)-generated analogical content and benchmarking of language models in creative tasks such as design ideation. Through this study, we aim to (i) investigate the effect of creativity heuristics by leveraging LLMs to generate analogical stimuli for novice designers in ideation tasks and (ii) evaluate and benchmark language models across analogical creative tasks. We developed a support tool based on the proposed conceptual framework and validated it by conducting controlled ideation experiments with 24 undergraduate design students. Groups assisted with the support tool generated higher-rated ideas, thus validating the proposed framework and the effectiveness of analogical reasoning for augmenting creative output with LLMs. Benchmarking of the models revealed significant differences in the creative performance of analogies across various language models, suggesting that future studies should focus on evaluating language models across creative, subjective tasks.",
+              "authors": [
+                "Rutvik Kokate",
+                "Prasad Onkar"
+              ],
+              "benchmarks": [],
+              "citation_count": 0,
+              "community_signals": {
+                "source": "crossref",
+                "type": "journal-article"
+              },
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "https://doi.org/10.1017/dsj.2025.10044",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2026-01-28T19:15:20Z",
+              "source_urls": [
+                "https://doi.org/10.1017/dsj.2025.10044",
+                "https://www.cambridge.org/core/product/identifier/S2053470125100449/type/journal_article"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+              "url_or_doi": "https://doi.org/10.1017/dsj.2025.10044",
+              "validation_level": "L1",
+              "venue_or_source": "Design Science",
+              "year": 2026
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "https://doi.org/10.1017/dsj.2025.10044",
+              "https://www.cambridge.org/core/product/identifier/S2053470125100449/type/journal_article"
+            ],
+            "version_id": "VER-86ADEC3DAB8F"
+          }
+        },
+        "venue_or_source": "Design Science",
+        "work_id": "W-50A0DFAB12FB",
+        "year": 2026
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "crossref",
+      "source_record_id": "W-50A0DFAB12FB",
+      "source_updated_at": "2026-01-28T19:15:20Z",
+      "title": "Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation",
+      "title_hash": "b3c3dc25098c557d",
+      "work_id": "W-A482FD24BE59",
+      "work_version_id": "WV-3A880476DE85"
+    }
+  ]
+}
