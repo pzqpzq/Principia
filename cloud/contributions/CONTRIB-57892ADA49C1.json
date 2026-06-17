@@ -1,0 +1,1115 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "imagenet imagenet imagenet w 2eaa9f5e4e47",
+      "canonical_label": "ImageNet",
+      "concept_id": "B-10E0FD73A1D8",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-31F3EC4F1976",
+        "benchmark_id": "B-3F4FF5D20CF8",
+        "benchmark_name": "ImageNet",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-3F4FF5D20CF8",
+        "canonical_key": "imagenet",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T11:03:49+00:00",
+        "data_form": "Labeled natural images organized by object category; standard classification labels and train/validation splits.",
+        "dataset": "ImageNet",
+        "description": "Large-scale image classification benchmark commonly used to evaluate visual representation transfer and adaptation.",
+        "entered_at": "2026-06-17T11:03:49+00:00",
+        "evidence": "{\"benchmark_id\": \"B-7593FF69197B\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-64A419F0B519\", \"task\": \"images limited scene views\", \"dataset\": \"ImageNet\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DeepVisInterests: CNN-Ontology Prediction of Users Interest...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:19:06+00:00",
+        "extractor": "deterministic",
+        "metric": "mAP",
+        "metrics": [
+          "primary reported metric",
+          "accuracy",
+          "mAP",
+          "memory",
+          "F1"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://www.image-net.org/",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Approximately 1.2M training images and 50K validation images in the ILSVRC classification setup.",
+        "source": "ImageNet / ILSVRC",
+        "source_paper_link": "http://arxiv.org/abs/1811.10920v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1905.03743v1",
+          "https://doi.org/10.1038/s41598-023-42891-8",
+          "http://arxiv.org/abs/2308.11356v2",
+          "http://arxiv.org/abs/2106.11952v2",
+          "http://arxiv.org/abs/1812.10889v2",
+          "http://arxiv.org/abs/2206.07326v2",
+          "http://arxiv.org/abs/2203.13131v1",
+          "https://doi.org/10.1186/s40537-019-0197-0",
+          "http://arxiv.org/abs/2211.10026v1",
+          "http://arxiv.org/abs/1811.10920v1"
+        ],
+        "source_paper_title": "DeepVisInterests: CNN-Ontology Prediction of Users Interests from Social Images",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-2EAA9F5E4E47"
+        ],
+        "source_work_title": "DeepVisInterests: CNN-Ontology Prediction of Users Interests from Social Images",
+        "source_works": [
+          "W-2EAA9F5E4E47"
+        ],
+        "task": "images limited scene views",
+        "updated_at": "2026-06-17T11:19:06+00:00",
+        "variants": {
+          "VER-31F3EC4F1976": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T11:03:49+00:00",
+            "extracted_at": "2026-06-17T11:19:06+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "ImageNet",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Labeled natural images organized by object category; standard classification labels and train/validation splits.",
+              "dataset": "ImageNet",
+              "description": "Large-scale image classification benchmark commonly used to evaluate visual representation transfer and adaptation.",
+              "evidence": "{\"benchmark_id\": \"B-7593FF69197B\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-64A419F0B519\", \"task\": \"images limited scene views\", \"dataset\": \"ImageNet\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DeepVisInterests: CNN-Ontology Prediction of Users Interest...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "mAP",
+              "metrics": [
+                "primary reported metric",
+                "accuracy",
+                "mAP",
+                "memory",
+                "F1"
+              ],
+              "needs_review": false,
+              "official_url": "https://www.image-net.org/",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Approximately 1.2M training images and 50K validation images in the ILSVRC classification setup.",
+              "source": "ImageNet / ILSVRC",
+              "source_paper_link": "http://arxiv.org/abs/1811.10920v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1905.03743v1",
+                "https://doi.org/10.1038/s41598-023-42891-8",
+                "http://arxiv.org/abs/2308.11356v2",
+                "http://arxiv.org/abs/2106.11952v2",
+                "http://arxiv.org/abs/1812.10889v2",
+                "http://arxiv.org/abs/2206.07326v2",
+                "http://arxiv.org/abs/2203.13131v1",
+                "https://doi.org/10.1186/s40537-019-0197-0",
+                "http://arxiv.org/abs/2211.10026v1",
+                "http://arxiv.org/abs/1811.10920v1"
+              ],
+              "source_paper_title": "DeepVisInterests: CNN-Ontology Prediction of Users Interests from Social Images",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7B546F57F4BE",
+                "W-E115EFD50D53",
+                "W-46029CE9D5D6",
+                "W-6E21A2CF36E4",
+                "W-7FDF3A887A50",
+                "W-1A4683B1260D",
+                "W-F8566C0F53EF",
+                "W-F14A5EBB0EC4",
+                "W-B8B762D07593",
+                "W-64A419F0B519"
+              ],
+              "source_work_title": "DeepVisInterests: CNN-Ontology Prediction of Users Interests from Social Images",
+              "source_works": [],
+              "task": "images limited scene views",
+              "venue_or_source": "arXiv",
+              "year": 2018
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1811.10920v1",
+              "https://www.image-net.org/"
+            ],
+            "version_id": "VER-31F3EC4F1976"
+          }
+        },
+        "venue_or_source": "arXiv",
+        "year": 2018
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-2EAA9F5E4E47"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:25+00:00",
+        "updated_at": "2026-06-17T11:22:25+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-AE58EFB1F9FD",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "cityscapes cityscapes cityscapes w 2eaa9f5e4e47",
+      "canonical_label": "Cityscapes",
+      "concept_id": "B-2BE5E457E56A",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-F15B9822CBD5",
+        "benchmark_id": "B-A09FA3ED9029",
+        "benchmark_name": "Cityscapes",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-A09FA3ED9029",
+        "canonical_key": "cityscapes",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T11:07:30+00:00",
+        "data_form": "Street-view images with fine and coarse pixel-level annotations.",
+        "dataset": "Cityscapes",
+        "description": "Urban street-scene benchmark for semantic understanding.",
+        "entered_at": "2026-06-17T11:07:30+00:00",
+        "evidence": "{\"benchmark_id\": \"B-F71AC3ADAA6C\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-46029CE9D5D6\", \"task\": \"images limited scene views\", \"dataset\": \"Cityscapes\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Semantic RGB-D Image Synthesis Collecting diverse sets of...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:08:41+00:00",
+        "extractor": "deterministic",
+        "metric": "mAP",
+        "metrics": [
+          "accuracy",
+          "mAP"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://www.cityscapes-dataset.com/",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Thousands of annotated urban driving images.",
+        "source": "Cityscapes",
+        "source_paper_link": "http://arxiv.org/abs/2308.11356v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2308.11356v2"
+        ],
+        "source_paper_title": "Semantic RGB-D Image Synthesis",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-2EAA9F5E4E47"
+        ],
+        "source_work_title": "Semantic RGB-D Image Synthesis",
+        "source_works": [
+          "W-2EAA9F5E4E47"
+        ],
+        "task": "images limited scene views",
+        "updated_at": "2026-06-17T11:08:41+00:00",
+        "variants": {
+          "VER-F15B9822CBD5": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T11:07:30+00:00",
+            "extracted_at": "2026-06-17T11:08:41+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "Cityscapes",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Street-view images with fine and coarse pixel-level annotations.",
+              "dataset": "Cityscapes",
+              "description": "Urban street-scene benchmark for semantic understanding.",
+              "evidence": "{\"benchmark_id\": \"B-F71AC3ADAA6C\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-46029CE9D5D6\", \"task\": \"images limited scene views\", \"dataset\": \"Cityscapes\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Semantic RGB-D Image Synthesis Collecting diverse sets of...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "mAP",
+              "metrics": [
+                "accuracy",
+                "mAP"
+              ],
+              "needs_review": false,
+              "official_url": "https://www.cityscapes-dataset.com/",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Thousands of annotated urban driving images.",
+              "source": "Cityscapes",
+              "source_paper_link": "http://arxiv.org/abs/2308.11356v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2308.11356v2"
+              ],
+              "source_paper_title": "Semantic RGB-D Image Synthesis",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-46029CE9D5D6"
+              ],
+              "source_work_title": "Semantic RGB-D Image Synthesis",
+              "source_works": [],
+              "task": "images limited scene views",
+              "venue_or_source": "ICCV 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2308.11356v2",
+              "https://www.cityscapes-dataset.com/"
+            ],
+            "version_id": "VER-F15B9822CBD5"
+          }
+        },
+        "venue_or_source": "ICCV 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-2EAA9F5E4E47"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:25+00:00",
+        "updated_at": "2026-06-17T11:22:25+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-F143FBAE9C9F",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "architecture design in section 4 architecture design in section 4 architecture design in section 4 w 2eaa9f5e4e47",
+      "canonical_label": "architecture design in Section 4",
+      "concept_id": "B-5D43806CC535",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-951896E82AB5",
+        "benchmark_id": "B-8F177FA081D8",
+        "benchmark_name": "architecture design in Section 4",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-8F177FA081D8",
+        "canonical_key": "architecture design in section 4",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T11:07:31+00:00",
+        "data_form": "Multiple-choice science exam questions.",
+        "dataset": "architecture design in Section 4",
+        "description": "AI2 science-question benchmark for grade-school science reasoning.",
+        "entered_at": "2026-06-17T11:07:31+00:00",
+        "evidence": "{\"benchmark_id\": \"B-FA8F10D6F125\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-46029CE9D5D6\", \"task\": \"images limited scene views\", \"dataset\": \"architecture design in Section 4\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Semantic RGB-D Image Synthesis Coll...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:08:41+00:00",
+        "extractor": "deterministic",
+        "metric": "mAP",
+        "metrics": [
+          "accuracy",
+          "mAP"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/allenai/ai2_arc",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "ARC Easy and ARC Challenge splits.",
+        "source": "AI2 / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2308.11356v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2308.11356v2"
+        ],
+        "source_paper_title": "Semantic RGB-D Image Synthesis",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-2EAA9F5E4E47"
+        ],
+        "source_work_title": "Semantic RGB-D Image Synthesis",
+        "source_works": [
+          "W-2EAA9F5E4E47"
+        ],
+        "task": "images limited scene views",
+        "updated_at": "2026-06-17T11:08:41+00:00",
+        "variants": {
+          "VER-951896E82AB5": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T11:07:31+00:00",
+            "extracted_at": "2026-06-17T11:08:41+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "architecture design in Section 4",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Multiple-choice science exam questions.",
+              "dataset": "architecture design in Section 4",
+              "description": "AI2 science-question benchmark for grade-school science reasoning.",
+              "evidence": "{\"benchmark_id\": \"B-FA8F10D6F125\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-46029CE9D5D6\", \"task\": \"images limited scene views\", \"dataset\": \"architecture design in Section 4\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Semantic RGB-D Image Synthesis Coll...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "mAP",
+              "metrics": [
+                "accuracy",
+                "mAP"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/allenai/ai2_arc",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "ARC Easy and ARC Challenge splits.",
+              "source": "AI2 / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2308.11356v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2308.11356v2"
+              ],
+              "source_paper_title": "Semantic RGB-D Image Synthesis",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-46029CE9D5D6"
+              ],
+              "source_work_title": "Semantic RGB-D Image Synthesis",
+              "source_works": [],
+              "task": "images limited scene views",
+              "venue_or_source": "ICCV 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2308.11356v2",
+              "https://huggingface.co/datasets/allenai/ai2_arc"
+            ],
+            "version_id": "VER-951896E82AB5"
+          }
+        },
+        "venue_or_source": "ICCV 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-2EAA9F5E4E47"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:25+00:00",
+        "updated_at": "2026-06-17T11:22:25+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-E28CC6D196E5",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "oasis extended to rgb d oasis extended to rgb d w 2eaa9f5e4e47",
+      "canonical_label": "OASIS (Extended to RGB-D)",
+      "concept_id": "BL-99469089B8CC",
+      "concept_type": "baseline",
+      "payload": {
+        "active_version_id": "VER-0D50D1C136B5",
+        "baseline_id": "BL-13F85914BCB6",
+        "baseline_name": "OASIS (Extended to RGB-D)",
+        "baseline_type": "compared_method",
+        "benchmarks": [
+          "NYU Depth V2"
+        ],
+        "canonical_id": "BL-13F85914BCB6",
+        "canonical_key": "oasis extended to rgb d",
+        "confidence_score": 0.55,
+        "core_idea": "A uni-modal semantic image synthesis approach adapted for multi-modal data by treating RGB and depth channels as a single concatenated input.",
+        "created_at": "2026-06-17T11:08:41+00:00",
+        "description": "OASIS is a state-of-the-art uni-modal synthesis method. In this work, it serves as a baseline by being directly extended to handle RGB-D inputs, serving as a control to demonstrate the necessity of multi-modal specific architectures.",
+        "discussion": "The baseline fails to maintain geometric consistency, producing noisy depth maps and misaligned edges. This performance gap highlights the inadequacy of simple channel concatenation for multi-modal tasks and validates the proposed modality-decoupled approach.",
+        "entered_at": "2026-06-17T11:08:41+00:00",
+        "evidence": "Figure 1 comparison notes that 'depth maps of OASIS are inaccurate and noisy and the edges of the tables are not straight,' whereas the proposed method generates consistent images.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:08:41+00:00",
+        "methodology": "The method takes a semantic label map and generates an image by concatenating RGB and depth as a single modality without explicit disentanglement of modal-specific features.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "performance": [
+          {
+            "benchmark_name": "NYU Depth V2",
+            "metric": "Visual Quality",
+            "value_text": "Generated depth maps are inaccurate and noisy; object edges (e.g., tables) are not straight."
+          }
+        ],
+        "principle": "Uni-modal synthesis assumes a single statistical distribution for all output channels, which fails to capture the distinct geometric constraints of depth data.",
+        "provider": "siliconflow",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2308.11356v2"
+        ],
+        "source_paper_title": "Semantic RGB-D Image Synthesis",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-2EAA9F5E4E47"
+        ],
+        "source_work_title": "Semantic RGB-D Image Synthesis",
+        "source_works": [
+          "W-2EAA9F5E4E47"
+        ],
+        "updated_at": "2026-06-17T11:08:41+00:00",
+        "variants": {
+          "VER-0D50D1C136B5": {
+            "confidence_score": 0.55,
+            "entered_at": "2026-06-17T11:08:41+00:00",
+            "extracted_at": "2026-06-17T11:08:41+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "baseline_name": "OASIS (Extended to RGB-D)",
+              "baseline_type": "compared_method",
+              "benchmarks": [
+                "NYU Depth V2"
+              ],
+              "confidence_score": 0.55,
+              "core_idea": "A uni-modal semantic image synthesis approach adapted for multi-modal data by treating RGB and depth channels as a single concatenated input.",
+              "description": "OASIS is a state-of-the-art uni-modal synthesis method. In this work, it serves as a baseline by being directly extended to handle RGB-D inputs, serving as a control to demonstrate the necessity of multi-modal specific architectures.",
+              "discussion": "The baseline fails to maintain geometric consistency, producing noisy depth maps and misaligned edges. This performance gap highlights the inadequacy of simple channel concatenation for multi-modal tasks and validates the proposed modality-decoupled approach.",
+              "evidence": "Figure 1 comparison notes that 'depth maps of OASIS are inaccurate and noisy and the edges of the tables are not straight,' whereas the proposed method generates consistent images.",
+              "evidence_items": [],
+              "methodology": "The method takes a semantic label map and generates an image by concatenating RGB and depth as a single modality without explicit disentanglement of modal-specific features.",
+              "metrics": [],
+              "needs_review": true,
+              "performance": [
+                {
+                  "benchmark_name": "NYU Depth V2",
+                  "metric": "Visual Quality",
+                  "value_text": "Generated depth maps are inaccurate and noisy; object edges (e.g., tables) are not straight."
+                }
+              ],
+              "principle": "Uni-modal synthesis assumes a single statistical distribution for all output channels, which fails to capture the distinct geometric constraints of depth data.",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2308.11356v2"
+              ],
+              "source_paper_title": "Semantic RGB-D Image Synthesis",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-46029CE9D5D6"
+              ],
+              "source_work_title": "Semantic RGB-D Image Synthesis",
+              "source_works": [],
+              "venue_or_source": "ICCV 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2308.11356v2"
+            ],
+            "version_id": "VER-0D50D1C136B5"
+          }
+        },
+        "venue_or_source": "ICCV 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.55,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-2EAA9F5E4E47"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:25+00:00",
+        "updated_at": "2026-06-17T11:22:25+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-F51DC60B25DD",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "modality specific feature disentanglement modality specific feature disentanglement treating distinct sensor modalities as a single concatenated input in generative models leads to suboptimal performance because the unique statistical and structural constraints of each modality interfere with one an",
+      "canonical_label": "Modality-Specific Feature Disentanglement",
+      "concept_id": "P-2D1AF306F17E",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "Treating distinct sensor modalities as a single concatenated input in generative models leads to suboptimal performance because the unique statistical and structural constraints of each modality interfere with one another during feature learning.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-037BE184695D",
+        "argument": "Treating distinct sensor modalities as a single concatenated input in generative models leads to suboptimal performance because the unique statistical and structural constraints of each modality interfere with one another during feature learning.",
+        "benchmarks": [],
+        "canonical_id": "P-643DE3666CA5",
+        "canonical_key": "treating distinct sensor modalities as single concatenated input in generative models leads to suboptimal performance because unique statistical and structural constraints of each ",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T11:08:18+00:00",
+        "discussion": "The principle suggests that generative architectures for multi-sensor data must incorporate inductive biases that respect the physical differences between modalities (e.g., the piecewise planar nature of depth vs. the continuous texture of RGB). Applying this to other domains, such as audio-visual synthesis or thermal-RGB fusion, would likely require similar architectural separations to prevent one modality from dominating the latent representation at the expense of the other.",
+        "entered_at": "2026-06-17T11:08:18+00:00",
+        "evidence": "The work demonstrates that extending uni-modal approaches like OASIS to RGB-D by treating RGB and depth as a single modality results in 'inaccurate and noisy' depth maps and inconsistent edges. The proposed method, which separates modal-independent and modal-dependent information, outperforms these uni-modal extensions by a 'large margin,' proving that explicit disentanglement is necessary for high-fidelity multi-modal synthesis.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:08:40+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Modality-Specific Feature Disentanglement",
+        "performance": [],
+        "principle_id": "P-643DE3666CA5",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2308.11356v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2308.11356v2"
+        ],
+        "source_paper_title": "Semantic RGB-D Image Synthesis",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-2EAA9F5E4E47"
+        ],
+        "source_work_title": "Semantic RGB-D Image Synthesis",
+        "source_works": [
+          "W-2EAA9F5E4E47"
+        ],
+        "updated_at": "2026-06-17T11:08:40+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-037BE184695D": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T11:08:18+00:00",
+            "extracted_at": "2026-06-17T11:08:40+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "Treating distinct sensor modalities as a single concatenated input in generative models leads to suboptimal performance because the unique statistical and structural constraints of each modality interfere with one another during feature learning.",
+              "argument": "Treating distinct sensor modalities as a single concatenated input in generative models leads to suboptimal performance because the unique statistical and structural constraints of each modality interfere with one another during feature learning.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle suggests that generative architectures for multi-sensor data must incorporate inductive biases that respect the physical differences between modalities (e.g., the piecewise planar nature of depth vs. the continuous texture of RGB). Applying this to other domains, such as audio-visual synthesis or thermal-RGB fusion, would likely require similar architectural separations to prevent one modality from dominating the latent representation at the expense of the other.",
+              "evidence": "The work demonstrates that extending uni-modal approaches like OASIS to RGB-D by treating RGB and depth as a single modality results in 'inaccurate and noisy' depth maps and inconsistent edges. The proposed method, which separates modal-independent and modal-dependent information, outperforms these uni-modal extensions by a 'large margin,' proving that explicit disentanglement is necessary for high-fidelity multi-modal synthesis.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Modality-Specific Feature Disentanglement",
+              "performance": [],
+              "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+              "source_paper_link": "http://arxiv.org/abs/2308.11356v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2308.11356v2"
+              ],
+              "source_paper_title": "Semantic RGB-D Image Synthesis",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-46029CE9D5D6"
+              ],
+              "source_work_title": "Semantic RGB-D Image Synthesis",
+              "source_works": [
+                "W-46029CE9D5D6"
+              ],
+              "venue_or_source": "ICCV 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2308.11356v2"
+            ],
+            "version_id": "VER-037BE184695D"
+          }
+        },
+        "venue_or_source": "ICCV 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-2EAA9F5E4E47"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:25+00:00",
+        "updated_at": "2026-06-17T11:22:25+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-EDF63F0A2D55",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "synthetic data augmentation for privacy constrained segmentation synthetic data augmentation for privacy constrained segmentation mixing real and synthetically generated rgb d images during training significantly improves the accuracy of rgb d semantic segmentation models particularly when real trai",
+      "canonical_label": "Synthetic Data Augmentation for Privacy-Constrained Segmentation",
+      "concept_id": "TM-D50E388A585A",
+      "concept_type": "takeaway_message",
+      "payload": {
+        "actionable_lesson": "When deploying robots in privacy-sensitive areas, prioritize generating diverse synthetic RGB-D training pairs from available label maps to augment limited real datasets, ensuring the synthesis model explicitly enforces RGB-depth consistency.",
+        "active_version_id": "VER-C7E9D3FA9EDD",
+        "benchmarks": [],
+        "canonical_id": "TM-EE7BAE684350",
+        "canonical_key": "mixing real and synthetically generated rgb d images during training significantly improves accuracy of rgb d semantic segmentation models particularly when real training data is l",
+        "condition": "This finding applies to scenarios where data collection is restricted due to privacy concerns, such as in-home robotics, resulting in small, low-diversity training sets. The improvement is realized when the synthetic data is generated from semantic label maps using a multi-modal consistent synthesis method rather than a uni-modal extension.",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T11:08:18+00:00",
+        "discussion": "The empirical lesson confirms that high-quality synthetic data can effectively regularize segmentation networks against overfitting in low-data regimes. The key factor is the consistency between the generated RGB and depth channels; inconsistent synthetic data would likely introduce noise that degrades rather than improves performance. This validates semantic image synthesis as a viable strategy for bootstrapping perception systems in sensitive environments where large-scale real data collection is impossible.",
+        "entered_at": "2026-06-17T11:08:18+00:00",
+        "evidence": "The text states that 'the accuracy of an approach for RGB-D semantic segmentation can be significantly improved by mixing real and generated images during training.' It specifically references experiments showing improvement over baselines in these constrained settings.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:08:40+00:00",
+        "extraction_method": "llm_extracted",
+        "finding": "Mixing real and synthetically generated RGB-D images during training significantly improves the accuracy of RGB-D semantic segmentation models, particularly when real training data is limited.",
+        "main_results": "Mixing real and synthetically generated RGB-D images during training significantly improves the accuracy of RGB-D semantic segmentation models, particularly when real training data is limited.",
+        "message_text": "Mixing real and synthetically generated RGB-D images during training significantly improves the accuracy of RGB-D semantic segmentation models, particularly when real training data is limited.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2308.11356v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2308.11356v2"
+        ],
+        "source_paper_title": "Semantic RGB-D Image Synthesis",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-2EAA9F5E4E47"
+        ],
+        "source_work_title": "Semantic RGB-D Image Synthesis",
+        "source_works": [
+          "W-2EAA9F5E4E47"
+        ],
+        "title": "Synthetic Data Augmentation for Privacy-Constrained Segmentation",
+        "updated_at": "2026-06-17T11:08:40+00:00",
+        "variants": {
+          "VER-C7E9D3FA9EDD": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T11:08:18+00:00",
+            "extracted_at": "2026-06-17T11:08:40+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "actionable_lesson": "When deploying robots in privacy-sensitive areas, prioritize generating diverse synthetic RGB-D training pairs from available label maps to augment limited real datasets, ensuring the synthesis model explicitly enforces RGB-depth consistency.",
+              "benchmarks": [],
+              "condition": "This finding applies to scenarios where data collection is restricted due to privacy concerns, such as in-home robotics, resulting in small, low-diversity training sets. The improvement is realized when the synthetic data is generated from semantic label maps using a multi-modal consistent synthesis method rather than a uni-modal extension.",
+              "confidence_score": 0.7,
+              "discussion": "The empirical lesson confirms that high-quality synthetic data can effectively regularize segmentation networks against overfitting in low-data regimes. The key factor is the consistency between the generated RGB and depth channels; inconsistent synthetic data would likely introduce noise that degrades rather than improves performance. This validates semantic image synthesis as a viable strategy for bootstrapping perception systems in sensitive environments where large-scale real data collection is impossible.",
+              "evidence": "The text states that 'the accuracy of an approach for RGB-D semantic segmentation can be significantly improved by mixing real and generated images during training.' It specifically references experiments showing improvement over baselines in these constrained settings.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "finding": "Mixing real and synthetically generated RGB-D images during training significantly improves the accuracy of RGB-D semantic segmentation models, particularly when real training data is limited.",
+              "main_results": "Mixing real and synthetically generated RGB-D images during training significantly improves the accuracy of RGB-D semantic segmentation models, particularly when real training data is limited.",
+              "message_text": "Mixing real and synthetically generated RGB-D images during training significantly improves the accuracy of RGB-D semantic segmentation models, particularly when real training data is limited.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "http://arxiv.org/abs/2308.11356v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2308.11356v2"
+              ],
+              "source_paper_title": "Semantic RGB-D Image Synthesis",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-46029CE9D5D6"
+              ],
+              "source_work_title": "Semantic RGB-D Image Synthesis",
+              "source_works": [],
+              "title": "Synthetic Data Augmentation for Privacy-Constrained Segmentation",
+              "venue_or_source": "ICCV 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2308.11356v2"
+            ],
+            "version_id": "VER-C7E9D3FA9EDD"
+          }
+        },
+        "venue_or_source": "ICCV 2023",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-2EAA9F5E4E47"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:25+00:00",
+        "updated_at": "2026-06-17T11:22:25+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-BAFADA617E22",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-57892ADA49C1",
+  "created_at": "2026-06-17T11:22:25+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "The work demonstrates that extending uni-modal approaches like OASIS to RGB-D by treating RGB and depth as a single modality results in 'inaccurate and noisy' depth maps and inconsistent edges. The proposed method, which separates modal-independent and modal-dependent information, outperforms these uni-modal extensions by a 'large margin,' proving that explicit disentanglement is necessary for high-fidelity multi-modal synthesis.",
+      "concept_id": "P-2D1AF306F17E",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T11:22:25+00:00",
+      "evidence_id": "EV-B6FD81EEEECB",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work demonstrates that extending uni-modal approaches like OASIS to RGB-D by treating RGB and depth as a single modality results in 'inaccurate and noisy' depth maps and inconsistent edges. The proposed method, which separates modal-independent and modal-dependent information, outperforms these uni-modal extensions by a 'large margin,' proving that explicit disentanglement is necessary for high-fidelity multi-modal synthesis.",
+      "work_id": "W-2EAA9F5E4E47",
+      "work_version_id": "WV-9C1DBB5CDEDC"
+    },
+    {
+      "claim_text": "The text states that 'the accuracy of an approach for RGB-D semantic segmentation can be significantly improved by mixing real and generated images during training.' It specifically references experiments showing improvement over baselines in these constrained settings.",
+      "concept_id": "TM-D50E388A585A",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T11:22:25+00:00",
+      "evidence_id": "EV-82F437F34E24",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text states that 'the accuracy of an approach for RGB-D semantic segmentation can be significantly improved by mixing real and generated images during training.' It specifically references experiments showing improvement over baselines in these constrained settings.",
+      "work_id": "W-2EAA9F5E4E47",
+      "work_version_id": "WV-9C1DBB5CDEDC"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-7593FF69197B\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-64A419F0B519\", \"task\": \"images limited scene views\", \"dataset\": \"ImageNet\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DeepVisInterests: CNN-Ontology Prediction of Users Interest...",
+      "concept_id": "B-10E0FD73A1D8",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T11:22:25+00:00",
+      "evidence_id": "EV-7B588501F64F",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-7593FF69197B\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-64A419F0B519\", \"task\": \"images limited scene views\", \"dataset\": \"ImageNet\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DeepVisInterests: CNN-Ontology Prediction of Users Interest...",
+      "work_id": "W-2EAA9F5E4E47",
+      "work_version_id": "WV-9C1DBB5CDEDC"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-F71AC3ADAA6C\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-46029CE9D5D6\", \"task\": \"images limited scene views\", \"dataset\": \"Cityscapes\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Semantic RGB-D Image Synthesis Collecting diverse sets of...",
+      "concept_id": "B-2BE5E457E56A",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T11:22:25+00:00",
+      "evidence_id": "EV-0D7C23388EF7",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-F71AC3ADAA6C\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-46029CE9D5D6\", \"task\": \"images limited scene views\", \"dataset\": \"Cityscapes\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Semantic RGB-D Image Synthesis Collecting diverse sets of...",
+      "work_id": "W-2EAA9F5E4E47",
+      "work_version_id": "WV-9C1DBB5CDEDC"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-FA8F10D6F125\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-46029CE9D5D6\", \"task\": \"images limited scene views\", \"dataset\": \"architecture design in Section 4\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Semantic RGB-D Image Synthesis Coll...",
+      "concept_id": "B-5D43806CC535",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T11:22:25+00:00",
+      "evidence_id": "EV-925CF4CA820E",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-FA8F10D6F125\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-46029CE9D5D6\", \"task\": \"images limited scene views\", \"dataset\": \"architecture design in Section 4\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Semantic RGB-D Image Synthesis Coll...",
+      "work_id": "W-2EAA9F5E4E47",
+      "work_version_id": "WV-9C1DBB5CDEDC"
+    },
+    {
+      "claim_text": "Figure 1 comparison notes that 'depth maps of OASIS are inaccurate and noisy and the edges of the tables are not straight,' whereas the proposed method generates consistent images.",
+      "concept_id": "BL-99469089B8CC",
+      "confidence": 0.55,
+      "created_at": "2026-06-17T11:22:25+00:00",
+      "evidence_id": "EV-8235E3247073",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "Figure 1 comparison notes that 'depth maps of OASIS are inaccurate and noisy and the edges of the tables are not straight,' whereas the proposed method generates consistent images.",
+      "work_id": "W-2EAA9F5E4E47",
+      "work_version_id": "WV-9C1DBB5CDEDC"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-17T11:22:25+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-17T11:22:20+00:00",
+      "extraction_run_id": "XRUN-4F3B94B53503",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 1,
+        "benchmark_records": 14,
+        "existed_ideas": 0,
+        "principles": 1,
+        "takeaway_messages": 1,
+        "total": 17
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-2EAA9F5E4E47",
+      "work_version_id": "WV-9C1DBB5CDEDC"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "",
+    "secret_exposed_to_browser": false,
+    "warning": ""
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 0,
+        "principle": 1
+      },
+      "title": "Semantic RGB-D Image Synthesis",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-2EAA9F5E4E47"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "2308.11356",
+        "authors": [
+          "Shijie Li",
+          "Rong Li",
+          "Juergen Gall"
+        ],
+        "canonical_title": "Semantic RGB-D Image Synthesis",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "http://arxiv.org/abs/2308.11356v2"
+        ],
+        "title_hash": "55a8d856095f0225",
+        "title_norm": "semantic rgb d image synthesis",
+        "venue_or_source": "ICCV 2023",
+        "year": 2023
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "2023-09-19T02:52:19Z",
+        "title_hash": "55a8d856095f0225"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:20+00:00",
+        "updated_at": "2026-06-17T11:22:20+00:00"
+      },
+      "work_id": "W-2EAA9F5E4E47"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": "Collecting diverse sets of training images for RGB-D semantic image segmentation is not always possible. In particular, when robots need to operate in privacy-sensitive areas like homes, the collection is often limited to a small set of locations. As a consequence, the annotated images lack diversity in appearance and approaches for RGB-D semantic image segmentation tend to overfit the training data. In this paper, we thus introduce semantic RGB-D image synthesis to address this problem. It requires synthesising a realistic-looking RGB-D image for a given semantic label map. Current approaches, however, are uni-modal and cannot cope with multi-modal data. Indeed, we show that extending uni-modal approaches to multi-modal data does not perform well. In this paper, we therefore propose a generator for multi-modal data that separates modal-independent information of the semantic layout from the modal-dependent information that is needed to generate an RGB and a depth image, respectively. Furthermore, we propose a discriminator that ensures semantic consistency between the label maps and the generated images and perceptual similarity between the real and generated images. Our comprehensive experiments demonstrate that the proposed method outperforms previous uni-modal methods by a large margin and that the accuracy of an approach for RGB-D semantic segmentation can be significantly improved by mixing real and generated images during training.",
+      "abstract_hash": "dfdb6eb1e2da1058",
+      "content_hash": "c4348d47a4ec3724",
+      "created_at": "2026-06-17T11:22:20+00:00",
+      "metadata": {
+        "abstract": "Collecting diverse sets of training images for RGB-D semantic image segmentation is not always possible. In particular, when robots need to operate in privacy-sensitive areas like homes, the collection is often limited to a small set of locations. As a consequence, the annotated images lack diversity in appearance and approaches for RGB-D semantic image segmentation tend to overfit the training data. In this paper, we thus introduce semantic RGB-D image synthesis to address this problem. It requires synthesising a realistic-looking RGB-D image for a given semantic label map. Current approaches, however, are uni-modal and cannot cope with multi-modal data. Indeed, we show that extending uni-modal approaches to multi-modal data does not perform well. In this paper, we therefore propose a generator for multi-modal data that separates modal-independent information of the semantic layout from the modal-dependent information that is needed to generate an RGB and a depth image, respectively. Furthermore, we propose a discriminator that ensures semantic consistency between the label maps and the generated images and perceptual similarity between the real and generated images. Our comprehensive experiments demonstrate that the proposed method outperforms previous uni-modal methods by a large margin and that the accuracy of an approach for RGB-D semantic segmentation can be significantly improved by mixing real and generated images during training.",
+        "active_version_id": "VER-9246FDEA3B57",
+        "authors": [
+          "Shijie Li",
+          "Rong Li",
+          "Juergen Gall"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-46029CE9D5D6",
+        "canonical_key": "semantic rgb d image synthesis",
+        "community_signals": {},
+        "confidence_score": 0.62,
+        "created_at": "2026-06-17T10:49:59+00:00",
+        "entered_at": "2026-06-17T11:07:30+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:08:40+00:00",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "paper_link": "http://arxiv.org/abs/2308.11356v2",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "2023-09-19T02:52:19Z",
+        "source_urls": [
+          "http://arxiv.org/abs/2308.11356v2"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "title": "Semantic RGB-D Image Synthesis",
+        "updated_at": "2026-06-17T11:08:40+00:00",
+        "url_or_doi": "http://arxiv.org/abs/2308.11356v2",
+        "validation_level": "L1",
+        "variants": {
+          "VER-7448005A6DD9": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T10:49:59+00:00",
+            "extracted_at": "2026-06-17T10:49:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Collecting diverse sets of training images for RGB-D semantic image segmentation is not always possible. In particular, when robots need to operate in privacy-sensitive areas like homes, the collection is often limited to a small set of locations. As a consequence, the annotated images lack diversity in appearance and approaches for RGB-D semantic image segmentation tend to overfit the training data. In this paper, we thus introduce semantic RGB-D image synthesis to address this problem. It requires synthesising a realistic-looking RGB-D image for a given semantic label map. Current approaches, however, are uni-modal and cannot cope with multi-modal data. Indeed, we show that extending uni-modal approaches to multi-modal data does not perform well. In this paper, we therefore propose a generator for multi-modal data that separates modal-independent information of the semantic layout from the modal-dependent information that is needed to generate an RGB and a depth image, respectively. Furthermore, we propose a discriminator that ensures semantic consistency between the label maps and the generated images and perceptual similarity between the real and generated images. Our comprehensive experiments demonstrate that the proposed method outperforms previous uni-modal methods by a large margin and that the accuracy of an approach for RGB-D semantic segmentation can be significantly improved by mixing real and generated images during training.",
+              "authors": [
+                "Shijie Li",
+                "Rong Li",
+                "Juergen Gall"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/2308.11356v2",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2023-09-19T02:52:19Z",
+              "source_urls": [
+                "http://arxiv.org/abs/2308.11356v2"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Semantic RGB-D Image Synthesis",
+              "url_or_doi": "http://arxiv.org/abs/2308.11356v2",
+              "validation_level": "L1",
+              "venue_or_source": "ICCV 2023",
+              "year": 2023
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "http://arxiv.org/abs/2308.11356v2"
+            ],
+            "version_id": "VER-7448005A6DD9"
+          },
+          "VER-9246FDEA3B57": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T11:07:30+00:00",
+            "extracted_at": "2026-06-17T11:08:40+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Collecting diverse sets of training images for RGB-D semantic image segmentation is not always possible. In particular, when robots need to operate in privacy-sensitive areas like homes, the collection is often limited to a small set of locations. As a consequence, the annotated images lack diversity in appearance and approaches for RGB-D semantic image segmentation tend to overfit the training data. In this paper, we thus introduce semantic RGB-D image synthesis to address this problem. It requires synthesising a realistic-looking RGB-D image for a given semantic label map. Current approaches, however, are uni-modal and cannot cope with multi-modal data. Indeed, we show that extending uni-modal approaches to multi-modal data does not perform well. In this paper, we therefore propose a generator for multi-modal data that separates modal-independent information of the semantic layout from the modal-dependent information that is needed to generate an RGB and a depth image, respectively. Furthermore, we propose a discriminator that ensures semantic consistency between the label maps and the generated images and perceptual similarity between the real and generated images. Our comprehensive experiments demonstrate that the proposed method outperforms previous uni-modal methods by a large margin and that the accuracy of an approach for RGB-D semantic segmentation can be significantly improved by mixing real and generated images during training.",
+              "authors": [
+                "Shijie Li",
+                "Rong Li",
+                "Juergen Gall"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/2308.11356v2",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2023-09-19T02:52:19Z",
+              "source_urls": [
+                "http://arxiv.org/abs/2308.11356v2"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Semantic RGB-D Image Synthesis",
+              "url_or_doi": "http://arxiv.org/abs/2308.11356v2",
+              "validation_level": "L1",
+              "venue_or_source": "ICCV 2023",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2308.11356v2"
+            ],
+            "version_id": "VER-9246FDEA3B57"
+          }
+        },
+        "venue_or_source": "ICCV 2023",
+        "work_id": "W-46029CE9D5D6",
+        "year": 2023
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "",
+      "source_record_id": "W-46029CE9D5D6",
+      "source_updated_at": "2023-09-19T02:52:19Z",
+      "title": "Semantic RGB-D Image Synthesis",
+      "title_hash": "55a8d856095f0225",
+      "work_id": "W-2EAA9F5E4E47",
+      "work_version_id": "WV-9C1DBB5CDEDC"
+    }
+  ]
+}
