@@ -1,0 +1,1411 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "arcane on challenging tasks requiring multi step reasoning arcane on challenging tasks requiring multi step reasoning arcane on challenging tasks requiring multi step reasoning w 3af393f65ea3",
+      "canonical_label": "ARCANE on challenging tasks requiring multi-step reasoning",
+      "concept_id": "B-69395043ED56",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-DDC070D4AB9A",
+        "benchmark_id": "B-00F45A6CC2B8",
+        "benchmark_name": "ARCANE on challenging tasks requiring multi-step reasoning",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-00F45A6CC2B8",
+        "canonical_key": "arcane on challenging tasks requiring multi step reasoning",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T06:57:38+00:00",
+        "data_form": "Multiple-choice science exam questions.",
+        "dataset": "ARCANE on challenging tasks requiring multi-step reasoning",
+        "description": "AI2 science-question benchmark for grade-school science reasoning.",
+        "entered_at": "2026-06-17T06:57:38+00:00",
+        "evidence": "{\"benchmark_id\": \"B-85212B09860F\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-749CEA54BCE2\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"ARCANE on challenging tasks requiring multi-step reasoning\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\":...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:04+00:00",
+        "extractor": "deterministic",
+        "metric": "accuracy",
+        "metrics": [
+          "accuracy"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/allenai/ai2_arc",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "ARC Easy and ARC Challenge splits.",
+        "source": "AI2 / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2512.06196v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2512.06196v1"
+        ],
+        "source_paper_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-3AF393F65EA3"
+        ],
+        "source_work_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+        "source_works": [
+          "W-3AF393F65EA3"
+        ],
+        "task": "LLM multi-agent reasoning system",
+        "updated_at": "2026-06-17T07:01:04+00:00",
+        "variants": {
+          "VER-DDC070D4AB9A": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T06:57:38+00:00",
+            "extracted_at": "2026-06-17T07:01:04+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "ARCANE on challenging tasks requiring multi-step reasoning",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Multiple-choice science exam questions.",
+              "dataset": "ARCANE on challenging tasks requiring multi-step reasoning",
+              "description": "AI2 science-question benchmark for grade-school science reasoning.",
+              "evidence": "{\"benchmark_id\": \"B-85212B09860F\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-749CEA54BCE2\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"ARCANE on challenging tasks requiring multi-step reasoning\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\":...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "accuracy",
+              "metrics": [
+                "accuracy"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/allenai/ai2_arc",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "ARC Easy and ARC Challenge splits.",
+              "source": "AI2 / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2512.06196v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2512.06196v1"
+              ],
+              "source_paper_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-749CEA54BCE2"
+              ],
+              "source_work_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+              "source_works": [],
+              "task": "LLM multi-agent reasoning system",
+              "venue_or_source": "AAAI 2026",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2512.06196v1",
+              "https://huggingface.co/datasets/allenai/ai2_arc"
+            ],
+            "version_id": "VER-DDC070D4AB9A"
+          }
+        },
+        "venue_or_source": "AAAI 2026",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-3AF393F65EA3"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T10:36:01+00:00",
+        "updated_at": "2026-06-17T10:36:01+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-2D1E1D428222",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "arcane on tasks from the gdpval benchmark patwardhan arcane on tasks from the gdpval benchmark patwardhan arcane on tasks from the gdpval benchmark patwardhan w 749cea54bce2",
+      "canonical_label": "ARCANE on tasks from the GDPVal benchmark (Patwardhan",
+      "concept_id": "B-8C09260E9035",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-F9E7DC07C0CE",
+        "benchmark_id": "B-1F82517B93EF",
+        "benchmark_name": "ARCANE on tasks from the GDPVal benchmark (Patwardhan",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-1F82517B93EF",
+        "canonical_key": "arcane on tasks from the gdpval benchmark patwardhan",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T06:57:38+00:00",
+        "data_form": "Multiple-choice science exam questions.",
+        "dataset": "ARCANE on tasks from the GDPVal benchmark (Patwardhan",
+        "description": "AI2 science-question benchmark for grade-school science reasoning.",
+        "entered_at": "2026-06-17T06:57:38+00:00",
+        "evidence": "{\"benchmark_id\": \"B-431EF0086197\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-749CEA54BCE2\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"ARCANE on tasks from the GDPVal benchmark (Patwardhan\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"ARC...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:04+00:00",
+        "extractor": "deterministic",
+        "metric": "accuracy",
+        "metrics": [
+          "accuracy"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/allenai/ai2_arc",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "ARC Easy and ARC Challenge splits.",
+        "source": "AI2 / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2512.06196v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2512.06196v1"
+        ],
+        "source_paper_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-749CEA54BCE2"
+        ],
+        "source_work_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+        "source_works": [],
+        "task": "LLM multi-agent reasoning system",
+        "updated_at": "2026-06-17T07:01:04+00:00",
+        "variants": {
+          "VER-F9E7DC07C0CE": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T06:57:38+00:00",
+            "extracted_at": "2026-06-17T07:01:04+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "ARCANE on tasks from the GDPVal benchmark (Patwardhan",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Multiple-choice science exam questions.",
+              "dataset": "ARCANE on tasks from the GDPVal benchmark (Patwardhan",
+              "description": "AI2 science-question benchmark for grade-school science reasoning.",
+              "evidence": "{\"benchmark_id\": \"B-431EF0086197\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-749CEA54BCE2\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"ARCANE on tasks from the GDPVal benchmark (Patwardhan\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"ARC...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "accuracy",
+              "metrics": [
+                "accuracy"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/allenai/ai2_arc",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "ARC Easy and ARC Challenge splits.",
+              "source": "AI2 / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2512.06196v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2512.06196v1"
+              ],
+              "source_paper_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-749CEA54BCE2"
+              ],
+              "source_work_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+              "source_works": [],
+              "task": "LLM multi-agent reasoning system",
+              "venue_or_source": "AAAI 2026",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2512.06196v1",
+              "https://huggingface.co/datasets/allenai/ai2_arc"
+            ],
+            "version_id": "VER-F9E7DC07C0CE"
+          }
+        },
+        "venue_or_source": "AAAI 2026",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-749CEA54BCE2"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:41:42+00:00",
+        "updated_at": "2026-06-17T10:29:34+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-92E7D4B0ECB7",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "arcane on tasks from the gdpval benchmark patwardhan arcane on tasks from the gdpval benchmark patwardhan arcane on tasks from the gdpval benchmark patwardhan w 3af393f65ea3",
+      "canonical_label": "ARCANE on tasks from the GDPVal benchmark (Patwardhan",
+      "concept_id": "B-923DC15A6F0E",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-F9E7DC07C0CE",
+        "benchmark_id": "B-1F82517B93EF",
+        "benchmark_name": "ARCANE on tasks from the GDPVal benchmark (Patwardhan",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-1F82517B93EF",
+        "canonical_key": "arcane on tasks from the gdpval benchmark patwardhan",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T06:57:38+00:00",
+        "data_form": "Multiple-choice science exam questions.",
+        "dataset": "ARCANE on tasks from the GDPVal benchmark (Patwardhan",
+        "description": "AI2 science-question benchmark for grade-school science reasoning.",
+        "entered_at": "2026-06-17T06:57:38+00:00",
+        "evidence": "{\"benchmark_id\": \"B-431EF0086197\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-749CEA54BCE2\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"ARCANE on tasks from the GDPVal benchmark (Patwardhan\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"ARC...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:04+00:00",
+        "extractor": "deterministic",
+        "metric": "accuracy",
+        "metrics": [
+          "accuracy"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/allenai/ai2_arc",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "ARC Easy and ARC Challenge splits.",
+        "source": "AI2 / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2512.06196v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2512.06196v1"
+        ],
+        "source_paper_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-3AF393F65EA3"
+        ],
+        "source_work_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+        "source_works": [
+          "W-3AF393F65EA3"
+        ],
+        "task": "LLM multi-agent reasoning system",
+        "updated_at": "2026-06-17T07:01:04+00:00",
+        "variants": {
+          "VER-F9E7DC07C0CE": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T06:57:38+00:00",
+            "extracted_at": "2026-06-17T07:01:04+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "ARCANE on tasks from the GDPVal benchmark (Patwardhan",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Multiple-choice science exam questions.",
+              "dataset": "ARCANE on tasks from the GDPVal benchmark (Patwardhan",
+              "description": "AI2 science-question benchmark for grade-school science reasoning.",
+              "evidence": "{\"benchmark_id\": \"B-431EF0086197\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-749CEA54BCE2\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"ARCANE on tasks from the GDPVal benchmark (Patwardhan\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"ARC...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "accuracy",
+              "metrics": [
+                "accuracy"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/allenai/ai2_arc",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "ARC Easy and ARC Challenge splits.",
+              "source": "AI2 / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2512.06196v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2512.06196v1"
+              ],
+              "source_paper_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-749CEA54BCE2"
+              ],
+              "source_work_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+              "source_works": [],
+              "task": "LLM multi-agent reasoning system",
+              "venue_or_source": "AAAI 2026",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2512.06196v1",
+              "https://huggingface.co/datasets/allenai/ai2_arc"
+            ],
+            "version_id": "VER-F9E7DC07C0CE"
+          }
+        },
+        "venue_or_source": "AAAI 2026",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-3AF393F65EA3"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T10:36:01+00:00",
+        "updated_at": "2026-06-17T10:36:01+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-997A8D09B8EA",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "arcane on challenging tasks requiring multi step reasoning arcane on challenging tasks requiring multi step reasoning arcane on challenging tasks requiring multi step reasoning w 749cea54bce2",
+      "canonical_label": "ARCANE on challenging tasks requiring multi-step reasoning",
+      "concept_id": "B-DB3D3B553637",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-DDC070D4AB9A",
+        "benchmark_id": "B-00F45A6CC2B8",
+        "benchmark_name": "ARCANE on challenging tasks requiring multi-step reasoning",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-00F45A6CC2B8",
+        "canonical_key": "arcane on challenging tasks requiring multi step reasoning",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T06:57:38+00:00",
+        "data_form": "Multiple-choice science exam questions.",
+        "dataset": "ARCANE on challenging tasks requiring multi-step reasoning",
+        "description": "AI2 science-question benchmark for grade-school science reasoning.",
+        "entered_at": "2026-06-17T06:57:38+00:00",
+        "evidence": "{\"benchmark_id\": \"B-85212B09860F\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-749CEA54BCE2\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"ARCANE on challenging tasks requiring multi-step reasoning\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\":...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:04+00:00",
+        "extractor": "deterministic",
+        "metric": "accuracy",
+        "metrics": [
+          "accuracy"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/allenai/ai2_arc",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "ARC Easy and ARC Challenge splits.",
+        "source": "AI2 / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2512.06196v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2512.06196v1"
+        ],
+        "source_paper_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-749CEA54BCE2"
+        ],
+        "source_work_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+        "source_works": [],
+        "task": "LLM multi-agent reasoning system",
+        "updated_at": "2026-06-17T07:01:04+00:00",
+        "variants": {
+          "VER-DDC070D4AB9A": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T06:57:38+00:00",
+            "extracted_at": "2026-06-17T07:01:04+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "ARCANE on challenging tasks requiring multi-step reasoning",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Multiple-choice science exam questions.",
+              "dataset": "ARCANE on challenging tasks requiring multi-step reasoning",
+              "description": "AI2 science-question benchmark for grade-school science reasoning.",
+              "evidence": "{\"benchmark_id\": \"B-85212B09860F\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-749CEA54BCE2\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"ARCANE on challenging tasks requiring multi-step reasoning\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\":...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "accuracy",
+              "metrics": [
+                "accuracy"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/allenai/ai2_arc",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "ARC Easy and ARC Challenge splits.",
+              "source": "AI2 / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2512.06196v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2512.06196v1"
+              ],
+              "source_paper_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-749CEA54BCE2"
+              ],
+              "source_work_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+              "source_works": [],
+              "task": "LLM multi-agent reasoning system",
+              "venue_or_source": "AAAI 2026",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2512.06196v1",
+              "https://huggingface.co/datasets/allenai/ai2_arc"
+            ],
+            "version_id": "VER-DDC070D4AB9A"
+          }
+        },
+        "venue_or_source": "AAAI 2026",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-749CEA54BCE2"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:41:42+00:00",
+        "updated_at": "2026-06-17T10:29:34+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-E5FD677178F8",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "gdpval gdpval gdpval w 749cea54bce2",
+      "canonical_label": "GDPVal",
+      "concept_id": "B-E62013A62774",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-443833AFBE97",
+        "benchmark_id": "B-D39EE479F0A1",
+        "benchmark_name": "GDPVal",
+        "benchmarks": [],
+        "candidate_dataset_pages": [
+          "https://huggingface.co/datasets?search=GDPVal"
+        ],
+        "canonical_id": "B-D39EE479F0A1",
+        "canonical_key": "gdpval",
+        "confidence_score": 0.58,
+        "created_at": "2026-06-17T07:01:04+00:00",
+        "data_form": "Corpus of labeled rubrics",
+        "dataset": "GDPVal",
+        "description": "GDPVal appears in local source evidence. Add official metadata when you curate this project.",
+        "entered_at": "2026-06-17T07:01:04+00:00",
+        "evidence": "Using a corpus of 219 labeled rubrics derived from the GDPVal benchmark, we evaluate ARCANE on challenging tasks requiring multi-step reasoning and tool use.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:04+00:00",
+        "metric": "Interpretability",
+        "metrics": [
+          "Interpretability",
+          "Faithfulness",
+          "Computational efficiency"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": false,
+        "scale": "219 labeled rubrics",
+        "source": "local extraction",
+        "source_paper_link": "http://arxiv.org/abs/2512.06196v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2512.06196v1"
+        ],
+        "source_paper_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-749CEA54BCE2"
+        ],
+        "source_work_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+        "source_works": [],
+        "task": "Multi-step reasoning and tool use evaluation",
+        "updated_at": "2026-06-17T07:01:04+00:00",
+        "variants": {
+          "VER-443833AFBE97": {
+            "confidence_score": 0.58,
+            "entered_at": "2026-06-17T07:01:04+00:00",
+            "extracted_at": "2026-06-17T07:01:04+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "benchmark_name": "GDPVal",
+              "benchmarks": [],
+              "candidate_dataset_pages": [
+                "https://huggingface.co/datasets?search=GDPVal"
+              ],
+              "confidence_score": 0.58,
+              "data_form": "Corpus of labeled rubrics",
+              "dataset": "GDPVal",
+              "description": "GDPVal appears in local source evidence. Add official metadata when you curate this project.",
+              "evidence": "Using a corpus of 219 labeled rubrics derived from the GDPVal benchmark, we evaluate ARCANE on challenging tasks requiring multi-step reasoning and tool use.",
+              "evidence_items": [],
+              "metric": "Interpretability",
+              "metrics": [
+                "Interpretability",
+                "Faithfulness",
+                "Computational efficiency"
+              ],
+              "needs_review": true,
+              "performance": [],
+              "public_dataset": false,
+              "scale": "219 labeled rubrics",
+              "source": "local extraction",
+              "source_paper_link": "http://arxiv.org/abs/2512.06196v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2512.06196v1"
+              ],
+              "source_paper_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-749CEA54BCE2"
+              ],
+              "source_work_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+              "source_works": [],
+              "task": "Multi-step reasoning and tool use evaluation",
+              "venue_or_source": "AAAI 2026",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2512.06196v1"
+            ],
+            "version_id": "VER-443833AFBE97"
+          }
+        },
+        "venue_or_source": "AAAI 2026",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.58,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-749CEA54BCE2"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:41:42+00:00",
+        "updated_at": "2026-06-17T10:29:34+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-B63E3FB12EE9",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "dynamic rubric reconstruction principle dynamic rubric reconstruction principle if alignment requires both interpretability and test time adaptability then reward models must be generated as dynamic weighted sets of verifiable natural language criteria derived from task context rather than static w ",
+      "canonical_label": "Dynamic Rubric Reconstruction Principle",
+      "concept_id": "P-0C1107BC9162",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "If alignment requires both interpretability and test-time adaptability, then reward models must be generated as dynamic, weighted sets of verifiable natural-language criteria derived from task context rather than static, opaque functions.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-22679CC34F83",
+        "argument": "If alignment requires both interpretability and test-time adaptability, then reward models must be generated as dynamic, weighted sets of verifiable natural-language criteria derived from task context rather than static, opaque functions.",
+        "benchmarks": [],
+        "canonical_id": "P-3FA96C88B18C",
+        "canonical_key": "if alignment requires both interpretability and test time adaptability then reward models must be generated as dynamic weighted sets of verifiable natural language criteria derived",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T06:59:05+00:00",
+        "discussion": "The principle dictates that the alignment mechanism must decouple the definition of objectives from the model weights. By reconstructing rubrics on-the-fly, the system ensures that stakeholders can audit the specific criteria influencing agent behavior at any given moment, satisfying the need for transparency in long-horizon tasks.",
+        "entered_at": "2026-06-17T06:59:05+00:00",
+        "evidence": "Effective alignment in such settings requires reward models that are interpretable... Moreover, reward models must be capable of steering agents at interaction time, allowing preference shifts to be incorporated without retraining.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:04+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Dynamic Rubric Reconstruction Principle",
+        "performance": [],
+        "principle_id": "P-3FA96C88B18C",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "How can we provide real-time, calibrated, actionable process quality control for autonomous coding agents operating on large-scale repositories?",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2512.06196v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2512.06196v1"
+        ],
+        "source_paper_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-749CEA54BCE2"
+        ],
+        "source_work_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+        "source_works": [
+          "W-749CEA54BCE2"
+        ],
+        "updated_at": "2026-06-17T07:01:04+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-22679CC34F83": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T06:59:05+00:00",
+            "extracted_at": "2026-06-17T07:01:04+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "If alignment requires both interpretability and test-time adaptability, then reward models must be generated as dynamic, weighted sets of verifiable natural-language criteria derived from task context rather than static, opaque functions.",
+              "argument": "If alignment requires both interpretability and test-time adaptability, then reward models must be generated as dynamic, weighted sets of verifiable natural-language criteria derived from task context rather than static, opaque functions.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle dictates that the alignment mechanism must decouple the definition of objectives from the model weights. By reconstructing rubrics on-the-fly, the system ensures that stakeholders can audit the specific criteria influencing agent behavior at any given moment, satisfying the need for transparency in long-horizon tasks.",
+              "evidence": "Effective alignment in such settings requires reward models that are interpretable... Moreover, reward models must be capable of steering agents at interaction time, allowing preference shifts to be incorporated without retraining.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Dynamic Rubric Reconstruction Principle",
+              "performance": [],
+              "problem_pressure": "How can we provide real-time, calibrated, actionable process quality control for autonomous coding agents operating on large-scale repositories?",
+              "source_paper_link": "http://arxiv.org/abs/2512.06196v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2512.06196v1"
+              ],
+              "source_paper_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-749CEA54BCE2"
+              ],
+              "source_work_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+              "source_works": [
+                "W-749CEA54BCE2"
+              ],
+              "venue_or_source": "AAAI 2026",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2512.06196v1"
+            ],
+            "version_id": "VER-22679CC34F83"
+          }
+        },
+        "venue_or_source": "AAAI 2026",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-749CEA54BCE2"
+        ],
+        "validation_level": "L1",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:41:39+00:00",
+        "updated_at": "2026-06-17T10:29:30+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-6F682B08916E",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "dynamic rubric reconstruction principle dynamic rubric reconstruction principle if alignment requires both interpretability and test time adaptability then reward models must be generated as dynamic weighted sets of verifiable natural language criteria derived from task context rather than static w ",
+      "canonical_label": "Dynamic Rubric Reconstruction Principle",
+      "concept_id": "P-925E9B5F77BB",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "If alignment requires both interpretability and test-time adaptability, then reward models must be generated as dynamic, weighted sets of verifiable natural-language criteria derived from task context rather than static, opaque functions.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-22679CC34F83",
+        "argument": "If alignment requires both interpretability and test-time adaptability, then reward models must be generated as dynamic, weighted sets of verifiable natural-language criteria derived from task context rather than static, opaque functions.",
+        "benchmarks": [],
+        "canonical_id": "P-3FA96C88B18C",
+        "canonical_key": "if alignment requires both interpretability and test time adaptability then reward models must be generated as dynamic weighted sets of verifiable natural language criteria derived",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T06:59:05+00:00",
+        "discussion": "The principle dictates that the alignment mechanism must decouple the definition of objectives from the model weights. By reconstructing rubrics on-the-fly, the system ensures that stakeholders can audit the specific criteria influencing agent behavior at any given moment, satisfying the need for transparency in long-horizon tasks.",
+        "entered_at": "2026-06-17T06:59:05+00:00",
+        "evidence": "Effective alignment in such settings requires reward models that are interpretable... Moreover, reward models must be capable of steering agents at interaction time, allowing preference shifts to be incorporated without retraining.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:04+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Dynamic Rubric Reconstruction Principle",
+        "performance": [],
+        "principle_id": "P-3FA96C88B18C",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "How can we provide real-time, calibrated, actionable process quality control for autonomous coding agents operating on large-scale repositories?",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2512.06196v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2512.06196v1"
+        ],
+        "source_paper_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-3AF393F65EA3"
+        ],
+        "source_work_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+        "source_works": [
+          "W-3AF393F65EA3"
+        ],
+        "updated_at": "2026-06-17T07:01:04+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-22679CC34F83": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T06:59:05+00:00",
+            "extracted_at": "2026-06-17T07:01:04+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "If alignment requires both interpretability and test-time adaptability, then reward models must be generated as dynamic, weighted sets of verifiable natural-language criteria derived from task context rather than static, opaque functions.",
+              "argument": "If alignment requires both interpretability and test-time adaptability, then reward models must be generated as dynamic, weighted sets of verifiable natural-language criteria derived from task context rather than static, opaque functions.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle dictates that the alignment mechanism must decouple the definition of objectives from the model weights. By reconstructing rubrics on-the-fly, the system ensures that stakeholders can audit the specific criteria influencing agent behavior at any given moment, satisfying the need for transparency in long-horizon tasks.",
+              "evidence": "Effective alignment in such settings requires reward models that are interpretable... Moreover, reward models must be capable of steering agents at interaction time, allowing preference shifts to be incorporated without retraining.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Dynamic Rubric Reconstruction Principle",
+              "performance": [],
+              "problem_pressure": "How can we provide real-time, calibrated, actionable process quality control for autonomous coding agents operating on large-scale repositories?",
+              "source_paper_link": "http://arxiv.org/abs/2512.06196v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2512.06196v1"
+              ],
+              "source_paper_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-749CEA54BCE2"
+              ],
+              "source_work_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+              "source_works": [
+                "W-749CEA54BCE2"
+              ],
+              "venue_or_source": "AAAI 2026",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2512.06196v1"
+            ],
+            "version_id": "VER-22679CC34F83"
+          }
+        },
+        "venue_or_source": "AAAI 2026",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-3AF393F65EA3"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T10:36:00+00:00",
+        "updated_at": "2026-06-17T10:36:00+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-40FC97EDBD2A",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "arcane on challenging tasks requiring multi step reasoning arcane on challenging tasks requiring multi step reasoning",
+      "canonical_label": "ARCANE on challenging tasks requiring multi-step reasoning",
+      "concept_id": "RF-635BA2FE68F9",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-85212B09860F",
+        "benchmark_name": "ARCANE on challenging tasks requiring multi-step reasoning",
+        "code_url": "https://github.com/DeepFlow-research/manager",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-17T06:57:38+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "tems can exhibit sycophancy (Cau et al. 2025), persuasion failures (Wynn et al. 2025), and collective bias amplification (Ashery et al. 2025). Thus, alignment becom"
+        },
+        "extracted_at": "2026-06-17T06:57:38+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-C3CE01A48103",
+        "method_name": "ARCANE",
+        "metric": "EM",
+        "needs_llm_review": false,
+        "result_id": "RR-C4FFC9D0137B",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": true,
+          "has_compute_accounting": true,
+          "needs_verification": false
+        },
+        "source_hash": "35316d8d85265532",
+        "source_work_id": "W-749CEA54BCE2",
+        "unit": "",
+        "updated_at": "2026-06-17T07:01:04+00:00",
+        "value": 2025.0,
+        "value_text": "tems can exhibit sycophancy (Cau et al. 2025), persuasion failures (Wynn et al. 2025), and collective bias amplification (Ashery et al. 2025). Thus, alignment becom",
+        "work_id": "W-749CEA54BCE2"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:41:51+00:00",
+        "updated_at": "2026-06-17T10:29:45+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-2A140EA8365A",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "arcane on tasks from the gdpval benchmark patwardhan arcane on tasks from the gdpval benchmark patwardhan",
+      "canonical_label": "ARCANE on tasks from the GDPVal benchmark (Patwardhan",
+      "concept_id": "RF-D62E38E834E0",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-431EF0086197",
+        "benchmark_name": "ARCANE on tasks from the GDPVal benchmark (Patwardhan",
+        "code_url": "https://github.com/DeepFlow-research/manager",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-17T06:57:38+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "reasoning echo these dynamics: joint systems can exhibit sycophancy (Cau et al. 2025), persuasion failures (Wynn et al. 2025), and collective bias amplification (As"
+        },
+        "extracted_at": "2026-06-17T06:57:38+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-C3CE01A48103",
+        "method_name": "ARCANE",
+        "metric": "EM",
+        "needs_llm_review": false,
+        "result_id": "RR-D87853A972B7",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": true,
+          "has_compute_accounting": true,
+          "needs_verification": false
+        },
+        "source_hash": "35316d8d85265532",
+        "source_work_id": "W-749CEA54BCE2",
+        "unit": "",
+        "updated_at": "2026-06-17T07:01:04+00:00",
+        "value": 2025.0,
+        "value_text": "reasoning echo these dynamics: joint systems can exhibit sycophancy (Cau et al. 2025), persuasion failures (Wynn et al. 2025), and collective bias amplification (As",
+        "work_id": "W-749CEA54BCE2"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:41:51+00:00",
+        "updated_at": "2026-06-17T10:29:45+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-FB62F1B8221A",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-2F257504B27F",
+  "created_at": "2026-06-17T10:36:01+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "Effective alignment in such settings requires reward models that are interpretable... Moreover, reward models must be capable of steering agents at interaction time, allowing preference shifts to be incorporated without retraining.",
+      "concept_id": "P-0C1107BC9162",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T07:41:39+00:00",
+      "evidence_id": "EV-A832E21337A6",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "Effective alignment in such settings requires reward models that are interpretable... Moreover, reward models must be capable of steering agents at interaction time, allowing preference shifts to be incorporated without retraining.",
+      "work_id": "W-3AF393F65EA3",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-85212B09860F\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-749CEA54BCE2\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"ARCANE on challenging tasks requiring multi-step reasoning\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\":...",
+      "concept_id": "B-DB3D3B553637",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T07:41:42+00:00",
+      "evidence_id": "EV-B4F08BD5B56A",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-85212B09860F\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-749CEA54BCE2\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"ARCANE on challenging tasks requiring multi-step reasoning\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\":...",
+      "work_id": "W-3AF393F65EA3",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-431EF0086197\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-749CEA54BCE2\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"ARCANE on tasks from the GDPVal benchmark (Patwardhan\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"ARC...",
+      "concept_id": "B-8C09260E9035",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T07:41:42+00:00",
+      "evidence_id": "EV-82C248AEB3A0",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-431EF0086197\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-749CEA54BCE2\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"ARCANE on tasks from the GDPVal benchmark (Patwardhan\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"ARC...",
+      "work_id": "W-3AF393F65EA3",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "Using a corpus of 219 labeled rubrics derived from the GDPVal benchmark, we evaluate ARCANE on challenging tasks requiring multi-step reasoning and tool use.",
+      "concept_id": "B-E62013A62774",
+      "confidence": 0.58,
+      "created_at": "2026-06-17T07:41:42+00:00",
+      "evidence_id": "EV-E3C74D1FDAEF",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "Using a corpus of 219 labeled rubrics derived from the GDPVal benchmark, we evaluate ARCANE on challenging tasks requiring multi-step reasoning and tool use.",
+      "work_id": "W-3AF393F65EA3",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-D62E38E834E0",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-CB7D21A35601",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-3AF393F65EA3",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-D62E38E834E0",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-90DBCBCA5FD1",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-3AF393F65EA3",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-635BA2FE68F9",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-7724044B9A5C",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-3AF393F65EA3",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-635BA2FE68F9",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-18733658EF36",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-3AF393F65EA3",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-635BA2FE68F9",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-F40F049034FB",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-3AF393F65EA3",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-D62E38E834E0",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-DA2B1323761F",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-3AF393F65EA3",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-635BA2FE68F9",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:51+00:00",
+      "evidence_id": "EV-2609CB1F1F98",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-3AF393F65EA3",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-D62E38E834E0",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T07:41:52+00:00",
+      "evidence_id": "EV-62D43F11C5EF",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-3AF393F65EA3",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "Effective alignment in such settings requires reward models that are interpretable... Moreover, reward models must be capable of steering agents at interaction time, allowing preference shifts to be incorporated without retraining.",
+      "concept_id": "P-925E9B5F77BB",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T10:36:00+00:00",
+      "evidence_id": "EV-29DB0AD45C71",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "Effective alignment in such settings requires reward models that are interpretable... Moreover, reward models must be capable of steering agents at interaction time, allowing preference shifts to be incorporated without retraining.",
+      "work_id": "W-3AF393F65EA3",
+      "work_version_id": "WV-A5704BB38B7C"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-85212B09860F\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-749CEA54BCE2\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"ARCANE on challenging tasks requiring multi-step reasoning\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\":...",
+      "concept_id": "B-69395043ED56",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T10:36:01+00:00",
+      "evidence_id": "EV-4CD114B41192",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-85212B09860F\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-749CEA54BCE2\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"ARCANE on challenging tasks requiring multi-step reasoning\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\":...",
+      "work_id": "W-3AF393F65EA3",
+      "work_version_id": "WV-A5704BB38B7C"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-431EF0086197\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-749CEA54BCE2\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"ARCANE on tasks from the GDPVal benchmark (Patwardhan\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"ARC...",
+      "concept_id": "B-923DC15A6F0E",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T10:36:01+00:00",
+      "evidence_id": "EV-4939BACC2B90",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-431EF0086197\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-749CEA54BCE2\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"ARCANE on tasks from the GDPVal benchmark (Patwardhan\", \"split\": \"unspecified\", \"metric\": \"accuracy\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"ARC...",
+      "work_id": "W-3AF393F65EA3",
+      "work_version_id": "WV-A5704BB38B7C"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-17T10:36:00+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-17T10:35:59+00:00",
+      "extraction_run_id": "XRUN-588622366D2E",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 3,
+        "existed_ideas": 0,
+        "principles": 1,
+        "takeaway_messages": 0,
+        "total": 4
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-3AF393F65EA3",
+      "work_version_id": "WV-A5704BB38B7C"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "",
+    "secret_exposed_to_browser": false,
+    "warning": ""
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 0,
+        "principle": 1
+      },
+      "title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-3AF393F65EA3"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "2512.06196",
+        "authors": [
+          "Charlie Masters",
+          "Marta Grześkiewicz",
+          "Stefano V. Albrecht"
+        ],
+        "canonical_title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "http://arxiv.org/abs/2512.06196v1"
+        ],
+        "title_hash": "654b8a6d2f617953",
+        "title_norm": "arcane a multi agent framework for interpretable and configurable alignment",
+        "venue_or_source": "AAAI 2026",
+        "year": 2025
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "2025-12-05T22:39:54Z",
+        "title_hash": "654b8a6d2f617953"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:21:04+00:00",
+        "updated_at": "2026-06-17T10:35:59+00:00"
+      },
+      "work_id": "W-3AF393F65EA3"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": "As agents based on large language models are increasingly deployed to long-horizon tasks, maintaining their alignment with stakeholder preferences becomes critical. Effective alignment in such settings requires reward models that are interpretable so that stakeholders can understand and audit model objectives. Moreover, reward models must be capable of steering agents at interaction time, allowing preference shifts to be incorporated without retraining. We introduce ARCANE, a framework that frames alignment as a multi-agent collaboration problem that dynamically represents stakeholder preferences as natural-language rubrics: weighted sets of verifiable criteria that can be generated on-the-fly from task context. Inspired by utility theory, we formulate rubric learning as a reconstruction problem and apply a regularized Group-Sequence Policy Optimization (GSPO) procedure that balances interpretability, faithfulness, and computational efficiency. Using a corpus of 219 labeled rubrics derived from the GDPVal benchmark, we evaluate ARCANE on challenging tasks requiring multi-step reasoning and tool use. The learned rubrics produce compact, legible evaluations and enable configurable trade-offs (e.g., correctness vs. conciseness) without retraining. Our results show that rubric-based reward models offer a promising path toward interpretable, test-time adaptive alignment for complex, long-horizon AI systems.",
+      "abstract_hash": "c49a8736169c989c",
+      "content_hash": "43b2037baeee1b58",
+      "created_at": "2026-06-17T06:21:04+00:00",
+      "metadata": {
+        "abstract": "As agents based on large language models are increasingly deployed to long-horizon tasks, maintaining their alignment with stakeholder preferences becomes critical. Effective alignment in such settings requires reward models that are interpretable so that stakeholders can understand and audit model objectives. Moreover, reward models must be capable of steering agents at interaction time, allowing preference shifts to be incorporated without retraining. We introduce ARCANE, a framework that frames alignment as a multi-agent collaboration problem that dynamically represents stakeholder preferences as natural-language rubrics: weighted sets of verifiable criteria that can be generated on-the-fly from task context. Inspired by utility theory, we formulate rubric learning as a reconstruction problem and apply a regularized Group-Sequence Policy Optimization (GSPO) procedure that balances interpretability, faithfulness, and computational efficiency. Using a corpus of 219 labeled rubrics derived from the GDPVal benchmark, we evaluate ARCANE on challenging tasks requiring multi-step reasoning and tool use. The learned rubrics produce compact, legible evaluations and enable configurable trade-offs (e.g., correctness vs. conciseness) without retraining. Our results show that rubric-based reward models offer a promising path toward interpretable, test-time adaptive alignment for complex, long-horizon AI systems.",
+        "active_version_id": "VER-853694E6540C",
+        "authors": [
+          "Charlie Masters",
+          "Marta Grześkiewicz",
+          "Stefano V. Albrecht"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-749CEA54BCE2",
+        "canonical_key": "arcane a multi agent framework for interpretable and configurable alignment",
+        "community_signals": {},
+        "confidence_score": 0.62,
+        "created_at": "2026-06-17T06:18:14+00:00",
+        "entered_at": "2026-06-17T06:18:14+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T06:18:14+00:00",
+        "metrics": [],
+        "model_mode": "metadata",
+        "model_name": "metadata",
+        "paper_link": "http://arxiv.org/abs/2512.06196v1",
+        "performance": [],
+        "provider": "metadata",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "2025-12-05T22:39:54Z",
+        "source_urls": [
+          "http://arxiv.org/abs/2512.06196v1"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+        "updated_at": "2026-06-17T06:18:14+00:00",
+        "url_or_doi": "http://arxiv.org/abs/2512.06196v1",
+        "validation_level": "L1",
+        "variants": {
+          "VER-853694E6540C": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T06:18:14+00:00",
+            "extracted_at": "2026-06-17T06:18:14+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "As agents based on large language models are increasingly deployed to long-horizon tasks, maintaining their alignment with stakeholder preferences becomes critical. Effective alignment in such settings requires reward models that are interpretable so that stakeholders can understand and audit model objectives. Moreover, reward models must be capable of steering agents at interaction time, allowing preference shifts to be incorporated without retraining. We introduce ARCANE, a framework that frames alignment as a multi-agent collaboration problem that dynamically represents stakeholder preferences as natural-language rubrics: weighted sets of verifiable criteria that can be generated on-the-fly from task context. Inspired by utility theory, we formulate rubric learning as a reconstruction problem and apply a regularized Group-Sequence Policy Optimization (GSPO) procedure that balances interpretability, faithfulness, and computational efficiency. Using a corpus of 219 labeled rubrics derived from the GDPVal benchmark, we evaluate ARCANE on challenging tasks requiring multi-step reasoning and tool use. The learned rubrics produce compact, legible evaluations and enable configurable trade-offs (e.g., correctness vs. conciseness) without retraining. Our results show that rubric-based reward models offer a promising path toward interpretable, test-time adaptive alignment for complex, long-horizon AI systems.",
+              "authors": [
+                "Charlie Masters",
+                "Marta Grześkiewicz",
+                "Stefano V. Albrecht"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/2512.06196v1",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2025-12-05T22:39:54Z",
+              "source_urls": [
+                "http://arxiv.org/abs/2512.06196v1"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+              "url_or_doi": "http://arxiv.org/abs/2512.06196v1",
+              "validation_level": "L1",
+              "venue_or_source": "AAAI 2026",
+              "year": 2025
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "http://arxiv.org/abs/2512.06196v1"
+            ],
+            "version_id": "VER-853694E6540C"
+          }
+        },
+        "venue_or_source": "AAAI 2026",
+        "work_id": "W-749CEA54BCE2",
+        "year": 2025
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "",
+      "source_record_id": "W-749CEA54BCE2",
+      "source_updated_at": "2025-12-05T22:39:54Z",
+      "title": "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment",
+      "title_hash": "654b8a6d2f617953",
+      "work_id": "W-3AF393F65EA3",
+      "work_version_id": "WV-A5704BB38B7C"
+    }
+  ]
+}
