@@ -1,0 +1,521 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "incremental optimality via constrained sampling incremental optimality via constrained sampling if a search algorithm guarantees eventual optimality but suffers from slow convergence then integrating domain specific conflict constraints into the sampling distribution will accelerate convergence towa",
+      "canonical_label": "Incremental Optimality via Constrained Sampling",
+      "concept_id": "P-391B4CC3E875",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "If a search algorithm guarantees eventual optimality but suffers from slow convergence, then integrating domain-specific conflict constraints into the sampling distribution will accelerate convergence toward high-quality solutions without violating completeness.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-D1E301FCBB63",
+        "argument": "If a search algorithm guarantees eventual optimality but suffers from slow convergence, then integrating domain-specific conflict constraints into the sampling distribution will accelerate convergence toward high-quality solutions without violating completeness.",
+        "benchmarks": [],
+        "canonical_id": "P-351B3D9DB77E",
+        "canonical_key": "if search algorithm guarantees eventual optimality but suffers from slow convergence then integrating domain specific conflict constraints into sampling distribution will accelerat",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T06:20:25+00:00",
+        "discussion": "The principle suggests that completeness and speed are not mutually exclusive if the search heuristic is informed by structural properties of the problem, such as agent conflicts. By modifying the sampling strategy to respect these constraints early, the algorithm avoids wasting computational resources on trajectories that are guaranteed to fail or be suboptimal, thereby tightening the bound on solution quality over time.",
+        "entered_at": "2026-06-17T06:20:25+00:00",
+        "evidence": "The work identifies that while LaCAM* guarantees 'eventual finding of optimal solutions,' its 'convergence speed to the optimum is slow,' necessitating the introduction of improvement techniques to overcome this specific limitation.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T06:21:02+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Incremental Optimality via Constrained Sampling",
+        "performance": [],
+        "principle_id": "P-351B3D9DB77E",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "How can we provide real-time, calibrated, actionable process quality control for autonomous coding agents operating on large-scale repositories?",
+        "provider": "siliconflow",
+        "source_paper_link": "https://doi.org/10.65109/yqid4918",
+        "source_paper_links": [
+          "https://doi.org/10.65109/yqid4918"
+        ],
+        "source_paper_title": "Engineering LaCAM*: Towards Real-time, Large-scale, and Near-optimal Multi-agent Pathfinding",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-A95BC272B426"
+        ],
+        "source_work_title": "Engineering LaCAM*: Towards Real-time, Large-scale, and Near-optimal Multi-agent Pathfinding",
+        "source_works": [
+          "W-A95BC272B426"
+        ],
+        "updated_at": "2026-06-17T06:21:02+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-D1E301FCBB63": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T06:20:25+00:00",
+            "extracted_at": "2026-06-17T06:21:02+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "If a search algorithm guarantees eventual optimality but suffers from slow convergence, then integrating domain-specific conflict constraints into the sampling distribution will accelerate convergence toward high-quality solutions without violating completeness.",
+              "argument": "If a search algorithm guarantees eventual optimality but suffers from slow convergence, then integrating domain-specific conflict constraints into the sampling distribution will accelerate convergence toward high-quality solutions without violating completeness.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle suggests that completeness and speed are not mutually exclusive if the search heuristic is informed by structural properties of the problem, such as agent conflicts. By modifying the sampling strategy to respect these constraints early, the algorithm avoids wasting computational resources on trajectories that are guaranteed to fail or be suboptimal, thereby tightening the bound on solution quality over time.",
+              "evidence": "The work identifies that while LaCAM* guarantees 'eventual finding of optimal solutions,' its 'convergence speed to the optimum is slow,' necessitating the introduction of improvement techniques to overcome this specific limitation.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Incremental Optimality via Constrained Sampling",
+              "performance": [],
+              "problem_pressure": "How can we provide real-time, calibrated, actionable process quality control for autonomous coding agents operating on large-scale repositories?",
+              "source_paper_link": "https://doi.org/10.65109/yqid4918",
+              "source_paper_links": [
+                "https://doi.org/10.65109/yqid4918"
+              ],
+              "source_paper_title": "Engineering LaCAM*: Towards Real-time, Large-scale, and Near-optimal Multi-agent Pathfinding",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-A95BC272B426"
+              ],
+              "source_work_title": "Engineering LaCAM*: Towards Real-time, Large-scale, and Near-optimal Multi-agent Pathfinding",
+              "source_works": [
+                "W-A95BC272B426"
+              ],
+              "venue_or_source": "International Joint Conference on Autonomous Agents and Multiagent Systems Proceedings of the Third International Joint Conference on Autonomous Agents and Multiagent Systems - Volume 1",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.65109/yqid4918"
+            ],
+            "version_id": "VER-D1E301FCBB63"
+          }
+        },
+        "venue_or_source": "International Joint Conference on Autonomous Agents and Multiagent Systems Proceedings of the Third International Joint Conference on Autonomous Agents and Multiagent Systems - Volume 1",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-A95BC272B426"
+        ],
+        "validation_level": "L1",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:21:10+00:00",
+        "updated_at": "2026-06-17T06:23:08+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-3CD1EC439739",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "incremental optimality via constrained sampling incremental optimality via constrained sampling if a search algorithm guarantees eventual optimality but suffers from slow convergence then integrating domain specific conflict constraints into the sampling distribution will accelerate convergence towa",
+      "canonical_label": "Incremental Optimality via Constrained Sampling",
+      "concept_id": "P-866CCB14F7A0",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "If a search algorithm guarantees eventual optimality but suffers from slow convergence, then integrating domain-specific conflict constraints into the sampling distribution will accelerate convergence toward high-quality solutions without violating completeness.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-D1E301FCBB63",
+        "argument": "If a search algorithm guarantees eventual optimality but suffers from slow convergence, then integrating domain-specific conflict constraints into the sampling distribution will accelerate convergence toward high-quality solutions without violating completeness.",
+        "benchmarks": [],
+        "canonical_id": "P-351B3D9DB77E",
+        "canonical_key": "if search algorithm guarantees eventual optimality but suffers from slow convergence then integrating domain specific conflict constraints into sampling distribution will accelerat",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T06:20:25+00:00",
+        "discussion": "The principle suggests that completeness and speed are not mutually exclusive if the search heuristic is informed by structural properties of the problem, such as agent conflicts. By modifying the sampling strategy to respect these constraints early, the algorithm avoids wasting computational resources on trajectories that are guaranteed to fail or be suboptimal, thereby tightening the bound on solution quality over time.",
+        "entered_at": "2026-06-17T06:20:25+00:00",
+        "evidence": "The work identifies that while LaCAM* guarantees 'eventual finding of optimal solutions,' its 'convergence speed to the optimum is slow,' necessitating the introduction of improvement techniques to overcome this specific limitation.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T06:21:02+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Incremental Optimality via Constrained Sampling",
+        "performance": [],
+        "principle_id": "P-351B3D9DB77E",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "How can we provide real-time, calibrated, actionable process quality control for autonomous coding agents operating on large-scale repositories?",
+        "provider": "siliconflow",
+        "source_paper_link": "https://doi.org/10.65109/yqid4918",
+        "source_paper_links": [
+          "https://doi.org/10.65109/yqid4918"
+        ],
+        "source_paper_title": "Engineering LaCAM*: Towards Real-time, Large-scale, and Near-optimal Multi-agent Pathfinding",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-F27F0411A728"
+        ],
+        "source_work_title": "Engineering LaCAM*: Towards Real-time, Large-scale, and Near-optimal Multi-agent Pathfinding",
+        "source_works": [
+          "W-F27F0411A728"
+        ],
+        "updated_at": "2026-06-17T06:21:02+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-D1E301FCBB63": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T06:20:25+00:00",
+            "extracted_at": "2026-06-17T06:21:02+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "If a search algorithm guarantees eventual optimality but suffers from slow convergence, then integrating domain-specific conflict constraints into the sampling distribution will accelerate convergence toward high-quality solutions without violating completeness.",
+              "argument": "If a search algorithm guarantees eventual optimality but suffers from slow convergence, then integrating domain-specific conflict constraints into the sampling distribution will accelerate convergence toward high-quality solutions without violating completeness.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle suggests that completeness and speed are not mutually exclusive if the search heuristic is informed by structural properties of the problem, such as agent conflicts. By modifying the sampling strategy to respect these constraints early, the algorithm avoids wasting computational resources on trajectories that are guaranteed to fail or be suboptimal, thereby tightening the bound on solution quality over time.",
+              "evidence": "The work identifies that while LaCAM* guarantees 'eventual finding of optimal solutions,' its 'convergence speed to the optimum is slow,' necessitating the introduction of improvement techniques to overcome this specific limitation.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Incremental Optimality via Constrained Sampling",
+              "performance": [],
+              "problem_pressure": "How can we provide real-time, calibrated, actionable process quality control for autonomous coding agents operating on large-scale repositories?",
+              "source_paper_link": "https://doi.org/10.65109/yqid4918",
+              "source_paper_links": [
+                "https://doi.org/10.65109/yqid4918"
+              ],
+              "source_paper_title": "Engineering LaCAM*: Towards Real-time, Large-scale, and Near-optimal Multi-agent Pathfinding",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-A95BC272B426"
+              ],
+              "source_work_title": "Engineering LaCAM*: Towards Real-time, Large-scale, and Near-optimal Multi-agent Pathfinding",
+              "source_works": [
+                "W-A95BC272B426"
+              ],
+              "venue_or_source": "International Joint Conference on Autonomous Agents and Multiagent Systems Proceedings of the Third International Joint Conference on Autonomous Agents and Multiagent Systems - Volume 1",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.65109/yqid4918"
+            ],
+            "version_id": "VER-D1E301FCBB63"
+          }
+        },
+        "venue_or_source": "International Joint Conference on Autonomous Agents and Multiagent Systems Proceedings of the Third International Joint Conference on Autonomous Agents and Multiagent Systems - Volume 1",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-F27F0411A728"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:04:36+00:00",
+        "updated_at": "2026-06-17T07:04:36+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-7DB309710513",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-710D69EFC4DC",
+  "created_at": "2026-06-17T07:04:36+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "The work identifies that while LaCAM* guarantees 'eventual finding of optimal solutions,' its 'convergence speed to the optimum is slow,' necessitating the introduction of improvement techniques to overcome this specific limitation.",
+      "concept_id": "P-391B4CC3E875",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T06:21:10+00:00",
+      "evidence_id": "EV-9C1D5FF20F38",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work identifies that while LaCAM* guarantees 'eventual finding of optimal solutions,' its 'convergence speed to the optimum is slow,' necessitating the introduction of improvement techniques to overcome this specific limitation.",
+      "work_id": "W-F27F0411A728",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "The work identifies that while LaCAM* guarantees 'eventual finding of optimal solutions,' its 'convergence speed to the optimum is slow,' necessitating the introduction of improvement techniques to overcome this specific limitation.",
+      "concept_id": "P-866CCB14F7A0",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T07:04:36+00:00",
+      "evidence_id": "EV-128F42B45E9E",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work identifies that while LaCAM* guarantees 'eventual finding of optimal solutions,' its 'convergence speed to the optimum is slow,' necessitating the introduction of improvement techniques to overcome this specific limitation.",
+      "work_id": "W-F27F0411A728",
+      "work_version_id": "WV-686EBC1E0568"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-17T07:04:36+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-17T07:04:35+00:00",
+      "extraction_run_id": "XRUN-0F151C9D5302",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 0,
+        "existed_ideas": 0,
+        "principles": 1,
+        "takeaway_messages": 0,
+        "total": 1
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-F27F0411A728",
+      "work_version_id": "WV-686EBC1E0568"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "local_pr_export",
+    "secret_exposed_to_browser": false,
+    "warning": "Server admin key is not configured; output is a local PR-export artifact, not a direct GitHub write."
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 0,
+        "principle": 1
+      },
+      "title": "Engineering LaCAM*: Towards Real-time, Large-scale, and Near-optimal Multi-agent Pathfinding",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-F27F0411A728"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "",
+        "authors": [
+          "Keisuke Okumura"
+        ],
+        "canonical_title": "Engineering LaCAM*: Towards Real-time, Large-scale, and Near-optimal Multi-agent Pathfinding",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "https://doi.org/10.65109/yqid4918",
+          "https://dl.acm.org/doi/10.5555/3635637.3663010"
+        ],
+        "title_hash": "c3bfba42651b48a7",
+        "title_norm": "engineering lacam towards real time large scale and near optimal multi agent pathfinding",
+        "venue_or_source": "International Joint Conference on Autonomous Agents and Multiagent Systems Proceedings of the Third International Joint Conference on Autonomous Agents and Multiagent Systems - Volume 1",
+        "year": 2024
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 0.99,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "2026-06-16T14:58:41Z",
+        "title_hash": "c3bfba42651b48a7"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:21:10+00:00",
+        "updated_at": "2026-06-17T07:04:35+00:00"
+      },
+      "work_id": "W-F27F0411A728"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": "This paper addresses the challenges of real-time, large-scale, and near-optimal multi-agent pathfinding (MAPF) through enhancements to the recently proposed LaCAM* algorithm. LaCAM* is a scalable search-based algorithm that guarantees the eventual finding of optimal solutions for cumulative transition costs. While it has demonstrated remarkable planning success rates, surpassing various state-of-the-art MAPF methods, its initial solution quality is far from optimal, and its convergence speed to the optimum is slow. To overcome these limitations, this paper introduces several improvement techniques, partly drawing inspiration from other MAPF methods. We provide empirical evidence that the fusion of these techniques significantly improves the solution quality of LaCAM*, thus further pushing the boundaries of MAPF algorithms.",
+      "abstract_hash": "1d4bfeab72e95708",
+      "content_hash": "420e03bf4b69d121",
+      "created_at": "2026-06-17T06:21:10+00:00",
+      "metadata": {
+        "abstract": "This paper addresses the challenges of real-time, large-scale, and near-optimal multi-agent pathfinding (MAPF) through enhancements to the recently proposed LaCAM* algorithm. LaCAM* is a scalable search-based algorithm that guarantees the eventual finding of optimal solutions for cumulative transition costs. While it has demonstrated remarkable planning success rates, surpassing various state-of-the-art MAPF methods, its initial solution quality is far from optimal, and its convergence speed to the optimum is slow. To overcome these limitations, this paper introduces several improvement techniques, partly drawing inspiration from other MAPF methods. We provide empirical evidence that the fusion of these techniques significantly improves the solution quality of LaCAM*, thus further pushing the boundaries of MAPF algorithms.",
+        "active_version_id": "VER-890DA49C9200",
+        "authors": [
+          "Keisuke Okumura"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-A95BC272B426",
+        "canonical_key": "engineering lacam towards real time large scale and near optimal multi agent pathfinding",
+        "citation_count": 4,
+        "community_signals": {
+          "source": "crossref",
+          "type": "proceedings-article"
+        },
+        "confidence_score": 0.62,
+        "created_at": "2026-06-17T06:18:14+00:00",
+        "entered_at": "2026-06-17T06:20:25+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T06:21:02+00:00",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "paper_link": "https://doi.org/10.65109/yqid4918",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "2026-06-16T14:58:41Z",
+        "source_urls": [
+          "https://doi.org/10.65109/yqid4918",
+          "https://dl.acm.org/doi/10.5555/3635637.3663010"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "title": "Engineering LaCAM*: Towards Real-time, Large-scale, and Near-optimal Multi-agent Pathfinding",
+        "updated_at": "2026-06-17T06:21:02+00:00",
+        "url_or_doi": "https://doi.org/10.65109/yqid4918",
+        "validation_level": "L1",
+        "variants": {
+          "VER-4BB8666F43E3": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T06:18:14+00:00",
+            "extracted_at": "2026-06-17T06:18:14+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "This paper addresses the challenges of real-time, large-scale, and near-optimal multi-agent pathfinding (MAPF) through enhancements to the recently proposed LaCAM* algorithm. LaCAM* is a scalable search-based algorithm that guarantees the eventual finding of optimal solutions for cumulative transition costs. While it has demonstrated remarkable planning success rates, surpassing various state-of-the-art MAPF methods, its initial solution quality is far from optimal, and its convergence speed to the optimum is slow. To overcome these limitations, this paper introduces several improvement techniques, partly drawing inspiration from other MAPF methods. We provide empirical evidence that the fusion of these techniques significantly improves the solution quality of LaCAM*, thus further pushing the boundaries of MAPF algorithms.",
+              "authors": [
+                "Keisuke Okumura"
+              ],
+              "benchmarks": [],
+              "citation_count": 4,
+              "community_signals": {
+                "source": "crossref",
+                "type": "proceedings-article"
+              },
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "https://doi.org/10.65109/yqid4918",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2026-06-16T14:58:41Z",
+              "source_urls": [
+                "https://doi.org/10.65109/yqid4918",
+                "https://dl.acm.org/doi/10.5555/3635637.3663010"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Engineering LaCAM*: Towards Real-time, Large-scale, and Near-optimal Multi-agent Pathfinding",
+              "url_or_doi": "https://doi.org/10.65109/yqid4918",
+              "validation_level": "L1",
+              "venue_or_source": "International Joint Conference on Autonomous Agents and Multiagent Systems Proceedings of the Third International Joint Conference on Autonomous Agents and Multiagent Systems - Volume 1",
+              "year": 2024
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "https://doi.org/10.65109/yqid4918",
+              "https://dl.acm.org/doi/10.5555/3635637.3663010"
+            ],
+            "version_id": "VER-4BB8666F43E3"
+          },
+          "VER-890DA49C9200": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T06:20:25+00:00",
+            "extracted_at": "2026-06-17T06:21:02+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract": "This paper addresses the challenges of real-time, large-scale, and near-optimal multi-agent pathfinding (MAPF) through enhancements to the recently proposed LaCAM* algorithm. LaCAM* is a scalable search-based algorithm that guarantees the eventual finding of optimal solutions for cumulative transition costs. While it has demonstrated remarkable planning success rates, surpassing various state-of-the-art MAPF methods, its initial solution quality is far from optimal, and its convergence speed to the optimum is slow. To overcome these limitations, this paper introduces several improvement techniques, partly drawing inspiration from other MAPF methods. We provide empirical evidence that the fusion of these techniques significantly improves the solution quality of LaCAM*, thus further pushing the boundaries of MAPF algorithms.",
+              "authors": [
+                "Keisuke Okumura"
+              ],
+              "benchmarks": [],
+              "citation_count": 4,
+              "community_signals": {
+                "source": "crossref",
+                "type": "proceedings-article"
+              },
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "https://doi.org/10.65109/yqid4918",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2026-06-16T14:58:41Z",
+              "source_urls": [
+                "https://doi.org/10.65109/yqid4918",
+                "https://dl.acm.org/doi/10.5555/3635637.3663010"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Engineering LaCAM*: Towards Real-time, Large-scale, and Near-optimal Multi-agent Pathfinding",
+              "url_or_doi": "https://doi.org/10.65109/yqid4918",
+              "validation_level": "L1",
+              "venue_or_source": "International Joint Conference on Autonomous Agents and Multiagent Systems Proceedings of the Third International Joint Conference on Autonomous Agents and Multiagent Systems - Volume 1",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.65109/yqid4918",
+              "https://dl.acm.org/doi/10.5555/3635637.3663010"
+            ],
+            "version_id": "VER-890DA49C9200"
+          }
+        },
+        "venue_or_source": "International Joint Conference on Autonomous Agents and Multiagent Systems Proceedings of the Third International Joint Conference on Autonomous Agents and Multiagent Systems - Volume 1",
+        "work_id": "W-A95BC272B426",
+        "year": 2024
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "crossref",
+      "source_record_id": "W-A95BC272B426",
+      "source_updated_at": "2026-06-16T14:58:41Z",
+      "title": "Engineering LaCAM*: Towards Real-time, Large-scale, and Near-optimal Multi-agent Pathfinding",
+      "title_hash": "c3bfba42651b48a7",
+      "work_id": "W-F27F0411A728",
+      "work_version_id": "WV-686EBC1E0568"
+    }
+  ]
+}
