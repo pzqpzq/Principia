@@ -1,0 +1,895 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "semantic abstraction for low resource visual learning semantic abstraction for low resource visual learning if visual relationships exhibit consistent semantic patterns independent of specific image instances then defining image agnostic features allows for the generation of effective weak supervisi",
+      "canonical_label": "Semantic Abstraction for Low-Resource Visual Learning",
+      "concept_id": "P-E843950AFF33",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "If visual relationships exhibit consistent semantic patterns independent of specific image instances, then defining image-agnostic features allows for the generation of effective weak supervision signals from minimal labeled data.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-E06D022F8BAF",
+        "argument": "If visual relationships exhibit consistent semantic patterns independent of specific image instances, then defining image-agnostic features allows for the generation of effective weak supervision signals from minimal labeled data.",
+        "benchmarks": [],
+        "canonical_id": "P-30DE86178BA9",
+        "canonical_key": "if visual relationships exhibit consistent semantic patterns independent of specific image instances then defining image agnostic features allows for generation of effective weak s",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T11:06:05+00:00",
+        "discussion": "The principle suggests that moving away from pixel-dependent features towards semantic abstractions is a viable strategy for low-resource visual tasks. It implies that the bottleneck in visual relationship learning is often the lack of labeled data rather than the inability to model visual features, provided that the underlying semantic logic can be captured.",
+        "entered_at": "2026-06-17T11:06:05+00:00",
+        "evidence": "The work demonstrates that analyzing visual relationships reveals patterns like size constraints and common object pairs that are not dependent on raw pixel values, enabling the creation of heuristics from few labeled examples.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:07:13+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Semantic Abstraction for Low-Resource Visual Learning",
+        "performance": [],
+        "principle_id": "P-30DE86178BA9",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/1904.11622v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1904.11622v3"
+        ],
+        "source_paper_title": "Scene Graph Prediction with Limited Labels",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-D455872A754C"
+        ],
+        "source_work_title": "Scene Graph Prediction with Limited Labels",
+        "source_works": [
+          "W-D455872A754C"
+        ],
+        "updated_at": "2026-06-17T11:07:13+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-E06D022F8BAF": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T11:06:05+00:00",
+            "extracted_at": "2026-06-17T11:07:13+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "If visual relationships exhibit consistent semantic patterns independent of specific image instances, then defining image-agnostic features allows for the generation of effective weak supervision signals from minimal labeled data.",
+              "argument": "If visual relationships exhibit consistent semantic patterns independent of specific image instances, then defining image-agnostic features allows for the generation of effective weak supervision signals from minimal labeled data.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle suggests that moving away from pixel-dependent features towards semantic abstractions is a viable strategy for low-resource visual tasks. It implies that the bottleneck in visual relationship learning is often the lack of labeled data rather than the inability to model visual features, provided that the underlying semantic logic can be captured.",
+              "evidence": "The work demonstrates that analyzing visual relationships reveals patterns like size constraints and common object pairs that are not dependent on raw pixel values, enabling the creation of heuristics from few labeled examples.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Semantic Abstraction for Low-Resource Visual Learning",
+              "performance": [],
+              "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+              "source_paper_link": "http://arxiv.org/abs/1904.11622v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1904.11622v3"
+              ],
+              "source_paper_title": "Scene Graph Prediction with Limited Labels",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-1026C3EA6BD2"
+              ],
+              "source_work_title": "Scene Graph Prediction with Limited Labels",
+              "source_works": [
+                "W-1026C3EA6BD2"
+              ],
+              "venue_or_source": "ICCV 2019",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1904.11622v3"
+            ],
+            "version_id": "VER-E06D022F8BAF"
+          }
+        },
+        "venue_or_source": "ICCV 2019",
+        "year": 2019
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-D455872A754C"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:24+00:00",
+        "updated_at": "2026-06-17T11:22:24+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-B3DC0850A15E",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "generative denoising of weak supervision generative denoising of weak supervision when multiple noisy labeling sources are available a generative model that explicitly accounts for source accuracy and correlation can synthesize high quality probabilistic labels superior to any individual source w d4",
+      "canonical_label": "Generative Denoising of Weak Supervision",
+      "concept_id": "P-ECEA72AD81A2",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "When multiple noisy labeling sources are available, a generative model that explicitly accounts for source accuracy and correlation can synthesize high-quality probabilistic labels superior to any individual source.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-970528E02F3C",
+        "argument": "When multiple noisy labeling sources are available, a generative model that explicitly accounts for source accuracy and correlation can synthesize high-quality probabilistic labels superior to any individual source.",
+        "benchmarks": [],
+        "canonical_id": "P-29C4616229A3",
+        "canonical_key": "when multiple noisy labeling sources are available generative model explicitly accounts for source accuracy and correlation can synthesize high quality probabilistic labels superio",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T11:06:05+00:00",
+        "discussion": "The principle highlights the power of modeling the noise generation process rather than trying to eliminate noise at the source. By treating heuristic outputs as observations of a latent true label, the system can statistically recover accurate supervision, making it possible to leverage vast amounts of unlabeled data that would otherwise be unusable.",
+        "entered_at": "2026-06-17T11:06:05+00:00",
+        "evidence": "The paper reports that the factor graph-based aggregation of noisy heuristics enables training scene graph models that outperform baselines by 5.16 recall@100, despite using only 10 labeled examples per relationship.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:07:13+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Generative Denoising of Weak Supervision",
+        "performance": [],
+        "principle_id": "P-29C4616229A3",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/1904.11622v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1904.11622v3"
+        ],
+        "source_paper_title": "Scene Graph Prediction with Limited Labels",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-D455872A754C"
+        ],
+        "source_work_title": "Scene Graph Prediction with Limited Labels",
+        "source_works": [
+          "W-D455872A754C"
+        ],
+        "updated_at": "2026-06-17T11:07:13+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-970528E02F3C": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T11:06:05+00:00",
+            "extracted_at": "2026-06-17T11:07:13+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "When multiple noisy labeling sources are available, a generative model that explicitly accounts for source accuracy and correlation can synthesize high-quality probabilistic labels superior to any individual source.",
+              "argument": "When multiple noisy labeling sources are available, a generative model that explicitly accounts for source accuracy and correlation can synthesize high-quality probabilistic labels superior to any individual source.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle highlights the power of modeling the noise generation process rather than trying to eliminate noise at the source. By treating heuristic outputs as observations of a latent true label, the system can statistically recover accurate supervision, making it possible to leverage vast amounts of unlabeled data that would otherwise be unusable.",
+              "evidence": "The paper reports that the factor graph-based aggregation of noisy heuristics enables training scene graph models that outperform baselines by 5.16 recall@100, despite using only 10 labeled examples per relationship.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Generative Denoising of Weak Supervision",
+              "performance": [],
+              "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+              "source_paper_link": "http://arxiv.org/abs/1904.11622v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1904.11622v3"
+              ],
+              "source_paper_title": "Scene Graph Prediction with Limited Labels",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-1026C3EA6BD2"
+              ],
+              "source_work_title": "Scene Graph Prediction with Limited Labels",
+              "source_works": [
+                "W-1026C3EA6BD2"
+              ],
+              "venue_or_source": "ICCV 2019",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1904.11622v3"
+            ],
+            "version_id": "VER-970528E02F3C"
+          }
+        },
+        "venue_or_source": "ICCV 2019",
+        "year": 2019
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-D455872A754C"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:24+00:00",
+        "updated_at": "2026-06-17T11:22:24+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-B6A90A565029",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "viability of semi supervised scene graph learning viability of semi supervised scene graph learning the proposed method outperforms all baseline approaches on scene graph prediction achieving a 5 16 increase in recall 100 for the predcls task w d455872a754c",
+      "canonical_label": "Viability of Semi-Supervised Scene Graph Learning",
+      "concept_id": "TM-62D8089B628E",
+      "concept_type": "takeaway_message",
+      "payload": {
+        "active_version_id": "VER-3F3C3CD10E08",
+        "benchmarks": [],
+        "canonical_id": "TM-7BAA1FC2D9C0",
+        "canonical_key": "proposed method outperforms all baseline approaches on scene graph prediction achieving 5 16 increase in recall 100 for predcls task",
+        "condition": "This success is observed when at least 10 labeled examples per relationship are available to seed the heuristic generation process.",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T11:06:05+00:00",
+        "discussion": "The results indicate that the scarcity of labeled data is not an insurmountable barrier for scene graph prediction if appropriate weak supervision techniques are applied. The significant margin of improvement over baselines suggests that current fully supervised methods are underutilizing the available unlabeled data.",
+        "entered_at": "2026-06-17T11:06:05+00:00",
+        "evidence": "The abstract states the method outperforms all baseline approaches by 5.16 recall@100 for PREDCLS and functions effectively with as few as 10 labeled examples per relationship.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:07:13+00:00",
+        "extraction_method": "llm_extracted",
+        "finding": "The proposed method outperforms all baseline approaches on scene graph prediction, achieving a 5.16 increase in recall@100 for the PREDCLS task.",
+        "main_results": "The proposed method outperforms all baseline approaches on scene graph prediction, achieving a 5.16 increase in recall@100 for the PREDCLS task.",
+        "message_text": "The proposed method outperforms all baseline approaches on scene graph prediction, achieving a 5.16 increase in recall@100 for the PREDCLS task.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/1904.11622v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1904.11622v3"
+        ],
+        "source_paper_title": "Scene Graph Prediction with Limited Labels",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-D455872A754C"
+        ],
+        "source_work_title": "Scene Graph Prediction with Limited Labels",
+        "source_works": [
+          "W-D455872A754C"
+        ],
+        "title": "Viability of Semi-Supervised Scene Graph Learning",
+        "updated_at": "2026-06-17T11:07:13+00:00",
+        "variants": {
+          "VER-3F3C3CD10E08": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T11:06:05+00:00",
+            "extracted_at": "2026-06-17T11:07:13+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "condition": "This success is observed when at least 10 labeled examples per relationship are available to seed the heuristic generation process.",
+              "confidence_score": 0.7,
+              "discussion": "The results indicate that the scarcity of labeled data is not an insurmountable barrier for scene graph prediction if appropriate weak supervision techniques are applied. The significant margin of improvement over baselines suggests that current fully supervised methods are underutilizing the available unlabeled data.",
+              "evidence": "The abstract states the method outperforms all baseline approaches by 5.16 recall@100 for PREDCLS and functions effectively with as few as 10 labeled examples per relationship.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "finding": "The proposed method outperforms all baseline approaches on scene graph prediction, achieving a 5.16 increase in recall@100 for the PREDCLS task.",
+              "main_results": "The proposed method outperforms all baseline approaches on scene graph prediction, achieving a 5.16 increase in recall@100 for the PREDCLS task.",
+              "message_text": "The proposed method outperforms all baseline approaches on scene graph prediction, achieving a 5.16 increase in recall@100 for the PREDCLS task.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "http://arxiv.org/abs/1904.11622v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1904.11622v3"
+              ],
+              "source_paper_title": "Scene Graph Prediction with Limited Labels",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-1026C3EA6BD2"
+              ],
+              "source_work_title": "Scene Graph Prediction with Limited Labels",
+              "source_works": [],
+              "title": "Viability of Semi-Supervised Scene Graph Learning",
+              "venue_or_source": "ICCV 2019",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1904.11622v3"
+            ],
+            "version_id": "VER-3F3C3CD10E08"
+          }
+        },
+        "venue_or_source": "ICCV 2019",
+        "year": 2019
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-D455872A754C"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:24+00:00",
+        "updated_at": "2026-06-17T11:22:24+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-33D25011CE73",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "predictability of method success via complexity metric predictability of method success via complexity metric a defined complexity metric for relationships serves as a strong indicator r2 0 778 for conditions under which the semi supervised method succeeds over transfer learning w d455872a754c",
+      "canonical_label": "Predictability of Method Success via Complexity Metric",
+      "concept_id": "TM-6C08567861AB",
+      "concept_type": "takeaway_message",
+      "payload": {
+        "active_version_id": "VER-A3605555A499",
+        "benchmarks": [],
+        "canonical_id": "TM-DD5CEBF44DAD",
+        "canonical_key": "defined complexity metric for relationships serves as strong indicator r2 0 778 for conditions under which semi supervised method succeeds over transfer learning",
+        "condition": "The metric is applicable in limited label settings where the goal is to determine whether to apply semi-supervised generation or rely on transfer learning.",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T11:06:05+00:00",
+        "discussion": "This finding provides a practical tool for practitioners to decide on the optimal training strategy for specific relationships. It suggests that not all relationships benefit equally from semi-supervised expansion, and the complexity metric offers a data-driven way to identify which relationships are suitable for heuristic-based label generation.",
+        "entered_at": "2026-06-17T11:06:05+00:00",
+        "evidence": "The abstract explicitly mentions the definition of a complexity metric that serves as an indicator with an R2 of 0.778 for conditions where the method succeeds over transfer learning.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:07:13+00:00",
+        "extraction_method": "llm_extracted",
+        "finding": "A defined complexity metric for relationships serves as a strong indicator (R2 = 0.778) for conditions under which the semi-supervised method succeeds over transfer learning.",
+        "main_results": "A defined complexity metric for relationships serves as a strong indicator (R2 = 0.778) for conditions under which the semi-supervised method succeeds over transfer learning.",
+        "message_text": "A defined complexity metric for relationships serves as a strong indicator (R2 = 0.778) for conditions under which the semi-supervised method succeeds over transfer learning.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/1904.11622v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1904.11622v3"
+        ],
+        "source_paper_title": "Scene Graph Prediction with Limited Labels",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-D455872A754C"
+        ],
+        "source_work_title": "Scene Graph Prediction with Limited Labels",
+        "source_works": [
+          "W-D455872A754C"
+        ],
+        "title": "Predictability of Method Success via Complexity Metric",
+        "updated_at": "2026-06-17T11:07:13+00:00",
+        "variants": {
+          "VER-A3605555A499": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T11:06:05+00:00",
+            "extracted_at": "2026-06-17T11:07:13+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "condition": "The metric is applicable in limited label settings where the goal is to determine whether to apply semi-supervised generation or rely on transfer learning.",
+              "confidence_score": 0.7,
+              "discussion": "This finding provides a practical tool for practitioners to decide on the optimal training strategy for specific relationships. It suggests that not all relationships benefit equally from semi-supervised expansion, and the complexity metric offers a data-driven way to identify which relationships are suitable for heuristic-based label generation.",
+              "evidence": "The abstract explicitly mentions the definition of a complexity metric that serves as an indicator with an R2 of 0.778 for conditions where the method succeeds over transfer learning.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "finding": "A defined complexity metric for relationships serves as a strong indicator (R2 = 0.778) for conditions under which the semi-supervised method succeeds over transfer learning.",
+              "main_results": "A defined complexity metric for relationships serves as a strong indicator (R2 = 0.778) for conditions under which the semi-supervised method succeeds over transfer learning.",
+              "message_text": "A defined complexity metric for relationships serves as a strong indicator (R2 = 0.778) for conditions under which the semi-supervised method succeeds over transfer learning.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "http://arxiv.org/abs/1904.11622v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1904.11622v3"
+              ],
+              "source_paper_title": "Scene Graph Prediction with Limited Labels",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-1026C3EA6BD2"
+              ],
+              "source_work_title": "Scene Graph Prediction with Limited Labels",
+              "source_works": [],
+              "title": "Predictability of Method Success via Complexity Metric",
+              "venue_or_source": "ICCV 2019",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1904.11622v3"
+            ],
+            "version_id": "VER-A3605555A499"
+          }
+        },
+        "venue_or_source": "ICCV 2019",
+        "year": 2019
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-D455872A754C"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:24+00:00",
+        "updated_at": "2026-06-17T11:22:24+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-159592547B86",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "factor graph based aggregation of noisy supervision factor graph based aggregation of noisy supervision a factor graph based generative model aggregates outputs from multiple noisy heuristics to produce high quality probabilistic training labels this aggregation process resolves conflicts between he",
+      "canonical_label": "Factor Graph-Based Aggregation of Noisy Supervision",
+      "concept_id": "XI-F24ED8BE8CF6",
+      "concept_type": "existed_idea",
+      "payload": {
+        "active_version_id": "VER-BC35EABECACE",
+        "benchmarks": [],
+        "canonical_id": "XI-D1B01C61B694",
+        "canonical_key": "factor graph based generative model aggregates outputs from multiple noisy heuristics to produce high quality probabilistic training labels aggregation process resolves conflicts b",
+        "confidence_score": 0.72,
+        "core_idea": "A factor graph-based generative model aggregates outputs from multiple noisy heuristics to produce high-quality probabilistic training labels. This aggregation process resolves conflicts between heuristics and estimates the true label distribution without requiring ground truth for the unlabeled data.",
+        "created_at": "2026-06-17T11:06:05+00:00",
+        "discussion": "This aggregation technique is critical for transforming sparse, noisy signals into a dense, reliable training signal. It enables the use of simple, imperfect rules that would be unusable individually but become powerful when combined statistically. The resulting probabilistic labels allow downstream scene graph models to be trained effectively even when only a few dozen labeled examples per relationship are available.",
+        "entered_at": "2026-06-17T11:06:05+00:00",
+        "evidence": "The abstract explicitly mentions that heuristic outputs are aggregated using a factor graph-based generative model. It further notes that with as few as 10 labeled examples, this model creates sufficient training data to train state-of-the-art scene graph models.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:07:13+00:00",
+        "extraction_method": "llm_extracted",
+        "idea_text": "A factor graph-based generative model aggregates outputs from multiple noisy heuristics to produce high-quality probabilistic training labels. This aggregation process resolves conflicts between heuristics and estimates the true label distribution without requiring ground truth for the unlabeled data.",
+        "mechanism": "The mechanism utilizes a probabilistic graphical model where nodes represent the true latent labels and the observed heuristic outputs. Factors in the graph encode the reliability of each heuristic and the correlations between them. By performing inference on this graph, the model computes posterior probabilities for each relationship in the unlabeled set, effectively denoising the weak supervision signals.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/1904.11622v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1904.11622v3"
+        ],
+        "source_paper_title": "Scene Graph Prediction with Limited Labels",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-D455872A754C"
+        ],
+        "source_work_title": "Scene Graph Prediction with Limited Labels",
+        "source_works": [
+          "W-D455872A754C"
+        ],
+        "summary": "A factor graph-based generative model aggregates outputs from multiple noisy heuristics to produce high-quality probabilistic training labels. This aggregation process resolves conflicts between heuristics and estimates the true label di...",
+        "title": "Factor Graph-Based Aggregation of Noisy Supervision",
+        "updated_at": "2026-06-17T11:07:13+00:00",
+        "variants": {
+          "VER-BC35EABECACE": {
+            "confidence_score": 0.72,
+            "entered_at": "2026-06-17T11:06:05+00:00",
+            "extracted_at": "2026-06-17T11:07:13+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "confidence_score": 0.72,
+              "core_idea": "A factor graph-based generative model aggregates outputs from multiple noisy heuristics to produce high-quality probabilistic training labels. This aggregation process resolves conflicts between heuristics and estimates the true label distribution without requiring ground truth for the unlabeled data.",
+              "discussion": "This aggregation technique is critical for transforming sparse, noisy signals into a dense, reliable training signal. It enables the use of simple, imperfect rules that would be unusable individually but become powerful when combined statistically. The resulting probabilistic labels allow downstream scene graph models to be trained effectively even when only a few dozen labeled examples per relationship are available.",
+              "evidence": "The abstract explicitly mentions that heuristic outputs are aggregated using a factor graph-based generative model. It further notes that with as few as 10 labeled examples, this model creates sufficient training data to train state-of-the-art scene graph models.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "idea_text": "A factor graph-based generative model aggregates outputs from multiple noisy heuristics to produce high-quality probabilistic training labels. This aggregation process resolves conflicts between heuristics and estimates the true label distribution without requiring ground truth for the unlabeled data.",
+              "mechanism": "The mechanism utilizes a probabilistic graphical model where nodes represent the true latent labels and the observed heuristic outputs. Factors in the graph encode the reliability of each heuristic and the correlations between them. By performing inference on this graph, the model computes posterior probabilities for each relationship in the unlabeled set, effectively denoising the weak supervision signals.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "http://arxiv.org/abs/1904.11622v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1904.11622v3"
+              ],
+              "source_paper_title": "Scene Graph Prediction with Limited Labels",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-1026C3EA6BD2"
+              ],
+              "source_work_title": "Scene Graph Prediction with Limited Labels",
+              "source_works": [],
+              "summary": "A factor graph-based generative model aggregates outputs from multiple noisy heuristics to produce high-quality probabilistic training labels. This aggregation process resolves conflicts between heuristics and estimates the true label di...",
+              "title": "Factor Graph-Based Aggregation of Noisy Supervision",
+              "venue_or_source": "ICCV 2019",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1904.11622v3"
+            ],
+            "version_id": "VER-BC35EABECACE"
+          }
+        },
+        "venue_or_source": "ICCV 2019",
+        "year": 2019
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.72,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-D455872A754C"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:24+00:00",
+        "updated_at": "2026-06-17T11:22:24+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-0105DF87ED9C",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-9790786A09F7",
+  "created_at": "2026-06-17T11:22:24+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "The abstract explicitly mentions that heuristic outputs are aggregated using a factor graph-based generative model. It further notes that with as few as 10 labeled examples, this model creates sufficient training data to train state-of-the-art scene graph models.",
+      "concept_id": "XI-F24ED8BE8CF6",
+      "confidence": 0.72,
+      "created_at": "2026-06-17T11:22:24+00:00",
+      "evidence_id": "EV-41E3A9A3FDAD",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The abstract explicitly mentions that heuristic outputs are aggregated using a factor graph-based generative model. It further notes that with as few as 10 labeled examples, this model creates sufficient training data to train state-of-the-art scene graph models.",
+      "work_id": "W-D455872A754C",
+      "work_version_id": "WV-7077F5E08D81"
+    },
+    {
+      "claim_text": "The work demonstrates that analyzing visual relationships reveals patterns like size constraints and common object pairs that are not dependent on raw pixel values, enabling the creation of heuristics from few labeled examples.",
+      "concept_id": "P-E843950AFF33",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T11:22:24+00:00",
+      "evidence_id": "EV-2C7E230142A9",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work demonstrates that analyzing visual relationships reveals patterns like size constraints and common object pairs that are not dependent on raw pixel values, enabling the creation of heuristics from few labeled examples.",
+      "work_id": "W-D455872A754C",
+      "work_version_id": "WV-7077F5E08D81"
+    },
+    {
+      "claim_text": "The paper reports that the factor graph-based aggregation of noisy heuristics enables training scene graph models that outperform baselines by 5.16 recall@100, despite using only 10 labeled examples per relationship.",
+      "concept_id": "P-ECEA72AD81A2",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T11:22:24+00:00",
+      "evidence_id": "EV-4BF8DF0564B1",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The paper reports that the factor graph-based aggregation of noisy heuristics enables training scene graph models that outperform baselines by 5.16 recall@100, despite using only 10 labeled examples per relationship.",
+      "work_id": "W-D455872A754C",
+      "work_version_id": "WV-7077F5E08D81"
+    },
+    {
+      "claim_text": "The abstract states the method outperforms all baseline approaches by 5.16 recall@100 for PREDCLS and functions effectively with as few as 10 labeled examples per relationship.",
+      "concept_id": "TM-62D8089B628E",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T11:22:24+00:00",
+      "evidence_id": "EV-7B5541CF248A",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The abstract states the method outperforms all baseline approaches by 5.16 recall@100 for PREDCLS and functions effectively with as few as 10 labeled examples per relationship.",
+      "work_id": "W-D455872A754C",
+      "work_version_id": "WV-7077F5E08D81"
+    },
+    {
+      "claim_text": "The abstract explicitly mentions the definition of a complexity metric that serves as an indicator with an R2 of 0.778 for conditions where the method succeeds over transfer learning.",
+      "concept_id": "TM-6C08567861AB",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T11:22:24+00:00",
+      "evidence_id": "EV-8CEBF6CA7746",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The abstract explicitly mentions the definition of a complexity metric that serves as an indicator with an R2 of 0.778 for conditions where the method succeeds over transfer learning.",
+      "work_id": "W-D455872A754C",
+      "work_version_id": "WV-7077F5E08D81"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-17T11:22:24+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-17T11:22:18+00:00",
+      "extraction_run_id": "XRUN-01130CAD9801",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 1,
+        "existed_ideas": 1,
+        "principles": 2,
+        "takeaway_messages": 2,
+        "total": 6
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-D455872A754C",
+      "work_version_id": "WV-7077F5E08D81"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "",
+    "secret_exposed_to_browser": false,
+    "warning": ""
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 1,
+        "principle": 2
+      },
+      "title": "Scene Graph Prediction with Limited Labels",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-D455872A754C"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "1904.11622",
+        "authors": [
+          "Vincent S. Chen",
+          "Paroma Varma",
+          "Ranjay Krishna",
+          "Michael Bernstein",
+          "Christopher Re",
+          "Li Fei-Fei"
+        ],
+        "canonical_title": "Scene Graph Prediction with Limited Labels",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "http://arxiv.org/abs/1904.11622v3"
+        ],
+        "title_hash": "c9848b2dcd182856",
+        "title_norm": "scene graph prediction with limited labels",
+        "venue_or_source": "ICCV 2019",
+        "year": 2019
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "2019-11-30T21:52:18Z",
+        "title_hash": "c9848b2dcd182856"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:18+00:00",
+        "updated_at": "2026-06-17T11:22:18+00:00"
+      },
+      "work_id": "W-D455872A754C"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": "Visual knowledge bases such as Visual Genome power numerous applications in computer vision, including visual question answering and captioning, but suffer from sparse, incomplete relationships. All scene graph models to date are limited to training on a small set of visual relationships that have thousands of training labels each. Hiring human annotators is expensive, and using textual knowledge base completion methods are incompatible with visual data. In this paper, we introduce a semi-supervised method that assigns probabilistic relationship labels to a large number of unlabeled images using few labeled examples. We analyze visual relationships to suggest two types of image-agnostic features that are used to generate noisy heuristics, whose outputs are aggregated using a factor graph-based generative model. With as few as 10 labeled examples per relationship, the generative model creates enough training data to train any existing state-of-the-art scene graph model. We demonstrate that our method outperforms all baseline approaches on scene graph prediction by 5.16 recall@100 for PREDCLS. In our limited label setting, we define a complexity metric for relationships that serves as an indicator (R^2 = 0.778) for conditions under which our method succeeds over transfer learning, the de-facto approach for training with limited labels.",
+      "abstract_hash": "d3f4c7d79762b757",
+      "content_hash": "e0859f9b767dcc3f",
+      "created_at": "2026-06-17T11:22:18+00:00",
+      "metadata": {
+        "abstract": "Visual knowledge bases such as Visual Genome power numerous applications in computer vision, including visual question answering and captioning, but suffer from sparse, incomplete relationships. All scene graph models to date are limited to training on a small set of visual relationships that have thousands of training labels each. Hiring human annotators is expensive, and using textual knowledge base completion methods are incompatible with visual data. In this paper, we introduce a semi-supervised method that assigns probabilistic relationship labels to a large number of unlabeled images using few labeled examples. We analyze visual relationships to suggest two types of image-agnostic features that are used to generate noisy heuristics, whose outputs are aggregated using a factor graph-based generative model. With as few as 10 labeled examples per relationship, the generative model creates enough training data to train any existing state-of-the-art scene graph model. We demonstrate that our method outperforms all baseline approaches on scene graph prediction by 5.16 recall@100 for PREDCLS. In our limited label setting, we define a complexity metric for relationships that serves as an indicator (R^2 = 0.778) for conditions under which our method succeeds over transfer learning, the de-facto approach for training with limited labels.",
+        "active_version_id": "VER-A5351AA31A7D",
+        "authors": [
+          "Vincent S. Chen",
+          "Paroma Varma",
+          "Ranjay Krishna",
+          "Michael Bernstein",
+          "Christopher Re",
+          "Li Fei-Fei"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-1026C3EA6BD2",
+        "canonical_key": "scene graph prediction with limited labels",
+        "community_signals": {},
+        "confidence_score": 0.62,
+        "created_at": "2026-06-17T10:49:59+00:00",
+        "entered_at": "2026-06-17T11:05:20+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:07:13+00:00",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "paper_link": "http://arxiv.org/abs/1904.11622v3",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "2019-11-30T21:52:18Z",
+        "source_urls": [
+          "http://arxiv.org/abs/1904.11622v3"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "title": "Scene Graph Prediction with Limited Labels",
+        "updated_at": "2026-06-17T11:07:13+00:00",
+        "url_or_doi": "http://arxiv.org/abs/1904.11622v3",
+        "validation_level": "L1",
+        "variants": {
+          "VER-79EF3135F1EB": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T10:49:59+00:00",
+            "extracted_at": "2026-06-17T10:49:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Visual knowledge bases such as Visual Genome power numerous applications in computer vision, including visual question answering and captioning, but suffer from sparse, incomplete relationships. All scene graph models to date are limited to training on a small set of visual relationships that have thousands of training labels each. Hiring human annotators is expensive, and using textual knowledge base completion methods are incompatible with visual data. In this paper, we introduce a semi-supervised method that assigns probabilistic relationship labels to a large number of unlabeled images using few labeled examples. We analyze visual relationships to suggest two types of image-agnostic features that are used to generate noisy heuristics, whose outputs are aggregated using a factor graph-based generative model. With as few as 10 labeled examples per relationship, the generative model creates enough training data to train any existing state-of-the-art scene graph model. We demonstrate that our method outperforms all baseline approaches on scene graph prediction by 5.16 recall@100 for PREDCLS. In our limited label setting, we define a complexity metric for relationships that serves as an indicator (R^2 = 0.778) for conditions under which our method succeeds over transfer learning, the de-facto approach for training with limited labels.",
+              "authors": [
+                "Vincent S. Chen",
+                "Paroma Varma",
+                "Ranjay Krishna",
+                "Michael Bernstein",
+                "Christopher Re",
+                "Li Fei-Fei"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/1904.11622v3",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2019-11-30T21:52:18Z",
+              "source_urls": [
+                "http://arxiv.org/abs/1904.11622v3"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Scene Graph Prediction with Limited Labels",
+              "url_or_doi": "http://arxiv.org/abs/1904.11622v3",
+              "validation_level": "L1",
+              "venue_or_source": "ICCV 2019",
+              "year": 2019
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "http://arxiv.org/abs/1904.11622v3"
+            ],
+            "version_id": "VER-79EF3135F1EB"
+          },
+          "VER-A5351AA31A7D": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T11:05:20+00:00",
+            "extracted_at": "2026-06-17T11:07:13+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Visual knowledge bases such as Visual Genome power numerous applications in computer vision, including visual question answering and captioning, but suffer from sparse, incomplete relationships. All scene graph models to date are limited to training on a small set of visual relationships that have thousands of training labels each. Hiring human annotators is expensive, and using textual knowledge base completion methods are incompatible with visual data. In this paper, we introduce a semi-supervised method that assigns probabilistic relationship labels to a large number of unlabeled images using few labeled examples. We analyze visual relationships to suggest two types of image-agnostic features that are used to generate noisy heuristics, whose outputs are aggregated using a factor graph-based generative model. With as few as 10 labeled examples per relationship, the generative model creates enough training data to train any existing state-of-the-art scene graph model. We demonstrate that our method outperforms all baseline approaches on scene graph prediction by 5.16 recall@100 for PREDCLS. In our limited label setting, we define a complexity metric for relationships that serves as an indicator (R^2 = 0.778) for conditions under which our method succeeds over transfer learning, the de-facto approach for training with limited labels.",
+              "authors": [
+                "Vincent S. Chen",
+                "Paroma Varma",
+                "Ranjay Krishna",
+                "Michael Bernstein",
+                "Christopher Re",
+                "Li Fei-Fei"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/1904.11622v3",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2019-11-30T21:52:18Z",
+              "source_urls": [
+                "http://arxiv.org/abs/1904.11622v3"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Scene Graph Prediction with Limited Labels",
+              "url_or_doi": "http://arxiv.org/abs/1904.11622v3",
+              "validation_level": "L1",
+              "venue_or_source": "ICCV 2019",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1904.11622v3"
+            ],
+            "version_id": "VER-A5351AA31A7D"
+          }
+        },
+        "venue_or_source": "ICCV 2019",
+        "work_id": "W-1026C3EA6BD2",
+        "year": 2019
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "",
+      "source_record_id": "W-1026C3EA6BD2",
+      "source_updated_at": "2019-11-30T21:52:18Z",
+      "title": "Scene Graph Prediction with Limited Labels",
+      "title_hash": "c9848b2dcd182856",
+      "work_id": "W-D455872A754C",
+      "work_version_id": "WV-7077F5E08D81"
+    }
+  ]
+}
