@@ -1,0 +1,391 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "2d media synthesis as a proxy for 3d consistency 2d media synthesis as a proxy for 3d consistency when 3d scene synthesis is reframed as an image or video synthesis problem using advanced diffusion models the system gains the ability to bridge the gap between high photorealism and spatial structure ",
+      "canonical_label": "2D Media Synthesis as a Proxy for 3D Consistency",
+      "concept_id": "P-D21F7120FEB4",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "When 3D scene synthesis is reframed as an image or video synthesis problem using advanced diffusion models, the system gains the ability to bridge the gap between high photorealism and spatial structure, provided that view consistency mechanisms are integrated into the generation pipeline.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-8F714A72E581",
+        "argument": "When 3D scene synthesis is reframed as an image or video synthesis problem using advanced diffusion models, the system gains the ability to bridge the gap between high photorealism and spatial structure, provided that view consistency mechanisms are integrated into the generation pipeline.",
+        "benchmarks": [],
+        "canonical_id": "P-9A05FD6ABF8D",
+        "canonical_key": "when 3d scene synthesis is reframed as image or video synthesis problem using advanced diffusion models system gains ability to bridge gap between high photorealism and spatial str",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T11:19:52+00:00",
+        "discussion": "The principle captures the strategic pivot where the difficulty of direct 3D geometry generation is bypassed by leveraging the mature capabilities of 2D generative models. The logic suggests that by treating 3D scene creation as a multi-view image or temporal video generation task, systems can inherit the high-fidelity textures and lighting effects mastered by 2D diffusion models. However, the principle implies a critical dependency: the success of this proxy approach hinges on maintaining 'view consistency,' ensuring that the synthesized 2D projections cohere into a valid spatially structured 3D environment suitable for navigation and interaction.",
+        "entered_at": "2026-06-17T11:19:52+00:00",
+        "evidence": "The abstract notes that 'Recent advances like diffusion models bridge 3D scene synthesis and photorealism by reframing generation as image or video synthesis problems,' while the introduction emphasizes the goal of creating 'spatially structured... and visually realistic' environments.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:20:00+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "2D Media Synthesis as a Proxy for 3D Consistency",
+        "performance": [],
+        "principle_id": "P-9A05FD6ABF8D",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2505.05474v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2505.05474v1"
+        ],
+        "source_paper_title": "3D Scene Generation: A Survey",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-DDC13E424891"
+        ],
+        "source_work_title": "3D Scene Generation: A Survey",
+        "source_works": [
+          "W-DDC13E424891"
+        ],
+        "updated_at": "2026-06-17T11:20:00+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-8F714A72E581": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T11:19:52+00:00",
+            "extracted_at": "2026-06-17T11:20:00+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "When 3D scene synthesis is reframed as an image or video synthesis problem using advanced diffusion models, the system gains the ability to bridge the gap between high photorealism and spatial structure, provided that view consistency mechanisms are integrated into the generation pipeline.",
+              "argument": "When 3D scene synthesis is reframed as an image or video synthesis problem using advanced diffusion models, the system gains the ability to bridge the gap between high photorealism and spatial structure, provided that view consistency mechanisms are integrated into the generation pipeline.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle captures the strategic pivot where the difficulty of direct 3D geometry generation is bypassed by leveraging the mature capabilities of 2D generative models. The logic suggests that by treating 3D scene creation as a multi-view image or temporal video generation task, systems can inherit the high-fidelity textures and lighting effects mastered by 2D diffusion models. However, the principle implies a critical dependency: the success of this proxy approach hinges on maintaining 'view consistency,' ensuring that the synthesized 2D projections cohere into a valid spatially structured 3D environment suitable for navigation and interaction.",
+              "evidence": "The abstract notes that 'Recent advances like diffusion models bridge 3D scene synthesis and photorealism by reframing generation as image or video synthesis problems,' while the introduction emphasizes the goal of creating 'spatially structured... and visually realistic' environments.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "2D Media Synthesis as a Proxy for 3D Consistency",
+              "performance": [],
+              "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+              "source_paper_link": "http://arxiv.org/abs/2505.05474v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2505.05474v1"
+              ],
+              "source_paper_title": "3D Scene Generation: A Survey",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-8934B5356700"
+              ],
+              "source_work_title": "3D Scene Generation: A Survey",
+              "source_works": [
+                "W-8934B5356700"
+              ],
+              "venue_or_source": "arXiv",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2505.05474v1"
+            ],
+            "version_id": "VER-8F714A72E581"
+          }
+        },
+        "venue_or_source": "arXiv",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-DDC13E424891"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:05+00:00",
+        "updated_at": "2026-06-17T11:22:05+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-220D796E3C1A",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-9B2D6FAC10C0",
+  "created_at": "2026-06-17T11:22:05+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "The abstract notes that 'Recent advances like diffusion models bridge 3D scene synthesis and photorealism by reframing generation as image or video synthesis problems,' while the introduction emphasizes the goal of creating 'spatially structured... and visually realistic' environments.",
+      "concept_id": "P-D21F7120FEB4",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T11:22:05+00:00",
+      "evidence_id": "EV-D3AC1615A0B2",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The abstract notes that 'Recent advances like diffusion models bridge 3D scene synthesis and photorealism by reframing generation as image or video synthesis problems,' while the introduction emphasizes the goal of creating 'spatially structured... and visually realistic' environments.",
+      "work_id": "W-DDC13E424891",
+      "work_version_id": "WV-343A814FBD84"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-17T11:22:05+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-17T11:21:59+00:00",
+      "extraction_run_id": "XRUN-774D6EBE9100",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 0,
+        "existed_ideas": 0,
+        "principles": 1,
+        "takeaway_messages": 0,
+        "total": 1
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-DDC13E424891",
+      "work_version_id": "WV-343A814FBD84"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "",
+    "secret_exposed_to_browser": false,
+    "warning": ""
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 0,
+        "principle": 1
+      },
+      "title": "3D Scene Generation: A Survey",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-DDC13E424891"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "2505.05474",
+        "authors": [
+          "Beichen Wen",
+          "Haozhe Xie",
+          "Zhaoxi Chen",
+          "Fangzhou Hong",
+          "Ziwei Liu"
+        ],
+        "canonical_title": "3D Scene Generation: A Survey",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "http://arxiv.org/abs/2505.05474v1"
+        ],
+        "title_hash": "9154734711664aea",
+        "title_norm": "3d scene generation a survey",
+        "venue_or_source": "arXiv",
+        "year": 2025
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "2025-05-08T17:59:54Z",
+        "title_hash": "9154734711664aea"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:21:59+00:00",
+        "updated_at": "2026-06-17T11:21:59+00:00"
+      },
+      "work_id": "W-DDC13E424891"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": "3D scene generation seeks to synthesize spatially structured, semantically meaningful, and photorealistic environments for applications such as immersive media, robotics, autonomous driving, and embodied AI. Early methods based on procedural rules offered scalability but limited diversity. Recent advances in deep generative models (e.g., GANs, diffusion models) and 3D representations (e.g., NeRF, 3D Gaussians) have enabled the learning of real-world scene distributions, improving fidelity, diversity, and view consistency. Recent advances like diffusion models bridge 3D scene synthesis and photorealism by reframing generation as image or video synthesis problems. This survey provides a systematic overview of state-of-the-art approaches, organizing them into four paradigms: procedural generation, neural 3D-based generation, image-based generation, and video-based generation. We analyze their technical foundations, trade-offs, and representative results, and review commonly used datasets, evaluation protocols, and downstream applications. We conclude by discussing key challenges in generation capacity, 3D representation, data and annotations, and evaluation, and outline promising directions including higher fidelity, physics-aware and interactive generation, and unified perception-generation models. This review organizes recent advances in 3D scene generation and highlights promising directions at the intersection of generative AI, 3D vision, and embodied intelligence. To track ongoing developments, we maintain an up-to-date project page: https://github.com/hzxie/Awesome-3D-Scene-Generation.",
+      "abstract_hash": "27c70b749c923340",
+      "content_hash": "3b0889be94a5bc17",
+      "created_at": "2026-06-17T11:21:59+00:00",
+      "metadata": {
+        "abstract": "3D scene generation seeks to synthesize spatially structured, semantically meaningful, and photorealistic environments for applications such as immersive media, robotics, autonomous driving, and embodied AI. Early methods based on procedural rules offered scalability but limited diversity. Recent advances in deep generative models (e.g., GANs, diffusion models) and 3D representations (e.g., NeRF, 3D Gaussians) have enabled the learning of real-world scene distributions, improving fidelity, diversity, and view consistency. Recent advances like diffusion models bridge 3D scene synthesis and photorealism by reframing generation as image or video synthesis problems. This survey provides a systematic overview of state-of-the-art approaches, organizing them into four paradigms: procedural generation, neural 3D-based generation, image-based generation, and video-based generation. We analyze their technical foundations, trade-offs, and representative results, and review commonly used datasets, evaluation protocols, and downstream applications. We conclude by discussing key challenges in generation capacity, 3D representation, data and annotations, and evaluation, and outline promising directions including higher fidelity, physics-aware and interactive generation, and unified perception-generation models. This review organizes recent advances in 3D scene generation and highlights promising directions at the intersection of generative AI, 3D vision, and embodied intelligence. To track ongoing developments, we maintain an up-to-date project page: https://github.com/hzxie/Awesome-3D-Scene-Generation.",
+        "active_version_id": "VER-94CFF9BAE640",
+        "authors": [
+          "Beichen Wen",
+          "Haozhe Xie",
+          "Zhaoxi Chen",
+          "Fangzhou Hong",
+          "Ziwei Liu"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-8934B5356700",
+        "canonical_key": "3d scene generation a survey",
+        "community_signals": {},
+        "confidence_score": 0.62,
+        "created_at": "2026-06-17T10:49:59+00:00",
+        "entered_at": "2026-06-17T11:19:18+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:20:00+00:00",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "paper_link": "http://arxiv.org/abs/2505.05474v1",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "2025-05-08T17:59:54Z",
+        "source_urls": [
+          "http://arxiv.org/abs/2505.05474v1"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "title": "3D Scene Generation: A Survey",
+        "updated_at": "2026-06-17T11:20:00+00:00",
+        "url_or_doi": "http://arxiv.org/abs/2505.05474v1",
+        "validation_level": "L1",
+        "variants": {
+          "VER-6D28CD108C0E": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T10:49:59+00:00",
+            "extracted_at": "2026-06-17T10:49:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "3D scene generation seeks to synthesize spatially structured, semantically meaningful, and photorealistic environments for applications such as immersive media, robotics, autonomous driving, and embodied AI. Early methods based on procedural rules offered scalability but limited diversity. Recent advances in deep generative models (e.g., GANs, diffusion models) and 3D representations (e.g., NeRF, 3D Gaussians) have enabled the learning of real-world scene distributions, improving fidelity, diversity, and view consistency. Recent advances like diffusion models bridge 3D scene synthesis and photorealism by reframing generation as image or video synthesis problems. This survey provides a systematic overview of state-of-the-art approaches, organizing them into four paradigms: procedural generation, neural 3D-based generation, image-based generation, and video-based generation. We analyze their technical foundations, trade-offs, and representative results, and review commonly used datasets, evaluation protocols, and downstream applications. We conclude by discussing key challenges in generation capacity, 3D representation, data and annotations, and evaluation, and outline promising directions including higher fidelity, physics-aware and interactive generation, and unified perception-generation models. This review organizes recent advances in 3D scene generation and highlights promising directions at the intersection of generative AI, 3D vision, and embodied intelligence. To track ongoing developments, we maintain an up-to-date project page: https://github.com/hzxie/Awesome-3D-Scene-Generation.",
+              "authors": [
+                "Beichen Wen",
+                "Haozhe Xie",
+                "Zhaoxi Chen",
+                "Fangzhou Hong",
+                "Ziwei Liu"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/2505.05474v1",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2025-05-08T17:59:54Z",
+              "source_urls": [
+                "http://arxiv.org/abs/2505.05474v1"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "3D Scene Generation: A Survey",
+              "url_or_doi": "http://arxiv.org/abs/2505.05474v1",
+              "validation_level": "L1",
+              "venue_or_source": "arXiv",
+              "year": 2025
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "http://arxiv.org/abs/2505.05474v1"
+            ],
+            "version_id": "VER-6D28CD108C0E"
+          },
+          "VER-94CFF9BAE640": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T11:19:18+00:00",
+            "extracted_at": "2026-06-17T11:20:00+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract": "3D scene generation seeks to synthesize spatially structured, semantically meaningful, and photorealistic environments for applications such as immersive media, robotics, autonomous driving, and embodied AI. Early methods based on procedural rules offered scalability but limited diversity. Recent advances in deep generative models (e.g., GANs, diffusion models) and 3D representations (e.g., NeRF, 3D Gaussians) have enabled the learning of real-world scene distributions, improving fidelity, diversity, and view consistency. Recent advances like diffusion models bridge 3D scene synthesis and photorealism by reframing generation as image or video synthesis problems. This survey provides a systematic overview of state-of-the-art approaches, organizing them into four paradigms: procedural generation, neural 3D-based generation, image-based generation, and video-based generation. We analyze their technical foundations, trade-offs, and representative results, and review commonly used datasets, evaluation protocols, and downstream applications. We conclude by discussing key challenges in generation capacity, 3D representation, data and annotations, and evaluation, and outline promising directions including higher fidelity, physics-aware and interactive generation, and unified perception-generation models. This review organizes recent advances in 3D scene generation and highlights promising directions at the intersection of generative AI, 3D vision, and embodied intelligence. To track ongoing developments, we maintain an up-to-date project page: https://github.com/hzxie/Awesome-3D-Scene-Generation.",
+              "authors": [
+                "Beichen Wen",
+                "Haozhe Xie",
+                "Zhaoxi Chen",
+                "Fangzhou Hong",
+                "Ziwei Liu"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/2505.05474v1",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2025-05-08T17:59:54Z",
+              "source_urls": [
+                "http://arxiv.org/abs/2505.05474v1"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "3D Scene Generation: A Survey",
+              "url_or_doi": "http://arxiv.org/abs/2505.05474v1",
+              "validation_level": "L1",
+              "venue_or_source": "arXiv",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2505.05474v1"
+            ],
+            "version_id": "VER-94CFF9BAE640"
+          }
+        },
+        "venue_or_source": "arXiv",
+        "work_id": "W-8934B5356700",
+        "year": 2025
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "",
+      "source_record_id": "W-8934B5356700",
+      "source_updated_at": "2025-05-08T17:59:54Z",
+      "title": "3D Scene Generation: A Survey",
+      "title_hash": "9154734711664aea",
+      "work_id": "W-DDC13E424891",
+      "work_version_id": "WV-343A814FBD84"
+    }
+  ]
+}
