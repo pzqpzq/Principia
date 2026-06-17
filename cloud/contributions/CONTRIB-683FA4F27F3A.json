@@ -1,0 +1,1420 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "natural scenes dataset nsd natural scenes dataset nsd natural scenes dataset nsd w 50643f2a170f",
+      "canonical_label": "Natural Scenes Dataset (NSD",
+      "concept_id": "B-395D7EF814E7",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-826CEE846104",
+        "benchmark_id": "B-5C692ACA76A0",
+        "benchmark_name": "Natural Scenes Dataset (NSD",
+        "benchmarks": [],
+        "canonical_id": "B-5C692ACA76A0",
+        "canonical_key": "natural scenes dataset nsd",
+        "confidence_score": 0.58,
+        "created_at": "2026-06-17T11:04:56+00:00",
+        "data_form": "fMRI volumes (7T) paired with natural scene images",
+        "dataset": "Natural Scenes Dataset (NSD",
+        "description": "Natural Scenes Dataset (NSD appears in local source evidence. Add official metadata when you curate this project.",
+        "entered_at": "2026-06-17T11:04:56+00:00",
+        "evidence": "The text explicitly states: 'On the publicly available Natural Scenes Dataset benchmark, our method outperforms previous models both qualitatively and quantitatively.'",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:04:56+00:00",
+        "metric": "Qualitative visual assessment",
+        "metrics": [
+          "Qualitative visual assessment",
+          "Quantitative reconstruction metrics (specific values not detailed in excerpt but implied by 'outperforms')"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://naturalscenesdataset.org",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Large-scale dataset with high-resolution fMRI and diverse natural images",
+        "source": "local extraction",
+        "source_paper_link": "https://doi.org/10.1038/s41598-023-42891-8",
+        "source_paper_links": [
+          "https://doi.org/10.1038/s41598-023-42891-8"
+        ],
+        "source_paper_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-50643F2A170F"
+        ],
+        "source_work_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+        "source_works": [
+          "W-50643F2A170F"
+        ],
+        "task": "Reconstruction of perceived natural images from fMRI signals",
+        "updated_at": "2026-06-17T11:04:56+00:00",
+        "variants": {
+          "VER-826CEE846104": {
+            "confidence_score": 0.58,
+            "entered_at": "2026-06-17T11:04:56+00:00",
+            "extracted_at": "2026-06-17T11:04:56+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "Natural Scenes Dataset (NSD",
+              "benchmarks": [],
+              "confidence_score": 0.58,
+              "data_form": "fMRI volumes (7T) paired with natural scene images",
+              "dataset": "Natural Scenes Dataset (NSD",
+              "description": "Natural Scenes Dataset (NSD appears in local source evidence. Add official metadata when you curate this project.",
+              "evidence": "The text explicitly states: 'On the publicly available Natural Scenes Dataset benchmark, our method outperforms previous models both qualitatively and quantitatively.'",
+              "evidence_items": [],
+              "metric": "Qualitative visual assessment",
+              "metrics": [
+                "Qualitative visual assessment",
+                "Quantitative reconstruction metrics (specific values not detailed in excerpt but implied by 'outperforms')"
+              ],
+              "needs_review": false,
+              "official_url": "https://naturalscenesdataset.org",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Large-scale dataset with high-resolution fMRI and diverse natural images",
+              "source": "local extraction",
+              "source_paper_link": "https://doi.org/10.1038/s41598-023-42891-8",
+              "source_paper_links": [
+                "https://doi.org/10.1038/s41598-023-42891-8"
+              ],
+              "source_paper_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E115EFD50D53"
+              ],
+              "source_work_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+              "source_works": [],
+              "task": "Reconstruction of perceived natural images from fMRI signals",
+              "venue_or_source": "Scientific Reports",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1038/s41598-023-42891-8",
+              "https://naturalscenesdataset.org"
+            ],
+            "version_id": "VER-826CEE846104"
+          }
+        },
+        "venue_or_source": "Scientific Reports",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.58,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-50643F2A170F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:24:39+00:00",
+        "updated_at": "2026-06-17T11:24:39+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-F573517ECCC3",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "imagenet imagenet imagenet w 50643f2a170f",
+      "canonical_label": "ImageNet",
+      "concept_id": "B-5EC146F24CE1",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-31F3EC4F1976",
+        "benchmark_id": "B-3F4FF5D20CF8",
+        "benchmark_name": "ImageNet",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-3F4FF5D20CF8",
+        "canonical_key": "imagenet",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T11:03:49+00:00",
+        "data_form": "Labeled natural images organized by object category; standard classification labels and train/validation splits.",
+        "dataset": "ImageNet",
+        "description": "Large-scale image classification benchmark commonly used to evaluate visual representation transfer and adaptation.",
+        "entered_at": "2026-06-17T11:03:49+00:00",
+        "evidence": "{\"benchmark_id\": \"B-7593FF69197B\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-64A419F0B519\", \"task\": \"images limited scene views\", \"dataset\": \"ImageNet\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DeepVisInterests: CNN-Ontology Prediction of Users Interest...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:19:06+00:00",
+        "extractor": "deterministic",
+        "metric": "mAP",
+        "metrics": [
+          "primary reported metric",
+          "accuracy",
+          "mAP",
+          "memory",
+          "F1"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://www.image-net.org/",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Approximately 1.2M training images and 50K validation images in the ILSVRC classification setup.",
+        "source": "ImageNet / ILSVRC",
+        "source_paper_link": "http://arxiv.org/abs/1811.10920v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1905.03743v1",
+          "https://doi.org/10.1038/s41598-023-42891-8",
+          "http://arxiv.org/abs/2308.11356v2",
+          "http://arxiv.org/abs/2106.11952v2",
+          "http://arxiv.org/abs/1812.10889v2",
+          "http://arxiv.org/abs/2206.07326v2",
+          "http://arxiv.org/abs/2203.13131v1",
+          "https://doi.org/10.1186/s40537-019-0197-0",
+          "http://arxiv.org/abs/2211.10026v1",
+          "http://arxiv.org/abs/1811.10920v1"
+        ],
+        "source_paper_title": "DeepVisInterests: CNN-Ontology Prediction of Users Interests from Social Images",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-50643F2A170F"
+        ],
+        "source_work_title": "DeepVisInterests: CNN-Ontology Prediction of Users Interests from Social Images",
+        "source_works": [
+          "W-50643F2A170F"
+        ],
+        "task": "images limited scene views",
+        "updated_at": "2026-06-17T11:19:06+00:00",
+        "variants": {
+          "VER-31F3EC4F1976": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T11:03:49+00:00",
+            "extracted_at": "2026-06-17T11:19:06+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "ImageNet",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Labeled natural images organized by object category; standard classification labels and train/validation splits.",
+              "dataset": "ImageNet",
+              "description": "Large-scale image classification benchmark commonly used to evaluate visual representation transfer and adaptation.",
+              "evidence": "{\"benchmark_id\": \"B-7593FF69197B\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-64A419F0B519\", \"task\": \"images limited scene views\", \"dataset\": \"ImageNet\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DeepVisInterests: CNN-Ontology Prediction of Users Interest...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "mAP",
+              "metrics": [
+                "primary reported metric",
+                "accuracy",
+                "mAP",
+                "memory",
+                "F1"
+              ],
+              "needs_review": false,
+              "official_url": "https://www.image-net.org/",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Approximately 1.2M training images and 50K validation images in the ILSVRC classification setup.",
+              "source": "ImageNet / ILSVRC",
+              "source_paper_link": "http://arxiv.org/abs/1811.10920v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1905.03743v1",
+                "https://doi.org/10.1038/s41598-023-42891-8",
+                "http://arxiv.org/abs/2308.11356v2",
+                "http://arxiv.org/abs/2106.11952v2",
+                "http://arxiv.org/abs/1812.10889v2",
+                "http://arxiv.org/abs/2206.07326v2",
+                "http://arxiv.org/abs/2203.13131v1",
+                "https://doi.org/10.1186/s40537-019-0197-0",
+                "http://arxiv.org/abs/2211.10026v1",
+                "http://arxiv.org/abs/1811.10920v1"
+              ],
+              "source_paper_title": "DeepVisInterests: CNN-Ontology Prediction of Users Interests from Social Images",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7B546F57F4BE",
+                "W-E115EFD50D53",
+                "W-46029CE9D5D6",
+                "W-6E21A2CF36E4",
+                "W-7FDF3A887A50",
+                "W-1A4683B1260D",
+                "W-F8566C0F53EF",
+                "W-F14A5EBB0EC4",
+                "W-B8B762D07593",
+                "W-64A419F0B519"
+              ],
+              "source_work_title": "DeepVisInterests: CNN-Ontology Prediction of Users Interests from Social Images",
+              "source_works": [],
+              "task": "images limited scene views",
+              "venue_or_source": "arXiv",
+              "year": 2018
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1811.10920v1",
+              "https://www.image-net.org/"
+            ],
+            "version_id": "VER-31F3EC4F1976"
+          }
+        },
+        "venue_or_source": "arXiv",
+        "year": 2018
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-50643F2A170F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:24:39+00:00",
+        "updated_at": "2026-06-17T11:24:39+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-146124C7CB9E",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "natural scenes natural scenes natural scenes w 50643f2a170f",
+      "canonical_label": "Natural Scenes",
+      "concept_id": "B-F805ACD38C9C",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-BB5A8A19E165",
+        "benchmark_id": "B-AC58E119F729",
+        "benchmark_name": "Natural Scenes",
+        "benchmarks": [],
+        "canonical_id": "B-AC58E119F729",
+        "canonical_key": "natural scenes",
+        "confidence_score": 0.58,
+        "created_at": "2026-06-17T11:04:56+00:00",
+        "data_form": "fMRI volumes paired with natural scene images",
+        "dataset": "Natural Scenes",
+        "description": "Natural Scenes appears in local source evidence. Add official metadata when you curate this project.",
+        "entered_at": "2026-06-17T11:04:56+00:00",
+        "evidence": "The text explicitly states that on the publicly available Natural Scenes Dataset benchmark, the method outperforms previous models both qualitatively and quantitatively.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:04:56+00:00",
+        "metric": "Qualitative visual assessment",
+        "metrics": [
+          "Qualitative visual assessment",
+          "Quantitative reconstruction metrics"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://naturalscenesdataset.org",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Large-scale dataset with high-resolution fMRI and diverse natural images",
+        "source": "local extraction",
+        "source_paper_link": "https://doi.org/10.1038/s41598-023-42891-8",
+        "source_paper_links": [
+          "https://doi.org/10.1038/s41598-023-42891-8"
+        ],
+        "source_paper_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-50643F2A170F"
+        ],
+        "source_work_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+        "source_works": [
+          "W-50643F2A170F"
+        ],
+        "task": "Reconstruction of perceived natural images from fMRI signals",
+        "updated_at": "2026-06-17T11:04:56+00:00",
+        "variants": {
+          "VER-BB5A8A19E165": {
+            "confidence_score": 0.58,
+            "entered_at": "2026-06-17T11:04:56+00:00",
+            "extracted_at": "2026-06-17T11:04:56+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "Natural Scenes",
+              "benchmarks": [],
+              "confidence_score": 0.58,
+              "data_form": "fMRI volumes paired with natural scene images",
+              "dataset": "Natural Scenes",
+              "description": "Natural Scenes appears in local source evidence. Add official metadata when you curate this project.",
+              "evidence": "The text explicitly states that on the publicly available Natural Scenes Dataset benchmark, the method outperforms previous models both qualitatively and quantitatively.",
+              "evidence_items": [],
+              "metric": "Qualitative visual assessment",
+              "metrics": [
+                "Qualitative visual assessment",
+                "Quantitative reconstruction metrics"
+              ],
+              "needs_review": false,
+              "official_url": "https://naturalscenesdataset.org",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Large-scale dataset with high-resolution fMRI and diverse natural images",
+              "source": "local extraction",
+              "source_paper_link": "https://doi.org/10.1038/s41598-023-42891-8",
+              "source_paper_links": [
+                "https://doi.org/10.1038/s41598-023-42891-8"
+              ],
+              "source_paper_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E115EFD50D53"
+              ],
+              "source_work_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+              "source_works": [],
+              "task": "Reconstruction of perceived natural images from fMRI signals",
+              "venue_or_source": "Scientific Reports",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1038/s41598-023-42891-8",
+              "https://naturalscenesdataset.org"
+            ],
+            "version_id": "VER-BB5A8A19E165"
+          }
+        },
+        "venue_or_source": "Scientific Reports",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.58,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-50643F2A170F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:24:39+00:00",
+        "updated_at": "2026-06-17T11:24:39+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-6B794DAFD004",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "coco coco coco w 50643f2a170f",
+      "canonical_label": "COCO",
+      "concept_id": "B-FE859D67603A",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-ED4A652823AC",
+        "benchmark_id": "B-09F836894FC1",
+        "benchmark_name": "COCO",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-09F836894FC1",
+        "canonical_key": "coco",
+        "confidence_score": 0.32,
+        "created_at": "2026-06-17T11:03:49+00:00",
+        "data_form": "Images with object annotations, segmentations, captions, and task-specific labels.",
+        "dataset": "COCO",
+        "description": "Large-scale image benchmark for detection, segmentation, captioning, and keypoints.",
+        "entered_at": "2026-06-17T11:03:49+00:00",
+        "evidence": "{\"benchmark_id\": \"B-18A3C7AD5F6D\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-0DE8919CF549\", \"task\": \"images limited scene views\", \"dataset\": \"COCO\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"SynthText3D: synthesizing scene text images from 3D...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:19:59+00:00",
+        "extractor": "deterministic",
+        "metric": "primary reported metric",
+        "metrics": [
+          "primary reported metric",
+          "Image generation quality",
+          "accuracy",
+          "mAP",
+          "memory",
+          "mAP (mean Average Precision)",
+          "AP50",
+          "AP75",
+          "PSNR",
+          "SSIM"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "official_url": "https://cocodataset.org/#download",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Hundreds of thousands of labeled images depending on split/task.",
+        "source": "COCO Consortium",
+        "source_paper_link": "https://doi.org/10.1007/s11432-019-2737-0",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1905.03743v1",
+          "http://arxiv.org/abs/1804.01622v1",
+          "https://doi.org/10.1038/s41598-023-42891-8",
+          "http://arxiv.org/abs/1912.07414v5",
+          "http://arxiv.org/abs/2106.11952v2",
+          "http://arxiv.org/abs/1812.10889v2",
+          "http://arxiv.org/abs/2203.13131v1",
+          "http://arxiv.org/abs/2408.14819v1",
+          "http://arxiv.org/abs/2310.14025v1",
+          "https://doi.org/10.1007/s11432-019-2737-0"
+        ],
+        "source_paper_title": "SynthText3D: synthesizing scene text images from 3D virtual worlds",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-50643F2A170F"
+        ],
+        "source_work_title": "SynthText3D: synthesizing scene text images from 3D virtual worlds",
+        "source_works": [
+          "W-50643F2A170F"
+        ],
+        "task": "images limited scene views",
+        "updated_at": "2026-06-17T11:19:59+00:00",
+        "variants": {
+          "VER-ED4A652823AC": {
+            "confidence_score": 0.32,
+            "entered_at": "2026-06-17T11:03:49+00:00",
+            "extracted_at": "2026-06-17T11:19:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "benchmark_name": "COCO",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.32,
+              "data_form": "Images with object annotations, segmentations, captions, and task-specific labels.",
+              "dataset": "COCO",
+              "description": "Large-scale image benchmark for detection, segmentation, captioning, and keypoints.",
+              "evidence": "{\"benchmark_id\": \"B-18A3C7AD5F6D\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-0DE8919CF549\", \"task\": \"images limited scene views\", \"dataset\": \"COCO\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"SynthText3D: synthesizing scene text images from 3D...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "primary reported metric",
+              "metrics": [
+                "primary reported metric",
+                "Image generation quality",
+                "accuracy",
+                "mAP",
+                "memory",
+                "mAP (mean Average Precision)",
+                "AP50",
+                "AP75",
+                "PSNR",
+                "SSIM"
+              ],
+              "needs_review": true,
+              "official_url": "https://cocodataset.org/#download",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Hundreds of thousands of labeled images depending on split/task.",
+              "source": "COCO Consortium",
+              "source_paper_link": "https://doi.org/10.1007/s11432-019-2737-0",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1905.03743v1",
+                "http://arxiv.org/abs/1804.01622v1",
+                "https://doi.org/10.1038/s41598-023-42891-8",
+                "http://arxiv.org/abs/1912.07414v5",
+                "http://arxiv.org/abs/2106.11952v2",
+                "http://arxiv.org/abs/1812.10889v2",
+                "http://arxiv.org/abs/2203.13131v1",
+                "http://arxiv.org/abs/2408.14819v1",
+                "http://arxiv.org/abs/2310.14025v1",
+                "https://doi.org/10.1007/s11432-019-2737-0"
+              ],
+              "source_paper_title": "SynthText3D: synthesizing scene text images from 3D virtual worlds",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7B546F57F4BE",
+                "W-C269F7BBBCB8",
+                "W-E115EFD50D53",
+                "W-A99D60F4394C",
+                "W-6E21A2CF36E4",
+                "W-7FDF3A887A50",
+                "W-F8566C0F53EF",
+                "W-A18A379D7254",
+                "W-26C8A88D0F20",
+                "W-0DE8919CF549"
+              ],
+              "source_work_title": "SynthText3D: synthesizing scene text images from 3D virtual worlds",
+              "source_works": [],
+              "task": "images limited scene views",
+              "venue_or_source": "Science China Information Sciences",
+              "year": 2020
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1007/s11432-019-2737-0",
+              "https://cocodataset.org/#download"
+            ],
+            "version_id": "VER-ED4A652823AC"
+          }
+        },
+        "venue_or_source": "Science China Information Sciences",
+        "year": 2020
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.32,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-50643F2A170F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:24:39+00:00",
+        "updated_at": "2026-06-17T11:24:39+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-D3595CA369B7",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "hierarchical decoupling of structural and semantic priors hierarchical decoupling of structural and semantic priors if a generative decoding task involves high dimensional noisy inputs then separating the recovery of low level structural layouts from high level semantic textures into distinct cascad",
+      "canonical_label": "Hierarchical Decoupling of Structural and Semantic Priors",
+      "concept_id": "P-45ACD9D3C034",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "If a generative decoding task involves high-dimensional noisy inputs, then separating the recovery of low-level structural layouts from high-level semantic textures into distinct cascaded stages yields higher fidelity than end-to-end generation.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-ED1F106B639F",
+        "argument": "If a generative decoding task involves high-dimensional noisy inputs, then separating the recovery of low-level structural layouts from high-level semantic textures into distinct cascaded stages yields higher fidelity than end-to-end generation.",
+        "benchmarks": [],
+        "canonical_id": "P-45915651593B",
+        "canonical_key": "if generative decoding task involves high dimensional noisy inputs then separating recovery of low level structural layouts from high level semantic textures into distinct cascaded",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T11:04:53+00:00",
+        "discussion": "The principle addresses the limitation of previous models that failed to simultaneously reconstruct low-level properties and high-level semantics for complex scenes. By isolating the structural estimation in the first stage, the system provides a robust geometric prior that guides the subsequent diffusion process. This prevents the generative model from hallucinating incorrect global structures while allowing it to focus computational capacity on refining textures and semantic details based on the predicted embeddings.",
+        "entered_at": "2026-06-17T11:04:53+00:00",
+        "evidence": "The text describes a 'two-stage scene reconstruction framework' where the first stage uses a VDVAE to capture 'low-level properties and overall layout,' and the second stage uses a latent diffusion model conditioned on multimodal features to generate the final image.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:04:55+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Hierarchical Decoupling of Structural and Semantic Priors",
+        "performance": [],
+        "principle_id": "P-45915651593B",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+        "provider": "siliconflow",
+        "source_paper_link": "https://doi.org/10.1038/s41598-023-42891-8",
+        "source_paper_links": [
+          "https://doi.org/10.1038/s41598-023-42891-8"
+        ],
+        "source_paper_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-50643F2A170F"
+        ],
+        "source_work_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+        "source_works": [
+          "W-50643F2A170F"
+        ],
+        "updated_at": "2026-06-17T11:04:55+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-ED1F106B639F": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T11:04:53+00:00",
+            "extracted_at": "2026-06-17T11:04:55+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "If a generative decoding task involves high-dimensional noisy inputs, then separating the recovery of low-level structural layouts from high-level semantic textures into distinct cascaded stages yields higher fidelity than end-to-end generation.",
+              "argument": "If a generative decoding task involves high-dimensional noisy inputs, then separating the recovery of low-level structural layouts from high-level semantic textures into distinct cascaded stages yields higher fidelity than end-to-end generation.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle addresses the limitation of previous models that failed to simultaneously reconstruct low-level properties and high-level semantics for complex scenes. By isolating the structural estimation in the first stage, the system provides a robust geometric prior that guides the subsequent diffusion process. This prevents the generative model from hallucinating incorrect global structures while allowing it to focus computational capacity on refining textures and semantic details based on the predicted embeddings.",
+              "evidence": "The text describes a 'two-stage scene reconstruction framework' where the first stage uses a VDVAE to capture 'low-level properties and overall layout,' and the second stage uses a latent diffusion model conditioned on multimodal features to generate the final image.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Hierarchical Decoupling of Structural and Semantic Priors",
+              "performance": [],
+              "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+              "source_paper_link": "https://doi.org/10.1038/s41598-023-42891-8",
+              "source_paper_links": [
+                "https://doi.org/10.1038/s41598-023-42891-8"
+              ],
+              "source_paper_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E115EFD50D53"
+              ],
+              "source_work_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+              "source_works": [
+                "W-E115EFD50D53"
+              ],
+              "venue_or_source": "Scientific Reports",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1038/s41598-023-42891-8"
+            ],
+            "version_id": "VER-ED1F106B639F"
+          }
+        },
+        "venue_or_source": "Scientific Reports",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-50643F2A170F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:24:39+00:00",
+        "updated_at": "2026-06-17T11:24:39+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-1F1EDB4B2A6F",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "multimodal conditioning for diffusion guidance multimodal conditioning for diffusion guidance when conditioning a latent diffusion model on neural data combining predicted visual layouts with predicted text and image embeddings ensures alignment with both spatial structure and categorical semantics ",
+      "canonical_label": "Multimodal Conditioning for Diffusion Guidance",
+      "concept_id": "P-F8A38F6A4BD4",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "When conditioning a latent diffusion model on neural data, combining predicted visual layouts with predicted text and image embeddings ensures alignment with both spatial structure and categorical semantics.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-FA14FD0EC909",
+        "argument": "When conditioning a latent diffusion model on neural data, combining predicted visual layouts with predicted text and image embeddings ensures alignment with both spatial structure and categorical semantics.",
+        "benchmarks": [],
+        "canonical_id": "P-53EF95E90AC8",
+        "canonical_key": "when conditioning latent diffusion model on neural data combining predicted visual layouts with predicted text and image embeddings ensures alignment with both spatial structure an",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T11:04:53+00:00",
+        "discussion": "Relying solely on visual features from fMRI may result in category errors or semantic drift. By explicitly predicting and injecting CLIP-based text and image embeddings into the diffusion process, the model leverages the semantic knowledge embedded in large-scale pre-trained models. This multimodal conditioning acts as a regularizer, ensuring that the generated high-frequency details are consistent with the object categories and scene descriptions implied by the neural activity.",
+        "entered_at": "2026-06-17T11:04:53+00:00",
+        "evidence": "The methodology specifies using an 'image-to-image framework of a latent diffusion model... conditioned on predicted multimodal (text and visual) features' alongside the coarse reconstruction from the first stage.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:04:55+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Multimodal Conditioning for Diffusion Guidance",
+        "performance": [],
+        "principle_id": "P-53EF95E90AC8",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+        "provider": "siliconflow",
+        "source_paper_link": "https://doi.org/10.1038/s41598-023-42891-8",
+        "source_paper_links": [
+          "https://doi.org/10.1038/s41598-023-42891-8"
+        ],
+        "source_paper_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-50643F2A170F"
+        ],
+        "source_work_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+        "source_works": [
+          "W-50643F2A170F"
+        ],
+        "updated_at": "2026-06-17T11:04:55+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-FA14FD0EC909": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T11:04:53+00:00",
+            "extracted_at": "2026-06-17T11:04:55+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "When conditioning a latent diffusion model on neural data, combining predicted visual layouts with predicted text and image embeddings ensures alignment with both spatial structure and categorical semantics.",
+              "argument": "When conditioning a latent diffusion model on neural data, combining predicted visual layouts with predicted text and image embeddings ensures alignment with both spatial structure and categorical semantics.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "Relying solely on visual features from fMRI may result in category errors or semantic drift. By explicitly predicting and injecting CLIP-based text and image embeddings into the diffusion process, the model leverages the semantic knowledge embedded in large-scale pre-trained models. This multimodal conditioning acts as a regularizer, ensuring that the generated high-frequency details are consistent with the object categories and scene descriptions implied by the neural activity.",
+              "evidence": "The methodology specifies using an 'image-to-image framework of a latent diffusion model... conditioned on predicted multimodal (text and visual) features' alongside the coarse reconstruction from the first stage.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Multimodal Conditioning for Diffusion Guidance",
+              "performance": [],
+              "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+              "source_paper_link": "https://doi.org/10.1038/s41598-023-42891-8",
+              "source_paper_links": [
+                "https://doi.org/10.1038/s41598-023-42891-8"
+              ],
+              "source_paper_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E115EFD50D53"
+              ],
+              "source_work_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+              "source_works": [
+                "W-E115EFD50D53"
+              ],
+              "venue_or_source": "Scientific Reports",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1038/s41598-023-42891-8"
+            ],
+            "version_id": "VER-FA14FD0EC909"
+          }
+        },
+        "venue_or_source": "Scientific Reports",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-50643F2A170F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:24:39+00:00",
+        "updated_at": "2026-06-17T11:24:39+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-0A12AF58253A",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "superior performance of latent diffusion over previous generative models in fmri decoding superior performance of latent diffusion over previous generative models in fmri decoding the proposed two stage framework utilizing latent diffusion outperforms previous vae and gan based models in both qualit",
+      "canonical_label": "Superior Performance of Latent Diffusion over Previous Generative Models in fMRI Decoding",
+      "concept_id": "TM-2965EC783613",
+      "concept_type": "takeaway_message",
+      "payload": {
+        "active_version_id": "VER-94430BA6C6BF",
+        "benchmarks": [],
+        "canonical_id": "TM-7D0DC885E8BA",
+        "canonical_key": "proposed two stage framework utilizing latent diffusion outperforms previous vae and gan based models in both qualitative visual fidelity and quantitative metrics on natural scene ",
+        "condition": "The evaluation was conducted on the Natural Scenes Dataset, a large-scale fMRI benchmark involving complex natural images, comparing against prior methods that typically struggled to simultaneously recover low-level details and high-level semantics.",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T11:04:53+00:00",
+        "discussion": "The results indicate that the bottleneck in fMRI reconstruction is often the generative capacity of the decoder rather than the encoding of neural signals. By offloading the image synthesis burden to a powerful, pre-trained diffusion model, the system only needs to learn a relatively low-dimensional mapping from brain activity to the model's conditioning space. This suggests a paradigm shift where decoding research focuses on alignment strategies with foundation models rather than building end-to-end generative architectures.",
+        "entered_at": "2026-06-17T11:04:53+00:00",
+        "evidence": "The abstract and introduction note that on the publicly available Natural Scenes Dataset benchmark, the method outperforms previous models both qualitatively and quantitatively. It further contrasts this with previous studies that typically failed to reconstruct low-level and high-level properties together for complex scene images.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:04:55+00:00",
+        "extraction_method": "llm_extracted",
+        "finding": "The proposed two-stage framework utilizing latent diffusion outperforms previous VAE and GAN-based models in both qualitative visual fidelity and quantitative metrics on natural scene reconstruction tasks.",
+        "main_results": "The proposed two-stage framework utilizing latent diffusion outperforms previous VAE and GAN-based models in both qualitative visual fidelity and quantitative metrics on natural scene reconstruction tasks.",
+        "message_text": "The proposed two-stage framework utilizing latent diffusion outperforms previous VAE and GAN-based models in both qualitative visual fidelity and quantitative metrics on natural scene reconstruction tasks.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "https://doi.org/10.1038/s41598-023-42891-8",
+        "source_paper_links": [
+          "https://doi.org/10.1038/s41598-023-42891-8"
+        ],
+        "source_paper_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-50643F2A170F"
+        ],
+        "source_work_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+        "source_works": [
+          "W-50643F2A170F"
+        ],
+        "title": "Superior Performance of Latent Diffusion over Previous Generative Models in fMRI Decoding",
+        "updated_at": "2026-06-17T11:04:55+00:00",
+        "variants": {
+          "VER-94430BA6C6BF": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T11:04:53+00:00",
+            "extracted_at": "2026-06-17T11:04:55+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "condition": "The evaluation was conducted on the Natural Scenes Dataset, a large-scale fMRI benchmark involving complex natural images, comparing against prior methods that typically struggled to simultaneously recover low-level details and high-level semantics.",
+              "confidence_score": 0.7,
+              "discussion": "The results indicate that the bottleneck in fMRI reconstruction is often the generative capacity of the decoder rather than the encoding of neural signals. By offloading the image synthesis burden to a powerful, pre-trained diffusion model, the system only needs to learn a relatively low-dimensional mapping from brain activity to the model's conditioning space. This suggests a paradigm shift where decoding research focuses on alignment strategies with foundation models rather than building end-to-end generative architectures.",
+              "evidence": "The abstract and introduction note that on the publicly available Natural Scenes Dataset benchmark, the method outperforms previous models both qualitatively and quantitatively. It further contrasts this with previous studies that typically failed to reconstruct low-level and high-level properties together for complex scene images.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "finding": "The proposed two-stage framework utilizing latent diffusion outperforms previous VAE and GAN-based models in both qualitative visual fidelity and quantitative metrics on natural scene reconstruction tasks.",
+              "main_results": "The proposed two-stage framework utilizing latent diffusion outperforms previous VAE and GAN-based models in both qualitative visual fidelity and quantitative metrics on natural scene reconstruction tasks.",
+              "message_text": "The proposed two-stage framework utilizing latent diffusion outperforms previous VAE and GAN-based models in both qualitative visual fidelity and quantitative metrics on natural scene reconstruction tasks.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "https://doi.org/10.1038/s41598-023-42891-8",
+              "source_paper_links": [
+                "https://doi.org/10.1038/s41598-023-42891-8"
+              ],
+              "source_paper_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E115EFD50D53"
+              ],
+              "source_work_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+              "source_works": [],
+              "title": "Superior Performance of Latent Diffusion over Previous Generative Models in fMRI Decoding",
+              "venue_or_source": "Scientific Reports",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1038/s41598-023-42891-8"
+            ],
+            "version_id": "VER-94430BA6C6BF"
+          }
+        },
+        "venue_or_source": "Scientific Reports",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-50643F2A170F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:24:39+00:00",
+        "updated_at": "2026-06-17T11:24:39+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-34B689E2876D",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "two stage hierarchical reconstruction via vdvae and conditional latent diffusion two stage hierarchical reconstruction via vdvae and conditional latent diffusion high fidelity scene reconstruction from fmri signals is achieved by decoupling low level structural layout recovery from high level semant",
+      "canonical_label": "Two-Stage Hierarchical Reconstruction via VDVAE and Conditional Latent Diffusion",
+      "concept_id": "XI-3626753FD59A",
+      "concept_type": "existed_idea",
+      "payload": {
+        "active_version_id": "VER-B5694DD2185C",
+        "benchmarks": [],
+        "canonical_id": "XI-614CD3100859",
+        "canonical_key": "high fidelity scene reconstruction from fmri signals is achieved by decoupling low level structural layout recovery from high level semantic refinement using cascaded generative pi",
+        "confidence_score": 0.72,
+        "core_idea": "High-fidelity scene reconstruction from fMRI signals is achieved by decoupling low-level structural layout recovery from high-level semantic refinement using a cascaded generative pipeline where a Very Deep Variational Autoencoder generates a coarse prior that conditions a latent diffusion model.",
+        "created_at": "2026-06-17T11:04:53+00:00",
+        "discussion": "This hierarchical approach effectively mitigates the difficulty of generating complex scenes directly from noisy, high-dimensional neural data by breaking the problem into structural estimation and textural synthesis. The reliance on a pre-trained diffusion model leverages existing knowledge of natural image statistics, reducing the data requirements for the neural decoding task. However, the fidelity of the final output remains dependent on the accuracy of the initial VDVAE layout; significant errors in the low-level stage may propagate as structural hallucinations in the diffusion stage, although the semantic conditioning helps correct categorical mismatches.",
+        "entered_at": "2026-06-17T11:04:53+00:00",
+        "evidence": "The full text describes a two-stage scene reconstruction framework called Brain-Diffuser where the first stage uses a VDVAE to reconstruct images capturing low-level properties and overall layout from fMRI signals. The second stage employs an image-to-image framework of a latent diffusion model conditioned on predicted multimodal text and visual features to generate the final images.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:04:55+00:00",
+        "extraction_method": "llm_extracted",
+        "idea_text": "High-fidelity scene reconstruction from fMRI signals is achieved by decoupling low-level structural layout recovery from high-level semantic refinement using a cascaded generative pipeline where a Very Deep Variational Autoencoder generates a coarse prior that conditions a latent diffusion model.",
+        "mechanism": "The technical implementation begins with training a VDVAE to encode natural images into a latent space and decode them back, establishing a mapping between fMRI voxels and the VAE's latent variables. During inference, fMRI data predicts these latent variables to generate a coarse reconstruction. Simultaneously, a separate mapping predicts CLIP-based text and image embeddings from the fMRI signals. In the second stage, the coarse image and predicted embeddings condition the reverse diffusion process of a pre-trained latent diffusion model. The model iteratively denoises a latent representation, starting from random noise but heavily biased by the VDVAE output and semantic embeddings, to produce the final high-resolution image.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "https://doi.org/10.1038/s41598-023-42891-8",
+        "source_paper_links": [
+          "https://doi.org/10.1038/s41598-023-42891-8"
+        ],
+        "source_paper_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-50643F2A170F"
+        ],
+        "source_work_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+        "source_works": [
+          "W-50643F2A170F"
+        ],
+        "summary": "High-fidelity scene reconstruction from fMRI signals is achieved by decoupling low-level structural layout recovery from high-level semantic refinement using a cascaded generative pipeline where a Very Deep Variational Autoencoder genera...",
+        "title": "Two-Stage Hierarchical Reconstruction via VDVAE and Conditional Latent Diffusion",
+        "updated_at": "2026-06-17T11:04:55+00:00",
+        "variants": {
+          "VER-B5694DD2185C": {
+            "confidence_score": 0.72,
+            "entered_at": "2026-06-17T11:04:53+00:00",
+            "extracted_at": "2026-06-17T11:04:55+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "confidence_score": 0.72,
+              "core_idea": "High-fidelity scene reconstruction from fMRI signals is achieved by decoupling low-level structural layout recovery from high-level semantic refinement using a cascaded generative pipeline where a Very Deep Variational Autoencoder generates a coarse prior that conditions a latent diffusion model.",
+              "discussion": "This hierarchical approach effectively mitigates the difficulty of generating complex scenes directly from noisy, high-dimensional neural data by breaking the problem into structural estimation and textural synthesis. The reliance on a pre-trained diffusion model leverages existing knowledge of natural image statistics, reducing the data requirements for the neural decoding task. However, the fidelity of the final output remains dependent on the accuracy of the initial VDVAE layout; significant errors in the low-level stage may propagate as structural hallucinations in the diffusion stage, although the semantic conditioning helps correct categorical mismatches.",
+              "evidence": "The full text describes a two-stage scene reconstruction framework called Brain-Diffuser where the first stage uses a VDVAE to reconstruct images capturing low-level properties and overall layout from fMRI signals. The second stage employs an image-to-image framework of a latent diffusion model conditioned on predicted multimodal text and visual features to generate the final images.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "idea_text": "High-fidelity scene reconstruction from fMRI signals is achieved by decoupling low-level structural layout recovery from high-level semantic refinement using a cascaded generative pipeline where a Very Deep Variational Autoencoder generates a coarse prior that conditions a latent diffusion model.",
+              "mechanism": "The technical implementation begins with training a VDVAE to encode natural images into a latent space and decode them back, establishing a mapping between fMRI voxels and the VAE's latent variables. During inference, fMRI data predicts these latent variables to generate a coarse reconstruction. Simultaneously, a separate mapping predicts CLIP-based text and image embeddings from the fMRI signals. In the second stage, the coarse image and predicted embeddings condition the reverse diffusion process of a pre-trained latent diffusion model. The model iteratively denoises a latent representation, starting from random noise but heavily biased by the VDVAE output and semantic embeddings, to produce the final high-resolution image.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "https://doi.org/10.1038/s41598-023-42891-8",
+              "source_paper_links": [
+                "https://doi.org/10.1038/s41598-023-42891-8"
+              ],
+              "source_paper_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-E115EFD50D53"
+              ],
+              "source_work_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+              "source_works": [],
+              "summary": "High-fidelity scene reconstruction from fMRI signals is achieved by decoupling low-level structural layout recovery from high-level semantic refinement using a cascaded generative pipeline where a Very Deep Variational Autoencoder genera...",
+              "title": "Two-Stage Hierarchical Reconstruction via VDVAE and Conditional Latent Diffusion",
+              "venue_or_source": "Scientific Reports",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1038/s41598-023-42891-8"
+            ],
+            "version_id": "VER-B5694DD2185C"
+          }
+        },
+        "venue_or_source": "Scientific Reports",
+        "year": 2023
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.72,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-50643F2A170F"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:24:39+00:00",
+        "updated_at": "2026-06-17T11:24:39+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-F54B3EF9B5DE",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-683FA4F27F3A",
+  "created_at": "2026-06-17T11:24:39+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "The full text describes a two-stage scene reconstruction framework called Brain-Diffuser where the first stage uses a VDVAE to reconstruct images capturing low-level properties and overall layout from fMRI signals. The second stage employs an image-to-image framework of a latent diffusion model conditioned on predicted multimodal text and visual features to generate the final images.",
+      "concept_id": "XI-3626753FD59A",
+      "confidence": 0.72,
+      "created_at": "2026-06-17T11:24:39+00:00",
+      "evidence_id": "EV-AF0A4BB967BC",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The full text describes a two-stage scene reconstruction framework called Brain-Diffuser where the first stage uses a VDVAE to reconstruct images capturing low-level properties and overall layout from fMRI signals. The second stage employs an image-to-image framework of a latent diffusion model conditioned on predicted multimodal text and visual features to generate the final images.",
+      "work_id": "W-50643F2A170F",
+      "work_version_id": "WV-0AEDA6796E2B"
+    },
+    {
+      "claim_text": "The text describes a 'two-stage scene reconstruction framework' where the first stage uses a VDVAE to capture 'low-level properties and overall layout,' and the second stage uses a latent diffusion model conditioned on multimodal features to generate the final image.",
+      "concept_id": "P-45ACD9D3C034",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T11:24:39+00:00",
+      "evidence_id": "EV-D6FE1197771E",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text describes a 'two-stage scene reconstruction framework' where the first stage uses a VDVAE to capture 'low-level properties and overall layout,' and the second stage uses a latent diffusion model conditioned on multimodal features to generate the final image.",
+      "work_id": "W-50643F2A170F",
+      "work_version_id": "WV-0AEDA6796E2B"
+    },
+    {
+      "claim_text": "The methodology specifies using an 'image-to-image framework of a latent diffusion model... conditioned on predicted multimodal (text and visual) features' alongside the coarse reconstruction from the first stage.",
+      "concept_id": "P-F8A38F6A4BD4",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T11:24:39+00:00",
+      "evidence_id": "EV-6EF75EF92A3B",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The methodology specifies using an 'image-to-image framework of a latent diffusion model... conditioned on predicted multimodal (text and visual) features' alongside the coarse reconstruction from the first stage.",
+      "work_id": "W-50643F2A170F",
+      "work_version_id": "WV-0AEDA6796E2B"
+    },
+    {
+      "claim_text": "The abstract and introduction note that on the publicly available Natural Scenes Dataset benchmark, the method outperforms previous models both qualitatively and quantitatively. It further contrasts this with previous studies that typically failed to reconstruct low-level and high-level properties together for complex scene images.",
+      "concept_id": "TM-2965EC783613",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T11:24:39+00:00",
+      "evidence_id": "EV-F7752D269256",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The abstract and introduction note that on the publicly available Natural Scenes Dataset benchmark, the method outperforms previous models both qualitatively and quantitatively. It further contrasts this with previous studies that typically failed to reconstruct low-level and high-level properties together for complex scene images.",
+      "work_id": "W-50643F2A170F",
+      "work_version_id": "WV-0AEDA6796E2B"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-7593FF69197B\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-64A419F0B519\", \"task\": \"images limited scene views\", \"dataset\": \"ImageNet\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DeepVisInterests: CNN-Ontology Prediction of Users Interest...",
+      "concept_id": "B-5EC146F24CE1",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T11:24:39+00:00",
+      "evidence_id": "EV-12E4ACC3DC39",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-7593FF69197B\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-64A419F0B519\", \"task\": \"images limited scene views\", \"dataset\": \"ImageNet\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DeepVisInterests: CNN-Ontology Prediction of Users Interest...",
+      "work_id": "W-50643F2A170F",
+      "work_version_id": "WV-0AEDA6796E2B"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-18A3C7AD5F6D\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-0DE8919CF549\", \"task\": \"images limited scene views\", \"dataset\": \"COCO\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"SynthText3D: synthesizing scene text images from 3D...",
+      "concept_id": "B-FE859D67603A",
+      "confidence": 0.32,
+      "created_at": "2026-06-17T11:24:39+00:00",
+      "evidence_id": "EV-2D6B933807C7",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-18A3C7AD5F6D\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-0DE8919CF549\", \"task\": \"images limited scene views\", \"dataset\": \"COCO\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"SynthText3D: synthesizing scene text images from 3D...",
+      "work_id": "W-50643F2A170F",
+      "work_version_id": "WV-0AEDA6796E2B"
+    },
+    {
+      "claim_text": "The text explicitly states: 'On the publicly available Natural Scenes Dataset benchmark, our method outperforms previous models both qualitatively and quantitatively.'",
+      "concept_id": "B-395D7EF814E7",
+      "confidence": 0.58,
+      "created_at": "2026-06-17T11:24:39+00:00",
+      "evidence_id": "EV-108D4C72BC1D",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text explicitly states: 'On the publicly available Natural Scenes Dataset benchmark, our method outperforms previous models both qualitatively and quantitatively.'",
+      "work_id": "W-50643F2A170F",
+      "work_version_id": "WV-0AEDA6796E2B"
+    },
+    {
+      "claim_text": "The text explicitly states that on the publicly available Natural Scenes Dataset benchmark, the method outperforms previous models both qualitatively and quantitatively.",
+      "concept_id": "B-F805ACD38C9C",
+      "confidence": 0.58,
+      "created_at": "2026-06-17T11:24:39+00:00",
+      "evidence_id": "EV-E95040A4826B",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text explicitly states that on the publicly available Natural Scenes Dataset benchmark, the method outperforms previous models both qualitatively and quantitatively.",
+      "work_id": "W-50643F2A170F",
+      "work_version_id": "WV-0AEDA6796E2B"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-17T11:24:39+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-17T11:24:37+00:00",
+      "extraction_run_id": "XRUN-E107C62F6C2D",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 4,
+        "existed_ideas": 1,
+        "principles": 2,
+        "takeaway_messages": 1,
+        "total": 8
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-50643F2A170F",
+      "work_version_id": "WV-0AEDA6796E2B"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "",
+    "secret_exposed_to_browser": false,
+    "warning": ""
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 1,
+        "principle": 2
+      },
+      "title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-50643F2A170F"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "",
+        "authors": [
+          "Furkan Özçelik",
+          "Rufin VanRullen"
+        ],
+        "canonical_title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "https://doi.org/10.1038/s41598-023-42891-8",
+          "https://openalex.org/W4386881720"
+        ],
+        "title_hash": "97f997e79bcfd849",
+        "title_norm": "natural scene reconstruction from fmri signals using generative latent diffusion",
+        "venue_or_source": "Scientific Reports",
+        "year": 2023
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "2026-06-13T06:13:01.061226",
+        "title_hash": "97f997e79bcfd849"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:24:37+00:00",
+        "updated_at": "2026-06-17T11:24:37+00:00"
+      },
+      "work_id": "W-50643F2A170F"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": "In neural decoding research, one of the most intriguing topics is the reconstruction of perceived natural images based on fMRI signals. Previous studies have succeeded in re-creating different aspects of the visuals, such as low-level properties (shape, texture, layout) or high-level features (category of objects, descriptive semantics of scenes) but have typically failed to reconstruct these properties together for complex scene images. Generative AI has recently made a leap forward with latent diffusion models capable of generating high-complexity images. Here, we investigate how to take advantage of this innovative technology for brain decoding. We present a two-stage scene reconstruction framework called \"Brain-Diffuser\". In the first stage, starting from fMRI signals, we reconstruct images that capture low-level properties and overall layout using a VDVAE (Very Deep Variational Autoencoder) model. In the second stage, we use the image-to-image framework of a latent diffusion model (Versatile Diffusion) conditioned on predicted multimodal (text and visual) features, to generate final reconstructed images. On the publicly available Natural Scenes Dataset benchmark, our method outperforms previous models both qualitatively and quantitatively. When applied to synthetic fMRI patterns generated from individual ROI (region-of-interest) masks, our trained model creates compelling \"ROI-optimal\" scenes consistent with neuroscientific knowledge. Thus, the proposed methodology can have an impact on both applied (e.g. brain-computer interface) and fundamental neuroscience.",
+      "abstract_hash": "e29498d8113e74ec",
+      "content_hash": "47c71d1ffb08ff4d",
+      "created_at": "2026-06-17T11:24:37+00:00",
+      "metadata": {
+        "abstract": "In neural decoding research, one of the most intriguing topics is the reconstruction of perceived natural images based on fMRI signals. Previous studies have succeeded in re-creating different aspects of the visuals, such as low-level properties (shape, texture, layout) or high-level features (category of objects, descriptive semantics of scenes) but have typically failed to reconstruct these properties together for complex scene images. Generative AI has recently made a leap forward with latent diffusion models capable of generating high-complexity images. Here, we investigate how to take advantage of this innovative technology for brain decoding. We present a two-stage scene reconstruction framework called \"Brain-Diffuser\". In the first stage, starting from fMRI signals, we reconstruct images that capture low-level properties and overall layout using a VDVAE (Very Deep Variational Autoencoder) model. In the second stage, we use the image-to-image framework of a latent diffusion model (Versatile Diffusion) conditioned on predicted multimodal (text and visual) features, to generate final reconstructed images. On the publicly available Natural Scenes Dataset benchmark, our method outperforms previous models both qualitatively and quantitatively. When applied to synthetic fMRI patterns generated from individual ROI (region-of-interest) masks, our trained model creates compelling \"ROI-optimal\" scenes consistent with neuroscientific knowledge. Thus, the proposed methodology can have an impact on both applied (e.g. brain-computer interface) and fundamental neuroscience.",
+        "active_version_id": "VER-842613DA9CAE",
+        "authors": [
+          "Furkan Özçelik",
+          "Rufin VanRullen"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-E115EFD50D53",
+        "canonical_key": "natural scene reconstruction from fmri signals using generative latent diffusion",
+        "citation_count": 119,
+        "community_signals": {
+          "is_oa": true,
+          "source": "openalex",
+          "type": "article"
+        },
+        "confidence_score": 0.62,
+        "created_at": "2026-06-17T10:49:59+00:00",
+        "entered_at": "2026-06-17T11:03:50+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:04:55+00:00",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "paper_link": "https://doi.org/10.1038/s41598-023-42891-8",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "2026-06-13T06:13:01.061226",
+        "source_urls": [
+          "https://doi.org/10.1038/s41598-023-42891-8",
+          "https://openalex.org/W4386881720"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+        "updated_at": "2026-06-17T11:04:55+00:00",
+        "url_or_doi": "https://doi.org/10.1038/s41598-023-42891-8",
+        "validation_level": "L1",
+        "variants": {
+          "VER-842613DA9CAE": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T11:03:50+00:00",
+            "extracted_at": "2026-06-17T11:04:55+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract": "In neural decoding research, one of the most intriguing topics is the reconstruction of perceived natural images based on fMRI signals. Previous studies have succeeded in re-creating different aspects of the visuals, such as low-level properties (shape, texture, layout) or high-level features (category of objects, descriptive semantics of scenes) but have typically failed to reconstruct these properties together for complex scene images. Generative AI has recently made a leap forward with latent diffusion models capable of generating high-complexity images. Here, we investigate how to take advantage of this innovative technology for brain decoding. We present a two-stage scene reconstruction framework called \"Brain-Diffuser\". In the first stage, starting from fMRI signals, we reconstruct images that capture low-level properties and overall layout using a VDVAE (Very Deep Variational Autoencoder) model. In the second stage, we use the image-to-image framework of a latent diffusion model (Versatile Diffusion) conditioned on predicted multimodal (text and visual) features, to generate final reconstructed images. On the publicly available Natural Scenes Dataset benchmark, our method outperforms previous models both qualitatively and quantitatively. When applied to synthetic fMRI patterns generated from individual ROI (region-of-interest) masks, our trained model creates compelling \"ROI-optimal\" scenes consistent with neuroscientific knowledge. Thus, the proposed methodology can have an impact on both applied (e.g. brain-computer interface) and fundamental neuroscience.",
+              "authors": [
+                "Furkan Özçelik",
+                "Rufin VanRullen"
+              ],
+              "benchmarks": [],
+              "citation_count": 119,
+              "community_signals": {
+                "is_oa": true,
+                "source": "openalex",
+                "type": "article"
+              },
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "https://doi.org/10.1038/s41598-023-42891-8",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2026-06-13T06:13:01.061226",
+              "source_urls": [
+                "https://doi.org/10.1038/s41598-023-42891-8",
+                "https://openalex.org/W4386881720"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+              "url_or_doi": "https://doi.org/10.1038/s41598-023-42891-8",
+              "validation_level": "L1",
+              "venue_or_source": "Scientific Reports",
+              "year": 2023
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1038/s41598-023-42891-8",
+              "https://openalex.org/W4386881720"
+            ],
+            "version_id": "VER-842613DA9CAE"
+          },
+          "VER-B988EB24E455": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T10:49:59+00:00",
+            "extracted_at": "2026-06-17T10:49:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "In neural decoding research, one of the most intriguing topics is the reconstruction of perceived natural images based on fMRI signals. Previous studies have succeeded in re-creating different aspects of the visuals, such as low-level properties (shape, texture, layout) or high-level features (category of objects, descriptive semantics of scenes) but have typically failed to reconstruct these properties together for complex scene images. Generative AI has recently made a leap forward with latent diffusion models capable of generating high-complexity images. Here, we investigate how to take advantage of this innovative technology for brain decoding. We present a two-stage scene reconstruction framework called \"Brain-Diffuser\". In the first stage, starting from fMRI signals, we reconstruct images that capture low-level properties and overall layout using a VDVAE (Very Deep Variational Autoencoder) model. In the second stage, we use the image-to-image framework of a latent diffusion model (Versatile Diffusion) conditioned on predicted multimodal (text and visual) features, to generate final reconstructed images. On the publicly available Natural Scenes Dataset benchmark, our method outperforms previous models both qualitatively and quantitatively. When applied to synthetic fMRI patterns generated from individual ROI (region-of-interest) masks, our trained model creates compelling \"ROI-optimal\" scenes consistent with neuroscientific knowledge. Thus, the proposed methodology can have an impact on both applied (e.g. brain-computer interface) and fundamental neuroscience.",
+              "authors": [
+                "Furkan Özçelik",
+                "Rufin VanRullen"
+              ],
+              "benchmarks": [],
+              "citation_count": 119,
+              "community_signals": {
+                "is_oa": true,
+                "source": "openalex",
+                "type": "article"
+              },
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "https://doi.org/10.1038/s41598-023-42891-8",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2026-06-13T06:13:01.061226",
+              "source_urls": [
+                "https://doi.org/10.1038/s41598-023-42891-8",
+                "https://openalex.org/W4386881720"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+              "url_or_doi": "https://doi.org/10.1038/s41598-023-42891-8",
+              "validation_level": "L1",
+              "venue_or_source": "Scientific Reports",
+              "year": 2023
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "https://doi.org/10.1038/s41598-023-42891-8",
+              "https://openalex.org/W4386881720"
+            ],
+            "version_id": "VER-B988EB24E455"
+          }
+        },
+        "venue_or_source": "Scientific Reports",
+        "work_id": "W-E115EFD50D53",
+        "year": 2023
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "openalex",
+      "source_record_id": "W-E115EFD50D53",
+      "source_updated_at": "2026-06-13T06:13:01.061226",
+      "title": "Natural scene reconstruction from fMRI signals using generative latent diffusion",
+      "title_hash": "97f997e79bcfd849",
+      "work_id": "W-50643F2A170F",
+      "work_version_id": "WV-0AEDA6796E2B"
+    }
+  ]
+}
