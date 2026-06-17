@@ -1,0 +1,406 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "joint optimization of interface geometry and volumetric scene representation joint optimization of interface geometry and volumetric scene representation accurate reconstruction of scenes viewed through dynamic refractive interfaces requires treating the surface geometry and the background scene as ",
+      "canonical_label": "Joint Optimization of Interface Geometry and Volumetric Scene Representation",
+      "concept_id": "P-FEB05B3EDB33",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "Accurate reconstruction of scenes viewed through dynamic refractive interfaces requires treating the surface geometry and the background scene as interdependent variables within a single optimization framework rather than solving them sequentially.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-B7E524C2285B",
+        "argument": "Accurate reconstruction of scenes viewed through dynamic refractive interfaces requires treating the surface geometry and the background scene as interdependent variables within a single optimization framework rather than solving them sequentially.",
+        "benchmarks": [],
+        "boundary_conditions": [
+          "This principle applies specifically to scenarios where the refractive interface is dynamic and the viewing angles are limited to a sequence of images captured through this changing medium, requiring the surface model to support temporal variation."
+        ],
+        "canonical_id": "P-CE1BC78AAEEB",
+        "canonical_key": "accurate reconstruction of scenes viewed through dynamic refractive interfaces requires treating surface geometry and background scene as interdependent variables within single opt",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T11:26:31+00:00",
+        "discussion": "Sequential approaches often fail because errors in estimating the surface shape propagate directly into the scene reconstruction, creating artifacts that are indistinguishable from actual scene features. By optimizing both components jointly, the system can leverage constraints from the entire image sequence to disambiguate whether a visual feature arises from surface curvature or scene geometry.",
+        "entered_at": "2026-06-17T11:26:31+00:00",
+        "evidence": "The text describes optimizing rendered images to match input images to reconstruct both the boundary surface shape and the NeRF of the target scene simultaneously, implying that solving for one without the other yields insufficient accuracy due to the coupling of refraction and scene content.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:26:31+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Joint Optimization of Interface Geometry and Volumetric Scene Representation",
+        "performance": [],
+        "principle_id": "P-CE1BC78AAEEB",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Simultaneous Reconstruction of Scene Information and Boundary Surface Geometry from Images Captured through Dynamic Refractive Interfaces",
+        "provider": "siliconflow",
+        "source_paper_link": "https://doi.org/10.5220/0014486900004084",
+        "source_paper_links": [
+          "https://doi.org/10.5220/0014486900004084"
+        ],
+        "source_paper_title": "Simultaneous Reconstruction of Scene Information and Boundary Surface Geometry from Images Captured through Dynamic Refractive Interfaces",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-D9C2ED692CFF"
+        ],
+        "source_work_title": "Simultaneous Reconstruction of Scene Information and Boundary Surface Geometry from Images Captured through Dynamic Refractive Interfaces",
+        "source_works": [
+          "W-D9C2ED692CFF"
+        ],
+        "updated_at": "2026-06-17T11:26:31+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-B7E524C2285B": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T11:26:31+00:00",
+            "extracted_at": "2026-06-17T11:26:31+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "Accurate reconstruction of scenes viewed through dynamic refractive interfaces requires treating the surface geometry and the background scene as interdependent variables within a single optimization framework rather than solving them sequentially.",
+              "argument": "Accurate reconstruction of scenes viewed through dynamic refractive interfaces requires treating the surface geometry and the background scene as interdependent variables within a single optimization framework rather than solving them sequentially.",
+              "benchmarks": [],
+              "boundary_conditions": [
+                "This principle applies specifically to scenarios where the refractive interface is dynamic and the viewing angles are limited to a sequence of images captured through this changing medium, requiring the surface model to support temporal variation."
+              ],
+              "confidence_score": 0.68,
+              "discussion": "Sequential approaches often fail because errors in estimating the surface shape propagate directly into the scene reconstruction, creating artifacts that are indistinguishable from actual scene features. By optimizing both components jointly, the system can leverage constraints from the entire image sequence to disambiguate whether a visual feature arises from surface curvature or scene geometry.",
+              "evidence": "The text describes optimizing rendered images to match input images to reconstruct both the boundary surface shape and the NeRF of the target scene simultaneously, implying that solving for one without the other yields insufficient accuracy due to the coupling of refraction and scene content.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Joint Optimization of Interface Geometry and Volumetric Scene Representation",
+              "performance": [],
+              "problem_pressure": "Simultaneous Reconstruction of Scene Information and Boundary Surface Geometry from Images Captured through Dynamic Refractive Interfaces",
+              "source_paper_link": "https://doi.org/10.5220/0014486900004084",
+              "source_paper_links": [
+                "https://doi.org/10.5220/0014486900004084"
+              ],
+              "source_paper_title": "Simultaneous Reconstruction of Scene Information and Boundary Surface Geometry from Images Captured through Dynamic Refractive Interfaces",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-C0C7D0539838"
+              ],
+              "source_work_title": "Simultaneous Reconstruction of Scene Information and Boundary Surface Geometry from Images Captured through Dynamic Refractive Interfaces",
+              "source_works": [
+                "W-C0C7D0539838"
+              ],
+              "venue_or_source": "Proceedings of the 21st International Conference on Computer Vision Theory and Applications",
+              "year": 2026
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.5220/0014486900004084"
+            ],
+            "version_id": "VER-B7E524C2285B"
+          }
+        },
+        "venue_or_source": "Proceedings of the 21st International Conference on Computer Vision Theory and Applications",
+        "year": 2026
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-D9C2ED692CFF"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:26:40+00:00",
+        "updated_at": "2026-06-17T11:26:40+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-62C47ECF56F4",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-4F0317191869",
+  "created_at": "2026-06-17T11:26:40+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "The text describes optimizing rendered images to match input images to reconstruct both the boundary surface shape and the NeRF of the target scene simultaneously, implying that solving for one without the other yields insufficient accuracy due to the coupling of refraction and scene content.",
+      "concept_id": "P-FEB05B3EDB33",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T11:26:40+00:00",
+      "evidence_id": "EV-17066A7F46E3",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text describes optimizing rendered images to match input images to reconstruct both the boundary surface shape and the NeRF of the target scene simultaneously, implying that solving for one without the other yields insufficient accuracy due to the coupling of refraction and scene content.",
+      "work_id": "W-D9C2ED692CFF",
+      "work_version_id": "WV-C5178B368F3F"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-17T11:26:40+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-17T11:21:58+00:00",
+      "extraction_run_id": "XRUN-DC318A520A9A",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 3,
+        "existed_ideas": 0,
+        "principles": 1,
+        "takeaway_messages": 0,
+        "total": 4
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-D9C2ED692CFF",
+      "work_version_id": "WV-C5178B368F3F"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "",
+    "secret_exposed_to_browser": false,
+    "warning": ""
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 0,
+        "principle": 1
+      },
+      "title": "Simultaneous Reconstruction of Scene Information and Boundary Surface Geometry from Images Captured through Dynamic Refractive Interfaces",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-D9C2ED692CFF"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "",
+        "authors": [
+          "Mao Okamura",
+          "Fumihiko Sakaue",
+          "Jun Sato"
+        ],
+        "canonical_title": "Simultaneous Reconstruction of Scene Information and Boundary Surface Geometry from Images Captured through Dynamic Refractive Interfaces",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "https://doi.org/10.5220/0014486900004084",
+          "https://www.scitepress.org/DigitalLibrary/Link.aspx?doi=10.5220/0014486900004084"
+        ],
+        "title_hash": "f89cb35887af3f05",
+        "title_norm": "simultaneous reconstruction of scene information and boundary surface geometry from images captured through dynamic refractive interfaces",
+        "venue_or_source": "Proceedings of the 21st International Conference on Computer Vision Theory and Applications",
+        "year": 2026
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 0.96,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "2026-05-23T16:05:58Z",
+        "title_hash": "f89cb35887af3f05"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:21:58+00:00",
+        "updated_at": "2026-06-17T11:26:38+00:00"
+      },
+      "work_id": "W-D9C2ED692CFF"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": ": In this study, we propose a method to simultaneously reconstruct the NeRF of a scene behind a refractive surface and the shape of the refractive surface itself from a sequence of distorted images captured through dynamically changing surfaces such as water. To achieve this, we introduce a shape model capable of representing dynamic boundary surfaces. By performing ray tracing on the captured images using this model, it becomes possible to render accurate images even in scenes involving refraction. Furthermore, by optimizing the rendered images to match the input images, both the boundary surface shape and the NeRF of the target scene can be reconstructed simultaneously. Full Text Download Generate New Image Enter text above before pressing [Download] (case sensitive) CC BY-NC-ND 4.0 Guests can use SciTePress Digital Library without having a SciTePress account. However, guests have limited access to downloading full text versions of papers and no access to special options. Guests can use SciTePress Digital Library without having a SciTePress account. However, guests have limited access to downloading full text versions of papers and no access to special options. Guest: Register as new SciTePress user now for free. Download limit per month - 500 recent papers or 4000 papers more than 2 years old. SciTePress user: please login . My Papers Unable to see papers previously downloaded, because you haven't logged in as SciTePress Member. If you are already a member please login. You are not signed in, therefore limits apply to your IP address 203.175.14.54 In the current month: Recent papers: 100 available of 100 total 2 + years older papers: 200 available of 200 total Full Text Download Generate New Image Enter the captcha text before pressing [Download] (case sensitive)...",
+      "abstract_hash": "2ba5585be83df0f9",
+      "content_hash": "28ce062f35a21b05",
+      "created_at": "2026-06-17T11:21:58+00:00",
+      "metadata": {
+        "abstract": ": In this study, we propose a method to simultaneously reconstruct the NeRF of a scene behind a refractive surface and the shape of the refractive surface itself from a sequence of distorted images captured through dynamically changing surfaces such as water. To achieve this, we introduce a shape model capable of representing dynamic boundary surfaces. By performing ray tracing on the captured images using this model, it becomes possible to render accurate images even in scenes involving refraction. Furthermore, by optimizing the rendered images to match the input images, both the boundary surface shape and the NeRF of the target scene can be reconstructed simultaneously. Full Text Download Generate New Image Enter text above before pressing [Download] (case sensitive) CC BY-NC-ND 4.0 Guests can use SciTePress Digital Library without having a SciTePress account. However, guests have limited access to downloading full text versions of papers and no access to special options. Guests can use SciTePress Digital Library without having a SciTePress account. However, guests have limited access to downloading full text versions of papers and no access to special options. Guest: Register as new SciTePress user now for free. Download limit per month - 500 recent papers or 4000 papers more than 2 years old. SciTePress user: please login . My Papers Unable to see papers previously downloaded, because you haven't logged in as SciTePress Member. If you are already a member please login. You are not signed in, therefore limits apply to your IP address 203.175.14.54 In the current month: Recent papers: 100 available of 100 total 2 + years older papers: 200 available of 200 total Full Text Download Generate New Image Enter the captcha text before pressing [Download] (case sensitive)...",
+        "active_version_id": "VER-D12C76EAA0ED",
+        "authors": [
+          "Mao Okamura",
+          "Fumihiko Sakaue",
+          "Jun Sato"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-C0C7D0539838",
+        "canonical_key": "simultaneous reconstruction of scene information and boundary surface geometry from images captured through dynamic refractive interfaces",
+        "citation_count": 0,
+        "community_signals": {
+          "abstract_recovered_from": "https://doi.org/10.5220/0014486900004084",
+          "source": "crossref",
+          "type": "proceedings-article"
+        },
+        "confidence_score": 0.62,
+        "created_at": "2026-06-17T10:49:59+00:00",
+        "entered_at": "2026-06-17T11:10:33+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:11:30+00:00",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "paper_link": "https://doi.org/10.5220/0014486900004084",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "2026-05-23T16:05:58Z",
+        "source_urls": [
+          "https://doi.org/10.5220/0014486900004084",
+          "https://www.scitepress.org/DigitalLibrary/Link.aspx?doi=10.5220/0014486900004084"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "title": "Simultaneous Reconstruction of Scene Information and Boundary Surface Geometry from Images Captured through Dynamic Refractive Interfaces",
+        "updated_at": "2026-06-17T11:21:58+00:00",
+        "url_or_doi": "https://doi.org/10.5220/0014486900004084",
+        "validation_level": "L1",
+        "variants": {
+          "VER-2C27943D971C": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T10:49:59+00:00",
+            "extracted_at": "2026-06-17T10:49:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "authors": [
+                "Mao Okamura",
+                "Fumihiko Sakaue",
+                "Jun Sato"
+              ],
+              "benchmarks": [],
+              "citation_count": 0,
+              "community_signals": {
+                "source": "crossref",
+                "type": "proceedings-article"
+              },
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "https://doi.org/10.5220/0014486900004084",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2026-05-23T16:05:58Z",
+              "source_urls": [
+                "https://doi.org/10.5220/0014486900004084",
+                "https://www.scitepress.org/DigitalLibrary/Link.aspx?doi=10.5220/0014486900004084"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Simultaneous Reconstruction of Scene Information and Boundary Surface Geometry from Images Captured through Dynamic Refractive Interfaces",
+              "url_or_doi": "https://doi.org/10.5220/0014486900004084",
+              "validation_level": "L1",
+              "venue_or_source": "Proceedings of the 21st International Conference on Computer Vision Theory and Applications",
+              "year": 2026
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "https://doi.org/10.5220/0014486900004084",
+              "https://www.scitepress.org/DigitalLibrary/Link.aspx?doi=10.5220/0014486900004084"
+            ],
+            "version_id": "VER-2C27943D971C"
+          },
+          "VER-D12C76EAA0ED": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T11:10:33+00:00",
+            "extracted_at": "2026-06-17T11:11:30+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "authors": [
+                "Mao Okamura",
+                "Fumihiko Sakaue",
+                "Jun Sato"
+              ],
+              "benchmarks": [],
+              "citation_count": 0,
+              "community_signals": {
+                "source": "crossref",
+                "type": "proceedings-article"
+              },
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "https://doi.org/10.5220/0014486900004084",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2026-05-23T16:05:58Z",
+              "source_urls": [
+                "https://doi.org/10.5220/0014486900004084",
+                "https://www.scitepress.org/DigitalLibrary/Link.aspx?doi=10.5220/0014486900004084"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Simultaneous Reconstruction of Scene Information and Boundary Surface Geometry from Images Captured through Dynamic Refractive Interfaces",
+              "url_or_doi": "https://doi.org/10.5220/0014486900004084",
+              "validation_level": "L1",
+              "venue_or_source": "Proceedings of the 21st International Conference on Computer Vision Theory and Applications",
+              "year": 2026
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.5220/0014486900004084",
+              "https://www.scitepress.org/DigitalLibrary/Link.aspx?doi=10.5220/0014486900004084"
+            ],
+            "version_id": "VER-D12C76EAA0ED"
+          }
+        },
+        "venue_or_source": "Proceedings of the 21st International Conference on Computer Vision Theory and Applications",
+        "work_id": "W-C0C7D0539838",
+        "year": 2026
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "crossref",
+      "source_record_id": "W-C0C7D0539838",
+      "source_updated_at": "2026-05-23T16:05:58Z",
+      "title": "Simultaneous Reconstruction of Scene Information and Boundary Surface Geometry from Images Captured through Dynamic Refractive Interfaces",
+      "title_hash": "f89cb35887af3f05",
+      "work_id": "W-D9C2ED692CFF",
+      "work_version_id": "WV-C5178B368F3F"
+    }
+  ]
+}
