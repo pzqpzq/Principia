@@ -1,0 +1,761 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "imagenet imagenet imagenet w 5b0fe2946d14",
+      "canonical_label": "ImageNet",
+      "concept_id": "B-D14BCBE9D242",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-31F3EC4F1976",
+        "benchmark_id": "B-3F4FF5D20CF8",
+        "benchmark_name": "ImageNet",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-3F4FF5D20CF8",
+        "canonical_key": "imagenet",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T11:03:49+00:00",
+        "data_form": "Labeled natural images organized by object category; standard classification labels and train/validation splits.",
+        "dataset": "ImageNet",
+        "description": "Large-scale image classification benchmark commonly used to evaluate visual representation transfer and adaptation.",
+        "entered_at": "2026-06-17T11:03:49+00:00",
+        "evidence": "{\"benchmark_id\": \"B-7593FF69197B\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-64A419F0B519\", \"task\": \"images limited scene views\", \"dataset\": \"ImageNet\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DeepVisInterests: CNN-Ontology Prediction of Users Interest...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:19:06+00:00",
+        "extractor": "deterministic",
+        "metric": "mAP",
+        "metrics": [
+          "primary reported metric",
+          "accuracy",
+          "mAP",
+          "memory",
+          "F1"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://www.image-net.org/",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Approximately 1.2M training images and 50K validation images in the ILSVRC classification setup.",
+        "source": "ImageNet / ILSVRC",
+        "source_paper_link": "http://arxiv.org/abs/1811.10920v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1905.03743v1",
+          "https://doi.org/10.1038/s41598-023-42891-8",
+          "http://arxiv.org/abs/2308.11356v2",
+          "http://arxiv.org/abs/2106.11952v2",
+          "http://arxiv.org/abs/1812.10889v2",
+          "http://arxiv.org/abs/2206.07326v2",
+          "http://arxiv.org/abs/2203.13131v1",
+          "https://doi.org/10.1186/s40537-019-0197-0",
+          "http://arxiv.org/abs/2211.10026v1",
+          "http://arxiv.org/abs/1811.10920v1"
+        ],
+        "source_paper_title": "DeepVisInterests: CNN-Ontology Prediction of Users Interests from Social Images",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-5B0FE2946D14"
+        ],
+        "source_work_title": "DeepVisInterests: CNN-Ontology Prediction of Users Interests from Social Images",
+        "source_works": [
+          "W-5B0FE2946D14"
+        ],
+        "task": "images limited scene views",
+        "updated_at": "2026-06-17T11:19:06+00:00",
+        "variants": {
+          "VER-31F3EC4F1976": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T11:03:49+00:00",
+            "extracted_at": "2026-06-17T11:19:06+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "ImageNet",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Labeled natural images organized by object category; standard classification labels and train/validation splits.",
+              "dataset": "ImageNet",
+              "description": "Large-scale image classification benchmark commonly used to evaluate visual representation transfer and adaptation.",
+              "evidence": "{\"benchmark_id\": \"B-7593FF69197B\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-64A419F0B519\", \"task\": \"images limited scene views\", \"dataset\": \"ImageNet\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DeepVisInterests: CNN-Ontology Prediction of Users Interest...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "mAP",
+              "metrics": [
+                "primary reported metric",
+                "accuracy",
+                "mAP",
+                "memory",
+                "F1"
+              ],
+              "needs_review": false,
+              "official_url": "https://www.image-net.org/",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Approximately 1.2M training images and 50K validation images in the ILSVRC classification setup.",
+              "source": "ImageNet / ILSVRC",
+              "source_paper_link": "http://arxiv.org/abs/1811.10920v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1905.03743v1",
+                "https://doi.org/10.1038/s41598-023-42891-8",
+                "http://arxiv.org/abs/2308.11356v2",
+                "http://arxiv.org/abs/2106.11952v2",
+                "http://arxiv.org/abs/1812.10889v2",
+                "http://arxiv.org/abs/2206.07326v2",
+                "http://arxiv.org/abs/2203.13131v1",
+                "https://doi.org/10.1186/s40537-019-0197-0",
+                "http://arxiv.org/abs/2211.10026v1",
+                "http://arxiv.org/abs/1811.10920v1"
+              ],
+              "source_paper_title": "DeepVisInterests: CNN-Ontology Prediction of Users Interests from Social Images",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7B546F57F4BE",
+                "W-E115EFD50D53",
+                "W-46029CE9D5D6",
+                "W-6E21A2CF36E4",
+                "W-7FDF3A887A50",
+                "W-1A4683B1260D",
+                "W-F8566C0F53EF",
+                "W-F14A5EBB0EC4",
+                "W-B8B762D07593",
+                "W-64A419F0B519"
+              ],
+              "source_work_title": "DeepVisInterests: CNN-Ontology Prediction of Users Interests from Social Images",
+              "source_works": [],
+              "task": "images limited scene views",
+              "venue_or_source": "arXiv",
+              "year": 2018
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1811.10920v1",
+              "https://www.image-net.org/"
+            ],
+            "version_id": "VER-31F3EC4F1976"
+          }
+        },
+        "venue_or_source": "arXiv",
+        "year": 2018
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-5B0FE2946D14"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:07+00:00",
+        "updated_at": "2026-06-17T11:22:07+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-BD76D82A6333",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "coco coco coco w 5b0fe2946d14",
+      "canonical_label": "COCO",
+      "concept_id": "B-E965934F0F16",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-ED4A652823AC",
+        "benchmark_id": "B-09F836894FC1",
+        "benchmark_name": "COCO",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-09F836894FC1",
+        "canonical_key": "coco",
+        "confidence_score": 0.32,
+        "created_at": "2026-06-17T11:03:49+00:00",
+        "data_form": "Images with object annotations, segmentations, captions, and task-specific labels.",
+        "dataset": "COCO",
+        "description": "Large-scale image benchmark for detection, segmentation, captioning, and keypoints.",
+        "entered_at": "2026-06-17T11:03:49+00:00",
+        "evidence": "{\"benchmark_id\": \"B-18A3C7AD5F6D\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-0DE8919CF549\", \"task\": \"images limited scene views\", \"dataset\": \"COCO\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"SynthText3D: synthesizing scene text images from 3D...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:19:59+00:00",
+        "extractor": "deterministic",
+        "metric": "primary reported metric",
+        "metrics": [
+          "primary reported metric",
+          "Image generation quality",
+          "accuracy",
+          "mAP",
+          "memory",
+          "mAP (mean Average Precision)",
+          "AP50",
+          "AP75",
+          "PSNR",
+          "SSIM"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "official_url": "https://cocodataset.org/#download",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Hundreds of thousands of labeled images depending on split/task.",
+        "source": "COCO Consortium",
+        "source_paper_link": "https://doi.org/10.1007/s11432-019-2737-0",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1905.03743v1",
+          "http://arxiv.org/abs/1804.01622v1",
+          "https://doi.org/10.1038/s41598-023-42891-8",
+          "http://arxiv.org/abs/1912.07414v5",
+          "http://arxiv.org/abs/2106.11952v2",
+          "http://arxiv.org/abs/1812.10889v2",
+          "http://arxiv.org/abs/2203.13131v1",
+          "http://arxiv.org/abs/2408.14819v1",
+          "http://arxiv.org/abs/2310.14025v1",
+          "https://doi.org/10.1007/s11432-019-2737-0"
+        ],
+        "source_paper_title": "SynthText3D: synthesizing scene text images from 3D virtual worlds",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-5B0FE2946D14"
+        ],
+        "source_work_title": "SynthText3D: synthesizing scene text images from 3D virtual worlds",
+        "source_works": [
+          "W-5B0FE2946D14"
+        ],
+        "task": "images limited scene views",
+        "updated_at": "2026-06-17T11:19:59+00:00",
+        "variants": {
+          "VER-ED4A652823AC": {
+            "confidence_score": 0.32,
+            "entered_at": "2026-06-17T11:03:49+00:00",
+            "extracted_at": "2026-06-17T11:19:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "benchmark_name": "COCO",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.32,
+              "data_form": "Images with object annotations, segmentations, captions, and task-specific labels.",
+              "dataset": "COCO",
+              "description": "Large-scale image benchmark for detection, segmentation, captioning, and keypoints.",
+              "evidence": "{\"benchmark_id\": \"B-18A3C7AD5F6D\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-0DE8919CF549\", \"task\": \"images limited scene views\", \"dataset\": \"COCO\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"SynthText3D: synthesizing scene text images from 3D...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "primary reported metric",
+              "metrics": [
+                "primary reported metric",
+                "Image generation quality",
+                "accuracy",
+                "mAP",
+                "memory",
+                "mAP (mean Average Precision)",
+                "AP50",
+                "AP75",
+                "PSNR",
+                "SSIM"
+              ],
+              "needs_review": true,
+              "official_url": "https://cocodataset.org/#download",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Hundreds of thousands of labeled images depending on split/task.",
+              "source": "COCO Consortium",
+              "source_paper_link": "https://doi.org/10.1007/s11432-019-2737-0",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1905.03743v1",
+                "http://arxiv.org/abs/1804.01622v1",
+                "https://doi.org/10.1038/s41598-023-42891-8",
+                "http://arxiv.org/abs/1912.07414v5",
+                "http://arxiv.org/abs/2106.11952v2",
+                "http://arxiv.org/abs/1812.10889v2",
+                "http://arxiv.org/abs/2203.13131v1",
+                "http://arxiv.org/abs/2408.14819v1",
+                "http://arxiv.org/abs/2310.14025v1",
+                "https://doi.org/10.1007/s11432-019-2737-0"
+              ],
+              "source_paper_title": "SynthText3D: synthesizing scene text images from 3D virtual worlds",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7B546F57F4BE",
+                "W-C269F7BBBCB8",
+                "W-E115EFD50D53",
+                "W-A99D60F4394C",
+                "W-6E21A2CF36E4",
+                "W-7FDF3A887A50",
+                "W-F8566C0F53EF",
+                "W-A18A379D7254",
+                "W-26C8A88D0F20",
+                "W-0DE8919CF549"
+              ],
+              "source_work_title": "SynthText3D: synthesizing scene text images from 3D virtual worlds",
+              "source_works": [],
+              "task": "images limited scene views",
+              "venue_or_source": "Science China Information Sciences",
+              "year": 2020
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1007/s11432-019-2737-0",
+              "https://cocodataset.org/#download"
+            ],
+            "version_id": "VER-ED4A652823AC"
+          }
+        },
+        "venue_or_source": "Science China Information Sciences",
+        "year": 2020
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.32,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-5B0FE2946D14"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:07+00:00",
+        "updated_at": "2026-06-17T11:22:07+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-E0A111F6D04A",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "recurrent content preservation in generative modeling recurrent content preservation in generative modeling generative models tasked with iterative refinement must explicitly encode and retain the state of previous outputs to prevent the loss of established visual features when new information is in",
+      "canonical_label": "Recurrent Content Preservation in Generative Modeling",
+      "concept_id": "P-A5F5F03F08B5",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "Generative models tasked with iterative refinement must explicitly encode and retain the state of previous outputs to prevent the loss of established visual features when new information is introduced.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-BCE02C5A1109",
+        "argument": "Generative models tasked with iterative refinement must explicitly encode and retain the state of previous outputs to prevent the loss of established visual features when new information is introduced.",
+        "benchmarks": [],
+        "boundary_conditions": [
+          "This principle applies specifically to scenarios where the input data can be structured as a sequence of growing graphs or descriptions. It may be less effective if the incremental changes require a complete semantic overhaul of the scene that contradicts the preserved latent state, or if the domain lacks the structured annotations necessary to define the incremental steps clearly."
+        ],
+        "canonical_id": "P-A0115B7DB567",
+        "canonical_key": "generative models tasked with iterative refinement must explicitly encode and retain state of previous outputs to prevent loss of established visual features when new information i",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T11:04:23+00:00",
+        "discussion": "The principle highlights the necessity of memory mechanisms in generative tasks involving sequential data or user interaction. Unlike standard conditional GANs that discard previous context upon receiving a new prompt, this principle enforces continuity. It suggests that for tasks requiring step-wise construction, the generator's internal state must act as a persistent canvas that is updated rather than replaced.",
+        "entered_at": "2026-06-17T11:04:23+00:00",
+        "evidence": "The proposed architecture utilizes a recurrent network specifically designed to preserve image content generated in previous steps. The evaluation on the Coco-Stuff dataset shows that the model successfully modifies images based on new scene graph nodes without degrading the quality or presence of objects generated in earlier steps, a capability lacking in single-pass baselines.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:04:53+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Recurrent Content Preservation in Generative Modeling",
+        "performance": [],
+        "principle_id": "P-A0115B7DB567",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/1905.03743v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1905.03743v1"
+        ],
+        "source_paper_title": "Interactive Image Generation Using Scene Graphs",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-5B0FE2946D14"
+        ],
+        "source_work_title": "Interactive Image Generation Using Scene Graphs",
+        "source_works": [
+          "W-5B0FE2946D14"
+        ],
+        "updated_at": "2026-06-17T11:04:53+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-BCE02C5A1109": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T11:04:23+00:00",
+            "extracted_at": "2026-06-17T11:04:53+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "Generative models tasked with iterative refinement must explicitly encode and retain the state of previous outputs to prevent the loss of established visual features when new information is introduced.",
+              "argument": "Generative models tasked with iterative refinement must explicitly encode and retain the state of previous outputs to prevent the loss of established visual features when new information is introduced.",
+              "benchmarks": [],
+              "boundary_conditions": [
+                "This principle applies specifically to scenarios where the input data can be structured as a sequence of growing graphs or descriptions. It may be less effective if the incremental changes require a complete semantic overhaul of the scene that contradicts the preserved latent state, or if the domain lacks the structured annotations necessary to define the incremental steps clearly."
+              ],
+              "confidence_score": 0.68,
+              "discussion": "The principle highlights the necessity of memory mechanisms in generative tasks involving sequential data or user interaction. Unlike standard conditional GANs that discard previous context upon receiving a new prompt, this principle enforces continuity. It suggests that for tasks requiring step-wise construction, the generator's internal state must act as a persistent canvas that is updated rather than replaced.",
+              "evidence": "The proposed architecture utilizes a recurrent network specifically designed to preserve image content generated in previous steps. The evaluation on the Coco-Stuff dataset shows that the model successfully modifies images based on new scene graph nodes without degrading the quality or presence of objects generated in earlier steps, a capability lacking in single-pass baselines.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Recurrent Content Preservation in Generative Modeling",
+              "performance": [],
+              "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+              "source_paper_link": "http://arxiv.org/abs/1905.03743v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1905.03743v1"
+              ],
+              "source_paper_title": "Interactive Image Generation Using Scene Graphs",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7B546F57F4BE"
+              ],
+              "source_work_title": "Interactive Image Generation Using Scene Graphs",
+              "source_works": [
+                "W-7B546F57F4BE"
+              ],
+              "venue_or_source": "ICLR 2019",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1905.03743v1"
+            ],
+            "version_id": "VER-BCE02C5A1109"
+          }
+        },
+        "venue_or_source": "ICLR 2019",
+        "year": 2019
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-5B0FE2946D14"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:07+00:00",
+        "updated_at": "2026-06-17T11:22:07+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-128DC05FAD3B",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-7174E9161C62",
+  "created_at": "2026-06-17T11:22:07+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "The proposed architecture utilizes a recurrent network specifically designed to preserve image content generated in previous steps. The evaluation on the Coco-Stuff dataset shows that the model successfully modifies images based on new scene graph nodes without degrading the quality or presence of objects generated in earlier steps, a capability lacking in single-pass baselines.",
+      "concept_id": "P-A5F5F03F08B5",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T11:22:07+00:00",
+      "evidence_id": "EV-8FF0BD70580D",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The proposed architecture utilizes a recurrent network specifically designed to preserve image content generated in previous steps. The evaluation on the Coco-Stuff dataset shows that the model successfully modifies images based on new scene graph nodes without degrading the quality or presence of objects generated in earlier steps, a capability lacking in single-pass baselines.",
+      "work_id": "W-5B0FE2946D14",
+      "work_version_id": "WV-5BA6A7F5FD6A"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-7593FF69197B\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-64A419F0B519\", \"task\": \"images limited scene views\", \"dataset\": \"ImageNet\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DeepVisInterests: CNN-Ontology Prediction of Users Interest...",
+      "concept_id": "B-D14BCBE9D242",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T11:22:07+00:00",
+      "evidence_id": "EV-97127EE623D3",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-7593FF69197B\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-64A419F0B519\", \"task\": \"images limited scene views\", \"dataset\": \"ImageNet\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DeepVisInterests: CNN-Ontology Prediction of Users Interest...",
+      "work_id": "W-5B0FE2946D14",
+      "work_version_id": "WV-5BA6A7F5FD6A"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-18A3C7AD5F6D\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-0DE8919CF549\", \"task\": \"images limited scene views\", \"dataset\": \"COCO\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"SynthText3D: synthesizing scene text images from 3D...",
+      "concept_id": "B-E965934F0F16",
+      "confidence": 0.32,
+      "created_at": "2026-06-17T11:22:07+00:00",
+      "evidence_id": "EV-BCB0BB469509",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-18A3C7AD5F6D\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-0DE8919CF549\", \"task\": \"images limited scene views\", \"dataset\": \"COCO\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"SynthText3D: synthesizing scene text images from 3D...",
+      "work_id": "W-5B0FE2946D14",
+      "work_version_id": "WV-5BA6A7F5FD6A"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-17T11:22:07+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-17T11:22:05+00:00",
+      "extraction_run_id": "XRUN-4FDE4C643BE2",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 3,
+        "existed_ideas": 0,
+        "principles": 1,
+        "takeaway_messages": 0,
+        "total": 4
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-5B0FE2946D14",
+      "work_version_id": "WV-5BA6A7F5FD6A"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "",
+    "secret_exposed_to_browser": false,
+    "warning": ""
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 0,
+        "principle": 1
+      },
+      "title": "Interactive Image Generation Using Scene Graphs",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-5B0FE2946D14"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "1905.03743",
+        "authors": [
+          "Gaurav Mittal",
+          "Shubham Agrawal",
+          "Anuva Agarwal",
+          "Sushant Mehta",
+          "Tanya Marwah"
+        ],
+        "canonical_title": "Interactive Image Generation Using Scene Graphs",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "http://arxiv.org/abs/1905.03743v1"
+        ],
+        "title_hash": "66c910049857e7ee",
+        "title_norm": "interactive image generation using scene graphs",
+        "venue_or_source": "ICLR 2019",
+        "year": 2019
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "2019-05-09T16:39:31Z",
+        "title_hash": "66c910049857e7ee"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:05+00:00",
+        "updated_at": "2026-06-17T11:22:05+00:00"
+      },
+      "work_id": "W-5B0FE2946D14"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": "Recent years have witnessed some exciting developments in the domain of generating images from scene-based text descriptions. These approaches have primarily focused on generating images from a static text description and are limited to generating images in a single pass. They are unable to generate an image interactively based on an incrementally additive text description (something that is more intuitive and similar to the way we describe an image). We propose a method to generate an image incrementally based on a sequence of graphs of scene descriptions (scene-graphs). We propose a recurrent network architecture that preserves the image content generated in previous steps and modifies the cumulative image as per the newly provided scene information. Our model utilizes Graph Convolutional Networks (GCN) to cater to variable-sized scene graphs along with Generative Adversarial image translation networks to generate realistic multi-object images without needing any intermediate supervision during training. We experiment with Coco-Stuff dataset which has multi-object images along with annotations describing the visual scene and show that our model significantly outperforms other approaches on the same dataset in generating visually consistent images for incrementally growing scene graphs.",
+      "abstract_hash": "954d965a42cc52f1",
+      "content_hash": "e48ec4162b7b5a1b",
+      "created_at": "2026-06-17T11:22:05+00:00",
+      "metadata": {
+        "abstract": "Recent years have witnessed some exciting developments in the domain of generating images from scene-based text descriptions. These approaches have primarily focused on generating images from a static text description and are limited to generating images in a single pass. They are unable to generate an image interactively based on an incrementally additive text description (something that is more intuitive and similar to the way we describe an image). We propose a method to generate an image incrementally based on a sequence of graphs of scene descriptions (scene-graphs). We propose a recurrent network architecture that preserves the image content generated in previous steps and modifies the cumulative image as per the newly provided scene information. Our model utilizes Graph Convolutional Networks (GCN) to cater to variable-sized scene graphs along with Generative Adversarial image translation networks to generate realistic multi-object images without needing any intermediate supervision during training. We experiment with Coco-Stuff dataset which has multi-object images along with annotations describing the visual scene and show that our model significantly outperforms other approaches on the same dataset in generating visually consistent images for incrementally growing scene graphs.",
+        "active_version_id": "VER-3DC97C62C313",
+        "authors": [
+          "Gaurav Mittal",
+          "Shubham Agrawal",
+          "Anuva Agarwal",
+          "Sushant Mehta",
+          "Tanya Marwah"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-7B546F57F4BE",
+        "canonical_key": "interactive image generation using scene graphs",
+        "community_signals": {},
+        "confidence_score": 0.62,
+        "created_at": "2026-06-17T10:49:59+00:00",
+        "entered_at": "2026-06-17T11:03:49+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:04:53+00:00",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "paper_link": "http://arxiv.org/abs/1905.03743v1",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "2019-05-09T16:39:31Z",
+        "source_urls": [
+          "http://arxiv.org/abs/1905.03743v1"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "title": "Interactive Image Generation Using Scene Graphs",
+        "updated_at": "2026-06-17T11:04:53+00:00",
+        "url_or_doi": "http://arxiv.org/abs/1905.03743v1",
+        "validation_level": "L1",
+        "variants": {
+          "VER-3DC97C62C313": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T11:03:49+00:00",
+            "extracted_at": "2026-06-17T11:04:53+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Recent years have witnessed some exciting developments in the domain of generating images from scene-based text descriptions. These approaches have primarily focused on generating images from a static text description and are limited to generating images in a single pass. They are unable to generate an image interactively based on an incrementally additive text description (something that is more intuitive and similar to the way we describe an image). We propose a method to generate an image incrementally based on a sequence of graphs of scene descriptions (scene-graphs). We propose a recurrent network architecture that preserves the image content generated in previous steps and modifies the cumulative image as per the newly provided scene information. Our model utilizes Graph Convolutional Networks (GCN) to cater to variable-sized scene graphs along with Generative Adversarial image translation networks to generate realistic multi-object images without needing any intermediate supervision during training. We experiment with Coco-Stuff dataset which has multi-object images along with annotations describing the visual scene and show that our model significantly outperforms other approaches on the same dataset in generating visually consistent images for incrementally growing scene graphs.",
+              "authors": [
+                "Gaurav Mittal",
+                "Shubham Agrawal",
+                "Anuva Agarwal",
+                "Sushant Mehta",
+                "Tanya Marwah"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/1905.03743v1",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2019-05-09T16:39:31Z",
+              "source_urls": [
+                "http://arxiv.org/abs/1905.03743v1"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Interactive Image Generation Using Scene Graphs",
+              "url_or_doi": "http://arxiv.org/abs/1905.03743v1",
+              "validation_level": "L1",
+              "venue_or_source": "ICLR 2019",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1905.03743v1"
+            ],
+            "version_id": "VER-3DC97C62C313"
+          },
+          "VER-BE120ED959E7": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T10:49:59+00:00",
+            "extracted_at": "2026-06-17T10:49:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Recent years have witnessed some exciting developments in the domain of generating images from scene-based text descriptions. These approaches have primarily focused on generating images from a static text description and are limited to generating images in a single pass. They are unable to generate an image interactively based on an incrementally additive text description (something that is more intuitive and similar to the way we describe an image). We propose a method to generate an image incrementally based on a sequence of graphs of scene descriptions (scene-graphs). We propose a recurrent network architecture that preserves the image content generated in previous steps and modifies the cumulative image as per the newly provided scene information. Our model utilizes Graph Convolutional Networks (GCN) to cater to variable-sized scene graphs along with Generative Adversarial image translation networks to generate realistic multi-object images without needing any intermediate supervision during training. We experiment with Coco-Stuff dataset which has multi-object images along with annotations describing the visual scene and show that our model significantly outperforms other approaches on the same dataset in generating visually consistent images for incrementally growing scene graphs.",
+              "authors": [
+                "Gaurav Mittal",
+                "Shubham Agrawal",
+                "Anuva Agarwal",
+                "Sushant Mehta",
+                "Tanya Marwah"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/1905.03743v1",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2019-05-09T16:39:31Z",
+              "source_urls": [
+                "http://arxiv.org/abs/1905.03743v1"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Interactive Image Generation Using Scene Graphs",
+              "url_or_doi": "http://arxiv.org/abs/1905.03743v1",
+              "validation_level": "L1",
+              "venue_or_source": "ICLR 2019",
+              "year": 2019
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "http://arxiv.org/abs/1905.03743v1"
+            ],
+            "version_id": "VER-BE120ED959E7"
+          }
+        },
+        "venue_or_source": "ICLR 2019",
+        "work_id": "W-7B546F57F4BE",
+        "year": 2019
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "",
+      "source_record_id": "W-7B546F57F4BE",
+      "source_updated_at": "2019-05-09T16:39:31Z",
+      "title": "Interactive Image Generation Using Scene Graphs",
+      "title_hash": "66c910049857e7ee",
+      "work_id": "W-5B0FE2946D14",
+      "work_version_id": "WV-5BA6A7F5FD6A"
+    }
+  ]
+}
