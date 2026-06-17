@@ -1,0 +1,1470 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "visual genome visual genome visual genome w 2a462c17468e",
+      "canonical_label": "Visual Genome",
+      "concept_id": "B-4D5B63044680",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-A3FC2BFC7B22",
+        "benchmark_id": "B-F4EF4D6CF425",
+        "benchmark_name": "Visual Genome",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "candidate_dataset_pages": [
+          "https://huggingface.co/datasets?search=Visual%20Genome"
+        ],
+        "canonical_id": "B-F4EF4D6CF425",
+        "canonical_key": "visual genome",
+        "confidence_score": 0.58,
+        "created_at": "2026-06-17T11:05:19+00:00",
+        "data_form": "Images annotated with objects, attributes, and relationships",
+        "dataset": "Visual Genome",
+        "description": "Visual Genome appears in local source evidence. Add official metadata when you curate this project.",
+        "entered_at": "2026-06-17T11:05:19+00:00",
+        "evidence": "The text explicitly mentions extensive experiments on Visual Genome benchmark datasets showing improved performance.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:15:47+00:00",
+        "extractor": "deterministic",
+        "metric": "Recall@K",
+        "metrics": [
+          "accuracy",
+          "Image quality metrics (implied by context of improved performance)",
+          "Robustness to noise",
+          "Generalization to semantically equivalent graphs",
+          "Image quality metrics",
+          "primary reported metric",
+          "Recall@K",
+          "Mean Recall@K"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://visualgenome.org/",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Large-scale dataset with dense annotations",
+        "source": "local extraction",
+        "source_paper_link": "http://arxiv.org/abs/2207.13440v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2304.00590v2",
+          "http://arxiv.org/abs/1912.07414v5",
+          "http://arxiv.org/abs/2207.13440v1"
+        ],
+        "source_paper_title": "Iterative Scene Graph Generation",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-2A462C17468E"
+        ],
+        "source_work_title": "Iterative Scene Graph Generation",
+        "source_works": [
+          "W-2A462C17468E"
+        ],
+        "task": "Scene Graph Generation",
+        "updated_at": "2026-06-17T11:15:47+00:00",
+        "variants": {
+          "VER-A3FC2BFC7B22": {
+            "confidence_score": 0.58,
+            "entered_at": "2026-06-17T11:05:19+00:00",
+            "extracted_at": "2026-06-17T11:15:47+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "Visual Genome",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "candidate_dataset_pages": [
+                "https://huggingface.co/datasets?search=Visual%20Genome"
+              ],
+              "confidence_score": 0.58,
+              "data_form": "Images annotated with objects, attributes, and relationships",
+              "dataset": "Visual Genome",
+              "description": "Visual Genome appears in local source evidence. Add official metadata when you curate this project.",
+              "evidence": "The text explicitly mentions extensive experiments on Visual Genome benchmark datasets showing improved performance.",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "Recall@K",
+              "metrics": [
+                "accuracy",
+                "Image quality metrics (implied by context of improved performance)",
+                "Robustness to noise",
+                "Generalization to semantically equivalent graphs",
+                "Image quality metrics",
+                "primary reported metric",
+                "Recall@K",
+                "Mean Recall@K"
+              ],
+              "needs_review": false,
+              "official_url": "https://visualgenome.org/",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Large-scale dataset with dense annotations",
+              "source": "local extraction",
+              "source_paper_link": "http://arxiv.org/abs/2207.13440v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2304.00590v2",
+                "http://arxiv.org/abs/1912.07414v5",
+                "http://arxiv.org/abs/2207.13440v1"
+              ],
+              "source_paper_title": "Iterative Scene Graph Generation",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-D5AB4468B36E",
+                "W-A99D60F4394C",
+                "W-541615626A8F"
+              ],
+              "source_work_title": "Iterative Scene Graph Generation",
+              "source_works": [],
+              "task": "Scene Graph Generation",
+              "venue_or_source": "arXiv",
+              "year": 2022
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2207.13440v1",
+              "https://visualgenome.org/"
+            ],
+            "version_id": "VER-A3FC2BFC7B22"
+          }
+        },
+        "venue_or_source": "arXiv",
+        "year": 2022
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.58,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-2A462C17468E"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:23+00:00",
+        "updated_at": "2026-06-17T11:22:23+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-004923B0E376",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "drop drop drop w 931a92b2cbd0",
+      "canonical_label": "DROP",
+      "concept_id": "B-8C7A7CE9928D",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-996666835726",
+        "benchmark_id": "B-AA20C3BF5ECA",
+        "benchmark_name": "DROP",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-AA20C3BF5ECA",
+        "canonical_key": "drop",
+        "cloud_origin": {
+          "cloud_model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+          "cloud_payload_sha256": "",
+          "cloud_record_id": "B-8C7A7CE9928D",
+          "cloud_snapshot_id": "SNAP-1E83647E23AF",
+          "cloud_updated_at": "2026-06-17T07:05:01+00:00"
+        },
+        "concept_id": "B-8C7A7CE9928D",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T06:19:09+00:00",
+        "data_form": "Paragraph-question-answer examples with numerical, counting, and span reasoning.",
+        "dataset": "DROP",
+        "description": "Reading comprehension benchmark requiring discrete reasoning over paragraphs.",
+        "entered_at": "2026-06-17T06:19:09+00:00",
+        "evidence": "{\"benchmark_id\": \"B-A832065A9092\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-C56999C6F34A\", \"task\": \"images limited scene views\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Tangent Images for Mitigating Spherical Distortion In this work...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:12:59+00:00",
+        "extractor": "deterministic",
+        "field_id": "PRJ-6929CAF58133",
+        "metric": "mAP",
+        "metrics": [
+          "accuracy",
+          "memory",
+          "RMSE",
+          "mAP",
+          "primary reported metric"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/ucinlp/drop",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "96K question-answer pairs.",
+        "source": "DROP / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/1912.09390v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2406.07155v3",
+          "http://arxiv.org/abs/2512.15790v1",
+          "http://arxiv.org/abs/2603.25111v2",
+          "http://arxiv.org/abs/2605.29560v1",
+          "http://arxiv.org/abs/1912.07414v5",
+          "http://arxiv.org/abs/1912.09390v3"
+        ],
+        "source_paper_title": "Tangent Images for Mitigating Spherical Distortion",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-2A462C17468E"
+        ],
+        "source_work_title": "Tangent Images for Mitigating Spherical Distortion",
+        "source_works": [
+          "W-2A462C17468E"
+        ],
+        "task": "images limited scene views",
+        "title": "DROP",
+        "updated_at": "2026-06-17T11:12:59+00:00",
+        "variants": {
+          "VER-996666835726": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T06:19:09+00:00",
+            "extracted_at": "2026-06-17T11:12:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "DROP",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Paragraph-question-answer examples with numerical, counting, and span reasoning.",
+              "dataset": "DROP",
+              "description": "Reading comprehension benchmark requiring discrete reasoning over paragraphs.",
+              "evidence": "{\"benchmark_id\": \"B-A832065A9092\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-C56999C6F34A\", \"task\": \"images limited scene views\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Tangent Images for Mitigating Spherical Distortion In this work...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "mAP",
+              "metrics": [
+                "accuracy",
+                "memory",
+                "RMSE",
+                "mAP",
+                "primary reported metric"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/ucinlp/drop",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "96K question-answer pairs.",
+              "source": "DROP / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/1912.09390v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2406.07155v3",
+                "http://arxiv.org/abs/2512.15790v1",
+                "http://arxiv.org/abs/2603.25111v2",
+                "http://arxiv.org/abs/2605.29560v1",
+                "http://arxiv.org/abs/1912.07414v5",
+                "http://arxiv.org/abs/1912.09390v3"
+              ],
+              "source_paper_title": "Tangent Images for Mitigating Spherical Distortion",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-565BC95507DC",
+                "W-BE9F6B5E1FE3",
+                "W-0CB6DC2F0457",
+                "W-3DF3D42A24FD",
+                "W-A99D60F4394C",
+                "W-C56999C6F34A"
+              ],
+              "source_work_title": "Tangent Images for Mitigating Spherical Distortion",
+              "source_works": [],
+              "task": "images limited scene views",
+              "venue_or_source": "CVPR 2020",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1912.09390v3",
+              "https://huggingface.co/datasets/ucinlp/drop"
+            ],
+            "version_id": "VER-996666835726"
+          }
+        },
+        "venue_or_source": "CVPR 2020",
+        "year": 2019
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-2A462C17468E"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:04:54+00:00",
+        "updated_at": "2026-06-17T11:22:23+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-039A7A5DFC45",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "clevr clevr clevr w 2a462c17468e",
+      "canonical_label": "CLEVR",
+      "concept_id": "B-C879909C89AE",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-169BC8D267FC",
+        "benchmark_id": "B-EA7AD05D37CD",
+        "benchmark_name": "CLEVR",
+        "benchmarks": [],
+        "canonical_id": "B-EA7AD05D37CD",
+        "canonical_key": "clevr",
+        "confidence_score": 0.58,
+        "created_at": "2026-06-17T11:07:13+00:00",
+        "data_form": "Synthetic images with precise scene graph annotations",
+        "dataset": "CLEVR",
+        "description": "CLEVR appears in local source evidence. Add official metadata when you curate this project.",
+        "entered_at": "2026-06-17T11:07:13+00:00",
+        "evidence": "The text identifies CLEVR as the third benchmark used to validate the model's improved performance, particularly useful for testing logical equivalence due to its synthetic and precise nature.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:07:13+00:00",
+        "metric": "Image generation quality",
+        "metrics": [
+          "Image generation quality",
+          "Logical consistency"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://cs.stanford.edu/people/jcjohns/clevr/",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Dataset designed for visual reasoning with controlled complexity",
+        "source": "local extraction",
+        "source_paper_link": "http://arxiv.org/abs/1912.07414v5",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1912.07414v5"
+        ],
+        "source_paper_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-2A462C17468E"
+        ],
+        "source_work_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+        "source_works": [
+          "W-2A462C17468E"
+        ],
+        "task": "Scene Graph to Image Generation",
+        "updated_at": "2026-06-17T11:07:13+00:00",
+        "variants": {
+          "VER-169BC8D267FC": {
+            "confidence_score": 0.58,
+            "entered_at": "2026-06-17T11:07:13+00:00",
+            "extracted_at": "2026-06-17T11:07:13+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "CLEVR",
+              "benchmarks": [],
+              "confidence_score": 0.58,
+              "data_form": "Synthetic images with precise scene graph annotations",
+              "dataset": "CLEVR",
+              "description": "CLEVR appears in local source evidence. Add official metadata when you curate this project.",
+              "evidence": "The text identifies CLEVR as the third benchmark used to validate the model's improved performance, particularly useful for testing logical equivalence due to its synthetic and precise nature.",
+              "evidence_items": [],
+              "metric": "Image generation quality",
+              "metrics": [
+                "Image generation quality",
+                "Logical consistency"
+              ],
+              "needs_review": false,
+              "official_url": "https://cs.stanford.edu/people/jcjohns/clevr/",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Dataset designed for visual reasoning with controlled complexity",
+              "source": "local extraction",
+              "source_paper_link": "http://arxiv.org/abs/1912.07414v5",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1912.07414v5"
+              ],
+              "source_paper_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-A99D60F4394C"
+              ],
+              "source_work_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+              "source_works": [],
+              "task": "Scene Graph to Image Generation",
+              "venue_or_source": "ECCV 2020",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1912.07414v5",
+              "https://cs.stanford.edu/people/jcjohns/clevr/"
+            ],
+            "version_id": "VER-169BC8D267FC"
+          }
+        },
+        "venue_or_source": "ECCV 2020",
+        "year": 2019
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.58,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-2A462C17468E"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:23+00:00",
+        "updated_at": "2026-06-17T11:22:23+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-2F96702794C3",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "coco coco coco w 2a462c17468e",
+      "canonical_label": "COCO",
+      "concept_id": "B-F8179EDB487D",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-ED4A652823AC",
+        "benchmark_id": "B-09F836894FC1",
+        "benchmark_name": "COCO",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-09F836894FC1",
+        "canonical_key": "coco",
+        "confidence_score": 0.32,
+        "created_at": "2026-06-17T11:03:49+00:00",
+        "data_form": "Images with object annotations, segmentations, captions, and task-specific labels.",
+        "dataset": "COCO",
+        "description": "Large-scale image benchmark for detection, segmentation, captioning, and keypoints.",
+        "entered_at": "2026-06-17T11:03:49+00:00",
+        "evidence": "{\"benchmark_id\": \"B-18A3C7AD5F6D\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-0DE8919CF549\", \"task\": \"images limited scene views\", \"dataset\": \"COCO\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"SynthText3D: synthesizing scene text images from 3D...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:19:59+00:00",
+        "extractor": "deterministic",
+        "metric": "primary reported metric",
+        "metrics": [
+          "primary reported metric",
+          "Image generation quality",
+          "accuracy",
+          "mAP",
+          "memory",
+          "mAP (mean Average Precision)",
+          "AP50",
+          "AP75",
+          "PSNR",
+          "SSIM"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "official_url": "https://cocodataset.org/#download",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Hundreds of thousands of labeled images depending on split/task.",
+        "source": "COCO Consortium",
+        "source_paper_link": "https://doi.org/10.1007/s11432-019-2737-0",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1905.03743v1",
+          "http://arxiv.org/abs/1804.01622v1",
+          "https://doi.org/10.1038/s41598-023-42891-8",
+          "http://arxiv.org/abs/1912.07414v5",
+          "http://arxiv.org/abs/2106.11952v2",
+          "http://arxiv.org/abs/1812.10889v2",
+          "http://arxiv.org/abs/2203.13131v1",
+          "http://arxiv.org/abs/2408.14819v1",
+          "http://arxiv.org/abs/2310.14025v1",
+          "https://doi.org/10.1007/s11432-019-2737-0"
+        ],
+        "source_paper_title": "SynthText3D: synthesizing scene text images from 3D virtual worlds",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-2A462C17468E"
+        ],
+        "source_work_title": "SynthText3D: synthesizing scene text images from 3D virtual worlds",
+        "source_works": [
+          "W-2A462C17468E"
+        ],
+        "task": "images limited scene views",
+        "updated_at": "2026-06-17T11:19:59+00:00",
+        "variants": {
+          "VER-ED4A652823AC": {
+            "confidence_score": 0.32,
+            "entered_at": "2026-06-17T11:03:49+00:00",
+            "extracted_at": "2026-06-17T11:19:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "benchmark_name": "COCO",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.32,
+              "data_form": "Images with object annotations, segmentations, captions, and task-specific labels.",
+              "dataset": "COCO",
+              "description": "Large-scale image benchmark for detection, segmentation, captioning, and keypoints.",
+              "evidence": "{\"benchmark_id\": \"B-18A3C7AD5F6D\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-0DE8919CF549\", \"task\": \"images limited scene views\", \"dataset\": \"COCO\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"SynthText3D: synthesizing scene text images from 3D...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "primary reported metric",
+              "metrics": [
+                "primary reported metric",
+                "Image generation quality",
+                "accuracy",
+                "mAP",
+                "memory",
+                "mAP (mean Average Precision)",
+                "AP50",
+                "AP75",
+                "PSNR",
+                "SSIM"
+              ],
+              "needs_review": true,
+              "official_url": "https://cocodataset.org/#download",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Hundreds of thousands of labeled images depending on split/task.",
+              "source": "COCO Consortium",
+              "source_paper_link": "https://doi.org/10.1007/s11432-019-2737-0",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1905.03743v1",
+                "http://arxiv.org/abs/1804.01622v1",
+                "https://doi.org/10.1038/s41598-023-42891-8",
+                "http://arxiv.org/abs/1912.07414v5",
+                "http://arxiv.org/abs/2106.11952v2",
+                "http://arxiv.org/abs/1812.10889v2",
+                "http://arxiv.org/abs/2203.13131v1",
+                "http://arxiv.org/abs/2408.14819v1",
+                "http://arxiv.org/abs/2310.14025v1",
+                "https://doi.org/10.1007/s11432-019-2737-0"
+              ],
+              "source_paper_title": "SynthText3D: synthesizing scene text images from 3D virtual worlds",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7B546F57F4BE",
+                "W-C269F7BBBCB8",
+                "W-E115EFD50D53",
+                "W-A99D60F4394C",
+                "W-6E21A2CF36E4",
+                "W-7FDF3A887A50",
+                "W-F8566C0F53EF",
+                "W-A18A379D7254",
+                "W-26C8A88D0F20",
+                "W-0DE8919CF549"
+              ],
+              "source_work_title": "SynthText3D: synthesizing scene text images from 3D virtual worlds",
+              "source_works": [],
+              "task": "images limited scene views",
+              "venue_or_source": "Science China Information Sciences",
+              "year": 2020
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1007/s11432-019-2737-0",
+              "https://cocodataset.org/#download"
+            ],
+            "version_id": "VER-ED4A652823AC"
+          }
+        },
+        "venue_or_source": "Science China Information Sciences",
+        "year": 2020
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.32,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-2A462C17468E"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:23+00:00",
+        "updated_at": "2026-06-17T11:22:23+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-F87C66EAC74F",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "johnson et al 2018 standard sg2im johnson et al 2018 standard sg2im w 2a462c17468e",
+      "canonical_label": "Johnson et al. (2018) / Standard SG2Im",
+      "concept_id": "BL-A29548523566",
+      "concept_type": "baseline",
+      "payload": {
+        "active_version_id": "VER-D47AF284860A",
+        "baseline_id": "BL-FAED65D05ED6",
+        "baseline_name": "Johnson et al. (2018) / Standard SG2Im",
+        "baseline_type": "compared_method",
+        "benchmarks": [
+          "Visual Genome",
+          "COCO",
+          "CLEVR"
+        ],
+        "canonical_id": "BL-FAED65D05ED6",
+        "canonical_key": "johnson et al 2018 standard sg2im",
+        "confidence_score": 0.55,
+        "core_idea": "Directly mapping input scene graphs to layouts and then to images without enforcing canonical representations for logically equivalent graphs.",
+        "created_at": "2026-06-17T11:07:13+00:00",
+        "description": "This method represents the standard approach prior to the proposed work, struggling with complex scenes where the scene graph contains many objects and edges. It fails to capture semantic equivalence, leading to inconsistent layouts for logically equivalent inputs and lower quality generated images.",
+        "discussion": "The baseline serves as a critical comparison point, illustrating the failure mode of ignoring logical equivalence. Its performance degrades as graph complexity increases because the model cannot generalize across the various ways humans annotate the same spatial configuration.",
+        "entered_at": "2026-06-17T11:07:13+00:00",
+        "evidence": "Figure 1 and the introduction contrast the baseline's output with the proposed method.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:07:13+00:00",
+        "methodology": "The baseline approach involves encoding the scene graph directly into a feature vector or graph representation, which is then used to predict a layout and subsequently generate pixels. It treats different graph structures describing the same scene as distinct inputs, lacking an explicit mechanism to normalize reciprocal or redundant relations.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "performance": [
+          {
+            "benchmark_name": "Visual Genome",
+            "metric": "Image Quality / Consistency",
+            "value_text": "Lower performance on large scene graphs compared to the canonical representation method; generates low-quality images when input graphs vary logically but describe the same scene."
+          }
+        ],
+        "principle": "Relies on the neural network to implicitly learn invariance to graph variations, which proves insufficient for complex, noisy human-annotated graphs.",
+        "provider": "siliconflow",
+        "source_paper_link": "Referenced as [17] in the text",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1912.07414v5"
+        ],
+        "source_paper_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-2A462C17468E"
+        ],
+        "source_work_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+        "source_works": [
+          "W-2A462C17468E"
+        ],
+        "updated_at": "2026-06-17T11:07:13+00:00",
+        "variants": {
+          "VER-D47AF284860A": {
+            "confidence_score": 0.55,
+            "entered_at": "2026-06-17T11:07:13+00:00",
+            "extracted_at": "2026-06-17T11:07:13+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "baseline_name": "Johnson et al. (2018) / Standard SG2Im",
+              "baseline_type": "compared_method",
+              "benchmarks": [
+                "Visual Genome",
+                "COCO",
+                "CLEVR"
+              ],
+              "confidence_score": 0.55,
+              "core_idea": "Directly mapping input scene graphs to layouts and then to images without enforcing canonical representations for logically equivalent graphs.",
+              "description": "This method represents the standard approach prior to the proposed work, struggling with complex scenes where the scene graph contains many objects and edges. It fails to capture semantic equivalence, leading to inconsistent layouts for logically equivalent inputs and lower quality generated images.",
+              "discussion": "The baseline serves as a critical comparison point, illustrating the failure mode of ignoring logical equivalence. Its performance degrades as graph complexity increases because the model cannot generalize across the various ways humans annotate the same spatial configuration.",
+              "evidence": "Figure 1 and the introduction contrast the baseline's output with the proposed method.",
+              "evidence_items": [],
+              "methodology": "The baseline approach involves encoding the scene graph directly into a feature vector or graph representation, which is then used to predict a layout and subsequently generate pixels. It treats different graph structures describing the same scene as distinct inputs, lacking an explicit mechanism to normalize reciprocal or redundant relations.",
+              "metrics": [],
+              "needs_review": false,
+              "performance": [
+                {
+                  "benchmark_name": "Visual Genome",
+                  "metric": "Image Quality / Consistency",
+                  "value_text": "Lower performance on large scene graphs compared to the canonical representation method; generates low-quality images when input graphs vary logically but describe the same scene."
+                }
+              ],
+              "principle": "Relies on the neural network to implicitly learn invariance to graph variations, which proves insufficient for complex, noisy human-annotated graphs.",
+              "source_paper_link": "Referenced as [17] in the text",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1912.07414v5"
+              ],
+              "source_paper_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-A99D60F4394C"
+              ],
+              "source_work_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+              "source_works": [],
+              "venue_or_source": "ECCV 2020",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1912.07414v5"
+            ],
+            "version_id": "VER-D47AF284860A"
+          }
+        },
+        "venue_or_source": "ECCV 2020",
+        "year": 2019
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.55,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-2A462C17468E"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:23+00:00",
+        "updated_at": "2026-06-17T11:22:23+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-43FF293AA9C3",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "input normalization for structural consistency input normalization for structural consistency generative models conditioned on structured data achieve higher stability and output quality when logically equivalent input variations are normalized to a single canonical form prior to feature extraction ",
+      "canonical_label": "Input Normalization for Structural Consistency",
+      "concept_id": "P-672D7C3E7435",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "Generative models conditioned on structured data achieve higher stability and output quality when logically equivalent input variations are normalized to a single canonical form prior to feature extraction. This prevents the model from learning spurious correlations between specific graph encodings and spatial layouts.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-2D0D0E7D15BA",
+        "argument": "Generative models conditioned on structured data achieve higher stability and output quality when logically equivalent input variations are normalized to a single canonical form prior to feature extraction. This prevents the model from learning spurious correlations between specific graph encodings and spatial layouts.",
+        "benchmarks": [],
+        "boundary_conditions": [
+          "This principle is most effective in domains where logical equivalences are well-defined and computable, such as geometric spatial relations."
+        ],
+        "canonical_id": "P-E5EC828D0C17",
+        "canonical_key": "generative models conditioned on structured data achieve higher stability and output quality when logically equivalent input variations are normalized to single canonical form prio",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T11:07:12+00:00",
+        "discussion": "The principle highlights that data inconsistency in structured inputs acts as a form of label noise that confuses conditional generative models. Applying a canonicalization step acts as a regularizer, forcing the model to focus on the underlying semantic content rather than the specific syntactic arrangement of the input graph.",
+        "entered_at": "2026-06-17T11:07:12+00:00",
+        "evidence": "The work shows that existing models fail to generate consistent layouts when presented with scene graphs that are logically equivalent but structurally different. By explicitly replacing diverse input graphs with a learned canonical representation, the proposed model achieves improved empirical performance on large scene graphs and demonstrates robustness to noise.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:07:13+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Input Normalization for Structural Consistency",
+        "performance": [],
+        "principle_id": "P-E5EC828D0C17",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/1912.07414v5",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1912.07414v5"
+        ],
+        "source_paper_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-2A462C17468E"
+        ],
+        "source_work_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+        "source_works": [
+          "W-2A462C17468E"
+        ],
+        "updated_at": "2026-06-17T11:07:13+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-2D0D0E7D15BA": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T11:07:12+00:00",
+            "extracted_at": "2026-06-17T11:07:13+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "Generative models conditioned on structured data achieve higher stability and output quality when logically equivalent input variations are normalized to a single canonical form prior to feature extraction. This prevents the model from learning spurious correlations between specific graph encodings and spatial layouts.",
+              "argument": "Generative models conditioned on structured data achieve higher stability and output quality when logically equivalent input variations are normalized to a single canonical form prior to feature extraction. This prevents the model from learning spurious correlations between specific graph encodings and spatial layouts.",
+              "benchmarks": [],
+              "boundary_conditions": [
+                "This principle is most effective in domains where logical equivalences are well-defined and computable, such as geometric spatial relations."
+              ],
+              "confidence_score": 0.68,
+              "discussion": "The principle highlights that data inconsistency in structured inputs acts as a form of label noise that confuses conditional generative models. Applying a canonicalization step acts as a regularizer, forcing the model to focus on the underlying semantic content rather than the specific syntactic arrangement of the input graph.",
+              "evidence": "The work shows that existing models fail to generate consistent layouts when presented with scene graphs that are logically equivalent but structurally different. By explicitly replacing diverse input graphs with a learned canonical representation, the proposed model achieves improved empirical performance on large scene graphs and demonstrates robustness to noise.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Input Normalization for Structural Consistency",
+              "performance": [],
+              "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+              "source_paper_link": "http://arxiv.org/abs/1912.07414v5",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1912.07414v5"
+              ],
+              "source_paper_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-A99D60F4394C"
+              ],
+              "source_work_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+              "source_works": [
+                "W-A99D60F4394C"
+              ],
+              "venue_or_source": "ECCV 2020",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1912.07414v5"
+            ],
+            "version_id": "VER-2D0D0E7D15BA"
+          }
+        },
+        "venue_or_source": "ECCV 2020",
+        "year": 2019
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-2A462C17468E"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:22+00:00",
+        "updated_at": "2026-06-17T11:22:22+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-FE5790BA47BD",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "input normalization for structural consistency input normalization for structural consistency generative models conditioned on structured data achieve higher stability and quality when logically equivalent input variations are normalized to a single canonical form prior to feature extraction this pr",
+      "canonical_label": "Input Normalization for Structural Consistency",
+      "concept_id": "P-EE735D50CBA9",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "Generative models conditioned on structured data achieve higher stability and quality when logically equivalent input variations are normalized to a single canonical form prior to feature extraction. This prevents the model from learning spurious correlations between specific graph encodings and spatial layouts.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-4013674DE83A",
+        "argument": "Generative models conditioned on structured data achieve higher stability and quality when logically equivalent input variations are normalized to a single canonical form prior to feature extraction. This prevents the model from learning spurious correlations between specific graph encodings and spatial layouts.",
+        "benchmarks": [],
+        "canonical_id": "P-B308CC062A46",
+        "canonical_key": "generative models conditioned on structured data achieve higher stability and quality when logically equivalent input variations are normalized to single canonical form prior to fe",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T11:07:12+00:00",
+        "discussion": "The principle highlights that data inconsistency in structured inputs acts as a form of label noise that confuses conditional generative models. Applying a canonicalization step acts as a regularizer, forcing the model to focus on the underlying semantic content rather than the specific syntactic arrangement of the input graph. In practice, this requires defining or learning a comprehensive set of equivalence rules relevant to the domain. The limitation lies in the complexity of defining 'equivalence' for highly abstract or context-dependent relations, where a single canonical form might not exist or might be difficult to compute. Nevertheless, for geometric and spatial reasoning tasks, this normalization is a critical design choice for scaling to complex scenes.",
+        "entered_at": "2026-06-17T11:07:12+00:00",
+        "evidence": "The work demonstrates that existing models fail to generate consistent layouts when presented with scene graphs that are logically equivalent but structurally different, such as those containing only one direction of a reciprocal spatial relation. By explicitly replacing diverse input graphs with a learned canonical representation, the proposed model achieves improved empirical performance on large scene graphs and demonstrates robustness to noise. The results show that without this normalization, the layout generation step produces divergent outputs for the same underlying scene, leading to lower image quality.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:07:12+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Input Normalization for Structural Consistency",
+        "performance": [],
+        "principle_id": "P-B308CC062A46",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/1912.07414v5",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1912.07414v5"
+        ],
+        "source_paper_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-2A462C17468E"
+        ],
+        "source_work_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+        "source_works": [
+          "W-2A462C17468E"
+        ],
+        "updated_at": "2026-06-17T11:07:12+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-4013674DE83A": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T11:07:12+00:00",
+            "extracted_at": "2026-06-17T11:07:12+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "Generative models conditioned on structured data achieve higher stability and quality when logically equivalent input variations are normalized to a single canonical form prior to feature extraction. This prevents the model from learning spurious correlations between specific graph encodings and spatial layouts.",
+              "argument": "Generative models conditioned on structured data achieve higher stability and quality when logically equivalent input variations are normalized to a single canonical form prior to feature extraction. This prevents the model from learning spurious correlations between specific graph encodings and spatial layouts.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle highlights that data inconsistency in structured inputs acts as a form of label noise that confuses conditional generative models. Applying a canonicalization step acts as a regularizer, forcing the model to focus on the underlying semantic content rather than the specific syntactic arrangement of the input graph. In practice, this requires defining or learning a comprehensive set of equivalence rules relevant to the domain. The limitation lies in the complexity of defining 'equivalence' for highly abstract or context-dependent relations, where a single canonical form might not exist or might be difficult to compute. Nevertheless, for geometric and spatial reasoning tasks, this normalization is a critical design choice for scaling to complex scenes.",
+              "evidence": "The work demonstrates that existing models fail to generate consistent layouts when presented with scene graphs that are logically equivalent but structurally different, such as those containing only one direction of a reciprocal spatial relation. By explicitly replacing diverse input graphs with a learned canonical representation, the proposed model achieves improved empirical performance on large scene graphs and demonstrates robustness to noise. The results show that without this normalization, the layout generation step produces divergent outputs for the same underlying scene, leading to lower image quality.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Input Normalization for Structural Consistency",
+              "performance": [],
+              "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+              "source_paper_link": "http://arxiv.org/abs/1912.07414v5",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1912.07414v5"
+              ],
+              "source_paper_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-A99D60F4394C"
+              ],
+              "source_work_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+              "source_works": [
+                "W-A99D60F4394C"
+              ],
+              "venue_or_source": "ECCV 2020",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1912.07414v5"
+            ],
+            "version_id": "VER-4013674DE83A"
+          }
+        },
+        "venue_or_source": "ECCV 2020",
+        "year": 2019
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-2A462C17468E"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:22+00:00",
+        "updated_at": "2026-06-17T11:22:22+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-09977686748A",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "robustness to scene graph noise via canonicalization robustness to scene graph noise via canonicalization enforcing canonical representations for scene graphs significantly improves image generation quality for complex scenes and increases robustness to missing or noisy input relations the model dem",
+      "canonical_label": "Robustness to Scene Graph Noise via Canonicalization",
+      "concept_id": "TM-CF60665E99E8",
+      "concept_type": "takeaway_message",
+      "payload": {
+        "active_version_id": "VER-0A7FD14AD543",
+        "benchmarks": [],
+        "canonical_id": "TM-109F1992E395",
+        "canonical_key": "enforcing canonical representations for scene graphs significantly improves image generation quality for complex scenes and increases robustness to missing or noisy input relations",
+        "condition": "This finding applies specifically to scene graph-to-image generation tasks where input graphs are derived from human annotations, which often contain incomplete or asymmetric spatial relations.",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T11:07:12+00:00",
+        "discussion": "The empirical lesson is that explicit canonicalization modules provide a necessary inductive bias for structured generation tasks. By mapping variant input structures to a standard form before feeding them into the main generative network, systems can target known logical symmetries in the data domain.",
+        "entered_at": "2026-06-17T11:07:12+00:00",
+        "evidence": "The text reports improved performance of the model on three different benchmarks: Visual Genome, COCO, and CLEVR. The model demonstrates improved empirical performance on large scene graphs and robustness to noise in the input scene graph.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:07:13+00:00",
+        "extraction_method": "llm_extracted",
+        "finding": "Enforcing canonical representations for scene graphs significantly improves image generation quality for complex scenes and increases robustness to missing or noisy input relations. The model demonstrates superior generalization to semantically equivalent graphs.",
+        "main_results": "Enforcing canonical representations for scene graphs significantly improves image generation quality for complex scenes and increases robustness to missing or noisy input relations. The model demonstrates superior generalization to semantically equivalent graphs.",
+        "message_text": "Enforcing canonical representations for scene graphs significantly improves image generation quality for complex scenes and increases robustness to missing or noisy input relations. The model demonstrates superior generalization to semantically equivalent graphs.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/1912.07414v5",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1912.07414v5"
+        ],
+        "source_paper_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-2A462C17468E"
+        ],
+        "source_work_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+        "source_works": [
+          "W-2A462C17468E"
+        ],
+        "title": "Robustness to Scene Graph Noise via Canonicalization",
+        "updated_at": "2026-06-17T11:07:13+00:00",
+        "variants": {
+          "VER-0A7FD14AD543": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T11:07:12+00:00",
+            "extracted_at": "2026-06-17T11:07:13+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "condition": "This finding applies specifically to scene graph-to-image generation tasks where input graphs are derived from human annotations, which often contain incomplete or asymmetric spatial relations.",
+              "confidence_score": 0.7,
+              "discussion": "The empirical lesson is that explicit canonicalization modules provide a necessary inductive bias for structured generation tasks. By mapping variant input structures to a standard form before feeding them into the main generative network, systems can target known logical symmetries in the data domain.",
+              "evidence": "The text reports improved performance of the model on three different benchmarks: Visual Genome, COCO, and CLEVR. The model demonstrates improved empirical performance on large scene graphs and robustness to noise in the input scene graph.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "finding": "Enforcing canonical representations for scene graphs significantly improves image generation quality for complex scenes and increases robustness to missing or noisy input relations. The model demonstrates superior generalization to semantically equivalent graphs.",
+              "main_results": "Enforcing canonical representations for scene graphs significantly improves image generation quality for complex scenes and increases robustness to missing or noisy input relations. The model demonstrates superior generalization to semantically equivalent graphs.",
+              "message_text": "Enforcing canonical representations for scene graphs significantly improves image generation quality for complex scenes and increases robustness to missing or noisy input relations. The model demonstrates superior generalization to semantically equivalent graphs.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "http://arxiv.org/abs/1912.07414v5",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1912.07414v5"
+              ],
+              "source_paper_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-A99D60F4394C"
+              ],
+              "source_work_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+              "source_works": [],
+              "title": "Robustness to Scene Graph Noise via Canonicalization",
+              "venue_or_source": "ECCV 2020",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1912.07414v5"
+            ],
+            "version_id": "VER-0A7FD14AD543"
+          }
+        },
+        "venue_or_source": "ECCV 2020",
+        "year": 2019
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-2A462C17468E"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:22+00:00",
+        "updated_at": "2026-06-17T11:22:22+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-06E7A9FACF6F",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-AC352CDB40BA",
+  "created_at": "2026-06-17T11:22:23+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "The work demonstrates that existing models fail to generate consistent layouts when presented with scene graphs that are logically equivalent but structurally different, such as those containing only one direction of a reciprocal spatial relation. By explicitly replacing diverse input graphs with a learned canonical representation, the proposed model achieves improved empirical performance on large scene graphs and demonstrates robustness to noise. The results show that without this normalization, the layout generation step produces divergent outputs for the same underlying scene, leading to lower image quality.",
+      "concept_id": "P-EE735D50CBA9",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T11:22:22+00:00",
+      "evidence_id": "EV-69F727B8B47B",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work demonstrates that existing models fail to generate consistent layouts when presented with scene graphs that are logically equivalent but structurally different, such as those containing only one direction of a reciprocal spatial relation. By explicitly replacing diverse input graphs with a learned canonical representation, the proposed model achieves improved empirical performance on large scene graphs and demonstrates robustness to noise. The results show that without this normalization, the layout generation step produces divergent outputs for the same underlying scene, leading to lower image quality.",
+      "work_id": "W-2A462C17468E",
+      "work_version_id": "WV-10D98C643D05"
+    },
+    {
+      "claim_text": "The work shows that existing models fail to generate consistent layouts when presented with scene graphs that are logically equivalent but structurally different. By explicitly replacing diverse input graphs with a learned canonical representation, the proposed model achieves improved empirical performance on large scene graphs and demonstrates robustness to noise.",
+      "concept_id": "P-672D7C3E7435",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T11:22:22+00:00",
+      "evidence_id": "EV-E3193B739642",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work shows that existing models fail to generate consistent layouts when presented with scene graphs that are logically equivalent but structurally different. By explicitly replacing diverse input graphs with a learned canonical representation, the proposed model achieves improved empirical performance on large scene graphs and demonstrates robustness to noise.",
+      "work_id": "W-2A462C17468E",
+      "work_version_id": "WV-10D98C643D05"
+    },
+    {
+      "claim_text": "The text reports improved performance of the model on three different benchmarks: Visual Genome, COCO, and CLEVR. The model demonstrates improved empirical performance on large scene graphs and robustness to noise in the input scene graph.",
+      "concept_id": "TM-CF60665E99E8",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T11:22:22+00:00",
+      "evidence_id": "EV-2CEFDB708DE6",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text reports improved performance of the model on three different benchmarks: Visual Genome, COCO, and CLEVR. The model demonstrates improved empirical performance on large scene graphs and robustness to noise in the input scene graph.",
+      "work_id": "W-2A462C17468E",
+      "work_version_id": "WV-10D98C643D05"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-18A3C7AD5F6D\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-0DE8919CF549\", \"task\": \"images limited scene views\", \"dataset\": \"COCO\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"SynthText3D: synthesizing scene text images from 3D...",
+      "concept_id": "B-F8179EDB487D",
+      "confidence": 0.32,
+      "created_at": "2026-06-17T11:22:23+00:00",
+      "evidence_id": "EV-F3D6FD07202B",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-18A3C7AD5F6D\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-0DE8919CF549\", \"task\": \"images limited scene views\", \"dataset\": \"COCO\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"SynthText3D: synthesizing scene text images from 3D...",
+      "work_id": "W-2A462C17468E",
+      "work_version_id": "WV-10D98C643D05"
+    },
+    {
+      "claim_text": "The text explicitly mentions extensive experiments on Visual Genome benchmark datasets showing improved performance.",
+      "concept_id": "B-4D5B63044680",
+      "confidence": 0.58,
+      "created_at": "2026-06-17T11:22:23+00:00",
+      "evidence_id": "EV-D4C6B1032D0D",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text explicitly mentions extensive experiments on Visual Genome benchmark datasets showing improved performance.",
+      "work_id": "W-2A462C17468E",
+      "work_version_id": "WV-10D98C643D05"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-A832065A9092\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-C56999C6F34A\", \"task\": \"images limited scene views\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Tangent Images for Mitigating Spherical Distortion In this work...",
+      "concept_id": "B-8C7A7CE9928D",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T11:22:23+00:00",
+      "evidence_id": "EV-94758D07C091",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-A832065A9092\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-C56999C6F34A\", \"task\": \"images limited scene views\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Tangent Images for Mitigating Spherical Distortion In this work...",
+      "work_id": "W-2A462C17468E",
+      "work_version_id": "WV-10D98C643D05"
+    },
+    {
+      "claim_text": "The text identifies CLEVR as the third benchmark used to validate the model's improved performance, particularly useful for testing logical equivalence due to its synthetic and precise nature.",
+      "concept_id": "B-C879909C89AE",
+      "confidence": 0.58,
+      "created_at": "2026-06-17T11:22:23+00:00",
+      "evidence_id": "EV-FA9347408145",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The text identifies CLEVR as the third benchmark used to validate the model's improved performance, particularly useful for testing logical equivalence due to its synthetic and precise nature.",
+      "work_id": "W-2A462C17468E",
+      "work_version_id": "WV-10D98C643D05"
+    },
+    {
+      "claim_text": "Figure 1 and the introduction contrast the baseline's output with the proposed method.",
+      "concept_id": "BL-A29548523566",
+      "confidence": 0.55,
+      "created_at": "2026-06-17T11:22:23+00:00",
+      "evidence_id": "EV-15EF66F79BC1",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "Figure 1 and the introduction contrast the baseline's output with the proposed method.",
+      "work_id": "W-2A462C17468E",
+      "work_version_id": "WV-10D98C643D05"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-17T11:22:22+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-17T11:22:14+00:00",
+      "extraction_run_id": "XRUN-C68776A2A3CF",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 1,
+        "benchmark_records": 7,
+        "existed_ideas": 0,
+        "principles": 2,
+        "takeaway_messages": 1,
+        "total": 11
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-2A462C17468E",
+      "work_version_id": "WV-10D98C643D05"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "",
+    "secret_exposed_to_browser": false,
+    "warning": ""
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 0,
+        "principle": 2
+      },
+      "title": "Learning Canonical Representations for Scene Graph to Image Generation",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-2A462C17468E"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "1912.07414",
+        "authors": [
+          "Roei Herzig",
+          "Amir Bar",
+          "Huijuan Xu",
+          "Gal Chechik",
+          "Trevor Darrell",
+          "Amir Globerson"
+        ],
+        "canonical_title": "Learning Canonical Representations for Scene Graph to Image Generation",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "http://arxiv.org/abs/1912.07414v5"
+        ],
+        "title_hash": "04cb927be40a47f4",
+        "title_norm": "learning canonical representations for scene graph to image generation",
+        "venue_or_source": "ECCV 2020",
+        "year": 2019
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "2020-08-24T12:29:45Z",
+        "title_hash": "04cb927be40a47f4"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:14+00:00",
+        "updated_at": "2026-06-17T11:22:14+00:00"
+      },
+      "work_id": "W-2A462C17468E"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": "Generating realistic images of complex visual scenes becomes challenging when one wishes to control the structure of the generated images. Previous approaches showed that scenes with few entities can be controlled using scene graphs, but this approach struggles as the complexity of the graph (the number of objects and edges) increases. In this work, we show that one limitation of current methods is their inability to capture semantic equivalence in graphs. We present a novel model that addresses these issues by learning canonical graph representations from the data, resulting in improved image generation for complex visual scenes. Our model demonstrates improved empirical performance on large scene graphs, robustness to noise in the input scene graph, and generalization on semantically equivalent graphs. Finally, we show improved performance of the model on three different benchmarks: Visual Genome, COCO, and CLEVR.",
+      "abstract_hash": "ea6dbd902eb77c0d",
+      "content_hash": "bacfe26e1b085714",
+      "created_at": "2026-06-17T11:22:14+00:00",
+      "metadata": {
+        "abstract": "Generating realistic images of complex visual scenes becomes challenging when one wishes to control the structure of the generated images. Previous approaches showed that scenes with few entities can be controlled using scene graphs, but this approach struggles as the complexity of the graph (the number of objects and edges) increases. In this work, we show that one limitation of current methods is their inability to capture semantic equivalence in graphs. We present a novel model that addresses these issues by learning canonical graph representations from the data, resulting in improved image generation for complex visual scenes. Our model demonstrates improved empirical performance on large scene graphs, robustness to noise in the input scene graph, and generalization on semantically equivalent graphs. Finally, we show improved performance of the model on three different benchmarks: Visual Genome, COCO, and CLEVR.",
+        "active_version_id": "VER-80584913585D",
+        "authors": [
+          "Roei Herzig",
+          "Amir Bar",
+          "Huijuan Xu",
+          "Gal Chechik",
+          "Trevor Darrell",
+          "Amir Globerson"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-A99D60F4394C",
+        "canonical_key": "learning canonical representations for scene graph to image generation",
+        "community_signals": {},
+        "confidence_score": 0.62,
+        "created_at": "2026-06-17T10:49:59+00:00",
+        "entered_at": "2026-06-17T11:05:20+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:07:12+00:00",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "paper_link": "http://arxiv.org/abs/1912.07414v5",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "2020-08-24T12:29:45Z",
+        "source_urls": [
+          "http://arxiv.org/abs/1912.07414v5"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "title": "Learning Canonical Representations for Scene Graph to Image Generation",
+        "updated_at": "2026-06-17T11:07:12+00:00",
+        "url_or_doi": "http://arxiv.org/abs/1912.07414v5",
+        "validation_level": "L1",
+        "variants": {
+          "VER-80584913585D": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T11:05:20+00:00",
+            "extracted_at": "2026-06-17T11:07:12+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Generating realistic images of complex visual scenes becomes challenging when one wishes to control the structure of the generated images. Previous approaches showed that scenes with few entities can be controlled using scene graphs, but this approach struggles as the complexity of the graph (the number of objects and edges) increases. In this work, we show that one limitation of current methods is their inability to capture semantic equivalence in graphs. We present a novel model that addresses these issues by learning canonical graph representations from the data, resulting in improved image generation for complex visual scenes. Our model demonstrates improved empirical performance on large scene graphs, robustness to noise in the input scene graph, and generalization on semantically equivalent graphs. Finally, we show improved performance of the model on three different benchmarks: Visual Genome, COCO, and CLEVR.",
+              "authors": [
+                "Roei Herzig",
+                "Amir Bar",
+                "Huijuan Xu",
+                "Gal Chechik",
+                "Trevor Darrell",
+                "Amir Globerson"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/1912.07414v5",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2020-08-24T12:29:45Z",
+              "source_urls": [
+                "http://arxiv.org/abs/1912.07414v5"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Learning Canonical Representations for Scene Graph to Image Generation",
+              "url_or_doi": "http://arxiv.org/abs/1912.07414v5",
+              "validation_level": "L1",
+              "venue_or_source": "ECCV 2020",
+              "year": 2019
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1912.07414v5"
+            ],
+            "version_id": "VER-80584913585D"
+          },
+          "VER-BFAD39526511": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T10:49:59+00:00",
+            "extracted_at": "2026-06-17T10:49:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Generating realistic images of complex visual scenes becomes challenging when one wishes to control the structure of the generated images. Previous approaches showed that scenes with few entities can be controlled using scene graphs, but this approach struggles as the complexity of the graph (the number of objects and edges) increases. In this work, we show that one limitation of current methods is their inability to capture semantic equivalence in graphs. We present a novel model that addresses these issues by learning canonical graph representations from the data, resulting in improved image generation for complex visual scenes. Our model demonstrates improved empirical performance on large scene graphs, robustness to noise in the input scene graph, and generalization on semantically equivalent graphs. Finally, we show improved performance of the model on three different benchmarks: Visual Genome, COCO, and CLEVR.",
+              "authors": [
+                "Roei Herzig",
+                "Amir Bar",
+                "Huijuan Xu",
+                "Gal Chechik",
+                "Trevor Darrell",
+                "Amir Globerson"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/1912.07414v5",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2020-08-24T12:29:45Z",
+              "source_urls": [
+                "http://arxiv.org/abs/1912.07414v5"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Learning Canonical Representations for Scene Graph to Image Generation",
+              "url_or_doi": "http://arxiv.org/abs/1912.07414v5",
+              "validation_level": "L1",
+              "venue_or_source": "ECCV 2020",
+              "year": 2019
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "http://arxiv.org/abs/1912.07414v5"
+            ],
+            "version_id": "VER-BFAD39526511"
+          }
+        },
+        "venue_or_source": "ECCV 2020",
+        "work_id": "W-A99D60F4394C",
+        "year": 2019
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "",
+      "source_record_id": "W-A99D60F4394C",
+      "source_updated_at": "2020-08-24T12:29:45Z",
+      "title": "Learning Canonical Representations for Scene Graph to Image Generation",
+      "title_hash": "04cb927be40a47f4",
+      "work_id": "W-2A462C17468E",
+      "work_version_id": "WV-10D98C643D05"
+    }
+  ]
+}
