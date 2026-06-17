@@ -1,0 +1,2497 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "humaneval humaneval humaneval w 931a92b2cbd0",
+      "canonical_label": "HumanEval",
+      "concept_id": "B-02F383F1AA40",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-5C7875A7E9F5",
+        "benchmark_id": "B-563D4A9FFB3C",
+        "benchmark_name": "HumanEval",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-563D4A9FFB3C",
+        "canonical_key": "humaneval",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T06:19:09+00:00",
+        "data_form": "Programming prompts with unit tests.",
+        "dataset": "HumanEval",
+        "description": "Python code-generation benchmark for function synthesis.",
+        "entered_at": "2026-06-17T06:19:09+00:00",
+        "evidence": "{\"benchmark_id\": \"B-CE303A134A57\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-CCDDD020EEA0\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"HumanEval\", \"split\": \"unspecified\", \"metric\": \"EM\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Large Language Model Evaluation Via Multi AI Agents: Prelimina...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:15+00:00",
+        "extractor": "deterministic",
+        "metric": "EM",
+        "metrics": [
+          "accuracy",
+          "memory",
+          "EM"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://github.com/openai/human-eval",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "164 programming problems.",
+        "source": "OpenAI",
+        "source_paper_link": "http://arxiv.org/abs/2404.01023v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2406.07155v3",
+          "http://arxiv.org/abs/2404.01023v1"
+        ],
+        "source_paper_title": "Large Language Model Evaluation Via Multi AI Agents: Preliminary results",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-931A92B2CBD0"
+        ],
+        "source_work_title": "Large Language Model Evaluation Via Multi AI Agents: Preliminary results",
+        "source_works": [
+          "W-931A92B2CBD0"
+        ],
+        "task": "LLM multi-agent reasoning system",
+        "updated_at": "2026-06-17T07:01:15+00:00",
+        "variants": {
+          "VER-5C7875A7E9F5": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T06:19:09+00:00",
+            "extracted_at": "2026-06-17T07:01:15+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "HumanEval",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Programming prompts with unit tests.",
+              "dataset": "HumanEval",
+              "description": "Python code-generation benchmark for function synthesis.",
+              "evidence": "{\"benchmark_id\": \"B-CE303A134A57\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-CCDDD020EEA0\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"HumanEval\", \"split\": \"unspecified\", \"metric\": \"EM\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Large Language Model Evaluation Via Multi AI Agents: Prelimina...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "EM",
+              "metrics": [
+                "accuracy",
+                "memory",
+                "EM"
+              ],
+              "needs_review": false,
+              "official_url": "https://github.com/openai/human-eval",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "164 programming problems.",
+              "source": "OpenAI",
+              "source_paper_link": "http://arxiv.org/abs/2404.01023v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2406.07155v3",
+                "http://arxiv.org/abs/2404.01023v1"
+              ],
+              "source_paper_title": "Large Language Model Evaluation Via Multi AI Agents: Preliminary results",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-565BC95507DC",
+                "W-CCDDD020EEA0"
+              ],
+              "source_work_title": "Large Language Model Evaluation Via Multi AI Agents: Preliminary results",
+              "source_works": [],
+              "task": "LLM multi-agent reasoning system",
+              "venue_or_source": "ICLR 2024",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2404.01023v1",
+              "https://github.com/openai/human-eval"
+            ],
+            "version_id": "VER-5C7875A7E9F5"
+          }
+        },
+        "venue_or_source": "ICLR 2024",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-931A92B2CBD0"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:04:54+00:00",
+        "updated_at": "2026-06-17T07:04:54+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-652EA299E2E3",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "mmlu mmlu mmlu w 931a92b2cbd0",
+      "canonical_label": "MMLU",
+      "concept_id": "B-5A04BACF25E2",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-5964595F47AF",
+        "benchmark_id": "B-82630D34D2EE",
+        "benchmark_name": "MMLU",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-82630D34D2EE",
+        "canonical_key": "mmlu",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T06:19:09+00:00",
+        "data_form": "Multiple-choice questions spanning many subject areas.",
+        "dataset": "MMLU",
+        "description": "Massive Multitask Language Understanding benchmark for broad academic and professional knowledge.",
+        "entered_at": "2026-06-17T06:19:09+00:00",
+        "evidence": "{\"benchmark_id\": \"B-C1E25B16D8BA\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-F4B6C94FC69A\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"MALLM: Multi-Agent Large Language Models Framework Mult...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T07:01:18+00:00",
+        "extractor": "deterministic",
+        "metric": "memory",
+        "metrics": [
+          "accuracy",
+          "memory",
+          "mAP",
+          "BLEU",
+          "ROUGE"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/cais/mmlu",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Roughly 14K questions across 57 tasks.",
+        "source": "CAIS / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2509.11656v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2406.07155v3",
+          "http://arxiv.org/abs/2510.26352v2",
+          "http://arxiv.org/abs/2509.11656v3"
+        ],
+        "source_paper_title": "MALLM: Multi-Agent Large Language Models Framework",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-931A92B2CBD0"
+        ],
+        "source_work_title": "MALLM: Multi-Agent Large Language Models Framework",
+        "source_works": [
+          "W-931A92B2CBD0"
+        ],
+        "task": "LLM multi-agent reasoning system",
+        "updated_at": "2026-06-17T07:01:18+00:00",
+        "variants": {
+          "VER-5964595F47AF": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T06:19:09+00:00",
+            "extracted_at": "2026-06-17T07:01:18+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "MMLU",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Multiple-choice questions spanning many subject areas.",
+              "dataset": "MMLU",
+              "description": "Massive Multitask Language Understanding benchmark for broad academic and professional knowledge.",
+              "evidence": "{\"benchmark_id\": \"B-C1E25B16D8BA\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-F4B6C94FC69A\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"MALLM: Multi-Agent Large Language Models Framework Mult...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "memory",
+              "metrics": [
+                "accuracy",
+                "memory",
+                "mAP",
+                "BLEU",
+                "ROUGE"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/cais/mmlu",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Roughly 14K questions across 57 tasks.",
+              "source": "CAIS / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2509.11656v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2406.07155v3",
+                "http://arxiv.org/abs/2510.26352v2",
+                "http://arxiv.org/abs/2509.11656v3"
+              ],
+              "source_paper_title": "MALLM: Multi-Agent Large Language Models Framework",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-565BC95507DC",
+                "W-8DB03B5F73D6",
+                "W-F4B6C94FC69A"
+              ],
+              "source_work_title": "MALLM: Multi-Agent Large Language Models Framework",
+              "source_works": [],
+              "task": "LLM multi-agent reasoning system",
+              "venue_or_source": "EMNLP 2025",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2509.11656v3",
+              "https://huggingface.co/datasets/cais/mmlu"
+            ],
+            "version_id": "VER-5964595F47AF"
+          }
+        },
+        "venue_or_source": "EMNLP 2025",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-931A92B2CBD0"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:04:54+00:00",
+        "updated_at": "2026-06-17T07:04:54+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-8E07E5EFE69C",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "mmlu mmlu mmlu w 565bc95507dc w 8db03b5f73d6",
+      "canonical_label": "MMLU",
+      "concept_id": "B-6A7C1D0B9629",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-5964595F47AF",
+        "benchmark_id": "B-82630D34D2EE",
+        "benchmark_name": "MMLU",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-82630D34D2EE",
+        "canonical_key": "mmlu",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T06:19:09+00:00",
+        "data_form": "Multiple-choice questions spanning many subject areas.",
+        "dataset": "MMLU",
+        "description": "Massive Multitask Language Understanding benchmark for broad academic and professional knowledge.",
+        "entered_at": "2026-06-17T06:19:09+00:00",
+        "evidence": "{\"benchmark_id\": \"B-0B77A85A890E\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-565BC95507DC\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Scaling Large Language Model-based Multi-Agent Collabor...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T06:22:58+00:00",
+        "extractor": "deterministic",
+        "metric": "memory",
+        "metrics": [
+          "accuracy",
+          "memory",
+          "mAP"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/cais/mmlu",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Roughly 14K questions across 57 tasks.",
+        "source": "CAIS / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2406.07155v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2406.07155v3",
+          "http://arxiv.org/abs/2510.26352v2"
+        ],
+        "source_paper_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-565BC95507DC",
+          "W-8DB03B5F73D6"
+        ],
+        "source_work_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+        "source_works": [],
+        "task": "LLM multi-agent reasoning system",
+        "updated_at": "2026-06-17T06:22:58+00:00",
+        "variants": {
+          "VER-5964595F47AF": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T06:19:09+00:00",
+            "extracted_at": "2026-06-17T06:22:58+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "MMLU",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Multiple-choice questions spanning many subject areas.",
+              "dataset": "MMLU",
+              "description": "Massive Multitask Language Understanding benchmark for broad academic and professional knowledge.",
+              "evidence": "{\"benchmark_id\": \"B-0B77A85A890E\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-565BC95507DC\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Scaling Large Language Model-based Multi-Agent Collabor...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "memory",
+              "metrics": [
+                "accuracy",
+                "memory",
+                "mAP"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/cais/mmlu",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Roughly 14K questions across 57 tasks.",
+              "source": "CAIS / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2406.07155v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2406.07155v3",
+                "http://arxiv.org/abs/2510.26352v2"
+              ],
+              "source_paper_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-565BC95507DC",
+                "W-8DB03B5F73D6"
+              ],
+              "source_work_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+              "source_works": [],
+              "task": "LLM multi-agent reasoning system",
+              "venue_or_source": "ICLR 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2406.07155v3",
+              "https://huggingface.co/datasets/cais/mmlu"
+            ],
+            "version_id": "VER-5964595F47AF"
+          }
+        },
+        "venue_or_source": "ICLR 2025",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-565BC95507DC",
+          "W-8DB03B5F73D6"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:21:12+00:00",
+        "updated_at": "2026-06-17T06:23:10+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-93243CD847E6",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "drop drop drop w 931a92b2cbd0",
+      "canonical_label": "DROP",
+      "concept_id": "B-8C7A7CE9928D",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-996666835726",
+        "benchmark_id": "B-AA20C3BF5ECA",
+        "benchmark_name": "DROP",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-AA20C3BF5ECA",
+        "canonical_key": "drop",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T06:19:09+00:00",
+        "data_form": "Paragraph-question-answer examples with numerical, counting, and span reasoning.",
+        "dataset": "DROP",
+        "description": "Reading comprehension benchmark requiring discrete reasoning over paragraphs.",
+        "entered_at": "2026-06-17T06:19:09+00:00",
+        "evidence": "{\"benchmark_id\": \"B-790D0CE9B7F1\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-BE9F6B5E1FE3\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Bilevel Optimization for Covert Memory Tampering in Het...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T06:57:29+00:00",
+        "extractor": "deterministic",
+        "metric": "memory",
+        "metrics": [
+          "accuracy",
+          "memory"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/ucinlp/drop",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "96K question-answer pairs.",
+        "source": "DROP / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2512.15790v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2406.07155v3",
+          "http://arxiv.org/abs/2512.15790v1"
+        ],
+        "source_paper_title": "Bilevel Optimization for Covert Memory Tampering in Heterogeneous Multi-Agent Architectures (XAMT)",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-931A92B2CBD0"
+        ],
+        "source_work_title": "Bilevel Optimization for Covert Memory Tampering in Heterogeneous Multi-Agent Architectures (XAMT)",
+        "source_works": [
+          "W-931A92B2CBD0"
+        ],
+        "task": "LLM multi-agent reasoning system",
+        "updated_at": "2026-06-17T06:57:29+00:00",
+        "variants": {
+          "VER-996666835726": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T06:19:09+00:00",
+            "extracted_at": "2026-06-17T06:57:29+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "DROP",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Paragraph-question-answer examples with numerical, counting, and span reasoning.",
+              "dataset": "DROP",
+              "description": "Reading comprehension benchmark requiring discrete reasoning over paragraphs.",
+              "evidence": "{\"benchmark_id\": \"B-790D0CE9B7F1\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-BE9F6B5E1FE3\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Bilevel Optimization for Covert Memory Tampering in Het...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "memory",
+              "metrics": [
+                "accuracy",
+                "memory"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/ucinlp/drop",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "96K question-answer pairs.",
+              "source": "DROP / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2512.15790v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2406.07155v3",
+                "http://arxiv.org/abs/2512.15790v1"
+              ],
+              "source_paper_title": "Bilevel Optimization for Covert Memory Tampering in Heterogeneous Multi-Agent Architectures (XAMT)",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-565BC95507DC",
+                "W-BE9F6B5E1FE3"
+              ],
+              "source_work_title": "Bilevel Optimization for Covert Memory Tampering in Heterogeneous Multi-Agent Architectures (XAMT)",
+              "source_works": [],
+              "task": "LLM multi-agent reasoning system",
+              "venue_or_source": "arXiv",
+              "year": 2025
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2512.15790v1",
+              "https://huggingface.co/datasets/ucinlp/drop"
+            ],
+            "version_id": "VER-996666835726"
+          }
+        },
+        "venue_or_source": "arXiv",
+        "year": 2025
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-931A92B2CBD0"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:04:54+00:00",
+        "updated_at": "2026-06-17T07:04:54+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-EE30D6816DF3",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "humaneval humaneval humaneval w 565bc95507dc",
+      "canonical_label": "HumanEval",
+      "concept_id": "B-BA3683BBE7C9",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-5C7875A7E9F5",
+        "benchmark_id": "B-563D4A9FFB3C",
+        "benchmark_name": "HumanEval",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-563D4A9FFB3C",
+        "canonical_key": "humaneval",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T06:19:09+00:00",
+        "data_form": "Programming prompts with unit tests.",
+        "dataset": "HumanEval",
+        "description": "Python code-generation benchmark for function synthesis.",
+        "entered_at": "2026-06-17T06:19:09+00:00",
+        "evidence": "{\"benchmark_id\": \"B-DAD29E1D5234\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-565BC95507DC\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"HumanEval\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Scaling Large Language Model-based Multi-Agent Col...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T06:22:58+00:00",
+        "extractor": "deterministic",
+        "metric": "memory",
+        "metrics": [
+          "accuracy",
+          "memory"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://github.com/openai/human-eval",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "164 programming problems.",
+        "source": "OpenAI",
+        "source_paper_link": "http://arxiv.org/abs/2406.07155v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2406.07155v3"
+        ],
+        "source_paper_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-565BC95507DC"
+        ],
+        "source_work_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+        "source_works": [],
+        "task": "LLM multi-agent reasoning system",
+        "updated_at": "2026-06-17T06:22:58+00:00",
+        "variants": {
+          "VER-5C7875A7E9F5": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T06:19:09+00:00",
+            "extracted_at": "2026-06-17T06:22:58+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "HumanEval",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Programming prompts with unit tests.",
+              "dataset": "HumanEval",
+              "description": "Python code-generation benchmark for function synthesis.",
+              "evidence": "{\"benchmark_id\": \"B-DAD29E1D5234\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-565BC95507DC\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"HumanEval\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Scaling Large Language Model-based Multi-Agent Col...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "memory",
+              "metrics": [
+                "accuracy",
+                "memory"
+              ],
+              "needs_review": false,
+              "official_url": "https://github.com/openai/human-eval",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "164 programming problems.",
+              "source": "OpenAI",
+              "source_paper_link": "http://arxiv.org/abs/2406.07155v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2406.07155v3"
+              ],
+              "source_paper_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-565BC95507DC"
+              ],
+              "source_work_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+              "source_works": [],
+              "task": "LLM multi-agent reasoning system",
+              "venue_or_source": "ICLR 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2406.07155v3",
+              "https://github.com/openai/human-eval"
+            ],
+            "version_id": "VER-5C7875A7E9F5"
+          }
+        },
+        "venue_or_source": "ICLR 2025",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-565BC95507DC"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:21:12+00:00",
+        "updated_at": "2026-06-17T06:23:10+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-106DA6248D61",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "drop drop drop w 565bc95507dc w be9f6b5e1fe3",
+      "canonical_label": "DROP",
+      "concept_id": "B-D7F497E37E3F",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-996666835726",
+        "benchmark_id": "B-AA20C3BF5ECA",
+        "benchmark_name": "DROP",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-AA20C3BF5ECA",
+        "canonical_key": "drop",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T06:19:09+00:00",
+        "data_form": "Paragraph-question-answer examples with numerical, counting, and span reasoning.",
+        "dataset": "DROP",
+        "description": "Reading comprehension benchmark requiring discrete reasoning over paragraphs.",
+        "entered_at": "2026-06-17T06:19:09+00:00",
+        "evidence": "{\"benchmark_id\": \"B-D9C7CF2F8087\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-565BC95507DC\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Scaling Large Language Model-based Multi-Agent Collabor...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T06:22:58+00:00",
+        "extractor": "deterministic",
+        "metric": "memory",
+        "metrics": [
+          "accuracy",
+          "memory"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://huggingface.co/datasets/ucinlp/drop",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "96K question-answer pairs.",
+        "source": "DROP / Hugging Face",
+        "source_paper_link": "http://arxiv.org/abs/2406.07155v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2406.07155v3",
+          "http://arxiv.org/abs/2512.15790v1"
+        ],
+        "source_paper_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-565BC95507DC",
+          "W-BE9F6B5E1FE3"
+        ],
+        "source_work_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+        "source_works": [],
+        "task": "LLM multi-agent reasoning system",
+        "updated_at": "2026-06-17T06:22:58+00:00",
+        "variants": {
+          "VER-996666835726": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T06:19:09+00:00",
+            "extracted_at": "2026-06-17T06:22:58+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "DROP",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Paragraph-question-answer examples with numerical, counting, and span reasoning.",
+              "dataset": "DROP",
+              "description": "Reading comprehension benchmark requiring discrete reasoning over paragraphs.",
+              "evidence": "{\"benchmark_id\": \"B-D9C7CF2F8087\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-565BC95507DC\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Scaling Large Language Model-based Multi-Agent Collabor...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "memory",
+              "metrics": [
+                "accuracy",
+                "memory"
+              ],
+              "needs_review": false,
+              "official_url": "https://huggingface.co/datasets/ucinlp/drop",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "96K question-answer pairs.",
+              "source": "DROP / Hugging Face",
+              "source_paper_link": "http://arxiv.org/abs/2406.07155v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2406.07155v3",
+                "http://arxiv.org/abs/2512.15790v1"
+              ],
+              "source_paper_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-565BC95507DC",
+                "W-BE9F6B5E1FE3"
+              ],
+              "source_work_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+              "source_works": [],
+              "task": "LLM multi-agent reasoning system",
+              "venue_or_source": "ICLR 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2406.07155v3",
+              "https://huggingface.co/datasets/ucinlp/drop"
+            ],
+            "version_id": "VER-996666835726"
+          }
+        },
+        "venue_or_source": "ICLR 2025",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-565BC95507DC",
+          "W-BE9F6B5E1FE3"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:21:12+00:00",
+        "updated_at": "2026-06-17T06:23:10+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-1792CE159AA7",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "topology dependent scalability topology dependent scalability if a multi agent system employs an irregular directed acyclic graph topology then it will achieve higher performance at large scales compared to regular topologies due to optimized information flow paths w 931a92b2cbd0",
+      "canonical_label": "Topology-Dependent Scalability",
+      "concept_id": "P-BEFD03E8DB57",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "If a multi-agent system employs an irregular Directed Acyclic Graph topology, then it will achieve higher performance at large scales compared to regular topologies due to optimized information flow paths.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-FCAAD5D6AFF7",
+        "argument": "If a multi-agent system employs an irregular Directed Acyclic Graph topology, then it will achieve higher performance at large scales compared to regular topologies due to optimized information flow paths.",
+        "benchmarks": [],
+        "canonical_id": "P-7D8DA3C0661A",
+        "canonical_key": "if multi agent system employs irregular directed acyclic graph topology then it will achieve higher performance at large scales compared to regular topologies due to optimized info",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T06:45:52+00:00",
+        "discussion": "The principle dictates that uniform structures like grids or chains become inefficient bottlenecks as the network expands. Irregular DAGs allow for specialized hubs and varied path lengths that better match the complexity of the task, enabling the system to sustain the 'slow thinking' process without degradation.",
+        "entered_at": "2026-06-17T06:45:52+00:00",
+        "evidence": "Evaluations reveal that irregular topologies outperform regular ones when supporting collaboration among over a thousand agents.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T06:47:06+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Topology-Dependent Scalability",
+        "performance": [],
+        "principle_id": "P-7D8DA3C0661A",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "How can we provide real-time, calibrated, actionable process quality control for autonomous coding agents operating on large-scale repositories?",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2406.07155v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2406.07155v3"
+        ],
+        "source_paper_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-931A92B2CBD0"
+        ],
+        "source_work_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+        "source_works": [
+          "W-931A92B2CBD0"
+        ],
+        "updated_at": "2026-06-17T06:47:06+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-FCAAD5D6AFF7": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T06:45:52+00:00",
+            "extracted_at": "2026-06-17T06:47:06+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "If a multi-agent system employs an irregular Directed Acyclic Graph topology, then it will achieve higher performance at large scales compared to regular topologies due to optimized information flow paths.",
+              "argument": "If a multi-agent system employs an irregular Directed Acyclic Graph topology, then it will achieve higher performance at large scales compared to regular topologies due to optimized information flow paths.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle dictates that uniform structures like grids or chains become inefficient bottlenecks as the network expands. Irregular DAGs allow for specialized hubs and varied path lengths that better match the complexity of the task, enabling the system to sustain the 'slow thinking' process without degradation.",
+              "evidence": "Evaluations reveal that irregular topologies outperform regular ones when supporting collaboration among over a thousand agents.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Topology-Dependent Scalability",
+              "performance": [],
+              "problem_pressure": "How can we provide real-time, calibrated, actionable process quality control for autonomous coding agents operating on large-scale repositories?",
+              "source_paper_link": "http://arxiv.org/abs/2406.07155v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2406.07155v3"
+              ],
+              "source_paper_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-565BC95507DC"
+              ],
+              "source_work_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+              "source_works": [
+                "W-565BC95507DC"
+              ],
+              "venue_or_source": "ICLR 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2406.07155v3"
+            ],
+            "version_id": "VER-FCAAD5D6AFF7"
+          }
+        },
+        "venue_or_source": "ICLR 2025",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-931A92B2CBD0"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:04:54+00:00",
+        "updated_at": "2026-06-17T07:04:54+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-5591DC7D12C2",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "logistic collaborative saturation logistic collaborative saturation if the number of collaborative agents increases continuously then the system performance will follow a logistic growth curve rather than a power law exhibiting an early emergence phase followed by saturation w 931a92b2cbd0",
+      "canonical_label": "Logistic Collaborative Saturation",
+      "concept_id": "P-C574CEE87C61",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "If the number of collaborative agents increases continuously, then the system performance will follow a logistic growth curve rather than a power law, exhibiting an early emergence phase followed by saturation.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-01BE9B26FF35",
+        "argument": "If the number of collaborative agents increases continuously, then the system performance will follow a logistic growth curve rather than a power law, exhibiting an early emergence phase followed by saturation.",
+        "benchmarks": [],
+        "canonical_id": "P-0DC02882839C",
+        "canonical_key": "if number of collaborative agents increases continuously then system performance will follow logistic growth curve rather than power law exhibiting early emergence phase followed b",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T06:45:52+00:00",
+        "discussion": "The principle warns against the assumption that more agents always linearly or exponentially improve results. It establishes a theoretical bound on the utility of scaling agent populations, suggesting that optimization efforts should focus on the interaction quality and topology before simply adding more nodes once the logistic plateau is approached.",
+        "entered_at": "2026-06-17T06:45:52+00:00",
+        "evidence": "The study identifies a collaborative scaling law where performance follows a logistic growth pattern, with collaborative emergence occurring earlier than traditional neural emergence.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T06:47:06+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Logistic Collaborative Saturation",
+        "performance": [],
+        "principle_id": "P-0DC02882839C",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "How can we provide real-time, calibrated, actionable process quality control for autonomous coding agents operating on large-scale repositories?",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2406.07155v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2406.07155v3"
+        ],
+        "source_paper_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-931A92B2CBD0"
+        ],
+        "source_work_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+        "source_works": [
+          "W-931A92B2CBD0"
+        ],
+        "updated_at": "2026-06-17T06:47:06+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-01BE9B26FF35": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T06:45:52+00:00",
+            "extracted_at": "2026-06-17T06:47:06+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "If the number of collaborative agents increases continuously, then the system performance will follow a logistic growth curve rather than a power law, exhibiting an early emergence phase followed by saturation.",
+              "argument": "If the number of collaborative agents increases continuously, then the system performance will follow a logistic growth curve rather than a power law, exhibiting an early emergence phase followed by saturation.",
+              "benchmarks": [],
+              "confidence_score": 0.68,
+              "discussion": "The principle warns against the assumption that more agents always linearly or exponentially improve results. It establishes a theoretical bound on the utility of scaling agent populations, suggesting that optimization efforts should focus on the interaction quality and topology before simply adding more nodes once the logistic plateau is approached.",
+              "evidence": "The study identifies a collaborative scaling law where performance follows a logistic growth pattern, with collaborative emergence occurring earlier than traditional neural emergence.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Logistic Collaborative Saturation",
+              "performance": [],
+              "problem_pressure": "How can we provide real-time, calibrated, actionable process quality control for autonomous coding agents operating on large-scale repositories?",
+              "source_paper_link": "http://arxiv.org/abs/2406.07155v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2406.07155v3"
+              ],
+              "source_paper_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-565BC95507DC"
+              ],
+              "source_work_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+              "source_works": [
+                "W-565BC95507DC"
+              ],
+              "venue_or_source": "ICLR 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2406.07155v3"
+            ],
+            "version_id": "VER-01BE9B26FF35"
+          }
+        },
+        "venue_or_source": "ICLR 2025",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-931A92B2CBD0"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:04:54+00:00",
+        "updated_at": "2026-06-17T07:04:54+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-51408ADFDB72",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "mmlu mmlu",
+      "canonical_label": "MMLU",
+      "concept_id": "RF-7CD1F6386DCB",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-0B77A85A890E",
+        "benchmark_name": "MMLU",
+        "code_url": "https://github.com/OpenBMB/ChatDev/tree/macnet.",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-17T06:19:09+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "n and refinement, explicitly facilitating a process of \"slow thinking\" (Daniel, 2017; OpenAI, 2024). This paradigm effectively unites the distinct expertise of dive"
+        },
+        "extracted_at": "2026-06-17T06:19:09+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-C3CE01A48103",
+        "method_name": "Scaling Large Language Model-based Multi-Agent Collaboration",
+        "metric": "EM",
+        "needs_llm_review": false,
+        "result_id": "RR-E76079BD8BE7",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": true,
+          "has_compute_accounting": true,
+          "needs_verification": false
+        },
+        "source_hash": "63239282d41409bd",
+        "source_work_id": "W-565BC95507DC",
+        "unit": "",
+        "updated_at": "2026-06-17T06:22:58+00:00",
+        "value": 2017.0,
+        "value_text": "n and refinement, explicitly facilitating a process of \"slow thinking\" (Daniel, 2017; OpenAI, 2024). This paradigm effectively unites the distinct expertise of dive",
+        "work_id": "W-565BC95507DC"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:21:15+00:00",
+        "updated_at": "2026-06-17T06:23:17+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-04643B93BE68",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "humaneval humaneval",
+      "canonical_label": "HumanEval",
+      "concept_id": "RF-920F4AF87271",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-DAD29E1D5234",
+        "benchmark_name": "HumanEval",
+        "code_url": "https://github.com/OpenBMB/ChatDev/tree/macnet.",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-17T06:19:09+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "pabilities like context-aware memory (Park et al., 2023), tool use (Qin et al., 2024a), and procedural planning (Zhao et al., 2023). In this context, multi-agent co"
+        },
+        "extracted_at": "2026-06-17T06:19:09+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-C3CE01A48103",
+        "method_name": "Scaling Large Language Model-based Multi-Agent Collaboration",
+        "metric": "memory",
+        "needs_llm_review": false,
+        "result_id": "RR-DE849694153C",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": true,
+          "has_compute_accounting": true,
+          "needs_verification": false
+        },
+        "source_hash": "63239282d41409bd",
+        "source_work_id": "W-565BC95507DC",
+        "unit": "",
+        "updated_at": "2026-06-17T06:22:58+00:00",
+        "value": 2024.0,
+        "value_text": "pabilities like context-aware memory (Park et al., 2023), tool use (Qin et al., 2024a), and procedural planning (Zhao et al., 2023). In this context, multi-agent co",
+        "work_id": "W-565BC95507DC"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:21:15+00:00",
+        "updated_at": "2026-06-17T06:23:17+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-2175C1C99133",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "drop drop",
+      "canonical_label": "DROP",
+      "concept_id": "RF-E0F8BF9AA1F2",
+      "concept_type": "result_fact",
+      "payload": {
+        "baseline_id": "",
+        "benchmark_id": "B-D9C7CF2F8087",
+        "benchmark_name": "DROP",
+        "code_url": "https://github.com/OpenBMB/ChatDev/tree/macnet.",
+        "compute_budget": "",
+        "confidence_score": 0.46,
+        "created_at": "2026-06-17T06:19:09+00:00",
+        "evidence_span": {
+          "source": "transient_full_text",
+          "text": "by encapsulating external capabilities like context-aware memory (Park et al., 2023), tool use (Qin et al., 2024a), and procedural planning (Zhao et al., 2023). In"
+        },
+        "extracted_at": "2026-06-17T06:19:09+00:00",
+        "extraction_version": "benchmark-baseline-v1.6-canonical-quality",
+        "extractor": "deterministic",
+        "field_id": "PRJ-C3CE01A48103",
+        "method_name": "Scaling Large Language Model-based Multi-Agent Collaboration",
+        "metric": "memory",
+        "needs_llm_review": false,
+        "result_id": "RR-F7785ECB4474",
+        "result_quality": {
+          "has_ablation": false,
+          "has_code": true,
+          "has_compute_accounting": true,
+          "needs_verification": false
+        },
+        "source_hash": "63239282d41409bd",
+        "source_work_id": "W-565BC95507DC",
+        "unit": "",
+        "updated_at": "2026-06-17T06:22:58+00:00",
+        "value": 2023.0,
+        "value_text": "by encapsulating external capabilities like context-aware memory (Park et al., 2023), tool use (Qin et al., 2024a), and procedural planning (Zhao et al., 2023). In",
+        "work_id": "W-565BC95507DC"
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.46,
+        "evidence_count": 0,
+        "supporting_work_ids": [],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:21:14+00:00",
+        "updated_at": "2026-06-17T06:23:17+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-42BD738972A0",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "irregular topologies enable thousand agent collaboration irregular topologies enable thousand agent collaboration irregular dag topologies successfully support over a thousand agents and outperform regular structures in autonomous task solving w 931a92b2cbd0",
+      "canonical_label": "Irregular Topologies Enable Thousand-Agent Collaboration",
+      "concept_id": "TM-3FE2042226ED",
+      "concept_type": "takeaway_message",
+      "payload": {
+        "active_version_id": "VER-E97C1221C8A1",
+        "benchmarks": [],
+        "canonical_id": "TM-AD8B9CB55DB7",
+        "canonical_key": "irregular dag topologies successfully support over thousand agents and outperform regular structures in autonomous task solving",
+        "condition": "When designing multi-agent architectures intended to scale beyond dozens of participants.",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T06:45:52+00:00",
+        "discussion": "Regular topologies fail to manage the complexity of large-scale interactions, leading to suboptimal reasoning flows. The adoption of irregular DAGs allows for flexible, task-specific routing of information, which is critical for maintaining the coherence and quality of artifacts produced by massive agent collectives.",
+        "entered_at": "2026-06-17T06:45:52+00:00",
+        "evidence": "Extensive evaluations reveal that it effectively supports collaboration among over a thousand agents, with irregular topologies outperforming regular ones.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T06:47:06+00:00",
+        "extraction_method": "llm_extracted",
+        "finding": "Irregular DAG topologies successfully support over a thousand agents and outperform regular structures in autonomous task solving.",
+        "main_results": "Irregular DAG topologies successfully support over a thousand agents and outperform regular structures in autonomous task solving.",
+        "message_text": "Irregular DAG topologies successfully support over a thousand agents and outperform regular structures in autonomous task solving.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2406.07155v3",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2406.07155v3"
+        ],
+        "source_paper_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-931A92B2CBD0"
+        ],
+        "source_work_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+        "source_works": [
+          "W-931A92B2CBD0"
+        ],
+        "title": "Irregular Topologies Enable Thousand-Agent Collaboration",
+        "updated_at": "2026-06-17T06:47:06+00:00",
+        "variants": {
+          "VER-E97C1221C8A1": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T06:45:52+00:00",
+            "extracted_at": "2026-06-17T06:47:06+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "condition": "When designing multi-agent architectures intended to scale beyond dozens of participants.",
+              "confidence_score": 0.7,
+              "discussion": "Regular topologies fail to manage the complexity of large-scale interactions, leading to suboptimal reasoning flows. The adoption of irregular DAGs allows for flexible, task-specific routing of information, which is critical for maintaining the coherence and quality of artifacts produced by massive agent collectives.",
+              "evidence": "Extensive evaluations reveal that it effectively supports collaboration among over a thousand agents, with irregular topologies outperforming regular ones.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "finding": "Irregular DAG topologies successfully support over a thousand agents and outperform regular structures in autonomous task solving.",
+              "main_results": "Irregular DAG topologies successfully support over a thousand agents and outperform regular structures in autonomous task solving.",
+              "message_text": "Irregular DAG topologies successfully support over a thousand agents and outperform regular structures in autonomous task solving.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "http://arxiv.org/abs/2406.07155v3",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2406.07155v3"
+              ],
+              "source_paper_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-565BC95507DC"
+              ],
+              "source_work_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+              "source_works": [],
+              "title": "Irregular Topologies Enable Thousand-Agent Collaboration",
+              "venue_or_source": "ICLR 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2406.07155v3"
+            ],
+            "version_id": "VER-E97C1221C8A1"
+          }
+        },
+        "venue_or_source": "ICLR 2025",
+        "year": 2024
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-931A92B2CBD0"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T07:04:54+00:00",
+        "updated_at": "2026-06-17T07:04:54+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-318FFC1CDFD2",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-03A27AB311B1",
+  "created_at": "2026-06-17T07:04:54+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "{\"benchmark_id\": \"B-DAD29E1D5234\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-565BC95507DC\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"HumanEval\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Scaling Large Language Model-based Multi-Agent Col...",
+      "concept_id": "B-BA3683BBE7C9",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T06:21:12+00:00",
+      "evidence_id": "EV-A668E2D41171",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-DAD29E1D5234\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-565BC95507DC\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"HumanEval\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Scaling Large Language Model-based Multi-Agent Col...",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-790D0CE9B7F1\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-BE9F6B5E1FE3\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Bilevel Optimization for Covert Memory Tampering in Het...",
+      "concept_id": "B-D7F497E37E3F",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T06:21:12+00:00",
+      "evidence_id": "EV-E4AF73E56FBC",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-790D0CE9B7F1\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-BE9F6B5E1FE3\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Bilevel Optimization for Covert Memory Tampering in Het...",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-C43E6727FAAD\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-8DB03B5F73D6\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"The Geometry of Dialogue: Graphing Language Models to Rev...",
+      "concept_id": "B-6A7C1D0B9629",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T06:21:12+00:00",
+      "evidence_id": "EV-11E3CAAA32E4",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-C43E6727FAAD\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-8DB03B5F73D6\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"The Geometry of Dialogue: Graphing Language Models to Rev...",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E0F8BF9AA1F2",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:14+00:00",
+      "evidence_id": "EV-111F4EC9C608",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E0F8BF9AA1F2",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:15+00:00",
+      "evidence_id": "EV-1CEF2CD2AF8C",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-920F4AF87271",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:15+00:00",
+      "evidence_id": "EV-D2F099A3623A",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E0F8BF9AA1F2",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:15+00:00",
+      "evidence_id": "EV-2D1C14434AFF",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-920F4AF87271",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:15+00:00",
+      "evidence_id": "EV-4D81CEE50DF5",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-920F4AF87271",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:15+00:00",
+      "evidence_id": "EV-8739D5DA07A2",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E0F8BF9AA1F2",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:15+00:00",
+      "evidence_id": "EV-B4AE4A54AB58",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-920F4AF87271",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:15+00:00",
+      "evidence_id": "EV-65617CA59597",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:15+00:00",
+      "evidence_id": "EV-28996EE23B09",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:15+00:00",
+      "evidence_id": "EV-28EA15028673",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:15+00:00",
+      "evidence_id": "EV-E96A27386948",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-DD72FEC3EB30",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-920F4AF87271",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-C57BDC6FEB7D",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-920F4AF87271",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-2C93E7A62529",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-4B20CC16A8E6",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-920F4AF87271",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-75FD4FB897A5",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-16F61FE9C07D",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-EAC13597B883",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E0F8BF9AA1F2",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-C0B605F09448",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E0F8BF9AA1F2",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-821907736FDA",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-920F4AF87271",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-8CE90FFBD713",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E0F8BF9AA1F2",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-66CD5DA74EF4",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-04C0C9ED5881",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E0F8BF9AA1F2",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:21:16+00:00",
+      "evidence_id": "EV-2E5C1EA0E527",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-DAD29E1D5234\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-565BC95507DC\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"HumanEval\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Scaling Large Language Model-based Multi-Agent Col...",
+      "concept_id": "B-BA3683BBE7C9",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T06:23:10+00:00",
+      "evidence_id": "EV-8F8D745137D9",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-DAD29E1D5234\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-565BC95507DC\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"HumanEval\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Scaling Large Language Model-based Multi-Agent Col...",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-0B77A85A890E\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-565BC95507DC\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Scaling Large Language Model-based Multi-Agent Collabor...",
+      "concept_id": "B-6A7C1D0B9629",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T06:23:10+00:00",
+      "evidence_id": "EV-441F44767A45",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-0B77A85A890E\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-565BC95507DC\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Scaling Large Language Model-based Multi-Agent Collabor...",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-D9C7CF2F8087\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-565BC95507DC\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Scaling Large Language Model-based Multi-Agent Collabor...",
+      "concept_id": "B-D7F497E37E3F",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T06:23:10+00:00",
+      "evidence_id": "EV-17D5C45871E5",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-D9C7CF2F8087\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-565BC95507DC\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Scaling Large Language Model-based Multi-Agent Collabor...",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E0F8BF9AA1F2",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:15+00:00",
+      "evidence_id": "EV-4AA6DCCF828F",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E0F8BF9AA1F2",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:15+00:00",
+      "evidence_id": "EV-03A364F296E6",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-920F4AF87271",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:15+00:00",
+      "evidence_id": "EV-2CC2D19F26B5",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E0F8BF9AA1F2",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:15+00:00",
+      "evidence_id": "EV-5F83A2C814A4",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-920F4AF87271",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:15+00:00",
+      "evidence_id": "EV-71A9F62F0518",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-920F4AF87271",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:16+00:00",
+      "evidence_id": "EV-D94BC87197C1",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E0F8BF9AA1F2",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:16+00:00",
+      "evidence_id": "EV-D95F8B10CFCA",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-920F4AF87271",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:16+00:00",
+      "evidence_id": "EV-F490BEEC82FA",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:16+00:00",
+      "evidence_id": "EV-7C6D6B643A17",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:16+00:00",
+      "evidence_id": "EV-7EC17C23A786",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:16+00:00",
+      "evidence_id": "EV-FC76E79343EB",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:16+00:00",
+      "evidence_id": "EV-333B73918556",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-920F4AF87271",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:16+00:00",
+      "evidence_id": "EV-F92F4C224E5E",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-920F4AF87271",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:16+00:00",
+      "evidence_id": "EV-EED2B9829739",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:16+00:00",
+      "evidence_id": "EV-980BABA550B8",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-920F4AF87271",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:16+00:00",
+      "evidence_id": "EV-CDC97538B554",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:16+00:00",
+      "evidence_id": "EV-5FDE70488956",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:17+00:00",
+      "evidence_id": "EV-3D4A09C2F3F4",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E0F8BF9AA1F2",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:17+00:00",
+      "evidence_id": "EV-54DA7FD7FDF3",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E0F8BF9AA1F2",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:17+00:00",
+      "evidence_id": "EV-8456B258BC99",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-920F4AF87271",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:17+00:00",
+      "evidence_id": "EV-A684779FEDAA",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E0F8BF9AA1F2",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:17+00:00",
+      "evidence_id": "EV-2234673685EE",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-7CD1F6386DCB",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:17+00:00",
+      "evidence_id": "EV-37A2365CEB5A",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "",
+      "concept_id": "RF-E0F8BF9AA1F2",
+      "confidence": 0.46,
+      "created_at": "2026-06-17T06:23:17+00:00",
+      "evidence_id": "EV-CCB2C753AE76",
+      "evidence_type": "legacy_payload",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": ""
+    },
+    {
+      "claim_text": "Evaluations reveal that irregular topologies outperform regular ones when supporting collaboration among over a thousand agents.",
+      "concept_id": "P-BEFD03E8DB57",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T07:04:54+00:00",
+      "evidence_id": "EV-22C95B2DEAD6",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "Evaluations reveal that irregular topologies outperform regular ones when supporting collaboration among over a thousand agents.",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": "WV-63C61D19F72C"
+    },
+    {
+      "claim_text": "The study identifies a collaborative scaling law where performance follows a logistic growth pattern, with collaborative emergence occurring earlier than traditional neural emergence.",
+      "concept_id": "P-C574CEE87C61",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T07:04:54+00:00",
+      "evidence_id": "EV-832ACBE2FB26",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The study identifies a collaborative scaling law where performance follows a logistic growth pattern, with collaborative emergence occurring earlier than traditional neural emergence.",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": "WV-63C61D19F72C"
+    },
+    {
+      "claim_text": "Extensive evaluations reveal that it effectively supports collaboration among over a thousand agents, with irregular topologies outperforming regular ones.",
+      "concept_id": "TM-3FE2042226ED",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T07:04:54+00:00",
+      "evidence_id": "EV-C560C84952BB",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "Extensive evaluations reveal that it effectively supports collaboration among over a thousand agents, with irregular topologies outperforming regular ones.",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": "WV-63C61D19F72C"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-CE303A134A57\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-CCDDD020EEA0\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"HumanEval\", \"split\": \"unspecified\", \"metric\": \"EM\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Large Language Model Evaluation Via Multi AI Agents: Prelimina...",
+      "concept_id": "B-02F383F1AA40",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T07:04:54+00:00",
+      "evidence_id": "EV-BF57A14E6DB2",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-CE303A134A57\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-CCDDD020EEA0\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"HumanEval\", \"split\": \"unspecified\", \"metric\": \"EM\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Large Language Model Evaluation Via Multi AI Agents: Prelimina...",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": "WV-63C61D19F72C"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-C1E25B16D8BA\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-F4B6C94FC69A\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"MALLM: Multi-Agent Large Language Models Framework Mult...",
+      "concept_id": "B-5A04BACF25E2",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T07:04:54+00:00",
+      "evidence_id": "EV-542F01A6A015",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-C1E25B16D8BA\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-F4B6C94FC69A\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"MMLU\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"MALLM: Multi-Agent Large Language Models Framework Mult...",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": "WV-63C61D19F72C"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-790D0CE9B7F1\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-BE9F6B5E1FE3\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Bilevel Optimization for Covert Memory Tampering in Het...",
+      "concept_id": "B-8C7A7CE9928D",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T07:04:54+00:00",
+      "evidence_id": "EV-4AD4F38FF573",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-790D0CE9B7F1\", \"field_id\": \"PRJ-C3CE01A48103\", \"work_id\": \"W-BE9F6B5E1FE3\", \"task\": \"LLM multi-agent reasoning system\", \"dataset\": \"DROP\", \"split\": \"unspecified\", \"metric\": \"memory\", \"metric_direction\": \"lower_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"Bilevel Optimization for Covert Memory Tampering in Het...",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": "WV-63C61D19F72C"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-17T07:04:54+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-17T07:04:54+00:00",
+      "extraction_run_id": "XRUN-0B80D77BF8A1",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 3,
+        "existed_ideas": 0,
+        "principles": 2,
+        "takeaway_messages": 1,
+        "total": 6
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": "WV-63C61D19F72C"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "local_pr_export",
+    "secret_exposed_to_browser": false,
+    "warning": "Server admin key is not configured; output is a local PR-export artifact, not a direct GitHub write."
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 0,
+        "principle": 2
+      },
+      "title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-931A92B2CBD0"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "2406.07155",
+        "authors": [
+          "Chen Qian",
+          "Zihao Xie",
+          "YiFei Wang",
+          "Wei Liu",
+          "Kunlun Zhu",
+          "Hanchen Xia",
+          "Yufan Dang",
+          "Zhuoyun Du",
+          "Weize Chen",
+          "Cheng Yang",
+          "Zhiyuan Liu",
+          "Maosong Sun"
+        ],
+        "canonical_title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "http://arxiv.org/abs/2406.07155v3"
+        ],
+        "title_hash": "86bbbbbe896858f5",
+        "title_norm": "scaling large language model based multi agent collaboration",
+        "venue_or_source": "ICLR 2025",
+        "year": 2024
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "2025-03-17T00:22:42Z",
+        "title_hash": "86bbbbbe896858f5"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T06:21:09+00:00",
+        "updated_at": "2026-06-17T07:04:54+00:00"
+      },
+      "work_id": "W-931A92B2CBD0"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": "Recent breakthroughs in large language model-driven autonomous agents have revealed that multi-agent collaboration often surpasses each individual through collective reasoning. Inspired by the neural scaling law--increasing neurons enhances performance, this study explores whether the continuous addition of collaborative agents can yield similar benefits. Technically, we utilize directed acyclic graphs to organize agents into a multi-agent collaboration network (MacNet), upon which their interactive reasoning is topologically orchestrated for autonomous task solving. Extensive evaluations reveal that it effectively supports collaboration among over a thousand agents, with irregular topologies outperforming regular ones. We also identify a collaborative scaling law--the overall performance follows a logistic growth pattern as agents scale, with collaborative emergence occurring earlier than traditional neural emergence. We speculate this may be because scaling agents catalyzes their multidimensional considerations during interactive reflection and refinement, thereby producing more comprehensive artifacts. The code is available at https://github.com/OpenBMB/ChatDev/tree/macnet.",
+      "abstract_hash": "17bb714db0d0cb73",
+      "content_hash": "82742ce1bb9c1f4e",
+      "created_at": "2026-06-17T06:21:09+00:00",
+      "metadata": {
+        "abstract": "Recent breakthroughs in large language model-driven autonomous agents have revealed that multi-agent collaboration often surpasses each individual through collective reasoning. Inspired by the neural scaling law--increasing neurons enhances performance, this study explores whether the continuous addition of collaborative agents can yield similar benefits. Technically, we utilize directed acyclic graphs to organize agents into a multi-agent collaboration network (MacNet), upon which their interactive reasoning is topologically orchestrated for autonomous task solving. Extensive evaluations reveal that it effectively supports collaboration among over a thousand agents, with irregular topologies outperforming regular ones. We also identify a collaborative scaling law--the overall performance follows a logistic growth pattern as agents scale, with collaborative emergence occurring earlier than traditional neural emergence. We speculate this may be because scaling agents catalyzes their multidimensional considerations during interactive reflection and refinement, thereby producing more comprehensive artifacts. The code is available at https://github.com/OpenBMB/ChatDev/tree/macnet.",
+        "active_version_id": "VER-C28937591670",
+        "authors": [
+          "Chen Qian",
+          "Zihao Xie",
+          "YiFei Wang",
+          "Wei Liu",
+          "Kunlun Zhu",
+          "Hanchen Xia",
+          "Yufan Dang",
+          "Zhuoyun Du",
+          "Weize Chen",
+          "Cheng Yang",
+          "Zhiyuan Liu",
+          "Maosong Sun"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-565BC95507DC",
+        "canonical_key": "scaling large language model based multi agent collaboration",
+        "community_signals": {},
+        "confidence_score": 0.62,
+        "created_at": "2026-06-17T06:18:14+00:00",
+        "entered_at": "2026-06-17T06:19:08+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T06:19:08+00:00",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "paper_link": "http://arxiv.org/abs/2406.07155v3",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "2025-03-17T00:22:42Z",
+        "source_urls": [
+          "http://arxiv.org/abs/2406.07155v3"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+        "updated_at": "2026-06-17T06:19:08+00:00",
+        "url_or_doi": "http://arxiv.org/abs/2406.07155v3",
+        "validation_level": "L1",
+        "variants": {
+          "VER-B2BE8B4CA882": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T06:18:14+00:00",
+            "extracted_at": "2026-06-17T06:18:14+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Recent breakthroughs in large language model-driven autonomous agents have revealed that multi-agent collaboration often surpasses each individual through collective reasoning. Inspired by the neural scaling law--increasing neurons enhances performance, this study explores whether the continuous addition of collaborative agents can yield similar benefits. Technically, we utilize directed acyclic graphs to organize agents into a multi-agent collaboration network (MacNet), upon which their interactive reasoning is topologically orchestrated for autonomous task solving. Extensive evaluations reveal that it effectively supports collaboration among over a thousand agents, with irregular topologies outperforming regular ones. We also identify a collaborative scaling law--the overall performance follows a logistic growth pattern as agents scale, with collaborative emergence occurring earlier than traditional neural emergence. We speculate this may be because scaling agents catalyzes their multidimensional considerations during interactive reflection and refinement, thereby producing more comprehensive artifacts. The code is available at https://github.com/OpenBMB/ChatDev/tree/macnet.",
+              "authors": [
+                "Chen Qian",
+                "Zihao Xie",
+                "YiFei Wang",
+                "Wei Liu",
+                "Kunlun Zhu",
+                "Hanchen Xia",
+                "Yufan Dang",
+                "Zhuoyun Du",
+                "Weize Chen",
+                "Cheng Yang",
+                "Zhiyuan Liu",
+                "Maosong Sun"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/2406.07155v3",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2025-03-17T00:22:42Z",
+              "source_urls": [
+                "http://arxiv.org/abs/2406.07155v3"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+              "url_or_doi": "http://arxiv.org/abs/2406.07155v3",
+              "validation_level": "L1",
+              "venue_or_source": "ICLR 2025",
+              "year": 2024
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "http://arxiv.org/abs/2406.07155v3"
+            ],
+            "version_id": "VER-B2BE8B4CA882"
+          },
+          "VER-C28937591670": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T06:19:08+00:00",
+            "extracted_at": "2026-06-17T06:19:08+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Recent breakthroughs in large language model-driven autonomous agents have revealed that multi-agent collaboration often surpasses each individual through collective reasoning. Inspired by the neural scaling law--increasing neurons enhances performance, this study explores whether the continuous addition of collaborative agents can yield similar benefits. Technically, we utilize directed acyclic graphs to organize agents into a multi-agent collaboration network (MacNet), upon which their interactive reasoning is topologically orchestrated for autonomous task solving. Extensive evaluations reveal that it effectively supports collaboration among over a thousand agents, with irregular topologies outperforming regular ones. We also identify a collaborative scaling law--the overall performance follows a logistic growth pattern as agents scale, with collaborative emergence occurring earlier than traditional neural emergence. We speculate this may be because scaling agents catalyzes their multidimensional considerations during interactive reflection and refinement, thereby producing more comprehensive artifacts. The code is available at https://github.com/OpenBMB/ChatDev/tree/macnet.",
+              "authors": [
+                "Chen Qian",
+                "Zihao Xie",
+                "YiFei Wang",
+                "Wei Liu",
+                "Kunlun Zhu",
+                "Hanchen Xia",
+                "Yufan Dang",
+                "Zhuoyun Du",
+                "Weize Chen",
+                "Cheng Yang",
+                "Zhiyuan Liu",
+                "Maosong Sun"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/2406.07155v3",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2025-03-17T00:22:42Z",
+              "source_urls": [
+                "http://arxiv.org/abs/2406.07155v3"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+              "url_or_doi": "http://arxiv.org/abs/2406.07155v3",
+              "validation_level": "L1",
+              "venue_or_source": "ICLR 2025",
+              "year": 2024
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2406.07155v3"
+            ],
+            "version_id": "VER-C28937591670"
+          }
+        },
+        "venue_or_source": "ICLR 2025",
+        "work_id": "W-565BC95507DC",
+        "year": 2024
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "",
+      "source_record_id": "W-565BC95507DC",
+      "source_updated_at": "2025-03-17T00:22:42Z",
+      "title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+      "title_hash": "86bbbbbe896858f5",
+      "work_id": "W-931A92B2CBD0",
+      "work_version_id": "WV-63C61D19F72C"
+    }
+  ]
+}
