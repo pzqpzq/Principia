@@ -1,0 +1,885 @@
+{
+  "admin_operations": [],
+  "concept_records": [
+    {
+      "aliases": [],
+      "canonical_key": "imagenet imagenet imagenet w 4434248583f5",
+      "canonical_label": "ImageNet",
+      "concept_id": "B-545C59332398",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-31F3EC4F1976",
+        "benchmark_id": "B-3F4FF5D20CF8",
+        "benchmark_name": "ImageNet",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-3F4FF5D20CF8",
+        "canonical_key": "imagenet",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T11:03:49+00:00",
+        "data_form": "Labeled natural images organized by object category; standard classification labels and train/validation splits.",
+        "dataset": "ImageNet",
+        "description": "Large-scale image classification benchmark commonly used to evaluate visual representation transfer and adaptation.",
+        "entered_at": "2026-06-17T11:03:49+00:00",
+        "evidence": "{\"benchmark_id\": \"B-7593FF69197B\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-64A419F0B519\", \"task\": \"images limited scene views\", \"dataset\": \"ImageNet\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DeepVisInterests: CNN-Ontology Prediction of Users Interest...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:19:06+00:00",
+        "extractor": "deterministic",
+        "metric": "mAP",
+        "metrics": [
+          "primary reported metric",
+          "accuracy",
+          "mAP",
+          "memory",
+          "F1"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": false,
+        "official_url": "https://www.image-net.org/",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Approximately 1.2M training images and 50K validation images in the ILSVRC classification setup.",
+        "source": "ImageNet / ILSVRC",
+        "source_paper_link": "http://arxiv.org/abs/1811.10920v1",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1905.03743v1",
+          "https://doi.org/10.1038/s41598-023-42891-8",
+          "http://arxiv.org/abs/2308.11356v2",
+          "http://arxiv.org/abs/2106.11952v2",
+          "http://arxiv.org/abs/1812.10889v2",
+          "http://arxiv.org/abs/2206.07326v2",
+          "http://arxiv.org/abs/2203.13131v1",
+          "https://doi.org/10.1186/s40537-019-0197-0",
+          "http://arxiv.org/abs/2211.10026v1",
+          "http://arxiv.org/abs/1811.10920v1"
+        ],
+        "source_paper_title": "DeepVisInterests: CNN-Ontology Prediction of Users Interests from Social Images",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-4434248583F5"
+        ],
+        "source_work_title": "DeepVisInterests: CNN-Ontology Prediction of Users Interests from Social Images",
+        "source_works": [
+          "W-4434248583F5"
+        ],
+        "task": "images limited scene views",
+        "updated_at": "2026-06-17T11:19:06+00:00",
+        "variants": {
+          "VER-31F3EC4F1976": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T11:03:49+00:00",
+            "extracted_at": "2026-06-17T11:19:06+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmark_name": "ImageNet",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.7,
+              "data_form": "Labeled natural images organized by object category; standard classification labels and train/validation splits.",
+              "dataset": "ImageNet",
+              "description": "Large-scale image classification benchmark commonly used to evaluate visual representation transfer and adaptation.",
+              "evidence": "{\"benchmark_id\": \"B-7593FF69197B\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-64A419F0B519\", \"task\": \"images limited scene views\", \"dataset\": \"ImageNet\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DeepVisInterests: CNN-Ontology Prediction of Users Interest...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "mAP",
+              "metrics": [
+                "primary reported metric",
+                "accuracy",
+                "mAP",
+                "memory",
+                "F1"
+              ],
+              "needs_review": false,
+              "official_url": "https://www.image-net.org/",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Approximately 1.2M training images and 50K validation images in the ILSVRC classification setup.",
+              "source": "ImageNet / ILSVRC",
+              "source_paper_link": "http://arxiv.org/abs/1811.10920v1",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1905.03743v1",
+                "https://doi.org/10.1038/s41598-023-42891-8",
+                "http://arxiv.org/abs/2308.11356v2",
+                "http://arxiv.org/abs/2106.11952v2",
+                "http://arxiv.org/abs/1812.10889v2",
+                "http://arxiv.org/abs/2206.07326v2",
+                "http://arxiv.org/abs/2203.13131v1",
+                "https://doi.org/10.1186/s40537-019-0197-0",
+                "http://arxiv.org/abs/2211.10026v1",
+                "http://arxiv.org/abs/1811.10920v1"
+              ],
+              "source_paper_title": "DeepVisInterests: CNN-Ontology Prediction of Users Interests from Social Images",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7B546F57F4BE",
+                "W-E115EFD50D53",
+                "W-46029CE9D5D6",
+                "W-6E21A2CF36E4",
+                "W-7FDF3A887A50",
+                "W-1A4683B1260D",
+                "W-F8566C0F53EF",
+                "W-F14A5EBB0EC4",
+                "W-B8B762D07593",
+                "W-64A419F0B519"
+              ],
+              "source_work_title": "DeepVisInterests: CNN-Ontology Prediction of Users Interests from Social Images",
+              "source_works": [],
+              "task": "images limited scene views",
+              "venue_or_source": "arXiv",
+              "year": 2018
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/1811.10920v1",
+              "https://www.image-net.org/"
+            ],
+            "version_id": "VER-31F3EC4F1976"
+          }
+        },
+        "venue_or_source": "arXiv",
+        "year": 2018
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-4434248583F5"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:43+00:00",
+        "updated_at": "2026-06-17T11:22:43+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-4472B3E5037B",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "coco coco coco w 4434248583f5",
+      "canonical_label": "COCO",
+      "concept_id": "B-78FD9261A2C8",
+      "concept_type": "benchmark",
+      "payload": {
+        "active_version_id": "VER-ED4A652823AC",
+        "benchmark_id": "B-09F836894FC1",
+        "benchmark_name": "COCO",
+        "benchmark_relation": "reported_or_metadata_evidence",
+        "benchmarks": [],
+        "canonical_id": "B-09F836894FC1",
+        "canonical_key": "coco",
+        "confidence_score": 0.32,
+        "created_at": "2026-06-17T11:03:49+00:00",
+        "data_form": "Images with object annotations, segmentations, captions, and task-specific labels.",
+        "dataset": "COCO",
+        "description": "Large-scale image benchmark for detection, segmentation, captioning, and keypoints.",
+        "entered_at": "2026-06-17T11:03:49+00:00",
+        "evidence": "{\"benchmark_id\": \"B-18A3C7AD5F6D\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-0DE8919CF549\", \"task\": \"images limited scene views\", \"dataset\": \"COCO\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"SynthText3D: synthesizing scene text images from 3D...",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:19:59+00:00",
+        "extractor": "deterministic",
+        "metric": "primary reported metric",
+        "metrics": [
+          "primary reported metric",
+          "Image generation quality",
+          "accuracy",
+          "mAP",
+          "memory",
+          "mAP (mean Average Precision)",
+          "AP50",
+          "AP75",
+          "PSNR",
+          "SSIM"
+        ],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "needs_review": true,
+        "official_url": "https://cocodataset.org/#download",
+        "performance": [],
+        "provider": "siliconflow",
+        "public_dataset": true,
+        "scale": "Hundreds of thousands of labeled images depending on split/task.",
+        "source": "COCO Consortium",
+        "source_paper_link": "https://doi.org/10.1007/s11432-019-2737-0",
+        "source_paper_links": [
+          "http://arxiv.org/abs/1905.03743v1",
+          "http://arxiv.org/abs/1804.01622v1",
+          "https://doi.org/10.1038/s41598-023-42891-8",
+          "http://arxiv.org/abs/1912.07414v5",
+          "http://arxiv.org/abs/2106.11952v2",
+          "http://arxiv.org/abs/1812.10889v2",
+          "http://arxiv.org/abs/2203.13131v1",
+          "http://arxiv.org/abs/2408.14819v1",
+          "http://arxiv.org/abs/2310.14025v1",
+          "https://doi.org/10.1007/s11432-019-2737-0"
+        ],
+        "source_paper_title": "SynthText3D: synthesizing scene text images from 3D virtual worlds",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-4434248583F5"
+        ],
+        "source_work_title": "SynthText3D: synthesizing scene text images from 3D virtual worlds",
+        "source_works": [
+          "W-4434248583F5"
+        ],
+        "task": "images limited scene views",
+        "updated_at": "2026-06-17T11:19:59+00:00",
+        "variants": {
+          "VER-ED4A652823AC": {
+            "confidence_score": 0.32,
+            "entered_at": "2026-06-17T11:03:49+00:00",
+            "extracted_at": "2026-06-17T11:19:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": true,
+            "payload": {
+              "benchmark_name": "COCO",
+              "benchmark_relation": "reported_or_metadata_evidence",
+              "benchmarks": [],
+              "confidence_score": 0.32,
+              "data_form": "Images with object annotations, segmentations, captions, and task-specific labels.",
+              "dataset": "COCO",
+              "description": "Large-scale image benchmark for detection, segmentation, captioning, and keypoints.",
+              "evidence": "{\"benchmark_id\": \"B-18A3C7AD5F6D\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-0DE8919CF549\", \"task\": \"images limited scene views\", \"dataset\": \"COCO\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"SynthText3D: synthesizing scene text images from 3D...",
+              "evidence_items": [],
+              "extractor": "deterministic",
+              "metric": "primary reported metric",
+              "metrics": [
+                "primary reported metric",
+                "Image generation quality",
+                "accuracy",
+                "mAP",
+                "memory",
+                "mAP (mean Average Precision)",
+                "AP50",
+                "AP75",
+                "PSNR",
+                "SSIM"
+              ],
+              "needs_review": true,
+              "official_url": "https://cocodataset.org/#download",
+              "performance": [],
+              "public_dataset": true,
+              "scale": "Hundreds of thousands of labeled images depending on split/task.",
+              "source": "COCO Consortium",
+              "source_paper_link": "https://doi.org/10.1007/s11432-019-2737-0",
+              "source_paper_links": [
+                "http://arxiv.org/abs/1905.03743v1",
+                "http://arxiv.org/abs/1804.01622v1",
+                "https://doi.org/10.1038/s41598-023-42891-8",
+                "http://arxiv.org/abs/1912.07414v5",
+                "http://arxiv.org/abs/2106.11952v2",
+                "http://arxiv.org/abs/1812.10889v2",
+                "http://arxiv.org/abs/2203.13131v1",
+                "http://arxiv.org/abs/2408.14819v1",
+                "http://arxiv.org/abs/2310.14025v1",
+                "https://doi.org/10.1007/s11432-019-2737-0"
+              ],
+              "source_paper_title": "SynthText3D: synthesizing scene text images from 3D virtual worlds",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-7B546F57F4BE",
+                "W-C269F7BBBCB8",
+                "W-E115EFD50D53",
+                "W-A99D60F4394C",
+                "W-6E21A2CF36E4",
+                "W-7FDF3A887A50",
+                "W-F8566C0F53EF",
+                "W-A18A379D7254",
+                "W-26C8A88D0F20",
+                "W-0DE8919CF549"
+              ],
+              "source_work_title": "SynthText3D: synthesizing scene text images from 3D virtual worlds",
+              "source_works": [],
+              "task": "images limited scene views",
+              "venue_or_source": "Science China Information Sciences",
+              "year": 2020
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "https://doi.org/10.1007/s11432-019-2737-0",
+              "https://cocodataset.org/#download"
+            ],
+            "version_id": "VER-ED4A652823AC"
+          }
+        },
+        "venue_or_source": "Science China Information Sciences",
+        "year": 2020
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.32,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-4434248583F5"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:43+00:00",
+        "updated_at": "2026-06-17T11:22:43+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-C0F0CDD8E85D",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "region level consistency via pre trained priors region level consistency via pre trained priors in multi object scene images global image augmentation fails to guarantee semantic consistency necessitating a shift from instance level to region level positive pair construction guided by pre trained se",
+      "canonical_label": "Region-Level Consistency via Pre-trained Priors",
+      "concept_id": "P-4EF2B69AD3EB",
+      "concept_type": "principle",
+      "payload": {
+        "abstract_signature": "In multi-object scene images, global image augmentation fails to guarantee semantic consistency, necessitating a shift from instance-level to region-level positive pair construction guided by pre-trained semantic priors.",
+        "abstraction_level": "L2",
+        "active_version_id": "VER-A855345AAD2B",
+        "argument": "In multi-object scene images, global image augmentation fails to guarantee semantic consistency, necessitating a shift from instance-level to region-level positive pair construction guided by pre-trained semantic priors.",
+        "benchmarks": [],
+        "boundary_conditions": [
+          "This principle applies specifically to domains where images contain multiple distinct objects and where a suitable image-level pre-trained model exists to provide semantic priors. It may fail if the source domain of the pre-trained model lacks the semantic concepts present in the target scenes."
+        ],
+        "canonical_id": "P-34CA400E33D4",
+        "canonical_key": "in multi object scene images global image augmentation fails to guarantee semantic consistency necessitating shift from instance level to region level positive pair construction gu",
+        "confidence_score": 0.68,
+        "created_at": "2026-06-17T11:10:13+00:00",
+        "discussion": "The principle defines a boundary condition for self-supervised learning where the assumption that two views of one image represent the same class holds only for object-centric datasets. In general scene understanding, the unit of consistency must be the object or region, not the entire image frame. Application requires a two-stage process where global features guide local alignment, as attempting to learn local alignment from scratch without supervision leads to signal inconsistency.",
+        "entered_at": "2026-06-17T11:10:13+00:00",
+        "evidence": "The work demonstrates that naive application of contrastive learning on scene datasets like COCO results in performance degradation because random crops of the same image often contain different objects. The proposed solution validates that using features from an image-level pre-trained model allows the system to distinguish between regions that semantically match across images versus those that do not.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:10:14+00:00",
+        "extraction_method": "llm_extracted",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "name": "Region-Level Consistency via Pre-trained Priors",
+        "performance": [],
+        "principle_id": "P-34CA400E33D4",
+        "principle_type": "empirical_principle",
+        "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2106.11952v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2106.11952v2"
+        ],
+        "source_paper_title": "Unsupervised Object-Level Representation Learning from Scene Images",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-4434248583F5"
+        ],
+        "source_work_title": "Unsupervised Object-Level Representation Learning from Scene Images",
+        "source_works": [
+          "W-4434248583F5"
+        ],
+        "updated_at": "2026-06-17T11:10:14+00:00",
+        "validation_level": "L1",
+        "variants": {
+          "VER-A855345AAD2B": {
+            "confidence_score": 0.68,
+            "entered_at": "2026-06-17T11:10:13+00:00",
+            "extracted_at": "2026-06-17T11:10:14+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract_signature": "In multi-object scene images, global image augmentation fails to guarantee semantic consistency, necessitating a shift from instance-level to region-level positive pair construction guided by pre-trained semantic priors.",
+              "argument": "In multi-object scene images, global image augmentation fails to guarantee semantic consistency, necessitating a shift from instance-level to region-level positive pair construction guided by pre-trained semantic priors.",
+              "benchmarks": [],
+              "boundary_conditions": [
+                "This principle applies specifically to domains where images contain multiple distinct objects and where a suitable image-level pre-trained model exists to provide semantic priors. It may fail if the source domain of the pre-trained model lacks the semantic concepts present in the target scenes."
+              ],
+              "confidence_score": 0.68,
+              "discussion": "The principle defines a boundary condition for self-supervised learning where the assumption that two views of one image represent the same class holds only for object-centric datasets. In general scene understanding, the unit of consistency must be the object or region, not the entire image frame. Application requires a two-stage process where global features guide local alignment, as attempting to learn local alignment from scratch without supervision leads to signal inconsistency.",
+              "evidence": "The work demonstrates that naive application of contrastive learning on scene datasets like COCO results in performance degradation because random crops of the same image often contain different objects. The proposed solution validates that using features from an image-level pre-trained model allows the system to distinguish between regions that semantically match across images versus those that do not.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "metrics": [],
+              "name": "Region-Level Consistency via Pre-trained Priors",
+              "performance": [],
+              "problem_pressure": "Given limited views or images on a 3D scene, reconstruct this 3D scene based on the visual information presented in these limited images or views.",
+              "source_paper_link": "http://arxiv.org/abs/2106.11952v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2106.11952v2"
+              ],
+              "source_paper_title": "Unsupervised Object-Level Representation Learning from Scene Images",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-6E21A2CF36E4"
+              ],
+              "source_work_title": "Unsupervised Object-Level Representation Learning from Scene Images",
+              "source_works": [
+                "W-6E21A2CF36E4"
+              ],
+              "venue_or_source": "NeurIPS 2021",
+              "year": 2021
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2106.11952v2"
+            ],
+            "version_id": "VER-A855345AAD2B"
+          }
+        },
+        "venue_or_source": "NeurIPS 2021",
+        "year": 2021
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.68,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-4434248583F5"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:43+00:00",
+        "updated_at": "2026-06-17T11:22:43+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-372AE3F87575",
+        "last_three_version_ids_by_model": {}
+      }
+    },
+    {
+      "aliases": [],
+      "canonical_key": "superiority of object level learning on scene data superiority of object level learning on scene data object level representation learning significantly outperforms standard image level contrastive learning on complex scene datasets and can surpass supervised imagenet pre training on specific downst",
+      "canonical_label": "Superiority of Object-Level Learning on Scene Data",
+      "concept_id": "TM-66AD1D18D714",
+      "concept_type": "takeaway_message",
+      "payload": {
+        "active_version_id": "VER-6F655D23BE6F",
+        "benchmarks": [],
+        "canonical_id": "TM-8FE1A113BE43",
+        "canonical_key": "object level representation learning significantly outperforms standard image level contrastive learning on complex scene datasets and can surpass supervised imagenet pre training ",
+        "condition": "This finding applies when the target domain consists of complex scene images with multiple objects, such as the COCO dataset, and when sufficient unlabeled data is available to leverage unsupervised pre-training. The improvement is most pronounced when downstream tasks require fine-grained object understanding.",
+        "confidence_score": 0.7,
+        "created_at": "2026-06-17T11:10:13+00:00",
+        "discussion": "The empirical results indicate that unsupervised frameworks for applications like robotics or autonomous driving, which rely on scene data, must prioritize object-level consistency over global image consistency. The ability to harness unlabeled data in the wild depends on resolving the mismatch between image-level augmentation assumptions and multi-object reality.",
+        "entered_at": "2026-06-17T11:10:13+00:00",
+        "evidence": "The abstract states that extensive experiments on COCO show the proposed method significantly improves performance on scene images, even surpassing supervised ImageNet pre-training on several downstream tasks. The text also notes that the method improves downstream performance when more unlabeled scene images are available.",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:10:14+00:00",
+        "extraction_method": "llm_extracted",
+        "finding": "Object-level representation learning significantly outperforms standard image-level contrastive learning on complex scene datasets and can surpass supervised ImageNet pre-training on specific downstream tasks.",
+        "main_results": "Object-level representation learning significantly outperforms standard image-level contrastive learning on complex scene datasets and can surpass supervised ImageNet pre-training on specific downstream tasks.",
+        "message_text": "Object-level representation learning significantly outperforms standard image-level contrastive learning on complex scene datasets and can surpass supervised ImageNet pre-training on specific downstream tasks.",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_link": "http://arxiv.org/abs/2106.11952v2",
+        "source_paper_links": [
+          "http://arxiv.org/abs/2106.11952v2"
+        ],
+        "source_paper_title": "Unsupervised Object-Level Representation Learning from Scene Images",
+        "source_urls": [],
+        "source_work_ids": [
+          "W-4434248583F5"
+        ],
+        "source_work_title": "Unsupervised Object-Level Representation Learning from Scene Images",
+        "source_works": [
+          "W-4434248583F5"
+        ],
+        "title": "Superiority of Object-Level Learning on Scene Data",
+        "updated_at": "2026-06-17T11:10:14+00:00",
+        "variants": {
+          "VER-6F655D23BE6F": {
+            "confidence_score": 0.7,
+            "entered_at": "2026-06-17T11:10:13+00:00",
+            "extracted_at": "2026-06-17T11:10:14+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "benchmarks": [],
+              "condition": "This finding applies when the target domain consists of complex scene images with multiple objects, such as the COCO dataset, and when sufficient unlabeled data is available to leverage unsupervised pre-training. The improvement is most pronounced when downstream tasks require fine-grained object understanding.",
+              "confidence_score": 0.7,
+              "discussion": "The empirical results indicate that unsupervised frameworks for applications like robotics or autonomous driving, which rely on scene data, must prioritize object-level consistency over global image consistency. The ability to harness unlabeled data in the wild depends on resolving the mismatch between image-level augmentation assumptions and multi-object reality.",
+              "evidence": "The abstract states that extensive experiments on COCO show the proposed method significantly improves performance on scene images, even surpassing supervised ImageNet pre-training on several downstream tasks. The text also notes that the method improves downstream performance when more unlabeled scene images are available.",
+              "evidence_items": [],
+              "extraction_method": "llm_extracted",
+              "finding": "Object-level representation learning significantly outperforms standard image-level contrastive learning on complex scene datasets and can surpass supervised ImageNet pre-training on specific downstream tasks.",
+              "main_results": "Object-level representation learning significantly outperforms standard image-level contrastive learning on complex scene datasets and can surpass supervised ImageNet pre-training on specific downstream tasks.",
+              "message_text": "Object-level representation learning significantly outperforms standard image-level contrastive learning on complex scene datasets and can surpass supervised ImageNet pre-training on specific downstream tasks.",
+              "metrics": [],
+              "performance": [],
+              "source_paper_link": "http://arxiv.org/abs/2106.11952v2",
+              "source_paper_links": [
+                "http://arxiv.org/abs/2106.11952v2"
+              ],
+              "source_paper_title": "Unsupervised Object-Level Representation Learning from Scene Images",
+              "source_urls": [],
+              "source_work_ids": [
+                "W-6E21A2CF36E4"
+              ],
+              "source_work_title": "Unsupervised Object-Level Representation Learning from Scene Images",
+              "source_works": [],
+              "title": "Superiority of Object-Level Learning on Scene Data",
+              "venue_or_source": "NeurIPS 2021",
+              "year": 2021
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2106.11952v2"
+            ],
+            "version_id": "VER-6F655D23BE6F"
+          }
+        },
+        "venue_or_source": "NeurIPS 2021",
+        "year": 2021
+      },
+      "record_type": "concept",
+      "support": {
+        "confidence_score": 0.7,
+        "evidence_count": 0,
+        "supporting_work_ids": [
+          "W-4434248583F5"
+        ],
+        "validation_level": "extracted_unverified",
+        "verification_status": "extracted_unverified"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:43+00:00",
+        "updated_at": "2026-06-17T11:22:43+00:00"
+      },
+      "versioning": {
+        "active_version_id": "CV-807F9CCBD279",
+        "last_three_version_ids_by_model": {}
+      }
+    }
+  ],
+  "contribution_id": "CONTRIB-C39B8374EA1A",
+  "created_at": "2026-06-17T11:22:43+00:00",
+  "created_by": {},
+  "evidence_records": [
+    {
+      "claim_text": "The work demonstrates that naive application of contrastive learning on scene datasets like COCO results in performance degradation because random crops of the same image often contain different objects. The proposed solution validates that using features from an image-level pre-trained model allows the system to distinguish between regions that semantically match across images versus those that do not.",
+      "concept_id": "P-4EF2B69AD3EB",
+      "confidence": 0.68,
+      "created_at": "2026-06-17T11:22:43+00:00",
+      "evidence_id": "EV-264FC69E7AF0",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The work demonstrates that naive application of contrastive learning on scene datasets like COCO results in performance degradation because random crops of the same image often contain different objects. The proposed solution validates that using features from an image-level pre-trained model allows the system to distinguish between regions that semantically match across images versus those that do not.",
+      "work_id": "W-4434248583F5",
+      "work_version_id": "WV-96EDC9B58969"
+    },
+    {
+      "claim_text": "The abstract states that extensive experiments on COCO show the proposed method significantly improves performance on scene images, even surpassing supervised ImageNet pre-training on several downstream tasks. The text also notes that the method improves downstream performance when more unlabeled scene images are available.",
+      "concept_id": "TM-66AD1D18D714",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T11:22:43+00:00",
+      "evidence_id": "EV-D9752DF336B3",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "The abstract states that extensive experiments on COCO show the proposed method significantly improves performance on scene images, even surpassing supervised ImageNet pre-training on several downstream tasks. The text also notes that the method improves downstream performance when more unlabeled scene images are available.",
+      "work_id": "W-4434248583F5",
+      "work_version_id": "WV-96EDC9B58969"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-7593FF69197B\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-64A419F0B519\", \"task\": \"images limited scene views\", \"dataset\": \"ImageNet\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DeepVisInterests: CNN-Ontology Prediction of Users Interest...",
+      "concept_id": "B-545C59332398",
+      "confidence": 0.7,
+      "created_at": "2026-06-17T11:22:43+00:00",
+      "evidence_id": "EV-D0B204CC2CDC",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-7593FF69197B\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-64A419F0B519\", \"task\": \"images limited scene views\", \"dataset\": \"ImageNet\", \"split\": \"unspecified\", \"metric\": \"mAP\", \"metric_direction\": \"higher_is_better\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"DeepVisInterests: CNN-Ontology Prediction of Users Interest...",
+      "work_id": "W-4434248583F5",
+      "work_version_id": "WV-96EDC9B58969"
+    },
+    {
+      "claim_text": "{\"benchmark_id\": \"B-18A3C7AD5F6D\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-0DE8919CF549\", \"task\": \"images limited scene views\", \"dataset\": \"COCO\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"SynthText3D: synthesizing scene text images from 3D...",
+      "concept_id": "B-78FD9261A2C8",
+      "confidence": 0.32,
+      "created_at": "2026-06-17T11:22:43+00:00",
+      "evidence_id": "EV-11F02ADCC4C2",
+      "evidence_type": "principia_local_extraction",
+      "locator": {
+        "source_url": ""
+      },
+      "record_type": "evidence",
+      "snippet": "{\"benchmark_id\": \"B-18A3C7AD5F6D\", \"field_id\": \"PRJ-4624F2235160\", \"work_id\": \"W-0DE8919CF549\", \"task\": \"images limited scene views\", \"dataset\": \"COCO\", \"split\": \"unspecified\", \"metric\": \"primary reported metric\", \"metric_direction\": \"unknown\", \"evidence_span\": {\"source\": \"transient_full_text\", \"text\": \"SynthText3D: synthesizing scene text images from 3D...",
+      "work_id": "W-4434248583F5",
+      "work_version_id": "WV-96EDC9B58969"
+    }
+  ],
+  "extraction_records": [
+    {
+      "completed_at": "2026-06-17T11:22:43+00:00",
+      "cost_estimate": 0,
+      "created_at": "2026-06-17T11:22:40+00:00",
+      "extraction_run_id": "XRUN-14A3BDFEA18E",
+      "extraction_status": "complete",
+      "extraction_task_type": "work_concepts",
+      "llm_model": "Qwen/Qwen3.5-397B-A17B",
+      "llm_provider": "siliconflow",
+      "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "model_mode": "qwen_397b",
+      "prompt_version": "principia-work-extract-v1",
+      "record_type": "extraction_run",
+      "result_summary": {
+        "baseline_records": 0,
+        "benchmark_records": 2,
+        "existed_ideas": 0,
+        "principles": 1,
+        "takeaway_messages": 1,
+        "total": 4
+      },
+      "schema_version": "principia-cloud-1.1",
+      "token_estimates": {
+        "input": 0,
+        "output": 0
+      },
+      "work_id": "W-4434248583F5",
+      "work_version_id": "WV-96EDC9B58969"
+    }
+  ],
+  "model_key": "siliconflow:Qwen/Qwen3.5-397B-A17B:qwen_397b:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  },
+  "relation_records": [],
+  "schema_version": "principia-cloud-contribution-1.1",
+  "upload_authorization": {
+    "authorized": false,
+    "mode": "",
+    "secret_exposed_to_browser": false,
+    "warning": ""
+  },
+  "upload_decisions": [
+    {
+      "cloud_decision": "not_in_cloud",
+      "cloud_work_id": "",
+      "missing_required_extractions": [],
+      "required_extraction_counts": {
+        "existed_idea": 0,
+        "principle": 1
+      },
+      "title": "Unsupervised Object-Level Representation Learning from Scene Images",
+      "upload_allowed": true,
+      "upload_mode": "normal",
+      "work_id": "W-4434248583F5"
+    }
+  ],
+  "upload_mode": "normal",
+  "work_records": [
+    {
+      "identity": {
+        "arxiv_id": "2106.11952",
+        "authors": [
+          "Jiahao Xie",
+          "Xiaohang Zhan",
+          "Ziwei Liu",
+          "Yew Soon Ong",
+          "Chen Change Loy"
+        ],
+        "canonical_title": "Unsupervised Object-Level Representation Learning from Scene Images",
+        "crossref_id": "",
+        "doi": "",
+        "openalex_id": "",
+        "semantic_scholar_id": "",
+        "source_type": "paper",
+        "source_urls": [
+          "http://arxiv.org/abs/2106.11952v2"
+        ],
+        "title_hash": "d2b6531bcdab85c0",
+        "title_norm": "unsupervised object level representation learning from scene images",
+        "venue_or_source": "NeurIPS 2021",
+        "year": 2021
+      },
+      "latest_by_model": {},
+      "quality": {
+        "identity_confidence": 1.0,
+        "public_scope": "public_cloud",
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "record_type": "work",
+      "relations": {},
+      "source_state": {
+        "source_provider": "",
+        "source_record_id": "",
+        "source_updated_at": "2021-12-03T13:51:38Z",
+        "title_hash": "d2b6531bcdab85c0"
+      },
+      "timestamps": {
+        "created_at": "2026-06-17T11:22:40+00:00",
+        "updated_at": "2026-06-17T11:22:40+00:00"
+      },
+      "work_id": "W-4434248583F5"
+    }
+  ],
+  "work_version_records": [
+    {
+      "abstract": "Contrastive self-supervised learning has largely narrowed the gap to supervised pre-training on ImageNet. However, its success highly relies on the object-centric priors of ImageNet, i.e., different augmented views of the same image correspond to the same object. Such a heavily curated constraint becomes immediately infeasible when pre-trained on more complex scene images with many objects. To overcome this limitation, we introduce Object-level Representation Learning (ORL), a new self-supervised learning framework towards scene images. Our key insight is to leverage image-level self-supervised pre-training as the prior to discover object-level semantic correspondence, thus realizing object-level representation learning from scene images. Extensive experiments on COCO show that ORL significantly improves the performance of self-supervised learning on scene images, even surpassing supervised ImageNet pre-training on several downstream tasks. Furthermore, ORL improves the downstream performance when more unlabeled scene images are available, demonstrating its great potential of harnessing unlabeled data in the wild. We hope our approach can motivate future research on more general-purpose unsupervised representation learning from scene data.",
+      "abstract_hash": "2c8f13e46dbc169d",
+      "content_hash": "e355f291556d9528",
+      "created_at": "2026-06-17T11:22:40+00:00",
+      "metadata": {
+        "abstract": "Contrastive self-supervised learning has largely narrowed the gap to supervised pre-training on ImageNet. However, its success highly relies on the object-centric priors of ImageNet, i.e., different augmented views of the same image correspond to the same object. Such a heavily curated constraint becomes immediately infeasible when pre-trained on more complex scene images with many objects. To overcome this limitation, we introduce Object-level Representation Learning (ORL), a new self-supervised learning framework towards scene images. Our key insight is to leverage image-level self-supervised pre-training as the prior to discover object-level semantic correspondence, thus realizing object-level representation learning from scene images. Extensive experiments on COCO show that ORL significantly improves the performance of self-supervised learning on scene images, even surpassing supervised ImageNet pre-training on several downstream tasks. Furthermore, ORL improves the downstream performance when more unlabeled scene images are available, demonstrating its great potential of harnessing unlabeled data in the wild. We hope our approach can motivate future research on more general-purpose unsupervised representation learning from scene data.",
+        "active_version_id": "VER-FB4A40D18B61",
+        "authors": [
+          "Jiahao Xie",
+          "Xiaohang Zhan",
+          "Ziwei Liu",
+          "Yew Soon Ong",
+          "Chen Change Loy"
+        ],
+        "benchmarks": [],
+        "canonical_id": "W-6E21A2CF36E4",
+        "canonical_key": "unsupervised object level representation learning from scene images",
+        "community_signals": {},
+        "confidence_score": 0.62,
+        "created_at": "2026-06-17T10:49:59+00:00",
+        "entered_at": "2026-06-17T11:09:10+00:00",
+        "evidence_items": [],
+        "extracted_at": "2026-06-17T11:10:14+00:00",
+        "metrics": [],
+        "model_mode": "qwen_397b",
+        "model_name": "Qwen/Qwen3.5-397B-A17B",
+        "paper_link": "http://arxiv.org/abs/2106.11952v2",
+        "performance": [],
+        "provider": "siliconflow",
+        "source_paper_links": [],
+        "source_type": "paper",
+        "source_updated_at": "2021-12-03T13:51:38Z",
+        "source_urls": [
+          "http://arxiv.org/abs/2106.11952v2"
+        ],
+        "source_work_ids": [],
+        "source_works": [],
+        "title": "Unsupervised Object-Level Representation Learning from Scene Images",
+        "updated_at": "2026-06-17T11:10:14+00:00",
+        "url_or_doi": "http://arxiv.org/abs/2106.11952v2",
+        "validation_level": "L1",
+        "variants": {
+          "VER-41E450F21616": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T10:49:59+00:00",
+            "extracted_at": "2026-06-17T10:49:59+00:00",
+            "is_user_edit": false,
+            "model_mode": "metadata",
+            "model_name": "metadata",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Contrastive self-supervised learning has largely narrowed the gap to supervised pre-training on ImageNet. However, its success highly relies on the object-centric priors of ImageNet, i.e., different augmented views of the same image correspond to the same object. Such a heavily curated constraint becomes immediately infeasible when pre-trained on more complex scene images with many objects. To overcome this limitation, we introduce Object-level Representation Learning (ORL), a new self-supervised learning framework towards scene images. Our key insight is to leverage image-level self-supervised pre-training as the prior to discover object-level semantic correspondence, thus realizing object-level representation learning from scene images. Extensive experiments on COCO show that ORL significantly improves the performance of self-supervised learning on scene images, even surpassing supervised ImageNet pre-training on several downstream tasks. Furthermore, ORL improves the downstream performance when more unlabeled scene images are available, demonstrating its great potential of harnessing unlabeled data in the wild. We hope our approach can motivate future research on more general-purpose unsupervised representation learning from scene data.",
+              "authors": [
+                "Jiahao Xie",
+                "Xiaohang Zhan",
+                "Ziwei Liu",
+                "Yew Soon Ong",
+                "Chen Change Loy"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/2106.11952v2",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2021-12-03T13:51:38Z",
+              "source_urls": [
+                "http://arxiv.org/abs/2106.11952v2"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Unsupervised Object-Level Representation Learning from Scene Images",
+              "url_or_doi": "http://arxiv.org/abs/2106.11952v2",
+              "validation_level": "L1",
+              "venue_or_source": "NeurIPS 2021",
+              "year": 2021
+            },
+            "provider": "metadata",
+            "source_urls": [
+              "http://arxiv.org/abs/2106.11952v2"
+            ],
+            "version_id": "VER-41E450F21616"
+          },
+          "VER-FB4A40D18B61": {
+            "confidence_score": 0.62,
+            "entered_at": "2026-06-17T11:09:10+00:00",
+            "extracted_at": "2026-06-17T11:10:14+00:00",
+            "is_user_edit": false,
+            "model_mode": "qwen_397b",
+            "model_name": "Qwen/Qwen3.5-397B-A17B",
+            "needs_review": false,
+            "payload": {
+              "abstract": "Contrastive self-supervised learning has largely narrowed the gap to supervised pre-training on ImageNet. However, its success highly relies on the object-centric priors of ImageNet, i.e., different augmented views of the same image correspond to the same object. Such a heavily curated constraint becomes immediately infeasible when pre-trained on more complex scene images with many objects. To overcome this limitation, we introduce Object-level Representation Learning (ORL), a new self-supervised learning framework towards scene images. Our key insight is to leverage image-level self-supervised pre-training as the prior to discover object-level semantic correspondence, thus realizing object-level representation learning from scene images. Extensive experiments on COCO show that ORL significantly improves the performance of self-supervised learning on scene images, even surpassing supervised ImageNet pre-training on several downstream tasks. Furthermore, ORL improves the downstream performance when more unlabeled scene images are available, demonstrating its great potential of harnessing unlabeled data in the wild. We hope our approach can motivate future research on more general-purpose unsupervised representation learning from scene data.",
+              "authors": [
+                "Jiahao Xie",
+                "Xiaohang Zhan",
+                "Ziwei Liu",
+                "Yew Soon Ong",
+                "Chen Change Loy"
+              ],
+              "benchmarks": [],
+              "community_signals": {},
+              "evidence_items": [],
+              "metrics": [],
+              "paper_link": "http://arxiv.org/abs/2106.11952v2",
+              "performance": [],
+              "source_paper_links": [],
+              "source_type": "paper",
+              "source_updated_at": "2021-12-03T13:51:38Z",
+              "source_urls": [
+                "http://arxiv.org/abs/2106.11952v2"
+              ],
+              "source_work_ids": [],
+              "source_works": [],
+              "title": "Unsupervised Object-Level Representation Learning from Scene Images",
+              "url_or_doi": "http://arxiv.org/abs/2106.11952v2",
+              "validation_level": "L1",
+              "venue_or_source": "NeurIPS 2021",
+              "year": 2021
+            },
+            "provider": "siliconflow",
+            "source_urls": [
+              "http://arxiv.org/abs/2106.11952v2"
+            ],
+            "version_id": "VER-FB4A40D18B61"
+          }
+        },
+        "venue_or_source": "NeurIPS 2021",
+        "work_id": "W-6E21A2CF36E4",
+        "year": 2021
+      },
+      "record_type": "work_version",
+      "source_modified_at": "",
+      "source_provider": "",
+      "source_record_id": "W-6E21A2CF36E4",
+      "source_updated_at": "2021-12-03T13:51:38Z",
+      "title": "Unsupervised Object-Level Representation Learning from Scene Images",
+      "title_hash": "d2b6531bcdab85c0",
+      "work_id": "W-4434248583F5",
+      "work_version_id": "WV-96EDC9B58969"
+    }
+  ]
+}
