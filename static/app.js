@@ -2513,6 +2513,11 @@ function bindEvents() {
     }
   });
   el("clearRecordsBtn").addEventListener("click", () => {
+    const projectName = state.activeProject?.name || "this project";
+    el("clearRecordsMessage").textContent =
+      state.activeProjectId && state.activeProjectId !== "default"
+        ? `This removes local records from ${projectName}. Records shared with other projects are kept, and the project shell is kept.`
+        : "This removes local works, extracted ideas, principles, takeaways, benchmarks, baselines, generated ideas, run history, evidence links, and v1 memory. Project shells are kept.";
     el("clearRecordsModal").hidden = false;
   });
   el("cancelClearRecordsBtn").addEventListener("click", () => {
@@ -2520,9 +2525,10 @@ function bindEvents() {
   });
   el("confirmClearRecordsBtn").addEventListener("click", async () => {
     try {
-      await post("/api/v1/local-records/clear", {});
+      const payload = state.activeProjectId && state.activeProjectId !== "default" ? { field_id: state.activeProjectId } : {};
+      await post("/api/v1/local-records/clear", payload);
       el("clearRecordsModal").hidden = true;
-      showToast("Local records cleared.");
+      showToast(payload.field_id ? "Project local records cleared." : "Local records cleared.");
       state.assembler.selected = [];
       await loadProjects(state.activeProjectId);
       await loadSummary();

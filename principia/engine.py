@@ -1600,6 +1600,162 @@ class PrincipiaEngine:
         self.store.vacuum()
         return {"ok": True, "repaired": repaired}
 
+    def clear_project_local_records(self, field_id: str) -> dict[str, Any]:
+        field_id = str(field_id or "").strip()
+        if not field_id:
+            raise ValueError("Missing field_id")
+        if field_id == "default":
+            raise ValueError("The default project cannot be cleared with project-scoped cleanup.")
+        profile = self.store.get_item("field_profiles", field_id)
+        if not profile:
+            raise KeyError(f"field_profiles:{field_id} not found")
+
+        runs = self.store.list_research_runs_for_field(field_id, limit=10000)
+        for run in runs:
+            if run.get("field_id") == field_id and run.get("status") not in {"complete", "error", "cancelled"}:
+                self.cancel_run(str(run.get("run_id") or ""))
+
+        data_before = self.store.snapshot(limit_per_bucket=None)
+        project_memberships = self.store.list_project_memberships(field_id, include_hidden=True)
+        candidate_records = self._project_record_candidates(data_before, field_id, project_memberships)
+        deleted: dict[str, int] = {}
+
+        deleted_memberships = self.store.delete_project_memberships(field_id)
+        if deleted_memberships:
+            deleted["project_memberships"] = deleted_memberships
+        deleted_runs = self.store.delete_research_runs_for_field(field_id)
+        if deleted_runs:
+            deleted["research_runs"] = deleted_runs
+
+        try:
+            global_deleted = self.global_store.delete_project(field_id, delete_local_data=True)
+            if global_deleted:
+                deleted["v1_memory"] = int(sum(global_deleted.values()))
+        except Exception:
+            deleted["v1_memory_errors"] = deleted.get("v1_memory_errors", 0) + 1
+
+        data_after = self.store.snapshot(limit_per_bucket=None)
+        deleted_refs = self._delete_unreferenced_project_records(field_id, candidate_records, data_after, deleted)
+        for link in data_after.get("evidence_links", {}).values():
+            link_id = str(link.get("link_id") or "")
+            target_ref = (str(link.get("target_bucket") or ""), str(link.get("target_id") or ""))
+            source_ref = ("source_works", str(link.get("source_id") or link.get("source_work_id") or ""))
+            if link.get("field_id") == field_id or target_ref in deleted_refs or source_ref in deleted_refs:
+                if link_id and self.store.get_item("evidence_links", link_id):
+                    self.store.delete_item("evidence_links", link_id)
+                    deleted["evidence_links"] = deleted.get("evidence_links", 0) + 1
+
+        profile = self.store.get_item("field_profiles", field_id) or profile
+        profile["work_ids"] = []
+        profile["principle_ids"] = []
+        profile["idea_ids"] = []
+        profile["refresh_status"] = "idle"
+        profile["updated_at"] = utc_now()
+        self.store.upsert("field_profiles", profile, "field_id")
+        self.store.vacuum()
+        self.global_store.vacuum()
+        return {"ok": True, "field_id": field_id, "deleted": deleted}
+
+    def _project_record_candidates(
+        self,
+        data: dict[str, Any],
+        field_id: str,
+        project_memberships: list[dict[str, Any]],
+    ) -> dict[str, set[str]]:
+        candidate_records: dict[str, set[str]] = {}
+        for membership in project_memberships:
+            bucket = str(membership.get("bucket") or "")
+            record_id = str(membership.get("record_id") or "")
+            if bucket and record_id:
+                candidate_records.setdefault(bucket, set()).add(record_id)
+
+        profile = data.get("field_profiles", {}).get(field_id) or {}
+        legacy_refs = {
+            "work_ids": ("source_works",),
+            "principle_ids": ("principles",),
+            "idea_ids": ("ideas", "my_ideas"),
+        }
+        for key, buckets in legacy_refs.items():
+            for record_id in [str(item) for item in profile.get(key, []) if item]:
+                for bucket in buckets:
+                    candidate_records.setdefault(bucket, set()).add(record_id)
+        for bucket in (
+            "source_works",
+            "principles",
+            "ideas",
+            "work_facts",
+            "benchmark_records",
+            "baseline_records",
+            "result_records",
+            "gap_cards",
+            "existed_ideas",
+            "takeaway_messages",
+            "my_ideas",
+        ):
+            id_key = self._record_id_key(bucket)
+            for item in data.get(bucket, {}).values():
+                record_id = str(item.get(id_key) or "")
+                if record_id and item.get("field_id") == field_id:
+                    candidate_records.setdefault(bucket, set()).add(record_id)
+        return candidate_records
+
+    def _remaining_project_references(self, data: dict[str, Any], field_id: str) -> set[tuple[str, str]]:
+        still_referenced = {
+            (str(membership.get("bucket") or ""), str(membership.get("record_id") or ""))
+            for membership in data.get("project_memberships", {}).values()
+            if membership.get("field_id") != field_id and membership.get("bucket") and membership.get("record_id")
+        }
+        legacy_refs = {
+            "work_ids": ("source_works",),
+            "principle_ids": ("principles",),
+            "idea_ids": ("ideas", "my_ideas"),
+        }
+        for profile_id, profile in data.get("field_profiles", {}).items():
+            if profile_id == field_id:
+                continue
+            for key, buckets in legacy_refs.items():
+                for record_id in [str(item) for item in profile.get(key, []) if item]:
+                    for bucket in buckets:
+                        still_referenced.add((bucket, record_id))
+        return still_referenced
+
+    def _delete_unreferenced_project_records(
+        self,
+        field_id: str,
+        candidate_records: dict[str, set[str]],
+        data: dict[str, Any],
+        deleted: dict[str, int],
+    ) -> set[tuple[str, str]]:
+        still_referenced = self._remaining_project_references(data, field_id)
+        deleted_refs: set[tuple[str, str]] = set()
+
+        def delete_record(bucket: str, record_id: str) -> bool:
+            if not bucket or not record_id or (bucket, record_id) in still_referenced:
+                return False
+            record = self.store.get_item(bucket, record_id)
+            if not record:
+                return False
+            if record.get("field_id") == "default" and bucket not in {"existed_ideas", "principles", "takeaway_messages", "benchmark_records", "baseline_records", "source_works", "my_ideas", "ideas"}:
+                return False
+            self.store.delete_item(bucket, record_id)
+            deleted[bucket] = deleted.get(bucket, 0) + 1
+            deleted_refs.add((bucket, record_id))
+            return True
+
+        for bucket, record_ids in candidate_records.items():
+            for record_id in sorted(record_ids):
+                deleted_record = delete_record(bucket, record_id)
+                if bucket == "source_works" and deleted_record:
+                    record = data.get(bucket, {}).get(record_id) or {}
+                    work_id = str(record.get("work_id") or record_id)
+                    for linked_bucket in ("work_facts", "benchmark_records", "baseline_records", "result_records"):
+                        linked_id_key = self._record_id_key(linked_bucket)
+                        for linked in data.get(linked_bucket, {}).values():
+                            linked_record_id = str(linked.get(linked_id_key) or "")
+                            if linked.get("work_id") == work_id:
+                                delete_record(linked_bucket, linked_record_id)
+        return deleted_refs
+
     def clear_local_records(self, *, include_projects: bool = False) -> dict[str, Any]:
         data = self.store.snapshot(limit_per_bucket=None)
         buckets = [
