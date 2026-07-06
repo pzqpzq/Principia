@@ -57,6 +57,51 @@ class ToolLeakIdeaLLM(pc.LLMClient):
         }
 
 
+class AstroRetrievalLLM(pc.LLMClient):
+    def available(self, model: str = "auto") -> bool:
+        return True
+
+    def resolve(self, model: str = "auto") -> LLMConfig:
+        return LLMConfig(provider="custom", model="astro-rerank", api_key="test", base_url="https://example.test")
+
+    def chat_json(self, system: str, user: str, **kwargs):
+        if "academic literature search plans" in system.lower():
+            return {
+                "search_queries": ["S251112cm kilonova optical transient follow-up"],
+                "entities": ["S251112cm"],
+                "key_phrases": ["kilonova", "optical transient"],
+                "domain_hints": ["astronomy_transient"],
+                "exclude_terms": ["large language model"],
+            }
+        if "semantically rank candidate research works" in system.lower():
+            return {
+                "items": [
+                    {
+                        "work_id": "W-S251112CM",
+                        "relevance_score": 0.97,
+                        "relation_label": "direct",
+                        "rationale": "Directly follows up S251112cm as an astronomical transient.",
+                        "reject_reason": "",
+                    },
+                    {
+                        "work_id": "W-GEOPHYS",
+                        "relevance_score": 0.03,
+                        "relation_label": "out_of_scope",
+                        "rationale": "",
+                        "reject_reason": "Geophysical transient electromagnetic survey, not astronomy.",
+                    },
+                    {
+                        "work_id": "W-LLM",
+                        "relevance_score": 0.02,
+                        "relation_label": "out_of_scope",
+                        "rationale": "",
+                        "reject_reason": "AI methods paper for a non-AI goal.",
+                    },
+                ]
+            }
+        return {}
+
+
 def static_source(query: str, limit: int, timeout: float):
     return [
         {
@@ -136,6 +181,39 @@ def mixed_review_source(query: str, limit: int, timeout: float):
     ][:limit]
 
 
+def astro_mixed_source(query: str, limit: int, timeout: float):
+    return [
+        {
+            "work_id": "W-S251112CM",
+            "title": "Follow-up observations of S251112cm as an optical transient",
+            "authors": ["A. Astro"],
+            "abstract": "S251112cm is evaluated as a kilonova electromagnetic counterpart to a compact-object merger.",
+            "year": 2026,
+            "venue": "Astrophysical Journal Letters",
+            "source": "fake",
+            "url": "https://example.test/s251112cm",
+        },
+        {
+            "work_id": "W-GEOPHYS",
+            "title": "Transient electromagnetic inversion for mineral exploration",
+            "abstract": "Grounded-source transient electromagnetic survey inversion for mineral exploration.",
+            "year": 2026,
+            "venue": "Geophysics",
+            "source": "fake",
+            "citation_count": 500,
+        },
+        {
+            "work_id": "W-LLM",
+            "title": "Large language models for scientific discovery",
+            "abstract": "An LLM agent system for automated scientific discovery and hypothesis generation.",
+            "year": 2026,
+            "venue": "NeurIPS",
+            "source": "fake",
+            "citation_count": 1000,
+        },
+    ][:limit]
+
+
 def workspace(tmp_path: Path) -> pc.Workspace:
     return pc.Workspace(tmp_path, llm=pc.MockLLMClient(), search_sources={"static": static_source})
 
@@ -177,6 +255,21 @@ def test_search_ranking_prefers_peer_reviewed_metadata(tmp_path: Path) -> None:
     assert works[0].venue == "ACM Transactions on Software Engineering and Methodology"
     assert works[0].metadata["is_peer_reviewed"] is True
     assert works[1].venue == "arXiv"
+
+
+def test_search_uses_shared_semantic_retriever_for_astronomy(tmp_path: Path) -> None:
+    ws = pc.Workspace(tmp_path, llm=AstroRetrievalLLM(), search_sources={"astro": astro_mixed_source})
+
+    works = ws.research.search(
+        "Explanation for S251112cm as a sub-solar-mass kilonova optical transient",
+        target_count=3,
+        sources=["astro"],
+    )
+
+    assert works[0].id == "W-S251112CM"
+    assert "S251112cm" in works[0].title
+    assert all(work.id != "W-LLM" for work in works)
+    assert ws.counts()["works"] == 1
 
 
 def test_extract_cache_overwrite_and_generate_compare(tmp_path: Path) -> None:

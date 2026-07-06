@@ -50,6 +50,7 @@ from .symbolic_ideator import SymbolicIdeator
 from .utils import (
     clamp,
     compact_text,
+    contains_query_trigger,
     enrich_query,
     keyword_terms,
     lexical_score,
@@ -2302,7 +2303,7 @@ class PrincipiaEngine:
             existing_project_works = self._rank_works_for_query(goal_text, self._v2_project_records_fast(field_id, "source_works"))
             existing_work_count = len(existing_project_works)
             search_goal = goal_text
-            if existing_work_count >= target_works:
+            if existing_work_count >= target_works and not force_refresh:
                 works = existing_project_works
                 update(
                     "existing_works_research",
@@ -2341,7 +2342,13 @@ class PrincipiaEngine:
                     existing_works=existing_work_count,
                     top_up_needed=top_up_needed,
                 )
-                found_works = search_hybrid_sources(query, max_results=target_works, timeout=12)
+                found_works = search_hybrid_sources(
+                    query,
+                    max_results=target_works,
+                    timeout=12,
+                    llm=self.llm,
+                    original_goal=search_goal or goal_text,
+                )
                 self._raise_if_cancelled(run_id)
                 update(
                     "source_search",
@@ -2360,7 +2367,13 @@ class PrincipiaEngine:
                         existing_works=existing_work_count,
                         target_works=target_works,
                     )
-                    more_works = search_hybrid_sources(broaden_query, max_results=target_works, timeout=12)
+                    more_works = search_hybrid_sources(
+                        broaden_query,
+                        max_results=target_works,
+                        timeout=12,
+                        llm=self.llm,
+                        original_goal=goal_text,
+                    )
                     combined_works = self._dedupe_works([*combined_works, *more_works])
                     self._raise_if_cancelled(run_id)
                     update(
@@ -7327,7 +7340,7 @@ class PrincipiaEngine:
             return "geometry recovery from too few reliable views"
         if "rul" in lower or "remaining useful life" in lower:
             return "remaining-life prediction under noisy cross-sensor degradation"
-        if "multi-agent" in lower or "mas" in lower:
+        if self._has_query_trigger_any(lower, ["multi-agent", "multi agent", "mas"]):
             return "multi-agent reasoning where communication budget and correctness compete"
         if any(term in lower for term in ["reasoning", "logical", "logic", "exemplar", "benchmark", "chain-of-thought", "chain of thought"]):
             return "logical pattern extraction across reasoning domains and benchmarks"
@@ -8136,7 +8149,7 @@ class PrincipiaEngine:
             return "autonomous-code quality control"
         if "clip" in lower or "vision-language" in lower or "few-shot" in lower:
             return "few-shot vision-language adaptation"
-        if "multi-agent" in lower or "agentic" in lower or "mas" in lower:
+        if self._has_query_trigger_any(lower, ["multi-agent", "multi agent", "agentic", "mas"]):
             return "multi-agent scientific reasoning"
         if "logical" in lower or "logic" in lower or "symbolic" in lower:
             return "symbolic and logical reasoning with LLMs"
@@ -13355,7 +13368,10 @@ class PrincipiaEngine:
                 "failure_modes": ["测试时更新过拟合支持集。", "额外计算掩盖方法本身贡献。", "CLIP 文本语义在更新后漂移。", "只在少数简单数据集上有效。"],
                 "baselines": ["zero-shot CLIP", "CoOp", "CoCoOp", "Tip-Adapter", "TPT", "linear probe", "ViT^3-style test-time training"],
             }
-        if self._has_any(lower, ["mas", "multi-agent", "agent", "dialect", "scientific discovery", "symbolic", "llm"]):
+        if self._has_query_trigger_any(
+            lower,
+            ["mas", "multi-agent", "multi agent", "large language model", "llm", "ai agent", "llm agent", "agent communication", "machine dialect"],
+        ):
             return {
                 "work_abstract": "这条记录面向 LLM 多智能体推理，关注通信协议、符号压缩、分歧定位和 token 成本之间的关系。",
                 "work_principles": ["把 agent 交互从自由对话改造成有协议、有状态、有验收标准的压缩推理过程。"],
@@ -14392,6 +14408,9 @@ class PrincipiaEngine:
     def _has_any(self, text: str, terms: list[str]) -> bool:
         return any(term in text for term in terms)
 
+    def _has_query_trigger_any(self, text: str, terms: list[str]) -> bool:
+        return any(contains_query_trigger(text, term) for term in terms)
+
     def _has_rul_token(self, text: str) -> bool:
         return bool(re.search(r"(?<![a-z0-9])rul(?![a-z0-9])", text.lower()))
 
@@ -14423,18 +14442,20 @@ class PrincipiaEngine:
                     "multi view stereo",
                 ],
             ),
-            "mas": self._has_any(
+            "mas": self._has_query_trigger_any(
                 text,
                 [
                     "mas",
                     "multi-agent",
                     "multi agent",
+                    "large language model",
+                    "llm",
+                    "ai agent",
                     "llm agent",
                     "agent communication",
                     "agent collaboration",
                     "agent society",
                     "multi-agent systems",
-                    "scientific discovery",
                 ],
             ),
             "symbolic": self._has_any(
@@ -17545,12 +17566,16 @@ class PrincipiaEngine:
             for phrase in expansions
         ):
             domain = "TimesFM cross-sensor RUL prediction"
-        elif any(term in normalized for term in ["machine dialect", "dialect", "token efficient", "token cost"]):
+        elif self._has_query_trigger_any(normalized, ["machine dialect", "token efficient", "token cost"]):
             domain = "machine-dialect MAS for token-efficient reasoning"
-        elif any(term in normalized for term in ["symbolic compactness", "intrinsic reward", "scientific discovery"]):
+        elif self._has_query_trigger_any(normalized, ["symbolic compactness", "intrinsic reward"]) and self._has_query_trigger_any(
+            normalized, ["mas", "multi-agent", "multi agent", "large language model", "llm", "ai agent", "agent communication"]
+        ):
             domain = "symbolic-compactness reward for MAS scientific discovery"
-        elif any(term in normalized for term in ["mas", "multi-agent", "multi agent", "llm agents"]):
+        elif self._has_query_trigger_any(normalized, ["mas", "multi-agent", "multi agent", "large language model", "llm", "llm agents", "ai agent"]):
             domain = "LLM multi-agent reasoning system"
+        elif contains_query_trigger(normalized, "scientific discovery"):
+            domain = "scientific discovery"
         elif any(
             term in normalized
             for term in [

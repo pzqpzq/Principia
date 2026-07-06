@@ -9,51 +9,51 @@ import subprocess
 import tempfile
 import urllib.parse
 import urllib.request
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any
 
-from .arxiv import search_arxiv
-from .utils import compact_text, lexical_score, stable_id
+from principia_retrieval import RetrievalConfig, WorkRetriever
+
+from .utils import compact_text, stable_id
 
 
 USER_AGENT = "Principia-v2/0.2 (local research workspace; mailto:research@example.local)"
 
 
-def search_hybrid_sources(query: str, max_results: int = 100, timeout: int = 12) -> list[dict[str, Any]]:
+def search_hybrid_sources(
+    query: str,
+    max_results: int = 100,
+    timeout: int = 12,
+    *,
+    llm: Any | None = None,
+    original_goal: str | None = None,
+    sources: dict[str, Any] | None = None,
+    use_llm_rerank: bool | None = None,
+) -> list[dict[str, Any]]:
     """Search free public metadata sources and return SourceWork-shaped dicts.
 
     The function intentionally avoids paid/search-engine APIs. It combines arXiv,
-    OpenAlex, and Crossref metadata, then ranks and deduplicates by title.
+    OpenAlex, Crossref, and Semantic Scholar metadata through the shared semantic
+    retriever. Without an LLM it falls back to deterministic semantic-lite ranking.
     """
 
     query = " ".join(str(query or "").split())
     if not query:
         return []
-    per_source = max(20, min(max_results, 100))
-    sources = [
-        ("arxiv", lambda: search_arxiv(query, max_results=per_source, timeout=timeout)),
-        ("openalex", lambda: search_openalex(query, max_results=per_source, timeout=timeout)),
-        ("crossref", lambda: search_crossref(query, max_results=per_source, timeout=timeout)),
-    ]
-    works: list[dict[str, Any]] = []
-    with ThreadPoolExecutor(max_workers=3) as executor:
-        futures = [executor.submit(fetcher) for _, fetcher in sources]
-        for future in as_completed(futures):
-            try:
-                works.extend(future.result())
-            except Exception:
-                continue
-    ranked = _dedupe_works(works)
-    ranked.sort(
-        key=lambda work: (
-            lexical_score(query, f"{work.get('title', '')} {work.get('abstract', '')}"),
-            int(work.get("year") or 0),
-            bool(work.get("url_or_doi")),
-        ),
-        reverse=True,
+    config = RetrievalConfig(
+        use_llm_planner=llm is not None,
+        use_llm_rerank=bool(llm) if use_llm_rerank is None else bool(use_llm_rerank),
+        max_raw_candidates=max(100, int(max_results or 100) * 4),
+        max_queries=8,
     )
-    return ranked[:max_results]
+    result = WorkRetriever(sources=sources, config=config).search(
+        original_goal or query,
+        target_count=max_results,
+        llm=llm,
+        timeout=timeout,
+        use_llm_rerank=use_llm_rerank,
+    )
+    return result.selected_works
 
 
 def fetch_transient_full_text(work: dict[str, Any], *, timeout: int = 14, max_chars: int = 24_000) -> str:

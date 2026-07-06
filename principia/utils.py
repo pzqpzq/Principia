@@ -6,6 +6,8 @@ import math
 import re
 from typing import Any
 
+from principia_retrieval import contains_query_trigger
+
 
 STOPWORDS = {
     "a", "an", "and", "are", "as", "at", "be", "by", "can", "for", "from", "how",
@@ -96,8 +98,7 @@ ZH_QUERY_EXPANSIONS: list[tuple[tuple[str, ...], tuple[str, ...]]] = [
     (
         ("scientific discovery", "science discovery", "research discovery", "科学发现"),
         (
-            "AI for scientific discovery",
-            "automated scientific discovery",
+            "scientific discovery",
             "hypothesis generation",
             "scientific reasoning",
         ),
@@ -214,9 +215,7 @@ def query_expansions(text: str) -> list[str]:
     for triggers, phrases in ZH_QUERY_EXPANSIONS:
         def matches(trigger: str) -> bool:
             normalized = trigger.lower()
-            if normalized == "rul":
-                return bool(re.search(r"(?<![a-z0-9])rul(?![a-z0-9])", lower))
-            return normalized in lower
+            return contains_query_trigger(lower, normalized)
 
         if any(matches(trigger) for trigger in triggers):
             expansions.extend(phrases)

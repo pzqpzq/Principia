@@ -21,6 +21,7 @@ from principia.models import BaselineRecord, BenchmarkRecord, FieldProfile, Resu
 from principia.server import _display_model_alias, _openai_model_env_value, make_handler
 from principia.storage import Store
 from principia.utils import enrich_query, safe_json_loads, stable_id
+from principia_retrieval import RetrievalConfig, WorkRetriever, deterministic_query_plan
 
 
 SPARSE_VIEW_QUERY = "Please design a method for 稀疏数据三维重建（即在有限视角下进行三维重建）任务"
@@ -34,6 +35,9 @@ SYMBOLIC_COMPACTNESS_MAS_QUERY = (
 MACHINE_DIALECT_MAS_QUERY = (
     "Please design an MAS framework where LLMs are interacting machine dialects like social interaction "
     "to improve the reasoning accuracy and reducing the tokens completion and cost"
+)
+ASTRONOMY_TRANSIENT_QUERY = (
+    "Explanation for S251112cm as a sub-solar-mass compact-object merger, kilonova, or optical transient"
 )
 VISION_CLIP_TTT_QUERY = (
     "实验资源受限情况下（4-8块4090），视觉模型和clip在few shot learning任务上的新策略。"
@@ -200,7 +204,7 @@ class PrincipiaTests(unittest.TestCase):
         dialect = enrich_query(MACHINE_DIALECT_MAS_QUERY).lower()
 
         self.assertIn("multi-agent systems", symbolic)
-        self.assertIn("automated scientific discovery", symbolic)
+        self.assertIn("scientific reasoning", symbolic)
         self.assertIn("minimum description length", symbolic)
         self.assertIn("agent communication protocol", dialect)
         self.assertIn("token efficient reasoning", dialect)
@@ -209,6 +213,134 @@ class PrincipiaTests(unittest.TestCase):
         self.assertIn('all:"multi-agent" AND all:"large language model"', queries)
         self.assertIn('all:"symbolic reasoning" AND all:"scientific discovery"', queries)
         self.assertNotIn("all:compactness", queries[:6])
+
+    def test_astronomy_transient_query_does_not_trigger_ai_bias(self) -> None:
+        plan = deterministic_query_plan(ASTRONOMY_TRANSIENT_QUERY)
+        expanded = enrich_query(ASTRONOMY_TRANSIENT_QUERY).lower()
+        queries = build_arxiv_queries(ASTRONOMY_TRANSIENT_QUERY)
+
+        self.assertFalse(plan.ai_intent)
+        self.assertIn("astronomy_transient", plan.domain_hints)
+        self.assertNotIn("large language model", expanded)
+        self.assertNotIn("multi-agent systems", expanded)
+        self.assertTrue(any("S251112cm" in query for query in queries))
+        self.assertIn('all:"kilonova" AND all:"electromagnetic counterpart"', queries)
+        self.assertFalse(any("large language model" in query.lower() for query in queries))
+        self.assertFalse(any("multi-agent" in query.lower() for query in queries))
+
+    def test_mass_does_not_match_mas_trigger(self) -> None:
+        expanded = enrich_query("sub-solar mass kilonova optical transient").lower()
+        queries = build_arxiv_queries("sub-solar mass kilonova optical transient")
+
+        self.assertNotIn("multi-agent systems", expanded)
+        self.assertFalse(any("large language model" in query.lower() for query in queries))
+        self.assertFalse(any("multi-agent" in query.lower() for query in queries))
+        self.assertTrue(any("kilonova" in query.lower() for query in queries))
+
+    def test_shared_retriever_reranks_astronomy_over_ai_and_geophysics(self) -> None:
+        candidates = [
+            {
+                "work_id": "W-S251112CM",
+                "title": "Follow-up observations of S251112cm as an optical transient",
+                "abstract": "S251112cm is discussed as a kilonova electromagnetic counterpart to a compact-object merger.",
+                "year": 2026,
+                "venue_or_source": "Astrophysical Journal Letters",
+                "source": "fake",
+                "url_or_doi": "https://example.test/s251112cm",
+            },
+            {
+                "work_id": "W-GEOPHYS",
+                "title": "Transient electromagnetic inversion for mineral exploration",
+                "abstract": "Grounded-source transient electromagnetic survey inversion for geophysical mineral exploration.",
+                "year": 2026,
+                "venue_or_source": "Geophysics",
+                "citation_count": 500,
+                "source": "fake",
+            },
+            {
+                "work_id": "W-LLM",
+                "title": "Large language models for scientific discovery",
+                "abstract": "An LLM agent system for automated scientific discovery and hypothesis generation.",
+                "year": 2026,
+                "venue_or_source": "NeurIPS",
+                "citation_count": 1000,
+                "source": "fake",
+            },
+        ]
+
+        def source(query: str, limit: int, timeout: float):
+            return candidates[:limit]
+
+        class RerankLLM:
+            def available(self) -> bool:
+                return True
+
+            def chat_json(self, system: str, user: str, **kwargs):
+                return {
+                    "items": [
+                        {
+                            "work_id": "W-S251112CM",
+                            "relevance_score": 0.96,
+                            "relation_label": "direct",
+                            "rationale": "Directly studies S251112cm as the target transient.",
+                            "reject_reason": "",
+                        },
+                        {
+                            "work_id": "W-GEOPHYS",
+                            "relevance_score": 0.03,
+                            "relation_label": "out_of_scope",
+                            "rationale": "",
+                            "reject_reason": "Geophysical transient electromagnetic engineering, not astronomy.",
+                        },
+                        {
+                            "work_id": "W-LLM",
+                            "relevance_score": 0.02,
+                            "relation_label": "out_of_scope",
+                            "rationale": "",
+                            "reject_reason": "AI methods paper for a non-AI astronomy goal.",
+                        },
+                    ]
+                }
+
+        result = WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(use_llm_planner=False, use_llm_rerank=True, source_names=["fake"], max_raw_candidates=20),
+        ).search(ASTRONOMY_TRANSIENT_QUERY, target_count=3, llm=RerankLLM())
+
+        self.assertEqual(result.selected_works[0]["work_id"], "W-S251112CM")
+        self.assertNotIn("W-GEOPHYS", [work["work_id"] for work in result.selected_works])
+        self.assertNotIn("W-LLM", [work["work_id"] for work in result.selected_works])
+
+    def test_shared_retriever_deterministic_exact_entity_beats_citation(self) -> None:
+        candidates = [
+            {
+                "work_id": "W-S251112CM",
+                "title": "S251112cm follow-up observations",
+                "abstract": "Optical transient follow-up of S251112cm and possible kilonova interpretation.",
+                "year": 2026,
+                "venue_or_source": "arXiv",
+                "source": "fake",
+            },
+            {
+                "work_id": "W-HIGHCITE",
+                "title": "Large language models for scientific discovery",
+                "abstract": "A highly cited LLM agent system for scientific discovery.",
+                "year": 2026,
+                "venue_or_source": "Nature",
+                "citation_count": 5000,
+                "source": "fake",
+            },
+        ]
+
+        def source(query: str, limit: int, timeout: float):
+            return candidates[:limit]
+
+        result = WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(use_llm_planner=False, use_llm_rerank=False, source_names=["fake"], max_raw_candidates=20),
+        ).search(ASTRONOMY_TRANSIENT_QUERY, target_count=2, llm=None)
+
+        self.assertEqual(result.selected_works[0]["work_id"], "W-S251112CM")
 
     def test_principle_merge_upgrades_legacy_sparse_record(self) -> None:
         store = self.make_store()
