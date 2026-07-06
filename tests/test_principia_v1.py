@@ -2972,6 +2972,75 @@ class PrincipiaTests(unittest.TestCase):
         self.assertEqual(store.counts()["existed_ideas"], 0)
         self.assertGreaterEqual(cleared["deleted"].get("project_memberships", 0), 1)
 
+    def test_v2_clear_project_local_records_keeps_other_project_records(self) -> None:
+        store = self.make_store()
+        engine = PrincipiaEngine(store=store, llm=NoLLM())  # type: ignore[arg-type]
+        left = engine.create_project(name="Left Project", goal_text="left reasoning")
+        right = engine.create_project(name="Right Project", goal_text="right reasoning")
+        shared_work = engine._v2_upsert_work({"work_id": "W-SHARED", "title": "Shared Work", "abstract": "Shared evidence.", "year": 2026}, model_mode="metadata")
+        left_work = engine._v2_upsert_work({"work_id": "W-LEFT", "title": "Left Work", "abstract": "Left evidence.", "year": 2026}, model_mode="metadata")
+        right_work = engine._v2_upsert_work({"work_id": "W-RIGHT", "title": "Right Work", "abstract": "Right evidence.", "year": 2026}, model_mode="metadata")
+        shared_idea = engine._v2_upsert_canonical(
+            "existed_ideas",
+            "shared diagnostic routing",
+            {
+                "title": "Shared Diagnostic Routing",
+                "idea_text": "Use shared diagnostic routing to decide when evidence should alter the reasoning path.",
+                "source_work_ids": [shared_work["work_id"]],
+            },
+            model_mode="efficient",
+        )
+        left_idea = engine._v2_upsert_canonical(
+            "existed_ideas",
+            "left calibration gate",
+            {
+                "title": "Left Calibration Gate",
+                "idea_text": "Use a left-project calibration gate to decide when local evidence should override a default path.",
+                "source_work_ids": [left_work["work_id"]],
+            },
+            model_mode="efficient",
+        )
+        right_idea = engine._v2_upsert_canonical(
+            "existed_ideas",
+            "right verification gate",
+            {
+                "title": "Right Verification Gate",
+                "idea_text": "Use a right-project verification gate to decide when local evidence should override a default path.",
+                "source_work_ids": [right_work["work_id"]],
+            },
+            model_mode="efficient",
+        )
+        engine.add_project_memberships(left["field_id"], "source_works", [shared_work["work_id"], left_work["work_id"]])
+        engine.add_project_memberships(left["field_id"], "existed_ideas", [shared_idea["canonical_id"], left_idea["canonical_id"]])
+        engine.add_project_memberships(right["field_id"], "source_works", [shared_work["work_id"], right_work["work_id"]])
+        engine.add_project_memberships(right["field_id"], "existed_ideas", [shared_idea["canonical_id"], right_idea["canonical_id"]])
+        left_profile = store.get_item("field_profiles", left["field_id"])
+        left_profile["work_ids"] = [shared_work["work_id"], left_work["work_id"]]
+        left_profile["idea_ids"] = []
+        store.upsert("field_profiles", left_profile, "field_id")
+
+        cleared = engine.clear_project_local_records(left["field_id"])
+
+        self.assertIsNotNone(store.get_item("field_profiles", left["field_id"]))
+        self.assertEqual(store.list_project_memberships(left["field_id"], include_hidden=True), [])
+        self.assertEqual(store.get_item("field_profiles", left["field_id"]).get("work_ids"), [])
+        self.assertIsNone(store.get_item("source_works", left_work["work_id"]))
+        self.assertIsNone(store.get_item("existed_ideas", left_idea["canonical_id"]))
+        self.assertIsNotNone(store.get_item("source_works", shared_work["work_id"]))
+        self.assertIsNotNone(store.get_item("existed_ideas", shared_idea["canonical_id"]))
+        self.assertIsNotNone(store.get_item("source_works", right_work["work_id"]))
+        self.assertIsNotNone(store.get_item("existed_ideas", right_idea["canonical_id"]))
+        self.assertEqual(
+            {item["record_id"] for item in store.list_project_memberships(right["field_id"], "source_works")},
+            {shared_work["work_id"], right_work["work_id"]},
+        )
+        self.assertEqual(
+            {item["canonical_id"] for item in engine.build_v2_project_tab(right["field_id"], "existed_ideas", limit=10)["items"]},
+            {shared_idea["canonical_id"], right_idea["canonical_id"]},
+        )
+        self.assertGreaterEqual(cleared["deleted"].get("project_memberships", 0), 4)
+        self.assertEqual(cleared["deleted"].get("source_works", 0), 1)
+
     def test_v2_works_tab_supports_show_more_and_sort_modes(self) -> None:
         store = self.make_store()
         engine = PrincipiaEngine(store=store, llm=NoLLM())  # type: ignore[arg-type]
