@@ -21,7 +21,8 @@ from principia.models import BaselineRecord, BenchmarkRecord, FieldProfile, Resu
 from principia.server import _display_model_alias, _openai_model_env_value, make_handler
 from principia.storage import Store
 from principia.utils import enrich_query, safe_json_loads, stable_id
-from principia_retrieval import RetrievalConfig, WorkRetriever, deterministic_query_plan
+from principia_retrieval import QueryPlanner, RetrievalConfig, WorkRetriever, deterministic_query_plan, final_select
+from principia_retrieval.retriever import llm_rerank_candidate_limit
 
 
 SPARSE_VIEW_QUERY = "Please design a method for 稀疏数据三维重建（即在有限视角下进行三维重建）任务"
@@ -214,19 +215,110 @@ class PrincipiaTests(unittest.TestCase):
         self.assertIn('all:"symbolic reasoning" AND all:"scientific discovery"', queries)
         self.assertNotIn("all:compactness", queries[:6])
 
-    def test_astronomy_transient_query_does_not_trigger_ai_bias(self) -> None:
+    def test_deterministic_query_plan_uses_generic_terms_without_domain_rules(self) -> None:
         plan = deterministic_query_plan(ASTRONOMY_TRANSIENT_QUERY)
         expanded = enrich_query(ASTRONOMY_TRANSIENT_QUERY).lower()
         queries = build_arxiv_queries(ASTRONOMY_TRANSIENT_QUERY)
 
         self.assertFalse(plan.ai_intent)
-        self.assertIn("astronomy_transient", plan.domain_hints)
+        self.assertEqual([], plan.domain_hints)
+        self.assertEqual([], plan.exclude_terms)
+        self.assertTrue(any("S251112cm" in query for query in plan.search_queries))
+        self.assertTrue(any("compact-object merger" in query.lower() for query in plan.search_queries))
+        self.assertFalse(any("large language model" in query.lower() for query in plan.search_queries))
+        self.assertFalse(any("multi-agent" in query.lower() for query in plan.search_queries))
         self.assertNotIn("large language model", expanded)
         self.assertNotIn("multi-agent systems", expanded)
         self.assertTrue(any("S251112cm" in query for query in queries))
         self.assertIn('all:"kilonova" AND all:"electromagnetic counterpart"', queries)
         self.assertFalse(any("large language model" in query.lower() for query in queries))
         self.assertFalse(any("multi-agent" in query.lower() for query in queries))
+
+    def test_deterministic_query_plan_does_not_inject_fixed_ai_queries(self) -> None:
+        plan = deterministic_query_plan(MACHINE_DIALECT_MAS_QUERY)
+        injected = {
+            "large language model multi-agent systems",
+            "llm agents scientific discovery",
+            "agent communication large language model",
+            "multi-agent debate reasoning",
+        }
+
+        self.assertFalse(plan.ai_intent)
+        self.assertEqual([], plan.domain_hints)
+        self.assertEqual([], plan.exclude_terms)
+        self.assertFalse(any(query.lower() in injected for query in plan.search_queries))
+        self.assertTrue(any("machine dialect" in query.lower() for query in plan.search_queries))
+        self.assertTrue(any("reasoning accuracy" in query.lower() for query in plan.search_queries))
+
+    def test_query_planner_ignores_llm_domain_hints_and_exclude_terms(self) -> None:
+        class PlannerLLM:
+            def __init__(self) -> None:
+                self.user_prompt = ""
+
+            def available(self) -> bool:
+                return True
+
+            def chat_json(self, system: str, user: str, **kwargs):
+                self.user_prompt = user
+                return {
+                    "search_queries": ["compact machine dialect agent communication"],
+                    "entities": ["machine dialect"],
+                    "key_phrases": ["token efficient reasoning"],
+                    "domain_hints": ["ai"],
+                    "exclude_terms": ["non-ai topic"],
+                }
+
+        llm = PlannerLLM()
+        plan = QueryPlanner(llm, use_llm=True).plan(MACHINE_DIALECT_MAS_QUERY)
+
+        self.assertIn("compact machine dialect agent communication", plan.search_queries)
+        self.assertIn("machine dialect", plan.entities)
+        self.assertIn("token efficient reasoning", plan.key_phrases)
+        self.assertFalse(plan.ai_intent)
+        self.assertEqual([], plan.domain_hints)
+        self.assertEqual([], plan.exclude_terms)
+        self.assertIn("Field definitions:", llm.user_prompt)
+        self.assertIn("search_queries: 5-8 concise plain-text academic search strings", llm.user_prompt)
+        self.assertIn("entities: explicit named entities", llm.user_prompt)
+        self.assertIn("key_phrases: short noun phrases", llm.user_prompt)
+        self.assertIn("Use the same generic strategy for every research goal", llm.user_prompt)
+        self.assertIn("do not add exclusion terms", llm.user_prompt)
+
+    def test_query_planner_mixes_deterministic_anchors_llm_queries_and_goal_fallback(self) -> None:
+        llm_queries = [
+            "compact machine dialect agent communication",
+            "token efficient multi agent reasoning",
+            "llm agent social interaction protocol",
+            "reasoning accuracy communication overhead",
+            "cost aware llm collaboration",
+            "machine language emergent communication",
+            "multi agent debate efficiency",
+        ]
+
+        class PlannerLLM:
+            def available(self) -> bool:
+                return True
+
+            def chat_json(self, system: str, user: str, **kwargs):
+                return {"search_queries": llm_queries, "entities": [], "key_phrases": []}
+
+        deterministic = deterministic_query_plan(MACHINE_DIALECT_MAS_QUERY).search_queries
+        plan = QueryPlanner(PlannerLLM(), use_llm=True).plan(MACHINE_DIALECT_MAS_QUERY, max_queries=8)
+
+        self.assertEqual(8, len(plan.search_queries))
+        self.assertEqual(deterministic[:2], plan.search_queries[:2])
+        self.assertEqual(llm_queries[:5], plan.search_queries[2:7])
+        self.assertEqual(MACHINE_DIALECT_MAS_QUERY, plan.search_queries[7])
+        self.assertEqual(
+            {
+                "max_queries": 8,
+                "deterministic_query_count": len(deterministic),
+                "llm_query_count": len(llm_queries),
+                "mixed_query_count": 8,
+                "goal_fallback_included": True,
+            },
+            plan.trace["query_mixing"],
+        )
 
     def test_mass_does_not_match_mas_trigger(self) -> None:
         expanded = enrich_query("sub-solar mass kilonova optical transient").lower()
@@ -236,6 +328,154 @@ class PrincipiaTests(unittest.TestCase):
         self.assertFalse(any("large language model" in query.lower() for query in queries))
         self.assertFalse(any("multi-agent" in query.lower() for query in queries))
         self.assertTrue(any("kilonova" in query.lower() for query in queries))
+
+    def test_shared_retriever_bm25_reranks_textual_match_without_llm(self) -> None:
+        candidates = [
+            {
+                "work_id": "W-HIGHCITE",
+                "title": "Highly cited clinical trial meta analysis",
+                "abstract": "A broad medical intervention review with many citations but no connection to sparse-view neural rendering.",
+                "year": 2026,
+                "venue_or_source": "Nature",
+                "citation_count": 5000,
+                "source": "fake",
+            },
+            {
+                "work_id": "W-NERF",
+                "title": "Sparse-view neural radiance fields with depth regularization",
+                "abstract": "A method for neural radiance field reconstruction under limited views using depth and geometry regularization.",
+                "year": 2025,
+                "venue_or_source": "CVPR",
+                "citation_count": 5,
+                "source": "fake",
+            },
+        ]
+
+        def source(query: str, limit: int, timeout: float):
+            return candidates[:limit]
+
+        result = WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(use_llm_planner=False, rerank_mode="bm25", source_names=["fake"], max_raw_candidates=20),
+        ).search("sparse-view neural radiance field depth regularization", target_count=1, llm=None)
+
+        self.assertEqual(result.selected_works[0]["work_id"], "W-NERF")
+        self.assertGreater(result.selected_works[0]["community_signals"]["bm25_score"], 0)
+
+    def test_shared_retriever_uses_llm_planner_without_llm_rerank(self) -> None:
+        calls: list[str] = []
+        queries_seen: list[str] = []
+
+        class PlannerOnlyLLM:
+            def available(self) -> bool:
+                return True
+
+            def chat_json(self, system: str, user: str, **kwargs):
+                calls.append(user)
+                return {
+                    "search_queries": ["compact machine dialect communication"],
+                    "entities": ["machine dialect"],
+                    "key_phrases": ["token efficient communication"],
+                }
+
+        def source(query: str, limit: int, timeout: float):
+            queries_seen.append(query)
+            if query == "compact machine dialect communication":
+                return [
+                    {
+                        "work_id": "W-DIALECT",
+                        "title": "Compact machine dialect communication for multi-agent reasoning",
+                        "abstract": "LLM agents exchange concise machine dialect messages to reduce token cost and improve reasoning.",
+                        "year": 2026,
+                        "venue_or_source": "arXiv",
+                        "source": "fake",
+                    }
+                ]
+            return []
+
+        result = WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(use_llm_planner=True, rerank_mode="bm25", source_names=["fake"], max_queries=4, max_raw_candidates=20),
+        ).search(MACHINE_DIALECT_MAS_QUERY, target_count=1, llm=PlannerOnlyLLM())
+
+        self.assertEqual(["W-DIALECT"], [work["work_id"] for work in result.selected_works])
+        self.assertEqual(1, len(calls))
+        self.assertIn("compact machine dialect communication", queries_seen)
+
+    def test_shared_retriever_llm_rerank_mode_runs_after_bm25_prefilter(self) -> None:
+        calls: list[str] = []
+        candidates = [
+            {
+                "work_id": "W-BM25",
+                "title": "Machine dialect communication for token efficient agents",
+                "abstract": "A relevant candidate found by metadata search.",
+                "year": 2026,
+                "venue_or_source": "arXiv",
+                "source": "fake",
+            },
+            {
+                "work_id": "W-LLM-PICK",
+                "title": "Social interaction protocols for LLM multi-agent reasoning",
+                "abstract": "A central work on LLM agents interacting through compact communication protocols.",
+                "year": 2026,
+                "venue_or_source": "NeurIPS",
+                "source": "fake",
+            },
+        ]
+
+        class PlannerAndRerankLLM:
+            def available(self) -> bool:
+                return True
+
+            def chat_json(self, system: str, user: str, **kwargs):
+                calls.append(user)
+                if "Candidate works:" in user:
+                    return {
+                        "items": [
+                            {
+                                "work_id": "W-BM25",
+                                "relevance_score": 0.35,
+                                "relation_label": "background",
+                                "rationale": "Related but less central.",
+                                "reject_reason": "",
+                            },
+                            {
+                                "work_id": "W-LLM-PICK",
+                                "relevance_score": 0.96,
+                                "relation_label": "direct",
+                                "rationale": "Directly addresses the goal.",
+                                "reject_reason": "",
+                            },
+                        ]
+                    }
+                return {
+                    "search_queries": ["machine dialect llm agent communication"],
+                    "entities": ["LLM", "machine dialect"],
+                    "key_phrases": ["multi-agent reasoning", "token efficient communication"],
+                }
+
+        def source(query: str, limit: int, timeout: float):
+            return candidates[:limit]
+
+        result = WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(use_llm_planner=True, rerank_mode="llm_rerank", source_names=["fake"], max_queries=2, max_raw_candidates=20),
+        ).search(MACHINE_DIALECT_MAS_QUERY, target_count=1, llm=PlannerAndRerankLLM())
+
+        self.assertEqual("W-LLM-PICK", result.selected_works[0]["work_id"])
+        self.assertEqual(2, len(calls))
+        self.assertIn("Candidate works:", calls[-1])
+
+    def test_final_select_tops_up_after_filtering_low_score_out_of_scope(self) -> None:
+        plan = deterministic_query_plan("sparse-view neural radiance field depth regularization")
+        works = [
+            {"work_id": "W-LOW", "title": "Unrelated paper", "abstract": "", "_retrieval_score": 0.01, "relation_label": "out_of_scope"},
+            {"work_id": "W-OK", "title": "Sparse-view neural radiance fields", "abstract": "", "_retrieval_score": 0.55, "relation_label": "direct"},
+        ]
+
+        selected = final_select(works, 2, plan)
+
+        self.assertEqual(["W-OK", "W-LOW"], [work["work_id"] for work in selected])
 
     def test_shared_retriever_reranks_astronomy_over_ai_and_geophysics(self) -> None:
         candidates = [
@@ -297,7 +537,7 @@ class PrincipiaTests(unittest.TestCase):
                             "relevance_score": 0.02,
                             "relation_label": "out_of_scope",
                             "rationale": "",
-                            "reject_reason": "AI methods paper for a non-AI astronomy goal.",
+                            "reject_reason": "Not relevant to the target transient.",
                         },
                     ]
                 }
@@ -310,6 +550,113 @@ class PrincipiaTests(unittest.TestCase):
         self.assertEqual(result.selected_works[0]["work_id"], "W-S251112CM")
         self.assertNotIn("W-GEOPHYS", [work["work_id"] for work in result.selected_works])
         self.assertNotIn("W-LLM", [work["work_id"] for work in result.selected_works])
+
+    def test_shared_retriever_keeps_ai_work_when_reranker_scores_it(self) -> None:
+        candidates = [
+            {
+                "work_id": "W-S251112CM",
+                "title": "Follow-up observations of S251112cm as an optical transient",
+                "abstract": "S251112cm is discussed as a kilonova electromagnetic counterpart to a compact-object merger.",
+                "year": 2026,
+                "venue_or_source": "Astrophysical Journal Letters",
+                "source": "fake",
+            },
+            {
+                "work_id": "W-LLM",
+                "title": "Large language models for scientific discovery",
+                "abstract": "An LLM agent system for automated scientific discovery and hypothesis generation.",
+                "year": 2026,
+                "venue_or_source": "NeurIPS",
+                "citation_count": 1000,
+                "source": "fake",
+            },
+        ]
+
+        def source(query: str, limit: int, timeout: float):
+            return candidates[:limit]
+
+        class RerankLLM:
+            def available(self) -> bool:
+                return True
+
+            def chat_json(self, system: str, user: str, **kwargs):
+                return {
+                    "items": [
+                        {
+                            "work_id": "W-S251112CM",
+                            "relevance_score": 0.96,
+                            "relation_label": "direct",
+                            "rationale": "Directly studies S251112cm as the target transient.",
+                            "reject_reason": "",
+                        },
+                        {
+                            "work_id": "W-LLM",
+                            "relevance_score": 0.25,
+                            "relation_label": "out_of_scope",
+                            "rationale": "Useful adjacent AI literature despite not being the target astronomy object.",
+                            "reject_reason": "",
+                        },
+                    ]
+                }
+
+        result = WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(use_llm_planner=False, use_llm_rerank=True, source_names=["fake"], max_raw_candidates=20),
+        ).search(ASTRONOMY_TRANSIENT_QUERY, target_count=2, llm=RerankLLM())
+
+        selected_ids = [work["work_id"] for work in result.selected_works]
+        self.assertIn("W-S251112CM", selected_ids)
+        self.assertIn("W-LLM", selected_ids)
+
+    def test_shared_retriever_llm_rerank_prompt_defines_scores_and_labels(self) -> None:
+        candidates = [
+            {
+                "work_id": "W-S251112CM",
+                "title": "S251112cm follow-up observations",
+                "abstract": "Optical transient follow-up of S251112cm and possible kilonova interpretation.",
+                "year": 2026,
+                "venue_or_source": "arXiv",
+                "source": "fake",
+            }
+        ]
+
+        def source(query: str, limit: int, timeout: float):
+            return candidates[:limit]
+
+        class RerankLLM:
+            def __init__(self) -> None:
+                self.user_prompt = ""
+
+            def available(self) -> bool:
+                return True
+
+            def chat_json(self, system: str, user: str, **kwargs):
+                self.user_prompt = user
+                return {
+                    "items": [
+                        {
+                            "work_id": "W-S251112CM",
+                            "relevance_score": 0.95,
+                            "relation_label": "direct",
+                            "rationale": "Directly studies the target transient.",
+                            "reject_reason": "",
+                        }
+                    ]
+                }
+
+        llm = RerankLLM()
+        WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(use_llm_planner=False, use_llm_rerank=True, source_names=["fake"], max_raw_candidates=20),
+        ).search(ASTRONOMY_TRANSIENT_QUERY, target_count=1, llm=llm)
+
+        self.assertIn('Return {"items":[...]}', llm.user_prompt)
+        self.assertIn("0.90-1.00 central match", llm.user_prompt)
+        self.assertIn("0.10-0.34 weak connection", llm.user_prompt)
+        self.assertIn("relation_label must be one of", llm.user_prompt)
+        self.assertIn("Keep rationale under 20 words", llm.user_prompt)
+        self.assertIn("Set reject_reason only for out_of_scope items", llm.user_prompt)
+        self.assertNotIn("Do not reward AI", llm.user_prompt)
 
     def test_shared_retriever_deterministic_exact_entity_beats_citation(self) -> None:
         candidates = [
@@ -341,6 +688,12 @@ class PrincipiaTests(unittest.TestCase):
         ).search(ASTRONOMY_TRANSIENT_QUERY, target_count=2, llm=None)
 
         self.assertEqual(result.selected_works[0]["work_id"], "W-S251112CM")
+
+    def test_shared_retriever_llm_rerank_candidate_limit(self) -> None:
+        self.assertEqual(50, llm_rerank_candidate_limit(1))
+        self.assertEqual(50, llm_rerank_candidate_limit(25))
+        self.assertEqual(100, llm_rerank_candidate_limit(50))
+        self.assertEqual(200, llm_rerank_candidate_limit(100))
 
     def test_principle_merge_upgrades_legacy_sparse_record(self) -> None:
         store = self.make_store()
@@ -2430,8 +2783,8 @@ class PrincipiaTests(unittest.TestCase):
         ]
         original = engine_module.search_hybrid_sources
 
-        def fake_search(query, max_results=100, timeout=12):
-            calls.append({"query": query, "max_results": max_results, "timeout": timeout})
+        def fake_search(query, max_results=100, timeout=12, **kwargs):
+            calls.append({"query": query, "max_results": max_results, "timeout": timeout, **kwargs})
             return works
 
         engine_module.search_hybrid_sources = fake_search
@@ -2446,6 +2799,7 @@ class PrincipiaTests(unittest.TestCase):
             engine_module.search_hybrid_sources = original
 
         self.assertEqual(calls[0]["max_results"], 200)
+        self.assertEqual(calls[0]["retrieval_rerank_mode"], "bm25")
         self.assertEqual(result["run"]["target_works"], 200)
         self.assertEqual(result["summary"]["project"]["settings"]["target_works"], 200)
 

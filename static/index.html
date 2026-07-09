@@ -95,6 +95,10 @@
             </label>
             <div id="researchStatus" class="research-status">Ready</div>
           </div>
+          <label class="rerank-toggle">
+            <input id="retrievalRerankModeInput" type="checkbox" />
+            <span>Use LLM to rerank retrieved papers</span>
+          </label>
           <div class="header-actions research-actions" aria-label="Workspace actions">
             <button id="researchBtn" type="button" class="primary-btn">Research</button>
             <button id="cancelResearchBtn" type="button" class="secondary-btn danger-btn" data-allow-busy="true" hidden>Stop Research</button>

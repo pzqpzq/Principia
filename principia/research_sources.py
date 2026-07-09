@@ -29,20 +29,24 @@ def search_hybrid_sources(
     original_goal: str | None = None,
     sources: dict[str, Any] | None = None,
     use_llm_rerank: bool | None = None,
+    retrieval_rerank_mode: str | None = None,
 ) -> list[dict[str, Any]]:
     """Search free public metadata sources and return SourceWork-shaped dicts.
 
     The function intentionally avoids paid/search-engine APIs. It combines arXiv,
     OpenAlex, Crossref, and Semantic Scholar metadata through the shared semantic
-    retriever. Without an LLM it falls back to deterministic semantic-lite ranking.
+    retriever. Queries can use the LLM planner when available. Paper reranking
+    defaults to BM25; callers can opt into LLM reranking for the BM25 head set.
     """
 
     query = " ".join(str(query or "").split())
     if not query:
         return []
+    rerank_mode = _retrieval_rerank_mode(retrieval_rerank_mode, use_llm_rerank=use_llm_rerank)
     config = RetrievalConfig(
         use_llm_planner=llm is not None,
-        use_llm_rerank=bool(llm) if use_llm_rerank is None else bool(use_llm_rerank),
+        use_llm_rerank=rerank_mode == "llm_rerank",
+        rerank_mode=rerank_mode,
         max_raw_candidates=max(100, int(max_results or 100) * 4),
         max_queries=8,
     )
@@ -51,9 +55,18 @@ def search_hybrid_sources(
         target_count=max_results,
         llm=llm,
         timeout=timeout,
-        use_llm_rerank=use_llm_rerank,
+        use_llm_rerank=rerank_mode == "llm_rerank",
     )
     return result.selected_works
+
+
+def _retrieval_rerank_mode(value: str | None, *, use_llm_rerank: bool | None = None) -> str:
+    if use_llm_rerank is not None:
+        return "llm_rerank" if bool(use_llm_rerank) else "bm25"
+    mode = str(value or "bm25").strip().lower()
+    if mode in {"llm", "llm-rerank", "llm_rerank"}:
+        return "llm_rerank"
+    return "bm25"
 
 
 def fetch_transient_full_text(work: dict[str, Any], *, timeout: int = 14, max_chars: int = 24_000) -> str:

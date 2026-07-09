@@ -5,7 +5,7 @@ from typing import Any
 
 from .constants import STOPWORDS
 from .models import QueryPlan
-from .utils import call_llm_json, clean_text, contains_query_trigger, llm_available, ordered_unique, string_list, tokenize
+from .utils import call_llm_json, clean_text, llm_available, normalize_text, ordered_unique, string_list, tokenize
 
 
 class QueryPlanner:
@@ -14,7 +14,7 @@ class QueryPlanner:
         self.use_llm = use_llm
         self.model_mode = model_mode
 
-    def plan(self, goal_text: str) -> QueryPlan:
+    def plan(self, goal_text: str, *, max_queries: int | None = None) -> QueryPlan:
         deterministic = deterministic_query_plan(goal_text)
         if not self.use_llm or not llm_available(self.llm):
             return deterministic
@@ -23,9 +23,28 @@ class QueryPlanner:
                 self.llm,
                 "You build academic literature search plans. Return strict JSON only.",
                 (
-                    "Given a research goal, return JSON with keys: search_queries, entities, key_phrases, "
-                    "domain_hints, exclude_terms. Search queries must be concise academic search strings. "
-                    "Do not inject AI/LLM terms unless the goal explicitly asks for AI, LLMs, agents, or machine learning.\n\n"
+                    "Given a research goal, produce a generic academic metadata search plan. "
+                    "Return exactly one JSON object with keys: search_queries, entities, key_phrases.\n\n"
+                    "Field definitions:\n"
+                    "- search_queries: 5-8 concise plain-text academic search strings suitable for arXiv, "
+                    "OpenAlex, Crossref, and Semantic Scholar. Each query should be a focused combination "
+                    "of the goal's core task, object, method, constraint, metric, or mechanism. Preserve "
+                    "important acronyms, exact names, model names, datasets, benchmarks, materials, organisms, "
+                    "phenomena, and technical phrases from the goal. The queries must be complementary and "
+                    "cover different retrieval dimensions; do not generate near-duplicate paraphrases of "
+                    "the same query. Include useful alternative formulations "
+                    "only when they are directly implied by the goal. Do not use source-specific syntax, "
+                    "Boolean operators, negative filters, or broad generic filler terms.\n"
+                    "- entities: explicit named entities mentioned in or directly required by the goal, such as "
+                    "methods, systems, model names, datasets, benchmarks, instruments, organisms, materials, "
+                    "phenomena, tasks, or acronyms. Do not include vague broad fields unless the goal names "
+                    "them as targets.\n"
+                    "- key_phrases: short noun phrases capturing the core concepts, mechanisms, constraints, "
+                    "evaluation metrics, tasks, resources, or desired outcomes in the goal. Prefer 2-6 word "
+                    "phrases that can help rank retrieved works.\n\n"
+                    "Use the same generic strategy for every research goal. Do not classify the goal into a "
+                    "domain, do not add exclusion terms, and do not return keys other than search_queries, "
+                    "entities, and key_phrases.\n\n"
                     f"Research goal:\n{goal_text}"
                 ),
                 mode=self.model_mode,
@@ -34,22 +53,23 @@ class QueryPlanner:
             )
         except Exception:
             return deterministic
-        raw_llm_queries = string_list(payload.get("search_queries"))
-        llm_queries = [query for query in raw_llm_queries if deterministic.ai_intent or not is_ai_goal(query)]
+        llm_queries = string_list(payload.get("search_queries"))
         entities = ordered_unique([*deterministic.entities, *string_list(payload.get("entities"))])
         phrases = ordered_unique([*deterministic.key_phrases, *string_list(payload.get("key_phrases"))])
-        hints = ordered_unique([*deterministic.domain_hints, *string_list(payload.get("domain_hints"))])
-        excludes = ordered_unique([*deterministic.exclude_terms, *string_list(payload.get("exclude_terms"))])
-        queries = ordered_unique([*deterministic.search_queries, *llm_queries])
+        queries = mix_search_queries(deterministic.search_queries, llm_queries, goal_text, max_queries=max_queries)
         return QueryPlan(
             goal_text=goal_text,
             search_queries=queries,
             entities=entities,
             key_phrases=phrases,
-            domain_hints=hints,
-            exclude_terms=excludes,
-            ai_intent=deterministic.ai_intent,
-            trace={**deterministic.trace, "llm_planner": bool(llm_queries), "llm_queries_filtered": len(raw_llm_queries) - len(llm_queries)},
+            domain_hints=[],
+            exclude_terms=[],
+            ai_intent=False,
+            trace={
+                **deterministic.trace,
+                "llm_planner": bool(llm_queries),
+                "query_mixing": query_mixing_trace(deterministic.search_queries, llm_queries, goal_text, max_queries=max_queries),
+            },
         )
 
 
@@ -57,48 +77,12 @@ def deterministic_query_plan(goal_text: str) -> QueryPlan:
     text = clean_text(goal_text)
     entities = extract_entities(text)
     phrases = extract_key_phrases(text)
-    ai_intent = is_ai_goal(text)
-    hints = domain_hints(text)
     queries: list[str] = []
     for entity in entities[:4]:
         queries.append(entity)
         for phrase in phrases[:3]:
             queries.append(f"{entity} {phrase}")
-    if "astronomy_transient" in hints:
-        queries.extend(
-            [
-                " ".join([*entities[:1], "kilonova electromagnetic counterpart compact object merger"]).strip(),
-                "kilonova compact object merger electromagnetic counterpart",
-                "optical transient gravitational wave counterpart kilonova",
-                "AGN disk merger flare optical transient",
-                "supernova contaminant kilonova gravitational wave follow-up",
-            ]
-        )
-    if "vision" in hints:
-        queries.extend(
-            [
-                "test-time adaptation CLIP few-shot learning",
-                "few-shot vision-language model CLIP",
-                "prompt learning CLIP parameter-efficient tuning",
-            ]
-        )
-    if "3d_reconstruction" in hints:
-        queries.extend(
-            [
-                "sparse view 3d reconstruction",
-                "few view 3d reconstruction neural radiance fields",
-                "3d gaussian splatting sparse view",
-            ]
-        )
-    if ai_intent:
-        queries.extend(
-            [
-                "large language model multi-agent systems",
-                "LLM agents scientific discovery",
-                "agent communication large language model",
-                "multi-agent debate reasoning",
-            ]
-        )
+    queries.extend(phrases[:6])
     query_from_terms = " ".join([*entities[:2], *phrases[:5]]).strip()
     if query_from_terms:
         queries.append(query_from_terms)
@@ -108,11 +92,85 @@ def deterministic_query_plan(goal_text: str) -> QueryPlan:
         search_queries=ordered_unique([q for q in queries if clean_text(q)]),
         entities=entities,
         key_phrases=phrases,
-        domain_hints=hints,
-        exclude_terms=exclude_terms_for_goal(text, ai_intent),
-        ai_intent=ai_intent,
+        domain_hints=[],
+        exclude_terms=[],
+        ai_intent=False,
         trace={"deterministic": True},
     )
+
+
+def mix_search_queries(
+    deterministic_queries: list[str],
+    llm_queries: list[str],
+    goal_text: str,
+    *,
+    max_queries: int | None = None,
+) -> list[str]:
+    deterministic = unique_queries(deterministic_queries)
+    llm = unique_queries(llm_queries)
+    goal = clean_text(goal_text)
+    if not llm:
+        return deterministic
+    if max_queries is None:
+        return unique_queries([*deterministic[:2], *llm, goal, *deterministic[2:]])
+
+    budget = max(1, int(max_queries or 1))
+    if budget == 1:
+        return unique_queries([goal, *llm, *deterministic])[:1]
+
+    goal_key = query_key(goal)
+    deterministic_pool = [query for query in deterministic if query_key(query) != goal_key]
+    llm_pool = [query for query in llm if query_key(query) != goal_key]
+
+    fallback_budget = 1 if goal else 0
+    if budget <= 2:
+        anchor_budget = min(1, len(deterministic_pool), budget)
+        llm_budget = max(0, budget - anchor_budget - fallback_budget)
+    else:
+        anchor_budget = min(2, max(1, budget // 4), len(deterministic_pool), max(0, budget - fallback_budget))
+        llm_budget = max(0, budget - anchor_budget - fallback_budget)
+
+    mixed = [
+        *deterministic_pool[:anchor_budget],
+        *llm_pool[:llm_budget],
+        goal,
+        *llm_pool[llm_budget:],
+        *deterministic_pool[anchor_budget:],
+    ]
+    return unique_queries(mixed)[:budget]
+
+
+def query_mixing_trace(
+    deterministic_queries: list[str],
+    llm_queries: list[str],
+    goal_text: str,
+    *,
+    max_queries: int | None = None,
+) -> dict[str, Any]:
+    mixed = mix_search_queries(deterministic_queries, llm_queries, goal_text, max_queries=max_queries)
+    return {
+        "max_queries": max_queries,
+        "deterministic_query_count": len(unique_queries(deterministic_queries)),
+        "llm_query_count": len(unique_queries(llm_queries)),
+        "mixed_query_count": len(mixed),
+        "goal_fallback_included": query_key(goal_text) in {query_key(query) for query in mixed},
+    }
+
+
+def unique_queries(values: list[Any]) -> list[str]:
+    output = []
+    seen = set()
+    for value in values:
+        text = clean_text(value)
+        key = query_key(text)
+        if text and key and key not in seen:
+            output.append(text)
+            seen.add(key)
+    return output
+
+
+def query_key(value: Any) -> str:
+    return normalize_text(clean_text(value))
 
 
 def extract_entities(text: str) -> list[str]:
@@ -130,89 +188,10 @@ def extract_entities(text: str) -> list[str]:
 
 def extract_key_phrases(text: str) -> list[str]:
     lower = clean_text(text).lower()
-    candidates = []
-    known = [
-        "sub-solar-mass",
-        "compact-object merger",
-        "compact object merger",
-        "electromagnetic emission",
-        "electromagnetic counterpart",
-        "optical transient",
-        "follow-up",
-        "kilonova",
-        "kilonovae",
-        "agn-disk",
-        "agn disk",
-        "supernova contaminants",
-        "large language model",
-        "multi-agent",
-        "machine dialect",
-        "test-time training",
-        "few-shot learning",
-        "3d reconstruction",
-        "sparse view",
-    ]
-    for phrase in known:
-        if contains_query_trigger(lower, phrase):
-            candidates.append(phrase)
     tokens = [token for token in tokenize(lower) if token not in STOPWORDS]
-    candidates.extend(tokens[:10])
+    candidates = []
+    for size in (3, 2):
+        for index in range(0, max(0, len(tokens) - size + 1)):
+            candidates.append(" ".join(tokens[index : index + size]))
+    candidates.extend(tokens[:12])
     return ordered_unique(candidates)
-
-
-def domain_hints(text: str) -> list[str]:
-    lower = text.lower()
-    hints = []
-    if any(
-        contains_query_trigger(lower, term)
-        for term in [
-            "kilonova",
-            "optical transient",
-            "gravitational wave",
-            "compact object merger",
-            "sub-solar-mass",
-            "agn disk",
-            "agn-disk",
-            "supernova contaminant",
-        ]
-    ):
-        hints.append("astronomy_transient")
-    if any(contains_query_trigger(lower, term) for term in ["3d reconstruction", "sparse view", "few view", "neural radiance fields", "gaussian splatting"]):
-        hints.append("3d_reconstruction")
-    if any(contains_query_trigger(lower, term) for term in ["clip", "few-shot", "test-time training", "vision-language"]):
-        hints.append("vision")
-    if is_ai_goal(lower):
-        hints.append("ai")
-    return hints
-
-
-def exclude_terms_for_goal(text: str, ai_intent: bool) -> list[str]:
-    excludes = []
-    if not ai_intent:
-        excludes.extend(["large language model", "llm", "multi-agent llm", "ai agent"])
-    if "astronomy_transient" in domain_hints(text):
-        excludes.extend(["grounded source transient electromagnetic", "geophysical", "mineral exploration"])
-    return excludes
-
-
-def is_ai_goal(text: str) -> bool:
-    lower = text.lower()
-    triggers = [
-        "llm",
-        "ai",
-        "artificial intelligence",
-        "large language model",
-        "language model",
-        "ai agent",
-        "agentic ai",
-        "multi-agent",
-        "multi agent",
-        "agent communication",
-        "machine dialect",
-        "prompt learning",
-        "neural network",
-        "deep learning",
-        "reinforcement learning",
-        "machine learning",
-    ]
-    return any(contains_query_trigger(lower, trigger) for trigger in triggers) or contains_query_trigger(lower, "MAS")

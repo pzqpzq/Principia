@@ -256,6 +256,7 @@ class PrincipiaEngine:
         target_works: int = 100,
         run_id: str = "",
         force_refresh: bool = False,
+        retrieval_rerank_mode: str = "bm25",
     ) -> dict[str, Any]:
         result = self.v2_research_project(
             field_id,
@@ -264,6 +265,7 @@ class PrincipiaEngine:
             target_works=target_works,
             run_id=run_id,
             force_refresh=force_refresh,
+            retrieval_rerank_mode=retrieval_rerank_mode,
         )
         if not result.get("ok"):
             return {**result, "v1_migration": {"skipped": True}}
@@ -2401,9 +2403,11 @@ class PrincipiaEngine:
         target_works: int = 100,
         run_id: str = "",
         force_refresh: bool = False,
+        retrieval_rerank_mode: str = "bm25",
         progress_callback: Callable[[dict[str, Any]], None] | None = None,
     ) -> dict[str, Any]:
         target_works = max(1, min(int(target_works or 100), 200))
+        retrieval_rerank_mode = "llm_rerank" if str(retrieval_rerank_mode or "").strip().lower() in {"llm", "llm-rerank", "llm_rerank"} else "bm25"
         profile = self._ensure_field_profile(field_id, goal_text)
         goal_text = goal_text or profile.get("goal_text") or profile.get("query") or profile.get("name", "")
         model = self._v2_model_meta(model_mode)
@@ -2419,6 +2423,7 @@ class PrincipiaEngine:
             "model_mode": model_mode,
             "model_name": model["model_name"],
             "provider": model["provider"],
+            "retrieval_rerank_mode": retrieval_rerank_mode,
             "target_works": target_works,
             "counts": {},
             "errors": [],
@@ -2448,6 +2453,7 @@ class PrincipiaEngine:
                 "model_mode": model_mode,
                 "language": "en",
                 "source_mode": "online+local",
+                "retrieval_rerank_mode": retrieval_rerank_mode,
                 "paper_count": target_works,
                 "target_works": target_works,
                 "max_works": target_works,
@@ -2493,10 +2499,11 @@ class PrincipiaEngine:
                 query = self._v2_research_query(search_goal or goal_text)
                 update(
                     "source_search",
-                    "Searching arXiv, OpenAlex, Crossref, and public metadata to fill the Works target.",
+                    f"Searching arXiv, OpenAlex, Crossref, and public metadata with {retrieval_rerank_mode.replace('_', ' ')} paper rerank.",
                     planned_query=query,
                     existing_works=existing_work_count,
                     top_up_needed=top_up_needed,
+                    retrieval_rerank_mode=retrieval_rerank_mode,
                 )
                 found_works = search_hybrid_sources(
                     query,
@@ -2504,6 +2511,7 @@ class PrincipiaEngine:
                     timeout=12,
                     llm=self.llm,
                     original_goal=search_goal or goal_text,
+                    retrieval_rerank_mode=retrieval_rerank_mode,
                 )
                 self._raise_if_cancelled(run_id)
                 update(
@@ -2529,6 +2537,7 @@ class PrincipiaEngine:
                         timeout=12,
                         llm=self.llm,
                         original_goal=goal_text,
+                        retrieval_rerank_mode=retrieval_rerank_mode,
                     )
                     combined_works = self._dedupe_works([*combined_works, *more_works])
                     self._raise_if_cancelled(run_id)

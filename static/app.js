@@ -578,6 +578,10 @@ function getModelMode() {
   return el("modelModeInput").value || "auto";
 }
 
+function getRetrievalRerankMode() {
+  return el("retrievalRerankModeInput")?.checked ? "llm_rerank" : "bm25";
+}
+
 function isAdminMode() {
   return state.systemMode === "admin" && state.adminAuthenticated;
 }
@@ -807,6 +811,7 @@ function renderProjectHeader() {
   const settings = project.settings || {};
   el("modelModeInput").value = settings.model_mode || "auto";
   el("targetWorksInput").value = settings.paper_count || settings.target_works || settings.max_works || 100;
+  if (el("retrievalRerankModeInput")) el("retrievalRerankModeInput").checked = settings.retrieval_rerank_mode === "llm_rerank";
   renderTabs();
 }
 
@@ -1747,18 +1752,20 @@ async function startResearch() {
     return;
   }
   const targetWorks = getTargetWorks();
+  const retrievalRerankMode = getRetrievalRerankMode();
   setBusy(true, "Starting research...");
   try {
     await post("/api/v1/project/update", {
       field_id: state.activeProjectId,
       goal_text: goal,
       query: goal,
-      settings: { model_mode: getModelMode(), language: "en", source_mode: "online+local", paper_count: targetWorks, target_works: targetWorks, max_works: targetWorks },
+      settings: { model_mode: getModelMode(), language: "en", source_mode: "online+local", retrieval_rerank_mode: retrievalRerankMode, paper_count: targetWorks, target_works: targetWorks, max_works: targetWorks },
     }).catch(() => {});
     const result = await post("/api/v1/research/start", {
       field_id: state.activeProjectId,
       goal_text: goal,
       model_mode: getModelMode(),
+      retrieval_rerank_mode: retrievalRerankMode,
       target_works: targetWorks,
     });
     state.researchRunId = result.run_id;
@@ -2079,7 +2086,7 @@ async function submitProject(event) {
     await selectProject(fieldId);
     return;
   }
-  const project = await post("/api/v1/project/create", { name, description, settings: { model_mode: getModelMode() } });
+  const project = await post("/api/v1/project/create", { name, description, settings: { model_mode: getModelMode(), retrieval_rerank_mode: getRetrievalRerankMode() } });
   closeProjectModal();
   await loadProjects(project.field_id);
   await selectProject(project.field_id);

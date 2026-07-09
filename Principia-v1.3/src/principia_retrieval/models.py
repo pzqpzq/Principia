@@ -9,7 +9,8 @@ WorkSource = Callable[[str, int, float], Sequence[dict[str, Any] | Any]]
 @dataclass
 class RetrievalConfig:
     use_llm_planner: bool = True
-    use_llm_rerank: bool = True
+    use_llm_rerank: bool = False
+    rerank_mode: str = ""
     max_raw_candidates: int = 240
     min_relevance: float = 0.08
     source_names: list[str] | None = None

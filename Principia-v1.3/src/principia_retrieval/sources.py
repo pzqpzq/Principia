@@ -40,11 +40,14 @@ def fetch_source(name: str, source: WorkSource, query: str, limit: int, timeout:
     except Exception:
         return []
     output = []
-    for row in rows or []:
+    for index, row in enumerate(rows or [], start=1):
         item = normalize_work(row)
         if item:
             signals = dict(item.get("community_signals") or item.get("metadata") or {})
             signals.setdefault("source", name)
+            signals.setdefault("source_query", query)
+            signals.setdefault("source_rank", index)
+            signals.setdefault("source_limit", limit)
             item["community_signals"] = signals
             item["metadata"] = signals
             if not item.get("source"):
@@ -117,7 +120,12 @@ def search_openalex(query: str, limit: int = 20, timeout: float = 12) -> list[di
                 "abstract": openalex_abstract(item.get("abstract_inverted_index") or {}),
                 "citation_count": item.get("cited_by_count"),
                 "source_urls": [url for url in [landing, item.get("doi"), item.get("id")] if url],
-                "community_signals": {"source": "openalex", "type": item.get("type", ""), "is_oa": bool(primary.get("is_oa")) if isinstance(primary, dict) else False},
+                "community_signals": {
+                    "source": "openalex",
+                    "type": item.get("type", ""),
+                    "is_oa": bool(primary.get("is_oa")) if isinstance(primary, dict) else False,
+                    "source_score": item.get("relevance_score"),
+                },
             }
         )
     return works

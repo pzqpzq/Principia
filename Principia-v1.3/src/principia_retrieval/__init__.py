@@ -1,8 +1,8 @@
 """Shared semantic work retrieval utilities for Principia."""
 
 from .models import QueryPlan, RetrievalConfig, RetrievalResult, WorkSource
-from .planner import QueryPlanner, deterministic_query_plan, is_ai_goal
-from .ranking import deterministic_rank, final_select, llm_rerank
+from .planner import QueryPlanner, deterministic_query_plan
+from .ranking import bm25_rank, deterministic_rank, final_select, llm_rerank
 from .retriever import WorkRetriever
 from .sources import (
     default_sources,
@@ -22,6 +22,7 @@ __all__ = [
     "RetrievalResult",
     "WorkSource",
     "WorkRetriever",
+    "bm25_rank",
     "contains_query_trigger",
     "dedupe_works",
     "default_sources",
@@ -29,7 +30,6 @@ __all__ = [
     "deterministic_rank",
     "fetch_source",
     "final_select",
-    "is_ai_goal",
     "llm_rerank",
     "normalize_work",
     "search_arxiv",
