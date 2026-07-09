@@ -2407,7 +2407,13 @@ class PrincipiaEngine:
         progress_callback: Callable[[dict[str, Any]], None] | None = None,
     ) -> dict[str, Any]:
         target_works = max(1, min(int(target_works or 100), 200))
-        retrieval_rerank_mode = "llm_rerank" if str(retrieval_rerank_mode or "").strip().lower() in {"llm", "llm-rerank", "llm_rerank"} else "bm25"
+        retrieval_rerank_mode_value = str(retrieval_rerank_mode or "").strip().lower()
+        if retrieval_rerank_mode_value in {"llm", "llm-rerank", "llm_rerank"}:
+            retrieval_rerank_mode = "llm_rerank"
+        elif retrieval_rerank_mode_value in {"embedding", "embedding-rerank", "embedding_rerank"}:
+            retrieval_rerank_mode = "embedding_rerank"
+        else:
+            retrieval_rerank_mode = "bm25"
         profile = self._ensure_field_profile(field_id, goal_text)
         goal_text = goal_text or profile.get("goal_text") or profile.get("query") or profile.get("name", "")
         model = self._v2_model_meta(model_mode)

@@ -6,6 +6,7 @@ from collections import Counter
 from typing import Any
 
 from .constants import RELATION_ORDER
+from .embeddings import SiliconFlowEmbeddingClient, embedding_cache_key
 from .models import QueryPlan
 from .utils import call_llm_json, clamp_float, clean_text, normalize_text, stable_id, tokenize, truncate, weighted_tokens
 
@@ -135,6 +136,197 @@ def source_prior_score(work: dict[str, Any]) -> float:
         rank = 0
     rank_score = 1.0 / math.sqrt(rank) if rank > 0 else 0.0
     return max([0.0, rank_score, *score_candidates])
+
+
+def embedding_rerank(
+    goal_text: str,
+    works: list[dict[str, Any]],
+    plan: QueryPlan,
+    *,
+    model: str,
+    dimensions: int,
+    batch_size: int,
+    timeout: float = 30.0,
+    max_retries: int = 2,
+    embedding_client: Any | None = None,
+    cache: dict[str, list[float]] | None = None,
+) -> list[dict[str, Any]]:
+    by_id = {str(work.get("work_id") or stable_id("W", work.get("title", ""))): dict(work) for work in works}
+    rows = list(by_id.values())
+    if not rows:
+        return []
+    client = embedding_client or SiliconFlowEmbeddingClient(
+        model=model,
+        dimensions=dimensions,
+        timeout=timeout,
+        max_retries=max_retries,
+    )
+    cache = {} if cache is None else cache
+    query_text = query_embedding_text(goal_text, plan)
+    corpus_texts = [work_embedding_text(work) for work in rows]
+    try:
+        vectors = embed_texts_cached(
+            [query_text, *corpus_texts],
+            client,
+            model=model,
+            dimensions=dimensions,
+            batch_size=batch_size,
+            timeout=timeout,
+            cache=cache,
+        )
+    except Exception as exc:  # noqa: BLE001
+        return embedding_fallback(rows, exc, model=model, dimensions=dimensions)
+    query_vector = vectors[0]
+    work_vectors = vectors[1:]
+    output = []
+    for work, vector in zip(rows, work_vectors):
+        item = dict(work)
+        similarity = clamp_float(cosine_similarity(query_vector, vector), 0.0, 1.0)
+        metadata = metadata_score(item)
+        exact_bonus = 0.01 if has_exact_entity(item, plan) else 0.0
+        final = similarity + metadata * 0.05 + exact_bonus
+        relation = relation_from_embedding_similarity(similarity, exact_bonus > 0)
+        item["_retrieval_score"] = final
+        item["_embedding_similarity"] = similarity
+        item["relation_label"] = relation
+        item["retrieval_rationale"] = embedding_rationale(item, similarity)
+        item["reject_reason"] = ""
+        signals = item.setdefault("community_signals", {})
+        signals["embedding_similarity"] = round(similarity, 4)
+        signals["embedding_model"] = model
+        signals["embedding_dimensions"] = int(dimensions or 0)
+        signals["retrieval_score"] = round(final, 4)
+        signals["relation_label"] = relation
+        output.append(item)
+    output.sort(key=lambda item: (float(item.get("_retrieval_score", 0.0)), relation_rank(item), int(item.get("year") or 0)), reverse=True)
+    return output
+
+
+def embed_texts_cached(
+    texts: list[str],
+    client: Any,
+    *,
+    model: str,
+    dimensions: int,
+    batch_size: int,
+    timeout: float,
+    cache: dict[str, list[float]],
+) -> list[list[float]]:
+    keys = [embedding_cache_key(model, dimensions, text) for text in texts]
+    missing: list[tuple[str, str]] = []
+    seen_missing = set()
+    for key, text in zip(keys, texts):
+        if key in cache or key in seen_missing:
+            continue
+        missing.append((key, text))
+        seen_missing.add(key)
+    for index in range(0, len(missing), max(1, int(batch_size or 1))):
+        batch = missing[index : index + max(1, int(batch_size or 1))]
+        batch_vectors = call_embedding_client(
+            client,
+            [text for _, text in batch],
+            model=model,
+            dimensions=dimensions,
+            timeout=timeout,
+        )
+        if len(batch_vectors) != len(batch):
+            raise RuntimeError(f"Embedding client returned {len(batch_vectors)} vector(s), expected {len(batch)}.")
+        for (key, _), vector in zip(batch, batch_vectors):
+            cache[key] = [float(value) for value in vector]
+    return [cache[key] for key in keys]
+
+
+def call_embedding_client(
+    client: Any,
+    texts: list[str],
+    *,
+    model: str,
+    dimensions: int,
+    timeout: float,
+) -> list[list[float]]:
+    embed = getattr(client, "embed", None)
+    if callable(embed):
+        try:
+            return embed(texts, model=model, dimensions=dimensions, timeout=timeout)
+        except TypeError:
+            return embed(texts)
+    if callable(client):
+        try:
+            return client(texts, model=model, dimensions=dimensions, timeout=timeout)
+        except TypeError:
+            return client(texts)
+    raise RuntimeError("Embedding rerank requires an embedding client with an embed method.")
+
+
+def embedding_fallback(rows: list[dict[str, Any]], error: Exception, *, model: str, dimensions: int) -> list[dict[str, Any]]:
+    message = truncate(str(error), 220)
+    output = []
+    for work in rows:
+        item = dict(work)
+        signals = item.setdefault("community_signals", {})
+        signals["embedding_model"] = model
+        signals["embedding_dimensions"] = int(dimensions or 0)
+        signals["embedding_rerank_error"] = message
+        if not clean_text(item.get("retrieval_rationale") or ""):
+            item["retrieval_rationale"] = "BM25 fallback; embedding rerank unavailable"
+        output.append(item)
+    return output
+
+
+def query_embedding_text(goal_text: str, plan: QueryPlan) -> str:
+    rows = [
+        ("research_goal", goal_text),
+        ("search_queries", "; ".join(clean_text(value) for value in plan.search_queries[:8] if clean_text(value))),
+        ("entities", "; ".join(clean_text(value) for value in plan.entities[:16] if clean_text(value))),
+        ("key_phrases", "; ".join(clean_text(value) for value in plan.key_phrases[:20] if clean_text(value))),
+        ("domain_hints", "; ".join(clean_text(value) for value in plan.domain_hints[:8] if clean_text(value))),
+    ]
+    return "\n".join(f"{label}: {text}" for label, text in rows if text)
+
+
+def work_embedding_text(work: dict[str, Any]) -> str:
+    authors = work.get("authors") or []
+    if not isinstance(authors, list):
+        authors = []
+    rows = [
+        ("title", clean_text(work.get("title") or "")),
+        ("abstract", truncate(work.get("abstract") or "", 5000)),
+        ("venue", clean_text(work.get("venue_or_source") or work.get("venue") or "")),
+        ("year", clean_text(work.get("year") or "")),
+        ("authors", "; ".join(clean_text(value) for value in authors[:10] if clean_text(value))),
+        ("doi", clean_text(work.get("doi") or work.get("url_or_doi") or "")),
+        ("source", clean_text(work.get("source") or "")),
+    ]
+    return "\n".join(f"{label}: {text}" for label, text in rows if text)
+
+
+def cosine_similarity(left: list[float], right: list[float]) -> float:
+    if not left or not right:
+        return 0.0
+    length = min(len(left), len(right))
+    dot = sum(left[index] * right[index] for index in range(length))
+    left_norm = math.sqrt(sum(value * value for value in left[:length]))
+    right_norm = math.sqrt(sum(value * value for value in right[:length]))
+    if left_norm <= 0 or right_norm <= 0:
+        return 0.0
+    return dot / (left_norm * right_norm)
+
+
+def relation_from_embedding_similarity(similarity: float, exact_entity: bool) -> str:
+    if exact_entity or similarity >= 0.78:
+        return "direct"
+    if similarity >= 0.62:
+        return "background"
+    if similarity >= 0.46:
+        return "methodological"
+    return "out_of_scope"
+
+
+def embedding_rationale(work: dict[str, Any], similarity: float) -> str:
+    bits = [f"embedding cosine similarity {similarity:.2f}"]
+    if float(work.get("_bm25_score", 0.0) or 0.0) > 0:
+        bits.append("BM25 prefilter match")
+    return "; ".join(bits)
 
 
 def llm_rerank(goal_text: str, works: list[dict[str, Any]], plan: QueryPlan, llm: Any, *, batch_size: int) -> list[dict[str, Any]]:

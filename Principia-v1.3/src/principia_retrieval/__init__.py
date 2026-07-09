@@ -2,7 +2,7 @@
 
 from .models import QueryPlan, RetrievalConfig, RetrievalResult, WorkSource
 from .planner import QueryPlanner, deterministic_query_plan
-from .ranking import bm25_rank, deterministic_rank, final_select, llm_rerank
+from .ranking import bm25_rank, deterministic_rank, embedding_rerank, final_select, llm_rerank
 from .retriever import WorkRetriever
 from .sources import (
     default_sources,
@@ -28,6 +28,7 @@ __all__ = [
     "default_sources",
     "deterministic_query_plan",
     "deterministic_rank",
+    "embedding_rerank",
     "fetch_source",
     "final_select",
     "llm_rerank",

@@ -16,6 +16,12 @@ class RetrievalConfig:
     source_names: list[str] | None = None
     max_queries: int = 6
     llm_batch_size: int = 24
+    embedding_model: str = "Qwen/Qwen3-Embedding-4B"
+    embedding_dimensions: int = 1024
+    embedding_batch_size: int = 32
+    embedding_timeout: float = 30.0
+    embedding_max_retries: int = 2
+    embedding_rerank_candidate_limit: int = 0
 
 
 @dataclass

@@ -36,7 +36,8 @@ def search_hybrid_sources(
     The function intentionally avoids paid/search-engine APIs. It combines arXiv,
     OpenAlex, Crossref, and Semantic Scholar metadata through the shared semantic
     retriever. Queries can use the LLM planner when available. Paper reranking
-    defaults to BM25; callers can opt into LLM reranking for the BM25 head set.
+    defaults to BM25; callers can opt into embedding or LLM reranking for the
+    BM25 head set.
     """
 
     query = " ".join(str(query or "").split())
@@ -55,7 +56,7 @@ def search_hybrid_sources(
         target_count=max_results,
         llm=llm,
         timeout=timeout,
-        use_llm_rerank=rerank_mode == "llm_rerank",
+        use_llm_rerank=use_llm_rerank,
     )
     return result.selected_works
 
@@ -66,6 +67,8 @@ def _retrieval_rerank_mode(value: str | None, *, use_llm_rerank: bool | None = N
     mode = str(value or "bm25").strip().lower()
     if mode in {"llm", "llm-rerank", "llm_rerank"}:
         return "llm_rerank"
+    if mode in {"embedding", "embedding-rerank", "embedding_rerank"}:
+        return "embedding_rerank"
     return "bm25"
 
 

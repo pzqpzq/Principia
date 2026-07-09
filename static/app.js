@@ -579,7 +579,8 @@ function getModelMode() {
 }
 
 function getRetrievalRerankMode() {
-  return el("retrievalRerankModeInput")?.checked ? "llm_rerank" : "bm25";
+  const value = el("retrievalRerankModeInput")?.value || "bm25";
+  return ["bm25", "embedding_rerank", "llm_rerank"].includes(value) ? value : "bm25";
 }
 
 function isAdminMode() {
@@ -811,7 +812,10 @@ function renderProjectHeader() {
   const settings = project.settings || {};
   el("modelModeInput").value = settings.model_mode || "auto";
   el("targetWorksInput").value = settings.paper_count || settings.target_works || settings.max_works || 100;
-  if (el("retrievalRerankModeInput")) el("retrievalRerankModeInput").checked = settings.retrieval_rerank_mode === "llm_rerank";
+  if (el("retrievalRerankModeInput")) {
+    const rerankMode = settings.retrieval_rerank_mode || "bm25";
+    el("retrievalRerankModeInput").value = ["bm25", "embedding_rerank", "llm_rerank"].includes(rerankMode) ? rerankMode : "bm25";
+  }
   renderTabs();
 }
 

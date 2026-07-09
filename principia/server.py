@@ -101,6 +101,8 @@ def _payload_retrieval_rerank_mode(payload: dict[str, object]) -> str:
     value = str(payload.get("retrieval_rerank_mode") or payload.get("paper_rerank_mode") or "").strip().lower()
     if value in {"llm", "llm-rerank", "llm_rerank"}:
         return "llm_rerank"
+    if value in {"embedding", "embedding-rerank", "embedding_rerank"}:
+        return "embedding_rerank"
     return "bm25"
 
 

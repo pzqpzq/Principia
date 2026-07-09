@@ -21,8 +21,8 @@ from principia.models import BaselineRecord, BenchmarkRecord, FieldProfile, Resu
 from principia.server import _display_model_alias, _openai_model_env_value, make_handler
 from principia.storage import Store
 from principia.utils import enrich_query, safe_json_loads, stable_id
-from principia_retrieval import QueryPlanner, RetrievalConfig, WorkRetriever, deterministic_query_plan, final_select
-from principia_retrieval.retriever import llm_rerank_candidate_limit
+from principia_retrieval import QueryPlanner, RetrievalConfig, WorkRetriever, deterministic_query_plan, embedding_rerank, final_select
+from principia_retrieval.retriever import embedding_rerank_candidate_limit, llm_rerank_candidate_limit, resolve_rerank_mode
 
 
 SPARSE_VIEW_QUERY = "Please design a method for 稀疏数据三维重建（即在有限视角下进行三维重建）任务"
@@ -694,6 +694,125 @@ class PrincipiaTests(unittest.TestCase):
         self.assertEqual(50, llm_rerank_candidate_limit(25))
         self.assertEqual(100, llm_rerank_candidate_limit(50))
         self.assertEqual(200, llm_rerank_candidate_limit(100))
+
+    def test_shared_retriever_resolves_embedding_rerank_mode(self) -> None:
+        self.assertEqual("embedding_rerank", resolve_rerank_mode(RetrievalConfig(rerank_mode="embedding-rerank")))
+        self.assertEqual("embedding_rerank", resolve_rerank_mode(RetrievalConfig(rerank_mode="embedding")))
+        self.assertEqual("llm_rerank", resolve_rerank_mode(RetrievalConfig(rerank_mode="embedding_rerank"), use_llm_rerank=True))
+        self.assertEqual("bm25", resolve_rerank_mode(RetrievalConfig(rerank_mode="embedding_rerank"), use_llm_rerank=False))
+
+    def test_shared_retriever_embedding_rerank_candidate_limit(self) -> None:
+        self.assertEqual(50, embedding_rerank_candidate_limit(1))
+        self.assertEqual(100, embedding_rerank_candidate_limit(50))
+        self.assertEqual(80, embedding_rerank_candidate_limit(25, 80))
+        self.assertEqual(25, embedding_rerank_candidate_limit(25, 10))
+
+    def test_shared_retriever_embedding_rerank_runs_after_bm25_prefilter(self) -> None:
+        candidates = [
+            {
+                "work_id": "W-BM25",
+                "title": "Machine dialect communication for token efficient agents",
+                "abstract": "A relevant candidate found by metadata search.",
+                "year": 2026,
+                "venue_or_source": "arXiv",
+                "source": "fake",
+            },
+            {
+                "work_id": "W-EMBED",
+                "title": "Social interaction protocols for LLM multi-agent reasoning",
+                "abstract": "A central work on LLM agents interacting through compact communication protocols.",
+                "year": 2026,
+                "venue_or_source": "NeurIPS",
+                "source": "fake",
+            },
+        ]
+
+        def source(query: str, limit: int, timeout: float):
+            return candidates[:limit]
+
+        class EmbeddingClient:
+            def embed(self, texts: list[str], **kwargs):
+                vectors = []
+                for text in texts:
+                    lower = text.lower()
+                    if "research_goal:" in lower or "social interaction protocols" in lower:
+                        vectors.append([1.0, 0.0])
+                    else:
+                        vectors.append([0.0, 1.0])
+                return vectors
+
+        result = WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(use_llm_planner=False, rerank_mode="embedding_rerank", source_names=["fake"], max_raw_candidates=20, min_relevance=0.0),
+        ).search(MACHINE_DIALECT_MAS_QUERY, target_count=1, llm=None, embedding_client=EmbeddingClient())
+
+        self.assertEqual("W-EMBED", result.selected_works[0]["work_id"])
+        self.assertEqual(1.0, result.selected_works[0]["community_signals"]["embedding_similarity"])
+        self.assertEqual("Qwen/Qwen3-Embedding-4B", result.selected_works[0]["community_signals"]["embedding_model"])
+
+    def test_shared_retriever_embedding_rerank_falls_back_to_bm25_on_error(self) -> None:
+        candidates = [
+            {
+                "work_id": "W-HIGHCITE",
+                "title": "Highly cited clinical trial meta analysis",
+                "abstract": "A broad medical intervention review with many citations but no sparse-view neural rendering.",
+                "year": 2026,
+                "venue_or_source": "Nature",
+                "citation_count": 5000,
+                "source": "fake",
+            },
+            {
+                "work_id": "W-NERF",
+                "title": "Sparse-view neural radiance fields with depth regularization",
+                "abstract": "A method for neural radiance field reconstruction under limited views using depth and geometry regularization.",
+                "year": 2025,
+                "venue_or_source": "CVPR",
+                "citation_count": 5,
+                "source": "fake",
+            },
+        ]
+
+        def source(query: str, limit: int, timeout: float):
+            return candidates[:limit]
+
+        class FailingEmbeddingClient:
+            def embed(self, texts: list[str], **kwargs):
+                raise RuntimeError("embedding service unavailable")
+
+        result = WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(use_llm_planner=False, rerank_mode="embedding_rerank", source_names=["fake"], max_raw_candidates=20, min_relevance=0.0),
+        ).search("sparse-view neural radiance field depth regularization", target_count=1, llm=None, embedding_client=FailingEmbeddingClient())
+
+        self.assertEqual("W-NERF", result.selected_works[0]["work_id"])
+        self.assertIn("embedding service unavailable", result.selected_works[0]["community_signals"]["embedding_rerank_error"])
+
+    def test_embedding_rerank_caches_duplicate_texts_within_run(self) -> None:
+        plan = deterministic_query_plan("compact communication protocols")
+        calls: list[list[str]] = []
+
+        class CountingEmbeddingClient:
+            def embed(self, texts: list[str], **kwargs):
+                calls.append(list(texts))
+                return [[1.0, 0.0] for _ in texts]
+
+        works = [
+            {"work_id": "W-1", "title": "Compact communication protocols", "abstract": "Shared text.", "venue_or_source": "arXiv"},
+            {"work_id": "W-2", "title": "Compact communication protocols", "abstract": "Shared text.", "venue_or_source": "arXiv"},
+        ]
+
+        embedding_rerank(
+            "compact communication protocols",
+            works,
+            plan,
+            model="Qwen/Qwen3-Embedding-4B",
+            dimensions=1024,
+            batch_size=10,
+            embedding_client=CountingEmbeddingClient(),
+        )
+
+        self.assertEqual(1, len(calls))
+        self.assertEqual(2, len(calls[0]))
 
     def test_principle_merge_upgrades_legacy_sparse_record(self) -> None:
         store = self.make_store()
@@ -2802,6 +2921,43 @@ class PrincipiaTests(unittest.TestCase):
         self.assertEqual(calls[0]["retrieval_rerank_mode"], "bm25")
         self.assertEqual(result["run"]["target_works"], 200)
         self.assertEqual(result["summary"]["project"]["settings"]["target_works"], 200)
+
+    def test_v2_research_passes_embedding_rerank_mode_to_source_search(self) -> None:
+        store = self.make_store()
+        engine = PrincipiaEngine(store=store, llm=NoLLM())  # type: ignore[arg-type]
+        project = engine.create_project(name="Embedding Rerank", goal_text=MACHINE_DIALECT_MAS_QUERY)
+        calls = []
+        works = [
+            {
+                "work_id": "W-EMBED",
+                "title": "Social interaction protocols for LLM multi-agent reasoning",
+                "authors": ["A. Researcher"],
+                "year": 2026,
+                "venue_or_source": "arXiv",
+                "url_or_doi": "https://example.org/embed",
+                "abstract": "LLM agents interact through compact communication protocols.",
+            }
+        ]
+        original = engine_module.search_hybrid_sources
+
+        def fake_search(query, max_results=100, timeout=12, **kwargs):
+            calls.append({"query": query, "max_results": max_results, "timeout": timeout, **kwargs})
+            return works
+
+        engine_module.search_hybrid_sources = fake_search
+        try:
+            result = engine.v2_research_project(
+                project["field_id"],
+                goal_text=MACHINE_DIALECT_MAS_QUERY,
+                target_works=1,
+                retrieval_rerank_mode="embedding_rerank",
+            )
+        finally:
+            engine_module.search_hybrid_sources = original
+
+        self.assertEqual(calls[0]["retrieval_rerank_mode"], "embedding_rerank")
+        self.assertEqual(result["run"]["retrieval_rerank_mode"], "embedding_rerank")
+        self.assertEqual(result["summary"]["project"]["settings"]["retrieval_rerank_mode"], "embedding_rerank")
 
     def test_v2_source_sentence_extraction_rejects_incomplete_template_filler(self) -> None:
         store = self.make_store()
