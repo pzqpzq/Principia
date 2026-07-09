@@ -404,6 +404,53 @@ class PrincipiaTests(unittest.TestCase):
         self.assertEqual(client._request_timeout(client.resolve_model(mode="qwen_122b"), 3200), 420)
         self.assertEqual(client._request_timeout(client.resolve_model(mode="efficient"), 64), 45)
 
+    def test_openai_responses_api_is_not_inferred_for_local_base_url(self) -> None:
+        settings = Settings(
+            api_key="",
+            base_url="https://api.siliconflow.cn/v1",
+            openai_api_key="fake",
+            openai_base_url="http://127.0.0.1:1234/v1",
+            efficient_model="Qwen/Qwen3.6-27B",
+            strong_model="deepseek-ai/DeepSeek-V3",
+            model_aliases={"local": "openai:gpt-5-local"},
+            cost_limit_cny=1000,
+            request_timeout=45,
+            slow_request_timeout=420,
+            ssl_verify=True,
+            openai_api_style="auto",
+        )
+        client = LLMClient(settings=settings)
+        resolved = client.resolve_model(mode="local")
+
+        self.assertFalse(client._use_openai_responses_api(resolved, "gpt-5-local"))
+
+    def test_openai_responses_api_style_can_be_explicit_or_official_auto(self) -> None:
+        base_settings = dict(
+            api_key="",
+            base_url="https://api.siliconflow.cn/v1",
+            openai_api_key="fake",
+            openai_base_url="https://api.openai.com/v1",
+            efficient_model="Qwen/Qwen3.6-27B",
+            strong_model="deepseek-ai/DeepSeek-V3",
+            model_aliases={"official": "openai:gpt-5.5"},
+            cost_limit_cny=1000,
+            request_timeout=45,
+            slow_request_timeout=420,
+            ssl_verify=True,
+        )
+        auto_client = LLMClient(settings=Settings(**base_settings, openai_api_style="auto"))
+        chat_client = LLMClient(settings=Settings(**base_settings, openai_api_style="chat_completions"))
+        responses_client = LLMClient(
+            settings=Settings(
+                **{**base_settings, "openai_base_url": "http://127.0.0.1:1234/v1"},
+                openai_api_style="responses",
+            )
+        )
+
+        self.assertTrue(auto_client._use_openai_responses_api(auto_client.resolve_model(mode="official"), "gpt-5.5"))
+        self.assertFalse(chat_client._use_openai_responses_api(chat_client.resolve_model(mode="official"), "gpt-5.5"))
+        self.assertTrue(responses_client._use_openai_responses_api(responses_client.resolve_model(mode="official"), "gpt-5.5"))
+
     def test_timeout_message_is_not_extraction_specific_for_generation(self) -> None:
         store = self.make_store()
         engine = PrincipiaEngine(store=store, llm=NoLLM())

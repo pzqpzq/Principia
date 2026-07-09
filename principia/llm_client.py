@@ -179,7 +179,7 @@ class LLMClient:
         prompt = system + "\n\n" + user
         self.costs.reserve(model, prompt, max_tokens)
         request_timeout = self._request_timeout(resolved, max_tokens, timeout_seconds=timeout_seconds)
-        if resolved["provider"] == "openai" and model.lower().startswith("gpt-5"):
+        if self._use_openai_responses_api(resolved, model):
             return self._openai_responses_text(
                 resolved,
                 system,
@@ -246,6 +246,17 @@ class LLMClient:
             raise RuntimeError(f"LLM request failed: {exc}") from exc
         body = json.loads(raw)
         return body["choices"][0]["message"]["content"]
+
+    def _use_openai_responses_api(self, resolved: dict[str, str], model: str) -> bool:
+        if resolved["provider"] != "openai":
+            return False
+        style = self.settings.openai_api_style
+        if style == "responses":
+            return True
+        if style == "chat_completions":
+            return False
+        official_base = resolved["base_url"].rstrip("/") == "https://api.openai.com/v1"
+        return official_base and model.lower().startswith("gpt-5")
 
     def _openai_responses_text(
         self,
