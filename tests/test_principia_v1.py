@@ -18,7 +18,7 @@ from principia.config import Settings, get_settings
 from principia.engine import PrincipiaEngine
 from principia.llm_client import LLMClient
 from principia.models import BaselineRecord, BenchmarkRecord, FieldProfile, ResultRecord, WorkFact, to_dict
-from principia.server import make_handler
+from principia.server import _display_model_alias, _openai_model_env_value, make_handler
 from principia.storage import Store
 from principia.utils import enrich_query, safe_json_loads, stable_id
 
@@ -450,6 +450,12 @@ class PrincipiaTests(unittest.TestCase):
         self.assertTrue(auto_client._use_openai_responses_api(auto_client.resolve_model(mode="official"), "gpt-5.5"))
         self.assertFalse(chat_client._use_openai_responses_api(chat_client.resolve_model(mode="official"), "gpt-5.5"))
         self.assertTrue(responses_client._use_openai_responses_api(responses_client.resolve_model(mode="official"), "gpt-5.5"))
+
+    def test_openai_settings_model_alias_helpers(self) -> None:
+        self.assertEqual(_openai_model_env_value("qwen2.5-7b-instruct"), "openai:qwen2.5-7b-instruct")
+        self.assertEqual(_openai_model_env_value("openai:gpt-4.1"), "openai:gpt-4.1")
+        self.assertEqual(_openai_model_env_value("model:openai:local-model"), "openai:local-model")
+        self.assertEqual(_display_model_alias("openai:qwen2.5-7b-instruct"), "qwen2.5-7b-instruct")
 
     def test_timeout_message_is_not_extraction_specific_for_generation(self) -> None:
         store = self.make_store()

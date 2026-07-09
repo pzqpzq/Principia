@@ -137,6 +137,24 @@ def _write_env_values(updates: dict[str, str]) -> None:
         os.environ[key] = value
 
 
+def _openai_model_env_value(value: object) -> str:
+    model = str(value or "").strip()
+    if not model:
+        return ""
+    if model.startswith("model:"):
+        model = model.removeprefix("model:")
+    if ":" not in model:
+        model = f"openai:{model}"
+    return model
+
+
+def _display_model_alias(value: str) -> str:
+    text = str(value or "").strip()
+    if text.startswith("openai:") or text.startswith("siliconflow:"):
+        return text.split(":", 1)[1]
+    return text
+
+
 class PrincipiaRequestHandler(BaseHTTPRequestHandler):
     server_version = "Principia/1.0"
     work_extract_lock = threading.Lock()
@@ -324,6 +342,14 @@ class PrincipiaRequestHandler(BaseHTTPRequestHandler):
                     updates["PRINCIPIA_LLM_BASE_URL"] = str(payload.get("siliconflow_base_url") or "").strip()
                 if "openai_base_url" in payload:
                     updates["PRINCIPIA_OPENAI_BASE_URL"] = str(payload.get("openai_base_url") or "").strip()
+                if "openai_model" in payload:
+                    model_value = _openai_model_env_value(payload.get("openai_model"))
+                    if model_value:
+                        updates["PRINCIPIA_OPENAI_GPT55_MODEL"] = model_value
+                if "openai_api_style" in payload:
+                    style = str(payload.get("openai_api_style") or "auto").strip().lower()
+                    if style in {"auto", "chat_completions", "responses"}:
+                        updates["PRINCIPIA_OPENAI_API_STYLE"] = style
                 if updates:
                     _write_env_values(updates)
                     self.engine.llm = LLMClient(get_settings())
@@ -1391,6 +1417,8 @@ class PrincipiaRequestHandler(BaseHTTPRequestHandler):
                 "configured": bool(settings.openai_api_key),
                 "masked": _mask_secret(settings.openai_api_key),
                 "base_url": settings.openai_base_url,
+                "model": _display_model_alias(settings.model_aliases.get("openai_gpt55", "")),
+                "api_style": settings.openai_api_style,
             },
             "cost_limit_cny": settings.cost_limit_cny,
             "request_timeout": settings.request_timeout,

@@ -85,7 +85,7 @@
                 <option value="glm">GLM-5.1 Pro</option>
                 <option value="openai_gpt52_pro">OpenAI GPT-5.2 Pro</option>
                 <option value="openai_gpt5_pro">OpenAI GPT-5 Pro</option>
-                <option value="openai_gpt55">OpenAI GPT-5.5</option>
+                <option value="openai_gpt55">OpenAI / Local-compatible</option>
                 <option value="openai_gpt55_pro_20260423">OpenAI GPT-5.5 Pro 2026-04-23</option>
               </select>
             </label>
@@ -341,7 +341,7 @@
                   <option value="glm">GLM-5.1 Pro</option>
                   <option value="openai_gpt52_pro">OpenAI GPT-5.2 Pro</option>
                   <option value="openai_gpt5_pro">OpenAI GPT-5 Pro</option>
-                  <option value="openai_gpt55">OpenAI GPT-5.5</option>
+                  <option value="openai_gpt55">OpenAI / Local-compatible</option>
                   <option value="openai_gpt55_pro_20260423">OpenAI GPT-5.5 Pro 2026-04-23</option>
                 </select>
               </label>
@@ -362,14 +362,34 @@
           </div>
           <button id="cancelApiKeysBtn" type="button" class="secondary-btn">Cancel</button>
         </header>
-        <p id="apiKeysStatus" class="muted">Keys are saved locally in .env. Leave a field blank to keep its current value.</p>
+        <p id="apiKeysStatus" class="muted">Settings are saved locally in .env. Leave secrets blank to keep their current values.</p>
         <label class="full-field">
           <span>SiliconFlow API key</span>
           <input id="siliconflowKeyInput" type="password" autocomplete="off" placeholder="Leave blank to keep current key" />
         </label>
         <label class="full-field">
+          <span>SiliconFlow base URL</span>
+          <input id="siliconflowBaseUrlInput" type="url" autocomplete="off" placeholder="https://api.siliconflow.cn/v1" />
+        </label>
+        <label class="full-field">
           <span>OpenAI API key</span>
           <input id="openaiKeyInput" type="password" autocomplete="off" placeholder="Leave blank to keep current key" />
+        </label>
+        <label class="full-field">
+          <span>OpenAI-compatible base URL</span>
+          <input id="openaiBaseUrlInput" type="url" autocomplete="off" placeholder="http://127.0.0.1:1234/v1" />
+        </label>
+        <label class="full-field">
+          <span>OpenAI-compatible model</span>
+          <input id="openaiModelInput" type="text" autocomplete="off" placeholder="qwen2.5-7b-instruct" />
+        </label>
+        <label class="full-field">
+          <span>OpenAI API style</span>
+          <select id="openaiApiStyleInput">
+            <option value="auto">Auto</option>
+            <option value="chat_completions">Chat Completions</option>
+            <option value="responses">Responses</option>
+          </select>
         </label>
         <div class="modal-actions">
           <button id="clearApiKeysFormBtn" type="button" class="secondary-btn">Clear Fields</button>
