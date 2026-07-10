@@ -13,7 +13,7 @@ def dedupe_works(works: list[dict[str, Any]]) -> list[dict[str, Any]]:
         if not item:
             continue
         keys = identity_keys(item) or [f"title:{title_key(item.get('title', ''))}"]
-        match = next((key_to_index[key] for key in keys if key in key_to_index), None)
+        match = find_duplicate_index(item, keys, output, key_to_index)
         if match is None:
             index = len(output)
             output.append(item)
@@ -24,6 +24,28 @@ def dedupe_works(works: list[dict[str, Any]]) -> list[dict[str, Any]]:
         for key in identity_keys(output[match]):
             key_to_index[key] = match
     return output
+
+
+def find_duplicate_index(
+    item: dict[str, Any],
+    keys: list[str],
+    works: list[dict[str, Any]],
+    key_to_index: dict[str, int],
+) -> int | None:
+    """Prefer stable identifiers; use title only when at least one record lacks one."""
+    strong_keys = set(strong_identity_keys(item))
+    for key in strong_keys:
+        if key in key_to_index:
+            return key_to_index[key]
+
+    title = f"title:{title_key(item.get('title', ''))}"
+    match = key_to_index.get(title)
+    if match is None:
+        return None
+    existing_strong_keys = set(strong_identity_keys(works[match]))
+    if strong_keys and existing_strong_keys:
+        return None
+    return match
 
 
 def normalize_work(row: dict[str, Any] | Any) -> dict[str, Any]:
@@ -78,13 +100,18 @@ def merge_work(left: dict[str, Any], right: dict[str, Any]) -> dict[str, Any]:
 
 
 def identity_keys(work: dict[str, Any]) -> list[str]:
+    keys = strong_identity_keys(work)
+    if work.get("title"):
+        keys.append(f"title:{title_key(work['title'])}")
+    return keys
+
+
+def strong_identity_keys(work: dict[str, Any]) -> list[str]:
     keys = []
     for field, prefix in [("doi", "doi"), ("arxiv_id", "arxiv"), ("openalex_id", "openalex"), ("semantic_scholar_id", "s2")]:
         value = clean_text(work.get(field) or "")
         if value:
             keys.append(f"{prefix}:{value.lower()}")
-    if work.get("title"):
-        keys.append(f"title:{title_key(work['title'])}")
     return keys
 
 

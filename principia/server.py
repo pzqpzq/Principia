@@ -98,9 +98,9 @@ def _payload_has_other(value: Any) -> bool:
 
 
 def _payload_retrieval_rerank_mode(payload: dict[str, object]) -> str:
+    if "use_embedding_rerank" in payload:
+        return "embedding_rerank" if bool(payload.get("use_embedding_rerank")) else "bm25"
     value = str(payload.get("retrieval_rerank_mode") or payload.get("paper_rerank_mode") or "").strip().lower()
-    if value in {"llm", "llm-rerank", "llm_rerank"}:
-        return "llm_rerank"
     if value in {"embedding", "embedding-rerank", "embedding_rerank"}:
         return "embedding_rerank"
     return "bm25"

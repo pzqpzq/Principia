@@ -51,6 +51,7 @@ def build_parser() -> argparse.ArgumentParser:
     research.add_argument("query")
     research.add_argument("--project-id", default="default")
     research.add_argument("--target-works", type=int, default=50)
+    research.add_argument("--rerank-mode", choices=["bm25", "embedding_rerank"], default="bm25")
 
     retrieve = sub.add_parser("retrieve", help="Run independent v1 concept retrieval.")
     retrieve.add_argument("query")
@@ -180,6 +181,7 @@ def main(argv: list[str] | None = None) -> int:
                 goal_text=args.query,
                 model_mode=args.model_mode,
                 target_works=args.target_works,
+                retrieval_rerank_mode=args.rerank_mode,
             )
         )
         return 0

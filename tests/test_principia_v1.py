@@ -21,8 +21,8 @@ from principia.models import BaselineRecord, BenchmarkRecord, FieldProfile, Resu
 from principia.server import _display_model_alias, _openai_model_env_value, make_handler
 from principia.storage import Store
 from principia.utils import enrich_query, safe_json_loads, stable_id
-from principia_retrieval import QueryPlanner, RetrievalConfig, WorkRetriever, deterministic_query_plan, embedding_rerank, final_select
-from principia_retrieval.retriever import embedding_rerank_candidate_limit, llm_rerank_candidate_limit, resolve_rerank_mode
+from principia_retrieval import QueryPlanner, RetrievalConfig, WorkRetriever, bm25_rank, dedupe_works, deterministic_query_plan, embedding_rerank, final_select
+from principia_retrieval.retriever import embedding_rerank_candidate_limit, resolve_rerank_mode, source_task_limits
 
 
 SPARSE_VIEW_QUERY = "Please design a method for 稀疏数据三维重建（即在有限视角下进行三维重建）任务"
@@ -362,7 +362,7 @@ class PrincipiaTests(unittest.TestCase):
         self.assertEqual(result.selected_works[0]["work_id"], "W-NERF")
         self.assertGreater(result.selected_works[0]["community_signals"]["bm25_score"], 0)
 
-    def test_shared_retriever_uses_llm_planner_without_llm_rerank(self) -> None:
+    def test_shared_retriever_uses_llm_planner_with_bm25_ranking(self) -> None:
         calls: list[str] = []
         queries_seen: list[str] = []
 
@@ -402,70 +402,6 @@ class PrincipiaTests(unittest.TestCase):
         self.assertEqual(1, len(calls))
         self.assertIn("compact machine dialect communication", queries_seen)
 
-    def test_shared_retriever_llm_rerank_mode_runs_after_bm25_prefilter(self) -> None:
-        calls: list[str] = []
-        candidates = [
-            {
-                "work_id": "W-BM25",
-                "title": "Machine dialect communication for token efficient agents",
-                "abstract": "A relevant candidate found by metadata search.",
-                "year": 2026,
-                "venue_or_source": "arXiv",
-                "source": "fake",
-            },
-            {
-                "work_id": "W-LLM-PICK",
-                "title": "Social interaction protocols for LLM multi-agent reasoning",
-                "abstract": "A central work on LLM agents interacting through compact communication protocols.",
-                "year": 2026,
-                "venue_or_source": "NeurIPS",
-                "source": "fake",
-            },
-        ]
-
-        class PlannerAndRerankLLM:
-            def available(self) -> bool:
-                return True
-
-            def chat_json(self, system: str, user: str, **kwargs):
-                calls.append(user)
-                if "Candidate works:" in user:
-                    return {
-                        "items": [
-                            {
-                                "work_id": "W-BM25",
-                                "relevance_score": 0.35,
-                                "relation_label": "background",
-                                "rationale": "Related but less central.",
-                                "reject_reason": "",
-                            },
-                            {
-                                "work_id": "W-LLM-PICK",
-                                "relevance_score": 0.96,
-                                "relation_label": "direct",
-                                "rationale": "Directly addresses the goal.",
-                                "reject_reason": "",
-                            },
-                        ]
-                    }
-                return {
-                    "search_queries": ["machine dialect llm agent communication"],
-                    "entities": ["LLM", "machine dialect"],
-                    "key_phrases": ["multi-agent reasoning", "token efficient communication"],
-                }
-
-        def source(query: str, limit: int, timeout: float):
-            return candidates[:limit]
-
-        result = WorkRetriever(
-            sources={"fake": source},
-            config=RetrievalConfig(use_llm_planner=True, rerank_mode="llm_rerank", source_names=["fake"], max_queries=2, max_raw_candidates=20),
-        ).search(MACHINE_DIALECT_MAS_QUERY, target_count=1, llm=PlannerAndRerankLLM())
-
-        self.assertEqual("W-LLM-PICK", result.selected_works[0]["work_id"])
-        self.assertEqual(2, len(calls))
-        self.assertIn("Candidate works:", calls[-1])
-
     def test_final_select_tops_up_after_filtering_low_score_out_of_scope(self) -> None:
         plan = deterministic_query_plan("sparse-view neural radiance field depth regularization")
         works = [
@@ -477,6 +413,7 @@ class PrincipiaTests(unittest.TestCase):
 
         self.assertEqual(["W-OK", "W-LOW"], [work["work_id"] for work in selected])
 
+    @unittest.skip("LLM reranking has been removed; BM25 and embedding reranking are tested separately.")
     def test_shared_retriever_reranks_astronomy_over_ai_and_geophysics(self) -> None:
         candidates = [
             {
@@ -551,6 +488,7 @@ class PrincipiaTests(unittest.TestCase):
         self.assertNotIn("W-GEOPHYS", [work["work_id"] for work in result.selected_works])
         self.assertNotIn("W-LLM", [work["work_id"] for work in result.selected_works])
 
+    @unittest.skip("LLM reranking has been removed; BM25 and embedding reranking are tested separately.")
     def test_shared_retriever_keeps_ai_work_when_reranker_scores_it(self) -> None:
         candidates = [
             {
@@ -608,6 +546,7 @@ class PrincipiaTests(unittest.TestCase):
         self.assertIn("W-S251112CM", selected_ids)
         self.assertIn("W-LLM", selected_ids)
 
+    @unittest.skip("LLM reranking has been removed; BM25 and embedding reranking are tested separately.")
     def test_shared_retriever_llm_rerank_prompt_defines_scores_and_labels(self) -> None:
         candidates = [
             {
@@ -684,28 +623,80 @@ class PrincipiaTests(unittest.TestCase):
 
         result = WorkRetriever(
             sources={"fake": source},
-            config=RetrievalConfig(use_llm_planner=False, use_llm_rerank=False, source_names=["fake"], max_raw_candidates=20),
+            config=RetrievalConfig(use_llm_planner=False, source_names=["fake"], max_raw_candidates=20),
         ).search(ASTRONOMY_TRANSIENT_QUERY, target_count=2, llm=None)
 
         self.assertEqual(result.selected_works[0]["work_id"], "W-S251112CM")
 
-    def test_shared_retriever_llm_rerank_candidate_limit(self) -> None:
-        self.assertEqual(50, llm_rerank_candidate_limit(1))
-        self.assertEqual(50, llm_rerank_candidate_limit(25))
-        self.assertEqual(100, llm_rerank_candidate_limit(50))
-        self.assertEqual(200, llm_rerank_candidate_limit(100))
-
     def test_shared_retriever_resolves_embedding_rerank_mode(self) -> None:
         self.assertEqual("embedding_rerank", resolve_rerank_mode(RetrievalConfig(rerank_mode="embedding-rerank")))
         self.assertEqual("embedding_rerank", resolve_rerank_mode(RetrievalConfig(rerank_mode="embedding")))
-        self.assertEqual("llm_rerank", resolve_rerank_mode(RetrievalConfig(rerank_mode="embedding_rerank"), use_llm_rerank=True))
-        self.assertEqual("bm25", resolve_rerank_mode(RetrievalConfig(rerank_mode="embedding_rerank"), use_llm_rerank=False))
+        self.assertEqual("bm25", resolve_rerank_mode(RetrievalConfig(rerank_mode="llm_rerank")))
 
     def test_shared_retriever_embedding_rerank_candidate_limit(self) -> None:
         self.assertEqual(50, embedding_rerank_candidate_limit(1))
         self.assertEqual(100, embedding_rerank_candidate_limit(50))
         self.assertEqual(80, embedding_rerank_candidate_limit(25, 80))
         self.assertEqual(25, embedding_rerank_candidate_limit(25, 10))
+
+    def test_dedupe_keeps_same_title_with_distinct_strong_identifiers(self) -> None:
+        works = dedupe_works(
+            [
+                {"title": "Shared title", "doi": "10.1000/first", "abstract": "First publication."},
+                {"title": "Shared title", "doi": "10.1000/second", "abstract": "Second publication."},
+            ]
+        )
+
+        self.assertEqual(2, len(works))
+        self.assertEqual({"10.1000/first", "10.1000/second"}, {work["doi"] for work in works})
+
+    def test_shared_retriever_enforces_raw_candidate_budget(self) -> None:
+        requested_limits: list[int] = []
+
+        def make_source(name: str):
+            def source(query: str, limit: int, timeout: float):
+                requested_limits.append(limit)
+                return [
+                    {
+                        "work_id": f"{name}-{query}-{index}",
+                        "title": f"{name} {query} result {index}",
+                        "abstract": "alpha beta gamma retrieval result",
+                        "source": name,
+                    }
+                    for index in range(limit + 2)
+                ]
+
+            return source
+
+        result = WorkRetriever(
+            sources={"one": make_source("one"), "two": make_source("two")},
+            config=RetrievalConfig(
+                use_llm_planner=False,
+                rerank_mode="bm25",
+                source_names=["one", "two"],
+                max_queries=2,
+                max_raw_candidates=3,
+                min_relevance=0.0,
+            ),
+        ).search("alpha beta gamma", target_count=3, llm=None)
+
+        self.assertEqual([1, 1, 1, 0], source_task_limits(4, 3))
+        self.assertEqual(3, sum(requested_limits))
+        self.assertEqual(3, len(result.candidates))
+
+    def test_bm25_ranks_chinese_text(self) -> None:
+        goal = "稀疏数据三维重建"
+        ranked = bm25_rank(
+            goal,
+            [
+                {"work_id": "W-RELEVANT", "title": "稀疏数据三维重建方法", "abstract": "有限视角重建的几何约束"},
+                {"work_id": "W-OTHER", "title": "语言模型推理", "abstract": "文本生成方法"},
+            ],
+            deterministic_query_plan(goal),
+        )
+
+        self.assertEqual("W-RELEVANT", ranked[0]["work_id"])
+        self.assertGreater(ranked[0]["_bm25_score"], 0.0)
 
     def test_shared_retriever_embedding_rerank_runs_after_bm25_prefilter(self) -> None:
         candidates = [

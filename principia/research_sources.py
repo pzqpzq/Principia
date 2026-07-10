@@ -28,7 +28,6 @@ def search_hybrid_sources(
     llm: Any | None = None,
     original_goal: str | None = None,
     sources: dict[str, Any] | None = None,
-    use_llm_rerank: bool | None = None,
     retrieval_rerank_mode: str | None = None,
 ) -> list[dict[str, Any]]:
     """Search free public metadata sources and return SourceWork-shaped dicts.
@@ -36,17 +35,16 @@ def search_hybrid_sources(
     The function intentionally avoids paid/search-engine APIs. It combines arXiv,
     OpenAlex, Crossref, and Semantic Scholar metadata through the shared semantic
     retriever. Queries can use the LLM planner when available. Paper reranking
-    defaults to BM25; callers can opt into embedding or LLM reranking for the
-    BM25 head set.
+    defaults to BM25; callers can opt into embedding reranking for the BM25
+    head set.
     """
 
     query = " ".join(str(query or "").split())
     if not query:
         return []
-    rerank_mode = _retrieval_rerank_mode(retrieval_rerank_mode, use_llm_rerank=use_llm_rerank)
+    rerank_mode = _retrieval_rerank_mode(retrieval_rerank_mode)
     config = RetrievalConfig(
         use_llm_planner=llm is not None,
-        use_llm_rerank=rerank_mode == "llm_rerank",
         rerank_mode=rerank_mode,
         max_raw_candidates=max(100, int(max_results or 100) * 4),
         max_queries=8,
@@ -56,17 +54,12 @@ def search_hybrid_sources(
         target_count=max_results,
         llm=llm,
         timeout=timeout,
-        use_llm_rerank=use_llm_rerank,
     )
     return result.selected_works
 
 
-def _retrieval_rerank_mode(value: str | None, *, use_llm_rerank: bool | None = None) -> str:
-    if use_llm_rerank is not None:
-        return "llm_rerank" if bool(use_llm_rerank) else "bm25"
+def _retrieval_rerank_mode(value: str | None) -> str:
     mode = str(value or "bm25").strip().lower()
-    if mode in {"llm", "llm-rerank", "llm_rerank"}:
-        return "llm_rerank"
     if mode in {"embedding", "embedding-rerank", "embedding_rerank"}:
         return "embedding_rerank"
     return "bm25"

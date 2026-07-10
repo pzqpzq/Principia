@@ -703,6 +703,7 @@ The repository contains both the visual workbench and the V1.3 framework package
 Principia-v1.3/        V1.3 Python framework package, docs, tests, and examples
 v1.3-tutorial.ipynb    V1.3 notebook tutorial
 principia/             core Python package for the visual workbench
+principia_retrieval/   canonical shared retrieval package used by the workbench and V1.3
 static/                local browser UI
 cloud/                 Cloud Library schemas, manifests, and examples
 docs/screenshots/      README screenshots
@@ -745,6 +746,11 @@ python -m pytest -q
 python -m build --no-isolation
 python -m twine check dist/*
 ```
+
+`principia_retrieval` is maintained at the repository root. The V1.3 source
+tree links to this canonical package so local workbench, V1.3, and benchmark
+workflows execute the same retrieval implementation; the V1.3 wheel resolves
+the link and packages the module normally.
 
 ---
 

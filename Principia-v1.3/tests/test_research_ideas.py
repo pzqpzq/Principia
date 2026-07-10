@@ -73,32 +73,6 @@ class AstroRetrievalLLM(pc.LLMClient):
                 "domain_hints": ["astronomy_transient"],
                 "exclude_terms": ["large language model"],
             }
-        if "semantically rank candidate research works" in system.lower():
-            return {
-                "items": [
-                    {
-                        "work_id": "W-S251112CM",
-                        "relevance_score": 0.97,
-                        "relation_label": "direct",
-                        "rationale": "Directly follows up S251112cm as an astronomical transient.",
-                        "reject_reason": "",
-                    },
-                    {
-                        "work_id": "W-GEOPHYS",
-                        "relevance_score": 0.03,
-                        "relation_label": "out_of_scope",
-                        "rationale": "",
-                        "reject_reason": "Geophysical transient electromagnetic survey, not astronomy.",
-                    },
-                    {
-                        "work_id": "W-LLM",
-                        "relevance_score": 0.02,
-                        "relation_label": "out_of_scope",
-                        "rationale": "",
-                        "reject_reason": "AI methods paper for a non-AI goal.",
-                    },
-                ]
-            }
         return {}
 
 
@@ -247,14 +221,14 @@ def test_search_merges_arxiv_duplicate_into_peer_reviewed_venue(tmp_path: Path) 
     assert "arxiv" in works[0].metadata["merged_sources"]
 
 
-def test_search_ranking_prefers_peer_reviewed_metadata(tmp_path: Path) -> None:
+def test_search_uses_deterministic_bm25_order_without_embedding_rerank(tmp_path: Path) -> None:
     ws = pc.Workspace(tmp_path, llm=pc.MockLLMClient(), search_sources={"mixed": mixed_review_source})
 
     works = ws.research.search("repository quality control coding agents calibrated process risk", target_count=2)
 
-    assert works[0].venue == "ACM Transactions on Software Engineering and Methodology"
-    assert works[0].metadata["is_peer_reviewed"] is True
-    assert works[1].venue == "arXiv"
+    assert works[0].venue == "arXiv"
+    assert works[1].venue == "ACM Transactions on Software Engineering and Methodology"
+    assert works[1].metadata["is_peer_reviewed"] is True
 
 
 def test_search_uses_shared_semantic_retriever_for_astronomy(tmp_path: Path) -> None:
@@ -268,8 +242,8 @@ def test_search_uses_shared_semantic_retriever_for_astronomy(tmp_path: Path) -> 
 
     assert works[0].id == "W-S251112CM"
     assert "S251112cm" in works[0].title
-    assert all(work.id != "W-LLM" for work in works)
-    assert ws.counts()["works"] == 1
+    assert {work.id for work in works} == {"W-S251112CM", "W-GEOPHYS", "W-LLM"}
+    assert ws.counts()["works"] == 3
 
 
 def test_extract_cache_overwrite_and_generate_compare(tmp_path: Path) -> None:

@@ -9,13 +9,11 @@ WorkSource = Callable[[str, int, float], Sequence[dict[str, Any] | Any]]
 @dataclass
 class RetrievalConfig:
     use_llm_planner: bool = True
-    use_llm_rerank: bool = False
     rerank_mode: str = ""
     max_raw_candidates: int = 240
     min_relevance: float = 0.08
     source_names: list[str] | None = None
     max_queries: int = 6
-    llm_batch_size: int = 24
     embedding_model: str = "Qwen/Qwen3-Embedding-4B"
     embedding_dimensions: int = 1024
     embedding_batch_size: int = 32

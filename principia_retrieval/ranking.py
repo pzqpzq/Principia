@@ -1,14 +1,13 @@
 from __future__ import annotations
 
-import json
 import math
 from collections import Counter
 from typing import Any
 
 from .constants import RELATION_ORDER
-from .embeddings import SiliconFlowEmbeddingClient, embedding_cache_key
+from .embeddings import SiliconFlowEmbeddingClient, embedding_cache_key, validate_embedding_vectors
 from .models import QueryPlan
-from .utils import call_llm_json, clamp_float, clean_text, normalize_text, stable_id, tokenize, truncate, weighted_tokens
+from .utils import clamp_float, clean_text, normalize_text, stable_id, tokenize, truncate, weighted_tokens
 
 
 def deterministic_rank(goal_text: str, works: list[dict[str, Any]], plan: QueryPlan) -> list[dict[str, Any]]:
@@ -231,6 +230,7 @@ def embed_texts_cached(
         )
         if len(batch_vectors) != len(batch):
             raise RuntimeError(f"Embedding client returned {len(batch_vectors)} vector(s), expected {len(batch)}.")
+        validate_embedding_vectors(batch_vectors)
         for (key, _), vector in zip(batch, batch_vectors):
             cache[key] = [float(value) for value in vector]
     return [cache[key] for key in keys]
@@ -327,68 +327,6 @@ def embedding_rationale(work: dict[str, Any], similarity: float) -> str:
     if float(work.get("_bm25_score", 0.0) or 0.0) > 0:
         bits.append("BM25 prefilter match")
     return "; ".join(bits)
-
-
-def llm_rerank(goal_text: str, works: list[dict[str, Any]], plan: QueryPlan, llm: Any, *, batch_size: int) -> list[dict[str, Any]]:
-    by_id = {str(work.get("work_id") or stable_id("W", work.get("title", ""))): dict(work) for work in works}
-    updates: dict[str, dict[str, Any]] = {}
-    rows = list(by_id.values())
-    for index in range(0, len(rows), max(1, batch_size)):
-        batch = rows[index : index + batch_size]
-        payload = [
-            {
-                "work_id": work.get("work_id"),
-                "title": work.get("title"),
-                "abstract": truncate(work.get("abstract", ""), 900),
-                "venue": work.get("venue_or_source"),
-                "year": work.get("year"),
-            }
-            for work in batch
-        ]
-        try:
-            result = call_llm_json(
-                llm,
-                "You semantically rank candidate research works for a research goal. Return strict JSON only.",
-                (
-                    "Return {\"items\":[...]} with one item per candidate. Each item must include: "
-                    "work_id, relevance_score, relation_label, rationale, reject_reason.\n"
-                    "Score 0-1 by usefulness for the research goal: 0.90-1.00 central match, "
-                    "0.65-0.89 strong supporting evidence, 0.35-0.64 related method/background, "
-                    "0.10-0.34 weak connection, below 0.10 irrelevant.\n"
-                    "relation_label must be one of: direct, background, methodological, out_of_scope. "
-                    "direct = studies the goal's target object/task/mechanism; background = useful context "
-                    "or evidence; methodological = transferable method/evaluation/resource; out_of_scope = "
-                    "not useful for this goal.\n"
-                    "Use only title, abstract, venue, and year. Keep rationale under 20 words. "
-                    "Set reject_reason only for out_of_scope items, otherwise use an empty string.\n\n"
-                    f"Research goal:\n{goal_text}\n\nCandidate works:\n{json.dumps(payload, ensure_ascii=False)}"
-                ),
-                mode="auto",
-                max_tokens=2600,
-                temperature=0,
-            )
-        except Exception:
-            continue
-        for row in result.get("items", []) if isinstance(result, dict) else []:
-            if isinstance(row, dict) and row.get("work_id"):
-                updates[str(row["work_id"])] = row
-    output = []
-    for work in rows:
-        item = dict(work)
-        row = updates.get(str(item.get("work_id") or ""))
-        if row:
-            label = normalize_relation(row.get("relation_label"))
-            llm_score = clamp_float(row.get("relevance_score"), 0.0, 1.0)
-            metadata = metadata_score(item)
-            item["_retrieval_score"] = llm_score * 1.25 + metadata
-            item["relation_label"] = label
-            item["retrieval_rationale"] = clean_text(row.get("rationale") or item.get("retrieval_rationale") or "")
-            item["reject_reason"] = clean_text(row.get("reject_reason") or "")
-            item.setdefault("community_signals", {})["llm_relevance_score"] = round(llm_score, 4)
-            item.setdefault("community_signals", {})["relation_label"] = label
-        output.append(item)
-    output.sort(key=lambda item: (float(item.get("_retrieval_score", 0.0)), relation_rank(item), int(item.get("year") or 0)), reverse=True)
-    return output
 
 
 def final_select(works: list[dict[str, Any]], target_count: int, plan: QueryPlan) -> list[dict[str, Any]]:

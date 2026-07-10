@@ -492,17 +492,24 @@ body[data-system-mode="user"] .cloud-write-action {
 }
 
 .rerank-toggle {
-  display: inline-flex;
+  display: flex;
   gap: 8px;
   align-items: center;
-  width: max-content;
+  width: fit-content;
   color: #39463f;
   font-size: 13px;
   font-weight: 760;
 }
 
-.rerank-toggle select {
-  min-width: 170px;
+.rerank-toggle input {
+  width: auto;
+  margin: 0;
+}
+
+.rerank-toggle small {
+  color: #6c776f;
+  font-size: 12px;
+  font-weight: 550;
 }
 
 .research-status {

@@ -73,7 +73,7 @@ class SiliconFlowEmbeddingClient:
                 )
                 with urllib.request.urlopen(req, timeout=request_timeout) as resp:
                     body = json.loads(resp.read().decode("utf-8"))
-                return parse_embedding_response(body, expected_count=len(inputs))
+                return parse_embedding_response(body, expected_count=len(inputs), expected_dimensions=resolved_dimensions)
             except urllib.error.HTTPError as exc:
                 detail = exc.read().decode("utf-8", errors="replace")
                 last_error = RuntimeError(f"Embedding HTTP {exc.code}: {detail[:500]}")
@@ -94,7 +94,9 @@ class SiliconFlowEmbeddingClient:
         raise RuntimeError(str(last_error or "Embedding request failed."))
 
 
-def parse_embedding_response(body: dict[str, Any], *, expected_count: int) -> list[list[float]]:
+def parse_embedding_response(
+    body: dict[str, Any], *, expected_count: int, expected_dimensions: int = 0
+) -> list[list[float]]:
     rows = body.get("data") if isinstance(body, dict) else None
     if not isinstance(rows, list):
         raise RuntimeError("Embedding response did not include a data list.")
@@ -115,7 +117,18 @@ def parse_embedding_response(body: dict[str, Any], *, expected_count: int) -> li
     vectors = [vector for _, vector in indexed]
     if len(vectors) != expected_count:
         raise RuntimeError(f"Embedding response returned {len(vectors)} vector(s), expected {expected_count}.")
+    validate_embedding_vectors(vectors, expected_dimensions=expected_dimensions)
     return vectors
+
+
+def validate_embedding_vectors(vectors: Sequence[Sequence[float]], *, expected_dimensions: int = 0) -> None:
+    lengths = {len(vector) for vector in vectors}
+    if not lengths or 0 in lengths:
+        raise RuntimeError("Embedding response contained an empty vector.")
+    if len(lengths) != 1:
+        raise RuntimeError("Embedding response contained vectors with inconsistent dimensions.")
+    if expected_dimensions > 0 and lengths.pop() != expected_dimensions:
+        raise RuntimeError(f"Embedding response dimension did not match requested dimension {expected_dimensions}.")
 
 
 def embedding_cache_key(model: str, dimensions: int, text: str) -> str:

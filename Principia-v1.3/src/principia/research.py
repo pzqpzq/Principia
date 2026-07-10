@@ -52,6 +52,16 @@ SEARCH_STOPWORDS = {
     "with",
 }
 
+RETRIEVAL_RERANK_MODES = {"", "bm25", "deterministic", "no_llm", "embedding", "embedding_rerank"}
+
+
+def validate_rerank_mode(value: str | None) -> str:
+    mode = str(value or "").strip().lower().replace("-", "_")
+    if mode not in RETRIEVAL_RERANK_MODES:
+        choices = ", ".join(sorted(option for option in RETRIEVAL_RERANK_MODES if option))
+        raise ValueError(f"Unsupported retrieval rerank mode {value!r}. Choose one of: {choices}.")
+    return mode
+
 
 class ResearchService:
     def __init__(
@@ -103,6 +113,7 @@ class ResearchService:
         *,
         target_count: int = 20,
         mode: str = "hybrid",
+        rerank_mode: str | None = None,
         sources: list[str] | None = None,
         persist: bool = True,
         timeout: float = 12.0,
@@ -128,7 +139,7 @@ class ResearchService:
             retrieval_llm = self._retrieval_llm()
             config = RetrievalConfig(
                 use_llm_planner=retrieval_llm is not None,
-                use_llm_rerank=retrieval_llm is not None,
+                rerank_mode=validate_rerank_mode(rerank_mode),
                 max_raw_candidates=max(80, target_count * 4),
                 max_queries=8,
                 source_names=selected_names,
@@ -155,7 +166,7 @@ class ResearchService:
                 )
             except Exception as exc:  # noqa: BLE001
                 self.storage.log_event(run.status.run_id, "source_warning", f"shared retriever failed: {exc}")
-                retrieval = WorkRetriever(sources=source_map, config=RetrievalConfig(use_llm_planner=False, use_llm_rerank=False, source_names=selected_names)).search(
+                retrieval = WorkRetriever(sources=source_map, config=RetrievalConfig(use_llm_planner=False, source_names=selected_names)).search(
                     query,
                     target_count=target_count,
                     llm=None,

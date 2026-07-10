@@ -96,12 +96,9 @@
             <div id="researchStatus" class="research-status">Ready</div>
           </div>
           <label class="rerank-toggle">
-            <span>Paper rerank</span>
-            <select id="retrievalRerankModeInput">
-              <option value="bm25">BM25</option>
-              <option value="embedding_rerank">Embedding rerank</option>
-              <option value="llm_rerank">LLM rerank</option>
-            </select>
+            <input id="useEmbeddingRerankInput" type="checkbox" />
+            <span>Use embedding rerank after BM25 prefilter</span>
+            <small>Unchecked uses deterministic BM25 ranking only.</small>
           </label>
           <div class="header-actions research-actions" aria-label="Workspace actions">
             <button id="researchBtn" type="button" class="primary-btn">Research</button>

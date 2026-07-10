@@ -66,7 +66,13 @@ def token_weight(token: str) -> float:
 
 
 def tokenize(text: str) -> list[str]:
-    return [canonical_token(token) for token in re.findall(r"[a-zA-Z][a-zA-Z0-9_\-]{2,}", text.lower()) if token not in STOPWORDS]
+    tokens = []
+    for token in re.findall(r"[a-zA-Z][a-zA-Z0-9_\-]{2,}|[\u4e00-\u9fff]+", text.lower()):
+        if re.fullmatch(r"[\u4e00-\u9fff]+", token):
+            tokens.extend(token[index : index + 2] for index in range(max(1, len(token) - 1)))
+        elif token not in STOPWORDS:
+            tokens.append(canonical_token(token))
+    return tokens
 
 
 def canonical_token(token: str) -> str:
@@ -78,7 +84,7 @@ def canonical_token(token: str) -> str:
 
 
 def normalize_text(text: str) -> str:
-    return " ".join(re.findall(r"[a-zA-Z0-9]+", str(text or "").lower()))
+    return " ".join(re.findall(r"[a-zA-Z0-9]+|[\u4e00-\u9fff]", str(text or "").lower()))
 
 
 def clean_text(value: Any) -> str:

@@ -1,10 +1,39 @@
-"""Source-tree shim for the shared v1.3 retrieval package."""
+"""Shared semantic work retrieval utilities for Principia."""
 
-from __future__ import annotations
+from .models import QueryPlan, RetrievalConfig, RetrievalResult, WorkSource
+from .planner import QueryPlanner, deterministic_query_plan
+from .ranking import bm25_rank, deterministic_rank, embedding_rerank, final_select
+from .retriever import WorkRetriever
+from .sources import (
+    default_sources,
+    fetch_source,
+    search_arxiv,
+    search_crossref,
+    search_openalex,
+    search_semantic_scholar,
+)
+from .utils import contains_query_trigger
+from .works import dedupe_works, normalize_work
 
-from pathlib import Path
-
-_shared_dir = Path(__file__).resolve().parents[1] / "Principia-v1.3" / "src" / "principia_retrieval"
-__path__ = [str(_shared_dir), *__path__]  # type: ignore[name-defined]
-_shared_init = _shared_dir / "__init__.py"
-exec(compile(_shared_init.read_text(encoding="utf-8"), str(_shared_init), "exec"), globals())
+__all__ = [
+    "QueryPlan",
+    "QueryPlanner",
+    "RetrievalConfig",
+    "RetrievalResult",
+    "WorkSource",
+    "WorkRetriever",
+    "bm25_rank",
+    "contains_query_trigger",
+    "dedupe_works",
+    "default_sources",
+    "deterministic_query_plan",
+    "deterministic_rank",
+    "embedding_rerank",
+    "fetch_source",
+    "final_select",
+    "normalize_work",
+    "search_arxiv",
+    "search_crossref",
+    "search_openalex",
+    "search_semantic_scholar",
+]
