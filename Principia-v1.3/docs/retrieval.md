@@ -1,6 +1,10 @@
 # Principia Retrieval: Flow and Current Behavior
 
-This document describes the implementation in `principia_retrieval` as it exists today. It covers public metadata retrieval, query planning, deduplication, ranking, optional reranking, failure behavior, and known implementation issues.
+This document describes the implementation in `src/principia_retrieval`. It is
+the canonical V1.3 source for the public `principia_retrieval` package. The
+repository-root package path is only a V1.2 compatibility link to this source.
+The document covers public metadata retrieval, query planning, deduplication,
+ranking, optional reranking, failure behavior, and known implementation issues.
 
 ## Scope and Entry Points
 

@@ -58,10 +58,16 @@ class WorkRetriever:
         prefiltered = [item for item in scored if item["_retrieval_score"] >= config.min_relevance or has_exact_entity(item, plan)]
         if not prefiltered:
             prefiltered = scored[: max(target_count, 20)]
+        bm25_prefiltered_count = len(prefiltered)
+        embedding_input_count = 0
         if rerank_mode == "embedding_rerank":
+            embedding_input_count = min(
+                len(prefiltered),
+                embedding_rerank_candidate_limit(target_count, config.embedding_rerank_candidate_limit),
+            )
             prefiltered = embedding_rerank(
                 goal_text,
-                prefiltered[: embedding_rerank_candidate_limit(target_count, config.embedding_rerank_candidate_limit)],
+                prefiltered[:embedding_input_count],
                 plan,
                 model=config.embedding_model,
                 dimensions=config.embedding_dimensions,
@@ -71,6 +77,19 @@ class WorkRetriever:
                 embedding_client=embedding_client,
             )
         selected = final_select(prefiltered, target_count, plan)
+        if callback:
+            callback(
+                "retrieval_diagnostics",
+                {
+                    "rerank_mode": rerank_mode,
+                    "raw_count": len(raw),
+                    "candidate_count": len(candidates),
+                    "bm25_scored_count": len(scored),
+                    "bm25_prefiltered_count": bm25_prefiltered_count,
+                    "embedding_input_count": embedding_input_count,
+                    "selected_count": len(selected),
+                },
+            )
         trace = [
             {
                 "work_id": item.get("work_id", ""),

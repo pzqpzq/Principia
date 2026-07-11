@@ -684,6 +684,44 @@ class PrincipiaTests(unittest.TestCase):
         self.assertEqual(3, sum(requested_limits))
         self.assertEqual(3, len(result.candidates))
 
+    def test_shared_retriever_reports_stage_diagnostics(self) -> None:
+        events: list[tuple[str, dict]] = []
+
+        def source(query: str, limit: int, timeout: float):
+            return [
+                {
+                    "work_id": f"W-{index}",
+                    "title": f"Neural retrieval method {index}",
+                    "abstract": "Dense retrieval for scientific literature search.",
+                    "source": "fake",
+                }
+                for index in range(limit)
+            ]
+
+        WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(
+                use_llm_planner=False,
+                rerank_mode="bm25",
+                source_names=["fake"],
+                max_queries=1,
+                max_raw_candidates=4,
+            ),
+        ).search(
+            "neural retrieval",
+            target_count=2,
+            llm=None,
+            callback=lambda event, payload: events.append((event, payload)),
+        )
+
+        diagnostics = dict(next(payload for event, payload in events if event == "retrieval_diagnostics"))
+        self.assertEqual("bm25", diagnostics["rerank_mode"])
+        self.assertEqual(4, diagnostics["raw_count"])
+        self.assertEqual(4, diagnostics["candidate_count"])
+        self.assertEqual(4, diagnostics["bm25_scored_count"])
+        self.assertEqual(0, diagnostics["embedding_input_count"])
+        self.assertEqual(2, diagnostics["selected_count"])
+
     def test_bm25_ranks_chinese_text(self) -> None:
         goal = "稀疏数据三维重建"
         ranked = bm25_rank(

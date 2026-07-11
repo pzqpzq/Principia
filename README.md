@@ -700,10 +700,10 @@ Principia is built around provenance and user control.
 The repository contains both the visual workbench and the V1.3 framework package.
 
 ```text
-Principia-v1.3/        V1.3 Python framework package, docs, tests, and examples
+Principia-v1.3/        V1.3 Python framework package, including the maintained retrieval source
 v1.3-tutorial.ipynb    V1.3 notebook tutorial
 principia/             core Python package for the visual workbench
-principia_retrieval/   canonical shared retrieval package used by the workbench and V1.3
+principia_retrieval/   compatibility link for the V1.2 visual workbench
 static/                local browser UI
 cloud/                 Cloud Library schemas, manifests, and examples
 docs/screenshots/      README screenshots
@@ -747,10 +747,11 @@ python -m build --no-isolation
 python -m twine check dist/*
 ```
 
-`principia_retrieval` is maintained at the repository root. The V1.3 source
-tree links to this canonical package so local workbench, V1.3, and benchmark
-workflows execute the same retrieval implementation; the V1.3 wheel resolves
-the link and packages the module normally.
+`Principia-v1.3/src/principia_retrieval` is the canonical, maintained
+retrieval implementation. The repository-root `principia_retrieval` path is a
+compatibility link for the V1.2 visual workbench, so both entry points execute
+the same code while all retrieval changes are made in V1.3. The V1.3 wheel
+packages the module directly from its source tree.
 
 ---
 
