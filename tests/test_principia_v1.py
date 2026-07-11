@@ -684,6 +684,45 @@ class PrincipiaTests(unittest.TestCase):
         self.assertEqual(3, sum(requested_limits))
         self.assertEqual(3, len(result.candidates))
 
+    def test_shared_retriever_uses_full_raw_budget_without_task_cap(self) -> None:
+        self.assertEqual([50] * 8, source_task_limits(8, 400))
+        self.assertEqual(400, sum(source_task_limits(8, 400)))
+
+    def test_shared_retriever_reserves_full_goal_as_fallback_query(self) -> None:
+        goal = "full user goal for scientific retrieval"
+        events: list[tuple[str, dict]] = []
+
+        class PlannerLLM:
+            def available(self) -> bool:
+                return True
+
+            def chat_json(self, system: str, user: str, **kwargs):
+                return {
+                    "search_queries": ["query one", "query two", "query three"],
+                    "entities": [],
+                    "key_phrases": [],
+                }
+
+        def source(query: str, limit: int, timeout: float):
+            return []
+
+        WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(
+                use_llm_planner=True,
+                rerank_mode="bm25",
+                source_names=["fake"],
+                max_queries=3,
+                max_raw_candidates=9,
+            ),
+        ).search(goal, target_count=1, llm=PlannerLLM(), callback=lambda event, payload: events.append((event, payload)))
+
+        query_plan = next(payload for event, payload in events if event == "query_plan")
+        self.assertEqual(3, len(query_plan["queries"]))
+        self.assertEqual(goal, query_plan["queries"][-1])
+        self.assertEqual(goal, query_plan["fallback_query"])
+        self.assertTrue(query_plan["planner_trace"]["llm_planner"])
+
     def test_shared_retriever_reports_stage_diagnostics(self) -> None:
         events: list[tuple[str, dict]] = []
 

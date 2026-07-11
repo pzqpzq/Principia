@@ -7,7 +7,7 @@ from .models import RetrievalConfig, RetrievalResult, WorkSource
 from .planner import QueryPlanner
 from .ranking import bm25_rank, embedding_rerank, final_select, has_exact_entity
 from .sources import default_sources, fetch_source
-from .utils import ordered_unique, strip_internal
+from .utils import clean_text, ordered_unique, strip_internal
 from .works import dedupe_works
 
 
@@ -35,9 +35,25 @@ class WorkRetriever:
         query_budget = max(1, config.max_queries)
         plan = planner.plan(goal_text, max_queries=query_budget)
         source_names = config.source_names or list(source_registry)
-        queries = ordered_unique(plan.search_queries or [goal_text])[:query_budget]
+        fallback_query = clean_text(goal_text)
+        planned_queries = ordered_unique(plan.search_queries or [fallback_query])
+        if fallback_query:
+            non_fallback_queries = [query for query in planned_queries if query != fallback_query]
+            queries = [*non_fallback_queries[: max(0, query_budget - 1)], fallback_query]
+        else:
+            queries = planned_queries[:query_budget]
         if callback:
-            callback("query_plan", {"queries": queries, "entities": plan.entities, "domain_hints": plan.domain_hints, "rerank_mode": rerank_mode})
+            callback(
+                "query_plan",
+                {
+                    "queries": queries,
+                    "entities": plan.entities,
+                    "domain_hints": plan.domain_hints,
+                    "rerank_mode": rerank_mode,
+                    "fallback_query": fallback_query,
+                    "planner_trace": plan.trace,
+                },
+            )
 
         tasks = [(name, source_registry[name], query) for query in queries for name in source_names if name in source_registry]
         raw_budget = max(1, int(config.max_raw_candidates or 1))
@@ -116,7 +132,7 @@ def source_task_limits(task_count: int, raw_budget: int) -> list[int]:
     if task_count <= 0:
         return []
     base, remainder = divmod(max(0, raw_budget), task_count)
-    return [min(25, base + (1 if index < remainder else 0)) for index in range(task_count)]
+    return [base + (1 if index < remainder else 0) for index in range(task_count)]
 
 
 def resolve_rerank_mode(config: RetrievalConfig) -> str:
