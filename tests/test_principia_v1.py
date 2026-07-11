@@ -18,7 +18,7 @@ from principia.config import Settings, get_settings
 from principia.engine import PrincipiaEngine
 from principia.llm_client import LLMClient
 from principia.models import BaselineRecord, BenchmarkRecord, FieldProfile, ResultRecord, WorkFact, to_dict
-from principia.server import make_handler
+from principia.server import _display_model_alias, _openai_model_env_value, make_handler
 from principia.storage import Store
 from principia.utils import enrich_query, safe_json_loads, stable_id
 
@@ -403,6 +403,59 @@ class PrincipiaTests(unittest.TestCase):
 
         self.assertEqual(client._request_timeout(client.resolve_model(mode="qwen_122b"), 3200), 420)
         self.assertEqual(client._request_timeout(client.resolve_model(mode="efficient"), 64), 45)
+
+    def test_openai_responses_api_is_not_inferred_for_local_base_url(self) -> None:
+        settings = Settings(
+            api_key="",
+            base_url="https://api.siliconflow.cn/v1",
+            openai_api_key="fake",
+            openai_base_url="http://127.0.0.1:1234/v1",
+            efficient_model="Qwen/Qwen3.6-27B",
+            strong_model="deepseek-ai/DeepSeek-V3",
+            model_aliases={"local": "openai:gpt-5-local"},
+            cost_limit_cny=1000,
+            request_timeout=45,
+            slow_request_timeout=420,
+            ssl_verify=True,
+            openai_api_style="auto",
+        )
+        client = LLMClient(settings=settings)
+        resolved = client.resolve_model(mode="local")
+
+        self.assertFalse(client._use_openai_responses_api(resolved, "gpt-5-local"))
+
+    def test_openai_responses_api_style_can_be_explicit_or_official_auto(self) -> None:
+        base_settings = dict(
+            api_key="",
+            base_url="https://api.siliconflow.cn/v1",
+            openai_api_key="fake",
+            openai_base_url="https://api.openai.com/v1",
+            efficient_model="Qwen/Qwen3.6-27B",
+            strong_model="deepseek-ai/DeepSeek-V3",
+            model_aliases={"official": "openai:gpt-5.5"},
+            cost_limit_cny=1000,
+            request_timeout=45,
+            slow_request_timeout=420,
+            ssl_verify=True,
+        )
+        auto_client = LLMClient(settings=Settings(**base_settings, openai_api_style="auto"))
+        chat_client = LLMClient(settings=Settings(**base_settings, openai_api_style="chat_completions"))
+        responses_client = LLMClient(
+            settings=Settings(
+                **{**base_settings, "openai_base_url": "http://127.0.0.1:1234/v1"},
+                openai_api_style="responses",
+            )
+        )
+
+        self.assertTrue(auto_client._use_openai_responses_api(auto_client.resolve_model(mode="official"), "gpt-5.5"))
+        self.assertFalse(chat_client._use_openai_responses_api(chat_client.resolve_model(mode="official"), "gpt-5.5"))
+        self.assertTrue(responses_client._use_openai_responses_api(responses_client.resolve_model(mode="official"), "gpt-5.5"))
+
+    def test_openai_settings_model_alias_helpers(self) -> None:
+        self.assertEqual(_openai_model_env_value("qwen2.5-7b-instruct"), "openai:qwen2.5-7b-instruct")
+        self.assertEqual(_openai_model_env_value("openai:gpt-4.1"), "openai:gpt-4.1")
+        self.assertEqual(_openai_model_env_value("model:openai:local-model"), "openai:local-model")
+        self.assertEqual(_display_model_alias("openai:qwen2.5-7b-instruct"), "qwen2.5-7b-instruct")
 
     def test_timeout_message_is_not_extraction_specific_for_generation(self) -> None:
         store = self.make_store()

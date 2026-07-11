@@ -2129,9 +2129,13 @@ async function confirmDeleteProject() {
 
 async function editApiKeys() {
   const current = await api("/api/settings");
-  el("apiKeysStatus").textContent = `SiliconFlow: ${current.siliconflow?.configured ? current.siliconflow.masked || "configured" : "not configured"} / OpenAI: ${current.openai?.configured ? current.openai.masked || "configured" : "not configured"}. Leave a field blank to keep its current value.`;
+  el("apiKeysStatus").textContent = `SiliconFlow: ${current.siliconflow?.configured ? current.siliconflow.masked || "configured" : "not configured"} / OpenAI: ${current.openai?.configured ? current.openai.masked || "configured" : "not configured"}. Base URLs, model, and API style are saved to .env.`;
   el("siliconflowKeyInput").value = "";
   el("openaiKeyInput").value = "";
+  el("siliconflowBaseUrlInput").value = current.siliconflow?.base_url || "";
+  el("openaiBaseUrlInput").value = current.openai?.base_url || "";
+  el("openaiModelInput").value = current.openai?.model || "";
+  el("openaiApiStyleInput").value = current.openai?.api_style || "auto";
   el("apiKeysModal").hidden = false;
 }
 
@@ -2140,8 +2144,16 @@ async function submitApiKeys(event) {
   const payload = {};
   const silicon = el("siliconflowKeyInput").value.trim();
   const openai = el("openaiKeyInput").value.trim();
+  const siliconBaseUrl = el("siliconflowBaseUrlInput").value.trim();
+  const openaiBaseUrl = el("openaiBaseUrlInput").value.trim();
+  const openaiModel = el("openaiModelInput").value.trim();
+  const openaiApiStyle = el("openaiApiStyleInput").value || "auto";
   if (silicon) payload.siliconflow_api_key = silicon;
   if (openai) payload.openai_api_key = openai;
+  if (siliconBaseUrl) payload.siliconflow_base_url = siliconBaseUrl;
+  if (openaiBaseUrl) payload.openai_base_url = openaiBaseUrl;
+  if (openaiModel) payload.openai_model = openaiModel;
+  payload.openai_api_style = openaiApiStyle;
   if (Object.keys(payload).length) await post("/api/settings", payload);
   el("apiKeysModal").hidden = true;
   el("apiKeysForm").reset();
@@ -2537,6 +2549,10 @@ function bindEvents() {
   el("clearApiKeysFormBtn").addEventListener("click", () => {
     el("siliconflowKeyInput").value = "";
     el("openaiKeyInput").value = "";
+    el("siliconflowBaseUrlInput").value = "";
+    el("openaiBaseUrlInput").value = "";
+    el("openaiModelInput").value = "";
+    el("openaiApiStyleInput").value = "auto";
   });
   el("tabRow").addEventListener("click", async (event) => {
     const button = event.target.closest("[data-tab]");

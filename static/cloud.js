@@ -32,7 +32,7 @@ const modelOptions = [
   ["glm", "GLM-5.1 Pro"],
   ["openai_gpt52_pro", "OpenAI GPT-5.2 Pro"],
   ["openai_gpt5_pro", "OpenAI GPT-5 Pro"],
-  ["openai_gpt55", "OpenAI GPT-5.5"],
+  ["openai_gpt55", "OpenAI / Local-compatible"],
   ["openai_gpt55_pro_20260423", "OpenAI GPT-5.5 Pro 2026-04-23"],
 ];
 

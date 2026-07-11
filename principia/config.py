@@ -39,6 +39,7 @@ class Settings:
     request_timeout: int
     slow_request_timeout: int
     ssl_verify: bool
+    openai_api_style: str = "auto"
 
     @property
     def llm_available(self) -> bool:
@@ -85,4 +86,5 @@ def get_settings() -> Settings:
         request_timeout=int(os.getenv("PRINCIPIA_REQUEST_TIMEOUT", "180")),
         slow_request_timeout=int(os.getenv("PRINCIPIA_SLOW_REQUEST_TIMEOUT", "420")),
         ssl_verify=os.getenv("PRINCIPIA_SSL_VERIFY", "1").strip().lower() not in {"0", "false", "no"},
+        openai_api_style=os.getenv("PRINCIPIA_OPENAI_API_STYLE", "auto").strip().lower() or "auto",
     )
