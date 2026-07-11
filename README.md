@@ -136,6 +136,7 @@ The key design choice is that **idea generation is not a single prompt**. It is 
 The official notebook is included in the repository:
 
 - [`Principia-v1.3/examples/principia_v13_tutorial.ipynb`](Principia-v1.3/examples/principia_v13_tutorial.ipynb)
+- [`Principia-v1.3/examples/principia_retrieval_tutorial.ipynb`](Principia-v1.3/examples/principia_retrieval_tutorial.ipynb) — online retrieval with embedding reranking
 
 ### 1. Install and select a notebook kernel
 

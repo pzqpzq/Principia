@@ -1,8 +1,9 @@
 # Principia V1.3 Examples
 
-The official quickstart notebook is:
+The official notebooks are:
 
-- `principia_v13_tutorial.ipynb`
+- `principia_v13_tutorial.ipynb` — the full real-LLM framework workflow.
+- `principia_retrieval_tutorial.ipynb` — an online shared-retrieval walkthrough with LLM query planning and embedding reranking.
 
 It demonstrates the full real-LLM workflow:
 
@@ -12,6 +13,11 @@ It demonstrates the full real-LLM workflow:
 4. Generate a V1.3 idea.
 5. Compare the generated idea against extracted prior ideas.
 6. Export visible local files under `principia_project/principia_outputs/latest/`.
+
+The retrieval tutorial queries arXiv, OpenAlex, Crossref, and Semantic Scholar,
+then compares BM25 ranking with SiliconFlow embedding reranking. Set
+`SILICONFLOW_API_KEY` in the environment before running it; the key is used for
+the LLM planner and embedding client, not stored in the notebook.
 
 ## Resume From Existing Features
 
