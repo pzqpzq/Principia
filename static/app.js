@@ -2537,11 +2537,6 @@ function bindEvents() {
     }
   });
   el("clearRecordsBtn").addEventListener("click", () => {
-    const projectName = state.activeProject?.name || "this project";
-    el("clearRecordsMessage").textContent =
-      state.activeProjectId && state.activeProjectId !== "default"
-        ? `This removes local records from ${projectName}. Records shared with other projects are kept, and the project shell is kept.`
-        : "This removes local works, extracted ideas, principles, takeaways, benchmarks, baselines, generated ideas, run history, evidence links, and v1 memory. Project shells are kept.";
     el("clearRecordsModal").hidden = false;
   });
   el("cancelClearRecordsBtn").addEventListener("click", () => {
