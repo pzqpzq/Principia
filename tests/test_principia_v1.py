@@ -21,6 +21,8 @@ from principia.models import BaselineRecord, BenchmarkRecord, FieldProfile, Resu
 from principia.server import _display_model_alias, _openai_model_env_value, make_handler
 from principia.storage import Store
 from principia.utils import enrich_query, safe_json_loads, stable_id
+from principia_retrieval import QueryPlanner, RetrievalConfig, WorkRetriever, bm25_rank, dedupe_works, deterministic_query_plan, embedding_rerank, final_select
+from principia_retrieval.retriever import embedding_rerank_candidate_limit, resolve_rerank_mode, source_task_limits
 
 
 SPARSE_VIEW_QUERY = "Please design a method for 稀疏数据三维重建（即在有限视角下进行三维重建）任务"
@@ -34,6 +36,9 @@ SYMBOLIC_COMPACTNESS_MAS_QUERY = (
 MACHINE_DIALECT_MAS_QUERY = (
     "Please design an MAS framework where LLMs are interacting machine dialects like social interaction "
     "to improve the reasoning accuracy and reducing the tokens completion and cost"
+)
+ASTRONOMY_TRANSIENT_QUERY = (
+    "Explanation for S251112cm as a sub-solar-mass compact-object merger, kilonova, or optical transient"
 )
 VISION_CLIP_TTT_QUERY = (
     "实验资源受限情况下（4-8块4090），视觉模型和clip在few shot learning任务上的新策略。"
@@ -200,7 +205,7 @@ class PrincipiaTests(unittest.TestCase):
         dialect = enrich_query(MACHINE_DIALECT_MAS_QUERY).lower()
 
         self.assertIn("multi-agent systems", symbolic)
-        self.assertIn("automated scientific discovery", symbolic)
+        self.assertIn("scientific reasoning", symbolic)
         self.assertIn("minimum description length", symbolic)
         self.assertIn("agent communication protocol", dialect)
         self.assertIn("token efficient reasoning", dialect)
@@ -209,6 +214,673 @@ class PrincipiaTests(unittest.TestCase):
         self.assertIn('all:"multi-agent" AND all:"large language model"', queries)
         self.assertIn('all:"symbolic reasoning" AND all:"scientific discovery"', queries)
         self.assertNotIn("all:compactness", queries[:6])
+
+    def test_deterministic_query_plan_uses_generic_terms_without_domain_rules(self) -> None:
+        plan = deterministic_query_plan(ASTRONOMY_TRANSIENT_QUERY)
+        expanded = enrich_query(ASTRONOMY_TRANSIENT_QUERY).lower()
+        queries = build_arxiv_queries(ASTRONOMY_TRANSIENT_QUERY)
+
+        self.assertFalse(plan.ai_intent)
+        self.assertEqual([], plan.domain_hints)
+        self.assertEqual([], plan.exclude_terms)
+        self.assertTrue(any("S251112cm" in query for query in plan.search_queries))
+        self.assertTrue(any("compact-object merger" in query.lower() for query in plan.search_queries))
+        self.assertFalse(any("large language model" in query.lower() for query in plan.search_queries))
+        self.assertFalse(any("multi-agent" in query.lower() for query in plan.search_queries))
+        self.assertNotIn("large language model", expanded)
+        self.assertNotIn("multi-agent systems", expanded)
+        self.assertTrue(any("S251112cm" in query for query in queries))
+        self.assertIn('all:"kilonova" AND all:"electromagnetic counterpart"', queries)
+        self.assertFalse(any("large language model" in query.lower() for query in queries))
+        self.assertFalse(any("multi-agent" in query.lower() for query in queries))
+
+    def test_deterministic_query_plan_does_not_inject_fixed_ai_queries(self) -> None:
+        plan = deterministic_query_plan(MACHINE_DIALECT_MAS_QUERY)
+        injected = {
+            "large language model multi-agent systems",
+            "llm agents scientific discovery",
+            "agent communication large language model",
+            "multi-agent debate reasoning",
+        }
+
+        self.assertFalse(plan.ai_intent)
+        self.assertEqual([], plan.domain_hints)
+        self.assertEqual([], plan.exclude_terms)
+        self.assertFalse(any(query.lower() in injected for query in plan.search_queries))
+        self.assertTrue(any("machine dialect" in query.lower() for query in plan.search_queries))
+        self.assertTrue(any("reasoning accuracy" in query.lower() for query in plan.search_queries))
+
+    def test_query_planner_ignores_llm_domain_hints_and_exclude_terms(self) -> None:
+        class PlannerLLM:
+            def __init__(self) -> None:
+                self.user_prompt = ""
+
+            def available(self) -> bool:
+                return True
+
+            def chat_json(self, system: str, user: str, **kwargs):
+                self.user_prompt = user
+                return {
+                    "search_queries": ["compact machine dialect agent communication"],
+                    "entities": ["machine dialect"],
+                    "key_phrases": ["token efficient reasoning"],
+                    "domain_hints": ["ai"],
+                    "exclude_terms": ["non-ai topic"],
+                }
+
+        llm = PlannerLLM()
+        plan = QueryPlanner(llm, use_llm=True).plan(MACHINE_DIALECT_MAS_QUERY)
+
+        self.assertIn("compact machine dialect agent communication", plan.search_queries)
+        self.assertIn("machine dialect", plan.entities)
+        self.assertIn("token efficient reasoning", plan.key_phrases)
+        self.assertFalse(plan.ai_intent)
+        self.assertEqual([], plan.domain_hints)
+        self.assertEqual([], plan.exclude_terms)
+        self.assertIn("Field definitions:", llm.user_prompt)
+        self.assertIn("search_queries: 5-8 concise plain-text academic search strings", llm.user_prompt)
+        self.assertIn("entities: explicit named entities", llm.user_prompt)
+        self.assertIn("key_phrases: short noun phrases", llm.user_prompt)
+        self.assertIn("Use the same generic strategy for every research goal", llm.user_prompt)
+        self.assertIn("do not add exclusion terms", llm.user_prompt)
+
+    def test_query_planner_mixes_deterministic_anchors_llm_queries_and_goal_fallback(self) -> None:
+        llm_queries = [
+            "compact machine dialect agent communication",
+            "token efficient multi agent reasoning",
+            "llm agent social interaction protocol",
+            "reasoning accuracy communication overhead",
+            "cost aware llm collaboration",
+            "machine language emergent communication",
+            "multi agent debate efficiency",
+        ]
+
+        class PlannerLLM:
+            def available(self) -> bool:
+                return True
+
+            def chat_json(self, system: str, user: str, **kwargs):
+                return {"search_queries": llm_queries, "entities": [], "key_phrases": []}
+
+        deterministic = deterministic_query_plan(MACHINE_DIALECT_MAS_QUERY).search_queries
+        plan = QueryPlanner(PlannerLLM(), use_llm=True).plan(MACHINE_DIALECT_MAS_QUERY, max_queries=8)
+
+        self.assertEqual(8, len(plan.search_queries))
+        self.assertEqual(deterministic[:2], plan.search_queries[:2])
+        self.assertEqual(llm_queries[:5], plan.search_queries[2:7])
+        self.assertEqual(MACHINE_DIALECT_MAS_QUERY, plan.search_queries[7])
+        self.assertEqual(
+            {
+                "max_queries": 8,
+                "deterministic_query_count": len(deterministic),
+                "llm_query_count": len(llm_queries),
+                "mixed_query_count": 8,
+                "goal_fallback_included": True,
+            },
+            plan.trace["query_mixing"],
+        )
+
+    def test_mass_does_not_match_mas_trigger(self) -> None:
+        expanded = enrich_query("sub-solar mass kilonova optical transient").lower()
+        queries = build_arxiv_queries("sub-solar mass kilonova optical transient")
+
+        self.assertNotIn("multi-agent systems", expanded)
+        self.assertFalse(any("large language model" in query.lower() for query in queries))
+        self.assertFalse(any("multi-agent" in query.lower() for query in queries))
+        self.assertTrue(any("kilonova" in query.lower() for query in queries))
+
+    def test_shared_retriever_bm25_reranks_textual_match_without_llm(self) -> None:
+        candidates = [
+            {
+                "work_id": "W-HIGHCITE",
+                "title": "Highly cited clinical trial meta analysis",
+                "abstract": "A broad medical intervention review with many citations but no connection to sparse-view neural rendering.",
+                "year": 2026,
+                "venue_or_source": "Nature",
+                "citation_count": 5000,
+                "source": "fake",
+            },
+            {
+                "work_id": "W-NERF",
+                "title": "Sparse-view neural radiance fields with depth regularization",
+                "abstract": "A method for neural radiance field reconstruction under limited views using depth and geometry regularization.",
+                "year": 2025,
+                "venue_or_source": "CVPR",
+                "citation_count": 5,
+                "source": "fake",
+            },
+        ]
+
+        def source(query: str, limit: int, timeout: float):
+            return candidates[:limit]
+
+        result = WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(use_llm_planner=False, rerank_mode="bm25", source_names=["fake"], max_raw_candidates=20),
+        ).search("sparse-view neural radiance field depth regularization", target_count=1, llm=None)
+
+        self.assertEqual(result.selected_works[0]["work_id"], "W-NERF")
+        self.assertGreater(result.selected_works[0]["community_signals"]["bm25_score"], 0)
+
+    def test_shared_retriever_uses_llm_planner_with_bm25_ranking(self) -> None:
+        calls: list[str] = []
+        queries_seen: list[str] = []
+
+        class PlannerOnlyLLM:
+            def available(self) -> bool:
+                return True
+
+            def chat_json(self, system: str, user: str, **kwargs):
+                calls.append(user)
+                return {
+                    "search_queries": ["compact machine dialect communication"],
+                    "entities": ["machine dialect"],
+                    "key_phrases": ["token efficient communication"],
+                }
+
+        def source(query: str, limit: int, timeout: float):
+            queries_seen.append(query)
+            if query == "compact machine dialect communication":
+                return [
+                    {
+                        "work_id": "W-DIALECT",
+                        "title": "Compact machine dialect communication for multi-agent reasoning",
+                        "abstract": "LLM agents exchange concise machine dialect messages to reduce token cost and improve reasoning.",
+                        "year": 2026,
+                        "venue_or_source": "arXiv",
+                        "source": "fake",
+                    }
+                ]
+            return []
+
+        result = WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(use_llm_planner=True, rerank_mode="bm25", source_names=["fake"], max_queries=4, max_raw_candidates=20),
+        ).search(MACHINE_DIALECT_MAS_QUERY, target_count=1, llm=PlannerOnlyLLM())
+
+        self.assertEqual(["W-DIALECT"], [work["work_id"] for work in result.selected_works])
+        self.assertEqual(1, len(calls))
+        self.assertIn("compact machine dialect communication", queries_seen)
+
+    def test_final_select_tops_up_after_filtering_low_score_out_of_scope(self) -> None:
+        plan = deterministic_query_plan("sparse-view neural radiance field depth regularization")
+        works = [
+            {"work_id": "W-LOW", "title": "Unrelated paper", "abstract": "", "_retrieval_score": 0.01, "relation_label": "out_of_scope"},
+            {"work_id": "W-OK", "title": "Sparse-view neural radiance fields", "abstract": "", "_retrieval_score": 0.55, "relation_label": "direct"},
+        ]
+
+        selected = final_select(works, 2, plan)
+
+        self.assertEqual(["W-OK", "W-LOW"], [work["work_id"] for work in selected])
+
+    @unittest.skip("LLM reranking has been removed; BM25 and embedding reranking are tested separately.")
+    def test_shared_retriever_reranks_astronomy_over_ai_and_geophysics(self) -> None:
+        candidates = [
+            {
+                "work_id": "W-S251112CM",
+                "title": "Follow-up observations of S251112cm as an optical transient",
+                "abstract": "S251112cm is discussed as a kilonova electromagnetic counterpart to a compact-object merger.",
+                "year": 2026,
+                "venue_or_source": "Astrophysical Journal Letters",
+                "source": "fake",
+                "url_or_doi": "https://example.test/s251112cm",
+            },
+            {
+                "work_id": "W-GEOPHYS",
+                "title": "Transient electromagnetic inversion for mineral exploration",
+                "abstract": "Grounded-source transient electromagnetic survey inversion for geophysical mineral exploration.",
+                "year": 2026,
+                "venue_or_source": "Geophysics",
+                "citation_count": 500,
+                "source": "fake",
+            },
+            {
+                "work_id": "W-LLM",
+                "title": "Large language models for scientific discovery",
+                "abstract": "An LLM agent system for automated scientific discovery and hypothesis generation.",
+                "year": 2026,
+                "venue_or_source": "NeurIPS",
+                "citation_count": 1000,
+                "source": "fake",
+            },
+        ]
+
+        def source(query: str, limit: int, timeout: float):
+            return candidates[:limit]
+
+        class RerankLLM:
+            def available(self) -> bool:
+                return True
+
+            def chat_json(self, system: str, user: str, **kwargs):
+                return {
+                    "items": [
+                        {
+                            "work_id": "W-S251112CM",
+                            "relevance_score": 0.96,
+                            "relation_label": "direct",
+                            "rationale": "Directly studies S251112cm as the target transient.",
+                            "reject_reason": "",
+                        },
+                        {
+                            "work_id": "W-GEOPHYS",
+                            "relevance_score": 0.03,
+                            "relation_label": "out_of_scope",
+                            "rationale": "",
+                            "reject_reason": "Geophysical transient electromagnetic engineering, not astronomy.",
+                        },
+                        {
+                            "work_id": "W-LLM",
+                            "relevance_score": 0.02,
+                            "relation_label": "out_of_scope",
+                            "rationale": "",
+                            "reject_reason": "Not relevant to the target transient.",
+                        },
+                    ]
+                }
+
+        result = WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(use_llm_planner=False, use_llm_rerank=True, source_names=["fake"], max_raw_candidates=20),
+        ).search(ASTRONOMY_TRANSIENT_QUERY, target_count=3, llm=RerankLLM())
+
+        self.assertEqual(result.selected_works[0]["work_id"], "W-S251112CM")
+        self.assertNotIn("W-GEOPHYS", [work["work_id"] for work in result.selected_works])
+        self.assertNotIn("W-LLM", [work["work_id"] for work in result.selected_works])
+
+    @unittest.skip("LLM reranking has been removed; BM25 and embedding reranking are tested separately.")
+    def test_shared_retriever_keeps_ai_work_when_reranker_scores_it(self) -> None:
+        candidates = [
+            {
+                "work_id": "W-S251112CM",
+                "title": "Follow-up observations of S251112cm as an optical transient",
+                "abstract": "S251112cm is discussed as a kilonova electromagnetic counterpart to a compact-object merger.",
+                "year": 2026,
+                "venue_or_source": "Astrophysical Journal Letters",
+                "source": "fake",
+            },
+            {
+                "work_id": "W-LLM",
+                "title": "Large language models for scientific discovery",
+                "abstract": "An LLM agent system for automated scientific discovery and hypothesis generation.",
+                "year": 2026,
+                "venue_or_source": "NeurIPS",
+                "citation_count": 1000,
+                "source": "fake",
+            },
+        ]
+
+        def source(query: str, limit: int, timeout: float):
+            return candidates[:limit]
+
+        class RerankLLM:
+            def available(self) -> bool:
+                return True
+
+            def chat_json(self, system: str, user: str, **kwargs):
+                return {
+                    "items": [
+                        {
+                            "work_id": "W-S251112CM",
+                            "relevance_score": 0.96,
+                            "relation_label": "direct",
+                            "rationale": "Directly studies S251112cm as the target transient.",
+                            "reject_reason": "",
+                        },
+                        {
+                            "work_id": "W-LLM",
+                            "relevance_score": 0.25,
+                            "relation_label": "out_of_scope",
+                            "rationale": "Useful adjacent AI literature despite not being the target astronomy object.",
+                            "reject_reason": "",
+                        },
+                    ]
+                }
+
+        result = WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(use_llm_planner=False, use_llm_rerank=True, source_names=["fake"], max_raw_candidates=20),
+        ).search(ASTRONOMY_TRANSIENT_QUERY, target_count=2, llm=RerankLLM())
+
+        selected_ids = [work["work_id"] for work in result.selected_works]
+        self.assertIn("W-S251112CM", selected_ids)
+        self.assertIn("W-LLM", selected_ids)
+
+    @unittest.skip("LLM reranking has been removed; BM25 and embedding reranking are tested separately.")
+    def test_shared_retriever_llm_rerank_prompt_defines_scores_and_labels(self) -> None:
+        candidates = [
+            {
+                "work_id": "W-S251112CM",
+                "title": "S251112cm follow-up observations",
+                "abstract": "Optical transient follow-up of S251112cm and possible kilonova interpretation.",
+                "year": 2026,
+                "venue_or_source": "arXiv",
+                "source": "fake",
+            }
+        ]
+
+        def source(query: str, limit: int, timeout: float):
+            return candidates[:limit]
+
+        class RerankLLM:
+            def __init__(self) -> None:
+                self.user_prompt = ""
+
+            def available(self) -> bool:
+                return True
+
+            def chat_json(self, system: str, user: str, **kwargs):
+                self.user_prompt = user
+                return {
+                    "items": [
+                        {
+                            "work_id": "W-S251112CM",
+                            "relevance_score": 0.95,
+                            "relation_label": "direct",
+                            "rationale": "Directly studies the target transient.",
+                            "reject_reason": "",
+                        }
+                    ]
+                }
+
+        llm = RerankLLM()
+        WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(use_llm_planner=False, use_llm_rerank=True, source_names=["fake"], max_raw_candidates=20),
+        ).search(ASTRONOMY_TRANSIENT_QUERY, target_count=1, llm=llm)
+
+        self.assertIn('Return {"items":[...]}', llm.user_prompt)
+        self.assertIn("0.90-1.00 central match", llm.user_prompt)
+        self.assertIn("0.10-0.34 weak connection", llm.user_prompt)
+        self.assertIn("relation_label must be one of", llm.user_prompt)
+        self.assertIn("Keep rationale under 20 words", llm.user_prompt)
+        self.assertIn("Set reject_reason only for out_of_scope items", llm.user_prompt)
+        self.assertNotIn("Do not reward AI", llm.user_prompt)
+
+    def test_shared_retriever_deterministic_exact_entity_beats_citation(self) -> None:
+        candidates = [
+            {
+                "work_id": "W-S251112CM",
+                "title": "S251112cm follow-up observations",
+                "abstract": "Optical transient follow-up of S251112cm and possible kilonova interpretation.",
+                "year": 2026,
+                "venue_or_source": "arXiv",
+                "source": "fake",
+            },
+            {
+                "work_id": "W-HIGHCITE",
+                "title": "Large language models for scientific discovery",
+                "abstract": "A highly cited LLM agent system for scientific discovery.",
+                "year": 2026,
+                "venue_or_source": "Nature",
+                "citation_count": 5000,
+                "source": "fake",
+            },
+        ]
+
+        def source(query: str, limit: int, timeout: float):
+            return candidates[:limit]
+
+        result = WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(use_llm_planner=False, source_names=["fake"], max_raw_candidates=20),
+        ).search(ASTRONOMY_TRANSIENT_QUERY, target_count=2, llm=None)
+
+        self.assertEqual(result.selected_works[0]["work_id"], "W-S251112CM")
+
+    def test_shared_retriever_resolves_embedding_rerank_mode(self) -> None:
+        self.assertEqual("embedding_rerank", resolve_rerank_mode(RetrievalConfig(rerank_mode="embedding-rerank")))
+        self.assertEqual("embedding_rerank", resolve_rerank_mode(RetrievalConfig(rerank_mode="embedding")))
+        self.assertEqual("bm25", resolve_rerank_mode(RetrievalConfig(rerank_mode="llm_rerank")))
+
+    def test_shared_retriever_embedding_rerank_candidate_limit(self) -> None:
+        self.assertEqual(50, embedding_rerank_candidate_limit(1))
+        self.assertEqual(100, embedding_rerank_candidate_limit(50))
+        self.assertEqual(80, embedding_rerank_candidate_limit(25, 80))
+        self.assertEqual(25, embedding_rerank_candidate_limit(25, 10))
+
+    def test_dedupe_keeps_same_title_with_distinct_strong_identifiers(self) -> None:
+        works = dedupe_works(
+            [
+                {"title": "Shared title", "doi": "10.1000/first", "abstract": "First publication."},
+                {"title": "Shared title", "doi": "10.1000/second", "abstract": "Second publication."},
+            ]
+        )
+
+        self.assertEqual(2, len(works))
+        self.assertEqual({"10.1000/first", "10.1000/second"}, {work["doi"] for work in works})
+
+    def test_shared_retriever_enforces_raw_candidate_budget(self) -> None:
+        requested_limits: list[int] = []
+
+        def make_source(name: str):
+            def source(query: str, limit: int, timeout: float):
+                requested_limits.append(limit)
+                return [
+                    {
+                        "work_id": f"{name}-{query}-{index}",
+                        "title": f"{name} {query} result {index}",
+                        "abstract": "alpha beta gamma retrieval result",
+                        "source": name,
+                    }
+                    for index in range(limit + 2)
+                ]
+
+            return source
+
+        result = WorkRetriever(
+            sources={"one": make_source("one"), "two": make_source("two")},
+            config=RetrievalConfig(
+                use_llm_planner=False,
+                rerank_mode="bm25",
+                source_names=["one", "two"],
+                max_queries=2,
+                max_raw_candidates=3,
+                min_relevance=0.0,
+            ),
+        ).search("alpha beta gamma", target_count=3, llm=None)
+
+        self.assertEqual([1, 1, 1, 0], source_task_limits(4, 3))
+        self.assertEqual(3, sum(requested_limits))
+        self.assertEqual(3, len(result.candidates))
+
+    def test_shared_retriever_uses_full_raw_budget_without_task_cap(self) -> None:
+        self.assertEqual([50] * 8, source_task_limits(8, 400))
+        self.assertEqual(400, sum(source_task_limits(8, 400)))
+
+    def test_shared_retriever_reserves_full_goal_as_fallback_query(self) -> None:
+        goal = "full user goal for scientific retrieval"
+        events: list[tuple[str, dict]] = []
+
+        class PlannerLLM:
+            def available(self) -> bool:
+                return True
+
+            def chat_json(self, system: str, user: str, **kwargs):
+                return {
+                    "search_queries": ["query one", "query two", "query three"],
+                    "entities": [],
+                    "key_phrases": [],
+                }
+
+        def source(query: str, limit: int, timeout: float):
+            return []
+
+        WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(
+                use_llm_planner=True,
+                rerank_mode="bm25",
+                source_names=["fake"],
+                max_queries=3,
+                max_raw_candidates=9,
+            ),
+        ).search(goal, target_count=1, llm=PlannerLLM(), callback=lambda event, payload: events.append((event, payload)))
+
+        query_plan = next(payload for event, payload in events if event == "query_plan")
+        self.assertEqual(3, len(query_plan["queries"]))
+        self.assertEqual(goal, query_plan["queries"][-1])
+        self.assertEqual(goal, query_plan["fallback_query"])
+        self.assertTrue(query_plan["planner_trace"]["llm_planner"])
+
+    def test_shared_retriever_reports_stage_diagnostics(self) -> None:
+        events: list[tuple[str, dict]] = []
+
+        def source(query: str, limit: int, timeout: float):
+            return [
+                {
+                    "work_id": f"W-{index}",
+                    "title": f"Neural retrieval method {index}",
+                    "abstract": "Dense retrieval for scientific literature search.",
+                    "source": "fake",
+                }
+                for index in range(limit)
+            ]
+
+        WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(
+                use_llm_planner=False,
+                rerank_mode="bm25",
+                source_names=["fake"],
+                max_queries=1,
+                max_raw_candidates=4,
+            ),
+        ).search(
+            "neural retrieval",
+            target_count=2,
+            llm=None,
+            callback=lambda event, payload: events.append((event, payload)),
+        )
+
+        diagnostics = dict(next(payload for event, payload in events if event == "retrieval_diagnostics"))
+        self.assertEqual("bm25", diagnostics["rerank_mode"])
+        self.assertEqual(4, diagnostics["raw_count"])
+        self.assertEqual(4, diagnostics["candidate_count"])
+        self.assertEqual(4, diagnostics["bm25_scored_count"])
+        self.assertEqual(0, diagnostics["embedding_input_count"])
+        self.assertEqual(2, diagnostics["selected_count"])
+
+    def test_bm25_ranks_chinese_text(self) -> None:
+        goal = "稀疏数据三维重建"
+        ranked = bm25_rank(
+            goal,
+            [
+                {"work_id": "W-RELEVANT", "title": "稀疏数据三维重建方法", "abstract": "有限视角重建的几何约束"},
+                {"work_id": "W-OTHER", "title": "语言模型推理", "abstract": "文本生成方法"},
+            ],
+            deterministic_query_plan(goal),
+        )
+
+        self.assertEqual("W-RELEVANT", ranked[0]["work_id"])
+        self.assertGreater(ranked[0]["_bm25_score"], 0.0)
+
+    def test_shared_retriever_embedding_rerank_runs_after_bm25_prefilter(self) -> None:
+        candidates = [
+            {
+                "work_id": "W-BM25",
+                "title": "Machine dialect communication for token efficient agents",
+                "abstract": "A relevant candidate found by metadata search.",
+                "year": 2026,
+                "venue_or_source": "arXiv",
+                "source": "fake",
+            },
+            {
+                "work_id": "W-EMBED",
+                "title": "Social interaction protocols for LLM multi-agent reasoning",
+                "abstract": "A central work on LLM agents interacting through compact communication protocols.",
+                "year": 2026,
+                "venue_or_source": "NeurIPS",
+                "source": "fake",
+            },
+        ]
+
+        def source(query: str, limit: int, timeout: float):
+            return candidates[:limit]
+
+        class EmbeddingClient:
+            def embed(self, texts: list[str], **kwargs):
+                vectors = []
+                for text in texts:
+                    lower = text.lower()
+                    if "research_goal:" in lower or "social interaction protocols" in lower:
+                        vectors.append([1.0, 0.0])
+                    else:
+                        vectors.append([0.0, 1.0])
+                return vectors
+
+        result = WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(use_llm_planner=False, rerank_mode="embedding_rerank", source_names=["fake"], max_raw_candidates=20, min_relevance=0.0),
+        ).search(MACHINE_DIALECT_MAS_QUERY, target_count=1, llm=None, embedding_client=EmbeddingClient())
+
+        self.assertEqual("W-EMBED", result.selected_works[0]["work_id"])
+        self.assertEqual(1.0, result.selected_works[0]["community_signals"]["embedding_similarity"])
+        self.assertEqual("Qwen/Qwen3-Embedding-4B", result.selected_works[0]["community_signals"]["embedding_model"])
+
+    def test_shared_retriever_embedding_rerank_falls_back_to_bm25_on_error(self) -> None:
+        candidates = [
+            {
+                "work_id": "W-HIGHCITE",
+                "title": "Highly cited clinical trial meta analysis",
+                "abstract": "A broad medical intervention review with many citations but no sparse-view neural rendering.",
+                "year": 2026,
+                "venue_or_source": "Nature",
+                "citation_count": 5000,
+                "source": "fake",
+            },
+            {
+                "work_id": "W-NERF",
+                "title": "Sparse-view neural radiance fields with depth regularization",
+                "abstract": "A method for neural radiance field reconstruction under limited views using depth and geometry regularization.",
+                "year": 2025,
+                "venue_or_source": "CVPR",
+                "citation_count": 5,
+                "source": "fake",
+            },
+        ]
+
+        def source(query: str, limit: int, timeout: float):
+            return candidates[:limit]
+
+        class FailingEmbeddingClient:
+            def embed(self, texts: list[str], **kwargs):
+                raise RuntimeError("embedding service unavailable")
+
+        result = WorkRetriever(
+            sources={"fake": source},
+            config=RetrievalConfig(use_llm_planner=False, rerank_mode="embedding_rerank", source_names=["fake"], max_raw_candidates=20, min_relevance=0.0),
+        ).search("sparse-view neural radiance field depth regularization", target_count=1, llm=None, embedding_client=FailingEmbeddingClient())
+
+        self.assertEqual("W-NERF", result.selected_works[0]["work_id"])
+        self.assertIn("embedding service unavailable", result.selected_works[0]["community_signals"]["embedding_rerank_error"])
+
+    def test_embedding_rerank_caches_duplicate_texts_within_run(self) -> None:
+        plan = deterministic_query_plan("compact communication protocols")
+        calls: list[list[str]] = []
+
+        class CountingEmbeddingClient:
+            def embed(self, texts: list[str], **kwargs):
+                calls.append(list(texts))
+                return [[1.0, 0.0] for _ in texts]
+
+        works = [
+            {"work_id": "W-1", "title": "Compact communication protocols", "abstract": "Shared text.", "venue_or_source": "arXiv"},
+            {"work_id": "W-2", "title": "Compact communication protocols", "abstract": "Shared text.", "venue_or_source": "arXiv"},
+        ]
+
+        embedding_rerank(
+            "compact communication protocols",
+            works,
+            plan,
+            model="Qwen/Qwen3-Embedding-4B",
+            dimensions=1024,
+            batch_size=10,
+            embedding_client=CountingEmbeddingClient(),
+        )
+
+        self.assertEqual(1, len(calls))
+        self.assertEqual(2, len(calls[0]))
 
     def test_principle_merge_upgrades_legacy_sparse_record(self) -> None:
         store = self.make_store()
@@ -2298,8 +2970,8 @@ class PrincipiaTests(unittest.TestCase):
         ]
         original = engine_module.search_hybrid_sources
 
-        def fake_search(query, max_results=100, timeout=12):
-            calls.append({"query": query, "max_results": max_results, "timeout": timeout})
+        def fake_search(query, max_results=100, timeout=12, **kwargs):
+            calls.append({"query": query, "max_results": max_results, "timeout": timeout, **kwargs})
             return works
 
         engine_module.search_hybrid_sources = fake_search
@@ -2314,8 +2986,46 @@ class PrincipiaTests(unittest.TestCase):
             engine_module.search_hybrid_sources = original
 
         self.assertEqual(calls[0]["max_results"], 200)
+        self.assertEqual(calls[0]["retrieval_rerank_mode"], "bm25")
         self.assertEqual(result["run"]["target_works"], 200)
         self.assertEqual(result["summary"]["project"]["settings"]["target_works"], 200)
+
+    def test_v2_research_passes_embedding_rerank_mode_to_source_search(self) -> None:
+        store = self.make_store()
+        engine = PrincipiaEngine(store=store, llm=NoLLM())  # type: ignore[arg-type]
+        project = engine.create_project(name="Embedding Rerank", goal_text=MACHINE_DIALECT_MAS_QUERY)
+        calls = []
+        works = [
+            {
+                "work_id": "W-EMBED",
+                "title": "Social interaction protocols for LLM multi-agent reasoning",
+                "authors": ["A. Researcher"],
+                "year": 2026,
+                "venue_or_source": "arXiv",
+                "url_or_doi": "https://example.org/embed",
+                "abstract": "LLM agents interact through compact communication protocols.",
+            }
+        ]
+        original = engine_module.search_hybrid_sources
+
+        def fake_search(query, max_results=100, timeout=12, **kwargs):
+            calls.append({"query": query, "max_results": max_results, "timeout": timeout, **kwargs})
+            return works
+
+        engine_module.search_hybrid_sources = fake_search
+        try:
+            result = engine.v2_research_project(
+                project["field_id"],
+                goal_text=MACHINE_DIALECT_MAS_QUERY,
+                target_works=1,
+                retrieval_rerank_mode="embedding_rerank",
+            )
+        finally:
+            engine_module.search_hybrid_sources = original
+
+        self.assertEqual(calls[0]["retrieval_rerank_mode"], "embedding_rerank")
+        self.assertEqual(result["run"]["retrieval_rerank_mode"], "embedding_rerank")
+        self.assertEqual(result["summary"]["project"]["settings"]["retrieval_rerank_mode"], "embedding_rerank")
 
     def test_v2_source_sentence_extraction_rejects_incomplete_template_filler(self) -> None:
         store = self.make_store()
@@ -2839,6 +3549,75 @@ class PrincipiaTests(unittest.TestCase):
         self.assertEqual(store.counts()["source_works"], 0)
         self.assertEqual(store.counts()["existed_ideas"], 0)
         self.assertGreaterEqual(cleared["deleted"].get("project_memberships", 0), 1)
+
+    def test_v2_clear_project_local_records_keeps_other_project_records(self) -> None:
+        store = self.make_store()
+        engine = PrincipiaEngine(store=store, llm=NoLLM())  # type: ignore[arg-type]
+        left = engine.create_project(name="Left Project", goal_text="left reasoning")
+        right = engine.create_project(name="Right Project", goal_text="right reasoning")
+        shared_work = engine._v2_upsert_work({"work_id": "W-SHARED", "title": "Shared Work", "abstract": "Shared evidence.", "year": 2026}, model_mode="metadata")
+        left_work = engine._v2_upsert_work({"work_id": "W-LEFT", "title": "Left Work", "abstract": "Left evidence.", "year": 2026}, model_mode="metadata")
+        right_work = engine._v2_upsert_work({"work_id": "W-RIGHT", "title": "Right Work", "abstract": "Right evidence.", "year": 2026}, model_mode="metadata")
+        shared_idea = engine._v2_upsert_canonical(
+            "existed_ideas",
+            "shared diagnostic routing",
+            {
+                "title": "Shared Diagnostic Routing",
+                "idea_text": "Use shared diagnostic routing to decide when evidence should alter the reasoning path.",
+                "source_work_ids": [shared_work["work_id"]],
+            },
+            model_mode="efficient",
+        )
+        left_idea = engine._v2_upsert_canonical(
+            "existed_ideas",
+            "left calibration gate",
+            {
+                "title": "Left Calibration Gate",
+                "idea_text": "Use a left-project calibration gate to decide when local evidence should override a default path.",
+                "source_work_ids": [left_work["work_id"]],
+            },
+            model_mode="efficient",
+        )
+        right_idea = engine._v2_upsert_canonical(
+            "existed_ideas",
+            "right verification gate",
+            {
+                "title": "Right Verification Gate",
+                "idea_text": "Use a right-project verification gate to decide when local evidence should override a default path.",
+                "source_work_ids": [right_work["work_id"]],
+            },
+            model_mode="efficient",
+        )
+        engine.add_project_memberships(left["field_id"], "source_works", [shared_work["work_id"], left_work["work_id"]])
+        engine.add_project_memberships(left["field_id"], "existed_ideas", [shared_idea["canonical_id"], left_idea["canonical_id"]])
+        engine.add_project_memberships(right["field_id"], "source_works", [shared_work["work_id"], right_work["work_id"]])
+        engine.add_project_memberships(right["field_id"], "existed_ideas", [shared_idea["canonical_id"], right_idea["canonical_id"]])
+        left_profile = store.get_item("field_profiles", left["field_id"])
+        left_profile["work_ids"] = [shared_work["work_id"], left_work["work_id"]]
+        left_profile["idea_ids"] = []
+        store.upsert("field_profiles", left_profile, "field_id")
+
+        cleared = engine.clear_project_local_records(left["field_id"])
+
+        self.assertIsNotNone(store.get_item("field_profiles", left["field_id"]))
+        self.assertEqual(store.list_project_memberships(left["field_id"], include_hidden=True), [])
+        self.assertEqual(store.get_item("field_profiles", left["field_id"]).get("work_ids"), [])
+        self.assertIsNone(store.get_item("source_works", left_work["work_id"]))
+        self.assertIsNone(store.get_item("existed_ideas", left_idea["canonical_id"]))
+        self.assertIsNotNone(store.get_item("source_works", shared_work["work_id"]))
+        self.assertIsNotNone(store.get_item("existed_ideas", shared_idea["canonical_id"]))
+        self.assertIsNotNone(store.get_item("source_works", right_work["work_id"]))
+        self.assertIsNotNone(store.get_item("existed_ideas", right_idea["canonical_id"]))
+        self.assertEqual(
+            {item["record_id"] for item in store.list_project_memberships(right["field_id"], "source_works")},
+            {shared_work["work_id"], right_work["work_id"]},
+        )
+        self.assertEqual(
+            {item["canonical_id"] for item in engine.build_v2_project_tab(right["field_id"], "existed_ideas", limit=10)["items"]},
+            {shared_idea["canonical_id"], right_idea["canonical_id"]},
+        )
+        self.assertGreaterEqual(cleared["deleted"].get("project_memberships", 0), 4)
+        self.assertEqual(cleared["deleted"].get("source_works", 0), 1)
 
     def test_v2_works_tab_supports_show_more_and_sort_modes(self) -> None:
         store = self.make_store()

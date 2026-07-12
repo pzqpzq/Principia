@@ -54,7 +54,7 @@ Documentation = "https://github.com/pzqpzq/Principia"
 principia = "principia.cli:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/principia"]
+packages = ["src/principia", "src/principia_retrieval"]
 
 [tool.hatch.build.targets.sdist]
 include = [

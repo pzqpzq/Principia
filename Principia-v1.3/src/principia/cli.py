@@ -29,12 +29,14 @@ def build_parser() -> argparse.ArgumentParser:
     search = sub.add_parser("search", help="Search public research metadata.")
     search.add_argument("query")
     search.add_argument("--target-count", type=int, default=10)
+    search.add_argument("--rerank-mode", choices=["bm25", "embedding_rerank"])
 
     extract = sub.add_parser("extract", help="Search and extract features.")
     extract.add_argument("query")
     extract.add_argument("--target-count", type=int, default=5)
     extract.add_argument("--model", default="mock")
     extract.add_argument("--overwrite", action="store_true")
+    extract.add_argument("--rerank-mode", choices=["bm25", "embedding_rerank"])
 
     generate = sub.add_parser("generate", help="Search, extract, and generate one idea.")
     generate.add_argument("query")
@@ -42,6 +44,7 @@ def build_parser() -> argparse.ArgumentParser:
     generate.add_argument("--model", default="mock")
     generate.add_argument("--mode", default="calculus")
     generate.add_argument("--user-note", default="")
+    generate.add_argument("--rerank-mode", choices=["bm25", "embedding_rerank"])
 
     return parser
 
@@ -56,12 +59,12 @@ def main(argv: list[str] | None = None) -> int:
     elif args.command == "status":
         print_json({"workspace": str(ws.path), "db_path": str(ws.db_path), "counts": ws.counts()})
     elif args.command == "search":
-        print_json(ws.research.search(args.query, target_count=args.target_count, show_progress=True))
+        print_json(ws.research.search(args.query, target_count=args.target_count, rerank_mode=args.rerank_mode, show_progress=True))
     elif args.command == "extract":
-        works = ws.research.search(args.query, target_count=args.target_count, show_progress=True)
+        works = ws.research.search(args.query, target_count=args.target_count, rerank_mode=args.rerank_mode, show_progress=True)
         print_json(ws.research.extract(works, model=args.model, overwrite=args.overwrite, show_progress=True))
     elif args.command == "generate":
-        works = ws.research.search(args.query, target_count=args.target_count, show_progress=True)
+        works = ws.research.search(args.query, target_count=args.target_count, rerank_mode=args.rerank_mode, show_progress=True)
         features = ws.research.extract(works, model=args.model, show_progress=True)
         print_json(ws.ideas.generate(features, user_note=args.user_note, mode=args.mode, model=args.model, show_progress=True))
     return 0
@@ -69,4 +72,3 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

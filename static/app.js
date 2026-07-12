@@ -578,6 +578,10 @@ function getModelMode() {
   return el("modelModeInput").value || "auto";
 }
 
+function getRetrievalRerankMode() {
+  return el("useEmbeddingRerankInput")?.checked ? "embedding_rerank" : "bm25";
+}
+
 function isAdminMode() {
   return state.systemMode === "admin" && state.adminAuthenticated;
 }
@@ -807,6 +811,10 @@ function renderProjectHeader() {
   const settings = project.settings || {};
   el("modelModeInput").value = settings.model_mode || "auto";
   el("targetWorksInput").value = settings.paper_count || settings.target_works || settings.max_works || 100;
+  if (el("useEmbeddingRerankInput")) {
+    const rerankMode = settings.retrieval_rerank_mode || "bm25";
+    el("useEmbeddingRerankInput").checked = rerankMode === "embedding_rerank";
+  }
   renderTabs();
 }
 
@@ -1747,18 +1755,21 @@ async function startResearch() {
     return;
   }
   const targetWorks = getTargetWorks();
+  const retrievalRerankMode = getRetrievalRerankMode();
+  const useEmbeddingRerank = retrievalRerankMode === "embedding_rerank";
   setBusy(true, "Starting research...");
   try {
     await post("/api/v1/project/update", {
       field_id: state.activeProjectId,
       goal_text: goal,
       query: goal,
-      settings: { model_mode: getModelMode(), language: "en", source_mode: "online+local", paper_count: targetWorks, target_works: targetWorks, max_works: targetWorks },
+      settings: { model_mode: getModelMode(), language: "en", source_mode: "online+local", retrieval_rerank_mode: retrievalRerankMode, use_embedding_rerank: useEmbeddingRerank, paper_count: targetWorks, target_works: targetWorks, max_works: targetWorks },
     }).catch(() => {});
     const result = await post("/api/v1/research/start", {
       field_id: state.activeProjectId,
       goal_text: goal,
       model_mode: getModelMode(),
+      use_embedding_rerank: useEmbeddingRerank,
       target_works: targetWorks,
     });
     state.researchRunId = result.run_id;
@@ -2079,7 +2090,8 @@ async function submitProject(event) {
     await selectProject(fieldId);
     return;
   }
-  const project = await post("/api/v1/project/create", { name, description, settings: { model_mode: getModelMode() } });
+  const rerankMode = getRetrievalRerankMode();
+  const project = await post("/api/v1/project/create", { name, description, settings: { model_mode: getModelMode(), retrieval_rerank_mode: rerankMode, use_embedding_rerank: rerankMode === "embedding_rerank" } });
   closeProjectModal();
   await loadProjects(project.field_id);
   await selectProject(project.field_id);
@@ -2534,7 +2546,7 @@ function bindEvents() {
     try {
       await post("/api/v1/local-records/clear", {});
       el("clearRecordsModal").hidden = true;
-      showToast("Local records cleared.");
+      showToast("All project local records cleared.");
       state.assembler.selected = [];
       await loadProjects(state.activeProjectId);
       await loadSummary();

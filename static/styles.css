@@ -491,6 +491,27 @@ body[data-system-mode="user"] .cloud-write-action {
   align-items: end;
 }
 
+.rerank-toggle {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: fit-content;
+  color: #39463f;
+  font-size: 13px;
+  font-weight: 760;
+}
+
+.rerank-toggle input {
+  width: auto;
+  margin: 0;
+}
+
+.rerank-toggle small {
+  color: #6c776f;
+  font-size: 12px;
+  font-weight: 550;
+}
+
 .research-status {
   min-height: 92px;
   display: grid;

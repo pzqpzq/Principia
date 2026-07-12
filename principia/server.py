@@ -97,6 +97,15 @@ def _payload_has_other(value: Any) -> bool:
     return any(str(item or "").strip() == OTHER_FILTER_VALUE for item in _payload_list(value))
 
 
+def _payload_retrieval_rerank_mode(payload: dict[str, object]) -> str:
+    if "use_embedding_rerank" in payload:
+        return "embedding_rerank" if bool(payload.get("use_embedding_rerank")) else "bm25"
+    value = str(payload.get("retrieval_rerank_mode") or payload.get("paper_rerank_mode") or "").strip().lower()
+    if value in {"embedding", "embedding-rerank", "embedding_rerank"}:
+        return "embedding_rerank"
+    return "bm25"
+
+
 def _cloud_crawl_goal_text(plan: dict[str, object], payload: dict[str, object]) -> str:
     topics = ", ".join(str(item) for item in (plan.get("topics") or []) if item) or "AI research"
     venues = ", ".join(str(item) for item in (plan.get("venues") or []) if item) or "public metadata venues"
@@ -422,6 +431,7 @@ class PrincipiaRequestHandler(BaseHTTPRequestHandler):
             model_mode = str(payload.get("model_mode") or "auto")
             target_works = int(payload.get("target_works") or 100)
             force_refresh = bool(payload.get("force_refresh", False) or payload.get("force", False))
+            retrieval_rerank_mode = _payload_retrieval_rerank_mode(payload)
             run_id = f"VRUN-{int(time.time() * 1000)}"
             engine = self.engine
             store = self.store
@@ -436,6 +446,7 @@ class PrincipiaRequestHandler(BaseHTTPRequestHandler):
                     "message": "Research queued.",
                     "goal_text": goal_text,
                     "model_mode": model_mode,
+                    "retrieval_rerank_mode": retrieval_rerank_mode,
                     "target_works": target_works,
                     "counts": {},
                     "started_at": utc_now(),
@@ -453,6 +464,7 @@ class PrincipiaRequestHandler(BaseHTTPRequestHandler):
                         target_works=target_works,
                         run_id=run_id,
                         force_refresh=force_refresh,
+                        retrieval_rerank_mode=retrieval_rerank_mode,
                     )
                 except Exception:
                     # v2_research_project records the failure in research_runs.
@@ -686,6 +698,7 @@ class PrincipiaRequestHandler(BaseHTTPRequestHandler):
             model_mode = str(payload.get("model_mode") or "auto")
             target_works = int(payload.get("target_works") or payload.get("paper_count") or 100)
             force_refresh = bool(payload.get("force_refresh", False) or payload.get("force", False))
+            retrieval_rerank_mode = _payload_retrieval_rerank_mode(payload)
             run_id = f"V1RUN-{int(time.time() * 1000)}"
             self.store.upsert(
                 "research_runs",
@@ -698,6 +711,7 @@ class PrincipiaRequestHandler(BaseHTTPRequestHandler):
                     "message": "Research queued.",
                     "goal_text": goal_text,
                     "model_mode": model_mode,
+                    "retrieval_rerank_mode": retrieval_rerank_mode,
                     "target_works": target_works,
                     "counts": {},
                     "warnings": [],
@@ -716,6 +730,7 @@ class PrincipiaRequestHandler(BaseHTTPRequestHandler):
                         target_works=target_works,
                         run_id=run_id,
                         force_refresh=force_refresh,
+                        retrieval_rerank_mode=retrieval_rerank_mode,
                     )
                 except Exception as exc:
                     run = self.store.get_item("research_runs", run_id) or {"run_id": run_id}

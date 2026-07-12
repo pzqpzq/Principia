@@ -136,6 +136,7 @@ The key design choice is that **idea generation is not a single prompt**. It is 
 The official notebook is included in the repository:
 
 - [`Principia-v1.3/examples/principia_v13_tutorial.ipynb`](Principia-v1.3/examples/principia_v13_tutorial.ipynb)
+- [`Principia-v1.3/examples/principia_retrieval_tutorial.ipynb`](Principia-v1.3/examples/principia_retrieval_tutorial.ipynb) — online retrieval with embedding reranking
 
 ### 1. Install and select a notebook kernel
 
@@ -700,9 +701,10 @@ Principia is built around provenance and user control.
 The repository contains both the visual workbench and the V1.3 framework package.
 
 ```text
-Principia-v1.3/        V1.3 Python framework package, docs, tests, and examples
+Principia-v1.3/        V1.3 Python framework package, including the maintained retrieval source
 v1.3-tutorial.ipynb    V1.3 notebook tutorial
 principia/             core Python package for the visual workbench
+principia_retrieval/   compatibility link for the V1.2 visual workbench
 static/                local browser UI
 cloud/                 Cloud Library schemas, manifests, and examples
 docs/screenshots/      README screenshots
@@ -745,6 +747,12 @@ python -m pytest -q
 python -m build --no-isolation
 python -m twine check dist/*
 ```
+
+`Principia-v1.3/src/principia_retrieval` is the canonical, maintained
+retrieval implementation. The repository-root `principia_retrieval` path is a
+compatibility link for the V1.2 visual workbench, so both entry points execute
+the same code while all retrieval changes are made in V1.3. The V1.3 wheel
+packages the module directly from its source tree.
 
 ---
 

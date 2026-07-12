@@ -95,6 +95,11 @@
             </label>
             <div id="researchStatus" class="research-status">Ready</div>
           </div>
+          <label class="rerank-toggle">
+            <input id="useEmbeddingRerankInput" type="checkbox" />
+            <span>Use embedding rerank after BM25 prefilter</span>
+            <small>Unchecked uses deterministic BM25 ranking only.</small>
+          </label>
           <div class="header-actions research-actions" aria-label="Workspace actions">
             <button id="researchBtn" type="button" class="primary-btn">Research</button>
             <button id="cancelResearchBtn" type="button" class="secondary-btn danger-btn" data-allow-busy="true" hidden>Stop Research</button>
@@ -229,7 +234,7 @@
           </div>
           <button id="cancelClearRecordsBtn" type="button" class="secondary-btn">Cancel</button>
         </header>
-        <p class="muted">This removes local works, extracted ideas, principles, takeaways, benchmarks, baselines, generated ideas, run history, evidence links, and v1 memory. Project shells are kept.</p>
+        <p class="muted">This removes local records from all projects: works, extracted ideas, principles, takeaways, benchmarks, baselines, generated ideas, run history, evidence links, and v1 memory. Project shells are kept.</p>
         <div class="modal-actions">
           <button id="confirmClearRecordsBtn" type="button" class="danger-btn">Clear Local Records</button>
         </div>

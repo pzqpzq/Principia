@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from .models import SourceWork, to_dict
-from .utils import compact_text, enrich_query, keyword_terms, lexical_score, query_expansions, stable_id
+from .utils import compact_text, contains_query_trigger, enrich_query, keyword_terms, lexical_score, query_expansions, stable_id
 
 
 ATOM = {"a": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
@@ -188,6 +188,9 @@ def build_arxiv_queries(query: str) -> list[str]:
     lower = enrich_query(query).lower().replace("_", " ")
     expansions = query_expansions(query)
     domain_queries: list[str] = []
+
+    def has(term: str) -> bool:
+        return contains_query_trigger(lower, term)
     if any("3d reconstruction" in phrase for phrase in expansions):
         domain_queries.extend(
             [
@@ -203,18 +206,45 @@ def build_arxiv_queries(query: str) -> list[str]:
                 'all:"neural radiance fields"',
             ]
         )
+    astronomy_like = any(
+        has(term)
+        for term in [
+            "kilonova",
+            "optical transient",
+            "gravitational wave",
+            "compact object merger",
+            "sub-solar-mass",
+            "agn disk",
+            "agn-disk",
+            "supernova contaminant",
+        ]
+    )
+    if astronomy_like:
+        entities = re.findall(r"\b(?:S|GW|GRB|AT|SN|FRB|ZTF)\d{4,}[A-Za-z0-9]*\b", query)
+        for entity in entities[:2]:
+            domain_queries.append(f"all:{entity}")
+            domain_queries.append(f'all:{entity} AND all:"optical transient"')
+        domain_queries.extend(
+            [
+                'all:"kilonova" AND all:"electromagnetic counterpart"',
+                'all:"compact object merger" AND all:"kilonova"',
+                'all:"optical transient" AND all:"gravitational wave"',
+                'all:"AGN disk" AND all:"compact object merger"',
+                'all:"supernova contaminant" AND all:"kilonova"',
+            ]
+        )
     mas_like = any(
-        term in lower
+        has(term)
         for term in [
             "mas",
             "multi-agent",
             "multi agent",
+            "large language model",
+            "llm",
+            "ai agent",
             "llm agent",
             "agent communication",
             "machine dialect",
-            "scientific discovery",
-            "intrinsic reward",
-            "symbolic compactness",
             "token efficient reasoning",
         ]
     )
@@ -234,7 +264,7 @@ def build_arxiv_queries(query: str) -> list[str]:
             ]
         )
     vision_like = any(
-        term in lower
+        has(term)
         for term in [
             "few-shot",
             "few shot",
@@ -264,25 +294,27 @@ def build_arxiv_queries(query: str) -> list[str]:
             ]
         )
     clauses: list[str] = []
-    if "long-context" in lower or "long context" in lower:
+    if has("long-context") or has("long context"):
         clauses.append('all:"long context"')
-    if "llm" in lower or "large language" in lower or "language model" in lower:
+    if has("llm") or has("large language model") or has("language model"):
         clauses.append('all:"large language model"')
-    elif "mas" in lower or "multi-agent" in lower or "multi agent" in lower:
+    elif has("mas") or has("multi-agent") or has("multi agent"):
         clauses.append('all:"multi-agent"')
-    elif "agent" in lower:
+    elif has("ai agent") or has("llm agent") or has("agent communication"):
+        clauses.append('all:"large language model"')
+    elif has("agent"):
         clauses.append("all:agent")
-    if "scientific discovery" in lower and not any("scientific discovery" in clause for clause in clauses):
+    if has("scientific discovery") and not any("scientific discovery" in clause for clause in clauses):
         clauses.append('all:"scientific discovery"')
-    if "machine dialect" in lower or "dialect" in lower:
+    if has("machine dialect"):
         clauses.append('all:"agent communication"')
-    if "symbolic compactness" in lower:
+    if has("symbolic compactness"):
         clauses.append('all:"symbolic reasoning"')
-    if "clip" in lower and not any("clip" in clause.lower() for clause in clauses):
+    if has("clip") and not any("clip" in clause.lower() for clause in clauses):
         clauses.append("all:CLIP")
-    if "test-time training" in lower or "test time training" in lower or "ttt" in lower:
+    if has("test-time training") or has("test time training") or has("ttt"):
         clauses.append('all:"test-time training"')
-    if "few-shot" in lower or "few shot" in lower:
+    if has("few-shot") or has("few shot"):
         clauses.append('all:"few-shot learning"')
     terms = [term for term in keyword_terms(lower, 8) if term not in QUERY_STOPWORDS]
     for term in terms:
@@ -307,7 +339,8 @@ def build_arxiv_queries(query: str) -> list[str]:
     if terms:
         queries.append(" AND ".join(f"all:{term}" for term in terms[:2]))
         queries.append("all:" + terms[0])
-    queries.append("all:large language model")
+    if mas_like and not any("large language model" in item.lower() for item in queries):
+        queries.append("all:large language model")
     deduped: list[str] = []
     for item in queries:
         if item and item not in deduped:
@@ -354,19 +387,7 @@ def fallback_seed_work(query: str) -> list[dict]:
             ),
         ]
         return [_seed_work(title, abstract) for title, abstract in seed_specs]
-    if any(
-        term in normalized
-        for term in [
-            "mas",
-            "multi agent",
-            "multi-agent",
-            "llm agents",
-            "scientific discovery",
-            "machine dialect",
-            "symbolic compactness",
-            "intrinsic reward",
-        ]
-    ):
+    if any(contains_query_trigger(normalized, term) for term in ["mas", "multi agent", "multi-agent", "llm agents", "ai agent", "agent communication", "machine dialect"]):
         seed_specs = [
             (
                 "Seed note: symbolic compactness as a discovery reward for LLM agent societies",

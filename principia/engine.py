@@ -50,6 +50,7 @@ from .symbolic_ideator import SymbolicIdeator
 from .utils import (
     clamp,
     compact_text,
+    contains_query_trigger,
     enrich_query,
     keyword_terms,
     lexical_score,
@@ -255,6 +256,7 @@ class PrincipiaEngine:
         target_works: int = 100,
         run_id: str = "",
         force_refresh: bool = False,
+        retrieval_rerank_mode: str = "bm25",
     ) -> dict[str, Any]:
         result = self.v2_research_project(
             field_id,
@@ -263,6 +265,7 @@ class PrincipiaEngine:
             target_works=target_works,
             run_id=run_id,
             force_refresh=force_refresh,
+            retrieval_rerank_mode=retrieval_rerank_mode,
         )
         if not result.get("ok"):
             return {**result, "v1_migration": {"skipped": True}}
@@ -1600,6 +1603,162 @@ class PrincipiaEngine:
         self.store.vacuum()
         return {"ok": True, "repaired": repaired}
 
+    def clear_project_local_records(self, field_id: str) -> dict[str, Any]:
+        field_id = str(field_id or "").strip()
+        if not field_id:
+            raise ValueError("Missing field_id")
+        if field_id == "default":
+            raise ValueError("The default project cannot be cleared with project-scoped cleanup.")
+        profile = self.store.get_item("field_profiles", field_id)
+        if not profile:
+            raise KeyError(f"field_profiles:{field_id} not found")
+
+        runs = self.store.list_research_runs_for_field(field_id, limit=10000)
+        for run in runs:
+            if run.get("field_id") == field_id and run.get("status") not in {"complete", "error", "cancelled"}:
+                self.cancel_run(str(run.get("run_id") or ""))
+
+        data_before = self.store.snapshot(limit_per_bucket=None)
+        project_memberships = self.store.list_project_memberships(field_id, include_hidden=True)
+        candidate_records = self._project_record_candidates(data_before, field_id, project_memberships)
+        deleted: dict[str, int] = {}
+
+        deleted_memberships = self.store.delete_project_memberships(field_id)
+        if deleted_memberships:
+            deleted["project_memberships"] = deleted_memberships
+        deleted_runs = self.store.delete_research_runs_for_field(field_id)
+        if deleted_runs:
+            deleted["research_runs"] = deleted_runs
+
+        try:
+            global_deleted = self.global_store.delete_project(field_id, delete_local_data=True)
+            if global_deleted:
+                deleted["v1_memory"] = int(sum(global_deleted.values()))
+        except Exception:
+            deleted["v1_memory_errors"] = deleted.get("v1_memory_errors", 0) + 1
+
+        data_after = self.store.snapshot(limit_per_bucket=None)
+        deleted_refs = self._delete_unreferenced_project_records(field_id, candidate_records, data_after, deleted)
+        for link in data_after.get("evidence_links", {}).values():
+            link_id = str(link.get("link_id") or "")
+            target_ref = (str(link.get("target_bucket") or ""), str(link.get("target_id") or ""))
+            source_ref = ("source_works", str(link.get("source_id") or link.get("source_work_id") or ""))
+            if link.get("field_id") == field_id or target_ref in deleted_refs or source_ref in deleted_refs:
+                if link_id and self.store.get_item("evidence_links", link_id):
+                    self.store.delete_item("evidence_links", link_id)
+                    deleted["evidence_links"] = deleted.get("evidence_links", 0) + 1
+
+        profile = self.store.get_item("field_profiles", field_id) or profile
+        profile["work_ids"] = []
+        profile["principle_ids"] = []
+        profile["idea_ids"] = []
+        profile["refresh_status"] = "idle"
+        profile["updated_at"] = utc_now()
+        self.store.upsert("field_profiles", profile, "field_id")
+        self.store.vacuum()
+        self.global_store.vacuum()
+        return {"ok": True, "field_id": field_id, "deleted": deleted}
+
+    def _project_record_candidates(
+        self,
+        data: dict[str, Any],
+        field_id: str,
+        project_memberships: list[dict[str, Any]],
+    ) -> dict[str, set[str]]:
+        candidate_records: dict[str, set[str]] = {}
+        for membership in project_memberships:
+            bucket = str(membership.get("bucket") or "")
+            record_id = str(membership.get("record_id") or "")
+            if bucket and record_id:
+                candidate_records.setdefault(bucket, set()).add(record_id)
+
+        profile = data.get("field_profiles", {}).get(field_id) or {}
+        legacy_refs = {
+            "work_ids": ("source_works",),
+            "principle_ids": ("principles",),
+            "idea_ids": ("ideas", "my_ideas"),
+        }
+        for key, buckets in legacy_refs.items():
+            for record_id in [str(item) for item in profile.get(key, []) if item]:
+                for bucket in buckets:
+                    candidate_records.setdefault(bucket, set()).add(record_id)
+        for bucket in (
+            "source_works",
+            "principles",
+            "ideas",
+            "work_facts",
+            "benchmark_records",
+            "baseline_records",
+            "result_records",
+            "gap_cards",
+            "existed_ideas",
+            "takeaway_messages",
+            "my_ideas",
+        ):
+            id_key = self._record_id_key(bucket)
+            for item in data.get(bucket, {}).values():
+                record_id = str(item.get(id_key) or "")
+                if record_id and item.get("field_id") == field_id:
+                    candidate_records.setdefault(bucket, set()).add(record_id)
+        return candidate_records
+
+    def _remaining_project_references(self, data: dict[str, Any], field_id: str) -> set[tuple[str, str]]:
+        still_referenced = {
+            (str(membership.get("bucket") or ""), str(membership.get("record_id") or ""))
+            for membership in data.get("project_memberships", {}).values()
+            if membership.get("field_id") != field_id and membership.get("bucket") and membership.get("record_id")
+        }
+        legacy_refs = {
+            "work_ids": ("source_works",),
+            "principle_ids": ("principles",),
+            "idea_ids": ("ideas", "my_ideas"),
+        }
+        for profile_id, profile in data.get("field_profiles", {}).items():
+            if profile_id == field_id:
+                continue
+            for key, buckets in legacy_refs.items():
+                for record_id in [str(item) for item in profile.get(key, []) if item]:
+                    for bucket in buckets:
+                        still_referenced.add((bucket, record_id))
+        return still_referenced
+
+    def _delete_unreferenced_project_records(
+        self,
+        field_id: str,
+        candidate_records: dict[str, set[str]],
+        data: dict[str, Any],
+        deleted: dict[str, int],
+    ) -> set[tuple[str, str]]:
+        still_referenced = self._remaining_project_references(data, field_id)
+        deleted_refs: set[tuple[str, str]] = set()
+
+        def delete_record(bucket: str, record_id: str) -> bool:
+            if not bucket or not record_id or (bucket, record_id) in still_referenced:
+                return False
+            record = self.store.get_item(bucket, record_id)
+            if not record:
+                return False
+            if record.get("field_id") == "default" and bucket not in {"existed_ideas", "principles", "takeaway_messages", "benchmark_records", "baseline_records", "source_works", "my_ideas", "ideas"}:
+                return False
+            self.store.delete_item(bucket, record_id)
+            deleted[bucket] = deleted.get(bucket, 0) + 1
+            deleted_refs.add((bucket, record_id))
+            return True
+
+        for bucket, record_ids in candidate_records.items():
+            for record_id in sorted(record_ids):
+                deleted_record = delete_record(bucket, record_id)
+                if bucket == "source_works" and deleted_record:
+                    record = data.get(bucket, {}).get(record_id) or {}
+                    work_id = str(record.get("work_id") or record_id)
+                    for linked_bucket in ("work_facts", "benchmark_records", "baseline_records", "result_records"):
+                        linked_id_key = self._record_id_key(linked_bucket)
+                        for linked in data.get(linked_bucket, {}).values():
+                            linked_record_id = str(linked.get(linked_id_key) or "")
+                            if linked.get("work_id") == work_id:
+                                delete_record(linked_bucket, linked_record_id)
+        return deleted_refs
+
     def clear_local_records(self, *, include_projects: bool = False) -> dict[str, Any]:
         data = self.store.snapshot(limit_per_bucket=None)
         buckets = [
@@ -2244,9 +2403,15 @@ class PrincipiaEngine:
         target_works: int = 100,
         run_id: str = "",
         force_refresh: bool = False,
+        retrieval_rerank_mode: str = "bm25",
         progress_callback: Callable[[dict[str, Any]], None] | None = None,
     ) -> dict[str, Any]:
         target_works = max(1, min(int(target_works or 100), 200))
+        retrieval_rerank_mode_value = str(retrieval_rerank_mode or "").strip().lower()
+        if retrieval_rerank_mode_value in {"embedding", "embedding-rerank", "embedding_rerank"}:
+            retrieval_rerank_mode = "embedding_rerank"
+        else:
+            retrieval_rerank_mode = "bm25"
         profile = self._ensure_field_profile(field_id, goal_text)
         goal_text = goal_text or profile.get("goal_text") or profile.get("query") or profile.get("name", "")
         model = self._v2_model_meta(model_mode)
@@ -2262,6 +2427,7 @@ class PrincipiaEngine:
             "model_mode": model_mode,
             "model_name": model["model_name"],
             "provider": model["provider"],
+            "retrieval_rerank_mode": retrieval_rerank_mode,
             "target_works": target_works,
             "counts": {},
             "errors": [],
@@ -2291,6 +2457,7 @@ class PrincipiaEngine:
                 "model_mode": model_mode,
                 "language": "en",
                 "source_mode": "online+local",
+                "retrieval_rerank_mode": retrieval_rerank_mode,
                 "paper_count": target_works,
                 "target_works": target_works,
                 "max_works": target_works,
@@ -2302,7 +2469,7 @@ class PrincipiaEngine:
             existing_project_works = self._rank_works_for_query(goal_text, self._v2_project_records_fast(field_id, "source_works"))
             existing_work_count = len(existing_project_works)
             search_goal = goal_text
-            if existing_work_count >= target_works:
+            if existing_work_count >= target_works and not force_refresh:
                 works = existing_project_works
                 update(
                     "existing_works_research",
@@ -2336,12 +2503,20 @@ class PrincipiaEngine:
                 query = self._v2_research_query(search_goal or goal_text)
                 update(
                     "source_search",
-                    "Searching arXiv, OpenAlex, Crossref, and public metadata to fill the Works target.",
+                    f"Searching arXiv, OpenAlex, Crossref, and public metadata with {retrieval_rerank_mode.replace('_', ' ')} paper rerank.",
                     planned_query=query,
                     existing_works=existing_work_count,
                     top_up_needed=top_up_needed,
+                    retrieval_rerank_mode=retrieval_rerank_mode,
                 )
-                found_works = search_hybrid_sources(query, max_results=target_works, timeout=12)
+                found_works = search_hybrid_sources(
+                    query,
+                    max_results=target_works,
+                    timeout=12,
+                    llm=self.llm,
+                    original_goal=search_goal or goal_text,
+                    retrieval_rerank_mode=retrieval_rerank_mode,
+                )
                 self._raise_if_cancelled(run_id)
                 update(
                     "source_search",
@@ -2360,7 +2535,14 @@ class PrincipiaEngine:
                         existing_works=existing_work_count,
                         target_works=target_works,
                     )
-                    more_works = search_hybrid_sources(broaden_query, max_results=target_works, timeout=12)
+                    more_works = search_hybrid_sources(
+                        broaden_query,
+                        max_results=target_works,
+                        timeout=12,
+                        llm=self.llm,
+                        original_goal=goal_text,
+                        retrieval_rerank_mode=retrieval_rerank_mode,
+                    )
                     combined_works = self._dedupe_works([*combined_works, *more_works])
                     self._raise_if_cancelled(run_id)
                     update(
@@ -7327,7 +7509,7 @@ class PrincipiaEngine:
             return "geometry recovery from too few reliable views"
         if "rul" in lower or "remaining useful life" in lower:
             return "remaining-life prediction under noisy cross-sensor degradation"
-        if "multi-agent" in lower or "mas" in lower:
+        if self._has_query_trigger_any(lower, ["multi-agent", "multi agent", "mas"]):
             return "multi-agent reasoning where communication budget and correctness compete"
         if any(term in lower for term in ["reasoning", "logical", "logic", "exemplar", "benchmark", "chain-of-thought", "chain of thought"]):
             return "logical pattern extraction across reasoning domains and benchmarks"
@@ -8136,7 +8318,7 @@ class PrincipiaEngine:
             return "autonomous-code quality control"
         if "clip" in lower or "vision-language" in lower or "few-shot" in lower:
             return "few-shot vision-language adaptation"
-        if "multi-agent" in lower or "agentic" in lower or "mas" in lower:
+        if self._has_query_trigger_any(lower, ["multi-agent", "multi agent", "agentic", "mas"]):
             return "multi-agent scientific reasoning"
         if "logical" in lower or "logic" in lower or "symbolic" in lower:
             return "symbolic and logical reasoning with LLMs"
@@ -13355,7 +13537,10 @@ class PrincipiaEngine:
                 "failure_modes": ["测试时更新过拟合支持集。", "额外计算掩盖方法本身贡献。", "CLIP 文本语义在更新后漂移。", "只在少数简单数据集上有效。"],
                 "baselines": ["zero-shot CLIP", "CoOp", "CoCoOp", "Tip-Adapter", "TPT", "linear probe", "ViT^3-style test-time training"],
             }
-        if self._has_any(lower, ["mas", "multi-agent", "agent", "dialect", "scientific discovery", "symbolic", "llm"]):
+        if self._has_query_trigger_any(
+            lower,
+            ["mas", "multi-agent", "multi agent", "large language model", "llm", "ai agent", "llm agent", "agent communication", "machine dialect"],
+        ):
             return {
                 "work_abstract": "这条记录面向 LLM 多智能体推理，关注通信协议、符号压缩、分歧定位和 token 成本之间的关系。",
                 "work_principles": ["把 agent 交互从自由对话改造成有协议、有状态、有验收标准的压缩推理过程。"],
@@ -14392,6 +14577,9 @@ class PrincipiaEngine:
     def _has_any(self, text: str, terms: list[str]) -> bool:
         return any(term in text for term in terms)
 
+    def _has_query_trigger_any(self, text: str, terms: list[str]) -> bool:
+        return any(contains_query_trigger(text, term) for term in terms)
+
     def _has_rul_token(self, text: str) -> bool:
         return bool(re.search(r"(?<![a-z0-9])rul(?![a-z0-9])", text.lower()))
 
@@ -14423,18 +14611,20 @@ class PrincipiaEngine:
                     "multi view stereo",
                 ],
             ),
-            "mas": self._has_any(
+            "mas": self._has_query_trigger_any(
                 text,
                 [
                     "mas",
                     "multi-agent",
                     "multi agent",
+                    "large language model",
+                    "llm",
+                    "ai agent",
                     "llm agent",
                     "agent communication",
                     "agent collaboration",
                     "agent society",
                     "multi-agent systems",
-                    "scientific discovery",
                 ],
             ),
             "symbolic": self._has_any(
@@ -17545,12 +17735,16 @@ class PrincipiaEngine:
             for phrase in expansions
         ):
             domain = "TimesFM cross-sensor RUL prediction"
-        elif any(term in normalized for term in ["machine dialect", "dialect", "token efficient", "token cost"]):
+        elif self._has_query_trigger_any(normalized, ["machine dialect", "token efficient", "token cost"]):
             domain = "machine-dialect MAS for token-efficient reasoning"
-        elif any(term in normalized for term in ["symbolic compactness", "intrinsic reward", "scientific discovery"]):
+        elif self._has_query_trigger_any(normalized, ["symbolic compactness", "intrinsic reward"]) and self._has_query_trigger_any(
+            normalized, ["mas", "multi-agent", "multi agent", "large language model", "llm", "ai agent", "agent communication"]
+        ):
             domain = "symbolic-compactness reward for MAS scientific discovery"
-        elif any(term in normalized for term in ["mas", "multi-agent", "multi agent", "llm agents"]):
+        elif self._has_query_trigger_any(normalized, ["mas", "multi-agent", "multi agent", "large language model", "llm", "llm agents", "ai agent"]):
             domain = "LLM multi-agent reasoning system"
+        elif contains_query_trigger(normalized, "scientific discovery"):
+            domain = "scientific discovery"
         elif any(
             term in normalized
             for term in [

@@ -10,6 +10,7 @@ from typing import Any
 
 import httpx
 from pypdf import PdfReader
+from principia_retrieval import RetrievalConfig, WorkRetriever
 
 from ._llm_progress import call_with_progress
 from .ids import normalize_key, readable_id, short_hash
@@ -51,6 +52,16 @@ SEARCH_STOPWORDS = {
     "with",
 }
 
+RETRIEVAL_RERANK_MODES = {"", "bm25", "deterministic", "no_llm", "embedding", "embedding_rerank"}
+
+
+def validate_rerank_mode(value: str | None) -> str:
+    mode = str(value or "").strip().lower().replace("-", "_")
+    if mode not in RETRIEVAL_RERANK_MODES:
+        choices = ", ".join(sorted(option for option in RETRIEVAL_RERANK_MODES if option))
+        raise ValueError(f"Unsupported retrieval rerank mode {value!r}. Choose one of: {choices}.")
+    return mode
+
 
 class ResearchService:
     def __init__(
@@ -62,6 +73,7 @@ class ResearchService:
     ) -> None:
         self.storage = storage
         self.llm = llm
+        self.custom_search_sources = search_sources is not None
         self.search_sources = search_sources or {
             "openalex": search_openalex,
             "crossref": search_crossref,
@@ -101,6 +113,7 @@ class ResearchService:
         *,
         target_count: int = 20,
         mode: str = "hybrid",
+        rerank_mode: str | None = None,
         sources: list[str] | None = None,
         persist: bool = True,
         timeout: float = 12.0,
@@ -108,8 +121,9 @@ class ResearchService:
         callback: ProgressCallback | None = None,
         cancel_token: CancelToken | None = None,
     ) -> WorkList:
-        selected_names = sources or list(self.search_sources)
-        source_query = compact_search_query(query)
+        selected_names = sources or (
+            list(self.search_sources) if self.custom_search_sources else ["arxiv", "openalex", "crossref", "semantic_scholar"]
+        )
         target_count = max(1, min(int(target_count or 20), 200))
         with RunHandle(
             self.storage,
@@ -118,26 +132,54 @@ class ResearchService:
             token=cancel_token,
             show_progress=show_progress,
         ) as run:
-            run.update("source_search", "Searching public metadata sources.", progress=0.05, target_count=target_count)
-            per_source = max(20, min(100, target_count * 3))
-            raw: list[dict[str, Any] | WorkItem] = []
-            for index, name in enumerate(selected_names, start=1):
-                run.update(
-                    "source_search",
-                    f"Searching {name}.",
-                    progress=0.05 + 0.6 * ((index - 1) / max(1, len(selected_names))),
-                    source=name,
+            run.update("query_planning", "Planning semantic metadata search.", progress=0.05, target_count=target_count)
+            source_map = None
+            if self.custom_search_sources:
+                source_map = {name: self.search_sources[name] for name in selected_names if name in self.search_sources}
+            retrieval_llm = self._retrieval_llm()
+            config = RetrievalConfig(
+                use_llm_planner=retrieval_llm is not None,
+                rerank_mode=validate_rerank_mode(rerank_mode),
+                max_raw_candidates=max(80, target_count * 4),
+                max_queries=8,
+                source_names=selected_names,
+            )
+
+            def retrieval_callback(stage: str, payload: dict[str, Any]) -> None:
+                if stage == "query_plan":
+                    run.update(
+                        "source_search",
+                        "Searching public metadata sources with the shared semantic retriever.",
+                        progress=0.15,
+                        query_count=len(payload.get("queries") or []),
+                        entities=payload.get("entities") or [],
+                        sources=selected_names,
+                    )
+
+            try:
+                retrieval = WorkRetriever(sources=source_map, config=config).search(
+                    query,
+                    target_count=target_count,
+                    llm=retrieval_llm,
+                    timeout=timeout,
+                    callback=retrieval_callback,
                 )
-                source = self.search_sources.get(name)
-                if not source:
-                    continue
-                try:
-                    raw.extend(source(source_query, per_source, timeout))
-                except Exception as exc:  # noqa: BLE001
-                    self.storage.log_event(run.status.run_id, "source_warning", f"{name} failed: {exc}")
-            run.update("dedupe", "Normalizing and deduplicating candidate works.", progress=0.7, raw_candidates=len(raw))
-            works = dedupe_works([coerce_work(item) for item in raw])
-            works.sort(key=lambda item: search_rank_score(query, item), reverse=True)
+            except Exception as exc:  # noqa: BLE001
+                self.storage.log_event(run.status.run_id, "source_warning", f"shared retriever failed: {exc}")
+                retrieval = WorkRetriever(sources=source_map, config=RetrievalConfig(use_llm_planner=False, source_names=selected_names)).search(
+                    query,
+                    target_count=target_count,
+                    llm=None,
+                    timeout=timeout,
+                )
+            run.update(
+                "dedupe",
+                "Normalizing and deduplicating candidate works.",
+                progress=0.7,
+                raw_candidates=len(retrieval.candidates),
+                selected_candidates=len(retrieval.selected_works),
+            )
+            works = dedupe_works([coerce_work(item) for item in retrieval.selected_works])
             works = works[:target_count]
             if persist:
                 existing = self.storage.existing_work_ids()
@@ -162,6 +204,27 @@ class ResearchService:
             return output
         raise RuntimeError("search run ended without producing a result")
 
+    def _retrieval_llm(self) -> LLMClient | None:
+        resolve = getattr(self.llm, "resolve", None)
+        if callable(resolve):
+            try:
+                if getattr(resolve("auto"), "provider", "") == "mock":
+                    return None
+            except Exception:
+                pass
+        available = getattr(self.llm, "available", None)
+        if not callable(available):
+            return None
+        try:
+            return self.llm if available("auto") else None
+        except TypeError:
+            try:
+                return self.llm if available() else None
+            except Exception:
+                return None
+        except Exception:
+            return None
+
     def extract(
         self,
         works: WorkList | list[WorkItem],
@@ -171,6 +234,7 @@ class ResearchService:
         retain_pdfs: bool = False,
         pdf_dir: str | Path | None = None,
         max_chars: int = 24_000,
+        continue_on_error: bool = False,
         show_progress: bool = False,
         callback: ProgressCallback | None = None,
         cancel_token: CancelToken | None = None,
@@ -220,16 +284,32 @@ class ResearchService:
                         skipped=sum(1 for item in features if item.skipped),
                     )
                     continue
-                extracted = self._extract_one(
-                    work,
-                    text,
-                    model=model,
-                    run=run,
-                    progress_start=start_progress + (end_progress - start_progress) * 0.15,
-                    progress_end=start_progress + (end_progress - start_progress) * 0.95,
-                    current=index,
-                    total=len(items),
-                )
+                try:
+                    extracted = self._extract_one(
+                        work,
+                        text,
+                        model=model,
+                        run=run,
+                        progress_start=start_progress + (end_progress - start_progress) * 0.15,
+                        progress_end=start_progress + (end_progress - start_progress) * 0.95,
+                        current=index,
+                        total=len(items),
+                    )
+                except Exception as exc:  # noqa: BLE001
+                    if not continue_on_error:
+                        raise
+                    self.storage.log_event(run.status.run_id, "extract_warning", f"{work.id} failed: {exc}")
+                    run.update(
+                        "extract_work_failed",
+                        f"Skipped failed extraction {index}/{len(items)}: {work.title[:80]}",
+                        progress=end_progress,
+                        current=index,
+                        total=len(items),
+                        extracted=len(features),
+                        failed=1,
+                        error=str(exc)[:500],
+                    )
+                    continue
                 extracted.source_excerpt_chars = len(text)
                 extracted.retained_pdf_path = str(retained_path or "")
                 extracted.extraction_id = short_hash(work.id, model_label, content_hash, length=16)
