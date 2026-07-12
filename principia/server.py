@@ -1061,9 +1061,6 @@ class PrincipiaRequestHandler(BaseHTTPRequestHandler):
         if path == "/api/v1/local-records/compact":
             return self.engine.compact_local_storage(clear_cloud_cache=bool(payload.get("clear_cloud_cache", True)))
         if path == "/api/v1/local-records/clear":
-            field_id = str(payload.get("field_id") or "").strip()
-            if field_id and field_id != "default":
-                return self.engine.clear_project_local_records(field_id)
             return self.engine.clear_local_records(include_projects=bool(payload.get("include_projects")))
         if path == "/api/v1/project/reorder":
             return {"items": self.engine.reorder_projects([str(item) for item in payload.get("field_ids", [])])}

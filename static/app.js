@@ -2549,10 +2549,9 @@ function bindEvents() {
   });
   el("confirmClearRecordsBtn").addEventListener("click", async () => {
     try {
-      const payload = state.activeProjectId && state.activeProjectId !== "default" ? { field_id: state.activeProjectId } : {};
-      await post("/api/v1/local-records/clear", payload);
+      await post("/api/v1/local-records/clear", {});
       el("clearRecordsModal").hidden = true;
-      showToast(payload.field_id ? "Project local records cleared." : "Local records cleared.");
+      showToast("All project local records cleared.");
       state.assembler.selected = [];
       await loadProjects(state.activeProjectId);
       await loadSummary();
