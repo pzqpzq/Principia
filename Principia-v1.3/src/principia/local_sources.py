@@ -614,7 +614,7 @@ def _parse_text(path: Path, data: bytes) -> ParsedLocalContent:
 
 def _parse_docx(path: Path, data: bytes) -> ParsedLocalContent:
     try:
-        from docx import Document
+        from docx import Document  # type: ignore[import-not-found, import-untyped]
     except ImportError as exc:  # pragma: no cover - depends on optional extra
         raise LocalParserUnavailable(
             "DOCX parsing requires `pip install principia-ai[local]`."
@@ -628,7 +628,7 @@ def _parse_docx(path: Path, data: bytes) -> ParsedLocalContent:
 
 def _parse_pptx(path: Path, data: bytes) -> ParsedLocalContent:
     try:
-        from pptx import Presentation
+        from pptx import Presentation  # type: ignore[import-not-found, import-untyped]
     except ImportError as exc:  # pragma: no cover - depends on optional extra
         raise LocalParserUnavailable(
             "PPTX parsing requires `pip install principia-ai[local]`."

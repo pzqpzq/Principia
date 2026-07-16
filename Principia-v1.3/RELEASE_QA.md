@@ -82,7 +82,7 @@ environment variables pointed to an isolated Node 22 / KaTeX 0.16.22 runtime.
 | `shasum -a 256 -c examples/test*/checksums.sha256` | PASS — all 9 public showcase files match |
 | `python -m build --no-isolation` | PASS — exactly one 1.3.3 wheel and one 1.3.3 sdist |
 | `python -m twine check dist/*` | PASS — both archives |
-| `python scripts/check_release_archive.py dist/*` | PASS — 153 text members and 2,015,172 uncompressed bytes scanned |
+| `python scripts/check_release_archive.py dist/*` | PASS — 153 text members and 2,015,372 uncompressed bytes scanned |
 | clean installed-wheel core smoke | PASS — imports, 14 public interfaces, typing markers, CLI, dependency integrity |
 | clean installed-wheel `[local]` smoke | PASS — DOCX/PPTX/XLSX parsers, 3/3 ingestion, portable URIs, no path leakage |
 
@@ -195,8 +195,8 @@ both GitHub and PyPI.
 
 | Artifact | Bytes | SHA-256 |
 | --- | ---: | --- |
-| `principia_ai-1.3.3-py3-none-any.whl` | 170,905 | `448d2a29568a89020d90095b4748f7f77809beeb149e83d46e4e7369eed8dde0` |
-| `principia_ai-1.3.3.tar.gz` | 317,766 | `d471efadb6a03c83ed2052cf8eb3d7675a93641198457e4997a6e5b2cd0dedd6` |
+| `principia_ai-1.3.3-py3-none-any.whl` | 170,917 | `5414073952a4a26f5f5e8689f9b8268b05405b56505599750ac3e81359007cb7` |
+| `principia_ai-1.3.3.tar.gz` | 317,781 | `78aa4c7173bcb6bf87a7b8fadc2868ed64a6ee25f4c258d2ecbcdc8e105680fb` |
 
 Archive inspection confirmed package metadata version 1.3.3, Python 3.10+
 compatibility, MIT license metadata, `principia` and `principia_retrieval`, both
