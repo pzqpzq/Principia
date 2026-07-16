@@ -1,6 +1,6 @@
 """Constants used by the shared retrieval package."""
 
-USER_AGENT = "Principia-Retrieval/0.1 (local research workspace)"
+USER_AGENT = "Principia/1.3.3 (academic metadata retrieval; https://github.com/pzqpzq/Principia)"
 
 STOPWORDS = {
     "a",
@@ -20,6 +20,7 @@ STOPWORDS = {
     "is",
     "it",
     "its",
+    "like",
     "of",
     "on",
     "or",

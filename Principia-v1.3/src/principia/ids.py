@@ -57,4 +57,3 @@ def readable_id(
 
 def stable_prefixed_id(prefix: str, *parts: object, length: int = 12) -> str:
     return f"{prefix}_{short_hash(*parts, length=length)}"
-
