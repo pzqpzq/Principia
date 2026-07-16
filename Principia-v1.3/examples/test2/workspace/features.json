@@ -1,0 +1,179 @@
+{
+  "schema_version": "principia.example_features.v1",
+  "scope": "the exact 15 selected canonical evidence records",
+  "items": [
+    {
+      "work_id": "L-1486ADF79DC697C97165",
+      "title": "pose uncertainty design",
+      "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+      "ideas": [
+        {
+          "id": "Joint_Optimization_Of_Pose_And_Uncertainty",
+          "record_type": "idea",
+          "title": "Joint Optimization of Pose and Uncertainty",
+          "text": "Pose and uncertainty must be optimized together rather than sequentially or independently."
+        }
+      ],
+      "source_content_type": "local_text",
+      "source_excerpt_chars": 399
+    },
+    {
+      "work_id": "L-2C419FA26265065F632D",
+      "title": "dynamic reconstruction protocol",
+      "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+      "ideas": [
+        {
+          "id": "Uncertainty_Aware_Dynamic_Reconstruction",
+          "record_type": "idea",
+          "title": "Uncertainty-aware dynamic reconstruction",
+          "text": "A synthetic sparse-view protocol for uncalibrated feed-forward 3D Gaussian splatting that reconstructs time-varying scenes from six to twelve uncalibrated views while exposing uncertainty that tracks geometric failure."
+        },
+        {
+          "id": "Uncertainty_Contract",
+          "record_type": "idea",
+          "title": "Uncertainty contract",
+          "text": "Each Gaussian carries appearance, opacity, motion, and covariance estimates, evaluated using calibration error and risk-coverage curves in addition to image quality."
+        }
+      ],
+      "source_content_type": "pdf_text",
+      "source_excerpt_chars": 1249
+    },
+    {
+      "work_id": "L-3E96E2D1946E766D4041",
+      "title": "uncertainty protocol",
+      "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+      "principles": [
+        {
+          "id": "Calibration_Validity",
+          "record_type": "principle",
+          "title": "Calibration Validity",
+          "text": "Uncertainty estimates are considered valid if the expected calibration error does not exceed 0.10."
+        },
+        {
+          "id": "Selective_Reconstruction_Utility",
+          "record_type": "principle",
+          "title": "Selective Reconstruction Utility",
+          "text": "Uncertainty estimates are useful if rejecting uncertain elements improves the median rendering error."
+        }
+      ],
+      "source_content_type": "local_text",
+      "source_excerpt_chars": 729
+    },
+    {
+      "work_id": "L-DA6DA8F4A75FE6E87F7F",
+      "title": "geometry priors",
+      "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+      "ideas": [
+        {
+          "id": "Geometry_Conditioned_Feed_Forward_Reconstruction",
+          "record_type": "idea",
+          "title": "Geometry-conditioned feed-forward reconstruction",
+          "text": "A feed-forward network predicts per-view 3D Gaussian parameters, camera hypotheses, and heteroscedastic uncertainty from sparse uncalibrated images."
+        },
+        {
+          "id": "Geometric_Constraints_For_Reconstruction",
+          "record_type": "idea",
+          "title": "Geometric constraints for reconstruction",
+          "text": "The reconstruction process is guided by specific geometric constraints including pose, epipolar, depth-order, and motion consistency."
+        }
+      ],
+      "source_content_type": "html",
+      "source_excerpt_chars": 853
+    },
+    {
+      "work_id": "W-0209EA1FE411",
+      "title": "FreeSplatter: Pose-free Gaussian Splatting for Sparse-view 3D Reconstruction",
+      "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+      "principles": [
+        {
+          "id": "Pixel_Alignment_For_Pose_Free_Gaussian_Splatting",
+          "record_type": "principle",
+          "title": "Pixel-Alignment for Pose-Free Gaussian Splatting",
+          "text": "Enforcing pixel alignment via cosine similarity maximization between predicted Gaussian rays and camera rays improves rendering quality and facilitates pose estimation."
+        }
+      ],
+      "takeaways": [
+        {
+          "id": "Superiority_Over_Pose_Dependent_LRMs",
+          "record_type": "takeaway",
+          "title": "Superiority over Pose-Dependent LRMs",
+          "text": "FreeSplatter-O outperforms pose-dependent Large Reconstruction Models (LGM, InstantMesh) that use ground truth camera poses."
+        }
+      ],
+      "source_content_type": "pdf_text",
+      "source_excerpt_chars": 24000
+    },
+    {
+      "work_id": "W-2482B48C0F67",
+      "title": "Diff3R: Feed-forward 3D Gaussian Splatting with Uncertainty-aware Differentiable Optimization",
+      "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+      "takeaways": [
+        {
+          "id": "Bridging_Feed_Forward_And_Optimization",
+          "record_type": "takeaway",
+          "title": "Bridging Feed-Forward and Optimization",
+          "text": "Learning optimal initializations for test-time optimization via differentiable layers combines speed and quality."
+        },
+        {
+          "id": "Uncertainty_Control_For_Robustness",
+          "record_type": "takeaway",
+          "title": "Uncertainty Control for Robustness",
+          "text": "Adaptive parameter change control mitigates overfitting and improves robustness."
+        }
+      ],
+      "source_content_type": "abstract",
+      "source_excerpt_chars": 1377
+    },
+    {
+      "work_id": "W-4E844E27119B",
+      "title": "GIFSplat: Generative Prior-Guided Iterative Feed-Forward 3D Gaussian Splatting from Sparse Views",
+      "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+      "takeaways": [
+        {
+          "id": "Iterative_Refinement_For_Sparse_Views",
+          "record_type": "takeaway",
+          "title": "Iterative Refinement for Sparse Views",
+          "text": "Forward-only residual updates driven by rendering evidence can effectively refine 3D scenes from sparse inputs."
+        }
+      ],
+      "source_content_type": "html",
+      "source_excerpt_chars": 5134
+    },
+    {
+      "work_id": "W-B458587276BC",
+      "title": "AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors",
+      "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+      "principles": [
+        {
+          "id": "Decoupling_From_2D_Grid",
+          "record_type": "principle",
+          "title": "Decoupling from 2D Grid",
+          "text": "Pixel-aligned formulations entangle Gaussian representations with input images, leading to redundant primitives in plain regions and insufficient coverage in complex areas."
+        },
+        {
+          "id": "Efficiency_Via_Sparsity",
+          "record_type": "principle",
+          "title": "Efficiency via Sparsity",
+          "text": "Using a sparse set of 3D anchors significantly reduces the number of required Gaussians compared to dense pixel-aligned approaches."
+        }
+      ],
+      "source_content_type": "pdf_text",
+      "source_excerpt_chars": 24000
+    },
+    {
+      "work_id": "W-EAA8B2F37B30",
+      "title": "Uncertainty-Aware Normal-Guided Gaussian Splatting for Surface Reconstruction from Sparse Image Sequences",
+      "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+      "takeaways": [
+        {
+          "id": "Performance_In_Sparse_Sequences",
+          "record_type": "takeaway",
+          "title": "Performance in Sparse Sequences",
+          "text": "UNG-GS significantly outperforms state-of-the-art methods in both sparse and dense sequences."
+        }
+      ],
+      "source_content_type": "abstract",
+      "source_excerpt_chars": 1385
+    }
+  ]
+}

@@ -1,76 +1,133 @@
-# Principia V1.3 Examples
+# Principia v1.3.3 examples
 
-The official notebooks are:
+These three compact projects demonstrate the same evidence-grounded workflow
+across AI, computer vision, and physics:
 
-- `principia_v13_tutorial.ipynb` — the full real-LLM framework workflow.
-- `principia_retrieval_tutorial.ipynb` — an online shared-retrieval walkthrough with LLM query planning and embedding reranking.
+- `test1`: communication-efficient LLM multi-agent reasoning with learned
+  machine dialects;
+- `test2`: uncertainty-aware sparse-view dynamic 3D reconstruction;
+- `test3`: superconducting-resonator and squeezed-state axion sensing.
 
-It demonstrates the full real-LLM workflow:
+They are display bundles for GitHub and PyPI, not archived runtime workspaces.
+Each notebook keeps concise explanatory code and a small set of meaningful
+outputs. Large or sensitive runtime state is deliberately excluded.
 
-1. Search 50 real works from public metadata sources.
-2. Extract structured features from the top-ranked works.
-3. Select evidence for generation.
-4. Generate a V1.3 idea.
-5. Compare the generated idea against extracted prior ideas.
-6. Export visible local files under `principia_project/principia_outputs/latest/`.
+## Project structure
 
-The retrieval tutorial queries arXiv, OpenAlex, Crossref, and Semantic Scholar,
-then compares BM25 ranking with SiliconFlow embedding reranking. Set
-`SILICONFLOW_API_KEY` in the environment before running it; the key is used for
-the LLM planner and embedding client, not stored in the notebook.
+Every task uses exactly one shared evidence pool and one folder per idea:
 
-## Resume From Existing Features
+```text
+testN/
+  tutorial.ipynb
+  workspace/
+    README.md
+    works.json
+    features.json
+    manifest.json
+  outputs/
+    README.md
+    <idea_id>/
+      idea.md
+      idea.json
+      evidence.json
+      comparison.json
+      result.json
+      validation_plan.md
+      validation_plan.json
+```
 
-After search and extraction have completed once, a later notebook can start directly from saved features:
+`workspace/works.json` and `workspace/features.json` contain only the compact
+records needed to understand the example. All ideas in one task reference this
+same pool. An output folder therefore contains no duplicate `works.json` or
+`features.json`. `workspace/manifest.json` distinguishes originating acceptance
+metrics from the number of records retained in the display bundle.
+
+The release examples omit:
+
+- credentials and authorization headers;
+- absolute paths and `file://` URIs;
+- SQLite databases, embeddings, provider caches, and retry histories;
+- source originals and normalized private-document text;
+- raw prompts, internal traces, progress frames, and widget state.
+
+## Tutorial style
+
+The notebooks follow a concept-first structure: a short explanation introduces
+each stage, followed by a small code cell that exposes only the essential API.
+The retained outputs show the research contract rather than implementation
+noise:
+
+1. public/local work and extraction counts;
+2. exact evidence-kind counts and canonical record identities;
+3. a compact Idea Card with source-grounded mathematics;
+4. prior-idea comparison highlights;
+5. standalone validation status and artifact links.
+
+Release notebooks use environment lookup in every credential-bearing example:
 
 ```python
+import os
 import principia as pc
 
-API_key = "YOUR_SILICONFLOW_API_KEY"
-ws = pc.Workspace("principia_project", llm_config=pc.siliconflow_config(API_key))
-
-features = ws.load_features()
-selected_evidence = pc.select_evidence(features)
-idea = ws.ideas.generate(selected_evidence, user_note="...", mode="calculus", model="siliconflow:Qwen/Qwen3.5-397B-A17B")
+ws = pc.Workspace.project(
+    ".",
+    llm_config=pc.siliconflow_config(os.environ["SILICONFLOW_API_KEY"]),
+    allow_remote_private_content=True,
+)
+job = ws.start(
+    goal,
+    documents="local_sources",
+    pipeline_config=pc.PipelineConfig.research(),
+)
+result = job.result()
 ```
 
-`ws.load_features()` reads persisted extraction records from SQLite and does not rerun public search or LLM extraction.
-
-## Storage
-
-Principia workspaces are usually small because PDFs are not retained by default. If a tutorial folder is large, check whether it contains a virtual environment such as `.venv/`; that is Python environment storage, not Principia research data.
-
-Use:
-
-```python
-ws.storage_report()
-ws.compact()
-```
-
-`ws.compact()` shrinks SQLite WAL/free pages without deleting works, features, ideas, or exports.
-
-## Install
+The compact display bundles may not include enough runtime state to repeat the
+accepted live run in place. To run the workflow, copy the tutorial into a fresh
+project, provide authorized source documents if desired, and install:
 
 ```bash
-python -m pip install principia-ai ipykernel
-python -m ipykernel install --user --name principia-v13-python --display-name "Python 3.12 (Principia V1.3)"
+python -m pip install "principia-ai[local,notebook]==1.3.3"
+export SILICONFLOW_API_KEY="your-key"
 ```
 
-For source development from this repository:
+## Shared outputs and validation
 
-```bash
-python -m pip install -e ".[dev]"
-python -m ipykernel install --user --name principia-v13-python --display-name "Python 3.12 (Principia V1.3)"
-```
+`Workspace.project(".")` writes reusable works and features to `workspace/`.
+Each generated idea is exported to `outputs/<idea_id>/`. Its `result.json`
+contains relative pointers back to the shared pool, and both validation-plan
+files are generated without another LLM call.
 
-In VS Code, open the notebook and select `Python 3.12 (Principia V1.3)`. If the named kernel is not shown, choose the Python interpreter where `principia-ai` and `ipykernel` were installed.
+Every cited evidence item resolves exactly to
+`(work_id, kind, record_id)`. Generator mode, model settings, traces, warnings,
+and usage metadata cannot become scientific evidence.
 
-## API Key
+Mathematical output uses `$...$` inline and `$$...$$` for display equations.
+Subscripts and superscripts are semantically braced, for example $R_{cf}$,
+$\boldsymbol{\Sigma}_{i}$, and $\mathrm{SNR}^{2}$. All retained expressions
+must pass the shared validator and strict KaTeX compilation.
 
-The notebook intentionally uses a placeholder:
+## Long-run control
+
+The full workflow remains controllable even though transient progress output is
+not retained in the public notebooks:
 
 ```python
-API_key = "YOUR_SILICONFLOW_API_KEY"
+job.status()
+job.pause()
+job.resume()
+job.stop()
 ```
 
-Replace it at runtime with your own SiliconFlow key. Do not commit notebooks containing real API keys or executed outputs.
+Pause checkpoints the current safe provider unit and starts no further paid
+call until resume. Stop schedules no new work and best-effort closes a
+supported active transport. The persisted `run_id` can be inspected after a
+notebook or terminal is closed.
+
+## Release verification
+
+Before publishing, scan the complete notebook JSON and all visible artifacts,
+not only code-cell source. The gate must reject credentials, local paths,
+private excerpts, malformed canonical evidence, unbraced scripts, invalid
+LaTeX, and stale output links. Display metrics must agree with the compact
+workspace and idea manifests.

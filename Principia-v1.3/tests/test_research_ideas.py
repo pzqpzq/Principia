@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
+
 import principia as pc
 from principia.llm import LLMConfig
 from principia.models import WorkItem
@@ -12,12 +14,19 @@ class LooseExtractionLLM(pc.LLMClient):
         return True
 
     def resolve(self, model: str = "auto") -> LLMConfig:
-        return LLMConfig(provider="custom", model="loose-extraction", api_key="test", base_url="https://example.test")
+        return LLMConfig(
+            provider="custom",
+            model="loose-extraction",
+            api_key="test",
+            base_url="https://example.test",
+        )
 
     def chat_json(self, system: str, user: str, **kwargs):
         return {
             "ideas": ["Continuous process quality control for coding agents."],
-            "principles": ["Risk estimates should be calibrated before they gate autonomous edits."],
+            "principles": [
+                "Risk estimates should be calibrated before they gate autonomous edits."
+            ],
             "baselines": ["Static lint-only gates"],
             "benchmarks": [{"name": "repository-scale coding benchmark"}],
             "takeaways": ["A controller should map risk into concrete actions."],
@@ -30,7 +39,9 @@ class ToolLeakIdeaLLM(pc.LLMClient):
         return True
 
     def resolve(self, model: str = "auto") -> LLMConfig:
-        return LLMConfig(provider="custom", model="tool-leak", api_key="test", base_url="https://example.test")
+        return LLMConfig(
+            provider="custom", model="tool-leak", api_key="test", base_url="https://example.test"
+        )
 
     def chat_json(self, system: str, user: str, **kwargs):
         return {
@@ -42,8 +53,12 @@ class ToolLeakIdeaLLM(pc.LLMClient):
                 "summary": "A dialectical controller follows the SciDialect tool rather than paper evidence.",
                 "symbols": [{"symbol": "q_t", "definition": "quality state"}],
                 "equations": [{"name": "Risk", "latex": "r_t = P(y_t=1 | q_t)"}],
-                "workflow": [{"step": "Tool step", "detail": "Follow the dialect generator output."}],
-                "reliability_checks": [{"check": "Tool provenance", "detail": "Treat SciDialect as evidence."}],
+                "workflow": [
+                    {"step": "Tool step", "detail": "Follow the dialect generator output."}
+                ],
+                "reliability_checks": [
+                    {"check": "Tool provenance", "detail": "Treat SciDialect as evidence."}
+                ],
             },
             "source_evidence": [
                 {
@@ -62,7 +77,9 @@ class AstroRetrievalLLM(pc.LLMClient):
         return True
 
     def resolve(self, model: str = "auto") -> LLMConfig:
-        return LLMConfig(provider="custom", model="astro-rerank", api_key="test", base_url="https://example.test")
+        return LLMConfig(
+            provider="custom", model="astro-rerank", api_key="test", base_url="https://example.test"
+        )
 
     def chat_json(self, system: str, user: str, **kwargs):
         if "academic literature search plans" in system.lower():
@@ -114,7 +131,11 @@ def arxiv_duplicate_source(query: str, limit: int, timeout: float):
             "source": "arxiv",
             "url": "https://arxiv.org/abs/2601.12345",
             "arxiv_id": "2601.12345",
-            "metadata": {"is_preprint": True, "is_peer_reviewed": False, "publication_type": "preprint"},
+            "metadata": {
+                "is_preprint": True,
+                "is_peer_reviewed": False,
+                "publication_type": "preprint",
+            },
         }
     ][:limit]
 
@@ -130,7 +151,11 @@ def crossref_duplicate_source(query: str, limit: int, timeout: float):
             "url": "https://doi.org/10.1145/principia.peer",
             "doi": "10.1145/principia.peer",
             "citation_count": 42,
-            "metadata": {"is_peer_reviewed": True, "is_preprint": False, "publication_type": "proceedings-article"},
+            "metadata": {
+                "is_peer_reviewed": True,
+                "is_preprint": False,
+                "publication_type": "proceedings-article",
+            },
         }
     ][:limit]
 
@@ -142,7 +167,11 @@ def mixed_review_source(query: str, limit: int, timeout: float):
             "abstract": "Repository quality control for coding agents with calibrated process risk.",
             "venue": "arXiv",
             "source": "arxiv",
-            "metadata": {"is_preprint": True, "is_peer_reviewed": False, "publication_type": "preprint"},
+            "metadata": {
+                "is_preprint": True,
+                "is_peer_reviewed": False,
+                "publication_type": "preprint",
+            },
         },
         {
             "title": "Calibrated Process Risk for Coding Agents",
@@ -150,7 +179,11 @@ def mixed_review_source(query: str, limit: int, timeout: float):
             "venue": "ACM Transactions on Software Engineering and Methodology",
             "source": "crossref",
             "citation_count": 5,
-            "metadata": {"is_peer_reviewed": True, "is_preprint": False, "publication_type": "journal-article"},
+            "metadata": {
+                "is_peer_reviewed": True,
+                "is_preprint": False,
+                "publication_type": "journal-article",
+            },
         },
     ][:limit]
 
@@ -222,9 +255,13 @@ def test_search_merges_arxiv_duplicate_into_peer_reviewed_venue(tmp_path: Path) 
 
 
 def test_search_uses_deterministic_bm25_order_without_embedding_rerank(tmp_path: Path) -> None:
-    ws = pc.Workspace(tmp_path, llm=pc.MockLLMClient(), search_sources={"mixed": mixed_review_source})
+    ws = pc.Workspace(
+        tmp_path, llm=pc.MockLLMClient(), search_sources={"mixed": mixed_review_source}
+    )
 
-    works = ws.research.search("repository quality control coding agents calibrated process risk", target_count=2)
+    works = ws.research.search(
+        "repository quality control coding agents calibrated process risk", target_count=2
+    )
 
     assert works[0].venue == "arXiv"
     assert works[1].venue == "ACM Transactions on Software Engineering and Methodology"
@@ -232,7 +269,9 @@ def test_search_uses_deterministic_bm25_order_without_embedding_rerank(tmp_path:
 
 
 def test_search_uses_shared_semantic_retriever_for_astronomy(tmp_path: Path) -> None:
-    ws = pc.Workspace(tmp_path, llm=AstroRetrievalLLM(), search_sources={"astro": astro_mixed_source})
+    ws = pc.Workspace(
+        tmp_path, llm=AstroRetrievalLLM(), search_sources={"astro": astro_mixed_source}
+    )
 
     works = ws.research.search(
         "Explanation for S251112cm as a sub-solar-mass kilonova optical transient",
@@ -266,6 +305,11 @@ def test_extract_cache_overwrite_and_generate_compare(tmp_path: Path) -> None:
     assert idea.mode == "calculus"
     assert idea.lineage["nodes"]
     assert comparison.rows
+    comparison_run = ws.storage.get_run(comparison.run_id)
+    assert comparison_run is not None
+    # Mock comparisons are deterministic and deliberately consume no LLM calls,
+    # but the zero-valued usage record must still be persisted on the run.
+    assert comparison_run.counts["llm_usage"]["calls"] == 0
     assert ws.counts()["ideas"] == 1
     assert ws.counts()["comparisons"] == 1
 
@@ -298,9 +342,13 @@ def test_workspace_staged_pipeline_can_export_result(tmp_path: Path) -> None:
     works = ws.research.search("evidence gated multi agent discovery", target_count=5)
     features = ws.research.extract(works, model="mock")
     selected = pc.select_evidence(features, kinds=["ideas", "principles", "takeaways"])
-    idea = ws.ideas.generate(selected, user_note="optimize token cost", mode="calculus", model="mock")
+    idea = ws.ideas.generate(
+        selected, user_note="optimize token cost", mode="calculus", model="mock"
+    )
     comparison = ws.ideas.compare(idea, features, model="mock")
-    export_path = ws.export(goal=works.query, works=works, features=features, idea=idea, comparison=comparison)
+    export_path = ws.export(
+        goal=works.query, works=works, features=features, idea=idea, comparison=comparison
+    )
 
     assert selected.counts()["ideas"] == 1
     assert idea.methodological_details["equations"]
@@ -323,7 +371,9 @@ def test_new_notebook_can_load_existing_features_without_reextracting(tmp_path: 
     loaded_works = second_session.load_works()
     loaded_features = second_session.load_features()
     selected = pc.select_evidence(loaded_features, kinds=["ideas", "principles", "takeaways"])
-    idea = second_session.ideas.generate(selected, user_note="generate from loaded features", mode="calculus", model="mock")
+    idea = second_session.ideas.generate(
+        selected, user_note="generate from loaded features", mode="calculus", model="mock"
+    )
 
     assert len(loaded_works) == len(works)
     assert loaded_features.counts() == extracted.counts()
@@ -355,7 +405,10 @@ def test_extract_normalizes_loose_provider_feature_lists(tmp_path: Path) -> None
     work = pc.WorkItem(
         id="Coding_Agent_Process_Control",
         title="Real-Time Process Quality Control for Autonomous Coding Agents",
-        abstract="A repository-scale controller estimates calibrated risk and chooses actions.",
+        abstract=(
+            "A repository-scale controller estimates calibrated risk and chooses actions while comparing "
+            "against static lint-only gates on a repository-scale coding benchmark."
+        ),
     )
 
     features = ws.research.extract([work], model="custom:loose-extraction", overwrite=True)
@@ -366,7 +419,16 @@ def test_extract_normalizes_loose_provider_feature_lists(tmp_path: Path) -> None
     assert item.baselines[0]["name"] == "Static lint-only gates"
     assert item.takeaways[0]["message"].startswith("A controller")
     assert item.result_facts[0]["fact"].startswith("Calibration")
-    assert all(record["id"] for record in [*item.ideas, *item.principles, *item.baselines, *item.takeaways, *item.result_facts])
+    assert all(
+        record["id"]
+        for record in [
+            *item.ideas,
+            *item.principles,
+            *item.baselines,
+            *item.takeaways,
+            *item.result_facts,
+        ]
+    )
 
 
 def test_feature_summary_handles_v12_style_keys() -> None:
@@ -377,9 +439,24 @@ def test_feature_summary_handles_v12_style_keys() -> None:
                 work_id="W1",
                 title="Agentic quality paper",
                 model="test",
-                ideas=[{"id": "I1", "idea_text": "Use calibrated process risk to gate autonomous edits."}],
-                principles=[{"id": "P1", "abstract_signature": "Warnings must be actionable and calibrated."}],
-                takeaways=[{"id": "T1", "message_text": "Quality signals should map to concrete interventions."}],
+                ideas=[
+                    {
+                        "id": "I1",
+                        "idea_text": "Use calibrated process risk to gate autonomous edits.",
+                    }
+                ],
+                principles=[
+                    {
+                        "id": "P1",
+                        "abstract_signature": "Warnings must be actionable and calibrated.",
+                    }
+                ],
+                takeaways=[
+                    {
+                        "id": "T1",
+                        "message_text": "Quality signals should map to concrete interventions.",
+                    }
+                ],
             )
         ],
     )
@@ -401,7 +478,12 @@ def test_idea_markdown_cleans_numbered_workflow_and_wraps_latex() -> None:
             "summary": "A controller uses diff features.",
             "symbols": [{"symbol": "q_t", "definition": "quality state"}],
             "equations": [{"name": "Risk", "latex": "r_t = P(y_t=1 | q_t)"}],
-            "workflow": [{"step": "2. Step 2", "detail": "2. Extract static features F, H, L from the patch diff."}],
+            "workflow": [
+                {
+                    "step": "2. Step 2",
+                    "detail": "2. Extract static features $F$, $H$, $L$ from the patch diff.",
+                }
+            ],
             "reliability_checks": [{"check": "1. Calibration", "detail": "1. Check ECE."}],
         },
     )
@@ -410,8 +492,8 @@ def test_idea_markdown_cleans_numbered_workflow_and_wraps_latex() -> None:
 
     assert "2. **Step 2:** 2. Extract" not in markdown
     assert "1. **Step:** Extract static features $F$, $H$, $L$ from the patch diff." in markdown
-    assert "$r_t = P(y_t=1 | q_t)$" in markdown
-    assert "- $q_t$: quality state" in markdown
+    assert "$$r_{t} = P(y_{t}=1 | q_{t})$$" in markdown
+    assert "- $q_{t}$: quality state" in markdown
 
 
 def test_generation_mode_tool_name_is_not_treated_as_evidence(tmp_path: Path) -> None:
@@ -423,33 +505,34 @@ def test_generation_mode_tool_name_is_not_treated_as_evidence(tmp_path: Path) ->
                 work_id="W1",
                 title="Calibrated Process Control for Coding Agents",
                 model="test",
-                ideas=[{"id": "I1", "title": "Risk gate", "core_idea": "Gate agent actions with calibrated repository risk."}],
-                principles=[{"id": "P1", "name": "Actionability", "argument": "Warnings must map to concrete actions."}],
+                ideas=[
+                    {
+                        "id": "I1",
+                        "title": "Risk gate",
+                        "core_idea": "Gate agent actions with calibrated repository risk.",
+                    }
+                ],
+                principles=[
+                    {
+                        "id": "P1",
+                        "name": "Actionability",
+                        "argument": "Warnings must map to concrete actions.",
+                    }
+                ],
                 takeaways=[{"id": "T1", "message": "Use evidence-backed interventions."}],
             )
         ],
     )
 
-    idea = ws.ideas.generate(features, user_note="build process quality control", mode="scidialect-evo", model="custom:tool-leak")
+    with pytest.raises(RuntimeError, match="failed validation after one evidence-grounded repair"):
+        ws.ideas.generate(
+            features,
+            user_note="build process quality control",
+            mode="standard",
+            model="custom:tool-leak",
+        )
 
-    visible_content = " ".join(
-        [
-            idea.title,
-            idea.thesis,
-            idea.novelty_claim,
-            " ".join(idea.mechanism_design),
-            str(idea.methodological_details),
-            str(idea.source_evidence),
-            str(idea.trace),
-        ]
-    ).lower()
-
-    assert idea.mode == "scidialect_evo"
-    assert "scidialect" not in visible_content
-    assert "dialect" not in visible_content
-    assert idea.source_evidence
-    assert idea.source_evidence[0]["work_id"] == "W1"
-    assert idea.trace["top_variant"] == "candidate_evolution_full"
+    assert ws.counts()["ideas"] == 0
 
 
 def test_compare_requires_llm_without_mock(tmp_path: Path) -> None:

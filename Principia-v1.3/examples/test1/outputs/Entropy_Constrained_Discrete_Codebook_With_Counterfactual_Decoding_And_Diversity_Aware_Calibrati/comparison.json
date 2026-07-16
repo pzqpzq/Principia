@@ -1,0 +1,32 @@
+{
+  "idea_id": "Entropy_Constrained_Discrete_Codebook_With_Counterfactual_Decoding_And_Diversity_Aware_Calibrati",
+  "rows": [
+    {
+      "work_id": "L-AD934C6A69457BF4EB60",
+      "title": "Collapse and interpretability metrics for learned agent messages",
+      "mechanistic_similarity": "Both employ a per-task entropy floor within the loss function to penalize low codebook usage diversity and prevent representational collapse.",
+      "essential_difference": "The generated idea replaces graph-grounded decoding with a counterfactual decoding protocol that tests reconstruction under input perturbations, and introduces dynamic calibration of the entropy target triggered specifically when cosine similarity exceeds 0.88, whereas the prior work implies static or metric-only evaluation.",
+      "potential_advantage": "The dynamic adjustment of the entropy target based on real-time embedding overlap allows the system to adaptively prevent collapse in homogeneous regimes without over-constraining diverse regimes, while counterfactual testing ensures causal robustness rather than just structural grounding.",
+      "potential_weakness": "The reliance on a hard threshold for dynamic calibration may introduce training instability if embeddings fluctuate near the boundary, and the counterfactual reconstruction module adds significant computational overhead compared to simple graph grounding."
+    },
+    {
+      "work_id": "L-ED26DF60405BF08FF507",
+      "title": "Interpretability Checkpoint Protocol",
+      "mechanistic_similarity": "Both mechanisms mandate a decoding step where machine messages are translated back to human-readable forms and subjected to counterfactual coherence tests to verify interpretability.",
+      "essential_difference": "The prior work treats counterfactual coherence as a monitoring checkpoint to flag dialect collapse, while the generated idea integrates it as a mandatory validity gate within the training loop, coupled with an explicit entropy floor constraint.",
+      "potential_advantage": "Embedding the counterfactual audit as a hard constraint in the training workflow ensures that only causally robust dialects survive, potentially yielding higher reliability than a passive monitoring protocol.",
+      "potential_weakness": "Rejecting dialects based on counterfactual failure during training could lead to vanishing gradients or optimization deadlocks if the discrete codebook cannot simultaneously satisfy the entropy floor and the strict reconstruction requirements."
+    },
+    {
+      "work_id": "L-9FED827F2B6580EEDF8B",
+      "title": "Message Audit Protocol for Inter-Agent Communication",
+      "mechanistic_similarity": "Both frameworks aim to separate token savings from reliable coordination by enforcing a recovery mechanism that allows for human or automated audit of the compact communication.",
+      "essential_difference": "The prior work focuses on a synthetic protocol for post-hoc audit and intervention, while the generated idea operationalizes this via a Counterfactual Audit step that actively perturbs inputs to verify logical truth value preservation during the learning phase.",
+      "potential_advantage": "The generated idea use of controlled noise perturbations to test logical stability provides a stronger guarantee of causal interpretability compared to static audit paths.",
+      "potential_weakness": "The complexity of defining predictable changes in logical truth values under perturbation may introduce ambiguity in the loss signal, potentially hindering convergence compared to simpler audit metrics."
+    }
+  ],
+  "model": "siliconflow:Qwen/Qwen3.5-397B-A17B",
+  "run_id": "RUN_B08E394299D5",
+  "created_at": "2026-07-16T11:31:41+00:00"
+}

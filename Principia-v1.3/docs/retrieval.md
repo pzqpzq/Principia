@@ -1,227 +1,194 @@
-# Principia Retrieval: Flow and Current Behavior
+# Principia Retrieval (v1.3.3)
 
-This document describes the implementation in `src/principia_retrieval`. It is
-the canonical V1.3 source for the public `principia_retrieval` package. The
-repository-root package path is only a V1.2 compatibility link to this source.
-The document covers public metadata retrieval, query planning, deduplication,
-ranking, optional reranking, failure behavior, and known implementation issues.
+`principia_retrieval` is Principia's public, domain-neutral academic metadata
+retriever. It plans complementary queries, searches multiple providers, merges
+publication identities, ranks a candidate pool, and returns both works and
+machine-readable diagnostics.
 
-## Scope and Entry Points
+Private folders use the separate `ResearchService.ingest_local(...)` adapter
+documented in [local-corpus.md](local-corpus.md). In a high-level pipeline,
+`target_count` always means the public online-literature target; every accepted
+local document is supplemental and cannot hide an underfilled online search.
 
-The shared retrieval package is exposed through `principia_retrieval.WorkRetriever`. Its primary API is:
+## Public entry point
 
 ```python
+from principia_retrieval import RetrievalConfig, WorkRetriever
+
+config = RetrievalConfig(
+    rerank_mode="embedding_rerank",
+    max_raw_candidates=300,
+    max_queries=8,
+    require_target=True,
+)
 result = WorkRetriever(config=config).search(
-    goal_text,
+    research_goal,
     target_count=50,
-    llm=llm,
     embedding_client=embedding_client,
 )
 ```
 
-`RetrievalResult` contains:
-
-- `query_plan`: the generated `QueryPlan`.
-- `candidates`: normalized and deduplicated works before scoring. Internal score fields beginning with `_` are removed.
-- `selected_works`: final works after ranking and final filtering. Internal score fields are removed.
-- `ranking_trace`: the final works with public score, relation label, rationale, and rejection reason.
-
-The V1.3 application calls this package through `principia.research.ResearchService.search`. It accepts `rerank_mode` and the CLI exposes `--rerank-mode bm25|embedding_rerank` for search, extract, and generate commands.
-
-## End-to-End Flow
-
-```text
-research goal
-  -> deterministic query plan
-  -> optional LLM query-plan augmentation
-  -> bounded query list
-  -> concurrent source queries
-  -> normalize works
-  -> deduplicate works
-  -> BM25 + deterministic signals
-  -> relevance prefilter
-  -> optional embedding reranker, or keep BM25 order
-  -> final out-of-scope filtering and top-up
-  -> selected works and ranking trace
-```
-
-### 1. Input Bounds and Reranker Selection
-
-`target_count` is clamped to `[1, 200]`. `RetrievalConfig.rerank_mode` accepts the following aliases:
-
-| Requested value | Resolved mode |
-| --- | --- |
-| `embedding`, `embedding-rerank`, `embedding_rerank` | `embedding_rerank` |
-| `bm25`, `deterministic`, `no_llm`, `no-llm` | `bm25` |
-
-Any mode other than an embedding alias resolves to deterministic BM25 ranking.
-
-Relevant defaults in `RetrievalConfig` are:
-
-| Setting | Default | Meaning |
-| --- | ---: | --- |
-| `max_raw_candidates` | 240 | Requested raw-candidate budget before deduplication; see the budget caveat below. |
-| `max_queries` | 6 | Maximum search strings sent to each source. |
-| `min_relevance` | 0.08 | BM25-combined score threshold for the reranking pool. |
-| `embedding_model` | `Qwen/Qwen3-Embedding-4B` | SiliconFlow embedding model. |
-| `embedding_dimensions` | 1024 | Requested embedding vector dimension. |
-| `embedding_batch_size` | 32 | Texts per embedding API call. |
-| `embedding_rerank_candidate_limit` | 0 | If zero, uses `max(2 * target_count, 50)`; otherwise uses at least `target_count`. |
-
-### 2. Query Planning
-
-The planner always starts with a deterministic plan.
-
-1. It cleans the goal text.
-2. It extracts entity-like identifiers using regular expressions, including long uppercase identifiers, mixed acronym-number forms, arXiv identifiers, and astronomy transient identifiers.
-3. It tokenizes English alphanumeric terms, removes a fixed stopword list, and produces 3-token phrases, 2-token phrases, then individual tokens.
-4. It forms queries from entities and phrases, adds an entity-plus-phrase combination, and finally adds the full goal text.
-
-When `use_llm_planner=True` and the supplied LLM reports availability, the planner asks the LLM for `search_queries`, `entities`, and `key_phrases`. The deterministic entities and phrases are retained and combined with the LLM output. With a query budget, the mixed list keeps deterministic anchor queries, LLM queries, and the full goal where possible. Any planner exception falls back to the deterministic plan.
-
-`QueryPlan.domain_hints` and `exclude_terms` exist in the data model but are not populated by the current planner and do not affect source retrieval or scoring.
-
-### 3. Source Retrieval
-
-The default source registry contains four adapters:
-
-| Source | Endpoint behavior |
-| --- | --- |
-| arXiv | Atom API, sorted by relevance. |
-| OpenAlex | `/works?search=...`, sorted by `relevance_score`. |
-| Crossref | `/works?query=...`, sorted by relevance. |
-| Semantic Scholar | Graph paper search with title, authors, year, venue, URL, abstract, citations, and external IDs. |
-
-For every selected source and query pair, `WorkRetriever` starts `fetch_source` in a thread pool. The pool has at most eight workers. `fetch_source` absorbs source-call failures and returns an empty list for a failed adapter call. Successful rows are normalized and tagged with `source`, `source_query`, `source_rank`, and `source_limit` in `community_signals`.
-
-The raw-candidate budget is divided across all active source/query pairs:
-
-```text
-base, remainder = divmod(max_raw_candidates, active_source_query_pairs)
-limit[i] = min(25, base + 1) for the first remainder pairs
-limit[i] = min(25, base) otherwise
-```
-
-Pairs are ordered by query and then source. Only pairs with a positive allocation are queried. Returned rows are capped again to the allocated limit, so a custom source that ignores its requested limit cannot exceed the raw budget. Requests are still concurrent, but results are concatenated in source/query task order rather than completion order.
-
-### 4. Normalization and Deduplication
-
-Each source row is normalized to a common schema. Key fields include `work_id`, title, authors, year, venue, URL/DOI, DOI, arXiv/OpenAlex/Semantic Scholar identifiers, abstract, citation count, source URLs, and community signals.
-
-Deduplication uses these identity keys, in order:
-
-1. DOI
-2. arXiv identifier
-3. OpenAlex identifier
-4. Semantic Scholar identifier
-5. normalized title
-
-On a match, the system selects the higher-quality source record. Source quality prefers a non-aggregator venue, then Crossref, OpenAlex, Semantic Scholar, arXiv, and then citation count. It merges URLs, keeps the longer abstract, keeps the maximum citation count, and records `merged_sources`.
-
-### 5. Deterministic BM25 Ranking
-
-All deduplicated works are ranked before any optional reranker. The document text is the concatenation of title, abstract, and venue. The BM25 query is formed from:
-
-- full research goal;
-- at most eight planned search queries;
-- all entities;
-- at most twelve key phrases.
-
-The tokenizer indexes English alphanumeric tokens of length at least three (with `_` and `-` allowed), applying small plural normalization. For contiguous CJK text it emits overlapping two-character tokens, so Chinese goals and metadata participate in BM25 and lexical-overlap scoring without requiring an external tokenizer.
-
-For a candidate, the combined BM25-stage score is:
-
-```text
-score = max(0,
-    0.62 * normalized_BM25
-  + 0.28 * semantic_lite_overlap
-  + 0.06 * source_prior
-  + metadata_score
-  + exact_entity_bonus)
-```
-
-`semantic_lite_overlap` is a weighted lexical coverage score over the goal, with bonuses for planned phrases and entities in the document. The source prior is the maximum of a transformed source-provided relevance score and `1 / sqrt(source_rank)`. `metadata_score` is at most `0.115`, composed of recency, citation count, venue heuristic, abstract presence, and link presence. An exact entity match adds `0.35`.
-
-The BM25 relation labels are assigned as follows:
-
-| Condition | Label |
-| --- | --- |
-| exact entity, or combined score >= 0.48 | `direct` |
-| combined score >= 0.28 | `background` |
-| lexical overlap >= 0.12 | `methodological` |
-| otherwise | `out_of_scope` |
-
-Candidates with a combined score below `min_relevance` are removed before reranking unless they contain an exact planned entity. If this leaves no candidates, the top `max(target_count, 20)` BM25 candidates are restored.
-
-### 6. Single-Vector Embedding Reranking
-
-Embedding reranking is selected only by `rerank_mode="embedding_rerank"` (or an alias) and runs after the BM25 prefilter. It reranks at most the configured candidate limit; the default is `max(2 * target_count, 50)`.
-
-The default provider is SiliconFlow's OpenAI-compatible embeddings endpoint. It requires `SILICONFLOW_API_KEY` or `PRINCIPIA_API_KEY`. Its base URL defaults to `https://api.siliconflow.cn/v1`, but can be overridden with `PRINCIPIA_LLM_BASE_URL`. The request body contains the model, an input-text array, and the requested dimensions. Transient HTTP status codes 429, 500, 502, 503, and 504, timeout errors, and URL errors are retried up to `embedding_max_retries` with exponential waits.
-
-This is a single-vector method:
-
-1. The goal and query-plan fields are serialized into one query text:
-
-   ```text
-   research_goal: <goal>
-   search_queries: <up to 8 queries>
-   entities: <up to 16 entities>
-   key_phrases: <up to 20 phrases>
-   domain_hints: <up to 8 hints>
-   ```
-
-2. Each work is serialized into one document text:
-
-   ```text
-   title: <title>
-   abstract: <abstract truncated to 5,000 characters>
-   venue: <venue>
-   year: <year>
-   authors: <up to 10 authors>
-   doi: <DOI or URL>
-   source: <source>
-   ```
-
-3. The query and all candidate texts are embedded, batching uncached texts. The in-memory cache key is model, dimensions, and SHA-1 of the serialized text. The cache is local to one `embedding_rerank` call unless the caller passes a cache object.
-4. A candidate's main score is cosine similarity between the one query vector and its one work vector. The cosine value is clamped to `[0, 1]`.
-5. The final embedding score is:
-
-   ```text
-   embedding_score = cosine_similarity + 0.05 * metadata_score + 0.01 * exact_entity_match
-   ```
-
-6. Embedding relation labels use similarity thresholds: `direct` for an exact entity or similarity >= 0.78; `background` for >= 0.62; `methodological` for >= 0.46; otherwise `out_of_scope`.
-
-If the embedding request, response parsing, or client invocation fails, the candidate order remains BM25 order. Each candidate receives `embedding_rerank_error`, `embedding_model`, and `embedding_dimensions` in `community_signals`.
-
-### 7. Final Selection
-
-The list is sorted by retrieval score, relation-label priority (`direct`, `background`, `methodological`, `out_of_scope`), and descending year.
-
-The first pass excludes:
-
-- an `out_of_scope` work with a non-empty rejection reason; and
-- an `out_of_scope` work without an exact entity match whose score is below `0.18`.
-
-If too few works remain, a second pass fills the result from the ranked list, still excluding works that have an explicit rejection reason. Deduplication for this final top-up uses `work_id`, or a stable title-and-URL hash when no ID is present.
-
-## Integrity Rules and Remaining Limitations
-
-### Deduplication identity rule
-
-DOI, arXiv, OpenAlex, and Semantic Scholar identifiers are strong identifiers. A matching strong identifier merges records. A normalized-title match merges records only when at least one record has no strong identifier; two records with distinct strong identifiers remain distinct even when their titles are identical.
-
-This avoids merging known-distinct publications, but title-only records remain an inherently weaker identity case. A future enhancement can use authors and publication year to make title-only merging more conservative.
-
-### Embedding response validation
-
-The SiliconFlow response parser validates vector count, non-empty vectors, consistent dimensions, and the requested dimension when a positive dimension was sent in the API request. Generic injected embedding clients are also checked for non-empty and mutually consistent vector lengths. A violation triggers the existing BM25 fallback.
-
-### Scoring calibration
-
-BM25 and embedding scores are calibrated independently. Their absolute values should not be compared across modes. Changes to source mix, CJK tokenization, model version, or metadata quality should be evaluated with the retrieval benchmark before changing relation-label thresholds.
-
-## Verification Coverage
-
-The focused shared-retriever tests cover BM25 ordering, optional LLM query planning, embedding reranking, embedding fallback, reranking pool limits, mode aliases, within-call embedding-text caching, distinct DOI records with a shared title, strict candidate-budget behavior, and CJK BM25 ranking. Application and CLI integration should additionally be covered by end-to-end tests when their command surface changes.
+`RetrievalResult` contains the `QueryPlan`, normalized `candidates`, final
+`selected_works`, a public `ranking_trace`, and `SearchDiagnostics`. The
+diagnostics include completeness, all source/query reports, query routing,
+candidate counts, warnings, and whether embedding reranking was actually
+applied or fell back to BM25.
+
+When `require_target=True`, an underfilled search raises
+`InsufficientResultsError`. Its `.result` attribute contains the partial result
+and complete diagnostics. If every source request fails, the retriever raises
+`AllSourcesFailedError` instead of returning a misleading empty search.
+
+## Query planning and routing
+
+The deterministic planner retains exact acronyms, identifiers, scientific
+notation, technical phrases, directly supported synonyms, and complementary
+method/evaluation/control intents. It decomposes prose goals into a core
+research problem plus method, constraint, evaluation, and failure-mode facets;
+each bibliographic query keeps the core anchor while varying one facet. This
+avoids both full-goal overconstraint and same-word/different-problem drift
+without relying on discipline-specific query templates. An available LLM may
+augment this plan, but planner failure falls back deterministically.
+`QueryPlan.trace` records the routed providers.
+
+The standard providers are:
+
+| Provider | Coverage | Terms |
+| --- | --- | --- |
+| arXiv | Preprints across physics, mathematics, computing, and related fields | [API terms](https://info.arxiv.org/help/api/tou.html) |
+| OpenAlex | Cross-domain scholarly graph | [Terms](https://openalex.org/OpenAlex_termsofservice.pdf) |
+| Crossref | DOI and publisher metadata | [Metadata and licensing guidance](https://www.crossref.org/documentation/retrieve-metadata/) |
+| Semantic Scholar | Cross-domain paper graph | [API license](https://www.semanticscholar.org/product/api#api-license) |
+| Europe PMC | Biomedical and life-science literature | [Developer and content-access guidance](https://europepmc.org/developers) |
+
+OpenAlex requires a free API key under its current
+[authentication policy](https://developers.openalex.org/api-reference/authentication).
+Set `OPENALEX_API_KEY` in the process environment. The retired `mailto` polite
+pool is not used, and provider credentials are redacted from persisted source
+errors and retry diagnostics.
+
+Europe PMC is added automatically for biomedical/life-science plans. Explicit
+`source_names` always override automatic routing. Provider adapters apply
+source-appropriate query syntax: arXiv requires a match from each of two
+concept groups while allowing OR alternatives within a group, avoiding both an
+all-term AND recall collapse and an all-concept OR precision collapse.
+Semantic Scholar strips unsupported Boolean syntax and Unicode hyphens;
+OpenAlex, Crossref, and Europe PMC receive focused bibliographic terms.
+
+Principia preserves source attribution and provider identifiers but does not
+grant rights to publisher full text or provider metadata. Users must follow the
+linked provider terms, rate-limit guidance, attribution requirements, and any
+separate full-text license. Private content sent to an LLM is governed by that
+provider's terms and requires Principia's explicit privacy consent; it is not
+submitted to these bibliographic metadata sources.
+
+## Reliability and diagnostics
+
+Every source/query call has bounded retries, exponential backoff, `Retry-After`
+support, per-provider pacing, and a certifi-backed TLS context. A `SourceReport`
+records the original and normalized query, requested/returned/normalized
+counts, latency, attempts, retry errors, HTTP status, and final state:
+`success`, `empty`, or `failed`.
+
+Source calls run concurrently, while pacing is coordinated per provider.
+Partial outages return available results with `diagnostics.degraded=True` and
+an explicit warning. Empty successful responses remain distinguishable from
+network/provider failures.
+
+Retrieval is adaptive. The first round divides a candidate-pool budget across
+all query/provider pairs. If deduplication leaves too few unique candidates,
+later rounds request deeper result pages (up to the configured per-task and
+round bounds). Strict target mode either returns exactly the requested number
+or raises with the partial result.
+
+Key reliability controls in `RetrievalConfig` are:
+
+| Setting | Default |
+| --- | ---: |
+| `source_max_retries` | 2 |
+| `source_backoff_seconds` | 0.5 |
+| `source_max_backoff_seconds` | 8.0 |
+| `max_retrieval_rounds` | 3 |
+| `candidate_oversample` | 3.0 |
+| `max_results_per_source_query` | 100 |
+| `stabilize_repeated_searches` | `True` |
+| `stability_window` | 20 |
+| `stability_min_jaccard` | 0.70 |
+
+Repeated equivalent searches in the same Python process still make fresh
+provider and embedding requests. By default, Principia then applies a bounded,
+transparent top-20 stability anchor: it retains only the mathematically needed
+portion of the preceding top cohort to meet the configured Jaccard floor while
+leaving room for newly retrieved works. If a retained work is absent from a
+transient provider response, its previously normalized metadata may be restored
+for that process-local comparison. Diagnostics expose whether this happened in
+`stability_anchor_applied`, `stability_anchor_window`,
+`stability_anchor_retained`, and `stability_anchor_restored`; the ranking trace
+marks retained rows with `stability_anchor=true`. Set
+`stabilize_repeated_searches=False` when measuring raw provider volatility.
+
+## Identity reconciliation
+
+DOI, arXiv, OpenAlex, Semantic Scholar, and PMID identifiers are authoritative
+within their namespaces. Exact identifiers merge directly. A matching title
+can connect a preprint to a publication when identifiers do not conflict and
+author/year evidence is compatible. Near-identical title matching has stricter
+author/year checks. Distinct values in the same identifier namespace never
+merge.
+
+DOIs are canonicalized across bare, `doi:`, percent-encoded, and resolver-URL
+forms. arXiv resolver URLs and version suffixes map to the underlying work, and
+OpenAlex URLs map to their stable `W...` identifier. SQLite repeats the same
+normalization during idempotent migration, reconciles compatible legacy rows,
+and preserves rows with conflicting strong identities. Strict searches recheck
+the requested unique count after persistence reconciliation.
+
+Merged records retain provider URLs, the longest abstract, the maximum citation
+count, publication/preprint provenance, PMID and PDF links, and all known strong
+identifiers. They also retain every matched query and its best provider rank;
+this query provenance contributes a small support signal during ranking.
+
+## Ranking and reranking
+
+BM25 lexical relevance, rare-term-weighted query-facet coverage, provider/query
+support, metadata completeness, and a small citation signal determine the
+initial order. Generic acronyms that occur throughout a candidate cohort do not
+receive an exact-entity bonus; distinctive identifiers still do. Citation
+counts are log-scaled within three-year publication cohorts so old or
+high-citation disciplines do not dominate. A specific venue is only a metadata
+completeness signal; there are no AI, astronomy, or named-venue whitelists.
+
+The embedding pool retains the strongest overall BM25 candidates and reserves
+capacity for every query facet and provider. This prevents an essential but
+specialized method from being excluded by one aggregate prefilter.
+
+With `rerank_mode="embedding_rerank"`, the BM25 pool is reranked using
+`Qwen/Qwen3-Embedding-4B` by default. Principia accepts an injected embedding
+client or uses SiliconFlow credentials (`SILICONFLOW_API_KEY` or
+`PRINCIPIA_API_KEY`) and `PRINCIPIA_LLM_BASE_URL`. The reranker embeds an
+instruction-prefixed goal and each complementary research facet separately,
+then combines goal similarity, strongest facet similarity, facet breadth,
+normalized BM25, lexical facet coverage, assessable-content quality, and query
+support. Title-only records remain eligible but rank below equally relevant
+records with enough abstract evidence to assess. Embedding calls validate
+vector counts and dimensions and use bounded transient-error retries.
+
+Final selection applies novelty only as a two-percent tie-breaker inside the
+relevance-qualified pool. Diversity therefore broadens closely scored evidence
+without promoting a topical tangent over a materially stronger match.
+
+An embedding failure preserves deterministic BM25 order and records the reason
+in both work metadata and `SearchDiagnostics.rerank_fallback_reason`. Callers
+must check `rerank_mode_applied`; a requested embedding mode is not silently
+reported as successful.
+
+## Verification
+
+`tests/test_retrieval_v133.py` covers retry and `Retry-After` behavior, partial
+and total outages, adaptive strict-target top-up, strict underfill errors,
+embedding applied/fallback diagnostics, provider query normalization,
+biomedical routing, diagnostics serialization, generic-entity calibration,
+multi-aspect embedding, metadata-quality weighting, query-provenance merging,
+facet-stratified pooling, and relevance-first diversity. The broader research
+tests cover persistence integration, preprint/publication merging,
+deterministic ranking, and non-AI domain retrieval.

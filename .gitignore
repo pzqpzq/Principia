@@ -1,22 +1,39 @@
+# Credentials and local configuration
 .env
 .env.*
 !.env.example
-data/*.sqlite
-!data/principia.sqlite
-data/*.sqlite-*
-data/server-*.log
-data/store.json
-data/store.legacy.json
-data/artifacts/**
-!data/artifacts/**/
-!data/artifacts/**/.gitkeep
-dist/cloud*/
-dist/cloud-*/
-dist/cloud_*/
-__pycache__/
-*.pyc
-.DS_Store
+!**/.env.example
+.pypirc
 
-Principia-v1.3/examples/principia_project
-Principia-v1.3/examples/principia_astro
+# Python bytecode, environments, and tool state
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.coverage
+coverage.xml
+htmlcov/
+
+# Local editor and operating-system files
+.DS_Store
 .vscode/
+node_modules/
+
+# Build and publication artifacts
+build/
+dist/
+
+# Principia runtime state and generated workspaces
+.principia/
+principia_outputs/
+
+# The archived visual workbench recreates these files when run locally.
+legacy/v1.2/data/*.sqlite
+legacy/v1.2/data/*.sqlite-*
+legacy/v1.2/data/server-*.log
+legacy/v1.2/data/store.json
+legacy/v1.2/data/store.legacy.json

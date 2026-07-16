@@ -4,11 +4,11 @@ build-backend = "hatchling.build"
 
 [project]
 name = "principia-ai"
-version = "1.3.2"
-description = "Local-first research framework for evidence-grounded idea generation."
+version = "1.3.3"
+description = "Local-first, cross-domain research framework for evidence-grounded idea generation."
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT" }
+license = "MIT"
 license-files = ["LICENSE"]
 authors = [
   { name = "Principia Contributors" }
@@ -23,11 +23,14 @@ classifiers = [
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
-  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering",
 ]
 dependencies = [
+  "certifi>=2024.2.2",
   "httpx>=0.27",
   "platformdirs>=4.2",
+  "pylatexenc>=2.10",
   "pydantic>=2.7",
   "pypdf>=4.2",
   "rich>=13.7",
@@ -35,11 +38,20 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+local = [
+  "openpyxl>=3.1",
+  "python-docx>=1.1",
+  "python-pptx>=0.6.23",
+]
+notebook = [
+  "ipywidgets>=8.1",
+]
 dev = [
   "build>=1.2",
   "ipykernel>=6.29",
   "mypy>=1.10",
   "nbclient>=0.10",
+  "nbformat>=5.10",
   "pytest>=8.2",
   "ruff>=0.5",
   "twine>=5.1",
@@ -55,6 +67,12 @@ principia = "principia.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/principia", "src/principia_retrieval"]
+exclude = [
+  "**/__pycache__/**",
+  "**/*.pyc",
+  "**/*.pyo",
+  "**/.DS_Store",
+]
 
 [tool.hatch.build.targets.sdist]
 include = [
@@ -62,11 +80,20 @@ include = [
   "/tests",
   "/docs",
   "/examples",
+  "/scripts",
   "/README.md",
+  "/CHANGELOG.md",
   "/LICENSE",
+  "/UPSTREAM.md",
   "/pyproject.toml",
 ]
 exclude = [
+  "**/__pycache__/**",
+  "**/*.pyc",
+  "**/*.pyo",
+  "**/.pytest_cache/**",
+  "**/.mypy_cache/**",
+  "**/.ruff_cache/**",
   "**/.DS_Store",
   "**/.principia",
   "**/principia_outputs",
@@ -77,7 +104,7 @@ exclude = [
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["src"]
+pythonpath = ["src", "."]
 
 [tool.ruff]
 line-length = 100
