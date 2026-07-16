@@ -1,7 +1,7 @@
 # Principia 1.3.3 Release QA
 
 Date: 2026-07-16  
-Status: **PASS — explicit maintainer publication authorization received**
+Status: **PASS — PyPI published; GitHub PR awaiting final receipt CI and merge**
 
 This report records the checks performed against the final framework source,
 the three Jul16 live acceptance runs, and the exact wheel and source archive
@@ -208,6 +208,18 @@ cache, runtime workspace, duplicate member, or nested distribution.
 ## Publication receipt
 
 The maintainer explicitly authorized GitHub and PyPI publication in this task.
-The immutable PyPI artifact hashes are recorded above. GitHub pull-request,
-merge-commit, and PyPI verification URLs are appended here after remote
-publication completes; no credential is written to this report.
+No credential is written to this report.
+
+- GitHub branch: `codex/principia-v1.3.3-framework`.
+- Pre-receipt head: `1ad7fb6618b0ba199ae0bbc906dc4bd009069f34`.
+- Pull request: <https://github.com/pzqpzq/Principia/pull/9>.
+- Corrected pre-publication CI: run `29497057756`, with all nine jobs green
+  across core/local Python 3.10-3.13 and package/archive verification.
+- PyPI release: <https://pypi.org/project/principia-ai/1.3.3/>.
+- PyPI verification: 2026-07-16 22:21 CST. The JSON API returned exactly the
+  two non-yanked files, byte sizes, and SHA-256 digests recorded in the archive
+  table above, with `requires_python` set to `>=3.10`.
+
+This receipt commit must pass the same GitHub CI before PR #9 is merged. GitHub
+assigns the final merge commit after that gate; it is therefore verified as a
+post-merge public-endpoint check rather than predicted in this source report.
