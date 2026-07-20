@@ -205,6 +205,46 @@ def test_live_extraction_rejects_persistent_unsafe_math_without_persistence(
     assert workspace.counts()["extractions"] == 0
 
 
+def test_live_extraction_repairs_bare_mathematical_unicode(
+    tmp_path: Path, monkeypatch: Any
+) -> None:
+    invalid = valid_payload()
+    invalid["principles"][0]["evidence"] = "Noise scale σ controls calibration stability."
+    repaired = valid_payload()
+    repaired["principles"][0]["evidence"] = (
+        "Noise scale controls calibration stability."
+    )
+    llm = ExtractionLLM([invalid, repaired])
+    workspace = pc.Workspace(tmp_path, llm=llm)
+    work = pc.WorkItem(id="UNICODE-MATH", title="Calibrated resonator noise scale")
+    evidence = (
+        "A superconducting resonator scan uses squeezed readout and calibrated noise. "
+        "Calibrate without signal leakage and track resonator drift during acquisition. "
+        "The resonator noise scale controls calibration stability. "
+    ) * 10
+    monkeypatch.setattr(
+        research_module,
+        "fetch_source_content",
+        lambda *args, **kwargs: SourceContent(text=evidence, content_type="pdf_text"),
+    )
+
+    extracted = workspace.research.extract(
+        [work], model="custom:cross-domain-extractor"
+    )
+
+    assert llm.calls == 2
+    repair_prompt = llm.prompts[1][1]
+    assert "Mathematical validation failed" in repair_prompt
+    repair_context = repair_prompt.split("<BEGIN_UNTRUSTED_SOURCE_EVIDENCE>", 1)[0]
+    assert '"evidence": null' in repair_context
+    assert "σ" not in repair_context
+    assert "Never copy Unicode mathematical symbols" in repair_context
+    assert "rewrite U+03C3 as `sigma`" in repair_context
+    assert extracted.items[0].principles[0]["evidence"] == (
+        "Noise scale controls calibration stability."
+    )
+
+
 def test_extraction_allows_genuinely_empty_individual_category(
     tmp_path: Path, monkeypatch: Any
 ) -> None:

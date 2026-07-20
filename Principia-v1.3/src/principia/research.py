@@ -23,7 +23,7 @@ from .features import normalize_feature_payload_aliases
 from .ids import normalize_key, readable_id, short_hash
 from .llm import UNTRUSTED_DATA_POLICY, LLMClient, untrusted_data_block
 from .local_sources import LocalCorpusIngestor, chunk_local_text
-from .math import generated_math_issues, math_issues
+from .math import generated_math_issues
 from .models import (
     CancelToken,
     ExtractedFeatures,
@@ -953,11 +953,14 @@ class ResearchService:
         issues = extraction_payload_issues(payload, work, authoritative_text)
         warnings = [warning for item in chunks for warning in item.extraction_warnings]
         if issues:
-            has_math_issue = any("Mathematical" in issue or "LaTeX" in issue for issue in issues)
+            has_math_issue = _has_math_validation_issue(issues)
             math_repair_instruction = (
                 " Mathematical validation failed. Re-express every affected claim as grounded plain "
                 "language with no formula delimiters or backslash commands; do not reproduce the "
-                "malformed expression."
+                "malformed expression. Never copy Unicode mathematical symbols, operators, superscripts, "
+                "or subscripts from the source into a repaired field. Example: rewrite U+03C3 as `sigma`, "
+                "U+2264 as `less than or equal to`, and superscript two as `squared`; then verify that no "
+                "mathematical Unicode remains before returning JSON."
                 if has_math_issue
                 else ""
             )
@@ -1084,11 +1087,14 @@ class ResearchService:
                 "valid dollar-delimited LaTeX with correctly JSON-escaped backslashes and no control "
                 "characters."
             )
-            has_math_issue = any("Mathematical" in issue or "LaTeX" in issue for issue in issues)
+            has_math_issue = _has_math_validation_issue(issues)
             math_repair_instruction = (
                 " Mathematical validation failed. Re-express every affected claim as grounded plain "
                 "language with no formula delimiters or backslash commands; do not reproduce the "
-                "malformed expression."
+                "malformed expression. Never copy Unicode mathematical symbols, operators, superscripts, "
+                "or subscripts from the source into a repaired field. Example: rewrite U+03C3 as `sigma`, "
+                "U+2264 as `less than or equal to`, and superscript two as `squared`; then verify that no "
+                "mathematical Unicode remains before returning JSON."
                 if has_math_issue
                 else ""
             )
@@ -2002,7 +2008,7 @@ def _omit_invalid_math_strings(value: Any, *, path: str = "extraction") -> Any:
     """
 
     if isinstance(value, str):
-        return None if math_issues(value, path=path) else value
+        return None if generated_math_issues(value, path=path) else value
     if isinstance(value, list):
         return [
             _omit_invalid_math_strings(item, path=f"{path}[{index}]")
@@ -2014,6 +2020,15 @@ def _omit_invalid_math_strings(value: Any, *, path: str = "extraction") -> Any:
             for key, item in value.items()
         }
     return value
+
+
+def _has_math_validation_issue(issues: list[str]) -> bool:
+    """Recognize every math-validator issue regardless of message casing."""
+
+    return any(
+        "mathematical" in issue.casefold() or "latex" in issue.casefold()
+        for issue in issues
+    )
 
 
 _GROUNDING_STOPWORDS = SEARCH_STOPWORDS | {
