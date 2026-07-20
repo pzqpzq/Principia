@@ -334,6 +334,96 @@ def generated_math_issues(value: Any, *, path: str = "value") -> list[str]:
     return list(dict.fromkeys(issues))
 
 
+def omit_invalid_math_strings(value: Any, *, path: str = "value") -> Any:
+    """Remove invalid generated strings from an LLM repair draft.
+
+    The surrounding record structure and valid fields are preserved so a
+    repair model can reconstruct only the rejected value without copying it.
+    """
+
+    if isinstance(value, str):
+        return None if generated_math_issues(value, path=path) else value
+    if isinstance(value, list):
+        return [
+            omit_invalid_math_strings(item, path=f"{path}[{index}]")
+            for index, item in enumerate(value)
+        ]
+    if isinstance(value, dict):
+        return {
+            key: omit_invalid_math_strings(item, path=f"{path}.{key}")
+            for key, item in value.items()
+        }
+    if isinstance(value, tuple):
+        return tuple(
+            omit_invalid_math_strings(item, path=f"{path}[{index}]")
+            for index, item in enumerate(value)
+        )
+    return value
+
+
+def math_repair_guidance(issues: list[str], *, context: str = "prose") -> str:
+    """Return concise, issue-specific instructions for one strict repair call."""
+
+    issue_text = " ".join(str(issue) for issue in issues).casefold()
+    math_issue = any(
+        marker in issue_text
+        for marker in (
+            "mathematical",
+            "latex",
+            "dollar delimiter",
+            "subscript",
+            "superscript",
+            "programming conditionals",
+            "mathematical equality",
+            "integral(",
+        )
+    )
+    if not math_issue:
+        return ""
+
+    guidance = ["Mathematical validation failed; repair only the listed fields."]
+    if "mathematical unicode" in issue_text:
+        guidance.append(
+            "Never copy Unicode mathematical symbols, operators, superscripts, or subscripts; "
+            "rewrite U+03C3 as `sigma`, U+2264 as `less than or equal to`, and superscript two as `squared`."
+        )
+    if "programming conditionals" in issue_text:
+        guidance.append(
+            "Never use `if`, `elif`, `else`, or ternary syntax in an equation; use a source-grounded "
+            r"LaTeX cases form such as $$f(x)=\begin{cases}1,&x>0\\0,&\text{otherwise}\end{cases}$$."
+        )
+        if context == "idea":
+            guidance.append(
+                "If the evidence does not support the exact formula, return the complete Idea Card with "
+                "methodological_details.equations set to an empty list."
+            )
+    if "mathematical equality" in issue_text:
+        guidance.append("Use `=` for mathematical equality, never `==`.")
+    if "integral(" in issue_text:
+        guidance.append(r"Use a canonical `\int` expression, never programming-style `integral(...)`.")
+    if "repeated subscript or superscript" in issue_text:
+        guidance.append(
+            "Use exactly one braced subscript and one braced superscript per base symbol, or paraphrase the claim."
+        )
+    if any(
+        marker in issue_text
+        for marker in (
+            "delimiter",
+            "backslash",
+            "control character",
+            "malformed latex",
+            "unsafe characters",
+            "latex parser",
+        )
+    ):
+        guidance.append(
+            "Use only balanced $...$ or $$...$$ spans with correctly JSON-escaped LaTeX backslashes; "
+            "otherwise paraphrase in plain language."
+        )
+    guidance.append("Before returning JSON, verify that none of the listed mathematical defects remains.")
+    return " ".join(guidance)
+
+
 def _normalize_body(value: str) -> str:
     body = str(value or "").strip()
     if not body:
