@@ -15,9 +15,11 @@ from principia.ideas import IdeaService, candidate_generation_prompt, idea_paylo
 from principia.llm import UNTRUSTED_DATA_POLICY, LLMClient, LLMConfig, untrusted_data_block
 from principia.math import (
     MathValidationError,
+    math_repair_guidance,
     normalize_latex_formula,
     normalize_latex_symbol,
     normalize_math_text,
+    omit_invalid_math_strings,
     tokenize_math_spans,
 )
 from principia.models import EvidencePacket, Idea, IdeaComparison, WorkFeatures
@@ -280,7 +282,7 @@ def test_live_methodology_contract_rejects_unstructured_nested_rows() -> None:
 def test_candidate_prompt_preserves_full_goal_constraints_and_nested_schema() -> None:
     prompt = candidate_generation_prompt(mixed_evidence_packet())
 
-    assert '"symbols":[{"symbol":"...","definition":"..."}]' in prompt
+    assert '"symbols":[{"symbol":"$...$","definition":"..."}]' in prompt
     assert '"workflow":[{"step":"short semantic label","detail":"..."}]' in prompt
     assert "Do not discard a goal constraint during candidate selection" in prompt
     assert "false-positive controls" in prompt
@@ -456,6 +458,44 @@ def test_safe_explicit_math_is_canonicalized_without_an_llm_repair(
     assert len(comparison_llm.prompts) == 1
 
 
+def test_live_comparison_repair_uses_sanitized_unicode_fields(tmp_path: Path) -> None:
+    invalid_row = {
+        "work_id": "LOCAL1",
+        "title": "Compact interpretable protocol",
+        "mechanistic_similarity": "Both methods monitor semantic recovery during compact communication tasks.",
+        "essential_difference": "The proposal explicitly controls noise σ during protocol learning.",
+        "potential_advantage": "The added control exposes a measurable robustness target during evaluation.",
+        "potential_weakness": "The control may reduce communication capacity on difficult coordination tasks.",
+    }
+    repaired_row = {
+        **invalid_row,
+        "essential_difference": "The proposal explicitly controls the noise scale during protocol learning.",
+    }
+
+    class UnicodeRepairComparisonLLM(ComparisonLLM):
+        def chat_json(self, system: str, user: str, **kwargs):
+            self.prompts.append((system, user))
+            return {"rows": [repaired_row if system.startswith("Repair comparison rows") else invalid_row]}
+
+    idea = Idea(
+        id="I-COMPARE-MATH",
+        title="Interpretable compact protocol",
+        thesis="Control compact communication with semantic recovery.",
+        mode="standard",
+    )
+    llm = UnicodeRepairComparisonLLM()
+
+    comparison = IdeaService(WorkspaceStorage(tmp_path), llm).compare(
+        idea, evidence_packet().features, model="custom:integrity"
+    )
+
+    assert len(llm.prompts) == 2
+    repair_prompt = llm.prompts[1][1]
+    assert "rewrite U+03C3 as `sigma`" in repair_prompt
+    assert '"essential_difference": null' in repair_prompt
+    assert comparison.rows[0]["essential_difference"] == repaired_row["essential_difference"]
+
+
 def test_live_generation_repairs_contamination_without_rewriting_legitimate_dialect(
     tmp_path: Path,
 ) -> None:
@@ -474,6 +514,56 @@ def test_live_generation_repairs_contamination_without_rewriting_legitimate_dial
         r"$$\sigma^{2} \le \operatorname{Var}(x)$$"
     )
     assert UNTRUSTED_DATA_POLICY in llm.prompts[0][1]
+
+
+def test_live_generation_repairs_programming_conditional_as_latex_cases(
+    tmp_path: Path,
+) -> None:
+    draft = valid_payload()
+    draft["methodological_details"]["equations"][0]["latex"] = (
+        "$$f(x) = 1 if x > 0 else 0$$"
+    )
+    repaired = valid_payload()
+    repaired["methodological_details"]["equations"][0]["latex"] = (
+        r"$$f(x)=\begin{cases}1,&x>0\\0,&\text{otherwise}\end{cases}$$"
+    )
+    llm = CitationMixLLM(draft, repair=repaired)
+    storage = WorkspaceStorage(tmp_path)
+
+    idea = IdeaService(storage, llm).generate(
+        evidence_packet(), mode="standard", model="custom:citation-mix"
+    )
+
+    assert len(llm.prompts) == 2
+    repair_prompt = llm.prompts[1][1]
+    assert "Never use `if`, `elif`, `else`" in repair_prompt
+    assert r"\begin{cases}" in repair_prompt
+    assert '"symbol":"$...$"' in repair_prompt
+    assert "Preserve empty symbol or equation lists" in repair_prompt
+    assert '"latex": null' in repair_prompt
+    assert idea.methodological_details["equations"][0]["latex"] == (
+        r"$$f(x)=\begin{cases}1,&x>0\\0,&\text{otherwise}\end{cases}$$"
+    )
+    assert storage.counts()["ideas"] == 1
+
+
+def test_live_generation_does_not_restore_omitted_invalid_equation(
+    tmp_path: Path,
+) -> None:
+    draft = valid_payload()
+    draft["methodological_details"]["equations"][0]["latex"] = (
+        "$$f(x) = 1 if x > 0 else 0$$"
+    )
+    llm = CitationMixLLM(draft, repair={})
+    storage = WorkspaceStorage(tmp_path)
+
+    with pytest.raises(RuntimeError, match="failed validation after one evidence-grounded repair"):
+        IdeaService(storage, llm).generate(
+            evidence_packet(), mode="standard", model="custom:citation-mix"
+        )
+
+    assert '"latex": null' in llm.prompts[1][1]
+    assert storage.counts()["ideas"] == 0
 
 
 def test_unresolved_live_defect_is_not_persisted(tmp_path: Path) -> None:
@@ -588,6 +678,29 @@ def test_shared_math_parser_normalizes_unicode_and_rejects_malformed_markup() ->
             normalize_latex_formula(malformed)
     with pytest.raises(MathValidationError, match="Repeated subscript"):
         normalize_latex_formula("x₂_i")
+
+
+def test_math_repair_helpers_are_targeted_and_do_not_reinject_bad_unicode() -> None:
+    issues = [
+        "idea.methodological_details.equations[0].latex: "
+        "Use a LaTeX cases expression instead of programming conditionals",
+        "idea.thesis: mathematical Unicode must be inside canonical $...$ markup",
+    ]
+    payload = {
+        "thesis": "Noise σ must remain bounded.",
+        "methodological_details": {
+            "equations": [{"latex": "$$f(x) = 1 if x > 0 else 0$$"}]
+        },
+    }
+
+    guidance = math_repair_guidance(issues, context="idea")
+    sanitized = omit_invalid_math_strings(payload, path="idea")
+
+    assert "rewrite U+03C3 as `sigma`" in guidance
+    assert "Never use `if`, `elif`, `else`" in guidance
+    assert "σ" not in guidance
+    assert sanitized["thesis"] is None
+    assert sanitized["methodological_details"]["equations"][0]["latex"] is None
 
 
 def test_live_physics_formula_canonicalization_is_conservative() -> None:

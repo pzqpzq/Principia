@@ -21,9 +21,11 @@ from .llm import LLMClient, redact_secrets, untrusted_data_block
 from .math import (
     MathValidationError,
     generated_math_issues,
+    math_repair_guidance,
     normalize_latex_formula,
     normalize_latex_symbol,
     normalize_math_text,
+    omit_invalid_math_strings,
     tokenize_math_spans,
 )
 from .models import (
@@ -72,12 +74,13 @@ COMPARISON_BOILERPLATE_PATTERN = re.compile(
 
 METHODOLOGICAL_SCHEMA_CONTRACT = (
     'methodological_details must use exactly this nested shape: {"summary":"...",'
-    '"symbols":[{"symbol":"...","definition":"..."}],'
+    '"symbols":[{"symbol":"$...$","definition":"..."}],'
     '"equations":[{"name":"...","latex":"$$...$$","explanation":"..."}],'
     '"workflow":[{"step":"short semantic label","detail":"..."}],'
     '"reliability_checks":[{"check":"short semantic label","detail":"..."}]}. '
     "symbols and equations may be empty only when the evidence does not support a grounded "
-    "formalization; workflow and reliability_checks must remain structured objects. "
+    "formalization; every symbol must be one canonical inline $...$ span, every equation latex value "
+    "must be one canonical display $$...$$ span, and workflow and reliability_checks must remain structured objects. "
 )
 GOAL_COVERAGE_CONTRACT = (
     "Address every explicit requirement, boundary condition, preservation clause, risk, and "
@@ -85,6 +88,10 @@ GOAL_COVERAGE_CONTRACT = (
     "selection. Operationalize evidence-supported uncertainty, calibration, robustness, "
     "interpretability, noise, safety, and false-positive controls in the mechanism or validation "
     "protocol whenever the goal calls for them. "
+)
+MATH_GENERATION_CONTRACT = (
+    "Use equations only when source-grounded; never use programming conditionals inside LaTeX, "
+    "and express conditional formulas with a cases environment. "
 )
 
 
@@ -297,7 +304,8 @@ class IdeaService:
                             'Return {"rows":[{"work_id":"...","title":"...",'
                             '"mechanistic_similarity":"...","essential_difference":"...",'
                             '"potential_advantage":"...","potential_weakness":"..."}]}.\n'
-                            "Each row must name concrete mechanisms from both sides. Do not use boilerplate.\n\n"
+                            "Each row must name concrete mechanisms from both sides. Do not use boilerplate. "
+                            f"{MATH_GENERATION_CONTRACT}\n\n"
                             f"Generated idea content: {json.dumps(idea_content_projection(idea), ensure_ascii=False)}\n"
                             f"{untrusted_data_block('prior_idea_records', candidates)}"
                         ),
@@ -310,6 +318,10 @@ class IdeaService:
                 rows = canonicalize_explicit_math(list(payload.get("rows") or []))
                 comparison_issues = generated_math_issues(rows, path="comparison.rows")
                 if comparison_issues:
+                    repair_rows = omit_invalid_math_strings(rows, path="comparison.rows")
+                    repair_guidance = math_repair_guidance(
+                        comparison_issues, context="prose"
+                    )
                     repair_payload = call_with_progress(
                         run,
                         stage="llm_comparison_repair",
@@ -323,9 +335,10 @@ class IdeaService:
                                 'Return {"rows":[...]} with the same comparison claims and row identities. '
                                 "Repair every listed mathematical-format issue. Use canonical $...$ or $$...$$ LaTeX, "
                                 "brace every subscript and superscript, and never introduce a coefficient, power, "
-                                "threshold, denominator, or scientific claim.\n\n"
+                                "threshold, denominator, or scientific claim. "
+                                f"{repair_guidance}\n\n"
                                 f"Issues: {json.dumps(comparison_issues, ensure_ascii=False)}\n\n"
-                                f"Rows: {json.dumps(rows, ensure_ascii=False)}\n\n"
+                                f"Rows: {json.dumps(repair_rows, ensure_ascii=False)}\n\n"
                                 f"Generated idea content: {json.dumps(idea_content_projection(idea), ensure_ascii=False)}\n"
                                 f"{untrusted_data_block('prior_idea_records', candidates)}"
                             ),
@@ -398,6 +411,7 @@ class IdeaService:
             f"{METHODOLOGICAL_SCHEMA_CONTRACT}"
             "Use empty symbol/equation lists when the selected discipline does not support a grounded formalization; never add generic equations. "
             "When equations are supported, include name, latex, and explanation and wrap formulas in $...$ or $$...$$. "
+            f"{MATH_GENERATION_CONTRACT}"
             "Workflow step labels must be short semantic labels without numbering; do not write labels like 'Step 2' or details prefixed by '2.'. "
             "Treat baselines as comparators, controls, standard methods, or reference theories as appropriate to the discipline. "
             "Use the internal generation strategy only as reasoning procedure metadata, never as source evidence or as the topic of the idea. "
@@ -680,6 +694,8 @@ class IdeaService:
         if not issues:
             return payload, metadata
         metadata["attempted"] = True
+        repair_base_value = omit_invalid_math_strings(payload, path="idea")
+        repair_base = repair_base_value if isinstance(repair_base_value, dict) else payload
         try:
             repaired_value = call_with_progress(
                 run,
@@ -690,7 +706,7 @@ class IdeaService:
                 estimated_seconds=100,
                 call=lambda: self.llm.chat_json(
                     "Repair one research Idea Card using only supplied evidence. Return strict JSON only.",
-                    repair_idea_prompt(payload, packet, issues),
+                    repair_idea_prompt(repair_base, packet, issues),
                     model=model,
                     max_tokens=4400,
                     temperature=0.08,
@@ -700,7 +716,7 @@ class IdeaService:
             repaired: dict[str, Any] = repaired_value if isinstance(repaired_value, dict) else {}
             repaired_payload = canonicalize_explicit_math(unwrap_idea_card(repaired) or repaired)
             merged = canonicalize_explicit_math(
-                merge_nonempty_payload(payload, repaired_payload)
+                merge_nonempty_payload(repair_base, repaired_payload)
             )
             remaining = idea_payload_issues(merged, packet)
             metadata["remaining_issues"] = remaining
@@ -892,6 +908,7 @@ def candidate_generation_prompt(packet: EvidencePacket) -> str:
         "record_id values copied from the canonical evidence registry. "
         "selection_rationale is a concise audit sentence, not hidden reasoning. Make the candidates mechanistically distinct. "
         f"{METHODOLOGICAL_SCHEMA_CONTRACT}"
+        f"{MATH_GENERATION_CONTRACT}"
         f"{GOAL_COVERAGE_CONTRACT}"
         "Use only the evidence packet; do not invent citations or numerical results.\n\n"
         f"Evidence packet:\n{evidence_prompt(packet)}"
@@ -926,6 +943,7 @@ def critique_evolution_prompt(packet: EvidencePacket, candidates: list[dict[str,
         "validation protocol, and keep comparators appropriate to the evidence discipline. Each evolution must retain "
         "four audit scores and a concise rationale. source_evidence may contain only exact canonical record references. "
         f"{METHODOLOGICAL_SCHEMA_CONTRACT}"
+        f"{MATH_GENERATION_CONTRACT}"
         f"{GOAL_COVERAGE_CONTRACT}"
         "Use no unsupported equations.\n\n"
         f"Evidence packet: {evidence_prompt(packet)}\n"
@@ -940,6 +958,7 @@ def final_selection_prompt(packet: EvidencePacket, candidates: list[dict[str, An
         "methodological_details, method_variants, why_it_might_work, validation_protocol, baselines, metrics, risks, "
         "assumptions, derived_principles, and source_evidence. "
         f"{METHODOLOGICAL_SCHEMA_CONTRACT}"
+        f"{MATH_GENERATION_CONTRACT}"
         "Every source_evidence row "
         "must contain an exact work_id, kind, and record_id tuple copied from the canonical registry. Select on evidence grounding, "
         "mechanistic novelty, feasibility, and ability to distinguish "
@@ -954,6 +973,7 @@ def final_selection_prompt(packet: EvidencePacket, candidates: list[dict[str, An
 
 
 def repair_idea_prompt(payload: dict[str, Any], packet: EvidencePacket, issues: list[str]) -> str:
+    repair_guidance = math_repair_guidance(issues, context="idea")
     return (
         "Return a complete repaired Idea Card as one JSON object with title, thesis, novelty_claim, mechanism_design, "
         "methodological_details, method_variants, why_it_might_work, validation_protocol, baselines, metrics, risks, "
@@ -963,7 +983,9 @@ def repair_idea_prompt(payload: dict[str, Any], packet: EvidencePacket, issues: 
         "from the canonical registry. Never use generator mode, strategy, trace, or configuration as scientific evidence. "
         "Correct only the listed defects. Ground every mechanism, comparator, "
         "validation step, and evidence reference in the packet. Symbols or equations may be empty when the discipline "
-        "does not support a source-grounded formalization. "
+        "does not support a source-grounded formalization. Preserve empty symbol or equation lists when their repair "
+        "is not explicitly listed; do not introduce new mathematical items while fixing an unrelated defect. "
+        f"{repair_guidance} "
         f"{GOAL_COVERAGE_CONTRACT}"
         "Do not add generic software, benchmark, or agent language.\n\n"
         f"Defects: {json.dumps(issues, ensure_ascii=False)}\n"

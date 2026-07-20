@@ -23,7 +23,7 @@ from .features import normalize_feature_payload_aliases
 from .ids import normalize_key, readable_id, short_hash
 from .llm import UNTRUSTED_DATA_POLICY, LLMClient, untrusted_data_block
 from .local_sources import LocalCorpusIngestor, chunk_local_text
-from .math import generated_math_issues, math_issues
+from .math import generated_math_issues, math_repair_guidance, omit_invalid_math_strings
 from .models import (
     CancelToken,
     ExtractedFeatures,
@@ -953,15 +953,12 @@ class ResearchService:
         issues = extraction_payload_issues(payload, work, authoritative_text)
         warnings = [warning for item in chunks for warning in item.extraction_warnings]
         if issues:
-            has_math_issue = any("Mathematical" in issue or "LaTeX" in issue for issue in issues)
-            math_repair_instruction = (
-                " Mathematical validation failed. Re-express every affected claim as grounded plain "
-                "language with no formula delimiters or backslash commands; do not reproduce the "
-                "malformed expression."
-                if has_math_issue
-                else ""
+            math_repair_instruction = math_repair_guidance(issues, context="prose")
+            repair_payload = (
+                omit_invalid_math_strings(payload, path="extraction")
+                if math_repair_instruction
+                else payload
             )
-            repair_payload = _omit_invalid_math_strings(payload) if has_math_issue else payload
             repair_user = (
                 f"{EXTRACTION_SCHEMA_PROMPT}\n\n"
                 f"Validation issues: {json.dumps(issues, ensure_ascii=False)}\n\n"
@@ -969,7 +966,7 @@ class ResearchService:
                 "Repair every listed issue using only those feature bundles. If ideas, principles, "
                 "or takeaways is reported missing, return at least one concise, grounded record for "
                 "that category. Return one strict JSON object."
-                + math_repair_instruction
+                + (" " + math_repair_instruction if math_repair_instruction else "")
                 + "\n\n"
                 + untrusted_data_block("local_chunk_feature_bundles", chunk_payloads)
             )
@@ -1084,22 +1081,19 @@ class ResearchService:
                 "valid dollar-delimited LaTeX with correctly JSON-escaped backslashes and no control "
                 "characters."
             )
-            has_math_issue = any("Mathematical" in issue or "LaTeX" in issue for issue in issues)
-            math_repair_instruction = (
-                " Mathematical validation failed. Re-express every affected claim as grounded plain "
-                "language with no formula delimiters or backslash commands; do not reproduce the "
-                "malformed expression."
-                if has_math_issue
-                else ""
+            math_repair_instruction = math_repair_guidance(issues, context="prose")
+            repair_payload = (
+                omit_invalid_math_strings(payload, path="extraction")
+                if math_repair_instruction
+                else payload
             )
-            repair_payload = _omit_invalid_math_strings(payload) if has_math_issue else payload
             repair_user = (
                 f"{EXTRACTION_SCHEMA_PROMPT}\n\n"
                 f"Validation issues: {json.dumps(issues, ensure_ascii=False)}\n\n"
                 f"Original extraction: {json.dumps(repair_payload, ensure_ascii=False)}\n\n"
                 f"Work: {json.dumps(_prompt_work_metadata(work), ensure_ascii=False)}\n\n"
                 "Repair every listed issue using only the delimited source evidence."
-                + math_repair_instruction
+                + (" " + math_repair_instruction if math_repair_instruction else "")
                 + "\n\n"
                 + untrusted_data_block("source_evidence", {"text": evidence_text})
             )
@@ -1991,29 +1985,6 @@ def extraction_payload_issues(
             + ", ".join(unsupported_formulas[:8])
         )
     return issues
-
-
-def _omit_invalid_math_strings(value: Any, *, path: str = "extraction") -> Any:
-    """Omit malformed strings from repair input without synthesizing output.
-
-    The authoritative source remains available to the LLM, which must
-    reconstruct each omitted field. In particular, this prevents JSON control
-    escapes such as ``\\f`` from being copied into the repaired response.
-    """
-
-    if isinstance(value, str):
-        return None if math_issues(value, path=path) else value
-    if isinstance(value, list):
-        return [
-            _omit_invalid_math_strings(item, path=f"{path}[{index}]")
-            for index, item in enumerate(value)
-        ]
-    if isinstance(value, dict):
-        return {
-            key: _omit_invalid_math_strings(item, path=f"{path}.{key}")
-            for key, item in value.items()
-        }
-    return value
 
 
 _GROUNDING_STOPWORDS = SEARCH_STOPWORDS | {
