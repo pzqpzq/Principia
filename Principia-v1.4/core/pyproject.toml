@@ -1,0 +1,124 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "principia-ai"
+version = "1.4.0"
+description = "Local-first autonomous scientific discovery with Global and private Principle maps."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+  { name = "Principia Contributors" }
+]
+keywords = ["research", "ideation", "literature", "llm", "sqlite"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering",
+]
+dependencies = [
+  "certifi>=2024.2.2",
+  "fastapi>=0.115,<1",
+  "httpx>=0.27",
+  "platformdirs>=4.2",
+  "pylatexenc>=2.10",
+  "pydantic>=2.7",
+  "pypdf>=4.2",
+  "rich>=13.7",
+  "rfc8785>=0.1.4,<1",
+  "typing_extensions>=4.11",
+  "uvicorn>=0.30,<1",
+]
+
+[project.optional-dependencies]
+local = [
+  "openpyxl>=3.1",
+  "python-docx>=1.1",
+  "python-pptx>=0.6.23",
+]
+notebook = [
+  "ipywidgets>=8.1",
+]
+structured = [
+  "duckdb>=1.1,<2",
+]
+dev = [
+  "build>=1.2",
+  "hatchling>=1.25",
+  "ipykernel>=6.29",
+  "mypy>=1.10",
+  "nbclient>=0.10",
+  "nbformat>=5.10",
+  "pytest>=8.2",
+  "pytest-cov>=6.0",
+  "ruff>=0.5",
+  "twine>=5.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/pzqpzq/Principia"
+Repository = "https://github.com/pzqpzq/Principia"
+Documentation = "https://github.com/pzqpzq/Principia"
+
+[project.scripts]
+principia = "principia.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/principia", "src/principia_retrieval"]
+exclude = [
+  "**/__pycache__/**",
+  "**/*.pyc",
+  "**/*.pyo",
+  "**/.DS_Store",
+]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/src",
+  "/frontend",
+  "/tests",
+  "/docs",
+  "/examples",
+  "/scripts",
+  "/README.md",
+  "/CHANGELOG.md",
+  "/LICENSE",
+  "/UPSTREAM.md",
+  "/pyproject.toml",
+]
+exclude = [
+  "**/__pycache__/**",
+  "**/*.pyc",
+  "**/*.pyo",
+  "**/.pytest_cache/**",
+  "**/.mypy_cache/**",
+  "**/.ruff_cache/**",
+  "**/.DS_Store",
+  "**/.principia",
+  "**/principia_outputs",
+  "**/.venv",
+  "/dist",
+  "/build",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]

@@ -1,0 +1,192 @@
+{
+  "schema_version": "principia.example_features.v1",
+  "scope": "the exact 15 selected canonical evidence records",
+  "items": [
+    {
+      "work_id": "L-2D7602785D94821E40A4",
+      "title": "communication ablation",
+      "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+      "ideas": [
+        {
+          "id": "Communication_Ablation_Study",
+          "record_type": "idea",
+          "title": "Communication Ablation Study",
+          "text": "Investigating the individual and combined effects of compression, entropy constraints, evidence grounding, and decoding mechanisms on communication performance and interpretability."
+        }
+      ],
+      "source_content_type": "local_text",
+      "source_excerpt_chars": 613
+    },
+    {
+      "work_id": "L-87CA297BE6C71DEE6A33",
+      "title": "mas protocol notes",
+      "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+      "ideas": [
+        {
+          "id": "Compact_Learned_Communication_For_Multi_Agent_Reasoning",
+          "record_type": "idea",
+          "title": "Compact learned communication for multi-agent reasoning",
+          "text": "Agents emit short discrete messages from a learned codebook to communicate, balancing compactness with interpretability."
+        }
+      ],
+      "principles": [
+        {
+          "id": "Auditability_Via_Decodability",
+          "record_type": "principle",
+          "title": "Auditability via Decodability",
+          "text": "Communication protocols must remain interpretable by ensuring messages can be decoded to recover original observations and operations."
+        }
+      ],
+      "source_content_type": "local_text",
+      "source_excerpt_chars": 1349
+    },
+    {
+      "work_id": "L-9FED827F2B6580EEDF8B",
+      "title": "message audit protocol",
+      "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+      "principles": [
+        {
+          "id": "Dialect_Acceptance_Criteria",
+          "record_type": "principle",
+          "title": "Dialect Acceptance Criteria",
+          "text": "A learned communication dialect is only valid if it maintains task performance while significantly reducing token usage and ensuring high decoding accuracy without subgroup collapse."
+        },
+        {
+          "id": "Counterfactual_Validity_Check",
+          "record_type": "principle",
+          "title": "Counterfactual Validity Check",
+          "text": "A valid communication code must produce predictable action changes in response to minimal alterations in decoded propositions, distinguishing functional codes from decorative or uninterpretable channels."
+        }
+      ],
+      "source_content_type": "pdf_text",
+      "source_excerpt_chars": 1479
+    },
+    {
+      "work_id": "L-AD934C6A69457BF4EB60",
+      "title": "collapse metrics",
+      "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+      "ideas": [
+        {
+          "id": "Collapse_And_Interpretability_Metrics_For_Learned_Agent_Messages",
+          "record_type": "idea",
+          "title": "Collapse and interpretability metrics for learned agent messages",
+          "text": "A per-task entropy floor plus graph-grounded decoding prevents representational collapse while preserving compact communication."
+        }
+      ],
+      "source_content_type": "local_text",
+      "source_excerpt_chars": 1011
+    },
+    {
+      "work_id": "L-ED26DF60405BF08FF507",
+      "title": "dialect collapse safeguards",
+      "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+      "ideas": [
+        {
+          "id": "Utility_Of_Learned_Machine_Dialects",
+          "record_type": "idea",
+          "title": "Utility of Learned Machine Dialects",
+          "text": "A learned machine dialect is considered useful only if it reduces transmitted tokens while simultaneously preserving task accuracy, counterfactual recoverability, and a human-readable audit path."
+        },
+        {
+          "id": "Interpretability_Checkpoint_Protocol",
+          "record_type": "idea",
+          "title": "Interpretability Checkpoint Protocol",
+          "text": "Dialect collapse is monitored through specific interpretability checkpoints that require decoding machine messages and testing counterfactual coherence."
+        }
+      ],
+      "source_content_type": "local_text",
+      "source_excerpt_chars": 1640
+    },
+    {
+      "work_id": "W-03240C942CD2",
+      "title": "Representational Collapse in Multi-Agent LLM Committees: Measurement and Diversity-Aware Consensus",
+      "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+      "principles": [
+        {
+          "id": "Diagnostic_Guideline_For_Committee_Scaling",
+          "record_type": "principle",
+          "title": "Diagnostic Guideline for Committee Scaling",
+          "text": "Before committing compute to additional agents in a homogeneous committee, measure embedding overlap. A committee with cosine similarity above 0.88 provides the effective diversity of roughly two independent chains, not the number of agents."
+        }
+      ],
+      "takeaways": [
+        {
+          "id": "Token_Efficiency_Via_Short_Think_Prefixes",
+          "record_type": "takeaway",
+          "title": "Token Efficiency via Short Think Prefixes",
+          "text": "DALC variants achieve comparable or higher accuracy than self-consistency at 25–34% lower token cost."
+        }
+      ],
+      "source_content_type": "pdf_text",
+      "source_excerpt_chars": 24000
+    },
+    {
+      "work_id": "W-15E81C78148B",
+      "title": "OSC: Cognitive Orchestration through Dynamic Knowledge Alignment in Multi-Agent LLM Collaboration",
+      "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+      "takeaways": [
+        {
+          "id": "Impact_Of_OSC_On_Multi_Agent_Collaboration",
+          "record_type": "takeaway",
+          "title": "Impact of OSC on Multi-Agent Collaboration",
+          "text": "OSC significantly improves task performance and communication efficiency in multi-agent systems."
+        }
+      ],
+      "source_content_type": "abstract",
+      "source_excerpt_chars": 1145
+    },
+    {
+      "work_id": "W-6F281AC9C858",
+      "title": "When LLMs Develop Languages: Symbolic Communication for Efficient Multi-Agent Reasoning",
+      "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+      "principles": [
+        {
+          "id": "Accuracy_Token_Trade_Off_Optimization",
+          "record_type": "principle",
+          "title": "Accuracy-Token Trade-off Optimization",
+          "text": "Efficient machine reasoning requires balancing accuracy with token cost, which long natural-language rationales in CoT fail to achieve."
+        }
+      ],
+      "takeaways": [
+        {
+          "id": "Significant_Latency_Reduction_Via_Symbolic_Protocols",
+          "record_type": "takeaway",
+          "title": "Significant Latency Reduction via Symbolic Protocols",
+          "text": "Using CLSR reduces latency-oriented generated token completion significantly compared to standard CoT while maintaining accuracy."
+        }
+      ],
+      "source_content_type": "abstract",
+      "source_excerpt_chars": 1407
+    },
+    {
+      "work_id": "W-A3048BD093BF",
+      "title": "DAGP: Difficulty-Aware Graph Pruning for LLM-Based Multi-Agent System",
+      "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+      "takeaways": [
+        {
+          "id": "Efficiency_And_Performance_Balance",
+          "record_type": "takeaway",
+          "title": "Efficiency and Performance Balance",
+          "text": "Adaptive graph pruning based on difficulty estimation can simultaneously improve performance and reduce resource usage."
+        }
+      ],
+      "source_content_type": "abstract",
+      "source_excerpt_chars": 1020
+    },
+    {
+      "work_id": "W-F53AB1A201EE",
+      "title": "Budgeted Multi-Agent Routing: Adaptive Role Assignment and Communication Compression for Efficient LLM-Agent Collaboration",
+      "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+      "takeaways": [
+        {
+          "id": "Superior_Pareto_Efficiency",
+          "record_type": "takeaway",
+          "title": "Superior Pareto Efficiency",
+          "text": "Dynamic allocation under budget constraints yields better accuracy and token efficiency compared to single-agent or fixed multi-agent baselines."
+        }
+      ],
+      "source_content_type": "abstract",
+      "source_excerpt_chars": 1161
+    }
+  ]
+}
