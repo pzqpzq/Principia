@@ -6,17 +6,17 @@
 <p align="center">
   <a href="https://pypi.org/project/principia-ai/"><img alt="PyPI" src="https://img.shields.io/pypi/v/principia-ai?style=flat-square&amp;logo=pypi&amp;logoColor=white&amp;label=PyPI"></a>
   <a href="https://pypi.org/project/principia-ai/"><img alt="Python versions" src="https://img.shields.io/pypi/pyversions/principia-ai?style=flat-square&amp;logo=python&amp;logoColor=white"></a>
-  <a href="https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/CHANGELOG.md"><img alt="Release v1.4.0" src="https://img.shields.io/badge/release-v1.4.0-111827?style=flat-square"></a>
-  <a href="https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-0F766E?style=flat-square"></a>
+  <a href="https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/CHANGELOG.md"><img alt="Release v1.4.0" src="https://img.shields.io/badge/release-v1.4.0-111827?style=flat-square"></a>
+  <a href="https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-0F766E?style=flat-square"></a>
   <a href="https://icml.cc/virtual/2026/poster/61557"><img alt="ICML 2026" src="https://img.shields.io/badge/ICML-2026-7C3AED?style=flat-square"></a>
 </p>
 
 <p align="center">
   <a href="https://github.com/pzqpzq/Principia">GitHub</a> ·
   <a href="https://pypi.org/project/principia-ai/">PyPI</a> ·
-  <a href="https://github.com/pzqpzq/Principia/tree/main/Principia-v1.3/docs">Documentation</a> ·
-  <a href="https://github.com/pzqpzq/Principia/tree/main/Principia-v1.3/examples">Examples</a> ·
-  <a href="https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/RELEASE_QA.md">Release QA</a>
+  <a href="https://github.com/pzqpzq/Principia/tree/main/Principia-v1.4/core/docs">Documentation</a> ·
+  <a href="https://github.com/pzqpzq/Principia/tree/main/Principia-v1.4/core/examples">Examples</a> ·
+  <a href="https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/RELEASE_QA.md">Release QA</a>
 </p>
 
 > **Ideas from principles. Validated by evidence.**
@@ -255,7 +255,7 @@ Private documents are **supplemental**: they never silently replace the requeste
 
 Sending private text to a remote model requires explicit `allow_remote_private_content=True`. The provider receives document content and portable identifiers, not local absolute paths.
 
-See [Private corpus ingestion](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/docs/local-corpus.md) for parser limits, chunking, diagnostics, deduplication, custom parser registration, and cache cleanup.
+See [Private corpus ingestion](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/docs/local-corpus.md) for parser limits, chunking, diagnostics, deduplication, custom parser registration, and cache cleanup.
 
 ---
 
@@ -416,16 +416,16 @@ showcase manifests:
 <!-- PRINCIPIA_SHOWCASE_TABLE_START -->
 | Task | Online | Local | Features | Evidence | Mode | Validation |
 | --- | --- | --- | --- | --- | --- | --- |
-| [Communication-efficient LLM multi-agent reasoning](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/examples/test1/tutorial.ipynb) | 50 | 5 | 55 | 15 | scidialect-evo | passed |
-| [Uncertainty-aware sparse-view dynamic 3D reconstruction](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/examples/test2/tutorial.ipynb) | 50 | 5 | 55 | 15 | scidialect-evo | passed |
-| [Broadband squeezed-state axion sensing](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/examples/test3/tutorial.ipynb) | 50 | 5 | 55 | 15 | scidialect-evo | passed |
+| [Communication-efficient LLM multi-agent reasoning](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/examples/test1/tutorial.ipynb) | 50 | 5 | 55 | 15 | scidialect-evo | passed |
+| [Uncertainty-aware sparse-view dynamic 3D reconstruction](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/examples/test2/tutorial.ipynb) | 50 | 5 | 55 | 15 | scidialect-evo | passed |
+| [Broadband squeezed-state axion sensing](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/examples/test3/tutorial.ipynb) | 50 | 5 | 55 | 15 | scidialect-evo | passed |
 <!-- PRINCIPIA_SHOWCASE_TABLE_END -->
 
 | Research task | Generated Idea Card | Review |
 | --- | --- | --- |
-| Communication-efficient LLM multi-agent reasoning | **Entropy-Constrained Discrete Codebook with Counterfactual Decoding and Diversity-Aware Calibration** | [Notebook](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/examples/test1/tutorial.ipynb) · [Showcase](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/examples/test1/showcase.md) |
-| Uncertainty-aware sparse-view dynamic 3D reconstruction | **AnchorSplat-Dynamic: Sparse Anchor-Based Uncertainty for Uncalibrated Motion** | [Notebook](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/examples/test2/tutorial.ipynb) · [Showcase](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/examples/test2/showcase.md) |
-| Broadband squeezed-state axion sensing | **Dynamic Heuristic Optimization of Squeezed-State Haloscopes with Continuum Noise Modeling** | [Notebook](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/examples/test3/tutorial.ipynb) · [Showcase](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/examples/test3/showcase.md) |
+| Communication-efficient LLM multi-agent reasoning | **Entropy-Constrained Discrete Codebook with Counterfactual Decoding and Diversity-Aware Calibration** | [Notebook](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/examples/test1/tutorial.ipynb) · [Showcase](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/examples/test1/showcase.md) |
+| Uncertainty-aware sparse-view dynamic 3D reconstruction | **AnchorSplat-Dynamic: Sparse Anchor-Based Uncertainty for Uncalibrated Motion** | [Notebook](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/examples/test2/tutorial.ipynb) · [Showcase](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/examples/test2/showcase.md) |
+| Broadband squeezed-state axion sensing | **Dynamic Heuristic Optimization of Squeezed-State Haloscopes with Continuum Noise Modeling** | [Notebook](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/examples/test3/tutorial.ipynb) · [Showcase](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/examples/test3/showcase.md) |
 
 <details>
 <summary><strong>Example 1 — Communication-efficient LLM multi-agent reasoning</strong></summary>
@@ -696,17 +696,17 @@ Use `--mock-llm` only for deterministic smoke tests. Mock output is explicitly l
 
 ## Documentation
 
-- [API reference](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/docs/api.md)
-- [Projects, workspaces, and outputs](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/docs/workspaces.md)
-- [Private corpus ingestion](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/docs/local-corpus.md)
-- [Background jobs and run control](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/docs/jobs.md)
-- [Trustworthy generation and mathematics](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/docs/trustworthiness.md)
-- [Retrieval, diagnostics, and provider terms](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/docs/retrieval.md)
-- [Publishing and release checks](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/docs/publishing.md)
-- [Examples](https://github.com/pzqpzq/Principia/tree/main/Principia-v1.3/examples)
-- [Changelog](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/CHANGELOG.md)
-- [Release QA](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/RELEASE_QA.md)
-- [Upstream integration and license scope](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/UPSTREAM.md)
+- [API reference](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/docs/api.md)
+- [Projects, workspaces, and outputs](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/docs/workspaces.md)
+- [Private corpus ingestion](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/docs/local-corpus.md)
+- [Background jobs and run control](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/docs/jobs.md)
+- [Trustworthy generation and mathematics](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/docs/trustworthiness.md)
+- [Retrieval, diagnostics, and provider terms](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/docs/retrieval.md)
+- [Publishing and release checks](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/docs/publishing.md)
+- [Examples](https://github.com/pzqpzq/Principia/tree/main/Principia-v1.4/core/examples)
+- [Changelog](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/CHANGELOG.md)
+- [Release QA](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/RELEASE_QA.md)
+- [Upstream integration and license scope](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/UPSTREAM.md)
 
 ---
 
@@ -785,9 +785,9 @@ Contact: `peizhengqi@chipflow.net`
 
 ## License
 
-The `principia-ai` v1.4.0 framework is released under the [MIT License](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/LICENSE).
+The `principia-ai` v1.4.0 framework is released under the [MIT License](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/LICENSE).
 
-The upstream multi-project repository contains separately scoped material. See [UPSTREAM.md](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.3/UPSTREAM.md) for the exact integration and license boundary.
+The upstream multi-project repository contains separately scoped material. See [UPSTREAM.md](https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/UPSTREAM.md) for the exact integration and license boundary.
 
 ---
 
