@@ -11,6 +11,8 @@ from concurrent.futures import Future, ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any
 
+import httpx
+
 from ..cloud import (
     AdminCampaignRequest,
     AdminExtractRequest,
@@ -39,7 +41,12 @@ from ..local.literature import SafeLiteratureAcquirer, open_access_locations
 from ..local.quality import ScientificQualityGate, stable_atom_id
 from ..models import WorkItem, utc_now
 from ..persistence import V14WorkspaceRepository
-from ..providers import ModelPolicy, OpenAICompatibleProvider
+from ..providers import (
+    ModelPolicy,
+    OpenAICompatibleProvider,
+    ProviderOutputError,
+    ProviderRequestError,
+)
 from .github import GitHubPublicationAdapter
 
 _TERMINAL_UNIT_STATES = {
@@ -347,6 +354,7 @@ class AdminCampaignService:
                     **json.loads(row["metadata_json"]),
                     "selected": bool(row["selected"]),
                     "state": row["state"],
+                    "error": json.loads(row["error_json"]) if row["error_json"] else None,
                     "availability_status": row["availability_status"],
                     "cloud_presence": row["match_kind"],
                     "cloud_match_id": row["cloud_match_id"],
@@ -396,6 +404,16 @@ class AdminCampaignService:
             raise ValueError("no selected papers remain to extract")
         if not request.egress_confirmed:
             raise ValueError("Admin LLM extraction requires explicit remote-egress confirmation")
+        connection = self.local.test_provider_connection(campaign["provider_profile_id"])
+        if not bool(connection.get("ok")):
+            category = str(connection.get("category") or "provider_unavailable")
+            guidance = {
+                "authentication": "the saved API key was rejected; save a valid key and test it",
+                "rate_limited": "the provider is rate-limiting requests; wait briefly and retry",
+                "timeout": "the provider connection timed out; test it again when reachable",
+                "network": "the provider could not be reached; check the network and retry",
+            }.get(category, "the provider is unavailable; test the connection and retry")
+            raise ValueError(f"Extraction did not start: {guidance}")
         _, policy, api_key = self.local.provider_configuration(
             campaign["provider_profile_id"], campaign["model"], egress_confirmed=True
         )
@@ -431,6 +449,12 @@ class AdminCampaignService:
                         },
                     }
                 )
+            placeholders = ",".join("?" for _ in work_ids)
+            conn.execute(
+                f"UPDATE admin_campaign_works SET state='queued', error_json=NULL "
+                f"WHERE campaign_id=? AND work_id IN ({placeholders})",
+                (campaign_id, *work_ids),
+            )
             payload = campaign
             payload["extraction"] = {"state": "queued", "job_id": job.job_id}
             conn.execute(
@@ -488,6 +512,12 @@ class AdminCampaignService:
                             self._process_work, campaign_id, job_id, work_id, policy, api_key
                         )
                     ] = work_id
+                    job.stage = "extracting"
+                    job.status_message = (
+                        f"{len(futures)} paper worker{'s' if len(futures) != 1 else ''} active"
+                    )
+                    job.updated_at = utc_now()
+                    self.repository.save_job(job)
                 if control["cancel"].is_set() and not futures:
                     break
                 if control["pause"].is_set() and not futures:
@@ -510,10 +540,13 @@ class AdminCampaignService:
                 work_id = futures.pop(done)
                 try:
                     outcome = done.result()
-                except Exception as exc:
+                except Exception:
                     outcome = {
                         "state": "provider_failed",
-                        "error": {"category": type(exc).__name__},
+                        "error": {
+                            "category": "internal_worker_error",
+                            "message": "The paper worker stopped unexpectedly; retry this paper.",
+                        },
                     }
                 job.completed_units += 1
                 job.progress = job.completed_units / max(1, job.total_units)
@@ -573,6 +606,7 @@ class AdminCampaignService:
         state = "provider_failed"
         error: dict[str, Any] | None = None
         acquired: dict[str, Any] | None = None
+        phase = "acquisition"
         try:
             with self.repository.connect() as conn:
                 row = conn.execute(
@@ -628,6 +662,7 @@ class AdminCampaignService:
                 }
                 for index, page in enumerate(acquired["pages"], start=1)
             ]
+            phase = "provider"
             provider = OpenAICompatibleProvider(policy, api_key=api_key, timeout=120)
             self._set_unit(job_id, unit_id, work_id, "extracting", campaign_id)
             atoms_result = provider.extract_evidence_atoms(
@@ -782,9 +817,56 @@ class AdminCampaignService:
         except FileNotFoundError as exc:
             state = "acquisition_failed"
             error = {"category": "nonextractable", "message": str(exc)}
-        except Exception as exc:
+        except ProviderRequestError as exc:
             state = "provider_failed"
-            error = {"category": type(exc).__name__}
+            error = {
+                "category": exc.category,
+                "message": str(exc),
+                "retryable": exc.retryable,
+                "status_code": exc.status_code,
+            }
+        except ProviderOutputError:
+            state = "provider_failed"
+            error = {
+                "category": "invalid_output",
+                "message": "The LLM returned invalid structured output after one repair attempt.",
+                "retryable": True,
+            }
+        except httpx.TimeoutException:
+            state = "acquisition_failed" if phase == "acquisition" else "provider_failed"
+            error = {
+                "category": "download_timeout" if phase == "acquisition" else "provider_timeout",
+                "message": (
+                    "The full-text server timed out; retry this paper later."
+                    if phase == "acquisition"
+                    else "The LLM request timed out; retry this paper."
+                ),
+                "retryable": True,
+            }
+        except httpx.HTTPStatusError as exc:
+            state = "acquisition_failed" if phase == "acquisition" else "provider_failed"
+            error = {
+                "category": "download_http" if phase == "acquisition" else "provider_http",
+                "message": (
+                    "The full-text server rejected the download request."
+                    if phase == "acquisition"
+                    else "The LLM provider rejected the extraction request."
+                ),
+                "status_code": exc.response.status_code,
+                "retryable": exc.response.status_code in {408, 409, 429} or exc.response.status_code >= 500,
+            }
+        except Exception as exc:
+            state = "acquisition_failed" if phase == "acquisition" else "provider_failed"
+            error = {
+                "category": "acquisition_error" if phase == "acquisition" else "provider_error",
+                "message": (
+                    "The paper could not be downloaded and parsed."
+                    if phase == "acquisition"
+                    else "The LLM extraction failed; retry this paper or test the provider connection."
+                ),
+                "retryable": True,
+                "exception_type": type(exc).__name__,
+            }
         finally:
             if provider is not None:
                 provider.close()
@@ -802,7 +884,7 @@ class AdminCampaignService:
             self._set_unit(
                 job_id, unit_id, work_id, state, campaign_id, error=error, temp_deleted=cleanup_ok
             )
-        return {"state": state, "temp_deleted": cleanup_ok}
+        return {"state": state, "temp_deleted": cleanup_ok, "error": error}
 
     def _record_provider_trace(self, job_id: str, unit_id: str, trace: Any) -> None:
         """Persist redacted attempts and atomically aggregate shared-job usage."""
@@ -986,6 +1068,35 @@ class AdminCampaignService:
                     stage_id,
                 ),
             )
+            # Provenance links are supporting records, not separate human
+            # review decisions. Keep them aligned with their Principle so the
+            # UI can remain paper/Principle-centered and readable.
+            if item.entity == "principle":
+                principle_id = str(item.proposed.get("principle_id") or "")
+                link_rows = conn.execute(
+                    "SELECT stage_id, payload_json FROM admin_staged_items "
+                    "WHERE campaign_id=? AND entity='principle_work'",
+                    (item.campaign_id,),
+                ).fetchall()
+                link_decision = (
+                    "add" if request.decision in {"add", "update"} else "skip"
+                )
+                for link_row in link_rows:
+                    link = AdminStagedItem.model_validate_json(link_row["payload_json"])
+                    if str(link.proposed.get("principle_id") or "") != principle_id:
+                        continue
+                    link.decision = link_decision
+                    link.updated_at = item.updated_at
+                    conn.execute(
+                        "UPDATE admin_staged_items SET decision=?, payload_json=?, updated_at=? "
+                        "WHERE stage_id=?",
+                        (
+                            link.decision,
+                            link.model_dump_json(),
+                            link.updated_at,
+                            link.stage_id,
+                        ),
+                    )
         return item.model_dump(mode="json")
 
     def bulk_decide(self, request: BulkStagingDecisionRequest) -> dict[str, Any]:
@@ -1114,6 +1225,28 @@ class AdminCampaignService:
         if campaign is None:
             raise KeyError(campaign_id)
         items = self.staging(campaign_id)
+        # Old campaigns may predate automatic support-record decisions. Infer
+        # only the mechanical Principle-Work links; Works and Principles still
+        # require explicit Admin review.
+        principle_decisions = {
+            str(item["proposed"].get("principle_id") or ""): str(item["decision"])
+            for item in items
+            if item["entity"] == "principle"
+        }
+        for item in items:
+            if item["entity"] != "principle_work" or item["decision"]:
+                continue
+            inherited = principle_decisions.get(
+                str(item["proposed"].get("principle_id") or ""), ""
+            )
+            if inherited:
+                self.decide(
+                    str(item["stage_id"]),
+                    StagingDecisionRequest(
+                        decision="add" if inherited in {"add", "update"} else "skip"
+                    ),
+                )
+        items = self.staging(campaign_id)
         if not items or any(not item["decision"] for item in items):
             raise ValueError("every staged item requires an explicit review decision")
         if any(
@@ -1186,30 +1319,45 @@ class AdminCampaignService:
         # CI remains the only authority that rebuilds indexes, vectors, snapshot
         # assets and Pages pointers from these canonical records.
         branch = f"principia-cloud/{sync.sync_id.split(':')[-1].lower()}"
+        sync.branch = branch
         sync.state = "pr_creating"
         sync.updated_at = utc_now()
         self._save_sync(sync)
-        adapter.create_review_branch(
-            branch=branch,
-            base="main",
-            files=files,
-            message=f"Global Cloud reviewed sync {sync.sync_id}",
-        )
-        result = adapter.submit_reviewed_changeset(
-            branch=branch,
-            base="main",
-            title=f"Global Cloud: {campaign.get('research_goal', 'reviewed ingestion')[:80]}",
-            body=(
-                "Reviewed in Principia Admin. Changes are restricted to `global-cloud/**`.\n\n"
-                f"Sync: `{sync.sync_id}`\nBase release: `{sync.base_release_id}`\n"
-                f"Changeset: `{sync.changeset_digest}`"
-            ),
-        )
-        sync.pr_number = int(result["pr_number"])
-        sync.pr_url = result["pr_url"]
-        sync.state = (
-            "auto_merge_queued" if result["state"] == "auto_merge_queued" else "checks_running"
-        )
+        if adapter.credential_mode() == "ssh":
+            adapter.create_review_branch_ssh(
+                branch=branch,
+                base="main",
+                files=files,
+                message=f"Global Cloud reviewed sync {sync.sync_id}",
+            )
+            # The repository workflow creates the checked PR and queues
+            # auto-merge.  This avoids putting a second GitHub secret in the
+            # application when the owner has explicitly configured SSH.
+            sync.state = "checks_running"
+        else:
+            adapter.create_review_branch(
+                branch=branch,
+                base="main",
+                files=files,
+                message=f"Global Cloud reviewed sync {sync.sync_id}",
+            )
+            result = adapter.submit_reviewed_changeset(
+                branch=branch,
+                base="main",
+                title=f"Global Cloud: {campaign.get('research_goal', 'reviewed ingestion')[:80]}",
+                body=(
+                    "Reviewed in Principia Admin. Changes are restricted to `global-cloud/**`.\n\n"
+                    f"Sync: `{sync.sync_id}`\nBase release: `{sync.base_release_id}`\n"
+                    f"Changeset: `{sync.changeset_digest}`"
+                ),
+            )
+            sync.pr_number = int(result["pr_number"])
+            sync.pr_url = result["pr_url"]
+            sync.state = (
+                "auto_merge_queued"
+                if result["state"] == "auto_merge_queued"
+                else "checks_running"
+            )
         sync.updated_at = utc_now()
         self._save_sync(sync)
         return sync.model_dump(mode="json")
@@ -1346,6 +1494,15 @@ class AdminCampaignService:
             ).fetchone()
         return json.loads(row[0]) if row else None
 
+    def latest_sync(self, campaign_id: str) -> dict[str, Any] | None:
+        with self.repository.connect() as conn:
+            row = conn.execute(
+                "SELECT sync_id FROM admin_cloud_syncs WHERE campaign_id=? "
+                "ORDER BY updated_at DESC, sync_id DESC LIMIT 1",
+                (campaign_id,),
+            ).fetchone()
+        return self.refresh_sync(str(row[0])) if row else None
+
     def refresh_sync(self, sync_id: str) -> dict[str, Any]:
         detail = self.sync_detail(sync_id)
         if detail is None:
@@ -1353,12 +1510,19 @@ class AdminCampaignService:
         sync = CloudSync.model_validate(detail)
         if sync.state in {"published", "failed", "cancelled", "needs_resolution", "reviewed"}:
             return sync.model_dump(mode="json")
-        if not sync.pr_number:
-            return sync.model_dump(mode="json")
         adapter = GitHubPublicationAdapter()
         if not adapter.configured():
             return sync.model_dump(mode="json")
         try:
+            if not sync.pr_number and sync.branch:
+                branch_outcome = adapter.review_branch_status(branch=sync.branch)
+                if branch_outcome.get("pr_number"):
+                    sync.pr_number = int(branch_outcome["pr_number"])
+                    sync.pr_url = str(branch_outcome.get("pr_url") or "")
+                    sync.updated_at = utc_now()
+                    self._save_sync(sync)
+            if not sync.pr_number:
+                return sync.model_dump(mode="json")
             outcome = adapter.publication_status(pr_number=sync.pr_number)
             sync.state = outcome["state"]
             sync.release_id = str(outcome.get("release_id") or sync.release_id)

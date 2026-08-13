@@ -49,6 +49,8 @@ def test_local_ui_exposes_paths_optional_focus_credentials_and_readable_copy() -
         "Boolean(result.ok)",
         "Add papers to this folder",
         "Find papers for this folder",
+        "Home searches never write into folders you connected earlier",
+        "!homeOnlineSearch && destinationMode === \"existing\"",
         "Ready to review",
         "Held back",
         "setSelectedDocumentIds([])",

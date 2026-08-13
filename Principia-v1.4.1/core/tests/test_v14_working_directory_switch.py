@@ -20,6 +20,8 @@ def test_library_switches_between_fully_isolated_working_directories(
         "principia.application.facade.resolve_package_library",
         lambda value, *, discover: None,
     )
+    shared_cloud = tmp_path / "application-cloud-cache"
+    monkeypatch.setenv("PRINCIPIA_GLOBAL_CLOUD_CACHE", str(shared_cloud))
     first = tmp_path / "first-project"
     second = tmp_path / "empty-project"
     second.mkdir()
@@ -53,9 +55,10 @@ def test_library_switches_between_fully_isolated_working_directories(
     assert (second / "workspace" / "principles").is_dir()
     assert client.get("/api/v1/library/summary").json()["source_count"] == 0
     assert client.get("/api/v1/providers").json()["profiles"][0]["configured"] is False
-    assert app.state.principia.cloud.registry.root == (
-        second / "workspace" / ".principia" / "cloud"
-    )
+    # Public Global snapshots are application-level cache data. Switching a
+    # private working directory must preserve the same verified Cloud cache.
+    assert app.state.principia.cloud.registry.root == shared_cloud
+    assert app.state.principia.global_cloud.root == shared_cloud / "global-v1"
 
     returned = client.post(
         "/api/v1/runtime/working-directory/switch",

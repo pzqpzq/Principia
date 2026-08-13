@@ -8,9 +8,9 @@ import { JobProgress, readableJobKind, terminalJobStates } from "./JobProgress";
 type Job = components["schemas"]["JobRecord"];
 
 const nav = [
-  { path: "/library", icon: "▦", label: "Principles Library" },
-  { path: "/map", icon: "▤", label: "Principles Explorer" },
-  { path: "/local", icon: "◫", label: "Local Discovery" }
+  { path: "/library", icon: "⌂", label: "Home" },
+  { path: "/map", icon: "▤", label: "Results" },
+  { path: "/local", icon: "◫", label: "Data & settings" }
 ];
 
 export function Shell() {
@@ -52,7 +52,7 @@ export function Shell() {
         </div>
         {demoMode ? <span className="demo-badge">Demo Data</span> : null}
         <nav aria-label="Primary navigation">
-          {[...nav, ...(adminMode ? [{ path: "/admin", icon: "◈", label: "Admin Console" }] : [])].map((item) => (
+          {[...(adminMode ? [{ path: "/admin", icon: "◈", label: "Admin" }] : []), ...nav].map((item) => (
             <NavLink key={item.path} to={item.path} className={({ isActive }) => isActive ? "active" : ""}>
               <span aria-hidden="true">{item.icon}</span>{item.label}
             </NavLink>
@@ -64,7 +64,7 @@ export function Shell() {
         </div>
       </aside>
       <button className="activity-trigger" onClick={() => setActivityOpen((value) => !value)} aria-expanded={activityOpen} aria-controls="activity-center">
-        <span aria-hidden="true">◷</span><strong>Activity</strong>{activeJobs.length ? <b>{activeJobs.length}</b> : null}
+        <span aria-hidden="true">◷</span><strong>Jobs</strong>{activeJobs.length ? <b>{activeJobs.length}</b> : null}
       </button>
       {activityOpen ? <aside className="activity-center" id="activity-center" aria-label="Activity Center">
         <header><div><span className="eyebrow">Persistent operations</span><h2>Activity Center</h2></div><button aria-label="Close Activity Center" onClick={() => setActivityOpen(false)}>×</button></header>

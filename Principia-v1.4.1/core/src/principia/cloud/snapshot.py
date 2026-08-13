@@ -27,13 +27,49 @@ DEFAULT_CONTROL_URL = "https://pzqpzq.github.io/Principia/cloud/v1/latest.json"
 SYNC_INTERVAL_SECONDS = 6 * 60 * 60
 MAX_DOWNLOAD_BYTES = 512 * 1024 * 1024
 
+# Goal prompts are usually phrased as questions.  Feeding every grammatical
+# word to an OR-based FTS query made a paper containing only "system" outrank
+# the actual subject (for example, a Boltzmann paper for a multi-agent goal).
+# Keep the small domain-bearing vocabulary and discard only high-frequency
+# prompt scaffolding.  This list is intentionally conservative: terms such as
+# ``agent``, ``reasoning`` and ``discovery`` must remain searchable.
+_GOAL_STOP_WORDS = {
+    "a", "an", "and", "are", "as", "at", "be", "been", "being", "by",
+    "can", "could", "did", "do", "does", "for", "from", "had", "has",
+    "have", "how", "i", "if", "in", "into", "is", "it", "its", "may",
+    "might", "of", "on", "or", "our", "should", "system", "systems",
+    "that", "the", "their", "these", "this", "those", "to", "using",
+    "via", "was", "were", "what", "when", "where", "which", "who",
+    "why", "will", "with", "would", "improve", "improves", "improved",
+    "improving",
+}
+
 
 def _query_terms(query: str) -> list[str]:
-    return list(dict.fromkeys(re.findall(r"[\w-]+", query, flags=re.UNICODE)))[:30]
+    raw = re.findall(r"[\w-]+", query.casefold(), flags=re.UNICODE)
+    meaningful = [term for term in raw if len(term) > 1 and term not in _GOAL_STOP_WORDS]
+    # A prompt made entirely of common words is still a valid literal search;
+    # falling back is preferable to silently treating it as an empty query.
+    return list(dict.fromkeys(meaningful or raw))[:30]
 
 
 def _fts_query(query: str) -> str:
-    return " OR ".join(f'"{term.replace(chr(34), "")}"' for term in _query_terms(query))
+    terms = _query_terms(query)
+    quoted = [f'"{term.replace(chr(34), "")}"' for term in terms]
+    if len(quoted) <= 2:
+        return " OR ".join(quoted)
+    # A long research goal is a conjunction of concepts, not a bag of
+    # independent words.  Permit a distinctive compound (for example
+    # ``multi-agent``) on its own, otherwise require two concepts.  This keeps
+    # FTS useful when embeddings are unavailable without filling the result set
+    # with papers that happen to contain only "theorem" or "discovery".
+    compound = [value for value, term in zip(quoted, terms, strict=True) if "-" in term]
+    pairs = [
+        f"({left} AND {right})"
+        for index, left in enumerate(quoted)
+        for right in quoted[index + 1 :]
+    ]
+    return " OR ".join([*compound, *pairs])
 
 
 def _encode_offset(offset: int) -> str:
@@ -616,10 +652,17 @@ class GlobalCloudSnapshotStore:
                     {**dict(row), "matched_papers": [], "paper_score": 0.0},
                 )
                 item["paper_score"] = max(item["paper_score"], paper_scores.get(str(row["work_id"]), 0))
-                item["matched_papers"].append(
-                    {"work_id": row["work_id"], "title": row["matched_paper_title"],
-                     "url": row["matched_paper_url"], "role": row["role"]}
-                )
+                # A Principle can have multiple evidence locators in one Work.
+                # Search cards link the paper once; the detail endpoint retains
+                # every locator for provenance inspection.
+                if not any(
+                    paper["work_id"] == row["work_id"]
+                    for paper in item["matched_papers"]
+                ):
+                    item["matched_papers"].append(
+                        {"work_id": row["work_id"], "title": row["matched_paper_title"],
+                         "url": row["matched_paper_url"], "role": row["role"]}
+                    )
         direct = self._lexical_principles(
             request.query,
             limit=max(request.paper_cohort, request.limit * 4),

@@ -1,53 +1,60 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import type { components } from "../api/schema";
 import { api, dataOrThrow } from "../api/client";
-import { EmptyState, ErrorState, LoadingState } from "../components/AsyncState";
+import { ErrorState } from "../components/AsyncState";
+import { JobProgress, terminalJobStates } from "../components/JobProgress";
 import { PageHeader } from "../components/Shell";
 
-type CollectionKind = "research_goal" | "area" | "source";
 type Collection = components["schemas"]["LibraryCollectionItem"];
+type LocalSource = components["schemas"]["LocalSourceResponse"];
 type WorkingDirectory = components["schemas"]["WorkingDirectoryResponse"];
-type AreaObject = { [key: string]: unknown };
+type Job = components["schemas"]["JobRecord"];
+type UnknownRecord = Record<string, unknown>;
 
-function objectValue(value: unknown): AreaObject {
-  return value !== null && typeof value === "object" ? value as AreaObject : {};
+const record = (value: unknown): UnknownRecord => value !== null && typeof value === "object" ? value as UnknownRecord : {};
+const text = (value: unknown): string => typeof value === "string" ? value : "";
+const terminalRunStates = new Set(["succeeded", "partial", "failed", "cancelled"]);
+const onlineFolderName = (value: string): string => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 56) || "public-literature";
+
+function branchLabel(name: string): string {
+  if (name === "global") return "Global Cloud";
+  return "Local folder";
 }
 
-function textValue(value: unknown, fallback = ""): string {
-  return typeof value === "string" ? value : fallback;
+function branchMessage(name: string, branch: UnknownRecord): string {
+  const state = text(branch.state) || "queued";
+  if (state === "queued") return "Waiting";
+  if (state === "running") return name === "global" ? "Finding papers, then linked Principles" : text(branch.stage) || "Reading papers and extracting Principles";
+  if (state === "succeeded") return "Complete";
+  if (state === "failed") return "Unavailable — other results are preserved";
+  return state.replaceAll("_", " ");
 }
-
-function numberValue(value: unknown): number {
-  return typeof value === "number" && Number.isFinite(value) ? value : 0;
-}
-
-const GROUP_LABELS: Record<CollectionKind, string> = {
-  research_goal: "Research Goals",
-  area: "Areas",
-  source: "Private Folders",
-};
 
 export function LibraryPage() {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
-  const [kind, setKind] = useState<CollectionKind>("research_goal");
-  const [includeArchived, setIncludeArchived] = useState(false);
-  const [editingId, setEditingId] = useState("");
-  const [editingTitle, setEditingTitle] = useState("");
-  const [catalogPath, setCatalogPath] = useState("");
-  const [globalFilter, setGlobalFilter] = useState<"all" | "installed" | "available">("all");
+  const selectionInitialized = useRef(false);
+  const openedRun = useRef("");
   const [manualWorkingDirectory, setManualWorkingDirectory] = useState("");
-  const [showManualWorkingDirectory, setShowManualWorkingDirectory] = useState(false);
   const [researchGoal, setResearchGoal] = useState("");
   const [selectedSources, setSelectedSources] = useState<string[]>([]);
   const [includeGlobalCloud, setIncludeGlobalCloud] = useState(true);
-  const [includeOnline, setIncludeOnline] = useState(false);
-  const [goalAdvanced, setGoalAdvanced] = useState(false);
+  const [confirmEgress, setConfirmEgress] = useState(false);
   const [providerModel, setProviderModel] = useState("deepseek-ai/DeepSeek-V4-Flash");
+  const [credential, setCredential] = useState("");
+  const [credentialMessage, setCredentialMessage] = useState("");
   const [globalLimit, setGlobalLimit] = useState(50);
   const [localLimit, setLocalLimit] = useState(20);
+  const [runId, setRunId] = useState("");
+  const [onlineOpen, setOnlineOpen] = useState(false);
+  const [onlineQuestion, setOnlineQuestion] = useState("");
+  const [onlineTarget, setOnlineTarget] = useState(20);
+  const [onlineSearchId, setOnlineSearchId] = useState("");
+  const [onlineSearchJobId, setOnlineSearchJobId] = useState("");
+  const [onlineSelected, setOnlineSelected] = useState<string[]>([]);
+  const [onlineAcquisitionJobId, setOnlineAcquisitionJobId] = useState("");
 
   const workingDirectory = useQuery({
     queryKey: ["working-directory"],
@@ -57,6 +64,80 @@ export function LibraryPage() {
     queryKey: ["working-directory-picker"],
     queryFn: async () => dataOrThrow(await api.GET("/api/v1/runtime/working-directory/picker", {})),
   });
+  const localSources = useQuery({
+    queryKey: ["goal-run-sources"],
+    queryFn: async () => dataOrThrow(await api.GET("/api/v1/local/sources", {})),
+    refetchInterval: 1_000,
+  });
+  const providers = useQuery({
+    queryKey: ["providers"],
+    queryFn: async () => record(dataOrThrow(await api.GET("/api/v1/providers", {}))),
+  });
+  const cloudStatus = useQuery({
+    queryKey: ["global-cloud-status"],
+    queryFn: async () => record(dataOrThrow(await api.GET("/api/v1/cloud/status", {}))),
+    refetchInterval: 60_000,
+  });
+  const recentRuns = useQuery({
+    queryKey: ["library-collections", "research_goal", false],
+    queryFn: async () => dataOrThrow(await api.GET("/api/v1/library/collections", { params: { query: { kind: "research_goal", include_archived: false } } })),
+  });
+  const goalRun = useQuery({
+    queryKey: ["research-goal-run", runId],
+    enabled: Boolean(runId),
+    queryFn: async () => record(dataOrThrow(await api.GET("/api/v1/research-goal-runs/{run_id}", { params: { path: { run_id: runId } } }))),
+    refetchInterval: (query) => terminalRunStates.has(text(record(query.state.data).state)) ? false : 750,
+  });
+  const onlineSearchJob = useQuery({
+    queryKey: ["job", onlineSearchJobId], enabled: Boolean(onlineSearchJobId),
+    queryFn: async () => dataOrThrow(await api.GET("/api/v1/jobs/{job_id}", { params: { path: { job_id: onlineSearchJobId } } })) as Job,
+    refetchInterval: (query) => terminalJobStates.has(text(record(query.state.data).state)) ? false : 750,
+  });
+  const onlineSearch = useQuery({
+    queryKey: ["home-literature-search", onlineSearchId], enabled: Boolean(onlineSearchId),
+    queryFn: async () => record(dataOrThrow(await api.GET("/api/v1/local/literature-searches/{search_id}", { params: { path: { search_id: onlineSearchId } } }))),
+    refetchInterval: (query) => Boolean(record(query.state.data).selection_finalized) ? false : 750,
+  });
+  const onlineAcquisitionJob = useQuery({
+    queryKey: ["job", onlineAcquisitionJobId], enabled: Boolean(onlineAcquisitionJobId),
+    queryFn: async () => dataOrThrow(await api.GET("/api/v1/jobs/{job_id}", { params: { path: { job_id: onlineAcquisitionJobId } } })) as Job,
+    refetchInterval: (query) => terminalJobStates.has(text(record(query.state.data).state)) ? false : 750,
+  });
+
+  const sourceRows: LocalSource[] = localSources.data?.sources ?? [];
+  const profile = record((Array.isArray(providers.data?.profiles) ? providers.data.profiles : [])[0]);
+  const profileConfigured = Boolean(profile.configured);
+  const profileModels = Array.isArray(profile.models) ? profile.models.map(String) : [];
+  const cloud = cloudStatus.data ?? {};
+  const branches = Object.entries(record(goalRun.data?.branches));
+  const recentRows: Collection[] = recentRuns.data?.items ?? [];
+
+  useEffect(() => {
+    if (selectionInitialized.current || localSources.isLoading) return;
+    selectionInitialized.current = true;
+    setSelectedSources(sourceRows.filter((source) => source.status !== "removed").map((source) => source.source_id));
+  }, [localSources.isLoading, sourceRows.length]);
+
+  useEffect(() => {
+    const state = text(goalRun.data?.state);
+    if (!runId || !["succeeded", "partial"].includes(state) || openedRun.current === runId) return;
+    openedRun.current = runId;
+    const timer = window.setTimeout(() => navigate(`/map?scope=combined&goal_run=${encodeURIComponent(runId)}`), 650);
+    return () => window.clearTimeout(timer);
+  }, [runId, goalRun.data?.state, navigate]);
+  useEffect(() => {
+    if (!Boolean(onlineSearch.data?.selection_finalized)) return;
+    setOnlineSelected((current) => current.length ? current : (Array.isArray(onlineSearch.data?.selected_work_ids) ? onlineSearch.data.selected_work_ids.map(String) : []));
+  }, [onlineSearch.data?.selection_finalized]);
+  useEffect(() => {
+    if (text(record(onlineAcquisitionJob.data).state) !== "succeeded") return;
+    const sourceId = text(record(record(onlineAcquisitionJob.data).checkpoint).source_id);
+    if (sourceId) setSelectedSources((current) => Array.from(new Set([...current, sourceId])));
+    setResearchGoal(onlineQuestion);
+    setOnlineOpen(false);
+    queryClient.invalidateQueries({ queryKey: ["goal-run-sources"] });
+  }, [record(onlineAcquisitionJob.data).state]);
+
   const completeWorkingDirectorySwitch = () => {
     queryClient.clear();
     window.location.assign("/library");
@@ -69,194 +150,112 @@ export function LibraryPage() {
     mutationFn: async () => dataOrThrow(await api.POST("/api/v1/runtime/working-directory/switch", { body: { path: manualWorkingDirectory } })),
     onSuccess: completeWorkingDirectorySwitch,
   });
-
-  const summary = useQuery({
-    queryKey: ["library-summary"],
-    queryFn: async () => dataOrThrow(await api.GET("/api/v1/library/summary", {})),
+  const addFolders = useMutation({
+    mutationFn: async () => record(dataOrThrow(await api.POST("/api/v1/local/folder-picker/multiple", {}))),
+    onSuccess: (value) => {
+      const added = (Array.isArray(value.sources) ? value.sources : []).map(record).map((source) => text(source.source_id)).filter(Boolean);
+      setSelectedSources((current) => Array.from(new Set([...current, ...added])));
+      queryClient.invalidateQueries({ queryKey: ["goal-run-sources"] });
+    },
   });
-  const collections = useQuery({
-    queryKey: ["library-collections", kind, includeArchived],
-    queryFn: async () => dataOrThrow(await api.GET("/api/v1/library/collections", {
-      params: { query: { kind, include_archived: includeArchived } },
-    })),
-  });
-  const areas = useQuery({
-    queryKey: ["areas"],
-    queryFn: async () => dataOrThrow(await api.GET("/api/v1/areas", {})),
-  });
-  const localSources = useQuery({
-    queryKey: ["goal-run-sources"],
-    queryFn: async () => dataOrThrow(await api.GET("/api/v1/local/sources", {})),
-  });
-  const cloudStatus = useQuery({
-    queryKey: ["global-cloud-status"],
-    queryFn: async () => dataOrThrow(await api.GET("/api/v1/cloud/status", {})),
-    refetchInterval: 60_000,
+  const saveCredential = useMutation({
+    mutationFn: async () => dataOrThrow(await api.PUT("/api/v1/provider-profiles/{provider_id}/credential", { params: { path: { provider_id: "siliconflow" } }, body: { api_key: credential } })),
+    onSuccess: () => {
+      setCredential("");
+      setCredentialMessage("API key saved privately in this working directory.");
+      queryClient.invalidateQueries({ queryKey: ["providers"] });
+    },
   });
   const startGoalRun = useMutation({
-    mutationFn: async () => dataOrThrow(await api.POST("/api/v1/research-goal-runs", {
-      params: { query: { egress_confirmed: selectedSources.length > 0 } },
+    mutationFn: async () => record(dataOrThrow(await api.POST("/api/v1/research-goal-runs", {
+      params: { query: { egress_confirmed: selectedSources.length > 0 && confirmEgress } },
       body: {
-        goal: researchGoal,
-        source_ids: selectedSources,
-        include_global: includeGlobalCloud,
-        include_online: includeOnline,
-        provider_profile_id: "siliconflow",
-        model: providerModel,
-        local_limit: localLimit,
-        global_limit: globalLimit,
+        goal: researchGoal.trim(), source_ids: selectedSources, include_global: includeGlobalCloud,
+        include_online: false, provider_profile_id: "siliconflow", model: providerModel,
+        local_limit: localLimit, global_limit: globalLimit,
       },
-    })),
-    onSuccess: (data) => navigate(`/map?scope=combined&goal_run=${encodeURIComponent(String(data.run_id))}`),
+    }))),
+    onSuccess: (value) => setRunId(text(value.run_id)),
   });
-  const refresh = useMutation({
-    mutationFn: async () => dataOrThrow(await api.POST("/api/v1/areas/catalog/refresh", {
-      body: { path: catalogPath },
-    })),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["areas"] }),
-  });
-  const packageAction = useMutation({
-    mutationFn: async ({ area, action, version, pinned }: {
-      area: string;
-      action: "install" | "update" | "verify" | "pin" | "rollback";
-      version?: string;
-      pinned?: boolean;
-    }) => {
-      if (action === "install") return dataOrThrow(await api.POST("/api/v1/areas/{area}/install", { params: { path: { area } }, body: { version: version ?? null } }));
-      if (action === "update") return dataOrThrow(await api.POST("/api/v1/areas/{area}/update", { params: { path: { area } }, body: { version: version ?? null } }));
-      if (action === "verify") return dataOrThrow(await api.POST("/api/v1/areas/{area}/verify", { params: { path: { area } }, body: { version: version ?? null } }));
-      if (action === "pin") return dataOrThrow(await api.POST("/api/v1/areas/{area}/pin", { params: { path: { area } }, body: { version: version ?? "" , pinned: pinned ?? true } }));
-      return dataOrThrow(await api.POST("/api/v1/areas/{area}/rollback", { params: { path: { area } } }));
+  const startOnlineSearch = useMutation({
+    mutationFn: async () => record(dataOrThrow(await api.POST("/api/v1/local/literature-searches", { body: { query: onlineQuestion.trim(), goal: "", area: "", target_count: onlineTarget, semantic_ranking: true, source_id: "" } }))),
+    onSuccess: (job) => {
+      setOnlineSearchJobId(text(job.job_id));
+      setOnlineSearchId(text(record(job.checkpoint).search_id));
+      setOnlineSelected([]);
     },
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["areas"] }),
   });
-  const reveal = useMutation({
-    mutationFn: async (sourceId: string) => dataOrThrow(await api.POST("/api/v1/local/sources/{source_id}/reveal", {
-      params: { path: { source_id: sourceId } },
-    })),
+  const acquireOnline = useMutation({
+    mutationFn: async () => {
+      await dataOrThrow(await api.PATCH("/api/v1/local/literature-searches/{search_id}/selection", { params: { path: { search_id: onlineSearchId } }, body: { work_ids: onlineSelected } }));
+      return record(dataOrThrow(await api.POST("/api/v1/local/literature-searches/{search_id}/acquisitions", { params: { path: { search_id: onlineSearchId } }, body: { source_id: null, folder_name: onlineFolderName(onlineQuestion), work_ids: onlineSelected } })));
+    },
+    onSuccess: (job) => setOnlineAcquisitionJobId(text(job.job_id)),
   });
-  const editCollection = useMutation({
-    mutationFn: async ({ collection, title }: { collection: Collection; title: string }) => dataOrThrow(await api.PATCH("/api/v1/library/collections/{kind}/{collection_id}", {
-      params: { path: { kind: collection.kind, collection_id: collection.collection_id } }, body: { title },
-    })),
-    onSuccess: () => { setEditingId(""); setEditingTitle(""); queryClient.invalidateQueries({ queryKey: ["library-collections"] }); queryClient.invalidateQueries({ queryKey: ["library-summary"] }); },
-  });
-  const archiveCollection = useMutation({
-    mutationFn: async (collection: Collection) => dataOrThrow(await api.DELETE("/api/v1/library/collections/{kind}/{collection_id}", {
-      params: { path: { kind: collection.kind, collection_id: collection.collection_id } },
-    })),
-    onSuccess: () => { queryClient.invalidateQueries({ queryKey: ["library-collections"] }); queryClient.invalidateQueries({ queryKey: ["library-summary"] }); },
-  });
-  const restoreCollection = useMutation({
-    mutationFn: async (collection: Collection) => dataOrThrow(await api.POST("/api/v1/library/collections/{kind}/{collection_id}/restore", {
-      params: { path: { kind: collection.kind as "research_goal" | "source", collection_id: collection.collection_id } },
-    })),
-    onSuccess: () => { queryClient.invalidateQueries({ queryKey: ["library-collections"] }); queryClient.invalidateQueries({ queryKey: ["library-summary"] }); },
+  const cancelGoalRun = useMutation({
+    mutationFn: async () => dataOrThrow(await api.POST("/api/v1/research-goal-runs/{run_id}/cancel", { params: { path: { run_id: runId } } })),
+    onSuccess: () => goalRun.refetch(),
   });
 
-  const collectionRows: Collection[] = collections.data?.items ?? [];
-  const areaPayload = objectValue(areas.data);
-  const cloudPayload = objectValue(cloudStatus.data);
-  const globalRows = (Array.isArray(areaPayload.areas) ? areaPayload.areas : [])
-    .map(objectValue)
-    .filter((item) => globalFilter === "all" || (globalFilter === "installed" ? Boolean(item.installed) : !item.installed));
-  const mapUrl = (collection: Collection) => {
-    if (collection.kind === "research_goal") return `/map?scope=local&goal=${encodeURIComponent(collection.collection_id)}`;
-    if (collection.kind === "area") return `/map?scope=local&area=${encodeURIComponent(collection.area)}`;
-    return `/map?scope=local&source=${encodeURIComponent(collection.source_id)}`;
+  const toggleSource = (sourceId: string, checked: boolean) => {
+    setSelectedSources((current) => checked ? Array.from(new Set([...current, sourceId])) : current.filter((id) => id !== sourceId));
   };
+  const localReady = !selectedSources.length || (profileConfigured && confirmEgress);
+  const canRun = researchGoal.trim().length >= 8 && (includeGlobalCloud || selectedSources.length > 0) && localReady;
+  const cloudLabel = Boolean(cloud.available)
+    ? `${String(cloud.work_count ?? 0)} papers · ${String(cloud.principle_count ?? 0)} Principles`
+    : "Offline — Local search still works";
+  const primaryError = workingDirectory.error ?? chooseWorkingDirectory.error ?? switchWorkingDirectory.error
+    ?? addFolders.error ?? saveCredential.error ?? startGoalRun.error ?? goalRun.error ?? cancelGoalRun.error
+    ?? startOnlineSearch.error ?? onlineSearch.error ?? acquireOnline.error ?? onlineAcquisitionJob.error;
+  const onlineRows = (Array.isArray(onlineSearch.data?.results) ? onlineSearch.data.results : []).map(record);
 
-  return <div className="page library-page">
+  return <div className="page library-page concise-library">
     <PageHeader
-      eyebrow="Your scientific knowledge workspace"
-      title="Principles Library"
-      description="Browse the same private Principle corpus by Research Goal, Area, or Folder. These are overlapping views—not duplicate data."
-      actions={<button className="primary" onClick={() => navigate("/local?stage=folder")}>+ Add private folder</button>}
+      eyebrow="One goal, all your knowledge"
+      title="What are you researching?"
+      description="Principia searches the Global Cloud and your chosen folders together, then opens one clear result set."
     />
 
-    <section className="working-directory-card" aria-label="Active working directory">
-      <div className="working-directory-copy"><span className="eyebrow">Active working directory</span><div className="working-directory-title"><h2>{workingDirectory.data?.display_name ?? "Opening workspace…"}</h2>{workingDirectory.data ? <span className={workingDirectory.data.empty ? "pill" : "pill success"}>{workingDirectory.data.empty ? "Empty" : "Contains local knowledge"}</span> : null}</div><code>{workingDirectory.data?.working_directory ?? "Resolving exact path…"}</code><p>This folder isolates its <strong>workspace</strong>, <strong>local_data</strong>, credentials, jobs, and private Principles. Downloaded Principle packages live in one shared application library and remain available when you switch working directories.</p></div>
-      <div className="working-directory-actions"><button className="primary" onClick={() => { if (window.confirm("Switch the entire Principia workspace? The current directory remains unchanged on disk.")) chooseWorkingDirectory.mutate(); }} disabled={!Boolean(workingDirectoryPicker.data?.available) || chooseWorkingDirectory.isPending}>{chooseWorkingDirectory.isPending ? "Choose a folder in the system dialog…" : "Choose working directory…"}</button><button onClick={() => setShowManualWorkingDirectory((value) => !value)} aria-expanded={showManualWorkingDirectory}>Enter absolute path</button></div>
-      {showManualWorkingDirectory ? <form className="working-directory-manual" onSubmit={(event) => { event.preventDefault(); if (window.confirm("Switch the entire Principia workspace? The current directory remains unchanged on disk.")) switchWorkingDirectory.mutate(); }}><label><span>Existing folder on this computer</span><input value={manualWorkingDirectory} onChange={(event) => setManualWorkingDirectory(event.target.value)} placeholder="/absolute/path/to/working-directory" /></label><button className="primary" disabled={!manualWorkingDirectory.trim() || switchWorkingDirectory.isPending}>{switchWorkingDirectory.isPending ? "Switching workspace…" : "Open this working directory"}</button></form> : null}
-      {workingDirectory.data ? <div className="working-directory-boundaries"><span><strong>Raw Local data</strong><code>{workingDirectory.data.local_data}</code></span><span><strong>Durable private knowledge</strong><code>{workingDirectory.data.workspace}</code></span>{workingDirectory.data.package_library ? <span><strong>Shared Principle packages</strong><code>{workingDirectory.data.package_library}</code></span> : null}</div> : null}
-    </section>
-    {workingDirectory.isError || chooseWorkingDirectory.isError || switchWorkingDirectory.isError ? <ErrorState error={workingDirectory.error ?? chooseWorkingDirectory.error ?? switchWorkingDirectory.error} retry={() => workingDirectory.refetch()} /> : null}
-
-    <section className="research-goal-panel" aria-labelledby="new-research-goal-title">
-      <div><span className="eyebrow">Global + private knowledge</span><h2 id="new-research-goal-title">New research goal</h2><p>Search the pinned Global Cloud immediately while selected private folders run independently. No private content is uploaded to the Cloud.</p></div>
-      <label><span>Research goal</span><textarea value={researchGoal} onChange={(event) => setResearchGoal(event.target.value)} placeholder="Which scientific mechanisms or boundary conditions should I investigate?" /></label>
-      <fieldset><legend>Private folders (optional, multiple)</legend><div className="goal-source-grid">{(localSources.data?.sources ?? []).map((source) => <label className="inline-check" key={source.source_id}><input type="checkbox" checked={selectedSources.includes(source.source_id)} onChange={(event) => setSelectedSources((current) => event.target.checked ? [...current, source.source_id] : current.filter((value) => value !== source.source_id))} /><span>{source.display_name} · {source.document_count} papers</span></label>)}</div></fieldset>
-      <div className="goal-run-options"><label className="inline-check"><input type="checkbox" checked={includeGlobalCloud} onChange={(event) => setIncludeGlobalCloud(event.target.checked)} /><span>Include Global Cloud ({String(cloudPayload.principle_count ?? 0)} Principles · {String(cloudPayload.work_count ?? 0)} papers)</span></label><label className="inline-check"><input type="checkbox" checked={includeOnline} onChange={(event) => setIncludeOnline(event.target.checked)} /><span>Search online literature (paper selection required before download)</span></label></div>
-      <details open={goalAdvanced} onToggle={(event) => setGoalAdvanced(event.currentTarget.open)}><summary>Advanced settings</summary><div className="goal-advanced"><label><span>Provider model</span><input value={providerModel} onChange={(event) => setProviderModel(event.target.value)} /></label><label><span>Local limit</span><input type="number" min={1} max={500} value={localLimit} onChange={(event) => setLocalLimit(Number(event.target.value))} /></label><label><span>Global limit</span><input type="number" min={1} max={200} value={globalLimit} onChange={(event) => setGlobalLimit(Number(event.target.value))} /></label></div></details>
-      <div className="goal-run-actions"><span className={`pill ${cloudPayload.available ? "success" : ""}`}>{cloudPayload.available ? `Cloud ${String(cloudPayload.release_id ?? "verified")}` : "Cloud offline · Local still available"}</span><button className="primary" onClick={() => startGoalRun.mutate()} disabled={researchGoal.trim().length < 8 || (!includeGlobalCloud && !includeOnline && !selectedSources.length) || startGoalRun.isPending}>{startGoalRun.isPending ? "Starting branches…" : "Run research goal"}</button></div>
-      {startGoalRun.isError ? <ErrorState error={startGoalRun.error} /> : null}
+    <section className="workspace-strip" aria-label="Current working directory">
+      <div><span className="status-dot online" /><span>Working directory</span><strong>{workingDirectory.data?.display_name ?? "Opening…"}</strong></div>
+      <button onClick={() => chooseWorkingDirectory.mutate()} disabled={!Boolean(workingDirectoryPicker.data?.available) || chooseWorkingDirectory.isPending}>{chooseWorkingDirectory.isPending ? "Choose in system dialog…" : "Change"}</button>
+      <details><summary>Use a path</summary><form onSubmit={(event) => { event.preventDefault(); switchWorkingDirectory.mutate(); }}><input value={manualWorkingDirectory} onChange={(event) => setManualWorkingDirectory(event.target.value)} placeholder="/absolute/path/to/workspace" /><button disabled={!manualWorkingDirectory.trim()}>Open</button></form></details>
     </section>
 
-    <section className="library-totals" aria-label="Private workspace totals">
-      {[
-        [summary.data?.principle_count, "Principles ready to review"],
-        [summary.data?.document_count, "indexed papers"],
-        [summary.data?.research_goal_count, "research goals"],
-        [summary.data?.area_count, "scientific areas"],
-        [summary.data?.source_count, "private folders"],
-        [summary.data?.quarantined_count, "held-back drafts"],
-      ].map(([value, label]) => <div key={String(label)}><strong>{summary.isLoading ? "—" : String(value ?? 0)}</strong><span>{label}</span></div>)}
-    </section>
-    {summary.data?.needs_revalidation_count ? <div className="quality-notice" role="status"><strong>{summary.data.needs_revalidation_count} older drafts are hidden.</strong><span>They remain in the audit record and will return after updated evidence checks.</span></div> : null}
-    {summary.isError ? <ErrorState error={summary.error} retry={() => summary.refetch()} /> : null}
+    <main className="goal-composer" aria-labelledby="goal-composer-title">
+      <section className="goal-step sources-step">
+        <header><span>1</span><div><h2 id="goal-composer-title">Choose your knowledge</h2><p>Local folders are optional. Add several at once or search only the Cloud.</p></div></header>
+        <div className="source-actions"><button className="primary quiet" onClick={() => addFolders.mutate()} disabled={addFolders.isPending}>{addFolders.isPending ? "Choose folders in the system dialog…" : "+ Add local folders"}</button><button onClick={() => { setOnlineQuestion(researchGoal); setOnlineOpen(true); }}>Find papers online</button></div>
+        {sourceRows.length ? <div className="source-chip-list">{sourceRows.map((source) => <label key={source.source_id} className={selectedSources.includes(source.source_id) ? "source-chip selected" : "source-chip"}><input type="checkbox" checked={selectedSources.includes(source.source_id)} onChange={(event) => toggleSource(source.source_id, event.target.checked)} /><span><strong>{source.display_name}</strong><small>{source.status === "indexing" ? "Indexing papers…" : source.status === "index_failed" ? "Indexing needs attention" : `${source.document_count} paper${source.document_count === 1 ? "" : "s"}`}</small></span></label>)}</div> : <p className="empty-inline">No local folders connected. That is fine — Global Cloud is on.</p>}
+      </section>
 
-    <section className="private-collections" aria-labelledby="private-collection-title">
-      <div className="collection-heading">
-        <div><span className="eyebrow">Private workspace</span><h2 id="private-collection-title">Collections</h2><p>{collections.data?.explanation ?? "Choose how you want to enter the same Principle corpus."}</p></div>
-        <div className="segmented" aria-label="Group private Principles">
-          {(Object.keys(GROUP_LABELS) as CollectionKind[]).map((value) => <button key={value} className={kind === value ? "selected" : ""} aria-pressed={kind === value} onClick={() => setKind(value)}>{GROUP_LABELS[value]}</button>)}
-        </div>
-        {kind !== "area" ? <label className="inline-check collection-archive-control"><input type="checkbox" checked={includeArchived} onChange={(event) => setIncludeArchived(event.target.checked)} /><span>Show archived</span></label> : <span className="collection-archive-control" aria-hidden="true" />}
-      </div>
-      {collections.isLoading ? <LoadingState label={`Loading ${GROUP_LABELS[kind]}…`} /> : null}
-      {collections.isError ? <ErrorState error={collections.error} retry={() => collections.refetch()} /> : null}
-      {editCollection.isError || archiveCollection.isError || restoreCollection.isError ? <ErrorState error={editCollection.error ?? archiveCollection.error ?? restoreCollection.error} /> : null}
-      {!collections.isLoading && !collections.isError && !collectionRows.length ? <EmptyState title={`No ${GROUP_LABELS[kind]} yet`}><p>Choose or create a private folder in Local Discovery. Literature Search can help populate one when you do not already have papers.</p><button className="primary" onClick={() => navigate("/local?stage=folder")}>Open Local Discovery</button></EmptyState> : null}
-      <div className="collection-grid">{collectionRows.map((collection) => <article className="collection-card" key={collection.collection_id}>
-        <div className="card-top"><span className={`collection-icon ${collection.kind}`}>{collection.kind === "research_goal" ? "G" : collection.kind === "area" ? "A" : "F"}</span><span className={`pill ${collection.status === "ready" || collection.status === "active" ? "success" : ""}`}>{collection.status}</span></div>
-        <span className="collection-kind">{GROUP_LABELS[collection.kind].replace(/s$/, "")}</span>
-        {editingId === collection.collection_id ? <form className="collection-edit" onSubmit={(event) => { event.preventDefault(); editCollection.mutate({ collection, title: editingTitle }); }}><label><span>{collection.kind === "area" ? "Area label" : "Name"}</span><input autoFocus value={editingTitle} onChange={(event) => setEditingTitle(event.target.value)} /></label><div><button className="primary" disabled={!editingTitle.trim() || editCollection.isPending}>Save</button><button type="button" onClick={() => setEditingId("")}>Cancel</button></div></form> : <h3>{collection.kind === "area" ? collection.title.replaceAll("-", " ") : collection.title}</h3>}
-        {collection.source_name ? <p className="collection-location">{collection.source_name}{collection.display_location ? ` · ${collection.display_location}` : ""}</p> : <p className="collection-location">{collection.area.replaceAll("-", " ") || "Cross-area"}</p>}
-        <div className="collection-metrics"><div><strong>{collection.principle_count}</strong><span>Principles</span></div><div><strong>{collection.work_count}</strong><span>Papers</span></div><div><strong>{collection.evidence_count}</strong><span>Evidence</span></div><div><strong>{collection.quarantined_count}</strong><span>Held back</span></div></div>
-        {collection.needs_revalidation_count ? <p className="revalidation-count">{collection.needs_revalidation_count} older drafts await updated checks</p> : null}
-        <div className="card-actions"><button className="primary" onClick={() => navigate(mapUrl(collection))}>Open Explorer</button>{collection.kind === "source" && collection.status !== "removed" ? <button onClick={() => navigate(`/local?stage=papers&source=${encodeURIComponent(collection.source_id)}`)}>Select papers</button> : null}{collection.kind === "source" && collection.status !== "removed" ? <button onClick={() => reveal.mutate(collection.source_id)}>Open Folder</button> : null}<button onClick={() => { setEditingId(collection.collection_id); setEditingTitle(collection.kind === "area" ? collection.title.replaceAll("-", " ") : collection.title); }}>Rename</button>{collection.status === "archived" || collection.status === "removed" ? <button onClick={() => restoreCollection.mutate(collection)} disabled={collection.kind === "area"}>Restore</button> : <button onClick={() => { const action = collection.kind === "source" ? "disconnect this folder from Principia (files remain on disk)" : collection.kind === "area" ? "remove this Area label and move its Principles to Not categorized" : "archive this Research Goal"; if (window.confirm(`Are you sure you want to ${action}?`)) archiveCollection.mutate(collection); }}>{collection.kind === "source" ? "Disconnect" : collection.kind === "area" ? "Remove label" : "Archive"}</button>}</div>
-      </article>)}</div>
-    </section>
+      <section className="goal-step question-step">
+        <header><span>2</span><div><h2>Enter one research goal</h2><p>Describe the mechanism, design rule, or boundary you want to understand.</p></div></header>
+        <textarea autoFocus value={researchGoal} onChange={(event) => setResearchGoal(event.target.value)} placeholder="For example: Which coordination mechanisms make multi-agent systems robust to communication failures?" />
+        <label className="cloud-toggle"><input type="checkbox" checked={includeGlobalCloud} onChange={(event) => setIncludeGlobalCloud(event.target.checked)} /><span><strong>Search Global Cloud</strong><small>{cloudLabel}</small></span></label>
 
-    <details className="global-packages" open={globalRows.length > 0}>
-      <summary><span><strong>Shared Principle Package Library</strong><small>Downloaded once, available in every working directory · paper files excluded</small></span><span>{globalRows.length}</span></summary>
-      <div className="global-package-content">
-        <section className="toolbar-card" aria-label="Global catalog configuration">
-          <label><span>Principle catalog file</span><input value={catalogPath} onChange={(event) => setCatalogPath(event.target.value)} placeholder="Choose catalog.json" /></label>
-          <button className="primary" onClick={() => refresh.mutate()} disabled={!catalogPath || refresh.isPending}>Refresh catalog</button>
-          <div className="segmented" aria-label="Global package filter">{(["all", "installed", "available"] as const).map((value) => <button key={value} className={globalFilter === value ? "selected" : ""} onClick={() => setGlobalFilter(value)}>{value}</button>)}</div>
-        </section>
-        {areas.isLoading ? <LoadingState label="Reading shared Principle packages…" /> : null}
-        {areas.isError ? <ErrorState error={areas.error} retry={() => areas.refetch()} /> : null}
-        {refresh.isError || packageAction.isError || reveal.isError ? <ErrorState error={refresh.error ?? packageAction.error ?? reveal.error} /> : null}
-        {!areas.isLoading && !areas.isError && !globalRows.length ? <EmptyState title="No Principle packages found"><p>Configure a shared principle-packages directory or add a catalog. Private Principles remain isolated to this working directory.</p></EmptyState> : null}
-        <div className="area-grid">{globalRows.map((areaObject) => {
-          const area = textValue(areaObject.area);
-          const displayName = textValue(areaObject.display_name, area);
-          const version = textValue(areaObject.package_version);
-          const installed = Boolean(areaObject.installed);
-          const pinned = Boolean(areaObject.pinned);
-          const unassessed = textValue(areaObject.content_class) === "unassessed_candidates";
-          return <article className="area-card compact" key={`${area}-${version}`}>
-            <div className="card-top"><span className="area-icon">{displayName.slice(0, 2).toUpperCase()}</span><span className={`pill ${installed ? "success" : ""}`}>{installed ? "Installed locally" : "Available"}</span></div>
-            <h2>{displayName}</h2><p className="muted">{area}</p>
-            <p className="package-content-notice">{unassessed ? "Public literature · Automated evidence checks passed · Human review pending · Paper files not included" : "Human-reviewed Principle Capsules · Paper files not included"}</p>
-            <dl><div><dt>Version</dt><dd>{version || "—"}</dd></div><div><dt>Principles</dt><dd>{numberValue(areaObject.principle_count)}</dd></div><div><dt>Relations</dt><dd>{numberValue(areaObject.relation_count)}</dd></div><div><dt>Integrity</dt><dd>{textValue(areaObject.integrity, "Catalog")}</dd></div></dl>
-              <div className="card-actions">{installed ? <><button onClick={() => navigate(`/map?scope=global&package=${encodeURIComponent(area)}`)}>Open Explorer</button><button onClick={() => packageAction.mutate({ area, action: "verify", version })}>Verify</button><button aria-pressed={pinned} onClick={() => packageAction.mutate({ area, action: "pin", version, pinned: !pinned })}>{pinned ? "Unpin" : "Pin"}</button><button onClick={() => packageAction.mutate({ area, action: "rollback" })}>Rollback</button></> : <button className="primary" onClick={() => packageAction.mutate({ area, action: "install", version })}>Install</button>}</div>
-          </article>;
-        })}</div>
-      </div>
-    </details>
-    {packageAction.isPending ? <div className="toast" role="status">Verifying and activating package…</div> : null}
+        {selectedSources.length > 0 && !profileConfigured ? <div className="provider-setup" role="group" aria-label="Connect LLM provider"><div><strong>Connect the LLM for local extraction</strong><small>The key stays in this working directory and never enters the Cloud.</small></div><input type="password" value={credential} onChange={(event) => setCredential(event.target.value)} placeholder="SiliconFlow API key" autoComplete="off" /><button onClick={() => saveCredential.mutate()} disabled={credential.length < 8 || saveCredential.isPending}>Save key</button></div> : null}
+        {credentialMessage ? <p className="inline-success" role="status">{credentialMessage}</p> : null}
+        {selectedSources.length > 0 && profileConfigured ? <label className="egress-confirm"><input type="checkbox" checked={confirmEgress} onChange={(event) => setConfirmEgress(event.target.checked)} /><span>Use {text(profile.label) || "the selected LLM"} to analyze bounded excerpts from my selected folders. Nothing is uploaded to Global Cloud.</span></label> : null}
+
+        <details className="goal-options"><summary>Model and result limits</summary><div><label><span>Model</span>{profileModels.length ? <select value={providerModel} onChange={(event) => setProviderModel(event.target.value)}>{profileModels.map((value) => <option key={value}>{value}</option>)}</select> : <input value={providerModel} onChange={(event) => setProviderModel(event.target.value)} />}</label><label><span>Local results</span><input type="number" min={1} max={500} value={localLimit} onChange={(event) => setLocalLimit(Number(event.target.value))} /></label><label><span>Global results</span><input type="number" min={1} max={200} value={globalLimit} onChange={(event) => setGlobalLimit(Number(event.target.value))} /></label></div></details>
+        <button className="run-goal-button" onClick={() => startGoalRun.mutate()} disabled={!canRun || startGoalRun.isPending || Boolean(runId && !terminalRunStates.has(text(goalRun.data?.state)))}>{startGoalRun.isPending ? "Starting…" : selectedSources.length ? "Search Cloud + extract from my folders" : "Search Global Cloud"}</button>
+        {!localReady && selectedSources.length > 0 ? <small className="run-helper">Connect the LLM and confirm local analysis to continue.</small> : null}
+      </section>
+
+      {runId ? <section className="goal-progress" aria-live="polite">
+        <header><div><span className="eyebrow">Running your goal</span><h2>{text(goalRun.data?.goal) || researchGoal}</h2></div><span className={`pill ${["succeeded", "partial"].includes(text(goalRun.data?.state)) ? "success" : ""}`}>{text(goalRun.data?.state) || "starting"}</span></header>
+        <div className="branch-progress-list">{branches.map(([name, value]) => { const branch = record(value); const state = text(branch.state); return <div key={name}><span className={`branch-state ${state}`} aria-hidden="true" /> <strong>{branchLabel(name)}</strong><small>{branchMessage(name, branch)}</small></div>; })}</div>
+        {["succeeded", "partial"].includes(text(goalRun.data?.state)) ? <p className="inline-success">Results are ready. Opening Explorer…</p> : text(goalRun.data?.state) === "failed" ? <div><p>Neither branch completed. Your folders and Cloud data were not changed.</p><button onClick={() => { setRunId(""); openedRun.current = ""; }}>Try again</button></div> : <button className="quiet" onClick={() => cancelGoalRun.mutate()} disabled={cancelGoalRun.isPending}>Cancel</button>}
+      </section> : null}
+    </main>
+
+    {onlineOpen ? <div className="drawer-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) setOnlineOpen(false); }}><aside className="literature-drawer home-literature-drawer" role="dialog" aria-modal="true" aria-labelledby="home-literature-title"><header><div><span className="eyebrow">Stay on Home</span><h2 id="home-literature-title">Find papers online</h2><p>Search, choose, and save papers into a new goal-named folder under this working directory’s <code>local_data/</code>.</p></div><button aria-label="Close online paper search" onClick={() => setOnlineOpen(false)}>×</button></header><section><label><span>Research goal</span><textarea value={onlineQuestion} onChange={(event) => setOnlineQuestion(event.target.value)} placeholder="What papers do you need?" /></label><label><span>Target papers</span><input type="number" min={1} max={50} value={onlineTarget} onChange={(event) => setOnlineTarget(Number(event.target.value))} /></label><button className="primary full" disabled={onlineQuestion.trim().length < 8 || startOnlineSearch.isPending} onClick={() => startOnlineSearch.mutate()}>{startOnlineSearch.isPending ? "Starting…" : "Find papers"}</button>{onlineSearchJob.data ? <JobProgress job={onlineSearchJob.data} compact /> : null}</section>{Boolean(onlineSearch.data?.selection_finalized) ? <section><div className="drawer-section-heading"><div><span className="step-label">Choose papers</span><h3>{onlineSelected.length} selected</h3><p>Folder: <code>local_data/{onlineFolderName(onlineQuestion)}</code></p></div><button onClick={() => setOnlineSelected(onlineRows.map((paper) => text(paper.work_id) || text(paper.id)).filter(Boolean))}>Select all</button></div><div className="drawer-paper-list">{onlineRows.map((paper) => { const id = text(paper.work_id) || text(paper.id); const checked = onlineSelected.includes(id); return <label className={checked ? "selected" : ""} key={id}><input type="checkbox" checked={checked} onChange={() => setOnlineSelected((current) => checked ? current.filter((value) => value !== id) : [...current, id])} /><span><strong>{text(paper.title)}</strong><small>{String(paper.year ?? "Year unknown")} · {text(paper.venue) || text(paper.source)}</small></span></label>; })}</div><button className="primary full" disabled={!onlineSelected.length || acquireOnline.isPending || Boolean(onlineAcquisitionJobId)} onClick={() => acquireOnline.mutate()}>{acquireOnline.isPending ? "Starting download…" : `Save ${onlineSelected.length} papers`}</button>{onlineAcquisitionJob.data ? <><JobProgress job={onlineAcquisitionJob.data} compact />{text(record(onlineAcquisitionJob.data).state) === "succeeded" ? <div className="inline-success"><strong>Papers saved and selected.</strong> Close this panel, then run your research goal to extract from them automatically.</div> : null}</> : null}</section> : null}</aside></div> : null}
+
+    {primaryError ? <ErrorState error={primaryError} retry={() => { workingDirectory.refetch(); localSources.refetch(); cloudStatus.refetch(); }} /> : null}
+
+    {recentRows.length ? <details className="recent-goals"><summary>Previous research goals <span>{recentRows.length}</span></summary><div>{recentRows.slice(0, 8).map((collection) => <button key={collection.collection_id} onClick={() => navigate(`/map?scope=local&goal=${encodeURIComponent(collection.collection_id)}`)}><span><strong>{collection.title}</strong><small>{collection.principle_count} Principles · {collection.work_count} papers</small></span><span>Open →</span></button>)}</div></details> : null}
+    <details className="legacy-package-note"><summary>Legacy offline packages</summary><p><strong>Shared Principle Package Library:</strong> downloaded candidate packages remain <strong>Human review pending</strong>. Paper files not included. Existing .pcp packages remain readable in v1.4.1.</p></details>
   </div>;
 }

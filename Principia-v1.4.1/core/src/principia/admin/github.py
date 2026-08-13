@@ -3,8 +3,11 @@ from __future__ import annotations
 import base64
 import os
 import re
+import shutil
 import subprocess
+import tempfile
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any
 
 import httpx
@@ -12,6 +15,10 @@ import httpx
 _REPOSITORY = "pzqpzq/Principia"
 _KEYCHAIN_SERVICE = "Principia Global Cloud GitHub"
 _TOKEN_PATTERN = re.compile(r"^(?:github_pat_|ghp_)[A-Za-z0-9_]{20,}$")
+_SSH_KEY_CANDIDATES = (
+    Path.home() / ".ssh" / "id_ed25519_principia_github",
+    Path.home() / ".ssh" / "principia_github_v1_release_ed25519",
+)
 
 
 class GitHubPublicationError(RuntimeError):
@@ -20,7 +27,7 @@ class GitHubPublicationError(RuntimeError):
 
 @dataclass(frozen=True)
 class GitHubPublicationAdapter:
-    """Fine-grained, Keychain-backed adapter restricted to pzqpzq/Principia."""
+    """Repository-restricted publisher using Keychain PAT or the Principia SSH key."""
 
     repository: str = _REPOSITORY
 
@@ -52,7 +59,136 @@ class GitHubPublicationAdapter:
             self._token()
             return True
         except GitHubPublicationError:
-            return False
+            return self._ssh_key() is not None
+
+    def credential_mode(self) -> str:
+        try:
+            self._token()
+            return "keychain"
+        except GitHubPublicationError:
+            return "ssh" if self._ssh_key() is not None else ""
+
+    def _ssh_key(self) -> Path | None:
+        configured = os.getenv("PRINCIPIA_GITHUB_SSH_KEY", "").strip()
+        candidates = ([Path(configured).expanduser()] if configured else []) + list(
+            _SSH_KEY_CANDIDATES
+        )
+        for candidate in candidates:
+            try:
+                if candidate.is_file() and candidate.stat().st_mode & 0o077 == 0:
+                    return candidate.resolve()
+            except OSError:
+                continue
+        return None
+
+    def _public_request(self, path: str) -> Any:
+        response = httpx.get(
+            "https://api.github.com" + path,
+            headers={
+                "Accept": "application/vnd.github+json",
+                "X-GitHub-Api-Version": "2022-11-28",
+                "User-Agent": "Principia/1.4.1 Global Cloud Publisher",
+            },
+            timeout=30,
+            follow_redirects=False,
+        )
+        if response.status_code >= 400:
+            raise GitHubPublicationError(
+                f"GitHub API rejected the status request ({response.status_code})"
+            )
+        return response.json()
+
+    def _ssh_command(self, key: Path) -> str:
+        return f"ssh -i {key} -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
+
+    def create_review_branch_ssh(
+        self,
+        *,
+        branch: str,
+        base: str,
+        files: dict[str, bytes],
+        message: str,
+    ) -> dict[str, Any]:
+        """Commit reviewed canonical records and push a protected publication branch.
+
+        The private key path is never written into the clone, logs, durable
+        state, or command arguments visible to the UI.  The clone is deleted
+        immediately after the push.
+        """
+
+        if not branch.startswith("principia-cloud/"):
+            raise GitHubPublicationError("publication branches must use principia-cloud/*")
+        if not files or any(
+            not path.startswith("global-cloud/") or ".." in path.split("/") for path in files
+        ):
+            raise GitHubPublicationError("publication commits must affect only global-cloud/**")
+        key = self._ssh_key()
+        if key is None:
+            raise GitHubPublicationError("the Principia GitHub SSH key is not configured")
+        git = shutil.which("git")
+        if git is None:
+            raise GitHubPublicationError("git is unavailable")
+        env = {
+            **os.environ,
+            "GIT_SSH_COMMAND": self._ssh_command(key),
+            "GIT_TERMINAL_PROMPT": "0",
+        }
+        with tempfile.TemporaryDirectory(prefix="principia-cloud-publish.") as temporary:
+            root = Path(temporary) / "repository"
+
+            def run(*arguments: str) -> subprocess.CompletedProcess[str]:
+                result = subprocess.run(
+                    [git, *arguments],
+                    cwd=root if root.exists() else None,
+                    env=env,
+                    capture_output=True,
+                    text=True,
+                    timeout=120,
+                    check=False,
+                )
+                if result.returncode != 0:
+                    raise GitHubPublicationError("the checked GitHub branch could not be prepared")
+                return result
+
+            run(
+                "clone", "--depth", "1", "--branch", base,
+                f"git@github.com:{self.repository}.git", str(root),
+            )
+            parent_sha = run("rev-parse", "HEAD").stdout.strip()
+            run("checkout", "-b", branch)
+            for relative, body in sorted(files.items()):
+                target = (root / relative).resolve()
+                try:
+                    target.relative_to((root / "global-cloud").resolve())
+                except ValueError as exc:
+                    raise GitHubPublicationError("publication path escaped global-cloud") from exc
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(body)
+            run("add", "--", "global-cloud")
+            changed = run("diff", "--cached", "--name-only").stdout.splitlines()
+            if not changed or any(not path.startswith("global-cloud/") for path in changed):
+                raise GitHubPublicationError("the reviewed publication contains no safe change")
+            run("-c", "user.name=Principia Admin", "-c", "user.email=admin@principia.local",
+                "commit", "-m", message)
+            commit_sha = run("rev-parse", "HEAD").stdout.strip()
+            run("push", "--set-upstream", "origin", branch)
+        return {"branch": branch, "commit_sha": commit_sha, "base_commit_sha": parent_sha}
+
+    def review_branch_status(self, *, branch: str) -> dict[str, Any]:
+        """Read the PR created by the repository's checked branch workflow."""
+
+        pulls = self._public_request(
+            f"/repos/{self.repository}/pulls?state=all&head=pzqpzq:{branch}&per_page=10"
+        )
+        if not isinstance(pulls, list) or not pulls:
+            return {"state": "checks_running", "pr_number": None, "pr_url": "", "error": {}}
+        pull = pulls[0]
+        return {
+            "state": "checks_running",
+            "pr_number": int(pull["number"]),
+            "pr_url": str(pull.get("html_url") or ""),
+            "error": {},
+        }
 
     def _request(
         self, method: str, path: str, *, payload: dict[str, Any] | None = None
@@ -92,6 +228,17 @@ class GitHubPublicationAdapter:
         if value.get("errors"):
             raise GitHubPublicationError("GitHub could not enable checked auto-merge")
         return value
+
+    def _status_request(self, path: str) -> dict[str, Any]:
+        try:
+            return self._request("GET", path)
+        except GitHubPublicationError as exc:
+            value = self._public_request(path)
+            if not isinstance(value, dict):
+                raise GitHubPublicationError(
+                    "GitHub returned an unexpected status response"
+                ) from exc
+            return value
 
     def repository_capabilities(self) -> dict[str, Any]:
         value = self._request("GET", f"/repos/{self.repository}")
@@ -195,7 +342,7 @@ class GitHubPublicationAdapter:
         advanced the independently verified control document to that merge.
         """
 
-        pull = self._request("GET", f"/repos/{self.repository}/pulls/{pr_number}")
+        pull = self._status_request(f"/repos/{self.repository}/pulls/{pr_number}")
         if not bool(pull.get("merged")):
             if str(pull.get("state") or "") == "closed":
                 return {"state": "failed", "error": {"category": "pr_closed_unmerged"}}
@@ -206,7 +353,9 @@ class GitHubPublicationAdapter:
                     "error": {"category": "checks_or_merge_conflict", "detail": mergeable_state},
                 }
             head_sha = str((pull.get("head") or {}).get("sha") or "")
-            checks = self._request("GET", f"/repos/{self.repository}/commits/{head_sha}/check-runs")
+            checks = self._status_request(
+                f"/repos/{self.repository}/commits/{head_sha}/check-runs"
+            )
             conclusions = {
                 str(item.get("conclusion") or "")
                 for item in checks.get("check_runs") or []
@@ -236,8 +385,8 @@ class GitHubPublicationAdapter:
         if str(latest.get("commit_sha") or "") != merge_sha:
             return {"state": "release_building", "merge_commit_sha": merge_sha, "error": {}}
         release_id = str(latest.get("release_id") or "")
-        release = self._request(
-            "GET", f"/repos/{self.repository}/releases/tags/global-{release_id}"
+        release = self._status_request(
+            f"/repos/{self.repository}/releases/tags/global-{release_id}"
         )
         asset_names = {str(item.get("name") or "") for item in release.get("assets") or []}
         snapshot_name = f"principia-global-{release_id}.pcg"

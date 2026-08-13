@@ -12,6 +12,7 @@ from ..cloud import (
     GlobalCloudSnapshotStore,
     load_catalog,
     package_registry_root,
+    global_cloud_cache_root,
     resolve_package_library,
 )
 from ..domain import CatalogEntry, canonical_sha256
@@ -268,13 +269,9 @@ class Principia:
         shared_library = resolve_package_library(
             package_library, discover=cloud_root is None
         )
-        isolated_cloud = None
-        if shared_library is None:
-            isolated_cloud = (
-                resolved.root / ".principia" / "cloud"
-                if working_directory is not None and cloud_root is None
-                else cloud_root
-            )
+        isolated_cloud = cloud_root
+        if shared_library is None and isolated_cloud is None:
+            isolated_cloud = global_cloud_cache_root()
         return cls(
             resolved,
             cloud_root=isolated_cloud,
@@ -371,13 +368,9 @@ class AdminWorkspace(Principia):
         shared_library = resolve_package_library(
             package_library, discover=cloud_root is None
         )
-        isolated_cloud = None
-        if shared_library is None:
-            isolated_cloud = (
-                resolved.root / ".principia" / "cloud"
-                if working_directory is not None and cloud_root is None
-                else cloud_root
-            )
+        isolated_cloud = cloud_root
+        if shared_library is None and isolated_cloud is None:
+            isolated_cloud = global_cloud_cache_root()
         return cls(
             resolved,
             cloud_root=isolated_cloud,

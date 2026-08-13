@@ -7,6 +7,8 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any
 
+from principia_retrieval.embeddings import SiliconFlowEmbeddingClient
+
 from ..cloud import CloudSearchRequest, GlobalCloudSnapshotStore, ResearchGoalRunRequest
 from ..domain import JobRecord, LiteratureRunLimits, event_id, monotonic_ulid
 from ..models import utc_now
@@ -34,6 +36,26 @@ class ResearchGoalRunService:
                 raise KeyError(f"unknown Local source: {source_id}")
         if not request.include_global and not request.source_ids and not request.include_online:
             raise ValueError("select at least one research-goal branch")
+        extractable_sources = [
+            source_id
+            for source_id in request.source_ids
+            if self.repository.source_documents(source_id, limit=1, extractable=True)["items"]
+        ]
+        if extractable_sources:
+            if not egress_confirmed:
+                raise ValueError(
+                    "Confirm local LLM analysis before starting this research goal"
+                )
+            connection = self.local.test_provider_connection(request.provider_profile_id)
+            if not bool(connection.get("ok")):
+                category = str(connection.get("category") or "provider_unavailable")
+                guidance = {
+                    "authentication": "the saved API key was rejected; save a valid key and try again",
+                    "rate_limited": "the LLM provider is rate-limiting requests; wait briefly and try again",
+                    "timeout": "the LLM connection timed out; test it again when reachable",
+                    "network": "the LLM provider could not be reached; check the network and try again",
+                }.get(category, "the LLM provider is unavailable; test the connection and try again")
+                raise ValueError(f"Local extraction did not start: {guidance}")
         run_id = f"goalrun:{monotonic_ulid()}"
         job = JobRecord(
             job_id=f"job:{monotonic_ulid()}",
@@ -135,14 +157,76 @@ class ResearchGoalRunService:
         self.repository.save_job(job)
         started = time.monotonic()
         results: dict[str, Any] = {}
+        membership_lock = threading.Lock()
+
+        def persist_live_memberships() -> None:
+            """Make completed Global and emerging Local results visible immediately."""
+
+            with membership_lock:
+                global_items = list(results.get("global", {}).get("items") or [])
+                local_items = [
+                    item
+                    for name, result in results.items()
+                    if name.startswith("local:")
+                    for item in result.get("items") or []
+                ]
+                global_by_digest = {
+                    str(item.get("content_digest") or ""): item
+                    for item in global_items
+                    if item.get("content_digest")
+                }
+                combined = [{**item, "source": "global"} for item in global_items]
+                for item in local_items:
+                    digest = str(item.get("content_digest") or "")
+                    if digest and digest in global_by_digest:
+                        for existing in combined:
+                            if str(existing.get("content_digest") or "") == digest:
+                                existing["source"] = "both"
+                                break
+                    else:
+                        combined.append(item)
+                self._persist_memberships(
+                    run_id,
+                    {"global": global_items, "local": local_items, "combined": combined},
+                )
 
         def global_branch() -> dict[str, Any]:
             branches["global"]["state"] = "running"
             self._save_run(run_id, job_id, "running", request, branches, results)
+            status = self.global_cloud.status()
+            if not status.get("available"):
+                raise RuntimeError(
+                    "No verified Global Cloud snapshot is available. Open Cloud status and retry sync; the previous verified snapshot will remain usable offline."
+                )
+            query_vector: list[float] | None = None
+            ranking_warning = ""
+            # Reuse the user's explicitly configured SiliconFlow credential for
+            # the public goal text only.  Local Principle contents never leave
+            # the working directory.  Any embedding outage is a visible,
+            # deterministic FTS fallback rather than a failed research run.
+            try:
+                profile = self.local.provider_profile("siliconflow")
+                key = self.local.credentials.api_key("siliconflow")
+                if key and bool(status.get("vectors_complete")):
+                    query_vector = SiliconFlowEmbeddingClient(
+                        api_key=key,
+                        base_url=profile.base_url,
+                        timeout=25,
+                        max_retries=1,
+                    ).embed([request.goal])[0]
+            except Exception as exc:  # noqa: BLE001
+                ranking_warning = f"embedding_unavailable:{type(exc).__name__}"
             result = self.global_cloud.search(
-                CloudSearchRequest(entity="principle", query=request.goal, limit=request.global_limit)
+                CloudSearchRequest(entity="principle", query=request.goal, limit=request.global_limit),
+                query_vector=query_vector,
             )
-            return {"items": result["items"], "ranking_mode": result["ranking_mode"]}
+            if query_vector is None and bool(status.get("vectors_complete")):
+                ranking_warning = ranking_warning or "embedding_not_configured"
+            return {
+                "items": result["items"],
+                "ranking_mode": result["ranking_mode"],
+                "ranking_warning": ranking_warning,
+            }
 
         def local_branch(source_id: str) -> dict[str, Any]:
             name = f"local:{source_id}"
@@ -181,6 +265,25 @@ class ResearchGoalRunService:
                 branches[name].update(
                     {"state": child.state, "stage": child.stage, "progress": child.progress}
                 )
+                live_page = self.repository.browse_candidates(
+                    discovery_id=child.job_id,
+                    quality_state="eligible",
+                    eligibility="eligible",
+                    limit=100,
+                )
+                live_items = [
+                    self.repository.candidate_detail(str(item["candidate_id"]))
+                    for item in live_page["items"]
+                ]
+                results[name] = {
+                    "items": [
+                        {**item, "id": item["candidate_id"], "source": "local"}
+                        for item in live_items
+                        if item
+                    ],
+                    "state": child.state,
+                }
+                persist_live_memberships()
             if child is None or child.state != "succeeded":
                 raise RuntimeError((child.error or {}).get("message") if child else "child job disappeared")
             ids = list((child.result or {}).get("candidate_ids") or [])
@@ -202,8 +305,16 @@ class ResearchGoalRunService:
                     results[name] = future.result()
                     branches[name]["state"] = "succeeded"
                 except Exception as exc:
-                    results[name] = {"items": [], "error": {"category": type(exc).__name__}}
+                    message = str(exc).strip()
+                    results[name] = {
+                        "items": [],
+                        "error": {
+                            "category": type(exc).__name__,
+                            "message": message[:500] if message else "This branch could not complete.",
+                        },
+                    }
                     branches[name]["state"] = "failed"
+                persist_live_memberships()
                 job.completed_units += 1
                 job.progress = job.completed_units / max(1, job.total_units)
                 job.elapsed_seconds = round(time.monotonic() - started, 1)
@@ -244,7 +355,12 @@ class ResearchGoalRunService:
         job.state = "cancelled" if state == "cancelled" else "failed" if state == "failed" else "succeeded"
         job.stage = "Complete" if state in {"succeeded", "partial"} else state
         job.progress = 1
-        job.result = {"run_id": run_id, "state": state, "counts": {key: len(value) for key, value in memberships.items()}}
+        job.result = {
+            "run_id": run_id,
+            "state": state,
+            "counts": {key: len(value) for key, value in memberships.items()},
+            "branch_results": results,
+        }
         job.status_message = "Research-goal results are ready" if state != "failed" else "All branches failed"
         job.updated_at = utc_now()
         self.repository.save_job(job)
@@ -262,6 +378,15 @@ class ResearchGoalRunService:
             "request": json.loads(row["request_json"]), "branches": json.loads(row["branches_json"]),
             "result": json.loads(row["results_json"]), "created_at": row["created_at"], "updated_at": row["updated_at"],
         }
+
+    def latest(self) -> dict[str, Any] | None:
+        """Return the most recent durable goal run for the Results entry point."""
+
+        with self.repository.connect() as conn:
+            row = conn.execute(
+                "SELECT run_id FROM research_goal_runs ORDER BY updated_at DESC, run_id DESC LIMIT 1"
+            ).fetchone()
+        return self.detail(str(row[0])) if row is not None else None
 
     def results(self, run_id: str, membership: str, *, limit: int = 100, offset: int = 0) -> dict[str, Any]:
         if membership not in {"global", "local", "combined"}:

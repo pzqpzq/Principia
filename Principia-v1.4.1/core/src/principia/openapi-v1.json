@@ -4162,6 +4162,47 @@
         "summary": "Create Admin Sync"
       }
     },
+    "/api/v1/admin/campaigns/{campaign_id}/syncs/latest": {
+      "get": {
+        "operationId": "latest_admin_sync_api_v1_admin_campaigns__campaign_id__syncs_latest_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "campaign_id",
+            "required": true,
+            "schema": {
+              "title": "Campaign Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Latest Admin Sync Api V1 Admin Campaigns  Campaign Id  Syncs Latest Get",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Latest Admin Sync"
+      }
+    },
     "/api/v1/admin/changesets": {
       "post": {
         "operationId": "build_changeset_api_v1_admin_changesets_post",
@@ -7139,6 +7180,26 @@
         "summary": "Choose Folder"
       }
     },
+    "/api/v1/local/folder-picker/multiple": {
+      "post": {
+        "operationId": "choose_folders_api_v1_local_folder_picker_multiple_post",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Choose Folders Api V1 Local Folder Picker Multiple Post",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Choose Folders"
+      }
+    },
     "/api/v1/local/literature-searches": {
       "get": {
         "operationId": "literature_searches_api_v1_local_literature_searches_get",
@@ -8178,6 +8239,17 @@
           },
           {
             "in": "query",
+            "name": "goal_run_id",
+            "required": false,
+            "schema": {
+              "default": "",
+              "maxLength": 160,
+              "title": "Goal Run Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
             "name": "claim_type",
             "required": false,
             "schema": {
@@ -8778,6 +8850,26 @@
           }
         },
         "summary": "Start Research Goal Run"
+      }
+    },
+    "/api/v1/research-goal-runs/latest": {
+      "get": {
+        "operationId": "latest_research_goal_run_api_v1_research_goal_runs_latest_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Latest Research Goal Run Api V1 Research Goal Runs Latest Get",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Latest Research Goal Run"
       }
     },
     "/api/v1/research-goal-runs/{run_id}": {

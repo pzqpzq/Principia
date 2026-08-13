@@ -387,7 +387,29 @@ class LocalCorpusIngestor:
             )
         stored_duplicate = self.storage.get_source_asset_by_byte_hash(byte_hash)
         if stored_duplicate and stored_duplicate.get("portable_uri") != uri:
+            # One physical paper may intentionally be visible through more
+            # than one connected folder. Reuse its parsed Work instead of
+            # making the later folder appear empty. The source inventory gets
+            # its own document row while extraction reuses the cached text.
             duplicate_of = str(stored_duplicate.get("portable_uri") or "existing local source")
+            cached_work = self.storage.get_work(str(stored_duplicate.get("work_id") or ""))
+            if cached_work is not None:
+                seen_hashes[byte_hash] = uri
+                return (
+                    LocalSourceReport(
+                        **base,
+                        status="cached",
+                        mime_type=mime_type,
+                        parser=str(stored_duplicate.get("parser_name") or "cached"),
+                        parser_fingerprint=str(stored_duplicate.get("parser_fingerprint") or ""),
+                        byte_sha256=byte_hash,
+                        text_sha256=str(stored_duplicate.get("text_sha256") or ""),
+                        byte_size=len(data),
+                        character_count=int(stored_duplicate.get("character_count") or 0),
+                        warnings=[f"Reused the existing parsed paper from {duplicate_of}."],
+                    ),
+                    cached_work.model_copy(update={"url": uri}),
+                )
             seen_hashes[byte_hash] = duplicate_of
             return (
                 LocalSourceReport(

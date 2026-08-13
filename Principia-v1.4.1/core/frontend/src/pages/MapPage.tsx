@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import type { components } from "../api/schema";
 import { api, dataOrThrow } from "../api/client";
 import { EmptyState, ErrorState, LoadingState } from "../components/AsyncState";
@@ -69,6 +69,7 @@ function Score({ label, score, first, second, help }: {
 
 export function MapPage() {
   const queryClient = useQueryClient();
+  const navigate = useNavigate();
   const [params, setParams] = useSearchParams();
   const searchInput = useRef<HTMLInputElement | null>(null);
   const [queryInput, setQueryInput] = useState(params.get("q") ?? "");
@@ -78,6 +79,17 @@ export function MapPage() {
   const goalId = params.get("goal") ?? "";
   const sourceId = params.get("source") ?? "";
   const goalRunId = params.get("goal_run") ?? "";
+  const latestGoalRun = useQuery({
+    queryKey: ["research-goal-run", "latest"],
+    enabled: !goalRunId,
+    queryFn: async () => objectValue(dataOrThrow(await api.GET("/api/v1/research-goal-runs/latest", {}))),
+  });
+  useEffect(() => {
+    const latestId = textValue(latestGoalRun.data?.run_id);
+    if (!goalRunId && latestId) {
+      navigate(`/map?scope=combined&goal_run=${encodeURIComponent(latestId)}`, { replace: true });
+    }
+  }, [goalRunId, latestGoalRun.data?.run_id, navigate]);
   const pageNumber = Math.max(1, Number(params.get("page") ?? 1) || 1);
   const selectedId = params.get("selected") ?? params.get("seed") ?? "";
   const q = params.get("q") ?? "";
@@ -96,6 +108,22 @@ export function MapPage() {
   const [scenarioDiff, setScenarioDiff] = useState<ObjectValue | null>(null);
   const [editingTitle, setEditingTitle] = useState("");
 
+  const goalRun = useQuery({
+    queryKey: ["research-goal-run", goalRunId],
+    enabled: Boolean(goalRunId),
+    queryFn: async () => objectValue(dataOrThrow(await api.GET("/api/v1/research-goal-runs/{run_id}", { params: { path: { run_id: goalRunId } } }))),
+    refetchInterval: (query) => ["succeeded", "partial", "failed", "cancelled"].includes(textValue(objectValue(query.state.data).state)) ? false : 750,
+  });
+  const goalMembershipCounts = useQuery({
+    queryKey: ["research-goal-membership-counts", goalRunId],
+    enabled: Boolean(goalRunId),
+    refetchInterval: ["succeeded", "partial", "failed", "cancelled"].includes(textValue(goalRun.data?.state)) ? false : 1_000,
+    queryFn: async () => Object.fromEntries(await Promise.all((["combined", "global", "local"] as const).map(async (membership) => {
+      const value = dataOrThrow(await api.GET("/api/v1/research-goal-runs/{run_id}/results", { params: { path: { run_id: goalRunId }, query: { membership, limit: 1, offset: 0 } } }));
+      return [membership, value.total] as const;
+    }))),
+  });
+
   const updateParams = (updates: { [key: string]: string | null }, replace = false) => {
     const next = new URLSearchParams(params);
     Object.entries(updates).forEach(([key, value]) => value ? next.set(key, value) : next.delete(key));
@@ -110,6 +138,7 @@ export function MapPage() {
   const principlePage = useQuery({
     queryKey: ["principle-cards", scope, goalRunId, q, area, packageId, goalId, sourceId, claimType, evidenceStatus, humanReview, minimumSupport, relationFilter, contradictions, sort, pageNumber],
     placeholderData: (previous) => previous,
+    refetchInterval: goalRunId && !["succeeded", "partial", "failed", "cancelled"].includes(textValue(goalRun.data?.state)) ? 1_250 : false,
     queryFn: async () => dataOrThrow(await api.GET("/api/v1/principles", {
       params: { query: {
         scope: scope as "local" | "global" | "combined",
@@ -135,7 +164,7 @@ export function MapPage() {
   const cards = principlePage.data?.items ?? [];
   const firstPage = principlePage.data;
   const graphView = useQuery({
-    queryKey: ["principle-graph", scope, q, area, packageId, goalId, sourceId, claimType, evidenceStatus, humanReview, minimumSupport, relationFilter, contradictions, sort],
+    queryKey: ["principle-graph", scope, goalRunId, q, area, packageId, goalId, sourceId, claimType, evidenceStatus, humanReview, minimumSupport, relationFilter, contradictions, sort],
     enabled: graphMode,
     placeholderData: (previous) => previous,
     queryFn: async () => dataOrThrow(await api.GET("/api/v1/principles/graph", {
@@ -146,6 +175,7 @@ export function MapPage() {
         package_id: packageId,
         goal_id: goalId,
         source_id: sourceId,
+        goal_run_id: goalRunId,
         claim_type: claimType,
         evidence_status: evidenceStatus,
         human_review: humanReview,
@@ -361,7 +391,7 @@ export function MapPage() {
   const activePackage = listValue(objectValue(packages.data).areas)
     .map(objectValue)
     .find((item) => textValue(item.area) === packageId);
-  const collectionTitle = goalRunId ? "Research goal results" : activeGoal?.title
+  const collectionTitle = goalRunId ? textValue(goalRun.data?.goal, "Research goal results") : activeGoal?.title
     ?? activeFolder?.title
     ?? (activeArea ? `${activeArea.title.replaceAll("-", " ")} Principles` : undefined)
     ?? (activePackage ? `${textValue(activePackage.display_name, packageId)} Principles` : "All Principles");
@@ -383,15 +413,15 @@ export function MapPage() {
     <PageHeader
       eyebrow={goalRunId ? "Reproducible research-goal result" : scope === "global" ? "Downloaded scientific knowledge" : scope === "combined" ? "Private and downloaded scientific knowledge" : "Private scientific knowledge"}
       title={collectionTitle}
-      description={goalRunId ? "This view is the frozen Global, Local, or Combined membership produced by the pinned goal run. Exact content duplicates are collapsed only in Combined." : collectionDescription}
-      actions={<><button className={graphMode ? "primary" : ""} aria-pressed={graphMode} onClick={() => updateParams({ view: graphMode ? null : "graph", selected: null })}>{graphMode ? "Card Mode" : "Graph Mode"}</button><button aria-pressed={scenarioMode} onClick={() => updateParams({ scenario: scenarioMode ? null : "true" })}>Scenario Mode</button><button onClick={() => downloadJson("principia-explorer", { filters: Object.fromEntries(params), cards: graphMode ? graphCards : cards, relations: graphView.data?.edges ?? [] })}>Export view</button></>}
+      description={goalRunId ? "Principles found for this goal. Switch between Combined, Global, and Local without rerunning the search." : collectionDescription}
+      actions={<><button className={graphMode ? "primary" : ""} aria-pressed={graphMode} onClick={() => updateParams({ view: graphMode ? null : "graph", selected: null })}>{graphMode ? "Card Mode" : "Graph Mode"}</button>{goalRunId ? <button onClick={() => downloadJson("principia-goal-results", { goal_run: goalRun.data, membership: scope, cards: graphMode ? graphCards : cards, relations: graphView.data?.edges ?? [] })}>Export results</button> : <><button aria-pressed={scenarioMode} onClick={() => updateParams({ scenario: scenarioMode ? null : "true" })}>Scenario Mode</button><button onClick={() => downloadJson("principia-explorer", { filters: Object.fromEntries(params), cards: graphMode ? graphCards : cards, relations: graphView.data?.edges ?? [] })}>Export view</button></>}</>}
     />
 
-    <section className="explorer-context" aria-label="Explorer context">
+    {goalRunId ? <nav className="goal-membership-tabs" aria-label="Research goal result source">{(["combined", "global", "local"] as const).map((membership) => <button key={membership} className={scope === membership ? "selected" : ""} aria-pressed={scope === membership} onClick={() => updateParams({ scope: membership, selected: null })}><strong>{membership === "combined" ? "Combined" : membership === "global" ? "Global" : "Local"}</strong><small>{String(goalMembershipCounts.data?.[membership] ?? "—")} Principles</small></button>)}</nav> : <section className="explorer-context" aria-label="Explorer context">
       <div><strong>{visibleDescription}</strong><span>Principles shown</span></div>
       <div><strong>{firstPage?.total ?? "—"}</strong><span>Matching this view</span></div>
       <p>{graphMode ? "Each node is one Principle; arrows are validated scientific relations. Filters and search update both Explorer views." : "Each card is one evidence-grounded Principle argument. Reliability and Influence appear only when validated relations exist."}</p>
-    </section>
+    </section>}
 
     {scenarioMode ? <section className="scenario-card-panel">
       <div><span className="eyebrow">Reversible workspace</span><h2>Scenario Mode</h2><p>Virtual Principles and edits stay outside canonical knowledge.</p></div>
@@ -400,10 +430,11 @@ export function MapPage() {
       {scenarioDiff ? <details className="scenario-diff"><summary>Scenario diff</summary><pre>{JSON.stringify(scenarioDiff, null, 2)}</pre></details> : null}
     </section> : null}
 
-    <div className="explorer-shell">
-      <aside className="explorer-filters" aria-label="Principle filters">
+    <div className={`explorer-shell ${goalRunId ? "goal-run-explorer" : ""}`}>
+      {(() => { const FiltersContainer: "details" | "aside" = goalRunId ? "details" : "aside"; return <FiltersContainer className="explorer-filters" aria-label="Principle filters">
+        {goalRunId ? <summary>Refine these results</summary> : null}
         <h2>Filter Principles</h2>
-        <label><span>Knowledge source</span><SmartSelect ariaLabel="Knowledge source" value={scope} onChange={(value) => updateParams({ scope: value, selected: null })} options={[{ value: "local", label: "Local" }, { value: "global", label: "Global" }, { value: "combined", label: "Combined" }]} /></label>
+        {!goalRunId ? <label><span>Knowledge source</span><SmartSelect ariaLabel="Knowledge source" value={scope} onChange={(value) => updateParams({ scope: value, selected: null })} options={[{ value: "local", label: "Local" }, { value: "global", label: "Global" }, { value: "combined", label: "Combined" }]} /></label> : null}
         <label><span>Area</span><SmartSelect ariaLabel="Area" value={area} onChange={(value) => updateParams({ area: value, selected: null })} options={[{ value: "", label: "All Areas", description: `${viewFacets.data?.total ?? 0} Principles match current filters` }, ...explorerAreaOptions]} /></label>
         <p className="filter-help">These are the same Areas shown in Principles Library. A Principle may belong to more than one Area.</p>
         {activeGoal ? <div className="collection-filter-context"><span>Library collection</span><strong>{activeGoal.title}</strong><button onClick={() => updateParams({ goal: null, selected: null })}>View all Principles</button></div> : null}
@@ -415,14 +446,14 @@ export function MapPage() {
         <label><span>Relation evidence</span><SmartSelect ariaLabel="Relation evidence" value={relationFilter} onChange={(value) => updateParams({ relations: value, selected: null })} options={[{ value: "", label: "Any availability", description: `${firstPage?.total ?? 0} matching` }, ...(reliabilityAvailable || relationFilter === "reliability" ? [{ value: "reliability", label: "Reliability available", description: `${reliabilityAvailable} matching` }] : []), ...(influenceAvailable || relationFilter === "influence" ? [{ value: "influence", label: "Influence available", description: `${influenceAvailable} matching` }] : [])]} /></label>
         <label className="inline-check"><input type="checkbox" checked={Boolean(contradictions)} disabled={!contradictionCount && !contradictions} onChange={(event) => updateParams({ contradictions: event.target.checked ? "true" : null, selected: null })} /><span>{contradictionCount ? `Known contradictions only (${contradictionCount})` : "No validated contradictions"}</span></label>
         <button onClick={() => { const reset = new URLSearchParams({ scope, evidence: "checks_passed" }); if (packageId) reset.set("package", packageId); if (goalId) reset.set("goal", goalId); if (sourceId) reset.set("source", sourceId); if (activeArea) reset.set("area", area); setParams(reset); }}>Reset filters</button>
-      </aside>
+      </FiltersContainer>; })()}
 
       <main className="explorer-results">
         <div className="explorer-toolbar">
           <form onSubmit={(event) => { event.preventDefault(); updateParams({ q: queryInput.trim() || null, sort: queryInput.trim() ? "relevance" : "updated", selected: null }); }}><input ref={searchInput} value={queryInput} onChange={(event) => setQueryInput(event.target.value)} placeholder="Search claims, mechanisms, interventions, or boundaries…" aria-label="Search Principles" /><button className="primary">Search</button></form>
           <label><span className="sr-only">Sort Principles</span><SmartSelect ariaLabel="Sort Principles" value={sort} onChange={(value) => updateParams({ sort: value, selected: null })} options={[{ value: "relevance", label: "Best match" }, { value: "updated", label: "Recently updated" }, ...(reliabilityAvailable || sort === "reliability" ? [{ value: "reliability", label: "Reliability" }] : []), ...(influenceAvailable || sort === "influence" ? [{ value: "influence", label: "Influence" }] : []), { value: "supporting_papers", label: "Supporting papers" }, { value: "title", label: "Title" }]} /></label>
         </div>
-        <div className="score-explanation"><strong>How these measures work</strong><span>Reliability summarizes validated support versus contradiction links using a conservative confidence bound. Influence is connectivity within this installed library. Neither is a truth probability or real-world importance score.</span>{metricState !== "complete" ? <em>Relation measures are not available yet.</em> : null}</div>
+        {goalRunId ? <details className="score-explanation compact"><summary>About Reliability and Influence</summary><span>Reliability summarizes validated support versus contradiction links using a conservative confidence bound. Influence is connectivity within this installed library. Neither is a truth probability or real-world importance score.</span>{metricState !== "complete" ? <em>Relation measures are not available yet.</em> : null}</details> : <div className="score-explanation"><strong>How these measures work</strong><span>Reliability summarizes validated support versus contradiction links using a conservative confidence bound. Influence is connectivity within this installed library. Neither is a truth probability or real-world importance score.</span>{metricState !== "complete" ? <em>Relation measures are not available yet.</em> : null}</div>}
         {(graphMode ? graphView.isLoading : principlePage.isLoading) ? <LoadingState label={graphMode ? "Laying out validated Principle relations…" : "Preparing Principle cards…"} /> : null}
         {(graphMode ? graphView.isError : principlePage.isError) ? <ErrorState error={graphMode ? graphView.error : principlePage.error} retry={() => graphMode ? graphView.refetch() : principlePage.refetch()} /> : null}
         {graphMode && graphView.data && graphCards.length ? <><div className="graph-view-heading"><div><strong>{graphView.data.shown_count} Principles · {graphView.data.edges.length} validated relations</strong><span>{graphView.data.explanation}</span></div>{graphView.data.truncated ? <em>Showing the first {graphView.data.maximum_nodes} matching Principles. Refine the view to focus the graph.</em> : null}</div><Suspense fallback={<LoadingState label="Loading the interactive graph surface…" />}><PrincipleGraph cards={graphCards} relations={graphView.data.edges} selectedId={selectedId} onSelectPrinciple={(id) => updateParams({ selected: id })} onAnalyzePotentialRelations={analyzePotentialRelations} /></Suspense></> : null}

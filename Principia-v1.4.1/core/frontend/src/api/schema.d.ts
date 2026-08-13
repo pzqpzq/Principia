@@ -142,6 +142,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/admin/campaigns/{campaign_id}/syncs/latest": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Latest Admin Sync */
+        get: operations["latest_admin_sync_api_v1_admin_campaigns__campaign_id__syncs_latest_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/admin/changesets": {
         parameters: {
             query?: never;
@@ -1203,6 +1220,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/local/folder-picker/multiple": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Choose Folders */
+        post: operations["choose_folders_api_v1_local_folder_picker_multiple_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/local/literature-searches": {
         parameters: {
             query?: never;
@@ -1659,6 +1693,23 @@ export interface paths {
         put?: never;
         /** Start Research Goal Run */
         post: operations["start_research_goal_run_api_v1_research_goal_runs_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/research-goal-runs/latest": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Latest Research Goal Run */
+        get: operations["latest_research_goal_run_api_v1_research_goal_runs_latest_get"];
+        put?: never;
+        post?: never;
         delete?: never;
         options?: never;
         head?: never;
@@ -3841,6 +3892,39 @@ export interface operations {
                 "application/json": components["schemas"]["AdminSyncRequest"];
             };
         };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    latest_admin_sync_api_v1_admin_campaigns__campaign_id__syncs_latest_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                campaign_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
         responses: {
             /** @description Successful Response */
             200: {
@@ -6078,6 +6162,28 @@ export interface operations {
             };
         };
     };
+    choose_folders_api_v1_local_folder_picker_multiple_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+        };
+    };
     literature_searches_api_v1_local_literature_searches_get: {
         parameters: {
             query?: never;
@@ -6686,6 +6792,7 @@ export interface operations {
                 package_id?: string;
                 goal_id?: string;
                 source_id?: string;
+                goal_run_id?: string;
                 claim_type?: string;
                 evidence_status?: string;
                 human_review?: string;
@@ -7057,6 +7164,28 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    latest_research_goal_run_api_v1_research_goal_runs_latest_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
                 };
             };
         };

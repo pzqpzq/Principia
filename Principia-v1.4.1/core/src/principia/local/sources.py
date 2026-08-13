@@ -692,6 +692,11 @@ class LocalSourceService:
             status_message="Waiting to inspect the selected folder",
         )
         self.repository.save_job(job)
+        with self.repository.connect() as conn:
+            conn.execute(
+                "UPDATE local_sources_v14 SET status='indexing', updated_at=? WHERE source_id=?",
+                (utc_now(), source_id),
+            )
         self.repository.append_job_event(
             job.job_id,
             "queued",
@@ -904,6 +909,11 @@ class LocalSourceService:
                 "message": str(exc),
                 "retryable": True,
             }
+            with self.repository.connect() as conn:
+                conn.execute(
+                    "UPDATE local_sources_v14 SET status='index_failed', updated_at=? WHERE source_id=?",
+                    (utc_now(), source_id),
+                )
         job.updated_at = utc_now()
         job.last_activity_at = job.updated_at
         self.repository.save_job(job)

@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 
 PACKAGE_LIBRARY_ENV = "PRINCIPIA_PACKAGE_LIBRARY"
+GLOBAL_CLOUD_CACHE_ENV = "PRINCIPIA_GLOBAL_CLOUD_CACHE"
 
 
 def discover_package_library(start: str | Path | None = None) -> Path | None:
@@ -51,3 +52,22 @@ def package_registry_root(package_library: Path) -> Path:
     """Return rebuildable runtime state inside the shared package library."""
 
     return package_library / ".principia"
+
+
+def global_cloud_cache_root() -> Path:
+    """Return the application-level v1.4.1 Cloud cache.
+
+    Global metadata and snapshots are public, immutable, and intentionally
+    shared by every working directory. Local sources, jobs, and credentials
+    remain inside the selected working directory.
+    """
+
+    configured = os.getenv(GLOBAL_CLOUD_CACHE_ENV, "").strip()
+    if configured:
+        root = Path(configured).expanduser().resolve()
+    else:
+        from platformdirs import user_data_path
+
+        root = user_data_path("Principia", appauthor=False) / "cloud"
+    root.mkdir(parents=True, exist_ok=True)
+    return root

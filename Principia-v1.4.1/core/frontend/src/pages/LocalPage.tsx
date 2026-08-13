@@ -145,6 +145,7 @@ export function LocalPage() {
   const requestedStage = params.get("stage");
   const stage: Stage = requestedStage === "papers" || requestedStage === "extract" || requestedStage === "results" ? requestedStage : "folder";
   const activeSourceId = params.get("source") ?? "";
+  const homeOnlineSearch = params.get("online") === "1";
   const [managedName, setManagedName] = useState("");
   const [manualPath, setManualPath] = useState("");
   const [createdLocation, setCreatedLocation] = useState("");
@@ -167,8 +168,8 @@ export function LocalPage() {
   }, [params, activeJobId]);
   const [selectedCandidateId, setSelectedCandidateId] = useState("");
   const [newArea, setNewArea] = useState("");
-  const [literatureOpen, setLiteratureOpen] = useState(false);
-  const [searchQuestion, setSearchQuestion] = useState("");
+  const [literatureOpen, setLiteratureOpen] = useState(params.get("online") === "1");
+  const [searchQuestion, setSearchQuestion] = useState(params.get("online_goal") ?? "");
   const [semanticRanking, setSemanticRanking] = useState(true);
   const [targetCount, setTargetCount] = useState(20);
   const [activeSearchId, setActiveSearchId] = useState("");
@@ -192,6 +193,10 @@ export function LocalPage() {
   };
 
   const openLiteratureForFolder = (sourceId = activeSourceId) => {
+    const next = new URLSearchParams(params);
+    next.delete("online");
+    next.delete("online_goal");
+    setParams(next, { replace: true });
     if (sourceId) {
       setDestinationMode("existing");
       setDestinationSourceId(sourceId);
@@ -276,10 +281,16 @@ export function LocalPage() {
     if (canonical && canonical !== activeSourceId) setStage("papers", canonical, "");
   }, [sourceDetail.data?.canonical_source_id, activeSourceId]);
   useEffect(() => {
-    if (!literatureOpen || !activeSourceId) return;
+    if (!literatureOpen || !activeSourceId || homeOnlineSearch) return;
     setDestinationMode("existing");
     setDestinationSourceId(activeSourceId);
-  }, [literatureOpen, activeSourceId]);
+  }, [literatureOpen, activeSourceId, homeOnlineSearch]);
+  useEffect(() => {
+    if (!homeOnlineSearch) return;
+    setDestinationMode("new");
+    setDestinationSourceId("");
+    if (searchQuestion.trim()) setAcquisitionFolderName(localDataFolderName(searchQuestion));
+  }, [homeOnlineSearch, searchQuestion]);
   useEffect(() => {
     if (!activeSearchId && activeSearch) {
       setActiveSearchId(textValue(activeSearch.search_id));
@@ -491,7 +502,7 @@ export function LocalPage() {
   });
 
   const createSearch = useMutation({
-    mutationFn: async () => dataOrThrow(await api.POST("/api/v1/local/literature-searches", { body: { query: searchQuestion, goal: "", area: "", target_count: targetCount, semantic_ranking: semanticRanking, source_id: destinationMode === "existing" ? destinationSourceId : "" } })),
+    mutationFn: async () => dataOrThrow(await api.POST("/api/v1/local/literature-searches", { body: { query: searchQuestion, goal: "", area: "", target_count: targetCount, semantic_ranking: semanticRanking, source_id: !homeOnlineSearch && destinationMode === "existing" ? destinationSourceId : "" } })),
     onSuccess: (value) => {
       const job = objectValue(value);
       const result = objectValue(job.result);
@@ -547,9 +558,9 @@ export function LocalPage() {
     mutationFn: async () => {
       const searchId = textValue(activeSearch?.search_id);
       await dataOrThrow(await api.PATCH("/api/v1/local/literature-searches/{search_id}/selection", { params: { path: { search_id: searchId } }, body: { work_ids: selectedWorkIds } }));
-      const destination = destinationMode === "existing"
+      const destination = !homeOnlineSearch && destinationMode === "existing"
         ? { source_id: destinationSourceId, work_ids: selectedWorkIds }
-        : { folder_name: acquisitionFolderName.trim(), work_ids: selectedWorkIds };
+        : { folder_name: localDataFolderName(textValue(activeSearch?.query, searchQuestion)), work_ids: selectedWorkIds };
       return dataOrThrow(await api.POST("/api/v1/local/literature-searches/{search_id}/acquisitions", { params: { path: { search_id: searchId } }, body: destination }));
     },
     onSuccess: (value) => {
@@ -645,7 +656,7 @@ export function LocalPage() {
     {literatureOpen ? <div className="drawer-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) setLiteratureOpen(false); }}><aside className="literature-drawer" role="dialog" aria-modal="true" aria-labelledby="literature-title"><header><div><span className="eyebrow">Optional folder-building assistant</span><h2 id="literature-title">Find public literature</h2><p>Search metadata first, review the papers, then acquire permitted content into a visible folder. Extraction never starts automatically.</p></div><button aria-label="Close literature helper" onClick={() => setLiteratureOpen(false)}>×</button></header>
       <section><span className="step-label">A · Search metadata only</span>{destinationMode === "existing" && destinationSource ? <div className="acquisition-contract" role="status"><strong>Adding papers to {destinationSource.display_name}</strong><span>After you review the results, acquired papers will be saved to <code>{textValue(destinationLocation?.absolute_path, destinationSource.display_location)}</code>. Existing files and Principles are preserved.</span></div> : null}<label><span>Research question</span><textarea value={searchQuestion} onChange={(event) => setSearchQuestion(event.target.value)} placeholder="Which scientific mechanism, relationship, or boundary are you investigating?" /></label><label><span>Target papers</span><input type="number" min={1} max={50} value={targetCount} onChange={(event) => setTargetCount(Number(event.target.value))} /></label><label className="checkbox"><input type="checkbox" checked={semanticRanking} onChange={(event) => setSemanticRanking(event.target.checked)} /><span>Use semantic ranking when a workspace SiliconFlow credential is available. This sends only the research question and public paper metadata; without a credential, Principia falls back to deterministic scholarly ranking.</span></label><button className="primary full" onClick={() => createSearch.mutate()} disabled={searchQuestion.trim().length < 8 || createSearch.isPending}>{createSearch.isPending ? "Starting search…" : "Search papers"}</button>{searchJob.data ? <div className="search-job-panel"><JobProgress job={searchJob.data} /><div className="job-controls">{searchJob.data.state === "running" ? <button onClick={() => controlSearch("pause")}>Pause</button> : null}{!terminalJobStates.has(searchJob.data.state) ? <button onClick={() => controlSearch("cancel")}>Cancel</button> : null}{["failed", "interrupted", "cancelled"].includes(searchJob.data.state) ? <button onClick={() => controlSearch("retry-failed")}>Retry</button> : null}</div><p>{previewRows.length} provisional paper{previewRows.length === 1 ? "" : "s"} visible. Existing saved results remain available below.</p></div> : null}</section>
       {(activeSearch || previewRows.length) ? <section><div className="drawer-section-heading"><div><span className="step-label">B · Preview and edit</span><h3>{textValue(displaySearch.query, textValue(displaySearch.goal, searchQuestion))}</h3><p>{selectedWorkIds.length} new selected · {newUsablePreviewIds.length} new usable · {alreadySavedCount} already in folder · {previewRows.length - usablePreviewIds.length} metadata-only</p></div>{searchRows.length ? <SmartSelect ariaLabel="Saved literature searches" value={activeSearchId} onChange={(value) => { const found = objectValue(searchRows.find((item) => textValue(item.search_id) === value)); setActiveSearchId(value); setPendingSearchId(""); setSelectedWorkIds(defaultNewWorkIds(found, destinationWorkIds)); }} placeholder="Saved searches…" options={searchRows.map((item) => ({ value: textValue(item.search_id), label: textValue(item.query, textValue(item.goal)), description: `${listValue(item.results).length} results` }))} /> : null}</div>{Boolean(displaySearch.selection_finalized) ? <div className="literature-selection-actions"><button onClick={() => setSelectedWorkIds(allUsableSelected ? selectedWorkIds.filter((id) => !newUsablePreviewIds.includes(id)) : Array.from(new Set([...selectedWorkIds, ...newUsablePreviewIds])))}>{allUsableSelected ? "Clear all new papers" : `Select all new (${newUsablePreviewIds.length})`}</button><span>Already-saved and metadata-only records cannot be acquired again.</span></div> : null}<div className="drawer-paper-list">{previewRows.map((paper) => { const workId = searchWorkId(paper); const checked = selectedWorkIds.includes(workId); const usable = searchWorkUsable(paper); const alreadySaved = destinationWorkIds.has(workId); return <label key={workId} className={`${checked ? "selected" : ""} ${usable && !alreadySaved ? "" : "disabled"}`}><input type="checkbox" checked={checked} disabled={!Boolean(displaySearch.selection_finalized) || !usable || alreadySaved} onChange={() => setSelectedWorkIds((current) => checked ? current.filter((id) => id !== workId) : [...current, workId])} /><span><strong>{textValue(paper.title)}</strong><small>{numberValue(paper.year) || "Year unknown"} · {publicationLabel(paper)}</small><small>{alreadySaved ? "Already in this folder" : listValue(paper.oa_locations).length ? "Open-access full text may be available" : textValue(paper.abstract).trim() ? "Permitted abstract fallback available" : "Metadata only · not extractable"}</small></span></label>; })}</div>{showingPendingSearch && activeRows.length ? <details className="saved-results"><summary>Keep viewing the previous saved preview ({activeRows.length} documents)</summary><ul>{activeRows.slice(0, 10).map((paper) => <li key={searchWorkId(paper)}>{textValue(paper.title)}</li>)}</ul></details> : null}{searchJob.data?.error && showingPendingSearch ? <ErrorState error={searchJob.data.error} retry={() => controlSearch("retry-failed")} /> : null}</section> : null}
-      {activeSearch && !showingPendingSearch && Boolean(activeSearch.selection_finalized) ? <section><span className="step-label">C · Choose destination and acquire</span><div className="segmented destination-mode"><button className={destinationMode === "existing" ? "selected" : ""} onClick={() => setDestinationMode("existing")}>Add to existing folder</button><button className={destinationMode === "new" ? "selected" : ""} onClick={() => setDestinationMode("new")}>Create new folder</button></div>{destinationMode === "existing" ? <label><span>Private folder</span><SmartSelect ariaLabel="Acquisition destination folder" value={destinationSourceId} onChange={setDestinationSourceId} placeholder="Choose an existing folder…" options={sourceRows.map((source) => ({ value: source.source_id, label: source.display_name, description: `${source.document_count} indexed papers` }))} /></label> : <><label><span>New folder name</span><input value={acquisitionFolderName} onChange={(event) => setAcquisitionFolderName(event.target.value)} placeholder="e.g. test-ASD" /></label><p className="destination-receipt"><strong>Principia will create:</strong><code>{storageLayout.data ? `${storageLayout.data.local_data}/${acquisitionFolderName || "…"}` : `local_data/${acquisitionFolderName || "…"}`}</code></p></>}<div className="acquisition-contract"><strong>Raw data only</strong><span>{destinationMode === "existing" ? "Selected papers are added to the chosen folder and its inventory is refreshed." : "A new named folder is created under local_data."} Acquisition creates no Principles and makes no LLM call.</span></div><button className="primary full" onClick={() => acquire.mutate()} disabled={!selectedWorkIds.length || (destinationMode === "new" ? !acquisitionFolderName.trim() : !destinationSourceId) || acquire.isPending}>{acquire.isPending ? "Starting acquisition…" : `${destinationMode === "existing" ? "Add" : "Acquire"} ${selectedWorkIds.length} document${selectedWorkIds.length === 1 ? "" : "s"}`}</button>{acquisitionJob.data ? <div className="drawer-job"><JobProgress job={acquisitionJob.data} compact /></div> : null}</section> : null}
+      {activeSearch && !showingPendingSearch && Boolean(activeSearch.selection_finalized) ? <section><span className="step-label">C · Save papers</span>{homeOnlineSearch ? <div className="acquisition-contract" role="status"><strong>A fresh goal-based folder will be created</strong><span>Home searches never write into folders you connected earlier. These papers will be downloaded under this working directory’s <code>local_data/</code>.</span></div> : <div className="segmented destination-mode"><button className={destinationMode === "existing" ? "selected" : ""} onClick={() => setDestinationMode("existing")}>Add to existing folder</button><button className={destinationMode === "new" ? "selected" : ""} onClick={() => setDestinationMode("new")}>Create new folder</button></div>}{!homeOnlineSearch && destinationMode === "existing" ? <label><span>Private folder</span><SmartSelect ariaLabel="Acquisition destination folder" value={destinationSourceId} onChange={setDestinationSourceId} placeholder="Choose an existing folder…" options={sourceRows.map((source) => ({ value: source.source_id, label: source.display_name, description: `${source.document_count} indexed papers` }))} /></label> : <><label><span>New folder name</span><input value={homeOnlineSearch ? localDataFolderName(textValue(activeSearch.query, searchQuestion)) : acquisitionFolderName} onChange={(event) => setAcquisitionFolderName(event.target.value)} readOnly={homeOnlineSearch} placeholder="e.g. test-ASD" /></label><p className="destination-receipt"><strong>Principia will create:</strong><code>{storageLayout.data ? `${storageLayout.data.local_data}/${homeOnlineSearch ? localDataFolderName(textValue(activeSearch.query, searchQuestion)) : acquisitionFolderName || "…"}` : `local_data/${homeOnlineSearch ? localDataFolderName(textValue(activeSearch.query, searchQuestion)) : acquisitionFolderName || "…"}`}</code></p></>}<div className="acquisition-contract"><strong>Raw data only</strong><span>{!homeOnlineSearch && destinationMode === "existing" ? "Selected papers are added to the chosen folder and its inventory is refreshed." : "A new named folder is created under local_data."} Acquisition creates no Principles and makes no LLM call.</span></div><button className="primary full" onClick={() => acquire.mutate()} disabled={!selectedWorkIds.length || (!homeOnlineSearch && destinationMode === "new" ? !acquisitionFolderName.trim() : !homeOnlineSearch && !destinationSourceId) || acquire.isPending}>{acquire.isPending ? "Starting acquisition…" : `${!homeOnlineSearch && destinationMode === "existing" ? "Add" : "Acquire"} ${selectedWorkIds.length} document${selectedWorkIds.length === 1 ? "" : "s"}`}</button>{acquisitionJob.data ? <div className="drawer-job"><JobProgress job={acquisitionJob.data} compact /></div> : null}</section> : null}
     </aside></div> : null}
   </div>;
 }

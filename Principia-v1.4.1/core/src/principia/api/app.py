@@ -404,33 +404,33 @@ def create_app(
             result["ranking_mode"] = str(result["ranking_mode"]) + "_degraded"
         return result
 
-    @router.get("/cloud/works/{work_id:path}")
-    def cloud_work(work_id: str) -> dict[str, Any]:
-        item = principia.global_cloud.work(work_id)
-        if item is None:
-            raise KeyError(work_id)
-        return item
-
-    @router.get("/cloud/works/{work_id:path}/revisions")
+    @router.get("/cloud/works/{work_id}/revisions")
     def cloud_work_revisions(work_id: str) -> dict[str, Any]:
         items = principia.global_cloud.work_revisions(work_id)
         if not items:
             raise KeyError(work_id)
         return {"items": items}
 
-    @router.get("/cloud/principles/{principle_id:path}")
-    def cloud_principle(principle_id: str) -> dict[str, Any]:
-        item = principia.global_cloud.principle(principle_id)
+    @router.get("/cloud/works/{work_id}")
+    def cloud_work(work_id: str) -> dict[str, Any]:
+        item = principia.global_cloud.work(work_id)
         if item is None:
-            raise KeyError(principle_id)
+            raise KeyError(work_id)
         return item
 
-    @router.get("/cloud/principles/{principle_id:path}/revisions")
+    @router.get("/cloud/principles/{principle_id}/revisions")
     def cloud_principle_revisions(principle_id: str) -> dict[str, Any]:
         items = principia.global_cloud.principle_revisions(principle_id)
         if not items:
             raise KeyError(principle_id)
         return {"items": items}
+
+    @router.get("/cloud/principles/{principle_id}")
+    def cloud_principle(principle_id: str) -> dict[str, Any]:
+        item = principia.global_cloud.principle(principle_id)
+        if item is None:
+            raise KeyError(principle_id)
+        return item
 
     @router.get("/library/summary")
     def library_summary() -> LibrarySummaryResponse:
@@ -443,14 +443,11 @@ def create_app(
     ) -> dict[str, Any]:
         return principia.goal_runs.start(payload, egress_confirmed=egress_confirmed)
 
-    @router.get("/research-goal-runs/{run_id:path}")
-    def research_goal_run(run_id: str) -> dict[str, Any]:
-        item = principia.goal_runs.detail(run_id)
-        if item is None:
-            raise KeyError(run_id)
-        return item
+    @router.get("/research-goal-runs/latest")
+    def latest_research_goal_run() -> dict[str, Any]:
+        return principia.goal_runs.latest() or {}
 
-    @router.get("/research-goal-runs/{run_id:path}/results")
+    @router.get("/research-goal-runs/{run_id}/results")
     def research_goal_run_results(
         run_id: str,
         membership: Literal["global", "local", "combined"] = "combined",
@@ -461,16 +458,23 @@ def create_app(
             raise KeyError(run_id)
         return principia.goal_runs.results(run_id, membership, limit=limit, offset=offset)
 
-    @router.get("/research-goal-runs/{run_id:path}/events")
+    @router.get("/research-goal-runs/{run_id}/events")
     def research_goal_run_events(run_id: str, after: int = 0) -> dict[str, Any]:
         item = principia.goal_runs.detail(run_id)
         if item is None:
             raise KeyError(run_id)
         return {"items": principia.repository.job_events(item["job_id"], after=after)}
 
-    @router.post("/research-goal-runs/{run_id:path}/cancel")
+    @router.post("/research-goal-runs/{run_id}/cancel")
     def cancel_research_goal_run(run_id: str) -> dict[str, Any]:
         return principia.goal_runs.cancel(run_id)
+
+    @router.get("/research-goal-runs/{run_id}")
+    def research_goal_run(run_id: str) -> dict[str, Any]:
+        item = principia.goal_runs.detail(run_id)
+        if item is None:
+            raise KeyError(run_id)
+        return item
 
     @router.get("/library/collections")
     def library_collections(
@@ -639,6 +643,7 @@ def create_app(
         package_id: str = "",
         goal_id: str = "",
         source_id: str = "",
+        goal_run_id: str = Query(default="", max_length=160),
         claim_type: str = "",
         evidence_status: str = "checks_passed",
         human_review: str = "",
@@ -659,6 +664,7 @@ def create_app(
                 package_id=package_id,
                 goal_id=goal_id,
                 source_id=source_id,
+                goal_run_id=goal_run_id,
                 claim_type=claim_type,
                 evidence_status=evidence_status,
                 human_review=human_review,
@@ -815,6 +821,20 @@ def create_app(
     @router.post("/local/folder-picker")
     def choose_folder() -> dict[str, Any]:
         return principia.local.register_source(principia.local.choose_folder())
+
+    @router.post("/local/folder-picker/multiple")
+    def choose_folders() -> dict[str, Any]:
+        sources: list[dict[str, Any]] = []
+        jobs: list[dict[str, Any]] = []
+        for folder in principia.local.choose_folders():
+            source = principia.local.register_source(folder)
+            sources.append(source)
+            jobs.append(
+                principia.local.start_source_index(str(source["source_id"])).model_dump(
+                    mode="json"
+                )
+            )
+        return {"sources": sources, "jobs": jobs}
 
     @router.post("/local/discoveries")
     def start_discovery(payload: DiscoveryRequest) -> dict[str, Any]:
@@ -1265,15 +1285,7 @@ def create_app(
             assert principia.admin_campaigns is not None
             return {"items": principia.admin_campaigns.list_campaigns()}
 
-        @admin.get("/campaigns/{campaign_id:path}")
-        def admin_campaign_detail(campaign_id: str) -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            item = principia.admin_campaigns._campaign_row(campaign_id)
-            if item is None:
-                raise KeyError(campaign_id)
-            return item
-
-        @admin.get("/campaigns/{campaign_id:path}/papers")
+        @admin.get("/campaigns/{campaign_id}/papers")
         def admin_campaign_papers(
             campaign_id: str,
             limit: int = Query(default=100, ge=1, le=200),
@@ -1314,41 +1326,41 @@ def create_app(
                 cloud_presence=cloud_presence,
             )
 
-        @admin.patch("/campaigns/{campaign_id:path}/selection")
+        @admin.patch("/campaigns/{campaign_id}/selection")
         def admin_campaign_selection(
             campaign_id: str, payload: AdminSelectionRequest
         ) -> dict[str, Any]:
             assert principia.admin_campaigns is not None
             return principia.admin_campaigns.select(campaign_id, payload.work_ids)
 
-        @admin.post("/campaigns/{campaign_id:path}/extract", status_code=202)
+        @admin.post("/campaigns/{campaign_id}/extract", status_code=202)
         def admin_campaign_extract(
             campaign_id: str, payload: AdminExtractRequest
         ) -> dict[str, Any]:
             assert principia.admin_campaigns is not None
             return principia.admin_campaigns.extract(campaign_id, payload)
 
-        @admin.post("/extractions/{job_id:path}/pause")
+        @admin.post("/extractions/{job_id}/pause")
         def pause_admin_extraction(job_id: str) -> dict[str, Any]:
             assert principia.admin_campaigns is not None
             return principia.admin_campaigns.pause(job_id)
 
-        @admin.post("/extractions/{job_id:path}/resume")
+        @admin.post("/extractions/{job_id}/resume")
         def resume_admin_extraction(job_id: str) -> dict[str, Any]:
             assert principia.admin_campaigns is not None
             return principia.admin_campaigns.resume(job_id)
 
-        @admin.post("/extractions/{job_id:path}/cancel")
+        @admin.post("/extractions/{job_id}/cancel")
         def cancel_admin_extraction(job_id: str) -> dict[str, Any]:
             assert principia.admin_campaigns is not None
             return principia.admin_campaigns.cancel(job_id)
 
-        @admin.get("/campaigns/{campaign_id:path}/staging")
+        @admin.get("/campaigns/{campaign_id}/staging")
         def admin_staging(campaign_id: str) -> dict[str, Any]:
             assert principia.admin_campaigns is not None
             return {"items": principia.admin_campaigns.staging(campaign_id)}
 
-        @admin.get("/campaigns/{campaign_id:path}/events")
+        @admin.get("/campaigns/{campaign_id}/events")
         def admin_campaign_events(campaign_id: str, after: int = 0) -> dict[str, Any]:
             assert principia.admin_campaigns is not None
             campaign = principia.admin_campaigns._campaign_row(campaign_id)
@@ -1371,7 +1383,7 @@ def create_app(
             assert principia.admin_campaigns is not None
             return principia.admin_campaigns.bulk_decide(payload)
 
-        @admin.post("/campaigns/{campaign_id:path}/syncs")
+        @admin.post("/campaigns/{campaign_id}/syncs")
         def create_admin_sync(campaign_id: str, payload: AdminSyncRequest) -> dict[str, Any]:
             assert principia.admin_campaigns is not None
             if payload.mode != "dry_run":
@@ -1382,17 +1394,17 @@ def create_app(
                 campaign_id, confirmation=payload.confirmation
             )
 
-        @admin.get("/syncs/{sync_id:path}")
-        def admin_sync_detail(sync_id: str) -> dict[str, Any]:
+        @admin.get("/campaigns/{campaign_id}/syncs/latest")
+        def latest_admin_sync(campaign_id: str) -> dict[str, Any]:
             assert principia.admin_campaigns is not None
-            return principia.admin_campaigns.refresh_sync(sync_id)
+            return principia.admin_campaigns.latest_sync(campaign_id) or {}
 
-        @admin.get("/syncs/{sync_id:path}/events")
+        @admin.get("/syncs/{sync_id}/events")
         def admin_sync_events(sync_id: str) -> dict[str, Any]:
             assert principia.admin_campaigns is not None
             return {"items": [principia.admin_campaigns.refresh_sync(sync_id)]}
 
-        @admin.get("/syncs/{sync_id:path}/stream")
+        @admin.get("/syncs/{sync_id}/stream")
         async def admin_sync_stream(sync_id: str, request: Request) -> StreamingResponse:
             assert principia.admin_campaigns is not None
             if principia.admin_campaigns.sync_detail(sync_id) is None:
@@ -1424,14 +1436,27 @@ def create_app(
                 },
             )
 
-        @admin.post("/syncs/{sync_id:path}/submit")
+        @admin.post("/syncs/{sync_id}/submit")
         def submit_admin_sync(sync_id: str, payload: AdminSyncRequest) -> dict[str, Any]:
             assert principia.admin_campaigns is not None
             if payload.mode != "github_pr":
                 raise ValueError("sync submission requires mode=github_pr")
             return principia.admin_campaigns.submit_sync(sync_id, confirmation=payload.confirmation)
 
-        @admin.delete("/campaigns/{campaign_id:path}/staging")
+        @admin.get("/syncs/{sync_id}")
+        def admin_sync_detail(sync_id: str) -> dict[str, Any]:
+            assert principia.admin_campaigns is not None
+            return principia.admin_campaigns.refresh_sync(sync_id)
+
+        @admin.get("/campaigns/{campaign_id}")
+        def admin_campaign_detail(campaign_id: str) -> dict[str, Any]:
+            assert principia.admin_campaigns is not None
+            item = principia.admin_campaigns._campaign_row(campaign_id)
+            if item is None:
+                raise KeyError(campaign_id)
+            return item
+
+        @admin.delete("/campaigns/{campaign_id}/staging")
         def purge_admin_staging(campaign_id: str, abandoned: bool = False) -> dict[str, Any]:
             assert principia.admin_campaigns is not None
             return principia.admin_campaigns.purge_staging(campaign_id, abandoned=abandoned)

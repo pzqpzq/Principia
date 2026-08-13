@@ -30,7 +30,7 @@ jobs:
       - run: python -m pytest -q
       - run: python -m ruff check src tests scripts
         if: matrix.python-version == '3.12'
-      - run: python scripts/validate_global_cloud.py ../../../global-cloud
+      - run: python scripts/validate_global_cloud.py ../../global-cloud
         if: matrix.python-version == '3.12'
 
   frontend-and-package:

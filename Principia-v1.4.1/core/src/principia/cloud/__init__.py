@@ -11,6 +11,7 @@ from .library import (
     PACKAGE_LIBRARY_ENV,
     discover_package_library,
     package_registry_root,
+    global_cloud_cache_root,
     resolve_package_library,
 )
 from .models_v1 import (
@@ -77,6 +78,7 @@ __all__ = [
     "discover_package_library",
     "load_catalog",
     "package_registry_root",
+    "global_cloud_cache_root",
     "resolve_package_library",
     "verify_pcp",
     "verify_cloud_snapshot",

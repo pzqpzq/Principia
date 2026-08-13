@@ -883,6 +883,51 @@ class LocalDiscoveryService:
             raise RuntimeError("folder selection was cancelled")
         return result.stdout.strip()
 
+    @staticmethod
+    def choose_folders() -> list[str]:
+        """Choose one or more Local sources with the native system picker.
+
+        macOS and Zenity support a true multi-select picker.  Windows' stock
+        folder dialog returns one folder, so the same endpoint still returns a
+        one-item list and the user can invoke it again.
+        """
+
+        capability = LocalDiscoveryService.picker_capability()
+        if not capability["available"]:
+            raise RuntimeError("native folder picker is unavailable; use the manual path field")
+        if sys.platform == "darwin":
+            script = """
+set chosenFolders to choose folder with prompt "Choose one or more private Principia sources" with multiple selections allowed
+set output to ""
+repeat with chosenFolder in chosenFolders
+    set output to output & POSIX path of chosenFolder & linefeed
+end repeat
+return output
+""".strip()
+            command = ["osascript", "-e", script]
+        elif sys.platform == "win32":
+            command = [
+                "powershell",
+                "-NoProfile",
+                "-Command",
+                "Add-Type -AssemblyName System.Windows.Forms; $d=New-Object "
+                "System.Windows.Forms.FolderBrowserDialog; if($d.ShowDialog() -eq 'OK'){$d.SelectedPath}",
+            ]
+        else:
+            command = [
+                "zenity",
+                "--file-selection",
+                "--directory",
+                "--multiple",
+                "--separator=\n",
+                "--title=Choose Principia sources",
+            ]
+        result = subprocess.run(command, capture_output=True, text=True, timeout=120, check=False)
+        folders = [line.strip() for line in result.stdout.splitlines() if line.strip()]
+        if result.returncode != 0 or not folders:
+            raise RuntimeError("folder selection was cancelled")
+        return folders
+
     def start(
         self,
         *,
