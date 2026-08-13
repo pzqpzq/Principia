@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://github.com/pzqpzq/Principia/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/pzqpzq/Principia/actions/workflows/ci.yml/badge.svg"></a>
-  <a href="https://github.com/pzqpzq/Principia/tree/main/Principia-v1.4"><img alt="GitHub v1.4.0" src="https://img.shields.io/badge/GitHub-v1.4.0-111827?style=flat-square&amp;logo=github"></a>
+  <a href="https://github.com/pzqpzq/Principia/tree/main/Principia-v1.4.1"><img alt="GitHub v1.4.1" src="https://img.shields.io/badge/GitHub-v1.4.1-111827?style=flat-square&amp;logo=github"></a>
   <a href="https://pypi.org/project/principia-ai/"><img alt="PyPI stable" src="https://img.shields.io/pypi/v/principia-ai?style=flat-square&amp;logo=pypi&amp;logoColor=white&amp;label=PyPI%20stable"></a>
   <a href="https://github.com/pzqpzq/Principia/tree/main/Principia-v1.4/core"><img alt="Python 3.10–3.13" src="https://img.shields.io/badge/Python-3.10%E2%80%933.13-3776AB?style=flat-square&amp;logo=python&amp;logoColor=white"></a>
   <a href="https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4/core/LICENSE"><img alt="v1.4 core license MIT" src="https://img.shields.io/badge/v1.4%20core-MIT-0F766E?style=flat-square"></a>
@@ -13,13 +13,40 @@
 </p>
 
 <p align="center">
-  <a href="#principia-v140--the-living-principles-cloud">v1.4.0</a> ·
+  <a href="#principia-v141--global-principles-cloud">v1.4.1</a> ·
   <a href="#open-v140">Quick start</a> ·
   <a href="./Principia-v1.4/principle-packages/catalog.json">Cloud catalog</a> ·
   <a href="./Principia-v1.4/core/docs/v1.4/getting-started.md">Documentation</a> ·
   <a href="#principia-v133--evidence-grounded-idea-discovery">v1.3.3</a> ·
   <a href="#research-foundations">Research</a>
 </p>
+
+# Principia v1.4.1 — Global Principles Cloud
+
+v1.4.1 replaces version-folder binary packages as the maintained Cloud write path.
+Reviewable canonical metadata and immutable Principle revisions now live in
+repository-root [`global-cloud/`](./global-cloud/). GitHub Releases distribute
+verified SQLite/vector `.pcg` snapshots and `.pcd` deltas; clients search those
+snapshots locally and remain available offline.
+
+- Library research-goal runs execute Global paper-first retrieval and selected
+  private-folder extraction independently, then open reproducible Global, Local,
+  and Combined Explorer memberships.
+- Admin mode provides Dashboard, Discover, Extract, Review & Compare, Publish,
+  and Cloud Browser workflows, including four-wide ephemeral full-text extraction,
+  mandatory source cleanup, immutable revision decisions, checked PRs, and delayed
+  publication status until the Release and Pages pointer verify.
+- The migrated seed contains 18 Works, 62 unassessed Principles, 191 provenance
+  links, and 36 relations. v1.4.0 `.pcp` packages remain readable and frozen.
+
+Open the [v1.4.1 source](./Principia-v1.4.1/core/), read the
+[Cloud architecture](./Principia-v1.4.1/core/docs/v1.4.1/global-cloud.md), or inspect
+the [release QA report](./Principia-v1.4.1/core/docs/v1.4.1/release-qa-report.md).
+
+```bash
+python -m pip install principia-ai==1.4.1
+principia open --working-directory ./principia-project
+```
 
 <p align="center">
   <img src="./assets/screenshots-v1.4.0/principia-library.png" alt="Principia v1.4.0 Principles Library" width="100%">

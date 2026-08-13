@@ -1,0 +1,614 @@
+{
+  "$defs": {
+    "ChangesetOperation": {
+      "additionalProperties": false,
+      "properties": {
+        "expected_version": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expected Version"
+        },
+        "operation": {
+          "enum": [
+            "add",
+            "update",
+            "retire"
+          ],
+          "title": "Operation",
+          "type": "string"
+        },
+        "principle_id": {
+          "title": "Principle Id",
+          "type": "string"
+        },
+        "proposed": {
+          "$ref": "#/$defs/PrincipleCapsule"
+        }
+      },
+      "required": [
+        "operation",
+        "principle_id",
+        "proposed"
+      ],
+      "title": "ChangesetOperation",
+      "type": "object"
+    },
+    "GenerationTrace": {
+      "additionalProperties": false,
+      "properties": {
+        "actor": {
+          "minLength": 1,
+          "title": "Actor",
+          "type": "string"
+        },
+        "created_at": {
+          "title": "Created At",
+          "type": "string"
+        },
+        "event_id": {
+          "minLength": 1,
+          "title": "Event Id",
+          "type": "string"
+        },
+        "input_sha256": {
+          "default": "",
+          "title": "Input Sha256",
+          "type": "string"
+        },
+        "input_tokens": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Input Tokens",
+          "type": "integer"
+        },
+        "latency_ms": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Latency Ms",
+          "type": "integer"
+        },
+        "model": {
+          "default": "",
+          "title": "Model",
+          "type": "string"
+        },
+        "operation": {
+          "$ref": "#/$defs/TraceOperation"
+        },
+        "output_sha256": {
+          "default": "",
+          "title": "Output Sha256",
+          "type": "string"
+        },
+        "output_tokens": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Output Tokens",
+          "type": "integer"
+        },
+        "prompt_sha256": {
+          "default": "",
+          "title": "Prompt Sha256",
+          "type": "string"
+        },
+        "prompt_template": {
+          "default": "",
+          "title": "Prompt Template",
+          "type": "string"
+        },
+        "provider": {
+          "default": "",
+          "title": "Provider",
+          "type": "string"
+        },
+        "retries": {
+          "default": 0,
+          "maximum": 2,
+          "minimum": 0,
+          "title": "Retries",
+          "type": "integer"
+        },
+        "run_id": {
+          "default": "",
+          "title": "Run Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "event_id",
+        "operation",
+        "actor"
+      ],
+      "title": "GenerationTrace",
+      "type": "object"
+    },
+    "PrincipleCapsule": {
+      "additionalProperties": false,
+      "properties": {
+        "area": {
+          "maxLength": 63,
+          "minLength": 2,
+          "pattern": "^[a-z0-9][a-z0-9-]+$",
+          "title": "Area",
+          "type": "string"
+        },
+        "claim": {
+          "minLength": 1,
+          "title": "Claim",
+          "type": "string"
+        },
+        "content_digest": {
+          "default": "",
+          "title": "Content Digest",
+          "type": "string"
+        },
+        "created_at": {
+          "title": "Created At",
+          "type": "string"
+        },
+        "falsifier": {
+          "minLength": 1,
+          "title": "Falsifier",
+          "type": "string"
+        },
+        "generation_trace": {
+          "items": {
+            "$ref": "#/$defs/GenerationTrace"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Generation Trace",
+          "type": "array"
+        },
+        "kind": {
+          "$ref": "#/$defs/PrincipleKind"
+        },
+        "maturity": {
+          "$ref": "#/$defs/PrincipleMaturity"
+        },
+        "principle_id": {
+          "title": "Principle Id",
+          "type": "string"
+        },
+        "quality": {
+          "$ref": "#/$defs/QualityAssessment"
+        },
+        "relation_count": {
+          "minimum": 0,
+          "title": "Relation Count",
+          "type": "integer"
+        },
+        "relations": {
+          "items": {
+            "$ref": "#/$defs/PrincipleRelation"
+          },
+          "maxItems": 32,
+          "title": "Relations",
+          "type": "array"
+        },
+        "scope": {
+          "$ref": "#/$defs/PrincipleScope"
+        },
+        "source_count": {
+          "minimum": 1,
+          "title": "Source Count",
+          "type": "integer"
+        },
+        "source_references": {
+          "items": {
+            "$ref": "#/$defs/WorkReference"
+          },
+          "maxItems": 12,
+          "minItems": 1,
+          "title": "Source References",
+          "type": "array"
+        },
+        "status": {
+          "default": "active",
+          "enum": [
+            "active",
+            "retired"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Tags",
+          "type": "array"
+        },
+        "title": {
+          "maxLength": 240,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "trace_count": {
+          "minimum": 1,
+          "title": "Trace Count",
+          "type": "integer"
+        },
+        "updated_at": {
+          "title": "Updated At",
+          "type": "string"
+        },
+        "version": {
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "principle_id",
+        "area",
+        "version",
+        "title",
+        "claim",
+        "kind",
+        "maturity",
+        "scope",
+        "quality",
+        "falsifier",
+        "source_references",
+        "generation_trace",
+        "source_count",
+        "relation_count",
+        "trace_count"
+      ],
+      "title": "PrincipleCapsule",
+      "type": "object"
+    },
+    "PrincipleKind": {
+      "enum": [
+        "theorem",
+        "mechanistic",
+        "empirical",
+        "heuristic",
+        "hypothesis"
+      ],
+      "title": "PrincipleKind",
+      "type": "string"
+    },
+    "PrincipleMaturity": {
+      "enum": [
+        "supported",
+        "replicated",
+        "established",
+        "contested",
+        "retired"
+      ],
+      "title": "PrincipleMaturity",
+      "type": "string"
+    },
+    "PrincipleRelation": {
+      "additionalProperties": false,
+      "properties": {
+        "minimum_package_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minimum Package Version"
+        },
+        "rationale": {
+          "default": "",
+          "title": "Rationale",
+          "type": "string"
+        },
+        "relation_type": {
+          "$ref": "#/$defs/RelationType"
+        },
+        "strength": {
+          "default": 1.0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Strength",
+          "type": "number"
+        },
+        "target_area": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target Area"
+        },
+        "target_principle_id": {
+          "minLength": 1,
+          "title": "Target Principle Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "relation_type",
+        "target_principle_id"
+      ],
+      "title": "PrincipleRelation",
+      "type": "object"
+    },
+    "PrincipleScope": {
+      "additionalProperties": false,
+      "properties": {
+        "conditions": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Conditions",
+          "type": "array"
+        },
+        "exclusions": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Exclusions",
+          "type": "array"
+        },
+        "populations": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Populations",
+          "type": "array"
+        },
+        "statement": {
+          "minLength": 1,
+          "title": "Statement",
+          "type": "string"
+        }
+      },
+      "required": [
+        "statement"
+      ],
+      "title": "PrincipleScope",
+      "type": "object"
+    },
+    "QualityAssessment": {
+      "additionalProperties": false,
+      "properties": {
+        "assessed_at": {
+          "title": "Assessed At",
+          "type": "string"
+        },
+        "assessed_by": {
+          "minLength": 1,
+          "title": "Assessed By",
+          "type": "string"
+        },
+        "evidence_strength": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Evidence Strength",
+          "type": "number"
+        },
+        "generality": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Generality",
+          "type": "number"
+        },
+        "grade": {
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "title": "Grade",
+          "type": "string"
+        },
+        "reproducibility": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Reproducibility",
+          "type": "number"
+        },
+        "usefulness": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Usefulness",
+          "type": "number"
+        },
+        "validity": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Validity",
+          "type": "number"
+        }
+      },
+      "required": [
+        "grade",
+        "validity",
+        "reproducibility",
+        "evidence_strength",
+        "generality",
+        "usefulness",
+        "assessed_by"
+      ],
+      "title": "QualityAssessment",
+      "type": "object"
+    },
+    "RelationType": {
+      "enum": [
+        "supports",
+        "contradicts",
+        "refines",
+        "generalizes",
+        "specializes",
+        "depends_on",
+        "analogous_to",
+        "motivates"
+      ],
+      "title": "RelationType",
+      "type": "string"
+    },
+    "TraceOperation": {
+      "enum": [
+        "import",
+        "extract",
+        "challenge",
+        "map",
+        "review",
+        "edit",
+        "merge",
+        "promote",
+        "retire"
+      ],
+      "title": "TraceOperation",
+      "type": "string"
+    },
+    "WorkReference": {
+      "additionalProperties": false,
+      "properties": {
+        "doi": {
+          "default": "",
+          "title": "Doi",
+          "type": "string"
+        },
+        "public": {
+          "default": true,
+          "title": "Public",
+          "type": "boolean"
+        },
+        "role": {
+          "default": "evidence",
+          "enum": [
+            "evidence",
+            "proof",
+            "falsifier",
+            "context"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "title": {
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "url": {
+          "default": "",
+          "title": "Url",
+          "type": "string"
+        },
+        "work_id": {
+          "minLength": 1,
+          "title": "Work Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "work_id",
+        "title"
+      ],
+      "title": "WorkReference",
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "approvals": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Approvals",
+      "type": "array"
+    },
+    "area": {
+      "title": "Area",
+      "type": "string"
+    },
+    "base_package_version": {
+      "title": "Base Package Version",
+      "type": "string"
+    },
+    "changeset_id": {
+      "title": "Changeset Id",
+      "type": "string"
+    },
+    "created_at": {
+      "title": "Created At",
+      "type": "string"
+    },
+    "expected_content_digest": {
+      "title": "Expected Content Digest",
+      "type": "string"
+    },
+    "generator_trace": {
+      "items": {
+        "$ref": "#/$defs/GenerationTrace"
+      },
+      "title": "Generator Trace",
+      "type": "array"
+    },
+    "goal": {
+      "title": "Goal",
+      "type": "string"
+    },
+    "operations": {
+      "items": {
+        "$ref": "#/$defs/ChangesetOperation"
+      },
+      "minItems": 1,
+      "title": "Operations",
+      "type": "array"
+    },
+    "proposed_package_version": {
+      "title": "Proposed Package Version",
+      "type": "string"
+    },
+    "required_approvals": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Required Approvals",
+      "type": "integer"
+    },
+    "schema_version": {
+      "const": "publication-changeset-v1",
+      "default": "publication-changeset-v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "validation_results": {
+      "additionalProperties": {
+        "type": "boolean"
+      },
+      "title": "Validation Results",
+      "type": "object"
+    }
+  },
+  "required": [
+    "changeset_id",
+    "area",
+    "base_package_version",
+    "proposed_package_version",
+    "expected_content_digest",
+    "goal",
+    "operations"
+  ],
+  "title": "PublicationChangeset",
+  "type": "object"
+}

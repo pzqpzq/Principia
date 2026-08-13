@@ -1,0 +1,122 @@
+{
+  "audit": {
+    "authenticity_scan": "passed",
+    "code_cells": 6,
+    "code_lines": 56,
+    "output_kinds": [
+      "retrieval_local_metrics",
+      "extraction_provenance",
+      "evidence_counts",
+      "idea_card",
+      "comparison_validation"
+    ],
+    "privacy_scan": "passed",
+    "retained_outputs": 5,
+    "size_bytes": 16022
+  },
+  "notebook": "tutorial.ipynb",
+  "notebook_sha256": "0df8d655e02de32233d54e0764f48c670cbf66c922c8ca4bb7a3d28c6e4da212",
+  "outputs": [
+    {
+      "kind": "retrieval_local_metrics",
+      "payload": {
+        "embedding_rerank": "embedding_rerank",
+        "idea_id": "Entropy_Constrained_Discrete_Codebook_With_Counterfactual_Decoding_And_Diversity_Aware_Calibrati",
+        "jaccard_at_20": 0.8181818181818182,
+        "judged_works": 50,
+        "local_documents": 5,
+        "online_works": 50,
+        "out_of_scope": 1,
+        "output": "outputs/Entropy_Constrained_Discrete_Codebook_With_Counterfactual_Decoding_And_Diversity_Aware_Calibrati/",
+        "status": "complete",
+        "successful_sources": 3,
+        "top20_relevance": 1.0,
+        "top50_relevance": 0.98
+      },
+      "payload_sha256": "88725925e49c7d2b8c3c6b8c283b086eb6e13bf1f0d0fc71034ca69315796d03"
+    },
+    {
+      "kind": "extraction_provenance",
+      "payload": {
+        "content_types": {
+          "abstract": 27,
+          "html": 5,
+          "local_text": 4,
+          "pdf_text": 19
+        },
+        "feature_bundles": 55,
+        "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+        "provenance_complete": true
+      },
+      "payload_sha256": "26d8e333e871b9c6383f5b0fd45f388739afbfa37bc26587e4321cae79a0ced1"
+    },
+    {
+      "kind": "evidence_counts",
+      "payload": {
+        "contributing_works": 10,
+        "ideas": 5,
+        "previews": [
+          {
+            "kind": "principles",
+            "title": "Accuracy-Token Trade-off Optimization"
+          },
+          {
+            "kind": "takeaways",
+            "title": "Significant Latency Reduction via Symbolic Protocols"
+          },
+          {
+            "kind": "principles",
+            "title": "Diagnostic Guideline for Committee Scaling"
+          }
+        ],
+        "principles": 5,
+        "takeaways": 5,
+        "total": 15
+      },
+      "payload_sha256": "85243b9fd56965c2964063a2e84c56e820ba8d430456bb1274bb14193a8cefa2"
+    },
+    {
+      "kind": "idea_card",
+      "payload": "**Execution origin:** `live_llm`  \n**Degraded:** `false`\n# Entropy-Constrained Discrete Codebook with Counterfactual Decoding and Diversity-Aware Calibration\n**Mode:** `scidialect-evo`  \n**Model:** `siliconflow:Qwen/Qwen3.5-397B-A17B`\n**Thesis:** Imposing a per-task entropy floor on learned discrete messages prevents representational collapse while achieving token efficiency, provided that a counterfactual decoding protocol verifies causal interpretability and the entropy target is calibrated using real-time embedding diversity metrics.\n**Novelty:** Integrates an explicit entropy floor constraint directly into the communication loss function to force diversity, coupled with a mandatory counterfactual validity check to ensure the compact dialect remains causally grounded. Uniquely calibrates the entropy target dynamically based on pre-training embedding overlap measurements to prevent over-constraint in low-diversity regimes.\n## Mechanism\n- Agents map internal states to indices in a shared codebook. The loss function includes a term penalizing codebook usage below a calculated entropy threshold ($H_{target}$). $H_{target}$ is adjusted if pre-training diagnostics show agent embedding cosine similarity exceeds 0.88, signaling potential collapse. A separate decoder module must reconstruct the original observation from the code index; if reconstruction fails under minimal input perturbations (counterfactuals), the dialect is rejected.\n## Core equations\n$$L_{total} = L_{task} + \\lambda L_{tokens} - \\beta \\max(0, H_{target} - H(C))$$\n$$H_{target} = H_{base} \\cdot (1 + \\gamma \\cdot \\mathbb{I}(S_{cos} > 0.88))$$\n## Validation\n- Compare against standard CoT, uncompressed multi-agent baselines, and static codebook variants. Measure token reduction, accuracy, codebook entropy, success rate on counterfactual decoding tests, and embedding overlap. Specifically test scenarios where $S_{cos}$ approaches 0.88 to verify the dynamic calibration of $H_{target}$ prevents performance degradation.\n**Evidence:** 5 canonical records across 5 works.",
+      "payload_sha256": "32418fb29cbad06f8ab6dc82b93b3a116bfc3fd8d39a52b6116ff790268606b6"
+    },
+    {
+      "kind": "comparison_validation",
+      "payload": {
+        "artifacts": 7,
+        "highlights": [
+          {
+            "difference": "The generated idea replaces graph-grounded decoding with a counterfactual decoding protocol that tests reconstruction under input perturbations, and introduces dynamic calibration of the entropy target triggered specifically when cosine similarity exceeds 0.88, whereas the prior work implies static or metric-only evaluation.",
+            "prior": "Collapse and interpretability metrics for learned agent messages"
+          },
+          {
+            "difference": "The prior work treats counterfactual coherence as a monitoring checkpoint to flag dialect collapse, while the generated idea integrates it as a mandatory validity gate within the training loop, coupled with an explicit entropy floor constraint.",
+            "prior": "Interpretability Checkpoint Protocol"
+          },
+          {
+            "difference": "The prior work focuses on a synthetic protocol for post-hoc audit and intervention, while the generated idea operationalizes this via a Counterfactual Audit step that actively perturbs inputs to verify logical truth value preservation during the learning phase.",
+            "prior": "Message Audit Protocol for Inter-Agent Communication"
+          }
+        ],
+        "prior_ideas_compared": 3,
+        "validation": "passed",
+        "validation_schema": "1.0"
+      },
+      "payload_sha256": "84a545c46d12305339e9fcf61b82c500a4c7509fdddc82f00c4ee8b1c82eaba5"
+    }
+  ],
+  "readme_row": {
+    "evidence_records": 15,
+    "feature_bundles": 55,
+    "local_documents": 5,
+    "mode": "scidialect-evo",
+    "online_works": 50,
+    "task_id": "test1",
+    "title": "Communication-efficient LLM multi-agent reasoning",
+    "validation": "passed"
+  },
+  "schema_version": "principia.showcase.v1",
+  "source_notebook_sha256": "96050dc83fa38f180ca6e1b3a1df25237945e902c703bbd33154cf4168b0f61f",
+  "task_id": "test1",
+  "title": "Communication-efficient LLM multi-agent reasoning"
+}

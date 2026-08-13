@@ -1,0 +1,43 @@
+name: Global Cloud validation
+
+on:
+  pull_request:
+    paths:
+      - "global-cloud/**"
+      - "Principia-v1.4.1/core/scripts/validate_global_cloud.py"
+      - "Principia-v1.4.1/core/scripts/build_global_cloud_release.py"
+      - "Principia-v1.4.1/core/src/principia/cloud/**"
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -e Principia-v1.4.1/core
+      - name: Restrict reviewed cloud changes
+        run: |
+          git diff --name-only "${{ github.event.pull_request.base.sha }}" "${{ github.sha }}" > "${RUNNER_TEMP}/changed.txt"
+          if grep -q '^global-cloud/' "${RUNNER_TEMP}/changed.txt"; then
+            ! grep '^global-cloud/' "${RUNNER_TEMP}/changed.txt" | grep -Ev '^global-cloud/(data/v1|audit/|schemas/v1|contracts/|README.md|CLOUD_VERSION|legacy-pcp-catalog.json)'
+          fi
+      - run: python Principia-v1.4.1/core/scripts/validate_global_cloud.py global-cloud --report "${RUNNER_TEMP}/validation.json"
+      - name: Deterministic snapshot build
+        run: |
+          stamp="$(git show -s --format=%cI HEAD)"
+          python Principia-v1.4.1/core/scripts/build_global_cloud_release.py global-cloud "${RUNNER_TEMP}/release-a" --release-id pr-check --commit-sha "${GITHUB_SHA}" --created-at "$stamp"
+          python Principia-v1.4.1/core/scripts/build_global_cloud_release.py global-cloud "${RUNNER_TEMP}/release-b" --release-id pr-check --commit-sha "${GITHUB_SHA}" --created-at "$stamp"
+          cmp "${RUNNER_TEMP}/release-a/principia-global-pr-check.pcg" "${RUNNER_TEMP}/release-b/principia-global-pr-check.pcg"
+          cmp "${RUNNER_TEMP}/release-a/manifest.json" "${RUNNER_TEMP}/release-b/manifest.json"
+      - name: Reject forbidden artifact contents
+        run: |
+          ! find global-cloud -type f -size +50M -print -quit | grep .
+          ! grep -RIE '(BEGIN (RSA |OPENSSH )?PRIVATE KEY|github_pat_|ghp_|/Users/|/home/)' global-cloud

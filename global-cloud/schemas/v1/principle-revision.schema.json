@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pzqpzq.github.io/Principia/cloud/schemas/v1/principle-revision.schema.json",
+  "title": "Principia Global PrincipleRevision v1",
+  "type": "object",
+  "required": ["schema_version", "principle_id", "revision", "area", "claim", "scope", "falsifier", "quality", "status", "review_status", "content_digest"],
+  "properties": {
+    "schema_version": {"const": "global-principle-v1"},
+    "principle_id": {"type": "string", "pattern": "^prn:[a-z0-9-]+:[0-9A-HJKMNP-TV-Z]{26}$"},
+    "revision": {"type": "integer", "minimum": 1},
+    "status": {"enum": ["active", "retired"]},
+    "review_status": {"enum": ["reviewed", "unassessed"]},
+    "content_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

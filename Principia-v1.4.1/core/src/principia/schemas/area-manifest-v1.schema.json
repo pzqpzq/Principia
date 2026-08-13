@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "area": {
+      "maxLength": 63,
+      "minLength": 2,
+      "pattern": "^[a-z0-9][a-z0-9-]+$",
+      "title": "Area",
+      "type": "string"
+    },
+    "area_sqlite_sha256": {
+      "title": "Area Sqlite Sha256",
+      "type": "string"
+    },
+    "builder_version": {
+      "title": "Builder Version",
+      "type": "string"
+    },
+    "content_class": {
+      "default": "reviewed_capsules",
+      "enum": [
+        "reviewed_capsules",
+        "unassessed_candidates"
+      ],
+      "title": "Content Class",
+      "type": "string"
+    },
+    "content_digest": {
+      "title": "Content Digest",
+      "type": "string"
+    },
+    "created_at": {
+      "title": "Created At",
+      "type": "string"
+    },
+    "display_name": {
+      "minLength": 1,
+      "title": "Display Name",
+      "type": "string"
+    },
+    "framework_max_version": {
+      "default": "1.x",
+      "title": "Framework Max Version",
+      "type": "string"
+    },
+    "framework_min_version": {
+      "default": "1.4.0",
+      "title": "Framework Min Version",
+      "type": "string"
+    },
+    "immutable": {
+      "const": true,
+      "default": true,
+      "title": "Immutable",
+      "type": "boolean"
+    },
+    "package_version": {
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?$",
+      "title": "Package Version",
+      "type": "string"
+    },
+    "principle_count": {
+      "minimum": 0,
+      "title": "Principle Count",
+      "type": "integer"
+    },
+    "python_version": {
+      "title": "Python Version",
+      "type": "string"
+    },
+    "relation_count": {
+      "minimum": 0,
+      "title": "Relation Count",
+      "type": "integer"
+    },
+    "revision_count": {
+      "minimum": 0,
+      "title": "Revision Count",
+      "type": "integer"
+    },
+    "schema_version": {
+      "const": "area-manifest-v1",
+      "default": "area-manifest-v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "source_text_included": {
+      "const": false,
+      "default": false,
+      "title": "Source Text Included",
+      "type": "boolean"
+    },
+    "sqlite_version": {
+      "title": "Sqlite Version",
+      "type": "string"
+    },
+    "work_count": {
+      "minimum": 0,
+      "title": "Work Count",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "area",
+    "display_name",
+    "package_version",
+    "principle_count",
+    "revision_count",
+    "relation_count",
+    "work_count",
+    "content_digest",
+    "area_sqlite_sha256",
+    "builder_version",
+    "python_version",
+    "sqlite_version"
+  ],
+  "title": "AreaManifest",
+  "type": "object"
+}

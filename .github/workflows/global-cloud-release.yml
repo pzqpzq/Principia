@@ -1,0 +1,78 @@
+name: Publish Global Cloud release
+
+on:
+  push:
+    branches: [main]
+    paths: ["global-cloud/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: global-cloud-release
+  cancel-in-progress: false
+
+jobs:
+  build-verify-publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -e Principia-v1.4.1/core
+      - run: python Principia-v1.4.1/core/scripts/validate_global_cloud.py global-cloud
+      - name: Resolve immutable release identity and previous asset
+        id: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          release_id="$(date -u +%Y%m%d)-${GITHUB_SHA::12}"
+          echo "release_id=$release_id" >> "$GITHUB_OUTPUT"
+          previous="$(gh release list --json tagName --jq '[.[] | select(.tagName | startswith("global-"))][0].tagName // ""')"
+          if [ -n "$previous" ]; then
+            mkdir -p "${RUNNER_TEMP}/previous"
+            gh release download "$previous" -p '*.pcg' -D "${RUNNER_TEMP}/previous" || true
+            find "${RUNNER_TEMP}/previous" -name '*.pcg' -print -quit > "${RUNNER_TEMP}/previous-path"
+          fi
+      - name: Build full snapshot and optional delta
+        env:
+          PRINCIPIA_EMBEDDING_API_KEY: ${{ secrets.PRINCIPIA_EMBEDDING_API_KEY }}
+        run: |
+          previous_args=()
+          if [ -s "${RUNNER_TEMP}/previous-path" ]; then previous_args=(--previous-snapshot "$(cat "${RUNNER_TEMP}/previous-path")"); fi
+          python Principia-v1.4.1/core/scripts/build_global_cloud_vectors.py global-cloud "${RUNNER_TEMP}/vectors" "${previous_args[@]}"
+          python Principia-v1.4.1/core/scripts/build_global_cloud_release.py global-cloud "${RUNNER_TEMP}/release" \
+            --release-id "${{ steps.release.outputs.release_id }}" --commit-sha "$GITHUB_SHA" \
+            --created-at "$(git show -s --format=%cI HEAD)" \
+            --work-vectors "${RUNNER_TEMP}/vectors/work-vectors.f16" \
+            --principle-vectors "${RUNNER_TEMP}/vectors/principle-vectors.f16" "${previous_args[@]}"
+      - name: Upload immutable assets and verify by redownload
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="global-${{ steps.release.outputs.release_id }}"
+          assets=("${RUNNER_TEMP}/release"/*.pcg "${RUNNER_TEMP}/release/manifest.json" "${RUNNER_TEMP}/release/SHA256SUMS")
+          if compgen -G "${RUNNER_TEMP}/release/*.pcd" >/dev/null; then assets+=("${RUNNER_TEMP}/release"/*.pcd); fi
+          gh release create "$tag" "${assets[@]}" --target "$GITHUB_SHA" --title "$tag" --notes "Verified Principia Global Cloud snapshot."
+          mkdir "${RUNNER_TEMP}/verify"
+          gh release download "$tag" -D "${RUNNER_TEMP}/verify"
+          cd "${RUNNER_TEMP}/verify" && sha256sum -c SHA256SUMS
+      - name: Advance Pages controls only after independent verification
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/release/cloud
+      - uses: actions/deploy-pages@v4
+      - name: Retain newest five bulk release generations
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release list --limit 100 --json tagName --jq '[.[] | select(.tagName | startswith("global-"))][5:][].tagName' | while read -r tag; do gh release delete "$tag" --cleanup-tag=false --yes; done
