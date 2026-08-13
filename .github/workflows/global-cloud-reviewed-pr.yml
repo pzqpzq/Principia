@@ -31,17 +31,15 @@ jobs:
           test -z "$(find global-cloud -type f -size +50M -print -quit)"
           ! grep -RIE '(BEGIN (RSA |OPENSSH )?PRIVATE KEY|github_pat_|ghp_|/Users/|/home/)' global-cloud
       - name: Create checked PR and merge validated branch
+        # A same-repository workflow cannot create or approve its own PR with
+        # GITHUB_TOKEN on repositories that disable workflow-created PRs.
+        # Principia Admin (SSH mode) or the connected GitHub app creates the
+        # PR; this workflow is the required validation gate and merges it.
         env:
           GH_TOKEN: ${{ github.token }}
           HEAD_BRANCH: ${{ github.ref_name }}
         run: |
           pr="$(gh pr list --head "$HEAD_BRANCH" --state open --json number --jq '.[0].number // empty')"
-          if [ -z "$pr" ]; then
-            gh pr create --base main --head "$HEAD_BRANCH" \
-              --title "Global Cloud reviewed Admin publication" \
-              --body "Submitted by Principia Admin after explicit item review. The branch passed canonical schema, ordering, forbidden-data, and secret checks."
-            pr="$(gh pr list --head "$HEAD_BRANCH" --state open --json number --jq '.[0].number // empty')"
-          fi
           test -n "$pr"
           if ! gh pr merge "$pr" --auto --squash --delete-branch; then
             gh pr merge "$pr" --squash --delete-branch
