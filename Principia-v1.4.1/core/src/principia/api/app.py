@@ -1265,7 +1265,9 @@ def create_app(
             with principia.repository.connect() as conn:
                 pending = int(
                     conn.execute(
-                        "SELECT COUNT(*) FROM admin_cloud_syncs WHERE state NOT IN ('published','failed','cancelled')"
+                        "SELECT COUNT(*) FROM admin_cloud_syncs "
+                        "WHERE state IN ('pr_creating','checks_running','auto_merge_queued',"
+                        "'merged','release_building','needs_resolution')"
                     ).fetchone()[0]
                 )
             return {

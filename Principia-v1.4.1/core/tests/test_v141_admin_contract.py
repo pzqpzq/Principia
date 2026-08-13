@@ -198,6 +198,38 @@ def test_admin_nested_campaign_routes_do_not_get_swallowed_by_detail_route(
         product.close()
 
 
+def test_dashboard_counts_only_in_flight_or_conflicted_syncs_as_pending(tmp_path: Path) -> None:
+    product = AdminWorkspace.open(working_directory=tmp_path / "admin")
+    try:
+        now = "2026-08-13T00:00:00Z"
+        with product.repository.connect() as conn:
+            for index, state in enumerate(
+                ("reviewed", "failed", "published", "checks_running", "needs_resolution")
+            ):
+                conn.execute(
+                    "INSERT INTO admin_campaigns VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    (
+                        f"campaign:{index}", None, None, "draft", "dashboard test", 1,
+                        "", "", "", "{}", '{"research_goal":"dashboard test"}', now, now,
+                    ),
+                )
+                conn.execute(
+                    "INSERT INTO admin_cloud_syncs VALUES (?,?,?,?,?,?)",
+                    (
+                        f"sync:{index}", f"campaign:{index}", state,
+                        '{"schema_version":"cloud-sync-v1","sync_id":"sync:test",'
+                        '"campaign_id":"campaign:test"}', now, now,
+                    ),
+                )
+        response = TestClient(app_for_testing(product, admin_mode=True)).get(
+            "/api/v1/admin/dashboard"
+        )
+        assert response.status_code == 200, response.text
+        assert response.json()["pending_syncs"] == 2
+    finally:
+        product.close()
+
+
 def test_research_goal_nested_routes_accept_colon_ids(tmp_path: Path) -> None:
     """Goal progress/results must not be captured by the detail route."""
 

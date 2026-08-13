@@ -1331,10 +1331,12 @@ class AdminCampaignService:
                 files=files,
                 message=f"Global Cloud reviewed sync {sync.sync_id}",
             )
-            # The repository workflow creates the checked PR and queues
-            # auto-merge.  This avoids putting a second GitHub secret in the
-            # application when the owner has explicitly configured SSH.
+            # The private key can push reviewed canonical data but cannot call
+            # GitHub's PR API.  A connected GitHub app creates the PR for this
+            # branch; the repository workflow validates and merges it.  Until
+            # then, keep the durable state visible and resumable.
             sync.state = "checks_running"
+            sync.error = {"category": "checked_pr_creation_pending"}
         else:
             adapter.create_review_branch(
                 branch=branch,
