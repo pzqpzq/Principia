@@ -1299,10 +1299,11 @@ class AdminCampaignService:
             raise ValueError(f"typed confirmation must equal {expected}")
         campaign = self._campaign_row(sync.campaign_id) or {}
         current = self.global_cloud.status()
-        if (
-            current.get("release_id") != sync.base_release_id
-            or current.get("content_digest") != sync.base_manifest_digest
-        ):
+        # A newly published transport release may carry the exact same
+        # canonical dataset that the campaign reviewed.  Its release ID and
+        # commit can legitimately change without creating record-level drift;
+        # the logical content digest is the concurrency precondition.
+        if current.get("content_digest") != sync.base_manifest_digest:
             sync.state = "needs_resolution"
             sync.error = {
                 "category": "base_drift",

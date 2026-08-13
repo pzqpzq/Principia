@@ -372,8 +372,10 @@ class GitHubPublicationAdapter:
             }
 
         merge_sha = str(pull.get("merge_commit_sha") or "")
-        latest_url = "https://pzqpzq.github.io/Principia/cloud/v1/latest.json"
-        response = httpx.get(latest_url, timeout=20, follow_redirects=False)
+        latest_url = (
+            "https://github.com/pzqpzq/Principia/releases/latest/download/latest.json"
+        )
+        response = httpx.get(latest_url, timeout=20, follow_redirects=True)
         if response.status_code != 200:
             return {"state": "release_building", "merge_commit_sha": merge_sha, "error": {}}
         try:

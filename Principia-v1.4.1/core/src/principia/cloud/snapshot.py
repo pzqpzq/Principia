@@ -23,7 +23,9 @@ from ..models import utc_now
 from .canonical import PCG_ENTRIES, apply_cloud_delta, verify_cloud_snapshot
 from .models_v1 import CloudManifest, CloudSearchRequest
 
-DEFAULT_CONTROL_URL = "https://pzqpzq.github.io/Principia/cloud/v1/latest.json"
+DEFAULT_CONTROL_URL = (
+    "https://github.com/pzqpzq/Principia/releases/latest/download/latest.json"
+)
 SYNC_INTERVAL_SECONDS = 6 * 60 * 60
 MAX_DOWNLOAD_BYTES = 512 * 1024 * 1024
 

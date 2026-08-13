@@ -8,8 +8,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
   group: global-cloud-release
@@ -18,8 +16,6 @@ concurrency:
 jobs:
   build-verify-publish:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
     steps:
       - uses: actions/checkout@v4
         with:
@@ -49,28 +45,38 @@ jobs:
         run: |
           previous_args=()
           if [ -s "${RUNNER_TEMP}/previous-path" ]; then previous_args=(--previous-snapshot "$(cat "${RUNNER_TEMP}/previous-path")"); fi
-          python Principia-v1.4.1/core/scripts/build_global_cloud_vectors.py global-cloud "${RUNNER_TEMP}/vectors" "${previous_args[@]}"
+          vector_args=()
+          if [ -n "$PRINCIPIA_EMBEDDING_API_KEY" ]; then
+            python Principia-v1.4.1/core/scripts/build_global_cloud_vectors.py global-cloud "${RUNNER_TEMP}/vectors" "${previous_args[@]}"
+            vector_args=(--work-vectors "${RUNNER_TEMP}/vectors/work-vectors.f16" --principle-vectors "${RUNNER_TEMP}/vectors/principle-vectors.f16")
+          else
+            echo "Embedding credential is absent; publishing a verified FTS-only snapshot."
+          fi
           python Principia-v1.4.1/core/scripts/build_global_cloud_release.py global-cloud "${RUNNER_TEMP}/release" \
             --release-id "${{ steps.release.outputs.release_id }}" --commit-sha "$GITHUB_SHA" \
             --created-at "$(git show -s --format=%cI HEAD)" \
-            --work-vectors "${RUNNER_TEMP}/vectors/work-vectors.f16" \
-            --principle-vectors "${RUNNER_TEMP}/vectors/principle-vectors.f16" "${previous_args[@]}"
+            "${vector_args[@]}" "${previous_args[@]}"
       - name: Upload immutable assets and verify by redownload
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           tag="global-${{ steps.release.outputs.release_id }}"
-          assets=("${RUNNER_TEMP}/release"/*.pcg "${RUNNER_TEMP}/release/manifest.json" "${RUNNER_TEMP}/release/SHA256SUMS")
+          assets=("${RUNNER_TEMP}/release"/*.pcg "${RUNNER_TEMP}/release/manifest.json" "${RUNNER_TEMP}/release/SHA256SUMS" \
+            "${RUNNER_TEMP}/release/cloud/v1/latest.json" "${RUNNER_TEMP}/release/cloud/v1/stats.json")
           if compgen -G "${RUNNER_TEMP}/release/*.pcd" >/dev/null; then assets+=("${RUNNER_TEMP}/release"/*.pcd); fi
           gh release create "$tag" "${assets[@]}" --target "$GITHUB_SHA" --title "$tag" --notes "Verified Principia Global Cloud snapshot."
           mkdir "${RUNNER_TEMP}/verify"
           gh release download "$tag" -D "${RUNNER_TEMP}/verify"
           cd "${RUNNER_TEMP}/verify" && sha256sum -c SHA256SUMS
-      - name: Advance Pages controls only after independent verification
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ${{ runner.temp }}/release/cloud
-      - uses: actions/deploy-pages@v4
+          VERIFY_ROOT="${RUNNER_TEMP}/verify" VERIFY_COMMIT="$GITHUB_SHA" python - <<'PY'
+          import hashlib, json, os, pathlib
+          root = pathlib.Path(os.environ["VERIFY_ROOT"])
+          latest = json.loads((root / "latest.json").read_text())
+          assert latest["verified"] is True
+          assert latest["commit_sha"] == os.environ["VERIFY_COMMIT"]
+          snapshot = root / f"principia-global-{latest['release_id']}.pcg"
+          assert hashlib.sha256(snapshot.read_bytes()).hexdigest() == latest["snapshot_sha256"]
+          PY
       - name: Retain newest five bulk release generations
         env:
           GH_TOKEN: ${{ github.token }}
