@@ -1,0 +1,374 @@
+{
+  "$defs": {
+    "GenerationTrace": {
+      "additionalProperties": false,
+      "properties": {
+        "actor": {
+          "minLength": 1,
+          "title": "Actor",
+          "type": "string"
+        },
+        "created_at": {
+          "title": "Created At",
+          "type": "string"
+        },
+        "event_id": {
+          "minLength": 1,
+          "title": "Event Id",
+          "type": "string"
+        },
+        "input_sha256": {
+          "default": "",
+          "title": "Input Sha256",
+          "type": "string"
+        },
+        "input_tokens": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Input Tokens",
+          "type": "integer"
+        },
+        "latency_ms": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Latency Ms",
+          "type": "integer"
+        },
+        "model": {
+          "default": "",
+          "title": "Model",
+          "type": "string"
+        },
+        "operation": {
+          "$ref": "#/$defs/TraceOperation"
+        },
+        "output_sha256": {
+          "default": "",
+          "title": "Output Sha256",
+          "type": "string"
+        },
+        "output_tokens": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Output Tokens",
+          "type": "integer"
+        },
+        "prompt_sha256": {
+          "default": "",
+          "title": "Prompt Sha256",
+          "type": "string"
+        },
+        "prompt_template": {
+          "default": "",
+          "title": "Prompt Template",
+          "type": "string"
+        },
+        "provider": {
+          "default": "",
+          "title": "Provider",
+          "type": "string"
+        },
+        "retries": {
+          "default": 0,
+          "maximum": 2,
+          "minimum": 0,
+          "title": "Retries",
+          "type": "integer"
+        },
+        "run_id": {
+          "default": "",
+          "title": "Run Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "event_id",
+        "operation",
+        "actor"
+      ],
+      "title": "GenerationTrace",
+      "type": "object"
+    },
+    "PrincipleKind": {
+      "enum": [
+        "theorem",
+        "mechanistic",
+        "empirical",
+        "heuristic",
+        "hypothesis"
+      ],
+      "title": "PrincipleKind",
+      "type": "string"
+    },
+    "PrincipleRelation": {
+      "additionalProperties": false,
+      "properties": {
+        "minimum_package_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minimum Package Version"
+        },
+        "rationale": {
+          "default": "",
+          "title": "Rationale",
+          "type": "string"
+        },
+        "relation_type": {
+          "$ref": "#/$defs/RelationType"
+        },
+        "strength": {
+          "default": 1.0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Strength",
+          "type": "number"
+        },
+        "target_area": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target Area"
+        },
+        "target_principle_id": {
+          "minLength": 1,
+          "title": "Target Principle Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "relation_type",
+        "target_principle_id"
+      ],
+      "title": "PrincipleRelation",
+      "type": "object"
+    },
+    "PrincipleScope": {
+      "additionalProperties": false,
+      "properties": {
+        "conditions": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Conditions",
+          "type": "array"
+        },
+        "exclusions": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Exclusions",
+          "type": "array"
+        },
+        "populations": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Populations",
+          "type": "array"
+        },
+        "statement": {
+          "minLength": 1,
+          "title": "Statement",
+          "type": "string"
+        }
+      },
+      "required": [
+        "statement"
+      ],
+      "title": "PrincipleScope",
+      "type": "object"
+    },
+    "RelationType": {
+      "enum": [
+        "supports",
+        "contradicts",
+        "refines",
+        "generalizes",
+        "specializes",
+        "depends_on",
+        "analogous_to",
+        "motivates"
+      ],
+      "title": "RelationType",
+      "type": "string"
+    },
+    "TraceOperation": {
+      "enum": [
+        "import",
+        "extract",
+        "challenge",
+        "map",
+        "review",
+        "edit",
+        "merge",
+        "promote",
+        "retire"
+      ],
+      "title": "TraceOperation",
+      "type": "string"
+    },
+    "WorkReference": {
+      "additionalProperties": false,
+      "properties": {
+        "doi": {
+          "default": "",
+          "title": "Doi",
+          "type": "string"
+        },
+        "public": {
+          "default": true,
+          "title": "Public",
+          "type": "boolean"
+        },
+        "role": {
+          "default": "evidence",
+          "enum": [
+            "evidence",
+            "proof",
+            "falsifier",
+            "context"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "title": {
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "url": {
+          "default": "",
+          "title": "Url",
+          "type": "string"
+        },
+        "work_id": {
+          "minLength": 1,
+          "title": "Work Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "work_id",
+        "title"
+      ],
+      "title": "WorkReference",
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "area": {
+      "maxLength": 63,
+      "minLength": 2,
+      "pattern": "^[a-z0-9][a-z0-9-]+$",
+      "title": "Area",
+      "type": "string"
+    },
+    "assessment_status": {
+      "default": "unassessed",
+      "enum": [
+        "unassessed",
+        "reviewed",
+        "rejected"
+      ],
+      "title": "Assessment Status",
+      "type": "string"
+    },
+    "candidate_id": {
+      "minLength": 1,
+      "title": "Candidate Id",
+      "type": "string"
+    },
+    "claim": {
+      "minLength": 1,
+      "title": "Claim",
+      "type": "string"
+    },
+    "created_at": {
+      "title": "Created At",
+      "type": "string"
+    },
+    "falsifier": {
+      "default": "",
+      "title": "Falsifier",
+      "type": "string"
+    },
+    "generation_trace": {
+      "items": {
+        "$ref": "#/$defs/GenerationTrace"
+      },
+      "title": "Generation Trace",
+      "type": "array"
+    },
+    "kind": {
+      "$ref": "#/$defs/PrincipleKind"
+    },
+    "raw_legacy_payload": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Raw Legacy Payload"
+    },
+    "relations": {
+      "items": {
+        "$ref": "#/$defs/PrincipleRelation"
+      },
+      "title": "Relations",
+      "type": "array"
+    },
+    "scope": {
+      "$ref": "#/$defs/PrincipleScope"
+    },
+    "source_references": {
+      "items": {
+        "$ref": "#/$defs/WorkReference"
+      },
+      "title": "Source References",
+      "type": "array"
+    },
+    "title": {
+      "maxLength": 240,
+      "minLength": 1,
+      "title": "Title",
+      "type": "string"
+    },
+    "updated_at": {
+      "title": "Updated At",
+      "type": "string"
+    }
+  },
+  "required": [
+    "candidate_id",
+    "area",
+    "title",
+    "claim",
+    "kind",
+    "scope"
+  ],
+  "title": "CandidatePrinciple",
+  "type": "object"
+}

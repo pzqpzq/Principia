@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pzqpzq.github.io/Principia/cloud/schemas/v1/relation-revision.schema.json",
+  "title": "Principia Global RelationRevision v1",
+  "type": "object",
+  "required": ["schema_version", "relation_id", "revision", "source_principle_id", "target_principle_id", "relation_type", "status", "content_digest"],
+  "properties": {
+    "schema_version": {"const": "global-relation-v1"},
+    "revision": {"type": "integer", "minimum": 1},
+    "status": {"enum": ["active", "retired"]},
+    "content_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

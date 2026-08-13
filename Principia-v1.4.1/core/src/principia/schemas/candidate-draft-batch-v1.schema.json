@@ -1,0 +1,125 @@
+{
+  "$defs": {
+    "CandidateDraft": {
+      "additionalProperties": false,
+      "description": "Untrusted provider output before IDs and canonical references are assigned.",
+      "properties": {
+        "claim": {
+          "maxLength": 2400,
+          "minLength": 12,
+          "title": "Claim",
+          "type": "string"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceAnchorDraft"
+          },
+          "maxItems": 12,
+          "minItems": 1,
+          "title": "Evidence",
+          "type": "array"
+        },
+        "falsifier": {
+          "default": "",
+          "maxLength": 1200,
+          "title": "Falsifier",
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/$defs/PrincipleKind"
+        },
+        "scope": {
+          "maxLength": 1200,
+          "minLength": 3,
+          "title": "Scope",
+          "type": "string"
+        },
+        "source_keys": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Source Keys",
+          "type": "array"
+        },
+        "title": {
+          "maxLength": 240,
+          "minLength": 3,
+          "title": "Title",
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "claim",
+        "kind",
+        "scope",
+        "source_keys",
+        "evidence"
+      ],
+      "title": "CandidateDraft",
+      "type": "object"
+    },
+    "EvidenceAnchorDraft": {
+      "additionalProperties": false,
+      "description": "A model-proposed quotation tied to a server-issued evidence segment key.",
+      "properties": {
+        "quotation": {
+          "maxLength": 1200,
+          "minLength": 8,
+          "title": "Quotation",
+          "type": "string"
+        },
+        "role": {
+          "default": "evidence",
+          "enum": [
+            "evidence",
+            "falsifier",
+            "context"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "segment_key": {
+          "maxLength": 160,
+          "minLength": 1,
+          "title": "Segment Key",
+          "type": "string"
+        }
+      },
+      "required": [
+        "segment_key",
+        "quotation"
+      ],
+      "title": "EvidenceAnchorDraft",
+      "type": "object"
+    },
+    "PrincipleKind": {
+      "enum": [
+        "theorem",
+        "mechanistic",
+        "empirical",
+        "heuristic",
+        "hypothesis"
+      ],
+      "title": "PrincipleKind",
+      "type": "string"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Zero-to-eight atomic drafts for one extraction unit.\n\nAn empty batch is explicitly valid: the model must not invent a Principle when\nthe supplied paper does not support one.",
+  "properties": {
+    "drafts": {
+      "items": {
+        "$ref": "#/$defs/CandidateDraft"
+      },
+      "maxItems": 8,
+      "title": "Drafts",
+      "type": "array"
+    }
+  },
+  "title": "CandidateDraftBatch",
+  "type": "object"
+}
