@@ -89,6 +89,16 @@ def test_research_goal_run_opens_frozen_explorer_membership(tmp_path: Path) -> N
         )
         assert page["total"] >= len(page["items"])
         assert all(item["source"] == "global" for item in page["items"])
+        graph = app.explorer.graph_view(
+            scope="global",
+            goal_run_id=run["run_id"],
+            limit=100,
+            evidence_status="",
+        )
+        assert graph["total_count"] == page["total"]
+        assert {item["id"] for item in graph["nodes"]} == {
+            item["id"] for item in page["items"]
+        }
     finally:
         app.close()
 

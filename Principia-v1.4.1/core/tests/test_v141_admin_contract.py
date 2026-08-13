@@ -5,8 +5,8 @@ from pathlib import Path
 import pytest
 from fastapi.testclient import TestClient
 
-from principia.application import AdminWorkspace
 from principia.api import app_for_testing
+from principia.application import AdminWorkspace
 from principia.cloud import AdminExtractRequest
 from principia.domain import JobRecord
 

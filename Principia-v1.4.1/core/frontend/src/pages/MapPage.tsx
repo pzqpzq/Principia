@@ -112,12 +112,12 @@ export function MapPage() {
     queryKey: ["research-goal-run", goalRunId],
     enabled: Boolean(goalRunId),
     queryFn: async () => objectValue(dataOrThrow(await api.GET("/api/v1/research-goal-runs/{run_id}", { params: { path: { run_id: goalRunId } } }))),
-    refetchInterval: (query) => ["succeeded", "partial", "failed", "cancelled"].includes(textValue(objectValue(query.state.data).state)) ? false : 750,
+    refetchInterval: (query) => ["succeeded", "partial", "failed", "cancelled", "interrupted"].includes(textValue(objectValue(query.state.data).state)) ? false : 750,
   });
   const goalMembershipCounts = useQuery({
     queryKey: ["research-goal-membership-counts", goalRunId],
     enabled: Boolean(goalRunId),
-    refetchInterval: ["succeeded", "partial", "failed", "cancelled"].includes(textValue(goalRun.data?.state)) ? false : 1_000,
+    refetchInterval: ["succeeded", "partial", "failed", "cancelled", "interrupted"].includes(textValue(goalRun.data?.state)) ? false : 1_000,
     queryFn: async () => Object.fromEntries(await Promise.all((["combined", "global", "local"] as const).map(async (membership) => {
       const value = dataOrThrow(await api.GET("/api/v1/research-goal-runs/{run_id}/results", { params: { path: { run_id: goalRunId }, query: { membership, limit: 1, offset: 0 } } }));
       return [membership, value.total] as const;
@@ -138,7 +138,7 @@ export function MapPage() {
   const principlePage = useQuery({
     queryKey: ["principle-cards", scope, goalRunId, q, area, packageId, goalId, sourceId, claimType, evidenceStatus, humanReview, minimumSupport, relationFilter, contradictions, sort, pageNumber],
     placeholderData: (previous) => previous,
-    refetchInterval: goalRunId && !["succeeded", "partial", "failed", "cancelled"].includes(textValue(goalRun.data?.state)) ? 1_250 : false,
+    refetchInterval: goalRunId && !["succeeded", "partial", "failed", "cancelled", "interrupted"].includes(textValue(goalRun.data?.state)) ? 1_250 : false,
     queryFn: async () => dataOrThrow(await api.GET("/api/v1/principles", {
       params: { query: {
         scope: scope as "local" | "global" | "combined",

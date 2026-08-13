@@ -15,7 +15,7 @@ type UnknownRecord = Record<string, unknown>;
 
 const record = (value: unknown): UnknownRecord => value !== null && typeof value === "object" ? value as UnknownRecord : {};
 const text = (value: unknown): string => typeof value === "string" ? value : "";
-const terminalRunStates = new Set(["succeeded", "partial", "failed", "cancelled"]);
+const terminalRunStates = new Set(["succeeded", "partial", "failed", "cancelled", "interrupted"]);
 const onlineFolderName = (value: string): string => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 56) || "public-literature";
 
 function branchLabel(name: string): string {

@@ -300,7 +300,11 @@ class PrincipleExplorerService:
             "held_back": ("quarantined",),
             "archived": ("archived",),
         }.get(evidence_status, ("eligible", "quarantined", "archived"))
-        if goal_run_id and page_mode:
+        # Card and Graph Mode must project the same frozen research-run
+        # membership.  Graph Mode deliberately calls browse without database
+        # pagination; requiring ``page_mode`` here silently replaced the goal
+        # result with the entire Local/legacy registry library.
+        if goal_run_id:
             return self._goal_run_page(
                 goal_run_id=goal_run_id,
                 membership=scope,
@@ -597,20 +601,25 @@ class PrincipleExplorerService:
         for item in nodes:
             if item["source"] != "global":
                 continue
-            detail = self.registry.principle(str(item["id"])) or {}
+            detail = (
+                self.global_cloud.principle(str(item["id"]))
+                if self.global_cloud is not None and self.global_cloud.active()
+                else None
+            ) or self.registry.principle(str(item["id"])) or {}
             for index, relation in enumerate(detail.get("relations") or []):
+                source = str(relation.get("source_principle_id") or item["id"])
                 target = str(relation.get("target_principle_id") or "")
                 if target not in node_ids or target == item["id"]:
                     continue
                 relation_type = str(relation.get("relation_type") or "analogous_to")
-                relation_id = f"global:{item['id']}:{index}:{target}"
+                relation_id = str(relation.get("relation_id") or f"global:{source}:{index}:{target}")
                 if relation_id in seen:
                     continue
                 seen.add(relation_id)
                 edges.append(
                     {
                         "relation_id": relation_id,
-                        "source": str(item["id"]),
+                        "source": source,
                         "target": target,
                         "relation_type": relation_type,
                         "direction": "directed",
@@ -649,6 +658,12 @@ class PrincipleExplorerService:
                 detail = self.repository.principle(identifier)
             if detail is None:
                 detail = self.registry.principle(identifier)
+            if (
+                detail is None
+                and self.global_cloud is not None
+                and self.global_cloud.active()
+            ):
+                detail = self.global_cloud.principle(identifier)
             if detail is None:
                 raise KeyError(f"Principle {identifier} was not found")
             details[identifier] = detail

@@ -14,6 +14,37 @@ from principia.domain import LiteratureRunLimits
 from principia.providers import ModelPolicy
 
 
+def test_reused_paper_text_is_resolved_by_content_hash_after_work_deduplication(
+    tmp_path: Path,
+) -> None:
+    """A second folder must remain extractable when its Work ID is canonicalized."""
+
+    first_folder = tmp_path / "first"
+    second_folder = tmp_path / "second"
+    first_folder.mkdir()
+    second_folder.mkdir()
+    paper = (
+        "Independent verifier signals reduced selection errors when verifier failures "
+        "differed from generator failures."
+    )
+    (first_folder / "paper.txt").write_text(paper, encoding="utf-8")
+    (second_folder / "paper.txt").write_text(paper, encoding="utf-8")
+    product = Principia.open(tmp_path / "workspace", cloud_root=tmp_path / "cloud")
+    first = product.local.register_source(first_folder)
+    second = product.local.register_source(second_folder)
+    assert product.local.index_source(first["source_id"]).state == "succeeded"
+    assert product.local.index_source(second["source_id"]).state == "succeeded"
+    documents = product.local.source_documents(
+        second["source_id"], extractable=True, limit=10
+    )["items"]
+    assert len(documents) == 1
+    extracted = product.repository.extraction_documents(
+        second["source_id"], [documents[0]["document_id"]]
+    )
+    assert extracted[0]["segments"]
+    assert paper in extracted[0]["segments"][0]["text"]
+
+
 def test_evidence_extraction_prefetches_selected_papers_in_parallel(tmp_path: Path) -> None:
     private_folder = tmp_path / "parallel-papers"
     private_folder.mkdir()

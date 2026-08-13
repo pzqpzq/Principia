@@ -10,9 +10,9 @@ from ..cloud import (
     CloudInstaller,
     CloudRegistry,
     GlobalCloudSnapshotStore,
+    global_cloud_cache_root,
     load_catalog,
     package_registry_root,
-    global_cloud_cache_root,
     resolve_package_library,
 )
 from ..domain import CatalogEntry, canonical_sha256

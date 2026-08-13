@@ -927,12 +927,22 @@ class V14WorkspaceRepository:
                         (row["acquisition_id"],),
                     ).fetchall()
                     if not segments:
+                        # A paper can be imported through more than one Local
+                        # folder.  Strong bibliographic deduplication may map
+                        # the new folder row to a canonical Work ID while the
+                        # already parsed source asset keeps its original local
+                        # Work ID.  The immutable byte digest bridges those
+                        # identities and avoids presenting an indexed paper as
+                        # inexplicably non-extractable.
                         legacy = conn.execute(
                             """
                             SELECT normalized_text, text_sha256 FROM source_assets
-                            WHERE work_id=? ORDER BY updated_at DESC LIMIT 1
+                            WHERE work_id=? OR byte_sha256=?
+                            ORDER BY CASE WHEN work_id=? THEN 0 ELSE 1 END,
+                                     updated_at DESC
+                            LIMIT 1
                             """,
-                            (row["work_id"],),
+                            (row["work_id"], row["content_sha256"], row["work_id"]),
                         ).fetchone()
                         if legacy and str(legacy["normalized_text"] or "").strip():
                             segments = [

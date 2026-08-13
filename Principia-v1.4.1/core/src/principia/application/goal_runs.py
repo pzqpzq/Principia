@@ -29,6 +29,60 @@ class ResearchGoalRunService:
         self.global_cloud = global_cloud
         self._executor = ThreadPoolExecutor(max_workers=4, thread_name_prefix="principia-goal")
         self._cancel: dict[str, threading.Event] = {}
+        self._reconcile_interrupted_runs()
+
+    def _reconcile_interrupted_runs(self) -> None:
+        """Close parent goal runs interrupted by a process restart.
+
+        Child extraction jobs are already marked ``interrupted`` by the
+        workspace reconciler.  Leaving the parent row as ``running`` makes
+        Home poll forever and disables the next run.  Preserve every durable
+        membership that was visible before the restart and expose the run as
+        partial (or failed when no branch completed).
+        """
+
+        with self.repository.connect() as conn:
+            rows = conn.execute(
+                "SELECT * FROM research_goal_runs WHERE state IN ('queued','running')"
+            ).fetchall()
+            for row in rows:
+                branches = json.loads(row["branches_json"])
+                results = json.loads(row["results_json"])
+                for branch in branches.values():
+                    if str(branch.get("state") or "") in {
+                        "queued",
+                        "running",
+                        "pausing",
+                        "resuming",
+                    }:
+                        branch["state"] = "interrupted"
+                        branch["stage"] = "Interrupted by app restart"
+                membership_count = int(
+                    conn.execute(
+                        "SELECT COUNT(*) FROM research_goal_memberships WHERE run_id=?",
+                        (row["run_id"],),
+                    ).fetchone()[0]
+                )
+                completed_branch = any(
+                    str(branch.get("state") or "") == "succeeded"
+                    for branch in branches.values()
+                )
+                state = "partial" if membership_count or completed_branch else "failed"
+                results["recovery_message"] = (
+                    "The app restarted during this run. Results completed before the restart "
+                    "were preserved; start the goal again to resume unfinished folders."
+                )
+                conn.execute(
+                    "UPDATE research_goal_runs SET state=?, branches_json=?, results_json=?, "
+                    "updated_at=? WHERE run_id=?",
+                    (
+                        state,
+                        json.dumps(branches, sort_keys=True),
+                        json.dumps(results, sort_keys=True),
+                        utc_now(),
+                        row["run_id"],
+                    ),
+                )
 
     def start(self, request: ResearchGoalRunRequest, *, egress_confirmed: bool = False) -> dict[str, Any]:
         for source_id in request.source_ids:
