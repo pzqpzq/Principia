@@ -24,8 +24,8 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-      - run: python -m pip install -e .
-      - run: python scripts/validate_global_cloud.py global-cloud
+      - run: python -m pip install -e Principia-v1.4.1/core
+      - run: python Principia-v1.4.1/core/scripts/validate_global_cloud.py global-cloud
       - name: Reject forbidden files and secrets
         run: |
           test -z "$(find global-cloud -type f -size +50M -print -quit)"
