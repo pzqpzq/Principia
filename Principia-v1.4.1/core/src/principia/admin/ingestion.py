@@ -10,6 +10,7 @@ import time
 from concurrent.futures import Future, ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any
+from urllib.parse import quote
 
 import httpx
 
@@ -1336,6 +1337,10 @@ class AdminCampaignService:
             # branch; the repository workflow validates and merges it.  Until
             # then, keep the durable state visible and resumable.
             sync.state = "checks_running"
+            sync.pr_url = (
+                "https://github.com/pzqpzq/Principia/compare/main..."
+                f"{quote(branch, safe='/')}?expand=1"
+            )
             sync.error = {"category": "checked_pr_creation_pending"}
         else:
             adapter.create_review_branch(
