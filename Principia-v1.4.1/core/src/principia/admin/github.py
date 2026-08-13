@@ -190,6 +190,12 @@ class GitHubPublicationAdapter:
             "error": {},
         }
 
+    def compare_commits(self, *, base: str, head: str) -> dict[str, Any]:
+        value = self._public_request(f"/repos/{self.repository}/compare/{base}...{head}")
+        if not isinstance(value, dict):
+            raise GitHubPublicationError("GitHub returned an unexpected comparison response")
+        return value
+
     def _request(
         self, method: str, path: str, *, payload: dict[str, Any] | None = None
     ) -> dict[str, Any]:
@@ -384,8 +390,21 @@ class GitHubPublicationAdapter:
             return {"state": "release_building", "merge_commit_sha": merge_sha, "error": {}}
         if not isinstance(latest, dict) or not bool(latest.get("verified")):
             return {"state": "release_building", "merge_commit_sha": merge_sha, "error": {}}
-        if str(latest.get("commit_sha") or "") != merge_sha:
-            return {"state": "release_building", "merge_commit_sha": merge_sha, "error": {}}
+        latest_commit = str(latest.get("commit_sha") or "")
+        if latest_commit != merge_sha:
+            # A follow-up main commit may legitimately trigger the release
+            # after the reviewed merge.  Accept only a verified descendant so
+            # the released canonical history is guaranteed to contain this
+            # sync; an unrelated or older release remains `release_building`.
+            compare = self.compare_commits(base=merge_sha, head=latest_commit)
+            if str(compare.get("status") or "") not in {
+                "ahead", "identical"
+            }:
+                return {
+                    "state": "release_building",
+                    "merge_commit_sha": merge_sha,
+                    "error": {},
+                }
         release_id = str(latest.get("release_id") or "")
         release = self._status_request(
             f"/repos/{self.repository}/releases/tags/global-{release_id}"
