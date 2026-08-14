@@ -327,6 +327,7 @@ class CloudSync(DomainModel):
     base_manifest_digest: str = ""
     changeset_digest: str = ""
     branch: str = ""
+    submitted_commit_sha: str = ""
     pr_number: int | None = None
     pr_url: str = ""
     release_id: str = ""

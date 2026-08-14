@@ -87,3 +87,54 @@ def test_unrelated_verified_release_does_not_complete_publication(monkeypatch) -
     )
 
     assert adapter.publication_status(pr_number=14)["state"] == "release_building"
+
+
+def test_reviewed_branch_reports_one_failed_publication_run(monkeypatch) -> None:
+    adapter = GitHubPublicationAdapter()
+    monkeypatch.setattr(
+        GitHubPublicationAdapter,
+        "_verified_release_status",
+        lambda _self, _sha: {"state": "release_building", "error": {}},
+    )
+    monkeypatch.setattr(
+        GitHubPublicationAdapter,
+        "_public_request",
+        lambda _self, path: {
+            "workflow_runs": [
+                {
+                    "name": "Publish reviewed Global Cloud batch",
+                    "status": "completed",
+                    "conclusion": "failure",
+                    "html_url": "https://github.test/actions/1",
+                }
+            ]
+        }
+        if "/actions/runs?" in path
+        else [],
+    )
+
+    outcome = adapter.review_branch_status(branch="principia-cloud/test", commit_sha="c" * 40)
+
+    assert outcome["state"] == "needs_resolution"
+    assert outcome["error"]["category"] == "publication_workflow_failed"
+
+
+def test_reviewed_branch_completes_from_verified_release_without_a_pr(monkeypatch) -> None:
+    adapter = GitHubPublicationAdapter()
+    monkeypatch.setattr(
+        GitHubPublicationAdapter,
+        "_verified_release_status",
+        lambda _self, _sha: {
+            "state": "published",
+            "release_id": "20260814-zero-touch",
+            "error": {},
+        },
+    )
+
+    outcome = adapter.review_branch_status(branch="principia-cloud/test", commit_sha="d" * 40)
+
+    assert outcome == {
+        "state": "published",
+        "release_id": "20260814-zero-touch",
+        "error": {},
+    }

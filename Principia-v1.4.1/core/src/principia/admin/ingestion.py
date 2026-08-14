@@ -664,7 +664,9 @@ class AdminCampaignService:
                 for index, page in enumerate(acquired["pages"], start=1)
             ]
             phase = "provider"
-            provider = OpenAICompatibleProvider(policy, api_key=api_key, timeout=120)
+            # Four-wide Admin extraction can legitimately take longer than the
+            # lightweight connection probe while the model emits typed JSON.
+            provider = OpenAICompatibleProvider(policy, api_key=api_key, timeout=180)
             self._set_unit(job_id, unit_id, work_id, "extracting", campaign_id)
             atoms_result = provider.extract_evidence_atoms(
                 area="general",
@@ -1258,6 +1260,23 @@ class AdminCampaignService:
         if confirmation != expected:
             raise ValueError(f"typed confirmation must equal {expected}")
         changes = [item for item in items if item["decision"] != "skip"]
+        changeset_digest = canonical_sha256(changes)
+        # Creating or reloading the Publish step must not submit the same
+        # reviewed batch more than once. Reuse every non-abandoned durable
+        # sync for the same campaign and exact reviewed content.
+        with self.repository.connect() as conn:
+            existing_rows = conn.execute(
+                "SELECT payload_json FROM admin_cloud_syncs WHERE campaign_id=? "
+                "ORDER BY updated_at DESC, sync_id DESC",
+                (campaign_id,),
+            ).fetchall()
+        for row in existing_rows:
+            existing = CloudSync.model_validate_json(row[0])
+            if (
+                existing.changeset_digest == changeset_digest
+                and existing.state not in {"failed", "cancelled"}
+            ):
+                return existing.model_dump(mode="json")
         payload = CloudSync(
             sync_id=f"sync:{monotonic_ulid()}",
             campaign_id=campaign_id,
@@ -1265,7 +1284,7 @@ class AdminCampaignService:
             base_release_id=campaign["base_release_id"],
             base_commit_sha=campaign["base_commit_sha"],
             base_manifest_digest=campaign["base_manifest_digest"],
-            changeset_digest=canonical_sha256(changes),
+            changeset_digest=changeset_digest,
         )
         with self.repository.connect() as conn:
             conn.execute(
@@ -1298,7 +1317,6 @@ class AdminCampaignService:
         expected = f"PUBLISH {sync_id}"
         if confirmation != expected:
             raise ValueError(f"typed confirmation must equal {expected}")
-        campaign = self._campaign_row(sync.campaign_id) or {}
         current = self.global_cloud.status()
         # A newly published transport release may carry the exact same
         # canonical dataset that the campaign reviewed.  Its release ID and
@@ -1326,46 +1344,29 @@ class AdminCampaignService:
         sync.updated_at = utc_now()
         self._save_sync(sync)
         if adapter.credential_mode() == "ssh":
-            adapter.create_review_branch_ssh(
+            result = adapter.create_review_branch_ssh(
                 branch=branch,
                 base="main",
                 files=files,
                 message=f"Global Cloud reviewed sync {sync.sync_id}",
             )
-            # The private key can push reviewed canonical data but cannot call
-            # GitHub's PR API.  A connected GitHub app creates the PR for this
-            # branch; the repository workflow validates and merges it.  Until
-            # then, keep the durable state visible and resumable.
-            sync.state = "checks_running"
-            sync.pr_url = (
-                "https://github.com/pzqpzq/Principia/compare/main..."
-                f"{quote(branch, safe='/')}?expand=1"
-            )
-            sync.error = {"category": "checked_pr_creation_pending"}
         else:
-            adapter.create_review_branch(
+            result = adapter.create_review_branch(
                 branch=branch,
                 base="main",
                 files=files,
                 message=f"Global Cloud reviewed sync {sync.sync_id}",
             )
-            result = adapter.submit_reviewed_changeset(
-                branch=branch,
-                base="main",
-                title=f"Global Cloud: {campaign.get('research_goal', 'reviewed ingestion')[:80]}",
-                body=(
-                    "Reviewed in Principia Admin. Changes are restricted to `global-cloud/**`.\n\n"
-                    f"Sync: `{sync.sync_id}`\nBase release: `{sync.base_release_id}`\n"
-                    f"Changeset: `{sync.changeset_digest}`"
-                ),
-            )
-            sync.pr_number = int(result["pr_number"])
-            sync.pr_url = result["pr_url"]
-            sync.state = (
-                "auto_merge_queued"
-                if result["state"] == "auto_merge_queued"
-                else "checks_running"
-            )
+        # The repository workflow validates this single reviewed batch,
+        # advances main, builds the verified release and updates the control
+        # asset. The user never has to create or merge a PR.
+        sync.submitted_commit_sha = str(result["commit_sha"])
+        sync.state = "checks_running"
+        sync.pr_url = (
+            "https://github.com/pzqpzq/Principia/actions?query="
+            f"branch%3A{quote(branch, safe='')}"
+        )
+        sync.error = {}
         sync.updated_at = utc_now()
         self._save_sync(sync)
         return sync.model_dump(mode="json")
@@ -1384,8 +1385,7 @@ class AdminCampaignService:
         )
         if not (canonical_root / "CLOUD_VERSION").is_file():
             raise ValueError("the canonical Global Cloud checkout is unavailable")
-        source = CanonicalCloudRepository(canonical_root)
-        original = source.all_records()
+        original = self.global_cloud.canonical_records()
         by_kind: dict[RecordKind, dict[str, dict[str, Any]]] = {
             kind: {record_identity(kind, row): row for row in values}
             for kind, values in original.items()
@@ -1450,15 +1450,25 @@ class AdminCampaignService:
             by_kind[kind][record_identity(kind, normalized)] = normalized
 
         with tempfile.TemporaryDirectory(prefix="principia-reviewed-cloud.") as temporary:
+            baseline_root = Path(temporary) / "verified-baseline"
+            shutil.copytree(canonical_root, baseline_root)
+            baseline = CanonicalCloudRepository(baseline_root)
+            for kind, records in original.items():
+                baseline.write_records(kind, records)
+            baseline_validation = baseline.validate()
+            if baseline_validation["content_digest"] != sync.base_manifest_digest:
+                raise ValueError(
+                    "the active verified snapshot no longer matches the reviewed campaign base"
+                )
             staged_root = Path(temporary) / "global-cloud"
-            shutil.copytree(canonical_root, staged_root)
+            shutil.copytree(baseline_root, staged_root)
             staged = CanonicalCloudRepository(staged_root)
             for kind, records in by_kind.items():
                 staged.write_records(kind, records.values())
             validation = staged.validate()
             changed: dict[str, bytes] = {}
             for kind in by_kind:
-                original_dir = canonical_root / "data" / "v1" / kind
+                original_dir = baseline_root / "data" / "v1" / kind
                 updated_dir = staged_root / "data" / "v1" / kind
                 for path in sorted(updated_dir.glob("*.jsonl")):
                     prior = original_dir / path.name
@@ -1516,25 +1526,42 @@ class AdminCampaignService:
         if detail is None:
             raise KeyError(sync_id)
         sync = CloudSync.model_validate(detail)
-        if sync.state in {"published", "failed", "cancelled", "needs_resolution", "reviewed"}:
+        if sync.state in {"published", "failed", "cancelled", "reviewed"}:
             return sync.model_dump(mode="json")
         adapter = GitHubPublicationAdapter()
         if not adapter.configured():
             return sync.model_dump(mode="json")
         try:
+            outcome: dict[str, Any] | None = None
             if not sync.pr_number and sync.branch:
-                branch_outcome = adapter.review_branch_status(branch=sync.branch)
+                branch_outcome = adapter.review_branch_status(
+                    branch=sync.branch,
+                    commit_sha=sync.submitted_commit_sha,
+                )
                 if branch_outcome.get("pr_number"):
                     sync.pr_number = int(branch_outcome["pr_number"])
                     sync.pr_url = str(branch_outcome.get("pr_url") or "")
                     sync.updated_at = utc_now()
                     self._save_sync(sync)
-            if not sync.pr_number:
+                else:
+                    outcome = branch_outcome
+            if outcome is None and sync.pr_number:
+                outcome = adapter.publication_status(pr_number=sync.pr_number)
+            if outcome is None:
                 return sync.model_dump(mode="json")
-            outcome = adapter.publication_status(pr_number=sync.pr_number)
             sync.state = outcome["state"]
             sync.release_id = str(outcome.get("release_id") or sync.release_id)
             sync.error = dict(outcome.get("error") or {})
+            if sync.state == "published":
+                try:
+                    self.global_cloud.sync(force=True)
+                    installed = self.global_cloud.status()
+                    if installed.get("release_id") != sync.release_id:
+                        sync.state = "release_building"
+                        sync.error = {"category": "local_snapshot_activation_pending"}
+                except Exception:
+                    sync.state = "release_building"
+                    sync.error = {"category": "local_snapshot_activation_pending"}
             sync.updated_at = utc_now()
             self._save_sync(sync)
             if sync.state == "published":

@@ -2,9 +2,9 @@ name: Principia v1.4.1 CI
 
 on:
   push:
-    paths: ["Principia-v1.4.1/**", "global-cloud/**", ".github/workflows/principia-v141-ci.yml"]
+    paths: ["Principia-v1.4.1/**", ".github/workflows/principia-v141-ci.yml"]
   pull_request:
-    paths: ["Principia-v1.4.1/**", "global-cloud/**", ".github/workflows/principia-v141-ci.yml"]
+    paths: ["Principia-v1.4.1/**", ".github/workflows/principia-v141-ci.yml"]
 
 permissions:
   contents: read

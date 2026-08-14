@@ -19,6 +19,10 @@ const failureMessage = (paper: UnknownRecord): string => {
   if (paper.state === "cleanup_failed") return "Temporary source cleanup failed; this paper cannot be marked successful.";
   return "";
 };
+const reviewableStagedItems = (value: unknown): UnknownRecord[] =>
+  (Array.isArray(value) ? value : [])
+    .map(record)
+    .filter((item) => item.entity !== "principle_work");
 
 export function AdminPage() {
   const queryClient = useQueryClient();
@@ -84,7 +88,7 @@ export function AdminPage() {
   const resumeExtraction = useMutation({ mutationFn: async (jobId: string) => dataOrThrow(await api.POST("/api/v1/admin/extractions/{job_id}/resume", { params: { path: { job_id: jobId } } })), onSuccess: () => queryClient.invalidateQueries({ queryKey: ["admin-campaigns"] }) });
   const cancelExtraction = useMutation({ mutationFn: async (jobId: string) => dataOrThrow(await api.POST("/api/v1/admin/extractions/{job_id}/cancel", { params: { path: { job_id: jobId } } })), onSuccess: () => queryClient.invalidateQueries({ queryKey: ["admin-campaigns"] }) });
   const decision = useMutation({ mutationFn: async ({ stageId, action, confirmed }: { stageId: string; action: "add" | "update" | "retire" | "skip"; confirmed: boolean }) => dataOrThrow(await api.PATCH("/api/v1/admin/staging/{stage_id}/decision", { params: { path: { stage_id: stageId } }, body: { decision: action, confirmed_ambiguous: confirmed } })), onSuccess: () => staging.refetch() });
-  const bulkAdd = useMutation({ mutationFn: async () => dataOrThrow(await api.PATCH("/api/v1/admin/staging/decisions/bulk", { body: { stage_ids: (Array.isArray(staging.data?.items) ? staging.data.items : []).map((item) => text(record(item).stage_id)), decision: "add" } })), onSuccess: () => staging.refetch() });
+  const bulkAdd = useMutation({ mutationFn: async () => dataOrThrow(await api.PATCH("/api/v1/admin/staging/decisions/bulk", { body: { stage_ids: reviewableStagedItems(staging.data?.items).filter((item) => item.match_kind !== "ambiguous").map((item) => text(item.stage_id)), decision: "add" } })), onSuccess: () => staging.refetch() });
   const createSync = useMutation({ mutationFn: async () => dataOrThrow(await api.POST("/api/v1/admin/campaigns/{campaign_id}/syncs", { params: { path: { campaign_id: campaignId } }, body: { confirmation: `SUBMIT ${campaignId}`, mode: "dry_run" } })), onSuccess: (value) => setSyncId(text(value.sync_id)) });
   const submitSync = useMutation({ mutationFn: async (id: string) => dataOrThrow(await api.POST("/api/v1/admin/syncs/{sync_id}/submit", { params: { path: { sync_id: id } }, body: { confirmation: `PUBLISH ${id}`, mode: "github_pr" } })), onSuccess: () => { sync.refetch(); latestSync.refetch(); } });
   const publishReviewed = useMutation({
@@ -93,7 +97,8 @@ export function AdminPage() {
       const id = text(created.sync_id);
       if (!id) throw new Error("The reviewed publication draft was not created.");
       setSyncId(id);
-      return submitSync.mutateAsync(id);
+      if (text(created.state) === "reviewed") return submitSync.mutateAsync(id);
+      return created;
     },
     onSuccess: () => { dashboard.refetch(); latestSync.refetch(); },
   });
@@ -117,9 +122,16 @@ export function AdminPage() {
   });
 
   useEffect(() => { if (!campaignId && campaignRows.length) setCampaignId(text(campaignRows[0].campaign_id)); }, [campaignId, campaignRows]);
-  useEffect(() => { const id = text(latestSync.data?.sync_id); if (id) setSyncId(id); }, [latestSync.data?.sync_id]);
+  useEffect(() => { if (latestSync.isSuccess) setSyncId(text(latestSync.data?.sync_id)); }, [campaignId, latestSync.data?.sync_id, latestSync.isSuccess]);
   const paperRows = (Array.isArray(papers.data?.items) ? papers.data.items : []) as UnknownRecord[];
   const stagedRows = (Array.isArray(staging.data?.items) ? staging.data.items : []) as UnknownRecord[];
+  const reviewableRows = reviewableStagedItems(stagedRows);
+  const undecidedRows = reviewableRows.filter((item) => !item.decision);
+  const syncState = text(sync.data?.state);
+  const syncError = record(sync.data?.error);
+  const publicationComplete = syncState === "published";
+  const publicationInFlight = Boolean(syncId && !["reviewed", "failed", "cancelled", "needs_resolution", "published"].includes(syncState));
+  const publicationReady = Boolean(campaignId && reviewableRows.length && !undecidedRows.length);
   const dashboardCloud = record(dashboard.data?.cloud);
   const campaignState = text(campaign?.state);
   const provider = record((Array.isArray(providers.data?.profiles) ? providers.data.profiles : []).find((item) => text(record(item).provider_id) === providerProfile) ?? (Array.isArray(providers.data?.profiles) ? providers.data.profiles : [])[0]);
@@ -137,6 +149,12 @@ export function AdminPage() {
     ?? (tab === "Extract" ? extract.error ?? retryProviderFailures.error ?? pauseExtraction.error ?? resumeExtraction.error ?? cancelExtraction.error : null)
     ?? (tab === "Review & Compare" ? staging.error ?? decision.error ?? bulkAdd.error : null)
     ?? (tab === "Publish" ? sync.error ?? createSync.error ?? submitSync.error : null);
+
+  useEffect(() => {
+    if (syncState !== "published") return;
+    queryClient.invalidateQueries({ queryKey: ["admin-dashboard"] });
+    queryClient.invalidateQueries({ queryKey: ["admin-cloud-browser"] });
+  }, [queryClient, syncState]);
 
   return <div className="page admin-page">
     <PageHeader eyebrow="Global Cloud" title="Admin" description="Find papers, extract Principles, review the changes, and publish." actions={<span className="pill success">Admin mode</span>} />
@@ -171,7 +189,7 @@ export function AdminPage() {
 
     {tab === "Review & Compare" ? <section><div className="goal-run-actions"><span>{stagedRows.filter((item) => item.entity === "work").length} papers · {stagedRows.filter((item) => item.entity === "principle").length} Principles · provenance links are managed automatically</span><button onClick={() => bulkAdd.mutate()} disabled={!stagedRows.length}>Add all clear items</button></div>{!stagedRows.length ? <EmptyState title="Nothing staged"><p>Completed papers appear here as readable paper groups while extraction continues.</p></EmptyState> : <div className="review-paper-groups">{stagedRows.filter((item) => item.entity === "work").map((work) => { const proposedWork = record(work.proposed); const workId = text(proposedWork.work_id); const principles = stagedRows.filter((item) => item.entity === "principle" && stagedRows.some((link) => link.entity === "principle_work" && text(record(link.proposed).work_id) === workId && text(record(link.proposed).principle_id) === text(record(item.proposed).principle_id))); const renderDecision = (item: UnknownRecord) => { const ambiguous = item.match_kind === "ambiguous"; return <div className="decision-actions">{(["add", "update", "retire", "skip"] as const).map((action) => <button className={item.decision === action ? "primary" : ""} key={action} onClick={() => decision.mutate({ stageId: text(item.stage_id), action, confirmed: ambiguous })}>{action}</button>)}</div>; }; return <article className="review-paper-group" key={text(work.stage_id)}><header><div><span className="eyebrow">Paper</span><h2>{text(proposedWork.title) || "Untitled paper"}</h2><small>{text(proposedWork.venue) || "Venue unknown"} · {String(proposedWork.year ?? "year unknown")} · {principles.length} proposed Principle{principles.length === 1 ? "" : "s"}</small></div><span className={`pill ${work.match_kind === "new" ? "success" : ""}`}>{String(work.match_kind)}</span></header><div className="review-work-decision">{renderDecision(work)}</div><div className="review-principle-list">{principles.map((item) => { const proposed = record(item.proposed); const current = record(item.current); return <section key={text(item.stage_id)}><header><div><span className="eyebrow">Principle</span><h3>{text(proposed.title) || text(proposed.claim).slice(0, 100)}</h3></div><span className={`pill ${item.match_kind === "new" ? "success" : ""}`}>{String(item.match_kind)}</span></header><div className="side-by-side"><div><small>Current Cloud</small><p>{text(current.claim) || "No matching Principle"}</p></div><div><small>Proposed</small><p>{text(proposed.claim)}</p></div></div>{renderDecision(item)}</section>; })}</div></article>; })}</div>}</section> : null}
 
-    {tab === "Publish" ? <section className="cloud-status-card"><span className="eyebrow">Checked PR + auto-merge</span><h2>Publish reviewed additions</h2><p>One confirmation creates the checked branch and PR. CI validates schemas, review attestation, public links and forbidden data, then rebuilds the release. Updates append revision N+1.</p><div className="goal-run-actions"><button className="primary" onClick={() => { if (window.confirm("Publish the reviewed additions? Local staging remains available until the verified Cloud release succeeds.")) publishReviewed.mutate(); }} disabled={!campaignId || !stagedRows.length || stagedRows.some((item) => !item.decision) || publishReviewed.isPending || Boolean(syncId && !["reviewed", "failed", "cancelled", "needs_resolution"].includes(text(sync.data?.state)))}>{publishReviewed.isPending ? "Submitting checked publication…" : "Publish reviewed additions"}</button>{syncId && text(sync.data?.state) === "reviewed" ? <button onClick={() => submitSync.mutate(syncId)} disabled={submitSync.isPending}>Resume publication</button> : null}</div>{syncId ? <div className="review-warning"><strong>{text(sync.data?.state).replaceAll("_", " ") || "Loading publication state…"}</strong><br />{text(sync.data?.pr_url) ? <a href={text(sync.data?.pr_url)} target="_blank" rel="noreferrer">Open checked PR</a> : "Preparing the checked PR"}{text(sync.data?.release_id) ? <> · Release {text(sync.data?.release_id)}</> : null}. Dashboard and regular search update after the verified release is installed.</div> : null}</section> : null}
+    {tab === "Publish" ? <section className="cloud-status-card"><span className="eyebrow">One reviewed batch · automatic publication</span><h2>Publish reviewed additions</h2><p>One confirmation packages every accepted paper, Principle, and provenance link into one atomic batch. Principia validates it, updates GitHub, builds the verified release, and installs it locally—no PR or manual merge is required.</p>{publicationComplete ? <p className="inline-success" role="status">This reviewed batch is published and active in Dashboard and regular search.</p> : publicationReady ? <p className="inline-success" role="status">{reviewableRows.length} reviewed items are ready to publish.</p> : <p className="review-warning" role="status">Review {undecidedRows.length} remaining paper or Principle item{undecidedRows.length === 1 ? "" : "s"}. Provenance links are attached automatically.</p>}<div className="goal-run-actions"><button className="primary" onClick={() => { if (window.confirm("Publish this reviewed batch automatically? Local staging remains available until the verified Cloud release succeeds.")) publishReviewed.mutate(); }} disabled={!publicationReady || publicationComplete || publishReviewed.isPending || publicationInFlight}>{publishReviewed.isPending ? "Submitting one publication…" : publicationComplete ? "Reviewed batch published" : "Publish reviewed additions"}</button>{syncId && syncState === "reviewed" ? <button onClick={() => submitSync.mutate(syncId)} disabled={submitSync.isPending}>Resume publication</button> : null}</div>{syncId ? <div className={syncState === "published" ? "inline-success" : "review-warning"}><strong>{syncState.replaceAll("_", " ") || "Loading publication state…"}</strong><br />{syncState === "needs_resolution" ? <>Publication validation stopped safely; staging was preserved. {text(syncError.category).replaceAll("_", " ") || "Open the activity for details"}.</> : "Principia will update Dashboard and regular search automatically after the verified release is installed."}{text(sync.data?.pr_url) ? <> <a href={text(sync.data?.pr_url)} target="_blank" rel="noreferrer">Open publication activity</a></> : null}{text(sync.data?.release_id) ? <> · Release {text(sync.data?.release_id)}</> : null}</div> : null}</section> : null}
 
   </div>;
 }

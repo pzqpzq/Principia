@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: global-cloud-release
+  group: global-cloud-publication
   cancel-in-progress: false
 
 jobs:
@@ -33,7 +33,8 @@ jobs:
         run: |
           release_id="$(date -u +%Y%m%d)-${GITHUB_SHA::12}"
           echo "release_id=$release_id" >> "$GITHUB_OUTPUT"
-          previous="$(gh release list --json tagName --jq '[.[] | select(.tagName | startswith("global-"))][0].tagName // ""')"
+          current_tag="global-${release_id}"
+          previous="$(gh release list --limit 100 --json tagName --jq '[.[] | select((.tagName | startswith("global-")) and .tagName != "'"$current_tag"'")][0].tagName // ""')"
           if [ -n "$previous" ]; then
             mkdir -p "${RUNNER_TEMP}/previous"
             gh release download "$previous" -p '*.pcg' -D "${RUNNER_TEMP}/previous" || true
@@ -64,7 +65,11 @@ jobs:
           assets=("${RUNNER_TEMP}/release"/*.pcg "${RUNNER_TEMP}/release/manifest.json" "${RUNNER_TEMP}/release/SHA256SUMS" \
             "${RUNNER_TEMP}/release/cloud/v1/latest.json" "${RUNNER_TEMP}/release/cloud/v1/stats.json")
           if compgen -G "${RUNNER_TEMP}/release/*.pcd" >/dev/null; then assets+=("${RUNNER_TEMP}/release"/*.pcd); fi
-          gh release create "$tag" "${assets[@]}" --target "$GITHUB_SHA" --title "$tag" --notes "Verified Principia Global Cloud snapshot."
+          if gh release view "$tag" >/dev/null 2>&1; then
+            gh release upload "$tag" "${assets[@]}" --clobber
+          else
+            gh release create "$tag" "${assets[@]}" --target "$GITHUB_SHA" --title "$tag" --notes "Verified Principia Global Cloud snapshot."
+          fi
           mkdir "${RUNNER_TEMP}/verify"
           gh release download "$tag" -D "${RUNNER_TEMP}/verify"
           cd "${RUNNER_TEMP}/verify" && sha256sum -c SHA256SUMS

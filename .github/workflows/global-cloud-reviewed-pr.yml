@@ -1,4 +1,4 @@
-name: Submit reviewed Global Cloud branch
+name: Publish reviewed Global Cloud batch
 
 on:
   push:
@@ -7,14 +7,13 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
 
 concurrency:
-  group: reviewed-cloud-${{ github.ref }}
+  group: global-cloud-publication
   cancel-in-progress: false
 
 jobs:
-  validate-submit-merge:
+  validate-promote-release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,23 +23,103 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
+          cache-dependency-path: Principia-v1.4.1/core/pyproject.toml
       - run: python -m pip install -e Principia-v1.4.1/core
+      - name: Restrict the reviewed batch to canonical Cloud records
+        run: |
+          git diff --name-only HEAD^ HEAD > "${RUNNER_TEMP}/changed.txt"
+          test -s "${RUNNER_TEMP}/changed.txt"
+          ! grep -Ev '^global-cloud/' "${RUNNER_TEMP}/changed.txt"
       - run: python Principia-v1.4.1/core/scripts/validate_global_cloud.py global-cloud
       - name: Reject forbidden files and secrets
         run: |
-          test -z "$(find global-cloud -type f -size +50M -print -quit)"
+          ! find global-cloud -type f -size +50M -print -quit | grep .
           ! grep -RIE '(BEGIN (RSA |OPENSSH )?PRIVATE KEY|github_pat_|ghp_|/Users/|/home/)' global-cloud
-      - name: Create checked PR and merge validated branch
-        # A same-repository workflow cannot create or approve its own PR with
-        # GITHUB_TOKEN on repositories that disable workflow-created PRs.
-        # Principia Admin (SSH mode) or the connected GitHub app creates the
-        # PR; this workflow is the required validation gate and merges it.
+      - name: Deterministic snapshot preflight
+        run: |
+          stamp="$(git show -s --format=%cI HEAD)"
+          python Principia-v1.4.1/core/scripts/build_global_cloud_release.py global-cloud "${RUNNER_TEMP}/preflight-a" --release-id preflight --commit-sha "$GITHUB_SHA" --created-at "$stamp"
+          python Principia-v1.4.1/core/scripts/build_global_cloud_release.py global-cloud "${RUNNER_TEMP}/preflight-b" --release-id preflight --commit-sha "$GITHUB_SHA" --created-at "$stamp"
+          cmp "${RUNNER_TEMP}/preflight-a/principia-global-preflight.pcg" "${RUNNER_TEMP}/preflight-b/principia-global-preflight.pcg"
+          cmp "${RUNNER_TEMP}/preflight-a/manifest.json" "${RUNNER_TEMP}/preflight-b/manifest.json"
+      - name: Verify an unchanged main base
+        id: base
+        run: |
+          git fetch origin main
+          main_sha="$(git rev-parse origin/main)"
+          parent_sha="$(git rev-parse HEAD^)"
+          if [ "$main_sha" = "$GITHUB_SHA" ]; then
+            echo "promoted=true" >> "$GITHUB_OUTPUT"
+          elif [ "$main_sha" = "$parent_sha" ]; then
+            echo "promoted=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Main advanced after this reviewed batch was created; no content was published."
+            exit 1
+          fi
+      - name: Resolve immutable release identity and previous asset
+        id: release
         env:
           GH_TOKEN: ${{ github.token }}
-          HEAD_BRANCH: ${{ github.ref_name }}
         run: |
-          pr="$(gh pr list --head "$HEAD_BRANCH" --state open --json number --jq '.[0].number // empty')"
-          test -n "$pr"
-          if ! gh pr merge "$pr" --auto --squash --delete-branch; then
-            gh pr merge "$pr" --squash --delete-branch
+          release_id="$(date -u +%Y%m%d)-${GITHUB_SHA::12}"
+          echo "release_id=$release_id" >> "$GITHUB_OUTPUT"
+          current_tag="global-${release_id}"
+          previous="$(gh release list --limit 100 --json tagName --jq '[.[] | select((.tagName | startswith("global-")) and .tagName != "'"$current_tag"'")][0].tagName // ""')"
+          if [ -n "$previous" ]; then
+            mkdir -p "${RUNNER_TEMP}/previous"
+            gh release download "$previous" -p '*.pcg' -D "${RUNNER_TEMP}/previous" || true
+            find "${RUNNER_TEMP}/previous" -name '*.pcg' -print -quit > "${RUNNER_TEMP}/previous-path"
           fi
+      - name: Build full snapshot and optional delta
+        env:
+          PRINCIPIA_EMBEDDING_API_KEY: ${{ secrets.PRINCIPIA_EMBEDDING_API_KEY }}
+        run: |
+          previous_args=()
+          if [ -s "${RUNNER_TEMP}/previous-path" ]; then previous_args=(--previous-snapshot "$(cat "${RUNNER_TEMP}/previous-path")"); fi
+          vector_args=()
+          if [ -n "$PRINCIPIA_EMBEDDING_API_KEY" ]; then
+            python Principia-v1.4.1/core/scripts/build_global_cloud_vectors.py global-cloud "${RUNNER_TEMP}/vectors" "${previous_args[@]}"
+            vector_args=(--work-vectors "${RUNNER_TEMP}/vectors/work-vectors.f16" --principle-vectors "${RUNNER_TEMP}/vectors/principle-vectors.f16")
+          else
+            echo "Embedding credential is absent; publishing a verified FTS-only snapshot."
+          fi
+          python Principia-v1.4.1/core/scripts/build_global_cloud_release.py global-cloud "${RUNNER_TEMP}/release" \
+            --release-id "${{ steps.release.outputs.release_id }}" --commit-sha "$GITHUB_SHA" \
+            --created-at "$(git show -s --format=%cI HEAD)" \
+            "${vector_args[@]}" "${previous_args[@]}"
+      - name: Atomically advance main
+        if: steps.base.outputs.promoted != 'true'
+        run: git push origin HEAD:refs/heads/main
+      - name: Upload immutable assets and verify by redownload
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="global-${{ steps.release.outputs.release_id }}"
+          assets=("${RUNNER_TEMP}/release"/*.pcg "${RUNNER_TEMP}/release/manifest.json" "${RUNNER_TEMP}/release/SHA256SUMS" \
+            "${RUNNER_TEMP}/release/cloud/v1/latest.json" "${RUNNER_TEMP}/release/cloud/v1/stats.json")
+          if compgen -G "${RUNNER_TEMP}/release/*.pcd" >/dev/null; then assets+=("${RUNNER_TEMP}/release"/*.pcd); fi
+          if gh release view "$tag" >/dev/null 2>&1; then
+            gh release upload "$tag" "${assets[@]}" --clobber
+          else
+            gh release create "$tag" "${assets[@]}" --target "$GITHUB_SHA" --title "$tag" --notes "Verified Principia Global Cloud snapshot."
+          fi
+          verify_root="${RUNNER_TEMP}/verify"
+          mkdir -p "$verify_root"
+          gh release download "$tag" -D "$verify_root"
+          (cd "$verify_root" && sha256sum -c SHA256SUMS)
+          VERIFY_ROOT="$verify_root" VERIFY_COMMIT="$GITHUB_SHA" python - <<'PY'
+          import hashlib, json, os, pathlib
+          root = pathlib.Path(os.environ["VERIFY_ROOT"])
+          latest = json.loads((root / "latest.json").read_text())
+          assert latest["verified"] is True
+          assert latest["commit_sha"] == os.environ["VERIFY_COMMIT"]
+          snapshot = root / f"principia-global-{latest['release_id']}.pcg"
+          assert hashlib.sha256(snapshot.read_bytes()).hexdigest() == latest["snapshot_sha256"]
+          PY
+      - name: Retain newest five bulk release generations
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release list --limit 100 --json tagName --jq '[.[] | select(.tagName | startswith("global-"))][5:][].tagName' | while read -r tag; do gh release delete "$tag" --cleanup-tag=false --yes; done
+      - name: Remove the completed submission branch
+        run: git push origin --delete "$GITHUB_REF_NAME" || true

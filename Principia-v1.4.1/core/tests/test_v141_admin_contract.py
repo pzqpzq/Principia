@@ -7,7 +7,7 @@ from fastapi.testclient import TestClient
 
 from principia.api import app_for_testing
 from principia.application import AdminWorkspace
-from principia.cloud import AdminExtractRequest
+from principia.cloud import AdminExtractRequest, AdminStagedItem
 from principia.domain import JobRecord
 
 
@@ -226,6 +226,51 @@ def test_dashboard_counts_only_in_flight_or_conflicted_syncs_as_pending(tmp_path
         )
         assert response.status_code == 200, response.text
         assert response.json()["pending_syncs"] == 2
+    finally:
+        product.close()
+
+
+def test_same_reviewed_batch_reuses_one_publication_sync(tmp_path: Path) -> None:
+    product = AdminWorkspace.open(working_directory=tmp_path / "admin")
+    try:
+        service = product.admin_campaigns
+        assert service is not None
+        now = "2026-08-14T00:00:00Z"
+        campaign_id = "campaign:idempotent"
+        item = AdminStagedItem(
+            stage_id="stage:idempotent",
+            campaign_id=campaign_id,
+            entity="work",
+            proposed={"work_id": "work:idempotent", "title": "One reviewed paper"},
+            match_kind="new",
+            decision="add",
+        )
+        with product.repository.connect() as conn:
+            conn.execute(
+                "INSERT INTO admin_campaigns VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                (
+                    campaign_id, None, None, "review_ready", "idempotent publication", 1,
+                    "release:test", "a" * 40, "digest:test", "{}",
+                    '{"research_goal":"idempotent publication"}', now, now,
+                ),
+            )
+            conn.execute(
+                "INSERT INTO admin_staged_items VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                (
+                    item.stage_id, campaign_id, "work:idempotent", item.entity,
+                    item.match_kind, item.similarity, item.decision, 0, None, "",
+                    "content:test", item.model_dump_json(), now, now,
+                ),
+            )
+
+        first = service.create_sync(campaign_id, confirmation=f"SUBMIT {campaign_id}")
+        second = service.create_sync(campaign_id, confirmation=f"SUBMIT {campaign_id}")
+
+        assert first["sync_id"] == second["sync_id"]
+        with product.repository.connect() as conn:
+            assert conn.execute(
+                "SELECT COUNT(*) FROM admin_cloud_syncs WHERE campaign_id=?", (campaign_id,)
+            ).fetchone()[0] == 1
     finally:
         product.close()
 

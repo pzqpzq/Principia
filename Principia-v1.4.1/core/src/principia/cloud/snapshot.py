@@ -20,7 +20,7 @@ import httpx
 from .._sqlite import connect_sqlite
 from ..domain.hashing import file_sha256
 from ..models import utc_now
-from .canonical import PCG_ENTRIES, apply_cloud_delta, verify_cloud_snapshot
+from .canonical import PCG_ENTRIES, RecordKind, apply_cloud_delta, verify_cloud_snapshot
 from .models_v1 import CloudManifest, CloudSearchRequest
 
 DEFAULT_CONTROL_URL = (
@@ -86,6 +86,29 @@ def _decode_offset(cursor: str) -> int:
         return max(0, int(base64.urlsafe_b64decode(padded).decode()))
     except Exception as exc:
         raise ValueError("invalid Global Cloud cursor") from exc
+
+
+def _public_work_url(work: dict[str, Any]) -> str:
+    """Project one durable public paper URL from a canonical Work record."""
+
+    for key in ("source_url", "landing_url", "url"):
+        value = str(work.get(key) or "").strip()
+        if value.startswith("https://"):
+            return value
+    for value in work.get("source_urls") or []:
+        candidate = str(value or "").strip()
+        if candidate.startswith("https://"):
+            return candidate
+    for key, template in (
+        ("doi", "https://doi.org/{value}"),
+        ("arxiv_id", "https://arxiv.org/abs/{value}"),
+        ("pmid", "https://pubmed.ncbi.nlm.nih.gov/{value}/"),
+        ("pmcid", "https://www.ncbi.nlm.nih.gov/pmc/articles/{value}/"),
+    ):
+        value = str(work.get(key) or "").strip()
+        if value:
+            return template.format(value=value)
+    return ""
 
 
 class GlobalCloudSnapshotStore:
@@ -248,12 +271,24 @@ class GlobalCloudSnapshotStore:
         state = self._json(self.state_path)
         now = utc_now()
         try:
-            if not force and state.get("last_checked_epoch"):
+            active_release_id = str(self.active().get("release_id") or "")
+            state_release_id = str(state.get("release_id") or "")
+            cache_matches_state = bool(
+                active_release_id and state_release_id == active_release_id
+            )
+            if not force and cache_matches_state and state.get("last_checked_epoch"):
                 elapsed = time.time() - float(state["last_checked_epoch"])
                 if elapsed < SYNC_INTERVAL_SECONDS:
                     return {**self.status(), "outcome": "not_due"}
             headers = {"Accept": "application/json"}
-            if state.get("etag"):
+            active_before_request = self.active()
+            cached_release_id = str(state.get("release_id") or "")
+            if (
+                not force
+                and state.get("etag")
+                and active_before_request
+                and cached_release_id == str(active_before_request["release_id"])
+            ):
                 headers["If-None-Match"] = str(state["etag"])
             context = ssl.create_default_context(cafile=certifi.where())
             with httpx.Client(verify=context, timeout=20.0, follow_redirects=True) as client:
@@ -262,7 +297,8 @@ class GlobalCloudSnapshotStore:
                     self._atomic_json(
                         self.state_path,
                         {**state, "control_url": url, "last_checked_at": now,
-                         "last_checked_epoch": time.time(), "last_error": ""},
+                         "last_checked_epoch": time.time(), "last_error": "",
+                         "release_id": cached_release_id},
                     )
                     return {**self.status(), "outcome": "current"}
                 response.raise_for_status()
@@ -278,7 +314,8 @@ class GlobalCloudSnapshotStore:
                         self.state_path,
                         {"schema_version": "principia-global-sync-state-v1", "control_url": url,
                          "etag": response.headers.get("etag", ""), "last_checked_at": now,
-                         "last_checked_epoch": time.time(), "last_error": ""},
+                         "last_checked_epoch": time.time(), "last_error": "",
+                         "release_id": release_id},
                     )
                     return {**self.status(), "outcome": "current"}
                 download_url = snapshot_url
@@ -332,7 +369,8 @@ class GlobalCloudSnapshotStore:
                     self.state_path,
                     {"schema_version": "principia-global-sync-state-v1", "control_url": url,
                      "etag": response.headers.get("etag", ""), "last_checked_at": now,
-                     "last_checked_epoch": time.time(), "last_error": ""},
+                     "last_checked_epoch": time.time(), "last_error": "",
+                     "release_id": release_id},
                 )
                 return {**outcome, "outcome": "updated", "transport": download_kind}
         except Exception as exc:
@@ -370,6 +408,32 @@ class GlobalCloudSnapshotStore:
         conn = connect_sqlite(f"file:{active['database']}?mode=ro", uri=True)
         conn.row_factory = __import__("sqlite3").Row
         return conn
+
+    def canonical_records(self) -> dict[RecordKind, list[dict[str, Any]]]:
+        """Return the complete canonical record set from the verified snapshot.
+
+        Admin publication must extend the release that was actually reviewed,
+        never the possibly stale JSON fixtures bundled with the application.
+        Historical revisions are retained because all four snapshot tables
+        store their canonical payloads verbatim.
+        """
+
+        tables: dict[RecordKind, str] = {
+            "works": "works",
+            "principles": "principles",
+            "principle-work": "principle_work",
+            "relations": "relations",
+        }
+        with self._connect() as conn:
+            return {
+                kind: [
+                    json.loads(row[0])
+                    for row in conn.execute(
+                        f"SELECT payload_json FROM {table} ORDER BY payload_json"
+                    ).fetchall()
+                ]
+                for kind, table in tables.items()
+            }
 
     def _work_filters(self, request: CloudSearchRequest, alias: str = "w") -> tuple[str, list[Any]]:
         clauses: list[str] = []
@@ -605,17 +669,34 @@ class GlobalCloudSnapshotStore:
             }
         if request.entity == "principle":
             return self._paper_first_principles(request, query_vector=query_vector)
+        combined_limit = offset + request.limit
         paper_result = self.search(
-            request.model_copy(update={"entity": "paper", "limit": request.limit}),
+            request.model_copy(
+                update={"entity": "paper", "cursor": "", "limit": combined_limit}
+            ),
             query_vector=query_vector,
         )
         principle_result = self._paper_first_principles(
-            request.model_copy(update={"entity": "principle", "cursor": "", "limit": request.limit}),
+            request.model_copy(
+                update={"entity": "principle", "cursor": "", "limit": combined_limit}
+            ),
             query_vector=query_vector,
         )
         items = [*paper_result["items"], *principle_result["items"]]
         items.sort(key=lambda item: (-float(item.get("score") or 0), str(item.get("id") or "")))
-        return {**principle_result, "items": items[: request.limit], "entity": "all"}
+        total = int(paper_result["total"]) + int(principle_result["total"])
+        page = items[offset : offset + request.limit]
+        return {
+            **principle_result,
+            "items": page,
+            "next_cursor": (
+                _encode_offset(offset + request.limit)
+                if offset + request.limit < total
+                else None
+            ),
+            "total": total,
+            "entity": "all",
+        }
 
     def _paper_first_principles(
         self,
@@ -638,7 +719,7 @@ class GlobalCloudSnapshotStore:
                 rows = conn.execute(
                     f"""
                     SELECT p.*, pw.work_id, pw.role, w.title matched_paper_title,
-                           w.landing_url matched_paper_url
+                           w.payload_json matched_paper_json
                     FROM principle_work pw
                     JOIN current_principles p ON p.principle_id=pw.principle_id
                      AND p.revision=pw.principle_revision
@@ -661,9 +742,10 @@ class GlobalCloudSnapshotStore:
                     paper["work_id"] == row["work_id"]
                     for paper in item["matched_papers"]
                 ):
+                    matched_paper = json.loads(row["matched_paper_json"])
                     item["matched_papers"].append(
                         {"work_id": row["work_id"], "title": row["matched_paper_title"],
-                         "url": row["matched_paper_url"], "role": row["role"]}
+                         "url": _public_work_url(matched_paper), "role": row["role"]}
                     )
         direct = self._lexical_principles(
             request.query,
@@ -725,6 +807,7 @@ class GlobalCloudSnapshotStore:
             "entity": "paper",
             "score": float(row.get("rrf_score") or row.get("vector_score") or 0),
             **payload,
+            "source_url": _public_work_url(payload),
         }
 
     @staticmethod
@@ -844,9 +927,16 @@ class GlobalCloudSnapshotStore:
                 (principle_id,),
             ).fetchall()
         payload = json.loads(row[0])
-        payload["source_references"] = [
-            {**json.loads(item["work_json"]), **json.loads(item["link_json"])} for item in references
-        ]
+        payload["source_references"] = []
+        for item in references:
+            work = json.loads(item["work_json"])
+            payload["source_references"].append(
+                {
+                    **work,
+                    **json.loads(item["link_json"]),
+                    "source_url": _public_work_url(work),
+                }
+            )
         payload["relations"] = [json.loads(item[0]) for item in relations]
         payload["source"] = "global"
         return payload

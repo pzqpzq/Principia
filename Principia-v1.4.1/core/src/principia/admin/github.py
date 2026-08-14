@@ -174,27 +174,95 @@ class GitHubPublicationAdapter:
             run("push", "--set-upstream", "origin", branch)
         return {"branch": branch, "commit_sha": commit_sha, "base_commit_sha": parent_sha}
 
-    def review_branch_status(self, *, branch: str) -> dict[str, Any]:
-        """Read the PR created by the repository's checked branch workflow."""
+    def review_branch_status(self, *, branch: str, commit_sha: str = "") -> dict[str, Any]:
+        """Reconcile the zero-touch reviewed-branch publication workflow."""
 
+        if commit_sha:
+            release = self._verified_release_status(commit_sha)
+            if release["state"] == "published":
+                return release
+            runs = self._public_request(
+                f"/repos/{self.repository}/actions/runs?head_sha={commit_sha}&per_page=20"
+            )
+            publication_runs = [
+                item
+                for item in (runs.get("workflow_runs") if isinstance(runs, dict) else []) or []
+                if str(item.get("name") or "")
+                in {
+                    "Publish reviewed Global Cloud batch",
+                    "Submit reviewed Global Cloud branch",
+                }
+            ]
+            if publication_runs:
+                latest = publication_runs[0]
+                conclusion = str(latest.get("conclusion") or "")
+                if conclusion in {"failure", "cancelled", "timed_out", "action_required"}:
+                    return {
+                        "state": "needs_resolution",
+                        "pr_number": None,
+                        "pr_url": str(latest.get("html_url") or ""),
+                        "error": {
+                            "category": "publication_workflow_failed",
+                            "workflow_url": str(latest.get("html_url") or ""),
+                        },
+                    }
+                if str(latest.get("status") or "") == "completed":
+                    return {**release, "state": "release_building"}
+                return {
+                    "state": "checks_running",
+                    "pr_number": None,
+                    "pr_url": str(latest.get("html_url") or ""),
+                    "error": {},
+                }
+
+        # Compatibility for batches submitted by v1.4.1 builds that still
+        # created a PR before the zero-touch workflow was installed.
         pulls = self._public_request(
             f"/repos/{self.repository}/pulls?state=all&head=pzqpzq:{branch}&per_page=10"
         )
-        if not isinstance(pulls, list) or not pulls:
-            return {"state": "checks_running", "pr_number": None, "pr_url": "", "error": {}}
-        pull = pulls[0]
-        return {
-            "state": "checks_running",
-            "pr_number": int(pull["number"]),
-            "pr_url": str(pull.get("html_url") or ""),
-            "error": {},
-        }
+        if isinstance(pulls, list) and pulls:
+            pull = pulls[0]
+            return {
+                "state": "checks_running",
+                "pr_number": int(pull["number"]),
+                "pr_url": str(pull.get("html_url") or ""),
+                "error": {},
+            }
+        return {"state": "checks_running", "pr_number": None, "pr_url": "", "error": {}}
 
     def compare_commits(self, *, base: str, head: str) -> dict[str, Any]:
         value = self._public_request(f"/repos/{self.repository}/compare/{base}...{head}")
         if not isinstance(value, dict):
             raise GitHubPublicationError("GitHub returned an unexpected comparison response")
         return value
+
+    def _verified_release_status(self, expected_commit: str) -> dict[str, Any]:
+        latest_url = (
+            "https://github.com/pzqpzq/Principia/releases/latest/download/latest.json"
+        )
+        response = httpx.get(latest_url, timeout=20, follow_redirects=True)
+        if response.status_code != 200:
+            return {"state": "release_building", "error": {}}
+        try:
+            latest = response.json()
+        except ValueError:
+            return {"state": "release_building", "error": {}}
+        if not isinstance(latest, dict) or not bool(latest.get("verified")):
+            return {"state": "release_building", "error": {}}
+        latest_commit = str(latest.get("commit_sha") or "")
+        if latest_commit != expected_commit:
+            compare = self.compare_commits(base=expected_commit, head=latest_commit)
+            if str(compare.get("status") or "") not in {"ahead", "identical"}:
+                return {"state": "release_building", "error": {}}
+        release_id = str(latest.get("release_id") or "")
+        release = self._status_request(
+            f"/repos/{self.repository}/releases/tags/global-{release_id}"
+        )
+        asset_names = {str(item.get("name") or "") for item in release.get("assets") or []}
+        snapshot_name = f"principia-global-{release_id}.pcg"
+        if not {snapshot_name, "manifest.json", "SHA256SUMS"}.issubset(asset_names):
+            return {"state": "release_building", "error": {}}
+        return {"state": "published", "release_id": release_id, "error": {}}
 
     def _request(
         self, method: str, path: str, *, payload: dict[str, Any] | None = None
@@ -378,47 +446,7 @@ class GitHubPublicationAdapter:
             }
 
         merge_sha = str(pull.get("merge_commit_sha") or "")
-        latest_url = (
-            "https://github.com/pzqpzq/Principia/releases/latest/download/latest.json"
-        )
-        response = httpx.get(latest_url, timeout=20, follow_redirects=True)
-        if response.status_code != 200:
-            return {"state": "release_building", "merge_commit_sha": merge_sha, "error": {}}
-        try:
-            latest = response.json()
-        except ValueError:
-            return {"state": "release_building", "merge_commit_sha": merge_sha, "error": {}}
-        if not isinstance(latest, dict) or not bool(latest.get("verified")):
-            return {"state": "release_building", "merge_commit_sha": merge_sha, "error": {}}
-        latest_commit = str(latest.get("commit_sha") or "")
-        if latest_commit != merge_sha:
-            # A follow-up main commit may legitimately trigger the release
-            # after the reviewed merge.  Accept only a verified descendant so
-            # the released canonical history is guaranteed to contain this
-            # sync; an unrelated or older release remains `release_building`.
-            compare = self.compare_commits(base=merge_sha, head=latest_commit)
-            if str(compare.get("status") or "") not in {
-                "ahead", "identical"
-            }:
-                return {
-                    "state": "release_building",
-                    "merge_commit_sha": merge_sha,
-                    "error": {},
-                }
-        release_id = str(latest.get("release_id") or "")
-        release = self._status_request(
-            f"/repos/{self.repository}/releases/tags/global-{release_id}"
-        )
-        asset_names = {str(item.get("name") or "") for item in release.get("assets") or []}
-        snapshot_name = f"principia-global-{release_id}.pcg"
-        if not {snapshot_name, "manifest.json", "SHA256SUMS"}.issubset(asset_names):
-            return {"state": "release_building", "merge_commit_sha": merge_sha, "error": {}}
-        return {
-            "state": "published",
-            "release_id": release_id,
-            "merge_commit_sha": merge_sha,
-            "error": {},
-        }
+        return {**self._verified_release_status(merge_sha), "merge_commit_sha": merge_sha}
 
 
 def keychain_install_command() -> str:
