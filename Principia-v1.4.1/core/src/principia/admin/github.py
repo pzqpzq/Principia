@@ -257,12 +257,37 @@ class GitHubPublicationAdapter:
             if str(compare.get("status") or "") not in {"ahead", "identical"}:
                 return {"state": "release_building", "error": {}}
         release_id = str(latest.get("release_id") or "")
-        release = self._status_request(
-            f"/repos/{self.repository}/releases/tags/global-{release_id}"
+        snapshot_digest = str(latest.get("snapshot_sha256") or "")
+        if not release_id or len(snapshot_digest) != 64:
+            return {"state": "release_building", "error": {}}
+
+        # The public release downloads are the client contract. Verify them
+        # directly instead of depending on GitHub's rate-limited REST API;
+        # SSH-only Admin installations intentionally have no API token.
+        release_root = (
+            f"https://github.com/{self.repository}/releases/download/global-{release_id}"
         )
-        asset_names = {str(item.get("name") or "") for item in release.get("assets") or []}
+        try:
+            manifest_response = httpx.get(
+                f"{release_root}/manifest.json", timeout=20, follow_redirects=True
+            )
+            sums_response = httpx.get(
+                f"{release_root}/SHA256SUMS", timeout=20, follow_redirects=True
+            )
+            if manifest_response.status_code != 200 or sums_response.status_code != 200:
+                return {"state": "release_building", "error": {}}
+            release_manifest = manifest_response.json()
+            sums = sums_response.text.splitlines()
+        except (ValueError, httpx.HTTPError):
+            return {"state": "release_building", "error": {}}
+
+        if not isinstance(release_manifest, dict):
+            return {"state": "release_building", "error": {}}
+        for key in ("release_id", "commit_sha", "content_digest", "snapshot_sha256"):
+            if str(release_manifest.get(key) or "") != str(latest.get(key) or ""):
+                return {"state": "release_building", "error": {}}
         snapshot_name = f"principia-global-{release_id}.pcg"
-        if not {snapshot_name, "manifest.json", "SHA256SUMS"}.issubset(asset_names):
+        if f"{snapshot_digest}  {snapshot_name}" not in sums:
             return {"state": "release_building", "error": {}}
         return {"state": "published", "release_id": release_id, "error": {}}
 

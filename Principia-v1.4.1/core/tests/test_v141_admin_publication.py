@@ -9,8 +9,9 @@ from principia.admin.github import GitHubPublicationAdapter
 class _Response:
     status_code = 200
 
-    def __init__(self, payload: dict[str, object]):
+    def __init__(self, payload: dict[str, object], *, text: str = ""):
         self._payload = payload
+        self.text = text
 
     def json(self) -> dict[str, object]:
         return self._payload
@@ -22,19 +23,19 @@ def test_followup_release_commit_completes_reviewed_publication(monkeypatch) -> 
     release_sha = "b" * 40
     release_id = "20260813-followup"
 
-    def status(path: str) -> dict[str, object]:
-        if path.endswith("/pulls/14"):
-            return {"merged": True, "merge_commit_sha": merge_sha}
-        assert path.endswith(f"/releases/tags/global-{release_id}")
-        return {
-            "assets": [
-                {"name": f"principia-global-{release_id}.pcg"},
-                {"name": "manifest.json"},
-                {"name": "SHA256SUMS"},
-            ]
-        }
-
-    monkeypatch.setattr(GitHubPublicationAdapter, "_status_request", lambda _self, path: status(path))
+    snapshot_sha = "c" * 64
+    latest = {
+        "verified": True,
+        "commit_sha": release_sha,
+        "content_digest": "d" * 64,
+        "snapshot_sha256": snapshot_sha,
+        "release_id": release_id,
+    }
+    monkeypatch.setattr(
+        GitHubPublicationAdapter,
+        "_status_request",
+        lambda _self, path: {"merged": True, "merge_commit_sha": merge_sha},
+    )
     monkeypatch.setattr(
         GitHubPublicationAdapter,
         "compare_commits",
@@ -44,13 +45,12 @@ def test_followup_release_commit_completes_reviewed_publication(monkeypatch) -> 
         github_module,
         "httpx",
         SimpleNamespace(
-            get=lambda *_args, **_kwargs: _Response(
-                {
-                    "verified": True,
-                    "commit_sha": release_sha,
-                    "release_id": release_id,
-                }
-            )
+            HTTPError=RuntimeError,
+            get=lambda url, *_args, **_kwargs: (
+                _Response(latest, text=f"{snapshot_sha}  principia-global-{release_id}.pcg\n")
+                if str(url).endswith("latest.json") or str(url).endswith("SHA256SUMS")
+                else _Response(latest)
+            ),
         ),
     )
 
@@ -76,6 +76,7 @@ def test_unrelated_verified_release_does_not_complete_publication(monkeypatch) -
         github_module,
         "httpx",
         SimpleNamespace(
+            HTTPError=RuntimeError,
             get=lambda *_args, **_kwargs: _Response(
                 {
                     "verified": True,
@@ -87,6 +88,42 @@ def test_unrelated_verified_release_does_not_complete_publication(monkeypatch) -
     )
 
     assert adapter.publication_status(pr_number=14)["state"] == "release_building"
+
+
+def test_exact_release_status_does_not_require_github_api(monkeypatch) -> None:
+    adapter = GitHubPublicationAdapter()
+    commit_sha = "e" * 40
+    release_id = "20260815-direct-controls"
+    snapshot_sha = "f" * 64
+    latest = {
+        "verified": True,
+        "commit_sha": commit_sha,
+        "content_digest": "a" * 64,
+        "snapshot_sha256": snapshot_sha,
+        "release_id": release_id,
+    }
+
+    def get(url: str, *_args, **_kwargs) -> _Response:
+        if url.endswith("SHA256SUMS"):
+            return _Response({}, text=f"{snapshot_sha}  principia-global-{release_id}.pcg\n")
+        return _Response(latest)
+
+    monkeypatch.setattr(
+        GitHubPublicationAdapter,
+        "_status_request",
+        lambda *_args, **_kwargs: (_ for _ in ()).throw(AssertionError("REST API used")),
+    )
+    monkeypatch.setattr(
+        github_module,
+        "httpx",
+        SimpleNamespace(HTTPError=RuntimeError, get=get),
+    )
+
+    assert adapter._verified_release_status(commit_sha) == {
+        "state": "published",
+        "release_id": release_id,
+        "error": {},
+    }
 
 
 def test_reviewed_branch_reports_one_failed_publication_run(monkeypatch) -> None:
