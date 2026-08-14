@@ -82,16 +82,18 @@ class GitHubPublicationAdapter:
         return None
 
     def _public_request(self, path: str) -> Any:
-        response = httpx.get(
-            "https://api.github.com" + path,
-            headers={
-                "Accept": "application/vnd.github+json",
-                "X-GitHub-Api-Version": "2022-11-28",
-                "User-Agent": "Principia/1.4.1 Global Cloud Publisher",
-            },
-            timeout=30,
-            follow_redirects=False,
-        )
+        # Public status polling bypasses ambient HTTP proxies. Shared proxy
+        # egress can exhaust GitHub's anonymous rate limit for unrelated users,
+        # while direct requests retain the machine's own allowance.
+        with httpx.Client(trust_env=False, timeout=30, follow_redirects=False) as client:
+            response = client.get(
+                "https://api.github.com" + path,
+                headers={
+                    "Accept": "application/vnd.github+json",
+                    "X-GitHub-Api-Version": "2022-11-28",
+                    "User-Agent": "Principia/1.4.1 Global Cloud Publisher",
+                },
+            )
         if response.status_code >= 400:
             raise GitHubPublicationError(
                 f"GitHub API rejected the status request ({response.status_code})"
@@ -269,19 +271,20 @@ class GitHubPublicationAdapter:
     ) -> dict[str, Any]:
         token = self._token()
         try:
-            response = httpx.request(
-                method,
-                "https://api.github.com" + path,
-                json=payload,
-                headers={
-                    "Accept": "application/vnd.github+json",
-                    "Authorization": f"Bearer {token}",
-                    "X-GitHub-Api-Version": "2022-11-28",
-                    "User-Agent": "Principia/1.4.1 Global Cloud Publisher",
-                },
-                timeout=30,
-                follow_redirects=False,
-            )
+            with httpx.Client(
+                trust_env=False, timeout=30, follow_redirects=False
+            ) as client:
+                response = client.request(
+                    method,
+                    "https://api.github.com" + path,
+                    json=payload,
+                    headers={
+                        "Accept": "application/vnd.github+json",
+                        "Authorization": f"Bearer {token}",
+                        "X-GitHub-Api-Version": "2022-11-28",
+                        "User-Agent": "Principia/1.4.1 Global Cloud Publisher",
+                    },
+                )
         finally:
             token = ""  # keep the credential out of durable state and exception payloads
         if response.status_code >= 400:
