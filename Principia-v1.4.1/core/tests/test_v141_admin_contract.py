@@ -7,7 +7,7 @@ from fastapi.testclient import TestClient
 
 from principia.api import app_for_testing
 from principia.application import AdminWorkspace
-from principia.cloud import AdminExtractRequest, AdminStagedItem
+from principia.cloud import AdminExtractRequest, AdminStagedItem, BulkStagingDecisionRequest
 from principia.domain import JobRecord
 
 
@@ -271,6 +271,119 @@ def test_same_reviewed_batch_reuses_one_publication_sync(tmp_path: Path) -> None
             assert conn.execute(
                 "SELECT COUNT(*) FROM admin_cloud_syncs WHERE campaign_id=?", (campaign_id,)
             ).fetchone()[0] == 1
+    finally:
+        product.close()
+
+
+def test_add_all_clear_excludes_ambiguous_and_allows_publication(tmp_path: Path) -> None:
+    product = AdminWorkspace.open(working_directory=tmp_path / "admin")
+    try:
+        service = product.admin_campaigns
+        assert service is not None
+        now = "2026-08-14T00:00:00Z"
+        campaign_id = "campaign:clear-with-ambiguous"
+        clear = AdminStagedItem(
+            stage_id="stage:clear",
+            campaign_id=campaign_id,
+            entity="work",
+            match_kind="new",
+            proposed={"work_id": "W-CLEAR", "title": "A clear paper"},
+        )
+        ambiguous = AdminStagedItem(
+            stage_id="stage:ambiguous",
+            campaign_id=campaign_id,
+            entity="work",
+            match_kind="ambiguous",
+            proposed={"work_id": "W-PROPOSED", "title": "A possible duplicate"},
+            current={"work_id": "W-CURRENT", "revision": 1, "title": "A possible duplicate"},
+        )
+        with product.repository.connect() as conn:
+            conn.execute(
+                "INSERT INTO admin_campaigns VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                (
+                    campaign_id, None, None, "review_ready", "clear review", 2,
+                    "release:base", "commit:base", "digest:base", "{}",
+                    '{"research_goal":"clear review"}', now, now,
+                ),
+            )
+            for item in (clear, ambiguous):
+                conn.execute(
+                    "INSERT INTO admin_staged_items VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    (
+                        item.stage_id, campaign_id, str(item.proposed["work_id"]), item.entity,
+                        item.match_kind, item.similarity, item.decision, 0, None, "",
+                        "content-digest", item.model_dump_json(), item.created_at,
+                        item.updated_at,
+                    ),
+                )
+
+        result = service.bulk_decide(
+            BulkStagingDecisionRequest(
+                stage_ids=[clear.stage_id, ambiguous.stage_id], decision="add"
+            )
+        )
+        assert result == {
+            "updated": [clear.stage_id],
+            "excluded_ambiguous": 1,
+            "skipped_ambiguous": [ambiguous.stage_id],
+        }
+        decisions = {item["stage_id"]: item for item in service.staging(campaign_id)}
+        assert decisions[clear.stage_id]["decision"] == "add"
+        assert decisions[ambiguous.stage_id]["decision"] == "skip"
+        assert decisions[ambiguous.stage_id]["ambiguous_confirmed"] is False
+
+        sync = service.create_sync(campaign_id, confirmation=f"SUBMIT {campaign_id}")
+        assert sync["state"] == "reviewed"
+    finally:
+        product.close()
+
+
+def test_publication_auto_excludes_undecided_ambiguous_from_old_ui(tmp_path: Path) -> None:
+    product = AdminWorkspace.open(working_directory=tmp_path / "admin")
+    try:
+        service = product.admin_campaigns
+        assert service is not None
+        now = "2026-08-14T00:00:00Z"
+        campaign_id = "campaign:old-ui"
+        clear = AdminStagedItem(
+            stage_id="stage:accepted",
+            campaign_id=campaign_id,
+            entity="work",
+            match_kind="new",
+            proposed={"work_id": "W-ACCEPTED", "title": "Accepted paper"},
+            decision="add",
+        )
+        ambiguous = AdminStagedItem(
+            stage_id="stage:left-behind",
+            campaign_id=campaign_id,
+            entity="work",
+            match_kind="ambiguous",
+            proposed={"work_id": "W-LEFT-BEHIND", "title": "Possible duplicate"},
+        )
+        with product.repository.connect() as conn:
+            conn.execute(
+                "INSERT INTO admin_campaigns VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                (
+                    campaign_id, None, None, "review_ready", "old browser", 2,
+                    "release:base", "commit:base", "digest:base", "{}",
+                    '{"research_goal":"old browser"}', now, now,
+                ),
+            )
+            for item in (clear, ambiguous):
+                conn.execute(
+                    "INSERT INTO admin_staged_items VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    (
+                        item.stage_id, campaign_id, str(item.proposed["work_id"]), item.entity,
+                        item.match_kind, item.similarity, item.decision, 0, None, "",
+                        "content-digest", item.model_dump_json(), item.created_at,
+                        item.updated_at,
+                    ),
+                )
+
+        sync = service.create_sync(campaign_id, confirmation=f"SUBMIT {campaign_id}")
+        assert sync["state"] == "reviewed"
+        rows = {item["stage_id"]: item for item in service.staging(campaign_id)}
+        assert rows[ambiguous.stage_id]["decision"] == "skip"
     finally:
         product.close()
 

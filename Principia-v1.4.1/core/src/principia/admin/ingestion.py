@@ -1056,7 +1056,11 @@ class AdminCampaignService:
             if not row:
                 raise KeyError(stage_id)
             item = AdminStagedItem.model_validate_json(row[0])
-            if item.match_kind == "ambiguous" and not request.confirmed_ambiguous:
+            if (
+                item.match_kind == "ambiguous"
+                and request.decision != "skip"
+                and not request.confirmed_ambiguous
+            ):
                 raise ValueError("ambiguous matches require individual confirmation")
             item.decision = request.decision
             item.ambiguous_confirmed = request.confirmed_ambiguous
@@ -1104,13 +1108,25 @@ class AdminCampaignService:
 
     def bulk_decide(self, request: BulkStagingDecisionRequest) -> dict[str, Any]:
         updated: list[str] = []
+        skipped_ambiguous: list[str] = []
         for stage_id in request.stage_ids:
             try:
                 item = self.decide(stage_id, StagingDecisionRequest(decision=request.decision))
                 updated.append(item["stage_id"])
-            except ValueError:
-                continue
-        return {"updated": updated, "excluded_ambiguous": len(request.stage_ids) - len(updated)}
+            except ValueError as exc:
+                if str(exc) != "ambiguous matches require individual confirmation":
+                    raise
+                # "Add all clear items" must leave the campaign publishable.
+                # An ambiguous match cannot be added without an individual
+                # decision, but excluding it is safe and does not claim that
+                # the Admin reviewed the possible match.
+                item = self.decide(stage_id, StagingDecisionRequest(decision="skip"))
+                skipped_ambiguous.append(item["stage_id"])
+        return {
+            "updated": updated,
+            "excluded_ambiguous": len(skipped_ambiguous),
+            "skipped_ambiguous": skipped_ambiguous,
+        }
 
     def pause(self, job_id: str) -> dict[str, Any]:
         control = self._controls.get(job_id)
@@ -1228,6 +1244,18 @@ class AdminCampaignService:
         if campaign is None:
             raise KeyError(campaign_id)
         items = self.staging(campaign_id)
+        # Ambiguous leftovers are deliberately excluded from this publication
+        # batch. This keeps "Add all clear items" useful even for old browser
+        # sessions that did not send ambiguous stage IDs to the bulk endpoint.
+        # Adding or updating an ambiguous item still requires an individual
+        # confirmation.
+        for item in items:
+            if item["match_kind"] == "ambiguous" and not item["decision"]:
+                self.decide(
+                    str(item["stage_id"]),
+                    StagingDecisionRequest(decision="skip"),
+                )
+        items = self.staging(campaign_id)
         # Old campaigns may predate automatic support-record decisions. Infer
         # only the mechanical Principle-Work links; Works and Principles still
         # require explicit Admin review.
@@ -1253,13 +1281,18 @@ class AdminCampaignService:
         if not items or any(not item["decision"] for item in items):
             raise ValueError("every staged item requires an explicit review decision")
         if any(
-            item["match_kind"] == "ambiguous" and not item["ambiguous_confirmed"] for item in items
+            item["match_kind"] == "ambiguous"
+            and item["decision"] != "skip"
+            and not item["ambiguous_confirmed"]
+            for item in items
         ):
             raise ValueError("ambiguous staged items require individual confirmation")
         expected = f"SUBMIT {campaign_id}"
         if confirmation != expected:
             raise ValueError(f"typed confirmation must equal {expected}")
         changes = [item for item in items if item["decision"] != "skip"]
+        if not changes:
+            raise ValueError("at least one reviewed change is required for publication")
         changeset_digest = canonical_sha256(changes)
         # Creating or reloading the Publish step must not submit the same
         # reviewed batch more than once. Reuse every non-abandoned durable
@@ -1398,6 +1431,14 @@ class AdminCampaignService:
             items, key=lambda value: (value.entity == "principle_work", value.stage_id)
         ):
             if item.decision == "skip":
+                # A clear new Principle may cite a Work whose metadata match was
+                # ambiguous and therefore excluded. Resolve that provenance to
+                # the pinned current Work without changing the Work record.
+                if item.entity == "work" and item.current:
+                    identity_map[str(item.proposed.get("work_id") or "")] = (
+                        str(item.current.get("work_id") or ""),
+                        int(item.current.get("revision") or 1),
+                    )
                 continue
             kind: RecordKind = {
                 "work": "works",
