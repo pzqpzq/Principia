@@ -118,6 +118,12 @@ _GOAL_STOPWORDS = {
 
 def _goal_terms(value: str) -> set[str]:
     normalized = value.casefold()
+    # Preserve short scientific acronyms before the generic length filter.
+    # Without this expansion, a goal such as "AI for Physics" contains only
+    # one usable term ("physics") and the old two-term overlap rule becomes
+    # mathematically impossible to satisfy.
+    normalized = re.sub(r"\bai\b", " artificial intelligence ai ", normalized)
+    normalized = re.sub(r"\bml\b", " machine learning ml ", normalized)
     normalized = re.sub(r"α\s*(?=pd[- ]?(?:1|l1))", "", normalized)
     normalized = re.sub(r"\bpd[- ]?l1\b", " pdl1 ", normalized)
     normalized = re.sub(r"\bpd[- ]?1\b", " pd1 ", normalized)
@@ -146,6 +152,22 @@ def _goal_profile(goal: str, argument_text: str) -> tuple[bool, bool, int]:
     goal_folded = goal.casefold()
     argument_folded = argument_text.casefold()
     profiles: list[tuple[re.Pattern[str], re.Pattern[str], int]] = [
+        (
+            re.compile(
+                r"(?=.*\b(?:ai|artificial intelligence|machine learning|ml)\b)"
+                r"(?=.*\bphysic(?:s|al)\b)",
+                re.DOTALL,
+            ),
+            re.compile(
+                r"(?=.*\b(?:ai|artificial intelligence|machine learning|deep learning|"
+                r"neural networks?|data[- ]driven|foundation models?)\b)"
+                r"(?=.*\b(?:physic(?:s|al)|quantum|particle|fluid|molecular|materials?|"
+                r"climate|weather|optical|geophysic(?:s|al)|astronom(?:y|ical)|"
+                r"cosmolog(?:y|ical))\b)",
+                re.DOTALL,
+            ),
+            1,
+        ),
         (
             re.compile(r"\bhilbert(?:'s|s)?\s+sixth\s+problem\b"),
             re.compile(
@@ -260,8 +282,9 @@ class ScientificQualityGate:
         goal_terms = _goal_terms(goal)
         argument_terms = _goal_terms(argument_text)
         _, missing_goal_anchor, minimum_goal_overlap = _goal_profile(goal, argument_text)
+        required_overlap = min(minimum_goal_overlap, len(goal_terms))
         if goal_terms and (
-            len(goal_terms.intersection(argument_terms)) < minimum_goal_overlap
+            len(goal_terms.intersection(argument_terms)) < required_overlap
             or missing_goal_anchor
         ):
             reasons.append(QualityReason.OFF_GOAL)

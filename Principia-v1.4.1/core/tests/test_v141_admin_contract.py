@@ -43,6 +43,61 @@ def test_admin_extract_requires_four_for_new_run(tmp_path: Path) -> None:
         app.close()
 
 
+def test_admin_selection_rejects_metadata_only_papers(tmp_path: Path) -> None:
+    app = AdminWorkspace.open(working_directory=tmp_path / "admin")
+    try:
+        service = app.admin_campaigns
+        assert service is not None
+        now = "2026-08-14T00:00:00Z"
+        with app.repository.connect() as conn:
+            conn.execute(
+                "INSERT INTO admin_campaigns VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                ("campaign:metadata-only", None, None, "discovery_ready", "AI for Physics", 1,
+                 "", "", "", "{}", '{"research_goal":"AI for Physics"}', now, now),
+            )
+            conn.execute(
+                "INSERT INTO admin_campaign_works VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                ("campaign:metadata-only", "work:metadata-only", 0, 0, "discovered",
+                 "unknown", "", None, "", "new",
+                 '{"title":"Abstract-only AI policy paper"}', "{}", None, ""),
+            )
+        with pytest.raises(ValueError, match="full-text-only"):
+            service.select("campaign:metadata-only", ["work:metadata-only"])
+    finally:
+        app.close()
+
+
+def test_admin_work_staging_is_idempotent_for_retry(tmp_path: Path) -> None:
+    app = AdminWorkspace.open(working_directory=tmp_path / "admin")
+    try:
+        service = app.admin_campaigns
+        assert service is not None
+        now = "2026-08-14T00:00:00Z"
+        with app.repository.connect() as conn:
+            conn.execute(
+                "INSERT INTO admin_campaigns VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                ("campaign:retry", None, None, "review_ready", "AI for Physics", 1,
+                 "", "", "", "{}", '{"research_goal":"AI for Physics"}', now, now),
+            )
+        first = service._stage(
+            "campaign:retry", "W-RETRY", "work",
+            {"work_id": "W-RETRY", "revision": 1, "title": "AI for Physics"},
+        )
+        second = service._stage(
+            "campaign:retry", "W-RETRY", "work",
+            {"work_id": "W-RETRY", "revision": 1, "title": "AI for Physics updated"},
+        )
+        assert second.stage_id == first.stage_id
+        with app.repository.connect() as conn:
+            count = conn.execute(
+                "SELECT COUNT(*) FROM admin_staged_items WHERE campaign_id=? AND work_id=?",
+                ("campaign:retry", "W-RETRY"),
+            ).fetchone()[0]
+        assert count == 1
+    finally:
+        app.close()
+
+
 def test_admin_extract_preflights_provider_before_creating_job(tmp_path: Path, monkeypatch) -> None:
     app = AdminWorkspace.open(working_directory=tmp_path / "admin")
     try:

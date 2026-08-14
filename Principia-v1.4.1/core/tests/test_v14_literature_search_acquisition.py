@@ -53,6 +53,22 @@ def test_goal_rerank_suppresses_generic_keyword_false_friends() -> None:
     assert ranked[0]["relevance_score"] > ranked[1]["relevance_score"]
 
 
+def test_ai_for_physics_rerank_requires_both_domain_anchors() -> None:
+    ranked = rank_literature_for_goal(
+        "AI for Physics",
+        [
+            {"work_id": "work:policy", "rank": 1, "retrieval_rank": 1,
+             "title": "Artificial intelligence policy for higher education",
+             "abstract": "A governance survey of classroom adoption."},
+            {"work_id": "work:physics", "rank": 8, "retrieval_rank": 8,
+             "title": "Physics-informed neural networks for turbulent flow",
+             "abstract": "Deep learning enforces conservation constraints in fluid simulations."},
+        ],
+    )
+    assert ranked[0]["work_id"] == "work:physics"
+    assert [item["work_id"] for item in ranked] == ["work:physics"]
+
+
 def test_semantic_retrieval_order_is_not_overridden_by_exact_title_stuffing() -> None:
     ranked = rank_literature_for_goal(
         "how does multi-agent systems improve autonomous scientific discovery",

@@ -382,6 +382,23 @@ class AdminCampaignService:
                 )
                 if found != len(set(work_ids)):
                     raise ValueError("selection contains an unknown campaign Work")
+                unavailable = conn.execute(
+                    f"SELECT metadata_json, availability_status FROM admin_campaign_works "
+                    f"WHERE campaign_id=? AND work_id IN ({placeholders}) "
+                    "AND availability_status!='available' ORDER BY rank",
+                    (campaign_id, *work_ids),
+                ).fetchall()
+                if unavailable:
+                    titles = [
+                        str(json.loads(row["metadata_json"]).get("title") or "Untitled paper")
+                        for row in unavailable[:3]
+                    ]
+                    suffix = "" if len(unavailable) <= 3 else f" and {len(unavailable) - 3} more"
+                    raise ValueError(
+                        "Admin extraction is full-text-only. Remove metadata-only papers: "
+                        + "; ".join(titles)
+                        + suffix
+                    )
                 conn.execute(
                     f"UPDATE admin_campaign_works SET selected=1 WHERE campaign_id=? AND work_id IN ({placeholders})",
                     (campaign_id, *work_ids),
@@ -394,7 +411,8 @@ class AdminCampaignService:
             raise KeyError(campaign_id)
         with self.repository.connect() as conn:
             rows = conn.execute(
-                "SELECT work_id FROM admin_campaign_works WHERE campaign_id=? AND selected=1 "
+                "SELECT work_id, availability_status FROM admin_campaign_works "
+                "WHERE campaign_id=? AND selected=1 "
                 "AND state NOT IN ('staged') ORDER BY rank",
                 (campaign_id,),
             ).fetchall()
@@ -403,6 +421,12 @@ class AdminCampaignService:
             raise ValueError("a new Admin extraction requires at least four selected papers")
         if not work_ids:
             raise ValueError("no selected papers remain to extract")
+        metadata_only = [str(row[0]) for row in rows if str(row[1]) != "available"]
+        if metadata_only:
+            raise ValueError(
+                f"{len(metadata_only)} selected paper(s) have no verified full text. "
+                "Clear them before extraction; abstracts are never used as a fallback."
+            )
         if not request.egress_confirmed:
             raise ValueError("Admin LLM extraction requires explicit remote-egress confirmation")
         connection = self.local.test_provider_connection(campaign["provider_profile_id"])
@@ -716,6 +740,7 @@ class AdminCampaignService:
             decisions = {item.argument_index: item for item in challenges.decisions}
             self._set_unit(job_id, unit_id, work_id, "validating", campaign_id)
             valid = []
+            quality_reason_counts: dict[str, int] = {}
             for index, argument in enumerate(arguments.arguments):
                 reasons = gate.validate_argument(
                     argument,
@@ -724,6 +749,17 @@ class AdminCampaignService:
                     goal=(self._campaign_row(campaign_id) or {})["research_goal"],
                 )
                 decision = decisions.get(index)
+                for reason in reasons:
+                    key = reason.value
+                    quality_reason_counts[key] = quality_reason_counts.get(key, 0) + 1
+                if decision is None:
+                    quality_reason_counts["challenge_missing"] = (
+                        quality_reason_counts.get("challenge_missing", 0) + 1
+                    )
+                elif decision.verdict != "supported":
+                    for reason in decision.reason_codes:
+                        key = f"challenge:{reason.value}"
+                        quality_reason_counts[key] = quality_reason_counts.get(key, 0) + 1
                 if not reasons and decision and decision.verdict == "supported":
                     valid.append(argument)
             self._set_unit(job_id, unit_id, work_id, "staging", campaign_id)
@@ -745,7 +781,8 @@ class AdminCampaignService:
             work_record["content_digest"] = canonical_sha256(
                 {key: value for key, value in work_record.items() if key != "content_digest"}
             )
-            self._stage(campaign_id, work_id, "work", work_record)
+            if valid:
+                self._stage(campaign_id, work_id, "work", work_record)
             for argument in valid:
                 selected_atoms = [atom for atom in atoms if atom.atom_id in argument.atom_ids]
                 proposal = PrincipleRevision(
@@ -807,6 +844,24 @@ class AdminCampaignService:
                     self._stage(campaign_id, work_id, "principle_work", link)
             if not valid:
                 state = "validation_quarantined"
+                with self.repository.connect() as conn:
+                    # A paper with no eligible Principle is not a publishable
+                    # addition. Remove an undecided Work left by an older
+                    # attempt while retaining any reviewed history.
+                    conn.execute(
+                        "DELETE FROM admin_staged_items WHERE campaign_id=? AND work_id=? "
+                        "AND decision=''",
+                        (campaign_id, work_id),
+                    )
+                error = {
+                    "category": "quality_quarantined",
+                    "message": (
+                        "The LLM completed, but no extracted Principle passed the "
+                        "scientific evidence checks."
+                    ),
+                    "reason_counts": quality_reason_counts,
+                    "retryable": True,
+                }
             else:
                 state = "staged"
                 self._set_unit(
@@ -1005,8 +1060,18 @@ class AdminCampaignService:
         else:
             match = {"kind": "new", "match": None, "reason": "provenance_link", "similarity": 0.0}
         current = match.get("match") or {}
+        existing: AdminStagedItem | None = None
+        if entity == "work":
+            with self.repository.connect() as conn:
+                row = conn.execute(
+                    "SELECT payload_json FROM admin_staged_items WHERE campaign_id=? "
+                    "AND work_id=? AND entity='work' AND decision='' ORDER BY stage_id LIMIT 1",
+                    (campaign_id, work_id),
+                ).fetchone()
+            if row:
+                existing = AdminStagedItem.model_validate_json(row[0])
         item = AdminStagedItem(
-            stage_id=f"stage:{monotonic_ulid()}",
+            stage_id=existing.stage_id if existing else f"stage:{monotonic_ulid()}",
             campaign_id=campaign_id,
             entity=entity,
             proposed=proposed,
@@ -1017,10 +1082,15 @@ class AdminCampaignService:
             similarity=float(match.get("similarity") or 0),
             expected_revision=current.get("revision"),
             expected_digest=current.get("content_digest") or "",
+            created_at=existing.created_at if existing else utc_now(),
         )
         with self.repository.connect() as conn:
             conn.execute(
-                "INSERT INTO admin_staged_items VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                "INSERT INTO admin_staged_items VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?) "
+                "ON CONFLICT(stage_id) DO UPDATE SET match_kind=excluded.match_kind, "
+                "similarity=excluded.similarity, expected_revision=excluded.expected_revision, "
+                "expected_digest=excluded.expected_digest, content_digest=excluded.content_digest, "
+                "payload_json=excluded.payload_json, updated_at=excluded.updated_at",
                 (
                     item.stage_id,
                     campaign_id,

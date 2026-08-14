@@ -68,6 +68,21 @@ _RELEVANCE_WORD = re.compile(r"[a-z0-9]+", flags=re.IGNORECASE)
 _DOMAIN_RELEVANCE_PROFILES: list[tuple[re.Pattern[str], re.Pattern[str]]] = [
     (
         re.compile(
+            r"(?=.*\b(?:AI|artificial intelligence|machine learning|ML)\b)"
+            r"(?=.*\bphysic(?:s|al)\b)",
+            re.IGNORECASE | re.DOTALL,
+        ),
+        re.compile(
+            r"(?=.*\b(?:AI|artificial intelligence|machine learning|deep learning|"
+            r"neural networks?|data[- ]driven|foundation models?)\b)"
+            r"(?=.*\b(?:physic(?:s|al)|quantum|particle|fluid|molecular|materials?|"
+            r"climate|weather|optical|geophysic(?:s|al)|astronom(?:y|ical)|"
+            r"cosmolog(?:y|ical))\b)",
+            re.IGNORECASE | re.DOTALL,
+        ),
+    ),
+    (
+        re.compile(
             r"\bhilbert(?:'s|s)?\s+sixth\s+problem\b|"
             r"\bsixth\s+problem\s+of\s+hilbert\b",
             re.IGNORECASE,
@@ -145,6 +160,8 @@ def _domain_relevance(goal: str, item: dict[str, Any]) -> bool | None:
 
 
 def _relevance_terms(value: str) -> list[str]:
+    value = re.sub(r"\bai\b", " artificial intelligence ai ", value, flags=re.IGNORECASE)
+    value = re.sub(r"\bml\b", " machine learning ml ", value, flags=re.IGNORECASE)
     terms: list[str] = []
     for raw in _RELEVANCE_WORD.findall(value.casefold()):
         if len(raw) < 3 or raw in _RELEVANCE_STOPWORDS:
@@ -182,6 +199,15 @@ def rank_literature_for_goal(goal: str, items: list[dict[str, Any]]) -> list[dic
     source ranking as a stable tie-break while suppressing those false friends.
     """
 
+    # Broad scholarly providers frequently interpret the short query
+    # "AI for Physics" as either generic AI or generic physics.  For this
+    # recognized two-anchor goal, returning fewer genuinely relevant papers is
+    # safer than padding an Admin campaign with unrelated policy/education
+    # records that can never yield goal-relevant Principles.
+    ai_physics_goal = bool(_DOMAIN_RELEVANCE_PROFILES[0][0].search(goal))
+    if ai_physics_goal:
+        items = [item for item in items if _domain_relevance(goal, item) is True]
+
     goal_terms = set(_relevance_terms(goal))
     if not goal_terms or not items:
         return items
@@ -194,7 +220,7 @@ def rank_literature_for_goal(goal: str, items: list[dict[str, Any]]) -> list[dic
     }
     total = len(items)
 
-    hilbert_sixth_goal = bool(_DOMAIN_RELEVANCE_PROFILES[0][0].search(goal))
+    hilbert_sixth_goal = bool(_DOMAIN_RELEVANCE_PROFILES[1][0].search(goal))
 
     def score(item: dict[str, Any]) -> float:
         title_terms = set(_relevance_terms(str(item.get("title") or "")))
