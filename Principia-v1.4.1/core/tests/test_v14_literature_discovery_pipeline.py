@@ -58,6 +58,35 @@ def test_prompt_evidence_is_bounded_and_locator_precise() -> None:
     assert sum(len(item["text"]) for item in selected) <= 24_000
 
 
+def test_ai_for_physics_evidence_selection_preserves_both_goal_anchors() -> None:
+    ai_physics_evidence = (
+        "Artificial intelligence machine learning reduced conservation error "
+        "in the physics simulation."
+    )
+    selected = _select_evidence_segments(
+        [
+            {
+                "segment_id": "seg:generic",
+                "segment_key": "evidence:generic",
+                "section": "results",
+                "page_start": 1,
+                "text": "The physics experiment reports a conventional calibration result.",
+            },
+            {
+                "segment_id": "seg:ai-physics",
+                "segment_key": "evidence:ai-physics",
+                "section": "results",
+                "page_start": 2,
+                "text": ai_physics_evidence,
+            },
+        ],
+        "AI for Physics",
+        max_chars=len(ai_physics_evidence),
+    )
+    assert len(selected) == 1
+    assert selected[0]["segment_id"] == "seg:ai-physics"
+
+
 def test_source_driven_evidence_selection_balances_late_scientific_sections() -> None:
     segments = []
     for index, section in enumerate(

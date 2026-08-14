@@ -159,6 +159,19 @@ def _domain_relevance(goal: str, item: dict[str, Any]) -> bool | None:
     return None
 
 
+def goal_domain_relevance(goal: str, item: dict[str, Any]) -> bool:
+    """Return whether an item satisfies any recognized multi-anchor goal.
+
+    Unrecognized goals remain permissive; recognized profiles such as
+    ``AI for Physics`` must satisfy both sides of the domain contract.  Admin
+    uses this public wrapper to revalidate saved campaigns created by older
+    retrieval code before allowing extraction or retry.
+    """
+
+    decision = _domain_relevance(goal, item)
+    return decision is not False
+
+
 def _relevance_terms(value: str) -> list[str]:
     value = re.sub(r"\bai\b", " artificial intelligence ai ", value, flags=re.IGNORECASE)
     value = re.sub(r"\bml\b", " machine learning ml ", value, flags=re.IGNORECASE)

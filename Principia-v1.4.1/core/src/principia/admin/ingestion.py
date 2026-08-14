@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 import shutil
 import tempfile
 import threading
@@ -38,7 +39,12 @@ from ..domain import (
     monotonic_ulid,
     principle_id,
 )
-from ..local.literature import SafeLiteratureAcquirer, open_access_locations
+from ..local.literature import (
+    SafeLiteratureAcquirer,
+    goal_domain_relevance,
+    open_access_locations,
+)
+from ..local.literature_discovery import select_evidence_segments_for_goal
 from ..local.quality import ScientificQualityGate, stable_atom_id
 from ..models import WorkItem, utc_now
 from ..persistence import V14WorkspaceRepository
@@ -58,6 +64,35 @@ _TERMINAL_UNIT_STATES = {
     "cleanup_failed",
     "cancelled",
 }
+
+_AI_PHYSICS_AI = re.compile(
+    r"\b(?:ai|artificial intelligence|machine learning|ml)\b", re.IGNORECASE
+)
+_AI_PHYSICS_DOMAIN = re.compile(r"\bphysic(?:s|al)\b", re.IGNORECASE)
+
+
+def _admin_discovery_queries(goal: str, target_count: int) -> list[str]:
+    """Plan bounded scholarly queries without padding a precise goal with noise."""
+
+    queries = [goal]
+    if _AI_PHYSICS_AI.search(goal) and _AI_PHYSICS_DOMAIN.search(goal):
+        queries.extend(
+            [
+                "physics-informed machine learning",
+                "machine learning computational physics",
+                "machine learning quantum physics",
+                "machine learning particle physics",
+                "machine learning condensed matter physics",
+                "machine learning fluid physics simulation",
+                "machine learning plasma physics",
+                "machine learning astrophysics physical models",
+                "machine learning materials physics",
+            ]
+        )
+    minimum_rounds = max(1, min(400, (target_count + 49) // 50))
+    while len(queries) < minimum_rounds:
+        queries.append(f"{goal} research {len(queries) + 1}")
+    return list(dict.fromkeys(queries))
 
 
 def _diff(current: dict[str, Any], proposed: dict[str, Any]) -> dict[str, Any]:
@@ -166,25 +201,48 @@ class AdminCampaignService:
 
     def _discover(self, campaign_id: str, request: AdminCampaignRequest) -> None:
         gathered: dict[str, dict[str, Any]] = {}
-        rounds = max(1, min(400, (request.target_count + 49) // 50))
         degraded: list[str] = []
-        for round_index in range(rounds):
+        queries = _admin_discovery_queries(request.research_goal, request.target_count)
+        for query_index, query in enumerate(queries, start=1):
             if len(gathered) >= request.target_count:
                 break
-            query = (
-                request.research_goal
-                if round_index == 0
-                else f"{request.research_goal} research {round_index + 1}"
-            )
             try:
                 page = self.local.search_papers(query, target_count=50, timeout=120)
                 for item in page.get("results") or []:
-                    gathered.setdefault(str(item["work_id"]), item)
+                    if goal_domain_relevance(request.research_goal, item):
+                        gathered.setdefault(str(item["work_id"]), item)
             except Exception as exc:
                 degraded.append(type(exc).__name__)
-                if not gathered:
-                    continue
-        works = list(gathered.values())[: request.target_count]
+            with self.repository.connect() as conn:
+                row = conn.execute(
+                    "SELECT payload_json FROM admin_campaigns WHERE campaign_id=?",
+                    (campaign_id,),
+                ).fetchone()
+                if row:
+                    progress_payload = json.loads(row[0])
+                    progress_payload["discovery"] = {
+                        "state": "searching",
+                        "queries_completed": query_index,
+                        "query_count": len(queries),
+                        "result_count": len(gathered),
+                        "extractable_count": sum(
+                            bool(item.get("oa_locations")) for item in gathered.values()
+                        ),
+                        "degraded_sources": sorted(set(degraded)),
+                    }
+                    conn.execute(
+                        "UPDATE admin_campaigns SET payload_json=?, updated_at=? "
+                        "WHERE campaign_id=?",
+                        (json.dumps(progress_payload, sort_keys=True), utc_now(), campaign_id),
+                    )
+        works = sorted(
+            gathered.values(),
+            key=lambda item: (
+                0 if item.get("oa_locations") else 1,
+                int(item.get("rank") or 0),
+                str(item.get("work_id") or ""),
+            ),
+        )[: request.target_count]
         with self.repository.connect() as conn:
             for rank, work in enumerate(works, start=1):
                 proposed = self._work_revision(work)
@@ -219,6 +277,8 @@ class AdminCampaignService:
                 "state": "ready" if works and not degraded else "degraded" if works else "failed",
                 "result_count": len(works),
                 "degraded_sources": sorted(set(degraded)),
+                "query_count": len(queries),
+                "extractable_count": sum(bool(item.get("oa_locations")) for item in works),
             }
             state = "discovery_degraded" if degraded else "discovery_ready"
             if not works:
@@ -349,24 +409,28 @@ class AdminCampaignService:
                 f"SELECT * FROM admin_campaign_works WHERE {where} ORDER BY rank, work_id LIMIT ? OFFSET ?",
                 (*values, max(1, min(limit, 200)), max(0, offset)),
             ).fetchall()
-        return {
-            "items": [
+        campaign = self._campaign_row(campaign_id) or {}
+        goal = str(campaign.get("research_goal") or "")
+        items: list[dict[str, Any]] = []
+        for row in rows:
+            metadata = json.loads(row["metadata_json"])
+            items.append(
                 {
-                    **json.loads(row["metadata_json"]),
+                    **metadata,
                     "selected": bool(row["selected"]),
                     "state": row["state"],
                     "error": json.loads(row["error_json"]) if row["error_json"] else None,
                     "availability_status": row["availability_status"],
+                    "goal_relevant": goal_domain_relevance(goal, metadata),
                     "cloud_presence": row["match_kind"],
                     "cloud_match_id": row["cloud_match_id"],
                 }
-                for row in rows
-            ],
-            "total": total,
-        }
+            )
+        return {"items": items, "total": total}
 
     def select(self, campaign_id: str, work_ids: list[str]) -> dict[str, Any]:
-        if self._campaign_row(campaign_id) is None:
+        campaign = self._campaign_row(campaign_id)
+        if campaign is None:
             raise KeyError(campaign_id)
         with self.repository.connect() as conn:
             conn.execute(
@@ -399,6 +463,25 @@ class AdminCampaignService:
                         + "; ".join(titles)
                         + suffix
                     )
+                requested = conn.execute(
+                    f"SELECT metadata_json FROM admin_campaign_works WHERE campaign_id=? "
+                    f"AND work_id IN ({placeholders}) ORDER BY rank",
+                    (campaign_id, *work_ids),
+                ).fetchall()
+                off_goal = [
+                    json.loads(row["metadata_json"])
+                    for row in requested
+                    if not goal_domain_relevance(
+                        str(campaign.get("research_goal") or ""),
+                        json.loads(row["metadata_json"]),
+                    )
+                ]
+                if off_goal:
+                    titles = [str(item.get("title") or "Untitled paper") for item in off_goal[:3]]
+                    raise ValueError(
+                        "Remove papers that do not satisfy both sides of the research goal: "
+                        + "; ".join(titles)
+                    )
                 conn.execute(
                     f"UPDATE admin_campaign_works SET selected=1 WHERE campaign_id=? AND work_id IN ({placeholders})",
                     (campaign_id, *work_ids),
@@ -411,7 +494,7 @@ class AdminCampaignService:
             raise KeyError(campaign_id)
         with self.repository.connect() as conn:
             rows = conn.execute(
-                "SELECT work_id, availability_status FROM admin_campaign_works "
+                "SELECT work_id, availability_status, metadata_json FROM admin_campaign_works "
                 "WHERE campaign_id=? AND selected=1 "
                 "AND state NOT IN ('staged') ORDER BY rank",
                 (campaign_id,),
@@ -426,6 +509,18 @@ class AdminCampaignService:
             raise ValueError(
                 f"{len(metadata_only)} selected paper(s) have no verified full text. "
                 "Clear them before extraction; abstracts are never used as a fallback."
+            )
+        off_goal = [
+            str(row[0])
+            for row in rows
+            if not goal_domain_relevance(
+                str(campaign.get("research_goal") or ""), json.loads(row[2])
+            )
+        ]
+        if off_goal:
+            raise ValueError(
+                f"{len(off_goal)} selected paper(s) are not relevant to both sides of the "
+                "research goal. Refresh discovery before extracting."
             )
         if not request.egress_confirmed:
             raise ValueError("Admin LLM extraction requires explicit remote-egress confirmation")
@@ -678,7 +773,7 @@ class AdminCampaignService:
             os.chmod(raw_path, 0o600)
             os.chmod(text_path, 0o600)
             self._set_unit(job_id, unit_id, work_id, "parsing", campaign_id)
-            segments = [
+            all_segments = [
                 {
                     "segment_key": f"{work_id}:page:{page.get('page') or index}",
                     "section": page.get("section") or "page",
@@ -687,14 +782,20 @@ class AdminCampaignService:
                 }
                 for index, page in enumerate(acquired["pages"], start=1)
             ]
+            goal = str((self._campaign_row(campaign_id) or {})["research_goal"])
+            segments = select_evidence_segments_for_goal(all_segments, goal)
+            if not segments:
+                raise ValueError("the acquired full text contained no extractable evidence")
             phase = "provider"
-            # Four-wide Admin extraction can legitimately take longer than the
-            # lightweight connection probe while the model emits typed JSON.
+            # Admin papers run four-wide and structured scientific responses can
+            # legitimately take longer than the lightweight connection probe.
+            # Keep the bounded retry policy but avoid abandoning a healthy model
+            # while it is still producing its JSON response.
             provider = OpenAICompatibleProvider(policy, api_key=api_key, timeout=180)
             self._set_unit(job_id, unit_id, work_id, "extracting", campaign_id)
             atoms_result = provider.extract_evidence_atoms(
                 area="general",
-                goal=(self._campaign_row(campaign_id) or {})["research_goal"],
+                goal=goal,
                 source_records=[
                     {"source_key": "source:0", "work_id": work_id, "title": work.title}
                 ],
@@ -723,21 +824,25 @@ class AdminCampaignService:
             atoms = [atom for atom in atoms if atom.atom_id not in failures]
             arguments_result = provider.normalize_scientific_arguments(
                 area="general",
-                goal=(self._campaign_row(campaign_id) or {})["research_goal"],
+                goal=goal,
                 atoms=[atom.model_dump(mode="json") for atom in atoms],
             )
             self._record_provider_trace(job_id, unit_id, arguments_result.trace)
             arguments = ScientificArgumentBatch.model_validate(arguments_result.value)
-            self._set_unit(job_id, unit_id, work_id, "challenging", campaign_id)
-            challenge_result = provider.challenge_scientific_arguments(
-                area="general",
-                goal=(self._campaign_row(campaign_id) or {})["research_goal"],
-                atoms=[atom.model_dump(mode="json") for atom in atoms],
-                arguments=[argument.model_dump(mode="json") for argument in arguments.arguments],
-            )
-            self._record_provider_trace(job_id, unit_id, challenge_result.trace)
-            challenges = ChallengeDecisionBatch.model_validate(challenge_result.value)
-            decisions = {item.argument_index: item for item in challenges.decisions}
+            decisions = {}
+            if arguments.arguments:
+                self._set_unit(job_id, unit_id, work_id, "challenging", campaign_id)
+                challenge_result = provider.challenge_scientific_arguments(
+                    area="general",
+                    goal=goal,
+                    atoms=[atom.model_dump(mode="json") for atom in atoms],
+                    arguments=[
+                        argument.model_dump(mode="json") for argument in arguments.arguments
+                    ],
+                )
+                self._record_provider_trace(job_id, unit_id, challenge_result.trace)
+                challenges = ChallengeDecisionBatch.model_validate(challenge_result.value)
+                decisions = {item.argument_index: item for item in challenges.decisions}
             self._set_unit(job_id, unit_id, work_id, "validating", campaign_id)
             valid = []
             quality_reason_counts: dict[str, int] = {}
@@ -746,7 +851,7 @@ class AdminCampaignService:
                     argument,
                     atoms=atoms,
                     independent_work_ids={work_id},
-                    goal=(self._campaign_row(campaign_id) or {})["research_goal"],
+                    goal=goal,
                 )
                 decision = decisions.get(index)
                 for reason in reasons:
@@ -844,6 +949,8 @@ class AdminCampaignService:
                     self._stage(campaign_id, work_id, "principle_work", link)
             if not valid:
                 state = "validation_quarantined"
+                if not arguments.arguments:
+                    quality_reason_counts["no_reusable_scientific_argument"] = 1
                 with self.repository.connect() as conn:
                     # A paper with no eligible Principle is not a publishable
                     # addition. Remove an undecided Work left by an older
@@ -860,7 +967,7 @@ class AdminCampaignService:
                         "scientific evidence checks."
                     ),
                     "reason_counts": quality_reason_counts,
-                    "retryable": True,
+                    "retryable": False,
                 }
             else:
                 state = "staged"
@@ -1364,9 +1471,8 @@ class AdminCampaignService:
         if not changes:
             raise ValueError("at least one reviewed change is required for publication")
         changeset_digest = canonical_sha256(changes)
-        # Creating or reloading the Publish step must not submit the same
-        # reviewed batch more than once. Reuse every non-abandoned durable
-        # sync for the same campaign and exact reviewed content.
+        # A double click, reload, or delayed GitHub response must reuse the
+        # same reviewed batch instead of creating another branch and run.
         with self.repository.connect() as conn:
             existing_rows = conn.execute(
                 "SELECT payload_json FROM admin_cloud_syncs WHERE campaign_id=? "
@@ -1460,9 +1566,9 @@ class AdminCampaignService:
                 files=files,
                 message=f"Global Cloud reviewed sync {sync.sync_id}",
             )
-        # The repository workflow validates this single reviewed batch,
-        # advances main, builds the verified release and updates the control
-        # asset. The user never has to create or merge a PR.
+        # One repository workflow validates this batch, advances main, builds
+        # the release, and verifies its control asset. No PR or merge click is
+        # required from the Admin.
         sync.submitted_commit_sha = str(result["commit_sha"])
         sync.state = "checks_running"
         sync.pr_url = (

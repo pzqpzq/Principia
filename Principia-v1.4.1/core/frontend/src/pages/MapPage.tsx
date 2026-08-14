@@ -49,6 +49,22 @@ function listValue(value: unknown): unknown[] {
   return Array.isArray(value) ? value : [];
 }
 
+function publicPaperUrl(value: ObjectValue): string {
+  for (const candidate of [value.source_url, value.landing_url, value.url, ...listValue(value.source_urls)]) {
+    const url = textValue(candidate).trim();
+    if (url.startsWith("https://")) return url;
+  }
+  const doi = textValue(value.doi).trim();
+  if (doi) return `https://doi.org/${doi}`;
+  const arxiv = textValue(value.arxiv_id).trim();
+  if (arxiv) return `https://arxiv.org/abs/${arxiv}`;
+  const pmid = textValue(value.pmid).trim();
+  if (pmid) return `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`;
+  const pmcid = textValue(value.pmcid).trim();
+  if (pmcid) return `https://www.ncbi.nlm.nih.gov/pmc/articles/${pmcid}/`;
+  return "";
+}
+
 function countMap(value: unknown): { [key: string]: number } {
   const record = objectValue(value);
   return Object.fromEntries(Object.entries(record).map(([key, count]) => [key, Number(count) || 0]));
@@ -484,7 +500,7 @@ export function MapPage() {
         <section><h3>Boundary</h3><p>{listValue(argument.boundary).map(String).join("; ") || listValue(detailValue.boundary).map(String).join("; ") || "The reported boundary has not been projected into this view."}</p></section>
         <section><h3>How it can be tested</h3><p>{textValue(argument.testability, textValue(detailValue.testability, textValue(detailValue.falsifier, "Human review is required to define a test.")))}</p></section>
         <section><h3>Validated relations</h3>{relations.isLoading ? <LoadingState label="Reading validated relations…" /> : relationRows.length ? <ul className="relation-list">{relationRows.map((relation) => <li key={relation.relation_id}><button onClick={() => updateParams({ selected: relation.related_principle_id })}><span>{relation.orientation === "incoming" ? "Incoming" : "Outgoing"} · {relation.relation_type.replaceAll("_", " ")}</span><strong>{relation.related_title}</strong></button><span>{relation.rationale}</span></li>)}</ul> : <p>No validated scientific relation is available. Proposed or shared-paper links are intentionally excluded.</p>}</section>
-        <section><h3>Paper evidence</h3>{evidence.length ? <div className="evidence-cards">{evidence.map((item, index) => { const sourceUrl = textValue(item.source_url, textValue(item.url)); const quotation = textValue(item.quotation, textValue(item.excerpt)); return <article key={textValue(item.evidence_id, textValue(item.work_id, String(index)))}><strong>{textValue(item.work_title, textValue(item.title, "Supporting paper"))}</strong><small>{textValue(item.section)}{item.page_start ? ` · page ${String(item.page_start)}` : ""}</small>{quotation ? <blockquote>{quotation}</blockquote> : <p>Source text is not included in this portable package. The public paper link remains available.</p>}{sourceUrl ? <a href={sourceUrl} target="_blank" rel="noreferrer">Open source paper ↗</a> : <span>Public paper link unavailable</span>}</article>; })}</div> : <p>No public paper reference is projected for this Principle.</p>}</section>
+        <section><h3>Paper evidence</h3>{evidence.length ? <div className="evidence-cards">{evidence.map((item, index) => { const sourceUrl = publicPaperUrl(item); const quotation = textValue(item.quotation, textValue(item.excerpt)); return <article key={textValue(item.evidence_id, textValue(item.work_id, String(index)))}><strong>{textValue(item.work_title, textValue(item.title, "Supporting paper"))}</strong><small>{textValue(item.section)}{item.page_start ? ` · page ${String(item.page_start)}` : ""}</small>{quotation ? <blockquote>{quotation}</blockquote> : <p>Source text is not included in this portable package. The public paper link remains available.</p>}{sourceUrl ? <a href={sourceUrl} target="_blank" rel="noreferrer">Open source paper ↗</a> : <span>Public paper link unavailable</span>}</article>; })}</div> : <p>No public paper reference is projected for this Principle.</p>}</section>
         <details className="technical-record"><summary>Technical record</summary><pre>{JSON.stringify({ detail: detailValue, relations: relationRows, metric_revision: selectedCard?.metric_revision }, null, 2)}</pre></details>
         {selectedCard?.source === "local" ? <section className="principle-management"><h3>Manage this Principle</h3><p>Rename changes only the display title. Archiving hides the Principle without deleting its evidence or audit history.</p>{editingTitle ? <form onSubmit={(event) => { event.preventDefault(); editPrinciple.mutate(); }}><input autoFocus value={editingTitle} onChange={(event) => setEditingTitle(event.target.value)} /><button className="primary" disabled={editingTitle.trim().length < 3}>Save title</button><button type="button" onClick={() => setEditingTitle("")}>Cancel</button></form> : <div><button onClick={() => setEditingTitle(textValue(detailValue.title, selectedCard.title))}>Rename</button>{selectedCard.evidence_status === "archived" ? <button onClick={() => restorePrinciple.mutate()}>Restore</button> : <button onClick={() => { if (window.confirm("Archive this Principle? Its evidence and audit history will be preserved.")) archivePrinciple.mutate(); }}>Archive</button>}</div>}{editPrinciple.isError || archivePrinciple.isError || restorePrinciple.isError ? <ErrorState error={editPrinciple.error ?? archivePrinciple.error ?? restorePrinciple.error} /> : null}</section> : null}
         <div className="drawer-actions"><button onClick={() => downloadJson(`principia-${selectedId}`, detail.data)}>Export record</button><button className="primary" onClick={() => updateParams({ selected: null })}>Back to cards</button></div>

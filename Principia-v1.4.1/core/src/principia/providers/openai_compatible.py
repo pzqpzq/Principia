@@ -430,9 +430,14 @@ class OpenAICompatibleProvider:
                         "text": span,
                     }
                 )
+        normalized_goal = goal.casefold()
+        normalized_goal = re.sub(
+            r"\bai\b", " artificial intelligence machine learning ", normalized_goal
+        )
+        normalized_goal = re.sub(r"\bml\b", " machine learning ", normalized_goal)
         goal_tokens = {
             token
-            for token in re.findall(r"[a-z][a-z0-9-]+", goal.casefold())
+            for token in re.findall(r"[a-z][a-z0-9-]+", normalized_goal)
             if len(token) >= 4
             and token
             not in {

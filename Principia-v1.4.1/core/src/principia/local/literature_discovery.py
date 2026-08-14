@@ -73,6 +73,11 @@ _GENERIC_CLAIM_PATTERNS = (
     r"\b(?:can|may) (?:help|improve|enable|support) (?:better|more)\b",
 )
 
+_EVIDENCE_GOAL_STOPWORDS = {
+    "and", "are", "does", "for", "from", "how", "into", "the", "their",
+    "through", "under", "what", "when", "where", "which", "with",
+}
+
 
 def _quality_terms(value: str) -> set[str]:
     output: set[str] = set()
@@ -978,7 +983,14 @@ def _select_evidence_segments(
                 )
                 chunk_index += 1
             cursor = max(end, cursor + 1)
-    goal_terms = set(_WORD_RE.findall(goal.casefold()))
+    normalized_goal = goal.casefold()
+    normalized_goal = re.sub(r"\bai\b", " artificial intelligence machine learning ", normalized_goal)
+    normalized_goal = re.sub(r"\bml\b", " machine learning ", normalized_goal)
+    goal_terms = {
+        token
+        for token in _WORD_RE.findall(normalized_goal)
+        if len(token) >= 3 and token not in _EVIDENCE_GOAL_STOPWORDS
+    }
     if goal_terms:
         ranked = sorted(
             prompt_segments,
@@ -1031,6 +1043,14 @@ def _select_evidence_segments(
             output.append(projected)
             used += len(projected["text"])
     return sorted(output, key=lambda item: item["segment_key"])
+
+
+def select_evidence_segments_for_goal(
+    segments: list[dict[str, Any]], goal: str, *, max_chars: int = 24_000
+) -> list[dict[str, Any]]:
+    """Public bounded evidence selector shared by Local and Admin extraction."""
+
+    return _select_evidence_segments(segments, goal, max_chars=max_chars)
 
 
 def _section_bucket(section: str) -> str:

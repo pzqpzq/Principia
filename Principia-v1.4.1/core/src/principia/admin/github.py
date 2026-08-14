@@ -217,8 +217,8 @@ class GitHubPublicationAdapter:
                     "error": {},
                 }
 
-        # Compatibility for batches submitted by v1.4.1 builds that still
-        # created a PR before the zero-touch workflow was installed.
+        # Compatibility for batches submitted by builds that still created a
+        # PR before the zero-touch workflow was installed.
         pulls = self._public_request(
             f"/repos/{self.repository}/pulls?state=all&head=pzqpzq:{branch}&per_page=10"
         )

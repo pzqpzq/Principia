@@ -89,7 +89,12 @@ def _decode_offset(cursor: str) -> int:
 
 
 def _public_work_url(work: dict[str, Any]) -> str:
-    """Project one durable public paper URL from a canonical Work record."""
+    """Project one durable public paper URL from a canonical Work record.
+
+    Canonical v1 Works use ``landing_url`` and ``source_urls`` while legacy
+    Explorer records used ``url``.  Keeping the projection here prevents UI
+    clients from having to understand every identifier representation.
+    """
 
     for key in ("source_url", "landing_url", "url"):
         value = str(work.get(key) or "").strip()
@@ -283,6 +288,9 @@ class GlobalCloudSnapshotStore:
             headers = {"Accept": "application/json"}
             active_before_request = self.active()
             cached_release_id = str(state.get("release_id") or "")
+            # An ETag is valid only for the snapshot generation recorded with
+            # it.  If another process/test changed the active pointer, fetch
+            # the control document again so the verified release is restored.
             if (
                 not force
                 and state.get("etag")
@@ -411,12 +419,10 @@ class GlobalCloudSnapshotStore:
         return conn
 
     def canonical_records(self) -> dict[RecordKind, list[dict[str, Any]]]:
-        """Return the complete canonical record set from the verified snapshot.
+        """Return canonical payloads from the active verified snapshot.
 
-        Admin publication must extend the release that was actually reviewed,
-        never the possibly stale JSON fixtures bundled with the application.
-        Historical revisions are retained because all four snapshot tables
-        store their canonical payloads verbatim.
+        Admin publication extends the release that was actually reviewed,
+        never a potentially stale JSON fixture bundled with the application.
         """
 
         tables: dict[RecordKind, str] = {
@@ -670,6 +676,10 @@ class GlobalCloudSnapshotStore:
             }
         if request.entity == "principle":
             return self._paper_first_principles(request, query_vector=query_vector)
+        # `all` is a single ranked result set, so its cursor must be applied
+        # after papers and Principles have been merged.  Applying the cursor
+        # independently to papers (and resetting it for Principles) duplicated
+        # rows on later pages and reported only the Principle subtotal.
         combined_limit = offset + request.limit
         paper_result = self.search(
             request.model_copy(

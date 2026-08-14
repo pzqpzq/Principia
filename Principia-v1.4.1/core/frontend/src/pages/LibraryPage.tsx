@@ -38,6 +38,8 @@ export function LibraryPage() {
   const selectionInitialized = useRef(false);
   const openedRun = useRef("");
   const [manualWorkingDirectory, setManualWorkingDirectory] = useState("");
+  const [manualSourcePath, setManualSourcePath] = useState("");
+  const [sourcePathOpen, setSourcePathOpen] = useState(false);
   const [researchGoal, setResearchGoal] = useState("");
   const [selectedSources, setSelectedSources] = useState<string[]>([]);
   const [includeGlobalCloud, setIncludeGlobalCloud] = useState(true);
@@ -158,6 +160,21 @@ export function LibraryPage() {
       queryClient.invalidateQueries({ queryKey: ["goal-run-sources"] });
     },
   });
+  const addFolderPath = useMutation({
+    mutationFn: async () => {
+      const source = record(dataOrThrow(await api.POST("/api/v1/local/sources", { body: { path: manualSourcePath.trim() } })));
+      const sourceId = text(source.source_id);
+      if (sourceId) await dataOrThrow(await api.POST("/api/v1/local/sources/{source_id}/indexes", { params: { path: { source_id: sourceId } } }));
+      return source;
+    },
+    onSuccess: (value) => {
+      const sourceId = text(value.source_id);
+      if (sourceId) setSelectedSources((current) => Array.from(new Set([...current, sourceId])));
+      setManualSourcePath("");
+      setSourcePathOpen(false);
+      queryClient.invalidateQueries({ queryKey: ["goal-run-sources"] });
+    },
+  });
   const saveCredential = useMutation({
     mutationFn: async () => dataOrThrow(await api.PUT("/api/v1/provider-profiles/{provider_id}/credential", { params: { path: { provider_id: "siliconflow" } }, body: { api_key: credential } })),
     onSuccess: () => {
@@ -206,7 +223,7 @@ export function LibraryPage() {
     ? `${String(cloud.work_count ?? 0)} papers · ${String(cloud.principle_count ?? 0)} Principles`
     : "Offline — Local search still works";
   const primaryError = workingDirectory.error ?? chooseWorkingDirectory.error ?? switchWorkingDirectory.error
-    ?? addFolders.error ?? saveCredential.error ?? startGoalRun.error ?? goalRun.error ?? cancelGoalRun.error
+    ?? addFolders.error ?? addFolderPath.error ?? saveCredential.error ?? startGoalRun.error ?? goalRun.error ?? cancelGoalRun.error
     ?? startOnlineSearch.error ?? onlineSearch.error ?? acquireOnline.error ?? onlineAcquisitionJob.error;
   const onlineRows = (Array.isArray(onlineSearch.data?.results) ? onlineSearch.data.results : []).map(record);
 
@@ -226,7 +243,8 @@ export function LibraryPage() {
     <main className="goal-composer" aria-labelledby="goal-composer-title">
       <section className="goal-step sources-step">
         <header><span>1</span><div><h2 id="goal-composer-title">Choose your knowledge</h2><p>Local folders are optional. Add several at once or search only the Cloud.</p></div></header>
-        <div className="source-actions"><button className="primary quiet" onClick={() => addFolders.mutate()} disabled={addFolders.isPending}>{addFolders.isPending ? "Choose folders in the system dialog…" : "+ Add local folders"}</button><button onClick={() => { setOnlineQuestion(researchGoal); setOnlineOpen(true); }}>Find papers online</button></div>
+        <div className="source-actions"><button className="primary quiet" onClick={() => addFolders.mutate()} disabled={addFolders.isPending}>{addFolders.isPending ? "Choosing folders…" : "+ Add local folders"}</button><button onClick={() => setSourcePathOpen((current) => !current)}>Use a folder path</button><button onClick={() => { setOnlineQuestion(researchGoal); setOnlineOpen(true); }}>Find papers online</button></div>
+        {sourcePathOpen ? <form className="source-path-entry" onSubmit={(event) => { event.preventDefault(); addFolderPath.mutate(); }}><label htmlFor="home-local-folder-path">Existing local folder path</label><div className="input-action"><input id="home-local-folder-path" value={manualSourcePath} onChange={(event) => setManualSourcePath(event.target.value)} placeholder="/absolute/path/to/papers" autoFocus /><button className="primary" disabled={!manualSourcePath.trim() || addFolderPath.isPending}>{addFolderPath.isPending ? "Connecting…" : "Connect folder"}</button><button type="button" onClick={() => { setSourcePathOpen(false); setManualSourcePath(""); }}>Cancel</button></div><small>The folder stays where it is. Principia indexes its papers into this working directory.</small></form> : null}
         {sourceRows.length ? <div className="source-chip-list">{sourceRows.map((source) => <label key={source.source_id} className={selectedSources.includes(source.source_id) ? "source-chip selected" : "source-chip"}><input type="checkbox" checked={selectedSources.includes(source.source_id)} onChange={(event) => toggleSource(source.source_id, event.target.checked)} /><span><strong>{source.display_name}</strong><small>{source.status === "indexing" ? "Indexing papers…" : source.status === "index_failed" ? "Indexing needs attention" : `${source.document_count} paper${source.document_count === 1 ? "" : "s"}`}</small></span></label>)}</div> : <p className="empty-inline">No local folders connected. That is fine — Global Cloud is on.</p>}
       </section>
 

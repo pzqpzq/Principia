@@ -5,6 +5,7 @@ from pathlib import Path
 import pytest
 from fastapi.testclient import TestClient
 
+from principia.admin.ingestion import _admin_discovery_queries
 from principia.api import app_for_testing
 from principia.application import AdminWorkspace
 from principia.cloud import AdminExtractRequest, AdminStagedItem, BulkStagingDecisionRequest
@@ -63,6 +64,46 @@ def test_admin_selection_rejects_metadata_only_papers(tmp_path: Path) -> None:
             )
         with pytest.raises(ValueError, match="full-text-only"):
             service.select("campaign:metadata-only", ["work:metadata-only"])
+    finally:
+        app.close()
+
+
+def test_ai_for_physics_admin_discovery_uses_focused_subfield_queries() -> None:
+    queries = _admin_discovery_queries("AI for Physics", 50)
+    assert len(queries) >= 8
+    assert "physics-informed machine learning" in queries
+    assert "machine learning quantum physics" in queries
+    assert "machine learning particle physics" in queries
+
+
+def test_admin_selection_rejects_available_but_off_goal_legacy_paper(tmp_path: Path) -> None:
+    app = AdminWorkspace.open(working_directory=tmp_path / "admin")
+    try:
+        service = app.admin_campaigns
+        assert service is not None
+        now = "2026-08-15T00:00:00Z"
+        with app.repository.connect() as conn:
+            conn.execute(
+                "INSERT INTO admin_campaigns VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                (
+                    "campaign:off-goal", None, None, "discovery_ready", "AI for Physics", 1,
+                    "", "", "", "{}", '{"research_goal":"AI for Physics"}', now, now,
+                ),
+            )
+            conn.execute(
+                "INSERT INTO admin_campaign_works VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                (
+                    "campaign:off-goal", "work:education", 0, 0, "discovered", "available",
+                    "", None, "", "new",
+                    '{"title":"AI tutoring in education","abstract":"Completion rates improved.",'
+                    '"oa_locations":[{"url":"https://example.org/paper.pdf"}]}',
+                    "{}", None, "",
+                ),
+            )
+        paper = service.papers("campaign:off-goal")["items"][0]
+        assert paper["goal_relevant"] is False
+        with pytest.raises(ValueError, match="both sides"):
+            service.select("campaign:off-goal", ["work:education"])
     finally:
         app.close()
 
