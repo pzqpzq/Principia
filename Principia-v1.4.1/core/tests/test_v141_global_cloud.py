@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import shutil
 import time
 from pathlib import Path
 
@@ -57,6 +58,31 @@ def test_full_snapshot_and_identity_delta_are_deterministic(tmp_path: Path) -> N
     assert verify_cloud_snapshot(applied).principle_count == len(
         CanonicalCloudRepository(canonical_root()).records("principles")
     )
+
+
+def test_changed_delta_is_logically_equal_to_its_full_snapshot(tmp_path: Path) -> None:
+    target_root = tmp_path / "canonical"
+    shutil.copytree(canonical_root(), target_root)
+    repository = CanonicalCloudRepository(target_root)
+    works = repository.records("works")
+    works[0] = {**works[0], "title": works[0]["title"] + " updated", "content_digest": ""}
+    repository.write_records("works", works)
+    base = tmp_path / "base.pcg"
+    target = tmp_path / "target.pcg"
+    delta = tmp_path / "changed.pcd"
+    applied = tmp_path / "applied.pcg"
+    build_cloud_snapshot(
+        canonical_root(), base, release_id="base", created_at="2026-08-13T00:00:00Z"
+    )
+    target_manifest = build_cloud_snapshot(
+        target_root, target, release_id="target", created_at="2026-08-14T00:00:00Z"
+    )
+    build_cloud_delta(base, target, delta)
+
+    applied_manifest = apply_cloud_delta(base, delta, applied)
+
+    assert applied_manifest.content_digest == target_manifest.content_digest
+    assert applied_manifest.work_count == target_manifest.work_count
 
 
 def test_verified_snapshot_exposes_complete_canonical_publication_baseline(

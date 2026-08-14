@@ -7,7 +7,12 @@ import argparse
 import json
 from pathlib import Path
 
-from principia.cloud.canonical import build_cloud_delta, build_cloud_snapshot, verify_cloud_snapshot
+from principia.cloud.canonical import (
+    apply_cloud_delta,
+    build_cloud_delta,
+    build_cloud_snapshot,
+    verify_cloud_snapshot,
+)
 from principia.domain.hashing import file_sha256
 
 
@@ -42,6 +47,11 @@ def main() -> None:
         previous = verify_cloud_snapshot(args.previous_snapshot)
         delta_path = output / f"principia-global-{previous.release_id}--{args.release_id}.pcd"
         delta = build_cloud_delta(args.previous_snapshot, snapshot, delta_path)
+        verification_path = output / ".delta-verification.pcg"
+        applied = apply_cloud_delta(args.previous_snapshot, delta_path, verification_path)
+        if applied.content_digest != manifest.content_digest:
+            raise ValueError("the generated delta is not logically equal to the full snapshot")
+        verification_path.unlink(missing_ok=True)
     release = {
         **manifest.model_dump(mode="json"),
         "snapshot_url": f"https://github.com/pzqpzq/Principia/releases/download/global-{args.release_id}/{snapshot.name}",

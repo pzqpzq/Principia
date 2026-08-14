@@ -357,10 +357,11 @@ class GlobalCloudSnapshotStore:
                     installation_source = self.downloads_dir / f"{release_id}.pcg.partial"
                     apply_cloud_delta(active_snapshot, temporary, installation_source)
                     active_snapshot.unlink(missing_ok=True)
-                    expected_full = str(latest.get("snapshot_sha256") or "")
-                    if expected_full and file_sha256(installation_source) != expected_full:
-                        raise ValueError("Global Cloud delta output digest mismatch")
-                    digest = expected_full
+                    # The locally rebuilt SQLite snapshot may differ bytewise
+                    # across SQLite versions while remaining logically equal.
+                    # `apply_cloud_delta` verifies the target logical digest;
+                    # installation then verifies this local archive's own hash.
+                    digest = file_sha256(installation_source)
                 outcome = self.install_snapshot(installation_source, expected_sha256=digest)
                 temporary.unlink(missing_ok=True)
                 if installation_source != temporary:

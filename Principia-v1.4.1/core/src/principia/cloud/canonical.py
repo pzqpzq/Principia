@@ -597,8 +597,11 @@ def apply_cloud_delta(base: str | Path, delta: str | Path, output: str | Path) -
         )
         if result.content_digest != manifest.target_content_digest:
             raise ValueError("Global Cloud delta produced the wrong logical digest")
-        if manifest.target_snapshot_sha256 and file_sha256(output) != manifest.target_snapshot_sha256:
-            raise ValueError("Global Cloud delta output differs from the published full snapshot")
+        # SQLite files are not byte-stable across SQLite versions/platforms,
+        # even when their schema, rows and logical digest are identical. The
+        # downloaded delta itself is hash-verified; the rebuilt snapshot is
+        # accepted only after schema, foreign keys, counts, vectors and the
+        # target logical content digest have all been verified above.
         return result
     finally:
         shutil.rmtree(temporary_root, ignore_errors=True)
