@@ -3828,7 +3828,7 @@ class V14WorkspaceRepository:
                     FROM relation_metric_revisions WHERE state='complete'
                 )
                 SELECT c.candidate_id, c.title, c.claim, c.area, c.updated_at,
-                       c.assessment_status, c.quality_state, c.source_count,
+                       c.assessment_status, c.quality_state, c.source_count, c.source_kind,
                        c.context_relevance, c.extraction_mode,
                        a.claim_class, a.generalization_level,
                        a.payload_json AS argument_json,

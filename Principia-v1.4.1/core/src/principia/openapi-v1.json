@@ -617,6 +617,24 @@
         "title": "DiscoveryRequest",
         "type": "object"
       },
+      "GeneratedVirtualPrinciple": {
+        "additionalProperties": false,
+        "properties": {
+          "proposal": {
+            "$ref": "#/components/schemas/VirtualPrincipleProposal"
+          },
+          "virtual_id": {
+            "title": "Virtual Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "virtual_id",
+          "proposal"
+        ],
+        "title": "GeneratedVirtualPrinciple",
+        "type": "object"
+      },
       "GenerationTrace": {
         "additionalProperties": false,
         "properties": {
@@ -2438,6 +2456,11 @@
             "minimum": 0.0,
             "title": "Validated Relation Count",
             "type": "integer"
+          },
+          "virtual": {
+            "default": false,
+            "title": "Virtual",
+            "type": "boolean"
           }
         },
         "required": [
@@ -2472,6 +2495,16 @@
             "title": "Direction",
             "type": "string"
           },
+          "edge_class": {
+            "default": "validated",
+            "enum": [
+              "validated",
+              "shared_evidence",
+              "semantic_affinity"
+            ],
+            "title": "Edge Class",
+            "type": "string"
+          },
           "rationale": {
             "title": "Rationale",
             "type": "string"
@@ -2484,9 +2517,31 @@
             "title": "Relation Type",
             "type": "string"
           },
+          "shared_work_count": {
+            "default": 0,
+            "minimum": 0.0,
+            "title": "Shared Work Count",
+            "type": "integer"
+          },
           "source": {
             "title": "Source",
             "type": "string"
+          },
+          "strength": {
+            "anyOf": [
+              {
+                "enum": [
+                  "strong",
+                  "moderate",
+                  "weak"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Strength"
           },
           "target": {
             "title": "Target",
@@ -2507,6 +2562,13 @@
       "PrincipleGraphViewResponse": {
         "additionalProperties": false,
         "properties": {
+          "edge_counts": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "Edge Counts",
+            "type": "object"
+          },
           "edges": {
             "items": {
               "$ref": "#/components/schemas/PrincipleGraphEdgeResponse"
@@ -3391,6 +3453,261 @@
           "type"
         ],
         "title": "ValidationError",
+        "type": "object"
+      },
+      "VirtualPrincipleGenerateRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "egress_confirmed": {
+            "default": false,
+            "title": "Egress Confirmed",
+            "type": "boolean"
+          },
+          "model": {
+            "maxLength": 200,
+            "minLength": 2,
+            "title": "Model",
+            "type": "string"
+          },
+          "principle_ids": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 6,
+            "minItems": 2,
+            "title": "Principle Ids",
+            "type": "array"
+          },
+          "provider_profile_id": {
+            "default": "siliconflow",
+            "maxLength": 80,
+            "minLength": 2,
+            "title": "Provider Profile Id",
+            "type": "string"
+          },
+          "requested_count": {
+            "default": 3,
+            "maximum": 5.0,
+            "minimum": 1.0,
+            "title": "Requested Count",
+            "type": "integer"
+          },
+          "research_direction": {
+            "default": "",
+            "maxLength": 1000,
+            "title": "Research Direction",
+            "type": "string"
+          }
+        },
+        "required": [
+          "principle_ids",
+          "model"
+        ],
+        "title": "VirtualPrincipleGenerateRequest",
+        "type": "object"
+      },
+      "VirtualPrincipleGenerationResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "cross_principle_map": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Cross Principle Map",
+            "type": "array"
+          },
+          "disclosure": {
+            "title": "Disclosure",
+            "type": "string"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/GeneratedVirtualPrinciple"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "model": {
+            "title": "Model",
+            "type": "string"
+          },
+          "provider": {
+            "title": "Provider",
+            "type": "string"
+          },
+          "trace": {
+            "additionalProperties": true,
+            "title": "Trace",
+            "type": "object"
+          }
+        },
+        "required": [
+          "items",
+          "cross_principle_map",
+          "provider",
+          "model",
+          "trace",
+          "disclosure"
+        ],
+        "title": "VirtualPrincipleGenerationResponse",
+        "type": "object"
+      },
+      "VirtualPrincipleProposal": {
+        "additionalProperties": false,
+        "description": "A deliberately hypothetical synthesis derived from installed Principles.",
+        "properties": {
+          "area": {
+            "maxLength": 63,
+            "minLength": 2,
+            "pattern": "^[a-z0-9][a-z0-9-]+$",
+            "title": "Area",
+            "type": "string"
+          },
+          "assumptions": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 12,
+            "title": "Assumptions",
+            "type": "array"
+          },
+          "claim": {
+            "maxLength": 2400,
+            "minLength": 20,
+            "title": "Claim",
+            "type": "string"
+          },
+          "conditions": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 12,
+            "title": "Conditions",
+            "type": "array"
+          },
+          "contributing_principle_ids": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 6,
+            "minItems": 2,
+            "title": "Contributing Principle Ids",
+            "type": "array"
+          },
+          "derivation_level": {
+            "enum": [
+              "direct_composition",
+              "cross_context_generalization",
+              "boundary_hypothesis",
+              "mechanistic_bridge"
+            ],
+            "title": "Derivation Level",
+            "type": "string"
+          },
+          "exclusions": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 12,
+            "title": "Exclusions",
+            "type": "array"
+          },
+          "falsifier": {
+            "maxLength": 1200,
+            "minLength": 12,
+            "title": "Falsifier",
+            "type": "string"
+          },
+          "novelty_rationale": {
+            "maxLength": 1200,
+            "minLength": 20,
+            "title": "Novelty Rationale",
+            "type": "string"
+          },
+          "novelty_score": {
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Novelty Score",
+            "type": "number"
+          },
+          "reliability_rationale": {
+            "maxLength": 1200,
+            "minLength": 20,
+            "title": "Reliability Rationale",
+            "type": "string"
+          },
+          "reliability_score": {
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Reliability Score",
+            "type": "number"
+          },
+          "scope_statement": {
+            "maxLength": 1200,
+            "minLength": 12,
+            "title": "Scope Statement",
+            "type": "string"
+          },
+          "synthesis_summary": {
+            "maxLength": 1600,
+            "minLength": 20,
+            "title": "Synthesis Summary",
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 180,
+            "minLength": 8,
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "claim",
+          "area",
+          "derivation_level",
+          "scope_statement",
+          "falsifier",
+          "contributing_principle_ids",
+          "synthesis_summary",
+          "reliability_rationale",
+          "novelty_rationale",
+          "reliability_score",
+          "novelty_score"
+        ],
+        "title": "VirtualPrincipleProposal",
+        "type": "object"
+      },
+      "VirtualPrincipleSaveRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "model": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Model",
+            "type": "string"
+          },
+          "proposal": {
+            "$ref": "#/components/schemas/VirtualPrincipleProposal"
+          },
+          "provider": {
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Provider",
+            "type": "string"
+          },
+          "trace": {
+            "additionalProperties": true,
+            "title": "Trace",
+            "type": "object"
+          }
+        },
+        "required": [
+          "proposal",
+          "provider",
+          "model"
+        ],
+        "title": "VirtualPrincipleSaveRequest",
         "type": "object"
       },
       "WorkReference": {
@@ -8529,6 +8846,84 @@
           }
         },
         "summary": "Search Principles"
+      }
+    },
+    "/api/v1/principles/virtual-principles/generate": {
+      "post": {
+        "operationId": "generate_virtual_principles_api_v1_principles_virtual_principles_generate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VirtualPrincipleGenerateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VirtualPrincipleGenerationResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Generate Virtual Principles"
+      }
+    },
+    "/api/v1/principles/virtual-principles/save": {
+      "post": {
+        "operationId": "save_virtual_principle_api_v1_principles_virtual_principles_save_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VirtualPrincipleSaveRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Save Virtual Principle Api V1 Principles Virtual Principles Save Post",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Save Virtual Principle"
       }
     },
     "/api/v1/principles/{principle_id}": {

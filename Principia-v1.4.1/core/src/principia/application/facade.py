@@ -25,6 +25,7 @@ from .goal_runs import ResearchGoalRunService
 from .graph import PrincipleGraphService
 from .relations import PrincipleRelationService
 from .search import PrincipleSearchService
+from .virtual_principles import VirtualPrincipleService
 
 
 class CloudService:
@@ -227,6 +228,9 @@ class Principia:
             ),
             working_directory_root=workspace.working_directory_root,
             relation_rebuild=self.relations.start_rebuild,
+        )
+        self.virtual_principles = VirtualPrincipleService(
+            self.repository, self.local, self.explorer
         )
         self.goal_runs = ResearchGoalRunService(
             self.repository, self.local, self.global_cloud

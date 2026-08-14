@@ -5,7 +5,7 @@ import hashlib
 import json
 import math
 import re
-from collections import Counter
+from collections import Counter, defaultdict
 from itertools import combinations
 from typing import Any, Literal
 
@@ -597,6 +597,10 @@ class PrincipleExplorerService:
         edges = self.repository.graph_relations_for_principles(
             [str(item["id"]) for item in nodes if item["source"] == "local"]
         )
+        for edge in edges:
+            edge["edge_class"] = "validated"
+            edge["strength"] = "strong"
+            edge["shared_work_count"] = 0
         seen = {str(item["relation_id"]) for item in edges}
         for item in nodes:
             if item["source"] != "global":
@@ -624,9 +628,15 @@ class PrincipleExplorerService:
                         "relation_type": relation_type,
                         "direction": "directed",
                         "rationale": str(relation.get("rationale") or ""),
+                        "edge_class": "validated",
+                        "strength": "strong",
+                        "shared_work_count": 0,
                     }
                 )
+        self._add_context_edges(nodes, edges, seen)
+        self._apply_graph_metrics(nodes, edges)
         edges.sort(key=lambda item: (item["source"], item["target"], item["relation_type"]))
+        edge_counts = dict(Counter(str(item.get("edge_class") or "validated") for item in edges))
         return {
             "nodes": nodes,
             "edges": edges,
@@ -636,9 +646,172 @@ class PrincipleExplorerService:
             "maximum_nodes": requested,
             "explanation": (
                 "Every node is one Principle in the current filtered Explorer view. "
-                "Edges are validated scientific relations; papers remain evidence only."
+                "Solid arrows are validated scientific relations. Dotted context links expose "
+                "shared evidence or semantic affinity without changing scientific truth."
             ),
+            "edge_counts": edge_counts,
         }
+
+    def _add_context_edges(
+        self,
+        nodes: list[dict[str, Any]],
+        edges: list[dict[str, Any]],
+        seen: set[str],
+    ) -> None:
+        """Add bounded, explicitly non-validated context when the graph is sparse."""
+
+        node_by_id = {str(item["id"]): item for item in nodes}
+        local_ids = [identifier for identifier, item in node_by_id.items() if item["source"] == "local"]
+        validated_pairs = {
+            frozenset({str(item["source"]), str(item["target"])}) for item in edges
+        }
+        work_members: dict[str, set[str]] = defaultdict(set)
+        for link in self.repository.candidate_work_links(local_ids):
+            work_members[str(link["work_id"])].add(str(link["candidate_id"]))
+        shared_counts: Counter[tuple[str, str]] = Counter()
+        for members in work_members.values():
+            ordered = sorted(members)
+            for index, source in enumerate(ordered):
+                for target in ordered[index + 1 :]:
+                    shared_counts[(source, target)] += 1
+        derived_degree: Counter[str] = Counter()
+        for (source, target), count in sorted(
+            shared_counts.items(), key=lambda item: (-item[1], item[0])
+        ):
+            pair = frozenset({source, target})
+            if pair in validated_pairs or derived_degree[source] >= 3 or derived_degree[target] >= 3:
+                continue
+            relation_id = "shared:" + hashlib.sha256(
+                f"{source}\0{target}\0{count}".encode()
+            ).hexdigest()[:20]
+            if relation_id in seen:
+                continue
+            seen.add(relation_id)
+            validated_pairs.add(pair)
+            derived_degree[source] += 1
+            derived_degree[target] += 1
+            edges.append(
+                {
+                    "relation_id": relation_id,
+                    "source": source,
+                    "target": target,
+                    "relation_type": "shared_evidence",
+                    "direction": "undirected",
+                    "rationale": (
+                        f"These Principles cite {count} shared supporting paper"
+                        f"{'s' if count != 1 else ''}. This is provenance context, not proof "
+                        "that either Principle supports the other."
+                    ),
+                    "edge_class": "shared_evidence",
+                    "strength": "strong" if count >= 3 else "moderate" if count == 2 else "weak",
+                    "shared_work_count": count,
+                }
+            )
+
+        affinity_candidates: list[tuple[int, int, dict[str, Any]]] = []
+        ordered_ids = sorted(node_by_id)
+        for index, source in enumerate(ordered_ids):
+            for target in ordered_ids[index + 1 :]:
+                pair = frozenset({source, target})
+                if pair in validated_pairs:
+                    continue
+                suggestion = self._potential_relation(
+                    source,
+                    target,
+                    {"claim": node_by_id[source].get("claim"), "scope": node_by_id[source].get("applicability")},
+                    {"claim": node_by_id[target].get("claim"), "scope": node_by_id[target].get("applicability")},
+                )
+                if suggestion["relation_type"] == "relationship_unclear" or suggestion["strength"] == "weak":
+                    continue
+                affinity_candidates.append(
+                    (
+                        0 if suggestion["strength"] == "strong" else 1,
+                        -len(suggestion["shared_concepts"]),
+                        suggestion,
+                    )
+                )
+        maximum_affinities = min(80, max(12, len(nodes) * 2))
+        added = 0
+        for _, _, suggestion in sorted(
+            affinity_candidates,
+            key=lambda item: (item[0], item[1], item[2]["source"], item[2]["target"]),
+        ):
+            source = str(suggestion["source"])
+            target = str(suggestion["target"])
+            if derived_degree[source] >= 3 or derived_degree[target] >= 3:
+                continue
+            derived_degree[source] += 1
+            derived_degree[target] += 1
+            added += 1
+            edges.append(
+                {
+                    "relation_id": "affinity:" + str(suggestion["relation_id"]).split(":")[-1],
+                    "source": source,
+                    "target": target,
+                    "relation_type": "semantic_affinity",
+                    "direction": "undirected",
+                    "rationale": suggestion["rationale"],
+                    "edge_class": "semantic_affinity",
+                    "strength": suggestion["strength"],
+                    "shared_work_count": 0,
+                }
+            )
+            if added >= maximum_affinities:
+                break
+
+    @staticmethod
+    def _apply_graph_metrics(
+        nodes: list[dict[str, Any]], edges: list[dict[str, Any]]
+    ) -> None:
+        """Project varied evidence and graph-relative metrics for this exact view."""
+
+        by_id = {str(item["id"]): item for item in nodes}
+        neighbors: dict[str, set[str]] = {identifier: set() for identifier in by_id}
+        influence_weight: Counter[str] = Counter()
+        supports: Counter[str] = Counter()
+        contradicts: Counter[str] = Counter()
+        class_weight = {"validated": 1.0, "shared_evidence": 0.55, "semantic_affinity": 0.28}
+        for edge in edges:
+            source = str(edge["source"])
+            target = str(edge["target"])
+            if source not in by_id or target not in by_id or source == target:
+                continue
+            edge_class = str(edge.get("edge_class") or "validated")
+            weight = class_weight.get(edge_class, 0.2)
+            neighbors[source].add(target)
+            neighbors[target].add(source)
+            influence_weight[source] += weight
+            influence_weight[target] += weight
+            if edge_class == "validated" and edge.get("relation_type") == "supports":
+                supports[target] += 1
+            elif edge_class == "validated" and edge.get("relation_type") == "contradicts":
+                contradicts[target] += 1
+        maximum = max(influence_weight.values(), default=0.0)
+        for identifier, node in by_id.items():
+            papers = int(node.get("supporting_work_count") or 0)
+            anchors = int(node.get("evidence_anchor_count") or 0)
+            reviewed = node.get("human_review_status") == "reviewed"
+            evidence_score = (
+                40
+                + min(20.0, 9.0 * math.log2(1 + papers))
+                + min(12.0, 5.0 * math.log2(1 + anchors))
+                + (10.0 if reviewed else 2.0)
+                + min(8.0, supports[identifier] * 3.0)
+                - min(18.0, contradicts[identifier] * 6.0)
+            )
+            recorded = node.get("reliability_score")
+            if recorded is not None:
+                recorded_value = float(recorded)
+                if recorded_value <= 1:
+                    recorded_value *= 100
+                evidence_score = 0.6 * evidence_score + 0.4 * recorded_value
+            node["reliability_score"] = round(max(18.0, min(98.0, evidence_score)), 1)
+            node["influence_score"] = (
+                round(100 * influence_weight[identifier] / maximum, 1) if maximum else 0.0
+            )
+            node["distinct_neighbor_count"] = len(neighbors[identifier])
+            node["incoming_support_count"] = supports[identifier]
+            node["incoming_contradict_count"] = contradicts[identifier]
 
     def potential_relations(self, principle_ids: list[str]) -> dict[str, Any]:
         """Compare a small, explicit selection without mutating scientific truth.
@@ -880,6 +1053,9 @@ class PrincipleExplorerService:
     def _local_card(row: dict[str, Any]) -> dict[str, Any]:
         argument = json.loads(str(row.get("argument_json") or "{}"))
         state = str(row.get("quality_state") or "")
+        virtual = str(row.get("source_kind") or "") == "virtual_reasoning" or str(
+            row.get("extraction_mode") or ""
+        ) == "virtual_synthesis"
         evidence_status = {
             "eligible": "checks_passed",
             "quarantined": "held_back",
@@ -917,10 +1093,10 @@ class PrincipleExplorerService:
                 else _readable_title(row["title"], row["claim"])
             ),
             "claim": row["claim"],
-            "claim_type": str(row.get("claim_class") or ""),
+            "claim_type": "hypothesis" if virtual else str(row.get("claim_class") or ""),
             "applicability": "; ".join(conditions + boundary)[:1200],
             "area_labels": area_labels,
-            "evidence_status": evidence_status,
+            "evidence_status": "checking" if virtual else evidence_status,
             "human_review_status": human_review,
             "evidence_scope": "multiple_works" if support_count > 1 else "one_work",
             "supporting_work_count": support_count,
@@ -938,6 +1114,7 @@ class PrincipleExplorerService:
             "validated_relation_count": 0,
             "related_principles": [],
             "metric_revision": None,
+            "virtual": virtual,
         }
 
     @staticmethod
@@ -975,6 +1152,7 @@ class PrincipleExplorerService:
             "validated_relation_count": 0,
             "related_principles": [],
             "metric_revision": None,
+            "virtual": False,
         }
 
     @staticmethod
@@ -1008,6 +1186,7 @@ class PrincipleExplorerService:
             "validated_relation_count": 0,
             "related_principles": [],
             "metric_revision": None,
+            "virtual": False,
         }
 
     @staticmethod

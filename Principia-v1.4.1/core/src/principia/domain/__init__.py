@@ -58,6 +58,7 @@ from .scientific import (
     materialize_evidence_atoms,
     materialize_scientific_argument,
 )
+from .virtual import VirtualPrincipleBatch, VirtualPrincipleProposal
 
 __all__ = [
     "AreaManifest",
@@ -104,6 +105,8 @@ __all__ = [
     "TraceOperation",
     "WorkReference",
     "candidate_id",
+    "VirtualPrincipleBatch",
+    "VirtualPrincipleProposal",
     "canonical_json_bytes",
     "canonical_sha256",
     "concise_principle_title",

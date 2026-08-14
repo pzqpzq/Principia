@@ -71,6 +71,9 @@ from .models import (
     SourceRegistrationRequest,
     StorageLayoutDisclosureResponse,
     StorageLayoutRevealRequest,
+    VirtualPrincipleGenerateRequest,
+    VirtualPrincipleGenerationResponse,
+    VirtualPrincipleSaveRequest,
     WorkingDirectoryResponse,
     WorkingDirectorySwitchRequest,
 )
@@ -686,6 +689,33 @@ def create_app(
     ) -> PotentialRelationsResponse:
         return PotentialRelationsResponse.model_validate(
             principia.explorer.potential_relations(request.principle_ids)
+        )
+
+    @router.post(
+        "/principles/virtual-principles/generate",
+        response_model=VirtualPrincipleGenerationResponse,
+    )
+    def generate_virtual_principles(
+        request: VirtualPrincipleGenerateRequest,
+    ) -> VirtualPrincipleGenerationResponse:
+        return VirtualPrincipleGenerationResponse.model_validate(
+            principia.virtual_principles.generate(
+                principle_ids=request.principle_ids,
+                provider_profile_id=request.provider_profile_id,
+                model=request.model,
+                egress_confirmed=request.egress_confirmed,
+                requested_count=request.requested_count,
+                research_direction=request.research_direction,
+            )
+        )
+
+    @router.post("/principles/virtual-principles/save")
+    def save_virtual_principle(request: VirtualPrincipleSaveRequest) -> dict[str, Any]:
+        return principia.virtual_principles.save(
+            request.proposal,
+            provider=request.provider,
+            model=request.model,
+            trace=request.trace,
         )
 
     @router.get("/relation-metrics/status")

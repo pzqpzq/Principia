@@ -1562,6 +1562,40 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/principles/virtual-principles/generate": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Generate Virtual Principles */
+        post: operations["generate_virtual_principles_api_v1_principles_virtual_principles_generate_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/principles/virtual-principles/save": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Save Virtual Principle */
+        post: operations["save_virtual_principle_api_v1_principles_virtual_principles_save_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/principles/{principle_id}": {
         parameters: {
             query?: never;
@@ -2269,6 +2303,12 @@ export interface components {
             policy: components["schemas"]["ModelPolicy"];
             /** Source Id */
             source_id: string;
+        };
+        /** GeneratedVirtualPrinciple */
+        GeneratedVirtualPrinciple: {
+            proposal: components["schemas"]["VirtualPrincipleProposal"];
+            /** Virtual Id */
+            virtual_id: string;
         };
         /** GenerationTrace */
         GenerationTrace: {
@@ -3139,24 +3179,46 @@ export interface components {
              * @default 0
              */
             validated_relation_count: number;
+            /**
+             * Virtual
+             * @default false
+             */
+            virtual: boolean;
         };
         /** PrincipleGraphEdgeResponse */
         PrincipleGraphEdgeResponse: {
             /** Direction */
             direction: string;
+            /**
+             * Edge Class
+             * @default validated
+             * @enum {string}
+             */
+            edge_class: "validated" | "shared_evidence" | "semantic_affinity";
             /** Rationale */
             rationale: string;
             /** Relation Id */
             relation_id: string;
             /** Relation Type */
             relation_type: string;
+            /**
+             * Shared Work Count
+             * @default 0
+             */
+            shared_work_count: number;
             /** Source */
             source: string;
+            /** Strength */
+            strength?: ("strong" | "moderate" | "weak") | null;
             /** Target */
             target: string;
         };
         /** PrincipleGraphViewResponse */
         PrincipleGraphViewResponse: {
+            /** Edge Counts */
+            edge_counts?: {
+                [key: string]: number;
+            };
             /** Edges */
             edges: components["schemas"]["PrincipleGraphEdgeResponse"][];
             /** Explanation */
@@ -3499,6 +3561,101 @@ export interface components {
             msg: string;
             /** Error Type */
             type: string;
+        };
+        /** VirtualPrincipleGenerateRequest */
+        VirtualPrincipleGenerateRequest: {
+            /**
+             * Egress Confirmed
+             * @default false
+             */
+            egress_confirmed: boolean;
+            /** Model */
+            model: string;
+            /** Principle Ids */
+            principle_ids: string[];
+            /**
+             * Provider Profile Id
+             * @default siliconflow
+             */
+            provider_profile_id: string;
+            /**
+             * Requested Count
+             * @default 3
+             */
+            requested_count: number;
+            /**
+             * Research Direction
+             * @default
+             */
+            research_direction: string;
+        };
+        /** VirtualPrincipleGenerationResponse */
+        VirtualPrincipleGenerationResponse: {
+            /** Cross Principle Map */
+            cross_principle_map: string[];
+            /** Disclosure */
+            disclosure: string;
+            /** Items */
+            items: components["schemas"]["GeneratedVirtualPrinciple"][];
+            /** Model */
+            model: string;
+            /** Provider */
+            provider: string;
+            /** Trace */
+            trace: {
+                [key: string]: unknown;
+            };
+        };
+        /**
+         * VirtualPrincipleProposal
+         * @description A deliberately hypothetical synthesis derived from installed Principles.
+         */
+        VirtualPrincipleProposal: {
+            /** Area */
+            area: string;
+            /** Assumptions */
+            assumptions?: string[];
+            /** Claim */
+            claim: string;
+            /** Conditions */
+            conditions?: string[];
+            /** Contributing Principle Ids */
+            contributing_principle_ids: string[];
+            /**
+             * Derivation Level
+             * @enum {string}
+             */
+            derivation_level: "direct_composition" | "cross_context_generalization" | "boundary_hypothesis" | "mechanistic_bridge";
+            /** Exclusions */
+            exclusions?: string[];
+            /** Falsifier */
+            falsifier: string;
+            /** Novelty Rationale */
+            novelty_rationale: string;
+            /** Novelty Score */
+            novelty_score: number;
+            /** Reliability Rationale */
+            reliability_rationale: string;
+            /** Reliability Score */
+            reliability_score: number;
+            /** Scope Statement */
+            scope_statement: string;
+            /** Synthesis Summary */
+            synthesis_summary: string;
+            /** Title */
+            title: string;
+        };
+        /** VirtualPrincipleSaveRequest */
+        VirtualPrincipleSaveRequest: {
+            /** Model */
+            model: string;
+            proposal: components["schemas"]["VirtualPrincipleProposal"];
+            /** Provider */
+            provider: string;
+            /** Trace */
+            trace?: {
+                [key: string]: unknown;
+            };
         };
         /** WorkReference */
         WorkReference: {
@@ -6877,6 +7034,74 @@ export interface operations {
             cookie?: never;
         };
         requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    generate_virtual_principles_api_v1_principles_virtual_principles_generate_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["VirtualPrincipleGenerateRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["VirtualPrincipleGenerationResponse"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    save_virtual_principle_api_v1_principles_virtual_principles_save_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["VirtualPrincipleSaveRequest"];
+            };
+        };
         responses: {
             /** @description Successful Response */
             200: {

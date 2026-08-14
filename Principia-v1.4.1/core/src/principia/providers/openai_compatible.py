@@ -22,6 +22,7 @@ from ..domain import (
     EvidenceClaimAtomBatch,
     ScientificArgumentBatch,
     ScientificArgumentProposalBatch,
+    VirtualPrincipleBatch,
     canonical_sha256,
     loads_strict,
     materialize_evidence_atoms,
@@ -64,6 +65,12 @@ ARGUMENT_EMPTY_RECOVERY_PROMPT = (
 CHALLENGE_SYSTEM_PROMPT = (
     files("principia.prompts")
     .joinpath("scientific-challenge-v2.md")
+    .read_text(encoding="utf-8")
+    .strip()
+)
+VIRTUAL_PRINCIPLE_SYSTEM_PROMPT = (
+    files("principia.prompts")
+    .joinpath("virtual-principles-v1.md")
     .read_text(encoding="utf-8")
     .strip()
 )
@@ -394,6 +401,30 @@ class OpenAICompatibleProvider:
             ),
             trace=trace,
         )
+
+    def derive_virtual_principles(
+        self,
+        *,
+        principle_records: list[dict[str, Any]],
+        research_direction: str = "",
+        requested_count: int = 3,
+    ) -> ScientificGeneration:
+        """Deeply synthesize bounded, explicitly hypothetical Principle proposals."""
+
+        value, trace = self._generate_typed(
+            model_type=VirtualPrincipleBatch,
+            system_prompt=VIRTUAL_PRINCIPLE_SYSTEM_PROMPT,
+            prompt_template="virtual-principles-v1",
+            input_label="selected_principles",
+            input_payload={
+                "requested_count": max(1, min(int(requested_count), 5)),
+                "research_direction": research_direction.strip()[:1_000],
+                "principles": principle_records,
+            },
+            max_tokens=6_000,
+            thinking_budget=8_192,
+        )
+        return ScientificGeneration(value=value, trace=trace)
 
     @staticmethod
     def _evidence_line_records(

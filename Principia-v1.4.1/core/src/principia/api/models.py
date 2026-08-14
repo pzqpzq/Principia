@@ -10,6 +10,7 @@ from ..domain import (
     JobRecord,
     LiteratureRunLimits,
     PrincipleCapsule,
+    VirtualPrincipleProposal,
 )
 from ..providers import ModelPolicy
 
@@ -236,6 +237,7 @@ class PrincipleCardResponse(DomainModel):
     validated_relation_count: int = Field(default=0, ge=0)
     related_principles: list[RelatedPrinciplePreview] = Field(default_factory=list)
     metric_revision: int | None = None
+    virtual: bool = False
 
 
 class PrincipleCardPage(DomainModel):
@@ -277,6 +279,9 @@ class PrincipleGraphEdgeResponse(DomainModel):
     relation_type: str
     direction: str
     rationale: str
+    edge_class: Literal["validated", "shared_evidence", "semantic_affinity"] = "validated"
+    strength: Literal["strong", "moderate", "weak"] | None = None
+    shared_work_count: int = Field(default=0, ge=0)
 
 
 class PrincipleGraphViewResponse(DomainModel):
@@ -287,6 +292,7 @@ class PrincipleGraphViewResponse(DomainModel):
     truncated: bool
     maximum_nodes: int = Field(ge=1, le=500)
     explanation: str
+    edge_counts: dict[str, int] = Field(default_factory=dict)
 
 
 class PotentialRelationsRequest(DomainModel):
@@ -297,6 +303,44 @@ class PotentialRelationsRequest(DomainModel):
         if len(set(self.principle_ids)) != len(self.principle_ids):
             raise ValueError("Select each Principle only once")
         return self
+
+
+class VirtualPrincipleGenerateRequest(DomainModel):
+    principle_ids: list[str] = Field(min_length=2, max_length=6)
+    provider_profile_id: str = Field(default="siliconflow", min_length=2, max_length=80)
+    model: str = Field(min_length=2, max_length=200)
+    egress_confirmed: bool = False
+    requested_count: int = Field(default=3, ge=1, le=5)
+    research_direction: str = Field(default="", max_length=1_000)
+
+    @model_validator(mode="after")
+    def unique_principles(self) -> VirtualPrincipleGenerateRequest:
+        if len(set(self.principle_ids)) != len(self.principle_ids):
+            raise ValueError("Select each Principle only once")
+        if not self.egress_confirmed:
+            raise ValueError("Confirm remote analysis of the selected Principle text")
+        return self
+
+
+class GeneratedVirtualPrinciple(DomainModel):
+    virtual_id: str
+    proposal: VirtualPrincipleProposal
+
+
+class VirtualPrincipleGenerationResponse(DomainModel):
+    items: list[GeneratedVirtualPrinciple]
+    cross_principle_map: list[str]
+    provider: str
+    model: str
+    trace: dict[str, Any]
+    disclosure: str
+
+
+class VirtualPrincipleSaveRequest(DomainModel):
+    proposal: VirtualPrincipleProposal
+    provider: str = Field(min_length=1, max_length=80)
+    model: str = Field(min_length=1, max_length=200)
+    trace: dict[str, Any] = Field(default_factory=dict)
 
 
 class PotentialRelationResponse(DomainModel):

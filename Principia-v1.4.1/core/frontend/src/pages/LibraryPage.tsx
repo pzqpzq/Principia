@@ -175,6 +175,14 @@ export function LibraryPage() {
       queryClient.invalidateQueries({ queryKey: ["goal-run-sources"] });
     },
   });
+  const disconnectFolder = useMutation({
+    mutationFn: async (sourceId: string) => dataOrThrow(await api.DELETE("/api/v1/library/collections/{kind}/{collection_id}", { params: { path: { kind: "source", collection_id: sourceId } } })),
+    onSuccess: (_, sourceId) => {
+      setSelectedSources((current) => current.filter((item) => item !== sourceId));
+      queryClient.invalidateQueries({ queryKey: ["goal-run-sources"] });
+      queryClient.invalidateQueries({ queryKey: ["explorer-folders"] });
+    },
+  });
   const saveCredential = useMutation({
     mutationFn: async () => dataOrThrow(await api.PUT("/api/v1/provider-profiles/{provider_id}/credential", { params: { path: { provider_id: "siliconflow" } }, body: { api_key: credential } })),
     onSuccess: () => {
@@ -223,7 +231,7 @@ export function LibraryPage() {
     ? `${String(cloud.work_count ?? 0)} papers · ${String(cloud.principle_count ?? 0)} Principles`
     : "Offline — Local search still works";
   const primaryError = workingDirectory.error ?? chooseWorkingDirectory.error ?? switchWorkingDirectory.error
-    ?? addFolders.error ?? addFolderPath.error ?? saveCredential.error ?? startGoalRun.error ?? goalRun.error ?? cancelGoalRun.error
+    ?? addFolders.error ?? addFolderPath.error ?? disconnectFolder.error ?? saveCredential.error ?? startGoalRun.error ?? goalRun.error ?? cancelGoalRun.error
     ?? startOnlineSearch.error ?? onlineSearch.error ?? acquireOnline.error ?? onlineAcquisitionJob.error;
   const onlineRows = (Array.isArray(onlineSearch.data?.results) ? onlineSearch.data.results : []).map(record);
 
@@ -245,7 +253,7 @@ export function LibraryPage() {
         <header><span>1</span><div><h2 id="goal-composer-title">Choose your knowledge</h2><p>Local folders are optional. Add several at once or search only the Cloud.</p></div></header>
         <div className="source-actions"><button className="primary quiet" onClick={() => addFolders.mutate()} disabled={addFolders.isPending}>{addFolders.isPending ? "Choosing folders…" : "+ Add local folders"}</button><button onClick={() => setSourcePathOpen((current) => !current)}>Use a folder path</button><button onClick={() => { setOnlineQuestion(researchGoal); setOnlineOpen(true); }}>Find papers online</button></div>
         {sourcePathOpen ? <form className="source-path-entry" onSubmit={(event) => { event.preventDefault(); addFolderPath.mutate(); }}><label htmlFor="home-local-folder-path">Existing local folder path</label><div className="input-action"><input id="home-local-folder-path" value={manualSourcePath} onChange={(event) => setManualSourcePath(event.target.value)} placeholder="/absolute/path/to/papers" autoFocus /><button className="primary" disabled={!manualSourcePath.trim() || addFolderPath.isPending}>{addFolderPath.isPending ? "Connecting…" : "Connect folder"}</button><button type="button" onClick={() => { setSourcePathOpen(false); setManualSourcePath(""); }}>Cancel</button></div><small>The folder stays where it is. Principia indexes its papers into this working directory.</small></form> : null}
-        {sourceRows.length ? <div className="source-chip-list">{sourceRows.map((source) => <label key={source.source_id} className={selectedSources.includes(source.source_id) ? "source-chip selected" : "source-chip"}><input type="checkbox" checked={selectedSources.includes(source.source_id)} onChange={(event) => toggleSource(source.source_id, event.target.checked)} /><span><strong>{source.display_name}</strong><small>{source.status === "indexing" ? "Indexing papers…" : source.status === "index_failed" ? "Indexing needs attention" : `${source.document_count} paper${source.document_count === 1 ? "" : "s"}`}</small></span></label>)}</div> : <p className="empty-inline">No local folders connected. That is fine — Global Cloud is on.</p>}
+        {sourceRows.length ? <div className="source-chip-list">{sourceRows.map((source) => <div key={source.source_id} className={selectedSources.includes(source.source_id) ? "source-chip selected" : "source-chip"}><label title={source.display_name}><input type="checkbox" checked={selectedSources.includes(source.source_id)} onChange={(event) => toggleSource(source.source_id, event.target.checked)} /><span><strong>{source.display_name}</strong><small>{source.status === "indexing" ? "Indexing papers…" : source.status === "index_failed" ? "Indexing needs attention" : `${source.document_count} paper${source.document_count === 1 ? "" : "s"}`}</small></span></label><button className="source-chip-remove" aria-label={`Remove ${source.display_name}`} title="Disconnect folder (files stay untouched)" disabled={disconnectFolder.isPending} onClick={() => { if (window.confirm(`Remove “${source.display_name}” from this working directory? The folder and its files will not be deleted.`)) disconnectFolder.mutate(source.source_id); }}>×</button></div>)}</div> : <p className="empty-inline">No local folders connected. That is fine — Global Cloud is on.</p>}
       </section>
 
       <section className="goal-step question-step">

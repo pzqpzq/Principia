@@ -12,6 +12,8 @@ type PrincipleCard = components["schemas"]["PrincipleCardResponse"];
 type PrinciplePage = components["schemas"]["PrincipleCardPage"];
 type PrincipleGraphView = components["schemas"]["PrincipleGraphViewResponse"];
 type PotentialRelationsResponse = components["schemas"]["PotentialRelationsResponse"];
+type VirtualGenerationResponse = components["schemas"]["VirtualPrincipleGenerationResponse"];
+type VirtualPrincipleProposal = components["schemas"]["VirtualPrincipleProposal"];
 type Collection = components["schemas"]["LibraryCollectionItem"];
 type ObjectValue = { [key: string]: unknown };
 
@@ -95,17 +97,18 @@ export function MapPage() {
   const goalId = params.get("goal") ?? "";
   const sourceId = params.get("source") ?? "";
   const goalRunId = params.get("goal_run") ?? "";
+  const shouldOpenLatestGoal = !goalRunId && params.size === 0;
   const latestGoalRun = useQuery({
     queryKey: ["research-goal-run", "latest"],
-    enabled: !goalRunId,
+    enabled: shouldOpenLatestGoal,
     queryFn: async () => objectValue(dataOrThrow(await api.GET("/api/v1/research-goal-runs/latest", {}))),
   });
   useEffect(() => {
     const latestId = textValue(latestGoalRun.data?.run_id);
-    if (!goalRunId && latestId) {
+    if (shouldOpenLatestGoal && latestId) {
       navigate(`/map?scope=combined&goal_run=${encodeURIComponent(latestId)}`, { replace: true });
     }
-  }, [goalRunId, latestGoalRun.data?.run_id, navigate]);
+  }, [latestGoalRun.data?.run_id, navigate, shouldOpenLatestGoal]);
   const pageNumber = Math.max(1, Number(params.get("page") ?? 1) || 1);
   const selectedId = params.get("selected") ?? params.get("seed") ?? "";
   const q = params.get("q") ?? "";
@@ -205,6 +208,20 @@ export function MapPage() {
     })) as PrincipleGraphView,
   });
   const graphCards = graphView.data?.nodes ?? [];
+  const graphEdgeCounts = graphView.data?.edge_counts ?? {};
+  const providers = useQuery({
+    queryKey: ["providers"],
+    enabled: graphMode,
+    queryFn: async () => objectValue(dataOrThrow(await api.GET("/api/v1/providers", {}))),
+  });
+  const graphProviderRecord = objectValue((listValue(providers.data?.profiles)[0]));
+  const graphProvider = {
+    provider: textValue(graphProviderRecord.provider, "siliconflow"),
+    label: textValue(graphProviderRecord.label, "SiliconFlow"),
+    configured: Boolean(graphProviderRecord.configured),
+    defaultModel: textValue(graphProviderRecord.default_model, "deepseek-ai/DeepSeek-V4-Flash"),
+    models: listValue(graphProviderRecord.models).map(String),
+  };
   const contextualFacets = useQuery({
     queryKey: ["principle-facets", scope, q, packageId, goalId, sourceId],
     queryFn: async () => dataOrThrow(await api.GET("/api/v1/principles", {
@@ -340,6 +357,19 @@ export function MapPage() {
     dataOrThrow(await api.POST("/api/v1/principles/potential-relations", {
       body: { principle_ids: principleIds },
     }));
+  const generateVirtualPrinciples = async ({ principleIds, model, researchDirection }: { principleIds: string[]; model: string; researchDirection: string }): Promise<VirtualGenerationResponse> =>
+    dataOrThrow(await api.POST("/api/v1/principles/virtual-principles/generate", {
+      body: { principle_ids: principleIds, provider_profile_id: graphProvider.provider, model, egress_confirmed: true, requested_count: 3, research_direction: researchDirection },
+    }));
+  const saveVirtualPrinciple = async (proposal: VirtualPrincipleProposal, generation: VirtualGenerationResponse): Promise<{ candidate_id?: string }> => {
+    const value = dataOrThrow(await api.POST("/api/v1/principles/virtual-principles/save", {
+      body: { proposal, provider: generation.provider, model: generation.model, trace: generation.trace },
+    })) as { candidate_id?: string };
+    queryClient.invalidateQueries({ queryKey: ["principle-cards"] });
+    queryClient.invalidateQueries({ queryKey: ["principle-graph"] });
+    queryClient.invalidateQueries({ queryKey: ["library-summary"] });
+    return value;
+  };
 
   useEffect(() => {
     if (!selectedId) return;
@@ -472,7 +502,7 @@ export function MapPage() {
         {goalRunId ? <details className="score-explanation compact"><summary>About Reliability and Influence</summary><span>Reliability summarizes validated support versus contradiction links using a conservative confidence bound. Influence is connectivity within this installed library. Neither is a truth probability or real-world importance score.</span>{metricState !== "complete" ? <em>Relation measures are not available yet.</em> : null}</details> : <div className="score-explanation"><strong>How these measures work</strong><span>Reliability summarizes validated support versus contradiction links using a conservative confidence bound. Influence is connectivity within this installed library. Neither is a truth probability or real-world importance score.</span>{metricState !== "complete" ? <em>Relation measures are not available yet.</em> : null}</div>}
         {(graphMode ? graphView.isLoading : principlePage.isLoading) ? <LoadingState label={graphMode ? "Laying out validated Principle relations…" : "Preparing Principle cards…"} /> : null}
         {(graphMode ? graphView.isError : principlePage.isError) ? <ErrorState error={graphMode ? graphView.error : principlePage.error} retry={() => graphMode ? graphView.refetch() : principlePage.refetch()} /> : null}
-        {graphMode && graphView.data && graphCards.length ? <><div className="graph-view-heading"><div><strong>{graphView.data.shown_count} Principles · {graphView.data.edges.length} validated relations</strong><span>{graphView.data.explanation}</span></div>{graphView.data.truncated ? <em>Showing the first {graphView.data.maximum_nodes} matching Principles. Refine the view to focus the graph.</em> : null}</div><Suspense fallback={<LoadingState label="Loading the interactive graph surface…" />}><PrincipleGraph cards={graphCards} relations={graphView.data.edges} selectedId={selectedId} onSelectPrinciple={(id) => updateParams({ selected: id })} onAnalyzePotentialRelations={analyzePotentialRelations} /></Suspense></> : null}
+        {graphMode && graphView.data && graphCards.length ? <><div className="graph-view-heading"><div><strong>{graphView.data.shown_count} Principles · {graphEdgeCounts.validated ?? 0} validated · {(graphEdgeCounts.shared_evidence ?? 0) + (graphEdgeCounts.semantic_affinity ?? 0)} context links</strong><span>{graphView.data.explanation}</span></div>{graphView.data.truncated ? <em>Showing the first {graphView.data.maximum_nodes} matching Principles. Refine the view to focus the graph.</em> : null}</div><Suspense fallback={<LoadingState label="Loading the interactive graph surface…" />}><PrincipleGraph cards={graphCards} relations={graphView.data.edges} selectedId={selectedId} onSelectPrinciple={(id) => updateParams({ selected: id })} onAnalyzePotentialRelations={analyzePotentialRelations} provider={graphProvider} onGenerateVirtualPrinciples={generateVirtualPrinciples} onSaveVirtualPrinciple={saveVirtualPrinciple} /></Suspense></> : null}
         {!(graphMode ? graphView.isLoading : principlePage.isLoading) && !(graphMode ? graphView.isError : principlePage.isError) && !(graphMode ? graphCards.length : cards.length) ? <EmptyState title="No Principles match this view"><p>Try clearing a filter or inspect Held back drafts separately. Principia will not invent filler to populate the library.</p></EmptyState> : null}
         {!graphMode ? <section className="principle-card-grid" aria-label="Principle cards">{cards.map((card) => <article className={`principle-card ${selectedId === card.id ? "selected" : ""}`} key={card.id}>
           <button className="principle-card-open" onClick={() => updateParams({ selected: card.id })} aria-label={`Inspect ${card.title}`}>

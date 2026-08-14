@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Background,
   Controls,
@@ -19,16 +19,21 @@ type PrincipleCard = components["schemas"]["PrincipleCardResponse"];
 type PrincipleEdge = components["schemas"]["PrincipleGraphEdgeResponse"];
 type PotentialRelation = components["schemas"]["PotentialRelationResponse"];
 type PotentialRelationsResponse = components["schemas"]["PotentialRelationsResponse"];
+type VirtualGenerationResponse = components["schemas"]["VirtualPrincipleGenerationResponse"];
+type GeneratedVirtualPrinciple = components["schemas"]["GeneratedVirtualPrinciple"];
+type VirtualPrincipleProposal = components["schemas"]["VirtualPrincipleProposal"];
 type PrincipleNodeData = { card: PrincipleCard; isolated: boolean };
 type PrincipleNode = Node<PrincipleNodeData, "principle">;
 type GraphRelationData = {
   virtual: boolean;
   relation: PrincipleEdge | PotentialRelation;
+  edgeClass: string;
 };
 
-const WIDTH = 226;
-const HEIGHT = 122;
-const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
+type ProviderChoice = { provider: string; label: string; configured: boolean; defaultModel: string; models: string[] };
+
+const WIDTH = 348;
+const HEIGHT = 226;
 
 const relationColors: Record<string, string> = {
   supports: "#258164",
@@ -46,15 +51,19 @@ function readableRelation(value: string): string {
 
 function PrincipleNodeCard({ data }: NodeProps<PrincipleNode>) {
   const { card } = data;
+  const reliability = card.reliability_score ?? 0;
+  const influence = card.influence_score ?? 0;
   return <>
     {[Position.Top, Position.Right, Position.Bottom, Position.Left].flatMap((position) => [
       <Handle key={`source-${position}`} id={`source-${position}`} type="source" position={position} isConnectable={false} />,
       <Handle key={`target-${position}`} id={`target-${position}`} type="target" position={position} isConnectable={false} />,
     ])}
     <div className="principle-graph-node-content">
-      <div><span>{card.source === "local" ? "Local" : "Global"}</span><span>{card.supporting_work_count} paper{card.supporting_work_count === 1 ? "" : "s"}</span></div>
+      <div className="principle-graph-node-meta"><span>{card.virtual ? "Virtual hypothesis" : card.source === "local" ? "Local" : card.source === "both" ? "Global + Local" : "Global"}</span><span>{card.supporting_work_count} paper{card.supporting_work_count === 1 ? "" : "s"}</span></div>
       <strong>{card.title}</strong>
+      <p>{card.claim}</p>
       <small>{card.area_labels.length ? card.area_labels.slice(0, 2).map((area) => area.replaceAll("-", " ")).join(" · ") : "Not categorized"}</small>
+      <div className="principle-graph-node-metrics"><span><i style={{ width: `${reliability}%` }} /><b>Reliability</b><em>{Math.round(reliability)}</em></span><span><i style={{ width: `${influence}%` }} /><b>Influence</b><em>{Math.round(influence)}</em></span></div>
     </div>
   </>;
 }
@@ -95,83 +104,32 @@ function layoutPrinciples(cards: PrincipleCard[], relations: PrincipleEdge[]): P
   });
   const components = connectedComponents(ordered.map((card) => card.id), adjacency);
   const positions = new Map<string, { x: number; y: number }>();
-  const componentCenters = new Map<string, { x: number; y: number }>();
-  const componentColumns = Math.min(3, Math.max(1, Math.ceil(Math.sqrt(components.length))));
-
+  let nextComponentCenterX = 620;
   components.forEach((component, componentIndex) => {
-    const column = componentIndex % componentColumns;
-    const row = Math.floor(componentIndex / componentColumns);
-    const center = { x: 480 + column * 940, y: 410 + row * 760 };
-    component.forEach((id, index) => {
-      const radius = index === 0 ? 0 : 170 + 115 * Math.sqrt(index - 1);
-      const angle = index * GOLDEN_ANGLE + componentIndex * 0.37;
-      positions.set(id, {
-        x: center.x + Math.cos(angle) * radius,
-        y: center.y + Math.sin(angle) * radius * 0.78,
-      });
-      componentCenters.set(id, center);
-    });
+    const center = { x: nextComponentCenterX, y: 540 };
+    positions.set(component[0], center);
+    let cursor = 1;
+    let ring = 0;
+    let outerRadius = 0;
+    while (cursor < component.length) {
+      const radius = 520 + ring * 400;
+      const capacity = Math.max(6, Math.floor((2 * Math.PI * radius) / (WIDTH + 96)));
+      const count = Math.min(capacity, component.length - cursor);
+      for (let index = 0; index < count; index += 1) {
+        const angle = -Math.PI / 2 + componentIndex * 0.29 + (2 * Math.PI * index) / count;
+        positions.set(component[cursor + index], {
+          x: center.x + Math.cos(angle) * radius,
+          y: center.y + Math.sin(angle) * radius,
+        });
+      }
+      cursor += count;
+      outerRadius = radius;
+      ring += 1;
+    }
+    nextComponentCenterX += Math.max(1_180, outerRadius * 2 + WIDTH + 620);
   });
 
   const connectedIds = components.flat();
-  const linked = relations.filter((relation) => positions.has(relation.source) && positions.has(relation.target));
-  for (let iteration = 0; iteration < 100; iteration += 1) {
-    const movement = new Map(connectedIds.map((id) => [id, { x: 0, y: 0 }]));
-    for (let leftIndex = 0; leftIndex < connectedIds.length; leftIndex += 1) {
-      for (let rightIndex = leftIndex + 1; rightIndex < connectedIds.length; rightIndex += 1) {
-        const leftId = connectedIds[leftIndex];
-        const rightId = connectedIds[rightIndex];
-        const left = positions.get(leftId)!;
-        const right = positions.get(rightId)!;
-        let dx = right.x - left.x;
-        let dy = right.y - left.y;
-        if (Math.abs(dx) < 0.01 && Math.abs(dy) < 0.01) {
-          dx = Math.cos(rightIndex * GOLDEN_ANGLE);
-          dy = Math.sin(rightIndex * GOLDEN_ANGLE);
-        }
-        const distance = Math.max(24, Math.hypot(dx, dy));
-        const repulsion = Math.min(17, 33000 / (distance * distance));
-        movement.get(leftId)!.x -= (dx / distance) * repulsion;
-        movement.get(leftId)!.y -= (dy / distance) * repulsion;
-        movement.get(rightId)!.x += (dx / distance) * repulsion;
-        movement.get(rightId)!.y += (dy / distance) * repulsion;
-        const overlapX = WIDTH + 34 - Math.abs(dx);
-        const overlapY = HEIGHT + 30 - Math.abs(dy);
-        if (overlapX > 0 && overlapY > 0) {
-          if (overlapX / WIDTH < overlapY / HEIGHT) {
-            const correction = Math.min(20, overlapX * 0.14) * (dx >= 0 ? 1 : -1);
-            movement.get(leftId)!.x -= correction;
-            movement.get(rightId)!.x += correction;
-          } else {
-            const correction = Math.min(20, overlapY * 0.16) * (dy >= 0 ? 1 : -1);
-            movement.get(leftId)!.y -= correction;
-            movement.get(rightId)!.y += correction;
-          }
-        }
-      }
-    }
-    linked.forEach((relation) => {
-      const source = positions.get(relation.source)!;
-      const target = positions.get(relation.target)!;
-      const dx = target.x - source.x;
-      const dy = target.y - source.y;
-      const distance = Math.max(1, Math.hypot(dx, dy));
-      const attraction = (distance - 300) * 0.01;
-      movement.get(relation.source)!.x += (dx / distance) * attraction;
-      movement.get(relation.source)!.y += (dy / distance) * attraction;
-      movement.get(relation.target)!.x -= (dx / distance) * attraction;
-      movement.get(relation.target)!.y -= (dy / distance) * attraction;
-    });
-    connectedIds.forEach((id) => {
-      const position = positions.get(id)!;
-      const center = componentCenters.get(id)!;
-      const delta = movement.get(id)!;
-      delta.x += (center.x - position.x) * 0.0013;
-      delta.y += (center.y - position.y) * 0.0013;
-      position.x += Math.max(-17, Math.min(17, delta.x));
-      position.y += Math.max(-17, Math.min(17, delta.y));
-    });
-  }
 
   const isolates = ordered.filter((card) => !positions.has(card.id));
   const connectedMaximumX = connectedIds.length
@@ -223,7 +181,9 @@ function graphEdges(
 ): Edge<GraphRelationData>[] {
   const nodeById = new Map(nodes.map((node) => [node.id, node]));
   const validated = relations.map((relation): Edge<GraphRelationData> => {
-    const color = relationColors[relation.relation_type] ?? "#6d6879";
+    const edgeClass = relation.edge_class ?? "validated";
+    const color = edgeClass === "shared_evidence" ? "#3fb8b2" : edgeClass === "semantic_affinity" ? "#8da1bd" : relationColors[relation.relation_type] ?? "#9f95b5";
+    const contextEdge = edgeClass !== "validated";
     return {
       id: relation.relation_id,
       source: relation.source,
@@ -232,13 +192,14 @@ function graphEdges(
       type: "bezier",
       interactionWidth: 28,
       label: showLabels ? readableRelation(relation.relation_type) : undefined,
-      labelStyle: { fill: color, fontSize: 8, fontWeight: 700 },
-      labelBgStyle: { fill: "#ffffff", fillOpacity: 0.9 },
-      labelBgPadding: [5, 3],
-      style: { stroke: color, strokeWidth: relation.relation_type === "contradicts" ? 2.5 : 1.8 },
-      markerEnd: { type: MarkerType.ArrowClosed, color, width: 16, height: 16 },
-      data: { virtual: false, relation },
-      ariaLabel: `${readableRelation(relation.relation_type)} validated relation`,
+      labelStyle: { fill: contextEdge ? "#d9e5f2" : color, fontSize: 13, fontWeight: 760 },
+      labelBgStyle: { fill: "#13182a", fillOpacity: 0.92 },
+      labelBgPadding: [7, 4],
+      className: contextEdge ? `context-principle-edge ${edgeClass}` : "validated-principle-edge",
+      style: { stroke: color, strokeWidth: relation.relation_type === "contradicts" ? 3 : contextEdge ? 1.7 : 2.2, strokeDasharray: contextEdge ? edgeClass === "shared_evidence" ? "4 6" : "2 8" : undefined, opacity: contextEdge ? 0.72 : 0.94 },
+      markerEnd: contextEdge ? undefined : { type: MarkerType.ArrowClosed, color, width: 18, height: 18 },
+      data: { virtual: false, relation, edgeClass },
+      ariaLabel: `${readableRelation(relation.relation_type)} ${contextEdge ? "context" : "validated"} relation`,
     };
   });
   const virtual = virtualRelations.map((relation): Edge<GraphRelationData> => ({
@@ -250,16 +211,25 @@ function graphEdges(
     interactionWidth: 32,
     animated: true,
     label: `Potential · ${readableRelation(relation.relation_type).replace("potential ", "")}`,
-    labelStyle: { fill: "#7650b8", fontSize: 8, fontWeight: 800 },
-    labelBgStyle: { fill: "#faf7ff", fillOpacity: 0.95 },
+    labelStyle: { fill: "#dfb7ff", fontSize: 13, fontWeight: 800 },
+    labelBgStyle: { fill: "#19152b", fillOpacity: 0.95 },
     labelBgPadding: [6, 3],
     className: "virtual-principle-edge",
-    style: { stroke: "#9b6ad6", strokeWidth: 2, strokeDasharray: "8 7" },
+    style: { stroke: "#c77dff", strokeWidth: 2.4, strokeDasharray: "9 7" },
     markerEnd: { type: MarkerType.Arrow, color: "#9b6ad6", width: 18, height: 18 },
-    data: { virtual: true, relation },
+    data: { virtual: true, relation, edgeClass: "virtual" },
     ariaLabel: `${readableRelation(relation.relation_type)} virtual unvalidated relation`,
   }));
   return [...validated, ...virtual];
+}
+
+function layoutStorageKey(signature: string): string {
+  let hash = 2166136261;
+  for (let index = 0; index < signature.length; index += 1) {
+    hash ^= signature.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+  return `principia:graph-layout:v1:${(hash >>> 0).toString(16)}`;
 }
 
 export function PrincipleGraph({
@@ -268,13 +238,20 @@ export function PrincipleGraph({
   selectedId,
   onSelectPrinciple,
   onAnalyzePotentialRelations,
+  provider,
+  onGenerateVirtualPrinciples,
+  onSaveVirtualPrinciple,
 }: {
   cards: PrincipleCard[];
   relations: PrincipleEdge[];
   selectedId: string;
   onSelectPrinciple: (principleId: string) => void;
   onAnalyzePotentialRelations: (principleIds: string[]) => Promise<PotentialRelationsResponse>;
+  provider: ProviderChoice;
+  onGenerateVirtualPrinciples: (request: { principleIds: string[]; model: string; researchDirection: string }) => Promise<VirtualGenerationResponse>;
+  onSaveVirtualPrinciple: (proposal: VirtualPrincipleProposal, generation: VirtualGenerationResponse) => Promise<{ candidate_id?: string }>;
 }) {
+  const shellRef = useRef<HTMLElement | null>(null);
   const signature = useMemo(
     () => `${cards.map((card) => card.id).sort().join("|")}::${relations.map((edge) => edge.relation_id).sort().join("|")}`,
     [cards, relations],
@@ -282,24 +259,50 @@ export function PrincipleGraph({
   const preparedNodes = useMemo(() => layoutPrinciples(cards, relations), [signature]);
   const [nodes, setNodes, onNodesChange] = useNodesState<PrincipleNode>(preparedNodes);
   const [selectedEdgeId, setSelectedEdgeId] = useState("");
-  const [connectMode, setConnectMode] = useState(false);
+  const [selectionMode, setSelectionMode] = useState<"" | "connect" | "derive">("");
   const [connectionSelection, setConnectionSelection] = useState<string[]>([]);
   const [virtualRelations, setVirtualRelations] = useState<PotentialRelation[]>([]);
   const [connectionMessage, setConnectionMessage] = useState("");
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [selectedModel, setSelectedModel] = useState(provider.defaultModel);
+  const [researchDirection, setResearchDirection] = useState("");
+  const [confirmRemote, setConfirmRemote] = useState(false);
+  const [virtualGeneration, setVirtualGeneration] = useState<VirtualGenerationResponse | null>(null);
+  const [savedVirtualIds, setSavedVirtualIds] = useState<Set<string>>(new Set());
+  const [savingVirtualId, setSavingVirtualId] = useState("");
+  const [layoutDirty, setLayoutDirty] = useState(false);
+  const [layoutSaved, setLayoutSaved] = useState(false);
   const preparedEdges = useMemo(
     () => graphEdges(relations, virtualRelations, nodes, relations.length + virtualRelations.length <= 36),
     [relations, virtualRelations, nodes],
   );
 
   useEffect(() => {
-    setNodes(preparedNodes);
+    let positioned = preparedNodes;
+    try {
+      const stored = JSON.parse(localStorage.getItem(layoutStorageKey(signature)) ?? "{}") as Record<string, { x: number; y: number }>;
+      if (stored && typeof stored === "object") {
+        positioned = preparedNodes.map((node) => {
+          const position = stored[node.id];
+          return position && Number.isFinite(position.x) && Number.isFinite(position.y) ? { ...node, position } : node;
+        });
+        setLayoutSaved(Object.keys(stored).length > 0);
+      }
+    } catch {
+      localStorage.removeItem(layoutStorageKey(signature));
+      setLayoutSaved(false);
+    }
+    setNodes(positioned);
     setSelectedEdgeId("");
     setConnectionSelection([]);
     setVirtualRelations([]);
     setConnectionMessage("");
-    setConnectMode(false);
-  }, [preparedNodes, setNodes]);
+    setSelectionMode("");
+    setVirtualGeneration(null);
+    setLayoutDirty(false);
+  }, [preparedNodes, setNodes, signature]);
+
+  useEffect(() => setSelectedModel(provider.defaultModel), [provider.defaultModel]);
 
   useEffect(() => {
     const selectedForConnection = new Set(connectionSelection);
@@ -313,6 +316,7 @@ export function PrincipleGraph({
   const selectedEdge = preparedEdges.find((edge) => edge.id === selectedEdgeId);
   const selectedRelation = selectedEdge?.data?.relation;
   const selectedIsVirtual = Boolean(selectedEdge?.data?.virtual);
+  const selectedEdgeClass = selectedEdge?.data?.edgeClass ?? "validated";
   const sourceCard = cards.find((card) => card.id === selectedEdge?.source);
   const targetCard = cards.find((card) => card.id === selectedEdge?.target);
   const isolatedCount = preparedNodes.filter((node) => node.data.isolated).length;
@@ -339,7 +343,7 @@ export function PrincipleGraph({
         return [...merged.values()];
       });
       setConnectionSelection([]);
-      setConnectMode(false);
+      setSelectionMode("");
       setConnectionMessage(result.items.length
         ? `${result.items.length} temporary potential link${result.items.length === 1 ? "" : "s"} added. Click a dashed link to inspect it.`
         : "Those pairs already have validated relations; no virtual link was added.");
@@ -350,7 +354,54 @@ export function PrincipleGraph({
     }
   };
 
-  return <section className="principle-graph-shell" aria-label="Interactive Principle graph">
+  const deriveVirtualPrinciples = async () => {
+    if (connectionSelection.length < 2 || !confirmRemote || !provider.configured) return;
+    setIsAnalyzing(true);
+    setConnectionMessage("Mapping mechanisms, testing boundaries, and synthesizing hypotheses…");
+    try {
+      const generation = await onGenerateVirtualPrinciples({ principleIds: connectionSelection, model: selectedModel, researchDirection });
+      setVirtualGeneration(generation);
+      setConnectionSelection([]);
+      setSelectionMode("");
+      setConfirmRemote(false);
+      setConnectionMessage(`${generation.items.length} Virtual Principle${generation.items.length === 1 ? "" : "s"} ready for review.`);
+    } catch (error) {
+      setConnectionMessage(error instanceof Error ? error.message : "Virtual Principle synthesis failed.");
+    } finally {
+      setIsAnalyzing(false);
+    }
+  };
+
+  const saveVirtualPrinciple = async (item: GeneratedVirtualPrinciple) => {
+    if (!virtualGeneration) return;
+    setSavingVirtualId(item.virtual_id);
+    try {
+      await onSaveVirtualPrinciple(item.proposal, virtualGeneration);
+      setSavedVirtualIds((current) => new Set([...current, item.virtual_id]));
+      setConnectionMessage("Virtual Principle saved locally as an unreviewed hypothesis.");
+    } catch (error) {
+      setConnectionMessage(error instanceof Error ? error.message : "The Virtual Principle could not be saved.");
+    } finally {
+      setSavingVirtualId("");
+    }
+  };
+
+  const saveLayout = () => {
+    localStorage.setItem(layoutStorageKey(signature), JSON.stringify(Object.fromEntries(nodes.map((node) => [node.id, node.position]))));
+    setLayoutDirty(false);
+    setLayoutSaved(true);
+    setConnectionMessage("Custom graph layout saved in this browser.");
+  };
+
+  const resetLayout = () => {
+    localStorage.removeItem(layoutStorageKey(signature));
+    setNodes(preparedNodes);
+    setLayoutDirty(false);
+    setLayoutSaved(false);
+    setConnectionMessage("Graph reset to the automatic scientific layout.");
+  };
+
+  return <section ref={shellRef} className="principle-graph-shell" aria-label="Interactive Principle graph">
     <ReactFlow
       key={signature}
       nodes={nodes}
@@ -359,9 +410,10 @@ export function PrincipleGraph({
       onNodesChange={onNodesChange}
       onNodeClick={(_, node) => {
         setSelectedEdgeId("");
-        if (connectMode) toggleConnectionNode(node.id);
+        if (selectionMode) toggleConnectionNode(node.id);
         else onSelectPrinciple(node.id);
       }}
+      onNodeDragStop={() => { setLayoutDirty(true); setLayoutSaved(false); }}
       onEdgeClick={(_, edge) => setSelectedEdgeId(edge.id)}
       nodesDraggable
       nodesConnectable={false}
@@ -373,32 +425,39 @@ export function PrincipleGraph({
       zoomOnScroll={false}
       zoomOnPinch
       zoomOnDoubleClick
-      minZoom={0.18}
+      minZoom={0.2}
       maxZoom={2.2}
-      fitView={cards.length <= 12}
-      fitViewOptions={{ padding: 0.18, maxZoom: 1 }}
-      defaultViewport={{ x: 50, y: 35, zoom: 0.62 }}
+      fitView={cards.length <= 10}
+      fitViewOptions={{ padding: 0.18, maxZoom: 0.92 }}
+      defaultViewport={{ x: 58, y: 44, zoom: 0.82 }}
       proOptions={{ hideAttribution: true }}
-      colorMode="light"
+      colorMode="dark"
     >
-      <Background color="#d9d4e9" gap={22} size={1} />
+      <Background color="#303a61" gap={28} size={1.2} />
       <Controls showInteractive={false} position="bottom-left" />
       <Panel position="top-left" className="principle-graph-legend">
         <strong>Scientific relations</strong>
         <span><i className="supports" /> supports</span>
         <span><i className="contradicts" /> contradicts</span>
-        <span><i className="structural" /> refines or relates</span>
+        <span><i className="structural" /> other validated</span>
+        <span><i className="context" /> evidence / affinity</span>
         <span><i className="virtual" /> potential</span>
       </Panel>
-      {!connectMode && !selectedEdge ? <Panel position="top-right" className="principle-graph-actions">
-        <button className="primary" onClick={() => { setConnectMode(true); setConnectionMessage(""); }}>Compare &amp; connect</button>
+      {!selectionMode && !selectedEdge && !virtualGeneration ? <Panel position="top-right" className="principle-graph-actions">
+        <button onClick={() => { setSelectionMode("connect"); setConnectionMessage(""); }}>Compare &amp; connect</button>
+        <button className="primary" onClick={() => { setSelectionMode("derive"); setConnectionMessage(""); }}>Derive Virtual Principle</button>
+        <span className="graph-action-divider" />
+        <button disabled={!layoutDirty} onClick={saveLayout}>{layoutDirty ? "Save layout" : layoutSaved ? "Layout saved" : "Save layout"}</button>
+        <button onClick={resetLayout}>Reset</button>
+        <button onClick={() => shellRef.current?.requestFullscreen?.()}>Present</button>
         {virtualRelations.length ? <button onClick={() => { setVirtualRelations([]); setSelectedEdgeId(""); setConnectionMessage("Temporary links cleared."); }}>Clear virtual links</button> : null}
       </Panel> : null}
-      {connectMode ? <Panel position="top-center" className="principle-connect-panel">
-        <div><span className="eyebrow">Temporary relationship analysis</span><strong>Select 2–6 Principles</strong><small>{connectionSelection.length} selected</small></div>
-        <button className="primary" disabled={connectionSelection.length < 2 || isAnalyzing} onClick={analyzeConnections}>{isAnalyzing ? "Comparing…" : "Analyze potential links"}</button>
-        <button disabled={isAnalyzing} onClick={() => { setConnectMode(false); setConnectionSelection([]); setConnectionMessage(""); }}>Cancel</button>
-        <p>Selected pairs are compared without changing validated relations or library measures.</p>
+      {selectionMode ? <Panel position="top-right" className={`principle-connect-panel ${selectionMode}`}>
+        <div><span className="eyebrow">{selectionMode === "derive" ? "LLM synthesis · unreviewed hypotheses" : "Temporary relationship analysis"}</span><strong>Select 2–6 Principles</strong><small>{connectionSelection.length} selected</small></div>
+        {selectionMode === "derive" ? <div className="virtual-principle-config"><label><span>Reasoning model</span><select value={selectedModel} onChange={(event) => setSelectedModel(event.target.value)}>{provider.models.map((model) => <option key={model}>{model}</option>)}</select></label><label><span>Optional research direction</span><input value={researchDirection} onChange={(event) => setResearchDirection(event.target.value)} placeholder="e.g. seek a robust design rule" /></label><label className="virtual-egress"><input type="checkbox" checked={confirmRemote} onChange={(event) => setConfirmRemote(event.target.checked)} /><span>Send only the selected Principle records to {provider.label}. No paper PDF or full text is sent.</span></label></div> : null}
+        <button className="primary" disabled={connectionSelection.length < 2 || isAnalyzing || (selectionMode === "derive" && (!confirmRemote || !provider.configured))} onClick={selectionMode === "derive" ? deriveVirtualPrinciples : analyzeConnections}>{isAnalyzing ? selectionMode === "derive" ? "Deep reasoning…" : "Comparing…" : selectionMode === "derive" ? "Generate 3 Virtual Principles" : "Analyze potential links"}</button>
+        <button disabled={isAnalyzing} onClick={() => { setSelectionMode(""); setConnectionSelection([]); setConnectionMessage(""); }}>Cancel</button>
+        <p>{selectionMode === "derive" ? provider.configured ? "Principia maps mechanisms, stress-tests boundaries, and returns falsifiable hypotheses with separate reliability and novelty assessments." : "Configure the LLM on Home before generating Virtual Principles." : "Selected pairs are compared without changing validated relations or library measures."}</p>
       </Panel> : null}
       {isolatedCount ? <Panel position="bottom-center" className="principle-isolate-note">
         {isolatedCount} unconnected Principle{isolatedCount === 1 ? " is" : "s are"} arranged in a separate gallery to the right.
@@ -406,9 +465,14 @@ export function PrincipleGraph({
       <Panel position="bottom-right" className="principle-graph-hint">
         Two-finger scroll to pan · pinch to zoom · drag nodes
       </Panel>
-      {selectedRelation ? <Panel position="top-right" className={`principle-edge-inspector${selectedIsVirtual ? " virtual" : ""}`}>
+      {virtualGeneration ? <Panel position="top-right" className="virtual-principle-results">
+        <header><div><span className="eyebrow">Virtual Principle studio</span><strong>{virtualGeneration.items.length} hypotheses from deep synthesis</strong></div><button aria-label="Close Virtual Principle results" onClick={() => setVirtualGeneration(null)}>×</button></header>
+        <p>{virtualGeneration.disclosure}</p>
+        <div>{virtualGeneration.items.map((item) => <article key={item.virtual_id}><span>{item.proposal.derivation_level.replaceAll("_", " ")}</span><h3>{item.proposal.title}</h3><p>{item.proposal.claim}</p><div className="virtual-score-pair"><span><b>Reliability</b><strong>{Math.round(item.proposal.reliability_score)}</strong><i><em style={{ width: `${item.proposal.reliability_score}%` }} /></i></span><span><b>Novelty</b><strong>{Math.round(item.proposal.novelty_score)}</strong><i><em style={{ width: `${item.proposal.novelty_score}%` }} /></i></span></div><details><summary>Why this hypothesis?</summary><p><b>Synthesis:</b> {item.proposal.synthesis_summary}</p><p><b>Reliability:</b> {item.proposal.reliability_rationale}</p><p><b>Novelty:</b> {item.proposal.novelty_rationale}</p><p><b>Falsifier:</b> {item.proposal.falsifier}</p></details><button className="primary" disabled={savedVirtualIds.has(item.virtual_id) || savingVirtualId === item.virtual_id} onClick={() => saveVirtualPrinciple(item)}>{savedVirtualIds.has(item.virtual_id) ? "Saved locally" : savingVirtualId === item.virtual_id ? "Saving…" : "Save as local hypothesis"}</button></article>)}</div>
+      </Panel> : null}
+      {selectedRelation ? <Panel position="top-right" className={`principle-edge-inspector${selectedIsVirtual ? " virtual" : selectedEdgeClass !== "validated" ? " context" : ""}`}>
         <button className="edge-close" aria-label="Close relation details" onClick={() => setSelectedEdgeId("")}>×</button>
-        <span className="eyebrow">{selectedIsVirtual ? "Potential relationship · not validated" : "Validated scientific relation"}</span>
+        <span className="eyebrow">{selectedIsVirtual ? "Potential relationship · not validated" : selectedEdgeClass === "shared_evidence" ? "Shared-paper context · not scientific support" : selectedEdgeClass === "semantic_affinity" ? "Semantic affinity · not validated" : "Validated scientific relation"}</span>
         <h3>{readableRelation(selectedRelation.relation_type)}</h3>
         <button onClick={() => onSelectPrinciple(selectedRelation.source)}>{sourceCard?.title ?? "Source Principle"}</button>
         <span className="edge-direction">↓ {readableRelation(selectedRelation.relation_type)} ↓</span>
