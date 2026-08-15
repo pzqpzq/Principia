@@ -286,6 +286,7 @@ class PrincipleExplorerService:
         has_reliability: bool | None = None,
         has_influence: bool | None = None,
         known_contradictions: bool | None = None,
+        virtual_only: bool = False,
         sort: str = "updated",
         limit: int = 24,
         cursor: str | None = None,
@@ -313,6 +314,7 @@ class PrincipleExplorerService:
                 claim_type=claim_type,
                 evidence_status=evidence_status,
                 human_review=human_review,
+                virtual_only=virtual_only,
                 limit=resolved_limit,
                 page=resolved_page,
             )
@@ -322,6 +324,18 @@ class PrincipleExplorerService:
             and self.global_cloud.active()
             and page_mode
         ):
+            if virtual_only:
+                return {
+                    "items": [],
+                    "next_cursor": None,
+                    "total": 0,
+                    "facets": self._facets([]),
+                    "sort_explanation": "Saved Virtual Principles are local-only hypotheses.",
+                    "metric_status": {"state": "not_applicable", "metric_revision": None},
+                    "page": resolved_page,
+                    "page_size": resolved_limit,
+                    "page_count": 0,
+                }
             result = self.global_cloud.search(
                 CloudSearchRequest(
                     entity="principle",
@@ -360,6 +374,7 @@ class PrincipleExplorerService:
             and has_reliability is None
             and has_influence is None
             and known_contradictions is None
+            and not virtual_only
             and evidence_status in {"", "checks_passed", "held_back", "archived"}
             and sort in {"updated", "title", "supporting_papers"}
         )
@@ -406,6 +421,8 @@ class PrincipleExplorerService:
         if scope in {"local", "combined"}:
             for row in self.repository.principle_card_rows():
                 card = self._local_card(row)
+                if virtual_only and not card["virtual"]:
+                    continue
                 if area and area not in card["area_labels"]:
                     continue
                 if goal_id and goal_id not in _csv(row.get("goal_ids")):
@@ -443,6 +460,8 @@ class PrincipleExplorerService:
             # facet).  The registry owns the former; package payloads own the
             # latter, so filter after the bounded registry projection.
             for row in self.registry.browse(limit=500)["items"]:
+                if virtual_only:
+                    continue
                 card = self._global_card(row)
                 if package_id and package_id != row["area"]:
                     continue
@@ -817,13 +836,13 @@ class PrincipleExplorerService:
         """Compare a small, explicit selection without mutating scientific truth.
 
         These suggestions are a transient Explorer aid.  They are intentionally
-        derived outside the validated relation store, excluded from metric
-        snapshots, and bounded to fifteen pairs per request.
+        derived outside the validated relation store and excluded from metric
+        snapshots. A human may select up to twenty Principles per request.
         """
 
         identifiers = list(dict.fromkeys(str(item) for item in principle_ids if item))
-        if not 2 <= len(identifiers) <= 6:
-            raise ValueError("Select between two and six Principles")
+        if not 2 <= len(identifiers) <= 20:
+            raise ValueError("Select between two and twenty Principles")
         details: dict[str, dict[str, Any]] = {}
         for identifier in identifiers:
             detail = self.repository.candidate_detail(identifier)
@@ -988,6 +1007,7 @@ class PrincipleExplorerService:
         claim_type: str,
         evidence_status: str,
         human_review: str,
+        virtual_only: bool,
         limit: int,
         page: int,
     ) -> dict[str, Any]:
@@ -1030,6 +1050,8 @@ class PrincipleExplorerService:
             if evidence_status and card["evidence_status"] != evidence_status:
                 continue
             if human_review and card["human_review_status"] != human_review:
+                continue
+            if virtual_only and not card["virtual"]:
                 continue
             if query_terms and self._relevance(card, query_terms) <= 0:
                 continue

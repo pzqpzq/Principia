@@ -603,6 +603,7 @@ def create_app(
         has_reliability: bool | None = None,
         has_influence: bool | None = None,
         known_contradictions: bool | None = None,
+        virtual_only: bool = False,
         sort: Literal[
             "relevance", "updated", "reliability", "influence", "supporting_papers", "title"
         ] = "updated",
@@ -626,6 +627,7 @@ def create_app(
                 has_reliability=has_reliability,
                 has_influence=has_influence,
                 known_contradictions=known_contradictions,
+                virtual_only=virtual_only,
                 sort=sort,
                 limit=limit,
                 cursor=cursor,
@@ -654,6 +656,7 @@ def create_app(
         has_reliability: bool | None = None,
         has_influence: bool | None = None,
         known_contradictions: bool | None = None,
+        virtual_only: bool = False,
         sort: Literal[
             "relevance", "updated", "reliability", "influence", "supporting_papers", "title"
         ] = "updated",
@@ -675,6 +678,7 @@ def create_app(
                 has_reliability=has_reliability,
                 has_influence=has_influence,
                 known_contradictions=known_contradictions,
+                virtual_only=virtual_only,
                 sort=sort,
                 limit=limit,
             )

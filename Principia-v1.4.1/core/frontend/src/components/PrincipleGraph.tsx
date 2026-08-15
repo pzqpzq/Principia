@@ -29,13 +29,14 @@ type GraphRelationData = {
   relation: PrincipleEdge | PotentialRelation;
   edgeClass: string;
 };
+type GraphTheme = "macaron" | "midnight";
 
 type ProviderChoice = { provider: string; label: string; configured: boolean; defaultModel: string; models: string[] };
 
 const WIDTH = 348;
 const HEIGHT = 226;
 
-const relationColors: Record<string, string> = {
+const midnightRelationColors: Record<string, string> = {
   supports: "#258164",
   contradicts: "#c65462",
   refines: "#3978b8",
@@ -43,6 +44,15 @@ const relationColors: Record<string, string> = {
   specializes: "#92703a",
   depends_on: "#537589",
   analogous_to: "#8b5aad",
+};
+const macaronRelationColors: Record<string, string> = {
+  supports: "#4f9a7d",
+  contradicts: "#d96f80",
+  refines: "#5c83bd",
+  generalizes: "#7a69c6",
+  specializes: "#a57a45",
+  depends_on: "#66889a",
+  analogous_to: "#a0649e",
 };
 
 function readableRelation(value: string): string {
@@ -178,11 +188,14 @@ function graphEdges(
   virtualRelations: PotentialRelation[],
   nodes: PrincipleNode[],
   showLabels: boolean,
+  theme: GraphTheme,
 ): Edge<GraphRelationData>[] {
   const nodeById = new Map(nodes.map((node) => [node.id, node]));
+  const relationColors = theme === "macaron" ? macaronRelationColors : midnightRelationColors;
+  const labelBackground = theme === "macaron" ? "#fffdfa" : "#13182a";
   const validated = relations.map((relation): Edge<GraphRelationData> => {
     const edgeClass = relation.edge_class ?? "validated";
-    const color = edgeClass === "shared_evidence" ? "#3fb8b2" : edgeClass === "semantic_affinity" ? "#8da1bd" : relationColors[relation.relation_type] ?? "#9f95b5";
+    const color = edgeClass === "shared_evidence" ? theme === "macaron" ? "#58a9a1" : "#3fb8b2" : edgeClass === "semantic_affinity" ? theme === "macaron" ? "#8d8eae" : "#8da1bd" : relationColors[relation.relation_type] ?? "#9f95b5";
     const contextEdge = edgeClass !== "validated";
     return {
       id: relation.relation_id,
@@ -192,8 +205,8 @@ function graphEdges(
       type: "bezier",
       interactionWidth: 28,
       label: showLabels ? readableRelation(relation.relation_type) : undefined,
-      labelStyle: { fill: contextEdge ? "#d9e5f2" : color, fontSize: 13, fontWeight: 760 },
-      labelBgStyle: { fill: "#13182a", fillOpacity: 0.92 },
+      labelStyle: { fill: contextEdge ? theme === "macaron" ? "#62667b" : "#d9e5f2" : color, fontSize: 13, fontWeight: 760 },
+      labelBgStyle: { fill: labelBackground, fillOpacity: 0.94 },
       labelBgPadding: [7, 4],
       className: contextEdge ? `context-principle-edge ${edgeClass}` : "validated-principle-edge",
       style: { stroke: color, strokeWidth: relation.relation_type === "contradicts" ? 3 : contextEdge ? 1.7 : 2.2, strokeDasharray: contextEdge ? edgeClass === "shared_evidence" ? "4 6" : "2 8" : undefined, opacity: contextEdge ? 0.72 : 0.94 },
@@ -211,8 +224,8 @@ function graphEdges(
     interactionWidth: 32,
     animated: true,
     label: `Potential · ${readableRelation(relation.relation_type).replace("potential ", "")}`,
-    labelStyle: { fill: "#dfb7ff", fontSize: 13, fontWeight: 800 },
-    labelBgStyle: { fill: "#19152b", fillOpacity: 0.95 },
+    labelStyle: { fill: theme === "macaron" ? "#8b55a5" : "#dfb7ff", fontSize: 13, fontWeight: 800 },
+    labelBgStyle: { fill: theme === "macaron" ? "#fff8fd" : "#19152b", fillOpacity: 0.95 },
     labelBgPadding: [6, 3],
     className: "virtual-principle-edge",
     style: { stroke: "#c77dff", strokeWidth: 2.4, strokeDasharray: "9 7" },
@@ -241,6 +254,7 @@ export function PrincipleGraph({
   provider,
   onGenerateVirtualPrinciples,
   onSaveVirtualPrinciple,
+  onOpenSavedVirtualPrinciple,
 }: {
   cards: PrincipleCard[];
   relations: PrincipleEdge[];
@@ -250,6 +264,7 @@ export function PrincipleGraph({
   provider: ProviderChoice;
   onGenerateVirtualPrinciples: (request: { principleIds: string[]; model: string; researchDirection: string }) => Promise<VirtualGenerationResponse>;
   onSaveVirtualPrinciple: (proposal: VirtualPrincipleProposal, generation: VirtualGenerationResponse) => Promise<{ candidate_id?: string }>;
+  onOpenSavedVirtualPrinciple: (candidateId: string) => void;
 }) {
   const shellRef = useRef<HTMLElement | null>(null);
   const signature = useMemo(
@@ -266,16 +281,35 @@ export function PrincipleGraph({
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [selectedModel, setSelectedModel] = useState(provider.defaultModel);
   const [researchDirection, setResearchDirection] = useState("");
+  const [selectionQuery, setSelectionQuery] = useState("");
   const [confirmRemote, setConfirmRemote] = useState(false);
   const [virtualGeneration, setVirtualGeneration] = useState<VirtualGenerationResponse | null>(null);
-  const [savedVirtualIds, setSavedVirtualIds] = useState<Set<string>>(new Set());
+  const [savedVirtualCandidates, setSavedVirtualCandidates] = useState<Record<string, string>>({});
   const [savingVirtualId, setSavingVirtualId] = useState("");
+  const [graphTheme, setGraphTheme] = useState<GraphTheme>(() => {
+    try {
+      return localStorage.getItem("principia:graph-theme") === "midnight" ? "midnight" : "macaron";
+    } catch {
+      return "macaron";
+    }
+  });
   const [layoutDirty, setLayoutDirty] = useState(false);
   const [layoutSaved, setLayoutSaved] = useState(false);
   const preparedEdges = useMemo(
-    () => graphEdges(relations, virtualRelations, nodes, relations.length + virtualRelations.length <= 36),
-    [relations, virtualRelations, nodes],
+    () => graphEdges(relations, virtualRelations, nodes, relations.length + virtualRelations.length <= 36, graphTheme),
+    [relations, virtualRelations, nodes, graphTheme],
   );
+  const selectedCards = connectionSelection.map((id) => cards.find((card) => card.id === id)).filter((card): card is PrincipleCard => Boolean(card));
+  const selectionMatches = useMemo(() => {
+    const terms = selectionQuery.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+    if (!terms.length) return [];
+    const selected = new Set(connectionSelection);
+    return cards.filter((card) => {
+      if (selected.has(card.id)) return false;
+      const haystack = `${card.title} ${card.claim} ${card.area_labels.join(" ")}`.toLocaleLowerCase();
+      return terms.every((term) => haystack.includes(term));
+    }).slice(0, 8);
+  }, [cards, connectionSelection, selectionQuery]);
 
   useEffect(() => {
     let positioned = preparedNodes;
@@ -298,6 +332,7 @@ export function PrincipleGraph({
     setVirtualRelations([]);
     setConnectionMessage("");
     setSelectionMode("");
+    setSelectionQuery("");
     setVirtualGeneration(null);
     setLayoutDirty(false);
   }, [preparedNodes, setNodes, signature]);
@@ -325,9 +360,9 @@ export function PrincipleGraph({
     setConnectionMessage("");
     setConnectionSelection((current) => current.includes(id)
       ? current.filter((item) => item !== id)
-      : current.length < 6 ? [...current, id] : current);
-    if (!connectionSelection.includes(id) && connectionSelection.length >= 6) {
-      setConnectionMessage("Select at most six Principles at a time.");
+      : current.length < 20 ? [...current, id] : current);
+    if (!connectionSelection.includes(id) && connectionSelection.length >= 20) {
+      setConnectionMessage("The selection tray can hold at most twenty Principles.");
     }
   };
 
@@ -376,9 +411,10 @@ export function PrincipleGraph({
     if (!virtualGeneration) return;
     setSavingVirtualId(item.virtual_id);
     try {
-      await onSaveVirtualPrinciple(item.proposal, virtualGeneration);
-      setSavedVirtualIds((current) => new Set([...current, item.virtual_id]));
-      setConnectionMessage("Virtual Principle saved locally as an unreviewed hypothesis.");
+      const saved = await onSaveVirtualPrinciple(item.proposal, virtualGeneration);
+      if (!saved.candidate_id) throw new Error("The saved hypothesis did not return a local identifier.");
+      setSavedVirtualCandidates((current) => ({ ...current, [item.virtual_id]: saved.candidate_id! }));
+      setConnectionMessage("Saved under Local Results → Saved Virtual Principles.");
     } catch (error) {
       setConnectionMessage(error instanceof Error ? error.message : "The Virtual Principle could not be saved.");
     } finally {
@@ -401,7 +437,12 @@ export function PrincipleGraph({
     setConnectionMessage("Graph reset to the automatic scientific layout.");
   };
 
-  return <section ref={shellRef} className="principle-graph-shell" aria-label="Interactive Principle graph">
+  const changeTheme = (theme: GraphTheme) => {
+    setGraphTheme(theme);
+    try { localStorage.setItem("principia:graph-theme", theme); } catch { /* Browser storage is optional. */ }
+  };
+
+  return <section ref={shellRef} className={`principle-graph-shell ${graphTheme}`} aria-label="Interactive Principle graph">
     <ReactFlow
       key={signature}
       nodes={nodes}
@@ -431,9 +472,9 @@ export function PrincipleGraph({
       fitViewOptions={{ padding: 0.18, maxZoom: 0.92 }}
       defaultViewport={{ x: 58, y: 44, zoom: 0.82 }}
       proOptions={{ hideAttribution: true }}
-      colorMode="dark"
+      colorMode={graphTheme === "macaron" ? "light" : "dark"}
     >
-      <Background color="#303a61" gap={28} size={1.2} />
+      <Background color={graphTheme === "macaron" ? "#c7bfd9" : "#303a61"} gap={28} size={1.2} />
       <Controls showInteractive={false} position="bottom-left" />
       <Panel position="top-left" className="principle-graph-legend">
         <strong>Scientific relations</strong>
@@ -444,8 +485,9 @@ export function PrincipleGraph({
         <span><i className="virtual" /> potential</span>
       </Panel>
       {!selectionMode && !selectedEdge && !virtualGeneration ? <Panel position="top-right" className="principle-graph-actions">
-        <button onClick={() => { setSelectionMode("connect"); setConnectionMessage(""); }}>Compare &amp; connect</button>
-        <button className="primary" onClick={() => { setSelectionMode("derive"); setConnectionMessage(""); }}>Derive Virtual Principle</button>
+        <label className="graph-theme-picker"><span>Palette</span><select aria-label="Graph palette" value={graphTheme} onChange={(event) => changeTheme(event.target.value as GraphTheme)}><option value="macaron">Macaron</option><option value="midnight">Midnight</option></select></label>
+        <button onClick={() => { setSelectionMode("connect"); setConnectionMessage(""); setSelectionQuery(""); }}>Derive Virtual Connection</button>
+        <button className="primary" onClick={() => { setSelectionMode("derive"); setConnectionMessage(""); setSelectionQuery(""); }}>Derive Virtual Principles</button>
         <span className="graph-action-divider" />
         <button disabled={!layoutDirty} onClick={saveLayout}>{layoutDirty ? "Save layout" : layoutSaved ? "Layout saved" : "Save layout"}</button>
         <button onClick={resetLayout}>Reset</button>
@@ -453,10 +495,14 @@ export function PrincipleGraph({
         {virtualRelations.length ? <button onClick={() => { setVirtualRelations([]); setSelectedEdgeId(""); setConnectionMessage("Temporary links cleared."); }}>Clear virtual links</button> : null}
       </Panel> : null}
       {selectionMode ? <Panel position="top-right" className={`principle-connect-panel ${selectionMode}`}>
-        <div><span className="eyebrow">{selectionMode === "derive" ? "LLM synthesis · unreviewed hypotheses" : "Temporary relationship analysis"}</span><strong>Select 2–6 Principles</strong><small>{connectionSelection.length} selected</small></div>
+        <header className="principle-selection-header"><div><span className="eyebrow">{selectionMode === "derive" ? "LLM synthesis · unreviewed hypotheses" : "Virtual connection studio"}</span><strong>{selectionMode === "derive" ? "Derive Virtual Principles" : "Derive Virtual Connections"}</strong><small>Select 2–20 Principles</small></div><span className="selection-count"><b>{connectionSelection.length}</b>/20</span></header>
+        <section className="principle-selection-tray" aria-label="Selected Principles tray"><div><strong>Selected Principles</strong>{connectionSelection.length ? <button onClick={() => setConnectionSelection([])}>Clear all</button> : null}</div>{selectedCards.length ? <ol>{selectedCards.map((card) => <li key={card.id}><span><b>{card.title}</b><small>{card.source === "local" ? "Local" : card.source === "both" ? "Global + Local" : "Global"}</small></span><button aria-label={`Remove ${card.title} from selection`} onClick={() => toggleConnectionNode(card.id)}>×</button></li>)}</ol> : <p>Your tray is empty. Select cards in the graph or search below.</p>}</section>
+        <label className="principle-selection-search"><span>Search this graph</span><input value={selectionQuery} onChange={(event) => setSelectionQuery(event.target.value)} placeholder="Search title, claim, or area…" /></label>
+        {selectionQuery.trim() ? <div className="principle-selection-results">{selectionMatches.length ? selectionMatches.map((card) => <button key={card.id} onClick={() => { toggleConnectionNode(card.id); setSelectionQuery(""); }}><span><b>{card.title}</b><small>{card.claim}</small></span><em>+ Add</em></button>) : <p>No unselected Principle matches this graph.</p>}</div> : null}
         {selectionMode === "derive" ? <div className="virtual-principle-config"><label><span>Reasoning model</span><select value={selectedModel} onChange={(event) => setSelectedModel(event.target.value)}>{provider.models.map((model) => <option key={model}>{model}</option>)}</select></label><label><span>Optional research direction</span><input value={researchDirection} onChange={(event) => setResearchDirection(event.target.value)} placeholder="e.g. seek a robust design rule" /></label><label className="virtual-egress"><input type="checkbox" checked={confirmRemote} onChange={(event) => setConfirmRemote(event.target.checked)} /><span>Send only the selected Principle records to {provider.label}. No paper PDF or full text is sent.</span></label></div> : null}
-        <button className="primary" disabled={connectionSelection.length < 2 || isAnalyzing || (selectionMode === "derive" && (!confirmRemote || !provider.configured))} onClick={selectionMode === "derive" ? deriveVirtualPrinciples : analyzeConnections}>{isAnalyzing ? selectionMode === "derive" ? "Deep reasoning…" : "Comparing…" : selectionMode === "derive" ? "Generate 3 Virtual Principles" : "Analyze potential links"}</button>
+        <div className="principle-selection-actions"><button className="primary" disabled={connectionSelection.length < 2 || isAnalyzing || (selectionMode === "derive" && (!confirmRemote || !provider.configured))} onClick={selectionMode === "derive" ? deriveVirtualPrinciples : analyzeConnections}>{isAnalyzing ? selectionMode === "derive" ? "Deep reasoning…" : "Deriving connections…" : selectionMode === "derive" ? "Generate 3 Virtual Principles" : "Derive Virtual Connections"}</button>
         <button disabled={isAnalyzing} onClick={() => { setSelectionMode(""); setConnectionSelection([]); setConnectionMessage(""); }}>Cancel</button>
+        </div>
         <p>{selectionMode === "derive" ? provider.configured ? "Principia maps mechanisms, stress-tests boundaries, and returns falsifiable hypotheses with separate reliability and novelty assessments." : "Configure the LLM on Home before generating Virtual Principles." : "Selected pairs are compared without changing validated relations or library measures."}</p>
       </Panel> : null}
       {isolatedCount ? <Panel position="bottom-center" className="principle-isolate-note">
@@ -468,7 +514,7 @@ export function PrincipleGraph({
       {virtualGeneration ? <Panel position="top-right" className="virtual-principle-results">
         <header><div><span className="eyebrow">Virtual Principle studio</span><strong>{virtualGeneration.items.length} hypotheses from deep synthesis</strong></div><button aria-label="Close Virtual Principle results" onClick={() => setVirtualGeneration(null)}>×</button></header>
         <p>{virtualGeneration.disclosure}</p>
-        <div>{virtualGeneration.items.map((item) => <article key={item.virtual_id}><span>{item.proposal.derivation_level.replaceAll("_", " ")}</span><h3>{item.proposal.title}</h3><p>{item.proposal.claim}</p><div className="virtual-score-pair"><span><b>Reliability</b><strong>{Math.round(item.proposal.reliability_score)}</strong><i><em style={{ width: `${item.proposal.reliability_score}%` }} /></i></span><span><b>Novelty</b><strong>{Math.round(item.proposal.novelty_score)}</strong><i><em style={{ width: `${item.proposal.novelty_score}%` }} /></i></span></div><details><summary>Why this hypothesis?</summary><p><b>Synthesis:</b> {item.proposal.synthesis_summary}</p><p><b>Reliability:</b> {item.proposal.reliability_rationale}</p><p><b>Novelty:</b> {item.proposal.novelty_rationale}</p><p><b>Falsifier:</b> {item.proposal.falsifier}</p></details><button className="primary" disabled={savedVirtualIds.has(item.virtual_id) || savingVirtualId === item.virtual_id} onClick={() => saveVirtualPrinciple(item)}>{savedVirtualIds.has(item.virtual_id) ? "Saved locally" : savingVirtualId === item.virtual_id ? "Saving…" : "Save as local hypothesis"}</button></article>)}</div>
+        <div>{virtualGeneration.items.map((item) => { const savedCandidateId = savedVirtualCandidates[item.virtual_id]; return <article key={item.virtual_id}><span>{item.proposal.derivation_level.replaceAll("_", " ")}</span><h3>{item.proposal.title}</h3><p>{item.proposal.claim}</p><div className="virtual-score-pair"><span><b>Reliability</b><strong>{Math.round(item.proposal.reliability_score)}</strong><i><em style={{ width: `${item.proposal.reliability_score}%` }} /></i></span><span><b>Novelty</b><strong>{Math.round(item.proposal.novelty_score)}</strong><i><em style={{ width: `${item.proposal.novelty_score}%` }} /></i></span></div><details><summary>Why this hypothesis?</summary><p><b>Synthesis:</b> {item.proposal.synthesis_summary}</p><p><b>Reliability:</b> {item.proposal.reliability_rationale}</p><p><b>Novelty:</b> {item.proposal.novelty_rationale}</p><p><b>Falsifier:</b> {item.proposal.falsifier}</p></details>{savedCandidateId ? <button className="primary" onClick={() => onOpenSavedVirtualPrinciple(savedCandidateId)}>Open saved hypothesis</button> : <button className="primary" disabled={savingVirtualId === item.virtual_id} onClick={() => saveVirtualPrinciple(item)}>{savingVirtualId === item.virtual_id ? "Saving…" : "Save as local hypothesis"}</button>}</article>; })}</div>
       </Panel> : null}
       {selectedRelation ? <Panel position="top-right" className={`principle-edge-inspector${selectedIsVirtual ? " virtual" : selectedEdgeClass !== "validated" ? " context" : ""}`}>
         <button className="edge-close" aria-label="Close relation details" onClick={() => setSelectedEdgeId("")}>×</button>

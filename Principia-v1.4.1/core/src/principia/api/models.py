@@ -296,7 +296,7 @@ class PrincipleGraphViewResponse(DomainModel):
 
 
 class PotentialRelationsRequest(DomainModel):
-    principle_ids: list[str] = Field(min_length=2, max_length=6)
+    principle_ids: list[str] = Field(min_length=2, max_length=20)
 
     @model_validator(mode="after")
     def unique_principles(self) -> PotentialRelationsRequest:
@@ -306,7 +306,7 @@ class PotentialRelationsRequest(DomainModel):
 
 
 class VirtualPrincipleGenerateRequest(DomainModel):
-    principle_ids: list[str] = Field(min_length=2, max_length=6)
+    principle_ids: list[str] = Field(min_length=2, max_length=20)
     provider_profile_id: str = Field(default="siliconflow", min_length=2, max_length=80)
     model: str = Field(min_length=2, max_length=200)
     egress_confirmed: bool = False

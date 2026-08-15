@@ -6909,6 +6909,7 @@ export interface operations {
                 has_reliability?: boolean | null;
                 has_influence?: boolean | null;
                 known_contradictions?: boolean | null;
+                virtual_only?: boolean;
                 sort?: "relevance" | "updated" | "reliability" | "influence" | "supporting_papers" | "title";
                 limit?: number;
                 cursor?: string | null;
@@ -6957,6 +6958,7 @@ export interface operations {
                 has_reliability?: boolean | null;
                 has_influence?: boolean | null;
                 known_contradictions?: boolean | null;
+                virtual_only?: boolean;
                 sort?: "relevance" | "updated" | "reliability" | "influence" | "supporting_papers" | "title";
                 limit?: number;
             };

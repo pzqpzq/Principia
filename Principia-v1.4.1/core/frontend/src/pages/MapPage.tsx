@@ -119,6 +119,7 @@ export function MapPage() {
   const minimumSupport = Number(params.get("support") ?? 0);
   const relationFilter = params.get("relations") ?? "";
   const contradictions = params.get("contradictions") === "true" ? true : undefined;
+  const virtualOnly = params.get("virtual") === "true";
   const scenarioMode = params.get("scenario") === "true";
   const graphMode = params.get("view") === "graph";
   const scenarioId = params.get("scenario_id") ?? "";
@@ -155,7 +156,7 @@ export function MapPage() {
   };
 
   const principlePage = useQuery({
-    queryKey: ["principle-cards", scope, goalRunId, q, area, packageId, goalId, sourceId, claimType, evidenceStatus, humanReview, minimumSupport, relationFilter, contradictions, sort, pageNumber],
+    queryKey: ["principle-cards", scope, goalRunId, q, area, packageId, goalId, sourceId, claimType, evidenceStatus, humanReview, minimumSupport, relationFilter, contradictions, virtualOnly, sort, pageNumber],
     placeholderData: (previous) => previous,
     refetchInterval: goalRunId && !["succeeded", "partial", "failed", "cancelled", "interrupted"].includes(textValue(goalRun.data?.state)) ? 1_250 : false,
     queryFn: async () => dataOrThrow(await api.GET("/api/v1/principles", {
@@ -174,6 +175,7 @@ export function MapPage() {
         has_reliability: relationFilter === "reliability" ? true : undefined,
         has_influence: relationFilter === "influence" ? true : undefined,
         known_contradictions: contradictions,
+        virtual_only: virtualOnly || undefined,
         sort: sort as "relevance" | "updated" | "reliability" | "influence" | "supporting_papers" | "title",
         limit: 24,
         page: pageNumber,
@@ -183,7 +185,7 @@ export function MapPage() {
   const cards = principlePage.data?.items ?? [];
   const firstPage = principlePage.data;
   const graphView = useQuery({
-    queryKey: ["principle-graph", scope, goalRunId, q, area, packageId, goalId, sourceId, claimType, evidenceStatus, humanReview, minimumSupport, relationFilter, contradictions, sort],
+    queryKey: ["principle-graph", scope, goalRunId, q, area, packageId, goalId, sourceId, claimType, evidenceStatus, humanReview, minimumSupport, relationFilter, contradictions, virtualOnly, sort],
     enabled: graphMode,
     placeholderData: (previous) => previous,
     queryFn: async () => dataOrThrow(await api.GET("/api/v1/principles/graph", {
@@ -202,6 +204,7 @@ export function MapPage() {
         has_reliability: relationFilter === "reliability" ? true : undefined,
         has_influence: relationFilter === "influence" ? true : undefined,
         known_contradictions: contradictions,
+        virtual_only: virtualOnly || undefined,
         sort: sort as "relevance" | "updated" | "reliability" | "influence" | "supporting_papers" | "title",
         limit: 120,
       } },
@@ -223,7 +226,7 @@ export function MapPage() {
     models: listValue(graphProviderRecord.models).map(String),
   };
   const contextualFacets = useQuery({
-    queryKey: ["principle-facets", scope, q, packageId, goalId, sourceId],
+    queryKey: ["principle-facets", scope, q, packageId, goalId, sourceId, virtualOnly],
     queryFn: async () => dataOrThrow(await api.GET("/api/v1/principles", {
       params: { query: {
         scope: scope as "local" | "global" | "combined",
@@ -235,6 +238,7 @@ export function MapPage() {
         claim_type: "",
         evidence_status: "",
         human_review: "",
+        virtual_only: virtualOnly || undefined,
         minimum_supporting_papers: 0,
         sort: q ? "relevance" : "updated",
         limit: 1,
@@ -243,7 +247,7 @@ export function MapPage() {
     })) as PrinciplePage,
   });
   const viewFacets = useQuery({
-    queryKey: ["principle-view-facets", scope, q, packageId, goalId, sourceId, claimType, evidenceStatus, humanReview, minimumSupport, relationFilter, contradictions],
+    queryKey: ["principle-view-facets", scope, q, packageId, goalId, sourceId, claimType, evidenceStatus, humanReview, minimumSupport, relationFilter, contradictions, virtualOnly],
     queryFn: async () => dataOrThrow(await api.GET("/api/v1/principles", {
       params: { query: {
         scope: scope as "local" | "global" | "combined",
@@ -259,6 +263,7 @@ export function MapPage() {
         has_reliability: relationFilter === "reliability" ? true : undefined,
         has_influence: relationFilter === "influence" ? true : undefined,
         known_contradictions: contradictions,
+        virtual_only: virtualOnly || undefined,
         sort: q ? "relevance" : "updated",
         limit: 1,
         page: 1,
@@ -266,7 +271,7 @@ export function MapPage() {
     })) as PrinciplePage,
   });
   const claimFacets = useQuery({
-    queryKey: ["principle-claim-facets", scope, q, area, packageId, goalId, sourceId, evidenceStatus, humanReview, minimumSupport, relationFilter, contradictions],
+    queryKey: ["principle-claim-facets", scope, q, area, packageId, goalId, sourceId, evidenceStatus, humanReview, minimumSupport, relationFilter, contradictions, virtualOnly],
     queryFn: async () => dataOrThrow(await api.GET("/api/v1/principles", {
       params: { query: {
         scope: scope as "local" | "global" | "combined",
@@ -282,6 +287,7 @@ export function MapPage() {
         has_reliability: relationFilter === "reliability" ? true : undefined,
         has_influence: relationFilter === "influence" ? true : undefined,
         known_contradictions: contradictions,
+        virtual_only: virtualOnly || undefined,
         sort: q ? "relevance" : "updated",
         limit: 1,
         page: 1,
@@ -412,7 +418,8 @@ export function MapPage() {
     || humanReview
     || minimumSupport
     || relationFilter
-    || contradictions,
+    || contradictions
+    || virtualOnly,
   );
   const explorerAreaOptions = explorerAreaIds.map((areaId) => {
     const libraryArea = localAreaById.get(areaId);
@@ -437,11 +444,13 @@ export function MapPage() {
   const activePackage = listValue(objectValue(packages.data).areas)
     .map(objectValue)
     .find((item) => textValue(item.area) === packageId);
-  const collectionTitle = goalRunId ? textValue(goalRun.data?.goal, "Research goal results") : activeGoal?.title
+  const collectionTitle = virtualOnly ? "Saved Virtual Principles" : goalRunId ? textValue(goalRun.data?.goal, "Research goal results") : activeGoal?.title
     ?? activeFolder?.title
     ?? (activeArea ? `${activeArea.title.replaceAll("-", " ")} Principles` : undefined)
     ?? (activePackage ? `${textValue(activePackage.display_name, packageId)} Principles` : "All Principles");
-  const collectionDescription = activeGoal
+  const collectionDescription = virtualOnly
+    ? "Locally saved, LLM-derived hypotheses. They remain clearly marked as unreviewed until you validate or archive them."
+    : activeGoal
     ? `Principles grounded in papers collected for this research question. The question is fixed by the Library collection, not used as an extra Explorer filter.`
     : activeFolder
       ? `Principles extracted from papers indexed in the private folder “${activeFolder.title}”.`
@@ -457,10 +466,10 @@ export function MapPage() {
 
   return <div className="page explorer-page">
     <PageHeader
-      eyebrow={goalRunId ? "Reproducible research-goal result" : scope === "global" ? "Downloaded scientific knowledge" : scope === "combined" ? "Private and downloaded scientific knowledge" : "Private scientific knowledge"}
+      eyebrow={virtualOnly ? "Local hypothesis studio" : goalRunId ? "Reproducible research-goal result" : scope === "global" ? "Downloaded scientific knowledge" : scope === "combined" ? "Private and downloaded scientific knowledge" : "Private scientific knowledge"}
       title={collectionTitle}
       description={goalRunId ? "Principles found for this goal. Switch between Combined, Global, and Local without rerunning the search." : collectionDescription}
-      actions={<><button className={graphMode ? "primary" : ""} aria-pressed={graphMode} onClick={() => updateParams({ view: graphMode ? null : "graph", selected: null })}>{graphMode ? "Card Mode" : "Graph Mode"}</button>{goalRunId ? <button onClick={() => downloadJson("principia-goal-results", { goal_run: goalRun.data, membership: scope, cards: graphMode ? graphCards : cards, relations: graphView.data?.edges ?? [] })}>Export results</button> : <><button aria-pressed={scenarioMode} onClick={() => updateParams({ scenario: scenarioMode ? null : "true" })}>Scenario Mode</button><button onClick={() => downloadJson("principia-explorer", { filters: Object.fromEntries(params), cards: graphMode ? graphCards : cards, relations: graphView.data?.edges ?? [] })}>Export view</button></>}</>}
+      actions={<><button className={`virtual-header-action${virtualOnly ? " active" : ""}`} onClick={() => virtualOnly ? navigate("/map?scope=local&evidence=checks_passed") : navigate("/map?scope=local&evidence=checking&virtual=true")}>{virtualOnly ? "All Principles" : "✦ Saved Virtual"}</button><button className={graphMode ? "primary" : ""} aria-pressed={graphMode} onClick={() => updateParams({ view: graphMode ? null : "graph", selected: null })}>{graphMode ? "Card Mode" : "Graph Mode"}</button>{goalRunId ? <button onClick={() => downloadJson("principia-goal-results", { goal_run: goalRun.data, membership: scope, cards: graphMode ? graphCards : cards, relations: graphView.data?.edges ?? [] })}>Export results</button> : <><button aria-pressed={scenarioMode} onClick={() => updateParams({ scenario: scenarioMode ? null : "true" })}>Scenario Mode</button><button onClick={() => downloadJson("principia-explorer", { filters: Object.fromEntries(params), cards: graphMode ? graphCards : cards, relations: graphView.data?.edges ?? [] })}>Export view</button></>}</>}
     />
 
     {goalRunId ? <nav className="goal-membership-tabs" aria-label="Research goal result source">{(["combined", "global", "local"] as const).map((membership) => <button key={membership} className={scope === membership ? "selected" : ""} aria-pressed={scope === membership} onClick={() => updateParams({ scope: membership, selected: null })}><strong>{membership === "combined" ? "Combined" : membership === "global" ? "Global" : "Local"}</strong><small>{String(goalMembershipCounts.data?.[membership] ?? "—")} Principles</small></button>)}</nav> : <section className="explorer-context" aria-label="Explorer context">
@@ -480,6 +489,7 @@ export function MapPage() {
       {(() => { const FiltersContainer: "details" | "aside" = goalRunId ? "details" : "aside"; return <FiltersContainer className="explorer-filters" aria-label="Principle filters">
         {goalRunId ? <summary>Refine these results</summary> : null}
         <h2>Filter Principles</h2>
+        {!goalRunId ? <button className={`virtual-library-shortcut${virtualOnly ? " active" : ""}`} onClick={() => virtualOnly ? updateParams({ virtual: null, evidence: "checks_passed", selected: null }) : updateParams({ virtual: "true", scope: "local", evidence: "checking", goal_run: null, selected: null, view: null })}><span>✦</span><strong>{virtualOnly ? "Viewing Saved Virtual Principles" : "Saved Virtual Principles"}</strong><small>{virtualOnly ? "Return to the full library" : "Open locally saved hypotheses"}</small></button> : null}
         {!goalRunId ? <label><span>Knowledge source</span><SmartSelect ariaLabel="Knowledge source" value={scope} onChange={(value) => updateParams({ scope: value, selected: null })} options={[{ value: "local", label: "Local" }, { value: "global", label: "Global" }, { value: "combined", label: "Combined" }]} /></label> : null}
         <label><span>Area</span><SmartSelect ariaLabel="Area" value={area} onChange={(value) => updateParams({ area: value, selected: null })} options={[{ value: "", label: "All Areas", description: `${viewFacets.data?.total ?? 0} Principles match current filters` }, ...explorerAreaOptions]} /></label>
         <p className="filter-help">These are the same Areas shown in Principles Library. A Principle may belong to more than one Area.</p>
@@ -491,7 +501,7 @@ export function MapPage() {
         <label><span>Minimum supporting papers</span><input type="number" min={0} value={minimumSupport} onChange={(event) => updateParams({ support: event.target.value === "0" ? null : event.target.value, selected: null })} /></label>
         <label><span>Relation evidence</span><SmartSelect ariaLabel="Relation evidence" value={relationFilter} onChange={(value) => updateParams({ relations: value, selected: null })} options={[{ value: "", label: "Any availability", description: `${firstPage?.total ?? 0} matching` }, ...(reliabilityAvailable || relationFilter === "reliability" ? [{ value: "reliability", label: "Reliability available", description: `${reliabilityAvailable} matching` }] : []), ...(influenceAvailable || relationFilter === "influence" ? [{ value: "influence", label: "Influence available", description: `${influenceAvailable} matching` }] : [])]} /></label>
         <label className="inline-check"><input type="checkbox" checked={Boolean(contradictions)} disabled={!contradictionCount && !contradictions} onChange={(event) => updateParams({ contradictions: event.target.checked ? "true" : null, selected: null })} /><span>{contradictionCount ? `Known contradictions only (${contradictionCount})` : "No validated contradictions"}</span></label>
-        <button onClick={() => { const reset = new URLSearchParams({ scope, evidence: "checks_passed" }); if (packageId) reset.set("package", packageId); if (goalId) reset.set("goal", goalId); if (sourceId) reset.set("source", sourceId); if (activeArea) reset.set("area", area); setParams(reset); }}>Reset filters</button>
+        <button onClick={() => { const reset = new URLSearchParams({ scope: virtualOnly ? "local" : scope, evidence: virtualOnly ? "checking" : "checks_passed" }); if (virtualOnly) reset.set("virtual", "true"); if (packageId && !virtualOnly) reset.set("package", packageId); if (goalId && !virtualOnly) reset.set("goal", goalId); if (sourceId && !virtualOnly) reset.set("source", sourceId); if (activeArea) reset.set("area", area); setParams(reset); }}>Reset filters</button>
       </FiltersContainer>; })()}
 
       <main className="explorer-results">
@@ -502,11 +512,11 @@ export function MapPage() {
         {goalRunId ? <details className="score-explanation compact"><summary>About Reliability and Influence</summary><span>Reliability summarizes validated support versus contradiction links using a conservative confidence bound. Influence is connectivity within this installed library. Neither is a truth probability or real-world importance score.</span>{metricState !== "complete" ? <em>Relation measures are not available yet.</em> : null}</details> : <div className="score-explanation"><strong>How these measures work</strong><span>Reliability summarizes validated support versus contradiction links using a conservative confidence bound. Influence is connectivity within this installed library. Neither is a truth probability or real-world importance score.</span>{metricState !== "complete" ? <em>Relation measures are not available yet.</em> : null}</div>}
         {(graphMode ? graphView.isLoading : principlePage.isLoading) ? <LoadingState label={graphMode ? "Laying out validated Principle relations…" : "Preparing Principle cards…"} /> : null}
         {(graphMode ? graphView.isError : principlePage.isError) ? <ErrorState error={graphMode ? graphView.error : principlePage.error} retry={() => graphMode ? graphView.refetch() : principlePage.refetch()} /> : null}
-        {graphMode && graphView.data && graphCards.length ? <><div className="graph-view-heading"><div><strong>{graphView.data.shown_count} Principles · {graphEdgeCounts.validated ?? 0} validated · {(graphEdgeCounts.shared_evidence ?? 0) + (graphEdgeCounts.semantic_affinity ?? 0)} context links</strong><span>{graphView.data.explanation}</span></div>{graphView.data.truncated ? <em>Showing the first {graphView.data.maximum_nodes} matching Principles. Refine the view to focus the graph.</em> : null}</div><Suspense fallback={<LoadingState label="Loading the interactive graph surface…" />}><PrincipleGraph cards={graphCards} relations={graphView.data.edges} selectedId={selectedId} onSelectPrinciple={(id) => updateParams({ selected: id })} onAnalyzePotentialRelations={analyzePotentialRelations} provider={graphProvider} onGenerateVirtualPrinciples={generateVirtualPrinciples} onSaveVirtualPrinciple={saveVirtualPrinciple} /></Suspense></> : null}
+        {graphMode && graphView.data && graphCards.length ? <><div className="graph-view-heading"><div><strong>{graphView.data.shown_count} Principles · {graphEdgeCounts.validated ?? 0} validated · {(graphEdgeCounts.shared_evidence ?? 0) + (graphEdgeCounts.semantic_affinity ?? 0)} context links</strong><span>{graphView.data.explanation}</span></div>{graphView.data.truncated ? <em>Showing the first {graphView.data.maximum_nodes} matching Principles. Refine the view to focus the graph.</em> : null}</div><Suspense fallback={<LoadingState label="Loading the interactive graph surface…" />}><PrincipleGraph cards={graphCards} relations={graphView.data.edges} selectedId={selectedId} onSelectPrinciple={(id) => updateParams({ selected: id })} onAnalyzePotentialRelations={analyzePotentialRelations} provider={graphProvider} onGenerateVirtualPrinciples={generateVirtualPrinciples} onSaveVirtualPrinciple={saveVirtualPrinciple} onOpenSavedVirtualPrinciple={(candidateId) => navigate(`/map?scope=local&evidence=checking&virtual=true&selected=${encodeURIComponent(candidateId)}`)} /></Suspense></> : null}
         {!(graphMode ? graphView.isLoading : principlePage.isLoading) && !(graphMode ? graphView.isError : principlePage.isError) && !(graphMode ? graphCards.length : cards.length) ? <EmptyState title="No Principles match this view"><p>Try clearing a filter or inspect Held back drafts separately. Principia will not invent filler to populate the library.</p></EmptyState> : null}
         {!graphMode ? <section className="principle-card-grid" aria-label="Principle cards">{cards.map((card) => <article className={`principle-card ${selectedId === card.id ? "selected" : ""}`} key={card.id}>
           <button className="principle-card-open" onClick={() => updateParams({ selected: card.id })} aria-label={`Inspect ${card.title}`}>
-            <div className="principle-card-top"><span className={`source-badge ${card.source}`}>{card.source === "local" ? "Local" : card.source === "both" ? "Global + Local" : "Global"}</span><span>{claimLabels[card.claim_type] ?? card.claim_type.replaceAll("_", " ")}</span></div>
+            <div className="principle-card-top"><span className={`source-badge ${card.source}${card.virtual ? " virtual" : ""}`}>{card.virtual ? "Virtual hypothesis" : card.source === "local" ? "Local" : card.source === "both" ? "Global + Local" : "Global"}</span><span>{claimLabels[card.claim_type] ?? card.claim_type.replaceAll("_", " ")}</span></div>
             <h2>{card.title}</h2><p>{card.claim}</p>
           </button>
           <div className="principle-card-tags">{card.area_labels.length ? card.area_labels.map((label) => <span key={label}>{label.replaceAll("-", " ")}</span>) : <span>Not categorized</span>}<span>{evidenceLabels[card.evidence_status]}</span><span>{card.human_review_status === "pending" ? "Human review pending" : card.human_review_status}</span></div>
@@ -520,7 +530,7 @@ export function MapPage() {
     </div>
 
     {selectedId ? <div className="detail-drawer-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) updateParams({ selected: null }); }}><aside className="principle-detail-drawer" role="dialog" aria-modal="true" aria-labelledby="principle-detail-title">
-      <header><div><span className="eyebrow">{selectedCard?.source === "global" ? (selectedCard.human_review_status === "reviewed" ? "Reviewed package Principle" : "Downloaded Principle · Human review pending") : "Local Principle · Human review pending"}</span><h2 id="principle-detail-title">{selectedCard?.title ?? textValue(detailValue.title, "Opening Principle…")}</h2></div><button aria-label="Close Principle details" onClick={() => updateParams({ selected: null })}>×</button></header>
+      <header><div><span className="eyebrow">{selectedCard?.virtual ? "Saved Virtual Principle · Unreviewed hypothesis" : selectedCard?.source === "global" ? (selectedCard.human_review_status === "reviewed" ? "Reviewed package Principle" : "Downloaded Principle · Human review pending") : "Local Principle · Human review pending"}</span><h2 id="principle-detail-title">{selectedCard?.title ?? textValue(detailValue.title, "Opening Principle…")}</h2></div><button aria-label="Close Principle details" onClick={() => updateParams({ selected: null })}>×</button></header>
       {detail.isLoading ? <LoadingState label="Opening evidence and relations…" /> : null}
       {detail.isError ? <ErrorState error={detail.error} retry={() => detail.refetch()} /> : null}
       {!detail.isLoading && !detail.isError ? <div className="principle-detail-content">

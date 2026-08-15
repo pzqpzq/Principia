@@ -29,11 +29,18 @@ def test_production_frontend_graph_is_an_optional_bounded_explorer_view() -> Non
     assert 'type: "bezier"' in graph
     assert "connectedComponents" in graph
     assert "isolates" in graph
-    assert "Compare &amp; connect" in graph
+    assert "Derive Virtual Connection" in graph
+    assert "Select 2–20 Principles" in graph
+    assert "Selected Principles tray" in graph
+    assert 'value="macaron"' in graph
+    assert 'value="midnight"' in graph
+    assert "Open saved hypothesis" in graph
     assert "virtual-principle-edge" in graph
     assert "onAnalyzePotentialRelations" in graph
     assert "MiniMap" not in graph
     assert 'params.get("view") === "graph"' in explorer
+    assert 'params.get("virtual") === "true"' in explorer
+    assert "Saved Virtual Principles" in explorer
     assert "lazy(() => import" in explorer
 
 

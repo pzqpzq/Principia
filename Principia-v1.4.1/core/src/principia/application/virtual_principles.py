@@ -81,8 +81,8 @@ class VirtualPrincipleService:
         research_direction: str,
     ) -> dict[str, Any]:
         identifiers = list(dict.fromkeys(principle_ids))
-        if not 2 <= len(identifiers) <= 6:
-            raise ValueError("Select between two and six Principles")
+        if not 2 <= len(identifiers) <= 20:
+            raise ValueError("Select between two and twenty Principles")
         records = [self._provider_record(identifier, self._detail(identifier)) for identifier in identifiers]
         _, policy, api_key = self.local.provider_configuration(
             provider_profile_id,
@@ -134,8 +134,8 @@ class VirtualPrincipleService:
         trace: dict[str, Any],
     ) -> dict[str, Any]:
         parents = list(dict.fromkeys(proposal.contributing_principle_ids))
-        if not 2 <= len(parents) <= 6:
-            raise ValueError("A Virtual Principle must retain two to six parent Principles")
+        if not 2 <= len(parents) <= 20:
+            raise ValueError("A Virtual Principle must retain two to twenty parent Principles")
         for identifier in parents:
             self._detail(identifier)
         area = re.sub(r"[^a-z0-9-]+", "-", proposal.area.casefold()).strip("-") or "general"

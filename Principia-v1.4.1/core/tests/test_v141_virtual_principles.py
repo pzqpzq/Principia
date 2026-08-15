@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
+
 from principia.application import Principia
 from principia.application.explorer import PrincipleExplorerService
 from principia.domain import (
@@ -155,6 +157,63 @@ def test_virtual_principle_generation_is_bounded_and_saves_only_on_request(
     )
     assert card["virtual"] is True
     assert card["human_review_status"] == "pending"
+    saved_view = product.explorer.browse(
+        scope="local", evidence_status="checking", virtual_only=True, limit=100
+    )
+    assert [item["id"] for item in saved_view["items"]] == [saved["candidate_id"]]
+
+
+def test_virtual_workflows_accept_twenty_selected_principles(tmp_path: Path) -> None:
+    product = Principia.open(tmp_path / "workspace", cloud_root=tmp_path / "cloud")
+    identifiers = [f"cand:parent-{index:02d}" for index in range(20)]
+    for index, identifier in enumerate(identifiers):
+        _parent(
+            product,
+            identifier,
+            f"Mechanism {index} contributes a distinct constraint to scientific discovery.",
+        )
+
+    connections = product.explorer.potential_relations(identifiers)
+    assert connections["analyzed_pair_count"] == 190
+    extra = "cand:parent-20"
+    _parent(product, extra, "An additional mechanism exceeds the bounded selection tray.")
+    with pytest.raises(ValueError, match="two and twenty"):
+        product.explorer.potential_relations([*identifiers, extra])
+
+    proposal = VirtualPrincipleProposal(
+        title="Twenty-mechanism synthesis defines a composite discovery hypothesis",
+        claim=(
+            "Combining the twenty independently selected constraints may expose a composite "
+            "boundary that is invisible when each Principle is considered alone."
+        ),
+        area="machine-intelligence",
+        derivation_level="cross_context_generalization",
+        scope_statement="Scientific discovery systems represented by all selected mechanisms.",
+        conditions=["each parent remains applicable in the composite setting"],
+        exclusions=["settings where any parent is known to be invalid"],
+        falsifier="A complete ablation finds no composite boundary beyond every single parent.",
+        assumptions=["the selected scopes can be compared without category error"],
+        contributing_principle_ids=identifiers,
+        synthesis_summary=(
+            "The proposal preserves all twenty selected parents as inspectable provenance."
+        ),
+        reliability_rationale=(
+            "Reliability remains limited because compatibility across all scopes is unverified."
+        ),
+        novelty_rationale=(
+            "The proposed boundary is defined only by the joint twenty-parent configuration."
+        ),
+        reliability_score=61,
+        novelty_score=88,
+    )
+    saved = product.virtual_principles.save(
+        proposal,
+        provider="fixture",
+        model="fixture-model",
+        trace={},
+    )
+    assert len(saved["raw_legacy_payload"]["parent_principle_ids"]) == 20
+    assert len(saved["relations"]) == 20
 
 
 def test_graph_metrics_vary_with_evidence_and_network_position() -> None:

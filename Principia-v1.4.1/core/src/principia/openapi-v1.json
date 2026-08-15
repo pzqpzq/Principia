@@ -2035,7 +2035,7 @@
             "items": {
               "type": "string"
             },
-            "maxItems": 6,
+            "maxItems": 20,
             "minItems": 2,
             "title": "Principle Ids",
             "type": "array"
@@ -3473,7 +3473,7 @@
             "items": {
               "type": "string"
             },
-            "maxItems": 6,
+            "maxItems": 20,
             "minItems": 2,
             "title": "Principle Ids",
             "type": "array"
@@ -3589,7 +3589,7 @@
             "items": {
               "type": "string"
             },
-            "maxItems": 6,
+            "maxItems": 20,
             "minItems": 2,
             "title": "Contributing Principle Ids",
             "type": "array"
@@ -8403,6 +8403,16 @@
           },
           {
             "in": "query",
+            "name": "virtual_only",
+            "required": false,
+            "schema": {
+              "default": false,
+              "title": "Virtual Only",
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
             "name": "sort",
             "required": false,
             "schema": {
@@ -8652,6 +8662,16 @@
                 }
               ],
               "title": "Known Contradictions"
+            }
+          },
+          {
+            "in": "query",
+            "name": "virtual_only",
+            "required": false,
+            "schema": {
+              "default": false,
+              "title": "Virtual Only",
+              "type": "boolean"
             }
           },
           {

@@ -24,7 +24,7 @@ class VirtualPrincipleProposal(DomainModel):
     exclusions: list[str] = Field(default_factory=list, max_length=12)
     falsifier: str = Field(min_length=12, max_length=1_200)
     assumptions: list[str] = Field(default_factory=list, max_length=12)
-    contributing_principle_ids: list[str] = Field(min_length=2, max_length=6)
+    contributing_principle_ids: list[str] = Field(min_length=2, max_length=20)
     synthesis_summary: str = Field(min_length=20, max_length=1_600)
     reliability_rationale: str = Field(min_length=20, max_length=1_200)
     novelty_rationale: str = Field(min_length=20, max_length=1_200)
