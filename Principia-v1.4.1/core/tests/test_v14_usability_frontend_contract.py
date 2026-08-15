@@ -33,7 +33,17 @@ def test_production_frontend_graph_is_an_optional_bounded_explorer_view() -> Non
     assert "Select 2–20 Principles" in graph
     assert "Selected Principles tray" in graph
     assert 'value="macaron"' in graph
+    assert ">Daylight</option>" in graph
     assert 'value="midnight"' in graph
+    assert "Present</button>" not in graph
+    assert ">Palette</span>" not in graph
+    assert "Selected Principle details" in graph
+    assert "Virtual work tray" in graph
+    assert "Temporary connection batches" in graph
+    assert "Generated hypothesis batches" in graph
+    assert "Synthesis in progress" in graph
+    assert "Close Virtual Principle studio" in graph
+    assert "onOpenSavedVirtualLibrary" in graph
     assert "Open saved hypothesis" in graph
     assert "virtual-principle-edge" in graph
     assert "onAnalyzePotentialRelations" in graph
