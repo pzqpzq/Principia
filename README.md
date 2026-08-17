@@ -48,9 +48,7 @@ python -m pip install principia-ai==1.4.1
 principia open --working-directory ./principia-project
 ```
 
-<p align="center">
-  <img src="./assets/screenshots-v1.4.1/principles_map.png" alt="Principia v1.4.1 Principles Map" width="100%">
-</p>
+[![Principia v1.4.1 Principles Map](assets/screenshots-v1.4.1/principles-map.jpg)](assets/screenshots-v1.4.1/principles-map.jpg)
 
 > **Principia is a continuously maintained Principles Cloud, not a static collection of paper summaries.**
 >
