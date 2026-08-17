@@ -49,7 +49,7 @@ principia open --working-directory ./principia-project
 ```
 
 <p align="center">
-  <img src="./assets/screenshots-v1.4.0/principia-library.png" alt="Principia v1.4.0 Principles Library" width="100%">
+  <img src="./assets/screenshots-v1.4.1/principles_map.png" alt="Principia v1.4.1 Principles Map" width="100%">
 </p>
 
 > **Principia is a continuously maintained Principles Cloud, not a static collection of paper summaries.**
