@@ -3,7 +3,7 @@
 from principia_retrieval import RetrievalConfig, SearchDiagnostics, SourceReport
 
 from ._version import __version__
-from .application import AdminWorkspace, Principia, PrinciplesCloud
+from .application import Principia, PrinciplesCloud
 from .domain import (
     AreaManifest,
     CandidatePrinciple,
@@ -70,7 +70,6 @@ from .workspace import Workspace
 
 __all__ = [
     "__version__",
-    "AdminWorkspace",
     "AreaManifest",
     "CancelToken",
     "CandidatePrinciple",

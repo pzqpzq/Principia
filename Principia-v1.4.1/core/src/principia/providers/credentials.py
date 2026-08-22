@@ -105,11 +105,7 @@ class ProviderCredentialStore:
         profiles = payload.get("profiles")
         if not isinstance(profiles, dict):
             raise PermissionError("the workspace provider credential file has an invalid format")
-        return {
-            str(key): dict(value)
-            for key, value in profiles.items()
-            if isinstance(value, dict)
-        }
+        return {str(key): dict(value) for key, value in profiles.items() if isinstance(value, dict)}
 
     def _write(self, records: dict[str, dict[str, Any]]) -> None:
         self.directory.mkdir(parents=True, exist_ok=True, mode=0o700)
@@ -178,7 +174,5 @@ class ProviderCredentialStore:
     @staticmethod
     def _environment_key(provider_id: str) -> str:
         if provider_id == "siliconflow":
-            return os.getenv("PRINCIPIA_LLM_API_KEY", "") or os.getenv(
-                "SILICONFLOW_API_KEY", ""
-            )
+            return os.getenv("PRINCIPIA_LLM_API_KEY", "") or os.getenv("SILICONFLOW_API_KEY", "")
         return ""

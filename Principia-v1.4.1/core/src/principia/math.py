@@ -345,7 +345,9 @@ def _normalize_body(value: str) -> str:
     if "==" in body:
         raise MathValidationError("Use = for mathematical equality, not ==")
     if re.search(r"\b(?:if|elif|else)\b", body, flags=re.IGNORECASE):
-        raise MathValidationError("Use a LaTeX cases expression instead of programming conditionals")
+        raise MathValidationError(
+            "Use a LaTeX cases expression instead of programming conditionals"
+        )
     if re.search(r"\bintegral\s*\(", body, flags=re.IGNORECASE):
         raise MathValidationError("Use the LaTeX \\int command instead of integral(...)")
     if _REPEATED_SCRIPT.search(body):
@@ -403,6 +405,7 @@ def _normalize_unicode_scripts(body: str) -> str:
 
 def _normalize_ascii_greek(body: str) -> str:
     for name, command in _ASCII_GREEK.items():
+
         def replace_greek(_match: re.Match[str], replacement: str = command) -> str:
             return replacement
 

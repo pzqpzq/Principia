@@ -18,6 +18,7 @@ export function readableJobKind(kind: string): string {
     local_source_index: "Folder indexing",
     literature_acquisition: "Paper acquisition",
     local_extraction: "Principle extraction",
+    research_goal_run: "Research goal",
     relation_index: "Relation analysis",
   }[kind] ?? kind.replaceAll("_", " ");
 }

@@ -1,6 +1,21 @@
 # Changelog
 
-## 1.4.1 - 2026-08-13
+## 1.4.1 - 2026-08-22
+
+- Replaced the multi-page Home/Results/settings path with one durable New
+  Research workspace: a compact goal bar, optional unselected local sources,
+  in-place online acquisition, streaming result tray, shared inspector, and
+  automatically persisted project/session graph.
+- Added Global Cloud schema v2 with a unified literature/Meta-Principle contract,
+  406 traceable reviewed Meta revisions, explicit foundation assessments/gaps,
+  richer relations, controlled scholarly areas, graph coordinates/RTree, and
+  memory-mapped 1,024-dimensional vector indexes.
+- Replaced the large DOM graph path with a Sigma.js/Graphology WebGL map using
+  area supernodes, zoom-dependent content, viewport queries, a Web Worker, and
+  bounded rich rendering; saved sessions retain real snapshot and virtual edges.
+- Added Meta-aware extraction after independent scientific validation. Solid
+  unlinked findings remain publishable as `ungrounded_solid`; unsupported claims
+  cannot be rehabilitated by semantic proximity to a Meta-Principle.
 
 - Added the Git-backed, reviewable `global-cloud/` canonical dataset with immutable
   Work and Principle revisions, many-to-many provenance, deterministic shards,
@@ -8,12 +23,15 @@
 - Added paper-first hybrid Global retrieval, SQLite pagination/facets, vector
   memory mapping, visible FTS degradation, and pinned Global/Local/Combined
   research-goal runs with exact-digest deduplication only.
-- Replaced fixture-only Admin operations with discover, four-wide full-text
-  extraction, crash-safe cleanup, comparison, per-item review, checked PR
-  publication, release status, and Cloud Browser workflows.
+- Separated all privileged Cloud-maintenance code and UI into a local-only sibling
+  package; the public distribution retains read-only Cloud contracts, search,
+  validation, and snapshot infrastructure only.
 - Preserved all three v1.4.0 `.pcp` packages and migrated their verified baseline
   of 18 Works, 62 unassessed Principles, 191 provenance links, and 36 relations
   without silently upgrading review status.
+- Started the final Cloud migration from live release `20260821-06ae855fe489`
+  (676 Principles, 233 Works, 1,295 provenance links, 36 relations), while
+  retaining the package baseline only as compatibility history.
 
 ## 1.3.3 - 2026-07-16
 

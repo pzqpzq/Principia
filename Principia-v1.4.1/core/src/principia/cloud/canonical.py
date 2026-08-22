@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 import os
 import shutil
 import sqlite3
@@ -19,6 +20,7 @@ from ..domain.hashing import (
     file_sha256,
     loads_strict,
 )
+from .disciplines import classify_scientific_discipline
 from .models_v1 import (
     CloudDeltaManifest,
     CloudManifest,
@@ -29,13 +31,41 @@ from .models_v1 import (
     WorkRevision,
     reject_forbidden_cloud_fields,
 )
+from .models_v2 import (
+    FoundationAssessmentRevision,
+    FoundationGapRevision,
+    FoundationLinkRevision,
+    PrincipleRevisionV2,
+    PrincipleWorkLinkV2,
+    RelationRevisionV2,
+    WorkRevisionV2,
+)
 
-RecordKind = Literal["works", "principles", "principle-work", "relations"]
-KIND_MODELS = {
+RecordKind = Literal[
+    "works",
+    "principles",
+    "meta-principles",
+    "principle-work",
+    "relations",
+    "foundation-links",
+    "foundation-assessments",
+    "foundation-gaps",
+]
+V1_KIND_MODELS = {
     "works": WorkRevision,
     "principles": PrincipleRevision,
     "principle-work": PrincipleWorkLink,
     "relations": RelationRevision,
+}
+V2_KIND_MODELS = {
+    "works": WorkRevisionV2,
+    "principles": PrincipleRevisionV2,
+    "meta-principles": PrincipleRevisionV2,
+    "principle-work": PrincipleWorkLinkV2,
+    "relations": RelationRevisionV2,
+    "foundation-links": FoundationLinkRevision,
+    "foundation-assessments": FoundationAssessmentRevision,
+    "foundation-gaps": FoundationGapRevision,
 }
 PCG_ENTRIES = {
     "manifest.json",
@@ -51,7 +81,7 @@ MAX_SNAPSHOT_BYTES = 512 * 1024 * 1024
 def record_identity(kind: RecordKind, payload: dict[str, Any]) -> str:
     if kind == "works":
         return str(payload["work_id"])
-    if kind == "principles":
+    if kind in {"principles", "meta-principles"}:
         return str(payload["principle_id"])
     if kind == "principle-work":
         return ":".join(
@@ -65,21 +95,35 @@ def record_identity(kind: RecordKind, payload: dict[str, Any]) -> str:
                 str(payload.get("evidence_digest") or ""),
             ]
         )
-    return str(payload["relation_id"])
+    if kind == "relations":
+        return str(payload["relation_id"])
+    if kind == "foundation-links":
+        return str(payload["link_id"])
+    if kind == "foundation-assessments":
+        return str(payload["assessment_id"])
+    return str(payload["gap_id"])
 
 
 def shard_name(identifier: str) -> str:
     return f"{hashlib.sha256(identifier.encode('utf-8')).hexdigest()[:2]}.jsonl"
 
 
-def normalize_record(kind: RecordKind, payload: dict[str, Any]) -> dict[str, Any]:
+def normalize_record(
+    kind: RecordKind, payload: dict[str, Any], *, schema_generation: int = 1
+) -> dict[str, Any]:
     reject_forbidden_cloud_fields(payload)
-    model = KIND_MODELS[kind].model_validate(payload)
+    models = V2_KIND_MODELS if schema_generation >= 2 else V1_KIND_MODELS
+    model = models[kind].model_validate(payload)
     normalized = model.model_dump(mode="json")
-    if "content_digest" in normalized and not normalized["content_digest"]:
-        normalized["content_digest"] = canonical_sha256(
+    if "content_digest" in normalized:
+        expected_digest = canonical_sha256(
             {key: value for key, value in normalized.items() if key != "content_digest"}
         )
+        if normalized["content_digest"] and normalized["content_digest"] != expected_digest:
+            raise ValueError(
+                f"{kind} record {record_identity(kind, normalized)} has a stale content digest"
+            )
+        normalized["content_digest"] = expected_digest
     return normalized
 
 
@@ -89,12 +133,28 @@ def _sort_key(kind: RecordKind, payload: dict[str, Any]) -> tuple[Any, ...]:
     return identifier, revision, canonical_json_bytes(payload)
 
 
+def _latest_records(
+    records: Iterable[dict[str, Any]], identifier_key: str
+) -> dict[str, dict[str, Any]]:
+    latest: dict[str, dict[str, Any]] = {}
+    for row in records:
+        identifier = str(row[identifier_key])
+        if identifier not in latest or int(row.get("revision") or 1) > int(
+            latest[identifier].get("revision") or 1
+        ):
+            latest[identifier] = row
+    return latest
+
+
 class CanonicalCloudRepository:
     """Reviewable, deterministically sharded source of truth for Global Cloud."""
 
     def __init__(self, root: str | Path) -> None:
         self.root = Path(root).expanduser().resolve()
-        self.data_root = self.root / "data" / "v1"
+        v2_root = self.root / "data" / "v2"
+        self.schema_generation = 2 if v2_root.exists() else 1
+        self.data_root = v2_root if self.schema_generation == 2 else self.root / "data" / "v1"
+        self.kind_models = V2_KIND_MODELS if self.schema_generation == 2 else V1_KIND_MODELS
 
     def records(self, kind: RecordKind) -> list[dict[str, Any]]:
         rows: list[dict[str, Any]] = []
@@ -109,12 +169,10 @@ class CanonicalCloudRepository:
                 value = loads_strict(raw)
                 if not isinstance(value, dict):
                     raise ValueError(f"{path.name}:{line_number} is not a JSON object")
-                normalized = normalize_record(kind, value)
+                normalized = normalize_record(kind, value, schema_generation=self.schema_generation)
                 expected = shard_name(record_identity(kind, normalized))
                 if path.name != expected:
-                    raise ValueError(
-                        f"{path.name}:{line_number} belongs in shard {expected}"
-                    )
+                    raise ValueError(f"{path.name}:{line_number} belongs in shard {expected}")
                 shard_rows.append(normalized)
             if shard_rows != sorted(shard_rows, key=lambda row: _sort_key(kind, row)):
                 raise ValueError(f"{kind} shard {path.name} is not in canonical order")
@@ -122,24 +180,26 @@ class CanonicalCloudRepository:
         return rows
 
     def all_records(self) -> dict[RecordKind, list[dict[str, Any]]]:
-        return {kind: self.records(kind) for kind in KIND_MODELS}
+        return {kind: self.records(kind) for kind in self.kind_models}
 
     def validate(self) -> dict[str, Any]:
         records = self.all_records()
         works = {row["work_id"] for row in records["works"]}
-        principles = {
-            (row["principle_id"], int(row["revision"])) for row in records["principles"]
-        }
-        current_ids = {row["principle_id"] for row in records["principles"]}
+        principle_rows = [
+            *records["principles"],
+            *records.get("meta-principles", []),
+        ]
+        principles = {(row["principle_id"], int(row["revision"])) for row in principle_rows}
+        current_ids = {row["principle_id"] for row in principle_rows}
         if len({(row["work_id"], int(row["revision"])) for row in records["works"]}) != len(
             records["works"]
         ):
             raise ValueError("duplicate Work revision")
-        if len(principles) != len(records["principles"]):
+        if len(principles) != len(principle_rows):
             raise ValueError("duplicate Principle revision")
-        if len({record_identity("principle-work", row) for row in records["principle-work"]}) != len(
-            records["principle-work"]
-        ):
+        if len(
+            {record_identity("principle-work", row) for row in records["principle-work"]}
+        ) != len(records["principle-work"]):
             raise ValueError("duplicate Principle–Work provenance link")
         strong_identifiers: dict[tuple[str, str], str] = {}
         for row in records["works"]:
@@ -163,20 +223,52 @@ class CanonicalCloudRepository:
                 row.get("unresolved_target") and row.get("status") == "retired"
             ):
                 raise ValueError("relation target is unknown")
+        if self.schema_generation >= 2:
+            meta_revisions = {
+                (row["principle_id"], int(row["revision"])) for row in records["meta-principles"]
+            }
+            literature_revisions = {
+                (row["principle_id"], int(row["revision"])) for row in records["principles"]
+            }
+            foundation_link_ids = {row["link_id"] for row in records["foundation-links"]}
+            if len(foundation_link_ids) != len(records["foundation-links"]):
+                raise ValueError("duplicate Foundation link identity")
+            for row in records["foundation-links"]:
+                literature_key = (row["principle_id"], int(row["principle_revision"]))
+                meta_key = (
+                    row["meta_principle_id"],
+                    int(row["meta_principle_revision"]),
+                )
+                if literature_key not in literature_revisions:
+                    raise ValueError("Foundation link references unknown literature Principle")
+                if meta_key not in meta_revisions:
+                    raise ValueError("Foundation link references unknown Meta-Principle")
+            for row in records["foundation-assessments"]:
+                key = (row["principle_id"], int(row["principle_revision"]))
+                if key not in literature_revisions:
+                    raise ValueError("Foundation assessment references unknown Principle")
+                unknown_links = set(row["foundation_link_ids"]) - foundation_link_ids
+                if unknown_links:
+                    raise ValueError("Foundation assessment references unknown links")
         logical_records = [
-            {"kind": kind, "payload": row}
-            for kind, rows in records.items()
-            for row in rows
+            {"kind": kind, "payload": row} for kind, rows in records.items() for row in rows
         ]
         return {
-            "schema_version": "principia-global-validation-v1",
+            "schema_version": f"principia-global-validation-v{self.schema_generation}",
             "valid": True,
             "content_digest": digest_records(logical_records),
             "counts": {kind: len(rows) for kind, rows in records.items()},
         }
 
     def write_records(self, kind: RecordKind, records: Iterable[dict[str, Any]]) -> None:
-        normalized = [normalize_record(kind, record) for record in records]
+        if kind not in self.kind_models:
+            raise ValueError(
+                f"record kind {kind!r} is not valid for Cloud v{self.schema_generation}"
+            )
+        normalized = [
+            normalize_record(kind, record, schema_generation=self.schema_generation)
+            for record in records
+        ]
         grouped: dict[str, list[dict[str, Any]]] = {}
         for record in normalized:
             grouped.setdefault(shard_name(record_identity(kind, record)), []).append(record)
@@ -217,7 +309,7 @@ def _initialize_snapshot_database(conn: sqlite3.Connection) -> None:
             pmid TEXT NOT NULL, pmcid TEXT NOT NULL, openalex_id TEXT NOT NULL,
             semantic_scholar_id TEXT NOT NULL, landing_url TEXT NOT NULL,
             full_text_status TEXT NOT NULL, page_count INTEGER, pdf_bytes INTEGER,
-            content_digest TEXT NOT NULL, payload_json TEXT NOT NULL,
+            status TEXT NOT NULL, content_digest TEXT NOT NULL, payload_json TEXT NOT NULL,
             created_at TEXT NOT NULL, updated_at TEXT NOT NULL,
             PRIMARY KEY(work_id, revision)
         ) WITHOUT ROWID;
@@ -228,6 +320,9 @@ def _initialize_snapshot_database(conn: sqlite3.Connection) -> None:
             maturity TEXT NOT NULL, status TEXT NOT NULL, review_status TEXT NOT NULL,
             tags_json TEXT NOT NULL, content_digest TEXT NOT NULL, payload_json TEXT NOT NULL,
             created_at TEXT NOT NULL, updated_at TEXT NOT NULL,
+            principle_class TEXT NOT NULL, stability TEXT NOT NULL,
+            argument TEXT NOT NULL, interpretation TEXT NOT NULL,
+            applications_json TEXT NOT NULL,
             PRIMARY KEY(principle_id, revision)
         ) WITHOUT ROWID;
         CREATE TABLE current_principles AS SELECT * FROM principles WHERE 0;
@@ -240,18 +335,65 @@ def _initialize_snapshot_database(conn: sqlite3.Connection) -> None:
         CREATE TABLE relations(
             relation_id TEXT NOT NULL, revision INTEGER NOT NULL,
             source_principle_id TEXT NOT NULL, target_principle_id TEXT NOT NULL,
-            relation_type TEXT NOT NULL, rationale TEXT NOT NULL, strength REAL NOT NULL,
-            status TEXT NOT NULL, unresolved_target INTEGER NOT NULL, payload_json TEXT NOT NULL,
+            relation_type TEXT NOT NULL, relation_role TEXT NOT NULL, rationale TEXT NOT NULL,
+            strength REAL, status TEXT NOT NULL, review_status TEXT NOT NULL,
+            unresolved_target INTEGER NOT NULL, payload_json TEXT NOT NULL,
             PRIMARY KEY(relation_id, revision)
+        ) WITHOUT ROWID;
+        CREATE TABLE foundation_links(
+            link_id TEXT NOT NULL, revision INTEGER NOT NULL,
+            principle_id TEXT NOT NULL, principle_revision INTEGER NOT NULL,
+            meta_principle_id TEXT NOT NULL, meta_principle_revision INTEGER NOT NULL,
+            direction TEXT NOT NULL, relation_type TEXT NOT NULL, rationale TEXT NOT NULL,
+            confidence REAL NOT NULL,
+            status TEXT NOT NULL, review_status TEXT NOT NULL, payload_json TEXT NOT NULL,
+            PRIMARY KEY(link_id, revision)
+        ) WITHOUT ROWID;
+        CREATE TABLE foundation_assessments(
+            assessment_id TEXT NOT NULL, revision INTEGER NOT NULL,
+            principle_id TEXT NOT NULL, principle_revision INTEGER NOT NULL,
+            verdict TEXT NOT NULL, rationale TEXT NOT NULL,
+            frontier_candidate INTEGER NOT NULL, review_status TEXT NOT NULL,
+            payload_json TEXT NOT NULL, PRIMARY KEY(assessment_id, revision)
+        ) WITHOUT ROWID;
+        CREATE TABLE foundation_gaps(
+            gap_id TEXT NOT NULL, revision INTEGER NOT NULL, principle_id TEXT NOT NULL,
+            requested_target_id TEXT NOT NULL, area TEXT NOT NULL, description TEXT NOT NULL,
+            status TEXT NOT NULL, payload_json TEXT NOT NULL,
+            PRIMARY KEY(gap_id, revision)
         ) WITHOUT ROWID;
         CREATE TABLE work_vector_ordinals(work_id TEXT PRIMARY KEY, ordinal INTEGER NOT NULL) WITHOUT ROWID;
         CREATE TABLE principle_vector_ordinals(principle_id TEXT PRIMARY KEY, ordinal INTEGER NOT NULL) WITHOUT ROWID;
+        CREATE TABLE graph_nodes(
+            ordinal INTEGER PRIMARY KEY, principle_id TEXT NOT NULL UNIQUE,
+            area TEXT NOT NULL, principle_class TEXT NOT NULL, x REAL NOT NULL, y REAL NOT NULL
+        );
+        CREATE INDEX graph_nodes_lod_idx
+            ON graph_nodes(principle_class DESC, principle_id);
+        CREATE VIRTUAL TABLE graph_node_rtree USING rtree(ordinal, min_x, max_x, min_y, max_y);
+        CREATE TABLE graph_edges(
+            edge_id TEXT PRIMARY KEY, source_principle_id TEXT NOT NULL,
+            target_principle_id TEXT NOT NULL, edge_class TEXT NOT NULL,
+            relation_type TEXT NOT NULL, strength REAL, review_status TEXT NOT NULL
+        ) WITHOUT ROWID;
+        CREATE INDEX graph_edges_source_idx
+            ON graph_edges(source_principle_id, target_principle_id, edge_id);
+        CREATE INDEX graph_edges_target_idx
+            ON graph_edges(target_principle_id, source_principle_id, edge_id);
+        CREATE INDEX graph_edges_render_idx
+            ON graph_edges(edge_class, edge_id);
+        CREATE TABLE graph_areas(
+            area TEXT PRIMARY KEY, display_name TEXT NOT NULL, center_x REAL NOT NULL,
+            center_y REAL NOT NULL, radius REAL NOT NULL, principle_count INTEGER NOT NULL,
+            meta_count INTEGER NOT NULL
+        ) WITHOUT ROWID;
         CREATE VIRTUAL TABLE work_fts USING fts5(
             work_id UNINDEXED, title, abstract, authors, institutions, venue,
             tokenize='unicode61 remove_diacritics 2'
         );
         CREATE VIRTUAL TABLE principle_fts USING fts5(
-            principle_id UNINDEXED, title, claim, area, tags,
+            principle_id UNINDEXED, title, claim, argument, interpretation, applications,
+            area, principle_class UNINDEXED, tags,
             tokenize='unicode61 remove_diacritics 2'
         );
         CREATE INDEX idx_works_year ON works(year, venue);
@@ -261,10 +403,41 @@ def _initialize_snapshot_database(conn: sqlite3.Connection) -> None:
         CREATE UNIQUE INDEX idx_current_principles_id ON current_principles(principle_id);
         CREATE INDEX idx_current_principles_updated ON current_principles(updated_at DESC, principle_id);
         CREATE INDEX idx_current_principles_area ON current_principles(area, status, principle_id);
+        CREATE INDEX idx_current_principles_class ON current_principles(principle_class, status, principle_id);
+        CREATE INDEX idx_work_vector_ordinal ON work_vector_ordinals(ordinal);
+        CREATE INDEX idx_principle_vector_ordinal ON principle_vector_ordinals(ordinal);
         CREATE INDEX idx_principle_work_work ON principle_work(work_id, principle_id);
         CREATE INDEX idx_relations_source ON relations(source_principle_id, status);
+        CREATE INDEX idx_foundation_links_principle ON foundation_links(principle_id, status);
+        CREATE INDEX idx_foundation_links_meta ON foundation_links(meta_principle_id, status);
+        CREATE INDEX idx_foundation_assessments_principle ON foundation_assessments(principle_id);
+        CREATE INDEX idx_graph_edges_source_target
+            ON graph_edges(source_principle_id, target_principle_id);
+        CREATE INDEX idx_graph_edges_target_source
+            ON graph_edges(target_principle_id, source_principle_id);
         """
     )
+
+
+def _graph_position(
+    area: str, principle_id: str, area_index: int, area_count: int
+) -> tuple[float, float]:
+    """Return a deterministic neural-field position without an O(n²) pass.
+
+    Scientific areas occupy a golden-angle disk rather than a perimeter ring.
+    This keeps the atlas visually balanced at both overview and title LODs and
+    leaves space for connective tissue through the middle of the map.
+    """
+
+    golden_angle = math.pi * (3.0 - math.sqrt(5.0))
+    normalized_radius = math.sqrt((area_index + 0.65) / max(1, area_count))
+    area_angle = area_index * golden_angle - (math.pi / 2.0)
+    area_x = math.cos(area_angle) * 4_050.0 * normalized_radius
+    area_y = math.sin(area_angle) * 2_850.0 * normalized_radius
+    digest = hashlib.sha256(principle_id.encode("utf-8")).digest()
+    angle = int.from_bytes(digest[:4], "big") / (2**32) * 2 * math.pi
+    radius = 80.0 + math.sqrt(int.from_bytes(digest[4:8], "big") / (2**32)) * 650.0
+    return area_x + math.cos(angle) * radius, area_y + math.sin(angle) * radius * 0.78
 
 
 def build_cloud_snapshot(
@@ -280,6 +453,10 @@ def build_cloud_snapshot(
     source = CanonicalCloudRepository(canonical_root)
     validation = source.validate()
     records = source.all_records()
+    principle_records = [
+        *records["principles"],
+        *records.get("meta-principles", []),
+    ]
     output_path = Path(output).expanduser().resolve()
     output_path.parent.mkdir(parents=True, exist_ok=True)
     build_root = Path(tempfile.mkdtemp(prefix="principia-global-build."))
@@ -291,70 +468,194 @@ def build_cloud_snapshot(
             for row in records["works"]:
                 a = row["availability"]
                 conn.execute(
-                    "INSERT INTO works VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    "INSERT INTO works VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (
-                        row["work_id"], row["revision"], row["title"], row["abstract"],
+                        row["work_id"],
+                        row["revision"],
+                        row["title"],
+                        row["abstract"],
                         json.dumps(row["authors"], ensure_ascii=False, separators=(",", ":")),
                         json.dumps(row["institutions"], ensure_ascii=False, separators=(",", ":")),
-                        row["venue"], row["year"], row["doi"], row["arxiv_id"], row["pmid"],
-                        row["pmcid"], row["openalex_id"], row["semantic_scholar_id"],
-                        row["landing_url"], a["status"], a["page_count"], a["pdf_bytes"],
-                        row["content_digest"], json.dumps(row, ensure_ascii=False, sort_keys=True),
-                        row["created_at"], row["updated_at"],
+                        row["venue"],
+                        row["year"],
+                        row["doi"],
+                        row["arxiv_id"],
+                        row["pmid"],
+                        row["pmcid"],
+                        row["openalex_id"],
+                        row["semantic_scholar_id"],
+                        row["landing_url"],
+                        a["status"],
+                        a["page_count"],
+                        a["pdf_bytes"],
+                        str(row.get("status") or "active"),
+                        row["content_digest"],
+                        json.dumps(row, ensure_ascii=False, sort_keys=True),
+                        row["created_at"],
+                        row["updated_at"],
                     ),
                 )
-            for row in records["principles"]:
+            works_by_id = {row["work_id"]: row for row in records["works"]}
+            linked_work_ids: dict[tuple[str, int], list[str]] = {}
+            for link in records["principle-work"]:
+                linked_work_ids.setdefault(
+                    (link["principle_id"], int(link["principle_revision"])), []
+                ).append(link["work_id"])
+            for canonical_row in principle_records:
+                row = dict(canonical_row)
+                row["canonical_area"] = canonical_row["area"]
+                principle_class = str(row.get("principle_class") or "literature")
+                # Canonical areas remain immutable.  The snapshot projects all
+                # literature records into the controlled scholarly taxonomy so
+                # a migrated `general` bucket cannot dominate the living map.
+                # Meta-Principles retain their curated domain taxonomy.
+                if principle_class == "literature":
+                    row["area"] = classify_scientific_discipline(
+                        canonical_row,
+                        (
+                            works_by_id[work_id]
+                            for work_id in linked_work_ids.get(
+                                (canonical_row["principle_id"], int(canonical_row["revision"])),
+                                [],
+                            )
+                            if work_id in works_by_id
+                        ),
+                    )
+                argument = str(row.get("argument") or row["claim"])
+                interpretation = str(row.get("interpretation") or "")
+                applications = list(row.get("applications") or [])
                 conn.execute(
-                    "INSERT INTO principles VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    "INSERT INTO principles VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (
-                        row["principle_id"], row["revision"], row["area"], row["title"],
-                        row["claim"], row["kind"], row["maturity"], row["status"],
-                        row["review_status"], json.dumps(row["tags"], ensure_ascii=False),
-                        row["content_digest"], json.dumps(row, ensure_ascii=False, sort_keys=True),
-                        row["created_at"], row["updated_at"],
+                        row["principle_id"],
+                        row["revision"],
+                        row["area"],
+                        row["title"],
+                        row["claim"],
+                        row["kind"],
+                        row["maturity"],
+                        row["status"],
+                        row["review_status"],
+                        json.dumps(row["tags"], ensure_ascii=False),
+                        row["content_digest"],
+                        json.dumps(row, ensure_ascii=False, sort_keys=True),
+                        row["created_at"],
+                        row["updated_at"],
+                        principle_class,
+                        str(row.get("stability") or "unknown"),
+                        argument,
+                        interpretation,
+                        json.dumps(applications, ensure_ascii=False),
                     ),
                 )
             for row in records["principle-work"]:
                 conn.execute(
                     "INSERT INTO principle_work VALUES (?,?,?,?,?,?,?,?,?)",
                     (
-                        canonical_sha256(row), row["principle_id"], row["principle_revision"], row["work_id"],
-                        row["role"], row["page"], row["section"], row["evidence_digest"],
+                        canonical_sha256(row),
+                        row["principle_id"],
+                        row["principle_revision"],
+                        row["work_id"],
+                        row["role"],
+                        row["page"],
+                        row["section"],
+                        row["evidence_digest"],
                         json.dumps(row, ensure_ascii=False, sort_keys=True),
                     ),
                 )
             for row in records["relations"]:
                 conn.execute(
-                    "INSERT INTO relations VALUES (?,?,?,?,?,?,?,?,?,?)",
+                    "INSERT INTO relations VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
                     (
-                        row["relation_id"], row["revision"], row["source_principle_id"],
-                        row["target_principle_id"], row["relation_type"], row["rationale"],
-                        row["strength"], row["status"], int(row["unresolved_target"]),
+                        row["relation_id"],
+                        row["revision"],
+                        row["source_principle_id"],
+                        row["target_principle_id"],
+                        row["relation_type"],
+                        str(row.get("relation_role") or "peer"),
+                        row["rationale"],
+                        row.get("strength"),
+                        row["status"],
+                        str(row.get("review_status") or "unassessed"),
+                        int(row["unresolved_target"]),
+                        json.dumps(row, ensure_ascii=False, sort_keys=True),
+                    ),
+                )
+            for row in records.get("foundation-links", []):
+                conn.execute(
+                    "INSERT INTO foundation_links VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    (
+                        row["link_id"],
+                        row["revision"],
+                        row["principle_id"],
+                        row["principle_revision"],
+                        row["meta_principle_id"],
+                        row["meta_principle_revision"],
+                        row.get("direction") or "meta_to_principle",
+                        row["relation_type"],
+                        row["rationale"],
+                        row["confidence"],
+                        row["status"],
+                        row["review_status"],
+                        json.dumps(row, ensure_ascii=False, sort_keys=True),
+                    ),
+                )
+            for row in records.get("foundation-assessments", []):
+                conn.execute(
+                    "INSERT INTO foundation_assessments VALUES (?,?,?,?,?,?,?,?,?)",
+                    (
+                        row["assessment_id"],
+                        row["revision"],
+                        row["principle_id"],
+                        row["principle_revision"],
+                        row["verdict"],
+                        row["rationale"],
+                        int(row["frontier_candidate"]),
+                        row["review_status"],
+                        json.dumps(row, ensure_ascii=False, sort_keys=True),
+                    ),
+                )
+            for row in records.get("foundation-gaps", []):
+                conn.execute(
+                    "INSERT INTO foundation_gaps VALUES (?,?,?,?,?,?,?,?)",
+                    (
+                        row["gap_id"],
+                        row["revision"],
+                        row["principle_id"],
+                        row["requested_target_id"],
+                        row["area"],
+                        row["description"],
+                        row["status"],
                         json.dumps(row, ensure_ascii=False, sort_keys=True),
                     ),
                 )
             conn.execute(
                 "INSERT INTO current_works SELECT w.* FROM works w JOIN ("
                 "SELECT work_id, MAX(revision) revision FROM works GROUP BY work_id"
-                ") latest USING(work_id, revision)"
+                ") latest USING(work_id, revision) WHERE w.status='active'"
             )
             conn.execute(
                 "INSERT INTO current_principles SELECT p.* FROM principles p JOIN ("
                 "SELECT principle_id, MAX(revision) revision FROM principles GROUP BY principle_id"
-                ") latest USING(principle_id, revision)"
+                ") latest USING(principle_id, revision) WHERE p.status='active'"
             )
             current_works = conn.execute("SELECT * FROM current_works ORDER BY work_id").fetchall()
             current_principles = conn.execute(
                 "SELECT * FROM current_principles ORDER BY principle_id"
             ).fetchall()
             for ordinal, row in enumerate(current_works):
-                conn.execute("INSERT INTO work_vector_ordinals VALUES (?,?)", (row["work_id"], ordinal))
+                conn.execute(
+                    "INSERT INTO work_vector_ordinals VALUES (?,?)", (row["work_id"], ordinal)
+                )
                 conn.execute(
                     "INSERT INTO work_fts VALUES (?,?,?,?,?,?)",
                     (
-                        row["work_id"], row["title"], row["abstract"],
+                        row["work_id"],
+                        row["title"],
+                        row["abstract"],
                         " ".join(json.loads(row["authors_json"])),
-                        " ".join(json.loads(row["institutions_json"])), row["venue"],
+                        " ".join(json.loads(row["institutions_json"])),
+                        row["venue"],
                     ),
                 )
             for ordinal, row in enumerate(current_principles):
@@ -363,14 +664,88 @@ def build_cloud_snapshot(
                     (row["principle_id"], ordinal),
                 )
                 conn.execute(
-                    "INSERT INTO principle_fts VALUES (?,?,?,?,?)",
+                    "INSERT INTO principle_fts VALUES (?,?,?,?,?,?,?,?,?)",
                     (
-                        row["principle_id"], row["title"], row["claim"], row["area"],
+                        row["principle_id"],
+                        row["title"],
+                        row["claim"],
+                        row["argument"],
+                        row["interpretation"],
+                        " ".join(json.loads(row["applications_json"])),
+                        row["area"],
+                        row["principle_class"],
                         " ".join(json.loads(row["tags_json"])),
                     ),
                 )
+            areas = sorted({str(row["area"]) for row in current_principles})
+            area_positions: dict[str, tuple[float, float]] = {}
+            for area_index, area in enumerate(areas):
+                golden_angle = math.pi * (3.0 - math.sqrt(5.0))
+                normalized_radius = math.sqrt((area_index + 0.65) / max(1, len(areas)))
+                angle = area_index * golden_angle - (math.pi / 2.0)
+                center = (
+                    math.cos(angle) * 4_050.0 * normalized_radius,
+                    math.sin(angle) * 2_850.0 * normalized_radius,
+                )
+                area_positions[area] = center
+                area_rows = [row for row in current_principles if row["area"] == area]
+                display = str(json.loads(area_rows[0]["payload_json"]).get("area_display") or area)
+                conn.execute(
+                    "INSERT INTO graph_areas VALUES (?,?,?,?,?,?,?)",
+                    (
+                        area,
+                        display,
+                        center[0],
+                        center[1],
+                        820.0,
+                        len(area_rows),
+                        sum(1 for row in area_rows if row["principle_class"] == "meta"),
+                    ),
+                )
+            for ordinal, row in enumerate(current_principles):
+                x, y = _graph_position(
+                    str(row["area"]),
+                    str(row["principle_id"]),
+                    areas.index(str(row["area"])),
+                    len(areas),
+                )
+                conn.execute(
+                    "INSERT INTO graph_nodes VALUES (?,?,?,?,?,?)",
+                    (ordinal, row["principle_id"], row["area"], row["principle_class"], x, y),
+                )
+                conn.execute(
+                    "INSERT INTO graph_node_rtree VALUES (?,?,?,?,?)", (ordinal, x, x, y, y)
+                )
+            for row in records["relations"]:
+                conn.execute(
+                    "INSERT OR REPLACE INTO graph_edges VALUES (?,?,?,?,?,?,?)",
+                    (
+                        row["relation_id"],
+                        row["source_principle_id"],
+                        row["target_principle_id"],
+                        "foundation" if row.get("relation_role") == "foundation" else "validated",
+                        row["relation_type"],
+                        row.get("strength"),
+                        str(row.get("review_status") or "unassessed"),
+                    ),
+                )
+            for row in records.get("foundation-links", []):
+                if row["status"] == "retired":
+                    continue
+                conn.execute(
+                    "INSERT OR REPLACE INTO graph_edges VALUES (?,?,?,?,?,?,?)",
+                    (
+                        row["link_id"],
+                        row["principle_id"],
+                        row["meta_principle_id"],
+                        "foundation",
+                        row["relation_type"],
+                        row["confidence"],
+                        row["review_status"],
+                    ),
+                )
             meta = {
-                "format": "principia-global-snapshot-v1",
+                "format": f"principia-global-snapshot-v{source.schema_generation}",
                 "release_id": release_id,
                 "content_digest": validation["content_digest"],
                 "embedding_contract": EmbeddingContract().contract_id,
@@ -385,34 +760,61 @@ def build_cloud_snapshot(
         work_path.write_bytes(work_vectors)
         principle_path.write_bytes(principle_vectors)
         dimensions = 1024
+        latest_works = _latest_records(records["works"], "work_id")
+        latest_literature = _latest_records(records["principles"], "principle_id")
+        latest_meta = _latest_records(records.get("meta-principles", []), "principle_id")
+        active_works = [
+            row for row in latest_works.values() if str(row.get("status") or "active") == "active"
+        ]
+        active_literature = [
+            row for row in latest_literature.values() if row.get("status") == "active"
+        ]
+        active_meta = [row for row in latest_meta.values() if row.get("status") == "active"]
+        active_principles = [*active_literature, *active_meta]
         vectors_complete = (
-            len(work_vectors) == len({row["work_id"] for row in records["works"]}) * dimensions * 2
-            and len(principle_vectors)
-            == len({row["principle_id"] for row in records["principles"]}) * dimensions * 2
+            len(work_vectors) == len(active_works) * dimensions * 2
+            and len(principle_vectors) == len(active_principles) * dimensions * 2
         )
         manifest = CloudManifest(
+            schema_version=(
+                "principia-global-manifest-v2"
+                if source.schema_generation >= 2
+                else "principia-global-manifest-v1"
+            ),
             release_id=release_id,
             commit_sha=commit_sha,
             content_digest=validation["content_digest"],
-            work_count=len({row["work_id"] for row in records["works"]}),
-            principle_count=len({row["principle_id"] for row in records["principles"]}),
+            work_count=len(active_works),
+            principle_count=len(active_literature),
             principle_revision_count=len(records["principles"]),
             principle_work_count=len(records["principle-work"]),
             relation_count=len(records["relations"]),
+            meta_principle_count=len(active_meta),
+            meta_principle_revision_count=len(records.get("meta-principles", [])),
+            total_principle_count=len(active_principles),
+            total_principle_revision_count=len(principle_records),
+            foundation_link_count=len(records.get("foundation-links", [])),
+            foundation_assessment_count=len(records.get("foundation-assessments", [])),
+            foundation_gap_count=len(records.get("foundation-gaps", [])),
+            area_count=len(areas),
             vectors_complete=vectors_complete,
             **({"created_at": created_at} if created_at else {}),
         )
         (build_root / "manifest.json").write_text(
-            json.dumps(manifest.model_dump(mode="json"), ensure_ascii=False, indent=2, sort_keys=True)
+            json.dumps(
+                manifest.model_dump(mode="json"), ensure_ascii=False, indent=2, sort_keys=True
+            )
             + "\n",
             encoding="utf-8",
         )
         (build_root / "README.txt").write_text(
-            "Principia Global Cloud v1 snapshot. Contains metadata and Principles; no papers.\n",
+            f"Principia Global Cloud v{source.schema_generation} snapshot. Contains metadata and Principles; no paper files.\n",
             encoding="utf-8",
         )
         temporary = output_path.with_suffix(output_path.suffix + ".partial")
-        with zipfile.ZipFile(temporary, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+        with zipfile.ZipFile(
+            temporary, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9
+        ) as archive:
             for name in sorted(PCG_ENTRIES):
                 info = zipfile.ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0))
                 info.compress_type = zipfile.ZIP_DEFLATED
@@ -421,7 +823,10 @@ def build_cloud_snapshot(
         # The archive digest belongs in the external release control document. An
         # archive cannot contain its own digest without changing that digest.
         manifest = manifest.model_copy(
-            update={"snapshot_sha256": file_sha256(temporary), "snapshot_bytes": temporary.stat().st_size}
+            update={
+                "snapshot_sha256": file_sha256(temporary),
+                "snapshot_bytes": temporary.stat().st_size,
+            }
         )
         os.replace(temporary, output_path)
         return manifest
@@ -440,18 +845,25 @@ def verify_cloud_snapshot(path: str | Path, *, expected_sha256: str = "") -> Clo
         if names != PCG_ENTRIES:
             raise ValueError("Global Cloud snapshot contains unexpected entries")
         for info in archive.infolist():
-            if info.is_dir() or info.filename.startswith(("/", "../")) or ".." in Path(info.filename).parts:
+            if (
+                info.is_dir()
+                or info.filename.startswith(("/", "../"))
+                or ".." in Path(info.filename).parts
+            ):
                 raise ValueError("unsafe Global Cloud snapshot entry")
         manifest = CloudManifest.model_validate_json(archive.read("manifest.json"))
         work_vector_bytes = len(archive.read("work-vectors.f16"))
         principle_vector_bytes = len(archive.read("principle-vectors.f16"))
         if manifest.vectors_complete:
             expected_work_bytes = manifest.work_count * manifest.vector_dimensions * 2
-            expected_principle_bytes = manifest.principle_count * manifest.vector_dimensions * 2
+            vector_count = manifest.total_principle_count or manifest.principle_count
+            expected_principle_bytes = vector_count * manifest.vector_dimensions * 2
             if work_vector_bytes != expected_work_bytes:
                 raise ValueError("Global Cloud Work vector dimensions do not match its manifest")
             if principle_vector_bytes != expected_principle_bytes:
-                raise ValueError("Global Cloud Principle vector dimensions do not match its manifest")
+                raise ValueError(
+                    "Global Cloud Principle vector dimensions do not match its manifest"
+                )
         elif work_vector_bytes or principle_vector_bytes:
             raise ValueError("partial Global Cloud vector files are forbidden")
         temporary = Path(tempfile.mkdtemp(prefix="principia-global-verify."))
@@ -464,11 +876,57 @@ def verify_cloud_snapshot(path: str | Path, *, expected_sha256: str = "") -> Clo
                     raise ValueError("Global Cloud SQLite foreign-key check failed")
                 counts = {
                     "work_count": conn.execute("SELECT COUNT(*) FROM current_works").fetchone()[0],
-                    "principle_count": conn.execute("SELECT COUNT(*) FROM current_principles").fetchone()[0],
-                    "principle_revision_count": conn.execute("SELECT COUNT(*) FROM principles").fetchone()[0],
-                    "principle_work_count": conn.execute("SELECT COUNT(*) FROM principle_work").fetchone()[0],
+                    "principle_work_count": conn.execute(
+                        "SELECT COUNT(*) FROM principle_work"
+                    ).fetchone()[0],
                     "relation_count": conn.execute("SELECT COUNT(*) FROM relations").fetchone()[0],
                 }
+                if manifest.schema_version == "principia-global-manifest-v2":
+                    counts.update(
+                        {
+                            "principle_count": conn.execute(
+                                "SELECT COUNT(*) FROM current_principles WHERE principle_class='literature'"
+                            ).fetchone()[0],
+                            "principle_revision_count": conn.execute(
+                                "SELECT COUNT(*) FROM principles WHERE principle_class='literature'"
+                            ).fetchone()[0],
+                            "meta_principle_count": conn.execute(
+                                "SELECT COUNT(*) FROM current_principles WHERE principle_class='meta'"
+                            ).fetchone()[0],
+                            "meta_principle_revision_count": conn.execute(
+                                "SELECT COUNT(*) FROM principles WHERE principle_class='meta'"
+                            ).fetchone()[0],
+                            "total_principle_count": conn.execute(
+                                "SELECT COUNT(*) FROM current_principles"
+                            ).fetchone()[0],
+                            "total_principle_revision_count": conn.execute(
+                                "SELECT COUNT(*) FROM principles"
+                            ).fetchone()[0],
+                            "foundation_link_count": conn.execute(
+                                "SELECT COUNT(*) FROM foundation_links"
+                            ).fetchone()[0],
+                            "foundation_assessment_count": conn.execute(
+                                "SELECT COUNT(*) FROM foundation_assessments"
+                            ).fetchone()[0],
+                            "foundation_gap_count": conn.execute(
+                                "SELECT COUNT(*) FROM foundation_gaps"
+                            ).fetchone()[0],
+                            "area_count": conn.execute(
+                                "SELECT COUNT(*) FROM graph_areas"
+                            ).fetchone()[0],
+                        }
+                    )
+                else:
+                    counts.update(
+                        {
+                            "principle_count": conn.execute(
+                                "SELECT COUNT(*) FROM current_principles"
+                            ).fetchone()[0],
+                            "principle_revision_count": conn.execute(
+                                "SELECT COUNT(*) FROM principles"
+                            ).fetchone()[0],
+                        }
+                    )
                 for key, value in counts.items():
                     if int(getattr(manifest, key)) != int(value):
                         raise ValueError(f"Global Cloud count mismatch: {key}")
@@ -477,7 +935,9 @@ def verify_cloud_snapshot(path: str | Path, *, expected_sha256: str = "") -> Clo
     return manifest
 
 
-def _snapshot_records(snapshot: Path) -> tuple[CloudManifest, dict[RecordKind, list[dict[str, Any]]]]:
+def _snapshot_records(
+    snapshot: Path,
+) -> tuple[CloudManifest, dict[RecordKind, list[dict[str, Any]]]]:
     manifest = verify_cloud_snapshot(snapshot)
     temporary = Path(tempfile.mkdtemp(prefix="principia-global-records."))
     try:
@@ -485,35 +945,69 @@ def _snapshot_records(snapshot: Path) -> tuple[CloudManifest, dict[RecordKind, l
             archive.extract("cloud.sqlite", temporary)
         with connect_sqlite(f"file:{temporary / 'cloud.sqlite'}?mode=ro", uri=True) as conn:
             output: dict[RecordKind, list[dict[str, Any]]] = {}
-            for kind, table in (
+            table_rows: list[tuple[RecordKind, str]] = [
                 ("works", "works"),
                 ("principles", "principles"),
                 ("principle-work", "principle_work"),
                 ("relations", "relations"),
-            ):
-                output[kind] = [json.loads(row[0]) for row in conn.execute(
-                    f"SELECT payload_json FROM {table} ORDER BY payload_json"
-                )]
+            ]
+            if manifest.schema_version == "principia-global-manifest-v2":
+                table_rows.extend(
+                    [
+                        ("foundation-links", "foundation_links"),
+                        ("foundation-assessments", "foundation_assessments"),
+                        ("foundation-gaps", "foundation_gaps"),
+                    ]
+                )
+                output["meta-principles"] = []
+            for kind, table in table_rows:
+                output[kind] = []
+                for row in conn.execute(f"SELECT payload_json FROM {table} ORDER BY payload_json"):
+                    payload = json.loads(row[0])
+                    # The snapshot may enrich a Principle with a derived map
+                    # discipline. Deltas operate on canonical Git records, so
+                    # restore the immutable source area before comparing or
+                    # rewriting canonical shards.
+                    if kind == "principles":
+                        if payload.get("canonical_area"):
+                            payload["area"] = payload.pop("canonical_area")
+                        if payload.get("principle_class") == "meta":
+                            output["meta-principles"].append(payload)
+                            continue
+                    output[kind].append(payload)
         return manifest, output
     finally:
         shutil.rmtree(temporary, ignore_errors=True)
 
 
-def build_cloud_delta(previous: str | Path, target: str | Path, output: str | Path) -> CloudDeltaManifest:
+def build_cloud_delta(
+    previous: str | Path, target: str | Path, output: str | Path
+) -> CloudDeltaManifest:
     previous_path = Path(previous).expanduser().resolve()
     target_path = Path(target).expanduser().resolve()
     base_manifest, base_records = _snapshot_records(previous_path)
     target_manifest, target_records = _snapshot_records(target_path)
+    if base_manifest.schema_version != target_manifest.schema_version:
+        raise ValueError("Cloud schema transitions require a complete snapshot, not a delta")
     changes: list[dict[str, Any]] = []
-    for kind in KIND_MODELS:
+    for kind in target_records:
         before = {record_identity(kind, row): row for row in base_records[kind]}
         after = {record_identity(kind, row): row for row in target_records[kind]}
         for identifier in sorted(before.keys() - after.keys()):
             changes.append({"kind": kind, "op": "delete", "id": identifier})
         for identifier in sorted(after):
-            if identifier not in before or canonical_json_bytes(before[identifier]) != canonical_json_bytes(after[identifier]):
-                changes.append({"kind": kind, "op": "upsert", "id": identifier, "payload": after[identifier]})
+            if identifier not in before or canonical_json_bytes(
+                before[identifier]
+            ) != canonical_json_bytes(after[identifier]):
+                changes.append(
+                    {"kind": kind, "op": "upsert", "id": identifier, "payload": after[identifier]}
+                )
     delta = CloudDeltaManifest(
+        schema_version=(
+            "principia-global-delta-v2"
+            if target_manifest.schema_version == "principia-global-manifest-v2"
+            else "principia-global-delta-v1"
+        ),
         base_release_id=base_manifest.release_id,
         target_release_id=target_manifest.release_id,
         base_content_digest=base_manifest.content_digest,
@@ -526,12 +1020,23 @@ def build_cloud_delta(previous: str | Path, target: str | Path, output: str | Pa
         principle_revision_count=target_manifest.principle_revision_count,
         principle_work_count=target_manifest.principle_work_count,
         relation_count=target_manifest.relation_count,
+        meta_principle_count=target_manifest.meta_principle_count,
+        meta_principle_revision_count=target_manifest.meta_principle_revision_count,
+        total_principle_count=target_manifest.total_principle_count,
+        total_principle_revision_count=target_manifest.total_principle_revision_count,
+        foundation_link_count=target_manifest.foundation_link_count,
+        foundation_assessment_count=target_manifest.foundation_assessment_count,
+        foundation_gap_count=target_manifest.foundation_gap_count,
+        area_count=target_manifest.area_count,
         vectors_complete=target_manifest.vectors_complete,
         change_count=len(changes),
     )
     with zipfile.ZipFile(target_path) as target_archive:
         entries = {
-            "manifest.json": json.dumps(delta.model_dump(mode="json"), sort_keys=True, indent=2).encode() + b"\n",
+            "manifest.json": json.dumps(
+                delta.model_dump(mode="json"), sort_keys=True, indent=2
+            ).encode()
+            + b"\n",
             "changes.jsonl": b"".join(canonical_json_bytes(row) + b"\n" for row in changes),
             "work-vectors.f16": target_archive.read("work-vectors.f16"),
             "principle-vectors.f16": target_archive.read("principle-vectors.f16"),
@@ -539,7 +1044,9 @@ def build_cloud_delta(previous: str | Path, target: str | Path, output: str | Pa
     output_path = Path(output).expanduser().resolve()
     output_path.parent.mkdir(parents=True, exist_ok=True)
     temporary = output_path.with_suffix(output_path.suffix + ".partial")
-    with zipfile.ZipFile(temporary, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+    with zipfile.ZipFile(
+        temporary, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9
+    ) as archive:
         for name in sorted(entries):
             info = zipfile.ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
@@ -557,35 +1064,48 @@ def apply_cloud_delta(base: str | Path, delta: str | Path, output: str | Path) -
         if set(archive.namelist()) != PCD_ENTRIES:
             raise ValueError("Global Cloud delta contains unexpected entries")
         manifest = CloudDeltaManifest.model_validate_json(archive.read("manifest.json"))
-        if manifest.base_release_id != base_manifest.release_id or manifest.base_content_digest != base_manifest.content_digest:
+        if (
+            manifest.base_release_id != base_manifest.release_id
+            or manifest.base_content_digest != base_manifest.content_digest
+        ):
             raise ValueError("Global Cloud delta does not apply to the active release")
-        changes = [loads_strict(line) for line in archive.read("changes.jsonl").splitlines() if line.strip()]
+        changes = [
+            loads_strict(line)
+            for line in archive.read("changes.jsonl").splitlines()
+            if line.strip()
+        ]
         work_vectors = archive.read("work-vectors.f16")
         principle_vectors = archive.read("principle-vectors.f16")
     if len(changes) != manifest.change_count:
         raise ValueError("Global Cloud delta change count mismatch")
+    schema_generation = 2 if manifest.schema_version == "principia-global-delta-v2" else 1
+    kind_models = V2_KIND_MODELS if schema_generation == 2 else V1_KIND_MODELS
     by_kind = {
         kind: {record_identity(kind, row): row for row in values}
         for kind, values in records.items()
     }
     for change in changes:
         kind = str(change.get("kind") or "")
-        if kind not in KIND_MODELS or change.get("op") not in {"upsert", "delete"}:
+        if kind not in kind_models or change.get("op") not in {"upsert", "delete"}:
             raise ValueError("invalid Global Cloud delta operation")
         identifier = str(change.get("id") or "")
         if change["op"] == "delete":
             by_kind[kind].pop(identifier, None)
         else:
-            payload = normalize_record(kind, change.get("payload") or {})
+            payload = normalize_record(
+                kind, change.get("payload") or {}, schema_generation=schema_generation
+            )
             if record_identity(kind, payload) != identifier:
                 raise ValueError("Global Cloud delta identity mismatch")
             by_kind[kind][identifier] = payload
     temporary_root = Path(tempfile.mkdtemp(prefix="principia-global-apply."))
     try:
         canonical = temporary_root / "canonical"
+        if schema_generation == 2:
+            (canonical / "data" / "v2").mkdir(parents=True, exist_ok=True)
         repository = CanonicalCloudRepository(canonical)
-        for kind in KIND_MODELS:
-            repository.write_records(kind, by_kind[kind].values())
+        for kind in kind_models:
+            repository.write_records(kind, by_kind.get(kind, {}).values())
         result = build_cloud_snapshot(
             canonical,
             output,

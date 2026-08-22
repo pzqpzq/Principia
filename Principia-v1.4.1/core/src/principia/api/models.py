@@ -4,12 +4,11 @@ from typing import Any, Literal
 
 from pydantic import Field, SecretStr, model_validator
 
+from ..cloud import ResearchGoalRunRequest
 from ..domain import (
-    CandidatePrinciple,
     DomainModel,
     JobRecord,
     LiteratureRunLimits,
-    PrincipleCapsule,
     VirtualPrincipleProposal,
 )
 from ..providers import ModelPolicy
@@ -45,6 +44,38 @@ class WorkingDirectoryResponse(DomainModel):
     display_name: str
     switched: bool
     empty: bool
+
+
+class ResearchProjectCreateRequest(DomainModel):
+    title: str = Field(min_length=1, max_length=120)
+
+
+class ResearchProjectUpdateRequest(DomainModel):
+    title: str | None = Field(default=None, min_length=1, max_length=120)
+    archived: bool | None = None
+
+
+class ResearchSessionCreateRequest(DomainModel):
+    run: ResearchGoalRunRequest
+    title: str = Field(default="", max_length=160)
+    project_id: str | None = None
+
+
+class ResearchSessionUpdateRequest(DomainModel):
+    title: str | None = Field(default=None, min_length=1, max_length=160)
+    project_id: str | None = None
+    archived: bool | None = None
+    expected_revision: int | None = Field(default=None, ge=1)
+
+
+class ResearchGraphMutationRequest(DomainModel):
+    expected_revision: int = Field(ge=0)
+    operations: list[dict[str, Any]] = Field(min_length=1, max_length=250)
+
+
+class ResearchArtifactCreateRequest(DomainModel):
+    kind: Literal["virtual_principle", "virtual_connection"]
+    payload: dict[str, Any]
 
 
 class LibrarySummaryResponse(DomainModel):
@@ -224,6 +255,8 @@ class PrincipleCardResponse(DomainModel):
     evidence_scope: Literal["one_work", "multiple_works"]
     supporting_work_count: int = Field(ge=0)
     evidence_anchor_count: int = Field(ge=0)
+    supporting_citation_count: int = Field(default=0, ge=0)
+    citation_data_available: bool = False
     evidence_types: list[str]
     boundary_basis: str
     test_basis: str
@@ -364,8 +397,8 @@ class PotentialRelationResponse(DomainModel):
 
 class PotentialRelationsResponse(DomainModel):
     items: list[PotentialRelationResponse]
-    analyzed_pair_count: int = Field(ge=0, le=15)
-    skipped_validated_pair_count: int = Field(ge=0, le=15)
+    analyzed_pair_count: int = Field(ge=0, le=190)
+    skipped_validated_pair_count: int = Field(ge=0, le=190)
     explanation: str
 
 
@@ -531,29 +564,3 @@ class ScenarioEventRequest(DomainModel):
         "disable_relation",
     ]
     payload: dict[str, Any]
-
-
-class AdminHarvestRequest(DomainModel):
-    candidate: CandidatePrinciple
-
-
-class AdminDecisionRequest(DomainModel):
-    decision: Literal["approve", "edit", "merge", "reject"]
-    capsule: PrincipleCapsule | None = None
-    note: str = ""
-    merge_target: str = ""
-
-
-class ChangesetRequest(DomainModel):
-    area: str
-    base_package_version: str
-    proposed_package_version: str
-    expected_content_digest: str
-    goal: str
-    capsules: list[PrincipleCapsule] = Field(min_length=1)
-
-
-class PublishRequest(DomainModel):
-    mode: Literal["dry_run", "github"] = "dry_run"
-    output: str | None = None
-    confirmation: str = ""

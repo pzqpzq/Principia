@@ -608,9 +608,7 @@ class Workspace:
         export_dir.mkdir(parents=True, exist_ok=True)
         plan = build_validation_plan(result)
         idea_payload = portable_idea_payload(result.idea, self.root)
-        comparison_payload = portable_payload(
-            result.comparison.model_dump(mode="json"), self.root
-        )
+        comparison_payload = portable_payload(result.comparison.model_dump(mode="json"), self.root)
         (export_dir / "idea.json").write_text(
             json.dumps(idea_payload, ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",

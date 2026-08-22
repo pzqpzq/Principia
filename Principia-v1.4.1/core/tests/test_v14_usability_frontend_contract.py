@@ -37,7 +37,7 @@ def test_production_frontend_graph_is_an_optional_bounded_explorer_view() -> Non
     assert 'value="midnight"' in graph
     assert "Present</button>" not in graph
     assert ">Palette</span>" not in graph
-    assert "Selected Principle details" in graph
+    assert "Principle details" in graph
     assert "Virtual work tray" in graph
     assert "Temporary connection batches" in graph
     assert "Generated hypothesis batches" in graph
@@ -52,6 +52,37 @@ def test_production_frontend_graph_is_an_optional_bounded_explorer_view() -> Non
     assert 'params.get("virtual") === "true"' in explorer
     assert "Saved Virtual Principles" in explorer
     assert "lazy(() => import" in explorer
+
+
+def test_home_is_a_progressive_global_first_semantic_atlas() -> None:
+    library = (ROOT / "frontend" / "src" / "pages" / "LibraryPage.tsx").read_text(
+        encoding="utf-8"
+    )
+    graph = (ROOT / "frontend" / "src" / "components" / "PrincipleGraph.tsx").read_text(
+        encoding="utf-8"
+    )
+    explorer = (ROOT / "frontend" / "src" / "pages" / "MapPage.tsx").read_text(
+        encoding="utf-8"
+    )
+
+    assert "Global-first semantic search" in library
+    assert "SharedPrincipleGraph" in library
+    assert "useInfiniteQuery" not in library
+    assert "HOME_GRAPH_LIMIT = 100" in library
+    assert 'scope: "global"' in library
+    assert 'include_global: true' in library
+    assert "Local folders" in library
+    assert "onlyRenderVisibleElements" in graph
+    assert "onMoveStart" in graph
+    assert "onMoveEnd" in graph
+    assert "viewport-moving" in graph
+    assert "Principle details" in graph
+    assert "Derive Virtual Connection" in graph
+    assert "Derive Virtual Principles" in graph
+    assert "onAnalyzePotentialRelations" in library
+    assert "onGenerateVirtualPrinciples" in library
+    assert "Semantic search" in explorer
+    assert "Meaning-aware retrieval" in explorer
 
 
 def test_local_ui_exposes_paths_optional_focus_credentials_and_readable_copy() -> None:

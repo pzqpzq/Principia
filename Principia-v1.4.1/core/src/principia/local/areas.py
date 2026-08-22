@@ -118,13 +118,16 @@ def suggest_area_labels(
             claim,
             research_focus,
             *work_titles,
-            *(str(fields.get(key) or "") for key in (
-                "canonical_claim",
-                "subject_system",
-                "driver_or_intervention",
-                "outcome",
-                "direction_or_qualifier",
-            )),
+            *(
+                str(fields.get(key) or "")
+                for key in (
+                    "canonical_claim",
+                    "subject_system",
+                    "driver_or_intervention",
+                    "outcome",
+                    "direction_or_qualifier",
+                )
+            ),
         ]
     ).casefold()
     folded = re.sub(r"[^a-z0-9]+", " ", text).strip()
@@ -211,8 +214,7 @@ class CandidateAreaSuggestionService:
                 argument=dict(detail.get("scientific_argument") or {}),
                 claim=str(detail.get("claim") or ""),
                 work_titles=[
-                    str(item.get("work_title") or "")
-                    for item in detail.get("evidence") or []
+                    str(item.get("work_title") or "") for item in detail.get("evidence") or []
                 ],
                 research_focus=str((goal or {}).get("goal") or ""),
             )

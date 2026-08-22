@@ -62,19 +62,13 @@ class CandidateConsolidationService:
         self.repository = repository
 
     @staticmethod
-    def _similarity(
-        existing: ScientificArgument, argument: ScientificArgument
-    ) -> dict[str, float]:
+    def _similarity(existing: ScientificArgument, argument: ScientificArgument) -> dict[str, float]:
         return {
             "claim": _jaccard(existing.canonical_claim, argument.canonical_claim),
             "subject": _jaccard(existing.subject_system, argument.subject_system),
-            "driver": _jaccard(
-                existing.driver_or_intervention, argument.driver_or_intervention
-            ),
+            "driver": _jaccard(existing.driver_or_intervention, argument.driver_or_intervention),
             "outcome": _jaccard(existing.outcome, argument.outcome),
-            "conditions": _jaccard(
-                " ".join(existing.conditions), " ".join(argument.conditions)
-            ),
+            "conditions": _jaccard(" ".join(existing.conditions), " ".join(argument.conditions)),
         }
 
     @staticmethod
@@ -123,9 +117,7 @@ class CandidateConsolidationService:
                 and work_id
                 in {value for value in str(item.get("work_ids") or "").split(",") if value}
             )
-            if self._is_equivalent(
-                existing, argument, similarity, shared_work=shared_work
-            ):
+            if self._is_equivalent(existing, argument, similarity, shared_work=shared_work):
                 return ConsolidationMatch(
                     candidate=CandidatePrinciple.model_validate_json(item["candidate_json"]),
                     fingerprint=str(item["candidate_fingerprint"]),
@@ -142,18 +134,14 @@ class CandidateConsolidationService:
         for row in rows:
             candidate = CandidatePrinciple.model_validate_json(str(row["candidate_json"]))
             argument = ScientificArgument.model_validate_json(str(row["argument_json"]))
-            work_ids = {
-                value for value in str(row.get("work_ids") or "").split(",") if value
-            }
+            work_ids = {value for value in str(row.get("work_ids") or "").split(",") if value}
             match: tuple[dict[str, object], dict[str, float]] | None = None
             for existing_row in canonical_rows:
                 existing = ScientificArgument.model_validate_json(
                     str(existing_row["argument_json"])
                 )
                 existing_work_ids = {
-                    value
-                    for value in str(existing_row.get("work_ids") or "").split(",")
-                    if value
+                    value for value in str(existing_row.get("work_ids") or "").split(",") if value
                 }
                 similarity = self._similarity(existing, argument)
                 if self._is_equivalent(
@@ -168,9 +156,7 @@ class CandidateConsolidationService:
                 canonical_rows.append(dict(row))
                 continue
             existing_row, similarity = match
-            canonical = CandidatePrinciple.model_validate_json(
-                str(existing_row["candidate_json"])
-            )
+            canonical = CandidatePrinciple.model_validate_json(str(existing_row["candidate_json"]))
             self.record_merge(
                 alias_candidate_id=candidate.candidate_id,
                 canonical_candidate_id=canonical.candidate_id,

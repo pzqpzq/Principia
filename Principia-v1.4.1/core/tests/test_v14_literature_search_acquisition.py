@@ -57,12 +57,20 @@ def test_ai_for_physics_rerank_requires_both_domain_anchors() -> None:
     ranked = rank_literature_for_goal(
         "AI for Physics",
         [
-            {"work_id": "work:policy", "rank": 1, "retrieval_rank": 1,
-             "title": "Artificial intelligence policy for higher education",
-             "abstract": "A governance survey of classroom adoption."},
-            {"work_id": "work:physics", "rank": 8, "retrieval_rank": 8,
-             "title": "Physics-informed neural networks for turbulent flow",
-             "abstract": "Deep learning enforces conservation constraints in fluid simulations."},
+            {
+                "work_id": "work:policy",
+                "rank": 1,
+                "retrieval_rank": 1,
+                "title": "Artificial intelligence policy for higher education",
+                "abstract": "A governance survey of classroom adoption.",
+            },
+            {
+                "work_id": "work:physics",
+                "rank": 8,
+                "retrieval_rank": 8,
+                "title": "Physics-informed neural networks for turbulent flow",
+                "abstract": "Deep learning enforces conservation constraints in fluid simulations.",
+            },
         ],
     )
     assert ranked[0]["work_id"] == "work:physics"

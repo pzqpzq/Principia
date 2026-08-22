@@ -17,7 +17,6 @@ from ..domain import (
     EvidenceClaimAtom,
     JobRecord,
     PrincipleCapsule,
-    PublicationChangeset,
     QualityEvaluation,
     ScenarioEvent,
     ScenarioRecord,
@@ -1786,6 +1785,28 @@ class V14WorkspaceRepository:
                 """,
                 (candidate_id,),
             ).fetchall()
+            foundation_assessment = conn.execute(
+                """
+                SELECT assessment_id, revision, verdict, rationale,
+                       candidate_meta_ids_json, provider, model, trace_json, created_at
+                FROM candidate_foundation_assessments
+                WHERE candidate_id=? ORDER BY revision DESC LIMIT 1
+                """,
+                (candidate_id,),
+            ).fetchone()
+            foundation_links = (
+                conn.execute(
+                    """
+                    SELECT link_id, meta_principle_id, relation_type, direction,
+                           rationale, compatibility_json, confidence, status, created_at
+                    FROM candidate_foundation_links
+                    WHERE assessment_id=? ORDER BY confidence DESC, link_id
+                    """,
+                    (foundation_assessment["assessment_id"],),
+                ).fetchall()
+                if foundation_assessment is not None
+                else []
+            )
         evidence: list[dict[str, Any]] = []
         for item in evidence_rows:
             work = json.loads(item["work_json"])
@@ -1833,6 +1854,28 @@ class V14WorkspaceRepository:
         payload["quality_evaluations"] = [json.loads(item["payload_json"]) for item in evaluations]
         payload["evidence"] = evidence
         payload["area_suggestions"] = [dict(item) for item in area_assignments]
+        payload["foundation_assessment"] = (
+            {
+                "assessment_id": foundation_assessment["assessment_id"],
+                "revision": foundation_assessment["revision"],
+                "verdict": foundation_assessment["verdict"],
+                "rationale": foundation_assessment["rationale"],
+                "candidate_meta_ids": json.loads(foundation_assessment["candidate_meta_ids_json"]),
+                "provider": foundation_assessment["provider"],
+                "model": foundation_assessment["model"],
+                "trace": json.loads(foundation_assessment["trace_json"]),
+                "created_at": foundation_assessment["created_at"],
+                "links": [
+                    {
+                        **dict(item),
+                        "compatibility": json.loads(item["compatibility_json"]),
+                    }
+                    for item in foundation_links
+                ],
+            }
+            if foundation_assessment is not None
+            else None
+        )
         payload["incoming_relations"] = [
             {
                 "source_candidate_id": item["source_candidate_id"],
@@ -3129,12 +3172,12 @@ class V14WorkspaceRepository:
                 existed = conn.execute(
                     "SELECT 1 FROM local_research_goals WHERE search_id=?", (search_id,)
                 ).fetchone()
-            self.bind_research_goal_source(
-                search_id=search_id, source_id=str(dataset["source_id"])
-            )
+            self.bind_research_goal_source(search_id=search_id, source_id=str(dataset["source_id"]))
             created += 0 if existed else 1
         with self.connect() as conn:
-            before = int(conn.execute("SELECT COUNT(*) FROM candidate_goal_memberships").fetchone()[0])
+            before = int(
+                conn.execute("SELECT COUNT(*) FROM candidate_goal_memberships").fetchone()[0]
+            )
             conn.execute(
                 """
                 INSERT OR IGNORE INTO candidate_goal_memberships(
@@ -3154,7 +3197,9 @@ class V14WorkspaceRepository:
                 """,
                 (utc_now(),),
             )
-            after = int(conn.execute("SELECT COUNT(*) FROM candidate_goal_memberships").fetchone()[0])
+            after = int(
+                conn.execute("SELECT COUNT(*) FROM candidate_goal_memberships").fetchone()[0]
+            )
         return {"goals_created": created, "memberships_created": after - before}
 
     def graph_relations_for_principles(self, principle_ids: list[str]) -> list[dict[str, Any]]:
@@ -4518,88 +4563,6 @@ class V14WorkspaceRepository:
             ).rowcount
         if not changed:
             raise KeyError(f"unknown scenario: {scenario_id}")
-
-    def enqueue_review(self, candidate: CandidatePrinciple) -> None:
-        now = utc_now()
-        with self.connect() as conn:
-            conn.execute(
-                """
-                INSERT INTO admin_review_queue(
-                    candidate_id, status, payload_json, decision_json, created_at, updated_at
-                ) VALUES (?, 'pending', ?, NULL, ?, ?)
-                ON CONFLICT(candidate_id) DO UPDATE SET payload_json=excluded.payload_json,
-                    status='pending', decision_json=NULL, updated_at=excluded.updated_at
-                """,
-                (candidate.candidate_id, candidate.model_dump_json(), now, now),
-            )
-
-    def review_queue(self, *, status: str | None = None) -> list[dict[str, Any]]:
-        sql = "SELECT * FROM admin_review_queue"
-        values: tuple[Any, ...] = ()
-        if status:
-            sql += " WHERE status=?"
-            values = (status,)
-        sql += " ORDER BY updated_at DESC, candidate_id"
-        with self.connect() as conn:
-            rows = conn.execute(sql, values).fetchall()
-        return [
-            {
-                "candidate": json.loads(row["payload_json"]),
-                "status": row["status"],
-                "decision": json.loads(row["decision_json"]) if row["decision_json"] else None,
-                "updated_at": row["updated_at"],
-            }
-            for row in rows
-        ]
-
-    def decide_review(self, candidate_id: str, status: str, decision: dict[str, Any]) -> None:
-        now = utc_now()
-        with self.connect() as conn:
-            changed = conn.execute(
-                """
-                UPDATE admin_review_queue SET status=?, decision_json=?, updated_at=?
-                WHERE candidate_id=?
-                """,
-                (
-                    status,
-                    json.dumps(decision, ensure_ascii=False, sort_keys=True),
-                    now,
-                    candidate_id,
-                ),
-            ).rowcount
-        if not changed:
-            raise KeyError(f"unknown review candidate: {candidate_id}")
-
-    def save_changeset(self, changeset: PublicationChangeset, *, status: str = "draft") -> None:
-        now = utc_now()
-        with self.connect() as conn:
-            conn.execute(
-                """
-                INSERT INTO publication_changesets(
-                    changeset_id, area, status, expected_content_digest,
-                    payload_json, created_at, updated_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?)
-                ON CONFLICT(changeset_id) DO UPDATE SET status=excluded.status,
-                    payload_json=excluded.payload_json, updated_at=excluded.updated_at
-                """,
-                (
-                    changeset.changeset_id,
-                    changeset.area,
-                    status,
-                    changeset.expected_content_digest,
-                    changeset.model_dump_json(),
-                    changeset.created_at,
-                    now,
-                ),
-            )
-
-    def changeset(self, changeset_id: str) -> PublicationChangeset | None:
-        with self.connect() as conn:
-            row = conn.execute(
-                "SELECT payload_json FROM publication_changesets WHERE changeset_id=?",
-                (changeset_id,),
-            ).fetchone()
-        return PublicationChangeset.model_validate_json(row[0]) if row else None
 
     def canonical_content_digest(self) -> str:
         with self.connect() as conn:

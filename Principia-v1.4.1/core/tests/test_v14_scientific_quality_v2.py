@@ -136,16 +136,20 @@ def test_ai_for_physics_goal_accepts_physics_informed_neural_evidence() -> None:
     )
     atom = _atom(work_id="work:ai-physics", claim=quotation, quotation=quotation)
     argument = _argument(
-        atom, canonical_claim=quotation,
+        atom,
+        canonical_claim=quotation,
         subject_system="fluid simulations using physics-informed neural networks",
         driver_or_intervention="physics-informed neural constraints",
-        outcome="conservation error", direction_or_qualifier="reduced",
+        outcome="conservation error",
+        direction_or_qualifier="reduced",
         conditions=["the tested boundary conditions"],
         boundary=["fluid simulations represented in the evaluation"],
         testability="Compare conservation error with and without neural constraints.",
     )
     reasons = ScientificQualityGate().validate_argument(
-        argument, atoms=[atom], independent_work_ids={"work:ai-physics"},
+        argument,
+        atoms=[atom],
+        independent_work_ids={"work:ai-physics"},
         goal="AI for Physics",
     )
     assert QualityReason.OFF_GOAL not in reasons
@@ -155,15 +159,20 @@ def test_ai_for_physics_goal_rejects_unrelated_ai_policy_claim() -> None:
     quotation = "Artificial intelligence tutoring increased course completion rates."
     atom = _atom(work_id="work:education", claim=quotation, quotation=quotation)
     argument = _argument(
-        atom, canonical_claim=quotation,
+        atom,
+        canonical_claim=quotation,
         subject_system="artificial intelligence tutoring in online courses",
-        driver_or_intervention="automated tutoring", outcome="course completion rates",
-        direction_or_qualifier="increased", conditions=["online courses"],
+        driver_or_intervention="automated tutoring",
+        outcome="course completion rates",
+        direction_or_qualifier="increased",
+        conditions=["online courses"],
         boundary=["the evaluated education program"],
         testability="Compare completion rates with and without automated tutoring.",
     )
     reasons = ScientificQualityGate().validate_argument(
-        argument, atoms=[atom], independent_work_ids={"work:education"},
+        argument,
+        atoms=[atom],
+        independent_work_ids={"work:education"},
         goal="AI for Physics",
     )
     assert QualityReason.OFF_GOAL in reasons
@@ -173,15 +182,21 @@ def test_single_term_goal_never_requires_two_distinct_overlaps() -> None:
     quotation = "Turbulence increased mixing under the measured flow conditions."
     atom = _atom(work_id="work:turbulence", claim=quotation, quotation=quotation)
     argument = _argument(
-        atom, canonical_claim=quotation, subject_system="turbulence in channel flow",
-        driver_or_intervention="turbulence", outcome="mixing",
+        atom,
+        canonical_claim=quotation,
+        subject_system="turbulence in channel flow",
+        driver_or_intervention="turbulence",
+        outcome="mixing",
         direction_or_qualifier="increased",
         conditions=["the measured flow conditions"],
         boundary=["the evaluated channel geometry"],
         testability="Measure mixing across controlled turbulence intensities.",
     )
     reasons = ScientificQualityGate().validate_argument(
-        argument, atoms=[atom], independent_work_ids={"work:turbulence"}, goal="turbulence",
+        argument,
+        atoms=[atom],
+        independent_work_ids={"work:turbulence"},
+        goal="turbulence",
     )
     assert QualityReason.OFF_GOAL not in reasons
 

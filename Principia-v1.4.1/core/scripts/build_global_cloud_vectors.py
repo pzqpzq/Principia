@@ -75,15 +75,21 @@ def build(root: Path, output: Path, *, previous: Path | None, url: str, token: s
     records = repository.all_records()
     output.mkdir(parents=True, exist_ok=True)
     with httpx.Client(timeout=120) as client:
-        for entity, kind, identifier in (
-            ("work", "works", "work_id"), ("principle", "principles", "principle_id")
+        for entity, kinds, identifier in (
+            ("work", ("works",), "work_id"),
+            ("principle", ("principles", "meta-principles"), "principle_id"),
         ):
             latest: dict[str, dict[str, Any]] = {}
-            for row in records[kind]:
-                current = latest.get(str(row[identifier]))
-                if current is None or int(row["revision"]) > int(current["revision"]):
-                    latest[str(row[identifier])] = row
-            ordered = [latest[key] for key in sorted(latest)]
+            for kind in kinds:
+                for row in records[kind]:
+                    current = latest.get(str(row[identifier]))
+                    if current is None or int(row["revision"]) > int(current["revision"]):
+                        latest[str(row[identifier])] = row
+            ordered = [
+                latest[key]
+                for key in sorted(latest)
+                if str(latest[key].get("status") or "active") == "active"
+            ]
             old = _previous(previous, entity)
             matrix = np.empty((len(ordered), EmbeddingContract().dimensions), dtype=np.float32)
             missing: list[int] = []

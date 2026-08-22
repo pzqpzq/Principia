@@ -112,7 +112,7 @@ def migrate(package_directory: Path, output: Path) -> dict[str, Any]:
                         "exclusions": payload.get("boundary") or [],
                         "populations": [],
                     },
-                    "falsifier": payload.get("testability") or "Requires Admin assessment.",
+                    "falsifier": payload.get("testability") or "Requires owner assessment.",
                     "quality": {
                         "assessment_status": payload.get("assessment_status") or "unassessed",
                         "legacy_verification": payload.get("verification") or {},

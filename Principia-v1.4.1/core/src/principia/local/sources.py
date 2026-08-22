@@ -123,8 +123,7 @@ class LocalSourceService:
             with self.repository.connect() as conn:
                 conn.execute("BEGIN IMMEDIATE")
                 conn.execute(
-                    "UPDATE local_sources_v14 SET absolute_root=?, updated_at=? "
-                    "WHERE source_id=?",
+                    "UPDATE local_sources_v14 SET absolute_root=?, updated_at=? WHERE source_id=?",
                     (str(expected), utc_now(), source["source_id"]),
                 )
                 conn.execute(
@@ -423,9 +422,7 @@ class LocalSourceService:
                 if not raw_path.is_file() or not text_path.is_file():
                     continue
                 relative_raw = (
-                    raw_path.relative_to(root).as_posix()
-                    if raw_path.is_relative_to(root)
-                    else ""
+                    raw_path.relative_to(root).as_posix() if raw_path.is_relative_to(root) else ""
                 )
                 expected_name = (
                     "paper.pdf"
@@ -441,9 +438,8 @@ class LocalSourceService:
                     )
                     and raw_path.name == expected_name
                 )
-                derived_is_isolated = (
-                    not text_path.is_relative_to(root)
-                    and (not metadata_path.exists() or not metadata_path.is_relative_to(root))
+                derived_is_isolated = not text_path.is_relative_to(root) and (
+                    not metadata_path.exists() or not metadata_path.is_relative_to(root)
                 )
                 if raw_layout_is_current and derived_is_isolated:
                     continue
@@ -558,11 +554,7 @@ class LocalSourceService:
         area: str = "",
         parent: str | Path | None = None,
     ) -> dict[str, Any]:
-        base = (
-            Path(parent).expanduser().resolve(strict=True)
-            if parent
-            else self.local_data_root
-        )
+        base = Path(parent).expanduser().resolve(strict=True) if parent else self.local_data_root
         if not base.is_dir():
             raise NotADirectoryError("managed-source parent is not a directory")
         source_id = f"src:{monotonic_ulid()}"
@@ -600,7 +592,11 @@ class LocalSourceService:
             (json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True) + "\n").encode(),
         )
         if managed_root.is_relative_to(self.local_data_root):
-            prefix = "local_data" if self.local_data_root.name == "local_data" else self.local_data_root.name
+            prefix = (
+                "local_data"
+                if self.local_data_root.name == "local_data"
+                else self.local_data_root.name
+            )
             display_location = (
                 Path(prefix) / managed_root.relative_to(self.local_data_root)
             ).as_posix()
@@ -817,7 +813,9 @@ class LocalSourceService:
                     source_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
                     if source_manifest.get("schema_version") == "principia-local-source-v1":
                         manifest_documents = {
-                            str(item.get("portable_relative_uri") or item.get("relative_path")): item
+                            str(
+                                item.get("portable_relative_uri") or item.get("relative_path")
+                            ): item
                             for item in source_manifest.get("documents") or []
                             if item.get("portable_relative_uri") or item.get("relative_path")
                         }

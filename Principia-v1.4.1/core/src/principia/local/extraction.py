@@ -40,11 +40,13 @@ from ..providers import (
     ProviderBudgetExceeded,
     ProviderOutputError,
     ProviderRequestError,
+    ProviderTrace,
 )
 from ..providers.openai_compatible import ScientificGeneration
 from ..storage import WorkspaceStorage
 from .areas import CandidateAreaSuggestionService
 from .consolidation import CandidateConsolidationService
+from .foundation_grounding import FoundationGroundingService
 from .literature_discovery import _BudgetLedger, _select_evidence_segments
 from .quality import ScientificQualityGate, stable_atom_id
 
@@ -74,12 +76,14 @@ class CandidateExtractionService:
         *,
         principles_export_root: str | Path | None = None,
         relation_rebuild: Callable[[], JobRecord] | None = None,
+        global_cloud: Any | None = None,
     ) -> None:
         self.storage = storage
         self.repository = repository
         self.quality = ScientificQualityGate()
         self.consolidation = CandidateConsolidationService(repository)
         self.area_suggestions = CandidateAreaSuggestionService(repository)
+        self.foundation_grounding = FoundationGroundingService(repository, global_cloud)
         self.relation_rebuild = relation_rebuild
         self.principles_export_root = (
             Path(principles_export_root).expanduser().resolve()
@@ -232,6 +236,9 @@ class CandidateExtractionService:
             "quarantined_candidates": 0,
             "duplicate_candidates": 0,
             "failed_documents": 0,
+            "grounded_candidates": 0,
+            "ungrounded_solid_candidates": 0,
+            "ambiguous_foundation_candidates": 0,
             "candidate_count": 0,
             "candidate_ids": [],
             "usage": {
@@ -380,6 +387,9 @@ class CandidateExtractionService:
             "quarantined_candidates": 0,
             "duplicate_candidates": 0,
             "failed_documents": 0,
+            "grounded_candidates": 0,
+            "ungrounded_solid_candidates": 0,
+            "ambiguous_foundation_candidates": 0,
             "parallel_workers": min(max(1, limits.concurrency), max(1, len(documents))),
         }
         candidate_ids: list[str] = []
@@ -1054,6 +1064,50 @@ class CandidateExtractionService:
                             reason=",".join(item.value for item in final_reasons),
                         )
                         if not final_reasons:
+                            try:
+                                foundation = self.foundation_grounding.assess(
+                                    candidate,
+                                    argument,
+                                    provider=provider,
+                                )
+                            except Exception as exc:  # noqa: BLE001
+                                foundation = self.foundation_grounding.assess(
+                                    candidate,
+                                    argument,
+                                    provider=None,
+                                )
+                                self.repository.append_job_event(
+                                    job.job_id,
+                                    "foundation_warning",
+                                    {
+                                        "candidate_id": candidate.candidate_id,
+                                        "category": type(exc).__name__,
+                                        "message": (
+                                            "Scientific validation passed; Meta grounding needs review. "
+                                            "The Principle was preserved."
+                                        ),
+                                    },
+                                    event_id=event_id(),
+                                )
+                            metrics[
+                                {
+                                    "grounded": "grounded_candidates",
+                                    "ungrounded_solid": "ungrounded_solid_candidates",
+                                    "ambiguous": "ambiguous_foundation_candidates",
+                                }[str(foundation["verdict"])]
+                            ] += 1
+                            foundation_trace = foundation.get("trace") or {}
+                            if foundation_trace:
+                                parsed_trace = ProviderTrace.model_validate(foundation_trace)
+                                ledger.record_usage(
+                                    input_tokens=parsed_trace.input_tokens,
+                                    output_tokens=parsed_trace.output_tokens,
+                                )
+                                self._save_provider_trace(
+                                    job_id=job.job_id,
+                                    unit_id=unit_id,
+                                    trace=parsed_trace,
+                                )
                             self.area_suggestions.suggest_for_candidate(
                                 candidate.candidate_id,
                                 argument=argument.model_dump(mode="json"),

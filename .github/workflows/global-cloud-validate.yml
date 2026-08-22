@@ -27,7 +27,7 @@ jobs:
         run: |
           git diff --name-only "${{ github.event.pull_request.base.sha }}" "${{ github.sha }}" > "${RUNNER_TEMP}/changed.txt"
           if grep -q '^global-cloud/' "${RUNNER_TEMP}/changed.txt"; then
-            ! grep '^global-cloud/' "${RUNNER_TEMP}/changed.txt" | grep -Ev '^global-cloud/(data/v1|audit/|schemas/v1|contracts/|README.md|CLOUD_VERSION|legacy-pcp-catalog.json)'
+            ! grep '^global-cloud/' "${RUNNER_TEMP}/changed.txt" | grep -Ev '^global-cloud/(data/v[12]/|audit/|schemas/v[12]/|contracts/|README.md|CLOUD_VERSION|legacy-pcp-catalog.json)'
           fi
       - run: python Principia-v1.4.1/core/scripts/validate_global_cloud.py global-cloud --report "${RUNNER_TEMP}/validation.json"
       - name: Deterministic snapshot build

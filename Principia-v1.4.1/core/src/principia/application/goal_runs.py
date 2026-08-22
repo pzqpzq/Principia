@@ -64,8 +64,7 @@ class ResearchGoalRunService:
                     ).fetchone()[0]
                 )
                 completed_branch = any(
-                    str(branch.get("state") or "") == "succeeded"
-                    for branch in branches.values()
+                    str(branch.get("state") or "") == "succeeded" for branch in branches.values()
                 )
                 state = "partial" if membership_count or completed_branch else "failed"
                 results["recovery_message"] = (
@@ -84,7 +83,9 @@ class ResearchGoalRunService:
                     ),
                 )
 
-    def start(self, request: ResearchGoalRunRequest, *, egress_confirmed: bool = False) -> dict[str, Any]:
+    def start(
+        self, request: ResearchGoalRunRequest, *, egress_confirmed: bool = False
+    ) -> dict[str, Any]:
         for source_id in request.source_ids:
             if self.repository.source(source_id) is None:
                 raise KeyError(f"unknown Local source: {source_id}")
@@ -97,9 +98,7 @@ class ResearchGoalRunService:
         ]
         if extractable_sources:
             if not egress_confirmed:
-                raise ValueError(
-                    "Confirm local LLM analysis before starting this research goal"
-                )
+                raise ValueError("Confirm local LLM analysis before starting this research goal")
             connection = self.local.test_provider_connection(request.provider_profile_id)
             if not bool(connection.get("ok")):
                 category = str(connection.get("category") or "provider_unavailable")
@@ -108,7 +107,9 @@ class ResearchGoalRunService:
                     "rate_limited": "the LLM provider is rate-limiting requests; wait briefly and try again",
                     "timeout": "the LLM connection timed out; test it again when reachable",
                     "network": "the LLM provider could not be reached; check the network and try again",
-                }.get(category, "the LLM provider is unavailable; test the connection and try again")
+                }.get(
+                    category, "the LLM provider is unavailable; test the connection and try again"
+                )
                 raise ValueError(f"Local extraction did not start: {guidance}")
         run_id = f"goalrun:{monotonic_ulid()}"
         job = JobRecord(
@@ -119,7 +120,9 @@ class ResearchGoalRunService:
             progress=0,
             provider=request.provider_profile_id,
             model=request.model,
-            total_units=int(request.include_global) + len(request.source_ids) + int(request.include_online),
+            total_units=int(request.include_global)
+            + len(request.source_ids)
+            + int(request.include_online),
             checkpoint={"run_id": run_id, "request": request.model_dump(mode="json")},
             status_message="Preparing independent Global and Local branches",
         )
@@ -127,7 +130,11 @@ class ResearchGoalRunService:
         if request.include_global:
             branches["global"] = {"state": "queued", "job_id": ""}
         for source_id in request.source_ids:
-            branches[f"local:{source_id}"] = {"state": "queued", "job_id": "", "source_id": source_id}
+            branches[f"local:{source_id}"] = {
+                "state": "queued",
+                "job_id": "",
+                "source_id": source_id,
+            }
         if request.include_online:
             branches["online"] = {"state": "awaiting_selection", "job_id": ""}
         self.repository.save_job(job)
@@ -141,7 +148,9 @@ class ResearchGoalRunService:
         )
         cancel = threading.Event()
         self._cancel[run_id] = cancel
-        self._executor.submit(self._run, run_id, job.job_id, request, branches, cancel, egress_confirmed)
+        self._executor.submit(
+            self._run, run_id, job.job_id, request, branches, cancel, egress_confirmed
+        )
         return self.detail(run_id) or {}
 
     def _save_run(
@@ -167,18 +176,29 @@ class ResearchGoalRunService:
                     updated_at=excluded.updated_at
                 """,
                 (
-                    run_id, job_id, state, request.goal, status.get("release_id") or "",
-                    request.model_dump_json(), json.dumps(branches, sort_keys=True),
-                    json.dumps(results, sort_keys=True), now, now,
+                    run_id,
+                    job_id,
+                    state,
+                    request.goal,
+                    status.get("release_id") or "",
+                    request.model_dump_json(),
+                    json.dumps(branches, sort_keys=True),
+                    json.dumps(results, sort_keys=True),
+                    now,
+                    now,
                 ),
             )
 
-    def _persist_memberships(self, run_id: str, memberships: dict[str, list[dict[str, Any]]]) -> None:
+    def _persist_memberships(
+        self, run_id: str, memberships: dict[str, list[dict[str, Any]]]
+    ) -> None:
         with self.repository.connect() as conn:
             conn.execute("DELETE FROM research_goal_memberships WHERE run_id=?", (run_id,))
             for membership, items in memberships.items():
                 for item in items:
-                    identifier = str(item.get("id") or item.get("candidate_id") or item.get("principle_id"))
+                    identifier = str(
+                        item.get("id") or item.get("candidate_id") or item.get("principle_id")
+                    )
                     digest = str(item.get("content_digest") or "")
                     if not digest:
                         digest = hashlib.sha256(
@@ -187,8 +207,12 @@ class ResearchGoalRunService:
                     conn.execute(
                         "INSERT INTO research_goal_memberships VALUES (?,?,?,?,?,?)",
                         (
-                            run_id, membership, identifier, str(item.get("source") or membership),
-                            digest, json.dumps(item, ensure_ascii=False, sort_keys=True),
+                            run_id,
+                            membership,
+                            identifier,
+                            str(item.get("source") or membership),
+                            digest,
+                            json.dumps(item, ensure_ascii=False, sort_keys=True),
                         ),
                     )
 
@@ -271,7 +295,9 @@ class ResearchGoalRunService:
             except Exception as exc:  # noqa: BLE001
                 ranking_warning = f"embedding_unavailable:{type(exc).__name__}"
             result = self.global_cloud.search(
-                CloudSearchRequest(entity="principle", query=request.goal, limit=request.global_limit),
+                CloudSearchRequest(
+                    entity="principle", query=request.goal, limit=request.global_limit
+                ),
                 query_vector=query_vector,
             )
             if query_vector is None and bool(status.get("vectors_complete")):
@@ -294,7 +320,9 @@ class ResearchGoalRunService:
             if not documents:
                 return {"items": [], "message": "No extractable documents in this source"}
             if not egress_confirmed:
-                raise ValueError("Local LLM extraction requires explicit remote-egress confirmation")
+                raise ValueError(
+                    "Local LLM extraction requires explicit remote-egress confirmation"
+                )
             _, policy, api_key = self.local.provider_configuration(
                 request.provider_profile_id, request.model, egress_confirmed=True
             )
@@ -312,7 +340,12 @@ class ResearchGoalRunService:
             branches[name]["job_id"] = child.job_id
             while True:
                 child = self.repository.get_job(child.job_id)
-                if child is None or child.state in {"succeeded", "failed", "cancelled", "interrupted"}:
+                if child is None or child.state in {
+                    "succeeded",
+                    "failed",
+                    "cancelled",
+                    "interrupted",
+                }:
                     break
                 if cancel.wait(0.2):
                     self.local.cancel(child.job_id)
@@ -339,10 +372,18 @@ class ResearchGoalRunService:
                 }
                 persist_live_memberships()
             if child is None or child.state != "succeeded":
-                raise RuntimeError((child.error or {}).get("message") if child else "child job disappeared")
+                raise RuntimeError(
+                    (child.error or {}).get("message") if child else "child job disappeared"
+                )
             ids = list((child.result or {}).get("candidate_ids") or [])
             items = [self.repository.candidate_detail(identifier) for identifier in ids]
-            return {"items": [{**item, "id": item["candidate_id"], "source": "local"} for item in items if item]}
+            return {
+                "items": [
+                    {**item, "id": item["candidate_id"], "source": "local"}
+                    for item in items
+                    if item
+                ]
+            }
 
         futures: dict[Any, str] = {}
         with ThreadPoolExecutor(
@@ -364,7 +405,9 @@ class ResearchGoalRunService:
                         "items": [],
                         "error": {
                             "category": type(exc).__name__,
-                            "message": message[:500] if message else "This branch could not complete.",
+                            "message": message[:500]
+                            if message
+                            else "This branch could not complete.",
                         },
                     }
                     branches[name]["state"] = "failed"
@@ -372,7 +415,9 @@ class ResearchGoalRunService:
                 job.completed_units += 1
                 job.progress = job.completed_units / max(1, job.total_units)
                 job.elapsed_seconds = round(time.monotonic() - started, 1)
-                job.status_message = f"Completed {job.completed_units} of {job.total_units} branches"
+                job.status_message = (
+                    f"Completed {job.completed_units} of {job.total_units} branches"
+                )
                 job.updated_at = utc_now()
                 self.repository.save_job(job)
                 self._save_run(run_id, job_id, "running", request, branches, results)
@@ -390,7 +435,11 @@ class ResearchGoalRunService:
             if name.startswith("local:")
             for item in result.get("items") or []
         ]
-        global_by_digest = {str(item.get("content_digest") or ""): item for item in global_items if item.get("content_digest")}
+        global_by_digest = {
+            str(item.get("content_digest") or ""): item
+            for item in global_items
+            if item.get("content_digest")
+        }
         combined = [{**item, "source": "global"} for item in global_items]
         for item in local_items:
             digest = str(item.get("content_digest") or "")
@@ -404,9 +453,23 @@ class ResearchGoalRunService:
         memberships = {"global": global_items, "local": local_items, "combined": combined}
         self._persist_memberships(run_id, memberships)
         failed = sum(1 for value in branches.values() if value["state"] == "failed")
-        succeeded = sum(1 for value in branches.values() if value["state"] in {"succeeded", "awaiting_selection"})
-        state = "cancelled" if cancel.is_set() else "partial" if failed and succeeded else "failed" if failed else "succeeded"
-        job.state = "cancelled" if state == "cancelled" else "failed" if state == "failed" else "succeeded"
+        succeeded = sum(
+            1
+            for value in branches.values()
+            if value["state"] in {"succeeded", "awaiting_selection"}
+        )
+        state = (
+            "cancelled"
+            if cancel.is_set()
+            else "partial"
+            if failed and succeeded
+            else "failed"
+            if failed
+            else "succeeded"
+        )
+        job.state = (
+            "cancelled" if state == "cancelled" else "failed" if state == "failed" else "succeeded"
+        )
         job.stage = "Complete" if state in {"succeeded", "partial"} else state
         job.progress = 1
         job.result = {
@@ -415,7 +478,9 @@ class ResearchGoalRunService:
             "counts": {key: len(value) for key, value in memberships.items()},
             "branch_results": results,
         }
-        job.status_message = "Research-goal results are ready" if state != "failed" else "All branches failed"
+        job.status_message = (
+            "Research-goal results are ready" if state != "failed" else "All branches failed"
+        )
         job.updated_at = utc_now()
         self.repository.save_job(job)
         self._save_run(run_id, job_id, state, request, branches, job.result)
@@ -423,14 +488,22 @@ class ResearchGoalRunService:
 
     def detail(self, run_id: str) -> dict[str, Any] | None:
         with self.repository.connect() as conn:
-            row = conn.execute("SELECT * FROM research_goal_runs WHERE run_id=?", (run_id,)).fetchone()
+            row = conn.execute(
+                "SELECT * FROM research_goal_runs WHERE run_id=?", (run_id,)
+            ).fetchone()
         if row is None:
             return None
         return {
-            "run_id": row["run_id"], "job_id": row["job_id"], "state": row["state"],
-            "goal": row["goal"], "cloud_release_id": row["cloud_release_id"],
-            "request": json.loads(row["request_json"]), "branches": json.loads(row["branches_json"]),
-            "result": json.loads(row["results_json"]), "created_at": row["created_at"], "updated_at": row["updated_at"],
+            "run_id": row["run_id"],
+            "job_id": row["job_id"],
+            "state": row["state"],
+            "goal": row["goal"],
+            "cloud_release_id": row["cloud_release_id"],
+            "request": json.loads(row["request_json"]),
+            "branches": json.loads(row["branches_json"]),
+            "result": json.loads(row["results_json"]),
+            "created_at": row["created_at"],
+            "updated_at": row["updated_at"],
         }
 
     def latest(self) -> dict[str, Any] | None:
@@ -442,14 +515,18 @@ class ResearchGoalRunService:
             ).fetchone()
         return self.detail(str(row[0])) if row is not None else None
 
-    def results(self, run_id: str, membership: str, *, limit: int = 100, offset: int = 0) -> dict[str, Any]:
+    def results(
+        self, run_id: str, membership: str, *, limit: int = 100, offset: int = 0
+    ) -> dict[str, Any]:
         if membership not in {"global", "local", "combined"}:
             raise ValueError("membership must be global, local, or combined")
         with self.repository.connect() as conn:
-            total = int(conn.execute(
-                "SELECT COUNT(*) FROM research_goal_memberships WHERE run_id=? AND membership=?",
-                (run_id, membership),
-            ).fetchone()[0])
+            total = int(
+                conn.execute(
+                    "SELECT COUNT(*) FROM research_goal_memberships WHERE run_id=? AND membership=?",
+                    (run_id, membership),
+                ).fetchone()[0]
+            )
             rows = conn.execute(
                 "SELECT payload_json FROM research_goal_memberships WHERE run_id=? AND membership=? "
                 "ORDER BY rowid LIMIT ? OFFSET ?",

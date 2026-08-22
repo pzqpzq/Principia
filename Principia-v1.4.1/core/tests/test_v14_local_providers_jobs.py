@@ -20,7 +20,7 @@ from principia.domain import (
 )
 from principia.local import LocalDiscoveryService
 from principia.persistence import V14WorkspaceRepository
-from principia.providers import ModelPolicy, OpenAICompatibleProvider
+from principia.providers import ModelPolicy, OpenAICompatibleProvider, ProviderRequestError
 from principia.storage import WorkspaceStorage
 
 
@@ -383,6 +383,51 @@ def test_two_explicit_empty_argument_batches_are_a_valid_zero_result() -> None:
     )
     assert ScientificArgumentBatch.model_validate(generation.value).arguments == []
     assert len(calls) == 2
+
+
+def test_read_timeout_is_not_immediately_retried_as_a_duplicate_paid_call() -> None:
+    calls = 0
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        nonlocal calls
+        calls += 1
+        raise httpx.ReadTimeout("response is still pending", request=request)
+
+    provider = OpenAICompatibleProvider(
+        ModelPolicy(
+            mode="remote",
+            provider="siliconflow",
+            model="fixture-model",
+            base_url="https://api.siliconflow.com/v1",
+            remote_egress_confirmed=True,
+        ),
+        api_key="fixture-secret",
+        transport=httpx.MockTransport(handler),
+        timeout=600,
+    )
+    try:
+        with pytest.raises(ProviderRequestError) as captured:
+            provider.extract_evidence_atoms(
+                area="engineering-robotics",
+                goal="autonomous robotics",
+                source_records=[
+                    {"source_key": "source:0", "work_id": "W-TIMEOUT", "title": "Robotics"}
+                ],
+                evidence_segments=[
+                    {
+                        "segment_key": "segment:0",
+                        "section": "results",
+                        "page_start": 1,
+                        "text": "The autonomous controller reduced manufacturing errors.",
+                    }
+                ],
+            )
+    finally:
+        provider.close()
+
+    assert calls == 1
+    assert captured.value.category == "timeout"
+    assert "10 minutes" in str(captured.value)
 
 
 def test_challenge_repairs_only_missing_argument_decisions() -> None:

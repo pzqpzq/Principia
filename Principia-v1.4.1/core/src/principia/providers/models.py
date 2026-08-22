@@ -67,15 +67,9 @@ class ProviderProfile(DomainModel):
         return cls(
             provider="siliconflow",
             label="SiliconFlow",
-            base_url=os.getenv(
-                "PRINCIPIA_LLM_BASE_URL", SILICONFLOW_AUTHORIZED_BASE_URLS[0]
-            ),
-            default_model=os.getenv(
-                "PRINCIPIA_LLM_MODEL", "deepseek-ai/DeepSeek-V4-Flash"
-            ),
-            configured=bool(
-                os.getenv("PRINCIPIA_LLM_API_KEY") or os.getenv("SILICONFLOW_API_KEY")
-            ),
+            base_url=os.getenv("PRINCIPIA_LLM_BASE_URL", SILICONFLOW_AUTHORIZED_BASE_URLS[0]),
+            default_model=os.getenv("PRINCIPIA_LLM_MODEL", "deepseek-ai/DeepSeek-V4-Flash"),
+            configured=bool(os.getenv("PRINCIPIA_LLM_API_KEY") or os.getenv("SILICONFLOW_API_KEY")),
             remote=True,
             models=[
                 "deepseek-ai/DeepSeek-V4-Flash",

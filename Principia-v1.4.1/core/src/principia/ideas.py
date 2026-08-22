@@ -181,9 +181,7 @@ class IdeaService:
                     # A failed repair is still a paid, observable live run.
                     # Persist the usage delta before RunHandle records the
                     # terminal validation error, without saving an invalid idea.
-                    failed_usage = llm_usage_delta(
-                        usage_before, llm_usage_snapshot(self.llm)
-                    )
+                    failed_usage = llm_usage_delta(usage_before, llm_usage_snapshot(self.llm))
                     run.update(
                         "quality_review",
                         "Generated Idea Card remains invalid after repair.",
@@ -699,9 +697,7 @@ class IdeaService:
             )
             repaired: dict[str, Any] = repaired_value if isinstance(repaired_value, dict) else {}
             repaired_payload = canonicalize_explicit_math(unwrap_idea_card(repaired) or repaired)
-            merged = canonicalize_explicit_math(
-                merge_nonempty_payload(payload, repaired_payload)
-            )
+            merged = canonicalize_explicit_math(merge_nonempty_payload(payload, repaired_payload))
             remaining = idea_payload_issues(merged, packet)
             metadata["remaining_issues"] = remaining
             metadata["succeeded"] = not remaining
@@ -1297,9 +1293,7 @@ def methodological_structure_issues(details: dict[str, Any]) -> list[str]:
                 continue
             if not str(row.get("name") or row.get("title") or "").strip():
                 issues.append(f"methodological_details.equations[{index}] is missing name")
-            if not str(
-                row.get("latex") or row.get("formula") or row.get("equation") or ""
-            ).strip():
+            if not str(row.get("latex") or row.get("formula") or row.get("equation") or "").strip():
                 issues.append(f"methodological_details.equations[{index}] is missing latex")
             if not str(
                 row.get("explanation") or row.get("meaning") or row.get("description") or ""
@@ -1827,9 +1821,7 @@ def _lexical_variants(token: str) -> list[str]:
     stem = token
     if len(token) > 5 and token.endswith("ies"):
         stem = token[:-3] + "y"
-    elif len(token) > 4 and token.endswith("s") and not token.endswith(
-        ("ss", "us", "is", "ics")
-    ):
+    elif len(token) > 4 and token.endswith("s") and not token.endswith(("ss", "us", "is", "ics")):
         stem = token[:-1]
     elif len(token) > 6 and token.endswith("ing"):
         base = token[:-3]

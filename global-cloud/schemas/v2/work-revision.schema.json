@@ -1,0 +1,285 @@
+{
+  "$defs": {
+    "AuthorAffiliation": {
+      "additionalProperties": false,
+      "properties": {
+        "author": {
+          "maxLength": 300,
+          "minLength": 1,
+          "title": "Author",
+          "type": "string"
+        },
+        "institutions": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 30,
+          "title": "Institutions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "author"
+      ],
+      "title": "AuthorAffiliation",
+      "type": "object"
+    },
+    "WorkAvailability": {
+      "additionalProperties": false,
+      "properties": {
+        "basis": {
+          "default": "",
+          "title": "Basis",
+          "type": "string"
+        },
+        "checked_at": {
+          "default": "",
+          "title": "Checked At",
+          "type": "string"
+        },
+        "full_text_url": {
+          "default": "",
+          "title": "Full Text Url",
+          "type": "string"
+        },
+        "license": {
+          "default": "",
+          "title": "License",
+          "type": "string"
+        },
+        "page_count": {
+          "anyOf": [
+            {
+              "maximum": 100000,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page Count"
+        },
+        "pdf_bytes": {
+          "anyOf": [
+            {
+              "maximum": 1073741824,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pdf Bytes"
+        },
+        "status": {
+          "default": "unknown",
+          "enum": [
+            "available",
+            "unavailable",
+            "unknown",
+            "probe_failed"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "title": "WorkAvailability",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "abstract": {
+      "default": "",
+      "maxLength": 100000,
+      "title": "Abstract",
+      "type": "string"
+    },
+    "affiliations": {
+      "items": {
+        "$ref": "#/$defs/AuthorAffiliation"
+      },
+      "maxItems": 200,
+      "title": "Affiliations",
+      "type": "array"
+    },
+    "arxiv_id": {
+      "default": "",
+      "title": "Arxiv Id",
+      "type": "string"
+    },
+    "authors": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 200,
+      "title": "Authors",
+      "type": "array"
+    },
+    "availability": {
+      "$ref": "#/$defs/WorkAvailability"
+    },
+    "citation_count": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Citation Count"
+    },
+    "content_digest": {
+      "default": "",
+      "title": "Content Digest",
+      "type": "string"
+    },
+    "created_at": {
+      "title": "Created At",
+      "type": "string"
+    },
+    "doi": {
+      "default": "",
+      "title": "Doi",
+      "type": "string"
+    },
+    "identifier_observations": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "maxItems": 100,
+      "title": "Identifier Observations",
+      "type": "array"
+    },
+    "institutions": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 300,
+      "title": "Institutions",
+      "type": "array"
+    },
+    "landing_url": {
+      "default": "",
+      "title": "Landing Url",
+      "type": "string"
+    },
+    "legacy_ids": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100,
+      "title": "Legacy Ids",
+      "type": "array"
+    },
+    "migration_provenance": {
+      "additionalProperties": true,
+      "title": "Migration Provenance",
+      "type": "object"
+    },
+    "openalex_id": {
+      "default": "",
+      "title": "Openalex Id",
+      "type": "string"
+    },
+    "pmcid": {
+      "default": "",
+      "title": "Pmcid",
+      "type": "string"
+    },
+    "pmid": {
+      "default": "",
+      "title": "Pmid",
+      "type": "string"
+    },
+    "publication_date": {
+      "default": "",
+      "title": "Publication Date",
+      "type": "string"
+    },
+    "revision": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Revision",
+      "type": "integer"
+    },
+    "schema_version": {
+      "const": "global-work-v2",
+      "default": "global-work-v2",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "semantic_scholar_id": {
+      "default": "",
+      "title": "Semantic Scholar Id",
+      "type": "string"
+    },
+    "source_urls": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 50,
+      "title": "Source Urls",
+      "type": "array"
+    },
+    "status": {
+      "default": "active",
+      "enum": [
+        "active",
+        "retired"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "title": {
+      "maxLength": 1000,
+      "minLength": 1,
+      "title": "Title",
+      "type": "string"
+    },
+    "updated_at": {
+      "title": "Updated At",
+      "type": "string"
+    },
+    "venue": {
+      "default": "",
+      "maxLength": 500,
+      "title": "Venue",
+      "type": "string"
+    },
+    "work_id": {
+      "maxLength": 200,
+      "minLength": 3,
+      "title": "Work Id",
+      "type": "string"
+    },
+    "year": {
+      "anyOf": [
+        {
+          "maximum": 3000,
+          "minimum": 1000,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Year"
+    }
+  },
+  "required": [
+    "work_id",
+    "title"
+  ],
+  "title": "WorkRevisionV2",
+  "type": "object"
+}

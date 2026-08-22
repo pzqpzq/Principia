@@ -48,14 +48,6 @@ def build_parser() -> argparse.ArgumentParser:
         help="Shared principle-packages directory used by every working directory.",
     )
 
-    admin = sub.add_parser("admin", help="Launch the isolated Admin application.")
-    admin.add_argument("--workspace", dest="command_workspace")
-    admin.add_argument("--working-directory")
-    admin.add_argument("--port", type=int, default=0)
-    admin.add_argument("--no-browser", action="store_true")
-    admin.add_argument("--cloud-root")
-    admin.add_argument("--package-library")
-
     doctor = sub.add_parser("doctor", help="Inspect the local v1.4 runtime without secrets.")
     doctor.add_argument("--workspace", dest="command_workspace")
     doctor.add_argument("--working-directory")
@@ -187,7 +179,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
     resolved_workspace = getattr(args, "command_workspace", None) or args.workspace
-    if args.command in {"open", "admin", "doctor", "cloud", "local", "showcase"}:
+    if args.command in {"open", "doctor", "cloud", "local", "showcase"}:
         working_directory = getattr(args, "working_directory", None)
         if not working_directory and not resolved_workspace:
             parser.error(
@@ -303,21 +295,12 @@ def _dispatch_v14(
     *,
     working_directory: Path | None = None,
 ) -> int:
-    from .application import AdminWorkspace, Principia
+    from .application import Principia
     from .local.portable import PortablePrincipleLibrary
     from .providers import ModelPolicy
 
     cloud_root = getattr(args, "cloud_root", None)
     package_library = getattr(args, "package_library", None)
-    if args.command == "admin":
-        admin_product = AdminWorkspace.open(
-            workspace,
-            working_directory=working_directory,
-            cloud_root=cloud_root,
-            package_library=package_library,
-        )
-        admin_product.open_ui(port=args.port, browser=not args.no_browser)
-        return 0
     product = Principia.open(
         workspace,
         working_directory=working_directory,
@@ -366,11 +349,7 @@ def _dispatch_v14(
             )
         return 0
     if args.command == "local" and args.local_command == "search":
-        print_json(
-            product.local.search_papers(
-                args.goal, area="", target_count=args.target_count
-            )
-        )
+        print_json(product.local.search_papers(args.goal, area="", target_count=args.target_count))
         return 0
     if args.command == "local" and args.local_command == "discover":
         if args.policy == "no_llm":

@@ -444,12 +444,14 @@ export function MapPage() {
   const activePackage = listValue(objectValue(packages.data).areas)
     .map(objectValue)
     .find((item) => textValue(item.area) === packageId);
-  const collectionTitle = virtualOnly ? "Saved Virtual Principles" : goalRunId ? textValue(goalRun.data?.goal, "Research goal results") : activeGoal?.title
+  const collectionTitle = virtualOnly ? "Saved Virtual Principles" : goalRunId ? textValue(goalRun.data?.goal, "Research goal results") : q ? "Principles for your question" : activeGoal?.title
     ?? activeFolder?.title
     ?? (activeArea ? `${activeArea.title.replaceAll("-", " ")} Principles` : undefined)
     ?? (activePackage ? `${textValue(activePackage.display_name, packageId)} Principles` : "All Principles");
   const collectionDescription = virtualOnly
     ? "Locally saved, LLM-derived hypotheses. They remain clearly marked as unreviewed until you validate or archive them."
+    : q
+    ? `Meaning-aware results for “${q}”, ranked to surface useful mechanisms and solution patterns rather than exact words alone.`
     : activeGoal
     ? `Principles grounded in papers collected for this research question. The question is fixed by the Library collection, not used as an extra Explorer filter.`
     : activeFolder
@@ -466,7 +468,7 @@ export function MapPage() {
 
   return <div className="page explorer-page">
     <PageHeader
-      eyebrow={virtualOnly ? "Local hypothesis studio" : goalRunId ? "Reproducible research-goal result" : scope === "global" ? "Downloaded scientific knowledge" : scope === "combined" ? "Private and downloaded scientific knowledge" : "Private scientific knowledge"}
+      eyebrow={virtualOnly ? "Local hypothesis studio" : goalRunId ? "Reproducible research-goal result" : q ? "Semantic Principle search" : scope === "global" ? "Downloaded scientific knowledge" : scope === "combined" ? "Private and downloaded scientific knowledge" : "Private scientific knowledge"}
       title={collectionTitle}
       description={goalRunId ? "Principles found for this goal. Switch between Combined, Global, and Local without rerunning the search." : collectionDescription}
       actions={<><button className={`virtual-header-action${virtualOnly ? " active" : ""}`} onClick={() => virtualOnly ? navigate("/map?scope=local&evidence=checks_passed") : navigate("/map?scope=local&evidence=checking&virtual=true")}>{virtualOnly ? "All Principles" : "✦ Saved hypotheses"}</button><button className={graphMode ? "primary" : ""} aria-pressed={graphMode} onClick={() => updateParams({ view: graphMode ? null : "graph", selected: null })}>{graphMode ? "Card Mode" : "Graph Mode"}</button>{goalRunId ? <button onClick={() => downloadJson("principia-goal-results", { goal_run: goalRun.data, membership: scope, cards: graphMode ? graphCards : cards, relations: graphView.data?.edges ?? [] })}>Export results</button> : <><button aria-pressed={scenarioMode} onClick={() => updateParams({ scenario: scenarioMode ? null : "true" })}>Scenario Mode</button><button onClick={() => downloadJson("principia-explorer", { filters: Object.fromEntries(params), cards: graphMode ? graphCards : cards, relations: graphView.data?.edges ?? [] })}>Export view</button></>}</>}
@@ -506,9 +508,10 @@ export function MapPage() {
 
       <main className="explorer-results">
         <div className="explorer-toolbar">
-          <form onSubmit={(event) => { event.preventDefault(); updateParams({ q: queryInput.trim() || null, sort: queryInput.trim() ? "relevance" : "updated", selected: null }); }}><input ref={searchInput} value={queryInput} onChange={(event) => setQueryInput(event.target.value)} placeholder="Search claims, mechanisms, interventions, or boundaries…" aria-label="Search Principles" /><button className="primary">Search</button></form>
+          <form onSubmit={(event) => { event.preventDefault(); updateParams({ q: queryInput.trim() || null, sort: queryInput.trim() ? "relevance" : "updated", selected: null }); }}><input ref={searchInput} value={queryInput} onChange={(event) => setQueryInput(event.target.value)} placeholder="Describe a problem—the search finds Principles that can help solve it…" aria-label="Semantic search Principles" /><button className="primary">Semantic search</button></form>
           <label><span className="sr-only">Sort Principles</span><SmartSelect ariaLabel="Sort Principles" value={sort} onChange={(value) => updateParams({ sort: value, selected: null })} options={[{ value: "relevance", label: "Best match" }, { value: "updated", label: "Recently updated" }, ...(reliabilityAvailable || sort === "reliability" ? [{ value: "reliability", label: "Reliability" }] : []), ...(influenceAvailable || sort === "influence" ? [{ value: "influence", label: "Influence" }] : []), { value: "supporting_papers", label: "Supporting papers" }, { value: "title", label: "Title" }]} /></label>
         </div>
+        <p className="semantic-search-note"><span>✦</span><strong>Meaning-aware retrieval</strong> Global results are ranked paper-first, then by linked Principle relevance. Local and offline searches expand scientific concepts beyond exact keyword matches.</p>
         {goalRunId ? <details className="score-explanation compact"><summary>About Reliability and Influence</summary><span>Reliability summarizes validated support versus contradiction links using a conservative confidence bound. Influence is connectivity within this installed library. Neither is a truth probability or real-world importance score.</span>{metricState !== "complete" ? <em>Relation measures are not available yet.</em> : null}</details> : <div className="score-explanation"><strong>How these measures work</strong><span>Reliability summarizes validated support versus contradiction links using a conservative confidence bound. Influence is connectivity within this installed library. Neither is a truth probability or real-world importance score.</span>{metricState !== "complete" ? <em>Relation measures are not available yet.</em> : null}</div>}
         {(graphMode ? graphView.isLoading : principlePage.isLoading) ? <LoadingState label={graphMode ? "Laying out validated Principle relations…" : "Preparing Principle cards…"} /> : null}
         {(graphMode ? graphView.isError : principlePage.isError) ? <ErrorState error={graphMode ? graphView.error : principlePage.error} retry={() => graphMode ? graphView.refetch() : principlePage.refetch()} /> : null}

@@ -201,9 +201,7 @@ class AreaManifest(DomainModel):
     builder_version: str
     python_version: str
     sqlite_version: str
-    content_class: Literal["reviewed_capsules", "unassessed_candidates"] = (
-        "reviewed_capsules"
-    )
+    content_class: Literal["reviewed_capsules", "unassessed_candidates"] = "reviewed_capsules"
     source_text_included: Literal[False] = False
     immutable: Literal[True] = True
     created_at: str = Field(default_factory=utc_now)
@@ -229,9 +227,7 @@ class CatalogEntry(DomainModel):
     principle_count: int = Field(ge=0)
     relation_count: int = Field(ge=0)
     released_at: str
-    content_class: Literal["reviewed_capsules", "unassessed_candidates"] = (
-        "reviewed_capsules"
-    )
+    content_class: Literal["reviewed_capsules", "unassessed_candidates"] = "reviewed_capsules"
     source_text_included: Literal[False] = False
 
     @field_validator("artifact_sha256", "content_digest")
@@ -278,8 +274,17 @@ class JobRecord(DomainModel):
     job_id: str
     kind: str
     state: Literal[
-        "queued", "running", "pausing", "paused", "resuming", "recovering",
-        "cancelling", "cancelled", "succeeded", "failed", "interrupted"
+        "queued",
+        "running",
+        "pausing",
+        "paused",
+        "resuming",
+        "recovering",
+        "cancelling",
+        "cancelled",
+        "succeeded",
+        "failed",
+        "interrupted",
     ] = "queued"
     stage: str = "queued"
     progress: float = Field(default=0, ge=0, le=1)

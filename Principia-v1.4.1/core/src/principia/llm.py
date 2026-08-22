@@ -232,8 +232,7 @@ class LLMClient:
                 "You repair malformed model output into one strict JSON object. Return JSON only."
                 + control_guidance,
                 (
-                    repair_constraints
-                    + "Original task:\n"
+                    repair_constraints + "Original task:\n"
                     f"{user}\n\n"
                     f"{untrusted_data_block('malformed_model_output', repair_source)}\n\n"
                     "Return exactly one valid JSON object. Do not add new facts."
@@ -348,9 +347,7 @@ class LLMClient:
                     break
                 if isinstance(exc, _LLMOutputTruncatedError):
                     current_limit = int(payload["max_tokens"])
-                    payload["max_tokens"] = min(
-                        6000, current_limit + max(800, current_limit // 2)
-                    )
+                    payload["max_tokens"] = min(6000, current_limit + max(800, current_limit // 2))
                     if not truncation_recovery_added:
                         payload["messages"].append(
                             {

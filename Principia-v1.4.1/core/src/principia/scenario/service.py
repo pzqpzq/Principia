@@ -18,9 +18,7 @@ class ScenarioService:
     def list(self) -> builtins.list[ScenarioRecord]:
         return self.repository.list_scenarios()
 
-    def create(
-        self, name: str, *, parent_scenario_id: str | None = None
-    ) -> ScenarioRecord:
+    def create(self, name: str, *, parent_scenario_id: str | None = None) -> ScenarioRecord:
         if parent_scenario_id and self.repository.scenario(parent_scenario_id) is None:
             raise KeyError(f"unknown parent scenario: {parent_scenario_id}")
         scenario = ScenarioRecord(
@@ -131,9 +129,7 @@ class ScenarioService:
             "scenario_id": scenario_id,
             "base_content_digest": replay["base_content_digest"],
             "overlay_digest": replay["overlay_digest"],
-            "changes": [
-                event.model_dump(mode="json") for event in self.events(scenario_id)
-            ],
+            "changes": [event.model_dump(mode="json") for event in self.events(scenario_id)],
             "impact": replay["impact"],
         }
 

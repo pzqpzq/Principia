@@ -68,6 +68,32 @@ _RELEVANCE_WORD = re.compile(r"[a-z0-9]+", flags=re.IGNORECASE)
 _DOMAIN_RELEVANCE_PROFILES: list[tuple[re.Pattern[str], re.Pattern[str]]] = [
     (
         re.compile(
+            r"\bfinancial resilience\b|(?=.*\bcash[- ]?flow\b)(?=.*\bfinanc(?:e|ial|ing)\b)",
+            re.IGNORECASE | re.DOTALL,
+        ),
+        re.compile(
+            r"(?=.*\b(?:financ(?:e|ial|ing)|econom(?:y|ic)|cash[- ]?flow|liquidity|"
+            r"capital|credit|firm|business|enterprise|household|bank(?:ing)?)\b)"
+            r"(?=.*\b(?:resilien(?:ce|t)|cash[- ]?flow|liquidity|financ(?:e|ing)|"
+            r"working capital|solvency|bankrupt|cost pressures?|operating costs?|"
+            r"contagion|funding|debt|risk)\b)",
+            re.IGNORECASE | re.DOTALL,
+        ),
+    ),
+    (
+        re.compile(
+            r"(?=.*\bneuro(?:science|scientific)?\b|.*\bneural\b)"
+            r"(?=.*\bcog(?:nitive|nition|initive)\b)",
+            re.IGNORECASE | re.DOTALL,
+        ),
+        re.compile(
+            r"(?=.*\b(?:neuroscience|neuroscientific|neural|brain|cortical)\b)"
+            r"(?=.*\b(?:cognitive|cognition|perception|memory|attention|reasoning|decision)\b)",
+            re.IGNORECASE | re.DOTALL,
+        ),
+    ),
+    (
+        re.compile(
             r"(?=.*\b(?:AI|artificial intelligence|machine learning|ML)\b)"
             r"(?=.*\bphysic(?:s|al)\b)",
             re.IGNORECASE | re.DOTALL,
@@ -163,7 +189,7 @@ def goal_domain_relevance(goal: str, item: dict[str, Any]) -> bool:
     """Return whether an item satisfies any recognized multi-anchor goal.
 
     Unrecognized goals remain permissive; recognized profiles such as
-    ``AI for Physics`` must satisfy both sides of the domain contract.  Admin
+    ``AI for Physics`` must satisfy both sides of the domain contract.  Curated
     uses this public wrapper to revalidate saved campaigns created by older
     retrieval code before allowing extraction or retry.
     """
@@ -212,13 +238,10 @@ def rank_literature_for_goal(goal: str, items: list[dict[str, Any]]) -> list[dic
     source ranking as a stable tie-break while suppressing those false friends.
     """
 
-    # Broad scholarly providers frequently interpret the short query
-    # "AI for Physics" as either generic AI or generic physics.  For this
-    # recognized two-anchor goal, returning fewer genuinely relevant papers is
-    # safer than padding an Admin campaign with unrelated policy/education
-    # records that can never yield goal-relevant Principles.
-    ai_physics_goal = bool(_DOMAIN_RELEVANCE_PROFILES[0][0].search(goal))
-    if ai_physics_goal:
+    # Preserve the established fail-closed AI-for-Physics contract. Other
+    # recognized domains are retained during reranking so the caller can
+    # report how many false friends its later domain filter excluded.
+    if _DOMAIN_RELEVANCE_PROFILES[2][0].search(goal):
         items = [item for item in items if _domain_relevance(goal, item) is True]
 
     goal_terms = set(_relevance_terms(goal))
@@ -233,7 +256,7 @@ def rank_literature_for_goal(goal: str, items: list[dict[str, Any]]) -> list[dic
     }
     total = len(items)
 
-    hilbert_sixth_goal = bool(_DOMAIN_RELEVANCE_PROFILES[1][0].search(goal))
+    hilbert_sixth_goal = bool(_DOMAIN_RELEVANCE_PROFILES[3][0].search(goal))
 
     def score(item: dict[str, Any]) -> float:
         title_terms = set(_relevance_terms(str(item.get("title") or "")))

@@ -2,6 +2,7 @@ name: Principia v1.4.1 CI
 
 on:
   push:
+    branches: [main]
     paths: ["Principia-v1.4.1/**", ".github/workflows/principia-v141-ci.yml"]
   pull_request:
     paths: ["Principia-v1.4.1/**", ".github/workflows/principia-v141-ci.yml"]
@@ -47,7 +48,7 @@ jobs:
           cache-dependency-path: Principia-v1.4.1/core/pyproject.toml
       - uses: pnpm/action-setup@v4
         with:
-          version: 10.15.1
+          version: 11.16.0
       - uses: actions/setup-node@v4
         with:
           node-version: "22"

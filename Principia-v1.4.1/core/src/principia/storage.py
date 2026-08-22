@@ -270,9 +270,7 @@ class WorkspaceStorage:
             payload.update(values)
             payload.setdefault("pdf_url", "")
             serialized_payload = json.dumps(payload, ensure_ascii=False)
-            current_values = {
-                column: str(row[column] or "") for column in WORK_IDENTITY_COLUMNS
-            }
+            current_values = {column: str(row[column] or "") for column in WORK_IDENTITY_COLUMNS}
             identity_changed = any(
                 current_values[column] != values[column] for column in WORK_IDENTITY_COLUMNS
             )

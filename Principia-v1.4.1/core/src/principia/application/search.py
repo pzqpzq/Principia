@@ -72,9 +72,7 @@ class PrincipleSearchService:
                 source_id=source_id,
             )
         if area:
-            global_rows = [
-                item for item in global_rows if str(item.get("area") or "") == area
-            ]
+            global_rows = [item for item in global_rows if str(item.get("area") or "") == area]
         for item in global_rows:
             if item.get("entity") == "principle":
                 results.append(
@@ -139,9 +137,7 @@ class PrincipleSearchService:
             references = list(global_principle.get("references") or [])
             if content_class == "unassessed_candidates":
                 source_references = list(global_principle.get("source_references") or [])
-                public_by_id = {
-                    str(item.get("work_id") or ""): item for item in source_references
-                }
+                public_by_id = {str(item.get("work_id") or ""): item for item in source_references}
                 roles_by_id: dict[str, str] = {}
                 for item in references:
                     work_id = str(item.get("work_id") or "")

@@ -380,7 +380,9 @@ def build_candidate_pcp(
                 referenced_ids = {str(item.get("work_id") or "") for item in references}
                 missing = referenced_ids - set(work_by_id)
                 if missing:
-                    raise ValueError(f"Candidate package references unknown Works: {sorted(missing)}")
+                    raise ValueError(
+                        f"Candidate package references unknown Works: {sorted(missing)}"
+                    )
                 payload = {
                     **principle,
                     "package_content_class": "unassessed_candidates",
@@ -399,7 +401,9 @@ def build_candidate_pcp(
                         principle["claim"],
                         kind,
                         content_digest,
-                        json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")),
+                        json.dumps(
+                            payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+                        ),
                         principle.get("created_at") or "1970-01-01T00:00:00Z",
                         principle.get("updated_at") or "1970-01-01T00:00:00Z",
                     ),
@@ -471,7 +475,9 @@ def build_candidate_pcp(
                         relation.get("target_area") or package_id,
                         relation.get("minimum_package_version") or package_version,
                         relation.get("relation_type") or "analogous_to",
-                        json.dumps(relation, ensure_ascii=False, sort_keys=True, separators=(",", ":")),
+                        json.dumps(
+                            relation, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+                        ),
                     ),
                 )
             _finalize_area_db(conn, revision_count=len(principles))
@@ -533,7 +539,9 @@ def _validate_zip(archive: zipfile.ZipFile) -> None:
     infos = archive.infolist()
     names = {item.filename for item in infos}
     if len(infos) != 3 or names != PCP_ENTRIES:
-        raise PackageIntegrityError(".pcp must contain exactly manifest.json, area.sqlite, README.txt")
+        raise PackageIntegrityError(
+            ".pcp must contain exactly manifest.json, area.sqlite, README.txt"
+        )
     total = 0
     for info in infos:
         path = Path(info.filename)

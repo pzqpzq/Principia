@@ -115,19 +115,47 @@ _GOAL_STOPWORDS = {
     "systems",
 }
 
+_GOAL_TERM_EQUIVALENTS = {
+    "verification": "verify",
+    "verifier": "verify",
+    "verified": "verify",
+    "verifying": "verify",
+    "selection": "select",
+    "selected": "select",
+    "selecting": "select",
+    "inference": "infer",
+    "inferential": "infer",
+    "reasoning": "reason",
+    "discovery": "discover",
+    "coordination": "coordinate",
+    "optimization": "optimize",
+    "training": "train",
+}
+
 
 def _goal_terms(value: str) -> set[str]:
     normalized = value.casefold()
+    normalized = re.sub(r"\bcoginitive\b", "cognitive", normalized)
+    normalized = re.sub(r"\b(?:cognitive|cognition)\b", " cognition ", normalized)
+    normalized = re.sub(
+        r"\b(?:neuroscience|neuroscientific|neural(?!\s+networks?))\b",
+        " neuroscience ",
+        normalized,
+    )
     # Preserve short scientific acronyms before the generic length filter.
     # Without this expansion, a goal such as "AI for Physics" contains only
     # one usable term ("physics") and the old two-term overlap rule becomes
     # mathematically impossible to satisfy.
-    normalized = re.sub(r"\bai\b", " artificial intelligence ai ", normalized)
-    normalized = re.sub(r"\bml\b", " machine learning ml ", normalized)
+    normalized = re.sub(
+        r"\b(?:ai|artificial intelligence|machine learning|deep learning|neural networks?)\b",
+        " machineintelligence ",
+        normalized,
+    )
+    normalized = re.sub(r"\bml\b", " machineintelligence ", normalized)
     normalized = re.sub(r"α\s*(?=pd[- ]?(?:1|l1))", "", normalized)
     normalized = re.sub(r"\bpd[- ]?l1\b", " pdl1 ", normalized)
     normalized = re.sub(r"\bpd[- ]?1\b", " pd1 ", normalized)
-    normalized = re.sub(r"\bmulti[- ]agent\b", " multiagent multi agent ", normalized)
+    normalized = re.sub(r"\bmulti[- ]agent\b", " multiagent ", normalized)
     terms: set[str] = set()
     for token in re.findall(r"[a-z0-9]+", normalized):
         if len(token) < 3 or token in _GOAL_STOPWORDS:
@@ -136,77 +164,22 @@ def _goal_terms(value: str) -> set[str]:
             token = token[:-3] + "y"
         elif len(token) > 5 and token.endswith("s") and not token.endswith("ss"):
             token = token[:-1]
+        token = _GOAL_TERM_EQUIVALENTS.get(token, token)
         terms.add(token)
     return terms
 
 
-def _goal_profile(goal: str, argument_text: str) -> tuple[bool, bool, int]:
-    """Require an explicit domain anchor for the release's precise goal families.
+def _goal_compound_anchors(value: str) -> set[str]:
+    """Return vocabulary-neutral explicit topic anchors from a human goal."""
 
-    Shared words such as ``performance`` or ``coordination`` are not sufficient
-    evidence that a claim answers a goal.  These anchors are deliberately
-    semantic aliases rather than raw keyword bans; arbitrary goals still use
-    the general substantive-overlap rule below.
-    """
-
-    goal_folded = goal.casefold()
-    argument_folded = argument_text.casefold()
-    profiles: list[tuple[re.Pattern[str], re.Pattern[str], int]] = [
-        (
-            re.compile(
-                r"(?=.*\b(?:ai|artificial intelligence|machine learning|ml)\b)"
-                r"(?=.*\bphysic(?:s|al)\b)",
-                re.DOTALL,
-            ),
-            re.compile(
-                r"(?=.*\b(?:ai|artificial intelligence|machine learning|deep learning|"
-                r"neural networks?|data[- ]driven|foundation models?)\b)"
-                r"(?=.*\b(?:physic(?:s|al)|quantum|particle|fluid|molecular|materials?|"
-                r"climate|weather|optical|geophysic(?:s|al)|astronom(?:y|ical)|"
-                r"cosmolog(?:y|ical))\b)",
-                re.DOTALL,
-            ),
-            1,
-        ),
-        (
-            re.compile(r"\bhilbert(?:'s|s)?\s+sixth\s+problem\b"),
-            re.compile(
-                r"\b(?:boltzmann|kinetic|hydrodynamic|fluid|continuum|hard[- ]sphere|"
-                r"molecular chaos|navier[- ]stokes|euler equations?)\b"
-            ),
-            0,
-        ),
-        (
-            re.compile(r"\bmulti[- ]agent\b"),
-            re.compile(r"\b(?:multi[- ]?agent|agents?)\b"),
-            2,
-        ),
-        (
-            re.compile(r"\bsuperconducting[- ]qubits?\b"),
-            re.compile(r"\b(?:superconduct(?:ing|or)?|qubits?)\b"),
-            2,
-        ),
-        (
-            re.compile(r"\bpd[- ]?(?:1|l1)\b"),
-            re.compile(
-                r"\b(?:pd[- ]?(?:1|l1)|immune checkpoint|checkpoint blockade|"
-                r"immunotherap(?:y|ies))\b"
-            ),
-            1,
-        ),
-        (
-            re.compile(r"\bllms?\b|\blarge language models?\b"),
-            re.compile(
-                r"\b(?:llms?|large language models?|reasoning|inference|"
-                r"verifiers?|verification|generative active search|self[- ]correction)\b"
-            ),
-            1,
-        ),
-    ]
-    for goal_pattern, argument_pattern, minimum_overlap in profiles:
-        if goal_pattern.search(goal_folded):
-            return True, not bool(argument_pattern.search(argument_folded)), minimum_overlap
-    return False, False, 2
+    anchors = {
+        re.sub(r"[^a-z0-9]", "", match.casefold())
+        for match in re.findall(r"\b[a-zA-Z0-9]+[- ][a-zA-Z0-9]+\b", value)
+        if "-" in match
+    }
+    if re.search(r"\bmulti[- ]agent\b", value, re.IGNORECASE):
+        anchors.add("multiagent")
+    return {item for item in anchors if len(item) >= 5}
 
 
 def _symbols(value: str) -> set[str]:
@@ -281,11 +254,25 @@ class ScientificQualityGate:
         )
         goal_terms = _goal_terms(goal)
         argument_terms = _goal_terms(argument_text)
-        _, missing_goal_anchor, minimum_goal_overlap = _goal_profile(goal, argument_text)
-        required_overlap = min(minimum_goal_overlap, len(goal_terms))
+        # Goal fit is a prioritization signal, not a scientific-validity test.
+        # Keep this vocabulary-neutral: named discipline profiles previously
+        # rejected sound economics, robotics and neuroscience results merely
+        # because those domains used different terminology. One substantive
+        # lexical anchor is enough to flag obvious drift; the independent
+        # evidence/challenge gates below decide whether the Principle is valid.
+        overlap = goal_terms.intersection(argument_terms)
+        compound_anchors = _goal_compound_anchors(goal)
+        named_problem = bool(
+            re.search(r"\b(?:problem|conjecture|paradox)\b", goal, re.IGNORECASE)
+            and re.search(r"\b[A-Z][A-Za-z]+(?:['’]s)?\b", goal)
+        )
+        required_overlap = (
+            len(goal_terms) if len(goal_terms) <= 2 else 2 if len(goal_terms) <= 6 else 3
+        )
         if goal_terms and (
-            len(goal_terms.intersection(argument_terms)) < required_overlap
-            or missing_goal_anchor
+            not named_problem
+            and not (compound_anchors & argument_terms)
+            and len(overlap) < required_overlap
         ):
             reasons.append(QualityReason.OFF_GOAL)
 

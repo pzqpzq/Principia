@@ -5,15 +5,18 @@ import json
 import tempfile
 from pathlib import Path
 
-from principia import AdminWorkspace
+from principia import Principia
 from principia.api import create_app
 
 
 def render() -> str:
     with tempfile.TemporaryDirectory(prefix="principia-openapi-") as temp:
         root = Path(temp)
-        product = AdminWorkspace.open(root / "workspace", cloud_root=root / "cloud")
-        schema = create_app(product, admin_mode=True, test_mode=True).openapi()
+        product = Principia.open(root / "workspace", cloud_root=root / "cloud")
+        try:
+            schema = create_app(product, test_mode=True).openapi()
+        finally:
+            product.close()
     return json.dumps(schema, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
 
 

@@ -29,7 +29,9 @@ class CloudInstaller:
             return
         if parsed.scheme != "https":
             raise ValueError("Cloud artifacts require HTTPS or an explicit local fixture path")
-        with httpx.stream("GET", entry.artifact_url, timeout=self.timeout, follow_redirects=True) as response:
+        with httpx.stream(
+            "GET", entry.artifact_url, timeout=self.timeout, follow_redirects=True
+        ) as response:
             response.raise_for_status()
             with partial.open("wb") as handle:
                 for chunk in response.iter_bytes(1024 * 1024):

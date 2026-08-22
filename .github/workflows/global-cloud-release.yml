@@ -44,11 +44,27 @@ jobs:
         env:
           PRINCIPIA_EMBEDDING_API_KEY: ${{ secrets.PRINCIPIA_EMBEDDING_API_KEY }}
         run: |
-          previous_args=()
-          if [ -s "${RUNNER_TEMP}/previous-path" ]; then previous_args=(--previous-snapshot "$(cat "${RUNNER_TEMP}/previous-path")"); fi
+          vector_previous_args=()
+          delta_previous_args=()
+          if [ -s "${RUNNER_TEMP}/previous-path" ]; then
+            previous_snapshot="$(cat "${RUNNER_TEMP}/previous-path")"
+            vector_previous_args=(--previous-snapshot "$previous_snapshot")
+            previous_schema="$(python - "$previous_snapshot" <<'PY'
+          import json, sys, zipfile
+          with zipfile.ZipFile(sys.argv[1]) as archive:
+              print(json.loads(archive.read("manifest.json"))["schema_version"])
+          PY
+          )"
+            target_schema="principia-global-manifest-v$(tr -d '[:space:]' < global-cloud/CLOUD_VERSION)"
+            if [ "$previous_schema" = "$target_schema" ]; then
+              delta_previous_args=(--previous-snapshot "$previous_snapshot")
+            else
+              echo "Cloud schema transition ${previous_schema} -> ${target_schema}; publishing a complete snapshot without a delta."
+            fi
+          fi
           vector_args=()
           if [ -n "$PRINCIPIA_EMBEDDING_API_KEY" ]; then
-            python Principia-v1.4.1/core/scripts/build_global_cloud_vectors.py global-cloud "${RUNNER_TEMP}/vectors" "${previous_args[@]}"
+            python Principia-v1.4.1/core/scripts/build_global_cloud_vectors.py global-cloud "${RUNNER_TEMP}/vectors" "${vector_previous_args[@]}"
             vector_args=(--work-vectors "${RUNNER_TEMP}/vectors/work-vectors.f16" --principle-vectors "${RUNNER_TEMP}/vectors/principle-vectors.f16")
           else
             echo "Embedding credential is absent; publishing a verified FTS-only snapshot."
@@ -56,7 +72,7 @@ jobs:
           python Principia-v1.4.1/core/scripts/build_global_cloud_release.py global-cloud "${RUNNER_TEMP}/release" \
             --release-id "${{ steps.release.outputs.release_id }}" --commit-sha "$GITHUB_SHA" \
             --created-at "$(git show -s --format=%cI HEAD)" \
-            "${vector_args[@]}" "${previous_args[@]}"
+            "${vector_args[@]}" "${delta_previous_args[@]}"
       - name: Upload immutable assets and verify by redownload
         env:
           GH_TOKEN: ${{ github.token }}
