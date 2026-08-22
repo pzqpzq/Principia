@@ -1,160 +1,6 @@
 {
   "components": {
     "schemas": {
-      "AdminCampaignRequest": {
-        "additionalProperties": false,
-        "properties": {
-          "concurrency": {
-            "default": 4,
-            "maximum": 8.0,
-            "minimum": 4.0,
-            "title": "Concurrency",
-            "type": "integer"
-          },
-          "model": {
-            "default": "deepseek-ai/DeepSeek-V4-Flash",
-            "title": "Model",
-            "type": "string"
-          },
-          "provider_profile_id": {
-            "default": "siliconflow",
-            "title": "Provider Profile Id",
-            "type": "string"
-          },
-          "research_goal": {
-            "maxLength": 4000,
-            "minLength": 8,
-            "title": "Research Goal",
-            "type": "string"
-          },
-          "target_count": {
-            "default": 50,
-            "maximum": 20000.0,
-            "minimum": 1.0,
-            "title": "Target Count",
-            "type": "integer"
-          }
-        },
-        "required": [
-          "research_goal"
-        ],
-        "title": "AdminCampaignRequest",
-        "type": "object"
-      },
-      "AdminDecisionRequest": {
-        "additionalProperties": false,
-        "properties": {
-          "capsule": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/PrincipleCapsule"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "decision": {
-            "enum": [
-              "approve",
-              "edit",
-              "merge",
-              "reject"
-            ],
-            "title": "Decision",
-            "type": "string"
-          },
-          "merge_target": {
-            "default": "",
-            "title": "Merge Target",
-            "type": "string"
-          },
-          "note": {
-            "default": "",
-            "title": "Note",
-            "type": "string"
-          }
-        },
-        "required": [
-          "decision"
-        ],
-        "title": "AdminDecisionRequest",
-        "type": "object"
-      },
-      "AdminExtractRequest": {
-        "additionalProperties": false,
-        "properties": {
-          "egress_confirmed": {
-            "default": false,
-            "title": "Egress Confirmed",
-            "type": "boolean"
-          },
-          "retry": {
-            "default": false,
-            "title": "Retry",
-            "type": "boolean"
-          }
-        },
-        "title": "AdminExtractRequest",
-        "type": "object"
-      },
-      "AdminHarvestRequest": {
-        "additionalProperties": false,
-        "properties": {
-          "candidate": {
-            "$ref": "#/components/schemas/CandidatePrinciple"
-          }
-        },
-        "required": [
-          "candidate"
-        ],
-        "title": "AdminHarvestRequest",
-        "type": "object"
-      },
-      "AdminSelectionRequest": {
-        "additionalProperties": false,
-        "properties": {
-          "work_ids": {
-            "items": {
-              "type": "string"
-            },
-            "maxItems": 20000,
-            "minItems": 1,
-            "title": "Work Ids",
-            "type": "array"
-          }
-        },
-        "required": [
-          "work_ids"
-        ],
-        "title": "AdminSelectionRequest",
-        "type": "object"
-      },
-      "AdminSyncRequest": {
-        "additionalProperties": false,
-        "properties": {
-          "confirmation": {
-            "maxLength": 500,
-            "minLength": 1,
-            "title": "Confirmation",
-            "type": "string"
-          },
-          "mode": {
-            "default": "dry_run",
-            "enum": [
-              "dry_run",
-              "github_pr"
-            ],
-            "title": "Mode",
-            "type": "string"
-          }
-        },
-        "required": [
-          "confirmation"
-        ],
-        "title": "AdminSyncRequest",
-        "type": "object"
-      },
       "AreaSuggestionCreateRequest": {
         "additionalProperties": false,
         "properties": {
@@ -215,36 +61,6 @@
         "title": "AreaVersionRequest",
         "type": "object"
       },
-      "BulkStagingDecisionRequest": {
-        "additionalProperties": false,
-        "properties": {
-          "decision": {
-            "enum": [
-              "add",
-              "update",
-              "retire",
-              "skip"
-            ],
-            "title": "Decision",
-            "type": "string"
-          },
-          "stage_ids": {
-            "items": {
-              "type": "string"
-            },
-            "maxItems": 20000,
-            "minItems": 1,
-            "title": "Stage Ids",
-            "type": "array"
-          }
-        },
-        "required": [
-          "stage_ids",
-          "decision"
-        ],
-        "title": "BulkStagingDecisionRequest",
-        "type": "object"
-      },
       "CandidateDisplayEditRequest": {
         "additionalProperties": false,
         "properties": {
@@ -261,106 +77,6 @@
         "title": "CandidateDisplayEditRequest",
         "type": "object"
       },
-      "CandidatePrinciple": {
-        "additionalProperties": false,
-        "properties": {
-          "area": {
-            "maxLength": 63,
-            "minLength": 2,
-            "pattern": "^[a-z0-9][a-z0-9-]+$",
-            "title": "Area",
-            "type": "string"
-          },
-          "assessment_status": {
-            "default": "unassessed",
-            "enum": [
-              "unassessed",
-              "reviewed",
-              "rejected"
-            ],
-            "title": "Assessment Status",
-            "type": "string"
-          },
-          "candidate_id": {
-            "minLength": 1,
-            "title": "Candidate Id",
-            "type": "string"
-          },
-          "claim": {
-            "minLength": 1,
-            "title": "Claim",
-            "type": "string"
-          },
-          "created_at": {
-            "title": "Created At",
-            "type": "string"
-          },
-          "falsifier": {
-            "default": "",
-            "title": "Falsifier",
-            "type": "string"
-          },
-          "generation_trace": {
-            "items": {
-              "$ref": "#/components/schemas/GenerationTrace"
-            },
-            "title": "Generation Trace",
-            "type": "array"
-          },
-          "kind": {
-            "$ref": "#/components/schemas/PrincipleKind"
-          },
-          "raw_legacy_payload": {
-            "anyOf": [
-              {
-                "additionalProperties": true,
-                "type": "object"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Raw Legacy Payload"
-          },
-          "relations": {
-            "items": {
-              "$ref": "#/components/schemas/PrincipleRelation"
-            },
-            "title": "Relations",
-            "type": "array"
-          },
-          "scope": {
-            "$ref": "#/components/schemas/PrincipleScope"
-          },
-          "source_references": {
-            "items": {
-              "$ref": "#/components/schemas/WorkReference"
-            },
-            "title": "Source References",
-            "type": "array"
-          },
-          "title": {
-            "maxLength": 240,
-            "minLength": 1,
-            "title": "Title",
-            "type": "string"
-          },
-          "updated_at": {
-            "title": "Updated At",
-            "type": "string"
-          }
-        },
-        "required": [
-          "candidate_id",
-          "area",
-          "title",
-          "claim",
-          "kind",
-          "scope"
-        ],
-        "title": "CandidatePrinciple",
-        "type": "object"
-      },
       "CatalogRefreshRequest": {
         "additionalProperties": false,
         "properties": {
@@ -373,49 +89,6 @@
           "path"
         ],
         "title": "CatalogRefreshRequest",
-        "type": "object"
-      },
-      "ChangesetRequest": {
-        "additionalProperties": false,
-        "properties": {
-          "area": {
-            "title": "Area",
-            "type": "string"
-          },
-          "base_package_version": {
-            "title": "Base Package Version",
-            "type": "string"
-          },
-          "capsules": {
-            "items": {
-              "$ref": "#/components/schemas/PrincipleCapsule"
-            },
-            "minItems": 1,
-            "title": "Capsules",
-            "type": "array"
-          },
-          "expected_content_digest": {
-            "title": "Expected Content Digest",
-            "type": "string"
-          },
-          "goal": {
-            "title": "Goal",
-            "type": "string"
-          },
-          "proposed_package_version": {
-            "title": "Proposed Package Version",
-            "type": "string"
-          }
-        },
-        "required": [
-          "area",
-          "base_package_version",
-          "proposed_package_version",
-          "expected_content_digest",
-          "goal",
-          "capsules"
-        ],
-        "title": "ChangesetRequest",
         "type": "object"
       },
       "CloudSearchRequest": {
@@ -439,6 +112,7 @@
             "enum": [
               "paper",
               "principle",
+              "meta_principle",
               "all"
             ],
             "title": "Entity",
@@ -633,95 +307,6 @@
           "proposal"
         ],
         "title": "GeneratedVirtualPrinciple",
-        "type": "object"
-      },
-      "GenerationTrace": {
-        "additionalProperties": false,
-        "properties": {
-          "actor": {
-            "minLength": 1,
-            "title": "Actor",
-            "type": "string"
-          },
-          "created_at": {
-            "title": "Created At",
-            "type": "string"
-          },
-          "event_id": {
-            "minLength": 1,
-            "title": "Event Id",
-            "type": "string"
-          },
-          "input_sha256": {
-            "default": "",
-            "title": "Input Sha256",
-            "type": "string"
-          },
-          "input_tokens": {
-            "default": 0,
-            "minimum": 0.0,
-            "title": "Input Tokens",
-            "type": "integer"
-          },
-          "latency_ms": {
-            "default": 0,
-            "minimum": 0.0,
-            "title": "Latency Ms",
-            "type": "integer"
-          },
-          "model": {
-            "default": "",
-            "title": "Model",
-            "type": "string"
-          },
-          "operation": {
-            "$ref": "#/components/schemas/TraceOperation"
-          },
-          "output_sha256": {
-            "default": "",
-            "title": "Output Sha256",
-            "type": "string"
-          },
-          "output_tokens": {
-            "default": 0,
-            "minimum": 0.0,
-            "title": "Output Tokens",
-            "type": "integer"
-          },
-          "prompt_sha256": {
-            "default": "",
-            "title": "Prompt Sha256",
-            "type": "string"
-          },
-          "prompt_template": {
-            "default": "",
-            "title": "Prompt Template",
-            "type": "string"
-          },
-          "provider": {
-            "default": "",
-            "title": "Provider",
-            "type": "string"
-          },
-          "retries": {
-            "default": 0,
-            "maximum": 2.0,
-            "minimum": 0.0,
-            "title": "Retries",
-            "type": "integer"
-          },
-          "run_id": {
-            "default": "",
-            "title": "Run Id",
-            "type": "string"
-          }
-        },
-        "required": [
-          "event_id",
-          "operation",
-          "actor"
-        ],
-        "title": "GenerationTrace",
         "type": "object"
       },
       "GraphEdgeResponse": {
@@ -2051,7 +1636,7 @@
         "additionalProperties": false,
         "properties": {
           "analyzed_pair_count": {
-            "maximum": 15.0,
+            "maximum": 190.0,
             "minimum": 0.0,
             "title": "Analyzed Pair Count",
             "type": "integer"
@@ -2068,7 +1653,7 @@
             "type": "array"
           },
           "skipped_validated_pair_count": {
-            "maximum": 15.0,
+            "maximum": 190.0,
             "minimum": 0.0,
             "title": "Skipped Validated Pair Count",
             "type": "integer"
@@ -2081,145 +1666,6 @@
           "explanation"
         ],
         "title": "PotentialRelationsResponse",
-        "type": "object"
-      },
-      "PrincipleCapsule": {
-        "additionalProperties": false,
-        "properties": {
-          "area": {
-            "maxLength": 63,
-            "minLength": 2,
-            "pattern": "^[a-z0-9][a-z0-9-]+$",
-            "title": "Area",
-            "type": "string"
-          },
-          "claim": {
-            "minLength": 1,
-            "title": "Claim",
-            "type": "string"
-          },
-          "content_digest": {
-            "default": "",
-            "title": "Content Digest",
-            "type": "string"
-          },
-          "created_at": {
-            "title": "Created At",
-            "type": "string"
-          },
-          "falsifier": {
-            "minLength": 1,
-            "title": "Falsifier",
-            "type": "string"
-          },
-          "generation_trace": {
-            "items": {
-              "$ref": "#/components/schemas/GenerationTrace"
-            },
-            "maxItems": 32,
-            "minItems": 1,
-            "title": "Generation Trace",
-            "type": "array"
-          },
-          "kind": {
-            "$ref": "#/components/schemas/PrincipleKind"
-          },
-          "maturity": {
-            "$ref": "#/components/schemas/PrincipleMaturity"
-          },
-          "principle_id": {
-            "title": "Principle Id",
-            "type": "string"
-          },
-          "quality": {
-            "$ref": "#/components/schemas/QualityAssessment"
-          },
-          "relation_count": {
-            "minimum": 0.0,
-            "title": "Relation Count",
-            "type": "integer"
-          },
-          "relations": {
-            "items": {
-              "$ref": "#/components/schemas/PrincipleRelation"
-            },
-            "maxItems": 32,
-            "title": "Relations",
-            "type": "array"
-          },
-          "scope": {
-            "$ref": "#/components/schemas/PrincipleScope"
-          },
-          "source_count": {
-            "minimum": 1.0,
-            "title": "Source Count",
-            "type": "integer"
-          },
-          "source_references": {
-            "items": {
-              "$ref": "#/components/schemas/WorkReference"
-            },
-            "maxItems": 12,
-            "minItems": 1,
-            "title": "Source References",
-            "type": "array"
-          },
-          "status": {
-            "default": "active",
-            "enum": [
-              "active",
-              "retired"
-            ],
-            "title": "Status",
-            "type": "string"
-          },
-          "tags": {
-            "items": {
-              "type": "string"
-            },
-            "maxItems": 20,
-            "title": "Tags",
-            "type": "array"
-          },
-          "title": {
-            "maxLength": 240,
-            "minLength": 1,
-            "title": "Title",
-            "type": "string"
-          },
-          "trace_count": {
-            "minimum": 1.0,
-            "title": "Trace Count",
-            "type": "integer"
-          },
-          "updated_at": {
-            "title": "Updated At",
-            "type": "string"
-          },
-          "version": {
-            "minimum": 1.0,
-            "title": "Version",
-            "type": "integer"
-          }
-        },
-        "required": [
-          "principle_id",
-          "area",
-          "version",
-          "title",
-          "claim",
-          "kind",
-          "maturity",
-          "scope",
-          "quality",
-          "falsifier",
-          "source_references",
-          "generation_trace",
-          "source_count",
-          "relation_count",
-          "trace_count"
-        ],
-        "title": "PrincipleCapsule",
         "type": "object"
       },
       "PrincipleCardPage": {
@@ -2309,6 +1755,11 @@
           "boundary_basis": {
             "title": "Boundary Basis",
             "type": "string"
+          },
+          "citation_data_available": {
+            "default": false,
+            "title": "Citation Data Available",
+            "type": "boolean"
           },
           "claim": {
             "title": "Claim",
@@ -2433,6 +1884,12 @@
             ],
             "title": "Source",
             "type": "string"
+          },
+          "supporting_citation_count": {
+            "default": 0,
+            "minimum": 0.0,
+            "title": "Supporting Citation Count",
+            "type": "integer"
           },
           "supporting_work_count": {
             "minimum": 0.0,
@@ -2620,81 +2077,6 @@
         "title": "PrincipleGraphViewResponse",
         "type": "object"
       },
-      "PrincipleKind": {
-        "enum": [
-          "theorem",
-          "mechanistic",
-          "empirical",
-          "heuristic",
-          "hypothesis"
-        ],
-        "title": "PrincipleKind",
-        "type": "string"
-      },
-      "PrincipleMaturity": {
-        "enum": [
-          "supported",
-          "replicated",
-          "established",
-          "contested",
-          "retired"
-        ],
-        "title": "PrincipleMaturity",
-        "type": "string"
-      },
-      "PrincipleRelation": {
-        "additionalProperties": false,
-        "properties": {
-          "minimum_package_version": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Minimum Package Version"
-          },
-          "rationale": {
-            "default": "",
-            "title": "Rationale",
-            "type": "string"
-          },
-          "relation_type": {
-            "$ref": "#/components/schemas/RelationType"
-          },
-          "strength": {
-            "default": 1.0,
-            "maximum": 1.0,
-            "minimum": 0.0,
-            "title": "Strength",
-            "type": "number"
-          },
-          "target_area": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Target Area"
-          },
-          "target_principle_id": {
-            "minLength": 1,
-            "title": "Target Principle Id",
-            "type": "string"
-          }
-        },
-        "required": [
-          "relation_type",
-          "target_principle_id"
-        ],
-        "title": "PrincipleRelation",
-        "type": "object"
-      },
       "PrincipleRelationResponse": {
         "additionalProperties": false,
         "properties": {
@@ -2791,45 +2173,6 @@
         "title": "PrincipleRelationsResponse",
         "type": "object"
       },
-      "PrincipleScope": {
-        "additionalProperties": false,
-        "properties": {
-          "conditions": {
-            "items": {
-              "type": "string"
-            },
-            "maxItems": 20,
-            "title": "Conditions",
-            "type": "array"
-          },
-          "exclusions": {
-            "items": {
-              "type": "string"
-            },
-            "maxItems": 20,
-            "title": "Exclusions",
-            "type": "array"
-          },
-          "populations": {
-            "items": {
-              "type": "string"
-            },
-            "maxItems": 20,
-            "title": "Populations",
-            "type": "array"
-          },
-          "statement": {
-            "minLength": 1,
-            "title": "Statement",
-            "type": "string"
-          }
-        },
-        "required": [
-          "statement"
-        ],
-        "title": "PrincipleScope",
-        "type": "object"
-      },
       "ProviderCredentialRequest": {
         "additionalProperties": false,
         "properties": {
@@ -2846,103 +2189,6 @@
           "api_key"
         ],
         "title": "ProviderCredentialRequest",
-        "type": "object"
-      },
-      "PublishRequest": {
-        "additionalProperties": false,
-        "properties": {
-          "confirmation": {
-            "default": "",
-            "title": "Confirmation",
-            "type": "string"
-          },
-          "mode": {
-            "default": "dry_run",
-            "enum": [
-              "dry_run",
-              "github"
-            ],
-            "title": "Mode",
-            "type": "string"
-          },
-          "output": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Output"
-          }
-        },
-        "title": "PublishRequest",
-        "type": "object"
-      },
-      "QualityAssessment": {
-        "additionalProperties": false,
-        "properties": {
-          "assessed_at": {
-            "title": "Assessed At",
-            "type": "string"
-          },
-          "assessed_by": {
-            "minLength": 1,
-            "title": "Assessed By",
-            "type": "string"
-          },
-          "evidence_strength": {
-            "maximum": 1.0,
-            "minimum": 0.0,
-            "title": "Evidence Strength",
-            "type": "number"
-          },
-          "generality": {
-            "maximum": 1.0,
-            "minimum": 0.0,
-            "title": "Generality",
-            "type": "number"
-          },
-          "grade": {
-            "enum": [
-              "A",
-              "B",
-              "C",
-              "D"
-            ],
-            "title": "Grade",
-            "type": "string"
-          },
-          "reproducibility": {
-            "maximum": 1.0,
-            "minimum": 0.0,
-            "title": "Reproducibility",
-            "type": "number"
-          },
-          "usefulness": {
-            "maximum": 1.0,
-            "minimum": 0.0,
-            "title": "Usefulness",
-            "type": "number"
-          },
-          "validity": {
-            "maximum": 1.0,
-            "minimum": 0.0,
-            "title": "Validity",
-            "type": "number"
-          }
-        },
-        "required": [
-          "grade",
-          "validity",
-          "reproducibility",
-          "evidence_strength",
-          "generality",
-          "usefulness",
-          "assessed_by"
-        ],
-        "title": "QualityAssessment",
         "type": "object"
       },
       "RelatedPrinciplePreview": {
@@ -2978,19 +2224,29 @@
         "title": "RelatedPrinciplePreview",
         "type": "object"
       },
-      "RelationType": {
-        "enum": [
-          "supports",
-          "contradicts",
-          "refines",
-          "generalizes",
-          "specializes",
-          "depends_on",
-          "analogous_to",
-          "motivates"
+      "ResearchArtifactCreateRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "virtual_principle",
+              "virtual_connection"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "payload": {
+            "additionalProperties": true,
+            "title": "Payload",
+            "type": "object"
+          }
+        },
+        "required": [
+          "kind",
+          "payload"
         ],
-        "title": "RelationType",
-        "type": "string"
+        "title": "ResearchArtifactCreateRequest",
+        "type": "object"
       },
       "ResearchGoalRunRequest": {
         "additionalProperties": false,
@@ -3048,6 +2304,163 @@
           "goal"
         ],
         "title": "ResearchGoalRunRequest",
+        "type": "object"
+      },
+      "ResearchGraphMutationRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "expected_revision": {
+            "minimum": 0.0,
+            "title": "Expected Revision",
+            "type": "integer"
+          },
+          "operations": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "maxItems": 250,
+            "minItems": 1,
+            "title": "Operations",
+            "type": "array"
+          }
+        },
+        "required": [
+          "expected_revision",
+          "operations"
+        ],
+        "title": "ResearchGraphMutationRequest",
+        "type": "object"
+      },
+      "ResearchProjectCreateRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "title"
+        ],
+        "title": "ResearchProjectCreateRequest",
+        "type": "object"
+      },
+      "ResearchProjectUpdateRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "archived": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Archived"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "maxLength": 120,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          }
+        },
+        "title": "ResearchProjectUpdateRequest",
+        "type": "object"
+      },
+      "ResearchSessionCreateRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Project Id"
+          },
+          "run": {
+            "$ref": "#/components/schemas/ResearchGoalRunRequest"
+          },
+          "title": {
+            "default": "",
+            "maxLength": 160,
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "run"
+        ],
+        "title": "ResearchSessionCreateRequest",
+        "type": "object"
+      },
+      "ResearchSessionUpdateRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "archived": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Archived"
+          },
+          "expected_revision": {
+            "anyOf": [
+              {
+                "minimum": 1.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Expected Revision"
+          },
+          "project_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Project Id"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "maxLength": 160,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          }
+        },
+        "title": "ResearchSessionUpdateRequest",
         "type": "object"
       },
       "ScenarioCreateRequest": {
@@ -3312,31 +2725,6 @@
         "title": "SourceRegistrationRequest",
         "type": "object"
       },
-      "StagingDecisionRequest": {
-        "additionalProperties": false,
-        "properties": {
-          "confirmed_ambiguous": {
-            "default": false,
-            "title": "Confirmed Ambiguous",
-            "type": "boolean"
-          },
-          "decision": {
-            "enum": [
-              "add",
-              "update",
-              "retire",
-              "skip"
-            ],
-            "title": "Decision",
-            "type": "string"
-          }
-        },
-        "required": [
-          "decision"
-        ],
-        "title": "StagingDecisionRequest",
-        "type": "object"
-      },
       "StorageLayoutDisclosureResponse": {
         "additionalProperties": false,
         "properties": {
@@ -3399,21 +2787,6 @@
         ],
         "title": "StorageLayoutRevealRequest",
         "type": "object"
-      },
-      "TraceOperation": {
-        "enum": [
-          "import",
-          "extract",
-          "challenge",
-          "map",
-          "review",
-          "edit",
-          "merge",
-          "promote",
-          "retire"
-        ],
-        "title": "TraceOperation",
-        "type": "string"
       },
       "ValidationError": {
         "properties": {
@@ -3710,53 +3083,6 @@
         "title": "VirtualPrincipleSaveRequest",
         "type": "object"
       },
-      "WorkReference": {
-        "additionalProperties": false,
-        "properties": {
-          "doi": {
-            "default": "",
-            "title": "Doi",
-            "type": "string"
-          },
-          "public": {
-            "default": true,
-            "title": "Public",
-            "type": "boolean"
-          },
-          "role": {
-            "default": "evidence",
-            "enum": [
-              "evidence",
-              "proof",
-              "falsifier",
-              "context"
-            ],
-            "title": "Role",
-            "type": "string"
-          },
-          "title": {
-            "minLength": 1,
-            "title": "Title",
-            "type": "string"
-          },
-          "url": {
-            "default": "",
-            "title": "Url",
-            "type": "string"
-          },
-          "work_id": {
-            "minLength": 1,
-            "title": "Work Id",
-            "type": "string"
-          }
-        },
-        "required": [
-          "work_id",
-          "title"
-        ],
-        "title": "WorkReference",
-        "type": "object"
-      },
       "WorkingDirectoryResponse": {
         "additionalProperties": false,
         "properties": {
@@ -3836,1394 +3162,6 @@
   },
   "openapi": "3.1.0",
   "paths": {
-    "/api/v1/admin/campaigns": {
-      "get": {
-        "operationId": "list_admin_campaigns_api_v1_admin_campaigns_get",
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response List Admin Campaigns Api V1 Admin Campaigns Get",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          }
-        },
-        "summary": "List Admin Campaigns"
-      },
-      "post": {
-        "operationId": "create_admin_campaign_api_v1_admin_campaigns_post",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AdminCampaignRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "202": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Create Admin Campaign Api V1 Admin Campaigns Post",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Create Admin Campaign"
-      }
-    },
-    "/api/v1/admin/campaigns/{campaign_id}": {
-      "get": {
-        "operationId": "admin_campaign_detail_api_v1_admin_campaigns__campaign_id__get",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "campaign_id",
-            "required": true,
-            "schema": {
-              "title": "Campaign Id",
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Admin Campaign Detail Api V1 Admin Campaigns  Campaign Id  Get",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Admin Campaign Detail"
-      }
-    },
-    "/api/v1/admin/campaigns/{campaign_id}/events": {
-      "get": {
-        "operationId": "admin_campaign_events_api_v1_admin_campaigns__campaign_id__events_get",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "campaign_id",
-            "required": true,
-            "schema": {
-              "title": "Campaign Id",
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "after",
-            "required": false,
-            "schema": {
-              "default": 0,
-              "title": "After",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Admin Campaign Events Api V1 Admin Campaigns  Campaign Id  Events Get",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Admin Campaign Events"
-      }
-    },
-    "/api/v1/admin/campaigns/{campaign_id}/extract": {
-      "post": {
-        "operationId": "admin_campaign_extract_api_v1_admin_campaigns__campaign_id__extract_post",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "campaign_id",
-            "required": true,
-            "schema": {
-              "title": "Campaign Id",
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AdminExtractRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "202": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Admin Campaign Extract Api V1 Admin Campaigns  Campaign Id  Extract Post",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Admin Campaign Extract"
-      }
-    },
-    "/api/v1/admin/campaigns/{campaign_id}/papers": {
-      "get": {
-        "operationId": "admin_campaign_papers_api_v1_admin_campaigns__campaign_id__papers_get",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "campaign_id",
-            "required": true,
-            "schema": {
-              "title": "Campaign Id",
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "limit",
-            "required": false,
-            "schema": {
-              "default": 100,
-              "maximum": 200,
-              "minimum": 1,
-              "title": "Limit",
-              "type": "integer"
-            }
-          },
-          {
-            "in": "query",
-            "name": "offset",
-            "required": false,
-            "schema": {
-              "default": 0,
-              "minimum": 0,
-              "title": "Offset",
-              "type": "integer"
-            }
-          },
-          {
-            "in": "query",
-            "name": "selected",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "boolean"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Selected"
-            }
-          },
-          {
-            "in": "query",
-            "name": "year_from",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "integer"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Year From"
-            }
-          },
-          {
-            "in": "query",
-            "name": "year_to",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "integer"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Year To"
-            }
-          },
-          {
-            "in": "query",
-            "name": "venue",
-            "required": false,
-            "schema": {
-              "default": "",
-              "title": "Venue",
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "author",
-            "required": false,
-            "schema": {
-              "default": "",
-              "title": "Author",
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "institution",
-            "required": false,
-            "schema": {
-              "default": "",
-              "title": "Institution",
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "publication_status",
-            "required": false,
-            "schema": {
-              "default": "",
-              "title": "Publication Status",
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "full_text_status",
-            "required": false,
-            "schema": {
-              "default": "",
-              "title": "Full Text Status",
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "page_min",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "minimum": 1,
-                  "type": "integer"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Page Min"
-            }
-          },
-          {
-            "in": "query",
-            "name": "page_max",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "minimum": 1,
-                  "type": "integer"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Page Max"
-            }
-          },
-          {
-            "in": "query",
-            "name": "pdf_bytes_min",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "minimum": 0,
-                  "type": "integer"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Pdf Bytes Min"
-            }
-          },
-          {
-            "in": "query",
-            "name": "pdf_bytes_max",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "minimum": 0,
-                  "type": "integer"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Pdf Bytes Max"
-            }
-          },
-          {
-            "in": "query",
-            "name": "source",
-            "required": false,
-            "schema": {
-              "default": "",
-              "title": "Source",
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "cloud_presence",
-            "required": false,
-            "schema": {
-              "default": "",
-              "title": "Cloud Presence",
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Admin Campaign Papers Api V1 Admin Campaigns  Campaign Id  Papers Get",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Admin Campaign Papers"
-      }
-    },
-    "/api/v1/admin/campaigns/{campaign_id}/selection": {
-      "patch": {
-        "operationId": "admin_campaign_selection_api_v1_admin_campaigns__campaign_id__selection_patch",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "campaign_id",
-            "required": true,
-            "schema": {
-              "title": "Campaign Id",
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AdminSelectionRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Admin Campaign Selection Api V1 Admin Campaigns  Campaign Id  Selection Patch",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Admin Campaign Selection"
-      }
-    },
-    "/api/v1/admin/campaigns/{campaign_id}/staging": {
-      "delete": {
-        "operationId": "purge_admin_staging_api_v1_admin_campaigns__campaign_id__staging_delete",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "campaign_id",
-            "required": true,
-            "schema": {
-              "title": "Campaign Id",
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "abandoned",
-            "required": false,
-            "schema": {
-              "default": false,
-              "title": "Abandoned",
-              "type": "boolean"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Purge Admin Staging Api V1 Admin Campaigns  Campaign Id  Staging Delete",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Purge Admin Staging"
-      },
-      "get": {
-        "operationId": "admin_staging_api_v1_admin_campaigns__campaign_id__staging_get",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "campaign_id",
-            "required": true,
-            "schema": {
-              "title": "Campaign Id",
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Admin Staging Api V1 Admin Campaigns  Campaign Id  Staging Get",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Admin Staging"
-      }
-    },
-    "/api/v1/admin/campaigns/{campaign_id}/syncs": {
-      "post": {
-        "operationId": "create_admin_sync_api_v1_admin_campaigns__campaign_id__syncs_post",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "campaign_id",
-            "required": true,
-            "schema": {
-              "title": "Campaign Id",
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AdminSyncRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Create Admin Sync Api V1 Admin Campaigns  Campaign Id  Syncs Post",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Create Admin Sync"
-      }
-    },
-    "/api/v1/admin/campaigns/{campaign_id}/syncs/latest": {
-      "get": {
-        "operationId": "latest_admin_sync_api_v1_admin_campaigns__campaign_id__syncs_latest_get",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "campaign_id",
-            "required": true,
-            "schema": {
-              "title": "Campaign Id",
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Latest Admin Sync Api V1 Admin Campaigns  Campaign Id  Syncs Latest Get",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Latest Admin Sync"
-      }
-    },
-    "/api/v1/admin/changesets": {
-      "post": {
-        "operationId": "build_changeset_api_v1_admin_changesets_post",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChangesetRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Build Changeset Api V1 Admin Changesets Post",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Build Changeset"
-      }
-    },
-    "/api/v1/admin/changesets/{changeset_id}/publish": {
-      "post": {
-        "operationId": "publish_changeset_api_v1_admin_changesets__changeset_id__publish_post",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "changeset_id",
-            "required": true,
-            "schema": {
-              "title": "Changeset Id",
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PublishRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Publish Changeset Api V1 Admin Changesets  Changeset Id  Publish Post",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Publish Changeset"
-      }
-    },
-    "/api/v1/admin/changesets/{changeset_id}/validate": {
-      "get": {
-        "operationId": "validate_changeset_api_v1_admin_changesets__changeset_id__validate_get",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "changeset_id",
-            "required": true,
-            "schema": {
-              "title": "Changeset Id",
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "current_content_digest",
-            "required": true,
-            "schema": {
-              "title": "Current Content Digest",
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Validate Changeset Api V1 Admin Changesets  Changeset Id  Validate Get",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Validate Changeset"
-      }
-    },
-    "/api/v1/admin/dashboard": {
-      "get": {
-        "operationId": "admin_dashboard_api_v1_admin_dashboard_get",
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Admin Dashboard Api V1 Admin Dashboard Get",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          }
-        },
-        "summary": "Admin Dashboard"
-      }
-    },
-    "/api/v1/admin/extractions/{job_id}/cancel": {
-      "post": {
-        "operationId": "cancel_admin_extraction_api_v1_admin_extractions__job_id__cancel_post",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "job_id",
-            "required": true,
-            "schema": {
-              "title": "Job Id",
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Cancel Admin Extraction Api V1 Admin Extractions  Job Id  Cancel Post",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Cancel Admin Extraction"
-      }
-    },
-    "/api/v1/admin/extractions/{job_id}/pause": {
-      "post": {
-        "operationId": "pause_admin_extraction_api_v1_admin_extractions__job_id__pause_post",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "job_id",
-            "required": true,
-            "schema": {
-              "title": "Job Id",
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Pause Admin Extraction Api V1 Admin Extractions  Job Id  Pause Post",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Pause Admin Extraction"
-      }
-    },
-    "/api/v1/admin/extractions/{job_id}/resume": {
-      "post": {
-        "operationId": "resume_admin_extraction_api_v1_admin_extractions__job_id__resume_post",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "job_id",
-            "required": true,
-            "schema": {
-              "title": "Job Id",
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Resume Admin Extraction Api V1 Admin Extractions  Job Id  Resume Post",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Resume Admin Extraction"
-      }
-    },
-    "/api/v1/admin/harvest": {
-      "post": {
-        "operationId": "harvest_api_v1_admin_harvest_post",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AdminHarvestRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Harvest Api V1 Admin Harvest Post",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Harvest"
-      }
-    },
-    "/api/v1/admin/review": {
-      "get": {
-        "operationId": "review_queue_api_v1_admin_review_get",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "status",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Status"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Review Queue Api V1 Admin Review Get",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Review Queue"
-      }
-    },
-    "/api/v1/admin/review/{candidate_id}/decision": {
-      "post": {
-        "operationId": "review_decision_api_v1_admin_review__candidate_id__decision_post",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "candidate_id",
-            "required": true,
-            "schema": {
-              "title": "Candidate Id",
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AdminDecisionRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Review Decision Api V1 Admin Review  Candidate Id  Decision Post",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Review Decision"
-      }
-    },
-    "/api/v1/admin/runtime": {
-      "get": {
-        "operationId": "admin_runtime_api_v1_admin_runtime_get",
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Admin Runtime Api V1 Admin Runtime Get",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          }
-        },
-        "summary": "Admin Runtime"
-      }
-    },
-    "/api/v1/admin/staging/decisions/bulk": {
-      "patch": {
-        "operationId": "admin_bulk_staging_decision_api_v1_admin_staging_decisions_bulk_patch",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BulkStagingDecisionRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Admin Bulk Staging Decision Api V1 Admin Staging Decisions Bulk Patch",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Admin Bulk Staging Decision"
-      }
-    },
-    "/api/v1/admin/staging/{stage_id}/decision": {
-      "patch": {
-        "operationId": "admin_staging_decision_api_v1_admin_staging__stage_id__decision_patch",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "stage_id",
-            "required": true,
-            "schema": {
-              "title": "Stage Id",
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/StagingDecisionRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Admin Staging Decision Api V1 Admin Staging  Stage Id  Decision Patch",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Admin Staging Decision"
-      }
-    },
-    "/api/v1/admin/syncs/{sync_id}": {
-      "get": {
-        "operationId": "admin_sync_detail_api_v1_admin_syncs__sync_id__get",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "sync_id",
-            "required": true,
-            "schema": {
-              "title": "Sync Id",
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Admin Sync Detail Api V1 Admin Syncs  Sync Id  Get",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Admin Sync Detail"
-      }
-    },
-    "/api/v1/admin/syncs/{sync_id}/events": {
-      "get": {
-        "operationId": "admin_sync_events_api_v1_admin_syncs__sync_id__events_get",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "sync_id",
-            "required": true,
-            "schema": {
-              "title": "Sync Id",
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Admin Sync Events Api V1 Admin Syncs  Sync Id  Events Get",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Admin Sync Events"
-      }
-    },
-    "/api/v1/admin/syncs/{sync_id}/stream": {
-      "get": {
-        "operationId": "admin_sync_stream_api_v1_admin_syncs__sync_id__stream_get",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "sync_id",
-            "required": true,
-            "schema": {
-              "title": "Sync Id",
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {}
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Admin Sync Stream"
-      }
-    },
-    "/api/v1/admin/syncs/{sync_id}/submit": {
-      "post": {
-        "operationId": "submit_admin_sync_api_v1_admin_syncs__sync_id__submit_post",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "sync_id",
-            "required": true,
-            "schema": {
-              "title": "Sync Id",
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AdminSyncRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "title": "Response Submit Admin Sync Api V1 Admin Syncs  Sync Id  Submit Post",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Submit Admin Sync"
-      }
-    },
     "/api/v1/areas": {
       "get": {
         "operationId": "areas_api_v1_areas_get",
@@ -5529,6 +3467,205 @@
         "summary": "Verify Area"
       }
     },
+    "/api/v1/cloud/graph/viewport": {
+      "get": {
+        "operationId": "cloud_graph_viewport_api_v1_cloud_graph_viewport_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "min_x",
+            "required": false,
+            "schema": {
+              "default": -10000,
+              "title": "Min X",
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "max_x",
+            "required": false,
+            "schema": {
+              "default": 10000,
+              "title": "Max X",
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "min_y",
+            "required": false,
+            "schema": {
+              "default": -10000,
+              "title": "Min Y",
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "max_y",
+            "required": false,
+            "schema": {
+              "default": 10000,
+              "title": "Max Y",
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "zoom",
+            "required": false,
+            "schema": {
+              "default": 1.0,
+              "maximum": 100,
+              "minimum": 0.01,
+              "title": "Zoom",
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "areas",
+            "required": false,
+            "schema": {
+              "default": "",
+              "title": "Areas",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "schema": {
+              "default": "",
+              "maxLength": 4000,
+              "title": "Q",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 2500,
+              "maximum": 2500,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Cloud Graph Viewport Api V1 Cloud Graph Viewport Get",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Cloud Graph Viewport"
+      }
+    },
+    "/api/v1/cloud/meta-principles/{principle_id}": {
+      "get": {
+        "operationId": "cloud_meta_principle_api_v1_cloud_meta_principles__principle_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "principle_id",
+            "required": true,
+            "schema": {
+              "title": "Principle Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Cloud Meta Principle Api V1 Cloud Meta Principles  Principle Id  Get",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Cloud Meta Principle"
+      }
+    },
+    "/api/v1/cloud/meta-principles/{principle_id}/revisions": {
+      "get": {
+        "operationId": "cloud_meta_principle_revisions_api_v1_cloud_meta_principles__principle_id__revisions_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "principle_id",
+            "required": true,
+            "schema": {
+              "title": "Principle Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Cloud Meta Principle Revisions Api V1 Cloud Meta Principles  Principle Id  Revisions Get",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Cloud Meta Principle Revisions"
+      }
+    },
     "/api/v1/cloud/principles/{principle_id}": {
       "get": {
         "operationId": "cloud_principle_api_v1_cloud_principles__principle_id__get",
@@ -5568,6 +3705,47 @@
           }
         },
         "summary": "Cloud Principle"
+      }
+    },
+    "/api/v1/cloud/principles/{principle_id}/foundations": {
+      "get": {
+        "operationId": "cloud_principle_foundations_api_v1_cloud_principles__principle_id__foundations_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "principle_id",
+            "required": true,
+            "schema": {
+              "title": "Principle Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Cloud Principle Foundations Api V1 Cloud Principles  Principle Id  Foundations Get",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Cloud Principle Foundations"
       }
     },
     "/api/v1/cloud/principles/{principle_id}/revisions": {
@@ -8703,6 +6881,18 @@
               "title": "Limit",
               "type": "integer"
             }
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "default": 1,
+              "maximum": 1000000,
+              "minimum": 1,
+              "title": "Page",
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -9497,6 +7687,905 @@
           }
         },
         "summary": "Research Goal Run Results"
+      }
+    },
+    "/api/v1/research-projects": {
+      "get": {
+        "operationId": "research_projects_api_v1_research_projects_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "include_archived",
+            "required": false,
+            "schema": {
+              "default": false,
+              "title": "Include Archived",
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Research Projects Api V1 Research Projects Get",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Research Projects"
+      },
+      "post": {
+        "operationId": "create_research_project_api_v1_research_projects_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResearchProjectCreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Create Research Project Api V1 Research Projects Post",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Research Project"
+      }
+    },
+    "/api/v1/research-projects/{project_id}": {
+      "delete": {
+        "operationId": "delete_research_project_api_v1_research_projects__project_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "project_id",
+            "required": true,
+            "schema": {
+              "title": "Project Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Delete Research Project Api V1 Research Projects  Project Id  Delete",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Research Project"
+      },
+      "patch": {
+        "operationId": "update_research_project_api_v1_research_projects__project_id__patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "project_id",
+            "required": true,
+            "schema": {
+              "title": "Project Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResearchProjectUpdateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Update Research Project Api V1 Research Projects  Project Id  Patch",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Update Research Project"
+      }
+    },
+    "/api/v1/research-sessions": {
+      "get": {
+        "operationId": "research_sessions_api_v1_research_sessions_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "project_id",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Project Id"
+            }
+          },
+          {
+            "in": "query",
+            "name": "include_archived",
+            "required": false,
+            "schema": {
+              "default": false,
+              "title": "Include Archived",
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Research Sessions Api V1 Research Sessions Get",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Research Sessions"
+      },
+      "post": {
+        "operationId": "create_research_session_api_v1_research_sessions_post",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "egress_confirmed",
+            "required": false,
+            "schema": {
+              "default": false,
+              "title": "Egress Confirmed",
+              "type": "boolean"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResearchSessionCreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Create Research Session Api V1 Research Sessions Post",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Research Session"
+      }
+    },
+    "/api/v1/research-sessions/{session_id}": {
+      "delete": {
+        "operationId": "delete_research_session_api_v1_research_sessions__session_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "session_id",
+            "required": true,
+            "schema": {
+              "title": "Session Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "expected_revision",
+            "required": true,
+            "schema": {
+              "minimum": 1,
+              "title": "Expected Revision",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Delete Research Session Api V1 Research Sessions  Session Id  Delete",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Research Session"
+      },
+      "get": {
+        "operationId": "research_session_api_v1_research_sessions__session_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "session_id",
+            "required": true,
+            "schema": {
+              "title": "Session Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Research Session Api V1 Research Sessions  Session Id  Get",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Research Session"
+      },
+      "patch": {
+        "operationId": "update_research_session_api_v1_research_sessions__session_id__patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "session_id",
+            "required": true,
+            "schema": {
+              "title": "Session Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResearchSessionUpdateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Update Research Session Api V1 Research Sessions  Session Id  Patch",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Update Research Session"
+      }
+    },
+    "/api/v1/research-sessions/{session_id}/artifacts": {
+      "get": {
+        "operationId": "research_session_artifacts_api_v1_research_sessions__session_id__artifacts_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "session_id",
+            "required": true,
+            "schema": {
+              "title": "Session Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Research Session Artifacts Api V1 Research Sessions  Session Id  Artifacts Get",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Research Session Artifacts"
+      },
+      "post": {
+        "operationId": "create_research_session_artifact_api_v1_research_sessions__session_id__artifacts_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "session_id",
+            "required": true,
+            "schema": {
+              "title": "Session Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResearchArtifactCreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Create Research Session Artifact Api V1 Research Sessions  Session Id  Artifacts Post",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Research Session Artifact"
+      }
+    },
+    "/api/v1/research-sessions/{session_id}/artifacts/{artifact_id}": {
+      "delete": {
+        "operationId": "delete_research_session_artifact_api_v1_research_sessions__session_id__artifacts__artifact_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "session_id",
+            "required": true,
+            "schema": {
+              "title": "Session Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "artifact_id",
+            "required": true,
+            "schema": {
+              "title": "Artifact Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Delete Research Session Artifact Api V1 Research Sessions  Session Id  Artifacts  Artifact Id  Delete",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Research Session Artifact"
+      }
+    },
+    "/api/v1/research-sessions/{session_id}/events": {
+      "get": {
+        "operationId": "research_session_events_api_v1_research_sessions__session_id__events_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "session_id",
+            "required": true,
+            "schema": {
+              "title": "Session Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "after",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "title": "After",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Research Session Events Api V1 Research Sessions  Session Id  Events Get",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Research Session Events"
+      }
+    },
+    "/api/v1/research-sessions/{session_id}/graph": {
+      "get": {
+        "operationId": "research_session_graph_api_v1_research_sessions__session_id__graph_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "session_id",
+            "required": true,
+            "schema": {
+              "title": "Session Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Research Session Graph Api V1 Research Sessions  Session Id  Graph Get",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Research Session Graph"
+      },
+      "patch": {
+        "operationId": "mutate_research_session_graph_api_v1_research_sessions__session_id__graph_patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "session_id",
+            "required": true,
+            "schema": {
+              "title": "Session Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResearchGraphMutationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Mutate Research Session Graph Api V1 Research Sessions  Session Id  Graph Patch",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Mutate Research Session Graph"
+      }
+    },
+    "/api/v1/research-sessions/{session_id}/results": {
+      "get": {
+        "operationId": "research_session_results_api_v1_research_sessions__session_id__results_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "session_id",
+            "required": true,
+            "schema": {
+              "title": "Session Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "membership",
+            "required": false,
+            "schema": {
+              "default": "combined",
+              "enum": [
+                "global",
+                "local",
+                "combined",
+                "meta"
+              ],
+              "title": "Membership",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Research Session Results Api V1 Research Sessions  Session Id  Results Get",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Research Session Results"
+      }
+    },
+    "/api/v1/research-sessions/{session_id}/runs": {
+      "post": {
+        "operationId": "start_research_session_run_api_v1_research_sessions__session_id__runs_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "session_id",
+            "required": true,
+            "schema": {
+              "title": "Session Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "egress_confirmed",
+            "required": false,
+            "schema": {
+              "default": false,
+              "title": "Egress Confirmed",
+              "type": "boolean"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResearchGoalRunRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Start Research Session Run Api V1 Research Sessions  Session Id  Runs Post",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Start Research Session Run"
+      }
+    },
+    "/api/v1/research-sessions/{session_id}/virtual-principles/{virtual_id}": {
+      "delete": {
+        "operationId": "delete_research_session_virtual_principle_api_v1_research_sessions__session_id__virtual_principles__virtual_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "session_id",
+            "required": true,
+            "schema": {
+              "title": "Session Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "virtual_id",
+            "required": true,
+            "schema": {
+              "title": "Virtual Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "candidate_id",
+            "required": false,
+            "schema": {
+              "default": "",
+              "title": "Candidate Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Delete Research Session Virtual Principle Api V1 Research Sessions  Session Id  Virtual Principles  Virtual Id  Delete",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Research Session Virtual Principle"
       }
     },
     "/api/v1/runtime": {

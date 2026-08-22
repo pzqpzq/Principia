@@ -62,11 +62,15 @@ class CandidatePackageBuilder:
                 )
                 principles = self._rows(snapshot_root / "principles.jsonl")
                 if not principles:
-                    raise ValueError(f"source contains no ready-to-review Principles: {spec.source_id}")
+                    raise ValueError(
+                        f"source contains no ready-to-review Principles: {spec.source_id}"
+                    )
                 for principle in principles:
                     identity = str(principle["principle_id"])
                     if identity in principle_package:
-                        raise ValueError(f"Principle belongs to multiple release packages: {identity}")
+                        raise ValueError(
+                            f"Principle belongs to multiple release packages: {identity}"
+                        )
                     principle_package[identity] = spec.package_id
                 snapshots[spec.package_id] = {
                     "manifest": manifest,

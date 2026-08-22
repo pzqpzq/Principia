@@ -580,8 +580,7 @@ class PipelineResult(PrincipiaModel):
                 )
             ),
             "evidence_counts": {
-                kind: evidence_counts.get(kind, 0)
-                for kind in ("ideas", "principles", "takeaways")
+                kind: evidence_counts.get(kind, 0) for kind in ("ideas", "principles", "takeaways")
             },
             "embedding_rerank": self.works.diagnostics.rerank_mode_applied,
             "successful_sources": len(successful_sources),

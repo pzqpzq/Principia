@@ -332,9 +332,7 @@ class CloudRegistry:
         values: tuple[Any, ...] = (area,) if area else ()
         with self.connect() as conn:
             total = int(
-                conn.execute(
-                    f"SELECT COUNT(*) FROM principle_index {where}", values
-                ).fetchone()[0]
+                conn.execute(f"SELECT COUNT(*) FROM principle_index {where}", values).fetchone()[0]
             )
             rows = conn.execute(
                 f"""

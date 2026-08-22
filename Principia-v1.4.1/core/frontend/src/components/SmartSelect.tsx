@@ -41,8 +41,8 @@ export function SmartSelect({
     const close = (event: MouseEvent) => {
       if (!root.current?.contains(event.target as Node)) setOpen(false);
     };
-    document.addEventListener("mousedown", close);
-    return () => document.removeEventListener("mousedown", close);
+    document.addEventListener("click", close);
+    return () => document.removeEventListener("click", close);
   }, []);
 
   return <div className={`smart-select ${open ? "open" : ""}`} ref={root}>

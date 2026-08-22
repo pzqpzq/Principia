@@ -78,7 +78,9 @@ def _assert_public(value: Any, *, path: str = "root") -> None:
     if isinstance(value, dict):
         for key, item in value.items():
             if str(key) in _FORBIDDEN_KEYS:
-                raise ValueError(f"portable Principle payload contains forbidden field: {path}.{key}")
+                raise ValueError(
+                    f"portable Principle payload contains forbidden field: {path}.{key}"
+                )
             _assert_public(item, path=f"{path}.{key}")
     elif isinstance(value, list):
         for index, item in enumerate(value):
@@ -164,20 +166,26 @@ class PortablePrincipleLibrary:
                     "claim_class": str(argument.get("claim_class") or "empirical_association"),
                     "conditions": list(argument.get("conditions") or []),
                     "boundary": list(argument.get("boundary") or []),
-                    "testability": str(argument.get("testability") or detail.get("falsifier") or ""),
+                    "testability": str(
+                        argument.get("testability") or detail.get("falsifier") or ""
+                    ),
                     "generalization_level": str(
                         argument.get("generalization_level") or "study_bound"
                     ),
                     "area_labels": sorted(set(area_labels)),
                     "human_review_status": str(detail.get("assessment_status") or "unassessed"),
-                    "references": sorted(references, key=lambda item: (item["work_id"], item["excerpt_sha256"])),
+                    "references": sorted(
+                        references, key=lambda item: (item["work_id"], item["excerpt_sha256"])
+                    ),
                     "verification": {
                         "scientific_contract_version": str(
                             metadata.get("scientific_contract_version") or ""
                         ),
                         "quality_gate_version": str(metadata.get("quality_gate_version") or ""),
                         "evidence_digest": str(latest_evaluation.get("evidence_digest") or ""),
-                        "checked_at": str(latest_evaluation.get("created_at") or detail.get("updated_at") or ""),
+                        "checked_at": str(
+                            latest_evaluation.get("created_at") or detail.get("updated_at") or ""
+                        ),
                     },
                     "updated_at": str(detail.get("updated_at") or ""),
                     "created_at": str(detail.get("created_at") or detail.get("updated_at") or ""),
@@ -216,10 +224,13 @@ class PortablePrincipleLibrary:
             body = "".join(f"{_json_line(row)}\n" for row in rows).encode()
             _atomic_write(root / name, body)
             digests[name] = hashlib.sha256(body).hexdigest()
-        logical_timestamp = max(
-            (str(item.get("updated_at") or "") for item in principle_rows),
-            default="",
-        ) or "1970-01-01T00:00:00Z"
+        logical_timestamp = (
+            max(
+                (str(item.get("updated_at") or "") for item in principle_rows),
+                default="",
+            )
+            or "1970-01-01T00:00:00Z"
+        )
         manifest = {
             "schema_version": SCHEMA_VERSION,
             "label": label,
@@ -229,7 +240,11 @@ class PortablePrincipleLibrary:
             "relation_count": len(relations_sorted),
             "files": digests,
             "content_digest": canonical_sha256(
-                {"principles": principle_rows, "works": files["works.jsonl"], "relations": relations_sorted}
+                {
+                    "principles": principle_rows,
+                    "works": files["works.jsonl"],
+                    "relations": relations_sorted,
+                }
             ),
             # Derived from the data so repeated exports of an unchanged corpus are byte-identical.
             "created_at": logical_timestamp,
@@ -295,7 +310,9 @@ class PortablePrincipleLibrary:
                     url=str(works[work_id].get("url") or ""),
                     doi=str(works[work_id].get("doi") or ""),
                 )
-                for work_id in sorted({str(item["work_id"]) for item in row.get("references") or []})
+                for work_id in sorted(
+                    {str(item["work_id"]) for item in row.get("references") or []}
+                )
                 if work_id in works
             ]
             candidate = CandidatePrinciple(
@@ -312,7 +329,9 @@ class PortablePrincipleLibrary:
                 falsifier=row.get("testability") or "",
                 source_references=work_references,
                 assessment_status="unassessed",
-                raw_legacy_payload={"portable_showcase_verification": row.get("verification") or {}},
+                raw_legacy_payload={
+                    "portable_showcase_verification": row.get("verification") or {}
+                },
                 created_at=row.get("created_at") or row.get("updated_at") or manifest["created_at"],
                 updated_at=row.get("updated_at") or utc_now(),
             )
@@ -345,7 +364,8 @@ class PortablePrincipleLibrary:
                     "content_digest, created_at) VALUES (?, 1, ?, ?, ?, ?, ?, ?)",
                     (
                         row["principle_id"],
-                        verification.get("scientific_contract_version") or "scientific-principle-v2",
+                        verification.get("scientific_contract_version")
+                        or "scientific-principle-v2",
                         public_argument["generalization_level"],
                         public_argument["claim_class"],
                         json.dumps(public_argument, ensure_ascii=False, sort_keys=True),

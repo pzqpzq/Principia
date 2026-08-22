@@ -12,6 +12,7 @@ from typing import Any, Literal
 from ..cloud import CloudRegistry, CloudSearchRequest, GlobalCloudSnapshotStore
 from ..domain import concise_principle_title
 from ..persistence import V14WorkspaceRepository
+from ..search_semantics import expand_semantic_terms, literal_query_terms
 
 _TOKEN = re.compile(r"[a-z0-9][a-z0-9_-]+")
 _RELATION_STOPWORDS = frozenset(
@@ -98,78 +99,9 @@ _NEGATIVE_DIRECTION = frozenset(
     }
 )
 
-# Versioned scientific concept families provide local semantic recall without
-# sending private Principle text to an embedding endpoint on every Explorer
-# keystroke. Literature ranking may use the explicitly enabled remote embedding
-# service; library browsing remains fast and offline-capable.
-_SEMANTIC_CONCEPTS = (
-    frozenset(
-        {
-            "agent",
-            "agents",
-            "multiagent",
-            "multi-agent",
-            "team",
-            "teams",
-            "coordination",
-            "collaboration",
-            "specialization",
-            "roles",
-        }
-    ),
-    frozenset({"autonomous", "agentic", "automated", "automation", "self-driving"}),
-    frozenset(
-        {
-            "science",
-            "scientific",
-            "research",
-            "discovery",
-            "experiment",
-            "experimentation",
-            "hypothesis",
-        }
-    ),
-    frozenset(
-        {
-            "hilbert",
-            "boltzmann",
-            "kinetic",
-            "hydrodynamic",
-            "fluid",
-            "continuum",
-            "equation",
-            "equations",
-        }
-    ),
-    frozenset(
-        {"verify", "verification", "verifier", "validation", "critic", "critique", "checking"}
-    ),
-    frozenset({"memory", "persistent", "persistence", "history", "filesystem", "git"}),
-    frozenset(
-        {
-            "reliable",
-            "reliability",
-            "robust",
-            "robustness",
-            "fault",
-            "faults",
-            "error",
-            "errors",
-            "consistency",
-        }
-    ),
-    frozenset({"reasoning", "inference", "deliberation", "planning", "search"}),
-    frozenset({"coherence", "decoherence", "noise", "loss"}),
-    frozenset({"resistance", "escape", "checkpoint", "immunotherapy"}),
-)
-
 
 def _semantic_expansion(query_terms: set[str]) -> set[str]:
-    expanded: set[str] = set()
-    for family in _SEMANTIC_CONCEPTS:
-        if query_terms & family:
-            expanded.update(family - query_terms)
-    return expanded
+    return set(expand_semantic_terms(query_terms)) - query_terms
 
 
 def _readable_title(title: Any, claim: Any, limit: int = 220) -> str:
@@ -292,8 +224,10 @@ class PrincipleExplorerService:
         cursor: str | None = None,
         page: int = 1,
         page_mode: bool = False,
+        query_vector: list[float] | None = None,
     ) -> dict[str, Any]:
-        query_terms = set(_TOKEN.findall(query.casefold()))
+        query_terms = set(literal_query_terms(query, limit=30))
+        selected_areas = [value.strip() for value in area.split(",") if value.strip()]
         resolved_limit = max(1, min(int(limit), 100))
         resolved_page = max(1, int(page))
         quality_states = {
@@ -340,12 +274,19 @@ class PrincipleExplorerService:
                 CloudSearchRequest(
                     entity="principle",
                     query=query,
-                    areas=[area] if area else [],
+                    areas=selected_areas,
                     limit=resolved_limit,
+                    # Keep broad lexical matches from flooding a focused map
+                    # with loosely related Principles. Direct Principle
+                    # retrieval still fills a genuinely under-sized cohort.
+                    paper_cohort=max(25, min(60, resolved_limit)),
                     cursor=base64.urlsafe_b64encode(
                         str((resolved_page - 1) * resolved_limit).encode()
-                    ).decode().rstrip("="),
-                )
+                    )
+                    .decode()
+                    .rstrip("="),
+                ),
+                query_vector=query_vector,
             )
             cards = [self._global_cloud_card(item) for item in result["items"]]
             return {
@@ -423,7 +364,7 @@ class PrincipleExplorerService:
                 card = self._local_card(row)
                 if virtual_only and not card["virtual"]:
                     continue
-                if area and area not in card["area_labels"]:
+                if selected_areas and not set(selected_areas).intersection(card["area_labels"]):
                     continue
                 if goal_id and goal_id not in _csv(row.get("goal_ids")):
                     continue
@@ -465,7 +406,10 @@ class PrincipleExplorerService:
                 card = self._global_card(row)
                 if package_id and package_id != row["area"]:
                     continue
-                if area and area != row["area"] and area not in card["area_labels"]:
+                if selected_areas and not (
+                    set(selected_areas).intersection(card["area_labels"])
+                    or str(row["area"]) in selected_areas
+                ):
                     continue
                 if claim_type and card["claim_type"] != claim_type:
                     continue
@@ -588,9 +532,7 @@ class PrincipleExplorerService:
                     "evidence_digest": row["evidence_digest"],
                     "related_principle_id": related_id,
                     "related_title": (
-                        _readable_title(
-                            local_related.get("title"), local_related.get("claim")
-                        )
+                        _readable_title(local_related.get("title"), local_related.get("claim"))
                         if local_related
                         else str(related_id)
                     ),
@@ -607,10 +549,21 @@ class PrincipleExplorerService:
         }
 
     def graph_view(self, **filters: Any) -> dict[str, Any]:
-        """Return the exact Explorer filter result as a bounded graph projection."""
+        """Return one bounded, pageable projection of the Explorer result."""
 
         requested = max(1, min(int(filters.pop("limit", 120)), 200))
-        page = self.browse(limit=requested, page=1, page_mode=False, **filters)
+        page_number = max(1, int(filters.pop("page", 1)))
+        goal_run_id = str(filters.get("goal_run_id") or "")
+        scope = str(filters.get("scope") or "local")
+        page = self.browse(
+            limit=requested,
+            page=page_number,
+            # Frozen goal memberships retain their exact membership projection.
+            # The Home Global map uses SQLite-backed pages so thousands of
+            # records are never materialized into one Python or browser list.
+            page_mode=not goal_run_id and scope == "global",
+            **filters,
+        )
         nodes = list(page["items"])
         node_ids = {str(item["id"]) for item in nodes}
         edges = self.repository.graph_relations_for_principles(
@@ -625,17 +578,40 @@ class PrincipleExplorerService:
             if item["source"] != "global":
                 continue
             detail = (
-                self.global_cloud.principle(str(item["id"]))
-                if self.global_cloud is not None and self.global_cloud.active()
-                else None
-            ) or self.registry.principle(str(item["id"])) or {}
+                (
+                    self.global_cloud.principle(str(item["id"]))
+                    if self.global_cloud is not None and self.global_cloud.active()
+                    else None
+                )
+                or self.registry.principle(str(item["id"]))
+                or {}
+            )
+            references = list(detail.get("source_references") or [])
+            if references:
+                item["supporting_work_count"] = len(
+                    {str(reference.get("work_id") or "") for reference in references} - {""}
+                )
+                item["evidence_anchor_count"] = len(references)
+                citations_by_work: dict[str, int] = {}
+                for reference in references:
+                    citation_count = reference.get("citation_count")
+                    if citation_count is None:
+                        continue
+                    work_id = str(reference.get("work_id") or "")
+                    citations_by_work[work_id] = max(
+                        citations_by_work.get(work_id, 0), max(0, int(citation_count))
+                    )
+                item["supporting_citation_count"] = sum(citations_by_work.values())
+                item["citation_data_available"] = bool(citations_by_work)
             for index, relation in enumerate(detail.get("relations") or []):
                 source = str(relation.get("source_principle_id") or item["id"])
                 target = str(relation.get("target_principle_id") or "")
                 if target not in node_ids or target == item["id"]:
                     continue
                 relation_type = str(relation.get("relation_type") or "analogous_to")
-                relation_id = str(relation.get("relation_id") or f"global:{source}:{index}:{target}")
+                relation_id = str(
+                    relation.get("relation_id") or f"global:{source}:{index}:{target}"
+                )
                 if relation_id in seen:
                     continue
                 seen.add(relation_id)
@@ -680,10 +656,10 @@ class PrincipleExplorerService:
         """Add bounded, explicitly non-validated context when the graph is sparse."""
 
         node_by_id = {str(item["id"]): item for item in nodes}
-        local_ids = [identifier for identifier, item in node_by_id.items() if item["source"] == "local"]
-        validated_pairs = {
-            frozenset({str(item["source"]), str(item["target"])}) for item in edges
-        }
+        local_ids = [
+            identifier for identifier, item in node_by_id.items() if item["source"] == "local"
+        ]
+        validated_pairs = {frozenset({str(item["source"]), str(item["target"])}) for item in edges}
         work_members: dict[str, set[str]] = defaultdict(set)
         for link in self.repository.candidate_work_links(local_ids):
             work_members[str(link["work_id"])].add(str(link["candidate_id"]))
@@ -698,11 +674,15 @@ class PrincipleExplorerService:
             shared_counts.items(), key=lambda item: (-item[1], item[0])
         ):
             pair = frozenset({source, target})
-            if pair in validated_pairs or derived_degree[source] >= 3 or derived_degree[target] >= 3:
+            if (
+                pair in validated_pairs
+                or derived_degree[source] >= 3
+                or derived_degree[target] >= 3
+            ):
                 continue
-            relation_id = "shared:" + hashlib.sha256(
-                f"{source}\0{target}\0{count}".encode()
-            ).hexdigest()[:20]
+            relation_id = (
+                "shared:" + hashlib.sha256(f"{source}\0{target}\0{count}".encode()).hexdigest()[:20]
+            )
             if relation_id in seen:
                 continue
             seen.add(relation_id)
@@ -737,10 +717,19 @@ class PrincipleExplorerService:
                 suggestion = self._potential_relation(
                     source,
                     target,
-                    {"claim": node_by_id[source].get("claim"), "scope": node_by_id[source].get("applicability")},
-                    {"claim": node_by_id[target].get("claim"), "scope": node_by_id[target].get("applicability")},
+                    {
+                        "claim": node_by_id[source].get("claim"),
+                        "scope": node_by_id[source].get("applicability"),
+                    },
+                    {
+                        "claim": node_by_id[target].get("claim"),
+                        "scope": node_by_id[target].get("applicability"),
+                    },
                 )
-                if suggestion["relation_type"] == "relationship_unclear" or suggestion["strength"] == "weak":
+                if (
+                    suggestion["relation_type"] == "relationship_unclear"
+                    or suggestion["strength"] == "weak"
+                ):
                     continue
                 affinity_candidates.append(
                     (
@@ -779,9 +768,7 @@ class PrincipleExplorerService:
                 break
 
     @staticmethod
-    def _apply_graph_metrics(
-        nodes: list[dict[str, Any]], edges: list[dict[str, Any]]
-    ) -> None:
+    def _apply_graph_metrics(nodes: list[dict[str, Any]], edges: list[dict[str, Any]]) -> None:
         """Project varied evidence and graph-relative metrics for this exact view."""
 
         by_id = {str(item["id"]): item for item in nodes}
@@ -789,23 +776,26 @@ class PrincipleExplorerService:
         influence_weight: Counter[str] = Counter()
         supports: Counter[str] = Counter()
         contradicts: Counter[str] = Counter()
-        class_weight = {"validated": 1.0, "shared_evidence": 0.55, "semantic_affinity": 0.28}
+        # Influence is scientific-library structure, not visual busyness.
+        # Context and virtual links are useful navigation aids but must never
+        # inflate a Principle's measure.
+        class_weight = {"validated": 1.0, "shared_evidence": 0.0, "semantic_affinity": 0.0}
         for edge in edges:
             source = str(edge["source"])
             target = str(edge["target"])
             if source not in by_id or target not in by_id or source == target:
                 continue
             edge_class = str(edge.get("edge_class") or "validated")
-            weight = class_weight.get(edge_class, 0.2)
+            weight = class_weight.get(edge_class, 0.0)
             neighbors[source].add(target)
             neighbors[target].add(source)
-            influence_weight[source] += weight
-            influence_weight[target] += weight
+            if weight:
+                influence_weight[source] += weight
+                influence_weight[target] += weight
             if edge_class == "validated" and edge.get("relation_type") == "supports":
                 supports[target] += 1
             elif edge_class == "validated" and edge.get("relation_type") == "contradicts":
                 contradicts[target] += 1
-        maximum = max(influence_weight.values(), default=0.0)
         for identifier, node in by_id.items():
             papers = int(node.get("supporting_work_count") or 0)
             anchors = int(node.get("evidence_anchor_count") or 0)
@@ -825,12 +815,25 @@ class PrincipleExplorerService:
                     recorded_value *= 100
                 evidence_score = 0.6 * evidence_score + 0.4 * recorded_value
             node["reliability_score"] = round(max(18.0, min(98.0, evidence_score)), 1)
+            # Ground Influence in validated graph relations and known citation
+            # reach. View-relative normalization previously made every node 100;
+            # paper count alone then produced another arbitrary constant. Missing
+            # relation/citation evidence remains explicitly unavailable.
+            citations = max(0, int(node.get("supporting_citation_count") or 0))
+            influence_signal = (
+                1.25 * influence_weight[identifier]
+                + 0.65 * math.log2(1 + citations)
+                + 0.35 * math.log2(max(1, papers))
+            )
             node["influence_score"] = (
-                round(100 * influence_weight[identifier] / maximum, 1) if maximum else 0.0
+                round(100.0 * (1.0 - math.exp(-influence_signal / 5.0)), 1)
+                if influence_signal > 0
+                else None
             )
             node["distinct_neighbor_count"] = len(neighbors[identifier])
             node["incoming_support_count"] = supports[identifier]
             node["incoming_contradict_count"] = contradicts[identifier]
+            node["validated_relation_count"] = int(influence_weight[identifier])
 
     def potential_relations(self, principle_ids: list[str]) -> dict[str, Any]:
         """Compare a small, explicit selection without mutating scientific truth.
@@ -850,11 +853,7 @@ class PrincipleExplorerService:
                 detail = self.repository.principle(identifier)
             if detail is None:
                 detail = self.registry.principle(identifier)
-            if (
-                detail is None
-                and self.global_cloud is not None
-                and self.global_cloud.active()
-            ):
+            if detail is None and self.global_cloud is not None and self.global_cloud.active():
                 detail = self.global_cloud.principle(identifier)
             if detail is None:
                 raise KeyError(f"Principle {identifier} was not found")
@@ -913,8 +912,14 @@ class PrincipleExplorerService:
             & (right["claim"] | right["subject"] | right["driver"] | right["outcome"])
         )[:8]
         alignment = max(claim, (subject + driver + outcome) / 3)
-        opposite = left["direction"] and right["direction"] and left["direction"] != right["direction"]
-        same_or_open = not left["direction"] or not right["direction"] or left["direction"] == right["direction"]
+        opposite = (
+            left["direction"] and right["direction"] and left["direction"] != right["direction"]
+        )
+        same_or_open = (
+            not left["direction"]
+            or not right["direction"]
+            or left["direction"] == right["direction"]
+        )
 
         if opposite and max(subject, outcome, claim) >= 0.14:
             relation_type = "potential_contradiction"
@@ -986,9 +991,7 @@ class PrincipleExplorerService:
                                 related_detail.get("title") or related_id,
                                 related_detail.get("claim") or "",
                             ),
-                            "relation_type": str(
-                                relation.get("relation_type") or "analogous_to"
-                            ),
+                            "relation_type": str(relation.get("relation_type") or "analogous_to"),
                             "orientation": "outgoing",
                         }
                     )
@@ -1013,9 +1016,12 @@ class PrincipleExplorerService:
     ) -> dict[str, Any]:
         """Project a frozen goal-run membership into normal Explorer cards."""
         with self.repository.connect() as conn:
-            if conn.execute(
-                "SELECT 1 FROM research_goal_runs WHERE run_id=?", (goal_run_id,)
-            ).fetchone() is None:
+            if (
+                conn.execute(
+                    "SELECT 1 FROM research_goal_runs WHERE run_id=?", (goal_run_id,)
+                ).fetchone()
+                is None
+            ):
                 raise KeyError(goal_run_id)
             rows = conn.execute(
                 "SELECT payload_json FROM research_goal_memberships "
@@ -1035,7 +1041,12 @@ class PrincipleExplorerService:
         }
         cards: list[dict[str, Any]] = []
         for payload in payloads:
-            identifier = str(payload.get("candidate_id") or payload.get("principle_id") or payload.get("id") or "")
+            identifier = str(
+                payload.get("candidate_id")
+                or payload.get("principle_id")
+                or payload.get("id")
+                or ""
+            )
             origin = str(payload.get("source") or membership)
             if origin == "local" and identifier in local_rows:
                 card = self._local_card(local_rows[identifier])
@@ -1075,9 +1086,10 @@ class PrincipleExplorerService:
     def _local_card(row: dict[str, Any]) -> dict[str, Any]:
         argument = json.loads(str(row.get("argument_json") or "{}"))
         state = str(row.get("quality_state") or "")
-        virtual = str(row.get("source_kind") or "") == "virtual_reasoning" or str(
-            row.get("extraction_mode") or ""
-        ) == "virtual_synthesis"
+        virtual = (
+            str(row.get("source_kind") or "") == "virtual_reasoning"
+            or str(row.get("extraction_mode") or "") == "virtual_synthesis"
+        )
         evidence_status = {
             "eligible": "checks_passed",
             "quarantined": "held_back",
@@ -1150,7 +1162,8 @@ class PrincipleExplorerService:
             "title": row["title"],
             "claim": row["claim"],
             "claim_type": row.get("claim_type") or row.get("kind") or "",
-            "applicability": row.get("applicability") or (
+            "applicability": row.get("applicability")
+            or (
                 "Open the Principle to inspect its recorded scope."
                 if unassessed
                 else "Open the Principle to inspect its reviewed scope."
@@ -1191,7 +1204,9 @@ class PrincipleExplorerService:
             "applicability": scope.get("statement") or "Open the Principle to inspect its scope.",
             "area_labels": [row.get("area") or "global", *(row.get("tags") or [])],
             "evidence_status": "archived" if row.get("status") == "retired" else "checks_passed",
-            "human_review_status": "reviewed" if row.get("review_status") == "reviewed" else "pending",
+            "human_review_status": "reviewed"
+            if row.get("review_status") == "reviewed"
+            else "pending",
             "evidence_scope": "multiple_works" if support_count > 1 else "one_work",
             "supporting_work_count": support_count,
             "evidence_anchor_count": support_count,
@@ -1251,9 +1266,7 @@ class PrincipleExplorerService:
             "reliability_available_count": sum(
                 card["reliability_score"] is not None for card in cards
             ),
-            "influence_available_count": sum(
-                card["influence_score"] is not None for card in cards
-            ),
+            "influence_available_count": sum(card["influence_score"] is not None for card in cards),
             "known_contradiction_count": sum(
                 int(card["incoming_contradict_count"]) > 0 for card in cards
             ),

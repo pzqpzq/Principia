@@ -56,6 +56,40 @@ class QualityReason(str, Enum):
     CHALLENGE_INCONCLUSIVE = "challenge_inconclusive"
 
 
+class FoundationLinkProposal(DomainModel):
+    meta_principle_id: str = Field(pattern=r"^meta:[a-z0-9][a-z0-9-]+:[a-z0-9][a-z0-9-]+$")
+    relation_type: Literal[
+        "supports",
+        "depends_on",
+        "specializes",
+        "generalizes",
+        "refines",
+        "bounded_by",
+        "analogous_to",
+        "consistent_with",
+    ]
+    direction: Literal["meta_to_principle", "principle_to_meta"]
+    rationale: str = Field(min_length=20, max_length=1_200)
+    condition_compatibility: Literal["compatible", "partial", "incompatible", "unknown"]
+    variable_compatibility: Literal["compatible", "partial", "incompatible", "unknown"]
+    scale_compatibility: Literal["compatible", "partial", "incompatible", "unknown"]
+    confidence: float = Field(ge=0, le=1)
+
+
+class FoundationGroundingDecision(DomainModel):
+    verdict: Literal["grounded", "ungrounded_solid", "ambiguous"]
+    links: list[FoundationLinkProposal] = Field(default_factory=list, max_length=4)
+    rationale: str = Field(min_length=20, max_length=1_600)
+
+    @model_validator(mode="after")
+    def compatible_verdict(self) -> FoundationGroundingDecision:
+        if self.verdict == "grounded" and not self.links:
+            raise ValueError("grounded decisions require at least one link")
+        if self.verdict == "ungrounded_solid" and self.links:
+            raise ValueError("ungrounded_solid decisions cannot assert links")
+        return self
+
+
 class SupportSpan(DomainModel):
     segment_key: str = Field(min_length=1, max_length=160)
     quotation: str = Field(min_length=8, max_length=1_200)

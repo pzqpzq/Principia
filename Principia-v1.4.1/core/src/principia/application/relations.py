@@ -296,9 +296,7 @@ class PrincipleRelationService:
         outcome = _jaccard(left["outcome"], right["outcome"])
         claim = _jaccard(left["claim"], right["claim"])
         analogous_candidate = subject >= 0.55 and claim >= 0.12
-        if subject < 0.35 or (
-            driver < 0.34 and outcome < 0.34 and not analogous_candidate
-        ):
+        if subject < 0.35 or (driver < 0.34 and outcome < 0.34 and not analogous_candidate):
             return None
         # Near-identical records belong to consolidation, not the relation score.
         if claim >= 0.9:
@@ -343,10 +341,7 @@ class PrincipleRelationService:
             if len(left["conditions"]) < len(right["conditions"]):
                 source, target = right, left
             rationale = "A compatible relationship is stated under a stricter set of conditions."
-        elif (
-            subject >= 0.55
-            and claim >= 0.12
-        ):
+        elif subject >= 0.55 and claim >= 0.12:
             relation_type = "analogous_to"
             rationale = (
                 "The arguments concern the same scientific system and share a "

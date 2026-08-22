@@ -74,8 +74,28 @@ _GENERIC_CLAIM_PATTERNS = (
 )
 
 _EVIDENCE_GOAL_STOPWORDS = {
-    "and", "are", "does", "for", "from", "how", "into", "the", "their",
-    "through", "under", "what", "when", "where", "which", "with",
+    "and",
+    "are",
+    "does",
+    "for",
+    "from",
+    "how",
+    "into",
+    "the",
+    "their",
+    "through",
+    "under",
+    "what",
+    "when",
+    "where",
+    "which",
+    "with",
+    "leaders",
+    "focus",
+    "tightly",
+    "navigate",
+    "persistent",
+    "pressures",
 }
 
 
@@ -197,9 +217,15 @@ class _BudgetLedger:
 
     def reserve_unit(self, *, input_tokens: int, output_tokens: int, pro: bool = False) -> None:
         with self.lock:
-            if self.input_tokens + self.reserved_input + input_tokens > self.limits.max_input_tokens:
+            if (
+                self.input_tokens + self.reserved_input + input_tokens
+                > self.limits.max_input_tokens
+            ):
                 raise RuntimeError("literature input-token budget is exhausted")
-            if self.output_tokens + self.reserved_output + output_tokens > self.limits.max_output_tokens:
+            if (
+                self.output_tokens + self.reserved_output + output_tokens
+                > self.limits.max_output_tokens
+            ):
                 raise RuntimeError("literature output-token budget is exhausted")
             if pro and self.pro_calls >= self.limits.max_pro_calls:
                 raise RuntimeError("Pro adjudication budget is exhausted")
@@ -984,7 +1010,10 @@ def _select_evidence_segments(
                 chunk_index += 1
             cursor = max(end, cursor + 1)
     normalized_goal = goal.casefold()
-    normalized_goal = re.sub(r"\bai\b", " artificial intelligence machine learning ", normalized_goal)
+    normalized_goal = re.sub(r"\bcoginitive\b", "cognitive", normalized_goal)
+    normalized_goal = re.sub(
+        r"\bai\b", " artificial intelligence machine learning ", normalized_goal
+    )
     normalized_goal = re.sub(r"\bml\b", " machine learning ", normalized_goal)
     goal_terms = {
         token
@@ -996,6 +1025,7 @@ def _select_evidence_segments(
             prompt_segments,
             key=lambda item: (
                 -len(goal_terms & set(_WORD_RE.findall(str(item["text"]).casefold()))),
+                -_scientific_signal_score(str(item["text"])),
                 0
                 if _section_bucket(str(item["section"]))
                 in {"abstract", "introduction", "results", "discussion", "conclusion"}
@@ -1048,7 +1078,7 @@ def _select_evidence_segments(
 def select_evidence_segments_for_goal(
     segments: list[dict[str, Any]], goal: str, *, max_chars: int = 24_000
 ) -> list[dict[str, Any]]:
-    """Public bounded evidence selector shared by Local and Admin extraction."""
+    """Public bounded evidence selector shared by extraction workflows."""
 
     return _select_evidence_segments(segments, goal, max_chars=max_chars)
 

@@ -80,7 +80,9 @@ class PrincipleRevision(DomainModel):
     title: str = Field(min_length=1, max_length=240)
     claim: str = Field(min_length=1, max_length=10_000)
     kind: Literal["theorem", "mechanistic", "empirical", "heuristic", "hypothesis"]
-    maturity: Literal["unassessed", "supported", "replicated", "established", "contested", "retired"]
+    maturity: Literal[
+        "unassessed", "supported", "replicated", "established", "contested", "retired"
+    ]
     scope: dict[str, Any]
     falsifier: str = Field(min_length=1, max_length=10_000)
     quality: dict[str, Any]
@@ -157,7 +159,9 @@ class EmbeddingContract(DomainModel):
 
 
 class CloudManifest(DomainModel):
-    schema_version: Literal["principia-global-manifest-v1"] = "principia-global-manifest-v1"
+    schema_version: Literal["principia-global-manifest-v1", "principia-global-manifest-v2"] = (
+        "principia-global-manifest-v1"
+    )
     release_id: str = Field(min_length=1, max_length=200)
     commit_sha: str = ""
     content_digest: str
@@ -168,6 +172,14 @@ class CloudManifest(DomainModel):
     principle_revision_count: int = Field(ge=0)
     principle_work_count: int = Field(ge=0)
     relation_count: int = Field(ge=0)
+    meta_principle_count: int = Field(default=0, ge=0)
+    meta_principle_revision_count: int = Field(default=0, ge=0)
+    total_principle_count: int = Field(default=0, ge=0)
+    total_principle_revision_count: int = Field(default=0, ge=0)
+    foundation_link_count: int = Field(default=0, ge=0)
+    foundation_assessment_count: int = Field(default=0, ge=0)
+    foundation_gap_count: int = Field(default=0, ge=0)
+    area_count: int = Field(default=0, ge=0)
     embedding_contract: str = "qwen3-embedding-4b-1024-v1"
     vector_dimensions: int = Field(default=1024, ge=1)
     vectors_complete: bool = False
@@ -182,7 +194,9 @@ class CloudManifest(DomainModel):
 
 
 class CloudDeltaManifest(DomainModel):
-    schema_version: Literal["principia-global-delta-v1"] = "principia-global-delta-v1"
+    schema_version: Literal["principia-global-delta-v1", "principia-global-delta-v2"] = (
+        "principia-global-delta-v1"
+    )
     base_release_id: str
     target_release_id: str
     base_content_digest: str
@@ -195,6 +209,14 @@ class CloudDeltaManifest(DomainModel):
     principle_revision_count: int = Field(ge=0)
     principle_work_count: int = Field(ge=0)
     relation_count: int = Field(ge=0)
+    meta_principle_count: int = Field(default=0, ge=0)
+    meta_principle_revision_count: int = Field(default=0, ge=0)
+    total_principle_count: int = Field(default=0, ge=0)
+    total_principle_revision_count: int = Field(default=0, ge=0)
+    foundation_link_count: int = Field(default=0, ge=0)
+    foundation_assessment_count: int = Field(default=0, ge=0)
+    foundation_gap_count: int = Field(default=0, ge=0)
+    area_count: int = Field(default=0, ge=0)
     embedding_contract: str = "qwen3-embedding-4b-1024-v1"
     vector_dimensions: int = 1024
     vectors_complete: bool = False
@@ -210,7 +232,7 @@ class CloudDeltaManifest(DomainModel):
 
 
 class CloudSearchRequest(DomainModel):
-    entity: Literal["paper", "principle", "all"] = "principle"
+    entity: Literal["paper", "principle", "meta_principle", "all"] = "principle"
     query: str = Field(default="", max_length=4_000)
     year_from: int | None = Field(default=None, ge=1000, le=3000)
     year_to: int | None = Field(default=None, ge=1000, le=3000)
@@ -253,85 +275,10 @@ class ResearchGoalRun(DomainModel):
     schema_version: Literal["research-goal-run-v1"] = "research-goal-run-v1"
     run_id: str
     goal: str
-    state: Literal[
-        "queued", "running", "succeeded", "partial", "failed", "cancelled"
-    ] = "queued"
+    state: Literal["queued", "running", "succeeded", "partial", "failed", "cancelled"] = "queued"
     cloud_release_id: str = ""
     branches: dict[str, Any] = Field(default_factory=dict)
     result_counts: dict[str, int] = Field(default_factory=dict)
-    created_at: str = Field(default_factory=utc_now)
-    updated_at: str = Field(default_factory=utc_now)
-
-
-class AdminCampaignRequest(DomainModel):
-    research_goal: str = Field(min_length=8, max_length=4_000)
-    target_count: int = Field(default=50, ge=1, le=20_000)
-    provider_profile_id: str = "siliconflow"
-    model: str = "deepseek-ai/DeepSeek-V4-Flash"
-    concurrency: int = Field(default=4, ge=4, le=8)
-
-
-class AdminSelectionRequest(DomainModel):
-    work_ids: list[str] = Field(min_length=1, max_length=20_000)
-
-
-class AdminExtractRequest(DomainModel):
-    retry: bool = False
-    egress_confirmed: bool = False
-
-
-class StagingDecisionRequest(DomainModel):
-    decision: Literal["add", "update", "retire", "skip"]
-    confirmed_ambiguous: bool = False
-
-
-class BulkStagingDecisionRequest(DomainModel):
-    stage_ids: list[str] = Field(min_length=1, max_length=20_000)
-    decision: Literal["add", "update", "retire", "skip"]
-
-
-class AdminSyncRequest(DomainModel):
-    confirmation: str = Field(min_length=1, max_length=500)
-    mode: Literal["dry_run", "github_pr"] = "dry_run"
-
-
-class AdminStagedItem(DomainModel):
-    schema_version: Literal["admin-staged-item-v1"] = "admin-staged-item-v1"
-    stage_id: str
-    campaign_id: str
-    entity: Literal["work", "principle", "principle_work", "relation"]
-    proposed: dict[str, Any]
-    current: dict[str, Any] = Field(default_factory=dict)
-    diff: dict[str, Any] = Field(default_factory=dict)
-    match_kind: Literal["new", "exact", "strong_id", "semantic", "ambiguous"] = "new"
-    match_reason: str = ""
-    similarity: float = Field(default=0, ge=0, le=1)
-    decision: Literal["", "add", "update", "retire", "skip"] = ""
-    ambiguous_confirmed: bool = False
-    expected_revision: int | None = Field(default=None, ge=1)
-    expected_digest: str = ""
-    created_at: str = Field(default_factory=utc_now)
-    updated_at: str = Field(default_factory=utc_now)
-
-
-class CloudSync(DomainModel):
-    schema_version: Literal["cloud-sync-v1"] = "cloud-sync-v1"
-    sync_id: str
-    campaign_id: str
-    state: Literal[
-        "draft", "reviewed", "pr_creating", "checks_running", "auto_merge_queued",
-        "merged", "release_building", "published", "needs_resolution", "failed", "cancelled"
-    ] = "draft"
-    base_release_id: str = ""
-    base_commit_sha: str = ""
-    base_manifest_digest: str = ""
-    changeset_digest: str = ""
-    branch: str = ""
-    submitted_commit_sha: str = ""
-    pr_number: int | None = None
-    pr_url: str = ""
-    release_id: str = ""
-    error: dict[str, Any] = Field(default_factory=dict)
     created_at: str = Field(default_factory=utc_now)
     updated_at: str = Field(default_factory=utc_now)
 

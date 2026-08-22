@@ -14,13 +14,13 @@ from .._sqlite import connect_sqlite
 from ..domain.hashing import canonical_sha256, file_sha256
 
 LEGACY_IMPORT_MIGRATION = "1.4.0-001"
-ADMIN_MIGRATION_VERSION = "1.4.0-002"
 LITERATURE_MIGRATION_VERSION = "1.4.0-003"
 HUMAN_CENTERED_MIGRATION_VERSION = "1.4.0-004"
 USABILITY_RECOVERY_MIGRATION_VERSION = "1.4.0-005"
 # Public compatibility name retained for v1.4.0 callers and receipts.
 MIGRATION_VERSION = USABILITY_RECOVERY_MIGRATION_VERSION
 GLOBAL_CLOUD_WORKFLOW_MIGRATION_VERSION = "1.4.1-006"
+UNIFIED_RESEARCH_MIGRATION_VERSION = "1.4.1-007"
 
 _SCHEMA_SQL = """
 CREATE TABLE IF NOT EXISTS schema_migrations (
@@ -141,27 +141,6 @@ CREATE VIRTUAL TABLE IF NOT EXISTS local_principle_fts USING fts5(
 );
 """
 
-_ADMIN_SCHEMA_SQL = """
-CREATE TABLE IF NOT EXISTS admin_review_queue (
-    candidate_id TEXT PRIMARY KEY,
-    status TEXT NOT NULL,
-    payload_json TEXT NOT NULL,
-    decision_json TEXT,
-    created_at TEXT NOT NULL,
-    updated_at TEXT NOT NULL
-);
-CREATE INDEX IF NOT EXISTS idx_admin_review_status ON admin_review_queue(status, updated_at);
-CREATE TABLE IF NOT EXISTS publication_changesets (
-    changeset_id TEXT PRIMARY KEY,
-    area TEXT NOT NULL,
-    status TEXT NOT NULL,
-    expected_content_digest TEXT NOT NULL,
-    payload_json TEXT NOT NULL,
-    created_at TEXT NOT NULL,
-    updated_at TEXT NOT NULL
-);
-"""
-
 _GLOBAL_CLOUD_WORKFLOW_SCHEMA_SQL = """
 CREATE TABLE IF NOT EXISTS research_goal_runs (
     run_id TEXT PRIMARY KEY,
@@ -190,73 +169,132 @@ CREATE TABLE IF NOT EXISTS research_goal_memberships (
 );
 CREATE INDEX IF NOT EXISTS idx_research_goal_memberships_browse
     ON research_goal_memberships(run_id, membership, item_id);
-CREATE TABLE IF NOT EXISTS admin_campaigns (
-    campaign_id TEXT PRIMARY KEY,
-    search_id TEXT,
-    job_id TEXT,
-    state TEXT NOT NULL,
-    goal TEXT NOT NULL,
-    target_count INTEGER NOT NULL,
-    base_release_id TEXT NOT NULL,
-    base_commit_sha TEXT NOT NULL,
-    base_manifest_digest TEXT NOT NULL,
-    request_json TEXT NOT NULL,
-    payload_json TEXT NOT NULL,
+"""
+
+_UNIFIED_RESEARCH_SCHEMA_SQL = """
+CREATE TABLE IF NOT EXISTS research_projects (
+    project_id TEXT PRIMARY KEY,
+    title TEXT NOT NULL,
+    sort_order INTEGER NOT NULL DEFAULT 0,
+    archived_at TEXT NOT NULL DEFAULT '',
     created_at TEXT NOT NULL,
     updated_at TEXT NOT NULL
 );
-CREATE INDEX IF NOT EXISTS idx_admin_campaigns_updated
-    ON admin_campaigns(updated_at DESC, campaign_id);
-CREATE TABLE IF NOT EXISTS admin_campaign_works (
-    campaign_id TEXT NOT NULL,
-    work_id TEXT NOT NULL,
+CREATE INDEX IF NOT EXISTS idx_research_projects_order
+    ON research_projects(archived_at, sort_order, updated_at DESC, project_id);
+CREATE TABLE IF NOT EXISTS research_sessions (
+    session_id TEXT PRIMARY KEY,
+    project_id TEXT,
+    title TEXT NOT NULL,
+    active_run_id TEXT,
+    state TEXT NOT NULL,
+    revision INTEGER NOT NULL DEFAULT 1,
+    graph_revision INTEGER NOT NULL DEFAULT 0,
+    source_ids_json TEXT NOT NULL DEFAULT '[]',
+    provider_profile_id TEXT NOT NULL DEFAULT 'siliconflow',
+    model TEXT NOT NULL DEFAULT '',
+    archived_at TEXT NOT NULL DEFAULT '',
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL,
+    FOREIGN KEY(project_id) REFERENCES research_projects(project_id),
+    FOREIGN KEY(active_run_id) REFERENCES research_goal_runs(run_id)
+);
+CREATE INDEX IF NOT EXISTS idx_research_sessions_sidebar
+    ON research_sessions(archived_at, project_id, updated_at DESC, session_id);
+CREATE TABLE IF NOT EXISTS research_session_runs (
+    session_id TEXT NOT NULL,
+    run_id TEXT NOT NULL UNIQUE,
+    sequence INTEGER NOT NULL,
+    created_at TEXT NOT NULL,
+    PRIMARY KEY(session_id, sequence),
+    FOREIGN KEY(session_id) REFERENCES research_sessions(session_id),
+    FOREIGN KEY(run_id) REFERENCES research_goal_runs(run_id)
+);
+CREATE TABLE IF NOT EXISTS research_session_results (
+    session_id TEXT NOT NULL,
+    run_id TEXT NOT NULL,
+    membership TEXT NOT NULL,
+    item_id TEXT NOT NULL,
     rank INTEGER NOT NULL,
-    selected INTEGER NOT NULL DEFAULT 0,
-    state TEXT NOT NULL,
-    availability_status TEXT NOT NULL,
-    cloud_match_id TEXT NOT NULL,
-    cloud_revision INTEGER,
-    cloud_digest TEXT NOT NULL,
-    match_kind TEXT NOT NULL,
-    metadata_json TEXT NOT NULL,
-    checkpoint_json TEXT NOT NULL,
-    error_json TEXT,
-    temp_deleted_at TEXT NOT NULL,
-    PRIMARY KEY(campaign_id, work_id),
-    FOREIGN KEY(campaign_id) REFERENCES admin_campaigns(campaign_id)
+    payload_json TEXT NOT NULL,
+    created_at TEXT NOT NULL,
+    PRIMARY KEY(session_id, run_id, membership, item_id),
+    UNIQUE(session_id, run_id, membership, rank),
+    FOREIGN KEY(session_id) REFERENCES research_sessions(session_id),
+    FOREIGN KEY(run_id) REFERENCES research_goal_runs(run_id)
 );
-CREATE INDEX IF NOT EXISTS idx_admin_campaign_works_filter
-    ON admin_campaign_works(campaign_id, selected, state, rank, work_id);
-CREATE TABLE IF NOT EXISTS admin_staged_items (
-    stage_id TEXT PRIMARY KEY,
-    campaign_id TEXT NOT NULL,
-    work_id TEXT NOT NULL,
-    entity TEXT NOT NULL,
-    match_kind TEXT NOT NULL,
-    similarity REAL NOT NULL,
-    decision TEXT NOT NULL,
-    ambiguous_confirmed INTEGER NOT NULL DEFAULT 0,
-    expected_revision INTEGER,
-    expected_digest TEXT NOT NULL,
-    content_digest TEXT NOT NULL,
+CREATE INDEX IF NOT EXISTS idx_research_session_results_page
+    ON research_session_results(session_id, run_id, membership, rank, item_id);
+CREATE TABLE IF NOT EXISTS research_graph_items (
+    session_id TEXT NOT NULL,
+    principle_id TEXT NOT NULL,
+    record_kind TEXT NOT NULL,
+    origin TEXT NOT NULL,
+    visible INTEGER NOT NULL DEFAULT 1,
+    x REAL NOT NULL DEFAULT 0,
+    y REAL NOT NULL DEFAULT 0,
+    position_source TEXT NOT NULL DEFAULT 'automatic',
+    z_index INTEGER NOT NULL DEFAULT 0,
+    payload_json TEXT NOT NULL DEFAULT '{}',
+    updated_at TEXT NOT NULL,
+    PRIMARY KEY(session_id, principle_id),
+    FOREIGN KEY(session_id) REFERENCES research_sessions(session_id)
+);
+CREATE INDEX IF NOT EXISTS idx_research_graph_items_visible
+    ON research_graph_items(session_id, visible, z_index, principle_id);
+CREATE TABLE IF NOT EXISTS research_graph_state (
+    session_id TEXT PRIMARY KEY,
+    viewport_json TEXT NOT NULL DEFAULT '{}',
+    theme TEXT NOT NULL DEFAULT 'daylight',
+    revision INTEGER NOT NULL DEFAULT 0,
+    updated_at TEXT NOT NULL,
+    FOREIGN KEY(session_id) REFERENCES research_sessions(session_id)
+);
+CREATE TABLE IF NOT EXISTS research_artifacts (
+    artifact_id TEXT PRIMARY KEY,
+    session_id TEXT NOT NULL,
+    kind TEXT NOT NULL,
+    state TEXT NOT NULL,
     payload_json TEXT NOT NULL,
     created_at TEXT NOT NULL,
     updated_at TEXT NOT NULL,
-    FOREIGN KEY(campaign_id) REFERENCES admin_campaigns(campaign_id)
+    FOREIGN KEY(session_id) REFERENCES research_sessions(session_id)
 );
-CREATE INDEX IF NOT EXISTS idx_admin_staged_campaign
-    ON admin_staged_items(campaign_id, decision, match_kind, stage_id);
-CREATE TABLE IF NOT EXISTS admin_cloud_syncs (
-    sync_id TEXT PRIMARY KEY,
-    campaign_id TEXT NOT NULL,
-    state TEXT NOT NULL,
-    payload_json TEXT NOT NULL,
+CREATE INDEX IF NOT EXISTS idx_research_artifacts_session
+    ON research_artifacts(session_id, kind, state, updated_at DESC, artifact_id);
+CREATE TABLE IF NOT EXISTS candidate_foundation_assessments (
+    assessment_id TEXT PRIMARY KEY,
+    candidate_id TEXT NOT NULL,
+    revision INTEGER NOT NULL,
+    verdict TEXT NOT NULL,
+    rationale TEXT NOT NULL,
+    candidate_meta_ids_json TEXT NOT NULL DEFAULT '[]',
+    provider TEXT NOT NULL DEFAULT '',
+    model TEXT NOT NULL DEFAULT '',
+    trace_json TEXT NOT NULL DEFAULT '{}',
     created_at TEXT NOT NULL,
-    updated_at TEXT NOT NULL,
-    FOREIGN KEY(campaign_id) REFERENCES admin_campaigns(campaign_id)
+    UNIQUE(candidate_id, revision),
+    FOREIGN KEY(candidate_id) REFERENCES local_candidates(candidate_id)
 );
-CREATE INDEX IF NOT EXISTS idx_admin_cloud_syncs_updated
-    ON admin_cloud_syncs(updated_at DESC, sync_id);
+CREATE INDEX IF NOT EXISTS idx_candidate_foundation_assessments_current
+    ON candidate_foundation_assessments(candidate_id, revision DESC);
+CREATE TABLE IF NOT EXISTS candidate_foundation_links (
+    link_id TEXT PRIMARY KEY,
+    assessment_id TEXT NOT NULL,
+    candidate_id TEXT NOT NULL,
+    meta_principle_id TEXT NOT NULL,
+    relation_type TEXT NOT NULL,
+    direction TEXT NOT NULL,
+    rationale TEXT NOT NULL,
+    compatibility_json TEXT NOT NULL,
+    confidence REAL NOT NULL,
+    status TEXT NOT NULL,
+    created_at TEXT NOT NULL,
+    FOREIGN KEY(assessment_id) REFERENCES candidate_foundation_assessments(assessment_id),
+    FOREIGN KEY(candidate_id) REFERENCES local_candidates(candidate_id)
+);
+CREATE INDEX IF NOT EXISTS idx_candidate_foundation_links_candidate
+    ON candidate_foundation_links(candidate_id, status, confidence DESC, link_id);
 """
 
 _LITERATURE_SCHEMA_SQL = """
@@ -792,9 +830,7 @@ def migration_lock(db_path: Path) -> Iterator[None]:
             pass
 
 
-def _migration_applied(
-    db_path: Path, version: str = GLOBAL_CLOUD_WORKFLOW_MIGRATION_VERSION
-) -> bool:
+def _migration_applied(db_path: Path, version: str = UNIFIED_RESEARCH_MIGRATION_VERSION) -> bool:
     if not db_path.exists():
         return False
     with connect_sqlite(db_path) as conn:
@@ -803,7 +839,7 @@ def _migration_applied(
         ).fetchone()
         if not present:
             return False
-        if version != GLOBAL_CLOUD_WORKFLOW_MIGRATION_VERSION:
+        if version != UNIFIED_RESEARCH_MIGRATION_VERSION:
             return (
                 conn.execute(
                     "SELECT 1 FROM schema_migrations WHERE version=?", (version,)
@@ -812,11 +848,11 @@ def _migration_applied(
             )
         required = {
             LEGACY_IMPORT_MIGRATION,
-            ADMIN_MIGRATION_VERSION,
             LITERATURE_MIGRATION_VERSION,
             HUMAN_CENTERED_MIGRATION_VERSION,
             USABILITY_RECOVERY_MIGRATION_VERSION,
             GLOBAL_CLOUD_WORKFLOW_MIGRATION_VERSION,
+            UNIFIED_RESEARCH_MIGRATION_VERSION,
         }
         applied = {
             str(row[0])
@@ -825,7 +861,27 @@ def _migration_applied(
                 tuple(sorted(required)),
             )
         }
-        return applied == required
+        tables = {
+            str(row[0])
+            for row in conn.execute(
+                "SELECT name FROM sqlite_master WHERE type='table' AND name IN "
+                "('research_projects','research_sessions','research_session_runs',"
+                "'research_session_results','research_graph_items','research_graph_state',"
+                "'research_artifacts','candidate_foundation_assessments',"
+                "'candidate_foundation_links')"
+            )
+        }
+        return applied == required and tables == {
+            "research_projects",
+            "research_sessions",
+            "research_session_runs",
+            "research_session_results",
+            "research_graph_items",
+            "research_graph_state",
+            "research_artifacts",
+            "candidate_foundation_assessments",
+            "candidate_foundation_links",
+        }
 
 
 def _backup_database(db_path: Path) -> tuple[Path, str]:
@@ -1550,14 +1606,14 @@ def migrate_workspace(db_path: Path, *, legacy_database_existed: bool) -> dict[s
     db_path = Path(db_path)
     if _migration_applied(db_path):
         return {
-            "version": GLOBAL_CLOUD_WORKFLOW_MIGRATION_VERSION,
+            "version": UNIFIED_RESEARCH_MIGRATION_VERSION,
             "applied": False,
             "already_current": True,
         }
     with migration_lock(db_path):
         if _migration_applied(db_path):
             return {
-                "version": GLOBAL_CLOUD_WORKFLOW_MIGRATION_VERSION,
+                "version": UNIFIED_RESEARCH_MIGRATION_VERSION,
                 "applied": False,
                 "already_current": True,
             }
@@ -1567,26 +1623,29 @@ def migrate_workspace(db_path: Path, *, legacy_database_existed: bool) -> dict[s
             backup_path, backup_sha256 = _backup_database(db_path)
         now = _utc_now()
         legacy_checksum = hashlib.sha256(_SCHEMA_SQL.encode()).hexdigest()
-        admin_checksum = hashlib.sha256((_SCHEMA_SQL + _ADMIN_SCHEMA_SQL).encode()).hexdigest()
         literature_checksum = hashlib.sha256(
-            (_SCHEMA_SQL + _ADMIN_SCHEMA_SQL + _LITERATURE_SCHEMA_SQL).encode()
+            (_SCHEMA_SQL + _LITERATURE_SCHEMA_SQL).encode()
         ).hexdigest()
         human_centered_checksum = hashlib.sha256(
+            (_SCHEMA_SQL + _LITERATURE_SCHEMA_SQL + _HUMAN_CENTERED_SCHEMA_SQL).encode()
+        ).hexdigest()
+        global_cloud_checksum = hashlib.sha256(
             (
                 _SCHEMA_SQL
-                + _ADMIN_SCHEMA_SQL
                 + _LITERATURE_SCHEMA_SQL
                 + _HUMAN_CENTERED_SCHEMA_SQL
+                + _USABILITY_RECOVERY_SCHEMA_SQL
+                + _GLOBAL_CLOUD_WORKFLOW_SCHEMA_SQL
             ).encode()
         ).hexdigest()
         checksum = hashlib.sha256(
             (
                 _SCHEMA_SQL
-                + _ADMIN_SCHEMA_SQL
                 + _LITERATURE_SCHEMA_SQL
                 + _HUMAN_CENTERED_SCHEMA_SQL
                 + _USABILITY_RECOVERY_SCHEMA_SQL
                 + _GLOBAL_CLOUD_WORKFLOW_SCHEMA_SQL
+                + _UNIFIED_RESEARCH_SCHEMA_SQL
             ).encode()
         ).hexdigest()
         conn = connect_sqlite(db_path, timeout=30)
@@ -1621,17 +1680,6 @@ def migrate_workspace(db_path: Path, *, legacy_database_existed: bool) -> dict[s
                 conn.execute(
                     "INSERT INTO schema_migrations(version, checksum, applied_at) VALUES (?, ?, ?)",
                     (LEGACY_IMPORT_MIGRATION, legacy_checksum, now),
-                )
-            admin_applied = conn.execute(
-                "SELECT 1 FROM schema_migrations WHERE version=?", (ADMIN_MIGRATION_VERSION,)
-            ).fetchone()
-            if not admin_applied:
-                for statement in _ADMIN_SCHEMA_SQL.split(";"):
-                    if statement.strip():
-                        conn.execute(statement)
-                conn.execute(
-                    "INSERT INTO schema_migrations(version, checksum, applied_at) VALUES (?, ?, ?)",
-                    (ADMIN_MIGRATION_VERSION, admin_checksum, now),
                 )
             literature_applied = conn.execute(
                 "SELECT 1 FROM schema_migrations WHERE version=?",
@@ -1675,7 +1723,6 @@ def migrate_workspace(db_path: Path, *, legacy_database_existed: bool) -> dict[s
                     hashlib.sha256(
                         (
                             _SCHEMA_SQL
-                            + _ADMIN_SCHEMA_SQL
                             + _LITERATURE_SCHEMA_SQL
                             + _HUMAN_CENTERED_SCHEMA_SQL
                             + _USABILITY_RECOVERY_SCHEMA_SQL
@@ -1689,7 +1736,42 @@ def migrate_workspace(db_path: Path, *, legacy_database_existed: bool) -> dict[s
                     conn.execute(statement)
             conn.execute(
                 "INSERT OR IGNORE INTO schema_migrations(version, checksum, applied_at) VALUES (?, ?, ?)",
-                (GLOBAL_CLOUD_WORKFLOW_MIGRATION_VERSION, checksum, now),
+                (GLOBAL_CLOUD_WORKFLOW_MIGRATION_VERSION, global_cloud_checksum, now),
+            )
+            for statement in _UNIFIED_RESEARCH_SCHEMA_SQL.split(";"):
+                if statement.strip():
+                    conn.execute(statement)
+            conn.execute(
+                """
+                INSERT OR IGNORE INTO research_sessions(
+                    session_id, project_id, title, active_run_id, state, revision,
+                    graph_revision, source_ids_json, provider_profile_id, model,
+                    archived_at, created_at, updated_at
+                )
+                SELECT 'session:' || run_id, NULL, goal, run_id, state, 1, 0,
+                       json_extract(request_json, '$.source_ids'),
+                       COALESCE(json_extract(request_json, '$.provider_profile_id'), 'siliconflow'),
+                       COALESCE(json_extract(request_json, '$.model'), ''), '', created_at, updated_at
+                FROM research_goal_runs
+                """
+            )
+            conn.execute(
+                """
+                INSERT OR IGNORE INTO research_session_runs(session_id, run_id, sequence, created_at)
+                SELECT 'session:' || run_id, run_id, 1, created_at FROM research_goal_runs
+                """
+            )
+            conn.execute(
+                """
+                INSERT OR IGNORE INTO research_graph_state(
+                    session_id, viewport_json, theme, revision, updated_at
+                )
+                SELECT session_id, '{}', 'daylight', 0, updated_at FROM research_sessions
+                """
+            )
+            conn.execute(
+                "INSERT OR IGNORE INTO schema_migrations(version, checksum, applied_at) VALUES (?, ?, ?)",
+                (UNIFIED_RESEARCH_MIGRATION_VERSION, checksum, now),
             )
             conn.commit()
         except Exception:
@@ -1698,7 +1780,7 @@ def migrate_workspace(db_path: Path, *, legacy_database_existed: bool) -> dict[s
         finally:
             conn.close()
         receipt = {
-            "version": GLOBAL_CLOUD_WORKFLOW_MIGRATION_VERSION,
+            "version": UNIFIED_RESEARCH_MIGRATION_VERSION,
             "applied": True,
             "schema_checksum": checksum,
             "backup_path": str(backup_path) if backup_path else "",
@@ -1719,7 +1801,7 @@ def migrate_workspace(db_path: Path, *, legacy_database_existed: bool) -> dict[s
                 encoding="utf-8",
             )
             os.chmod(legacy_receipt_path, 0o600)
-        receipt_path = receipt_dir / f"{GLOBAL_CLOUD_WORKFLOW_MIGRATION_VERSION}.json"
+        receipt_path = receipt_dir / f"{UNIFIED_RESEARCH_MIGRATION_VERSION}.json"
         if not receipt_path.exists():
             receipt_path.write_text(
                 json.dumps(receipt, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

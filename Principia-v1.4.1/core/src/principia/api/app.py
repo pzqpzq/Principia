@@ -2,11 +2,11 @@ from __future__ import annotations
 
 import asyncio
 import json
-import os
 import secrets
 import threading
 import time
 import uuid
+from collections.abc import Callable
 from pathlib import Path
 from typing import Any, Literal
 
@@ -18,27 +18,15 @@ from principia_retrieval.embeddings import SiliconFlowEmbeddingClient
 
 from .._version import __version__
 from ..application.facade import Principia
-from ..cloud import (
-    AdminCampaignRequest,
-    AdminExtractRequest,
-    AdminSelectionRequest,
-    AdminSyncRequest,
-    BulkStagingDecisionRequest,
-    CloudSearchRequest,
-    ResearchGoalRunRequest,
-    StagingDecisionRequest,
-)
+from ..cloud import CloudSearchRequest, ResearchGoalRunRequest
 from ..domain import JobRecord
-from ..providers import ModelPolicy
+from ..providers import ModelPolicy, ProviderRequestError
 from .models import (
-    AdminDecisionRequest,
-    AdminHarvestRequest,
     AreaSuggestionCreateRequest,
     AreaSuggestionEditRequest,
     AreaVersionRequest,
     CandidateDisplayEditRequest,
     CatalogRefreshRequest,
-    ChangesetRequest,
     CollectionEditRequest,
     DiscoveryRequest,
     ErrorBody,
@@ -62,7 +50,12 @@ from .models import (
     PrincipleGraphViewResponse,
     PrincipleRelationsResponse,
     ProviderCredentialRequest,
-    PublishRequest,
+    ResearchArtifactCreateRequest,
+    ResearchGraphMutationRequest,
+    ResearchProjectCreateRequest,
+    ResearchProjectUpdateRequest,
+    ResearchSessionCreateRequest,
+    ResearchSessionUpdateRequest,
     ScenarioCreateRequest,
     ScenarioEventRequest,
     SourceDocumentPage,
@@ -111,19 +104,20 @@ def _error(
 def create_app(
     principia: Principia,
     *,
-    admin_mode: bool = False,
     bound_port: int | None = None,
     test_mode: bool = False,
+    configure_router: Callable[[FastAPI, APIRouter, Principia], None] | None = None,
+    ui_root_override: Path | None = None,
+    extra_spa_routes: set[str] | None = None,
 ) -> FastAPI:
     app = FastAPI(
         title="Principia Local API",
         version=__version__,
-        docs_url="/api/docs" if admin_mode or test_mode else None,
+        docs_url="/api/docs" if test_mode else None,
         redoc_url=None,
         openapi_url="/api/v1/openapi.json",
     )
     app.state.principia = principia
-    app.state.admin_mode = admin_mode
     app.state.session_token = secrets.token_urlsafe(32)
     app.state.bound_port = bound_port
     allowed_hosts = {"127.0.0.1", "localhost", "[::1]"}
@@ -236,6 +230,18 @@ def create_app(
             message=str(exc),
         )
 
+    @app.exception_handler(ProviderRequestError)
+    async def provider_request_error(request: Request, exc: ProviderRequestError) -> JSONResponse:
+        status = exc.status_code if exc.status_code and 400 <= exc.status_code < 600 else 502
+        return _error(
+            request,
+            status=status,
+            code="provider_request_failed",
+            category=exc.category,
+            message=str(exc),
+            retryable=exc.retryable,
+        )
+
     @app.exception_handler(Exception)
     async def unhandled_error(request: Request, exc: Exception) -> JSONResponse:
         return _error(
@@ -249,6 +255,50 @@ def create_app(
 
     router = APIRouter(prefix="/api/v1")
     working_directory_lock = threading.RLock()
+    query_embedding_lock = threading.RLock()
+    query_embedding_cache: dict[tuple[str, str, str], list[float]] = {}
+
+    def cloud_query_embedding(query: str) -> tuple[list[float] | None, str]:
+        """Embed one public search query when the active Cloud can use it.
+
+        The bounded in-memory cache prevents Explorer facets and Graph/Card
+        toggles from paying for the same query repeatedly.  Principle contents
+        never enter this request; releases without vectors use the deterministic
+        conceptual FTS path instead.
+        """
+
+        normalized = " ".join(str(query or "").split())
+        status = principia.global_cloud.status()
+        if not normalized or not bool(status.get("vectors_complete")):
+            return None, "cloud_vectors_unavailable"
+        cache_key = (
+            str(principia.workspace.working_directory_root),
+            str(status.get("release_id") or ""),
+            normalized.casefold(),
+        )
+        with query_embedding_lock:
+            cached = query_embedding_cache.get(cache_key)
+        if cached is not None:
+            return list(cached), ""
+        try:
+            profile = principia.local.provider_profile("siliconflow")
+            key = principia.local.credentials.api_key("siliconflow")
+            if not key:
+                return None, "embedding_credential_unavailable"
+            vector = SiliconFlowEmbeddingClient(
+                api_key=key,
+                base_url=profile.base_url,
+                dimensions=1024,
+                timeout=15,
+                max_retries=1,
+            ).embed([normalized])[0]
+            with query_embedding_lock:
+                query_embedding_cache[cache_key] = list(vector)
+                while len(query_embedding_cache) > 64:
+                    query_embedding_cache.pop(next(iter(query_embedding_cache)))
+            return vector, ""
+        except Exception as exc:  # noqa: BLE001
+            return None, type(exc).__name__
 
     def working_directory_response(*, switched: bool) -> WorkingDirectoryResponse:
         layout = principia.local.storage_layout_disclosure()
@@ -282,8 +332,6 @@ def create_app(
 
     def switch_working_directory(path: str) -> WorkingDirectoryResponse:
         nonlocal principia
-        if admin_mode:
-            raise ValueError("Admin runtime working directories cannot be switched in place")
         try:
             target = Path(path).expanduser().resolve(strict=True)
         except OSError as exc:
@@ -316,9 +364,8 @@ def create_app(
     def runtime() -> dict[str, Any]:
         return {
             "version": __version__,
-            "admin_mode": admin_mode,
             "demo_mode": principia.diagnostics()["demo_mode"],
-            "routes": ["library", "map", "local"] + (["admin"] if admin_mode else []),
+            "routes": ["research", "library", "map", "local"],
             "graph": {"default_nodes": 60, "soft_limit": 150, "hard_limit": 500},
         }
 
@@ -382,27 +429,9 @@ def create_app(
 
     @router.post("/cloud/search")
     def cloud_search(payload: CloudSearchRequest) -> dict[str, Any]:
-        query_vector: list[float] | None = None
-        embedding_error = ""
-        status = principia.global_cloud.status()
-        if payload.query and status.get("vectors_complete"):
-            try:
-                profile = principia.local.provider_profile("siliconflow")
-                key = principia.local.credentials.api_key("siliconflow")
-                if key:
-                    query_vector = SiliconFlowEmbeddingClient(
-                        api_key=key,
-                        base_url=profile.base_url,
-                        dimensions=1024,
-                        timeout=15,
-                        max_retries=1,
-                    ).embed([payload.query])[0]
-                else:
-                    embedding_error = "embedding_credential_unavailable"
-            except Exception as exc:
-                embedding_error = type(exc).__name__
+        query_vector, embedding_error = cloud_query_embedding(payload.query)
         result = principia.global_cloud.search(payload, query_vector=query_vector)
-        if embedding_error:
+        if embedding_error and embedding_error != "cloud_vectors_unavailable":
             result["degraded_reason"] = embedding_error
             result["ranking_mode"] = str(result["ranking_mode"]) + "_degraded"
         return result
@@ -428,12 +457,57 @@ def create_app(
             raise KeyError(principle_id)
         return {"items": items}
 
+    @router.get("/cloud/principles/{principle_id}/foundations")
+    def cloud_principle_foundations(principle_id: str) -> dict[str, Any]:
+        item = principia.global_cloud.foundations(principle_id)
+        if item is None:
+            raise KeyError(principle_id)
+        return item
+
     @router.get("/cloud/principles/{principle_id}")
     def cloud_principle(principle_id: str) -> dict[str, Any]:
         item = principia.global_cloud.principle(principle_id)
         if item is None:
             raise KeyError(principle_id)
         return item
+
+    @router.get("/cloud/meta-principles/{principle_id}/revisions")
+    def cloud_meta_principle_revisions(principle_id: str) -> dict[str, Any]:
+        items = principia.global_cloud.principle_revisions(principle_id)
+        if not items or any(item.get("principle_class") != "meta" for item in items):
+            raise KeyError(principle_id)
+        return {"items": items}
+
+    @router.get("/cloud/meta-principles/{principle_id}")
+    def cloud_meta_principle(principle_id: str) -> dict[str, Any]:
+        item = principia.global_cloud.principle(principle_id)
+        if item is None or item.get("principle_class") != "meta":
+            raise KeyError(principle_id)
+        return item
+
+    @router.get("/cloud/graph/viewport")
+    def cloud_graph_viewport(
+        min_x: float = Query(default=-10_000),
+        max_x: float = Query(default=10_000),
+        min_y: float = Query(default=-10_000),
+        max_y: float = Query(default=10_000),
+        zoom: float = Query(default=1.0, ge=0.01, le=100),
+        areas: str = "",
+        q: str = Query(default="", max_length=4_000),
+        limit: int = Query(default=2_500, ge=1, le=2_500),
+    ) -> dict[str, Any]:
+        if min_x >= max_x or min_y >= max_y:
+            raise ValueError("invalid graph viewport bounds")
+        return principia.global_cloud.graph_viewport(
+            min_x=min_x,
+            max_x=max_x,
+            min_y=min_y,
+            max_y=max_y,
+            zoom=zoom,
+            areas=[value for value in areas.split(",") if value],
+            query=q,
+            limit=limit,
+        )
 
     @router.get("/library/summary")
     def library_summary() -> LibrarySummaryResponse:
@@ -478,6 +552,147 @@ def create_app(
         if item is None:
             raise KeyError(run_id)
         return item
+
+    @router.get("/research-projects")
+    def research_projects(include_archived: bool = False) -> dict[str, Any]:
+        return {"items": principia.research_sessions.projects(include_archived=include_archived)}
+
+    @router.post("/research-projects", status_code=201)
+    def create_research_project(payload: ResearchProjectCreateRequest) -> dict[str, Any]:
+        return principia.research_sessions.create_project(payload.title)
+
+    @router.patch("/research-projects/{project_id}")
+    def update_research_project(
+        project_id: str, payload: ResearchProjectUpdateRequest
+    ) -> dict[str, Any]:
+        return principia.research_sessions.update_project(
+            project_id, title=payload.title, archived=payload.archived
+        )
+
+    @router.delete("/research-projects/{project_id}")
+    def delete_research_project(project_id: str) -> dict[str, Any]:
+        return principia.research_sessions.delete_project(project_id)
+
+    @router.get("/research-sessions")
+    def research_sessions(
+        project_id: str | None = None, include_archived: bool = False
+    ) -> dict[str, Any]:
+        return {
+            "items": principia.research_sessions.sessions(
+                project_id=project_id, include_archived=include_archived
+            )
+        }
+
+    @router.post("/research-sessions", status_code=202)
+    def create_research_session(
+        payload: ResearchSessionCreateRequest,
+        egress_confirmed: bool = False,
+    ) -> dict[str, Any]:
+        return principia.research_sessions.create(
+            payload.run,
+            title=payload.title,
+            project_id=payload.project_id,
+            egress_confirmed=egress_confirmed,
+        )
+
+    @router.get("/research-sessions/{session_id}")
+    def research_session(session_id: str) -> dict[str, Any]:
+        item = principia.research_sessions.detail(session_id)
+        if item is None:
+            raise KeyError(session_id)
+        return item
+
+    @router.patch("/research-sessions/{session_id}")
+    def update_research_session(
+        session_id: str, payload: ResearchSessionUpdateRequest
+    ) -> dict[str, Any]:
+        project_id: str | None | object = (
+            payload.project_id if "project_id" in payload.model_fields_set else ...
+        )
+        return principia.research_sessions.update_session(
+            session_id,
+            title=payload.title,
+            project_id=project_id,
+            archived=payload.archived,
+            expected_revision=payload.expected_revision,
+        )
+
+    @router.delete("/research-sessions/{session_id}")
+    def delete_research_session(
+        session_id: str, expected_revision: int = Query(ge=1)
+    ) -> dict[str, Any]:
+        return principia.research_sessions.delete_session(
+            session_id, expected_revision=expected_revision
+        )
+
+    @router.post("/research-sessions/{session_id}/runs", status_code=202)
+    def start_research_session_run(
+        session_id: str,
+        payload: ResearchGoalRunRequest,
+        egress_confirmed: bool = False,
+    ) -> dict[str, Any]:
+        return principia.research_sessions.start_run(
+            session_id, payload, egress_confirmed=egress_confirmed
+        )
+
+    @router.get("/research-sessions/{session_id}/results")
+    def research_session_results(
+        session_id: str,
+        membership: Literal["global", "local", "combined", "meta"] = "combined",
+        limit: int = Query(default=100, ge=1, le=200),
+        offset: int = Query(default=0, ge=0),
+    ) -> dict[str, Any]:
+        return principia.research_sessions.results(
+            session_id, membership, limit=limit, offset=offset
+        )
+
+    @router.get("/research-sessions/{session_id}/events")
+    def research_session_events(session_id: str, after: int = 0) -> dict[str, Any]:
+        item = principia.research_sessions.detail(session_id)
+        if item is None:
+            raise KeyError(session_id)
+        active = item.get("active_run") or {}
+        return {
+            "items": principia.repository.job_events(str(active.get("job_id") or ""), after=after)
+            if active
+            else []
+        }
+
+    @router.get("/research-sessions/{session_id}/graph")
+    def research_session_graph(session_id: str) -> dict[str, Any]:
+        return principia.research_sessions.graph(session_id)
+
+    @router.patch("/research-sessions/{session_id}/graph")
+    def mutate_research_session_graph(
+        session_id: str, payload: ResearchGraphMutationRequest
+    ) -> dict[str, Any]:
+        return principia.research_sessions.mutate_graph(
+            session_id,
+            payload.operations,
+            expected_revision=payload.expected_revision,
+        )
+
+    @router.get("/research-sessions/{session_id}/artifacts")
+    def research_session_artifacts(session_id: str) -> dict[str, Any]:
+        return {"items": principia.research_sessions.artifacts(session_id)}
+
+    @router.post("/research-sessions/{session_id}/artifacts", status_code=201)
+    def create_research_session_artifact(
+        session_id: str, payload: ResearchArtifactCreateRequest
+    ) -> dict[str, Any]:
+        return principia.research_sessions.save_artifact(session_id, payload.kind, payload.payload)
+
+    @router.delete("/research-sessions/{session_id}/artifacts/{artifact_id}")
+    def delete_research_session_artifact(session_id: str, artifact_id: str) -> dict[str, Any]:
+        return principia.research_sessions.delete_artifact(session_id, artifact_id)
+
+    @router.delete("/research-sessions/{session_id}/virtual-principles/{virtual_id}")
+    def delete_research_session_virtual_principle(
+        session_id: str, virtual_id: str, candidate_id: str = ""
+    ) -> dict[str, Any]:
+        return principia.research_sessions.delete_virtual_principle(
+            session_id, virtual_id, candidate_id=candidate_id
+        )
 
     @router.get("/library/collections")
     def library_collections(
@@ -611,6 +826,9 @@ def create_app(
         cursor: str | None = None,
         page: int = Query(default=1, ge=1, le=1_000_000),
     ) -> PrincipleCardPage:
+        query_vector, _ = (
+            cloud_query_embedding(q) if q and scope in {"global", "combined"} else (None, "")
+        )
         return PrincipleCardPage.model_validate(
             principia.explorer.browse(
                 scope=scope,
@@ -633,6 +851,7 @@ def create_app(
                 cursor=cursor,
                 page=page,
                 page_mode=True,
+                query_vector=query_vector,
             )
         )
 
@@ -661,7 +880,11 @@ def create_app(
             "relevance", "updated", "reliability", "influence", "supporting_papers", "title"
         ] = "updated",
         limit: int = Query(default=120, ge=1, le=200),
+        page: int = Query(default=1, ge=1, le=1_000_000),
     ) -> PrincipleGraphViewResponse:
+        query_vector, _ = (
+            cloud_query_embedding(q) if q and scope in {"global", "combined"} else (None, "")
+        )
         return PrincipleGraphViewResponse.model_validate(
             principia.explorer.graph_view(
                 scope=scope,
@@ -681,6 +904,8 @@ def create_app(
                 virtual_only=virtual_only,
                 sort=sort,
                 limit=limit,
+                page=page,
+                query_vector=query_vector,
             )
         )
 
@@ -864,9 +1089,7 @@ def create_app(
             source = principia.local.register_source(folder)
             sources.append(source)
             jobs.append(
-                principia.local.start_source_index(str(source["source_id"])).model_dump(
-                    mode="json"
-                )
+                principia.local.start_source_index(str(source["source_id"])).model_dump(mode="json")
             )
         return {"sources": sources, "jobs": jobs}
 
@@ -1209,33 +1432,18 @@ def create_app(
 
     @router.post("/jobs/{job_id}/pause")
     def pause_job(job_id: str) -> dict[str, Any]:
-        record = principia.repository.get_job(job_id)
-        if record and record.kind == "admin_extraction" and principia.admin_campaigns is not None:
-            return principia.admin_campaigns.pause(job_id)
         return principia.local.pause(job_id).model_dump(mode="json")
 
     @router.post("/jobs/{job_id}/resume")
     def resume_job(job_id: str) -> dict[str, Any]:
-        record = principia.repository.get_job(job_id)
-        if record and record.kind == "admin_extraction" and principia.admin_campaigns is not None:
-            return principia.admin_campaigns.resume(job_id)
         return principia.local.continue_job(job_id).model_dump(mode="json")
 
     @router.post("/jobs/{job_id}/retry-failed")
     def retry_failed_job(job_id: str) -> dict[str, Any]:
-        record = principia.repository.get_job(job_id)
-        if record and record.kind == "admin_extraction" and principia.admin_campaigns is not None:
-            campaign_id = str((record.checkpoint or {}).get("campaign_id") or "")
-            return principia.admin_campaigns.extract(
-                campaign_id, AdminExtractRequest(retry=True, egress_confirmed=True)
-            )
         return principia.local.retry_failed(job_id).model_dump(mode="json")
 
     @router.post("/jobs/{job_id}/cancel")
     def cancel_job(job_id: str) -> dict[str, Any]:
-        record = principia.repository.get_job(job_id)
-        if record and record.kind == "admin_extraction" and principia.admin_campaigns is not None:
-            return principia.admin_campaigns.cancel(job_id)
         return principia.local.cancel(job_id).model_dump(mode="json")
 
     @router.get("/scenarios")
@@ -1277,295 +1485,11 @@ def create_app(
         principia.scenarios.discard(scenario_id)
         return {"scenario_id": scenario_id, "status": "discarded"}
 
-    if admin_mode:
-        admin = APIRouter(prefix="/admin")
-
-        @admin.get("/review")
-        def review_queue(status: str | None = None) -> dict[str, Any]:
-            assert principia.admin is not None
-            return {"items": principia.admin.queue(status=status)}
-
-        @admin.get("/runtime")
-        def admin_runtime() -> dict[str, Any]:
-            return {
-                "admin_mode": True,
-                "github_write_enabled": bool(os.getenv("PRINCIPIA_ENABLE_GITHUB_WRITE") == "1"),
-                "publication_default": "dry_run",
-            }
-
-        @admin.get("/dashboard")
-        def admin_dashboard() -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            with principia.repository.connect() as conn:
-                pending = int(
-                    conn.execute(
-                        "SELECT COUNT(*) FROM admin_cloud_syncs "
-                        "WHERE state IN ('pr_creating','checks_running','auto_merge_queued',"
-                        "'merged','release_building','needs_resolution')"
-                    ).fetchone()[0]
-                )
-            return {
-                "cloud": principia.global_cloud.status(),
-                "campaign_count": len(principia.admin_campaigns.list_campaigns()),
-                "pending_syncs": pending,
-                "temp_sweep": principia.admin_campaigns.sweep_receipt,
-            }
-
-        @admin.post("/campaigns", status_code=202)
-        def create_admin_campaign(payload: AdminCampaignRequest) -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            return principia.admin_campaigns.create(payload)
-
-        @admin.get("/campaigns")
-        def list_admin_campaigns() -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            return {"items": principia.admin_campaigns.list_campaigns()}
-
-        @admin.get("/campaigns/{campaign_id}/papers")
-        def admin_campaign_papers(
-            campaign_id: str,
-            limit: int = Query(default=100, ge=1, le=200),
-            offset: int = Query(default=0, ge=0),
-            selected: bool | None = None,
-            year_from: int | None = None,
-            year_to: int | None = None,
-            venue: str = "",
-            author: str = "",
-            institution: str = "",
-            publication_status: str = "",
-            full_text_status: str = "",
-            page_min: int | None = Query(default=None, ge=1),
-            page_max: int | None = Query(default=None, ge=1),
-            pdf_bytes_min: int | None = Query(default=None, ge=0),
-            pdf_bytes_max: int | None = Query(default=None, ge=0),
-            source: str = "",
-            cloud_presence: str = "",
-        ) -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            return principia.admin_campaigns.papers(
-                campaign_id,
-                limit=limit,
-                offset=offset,
-                selected=selected,
-                year_from=year_from,
-                year_to=year_to,
-                venue=venue,
-                author=author,
-                institution=institution,
-                publication_status=publication_status,
-                full_text_status=full_text_status,
-                page_min=page_min,
-                page_max=page_max,
-                pdf_bytes_min=pdf_bytes_min,
-                pdf_bytes_max=pdf_bytes_max,
-                source=source,
-                cloud_presence=cloud_presence,
-            )
-
-        @admin.patch("/campaigns/{campaign_id}/selection")
-        def admin_campaign_selection(
-            campaign_id: str, payload: AdminSelectionRequest
-        ) -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            return principia.admin_campaigns.select(campaign_id, payload.work_ids)
-
-        @admin.post("/campaigns/{campaign_id}/extract", status_code=202)
-        def admin_campaign_extract(
-            campaign_id: str, payload: AdminExtractRequest
-        ) -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            return principia.admin_campaigns.extract(campaign_id, payload)
-
-        @admin.post("/extractions/{job_id}/pause")
-        def pause_admin_extraction(job_id: str) -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            return principia.admin_campaigns.pause(job_id)
-
-        @admin.post("/extractions/{job_id}/resume")
-        def resume_admin_extraction(job_id: str) -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            return principia.admin_campaigns.resume(job_id)
-
-        @admin.post("/extractions/{job_id}/cancel")
-        def cancel_admin_extraction(job_id: str) -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            return principia.admin_campaigns.cancel(job_id)
-
-        @admin.get("/campaigns/{campaign_id}/staging")
-        def admin_staging(campaign_id: str) -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            return {"items": principia.admin_campaigns.staging(campaign_id)}
-
-        @admin.get("/campaigns/{campaign_id}/events")
-        def admin_campaign_events(campaign_id: str, after: int = 0) -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            campaign = principia.admin_campaigns._campaign_row(campaign_id)
-            if campaign is None:
-                raise KeyError(campaign_id)
-            job_id = str(campaign.get("job_id") or "")
-            return {"items": principia.repository.job_events(job_id, after=after) if job_id else []}
-
-        @admin.patch("/staging/{stage_id}/decision")
-        def admin_staging_decision(
-            stage_id: str, payload: StagingDecisionRequest
-        ) -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            return principia.admin_campaigns.decide(stage_id, payload)
-
-        @admin.patch("/staging/decisions/bulk")
-        def admin_bulk_staging_decision(
-            payload: BulkStagingDecisionRequest,
-        ) -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            return principia.admin_campaigns.bulk_decide(payload)
-
-        @admin.post("/campaigns/{campaign_id}/syncs")
-        def create_admin_sync(campaign_id: str, payload: AdminSyncRequest) -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            if payload.mode != "dry_run":
-                raise ValueError(
-                    "GitHub submission requires the configured keychain publication adapter"
-                )
-            return principia.admin_campaigns.create_sync(
-                campaign_id, confirmation=payload.confirmation
-            )
-
-        @admin.get("/campaigns/{campaign_id}/syncs/latest")
-        def latest_admin_sync(campaign_id: str) -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            return principia.admin_campaigns.latest_sync(campaign_id) or {}
-
-        @admin.get("/syncs/{sync_id}/events")
-        def admin_sync_events(sync_id: str) -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            return {"items": [principia.admin_campaigns.refresh_sync(sync_id)]}
-
-        @admin.get("/syncs/{sync_id}/stream")
-        async def admin_sync_stream(sync_id: str, request: Request) -> StreamingResponse:
-            assert principia.admin_campaigns is not None
-            if principia.admin_campaigns.sync_detail(sync_id) is None:
-                raise KeyError(sync_id)
-
-            async def events() -> Any:
-                previous = ""
-                yield "retry: 15000\n\n"
-                while not await request.is_disconnected():
-                    item = principia.admin_campaigns.refresh_sync(sync_id)
-                    state = str(item["state"])
-                    if state != previous:
-                        yield (
-                            f"event: {state}\n"
-                            f"data: {json.dumps(item, ensure_ascii=False, separators=(',', ':'))}\n\n"
-                        )
-                        previous = state
-                    if state in {"published", "failed", "cancelled", "needs_resolution"}:
-                        return
-                    await asyncio.sleep(5)
-
-            return StreamingResponse(
-                events(),
-                media_type="text/event-stream",
-                headers={
-                    "Cache-Control": "no-store",
-                    "Connection": "keep-alive",
-                    "X-Accel-Buffering": "no",
-                },
-            )
-
-        @admin.post("/syncs/{sync_id}/submit")
-        def submit_admin_sync(sync_id: str, payload: AdminSyncRequest) -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            if payload.mode != "github_pr":
-                raise ValueError("sync submission requires mode=github_pr")
-            return principia.admin_campaigns.submit_sync(sync_id, confirmation=payload.confirmation)
-
-        @admin.get("/syncs/{sync_id}")
-        def admin_sync_detail(sync_id: str) -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            return principia.admin_campaigns.refresh_sync(sync_id)
-
-        @admin.get("/campaigns/{campaign_id}")
-        def admin_campaign_detail(campaign_id: str) -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            item = principia.admin_campaigns._campaign_row(campaign_id)
-            if item is None:
-                raise KeyError(campaign_id)
-            return item
-
-        @admin.delete("/campaigns/{campaign_id}/staging")
-        def purge_admin_staging(campaign_id: str, abandoned: bool = False) -> dict[str, Any]:
-            assert principia.admin_campaigns is not None
-            return principia.admin_campaigns.purge_staging(campaign_id, abandoned=abandoned)
-
-        @admin.post("/harvest")
-        def harvest(payload: AdminHarvestRequest) -> dict[str, Any]:
-            assert principia.admin is not None
-            principia.admin.enqueue(payload.candidate)
-            return {
-                "candidate_id": payload.candidate.candidate_id,
-                "status": "pending_review",
-            }
-
-        @admin.post("/review/{candidate_id:path}/decision")
-        def review_decision(candidate_id: str, payload: AdminDecisionRequest) -> dict[str, Any]:
-            assert principia.admin is not None
-            return principia.admin.decide(
-                candidate_id,
-                payload.decision,
-                capsule=payload.capsule,
-                note=payload.note,
-                merge_target=payload.merge_target,
-            )
-
-        @admin.post("/changesets")
-        def build_changeset(payload: ChangesetRequest) -> dict[str, Any]:
-            assert principia.admin is not None
-            return principia.admin.build_changeset(
-                area=payload.area,
-                base_package_version=payload.base_package_version,
-                proposed_package_version=payload.proposed_package_version,
-                expected_content_digest=payload.expected_content_digest,
-                goal=payload.goal,
-                capsules=payload.capsules,
-            ).model_dump(mode="json")
-
-        @admin.get("/changesets/{changeset_id:path}/validate")
-        def validate_changeset(changeset_id: str, current_content_digest: str) -> dict[str, Any]:
-            assert principia.admin is not None
-            return principia.admin.validate_changeset(
-                changeset_id, current_content_digest=current_content_digest
-            )
-
-        @admin.post("/changesets/{changeset_id:path}/publish")
-        def publish_changeset(changeset_id: str, payload: PublishRequest) -> dict[str, Any]:
-            assert principia.admin is not None
-            if payload.mode == "github":
-                return principia.admin.github_publish(
-                    changeset_id, confirmation=payload.confirmation
-                )
-            return principia.admin.dry_run_publish(changeset_id, output=payload.output)
-
-        router.include_router(admin)
-
+    if configure_router is not None:
+        configure_router(app, router, principia)
     app.include_router(router)
 
-    if not admin_mode:
-
-        @app.api_route(
-            "/api/v1/admin/{admin_path:path}",
-            methods=["GET", "POST", "PATCH", "PUT", "DELETE"],
-            include_in_schema=False,
-        )
-        def unavailable_admin(admin_path: str, request: Request) -> JSONResponse:
-            return _error(
-                request,
-                status=404,
-                code="not_found",
-                category="capability",
-                message="Admin routes are unavailable in the ordinary runtime.",
-            )
-
-    ui_root = Path(__file__).resolve().parents[1] / "ui_dist"
+    ui_root = ui_root_override or (Path(__file__).resolve().parents[1] / "ui_dist")
     assets_root = ui_root / "assets"
 
     @app.get("/favicon.ico", include_in_schema=False)
@@ -1598,9 +1522,8 @@ def create_app(
     @app.get("/{route:path}", include_in_schema=False)
     def spa(route: str) -> HTMLResponse:
         first = route.split("/", 1)[0]
-        if first == "admin" and not admin_mode:
-            raise KeyError("admin")
-        if first not in {"library", "map", "local", "admin"}:
+        routes = {"research", "library", "map", "local", "legacy"} | (extra_spa_routes or set())
+        if first not in routes:
             raise KeyError(route)
         return index_html()
 

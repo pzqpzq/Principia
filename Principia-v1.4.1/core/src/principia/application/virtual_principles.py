@@ -83,7 +83,10 @@ class VirtualPrincipleService:
         identifiers = list(dict.fromkeys(principle_ids))
         if not 2 <= len(identifiers) <= 20:
             raise ValueError("Select between two and twenty Principles")
-        records = [self._provider_record(identifier, self._detail(identifier)) for identifier in identifiers]
+        records = [
+            self._provider_record(identifier, self._detail(identifier))
+            for identifier in identifiers
+        ]
         _, policy, api_key = self.local.provider_configuration(
             provider_profile_id,
             model,
@@ -105,12 +108,13 @@ class VirtualPrincipleService:
             contributors = list(dict.fromkeys(proposal.contributing_principle_ids))
             if len(contributors) < 2 or not set(contributors).issubset(selected):
                 contributors = identifiers
-                proposal = proposal.model_copy(
-                    update={"contributing_principle_ids": contributors}
-                )
-            virtual_id = "virtual:" + canonical_sha256(
-                {"proposal": proposal.model_dump(mode="json"), "parents": contributors}
-            )[:24]
+                proposal = proposal.model_copy(update={"contributing_principle_ids": contributors})
+            virtual_id = (
+                "virtual:"
+                + canonical_sha256(
+                    {"proposal": proposal.model_dump(mode="json"), "parents": contributors}
+                )[:24]
+            )
             items.append({"virtual_id": virtual_id, "proposal": proposal})
         trace = generation.trace.model_dump(mode="json")
         return {

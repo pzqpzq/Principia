@@ -8,7 +8,7 @@ import json
 import re
 from pathlib import Path
 
-from principia.cloud.canonical import KIND_MODELS, CanonicalCloudRepository, normalize_record
+from principia.cloud.canonical import CanonicalCloudRepository, normalize_record
 from principia.domain.hashing import canonical_sha256
 
 SECRET = re.compile(r"(?i)(ghp_|github_pat_|sk-[A-Za-z0-9_-]{20,}|api[_-]?key\s*[:=])")
@@ -17,8 +17,8 @@ ABSOLUTE_PATH = re.compile(r"(?:^|[\s\"'])/(?:Users|home|var|tmp|private)/")
 
 def validate(root: Path) -> dict[str, object]:
     repository = CanonicalCloudRepository(root)
-    for kind in KIND_MODELS:
-        directory = root / "data" / "v1" / kind
+    for kind in repository.kind_models:
+        directory = repository.data_root / kind
         names = {path.name for path in directory.glob("*.jsonl")}
         expected = {f"{value:02x}.jsonl" for value in range(256)}
         if names != expected:
@@ -27,7 +27,9 @@ def validate(root: Path) -> dict[str, object]:
     records = repository.all_records()
     for kind, rows in records.items():
         for row in rows:
-            normalized = normalize_record(kind, row)
+            normalized = normalize_record(
+                kind, row, schema_generation=repository.schema_generation
+            )
             digest = normalized.get("content_digest")
             if digest and digest != canonical_sha256(
                 {key: value for key, value in normalized.items() if key != "content_digest"}
@@ -38,9 +40,12 @@ def validate(root: Path) -> dict[str, object]:
                 raise ValueError(f"credential-like value is forbidden in {kind}")
             if ABSOLUTE_PATH.search(serialized):
                 raise ValueError(f"absolute local path is forbidden in {kind}")
-            if kind == "principles" and row["review_status"] == "reviewed":
-                if not row.get("review_actor") or not row.get("reviewed_at"):
-                    raise ValueError("reviewed Principle lacks Admin attestation")
+            if kind in {"principles", "meta-principles"} and row["review_status"] == "reviewed":
+                if repository.schema_generation >= 2:
+                    if not row.get("review_attestation"):
+                        raise ValueError("reviewed v2 Principle lacks owner attestation")
+                elif not row.get("review_actor") or not row.get("reviewed_at"):
+                    raise ValueError("reviewed Principle lacks owner attestation")
     return result
 
 

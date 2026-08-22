@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { memo, useEffect, useMemo, useState } from "react";
 import {
   Background,
   Controls,
@@ -85,7 +85,7 @@ function readableRelation(value: string): string {
   return value.replace(/^potential_/, "potential ").replaceAll("_", " ");
 }
 
-function PrincipleNodeCard({ data }: NodeProps<PrincipleNode>) {
+const PrincipleNodeCard = memo(function PrincipleNodeCard({ data }: NodeProps<PrincipleNode>) {
   const { card } = data;
   const reliability = card.reliability_score ?? 0;
   const influence = card.influence_score ?? 0;
@@ -99,10 +99,10 @@ function PrincipleNodeCard({ data }: NodeProps<PrincipleNode>) {
       <strong>{card.title}</strong>
       <p>{card.claim}</p>
       <small>{card.area_labels.length ? card.area_labels.slice(0, 2).map((area) => area.replaceAll("-", " ")).join(" · ") : "Not categorized"}</small>
-      <div className="principle-graph-node-metrics"><span><i style={{ width: `${reliability}%` }} /><b>Reliability</b><em>{Math.round(reliability)}</em></span><span><i style={{ width: `${influence}%` }} /><b>Influence</b><em>{Math.round(influence)}</em></span></div>
+      <div className="principle-graph-node-metrics"><span><i style={{ width: `${reliability}%` }} /><b>Reliability</b><em>{Math.round(reliability)}</em></span><span><i style={{ width: `${influence}%` }} /><b>Influence</b><em>{card.influence_score == null ? "—" : Math.round(influence)}</em></span></div>
     </div>
   </>;
-}
+});
 
 const nodeTypes = { principle: PrincipleNodeCard };
 
@@ -298,7 +298,7 @@ export function PrincipleGraph({
     () => `${cards.map((card) => card.id).sort().join("|")}::${relations.map((edge) => edge.relation_id).sort().join("|")}`,
     [cards, relations],
   );
-  const preparedNodes = useMemo(() => layoutPrinciples(cards, relations), [signature]);
+  const preparedNodes = useMemo(() => layoutPrinciples(cards, relations), [cards, relations]);
   const [nodes, setNodes, onNodesChange] = useNodesState<PrincipleNode>(preparedNodes);
   const [selectedEdgeId, setSelectedEdgeId] = useState("");
   const [selectionMode, setSelectionMode] = useState<"" | "connect" | "derive">("");
@@ -328,6 +328,7 @@ export function PrincipleGraph({
   });
   const [layoutDirty, setLayoutDirty] = useState(false);
   const [layoutSaved, setLayoutSaved] = useState(false);
+  const [viewportMoving, setViewportMoving] = useState(false);
   const virtualRelations = useMemo(() => {
     const merged = new Map<string, PotentialRelation>();
     virtualConnectionBatches.forEach((batch) => batch.relations.forEach((relation) => merged.set(relation.relation_id, relation)));
@@ -340,8 +341,8 @@ export function PrincipleGraph({
     ? [...activeVirtualPrincipleBatch.items].sort((left, right) => left.virtual_id === focusedVirtualPrincipleId ? -1 : right.virtual_id === focusedVirtualPrincipleId ? 1 : 0)
     : [];
   const preparedEdges = useMemo(
-    () => graphEdges(relations, virtualRelations, nodes, relations.length + virtualRelations.length <= 36, graphTheme),
-    [relations, virtualRelations, nodes, graphTheme],
+    () => graphEdges(relations, virtualRelations, preparedNodes, relations.length + virtualRelations.length <= 36, graphTheme),
+    [relations, virtualRelations, preparedNodes, graphTheme],
   );
   const selectedCards = connectionSelection.map((id) => cards.find((card) => card.id === id)).filter((card): card is PrincipleCard => Boolean(card));
   const selectionMatches = useMemo(() => {
@@ -565,18 +566,17 @@ export function PrincipleGraph({
     try { localStorage.setItem("principia:graph-theme", theme); } catch { /* Browser storage is optional. */ }
   };
 
-  return <section className={`principle-graph-shell ${graphTheme}`} aria-label="Interactive Principle graph">
+  return <section className={`principle-graph-shell ${graphTheme}${viewportMoving ? " viewport-moving" : ""}`} aria-label="Interactive Principle graph">
     <ReactFlow
-      key={signature}
       nodes={nodes}
       edges={preparedEdges}
       nodeTypes={nodeTypes}
       onNodesChange={onNodesChange}
       onNodeClick={(_, node) => {
         setSelectedEdgeId("");
+        setInspectedPrincipleId(node.id);
         if (selectionMode) {
           toggleConnectionNode(node.id);
-          setInspectedPrincipleId(node.id);
         }
         else onSelectPrinciple(node.id);
       }}
@@ -588,6 +588,9 @@ export function PrincipleGraph({
       panOnDrag
       panOnScroll
       panOnScrollMode={PanOnScrollMode.Free}
+      onMoveStart={() => setViewportMoving(true)}
+      onMoveEnd={() => setViewportMoving(false)}
+      onlyRenderVisibleElements
       panOnScrollSpeed={0.8}
       zoomOnScroll={false}
       zoomOnPinch
@@ -630,14 +633,14 @@ export function PrincipleGraph({
         </div>
         <p>{selectionMode === "derive" ? provider.configured ? "Principia maps mechanisms, stress-tests boundaries, and returns falsifiable hypotheses with separate reliability and novelty assessments." : "Configure the LLM on Home before generating Virtual Principles." : "Selected pairs are compared without changing validated relations or library measures."}</p>
       </Panel> : null}
-      {selectionMode && inspectedPrinciple ? <Panel position="top-left" className="principle-selection-inspector">
-        <header><div><span className="eyebrow">Selected Principle details</span><strong>{connectionSelection.includes(inspectedPrinciple.id) ? "In your selection" : "Available to add"}</strong></div><button aria-label="Close selected Principle details" onClick={() => setInspectedPrincipleId("")}>Close ×</button></header>
+      {inspectedPrinciple ? <Panel position="top-left" className="principle-selection-inspector">
+        <header><div><span className="eyebrow">Principle details</span><strong>{selectionMode ? connectionSelection.includes(inspectedPrinciple.id) ? "In your selection" : "Available to add" : "Map record"}</strong></div><button aria-label="Close Principle details" onClick={() => setInspectedPrincipleId("")}>Close ×</button></header>
         <span className={`source-badge ${inspectedPrinciple.source}`}>{inspectedPrinciple.source === "local" ? "Local" : inspectedPrinciple.source === "both" ? "Global + Local" : "Global"}</span>
         <h3>{inspectedPrinciple.title}</h3>
         <p>{inspectedPrinciple.claim}</p>
-        <dl><div><dt>Area</dt><dd>{inspectedPrinciple.area_labels.length ? inspectedPrinciple.area_labels.map((label) => label.replaceAll("-", " ")).join(" · ") : "Not categorized"}</dd></div><div><dt>Evidence</dt><dd>{inspectedPrinciple.supporting_work_count} supporting paper{inspectedPrinciple.supporting_work_count === 1 ? "" : "s"}</dd></div><div><dt>Reliability</dt><dd>{Math.round(inspectedPrinciple.reliability_score ?? 0)}</dd></div><div><dt>Influence</dt><dd>{Math.round(inspectedPrinciple.influence_score ?? 0)}</dd></div></dl>
+        <dl><div><dt>Area</dt><dd>{inspectedPrinciple.area_labels.length ? inspectedPrinciple.area_labels.map((label) => label.replaceAll("-", " ")).join(" · ") : "Not categorized"}</dd></div><div><dt>Evidence</dt><dd>{inspectedPrinciple.supporting_work_count} supporting paper{inspectedPrinciple.supporting_work_count === 1 ? "" : "s"}</dd></div><div><dt>Reliability</dt><dd>{Math.round(inspectedPrinciple.reliability_score ?? 0)}</dd></div><div><dt>Influence</dt><dd>{inspectedPrinciple.influence_score == null ? "Not established" : Math.round(inspectedPrinciple.influence_score)}</dd></div></dl>
         {inspectedPrinciple.applicability ? <section><strong>Applicability</strong><p>{inspectedPrinciple.applicability}</p></section> : null}
-        <button className={connectionSelection.includes(inspectedPrinciple.id) ? "" : "primary"} onClick={() => toggleConnectionNode(inspectedPrinciple.id)}>{connectionSelection.includes(inspectedPrinciple.id) ? "Remove from selection" : "+ Add to selection"}</button>
+        {selectionMode ? <button className={connectionSelection.includes(inspectedPrinciple.id) ? "" : "primary"} onClick={() => toggleConnectionNode(inspectedPrinciple.id)}>{connectionSelection.includes(inspectedPrinciple.id) ? "Remove from selection" : "+ Add to selection"}</button> : null}
       </Panel> : null}
       {isolatedCount ? <Panel position="bottom-center" className="principle-isolate-note">
         {isolatedCount} unconnected Principle{isolatedCount === 1 ? " is" : "s are"} arranged in a separate gallery to the right.

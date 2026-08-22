@@ -6,4 +6,4 @@ Absolute private-source paths are stored only in the authoritative local SQLite 
 
 No-LLM jobs do not send content anywhere. Local-model jobs require a loopback host. Remote jobs send selected content only to the explicitly named provider after the user confirms egress for that job. Secrets are read from the process environment and are never placed in diagnostics, traces, package manifests, changesets, or release reports.
 
-Ordinary `principia open` does not mount Admin API routes and returns 404 for `/admin`. `principia admin` launches a separate Admin-capable process. GitHub writes are disabled unless all explicit environment, authentication, validation, base-version, and typed-confirmation gates pass; the v1.4.0 fixture release does not configure a real publication target.
+The public runtime contains no privileged cloud-mutation routes. Cloud publication tooling is distributed separately from the public package.

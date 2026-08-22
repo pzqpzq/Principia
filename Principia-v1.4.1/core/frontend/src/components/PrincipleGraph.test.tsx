@@ -46,6 +46,8 @@ const card = (id: string, title: string): PrincipleCard => ({
   reliability_score: 74,
   source: "global",
   supporting_work_count: 1,
+  supporting_citation_count: 0,
+  citation_data_available: false,
   test_basis: "A controlled test",
   title,
   updated_at: "2026-08-16T00:00:00Z",
@@ -106,7 +108,7 @@ describe("PrincipleGraph virtual work guidance", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Derive Virtual Principles" }));
     fireEvent.click(screen.getByRole("button", { name: "Select Alpha Principle" }));
-    expect(screen.getByText("Selected Principle details")).toBeTruthy();
+    expect(screen.getByText("Principle details")).toBeTruthy();
     expect(screen.getByText("Alpha Principle", { selector: "h3" })).toBeTruthy();
     fireEvent.click(screen.getByRole("button", { name: "Select Beta Principle" }));
     fireEvent.click(screen.getByRole("checkbox"));

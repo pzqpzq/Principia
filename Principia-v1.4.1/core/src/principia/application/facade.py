@@ -5,7 +5,6 @@ from pathlib import Path
 from typing import Any
 
 from .._version import __version__
-from ..admin import AdminCampaignService, AdminService
 from ..cloud import (
     CloudInstaller,
     CloudRegistry,
@@ -24,6 +23,7 @@ from .explorer import PrincipleExplorerService
 from .goal_runs import ResearchGoalRunService
 from .graph import PrincipleGraphService
 from .relations import PrincipleRelationService
+from .research_sessions import ResearchSessionService
 from .search import PrincipleSearchService
 from .virtual_principles import VirtualPrincipleService
 
@@ -46,9 +46,7 @@ class CloudService:
         if package_library is not None and (package_library / "catalog.json").is_file():
             local_catalog = package_library / "catalog.json"
             entries = load_catalog(local_catalog)
-            self.catalog.update(
-                {(item.area, item.package_version): item for item in entries}
-            )
+            self.catalog.update({(item.area, item.package_version): item for item in entries})
             self.registry.cache_catalog(list(self.catalog.values()), source=local_catalog)
             self.activate_downloaded_packages()
 
@@ -87,8 +85,7 @@ class CloudService:
 
         activated: list[dict[str, Any]] = []
         installed = {
-            (str(item["area"]), str(item["version"])): item
-            for item in self.registry.installed()
+            (str(item["area"]), str(item["version"])): item for item in self.registry.installed()
         }
         for key, entry in sorted(self.catalog.items()):
             artifact = self._downloaded_library_artifact(entry)
@@ -179,7 +176,6 @@ class Principia:
         *,
         cloud_root: str | Path | None = None,
         package_library: str | Path | None = None,
-        admin_mode: bool = False,
     ) -> None:
         if cloud_root is not None and package_library is not None:
             raise ValueError("choose either cloud_root or package_library, not both")
@@ -206,12 +202,13 @@ class Principia:
         )
         relation_snapshot_export = None
         if workspace.layout == "project":
+
             def relation_snapshot_export() -> dict[str, Any]:
                 from ..local.portable import PortablePrincipleLibrary
 
-                return PortablePrincipleLibrary(
-                    workspace.storage, self.repository
-                ).export(workspace.principles_dir)
+                return PortablePrincipleLibrary(workspace.storage, self.repository).export(
+                    workspace.principles_dir
+                )
 
         self.relations = PrincipleRelationService(
             self.repository,
@@ -228,29 +225,18 @@ class Principia:
             ),
             working_directory_root=workspace.working_directory_root,
             relation_rebuild=self.relations.start_rebuild,
+            global_cloud=self.global_cloud,
         )
         self.virtual_principles = VirtualPrincipleService(
             self.repository, self.local, self.explorer
         )
-        self.goal_runs = ResearchGoalRunService(
-            self.repository, self.local, self.global_cloud
+        self.goal_runs = ResearchGoalRunService(self.repository, self.local, self.global_cloud)
+        self.research_sessions = ResearchSessionService(
+            self.repository, self.goal_runs, self.global_cloud
         )
         base_digest = self.content_digest()
         self.scenarios = ScenarioService(self.repository, base_digest)
-        self.admin_mode = admin_mode
-        self.admin = AdminService(self.repository) if admin_mode else None
-        self.admin_campaigns = (
-            AdminCampaignService(
-                self.repository,
-                self.local,
-                self.global_cloud,
-                workspace.working_directory_root,
-            )
-            if admin_mode
-            else None
-        )
-        if not admin_mode:
-            self.global_cloud.start_background_sync()
+        self.global_cloud.start_background_sync()
 
     @classmethod
     def open(
@@ -270,9 +256,7 @@ class Principia:
         )
         if cloud_root is not None and package_library is not None:
             raise ValueError("choose either cloud_root or package_library, not both")
-        shared_library = resolve_package_library(
-            package_library, discover=cloud_root is None
-        )
+        shared_library = resolve_package_library(package_library, discover=cloud_root is None)
         isolated_cloud = cloud_root
         if shared_library is None and isolated_cloud is None:
             isolated_cloud = global_cloud_cache_root()
@@ -280,12 +264,9 @@ class Principia:
             resolved,
             cloud_root=isolated_cloud,
             package_library=shared_library,
-            admin_mode=False,
         )
 
     def close(self) -> None:
-        if self.admin_campaigns is not None:
-            self.admin_campaigns.close()
         self.goal_runs.close()
         self.local.close()
 
@@ -314,7 +295,7 @@ class Principia:
     ) -> str:
         from ..api.server import run_server
 
-        return run_server(self, port=port, browser=browser, admin_mode=self.admin_mode)
+        return run_server(self, port=port, browser=browser)
 
     def diagnostics(self) -> dict[str, Any]:
         migration = dict(self.workspace.storage.v14_migration)
@@ -345,42 +326,8 @@ class Principia:
                 "shared_package_library": self.package_library_root is not None,
                 "global": self.global_cloud.status(),
             },
-            "admin_mode": self.admin_mode,
             "demo_mode": os.getenv("PRINCIPIA_DEMO_MODE") == "1",
         }
-
-
-class AdminWorkspace(Principia):
-    @classmethod
-    def open(
-        cls,
-        workspace: str | Path | None = None,
-        *,
-        working_directory: str | Path | None = None,
-        cloud_root: str | Path | None = None,
-        package_library: str | Path | None = None,
-    ) -> AdminWorkspace:
-        if workspace is not None and working_directory is not None:
-            raise ValueError("choose either workspace or working_directory, not both")
-        resolved = (
-            Workspace.working_directory(working_directory)
-            if working_directory is not None
-            else Workspace(workspace or ".")
-        )
-        if cloud_root is not None and package_library is not None:
-            raise ValueError("choose either cloud_root or package_library, not both")
-        shared_library = resolve_package_library(
-            package_library, discover=cloud_root is None
-        )
-        isolated_cloud = cloud_root
-        if shared_library is None and isolated_cloud is None:
-            isolated_cloud = global_cloud_cache_root()
-        return cls(
-            resolved,
-            cloud_root=isolated_cloud,
-            package_library=shared_library,
-            admin_mode=True,
-        )
 
 
 PrinciplesCloud = Principia

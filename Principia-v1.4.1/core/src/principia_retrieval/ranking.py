@@ -23,6 +23,8 @@ from .utils import (
     weighted_tokens,
 )
 
+_DIVERSITY_TOKEN_PATTERN = re.compile(r"[a-z0-9][a-z0-9_-]+")
+
 
 def deterministic_rank(
     goal_text: str, works: list[dict[str, Any]], plan: QueryPlan
@@ -874,8 +876,25 @@ def final_select(
     # ordering while avoiding O(n * k^2) repeated tokenization.
     diversity_features = {
         id(work): (
-            set(tokenize(work_text(work))),
+            # Diversity only needs the vocabulary of a representative abstract
+            # prefix.  Provider metadata can occasionally contain a repeated or
+            # malformed multi-page abstract; bounding it keeps a 20k-result
+            # high-volume search from turning final selection into a UI stall.
+            set(
+                _DIVERSITY_TOKEN_PATTERN.findall(
+                    truncate(work_text(work), 4_000).casefold()
+                )
+            ),
             normalize_text(work.get("venue_or_source") or ""),
+        )
+        for work in remaining
+    }
+    rank_features = {
+        id(work): (
+            relation_rank(work),
+            safe_year(work),
+            normalize_text(work.get("title") or ""),
+            stable_rank_identity(work),
         )
         for work in remaining
     }
@@ -884,16 +903,17 @@ def final_select(
         ranked = []
         for work in remaining:
             novelty = 1.0 - max_similarities[id(work)] if selected else 1.0
+            relation, year, normalized_title, identity = rank_features[id(work)]
             # Diversity is a tie-breaker inside a relevance-qualified pool; it
             # must not promote a topical tangent over a materially stronger hit.
             adjusted = float(work.get("_retrieval_score", 0.0)) * 0.98 + novelty * 0.02
             ranked.append(
                 (
                     adjusted,
-                    relation_rank(work),
-                    safe_year(work),
-                    normalize_text(work.get("title") or ""),
-                    stable_rank_identity(work),
+                    relation,
+                    year,
+                    normalized_title,
+                    identity,
                     work,
                     novelty,
                 )

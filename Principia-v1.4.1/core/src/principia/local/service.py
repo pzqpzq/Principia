@@ -49,6 +49,7 @@ class LocalDiscoveryService:
         principles_export_root: str | Path | None = None,
         working_directory_root: str | Path | None = None,
         relation_rebuild: Callable[[], JobRecord] | None = None,
+        global_cloud: Any | None = None,
     ) -> None:
         self.storage = storage
         self.repository = repository
@@ -78,6 +79,7 @@ class LocalDiscoveryService:
             repository,
             principles_export_root=principles_export_root,
             relation_rebuild=relation_rebuild,
+            global_cloud=global_cloud,
         )
         self.credentials = ProviderCredentialStore(storage.root)
         self.source_alias_receipt = self.repository.reconcile_duplicate_source_roots()

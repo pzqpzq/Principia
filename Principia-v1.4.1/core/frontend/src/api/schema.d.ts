@@ -4,450 +4,6 @@
  */
 
 export interface paths {
-    "/api/v1/admin/campaigns": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** List Admin Campaigns */
-        get: operations["list_admin_campaigns_api_v1_admin_campaigns_get"];
-        put?: never;
-        /** Create Admin Campaign */
-        post: operations["create_admin_campaign_api_v1_admin_campaigns_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/campaigns/{campaign_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Admin Campaign Detail */
-        get: operations["admin_campaign_detail_api_v1_admin_campaigns__campaign_id__get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/campaigns/{campaign_id}/events": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Admin Campaign Events */
-        get: operations["admin_campaign_events_api_v1_admin_campaigns__campaign_id__events_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/campaigns/{campaign_id}/extract": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Admin Campaign Extract */
-        post: operations["admin_campaign_extract_api_v1_admin_campaigns__campaign_id__extract_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/campaigns/{campaign_id}/papers": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Admin Campaign Papers */
-        get: operations["admin_campaign_papers_api_v1_admin_campaigns__campaign_id__papers_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/campaigns/{campaign_id}/selection": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        /** Admin Campaign Selection */
-        patch: operations["admin_campaign_selection_api_v1_admin_campaigns__campaign_id__selection_patch"];
-        trace?: never;
-    };
-    "/api/v1/admin/campaigns/{campaign_id}/staging": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Admin Staging */
-        get: operations["admin_staging_api_v1_admin_campaigns__campaign_id__staging_get"];
-        put?: never;
-        post?: never;
-        /** Purge Admin Staging */
-        delete: operations["purge_admin_staging_api_v1_admin_campaigns__campaign_id__staging_delete"];
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/campaigns/{campaign_id}/syncs": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Create Admin Sync */
-        post: operations["create_admin_sync_api_v1_admin_campaigns__campaign_id__syncs_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/campaigns/{campaign_id}/syncs/latest": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Latest Admin Sync */
-        get: operations["latest_admin_sync_api_v1_admin_campaigns__campaign_id__syncs_latest_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/changesets": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Build Changeset */
-        post: operations["build_changeset_api_v1_admin_changesets_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/changesets/{changeset_id}/publish": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Publish Changeset */
-        post: operations["publish_changeset_api_v1_admin_changesets__changeset_id__publish_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/changesets/{changeset_id}/validate": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Validate Changeset */
-        get: operations["validate_changeset_api_v1_admin_changesets__changeset_id__validate_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/dashboard": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Admin Dashboard */
-        get: operations["admin_dashboard_api_v1_admin_dashboard_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/extractions/{job_id}/cancel": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Cancel Admin Extraction */
-        post: operations["cancel_admin_extraction_api_v1_admin_extractions__job_id__cancel_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/extractions/{job_id}/pause": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Pause Admin Extraction */
-        post: operations["pause_admin_extraction_api_v1_admin_extractions__job_id__pause_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/extractions/{job_id}/resume": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Resume Admin Extraction */
-        post: operations["resume_admin_extraction_api_v1_admin_extractions__job_id__resume_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/harvest": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Harvest */
-        post: operations["harvest_api_v1_admin_harvest_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/review": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Review Queue */
-        get: operations["review_queue_api_v1_admin_review_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/review/{candidate_id}/decision": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Review Decision */
-        post: operations["review_decision_api_v1_admin_review__candidate_id__decision_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/runtime": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Admin Runtime */
-        get: operations["admin_runtime_api_v1_admin_runtime_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/staging/decisions/bulk": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        /** Admin Bulk Staging Decision */
-        patch: operations["admin_bulk_staging_decision_api_v1_admin_staging_decisions_bulk_patch"];
-        trace?: never;
-    };
-    "/api/v1/admin/staging/{stage_id}/decision": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        /** Admin Staging Decision */
-        patch: operations["admin_staging_decision_api_v1_admin_staging__stage_id__decision_patch"];
-        trace?: never;
-    };
-    "/api/v1/admin/syncs/{sync_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Admin Sync Detail */
-        get: operations["admin_sync_detail_api_v1_admin_syncs__sync_id__get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/syncs/{sync_id}/events": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Admin Sync Events */
-        get: operations["admin_sync_events_api_v1_admin_syncs__sync_id__events_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/syncs/{sync_id}/stream": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Admin Sync Stream */
-        get: operations["admin_sync_stream_api_v1_admin_syncs__sync_id__stream_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/syncs/{sync_id}/submit": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Submit Admin Sync */
-        post: operations["submit_admin_sync_api_v1_admin_syncs__sync_id__submit_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
     "/api/v1/areas": {
         parameters: {
             query?: never;
@@ -567,6 +123,57 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/cloud/graph/viewport": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Cloud Graph Viewport */
+        get: operations["cloud_graph_viewport_api_v1_cloud_graph_viewport_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/cloud/meta-principles/{principle_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Cloud Meta Principle */
+        get: operations["cloud_meta_principle_api_v1_cloud_meta_principles__principle_id__get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/cloud/meta-principles/{principle_id}/revisions": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Cloud Meta Principle Revisions */
+        get: operations["cloud_meta_principle_revisions_api_v1_cloud_meta_principles__principle_id__revisions_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/cloud/principles/{principle_id}": {
         parameters: {
             query?: never;
@@ -576,6 +183,23 @@ export interface paths {
         };
         /** Cloud Principle */
         get: operations["cloud_principle_api_v1_cloud_principles__principle_id__get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/cloud/principles/{principle_id}/foundations": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Cloud Principle Foundations */
+        get: operations["cloud_principle_foundations_api_v1_cloud_principles__principle_id__foundations_get"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1818,6 +1442,200 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/research-projects": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Research Projects */
+        get: operations["research_projects_api_v1_research_projects_get"];
+        put?: never;
+        /** Create Research Project */
+        post: operations["create_research_project_api_v1_research_projects_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/research-projects/{project_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        /** Delete Research Project */
+        delete: operations["delete_research_project_api_v1_research_projects__project_id__delete"];
+        options?: never;
+        head?: never;
+        /** Update Research Project */
+        patch: operations["update_research_project_api_v1_research_projects__project_id__patch"];
+        trace?: never;
+    };
+    "/api/v1/research-sessions": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Research Sessions */
+        get: operations["research_sessions_api_v1_research_sessions_get"];
+        put?: never;
+        /** Create Research Session */
+        post: operations["create_research_session_api_v1_research_sessions_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/research-sessions/{session_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Research Session */
+        get: operations["research_session_api_v1_research_sessions__session_id__get"];
+        put?: never;
+        post?: never;
+        /** Delete Research Session */
+        delete: operations["delete_research_session_api_v1_research_sessions__session_id__delete"];
+        options?: never;
+        head?: never;
+        /** Update Research Session */
+        patch: operations["update_research_session_api_v1_research_sessions__session_id__patch"];
+        trace?: never;
+    };
+    "/api/v1/research-sessions/{session_id}/artifacts": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Research Session Artifacts */
+        get: operations["research_session_artifacts_api_v1_research_sessions__session_id__artifacts_get"];
+        put?: never;
+        /** Create Research Session Artifact */
+        post: operations["create_research_session_artifact_api_v1_research_sessions__session_id__artifacts_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/research-sessions/{session_id}/artifacts/{artifact_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        /** Delete Research Session Artifact */
+        delete: operations["delete_research_session_artifact_api_v1_research_sessions__session_id__artifacts__artifact_id__delete"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/research-sessions/{session_id}/events": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Research Session Events */
+        get: operations["research_session_events_api_v1_research_sessions__session_id__events_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/research-sessions/{session_id}/graph": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Research Session Graph */
+        get: operations["research_session_graph_api_v1_research_sessions__session_id__graph_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        /** Mutate Research Session Graph */
+        patch: operations["mutate_research_session_graph_api_v1_research_sessions__session_id__graph_patch"];
+        trace?: never;
+    };
+    "/api/v1/research-sessions/{session_id}/results": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Research Session Results */
+        get: operations["research_session_results_api_v1_research_sessions__session_id__results_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/research-sessions/{session_id}/runs": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Start Research Session Run */
+        post: operations["start_research_session_run_api_v1_research_sessions__session_id__runs_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/research-sessions/{session_id}/virtual-principles/{virtual_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        /** Delete Research Session Virtual Principle */
+        delete: operations["delete_research_session_virtual_principle_api_v1_research_sessions__session_id__virtual_principles__virtual_id__delete"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/runtime": {
         parameters: {
             query?: never;
@@ -2061,83 +1879,6 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
-        /** AdminCampaignRequest */
-        AdminCampaignRequest: {
-            /**
-             * Concurrency
-             * @default 4
-             */
-            concurrency: number;
-            /**
-             * Model
-             * @default deepseek-ai/DeepSeek-V4-Flash
-             */
-            model: string;
-            /**
-             * Provider Profile Id
-             * @default siliconflow
-             */
-            provider_profile_id: string;
-            /** Research Goal */
-            research_goal: string;
-            /**
-             * Target Count
-             * @default 50
-             */
-            target_count: number;
-        };
-        /** AdminDecisionRequest */
-        AdminDecisionRequest: {
-            capsule?: components["schemas"]["PrincipleCapsule"] | null;
-            /**
-             * Decision
-             * @enum {string}
-             */
-            decision: "approve" | "edit" | "merge" | "reject";
-            /**
-             * Merge Target
-             * @default
-             */
-            merge_target: string;
-            /**
-             * Note
-             * @default
-             */
-            note: string;
-        };
-        /** AdminExtractRequest */
-        AdminExtractRequest: {
-            /**
-             * Egress Confirmed
-             * @default false
-             */
-            egress_confirmed: boolean;
-            /**
-             * Retry
-             * @default false
-             */
-            retry: boolean;
-        };
-        /** AdminHarvestRequest */
-        AdminHarvestRequest: {
-            candidate: components["schemas"]["CandidatePrinciple"];
-        };
-        /** AdminSelectionRequest */
-        AdminSelectionRequest: {
-            /** Work Ids */
-            work_ids: string[];
-        };
-        /** AdminSyncRequest */
-        AdminSyncRequest: {
-            /** Confirmation */
-            confirmation: string;
-            /**
-             * Mode
-             * @default dry_run
-             * @enum {string}
-             */
-            mode: "dry_run" | "github_pr";
-        };
         /** AreaSuggestionCreateRequest */
         AreaSuggestionCreateRequest: {
             /** Area */
@@ -2163,78 +1904,15 @@ export interface components {
             /** Version */
             version?: string | null;
         };
-        /** BulkStagingDecisionRequest */
-        BulkStagingDecisionRequest: {
-            /**
-             * Decision
-             * @enum {string}
-             */
-            decision: "add" | "update" | "retire" | "skip";
-            /** Stage Ids */
-            stage_ids: string[];
-        };
         /** CandidateDisplayEditRequest */
         CandidateDisplayEditRequest: {
             /** Title */
             title: string;
         };
-        /** CandidatePrinciple */
-        CandidatePrinciple: {
-            /** Area */
-            area: string;
-            /**
-             * Assessment Status
-             * @default unassessed
-             * @enum {string}
-             */
-            assessment_status: "unassessed" | "reviewed" | "rejected";
-            /** Candidate Id */
-            candidate_id: string;
-            /** Claim */
-            claim: string;
-            /** Created At */
-            created_at?: string;
-            /**
-             * Falsifier
-             * @default
-             */
-            falsifier: string;
-            /** Generation Trace */
-            generation_trace?: components["schemas"]["GenerationTrace"][];
-            kind: components["schemas"]["PrincipleKind"];
-            /** Raw Legacy Payload */
-            raw_legacy_payload?: {
-                [key: string]: unknown;
-            } | null;
-            /** Relations */
-            relations?: components["schemas"]["PrincipleRelation"][];
-            scope: components["schemas"]["PrincipleScope"];
-            /** Source References */
-            source_references?: components["schemas"]["WorkReference"][];
-            /** Title */
-            title: string;
-            /** Updated At */
-            updated_at?: string;
-        };
         /** CatalogRefreshRequest */
         CatalogRefreshRequest: {
             /** Path */
             path: string;
-        };
-        /** ChangesetRequest */
-        ChangesetRequest: {
-            /** Area */
-            area: string;
-            /** Base Package Version */
-            base_package_version: string;
-            /** Capsules */
-            capsules: components["schemas"]["PrincipleCapsule"][];
-            /** Expected Content Digest */
-            expected_content_digest: string;
-            /** Goal */
-            goal: string;
-            /** Proposed Package Version */
-            proposed_package_version: string;
         };
         /** CloudSearchRequest */
         CloudSearchRequest: {
@@ -2250,7 +1928,7 @@ export interface components {
              * @default principle
              * @enum {string}
              */
-            entity: "paper" | "principle" | "all";
+            entity: "paper" | "principle" | "meta_principle" | "all";
             /**
              * Full Text Status
              * @default
@@ -2309,71 +1987,6 @@ export interface components {
             proposal: components["schemas"]["VirtualPrincipleProposal"];
             /** Virtual Id */
             virtual_id: string;
-        };
-        /** GenerationTrace */
-        GenerationTrace: {
-            /** Actor */
-            actor: string;
-            /** Created At */
-            created_at?: string;
-            /** Event Id */
-            event_id: string;
-            /**
-             * Input Sha256
-             * @default
-             */
-            input_sha256: string;
-            /**
-             * Input Tokens
-             * @default 0
-             */
-            input_tokens: number;
-            /**
-             * Latency Ms
-             * @default 0
-             */
-            latency_ms: number;
-            /**
-             * Model
-             * @default
-             */
-            model: string;
-            operation: components["schemas"]["TraceOperation"];
-            /**
-             * Output Sha256
-             * @default
-             */
-            output_sha256: string;
-            /**
-             * Output Tokens
-             * @default 0
-             */
-            output_tokens: number;
-            /**
-             * Prompt Sha256
-             * @default
-             */
-            prompt_sha256: string;
-            /**
-             * Prompt Template
-             * @default
-             */
-            prompt_template: string;
-            /**
-             * Provider
-             * @default
-             */
-            provider: string;
-            /**
-             * Retries
-             * @default 0
-             */
-            retries: number;
-            /**
-             * Run Id
-             * @default
-             */
-            run_id: string;
         };
         /** GraphEdgeResponse */
         GraphEdgeResponse: {
@@ -3030,54 +2643,6 @@ export interface components {
             /** Skipped Validated Pair Count */
             skipped_validated_pair_count: number;
         };
-        /** PrincipleCapsule */
-        PrincipleCapsule: {
-            /** Area */
-            area: string;
-            /** Claim */
-            claim: string;
-            /**
-             * Content Digest
-             * @default
-             */
-            content_digest: string;
-            /** Created At */
-            created_at?: string;
-            /** Falsifier */
-            falsifier: string;
-            /** Generation Trace */
-            generation_trace: components["schemas"]["GenerationTrace"][];
-            kind: components["schemas"]["PrincipleKind"];
-            maturity: components["schemas"]["PrincipleMaturity"];
-            /** Principle Id */
-            principle_id: string;
-            quality: components["schemas"]["QualityAssessment"];
-            /** Relation Count */
-            relation_count: number;
-            /** Relations */
-            relations?: components["schemas"]["PrincipleRelation"][];
-            scope: components["schemas"]["PrincipleScope"];
-            /** Source Count */
-            source_count: number;
-            /** Source References */
-            source_references: components["schemas"]["WorkReference"][];
-            /**
-             * Status
-             * @default active
-             * @enum {string}
-             */
-            status: "active" | "retired";
-            /** Tags */
-            tags?: string[];
-            /** Title */
-            title: string;
-            /** Trace Count */
-            trace_count: number;
-            /** Updated At */
-            updated_at?: string;
-            /** Version */
-            version: number;
-        };
         /** PrincipleCardPage */
         PrincipleCardPage: {
             /** Facets */
@@ -3120,6 +2685,11 @@ export interface components {
             area_labels: string[];
             /** Boundary Basis */
             boundary_basis: string;
+            /**
+             * Citation Data Available
+             * @default false
+             */
+            citation_data_available: boolean;
             /** Claim */
             claim: string;
             /** Claim Type */
@@ -3166,6 +2736,11 @@ export interface components {
              * @enum {string}
              */
             source: "local" | "global" | "both";
+            /**
+             * Supporting Citation Count
+             * @default 0
+             */
+            supporting_citation_count: number;
             /** Supporting Work Count */
             supporting_work_count: number;
             /** Test Basis */
@@ -3234,36 +2809,6 @@ export interface components {
             /** Truncated */
             truncated: boolean;
         };
-        /**
-         * PrincipleKind
-         * @enum {string}
-         */
-        PrincipleKind: "theorem" | "mechanistic" | "empirical" | "heuristic" | "hypothesis";
-        /**
-         * PrincipleMaturity
-         * @enum {string}
-         */
-        PrincipleMaturity: "supported" | "replicated" | "established" | "contested" | "retired";
-        /** PrincipleRelation */
-        PrincipleRelation: {
-            /** Minimum Package Version */
-            minimum_package_version?: string | null;
-            /**
-             * Rationale
-             * @default
-             */
-            rationale: string;
-            relation_type: components["schemas"]["RelationType"];
-            /**
-             * Strength
-             * @default 1
-             */
-            strength: number;
-            /** Target Area */
-            target_area?: string | null;
-            /** Target Principle Id */
-            target_principle_id: string;
-        };
         /** PrincipleRelationResponse */
         PrincipleRelationResponse: {
             /** Direction */
@@ -3304,17 +2849,6 @@ export interface components {
             /** Principle Id */
             principle_id: string;
         };
-        /** PrincipleScope */
-        PrincipleScope: {
-            /** Conditions */
-            conditions?: string[];
-            /** Exclusions */
-            exclusions?: string[];
-            /** Populations */
-            populations?: string[];
-            /** Statement */
-            statement: string;
-        };
         /** ProviderCredentialRequest */
         ProviderCredentialRequest: {
             /**
@@ -3322,44 +2856,6 @@ export interface components {
              * Format: password
              */
             api_key: string;
-        };
-        /** PublishRequest */
-        PublishRequest: {
-            /**
-             * Confirmation
-             * @default
-             */
-            confirmation: string;
-            /**
-             * Mode
-             * @default dry_run
-             * @enum {string}
-             */
-            mode: "dry_run" | "github";
-            /** Output */
-            output?: string | null;
-        };
-        /** QualityAssessment */
-        QualityAssessment: {
-            /** Assessed At */
-            assessed_at?: string;
-            /** Assessed By */
-            assessed_by: string;
-            /** Evidence Strength */
-            evidence_strength: number;
-            /** Generality */
-            generality: number;
-            /**
-             * Grade
-             * @enum {string}
-             */
-            grade: "A" | "B" | "C" | "D";
-            /** Reproducibility */
-            reproducibility: number;
-            /** Usefulness */
-            usefulness: number;
-            /** Validity */
-            validity: number;
         };
         /** RelatedPrinciplePreview */
         RelatedPrinciplePreview: {
@@ -3375,11 +2871,18 @@ export interface components {
             /** Title */
             title: string;
         };
-        /**
-         * RelationType
-         * @enum {string}
-         */
-        RelationType: "supports" | "contradicts" | "refines" | "generalizes" | "specializes" | "depends_on" | "analogous_to" | "motivates";
+        /** ResearchArtifactCreateRequest */
+        ResearchArtifactCreateRequest: {
+            /**
+             * Kind
+             * @enum {string}
+             */
+            kind: "virtual_principle" | "virtual_connection";
+            /** Payload */
+            payload: {
+                [key: string]: unknown;
+            };
+        };
         /** ResearchGoalRunRequest */
         ResearchGoalRunRequest: {
             /**
@@ -3416,6 +2919,49 @@ export interface components {
             provider_profile_id: string;
             /** Source Ids */
             source_ids?: string[];
+        };
+        /** ResearchGraphMutationRequest */
+        ResearchGraphMutationRequest: {
+            /** Expected Revision */
+            expected_revision: number;
+            /** Operations */
+            operations: {
+                [key: string]: unknown;
+            }[];
+        };
+        /** ResearchProjectCreateRequest */
+        ResearchProjectCreateRequest: {
+            /** Title */
+            title: string;
+        };
+        /** ResearchProjectUpdateRequest */
+        ResearchProjectUpdateRequest: {
+            /** Archived */
+            archived?: boolean | null;
+            /** Title */
+            title?: string | null;
+        };
+        /** ResearchSessionCreateRequest */
+        ResearchSessionCreateRequest: {
+            /** Project Id */
+            project_id?: string | null;
+            run: components["schemas"]["ResearchGoalRunRequest"];
+            /**
+             * Title
+             * @default
+             */
+            title: string;
+        };
+        /** ResearchSessionUpdateRequest */
+        ResearchSessionUpdateRequest: {
+            /** Archived */
+            archived?: boolean | null;
+            /** Expected Revision */
+            expected_revision?: number | null;
+            /** Project Id */
+            project_id?: string | null;
+            /** Title */
+            title?: string | null;
         };
         /** ScenarioCreateRequest */
         ScenarioCreateRequest: {
@@ -3505,19 +3051,6 @@ export interface components {
             /** Path */
             path: string;
         };
-        /** StagingDecisionRequest */
-        StagingDecisionRequest: {
-            /**
-             * Confirmed Ambiguous
-             * @default false
-             */
-            confirmed_ambiguous: boolean;
-            /**
-             * Decision
-             * @enum {string}
-             */
-            decision: "add" | "update" | "retire" | "skip";
-        };
         /** StorageLayoutDisclosureResponse */
         StorageLayoutDisclosureResponse: {
             /**
@@ -3544,11 +3077,6 @@ export interface components {
              */
             target: "working_directory" | "workspace" | "local_data" | "principles";
         };
-        /**
-         * TraceOperation
-         * @enum {string}
-         */
-        TraceOperation: "import" | "extract" | "challenge" | "map" | "review" | "edit" | "merge" | "promote" | "retire";
         /** ValidationError */
         ValidationError: {
             /** Context */
@@ -3657,34 +3185,6 @@ export interface components {
                 [key: string]: unknown;
             };
         };
-        /** WorkReference */
-        WorkReference: {
-            /**
-             * Doi
-             * @default
-             */
-            doi: string;
-            /**
-             * Public
-             * @default true
-             */
-            public: boolean;
-            /**
-             * Role
-             * @default evidence
-             * @enum {string}
-             */
-            role: "evidence" | "proof" | "falsifier" | "context";
-            /** Title */
-            title: string;
-            /**
-             * Url
-             * @default
-             */
-            url: string;
-            /** Work Id */
-            work_id: string;
-        };
         /** WorkingDirectoryResponse */
         WorkingDirectoryResponse: {
             /** Display Name */
@@ -3718,954 +3218,6 @@ export interface components {
 }
 export type $defs = Record<string, never>;
 export interface operations {
-    list_admin_campaigns_api_v1_admin_campaigns_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-        };
-    };
-    create_admin_campaign_api_v1_admin_campaigns_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["AdminCampaignRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            202: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    admin_campaign_detail_api_v1_admin_campaigns__campaign_id__get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                campaign_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    admin_campaign_events_api_v1_admin_campaigns__campaign_id__events_get: {
-        parameters: {
-            query?: {
-                after?: number;
-            };
-            header?: never;
-            path: {
-                campaign_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    admin_campaign_extract_api_v1_admin_campaigns__campaign_id__extract_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                campaign_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["AdminExtractRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            202: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    admin_campaign_papers_api_v1_admin_campaigns__campaign_id__papers_get: {
-        parameters: {
-            query?: {
-                limit?: number;
-                offset?: number;
-                selected?: boolean | null;
-                year_from?: number | null;
-                year_to?: number | null;
-                venue?: string;
-                author?: string;
-                institution?: string;
-                publication_status?: string;
-                full_text_status?: string;
-                page_min?: number | null;
-                page_max?: number | null;
-                pdf_bytes_min?: number | null;
-                pdf_bytes_max?: number | null;
-                source?: string;
-                cloud_presence?: string;
-            };
-            header?: never;
-            path: {
-                campaign_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    admin_campaign_selection_api_v1_admin_campaigns__campaign_id__selection_patch: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                campaign_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["AdminSelectionRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    admin_staging_api_v1_admin_campaigns__campaign_id__staging_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                campaign_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    purge_admin_staging_api_v1_admin_campaigns__campaign_id__staging_delete: {
-        parameters: {
-            query?: {
-                abandoned?: boolean;
-            };
-            header?: never;
-            path: {
-                campaign_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    create_admin_sync_api_v1_admin_campaigns__campaign_id__syncs_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                campaign_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["AdminSyncRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    latest_admin_sync_api_v1_admin_campaigns__campaign_id__syncs_latest_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                campaign_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    build_changeset_api_v1_admin_changesets_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["ChangesetRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    publish_changeset_api_v1_admin_changesets__changeset_id__publish_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                changeset_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["PublishRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    validate_changeset_api_v1_admin_changesets__changeset_id__validate_get: {
-        parameters: {
-            query: {
-                current_content_digest: string;
-            };
-            header?: never;
-            path: {
-                changeset_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    admin_dashboard_api_v1_admin_dashboard_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-        };
-    };
-    cancel_admin_extraction_api_v1_admin_extractions__job_id__cancel_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                job_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    pause_admin_extraction_api_v1_admin_extractions__job_id__pause_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                job_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    resume_admin_extraction_api_v1_admin_extractions__job_id__resume_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                job_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    harvest_api_v1_admin_harvest_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["AdminHarvestRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    review_queue_api_v1_admin_review_get: {
-        parameters: {
-            query?: {
-                status?: string | null;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    review_decision_api_v1_admin_review__candidate_id__decision_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                candidate_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["AdminDecisionRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    admin_runtime_api_v1_admin_runtime_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-        };
-    };
-    admin_bulk_staging_decision_api_v1_admin_staging_decisions_bulk_patch: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["BulkStagingDecisionRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    admin_staging_decision_api_v1_admin_staging__stage_id__decision_patch: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                stage_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["StagingDecisionRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    admin_sync_detail_api_v1_admin_syncs__sync_id__get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                sync_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    admin_sync_events_api_v1_admin_syncs__sync_id__events_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                sync_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    admin_sync_stream_api_v1_admin_syncs__sync_id__stream_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                sync_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": unknown;
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    submit_admin_sync_api_v1_admin_syncs__sync_id__submit_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                sync_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["AdminSyncRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
     areas_api_v1_areas_get: {
         parameters: {
             query?: never;
@@ -4904,7 +3456,146 @@ export interface operations {
             };
         };
     };
+    cloud_graph_viewport_api_v1_cloud_graph_viewport_get: {
+        parameters: {
+            query?: {
+                min_x?: number;
+                max_x?: number;
+                min_y?: number;
+                max_y?: number;
+                zoom?: number;
+                areas?: string;
+                q?: string;
+                limit?: number;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    cloud_meta_principle_api_v1_cloud_meta_principles__principle_id__get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                principle_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    cloud_meta_principle_revisions_api_v1_cloud_meta_principles__principle_id__revisions_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                principle_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
     cloud_principle_api_v1_cloud_principles__principle_id__get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                principle_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    cloud_principle_foundations_api_v1_cloud_principles__principle_id__foundations_get: {
         parameters: {
             query?: never;
             header?: never;
@@ -6961,6 +5652,7 @@ export interface operations {
                 virtual_only?: boolean;
                 sort?: "relevance" | "updated" | "reliability" | "influence" | "supporting_papers" | "title";
                 limit?: number;
+                page?: number;
             };
             header?: never;
             path?: never;
@@ -7528,6 +6220,641 @@ export interface operations {
             header?: never;
             path: {
                 run_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    research_projects_api_v1_research_projects_get: {
+        parameters: {
+            query?: {
+                include_archived?: boolean;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    create_research_project_api_v1_research_projects_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ResearchProjectCreateRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    delete_research_project_api_v1_research_projects__project_id__delete: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                project_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    update_research_project_api_v1_research_projects__project_id__patch: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                project_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ResearchProjectUpdateRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    research_sessions_api_v1_research_sessions_get: {
+        parameters: {
+            query?: {
+                project_id?: string | null;
+                include_archived?: boolean;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    create_research_session_api_v1_research_sessions_post: {
+        parameters: {
+            query?: {
+                egress_confirmed?: boolean;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ResearchSessionCreateRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            202: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    research_session_api_v1_research_sessions__session_id__get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                session_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    delete_research_session_api_v1_research_sessions__session_id__delete: {
+        parameters: {
+            query: {
+                expected_revision: number;
+            };
+            header?: never;
+            path: {
+                session_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    update_research_session_api_v1_research_sessions__session_id__patch: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                session_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ResearchSessionUpdateRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    research_session_artifacts_api_v1_research_sessions__session_id__artifacts_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                session_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    create_research_session_artifact_api_v1_research_sessions__session_id__artifacts_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                session_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ResearchArtifactCreateRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    delete_research_session_artifact_api_v1_research_sessions__session_id__artifacts__artifact_id__delete: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                session_id: string;
+                artifact_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    research_session_events_api_v1_research_sessions__session_id__events_get: {
+        parameters: {
+            query?: {
+                after?: number;
+            };
+            header?: never;
+            path: {
+                session_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    research_session_graph_api_v1_research_sessions__session_id__graph_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                session_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    mutate_research_session_graph_api_v1_research_sessions__session_id__graph_patch: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                session_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ResearchGraphMutationRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    research_session_results_api_v1_research_sessions__session_id__results_get: {
+        parameters: {
+            query?: {
+                membership?: "global" | "local" | "combined" | "meta";
+                limit?: number;
+                offset?: number;
+            };
+            header?: never;
+            path: {
+                session_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    start_research_session_run_api_v1_research_sessions__session_id__runs_post: {
+        parameters: {
+            query?: {
+                egress_confirmed?: boolean;
+            };
+            header?: never;
+            path: {
+                session_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ResearchGoalRunRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            202: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    delete_research_session_virtual_principle_api_v1_research_sessions__session_id__virtual_principles__virtual_id__delete: {
+        parameters: {
+            query?: {
+                candidate_id?: string;
+            };
+            header?: never;
+            path: {
+                session_id: string;
+                virtual_id: string;
             };
             cookie?: never;
         };

@@ -20,6 +20,7 @@ from ..domain import (
     EvidenceAtomProposalBatch,
     EvidenceClaimAtom,
     EvidenceClaimAtomBatch,
+    FoundationGroundingDecision,
     ScientificArgumentBatch,
     ScientificArgumentProposalBatch,
     VirtualPrincipleBatch,
@@ -73,6 +74,9 @@ VIRTUAL_PRINCIPLE_SYSTEM_PROMPT = (
     .joinpath("virtual-principles-v1.md")
     .read_text(encoding="utf-8")
     .strip()
+)
+META_GROUNDING_SYSTEM_PROMPT = (
+    files("principia.prompts").joinpath("meta-grounding-v1.md").read_text(encoding="utf-8").strip()
 )
 
 _JsonModel = TypeVar("_JsonModel", bound=BaseModel)
@@ -192,9 +196,7 @@ class OpenAICompatibleProvider:
                     "response_format": {"type": "json_object"},
                 }
                 effective_thinking_budget = (
-                    thinking_budget
-                    if thinking_budget is not None
-                    else self.thinking_budget
+                    thinking_budget if thinking_budget is not None else self.thinking_budget
                 )
                 if effective_thinking_budget is not None:
                     request_body["thinking_budget"] = effective_thinking_budget
@@ -223,7 +225,13 @@ class OpenAICompatibleProvider:
                 retryable = isinstance(exc, (httpx.TransportError, httpx.TimeoutException)) or (
                     status in {408, 429} or (status is not None and status >= 500)
                 )
-                if attempt == 3 or not retryable:
+                # A read timeout is ambiguous: the provider may have accepted,
+                # completed, and billed the request even though the response did
+                # not reach Principia. Retrying it immediately can create several
+                # paid duplicate calls. Let the durable paper-level scheduler
+                # defer that unit instead; connect failures and explicit 5xx/429
+                # responses retain the bounded transport retry policy.
+                if attempt == 3 or not retryable or isinstance(exc, httpx.ReadTimeout):
                     break
                 time.sleep(self._retry_delay(response, attempt))
         status = response.status_code if response is not None else None
@@ -241,7 +249,12 @@ class OpenAICompatibleProvider:
             message = f"{self.policy.provider} is rate limiting requests"
         elif isinstance(last_error, httpx.TimeoutException):
             category = "timeout"
-            message = f"{self.policy.provider} did not respond before the timeout"
+            minutes = max(1, round(self.timeout / 60))
+            message = (
+                f"{self.policy.provider} response did not reach Principia within "
+                f"{minutes} minute{'s' if minutes != 1 else ''}; the provider may still "
+                "show the server-side call as completed"
+            )
         elif isinstance(last_error, httpx.TransportError):
             category = "network"
             message = f"{self.policy.provider} could not be reached"
@@ -320,9 +333,7 @@ class OpenAICompatibleProvider:
                 except (ValueError, TypeError):
                     pass
                 repair_instruction = (
-                    "You returned schema metadata instead of instance data. "
-                    if schema_echo
-                    else ""
+                    "You returned schema metadata instead of instance data. " if schema_echo else ""
                 )
                 # A repair remains grounded: the evidence and schema are repeated
                 # together with the bounded validation error and invalid response.
@@ -426,6 +437,28 @@ class OpenAICompatibleProvider:
         )
         return ScientificGeneration(value=value, trace=trace)
 
+    def ground_scientific_principle(
+        self,
+        *,
+        principle_record: dict[str, Any],
+        meta_candidates: list[dict[str, Any]],
+    ) -> ScientificGeneration:
+        """Classify zero to four compatible roots after scientific validation."""
+
+        value, trace = self._generate_typed(
+            model_type=FoundationGroundingDecision,
+            system_prompt=META_GROUNDING_SYSTEM_PROMPT,
+            prompt_template="meta-grounding-v1",
+            input_label="validated_principle_and_meta_candidates",
+            input_payload={
+                "principle": principle_record,
+                "meta_candidates": meta_candidates[:24],
+            },
+            max_tokens=3_200,
+            thinking_budget=max(2_048, self.thinking_budget or 0),
+        )
+        return ScientificGeneration(value=value, trace=trace)
+
     @staticmethod
     def _evidence_line_records(
         evidence_segments: list[dict[str, Any]],
@@ -439,7 +472,9 @@ class OpenAICompatibleProvider:
             text = str(segment.get("text") or "").strip()
             if not text:
                 continue
-            spans = [item.strip() for item in re.split(r"(?<=[.!?])\s+|\n{2,}", text) if item.strip()]
+            spans = [
+                item.strip() for item in re.split(r"(?<=[.!?])\s+|\n{2,}", text) if item.strip()
+            ]
             bounded: list[str] = []
             for span in spans:
                 remainder = span
@@ -483,6 +518,12 @@ class OpenAICompatibleProvider:
                 "when",
                 "where",
                 "mechanisms",
+                "leaders",
+                "focus",
+                "tightly",
+                "navigate",
+                "persistent",
+                "pressures",
             }
         }
         scientific_signal = re.compile(
@@ -549,9 +590,7 @@ class OpenAICompatibleProvider:
             output: list[Any] = []
             for proposal in proposals.arguments:
                 try:
-                    output.append(
-                        materialize_scientific_argument(proposal, atom_batch.atoms)
-                    )
+                    output.append(materialize_scientific_argument(proposal, atom_batch.atoms))
                 except ValueError:
                     # Unknown atom references are rejected fail-closed without
                     # discarding other independently valid arguments in the batch.
@@ -609,9 +648,7 @@ class OpenAICompatibleProvider:
                     "transport_attempts": (
                         trace.transport_attempts + recovery_trace.transport_attempts
                     ),
-                    "repair_attempted": (
-                        trace.repair_attempted or recovery_trace.repair_attempted
-                    ),
+                    "repair_attempted": (trace.repair_attempted or recovery_trace.repair_attempted),
                 }
             )
             if not materialized and invalid_reference_output:
@@ -705,9 +742,7 @@ class OpenAICompatibleProvider:
         )
         first = ChallengeDecisionBatch.model_validate(value)
         valid = {
-            item.argument_index: item
-            for item in first.decisions
-            if item.argument_index in expected
+            item.argument_index: item for item in first.decisions if item.argument_index in expected
         }
         missing = sorted(expected - set(valid))
         if missing and not trace.repair_attempted:
@@ -724,8 +759,7 @@ class OpenAICompatibleProvider:
                     "goal": goal,
                     "atoms": atoms,
                     "arguments": [
-                        {"argument_index": index, "argument": arguments[index]}
-                        for index in missing
+                        {"argument_index": index, "argument": arguments[index]} for index in missing
                     ],
                 },
                 max_tokens=1_800,
@@ -739,9 +773,7 @@ class OpenAICompatibleProvider:
                     if item.argument_index in missing
                 }
             )
-            combined = ChallengeDecisionBatch(
-                decisions=[valid[index] for index in sorted(valid)]
-            )
+            combined = ChallengeDecisionBatch(decisions=[valid[index] for index in sorted(valid)])
             trace = trace.model_copy(
                 update={
                     "output_sha256": canonical_sha256(combined.model_dump(mode="json")),
@@ -757,9 +789,7 @@ class OpenAICompatibleProvider:
             )
             return ScientificGeneration(value=combined, trace=trace)
         return ScientificGeneration(
-            value=ChallengeDecisionBatch(
-                decisions=[valid[index] for index in sorted(valid)]
-            ),
+            value=ChallengeDecisionBatch(decisions=[valid[index] for index in sorted(valid)]),
             trace=trace,
         )
 

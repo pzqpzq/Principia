@@ -325,9 +325,7 @@ class ResearchService:
                 raw_candidates=len(retrieval.candidates),
                 selected_candidates=len(retrieval.selected_works),
             )
-            selected_works = dedupe_works(
-                [coerce_work(item) for item in retrieval.selected_works]
-            )
+            selected_works = dedupe_works([coerce_work(item) for item in retrieval.selected_works])
             ranked_pool = dedupe_works(
                 [
                     *selected_works,
@@ -353,9 +351,9 @@ class ResearchService:
                     f"{framework_top_up_count} ranked candidate top-up(s) to retain "
                     f"{target_count} unique works."
                 )
-                diagnostics.query_plan.setdefault("trace", {})[
-                    "framework_identity_top_up"
-                ] = framework_top_up_count
+                diagnostics.query_plan.setdefault("trace", {})["framework_identity_top_up"] = (
+                    framework_top_up_count
+                )
             strict = config.require_target if require_target is None else bool(require_target)
             if strict and len(works) != target_count:
                 retrieval.selected_works = [
@@ -393,9 +391,7 @@ class ResearchService:
                     # bridges complementary identifiers, so recompute the
                     # canonical set before deciding whether the target is full.
                     reconcile_saved_pairs()
-                works = [canonical_by_id[work_id] for work_id in canonical_order][
-                    :target_count
-                ]
+                works = [canonical_by_id[work_id] for work_id in canonical_order][:target_count]
 
                 mapped_trace: list[dict[str, Any]] = []
                 traced_ids: set[str] = set()
@@ -441,9 +437,9 @@ class ResearchService:
                         "Canonical identity reconciliation used "
                         f"{top_up_count} ranked candidate top-up(s) to retain the persisted cohort."
                     )
-                    diagnostics.query_plan.setdefault("trace", {})[
-                        "canonical_identity_top_up"
-                    ] = top_up_count
+                    diagnostics.query_plan.setdefault("trace", {})["canonical_identity_top_up"] = (
+                        top_up_count
+                    )
                 diagnostics.selected_count = len(works)
                 diagnostics.complete = len(works) == target_count
                 diagnostics.completeness = min(1.0, len(works) / max(1, target_count))

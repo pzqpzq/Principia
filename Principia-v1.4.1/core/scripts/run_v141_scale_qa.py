@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import contextlib
 import json
 import math
 import tempfile
@@ -55,6 +56,7 @@ def build_fixture(root: Path) -> None:
         )
     principles = []
     links = []
+    relations = []
     for index in range(10_000):
         principle = normalize_record(
             "principles",
@@ -96,10 +98,30 @@ def build_fixture(root: Path) -> None:
                     "evidence_digest": canonical_sha256({"principle": index, "work": work_index}),
                 }
             )
+        for offset in range(1, 6):
+            target = (index + offset) % 10_000
+            relations.append(
+                normalize_record(
+                    "relations",
+                    {
+                        "schema_version": "global-relation-v1",
+                        "relation_id": f"rel:scale:{index:05d}:{target:05d}",
+                        "revision": 1,
+                        "source_principle_id": principle["principle_id"],
+                        "target_principle_id": f"prn:scale:{target:026d}",
+                        "relation_type": "supports" if offset < 3 else "analogous_to",
+                        "rationale": "Synthetic bounded-degree graph QA edge.",
+                        "strength": 0.5 + offset / 20,
+                        "status": "active",
+                        "unresolved_target": False,
+                        "created_at": "2026-08-13T00:00:00Z",
+                    },
+                )
+            )
     repository.write_records("works", works)
     repository.write_records("principles", principles)
     repository.write_records("principle-work", links)
-    repository.write_records("relations", [])
+    repository.write_records("relations", relations)
 
 
 def vectors(count: int, dimensions: int, multiplier: int) -> bytes:
@@ -116,12 +138,24 @@ def percentile95(values: list[float]) -> float:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--report", type=Path, required=True)
+    parser.add_argument(
+        "--workspace",
+        type=Path,
+        help="Optional persistent QA workspace; existing canonical data is reused.",
+    )
     args = parser.parse_args()
-    with tempfile.TemporaryDirectory(prefix="principia-v141-scale.") as temporary:
+    manager = (
+        contextlib.nullcontext(str(args.workspace.expanduser().resolve()))
+        if args.workspace
+        else tempfile.TemporaryDirectory(prefix="principia-v141-scale.")
+    )
+    with manager as temporary:
         root = Path(temporary)
+        root.mkdir(parents=True, exist_ok=True)
         canonical = root / "canonical"
         started = time.perf_counter()
-        build_fixture(canonical)
+        if not (canonical / "data" / "v1" / "works").is_dir():
+            build_fixture(canonical)
         snapshot = root / "scale.pcg"
         manifest = build_cloud_snapshot(
             canonical,
@@ -153,12 +187,26 @@ def main() -> None:
             tick = time.perf_counter()
             response = store.search(request, query_vector=query_vector)
             timings.append(time.perf_counter() - tick)
+        graph_timings = []
+        graph_response = {}
+        for _ in range(30):
+            tick = time.perf_counter()
+            graph_response = store.graph_viewport(
+                min_x=-10_000,
+                max_x=10_000,
+                min_y=-10_000,
+                max_y=10_000,
+                zoom=0.7,
+                limit=2_500,
+            )
+            graph_timings.append(time.perf_counter() - tick)
         report = {
             "schema_version": "principia-v141-scale-qa-v1",
             "works": manifest.work_count,
             "principles": manifest.principle_count,
             "principle_revisions": manifest.principle_revision_count,
             "principle_work_links": manifest.principle_work_count,
+            "graph_edges": manifest.relation_count,
             "pagination_items_seen": seen,
             "pagination_pages": pages,
             "snapshot_bytes": snapshot.stat().st_size,
@@ -168,11 +216,19 @@ def main() -> None:
             "warm_hybrid_p95_seconds": round(percentile95(timings), 4),
             "warm_hybrid_max_seconds": round(max(timings), 4),
             "ranking_mode": response["ranking_mode"],
+            "graph_tile_nodes": len(graph_response["nodes"]),
+            "graph_tile_edges": len(graph_response["edges"]),
+            "graph_viewport_p95_seconds": round(percentile95(graph_timings), 4),
+            "graph_viewport_max_seconds": round(max(graph_timings), 4),
             "fixture_build_seconds": round(time.perf_counter() - started, 3),
             "acceptance": {
                 "complete_pagination": seen == 20_000,
                 "snapshot_at_most_250_mib": snapshot.stat().st_size <= 250 * 1024 * 1024,
                 "warm_p95_at_most_one_second": percentile95(timings) <= 1.0,
+                "graph_has_fifty_thousand_edges": manifest.relation_count == 50_000,
+                "graph_viewport_p95_at_most_100ms": percentile95(graph_timings) <= 0.1,
+                "graph_viewport_max_at_most_200ms": max(graph_timings) <= 0.2,
+                "graph_tile_is_bounded": len(graph_response["nodes"]) <= 2_500,
             },
         }
         if not all(report["acceptance"].values()):
