@@ -58,9 +58,9 @@ This representation is designed to make scientific knowledge compound: each new 
 
 The Global Principles Cloud is maintained as reviewable, canonical JSON records under [`global-cloud/`](./global-cloud/). GitHub Releases distribute derived, verified SQLite/vector snapshots for fast local search. Principia downloads and searches those snapshots locally; GitHub is not used as a live database.
 
-The schema-v2 foundation included with this release contains:
+v1.4.1 introduced the schema-v2 foundation with the following launch snapshot. The Cloud continues to grow through reviewed, data-only releases; see the [latest verified Cloud release](https://github.com/pzqpzq/Principia/releases/latest) for the live manifest and counts.
 
-| Scientific object | Current canonical count |
+| Scientific object | v1.4.1 launch count |
 | --- | ---: |
 | Works | 958 |
 | Literature Principles | 676 |
