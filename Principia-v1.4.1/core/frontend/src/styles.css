@@ -8503,6 +8503,20 @@ body,
 }
 .research-cloud-state {
   min-width: 116px;
+  min-height: 46px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+.research-cloud-state:hover {
+  border-color: rgba(103, 84, 180, 0.18);
+  background: rgba(242, 239, 250, 0.78);
+}
+.research-cloud-state:focus-visible {
+  outline: 3px solid rgba(103, 84, 180, 0.2);
+  outline-offset: 1px;
 }
 .research-cloud-state strong {
   font-size: 14px;
@@ -8514,6 +8528,181 @@ body,
   top: 58px;
   width: min(480px, calc(100vw - 340px));
   border-radius: 16px;
+}
+
+.cloud-status-backdrop {
+  position: fixed;
+  z-index: 95;
+  inset: 0 0 0 236px;
+  display: grid;
+  place-items: start end;
+  padding: 78px 24px 24px;
+  background: rgba(9, 15, 26, 0.18);
+  backdrop-filter: blur(3px);
+}
+.cloud-status-dialog {
+  width: min(560px, calc(100vw - 300px));
+  max-height: calc(100vh - 104px);
+  overflow: auto;
+  padding: 24px;
+  border: 1px solid rgba(134, 172, 216, 0.34);
+  border-radius: 20px;
+  color: #e7f2ff;
+  background:
+    radial-gradient(circle at 92% 4%, rgba(91, 107, 206, 0.2), transparent 38%),
+    linear-gradient(155deg, rgba(9, 22, 38, 0.985), rgba(10, 27, 45, 0.985));
+  box-shadow: 0 32px 90px rgba(0, 4, 12, 0.46);
+}
+.cloud-status-dialog > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+.cloud-status-dialog .eyebrow {
+  color: #76bff0;
+}
+.cloud-status-dialog h2 {
+  margin: 0;
+  color: #f2f7ff;
+  font: 600 24px/1.2 Georgia, serif;
+  letter-spacing: -0.02em;
+}
+.cloud-status-dialog header p {
+  max-width: 440px;
+  margin: 8px 0 0;
+  color: #9eb3ca;
+  font-size: 11px;
+  line-height: 1.55;
+}
+.cloud-status-close {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-color: rgba(147, 185, 224, 0.24);
+  border-radius: 50%;
+  color: #dcecff;
+  background: rgba(43, 71, 100, 0.3);
+  font-size: 22px;
+}
+.cloud-status-total {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0 14px;
+  padding: 16px;
+  border: 1px solid rgba(125, 173, 220, 0.18);
+  border-radius: 15px;
+  background: rgba(25, 52, 78, 0.46);
+}
+.cloud-status-total > div {
+  display: grid;
+  gap: 2px;
+}
+.cloud-status-total strong {
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+}
+.cloud-status-total small {
+  color: #99afc5;
+  font-size: 9px;
+}
+.cloud-live-indicator {
+  padding: 5px 8px;
+  border: 1px solid rgba(112, 177, 230, 0.25);
+  border-radius: 999px;
+  color: #bfe3ff;
+  background: rgba(65, 120, 164, 0.2);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.cloud-live-indicator.ready {
+  border-color: rgba(80, 203, 150, 0.3);
+  color: #a8e8ca;
+  background: rgba(42, 142, 101, 0.17);
+}
+.cloud-status-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+.cloud-status-metrics > div {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(128, 168, 209, 0.13);
+  border-radius: 12px;
+  background: rgba(26, 47, 69, 0.42);
+}
+.cloud-status-metrics dt {
+  min-height: 24px;
+  color: #829bb5;
+  font-size: 8px;
+  line-height: 1.35;
+}
+.cloud-status-metrics dd {
+  margin: 5px 0 0;
+  color: #f2f7fd;
+  font-size: 16px;
+  font-weight: 700;
+}
+.cloud-status-provenance {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 14px 15px;
+  border-top: 1px solid rgba(130, 170, 211, 0.16);
+  border-bottom: 1px solid rgba(130, 170, 211, 0.16);
+}
+.cloud-status-provenance > div {
+  display: grid;
+  grid-template-columns: 128px minmax(0, 1fr);
+  gap: 12px;
+}
+.cloud-status-provenance span {
+  color: #7891aa;
+  font-size: 9px;
+}
+.cloud-status-provenance strong {
+  overflow: hidden;
+  color: #bfd2e5;
+  font-size: 9px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cloud-status-warning {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border: 1px solid rgba(215, 169, 87, 0.28);
+  border-radius: 10px;
+  color: #e4c38d;
+  background: rgba(130, 82, 23, 0.18);
+  font-size: 9px;
+}
+.cloud-status-dialog > footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 16px;
+}
+.cloud-status-dialog > footer small {
+  max-width: 330px;
+  color: #778fa7;
+  font-size: 8px;
+  line-height: 1.5;
+}
+.cloud-status-dialog > footer button {
+  flex: 0 0 auto;
+  border-color: rgba(122, 186, 239, 0.36);
+  color: #dceeff;
+  background: rgba(48, 102, 148, 0.38);
 }
 
 .research-graph-tools {
