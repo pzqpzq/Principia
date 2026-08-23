@@ -4,7 +4,6 @@
 <p align="center"><em>From scientific works to reusable structure. From structure to testable derivations.</em></p>
 
 <p align="center">
-  <a href="https://github.com/pzqpzq/Principia/actions/workflows/principia-v141-ci.yml"><img alt="v1.4.1 CI" src="https://github.com/pzqpzq/Principia/actions/workflows/principia-v141-ci.yml/badge.svg"></a>
   <a href="https://github.com/pzqpzq/Principia/tree/main/Principia-v1.4.1/core"><img alt="Principia v1.4.1" src="https://img.shields.io/badge/Principia-v1.4.1-111827?style=flat-square&amp;logo=github"></a>
   <a href="https://pypi.org/project/principia-ai/"><img alt="PyPI stable" src="https://img.shields.io/pypi/v/principia-ai?style=flat-square&amp;logo=pypi&amp;logoColor=white&amp;label=PyPI%20stable"></a>
   <a href="https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4.1/core/LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/v1.4.1%20core-MIT-0F766E?style=flat-square"></a>
@@ -32,8 +31,16 @@ Principia v1.4.1 is a local-first research workbench that turns scientific liter
 The result is neither a paper database nor a generic chat interface. It is a living map where evidence-linked Principles can be connected to higher-order Meta-Principles, combined into candidate relations, and developed into locally controlled derived Principles.
 
 <p align="center">
-  <a href="./assets/screenshots-v1.4.1-aug23/home.png">
-    <img src="./assets/screenshots-v1.4.1-aug23/home.png" alt="Principia v1.4.1 New Research workspace and living Principles map" width="100%">
+  <a href="./assets/screenshots-v1.4.1-aug23/home_page.png">
+    <img src="./assets/screenshots-v1.4.1-aug23/home_page.png" alt="Principia v1.4.1 New Research workspace and living Principles map" width="100%">
+  </a>
+</p>
+
+One can select one or several scientific areas, then the Principles Map presents both literature and meta principles from those areas.
+
+<p align="center">
+  <a href="./assets/screenshots-v1.4.1-aug23/areas_page.png">
+    <img src="./assets/screenshots-v1.4.1-aug23/areas_page.png" alt="Principia v1.4.1 New Research workspace and living Principles map" width="100%">
   </a>
 </p>
 
@@ -77,8 +84,8 @@ Meta-grounding is deliberately non-authoritative. A Meta-Principle may explain o
 Global retrieval and selected Local extraction run independently and concurrently. Top-ranked literature Principles and their valid Meta foundations enter the graph first, while the complete Global, Local, and Meta result sets continue to stream into the workspace. Projects preserve graph membership, layout, viewport, results, and virtual artifacts across sessions.
 
 <p align="center">
-  <a href="./assets/screenshots-v1.4.1-aug23/project-page.png">
-    <img src="./assets/screenshots-v1.4.1-aug23/project-page.png" alt="Principia v1.4.1 project workspace with literature Principles, Meta-Principles, virtual hypotheses, and the scientific record inspector" width="100%">
+  <a href="./assets/screenshots-v1.4.1-aug23/projects_page.png">
+    <img src="./assets/screenshots-v1.4.1-aug23/projects_page.png" alt="Principia v1.4.1 project workspace with literature Principles, Meta-Principles, virtual hypotheses, and the scientific record inspector" width="100%">
   </a>
 </p>
 
