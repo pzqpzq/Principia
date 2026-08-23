@@ -1,0 +1,113 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "04_particle_physics_atlas_4lep_2015",
+  "domain": "particle physics",
+  "title": "ATLAS 2015 four-lepton open data across run periods",
+  "publisher": "CERN Open Data / ATLAS Collaboration",
+  "authoritative_landing_url": "https://opendata.cern.ch/record/93918",
+  "authoritative_source_urls": [
+    "https://opendata.cern.ch/api/records/93918",
+    "https://opendata.cern.ch/eos/opendata/atlas/rucio/opendata/"
+  ],
+  "identifiers": [
+    "doi:10.7483/OPENDATA.ATLAS.7UW9.C9LL"
+  ],
+  "release_or_version": "ODEO FEB2025 v0; 2015 periods D,E,F,G,H,J",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "CC0 1.0",
+  "deterministic_selection_rule": "Retain the record metadata and the six period-specific 4lep ROOT files D, E, F, G, H, and J.",
+  "exclusions": [
+    "No value-level preprocessing",
+    "No outcome-guided selection",
+    "No controlled-access or credential material"
+  ],
+  "ethics_restrictions": [
+    "Public/deidentified use only where human data are present",
+    "No re-identification",
+    "Generated USER_BRIEF is context, not evidence"
+  ],
+  "transport_and_headers": {
+    "status": "source metadata and mutable-feed companion metadata retained where publisher supplied it; browser-only endpoints are identified by URL",
+    "http_error_masquerade_check_required": true
+  },
+  "substitution": null,
+  "files": [
+    {
+      "path": "context/cern_record_93918.json",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://opendata.cern.ch/api/records/93918",
+        "https://opendata.cern.ch/eos/opendata/atlas/rucio/opendata/"
+      ],
+      "bytes": 15500,
+      "sha256": "42c4861d454205d0462884ae490082a9cda3d5384be40ce856040732c8342925",
+      "mime_type": "application/json"
+    },
+    {
+      "path": "raw/ODEO_FEB2025_v0_4lep_data15_periodD.4lep.root",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://opendata.cern.ch/api/records/93918",
+        "https://opendata.cern.ch/eos/opendata/atlas/rucio/opendata/"
+      ],
+      "bytes": 2358002,
+      "sha256": "d76098a536fca22f0c926672efa461feceb41a44e87feb0c773b29a01113dc4a",
+      "mime_type": "application/octet-stream"
+    },
+    {
+      "path": "raw/ODEO_FEB2025_v0_4lep_data15_periodE.4lep.root",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://opendata.cern.ch/api/records/93918",
+        "https://opendata.cern.ch/eos/opendata/atlas/rucio/opendata/"
+      ],
+      "bytes": 13461218,
+      "sha256": "56aad4dcc08625525d3c86d4889160799c2af4974a0616289df78545f0888470",
+      "mime_type": "application/octet-stream"
+    },
+    {
+      "path": "raw/ODEO_FEB2025_v0_4lep_data15_periodF.4lep.root",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://opendata.cern.ch/api/records/93918",
+        "https://opendata.cern.ch/eos/opendata/atlas/rucio/opendata/"
+      ],
+      "bytes": 9236190,
+      "sha256": "063ece4b1ac89f8ed3bf6abb6079507ee4468e15138fc4ff8c6c8691ed52a9cf",
+      "mime_type": "application/octet-stream"
+    },
+    {
+      "path": "raw/ODEO_FEB2025_v0_4lep_data15_periodG.4lep.root",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://opendata.cern.ch/api/records/93918",
+        "https://opendata.cern.ch/eos/opendata/atlas/rucio/opendata/"
+      ],
+      "bytes": 19424744,
+      "sha256": "97bae2da9a5ccfac65aac15677efee3c397116a524849b706217b616d318b69c",
+      "mime_type": "application/octet-stream"
+    },
+    {
+      "path": "raw/ODEO_FEB2025_v0_4lep_data15_periodH.4lep.root",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://opendata.cern.ch/api/records/93918",
+        "https://opendata.cern.ch/eos/opendata/atlas/rucio/opendata/"
+      ],
+      "bytes": 6000089,
+      "sha256": "43397857022591499a97a967cca3d45880f02531736b377ca036402d75abb23a",
+      "mime_type": "application/octet-stream"
+    },
+    {
+      "path": "raw/ODEO_FEB2025_v0_4lep_data15_periodJ.4lep.root",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://opendata.cern.ch/api/records/93918",
+        "https://opendata.cern.ch/eos/opendata/atlas/rucio/opendata/"
+      ],
+      "bytes": 35827539,
+      "sha256": "a74c8957f816a2b5ed24ed4505c69c55c5eba44f7fb3d8f65e8dc9d65366fd97",
+      "mime_type": "application/octet-stream"
+    }
+  ]
+}

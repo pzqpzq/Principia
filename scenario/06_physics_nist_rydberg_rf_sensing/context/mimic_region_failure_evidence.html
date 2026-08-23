@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>MIMIC-IV Clinical Database Demo v2.2</title>
+    
+  <!-- wfdb-python: <p>Version: 2.2</p> -->
+  
+    <meta name="description" content="An openly available subset of patients in the MIMIC-IV database.">
+  
+
+    
+<link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="/static/font-awesome/css/all.css"/>
+<link rel="stylesheet" type="text/css" href="/static/custom/css/physionet.css"/>
+    
+  <link rel="stylesheet" type="text/css" href="/static/project/css/project-content.css"/>
+  <link rel="stylesheet" type="text/css" href="/static/highlight/css/default.min.css"/>
+
+    
+<script src="/static/jquery/jquery.min.js"></script>
+<script src="/static/popper/popper.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-87592301-7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-87592301-7');
+</script>
+    
+  <script src="/static/mathjax/MathJax.js?config=MML_HTMLorMML"></script>
+  <script src="/static/highlight/js/highlight.min.js"></script>
+  <script src="/static/custom/js/copy-to-clipboard.js"></script>
+
+    <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/bootstrap/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="/static/fonts/inter-local.css">
+    <link rel="stylesheet" type="text/css" href="/static/custom/css/style.css?v=2">
+  </head>
+
+  
+  <body class="flexbody">
+    
+
+
+
+
+<div class="modern-ui nav-wrapper">
+  <nav class="nav">
+    <div class="container my-0 h-100 d-flex justify-content-between align-items-center">
+      <button type="button" class="nav__hamburger circle-button mr-2"
+              popovertarget="nav__hamburger_popup"
+              title="Menu">
+        <i class="nav__hamburger__list bi bi-list"></i>
+        <i class="nav__hamburger__x bi bi-x"></i>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <a href="/">
+        
+          <img src="/static/images/physionet-logo.svg" width="200px" alt="PhysioNet">
+        
+      </a>
+      <div class="nav__links align-items-center">
+        
+          
+            <a href="/about/publish/" class="nav-link">Share</a>
+          
+        
+          
+            <a href="/about/" class="nav-link">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <a href="/about/faqs/" class="nav-link">FAQs</a>
+          
+        
+          
+        
+
+        <div>
+          <button type="button" class="nav-link nav-link--expandable"
+                  popovertarget="nav__explore_popup">
+            Explore <i class="bi bi-chevron-down ml-2"></i>
+          </button>
+          <dialog class="nav-link__popup" id="nav__explore_popup" popover
+                  aria-label="Explore">
+            <div class="nav-sublinks">
+              
+                <a class="nav-sublink" href="/about/database/">
+                  <div class="nav-sublink__icon">
+                    
+                      <img src="/static/images/icons/data.png" alt="" height="32px">
+                    
+                  </div>
+                  <div class="nav-sublink__text">
+                    <span class="nav-sublink__title">Data</span>
+                    <span class="nav-sublink__description">View datasets</span>
+                  </div>
+                </a>
+              
+                <a class="nav-sublink" href="/about/software/">
+                  <div class="nav-sublink__icon">
+                    
+                      <img src="/static/images/icons/software.png" alt="" height="32px">
+                    
+                  </div>
+                  <div class="nav-sublink__text">
+                    <span class="nav-sublink__title">Software</span>
+                    <span class="nav-sublink__description">View software</span>
+                  </div>
+                </a>
+              
+                <a class="nav-sublink" href="/about/challenge/">
+                  <div class="nav-sublink__icon">
+                    
+                      <img src="/static/images/icons/challenges.png" alt="" height="32px">
+                    
+                  </div>
+                  <div class="nav-sublink__text">
+                    <span class="nav-sublink__title">Challenges</span>
+                    <span class="nav-sublink__description">View challenges</span>
+                  </div>
+                </a>
+              
+                <a class="nav-sublink" href="/about/tutorial/">
+                  <div class="nav-sublink__icon">
+                    
+                      <img src="/static/images/icons/tutorials.png" alt="" height="32px">
+                    
+                  </div>
+                  <div class="nav-sublink__text">
+                    <span class="nav-sublink__title">Tutorials</span>
+                    <span class="nav-sublink__description">View tutorials</span>
+                  </div>
+                </a>
+              
+              </div>
+          </dialog>
+        </div>
+      </div>
+      <div class="nav__actions d-flex ml-md-4">
+        <form action="/content/" class="mr-2">
+          <div class="nav__search">
+            <input type="text" name="topic" placeholder="Search for anything...">
+            <div class="nav__search__actions">
+              <button type="button" class="nav__search__close mr-2"
+                      title="Cancel">
+                <i class="bi bi-x"></i>
+                <span class="visually-hidden">Cancel</span>
+              </button>
+              <button type="submit" class="circle-button">Search</button>
+            </div>
+          </div>
+        </form>
+        <button type="button" class="nav__search__open circle-button mr-md-2"
+                title="Search PhysioNet">
+          <i class="bi bi-search"></i>
+          <span class="visually-hidden">Search PhysioNet</span>
+        </button>
+        
+          <a class="nav__user" href="/login/"
+             title="Log in">
+            <i class="bi bi-person"></i>
+            <span class="visually-hidden">Log in</span>
+          </a>
+        
+      </div>
+    </div>
+
+    <dialog class="nav__mobile" id="nav__hamburger_popup" popover
+            aria-label="Menu">
+      
+        
+          <a href="/about/publish/" class="nav-link">Share</a>
+        
+      
+        
+          <a href="/about/" class="nav-link">About</a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <a href="/about/faqs/" class="nav-link">FAQs</a>
+        
+      
+        
+      
+      <hr>
+      <div class="nav-sublinks">
+        
+          <a class="nav-sublink" href="/about/database/">
+            <div class="nav-sublink__icon">
+              
+                <img src="/static/images/icons/data.png" alt="" height="32px">
+              
+              </div>
+            <div class="nav-sublink__text">
+              <span class="nav-sublink__title">Data</span>
+              <span class="nav-sublink__description">View datasets</span>
+            </div>
+          </a>
+        
+          <a class="nav-sublink" href="/about/software/">
+            <div class="nav-sublink__icon">
+              
+                <img src="/static/images/icons/software.png" alt="" height="32px">
+              
+              </div>
+            <div class="nav-sublink__text">
+              <span class="nav-sublink__title">Software</span>
+              <span class="nav-sublink__description">View software</span>
+            </div>
+          </a>
+        
+          <a class="nav-sublink" href="/about/challenge/">
+            <div class="nav-sublink__icon">
+              
+                <img src="/static/images/icons/challenges.png" alt="" height="32px">
+              
+              </div>
+            <div class="nav-sublink__text">
+              <span class="nav-sublink__title">Challenges</span>
+              <span class="nav-sublink__description">View challenges</span>
+            </div>
+          </a>
+        
+          <a class="nav-sublink" href="/about/tutorial/">
+            <div class="nav-sublink__icon">
+              
+                <img src="/static/images/icons/tutorials.png" alt="" height="32px">
+              
+              </div>
+            <div class="nav-sublink__text">
+              <span class="nav-sublink__title">Tutorials</span>
+              <span class="nav-sublink__description">View tutorials</span>
+            </div>
+          </a>
+        
+      </div>
+    </dialog>
+  </nav>
+</div>
+
+    <div class="nav-spacer"></div>
+
+    <main>
+  <div class="container">
+    
+
+    <p>
+      <span class="badge badge-dark"><i class="fa fa-database"></i> Database</span>
+      <span class="badge badge-success"><i class="fas fa-lock-open"></i> Open Access</span>
+    </p>
+    <h1 class="form-signin-heading">MIMIC-IV Clinical Database Demo</h1>
+    <p>
+      <strong>
+      
+        <a class="author">Alistair Johnson</a> <i class="fas fa-info-circle" data-toggle="popover" data-original-title="<strong>Author Info</strong>" data-placement="bottom" data-content="&lt;b&gt;Affiliations&lt;/b&gt;&lt;p&gt;Massachusetts Institute of Technology&lt;/p&gt;<p><b>Profile</b><br><a href=/users/alistairewj target=_blank>alistairewj</a></p>" data-html="true" style="cursor: pointer;"></i>
+        ,&nbsp;
+      
+        <a class="author">Lucas Bulgarelli</a> <i class="fas fa-info-circle" data-toggle="popover" data-original-title="<strong>Author Info</strong>" data-placement="bottom" data-content="&lt;b&gt;Affiliations&lt;/b&gt;&lt;p&gt;Massachusetts Institute of Technology&lt;/p&gt;<p><b>Profile</b><br><a href=/users/lbulgarelli target=_blank>lbulgarelli</a></p>" data-html="true" style="cursor: pointer;"></i>
+        ,&nbsp;
+      
+        <a class="author">Tom Pollard</a> <i class="fas fa-info-circle" data-toggle="popover" data-original-title="<strong>Author Info</strong>" data-placement="bottom" data-content="&lt;b&gt;Affiliations&lt;/b&gt;&lt;p&gt;Massachusetts Institute of Technology, USA&lt;/p&gt;<p><b>Profile</b><br><a href=/users/tompollard target=_blank>tompollard</a></p>" data-html="true" style="cursor: pointer;"></i>
+        ,&nbsp;
+      
+        <a class="author">Steven Horng</a> <i class="fas fa-info-circle" data-toggle="popover" data-original-title="<strong>Author Info</strong>" data-placement="bottom" data-content="&lt;b&gt;Affiliations&lt;/b&gt;&lt;p&gt;Beth Israel Deaconess Medical Center&lt;br&gt;Harvard Medical School&lt;/p&gt;<p><b>Profile</b><br><a href=/users/shorng target=_blank>shorng</a></p>" data-html="true" style="cursor: pointer;"></i>
+        ,&nbsp;
+      
+        <a class="author">Leo Anthony Celi</a> <i class="fas fa-info-circle" data-toggle="popover" data-original-title="<strong>Author Info</strong>" data-placement="bottom" data-content="&lt;b&gt;Affiliations&lt;/b&gt;&lt;p&gt;Massachusetts Institute of Technology, Cambridge, USA&lt;/p&gt;<p><b>Profile</b><br><a href=/users/leoanthonyceli target=_blank>leoanthonyceli</a></p>" data-html="true" style="cursor: pointer;"></i>
+        ,&nbsp;
+      
+        <a class="author">Roger Mark</a> <i class="fas fa-info-circle" data-toggle="popover" data-original-title="<strong>Author Info</strong>" data-placement="bottom" data-content="&lt;b&gt;Affiliations&lt;/b&gt;&lt;p&gt;Massachusetts Institute of Technology&lt;/p&gt;<p><b>Profile</b><br><a href=/users/rgmark target=_blank>rgmark</a></p>" data-html="true" style="cursor: pointer;"></i>
+        
+      
+      </strong>
+    </p>
+
+    <p>Published: Jan. 31, 2023. Version:
+      2.2
+    </p>
+
+    
+    <hr>
+
+    <!-- Latest news and announcements -->
+    
+
+    <div class="row">
+      <!-- Main column -->
+      <div class="col-md-8">
+        
+          <div class="alert alert-secondary">
+
+  
+    
+      <p>
+        <strong>When using this resource, please cite: </strong>
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#citationModal" title="View citation formats"><i class="bi bi-quote"></i> Cite</button>
+        <button type="button" class="btn btn-sm btn-outline-secondary ml-1" title="Copy BibTeX" onclick="copyToClipboard(document.getElementById('bibtex-data-2').value); this.innerHTML='<i class=\'bi bi-check\'></i> Copied'; var btn=this; setTimeout(function(){ btn.innerHTML='<i class=\'bi bi-clipboard\'></i> Copy BibTeX'; }, 2000);"><i class="bi bi-clipboard"></i> Copy BibTeX</button>
+        <br><span>Johnson, A., Bulgarelli, L., Pollard, T., Horng, S., Celi, L. A., &amp; Mark, R. (2023). MIMIC-IV Clinical Database Demo (version 2.2). <i>PhysioNet</i>. RRID:SCR_007345. <a href="https://doi.org/10.13026/dp1f-ex47">https://doi.org/10.13026/dp1f-ex47</a></span>
+      </p>
+      <textarea id="bibtex-data-2" style="display:none;">@article{PhysioNet-mimic-iv-demo-2.2,
+  author = {Johnson, Alistair and Bulgarelli, Lucas and Pollard, Tom and Horng, Steven and Celi, Leo Anthony and Mark, Roger},
+  title = {{MIMIC-IV Clinical Database Demo}},
+  journal = {{PhysioNet}},
+  year = {2023},
+  month = jan,
+  note = {Version 2.2},
+  doi = {10.13026/dp1f-ex47},
+  url = {https://doi.org/10.13026/dp1f-ex47}
+}</textarea>
+
+      <div class="modal fade" id="citationModal">
+  <div class="modal-dialog citation" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      <table><tbody>
+        
+          
+          <tr>
+            <th>MLA</th>
+            <td>Johnson, Alistair, et al. "MIMIC-IV Clinical Database Demo" (version 2.2). <i>PhysioNet</i> (2023). RRID:SCR_007345. <a href="https://doi.org/10.13026/dp1f-ex47">https://doi.org/10.13026/dp1f-ex47</a></td>
+          </tr>
+          
+        
+          
+          <tr>
+            <th>APA</th>
+            <td>Johnson, A., Bulgarelli, L., Pollard, T., Horng, S., Celi, L. A., &amp; Mark, R. (2023). MIMIC-IV Clinical Database Demo (version 2.2). <i>PhysioNet</i>. RRID:SCR_007345. <a href="https://doi.org/10.13026/dp1f-ex47">https://doi.org/10.13026/dp1f-ex47</a></td>
+          </tr>
+          
+        
+          
+          <tr>
+            <th>Chicago</th>
+            <td>Johnson, Alistair, Bulgarelli, Lucas, Pollard, Tom, Horng, Steven, Celi, Leo Anthony, and Roger Mark. "MIMIC-IV Clinical Database Demo" (version 2.2). <i>PhysioNet</i> (2023). RRID:SCR_007345. <a href="https://doi.org/10.13026/dp1f-ex47">https://doi.org/10.13026/dp1f-ex47</a></td>
+          </tr>
+          
+        
+          
+          <tr>
+            <th>Harvard</th>
+            <td>Johnson, A., Bulgarelli, L., Pollard, T., Horng, S., Celi, L. A., and Mark, R. (2023) 'MIMIC-IV Clinical Database Demo' (version 2.2), <i>PhysioNet</i>. RRID:SCR_007345. Available at: <a href='https://doi.org/10.13026/dp1f-ex47'>https://doi.org/10.13026/dp1f-ex47</a></td>
+          </tr>
+          
+        
+          
+          <tr>
+            <th>Vancouver</th>
+            <td>Johnson A, Bulgarelli L, Pollard T, Horng S, Celi L A, Mark R. MIMIC-IV Clinical Database Demo (version 2.2). PhysioNet. 2023. RRID:SCR_007345. Available from: <a href="https://doi.org/10.13026/dp1f-ex47">https://doi.org/10.13026/dp1f-ex47</a></td>
+          </tr>
+          
+        
+          
+        
+      </tbody></table>
+      
+      <div class="mt-3">
+        <strong>BibTeX</strong>
+        <button class="btn btn-sm btn-outline-secondary ml-2" onclick="copyToClipboard(document.getElementById('bibtex-data-2').value); var btn=this; btn.textContent='Copied!'; setTimeout(function(){ btn.textContent='Copy'; }, 2000)">Copy</button>
+        <pre id="bibtex-citation-2" class="mt-2 p-2 border rounded" style="white-space: pre-wrap; background-color: #f8f9fa;">@article{PhysioNet-mimic-iv-demo-2.2,
+  author = {Johnson, Alistair and Bulgarelli, Lucas and Pollard, Tom and Horng, Steven and Celi, Leo Anthony and Mark, Roger},
+  title = {{MIMIC-IV Clinical Database Demo}},
+  journal = {{PhysioNet}},
+  year = {2023},
+  month = jan,
+  note = {Version 2.2},
+  doi = {10.13026/dp1f-ex47},
+  url = {https://doi.org/10.13026/dp1f-ex47}
+}</pre>
+      </div>
+      
+            </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <p>
+        <strong>Please include the standard citation for PhysioNet:</strong>
+        <a href="#citationModalPlatform" data-toggle="modal">(show more options)</a>
+          <br><span>Pollard, T., Moody, B. E., Lehman, L., Gow, B., Fernandes, C., Xie, C., Johnson, A., Mark, R. G., &amp; Heldt, T. (2026). PhysioNet as a global platform for biomedical research. Nature Health. https://doi.org/10.1038/s44360-026-00096-z. Available from: https://rdcu.be/faatM</span>
+      </p>
+    
+
+  <div class="modal fade" id="citationModalPlatform">
+  <div class="modal-dialog citation" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+  <table><tbody>
+    
+        
+          <tr>
+            <th>APA</th>
+            <td>Pollard, T., Moody, B. E., Lehman, L., Gow, B., Fernandes, C., Xie, C., Johnson, A., Mark, R. G., &amp; Heldt, T. (2026). PhysioNet as a global platform for biomedical research. Nature Health. https://doi.org/10.1038/s44360-026-00096-z. Available from: https://rdcu.be/faatM</td>
+          </tr>
+        
+    
+        
+          <tr>
+            <th>MLA</th>
+            <td>Pollard, Tom, et al. “PhysioNet as a Global Platform for Biomedical Research.” Nature Health, 2026, https://doi.org/10.1038/s44360-026-00096-z. Available from: https://rdcu.be/faatM</td>
+          </tr>
+        
+    
+        
+          <tr>
+            <th>CHICAGO</th>
+            <td>Pollard, Tom, Benjamin E. Moody, Li-wei Lehman, Brian Gow, Chrystinne Fernandes, Chen Xie, Alistair Johnson, Roger G. Mark, and Thomas Heldt. “PhysioNet as a Global Platform for Biomedical Research.” Nature Health (2026). https://doi.org/10.1038/s44360-026-00096-z.i Available from: https://rdcu.be/faatM</td>
+          </tr>
+        
+    
+        
+          <tr>
+            <th>HARVARD</th>
+            <td>Pollard, T., Moody, B.E., Lehman, L., Gow, B., Fernandes, C., Xie, C., Johnson, A., Mark, R.G. and Heldt, T., 2026. PhysioNet as a global platform for biomedical research. Nature Health. Available at: https://doi.org/10.1038/s44360-026-00096-z. Available from: https://rdcu.be/faatM</td>
+          </tr>
+        
+    
+        
+          <tr>
+            <th>VANCOUVER</th>
+            <td>Pollard T, Moody BE, Lehman L, Gow B, Fernandes C, Xie C, et al. PhysioNet as a global platform for biomedical research. Nature Health. 2026. doi:10.1038/s44360-026-00096-z. Available from: https://rdcu.be/faatM</td>
+          </tr>
+        
+    
+  </tbody></table>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+        
+
+        
+          
+  
+    <h2 id="abstract">Abstract</h2>
+    <p>The Medical Information Mart for Intensive Care (MIMIC)-IV&nbsp;database is comprised&nbsp;of&nbsp;deidentified electronic health records for patients admitted to the Beth Israel Deaconess Medical Center. Access to MIMIC-IV is limited to credentialed users. Here, we have provided an openly-available demo of MIMIC-IV containing&nbsp;a subset of&nbsp;100 patients. The dataset includes similar content to MIMIC-IV, but excludes free-text clinical notes. The demo may be useful for running workshops&nbsp;and for&nbsp;assessing whether the MIMIC-IV is appropriate for a study before making an access request.</p>
+    <hr>
+  
+
+  
+    <h2 id="background">Background</h2>
+    <p>The increasing adoption of&nbsp;digital electronic health records has led to the existence of&nbsp;large datasets that could be used to carry out important&nbsp;research across many areas of medicine. Research progress has been limited, however, due to limitations in the way that the datasets are curated and made available for research.&nbsp;The MIMIC datasets allow&nbsp;credentialed researchers around the world unprecedented access to real world clinical data, helping to reduce the barriers to conducting important medical research.&nbsp;The public availability of the data allows studies to be reproduced and collaboratively improved in ways that would not otherwise be possible.</p>
+    <hr>
+  
+
+  
+    <h2 id="methods">Methods</h2>
+    <p>First, the set of individuals to include in the demo was chosen. Each person in MIMIC-IV is assigned a unique <code>subject_id</code>. As the&nbsp;<code>subject_id</code> is randomly generated, ordering by&nbsp;<code>subject_id</code> results in a random subset of individuals. We only considered individuals with an&nbsp;<code>anchor_year_group</code>&nbsp;value of 2011 - 2013 or 2014 - 2016 to ensure overlap with MIMIC-CXR v2.0.0. The first 100&nbsp;<code>subject_id&nbsp;</code>who satisfied the <code>anchor_year_group</code> criteria were selected for the demo dataset.</p>
+
+<p>All tables from MIMIC-IV were included in the demo dataset. Tables containing patient information, such as <em>emar </em>or <em>labevents</em>, were filtered using the list of selected <code>subject_id</code>. Tables which do not contain patient level information were included in their entirety (e.g. <em>d_items</em> or <em>d_labitems</em>). Note that all tables which do not contain patient level information are prefixed with the characters &#39;d_&#39;.</p>
+
+<p>Deidentification was performed following the same approach as the MIMIC-IV database. Protected health information (PHI) as listed in the HIPAA Safe Harbor provision was removed.&nbsp;Patient identifiers were replaced using a random cipher, resulting in deidentified integer identifiers for patients, hospitalizations, and ICU stays. Stringent rules were applied to structured columns based on the data type. Dates were shifted consistently using a random integer removing seasonality, day of the week, and year information. Text fields were filtered by manually curated allow and block lists, as well as context-specific regular expressions. For example, columns containing dose values were filtered to only contain numeric values.&nbsp;If necessary, a free-text&nbsp;deidentification algorithm&nbsp;was applied to remove PHI from free-text. Results of this algorithm were manually reviewed and verified to remove identified PHI.</p>
+    <hr>
+  
+
+  
+    <h2 id="description">Data Description</h2>
+    <p>MIMIC-IV is a relational database consisting of 26 tables. For a detailed description of the database structure, see the&nbsp;MIMIC-IV Clinical Database page [1]&nbsp;or the&nbsp;MIMIC-IV online documentation [2]. The demo shares an identical schema and structure to the equivalent version of MIMIC-IV.</p>
+
+<p>Data files are distributed in comma separated value (CSV) format following the RFC 4180 standard [3]. The dataset is also made available on Google BigQuery. Instructions to accessing the dataset on BigQuery are provided on the online MIMIC-IV documentation, under the cloud page [2].</p>
+
+<p>An additional file is included: demo_subject_id.csv. This is a list of the <code>subject_id</code> used to filter MIMIC-IV to the demo subset.</p>
+    <hr>
+  
+
+  
+    <h2 id="usage-notes">Usage Notes</h2>
+    <p>The MIMIC-IV demo provides researchers with the opportunity to better understand MIMIC-IV data.</p>
+
+<p>CSV files can be opened natively using any text editor or spreadsheet program. However, as some tables are large&nbsp;it may be preferable to navigate the data via&nbsp;a relational database. We suggest either working with&nbsp;the data in Google BigQuery (see the &quot;Files&quot; section for access details)&nbsp;or creating&nbsp;an SQLite database using the CSV files. SQLite is a lightweight database format which stores all constituent tables in a single file, and SQLite databases interoperate well with a number software tools.</p>
+
+<p>Code is made available for use with MIMIC-IV on the MIMIC-IV code repository [4]. Code provided includes derivation of clinical concepts, tutorials, and reproducible analyses.</p>
+    <hr>
+  
+
+  
+    <h2 id="release-notes">Release Notes</h2>
+    <p>Release notes for the demo follow the release notes for the&nbsp;MIMIC-IV database.</p>
+    <hr>
+  
+
+  
+    <h2 id="ethics">Ethics</h2>
+    <p>This&nbsp;project was approved by the Institutional Review Boards of Beth Israel Deaconess Medical Center (Boston, MA) and the Massachusetts Institute of Technology (Cambridge, MA). Requirement for individual patient consent was waived because the project did not impact clinical care and all protected health information was deidentified.</p>
+    <hr>
+  
+
+  
+    <h2 id="acknowledgements">Acknowledgements</h2>
+    <p>This research and development was supported by grants NIH-R01-EB017205, NIH-R01-EB001659, and NIH-R01-GM104987 from the National Institutes of Health. The authors would also like to thank Philips Healthcare and staff at the Beth Israel Deaconess Medical Center, Boston, for supporting database development, and Ken Pierce for providing ongoing support for the MIMIC research community.</p>
+    <hr>
+  
+
+  
+    <h2 id="conflicts-of-interest">Conflicts of Interest</h2>
+    <p>The authors declare no competing financial interests.</p>
+    <hr>
+  
+
+
+
+  <h2 id="references">References</h2>
+  <ol>
+  
+    <li>Johnson, A., Bulgarelli, L., Pollard, T., Horng, S., Celi, L. A., &amp; Mark, R. (2021). MIMIC-IV (version 1.0). PhysioNet. <a href="https://doi.org/10.13026/s6n6-xd98.">https://doi.org/10.13026/s6n6-xd98.</a></li>
+  
+    <li>MIMIC Online Documentation. Accessed June 6th 2022. <a href="https://mimic.mit.edu/">https://mimic.mit.edu/</a></li>
+  
+    <li>Shafranovich Y. Common format and MIME type for comma-separated values (CSV) files. <a href="https://www.hjp.at/doc/rfc/rfc4180.html">https://www.hjp.at/doc/rfc/rfc4180.html</a></li>
+  
+    <li>Johnson AE, Stone DJ, Celi LA, Pollard TJ. The MIMIC Code Repository: enabling reproducibility in critical care research. Journal of the American Medical Informatics Association. 2018 Jan;25(1):32-9. <a href="https://github.com/MIT-LCP/mimic-code">https://github.com/MIT-LCP/mimic-code</a></li>
+  
+</ol>
+
+  <hr>
+
+
+        
+      </div>
+      <!-- /.main column -->
+
+      <!-- Sidebar Column -->
+      <div class="col-md-4">
+        
+        
+        <div class="card" style="border: 0">
+          <button class="btn btn-secondary dropdown-toggle btn-rsp btn-right" type="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Contents
+          </button>
+          <div class="dropdown-menu">
+            
+              
+                <a class="dropdown-item" href="#abstract">Abstract</a>
+              
+            
+              
+                <a class="dropdown-item" href="#background">Background</a>
+              
+            
+              
+                <a class="dropdown-item" href="#methods">Methods</a>
+              
+            
+              
+                <a class="dropdown-item" href="#description">Data Description</a>
+              
+            
+              
+                <a class="dropdown-item" href="#usage-notes">Usage Notes</a>
+              
+            
+              
+                <a class="dropdown-item" href="#release-notes">Release Notes</a>
+              
+            
+              
+                <a class="dropdown-item" href="#ethics">Ethics</a>
+              
+            
+              
+                <a class="dropdown-item" href="#acknowledgements">Acknowledgements</a>
+              
+            
+              
+                <a class="dropdown-item" href="#conflicts-of-interest">Conflicts of Interest</a>
+              
+            
+            
+              <a class="dropdown-item" href="#references">References</a>
+            
+            <a class="dropdown-item" href="#files">Files</a>
+          </div>
+        </div>
+        
+
+        
+        <div class="card my-4">
+          <h5 class="card-header">Parent Projects</h5>
+          <div class="card-body">
+            MIMIC-IV Clinical Database Demo was derived from:
+            <ul>
+              
+                <li><a href="/content/mimiciv/1.0/">MIMIC-IV v1.0</a></li>
+              
+            </ul>
+            Please cite them when using this project.
+          </div>
+        </div>
+        
+
+        <div class="card my-4">
+          <h5 class="card-header">Share</h5>
+          <div class="card-body">
+            <a class="btn btn-sm share-email sharebtn"
+              href="mailto:?subject=MIMIC-IV%20Clinical%20Database%20Demo&body=https://physionet.org/content/mimic-iv-demo/2.2/"
+              role="button" title="Share with email"><i class="far fa-envelope"></i></a>
+            <a class="btn btn-sm facebook sharebtn"
+              href="http://www.facebook.com/sharer.php?u=https://physionet.org/content/mimic-iv-demo/2.2/" role="button"
+              title="Share on Facebook"><i class="fab fa-facebook"></i></a>
+            <a class="btn btn-sm linkedin sharebtn"
+              href="https://www.linkedin.com/shareArticle?url=https://physionet.org/content/mimic-iv-demo/2.2/"
+              role="button" title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a class="btn btn-sm reddit sharebtn"
+              href="https://www.reddit.com/submit?url=https://physionet.org/content/mimic-iv-demo/2.2/&title=MIMIC-IV%20Clinical%20Database%20Demo"
+              role="button" title="Share on Reddit"><i class="fab fa-reddit"></i></a>
+            <a class="btn btn-sm twitter sharebtn"
+              href="https://twitter.com/intent/tweet?text=MIMIC-IV%20Clinical%20Database%20Demo. https://physionet.org/content/mimic-iv-demo/2.2/"
+              role="button" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="card my-4">
+          <h5 class="card-header">Access</h5>
+          <div class="card-body">
+            <p>
+              <strong>Access Policy:</strong>
+              <br>
+              Anyone can access the files, as long as they conform to the terms of the specified license.
+            </p>
+            <p>
+              <strong>License (for files):</strong>
+              <br>
+              <a href="/content/mimic-iv-demo/view-license/2.2/">Open Data Commons Open Database License v1.0</a>
+            </p>
+            
+
+            
+          </div>
+        </div>
+        <div class="card my-4">
+          <h5 class="card-header">Discovery</h5>
+          <div class="card-body">
+            
+              <p><strong>DOI (version 2.2):</strong>
+                <br>
+                <a href="https://doi.org/10.13026/dp1f-ex47">https://doi.org/10.13026/dp1f-ex47</a>
+              </p>
+            
+
+            
+              <p><strong>DOI (latest version):</strong>
+                <br>
+                <a href="https://doi.org/10.13026/ng9m-3n32">https://doi.org/10.13026/ng9m-3n32</a>
+              </p>
+            
+
+            
+
+            
+              <p><strong>Topics:</strong>
+                <br>
+                
+                  <a href="/content/?topic=critical+care"><span class="badge badge-pn">critical care</span></a>
+                
+                  <a href="/content/?topic=electronic+health+record"><span class="badge badge-pn">electronic health record</span></a>
+                
+                  <a href="/content/?topic=mimic"><span class="badge badge-pn">mimic</span></a>
+                
+              </p>
+            
+
+            
+              <p><strong>Project Website:</strong>
+                <br>
+                <a href="https://mimic.mit.edu"><i
+                  class="fas fa-external-link-alt"></i> https://mimic.mit.edu</a>
+              </p>
+            
+          </div>
+        </div>
+
+        <div class="card my-4">
+          <h5 class="card-header">Project Views</h5>
+          <div class="card-body text-center">
+            <div class="d-flex justify-content-around mb-2">
+              <div>
+                <h3 class="mb-0">18452</h3>
+                <small class="text-muted">Current Version</small>
+              </div>
+              <div>
+                <h3 class="mb-0">20093</h3>
+                <small class="text-muted">All Versions</small>
+              </div>
+            </div>
+            <small class="text-muted mb-0"><em>Project Views by Unique Registered Users</em></small>
+            <div class="mt-2">
+              <a href="/content/mimic-iv-demo/metrics/2.2/" class="btn btn-sm btn-outline-secondary">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card my-4">
+          <h5 class="card-header">Corresponding Author</h5>
+          <div class="card-body">
+            
+              <em>You must be logged in to view the contact information.</em>
+            
+          </div>
+        </div>
+
+        <div class="card my-4">
+  <h5 class="card-header">Versions</h5>
+  <ul class="list-group list-group-flush project-version-list">
+    
+      <li class="list-group-item">
+        <a href="/content/mimic-iv-demo/1.0/">
+          <span class="project-version">1.0</span>
+          <time datetime="2022-06-22">
+            June 22, 2022
+          </time>
+        </a>
+      </li>
+    
+      <li class="list-group-item">
+        <a href="/content/mimic-iv-demo/2.2/">
+          <span class="project-version">2.2</span>
+          <time datetime="2023-01-31">
+            Jan. 31, 2023
+          </time>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+      <!-- /.sidebar -->
+    </div>
+    <h2 id="files">Files</h2>
+    
+      
+        <div class="alert alert-danger col-md-8" role="alert">
+  
+    <p><strong>Data Not Available</strong></p>
+    <p>Data is not available in your region due to legal or policy restrictions.</p>
+  
+</div>
+
+      
+    
+    <br>
+    
+</div>
+
+
+
+</main>
+
+    
+<link rel="stylesheet" type="text/css" href="/static/custom/css/footer.css"/>
+
+<div class="modern-ui">
+  <footer class="footer w-100 secondary-bg py-5">
+    <div class="container my-0 py-0 py-md-5">
+      
+        <img src="/static/images/physionet-logo-white.svg" width="180px" alt="PhysioNet" class="pb-2" />
+      
+      <div class="footer__columns light-text">
+        <div>
+          
+            <p class="dark-light-text mb-2">Maintained by the MIT Laboratory for Computational Physiology</p>
+          
+          
+            <p class="dark-light-text mb-2">Supported by the National Institute of Biomedical Imaging and Bioengineering (NIBIB), National Heart Lung and Blood Institute (NHLBI), and NIH Office of the Director under NIH grant numbers U24EB037545 and R01EB030362</p>
+          
+        </div>
+        <div class="d-flex flex-column pl-0 pl-md-5 pt-4 pt-md-0">
+          <h2 class="text-white font-weight-bold">Navigation</h2>
+          <a href="/content" class="pb-3 dark-light-text">Discover Data</a>
+          <a href="/about/publish" class="pb-3 dark-light-text">Share Data</a>
+          <a href="/about" class="pb-3 dark-light-text">About</a>
+          <a href="/news" class="pb-3 dark-light-text">News</a>
+        </div>
+        <div class="d-flex flex-column pt-4 pt-md-0">
+          <h2 class="text-white font-weight-bold">Explore</h2>
+          
+            <a href="/about/database/" class="pb-3 dark-light-text">Data</a>
+          
+            <a href="/about/software/" class="pb-3 dark-light-text">Software</a>
+          
+            <a href="/about/challenge/" class="pb-3 dark-light-text">Challenges</a>
+          
+            <a href="/about/tutorial/" class="pb-3 dark-light-text">Tutorials</a>
+          
+        </div>
+        <!-- <div class="d-flex flex-column flex-grow">
+          <h2 class="text-white font-weight-bold">Subscribe to our Newsletter</h2>
+          <input type="email" class="form-control mb-2" placeholder="Your email">
+          <button type="button" class="primary-button">Subscribe Now</button>
+        </div> -->
+      </div>
+      <hr >
+      <div class="d-flex flex-column align-items-center justify-content-between flex-md-row">
+        <div class="d-flex pt-2 pt-md-0">
+          
+            <a class="mr-3" href="https://github.com/MIT-LCP/physionet-build/"><img src="/static/images/icons/github.png" height="18px"></a>
+          
+          
+          
+            <a class="mr-3" href="http://linkedin.com/company/physionet"><img src="/static/images/icons/linkedin.png" height="18px"></a>
+          
+          
+        </div>
+        <div class="pt-4 pt-md-0">
+          
+          
+          
+             <a class="dark-light-text" href="https://accessibility.mit.edu/">Accessibility</a>
+          
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+    
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+<script src="/static/custom/js/navbar.js"></script>
+
+    
+  <script src="/static/project/js/dynamic-files-panel.js"></script>
+  <script src="/static/custom/js/enable-popover.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+    
+  <!-- https://schema.org/ metadata for discovery -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Dataset",
+  "name": "MIMIC\u002DIV Clinical Database Demo",
+  "description": "The Medical Information Mart for Intensive Care (MIMIC)\u002DIV\u0026nbsp\u003Bdatabase is comprised\u0026nbsp\u003Bof\u0026nbsp\u003Bdeidentified electronic health records for patients admitted to the Beth Israel Deaconess Medical Center. Access to MIMIC\u002DIV is limited to credentialed users. Here, we have provided an openly\u002Davailable demo of MIMIC\u002DIV containing\u0026nbsp\u003Ba subset of\u0026nbsp\u003B100 patients. The dataset includes similar content to MIMIC\u002DIV, but excludes free\u002Dtext clinical notes. The demo may be useful for running workshops\u0026nbsp\u003Band for\u0026nbsp\u003Bassessing whether the MIMIC\u002DIV is appropriate for a study before making an access request.",
+  "version": "2.2",
+  "license": "https://opendatacommons.org/licenses/odbl/index.html",
+  "datePublished" : "Jan. 31, 2023",
+  "url": "https://physionet.org/content/mimic-iv-demo/2.2/",
+  
+  "identifier": "https://doi.org/10.13026/dp1f\u002Dex47",
+  
+  "creator": [
+  
+    {
+      "@type": "Person",
+      "givenName": "Alistair",
+      "familyName": "Johnson",
+      "name": "Alistair Johnson"
+    },
+  
+    {
+      "@type": "Person",
+      "givenName": "Lucas",
+      "familyName": "Bulgarelli",
+      "name": "Lucas Bulgarelli"
+    },
+  
+    {
+      "@type": "Person",
+      "givenName": "Tom",
+      "familyName": "Pollard",
+      "name": "Tom Pollard"
+    },
+  
+    {
+      "@type": "Person",
+      "givenName": "Steven",
+      "familyName": "Horng",
+      "name": "Steven Horng"
+    },
+  
+    {
+      "@type": "Person",
+      "givenName": "Leo Anthony",
+      "familyName": "Celi",
+      "name": "Leo Anthony Celi"
+    },
+  
+    {
+      "@type": "Person",
+      "givenName": "Roger",
+      "familyName": "Mark",
+      "name": "Roger Mark"
+    }
+  
+    ],
+  "includedInDataCatalog":{
+     "@type": "DataCatalog",
+     "name": "physionet.org"
+  },
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "contentUrl": "https://physionet.org/content/mimic-iv-demo/2.2/#files"
+    }
+  ]
+}
+</script>
+
+  </body>
+  
+</html>

@@ -1,0 +1,210 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "16_economics_bls_cpi_ces_2026",
+  "domain": "economics",
+  "title": "BLS CPI and CES selected bulk time-series files",
+  "publisher": "U.S. Bureau of Labor Statistics",
+  "authoritative_landing_url": "https://download.bls.gov/pub/time.series/",
+  "authoritative_source_urls": [
+    "https://download.bls.gov/pub/time.series/cu/",
+    "https://download.bls.gov/pub/time.series/ce/"
+  ],
+  "identifiers": [],
+  "release_or_version": "bulk directory snapshot dated 2026-08-12",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "U.S. Government public data",
+  "deterministic_selection_rule": "Retain the fixed CPI AllItems, Housing, and Medical files; CES TotalNonfarm, Manufacturing, and Information employment files; and their selected dictionaries.",
+  "exclusions": [
+    "No value-level preprocessing",
+    "No outcome-guided selection",
+    "No controlled-access or credential material"
+  ],
+  "ethics_restrictions": [
+    "Public/deidentified use only where human data are present",
+    "No re-identification",
+    "Generated USER_BRIEF is context, not evidence"
+  ],
+  "transport_and_headers": {
+    "status": "source metadata and mutable-feed companion metadata retained where publisher supplied it; browser-only endpoints are identified by URL",
+    "http_error_masquerade_check_required": true
+  },
+  "substitution": null,
+  "files": [
+    {
+      "path": "context/CE_directory.html",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://download.bls.gov/pub/time.series/cu/",
+        "https://download.bls.gov/pub/time.series/ce/"
+      ],
+      "bytes": 10805,
+      "sha256": "61d4a43b3e1ef64b3ff85a486e09baf975c1c2df0ae9af710830f4a435268a39",
+      "mime_type": "text/html"
+    },
+    {
+      "path": "context/CU_directory.html",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://download.bls.gov/pub/time.series/cu/",
+        "https://download.bls.gov/pub/time.series/ce/"
+      ],
+      "bytes": 3743,
+      "sha256": "b79f27ad5e5c4aa5b890cdf24c79eebf62f0dcfab6bf29b67095fb63b3b19f73",
+      "mime_type": "text/html"
+    },
+    {
+      "path": "raw/CE/ce.data.00a.TotalNonfarm.Employment",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://download.bls.gov/pub/time.series/cu/",
+        "https://download.bls.gov/pub/time.series/ce/"
+      ],
+      "bytes": 216412,
+      "sha256": "286e1dc014d476d411e1cfaffa0ebf6da5f0698aa203d88efe54a4536bb27260",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "raw/CE/ce.data.30a.Manufacturing.Employment",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://download.bls.gov/pub/time.series/cu/",
+        "https://download.bls.gov/pub/time.series/ce/"
+      ],
+      "bytes": 341330,
+      "sha256": "e9bd59e647d7257378892d78d714dd86f9e946f428acc777e1e6c3a5476186ec",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "raw/CE/ce.data.50a.Information.Employment",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://download.bls.gov/pub/time.series/cu/",
+        "https://download.bls.gov/pub/time.series/ce/"
+      ],
+      "bytes": 2519655,
+      "sha256": "4239a0ef5eab6ccb29518750e6161004b7c561e4cc2c2f0eca05b78a01a82b2e",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "raw/CE/ce.industry",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://download.bls.gov/pub/time.series/cu/",
+        "https://download.bls.gov/pub/time.series/ce/"
+      ],
+      "bytes": 58769,
+      "sha256": "9ad5e0a5426fcbe71d98510e04256bc08fc0e0758427fd4b0c26d8b6358290f2",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "raw/CE/ce.series",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://download.bls.gov/pub/time.series/cu/",
+        "https://download.bls.gov/pub/time.series/ce/"
+      ],
+      "bytes": 3941924,
+      "sha256": "15cc985ca2f88a1dbd1392da785ed37f2debb3cabea5bda0f8445f5cb2d3fe8c",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "raw/CE/ce.txt",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://download.bls.gov/pub/time.series/cu/",
+        "https://download.bls.gov/pub/time.series/ce/"
+      ],
+      "bytes": 59091,
+      "sha256": "a42b00f6826042a4894f20ad80b45cfdfb87aec280403b33f37f084b5ec8e48b",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "raw/CU/cu.area",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://download.bls.gov/pub/time.series/cu/",
+        "https://download.bls.gov/pub/time.series/ce/"
+      ],
+      "bytes": 2185,
+      "sha256": "f4d0442e38dd4c4909a98b9fc8f8bc5fc8146ca4e87e4d9b947461f78af8abeb",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "raw/CU/cu.data.1.AllItems",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://download.bls.gov/pub/time.series/cu/",
+        "https://download.bls.gov/pub/time.series/ce/"
+      ],
+      "bytes": 2685811,
+      "sha256": "9baac9eb2fd78f4510a7edeb2c2d23abfbe0c4d4482febe54f415852e19dddf7",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "raw/CU/cu.data.12.USHousing",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://download.bls.gov/pub/time.series/cu/",
+        "https://download.bls.gov/pub/time.series/ce/"
+      ],
+      "bytes": 2698758,
+      "sha256": "505e5507630ef0c0384195dc3a1bfac878086696a0255321a10f19e762116cfb",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "raw/CU/cu.data.15.USMedical",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://download.bls.gov/pub/time.series/cu/",
+        "https://download.bls.gov/pub/time.series/ce/"
+      ],
+      "bytes": 1011126,
+      "sha256": "15d481821a32affaa073c55ccb48b7a4ed2e1b3fada40ecf91097c004fb375b3",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "raw/CU/cu.footnote",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://download.bls.gov/pub/time.series/cu/",
+        "https://download.bls.gov/pub/time.series/ce/"
+      ],
+      "bytes": 100,
+      "sha256": "d92c2f0b60f9a52f9184f366f9d5b61fc6659181959be718fa332e43f9983903",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "raw/CU/cu.item",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://download.bls.gov/pub/time.series/cu/",
+        "https://download.bls.gov/pub/time.series/ce/"
+      ],
+      "bytes": 16554,
+      "sha256": "376f2a9dd2cc7bb358118e6c0e031a404941cfe158b82612e807e44eabcec8fa",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "raw/CU/cu.series",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://download.bls.gov/pub/time.series/cu/",
+        "https://download.bls.gov/pub/time.series/ce/"
+      ],
+      "bytes": 1339447,
+      "sha256": "13c3443beef653c41585340c909db6cb48a42b1e5614e6a1dd0852210be8bb45",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "raw/CU/cu.txt",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://download.bls.gov/pub/time.series/cu/",
+        "https://download.bls.gov/pub/time.series/ce/"
+      ],
+      "bytes": 14644,
+      "sha256": "1394b7f4210fda3d6dab62437bae5bd3664ed040612dd3df6268bc4e2911a471",
+      "mime_type": "text/plain"
+    }
+  ]
+}

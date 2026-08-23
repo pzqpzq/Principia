@@ -1,0 +1,122 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "19_transport_nhtsa_safety_2025_2026",
+  "domain": "transportation",
+  "title": "NHTSA complaints, recalls, investigations, and manufacturer communications",
+  "publisher": "National Highway Traffic Safety Administration",
+  "authoritative_landing_url": "https://www.nhtsa.gov/nhtsa-datasets-and-apis",
+  "authoritative_source_urls": [
+    "https://static.nhtsa.gov/odi/ffdd/",
+    "https://www.nhtsa.gov/nhtsa-datasets-and-apis"
+  ],
+  "identifiers": [],
+  "release_or_version": "2025-2026 rolling files frozen at retrieval",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "U.S. Government public data",
+  "deterministic_selection_rule": "Retain the four fixed official ZIP archives and their four official flat-file layouts.",
+  "exclusions": [
+    "No value-level preprocessing",
+    "No outcome-guided selection",
+    "No controlled-access or credential material"
+  ],
+  "ethics_restrictions": [
+    "Public/deidentified use only where human data are present",
+    "No re-identification",
+    "Generated USER_BRIEF is context, not evidence"
+  ],
+  "transport_and_headers": {
+    "status": "source metadata and mutable-feed companion metadata retained where publisher supplied it; browser-only endpoints are identified by URL",
+    "http_error_masquerade_check_required": true
+  },
+  "substitution": null,
+  "files": [
+    {
+      "path": "context/CMPL.txt",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://static.nhtsa.gov/odi/ffdd/",
+        "https://www.nhtsa.gov/nhtsa-datasets-and-apis"
+      ],
+      "bytes": 9982,
+      "sha256": "84585b4ded99b0c45abc4a5dc86f85332ba0a6969d2d7d9b1247f10fc53e8f45",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "context/INV.txt",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://static.nhtsa.gov/odi/ffdd/",
+        "https://www.nhtsa.gov/nhtsa-datasets-and-apis"
+      ],
+      "bytes": 2057,
+      "sha256": "04d3eef957004ff6d235ffbefe1ab270be27b72c1671ca5c3e8cfa96951bf8d2",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "context/RCL.txt",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://static.nhtsa.gov/odi/ffdd/",
+        "https://www.nhtsa.gov/nhtsa-datasets-and-apis"
+      ],
+      "bytes": 3053,
+      "sha256": "3438cc7e4131efa401dfe6437dbe035607e092c129155dfb411d459d58802203",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "context/TSBS.txt",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://static.nhtsa.gov/odi/ffdd/",
+        "https://www.nhtsa.gov/nhtsa-datasets-and-apis"
+      ],
+      "bytes": 5807,
+      "sha256": "cae527673072d467b741f129086b468ee236e614270901a693bb5f15c096bbab",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "raw/COMPLAINTS_RECEIVED_2025-2026.zip",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://static.nhtsa.gov/odi/ffdd/",
+        "https://www.nhtsa.gov/nhtsa-datasets-and-apis"
+      ],
+      "bytes": 37400118,
+      "sha256": "e7a1f8f6ae2122a8a370f1e7231813b5f119d480e91a67da194656e856eced15",
+      "mime_type": "application/zip"
+    },
+    {
+      "path": "raw/FLAT_INV.zip",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://static.nhtsa.gov/odi/ffdd/",
+        "https://www.nhtsa.gov/nhtsa-datasets-and-apis"
+      ],
+      "bytes": 4289887,
+      "sha256": "97c0eeba3e56bf602de4503926df3be60f3aee11de4ac42a324e9c4931002b0a",
+      "mime_type": "application/zip"
+    },
+    {
+      "path": "raw/MFR_COMMS_RECEIVED_2025-2026.zip",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://static.nhtsa.gov/odi/ffdd/",
+        "https://www.nhtsa.gov/nhtsa-datasets-and-apis"
+      ],
+      "bytes": 4980658,
+      "sha256": "73ad193326c5af8978278b4667c64b608f1c590566639c3df6bbed346380a216",
+      "mime_type": "application/zip"
+    },
+    {
+      "path": "raw/RCL_FROM_2025_2026.zip",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://static.nhtsa.gov/odi/ffdd/",
+        "https://www.nhtsa.gov/nhtsa-datasets-and-apis"
+      ],
+      "bytes": 92005,
+      "sha256": "46cd58c85495ba3164eda0884b91e02c255507759cc15c0c68fef166ea43f09f",
+      "mime_type": "application/zip"
+    }
+  ]
+}

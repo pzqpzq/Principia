@@ -1,0 +1,67 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "20_ocean_noaa_coral_ssta_20260816",
+  "domain": "oceanography",
+  "title": "NOAA Coral Reef Watch global 5 km sea-surface temperature anomaly",
+  "publisher": "NOAA Coral Reef Watch",
+  "authoritative_landing_url": "https://coralreefwatch.noaa.gov/product/5km/index_5km_ssta_clim19912020.php",
+  "authoritative_source_urls": [
+    "https://coralreefwatch.noaa.gov/product/5km/index_5km_ssta_clim19912020.php",
+    "https://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1-clim19912020-v1/"
+  ],
+  "identifiers": [],
+  "release_or_version": "v3.1 climatology 1991-2020 v1; 2026-08-16",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "U.S. Government public data",
+  "deterministic_selection_rule": "Retain the fixed global 2026-08-16 anomaly NetCDF and matching plain PNG under the 1991-2020 baseline.",
+  "exclusions": [
+    "No value-level preprocessing",
+    "No outcome-guided selection",
+    "No controlled-access or credential material"
+  ],
+  "ethics_restrictions": [
+    "Public/deidentified use only where human data are present",
+    "No re-identification",
+    "Generated USER_BRIEF is context, not evidence"
+  ],
+  "transport_and_headers": {
+    "status": "source metadata and mutable-feed companion metadata retained where publisher supplied it; browser-only endpoints are identified by URL",
+    "http_error_masquerade_check_required": true
+  },
+  "substitution": null,
+  "files": [
+    {
+      "path": "context/official_product_page.html",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://coralreefwatch.noaa.gov/product/5km/index_5km_ssta_clim19912020.php",
+        "https://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1-clim19912020-v1/"
+      ],
+      "bytes": 47868,
+      "sha256": "114a52e9e07a40d9501dde9181153c30178b1185250c68df84b3c8c3f0930806",
+      "mime_type": "text/html"
+    },
+    {
+      "path": "raw/ct5km_ssta_v3.1-clim19912020-v1_20260816.nc",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://coralreefwatch.noaa.gov/product/5km/index_5km_ssta_clim19912020.php",
+        "https://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1-clim19912020-v1/"
+      ],
+      "bytes": 10707615,
+      "sha256": "a72401223bebfb8d8df5ffadfc46db3ebc17ccb40160f802daaf26c411ef8267",
+      "mime_type": "application/x-hdf5"
+    },
+    {
+      "path": "raw/ct5km_ssta_v3.1-clim19912020-v1_20260816.png",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://coralreefwatch.noaa.gov/product/5km/index_5km_ssta_clim19912020.php",
+        "https://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1-clim19912020-v1/"
+      ],
+      "bytes": 4310259,
+      "sha256": "f3c8bdd4030749dc6376e4d28e07f0cf9809e932a04026505a96c77be9fff412",
+      "mime_type": "image/png"
+    }
+  ]
+}

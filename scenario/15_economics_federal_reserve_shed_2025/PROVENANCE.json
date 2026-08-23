@@ -1,0 +1,58 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "15_economics_federal_reserve_shed_2025",
+  "domain": "economics",
+  "title": "Federal Reserve 2025 SHED public-use microdata",
+  "publisher": "Board of Governors of the Federal Reserve System",
+  "authoritative_landing_url": "https://www.federalreserve.gov/consumerscommunities/shed_data.htm",
+  "authoritative_source_urls": [
+    "https://www.federalreserve.gov/consumerscommunities/files/SHED_public_use_data_2025_%28CSV%29.zip",
+    "https://www.federalreserve.gov/consumerscommunities/files/SHED_2025codebook.pdf"
+  ],
+  "identifiers": [
+    "doi:10.17016/datasets.002"
+  ],
+  "release_or_version": "2025 public-use release updated July 2026",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "Federal Reserve public-use data terms",
+  "deterministic_selection_rule": "Retain the official 2025 CSV ZIP and matching 2025 codebook PDF.",
+  "exclusions": [
+    "No value-level preprocessing",
+    "No outcome-guided selection",
+    "No controlled-access or credential material"
+  ],
+  "ethics_restrictions": [
+    "Public/deidentified use only where human data are present",
+    "No re-identification",
+    "Generated USER_BRIEF is context, not evidence"
+  ],
+  "transport_and_headers": {
+    "status": "source metadata and mutable-feed companion metadata retained where publisher supplied it; browser-only endpoints are identified by URL",
+    "http_error_masquerade_check_required": true
+  },
+  "substitution": null,
+  "files": [
+    {
+      "path": "context/SHED_2025_codebook.pdf",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://www.federalreserve.gov/consumerscommunities/files/SHED_public_use_data_2025_%28CSV%29.zip",
+        "https://www.federalreserve.gov/consumerscommunities/files/SHED_2025codebook.pdf"
+      ],
+      "bytes": 863597,
+      "sha256": "143137652f0464c57704ee60fa17d2eb94a24ed976bde26a0287920bf250c6df",
+      "mime_type": "application/pdf"
+    },
+    {
+      "path": "raw/SHED_public_use_data_2025_CSV.zip",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.federalreserve.gov/consumerscommunities/files/SHED_public_use_data_2025_%28CSV%29.zip",
+        "https://www.federalreserve.gov/consumerscommunities/files/SHED_2025codebook.pdf"
+      ],
+      "bytes": 4676794,
+      "sha256": "a4ab3f7d042f16d63626b1af9aeb6f0b8a0b39e412fa94b87265bc67fe26de14",
+      "mime_type": "application/zip"
+    }
+  ]
+}

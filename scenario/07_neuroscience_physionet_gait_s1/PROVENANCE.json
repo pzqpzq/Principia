@@ -1,0 +1,155 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "07_neuroscience_physionet_gait_s1",
+  "domain": "neuroscience",
+  "title": "Multimodal gait EEG, EMG, and force-plate data for participant S1",
+  "publisher": "PhysioNet",
+  "authoritative_landing_url": "https://physionet.org/content/multimodal-gait-dataset/1.0.0/",
+  "authoritative_source_urls": [
+    "https://physionet.org/files/multimodal-gait-dataset/1.0.0/Dataset/",
+    "https://physionet.org/content/multimodal-gait-dataset/1.0.0/"
+  ],
+  "identifiers": [],
+  "release_or_version": "1.0.0",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "CC BY 4.0",
+  "deterministic_selection_rule": "Participant S1 at 0.5, 0.75, and 1.0 m/s; retain the three EEG EDF, three EMG CSV, three force-plate CSV, and subject metadata files.",
+  "exclusions": [
+    "No value-level preprocessing",
+    "No outcome-guided selection",
+    "No controlled-access or credential material"
+  ],
+  "ethics_restrictions": [
+    "Public/deidentified use only where human data are present",
+    "No re-identification",
+    "Generated USER_BRIEF is context, not evidence"
+  ],
+  "transport_and_headers": {
+    "status": "source metadata and mutable-feed companion metadata retained where publisher supplied it; browser-only endpoints are identified by URL",
+    "http_error_masquerade_check_required": true
+  },
+  "substitution": null,
+  "files": [
+    {
+      "path": "context/landing.html",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://physionet.org/files/multimodal-gait-dataset/1.0.0/Dataset/",
+        "https://physionet.org/content/multimodal-gait-dataset/1.0.0/"
+      ],
+      "bytes": 72119,
+      "sha256": "576786f5880f63ab74edfdf89dffdedc96c0da1506047fa2c60adc5a09f1c4db",
+      "mime_type": "text/html"
+    },
+    {
+      "path": "raw/EEG_Data/S1_0.5_raw.edf",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://physionet.org/files/multimodal-gait-dataset/1.0.0/Dataset/",
+        "https://physionet.org/content/multimodal-gait-dataset/1.0.0/"
+      ],
+      "bytes": 911712,
+      "sha256": "70b8617f8bb1ab7359c330653eba0e3a8a55c8fba91ad04ec8a5c489807acc3a",
+      "mime_type": "biosig/edf"
+    },
+    {
+      "path": "raw/EEG_Data/S1_0.75_raw.edf",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://physionet.org/files/multimodal-gait-dataset/1.0.0/Dataset/",
+        "https://physionet.org/content/multimodal-gait-dataset/1.0.0/"
+      ],
+      "bytes": 911712,
+      "sha256": "91a9b010acd64c5baf4d90da64aed4ab3ad9fb39042c4b61db259f418472f7dc",
+      "mime_type": "biosig/edf"
+    },
+    {
+      "path": "raw/EEG_Data/S1_1_raw.edf",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://physionet.org/files/multimodal-gait-dataset/1.0.0/Dataset/",
+        "https://physionet.org/content/multimodal-gait-dataset/1.0.0/"
+      ],
+      "bytes": 911712,
+      "sha256": "c6904d9745a1eb575832195fcffed1d3e5927236ebea8025b4a14d5dcf5a96ea",
+      "mime_type": "biosig/edf"
+    },
+    {
+      "path": "raw/EMG_Data/EMG_S1_0.5.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://physionet.org/files/multimodal-gait-dataset/1.0.0/Dataset/",
+        "https://physionet.org/content/multimodal-gait-dataset/1.0.0/"
+      ],
+      "bytes": 277863,
+      "sha256": "b23f01da1191df2b8b906c2d2e8c46ad7c602dd88e0a6fac5cd496206006c4d2",
+      "mime_type": "text/csv"
+    },
+    {
+      "path": "raw/EMG_Data/EMG_S1_0.75.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://physionet.org/files/multimodal-gait-dataset/1.0.0/Dataset/",
+        "https://physionet.org/content/multimodal-gait-dataset/1.0.0/"
+      ],
+      "bytes": 281922,
+      "sha256": "6fa139fc386469df8ab0a13de0347f9f95654fc12ae612bc9d6b0e0d36918ff1",
+      "mime_type": "text/csv"
+    },
+    {
+      "path": "raw/EMG_Data/EMG_S1_1.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://physionet.org/files/multimodal-gait-dataset/1.0.0/Dataset/",
+        "https://physionet.org/content/multimodal-gait-dataset/1.0.0/"
+      ],
+      "bytes": 283773,
+      "sha256": "6f0b704ba681f6d8562373e2f6e30e5579821f9cca18c22e01d4ee3e35d0a0ba",
+      "mime_type": "text/csv"
+    },
+    {
+      "path": "raw/FP_Data/FP_S1_0.5.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://physionet.org/files/multimodal-gait-dataset/1.0.0/Dataset/",
+        "https://physionet.org/content/multimodal-gait-dataset/1.0.0/"
+      ],
+      "bytes": 12048656,
+      "sha256": "2249adc9645bc95b035bd76b6e2545456cc4b6ac9694d340712f40facc302bc3",
+      "mime_type": "text/csv"
+    },
+    {
+      "path": "raw/FP_Data/FP_S1_0.75.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://physionet.org/files/multimodal-gait-dataset/1.0.0/Dataset/",
+        "https://physionet.org/content/multimodal-gait-dataset/1.0.0/"
+      ],
+      "bytes": 11012505,
+      "sha256": "5c8ccc8f12bc70efe68a818d2fd65b68ec7ea9c887b0e1f81318d8169d5bf207",
+      "mime_type": "text/csv"
+    },
+    {
+      "path": "raw/FP_Data/FP_S1_1.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://physionet.org/files/multimodal-gait-dataset/1.0.0/Dataset/",
+        "https://physionet.org/content/multimodal-gait-dataset/1.0.0/"
+      ],
+      "bytes": 12479457,
+      "sha256": "66411a26cb89ba608518e9708883d2084a052c9f8db03df7833980565e99ca0c",
+      "mime_type": "text/csv"
+    },
+    {
+      "path": "raw/subject-info.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://physionet.org/files/multimodal-gait-dataset/1.0.0/Dataset/",
+        "https://physionet.org/content/multimodal-gait-dataset/1.0.0/"
+      ],
+      "bytes": 6612,
+      "sha256": "9a35a596e70da691fb0b81853bbe8e8be191708f750f0c7a65784c0b7bae1f59",
+      "mime_type": "text/csv"
+    }
+  ]
+}

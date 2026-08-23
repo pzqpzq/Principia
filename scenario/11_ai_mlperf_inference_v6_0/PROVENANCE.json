@@ -1,0 +1,89 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "11_ai_mlperf_inference_v6_0",
+  "domain": "artificial intelligence",
+  "title": "MLPerf Inference v6.0 summary results",
+  "publisher": "MLCommons",
+  "authoritative_landing_url": "https://github.com/mlcommons/inference_results_v6.0",
+  "authoritative_source_urls": [
+    "https://github.com/mlcommons/inference_results_v6.0",
+    "https://raw.githubusercontent.com/mlcommons/inference_results_v6.0/"
+  ],
+  "identifiers": [],
+  "release_or_version": "commit pinned in context/PINNED_COMMIT.txt",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "Apache License 2.0",
+  "deterministic_selection_rule": "Retain summary_results.json, the supplemental discussion PDF, repository README, license, and the resolved HEAD commit.",
+  "exclusions": [
+    "No value-level preprocessing",
+    "No outcome-guided selection",
+    "No controlled-access or credential material"
+  ],
+  "ethics_restrictions": [
+    "Public/deidentified use only where human data are present",
+    "No re-identification",
+    "Generated USER_BRIEF is context, not evidence"
+  ],
+  "transport_and_headers": {
+    "status": "source metadata and mutable-feed companion metadata retained where publisher supplied it; browser-only endpoints are identified by URL",
+    "http_error_masquerade_check_required": true
+  },
+  "substitution": null,
+  "files": [
+    {
+      "path": "context/LICENSE.md",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://github.com/mlcommons/inference_results_v6.0",
+        "https://raw.githubusercontent.com/mlcommons/inference_results_v6.0/"
+      ],
+      "bytes": 10174,
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "context/MLPerf_Inference_v6.0_Supplemental_Discussion.pdf",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://github.com/mlcommons/inference_results_v6.0",
+        "https://raw.githubusercontent.com/mlcommons/inference_results_v6.0/"
+      ],
+      "bytes": 401187,
+      "sha256": "1038e0a99518d74c48935ae2b500a1a94fd29cecf3162725af3d1d74718f9f7f",
+      "mime_type": "application/pdf"
+    },
+    {
+      "path": "context/PINNED_COMMIT.txt",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://github.com/mlcommons/inference_results_v6.0",
+        "https://raw.githubusercontent.com/mlcommons/inference_results_v6.0/"
+      ],
+      "bytes": 41,
+      "sha256": "27adbe5bea425d74f5d687b9b2cc8defb420e651dd01612b3ac3934d392f5343",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "context/README.md",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://github.com/mlcommons/inference_results_v6.0",
+        "https://raw.githubusercontent.com/mlcommons/inference_results_v6.0/"
+      ],
+      "bytes": 244,
+      "sha256": "4c99cc12b98af1c28973a537c4f5519ca6c4eba8fcad3f7dbaa649df455cad10",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "raw/summary_results.json",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://github.com/mlcommons/inference_results_v6.0",
+        "https://raw.githubusercontent.com/mlcommons/inference_results_v6.0/"
+      ],
+      "bytes": 784457,
+      "sha256": "52fa813a27834e8de38eca9fd381688df1cf9cd95020d2bd9e951f6cc16384ae",
+      "mime_type": "application/json"
+    }
+  ]
+}

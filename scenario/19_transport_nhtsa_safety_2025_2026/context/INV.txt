@@ -1,0 +1,52 @@
+
+DEFECT INVESTIGATIONS
+
+The INVESTIGATION file contains all NHTSA safety-related defect investigations 
+opened since 1972.
+
+File characteristics:
+
+-  All the records are TAB delimited
+-  All dates are in YYYYMMDD format
+
+-  Maximum Record length: 6816 characters
+
+Change log:
+1.	September 14, 2007
+	-Changed flat file extension from .lst to .txt
+2.	March 14, 2008
+	-Field #11 added
+3.	July 31, 2023
+	-Changed Field #10 length from 40 to 200
+	-Changed Field #11 length from 4000 to 6000
+	-Investigations are now sorted by NHTSA Identification Number (Field #1)
+4.	September 5, 2023
+	-Investigations are now sorted by NHTSA Identification Number alphabetically (Field #1)
+
+
+Last Updated September 5, 2023
+
+
+FIELDS:
+=======
+
+    Note: The CAMPNO field (NHTSA Recall Campaign Number), if present, 
+          identifies the recall campaign initiated as a result of the 
+          investigation.  The CAMPNO can be used to link to the RECALLS 
+          database for additional information.  
+          
+
+Field#   Name                	Type/Size   	Description                      
+------   ----------             ---------       -------------------------------
+1        NHTSA ACTION NUMBER    CHAR(10)        NHTSA Identification Number
+2        MAKE                   CHAR(25)        Vehicle/Equipment Make
+3        MODEL                  CHAR(256)       Vehicle/Equipment Model
+4        YEAR                   CHAR(4)         Model Year, 
+                                                   9999 if Unknown or N/A
+5        COMPNAME               CHAR(256)       Component Description
+6        MFR_NAME               CHAR(40)        Manufacturer's Name
+7        ODATE                  CHAR(8)         Date Opened (YYYYMMDD)
+8        CDATE                  CHAR(8)         Date Closed (YYYYMMDD)
+9        CAMPNO                 CHAR(9)         Recall Campaign Number, if applicable
+10       SUBJECT                CHAR(200)       Summary Description
+11       SUMMARY                CHAR(6000)      Summary Detail

@@ -1,0 +1,200 @@
+{
+  "candidate_indices": [
+    0,
+    46893,
+    93786,
+    140679,
+    187571,
+    234464,
+    281357,
+    328250
+  ],
+  "installed_payload_bytes": 2499491,
+  "query": {
+    "format": "json",
+    "page": 1,
+    "pagesize": 500000,
+    "params": {
+      "columns": "target_name,dataURL,jpegURL,obsid,obs_id",
+      "filters": [
+        {
+          "paramName": "provenance_name",
+          "values": [
+            "TARS"
+          ]
+        },
+        {
+          "paramName": "sequence_number",
+          "values": [
+            "96"
+          ]
+        }
+      ]
+    },
+    "service": "Mast.Caom.Filtered"
+  },
+  "retained": [
+    {
+      "files": [
+        {
+          "bytes": 123840,
+          "download_url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Ftars%2Fsec_96_cam_1_ccd_3%2Fhlsp_tars_tess_ffi_s0096-0000000002733028_tess_v01_lc.fits",
+          "mast_uri": "mast:HLSP/tars/sec_96_cam_1_ccd_3/hlsp_tars_tess_ffi_s0096-0000000002733028_tess_v01_lc.fits",
+          "path": "hlsp_tars_tess_ffi_s0096-0000000002733028_tess_v01_lc.fits"
+        },
+        {
+          "bytes": 167645,
+          "download_url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Ftars%2Fsec_96_cam_1_ccd_3%2Fhlsp_tars_tess_ffi_s0096-0000000002733028_tess_v01_preview.jpeg",
+          "mast_uri": "mast:HLSP/tars/sec_96_cam_1_ccd_3/hlsp_tars_tess_ffi_s0096-0000000002733028_tess_v01_preview.jpeg",
+          "path": "hlsp_tars_tess_ffi_s0096-0000000002733028_tess_v01_preview.jpeg"
+        }
+      ],
+      "obs_id": "hlsp_tars_tess_ffi_s0096-0000000002733028_tess",
+      "obsid": 444312769,
+      "quantile_index": 0,
+      "target_name": "2733028"
+    },
+    {
+      "files": [
+        {
+          "bytes": 132480,
+          "download_url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Ftars%2Fsec_96_cam_2_ccd_3%2Fhlsp_tars_tess_ffi_s0096-0000000063725713_tess_v01_lc.fits",
+          "mast_uri": "mast:HLSP/tars/sec_96_cam_2_ccd_3/hlsp_tars_tess_ffi_s0096-0000000063725713_tess_v01_lc.fits",
+          "path": "hlsp_tars_tess_ffi_s0096-0000000063725713_tess_v01_lc.fits"
+        },
+        {
+          "bytes": 169634,
+          "download_url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Ftars%2Fsec_96_cam_2_ccd_3%2Fhlsp_tars_tess_ffi_s0096-0000000063725713_tess_v01_preview.jpeg",
+          "mast_uri": "mast:HLSP/tars/sec_96_cam_2_ccd_3/hlsp_tars_tess_ffi_s0096-0000000063725713_tess_v01_preview.jpeg",
+          "path": "hlsp_tars_tess_ffi_s0096-0000000063725713_tess_v01_preview.jpeg"
+        }
+      ],
+      "obs_id": "hlsp_tars_tess_ffi_s0096-0000000063725713_tess",
+      "obsid": 444388577,
+      "quantile_index": 46893,
+      "target_name": "63725713"
+    },
+    {
+      "files": [
+        {
+          "bytes": 141120,
+          "download_url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Ftars%2Fsec_96_cam_4_ccd_1%2Fhlsp_tars_tess_ffi_s0096-0000000149351953_tess_v01_lc.fits",
+          "mast_uri": "mast:HLSP/tars/sec_96_cam_4_ccd_1/hlsp_tars_tess_ffi_s0096-0000000149351953_tess_v01_lc.fits",
+          "path": "hlsp_tars_tess_ffi_s0096-0000000149351953_tess_v01_lc.fits"
+        },
+        {
+          "bytes": 187517,
+          "download_url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Ftars%2Fsec_96_cam_4_ccd_1%2Fhlsp_tars_tess_ffi_s0096-0000000149351953_tess_v01_preview.jpeg",
+          "mast_uri": "mast:HLSP/tars/sec_96_cam_4_ccd_1/hlsp_tars_tess_ffi_s0096-0000000149351953_tess_v01_preview.jpeg",
+          "path": "hlsp_tars_tess_ffi_s0096-0000000149351953_tess_v01_preview.jpeg"
+        }
+      ],
+      "obs_id": "hlsp_tars_tess_ffi_s0096-0000000149351953_tess",
+      "obsid": 444511667,
+      "quantile_index": 93786,
+      "target_name": "149351953"
+    },
+    {
+      "files": [
+        {
+          "bytes": 132480,
+          "download_url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Ftars%2Fsec_96_cam_2_ccd_1%2Fhlsp_tars_tess_ffi_s0096-0000000201249388_tess_v01_lc.fits",
+          "mast_uri": "mast:HLSP/tars/sec_96_cam_2_ccd_1/hlsp_tars_tess_ffi_s0096-0000000201249388_tess_v01_lc.fits",
+          "path": "hlsp_tars_tess_ffi_s0096-0000000201249388_tess_v01_lc.fits"
+        },
+        {
+          "bytes": 174084,
+          "download_url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Ftars%2Fsec_96_cam_2_ccd_1%2Fhlsp_tars_tess_ffi_s0096-0000000201249388_tess_v01_preview.jpeg",
+          "mast_uri": "mast:HLSP/tars/sec_96_cam_2_ccd_1/hlsp_tars_tess_ffi_s0096-0000000201249388_tess_v01_preview.jpeg",
+          "path": "hlsp_tars_tess_ffi_s0096-0000000201249388_tess_v01_preview.jpeg"
+        }
+      ],
+      "obs_id": "hlsp_tars_tess_ffi_s0096-0000000201249388_tess",
+      "obsid": 444355124,
+      "quantile_index": 140679,
+      "target_name": "201249388"
+    },
+    {
+      "files": [
+        {
+          "bytes": 135360,
+          "download_url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Ftars%2Fsec_96_cam_3_ccd_1%2Fhlsp_tars_tess_ffi_s0096-0000000231055285_tess_v01_lc.fits",
+          "mast_uri": "mast:HLSP/tars/sec_96_cam_3_ccd_1/hlsp_tars_tess_ffi_s0096-0000000231055285_tess_v01_lc.fits",
+          "path": "hlsp_tars_tess_ffi_s0096-0000000231055285_tess_v01_lc.fits"
+        },
+        {
+          "bytes": 181859,
+          "download_url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Ftars%2Fsec_96_cam_3_ccd_1%2Fhlsp_tars_tess_ffi_s0096-0000000231055285_tess_v01_preview.jpeg",
+          "mast_uri": "mast:HLSP/tars/sec_96_cam_3_ccd_1/hlsp_tars_tess_ffi_s0096-0000000231055285_tess_v01_preview.jpeg",
+          "path": "hlsp_tars_tess_ffi_s0096-0000000231055285_tess_v01_preview.jpeg"
+        }
+      ],
+      "obs_id": "hlsp_tars_tess_ffi_s0096-0000000231055285_tess",
+      "obsid": 444437644,
+      "quantile_index": 187571,
+      "target_name": "231055285"
+    },
+    {
+      "files": [
+        {
+          "bytes": 141120,
+          "download_url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Ftars%2Fsec_96_cam_4_ccd_4%2Fhlsp_tars_tess_ffi_s0096-0000000278960483_tess_v01_lc.fits",
+          "mast_uri": "mast:HLSP/tars/sec_96_cam_4_ccd_4/hlsp_tars_tess_ffi_s0096-0000000278960483_tess_v01_lc.fits",
+          "path": "hlsp_tars_tess_ffi_s0096-0000000278960483_tess_v01_lc.fits"
+        },
+        {
+          "bytes": 190850,
+          "download_url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Ftars%2Fsec_96_cam_4_ccd_4%2Fhlsp_tars_tess_ffi_s0096-0000000278960483_tess_v01_preview.jpeg",
+          "mast_uri": "mast:HLSP/tars/sec_96_cam_4_ccd_4/hlsp_tars_tess_ffi_s0096-0000000278960483_tess_v01_preview.jpeg",
+          "path": "hlsp_tars_tess_ffi_s0096-0000000278960483_tess_v01_preview.jpeg"
+        }
+      ],
+      "obs_id": "hlsp_tars_tess_ffi_s0096-0000000278960483_tess",
+      "obsid": 444593431,
+      "quantile_index": 234464,
+      "target_name": "278960483"
+    },
+    {
+      "files": [
+        {
+          "bytes": 141120,
+          "download_url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Ftars%2Fsec_96_cam_4_ccd_3%2Fhlsp_tars_tess_ffi_s0096-0000000350184430_tess_v01_lc.fits",
+          "mast_uri": "mast:HLSP/tars/sec_96_cam_4_ccd_3/hlsp_tars_tess_ffi_s0096-0000000350184430_tess_v01_lc.fits",
+          "path": "hlsp_tars_tess_ffi_s0096-0000000350184430_tess_v01_lc.fits"
+        },
+        {
+          "bytes": 175670,
+          "download_url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Ftars%2Fsec_96_cam_4_ccd_3%2Fhlsp_tars_tess_ffi_s0096-0000000350184430_tess_v01_preview.jpeg",
+          "mast_uri": "mast:HLSP/tars/sec_96_cam_4_ccd_3/hlsp_tars_tess_ffi_s0096-0000000350184430_tess_v01_preview.jpeg",
+          "path": "hlsp_tars_tess_ffi_s0096-0000000350184430_tess_v01_preview.jpeg"
+        }
+      ],
+      "obs_id": "hlsp_tars_tess_ffi_s0096-0000000350184430_tess",
+      "obsid": 444574522,
+      "quantile_index": 281357,
+      "target_name": "350184430"
+    },
+    {
+      "files": [
+        {
+          "bytes": 123840,
+          "download_url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Ftars%2Fsec_96_cam_1_ccd_4%2Fhlsp_tars_tess_ffi_s0096-0000002056110539_tess_v01_lc.fits",
+          "mast_uri": "mast:HLSP/tars/sec_96_cam_1_ccd_4/hlsp_tars_tess_ffi_s0096-0000002056110539_tess_v01_lc.fits",
+          "path": "hlsp_tars_tess_ffi_s0096-0000002056110539_tess_v01_lc.fits"
+        },
+        {
+          "bytes": 180872,
+          "download_url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Ftars%2Fsec_96_cam_1_ccd_4%2Fhlsp_tars_tess_ffi_s0096-0000002056110539_tess_v01_preview.jpeg",
+          "mast_uri": "mast:HLSP/tars/sec_96_cam_1_ccd_4/hlsp_tars_tess_ffi_s0096-0000002056110539_tess_v01_preview.jpeg",
+          "path": "hlsp_tars_tess_ffi_s0096-0000002056110539_tess_v01_preview.jpeg"
+        }
+      ],
+      "obs_id": "hlsp_tars_tess_ffi_s0096-0000002056110539_tess",
+      "obsid": 444350592,
+      "quantile_index": 328250,
+      "target_name": "2056110539"
+    }
+  ],
+  "rows_returned": 328251,
+  "selection_rule": "Eight evenly spaced quantiles after numeric target_name sort; retain complete FITS/JPEG pairs while total is <=45 MiB."
+}

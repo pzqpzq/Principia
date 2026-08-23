@@ -1,0 +1,83 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "10_computer_security_nvd_recent_snapshot",
+  "domain": "cybersecurity",
+  "title": "NVD recent CVE JSON 2.0 snapshot",
+  "publisher": "National Institute of Standards and Technology / NVD",
+  "authoritative_landing_url": "https://nvd.nist.gov/vuln/data-feeds",
+  "authoritative_source_urls": [
+    "https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-recent.json.gz",
+    "https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-recent.meta",
+    "https://csrc.nist.gov/schema/nvd/api/2.0/cve_api_json_2.0.schema"
+  ],
+  "identifiers": [],
+  "release_or_version": "rolling recent feed frozen at retrieval",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "U.S. Government work; see NVD data-use policy",
+  "deterministic_selection_rule": "In one retrieval window retain the recent-feed gzip, losslessly expanded JSON, .meta file, and official JSON schema.",
+  "exclusions": [
+    "No value-level preprocessing",
+    "No outcome-guided selection",
+    "No controlled-access or credential material"
+  ],
+  "ethics_restrictions": [
+    "Public/deidentified use only where human data are present",
+    "No re-identification",
+    "Generated USER_BRIEF is context, not evidence"
+  ],
+  "transport_and_headers": {
+    "status": "source metadata and mutable-feed companion metadata retained where publisher supplied it; browser-only endpoints are identified by URL",
+    "http_error_masquerade_check_required": true
+  },
+  "substitution": null,
+  "files": [
+    {
+      "path": "context/cve_api_json_2.0.schema",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-recent.json.gz",
+        "https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-recent.meta",
+        "https://csrc.nist.gov/schema/nvd/api/2.0/cve_api_json_2.0.schema"
+      ],
+      "bytes": 10394,
+      "sha256": "2b9c4e8ab7e6e42aa17ea787f58167beff47c119c6f291405f86ac19c6149e01",
+      "mime_type": "application/json"
+    },
+    {
+      "path": "context/nvdcve-2.0-recent.meta",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-recent.json.gz",
+        "https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-recent.meta",
+        "https://csrc.nist.gov/schema/nvd/api/2.0/cve_api_json_2.0.schema"
+      ],
+      "bytes": 165,
+      "sha256": "c200ca03ab489b1426bc8476e2464c29ae1999beb8c4951c05be8afce7b17e9f",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "raw/nvdcve-2.0-recent.json",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-recent.json.gz",
+        "https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-recent.meta",
+        "https://csrc.nist.gov/schema/nvd/api/2.0/cve_api_json_2.0.schema"
+      ],
+      "bytes": 19264128,
+      "sha256": "a5bdbd3145b57222504b64cbf7a14fd52ca6887537e21dcbb9ddec55e4084f77",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "raw/nvdcve-2.0-recent.json.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-recent.json.gz",
+        "https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-recent.meta",
+        "https://csrc.nist.gov/schema/nvd/api/2.0/cve_api_json_2.0.schema"
+      ],
+      "bytes": 1735840,
+      "sha256": "9e0f8664e912de3c21bcdac26a6d7051b50de15a0b169be32d6456a2677604ba",
+      "mime_type": "application/gzip"
+    }
+  ]
+}

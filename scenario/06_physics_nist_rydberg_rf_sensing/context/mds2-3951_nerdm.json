@@ -1,0 +1,675 @@
+{
+  "_schema": "https://data.nist.gov/od/dm/nerdm-schema/v0.7#",
+  "@context": [
+    "https://data.nist.gov/od/dm/nerdm-pub-context.jsonld",
+    {
+      "@base": "ark:/88434/mds2-3951"
+    }
+  ],
+  "@type": [
+    "nrdp:DataPublication",
+    "nrdp:PublicDataResource",
+    "dcat:Dataset"
+  ],
+  "_extensionSchemas": [
+    "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/PublicDataResource"
+  ],
+  "@id": "ark:/88434/mds2-3951",
+  "ediid": "ark:/88434/mds2-3951",
+  "version": "1.0.3",
+  "doi": "doi:10.18434/mds2-3951",
+  "title": "Dataset in support of publication : Sensitivity Comparison of Rydberg Atom-Based Radio-Frequency Electric Field Detection: Ionization Current Versus Optical Readout",
+  "contactPoint": {
+    "fn": "Nik Prajapati",
+    "hasEmail": "mailto:nikunjkumar.prajapati@nist.gov"
+  },
+  "modified": "2025-08-04 00:00:00",
+  "status": "available",
+  "landingPage": "https://data.nist.gov/od/id/mds2-3951",
+  "description": [
+    "We investigate a technique for detecting radio-frequency (RF) electric fields in a Cesium (Cs) vapor cell at room temperature by collecting charge from ionized Rydberg atoms and compare its performance with the established method of electromagnetically induced transparency (EIT). By applying a known RF field, we measure the response from both the electrical (ionization current-based) and optical (EIT-based) readouts. The ionization current-based method yields a sensitivity of 22.4~$\\\\mu$Vm$^{-1}$Hz$^{-1/2}$, while the EIT-based method achieves 3.7~$\\\\mu$Vm$^{-1}$Hz$^{-1/2}$. The sensitivity of the ionization current-based method is limited by thermal noise arising from a 2.2~k$\\\\Omega$ resistance between the collection electrodes, attributed to a thin Cs film on the inner surfaces of the vapor cell. Controlling or eliminating the Cs layer can significantly improve the sensitivity of this ionization approach."
+  ],
+  "keyword": [
+    "Rydberg atoms",
+    "atomic physics",
+    "receivers",
+    "fields strength",
+    "electric field",
+    "volts/meter"
+  ],
+  "topic": [
+    {
+      "@type": "Concept",
+      "tag": "Physics:Atomic, molecular, and quantum"
+    }
+  ],
+  "accessLevel": "public",
+  "license": "https://www.nist.gov/open/license",
+  "publisher": {
+    "name": "National Institute of Standards and Technology",
+    "@type": "org:Organization"
+  },
+  "language": [
+    "en"
+  ],
+  "bureauCode": [
+    "006:55"
+  ],
+  "programCode": [
+    "006:052"
+  ],
+  "_editStatus": "done",
+  "theme": [
+    "Physics:Atomic, molecular, and quantum"
+  ],
+  "components": [
+    {
+      "@id": "cmps/FIG2b_EITSpectra_with_ProbeRabiFrequency.csv",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "FIG2b_EITSpectra_with_ProbeRabiFrequency.csv",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3951/FIG2b_EITSpectra_with_ProbeRabiFrequency.csv",
+      "mediaType": "text/csv",
+      "format": {
+        "description": "3 column data: coupling laser detuning (MHz), probe Rabi frequency (MHz), EIT signal amplitude (arb. units)"
+      },
+      "description": "Electromagnetically Induced Transparency (EIT) spectra of the 43D_3/2 and 43D_5/2 Rydberg state measured as a function of coupling laser detuning for various probe Rabi frequencies, with the coupling Rabi frequency fixed at 2.8 MHz. Each spectrum corresponds to a different value of the probe Rabi frequency.",
+      "title": "EIT Spectra for Varying Probe Rabi Frequencies",
+      "size": 11203067,
+      "checksum": {
+        "hash": "6dc0d63de4c627b013560753a5e47591576e88655677633cad7a914b001a0f62",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/FIG4a_EIT_ION_WidthandAmplitude_with_CouplingRabiFrequency.csv",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "FIG4a_EIT_ION_WidthandAmplitude_with_CouplingRabiFrequency.csv",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3951/FIG4a_EIT_ION_WidthandAmplitude_with_CouplingRabiFrequency.csv",
+      "mediaType": "text/csv",
+      "format": {
+        "description": "9 column data: coupling Rabi frequency (MHz), EIT FWHM (MHz), EIT FWHM standard deviation from fit (MHz), EIT amplitude (arb. units), EIT amplitude standard deviation from fit (arb. units), ionization FWHM (MHz), ionization FWHM standard deviation from fit (MHz), ionization amplitude (arb. units), ionization amplitude standard deviation from fit (arb. units)"
+      },
+      "description": "Full width at half maximum (FWHM) and amplitude of both EIT and ionization signals measured as a function of coupling Rabi frequency, with the probe Rabi frequency fixed at 3 MHz. Uncertainties represent standard deviations extracted from the fit to each individual spectrum.",
+      "title": "EIT and Ionization Full Width at Half Maximum (FWHM) and Amplitude vs. Coupling Rabi Frequency",
+      "size": 567,
+      "checksum": {
+        "hash": "10a39ce31e8aeae652eff09e564e46b2fd8928eb1f3dd7544140499646875d79",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/FIG5b_BeatnoteAmp_vs_AppliedSignalRFPower_EIT.csv",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "FIG5b_BeatnoteAmp_vs_AppliedSignalRFPower_EIT.csv",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3951/FIG5b_BeatnoteAmp_vs_AppliedSignalRFPower_EIT.csv",
+      "mediaType": "text/csv",
+      "format": {
+        "description": "6 column data: input signal power P_sig (dBm), measured beat note amplitude (dBm), input signal power for noise floor measurement (dBm), measured noise floor (dBm), input signal power for fit (dBm), fitted beat note amplitude (dBm)"
+      },
+      "description": "Beat note amplitude extracted from the EIT signal as a function of input RF signal power in dBm. The dataset includes measured beat note amplitudes, the measured noise floor, and fit data for beat note amplitude.",
+      "title": "Beat Note Amplitude vs. Input Signal RF Power from EIT ",
+      "size": 3714,
+      "checksum": {
+        "hash": "3d5cda40414d08315b63181cac5bf7dad62b09ba7a6b6078e5ac767253c33fde",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/FIG5c_BeatnoteAmp_vs_AppliedSignalRFPower_Ion.csv",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "FIG5c_BeatnoteAmp_vs_AppliedSignalRFPower_Ion.csv",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3951/FIG5c_BeatnoteAmp_vs_AppliedSignalRFPower_Ion.csv",
+      "mediaType": "text/csv",
+      "format": {
+        "description": "6 column data: input signal power P_sig (dBm), measured beat note amplitude (dBm), input signal power for noise floor measurement (dBm), measured noise floor (dBm), input signal power for fit (dBm), fitted beat note amplitude (dBm)"
+      },
+      "description": "Beat note amplitude extracted from the EIT signal as a function of input RF signal power in dBm. The dataset includes measured beat note amplitudes, the measured noise floor, and fit data for beat note amplitude.",
+      "title": "Beat Note Amplitude vs. Input Signal RF Power from Ionization ",
+      "size": 4396,
+      "checksum": {
+        "hash": "0b8aa167f1301e88bd9cfeb436cc298cb8a3266332d67ee28a4bc3c5fd0d4a84",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/FIG6a_Sensitivity_with_CouplingRabiFrequency.csv",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "FIG6a_Sensitivity_with_CouplingRabiFrequency.csv",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3951/FIG6a_Sensitivity_with_CouplingRabiFrequency.csv",
+      "mediaType": "text/csv",
+      "format": {
+        "description": "5 column data: coupling Rabi frequency (MHz), averaged EIT sensitivity (\u00b5V/m/Hz^0.5), standard deviation of EIT sensitivity, averaged ionization sensitivity (\u00b5V/m/Hz^0.5), standard deviation of ionization sensitivity"
+      },
+      "description": "Sensitivity in microvolts per meter per square root hertz (\u00b5V/m/Hz^0.5) measured as a function of coupling Rabi frequency, with the probe Rabi frequency fixed at 2.5 MHz. Each data point represents the average of three independent measurements, with error bars indicating the standard deviation.",
+      "title": "Sensitivity as a Function of Coupling Rabi Frequency",
+      "size": 401,
+      "checksum": {
+        "hash": "53635eb37588da11a55009d069c61e3fe19d17304bd797f28dee9022c6fa197f",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/FIG6b_Sensitivity_with_ProbeRabiFrequency.csv",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "FIG6b_Sensitivity_with_ProbeRabiFrequency.csv",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3951/FIG6b_Sensitivity_with_ProbeRabiFrequency.csv",
+      "mediaType": "text/csv",
+      "format": {
+        "description": "5 column data:probe Rabi frequency (MHz), averaged EIT sensitivity (\u00b5V/m/Hz^0.5), standard deviation of EIT sensitivity, averaged ionization sensitivity (\u00b5V/m/Hz^0.5), standard deviation of ionization sensitivity"
+      },
+      "description": "Sensitivity in microvolts per meter per square root hertz (\u00b5V/m/Hz^0.5) measured as a function of probe Rabi frequency, with the coupling Rabi frequency fixed at 2.8 MHz. Each data point represents the average of three independent measurements, with error bars indicating the standard deviation.",
+      "title": "Sensitivity as a Function of Probe Rabi Frequency",
+      "size": 884,
+      "checksum": {
+        "hash": "5253038ae29277950b56c10a5f96b3a6790f594bc7c98af8b9cafe47634da3b4",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/FIG2a_EITSpectra_with_CouplingRabiFrequency.csv",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "FIG2a_EITSpectra_with_CouplingRabiFrequency.csv",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3951/FIG2a_EITSpectra_with_CouplingRabiFrequency.csv",
+      "mediaType": "text/csv",
+      "format": {
+        "description": "3 column data: coupling laser detuning (MHz), coupling Rabi frequency (MHz), EIT signal amplitude (arb. units)"
+      },
+      "description": "Electromagnetically Induced Transparency (EIT) spectra of the 43D_3/2 and 43D_5/2 Rydberg state measured as a function of coupling laser detuning for various coupling Rabi frequencies, with the probe Rabi frequency fixed at 3 MHz. Each spectrum corresponds to a different value of the coupling Rabi frequency.",
+      "title": "EIT Spectra for Varying Coupling Rabi Frequencies",
+      "size": 11212427,
+      "checksum": {
+        "hash": "1bcd9985cdd180780fd335f717ed23d201ccd038a9e8f474f4a91f3459dbad02",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/FIG5e_NoiseSpectra_Ion.csv",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "FIG5e_NoiseSpectra_Ion.csv",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3951/FIG5e_NoiseSpectra_Ion.csv",
+      "mediaType": "text/csv",
+      "format": {
+        "description": "7 column data: frequency (kHz), spectrum analyzer noise (dBm), current amplifier noise open input (dBm), current amplifier noise cell connected (dBm), probe laser noise (dBm), probe plus coupling laser noise (dBm), probe plus coupling plus RF field noise (dBm)"
+      },
+      "description": "Noise spectra relevant to ionization measurements. Data includes spectrum analyzer  noise floor, current amplifier noise with input open, current amplifier noise with the vapor cell connected, probe laser noise alone, probe laser noise with the coupling laser present, and probe laser noise with both coupling laser and RF field applied.",
+      "title": "Noise Spectra for Ionization Measurements",
+      "size": 46533,
+      "checksum": {
+        "hash": "56240d66cc249021989cd6b40196ab6a0532c4db94737f03050ec12440d66b04",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/FIG1c_ExampleSpectraEIT_AT_Ion.csv",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "FIG1c_ExampleSpectraEIT_AT_Ion.csv",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3951/FIG1c_ExampleSpectraEIT_AT_Ion.csv",
+      "mediaType": "text/csv",
+      "format": {
+        "description": "9 column data: coupling laser detuning (MHz), 4 columns of EIT signal amplitude (arb. units) at different RF signal powers, 4 columns of ionization signal amplitude (arb. units) at the same RF signal powers"
+      },
+      "description": "Example traces of EIT-AT and ionization spectra as a function of coupling laser detuning for various injected RF powers (in dBm) applied to the cable feeding the horn antenna: RF off, 0, 8, and 14 dBm. The probe and coupling Rabi frequencies were fixed at 3 MHz and 2.83 MHz, respectively. EIT signals were obtained from a balanced photodetector measuring transmitted probe light, while ionization signals were collected simultaneously using a current amplifier.",
+      "title": "EIT-AT and Ionization Spectra at Various RF Signal Powers",
+      "size": 112585,
+      "checksum": {
+        "hash": "8c0c74359a57ef77a94143473a40a6fc3b894af65d46352c422ee9932152ee82",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/FIG4b_EIT_ION_WidthandAmplitude_with_ProbeRabiFrequency.csv",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "FIG4b_EIT_ION_WidthandAmplitude_with_ProbeRabiFrequency.csv",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3951/FIG4b_EIT_ION_WidthandAmplitude_with_ProbeRabiFrequency.csv",
+      "mediaType": "text/csv",
+      "format": {
+        "description": "9 column data: probe Rabi frequency (MHz), EIT FWHM (MHz), EIT FWHM standard deviation from fit (MHz), EIT amplitude (arb. units), EIT amplitude standard deviation from fit (arb. units), ionization FWHM (MHz), ionization FWHM standard deviation from fit (MHz), ionization amplitude (arb. units), ionization amplitude standard deviation from fit (arb. units)"
+      },
+      "description": "Full width at half maximum (FWHM) and amplitude of both EIT and ionization signals measured as a function of probe Rabi frequency, with the coupling Rabi frequency fixed at 2.8 MHz. Uncertainties represent standard deviations extracted from the fit to each individual spectrum.",
+      "title": "EIT and Ionization Full Width at Half Maximum (FWHM) and Amplitude vs. Probe Rabi Frequency",
+      "size": 1111,
+      "checksum": {
+        "hash": "8ad0582b1f2ea1486f4beb7defdfdfa14bb6986aa704ed0bde004a299d624318",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/FIG3b_IonSpectra_with_ProbeRabiFrequency.csv",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "FIG3b_IonSpectra_with_ProbeRabiFrequency.csv",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3951/FIG3b_IonSpectra_with_ProbeRabiFrequency.csv",
+      "mediaType": "text/csv",
+      "format": {
+        "description": "3 column data: coupling laser detuning (MHz), probe Rabi frequency (MHz), EIT signal amplitude (arb. units)"
+      },
+      "description": "Ionization spectra of the 43D_3/2 and 43D_5/2 Rydberg state measured as a function of coupling laser detuning for various probe Rabi frequencies, with the coupling Rabi frequency fixed at 2.8 MHz. Each spectrum corresponds to a different value of the probe Rabi frequency.",
+      "title": "Ionization Spectra for Varying Probe Rabi Frequencies",
+      "size": 11199193,
+      "checksum": {
+        "hash": "284dbd4ac1f2e42ba10a24a7d8a74107ab6bdba34e1fa55fe82976c8dad322ff",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/FIG5a_Measured_Efield_vs_AppliedSignalRFPower_for_EIT_ION.csv",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "FIG5a_Measured_Efield_vs_AppliedSignalRFPower_for_EIT_ION.csv",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3951/FIG5a_Measured_Efield_vs_AppliedSignalRFPower_for_EIT_ION.csv",
+      "mediaType": "text/csv",
+      "format": {
+        "description": "8 column data: square root of input RF signal power for EIT measurement (mW^0.5), electric field extracted from EIT spectra (V/m), square root of input RF signal power for EIT fit (mW^0.5), fitted electric field from EIT (V/m), square root of input RF signal power for ionization measurement (mW^0.5), electric field extracted from ionization spectra (V/m), square root of input RF signal power for ionization fit (mW^0.5), fitted electric field from ionization (V/m)"
+      },
+      "description": "Measured RF electric field amplitude as a function of the square root of the input RF signal power applied to the horn antenna, based on EIT and ionization measurements. This dataset is used to extract the electric field calibration factor via linear fitting for both measurement methods.",
+      "title": "Measured RF Electric Field Amplitude vs. Square Root of Input Signal RF Power",
+      "size": 1123,
+      "checksum": {
+        "hash": "c0dff10f6bf391fe26d127acaaf94d6e6c1e088fb0498637229a1e8917f0186a",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/FIG3a_IonSpectra_with_CouplingRabiFrequency.csv",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "FIG3a_IonSpectra_with_CouplingRabiFrequency.csv",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3951/FIG3a_IonSpectra_with_CouplingRabiFrequency.csv",
+      "mediaType": "text/csv",
+      "format": {
+        "description": "3 column data: coupling laser detuning (MHz), coupling Rabi frequency (MHz), EIT signal amplitude (arb. units)"
+      },
+      "description": "Ionization spectra of the 43D_3/2 and 43D_5/2 Rydberg state measured as a function of coupling laser detuning for various coupling Rabi frequencies, with the probe Rabi frequency fixed at 3 MHz. Each spectrum corresponds to a different value of the coupling Rabi frequency.",
+      "title": "Ionization Spectra for Varying Coupling Rabi Frequencies",
+      "size": 11200758,
+      "checksum": {
+        "hash": "ada0718afdefd4a056c70ba7c7bd150e3c5db5f45f0fc42f3a80bc7c115abdf4",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/3951_README.txt",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "3951_README.txt",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3951/3951_README.txt",
+      "mediaType": "text/plain",
+      "title": "Read me file for data set",
+      "size": 12816,
+      "checksum": {
+        "hash": "5b9ef6b21f27c52dfb61921ff0246a410f441b238ff88e326a53079d8ca2ea68",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/FIG5d_NoiseSpectra_EIT.csv",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "FIG5d_NoiseSpectra_EIT.csv",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3951/FIG5d_NoiseSpectra_EIT.csv",
+      "mediaType": "text/csv",
+      "format": {
+        "description": "6 column data: frequency (kHz), spectrum analyzer noise (dBm), photodetector noise (dBm), probe laser noise (dBm), probe plus coupling laser noise (dBm), probe plus coupling plus RF field noise (dBm)"
+      },
+      "description": "Noise spectra relevant to EIT measurements. Data includes the spectrum analyzer (SA) noise floor, the noise from the balanced photodetector during EIT measurement, probe laser noise alone, probe laser noise with the coupling laser present, and probe laser noise with both the coupling laser and RF field applied.",
+      "title": "Noise Spectra for EIT Measurements",
+      "size": 41262,
+      "checksum": {
+        "hash": "e5cc994806955c309d864bc20a989af3c0db06389b3d20f2e745ff86e2434ba0",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    }
+  ],
+  "authors": [
+    {
+      "familyName": "Shylla",
+      "fn": "Dangka  Shylla",
+      "givenName": "Dangka",
+      "middleName": "",
+      "affiliation": [
+        {
+          "title": "National Institute o",
+          "@type": "org:Organization"
+        },
+        {
+          "title": "University of Colorado - Boulder",
+          "@type": "org:Organization"
+        }
+      ],
+      "orcid": "0000-0002-3905-4589",
+      "@type": "foaf:Person"
+    },
+    {
+      "familyName": "Talashila",
+      "fn": "Rajavardhan  Talashila",
+      "givenName": "Rajavardhan",
+      "middleName": "",
+      "affiliation": [
+        {
+          "title": "Associate, National Institute of Standards and Technology",
+          "@type": "org:Organization",
+          "@id": "ror:05xpvk416"
+        },
+        {
+          "title": "University of Colorado",
+          "@type": "org:Organization"
+        }
+      ],
+      "orcid": "0000-0003-0810-7526",
+      "@type": "foaf:Person"
+    },
+    {
+      "familyName": "Artusio-Glimpse",
+      "fn": "Alexandra  Artusio-Glimpse",
+      "givenName": "Alexandra",
+      "middleName": "",
+      "affiliation": [
+        {
+          "title": "National Institute of Standards and Technology",
+          "@type": "org:Organization",
+          "@id": "ror:05xpvk416"
+        }
+      ],
+      "orcid": "0000-0002-8289-2393",
+      "@type": "foaf:Person"
+    },
+    {
+      "familyName": "Meraki",
+      "fn": "Adil  Meraki",
+      "givenName": "Adil",
+      "middleName": "",
+      "affiliation": [
+        {
+          "title": "Associate, National Institute of Standards and Technology",
+          "@type": "org:Organization",
+          "@id": "ror:05xpvk416"
+        },
+        {
+          "title": "University of Colorado -  Boulder",
+          "@type": "org:Organization"
+        }
+      ],
+      "orcid": "0000-0002-0780-5034",
+      "@type": "foaf:Person"
+    },
+    {
+      "familyName": "Manchaiah",
+      "fn": "Dixith  Manchaiah",
+      "givenName": "Dixith",
+      "middleName": "",
+      "affiliation": [
+        {
+          "title": "Associate, National Institute of Standards and Technology",
+          "@type": "org:Organization",
+          "@id": "ror:05xpvk416"
+        },
+        {
+          "title": "University of Colorado",
+          "@type": "org:Organization"
+        }
+      ],
+      "orcid": "0000-0002-4534-6182",
+      "@type": "foaf:Person"
+    },
+    {
+      "familyName": "Schlossberger",
+      "fn": "Noah  Schlossberger",
+      "givenName": "Noah",
+      "middleName": "",
+      "affiliation": [
+        {
+          "title": "National Institute of Standards and Technology",
+          "@type": "org:Organization",
+          "@id": "ror:05xpvk416"
+        }
+      ],
+      "orcid": "0000-0001-9573-8152",
+      "@type": "foaf:Person"
+    },
+    {
+      "familyName": "Berweger",
+      "fn": "Samuel  Berweger",
+      "givenName": "Samuel",
+      "middleName": "",
+      "affiliation": [
+        {
+          "title": "National Institute of Standards and Technology",
+          "@type": "org:Organization",
+          "@id": "ror:05xpvk416"
+        }
+      ],
+      "orcid": "0000-0002-4073-5322",
+      "@type": "foaf:Person"
+    },
+    {
+      "familyName": "Simons",
+      "fn": "Matthew T. Simons",
+      "givenName": "Matthew",
+      "middleName": "T.",
+      "affiliation": [
+        {
+          "title": "National Institute of Standards and Technology",
+          "@type": "org:Organization",
+          "@id": "ror:05xpvk416"
+        }
+      ],
+      "orcid": "0000-0001-9418-7520",
+      "@type": "foaf:Person"
+    },
+    {
+      "familyName": "Holloway",
+      "fn": "Christopher L. Holloway",
+      "givenName": "Christopher",
+      "middleName": "L.",
+      "affiliation": [
+        {
+          "title": "National Institute of Standards and Technology",
+          "@type": "org:Organization",
+          "@id": "ror:05xpvk416"
+        }
+      ],
+      "orcid": "0000-0002-4592-9935",
+      "@type": "foaf:Person"
+    },
+    {
+      "familyName": "Prajapati",
+      "fn": "Nikunjkumar  Prajapati",
+      "givenName": "Nikunjkumar",
+      "middleName": "",
+      "affiliation": [
+        {
+          "title": "National Institute of Standards and Technology",
+          "@type": "org:Organization",
+          "@id": "ror:05xpvk416"
+        }
+      ],
+      "orcid": "0000-0002-7779-9741",
+      "@type": "foaf:Person"
+    }
+  ],
+  "annotated": "2026-04-20T18:11:19.620236",
+  "revised": "2025-09-17T13:57:27.007687",
+  "issued": null,
+  "firstIssued": "2025-09-17T13:57:27.007687",
+  "releaseHistory": {
+    "@id": "ark:/88434/mds2-3951.rel",
+    "@type": [
+      "nrdr:ReleaseHistory"
+    ],
+    "hasRelease": [
+      {
+        "version": "1.0.0",
+        "issued": "2025-08-04",
+        "@id": "ark:/88434/mds2-3951/pdr:v/1.0.0",
+        "location": "https://data.nist.gov/od/id/ark:/88434/mds2-3951/pdr:v/1.0.0",
+        "description": "initial release"
+      },
+      {
+        "version": "1.0.1",
+        "issued": "2025-08-04 00:00:00",
+        "@id": "ark:/88434/mds2-3951/pdr:v/1.0.1",
+        "location": "https://data.nist.gov/od/id/ark:/88434/mds2-3951/pdr:v/1.0.1",
+        "description": "metadata update"
+      },
+      {
+        "version": "1.0.2",
+        "issued": "2025-08-04 00:00:00",
+        "@id": "ark:/88434/mds2-3951/pdr:v/1.0.2",
+        "location": "https://data.nist.gov/od/id/ark:/88434/mds2-3951/pdr:v/1.0.2",
+        "description": "metadata update"
+      },
+      {
+        "version": "1.0.3",
+        "issued": "2025-08-04 00:00:00",
+        "@id": "ark:/88434/mds2-3951/pdr:v/1.0.3",
+        "location": "https://data.nist.gov/od/id/ark:/88434/mds2-3951/pdr:v/1.0.3",
+        "description": "metadata update"
+      }
+    ]
+  }
+}
