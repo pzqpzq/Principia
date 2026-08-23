@@ -30,19 +30,7 @@ jobs:
           git diff --name-only HEAD^ HEAD > "${RUNNER_TEMP}/changed.txt"
           test -s "${RUNNER_TEMP}/changed.txt"
           ! grep -Ev '^global-cloud/' "${RUNNER_TEMP}/changed.txt"
-      - run: python Principia-v1.4.1/core/scripts/validate_global_cloud.py global-cloud
-      - name: Reject forbidden files and secrets
-        run: |
-          ! find global-cloud -type f -size +50M -print -quit | grep .
-          ! grep -RIE '(BEGIN (RSA |OPENSSH )?PRIVATE KEY|github_pat_|ghp_|/Users/|/home/)' global-cloud
-      - name: Deterministic snapshot preflight
-        run: |
-          stamp="$(git show -s --format=%cI HEAD)"
-          python Principia-v1.4.1/core/scripts/build_global_cloud_release.py global-cloud "${RUNNER_TEMP}/preflight-a" --release-id preflight --commit-sha "$GITHUB_SHA" --created-at "$stamp"
-          python Principia-v1.4.1/core/scripts/build_global_cloud_release.py global-cloud "${RUNNER_TEMP}/preflight-b" --release-id preflight --commit-sha "$GITHUB_SHA" --created-at "$stamp"
-          cmp "${RUNNER_TEMP}/preflight-a/principia-global-preflight.pcg" "${RUNNER_TEMP}/preflight-b/principia-global-preflight.pcg"
-          cmp "${RUNNER_TEMP}/preflight-a/manifest.json" "${RUNNER_TEMP}/preflight-b/manifest.json"
-      - name: Verify an unchanged main base
+      - name: Rebase across disjoint repository changes
         id: base
         run: |
           git fetch origin main
@@ -53,15 +41,39 @@ jobs:
           elif [ "$main_sha" = "$parent_sha" ]; then
             echo "promoted=false" >> "$GITHUB_OUTPUT"
           else
-            echo "Main advanced after this reviewed batch was created; no content was published."
-            exit 1
+            parent_cloud_tree="$(git rev-parse "${parent_sha}:global-cloud")"
+            main_cloud_tree="$(git rev-parse "${main_sha}:global-cloud")"
+            if [ "$parent_cloud_tree" != "$main_cloud_tree" ]; then
+              echo "The canonical Cloud changed after this batch was reviewed. Record-level resolution is required."
+              exit 1
+            fi
+            git config user.name "Principia Cloud Publisher"
+            git config user.email "publisher@principia.local"
+            git rebase origin/main
+            echo "promoted=false" >> "$GITHUB_OUTPUT"
+            echo "Rebased the reviewed Cloud batch across unrelated repository changes."
           fi
+          echo "publish_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - run: python Principia-v1.4.1/core/scripts/validate_global_cloud.py global-cloud
+      - name: Reject forbidden files and secrets
+        run: |
+          ! find global-cloud -type f -size +50M -print -quit | grep .
+          ! grep -RIE '(BEGIN (RSA |OPENSSH )?PRIVATE KEY|github_pat_|ghp_|/Users/|/home/)' global-cloud
+      - name: Deterministic snapshot preflight
+        run: |
+          stamp="$(git show -s --format=%cI HEAD)"
+          publish_sha="${{ steps.base.outputs.publish_sha }}"
+          python Principia-v1.4.1/core/scripts/build_global_cloud_release.py global-cloud "${RUNNER_TEMP}/preflight-a" --release-id preflight --commit-sha "$publish_sha" --created-at "$stamp"
+          python Principia-v1.4.1/core/scripts/build_global_cloud_release.py global-cloud "${RUNNER_TEMP}/preflight-b" --release-id preflight --commit-sha "$publish_sha" --created-at "$stamp"
+          cmp "${RUNNER_TEMP}/preflight-a/principia-global-preflight.pcg" "${RUNNER_TEMP}/preflight-b/principia-global-preflight.pcg"
+          cmp "${RUNNER_TEMP}/preflight-a/manifest.json" "${RUNNER_TEMP}/preflight-b/manifest.json"
       - name: Resolve immutable release identity and previous asset
         id: release
         env:
           GH_TOKEN: ${{ github.token }}
+          PUBLISH_SHA: ${{ steps.base.outputs.publish_sha }}
         run: |
-          release_id="$(date -u +%Y%m%d)-${GITHUB_SHA::12}"
+          release_id="$(date -u +%Y%m%d)-${PUBLISH_SHA::12}"
           echo "release_id=$release_id" >> "$GITHUB_OUTPUT"
           current_tag="global-${release_id}"
           previous="$(gh release list --limit 100 --json tagName --jq '[.[] | select((.tagName | startswith("global-")) and .tagName != "'"$current_tag"'")][0].tagName // ""')"
@@ -73,6 +85,7 @@ jobs:
       - name: Build full snapshot and optional delta
         env:
           PRINCIPIA_EMBEDDING_API_KEY: ${{ secrets.PRINCIPIA_EMBEDDING_API_KEY }}
+          PUBLISH_SHA: ${{ steps.base.outputs.publish_sha }}
         run: |
           vector_previous_args=()
           delta_previous_args=()
@@ -100,7 +113,7 @@ jobs:
             echo "Embedding credential is absent; publishing a verified FTS-only snapshot."
           fi
           python Principia-v1.4.1/core/scripts/build_global_cloud_release.py global-cloud "${RUNNER_TEMP}/release" \
-            --release-id "${{ steps.release.outputs.release_id }}" --commit-sha "$GITHUB_SHA" \
+            --release-id "${{ steps.release.outputs.release_id }}" --commit-sha "$PUBLISH_SHA" \
             --created-at "$(git show -s --format=%cI HEAD)" \
             "${vector_args[@]}" "${delta_previous_args[@]}"
       - name: Atomically advance main
@@ -109,6 +122,7 @@ jobs:
       - name: Upload immutable assets and verify by redownload
         env:
           GH_TOKEN: ${{ github.token }}
+          PUBLISH_SHA: ${{ steps.base.outputs.publish_sha }}
         run: |
           tag="global-${{ steps.release.outputs.release_id }}"
           assets=("${RUNNER_TEMP}/release"/*.pcg "${RUNNER_TEMP}/release/manifest.json" "${RUNNER_TEMP}/release/SHA256SUMS" \
@@ -117,13 +131,13 @@ jobs:
           if gh release view "$tag" >/dev/null 2>&1; then
             gh release upload "$tag" "${assets[@]}" --clobber
           else
-            gh release create "$tag" "${assets[@]}" --target "$GITHUB_SHA" --title "$tag" --notes "Verified Principia Global Cloud snapshot."
+            gh release create "$tag" "${assets[@]}" --target "$PUBLISH_SHA" --title "$tag" --notes "Verified Principia Global Cloud snapshot."
           fi
           verify_root="${RUNNER_TEMP}/verify"
           mkdir -p "$verify_root"
           gh release download "$tag" -D "$verify_root"
           (cd "$verify_root" && sha256sum -c SHA256SUMS)
-          VERIFY_ROOT="$verify_root" VERIFY_COMMIT="$GITHUB_SHA" python - <<'PY'
+          VERIFY_ROOT="$verify_root" VERIFY_COMMIT="$PUBLISH_SHA" python - <<'PY'
           import hashlib, json, os, pathlib
           root = pathlib.Path(os.environ["VERIFY_ROOT"])
           latest = json.loads((root / "latest.json").read_text())

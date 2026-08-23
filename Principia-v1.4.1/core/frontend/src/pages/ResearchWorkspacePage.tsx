@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import type { components } from "../api/schema";
 import { api, dataOrThrow } from "../api/client";
 import { ErrorState } from "../components/AsyncState";
+import { CloudStatusControl } from "../components/CloudStatusControl";
 import { JobProgress, terminalJobStates } from "../components/JobProgress";
 import { ScientificText } from "../components/ScientificText";
 import {
@@ -489,7 +490,25 @@ export function ResearchWorkspacePage() {
     queryKey: ["cloud-status"],
     queryFn: async () =>
       record(dataOrThrow(await api.GET("/api/v1/cloud/status", {}))),
-    refetchInterval: 60_000,
+    refetchInterval: 15_000,
+    refetchOnWindowFocus: "always",
+  });
+  const refreshCloud = useMutation({
+    mutationFn: async () =>
+      record(
+        dataOrThrow(
+          await api.POST("/api/v1/cloud/sync", {
+            params: { query: { force: true } },
+          }),
+        ),
+      ),
+    onSuccess: async () => {
+      await cloud.refetch();
+      queryClient.invalidateQueries({ queryKey: ["global-webgl-atlas"] });
+      queryClient.invalidateQueries({
+        queryKey: ["global-webgl-atlas-areas"],
+      });
+    },
   });
   const trayPage = useQuery({
     queryKey: ["research-results", sessionId, activeRunId, tray],
@@ -2041,19 +2060,12 @@ export function ResearchWorkspacePage() {
             ) : null}
           </div>
         </details>
-        <div className="research-cloud-state">
-          <span
-            className={`status-dot ${cloud.data?.available ? "online" : "warning"}`}
-          />
-          <strong>
-            {Number(
-              cloud.data?.total_principle_count ??
-                cloud.data?.principle_count ??
-                0,
-            ).toLocaleString()}
-          </strong>
-          <small>Principles ready</small>
-        </div>
+        <CloudStatusControl
+          status={cloud.data ?? {}}
+          fetching={cloud.isFetching}
+          refreshing={refreshCloud.isPending}
+          onRefresh={() => refreshCloud.mutate()}
+        />
       </header>
 
       {runNotice ? (

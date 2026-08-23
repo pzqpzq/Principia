@@ -47,11 +47,12 @@ def test_snapshot_projects_legacy_areas_without_mutating_canonical_records(
         result = store.search(request.model_copy(update={"cursor": result["next_cursor"]}))
         items.extend(result["items"])
     areas = {item["area"] for item in items}
-    assert len(items) == 676
+    canonical_principles = store.canonical_records()["principles"]
+    assert len(items) == len(canonical_principles)
     assert "general" not in areas
     assert "hilbert" not in areas
     assert {"mathematics-logic", "ai-ml", "neuroscience-cognition"} <= areas
 
-    canonical_areas = {row["area"] for row in store.canonical_records()["principles"]}
+    canonical_areas = {row["area"] for row in canonical_principles}
     assert "general" in canonical_areas
     assert canonical_areas != areas
