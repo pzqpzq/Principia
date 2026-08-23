@@ -1,20 +1,21 @@
 <h1 align="center">Principia</h1>
 
 <p align="center"><strong>The living Principles Cloud for Autonomous Scientific Discovery</strong></p>
-<p align="center"><em>From scientific works to reusable Principles. From Principles to solutions.</em></p>
+<p align="center"><em>From scientific works to reusable structure. From structure to testable derivations.</em></p>
 
 <p align="center">
   <a href="https://github.com/pzqpzq/Principia/actions/workflows/principia-v141-ci.yml"><img alt="v1.4.1 CI" src="https://github.com/pzqpzq/Principia/actions/workflows/principia-v141-ci.yml/badge.svg"></a>
   <a href="https://github.com/pzqpzq/Principia/tree/main/Principia-v1.4.1/core"><img alt="Principia v1.4.1" src="https://img.shields.io/badge/Principia-v1.4.1-111827?style=flat-square&amp;logo=github"></a>
   <a href="https://pypi.org/project/principia-ai/"><img alt="PyPI stable" src="https://img.shields.io/pypi/v/principia-ai?style=flat-square&amp;logo=pypi&amp;logoColor=white&amp;label=PyPI%20stable"></a>
   <a href="https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4.1/core/LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/v1.4.1%20core-MIT-0F766E?style=flat-square"></a>
-  <a href="https://icml.cc/virtual/2026/poster/61557"><img alt="ICML 2026" src="https://img.shields.io/badge/ICML-2026-6D4AFF?style=flat-square"></a>
+  <a href="https://arxiv.org/abs/2606.29354"><img alt="ICML 2026" src="https://img.shields.io/badge/ICML-2026-6D4AFF?style=flat-square"></a>
 </p>
 
 <p align="center">
   <a href="#principia-v141">v1.4.1</a> ·
-  <a href="#see-the-cloud-think">Living map</a> ·
-  <a href="#one-workspace-one-research-flow">Workflow</a> ·
+  <a href="#scientific-object-model">Object model</a> ·
+  <a href="#from-retrieval-to-derivation">Workflow</a> ·
+  <a href="#global-principles-cloud">Cloud</a> ·
   <a href="#install-and-open-v141">Quick start</a> ·
   <a href="#principia-v133--evidence-grounded-idea-discovery">v1.3.3</a> ·
   <a href="#research-foundations">Research</a>
@@ -24,9 +25,11 @@
 
 # Principia v1.4.1
 
-Principia v1.4.1 is a local-first research environment for navigating scientific knowledge as a living system of **Principles** rather than a pile of papers. It searches a versioned Global Principles Cloud, connects literature-derived claims to deeper Meta-Principle foundations, and gives researchers one visual workspace in which to inspect, combine, challenge, and extend scientific ideas.
+Principia v1.4.1 is a local-first research workbench that turns scientific literature into an **inspectable reasoning substrate**. Instead of treating papers as the terminal unit of knowledge, it represents reusable mechanisms, constraints, regularities, trade-offs, boundary conditions, and falsifiers as revisioned **Principles**.
 
-The central object is not a summary. It is a reusable scientific statement with explicit scope, conditions, boundaries, falsifiers, provenance, relations, and revision history.
+> **Core thesis:** autonomous scientific discovery needs an intermediate scientific language between papers and hypotheses—one that preserves provenance, scope, uncertainty, and falsifiability.
+
+The result is neither a paper database nor a generic chat interface. It is a living map where evidence-linked Principles can be connected to higher-order Meta-Principles, combined into candidate relations, and developed into locally controlled derived Principles.
 
 <p align="center">
   <a href="./assets/screenshots-v1.4.1-aug23/home.png">
@@ -34,141 +37,99 @@ The central object is not a summary. It is a reusable scientific statement with 
   </a>
 </p>
 
-## Why Principles?
+## Scientific object model
 
-Scientific literature is optimized for publication, not reuse. The same mechanism may be rediscovered in several fields, hidden behind different vocabularies, or buried inside a long paper. Principia makes the transferable unit explicit:
+Principia represents scientific knowledge as a small set of typed, composable objects:
 
 ```text
-scientific works
-      ↓
-evidence-linked literature Principles
-      ↓
-Meta-Principle foundations and typed relations
-      ↓
-a searchable, inspectable, evolving knowledge map
-      ↓
-new hypotheses, connections, and candidate solutions
+scientific Works
+      │  provenance
+      ▼
+literature Principles  ───── typed relations ─────  literature Principles
+      │
+      │  foundation assessment
+      ▼
+Meta-Principles
+      │
+      │  explicitly selected reasoning context
+      ▼
+virtual connections and derived Principles
+      │
+      ▼
+validation, revision, or rejection
 ```
 
-A literature Principle captures what a work supports. A **Meta-Principle** captures a more general law, constraint, reasoning pattern, or foundation that can connect claims across domains. Foundation links are typed and reviewed; a scientifically sound frontier Principle may remain ungrounded when no compatible Meta-Principle exists. Absence of a foundation is never treated as evidence of invalidity.
+| Object | Scientific contract | Why it matters |
+| --- | --- | --- |
+| **Work** | A public source identity and bibliographic record. | Keeps every reusable claim connected to where it came from. |
+| **Literature Principle** | An evidence-linked claim that retains its argument, scope, conditions, boundaries, falsifier, provenance, relations, and revision history. | Converts papers into scientific units that can be compared, transferred, challenged, and reused. |
+| **Meta-Principle** | A higher-order law, constraint, invariant, scaling relation, impossibility result, causal regularity, or design trade-off that can organize claims across domains. | Supplies deeper foundations without erasing domain-specific assumptions. |
+| **Derived / virtual artifact** | A candidate connection or Principle produced from an explicitly selected set of literature and Meta-Principles. | Turns retrieval into controlled hypothesis construction rather than unconstrained brainstorming. |
 
-This representation is designed to make scientific knowledge compound: each new work can strengthen, qualify, contradict, connect, or extend what is already known.
+Meta-grounding is deliberately non-authoritative. A Meta-Principle may explain or organize a literature claim, but it cannot rescue unsupported evidence. Conversely, a scientifically sound frontier Principle may remain ungrounded when no compatible foundation is known.
 
-## A Cloud with inspectable structure
+## From retrieval to derivation
 
-The Global Principles Cloud is maintained as reviewable, canonical JSON records under [`global-cloud/`](./global-cloud/). GitHub Releases distribute derived, verified SQLite/vector snapshots for fast local search. Principia downloads and searches those snapshots locally; GitHub is not used as a live database.
+| **01 · Discover** | **02 · Inspect** | **03 · Derive** |
+| --- | --- | --- |
+| Paper-first Global retrieval finds relevant Works, expands them through explicit Work–Principle provenance, and ranks the resulting Principles. Optional Local extraction runs only on folders the user selects. | A scalable WebGL map distinguishes literature Principles, Meta-Principles, and virtual hypotheses. The shared inspector exposes argument, conditions, boundaries, applications, reliability, influence, revisions, relations, and public sources. | **Derive connection** creates removable candidate edges. **Derive Principles** performs multi-level reasoning over up to 20 selected records, balancing novelty with scientific defensibility. |
 
-v1.4.1 introduced the schema-v2 foundation with the following launch snapshot. The Cloud continues to grow through reviewed, data-only releases; see the [latest verified Cloud release](https://github.com/pzqpzq/Principia/releases/latest) for the live manifest and counts.
-
-| Scientific object | v1.4.1 launch count |
-| --- | ---: |
-| Works | 958 |
-| Literature Principles | 676 |
-| Active Meta-Principles | 405 |
-| Active Principles in the unified map | 1,081 |
-| Work–Principle provenance links | 2,101 |
-| Principle relations | 468 |
-| Literature–Meta foundation links | 84 |
-| Foundation assessments | 676 |
-
-Canonical revisions preserve history. Updating a Principle appends a new revision; retirement does not erase the earlier scientific record. PDFs, extracted full text, credentials, private URLs, and absolute local paths are forbidden from the Cloud. Bibliographic metadata and public source links remain available so that users can inspect where a Principle came from.
-
-## See the Cloud think
-
-The v1.4.1 workspace is built around a scalable WebGL graph rather than a document list. Literature Principles and Meta-Principles have distinct visual identities, while validated edges reveal provenance, scientific relations, and foundation structure.
-
-- Overview zoom presents areas and large-scale structure.
-- Mid-range zoom presents GPU-rendered nodes and bounded labels.
-- Close zoom reveals readable Principle cards and their local neighborhoods.
-- Area filters, semantic search, and viewport loading keep the interaction responsive as the Cloud grows.
-- Node positions, viewport, membership, virtual artifacts, and project state save automatically.
-
-The graph is not decorative. Every visible item can be inspected, traced to public sources, added to or removed from a research session, and used as an input to further reasoning.
-
-## One workspace, one research flow
-
-v1.4.1 replaces the old sequence of separate Home, Results, and settings pages with a single **New Research** workspace:
-
-1. Choose a working directory.
-2. Enter a research goal.
-3. Search the Global Cloud immediately.
-4. Optionally select one or more local folders, or find papers online.
-5. Let Global retrieval and selected Local extraction run independently and concurrently.
-6. Explore Global, Local, and Meta results in one graph and result tray.
-
-Local folders are unselected by default. Principia never spends model calls on private material merely because a folder was connected. Online acquisition remains inside the workspace and downloads selected papers to a goal-named directory under the current working directory's `local_data/` folder.
-
-For each search, the five highest-ranked literature Principles enter the graph first, together with their valid Meta foundations. The complete result set continues to stream into separate Global, Local, and Meta sections. A branch failure does not discard successful results from another branch.
+Global retrieval and selected Local extraction run independently and concurrently. Top-ranked literature Principles and their valid Meta foundations enter the graph first, while the complete Global, Local, and Meta result sets continue to stream into the workspace. Projects preserve graph membership, layout, viewport, results, and virtual artifacts across sessions.
 
 <p align="center">
   <a href="./assets/screenshots-v1.4.1-aug23/project-page.png">
-    <img src="./assets/screenshots-v1.4.1-aug23/project-page.png" alt="Principia v1.4.1 research project with results, graph, and Meta-Principle inspector" width="100%">
+    <img src="./assets/screenshots-v1.4.1-aug23/project-page.png" alt="Principia v1.4.1 project workspace with literature Principles, Meta-Principles, virtual hypotheses, and the scientific record inspector" width="100%">
   </a>
 </p>
 
-Research sessions behave like durable scientific workspaces. They can be renamed, organized into projects, reopened, and deleted. Graph membership and layout persist continuously, so returning to a project restores the researcher’s working context rather than rebuilding an arbitrary visualization.
+Search results are therefore not the endpoint. They become a bounded and inspectable reasoning context from which researchers can construct, compare, revise, and eventually test new hypotheses. Derived objects remain local, visibly distinct from canonical Cloud records, removable, and under the user's control.
 
-## Retrieval that follows scientific provenance
+## Why this architecture matters
 
-Global search is paper-first:
+| Academic research | Industrial R&D |
+| --- | --- |
+| Principia introduces an explicit intermediate representation between literature retrieval and hypothesis generation. Provenance, cross-domain transfer, foundation alignment, contradiction, revision, and falsification become first-class operations rather than hidden behavior inside a prompt. | The same representation can convert papers, technical reports, and selected private materials into reusable mechanisms, engineering constraints, failure boundaries, and candidate solutions. Local-first storage supports durable R&D memory across projects without treating generated text as institutional truth. |
 
-1. Retrieve relevant Works through full-text metadata search and semantic vectors.
-2. Fuse the rankings and apply bibliographic filters.
-3. Expand matched Works through explicit Work–Principle provenance links.
-4. Rank Principles using both matched-paper relevance and direct Principle relevance.
-5. Use direct Principle retrieval only when the provenance-grounded cohort underfills the requested result set.
+**The architectural novelty is the combination:** evidence-linked abstraction, Meta-Principle grounding, graph-native exploration, and local hypothesis derivation operate inside one revisioned scientific system. The distinction from conventional document-centric RAG is structural: Principia retrieves and composes scientific objects and relations, not only passages.
 
-This makes a result explainable: Principia can show not only that a Principle is semantically related, but which relevant papers led to it and how it is connected to the larger foundation.
+## Global Principles Cloud
 
-If the configured embedding service is unavailable, the client degrades visibly to SQLite FTS search rather than silently returning invented semantic confidence.
+The Global Principles Cloud is maintained as reviewable canonical JSON under [`global-cloud/`](./global-cloud/). Literature Principles and Meta-Principles are separately sharded but implement one versioned scientific contract and share the derived search and graph indexes.
 
-## Explore, connect, and derive
+<p align="center"><strong>v1.4.1 launch snapshot</strong></p>
 
-The workspace supports more than retrieval:
+<table>
+  <tr>
+    <td align="center"><strong>958</strong><br>Works</td>
+    <td align="center"><strong>676</strong><br>Literature Principles</td>
+    <td align="center"><strong>405</strong><br>Active Meta-Principles</td>
+    <td align="center"><strong>1,081</strong><br>Active Principles</td>
+  </tr>
+  <tr>
+    <td align="center"><strong>2,101</strong><br>Provenance links</td>
+    <td align="center"><strong>468</strong><br>Principle relations</td>
+    <td align="center"><strong>84</strong><br>Foundation links</td>
+    <td align="center"><strong>676</strong><br>Foundation assessments</td>
+  </tr>
+</table>
 
-- **Add Global Principles** semantically searches both literature and Meta-Principles and previews records before insertion.
-- **Derive virtual connections** reasons over up to 20 selected Principles and creates removable, visibly distinct candidate edges.
-- **Derive virtual Principles** uses a chosen model to perform multi-level reasoning over up to 20 selected records, balancing novelty with scientific defensibility.
-- Saved virtual Principles remain local, appear in a dedicated collection, and can be added to or removed from the graph without losing the underlying hypothesis.
-- A shared record inspector presents argument, interpretation, conditions, boundaries, applications, reliability, influence, foundation relations, revision history, and public sources without duplicating fields.
+The Cloud grows through reviewed, data-only releases; the [latest verified Cloud release](https://github.com/pzqpzq/Principia/releases/latest) provides the live manifest and counts. Canonical updates append revisions rather than erasing history. Public bibliographic metadata and source links remain inspectable, while PDFs, extracted full text, credentials, private URLs, and absolute local paths are forbidden from the Cloud.
 
-Virtual objects are hypotheses, not Cloud truth. They are visually distinguished from canonical records and remain under the user’s control.
+GitHub is the distribution layer, not a live database. Deterministic builders publish verified SQLite/vector `.pcg` snapshots and optional `.pcd` deltas through GitHub Releases. Clients validate hashes, schemas, counts, and vector contracts before atomic activation, retain the preceding verified generation for rollback, and degrade visibly to SQLite FTS when semantic vectors are unavailable.
 
-## Local-first by design
-
-Principia separates three boundaries deliberately:
+## Local-first by construction
 
 | Boundary | Stored content |
 | --- | --- |
-| Global Cloud cache | Public, paper-free metadata, Principles, relations, indexes, and verified manifests |
-| Working directory | Sessions, jobs, provider settings, local Principles, layouts, and virtual artifacts |
-| `local_data/` and connected folders | User-controlled PDFs, text, notes, and acquired literature |
+| **Shared Cloud cache** | Public, paper-free metadata, Principles, relations, indexes, and verified manifests |
+| **Working directory** | Sessions, jobs, provider settings, local Principles, layouts, and virtual artifacts |
+| **`local_data/` and connected folders** | User-controlled PDFs, text, notes, and acquired literature |
 
-Private documents are processed only when the user explicitly selects their folder. No local content is uploaded during Global search. Provider credentials are stored through the operating-system credential mechanism and must not enter frontend state, logs, events, databases, changesets, or artifacts.
-
-The shared Cloud cache remains reusable across working directories, while every working directory keeps its private state isolated.
-
-## GitHub-native, database-free distribution
-
-```text
-reviewed canonical records on main
-              ↓
-deterministic release builder
-              ↓
-verified .pcg snapshot + optional .pcd delta
-              ↓
-atomic local activation with rollback
-              ↓
-offline paper-first and semantic search
-```
-
-This architecture avoids operating a separate hosted database or vector service. Canonical JSON remains reviewable in Git; derived binaries stay out of ordinary Git history; clients retain the previous verified snapshot for offline use and rollback. Corrupt or truncated assets never replace the active Cloud.
-
-The public v1.4.1 source contains only the regular-user application and neutral read-only Cloud infrastructure. Privileged ingestion, review, credential, and publication tooling is intentionally maintained outside the public source tree and is not included in the frontend bundle or Python distributions.
+Connected folders are unselected by default, and private documents are processed only after explicit selection. No local content is uploaded during Global search. Provider credentials are kept through the operating-system credential mechanism and are excluded from frontend state, logs, events, databases, changesets, and artifacts.
 
 ## Install and open v1.4.1
 
-v1.4.1 is currently published from source. The stable PyPI release remains v1.3.3 until the v1.4.1 distribution is separately released.
+v1.4.1 is currently published from source. The stable PyPI release remains v1.3.3 until the v1.4.1 distribution is released separately.
 
 ```bash
 git clone https://github.com/pzqpzq/Principia.git
@@ -181,9 +142,10 @@ python -m pip install -e "./Principia-v1.4.1/core[local]"
 principia open --working-directory ./principia-workspace
 ```
 
-Principia opens on a loopback address in the browser. The packaged React application is included in the Python source; a Node runtime is needed only for frontend development.
+Principia opens on a loopback address in the browser. The packaged React application is included in the Python source; Node.js is required only for frontend development.
 
-### Development and verification
+<details>
+<summary><strong>Development and verification</strong></summary>
 
 ```bash
 cd Principia-v1.4.1/core
@@ -197,6 +159,8 @@ corepack pnpm install --frozen-lockfile
 corepack pnpm test -- --run
 corepack pnpm build
 ```
+
+</details>
 
 ### v1.4.1 resources
 
@@ -370,12 +334,13 @@ The intended standard is simple:
 # Citation
 
 ```bibtex
-@software{principia2026,
-  title   = {Principia: The Living Principles Cloud for Autonomous Scientific Discovery},
-  author  = {{Principia Contributors}},
-  year    = {2026},
-  version = {1.4.1},
-  url     = {https://github.com/pzqpzq/Principia}
+@inproceedings{
+pei2026when,
+title={When {LLM}s Develop Languages: Symbolic Communication for Efficient Multi-Agent Reasoning},
+author={Zhengqi Pei and Qingming Huang and Shuhui Wang},
+booktitle={Forty-third International Conference on Machine Learning},
+year={2026},
+url={https://openreview.net/forum?id=ovpL0ujD6j}
 }
 ```
 
