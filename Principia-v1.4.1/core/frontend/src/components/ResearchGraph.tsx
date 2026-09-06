@@ -6,6 +6,10 @@ import {
   stableIdentifierHash,
   stableScaffoldPairs,
 } from "./researchGraphTopology";
+import {
+  graphEdgeLayer,
+  type GraphEdgeLayerVisibility,
+} from "./researchGraphControls";
 
 export type ResearchGraphItem = {
   principle_id: string;
@@ -75,6 +79,11 @@ const deepColors = [
   "#38bdf8",
 ];
 const metaColor = "#f2b84b";
+const allEdgeLayers: GraphEdgeLayerVisibility = {
+  scientific: true,
+  context: true,
+  virtual: true,
+};
 
 const pairKey = (source: string, target: string) =>
   [source, target].sort().join("\0");
@@ -132,6 +141,7 @@ export function ResearchGraph({
   deferViewportUntilInteraction = false,
   initialViewport,
   focusTarget,
+  visibleEdgeLayers = allEdgeLayers,
   onSelect,
   onSelectEdge,
   onStageClick,
@@ -146,6 +156,7 @@ export function ResearchGraph({
   deferViewportUntilInteraction?: boolean;
   initialViewport?: InitialViewport;
   focusTarget?: { id: string; request: number } | null;
+  visibleEdgeLayers?: GraphEdgeLayerVisibility;
   onSelect: (principleId: string) => void;
   onSelectEdge?: (edge: ResearchGraphEdgeSelection) => void;
   onStageClick?: () => void;
@@ -167,6 +178,8 @@ export function ResearchGraph({
   } | null>(null);
   const initialViewportRef = useRef(initialViewport);
   initialViewportRef.current = initialViewport;
+  const visibleEdgeLayersRef = useRef(visibleEdgeLayers);
+  visibleEdgeLayersRef.current = visibleEdgeLayers;
   const [ready, setReady] = useState(false);
   const selectedRef = useRef(selectedId);
   selectedRef.current = selectedId;
@@ -209,6 +222,11 @@ export function ResearchGraph({
       defaultDrawNodeHover: () => undefined,
       zIndex: true,
     });
+    renderer.setSetting("edgeReducer", (_edge, data) => ({
+      ...data,
+      hidden:
+        !visibleEdgeLayersRef.current[graphEdgeLayer(data.edge_class)],
+    }));
     rendererRef.current = renderer;
     const graphContainer = containerRef.current;
     const titleCanvas = renderer.createCanvas("embedded-titles", {
@@ -258,7 +276,7 @@ export function ResearchGraph({
         edge_id: edge,
         source_id: source,
         target_id: target,
-        edge_class: String(attributes.edge_class ?? "relation"),
+        edge_class: String(attributes.edge_class ?? "scientific"),
         relation_type: String(
           attributes.relation_type ??
             attributes.kind ??
@@ -476,6 +494,7 @@ export function ResearchGraph({
       for (const edge of graph.edges()) {
         const edgeData = graph.getEdgeAttributes(edge);
         if (String(edgeData.edge_class) !== "virtual") continue;
+        if (!visibleEdgeLayersRef.current.virtual) continue;
         const [source, target] = graph.extremities(edge);
         const sourceData = renderer.getNodeDisplayData(source);
         const targetData = renderer.getNodeDisplayData(target);
@@ -721,20 +740,22 @@ export function ResearchGraph({
         const key = [source, target].sort().join("\0");
         if (seen.has(key)) continue;
         seen.add(key);
+        const edgeClass = String(relation.edge_class ?? "validated");
         graph.addEdgeWithKey(
           `snapshot:${String(relation.edge_id ?? relation.relation_id ?? key)}`,
           source,
           target,
           {
             ...relation,
+            edge_class: edgeClass,
             color:
-              relation.edge_class === "foundation"
+              edgeClass === "foundation"
                 ? "rgba(255,210,114,.86)"
                 : theme === "deep-space"
                   ? "rgba(117,145,255,.58)"
                   : "rgba(72,184,230,.58)",
-            size: relation.edge_class === "foundation" ? 3.1 : 1.9,
-            zIndex: relation.edge_class === "foundation" ? 2 : 1,
+            size: edgeClass === "foundation" ? 3.1 : 1.9,
+            zIndex: edgeClass === "foundation" ? 2 : 1,
           },
         );
       }
@@ -753,6 +774,7 @@ export function ResearchGraph({
           seen.add(key);
           graph.addEdgeWithKey(`relation:${key}`, source, target, {
             ...relation,
+            edge_class: String(relation.edge_class ?? "validated"),
             color:
               theme === "deep-space"
                 ? "rgba(117,145,255,.58)"
@@ -1002,6 +1024,14 @@ export function ResearchGraph({
   useEffect(() => {
     rendererRef.current?.scheduleRender();
   }, [selectedId]);
+
+  useEffect(() => {
+    rendererRef.current?.refresh({ skipIndexation: true, schedule: true });
+  }, [
+    visibleEdgeLayers.scientific,
+    visibleEdgeLayers.context,
+    visibleEdgeLayers.virtual,
+  ]);
 
   useEffect(() => {
     if (!focusTarget?.id) return;
