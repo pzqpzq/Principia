@@ -9344,3 +9344,336 @@ body,
   color: #5c4b87;
   background: #f8f6fb;
 }
+
+/* Dense maps remain navigable, and visual context never has to masquerade as
+   a reviewed scientific relationship. */
+.research-graph-navigation-tools {
+  position: absolute;
+  z-index: 21;
+  top: 18px;
+  right: 18px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.research-workspace.has-session .research-graph-navigation-tools {
+  right: auto;
+  left: 18px;
+}
+.research-workspace.has-session .research-map-legend {
+  gap: 10px;
+}
+.research-workspace.has-session .research-map-legend > small {
+  display: none;
+}
+.research-map-finder,
+.research-edge-layers {
+  position: relative;
+  flex: 0 0 auto;
+}
+.research-map-finder > summary,
+.research-edge-layers > summary {
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 11px;
+  border: 1px solid rgba(151, 192, 255, 0.25);
+  border-radius: 9px;
+  color: #dcecff;
+  background: rgba(24, 45, 76, 0.78);
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  white-space: nowrap;
+}
+.research-map-finder > summary::-webkit-details-marker,
+.research-edge-layers > summary::-webkit-details-marker {
+  display: none;
+}
+.research-map-finder > summary:hover,
+.research-edge-layers > summary:hover,
+.research-map-finder[open] > summary,
+.research-edge-layers[open] > summary {
+  border-color: rgba(107, 205, 255, 0.62);
+  background: rgba(34, 64, 101, 0.95);
+}
+.research-map-finder > summary > span,
+.research-edge-layers > summary > span {
+  padding: 0;
+  color: #80d1ff;
+  font-size: 15px;
+  line-height: 1;
+}
+.research-edge-layers > summary > b {
+  min-width: 28px;
+  padding: 2px 5px;
+  border-radius: 999px;
+  color: #a9d9ff;
+  background: rgba(91, 151, 210, 0.22);
+  font-size: 8px;
+  text-align: center;
+}
+.research-map-finder-popover,
+.research-edge-layer-popover {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 10px);
+  right: 0;
+  bottom: auto;
+  width: min(390px, calc(100vw - 300px));
+  overflow: hidden;
+  border: 1px solid rgba(142, 190, 255, 0.3);
+  border-radius: 15px;
+  color: #e7f3ff;
+  background: rgba(7, 18, 33, 0.97);
+  box-shadow: 0 24px 62px rgba(0, 2, 10, 0.48);
+  backdrop-filter: blur(22px);
+}
+.research-workspace.has-session .research-map-finder-popover,
+.research-workspace.has-session .research-edge-layer-popover {
+  right: auto;
+  left: 0;
+}
+.research-map-finder-popover > header,
+.research-edge-layer-popover > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 15px 10px;
+}
+.research-map-finder-popover > header > div,
+.research-edge-layer-popover > header {
+  min-width: 0;
+}
+.research-map-finder-popover > header small,
+.research-map-finder-popover > header strong,
+.research-edge-layer-popover > header small,
+.research-edge-layer-popover > header strong {
+  display: block;
+}
+.research-map-finder-popover > header small,
+.research-edge-layer-popover > header small {
+  color: #7897b8;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.research-map-finder-popover > header strong,
+.research-edge-layer-popover > header strong {
+  margin-top: 3px;
+  color: #eef7ff;
+  font-size: 12px;
+}
+.research-map-finder-popover > header > span {
+  min-width: 34px;
+  padding: 4px 7px;
+  border-radius: 999px;
+  color: #a9d9ff;
+  background: rgba(84, 145, 203, 0.2);
+  font-size: 9px;
+  text-align: center;
+}
+.research-map-finder-popover > form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 38px;
+  gap: 7px;
+  padding: 0 14px 12px;
+}
+.research-map-finder-popover > form input {
+  min-width: 0;
+  min-height: 39px;
+  border-color: rgba(140, 185, 230, 0.3);
+  color: #edf7ff;
+  background: rgba(25, 44, 66, 0.86);
+  font-size: 10px;
+}
+.research-map-finder-popover > form input::placeholder {
+  color: #acc2d7;
+}
+.research-map-finder-popover > form button {
+  min-width: 0;
+  min-height: 39px;
+  padding: 0;
+  border-color: rgba(119, 198, 255, 0.36);
+  color: #dff2ff;
+  background: rgba(50, 105, 153, 0.46);
+}
+.research-map-search-results {
+  display: grid;
+  max-height: 310px;
+  overflow: auto;
+  border-top: 1px solid rgba(135, 178, 222, 0.18);
+}
+.research-map-search-results > button {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 0;
+  color: #eaf5ff;
+  background: transparent;
+  text-align: left;
+}
+.research-map-search-results > button + button {
+  border-top: 1px solid rgba(135, 178, 222, 0.12);
+}
+.research-map-search-results > button:hover {
+  background: rgba(46, 83, 119, 0.55);
+}
+.research-map-search-results > button > span {
+  padding: 0;
+  overflow: hidden;
+  color: #80a5c8;
+  font-size: 8px;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.research-map-search-results > button > strong {
+  overflow: hidden;
+  font-size: 10px;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.research-map-search-results > p {
+  margin: 0;
+  padding: 16px;
+  color: #829bb5;
+  font-size: 9px;
+  line-height: 1.5;
+}
+.research-edge-layer-popover {
+  width: min(410px, calc(100vw - 300px));
+  padding-bottom: 9px;
+}
+.research-edge-layer-popover > header {
+  display: grid;
+  justify-content: stretch;
+}
+.research-edge-layer-popover > button {
+  width: calc(100% - 18px);
+  min-width: 0;
+  min-height: 56px;
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  margin: 0 9px 5px;
+  padding: 9px 10px;
+  border-color: rgba(133, 173, 214, 0.18);
+  color: #dfefff;
+  background: rgba(27, 48, 71, 0.46);
+  text-align: left;
+}
+.research-edge-layer-popover > button.active {
+  border-color: rgba(112, 196, 255, 0.55);
+  background: rgba(39, 77, 111, 0.72);
+  opacity: 1;
+}
+.research-edge-layer-popover > button:hover:not(:disabled) {
+  border-color: rgba(112, 196, 255, 0.46);
+  background: rgba(35, 64, 91, 0.88);
+}
+.research-edge-layer-popover > button.active:hover:not(:disabled) {
+  border-color: rgba(112, 196, 255, 0.66);
+  background: rgba(43, 82, 118, 0.94);
+}
+.research-edge-layer-popover > button > span {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+  padding: 0;
+}
+.research-edge-layer-popover > button strong,
+.research-edge-layer-popover > button small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.research-edge-layer-popover > button strong {
+  color: #eaf5ff;
+  font-size: 10px;
+}
+.research-edge-layer-popover > button small {
+  color: #8fa9c2;
+  font-size: 8px;
+}
+.research-edge-layer-popover > button > b {
+  min-width: 32px;
+  color: #87cfff;
+  font-size: 8px;
+  text-align: right;
+}
+.research-edge-layer-popover > button:not(.active) > i {
+  opacity: 0.62;
+  filter: saturate(0.55);
+}
+.research-edge-layer-popover > button:not(.active) > b {
+  color: #b5c9dc;
+}
+.research-edge-layer-popover i.edge {
+  width: 30px;
+  height: 10px;
+  background: linear-gradient(
+    to bottom,
+    transparent 4px,
+    #7aa5ff 4px,
+    #7aa5ff 6px,
+    transparent 6px
+  );
+}
+.research-edge-layer-popover i.edge.context {
+  background: repeating-linear-gradient(
+    to right,
+    #69c8e8 0 3px,
+    transparent 3px 7px
+  ) center / 100% 2px no-repeat;
+}
+.research-edge-layer-popover i.edge.virtual {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: repeating-linear-gradient(
+    to right,
+    #d568e9 0 8px,
+    transparent 8px 13px
+  ) center / 100% 2px no-repeat;
+}
+.edge-context-note.virtual {
+  border-color: rgba(199, 102, 228, 0.34);
+  color: #765282;
+  background: #fff7ff;
+}
+
+@media (max-width: 1050px) {
+  .research-map-finder-popover,
+  .research-edge-layer-popover {
+    width: min(360px, calc(100vw - 250px));
+  }
+}
+
+@media (max-width: 760px) {
+  .research-graph-navigation-tools {
+    top: 12px;
+    right: 12px;
+  }
+  .research-workspace.has-session .research-graph-navigation-tools {
+    right: 12px;
+    left: auto;
+  }
+  .research-workspace.has-session .research-map-finder-popover,
+  .research-workspace.has-session .research-edge-layer-popover {
+    right: 0;
+    left: auto;
+  }
+  .research-map-finder-popover,
+  .research-edge-layer-popover {
+    width: min(360px, calc(100vw - 24px));
+  }
+}

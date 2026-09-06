@@ -15,6 +15,12 @@ import {
   type ResearchGraphViewport,
 } from "../components/ResearchGraph";
 import {
+  graphEdgeLayer,
+  rankGraphSearchResults,
+  type GraphEdgeLayer,
+  type GraphEdgeLayerVisibility,
+} from "../components/researchGraphControls";
+import {
   queueGraphMutation,
   queuedGraphMutations,
   removeQueuedGraphMutation,
@@ -33,6 +39,28 @@ const INITIAL_ATLAS_VIEWPORT = {
   max_y: 10_000,
   zoom: 0.55,
 };
+
+const EDGE_LAYER_OPTIONS: Array<{
+  id: GraphEdgeLayer;
+  label: string;
+  title: string;
+}> = [
+  {
+    id: "scientific",
+    label: "Scientific links",
+    title: "Reviewed Cloud relations and foundation links",
+  },
+  {
+    id: "context",
+    label: "Map context",
+    title: "Navigation-only context, shared evidence, and semantic affinity",
+  },
+  {
+    id: "virtual",
+    label: "Virtual",
+    title: "Unreviewed relationships derived in this research session",
+  },
+];
 
 const clamp = (value: number, minimum: number, maximum: number): number =>
   Math.min(Math.max(value, minimum), Math.max(minimum, maximum));
@@ -233,6 +261,8 @@ export function ResearchWorkspacePage() {
   } | null>(null);
   const optionsRef = useRef<HTMLDetailsElement | null>(null);
   const areaFilterRef = useRef<HTMLDetailsElement | null>(null);
+  const mapFinderRef = useRef<HTMLDetailsElement | null>(null);
+  const edgeLayersRef = useRef<HTMLDetailsElement | null>(null);
   const [goal, setGoal] = useState("");
   const [selectedSources, setSelectedSources] = useState<string[]>([]);
   const [confirmEgress, setConfirmEgress] = useState(false);
@@ -260,6 +290,14 @@ export function ResearchWorkspacePage() {
   const [globalQuery, setGlobalQuery] = useState("");
   const [globalSearchQuery, setGlobalSearchQuery] = useState("");
   const [globalFinderMessage, setGlobalFinderMessage] = useState("");
+  const [mapQuery, setMapQuery] = useState("");
+  const [mapFocusAnnouncement, setMapFocusAnnouncement] = useState("");
+  const [visibleEdgeLayers, setVisibleEdgeLayers] =
+    useState<GraphEdgeLayerVisibility>({
+      scientific: true,
+      context: true,
+      virtual: true,
+    });
   const [studio, setStudio] = useState<Studio>("");
   const [cart, setCart] = useState<string[]>([]);
   const [cartSearch, setCartSearch] = useState("");
@@ -381,6 +419,16 @@ export function ResearchWorkspacePage() {
         !areaFilterRef.current.contains(event.target as Node)
       )
         areaFilterRef.current.open = false;
+      if (
+        mapFinderRef.current?.open &&
+        !mapFinderRef.current.contains(event.target as Node)
+      )
+        mapFinderRef.current.open = false;
+      if (
+        edgeLayersRef.current?.open &&
+        !edgeLayersRef.current.contains(event.target as Node)
+      )
+        edgeLayersRef.current.open = false;
     };
     document.addEventListener("click", closeOptions);
     return () => document.removeEventListener("click", closeOptions);
@@ -694,6 +742,26 @@ export function ResearchWorkspacePage() {
           ),
     [sessionId, graph.dataUpdatedAt, cloudAtlas.dataUpdatedAt],
   );
+  const mapSearchableRows = useMemo(
+    () => graphRows.filter((item) => item.record_kind !== "area"),
+    [graphRows],
+  );
+  const mapSearchableCount = mapSearchableRows.length;
+  const mapTitleCoverage = mapSearchableRows.filter((item) =>
+    Boolean(text(item.payload.title)),
+  ).length;
+  const mapClaimCoverage = mapSearchableRows.filter(
+    (item) =>
+      Boolean(text(item.payload.claim)) || Boolean(text(item.payload.argument)),
+  ).length;
+  const mapSearchCoverageComplete =
+    mapSearchableCount > 0 &&
+    mapTitleCoverage === mapSearchableCount &&
+    mapClaimCoverage === mapSearchableCount;
+  const mapSearchResults = useMemo(
+    () => rankGraphSearchResults(mapSearchableRows, mapQuery),
+    [mapSearchableRows, mapQuery],
+  );
   const atlasAreas = useMemo(
     () =>
       rows(cloudAtlasAreas.data?.areas).sort(
@@ -707,6 +775,9 @@ export function ResearchWorkspacePage() {
   const selectedGraphItem = graphRows.find(
     (item) => item.principle_id === selectedId,
   );
+  const selectedEdgeLayer = selectedEdge
+    ? graphEdgeLayer(selectedEdge.edge_class)
+    : null;
   const graphIds = new Set(graphRows.map((item) => item.principle_id));
   const graphInsertionPosition = (identifier: string, offset = 0) => {
     const visible = graphRows.filter((item) => item.record_kind !== "area");
@@ -725,6 +796,36 @@ export function ResearchWorkspacePage() {
       x: centerX + Math.cos(angle) * radius,
       y: centerY + Math.sin(angle) * radius,
     };
+  };
+  const focusGraphItem = (identifier: string, announcedTitle?: string) => {
+    const item = mapSearchableRows.find(
+      (candidate) => candidate.principle_id === identifier,
+    );
+    const title = announcedTitle || itemTitle(item?.payload ?? {});
+    setMapFocusAnnouncement("");
+    setSelectedEdge(null);
+    setSelectedId(identifier);
+    setFocusTarget({ id: identifier, request: Date.now() });
+    if (mapFinderRef.current) mapFinderRef.current.open = false;
+    window.requestAnimationFrame(() => {
+      setMapFocusAnnouncement(
+        `Focused ${title || identifier}. Principle details opened.`,
+      );
+      inspectorRef.current?.focus({ preventScroll: true });
+    });
+  };
+  const toggleEdgeLayer = (layer: GraphEdgeLayer) => {
+    const willHide = visibleEdgeLayers[layer];
+    setVisibleEdgeLayers((current) => ({
+      ...current,
+      [layer]: !current[layer],
+    }));
+    if (
+      willHide &&
+      selectedEdge &&
+      graphEdgeLayer(selectedEdge.edge_class) === layer
+    )
+      setSelectedEdge(null);
   };
   const sessionTheme =
     text(graph.data?.theme) === "deep-space" ? "deep-space" : "daylight";
@@ -2224,6 +2325,159 @@ export function ResearchWorkspacePage() {
       ) : null}
 
       <main className="research-canvas">
+        <p className="sr-only" role="status" aria-live="polite">
+          {mapFocusAnnouncement}
+        </p>
+        <div className="research-graph-navigation-tools">
+          {mapSearchableCount ? (
+            <details
+              className="research-map-finder"
+              ref={mapFinderRef}
+              onToggle={(event) => {
+                const details = event.currentTarget;
+                if (details.open) {
+                  if (edgeLayersRef.current) edgeLayersRef.current.open = false;
+                  window.requestAnimationFrame(() =>
+                    details.querySelector("input")?.focus(),
+                  );
+                }
+              }}
+            >
+              <summary>
+                <span aria-hidden="true">⌕</span>
+                Find in map
+              </summary>
+              <div className="research-map-finder-popover">
+                <header>
+                  <div>
+                    <small>Current map</small>
+                    <strong>Find and focus a Principle</strong>
+                  </div>
+                  <span>{mapSearchableCount}</span>
+                </header>
+                <form
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    const first = mapSearchResults[0];
+                    if (first)
+                      focusGraphItem(first.item.principle_id, first.title);
+                  }}
+                >
+                  <input
+                    value={mapQuery}
+                    onChange={(event) => setMapQuery(event.target.value)}
+                    placeholder={
+                      mapClaimCoverage
+                        ? "Title, claim, area, or Principle ID"
+                        : mapTitleCoverage
+                          ? "Title, area, or Principle ID"
+                          : "Area or Principle ID · zoom in for titles"
+                    }
+                    aria-label="Find a Principle in the current map"
+                  />
+                  <button
+                    type="submit"
+                    disabled={!mapSearchResults.length}
+                    aria-label="Focus the first matching Principle"
+                    title="Focus first match"
+                  >
+                    ↵
+                  </button>
+                </form>
+                <div className="research-map-search-results" aria-live="polite">
+                  {mapQuery.trim() ? (
+                    mapSearchResults.length ? (
+                      mapSearchResults.map((result) => (
+                        <button
+                          type="button"
+                          key={result.item.principle_id}
+                          onClick={() =>
+                            focusGraphItem(
+                              result.item.principle_id,
+                              result.title,
+                            )
+                          }
+                        >
+                          <span>
+                            {result.item.record_kind === "meta_principle"
+                              ? "◇ Meta-Principle"
+                              : result.area.replaceAll("-", " ") ||
+                                "Literature Principle"}
+                          </span>
+                          <strong>
+                            <ScientificText value={result.title} />
+                          </strong>
+                        </button>
+                      ))
+                    ) : (
+                      <p>
+                        No match in the fields loaded at this zoom.
+                        {!mapSearchCoverageComplete
+                          ? " Zoom in to load more titles and claims."
+                          : ""}
+                      </p>
+                    )
+                  ) : (
+                    <p>
+                      {mapSearchCoverageComplete
+                        ? "Search every node loaded in this map."
+                        : `Search fields loaded at this zoom: ${mapTitleCoverage}/${mapSearchableCount} titles and ${mapClaimCoverage}/${mapSearchableCount} claims. Zoom in for richer text.`}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </details>
+          ) : null}
+          {graphRows.length ? (
+            <details
+              className="research-edge-layers"
+              ref={edgeLayersRef}
+              onToggle={(event) => {
+                if (event.currentTarget.open && mapFinderRef.current)
+                  mapFinderRef.current.open = false;
+              }}
+            >
+              <summary>
+                <span aria-hidden="true">≋</span>
+                Layers
+                <b>
+                  {
+                    EDGE_LAYER_OPTIONS.filter(
+                      (option) =>
+                        (sessionId || option.id !== "virtual") &&
+                        visibleEdgeLayers[option.id],
+                    ).length
+                  }
+                  /{sessionId ? 3 : 2}
+                </b>
+              </summary>
+              <div className="research-edge-layer-popover">
+                <header>
+                  <small>Relationship visibility</small>
+                  <strong>Separate evidence from visual context</strong>
+                </header>
+                {EDGE_LAYER_OPTIONS.filter(
+                  (option) => sessionId || option.id !== "virtual",
+                ).map((option) => (
+                  <button
+                    type="button"
+                    key={option.id}
+                    className={visibleEdgeLayers[option.id] ? "active" : ""}
+                    aria-pressed={visibleEdgeLayers[option.id]}
+                    onClick={() => toggleEdgeLayer(option.id)}
+                  >
+                    <i className={`edge ${option.id}`} aria-hidden="true" />
+                    <span>
+                      <strong>{option.label}</strong>
+                      <small>{option.title}</small>
+                    </span>
+                    <b>{visibleEdgeLayers[option.id] ? "On" : "Off"}</b>
+                  </button>
+                ))}
+              </div>
+            </details>
+          ) : null}
+        </div>
         <div className="research-graph-tools">
           {sessionId ? (
             <>
@@ -2367,6 +2621,7 @@ export function ResearchWorkspacePage() {
                 : undefined
             }
             focusTarget={focusTarget}
+            visibleEdgeLayers={visibleEdgeLayers}
             onSelect={(id) => {
               setSelectedEdge(null);
               setSelectedId(id);
@@ -2413,6 +2668,8 @@ export function ResearchWorkspacePage() {
           <aside
             className={`research-inspector ${selected.record_kind === "meta_principle" ? "meta" : ""}`}
             ref={inspectorRef}
+            tabIndex={-1}
+            aria-labelledby="research-principle-inspector-title"
             style={{
               transform: `translate3d(${inspectorOffset.x}px, ${inspectorOffset.y}px, 0)`,
               ...(inspectorSize
@@ -2467,7 +2724,7 @@ export function ResearchWorkspacePage() {
                     ? "◇ Foundational Meta-Principle"
                     : text(selected.payload.area).replaceAll("-", " ")}
                 </small>
-                <h2>
+                <h2 id="research-principle-inspector-title">
                   <ScientificText value={itemTitle(selected.payload)} />
                 </h2>
               </div>
@@ -2649,8 +2906,10 @@ export function ResearchWorkspacePage() {
         ) : null}
         {selectedEdge ? (
           <aside
-            className="research-inspector edge"
+            className={`research-inspector edge ${selectedEdgeLayer ?? ""}`}
             ref={inspectorRef}
+            tabIndex={-1}
+            aria-labelledby="research-edge-inspector-title"
             style={{
               transform: `translate3d(${inspectorOffset.x}px, ${inspectorOffset.y}px, 0)`,
               ...(inspectorSize
@@ -2700,8 +2959,16 @@ export function ResearchWorkspacePage() {
               className="inspector-heading"
             >
               <div>
-                <small>Connection</small>
-                <h2>{selectedEdge.relation_type.replaceAll("_", " ")}</h2>
+                <small>
+                  {selectedEdgeLayer === "scientific"
+                    ? "Cloud relation"
+                    : selectedEdgeLayer === "virtual"
+                      ? "Virtual connection · unreviewed"
+                      : "Map context · navigation only"}
+                </small>
+                <h2 id="research-edge-inspector-title">
+                  {selectedEdge.relation_type.replaceAll("_", " ")}
+                </h2>
               </div>
               <button
                 className="close"
@@ -2776,10 +3043,15 @@ export function ResearchWorkspacePage() {
                 </span>
               </button>
             </div>
-            {selectedEdge.edge_class.endsWith("context") ? (
+            {selectedEdgeLayer === "context" ? (
               <p className="edge-context-note">
-                Context edges organize the map for navigation; they are visually
-                distinct from reviewed scientific relations.
+                This edge organizes the map or exposes non-validating context.
+                It is not evidence that either Principle supports the other.
+              </p>
+            ) : selectedEdgeLayer === "virtual" ? (
+              <p className="edge-context-note virtual">
+                This relationship was derived in the current session and has
+                not been reviewed as a scientific relation.
               </p>
             ) : null}
             </div>
