@@ -1,24 +1,144 @@
 <h1 align="center">Principia</h1>
 
-<p align="center"><strong>The living Principles Cloud for Autonomous Scientific Discovery</strong></p>
-<p align="center"><em>From scientific works to reusable structure. From structure to testable derivations.</em></p>
+<p align="center"><strong>Autonomous Scientific Discovery, grounded in Principles and tested against data.</strong></p>
+<p align="center">Explore scientific knowledge. Discover interpretable Rules. Inspect the evidence.</p>
 
 <p align="center">
-  <a href="https://github.com/pzqpzq/Principia/tree/main/Principia-v1.4.1/core"><img alt="Principia v1.4.1" src="https://img.shields.io/badge/Principia-v1.4.1-111827?style=flat-square&amp;logo=github"></a>
-  <a href="https://pypi.org/project/principia-ai/"><img alt="PyPI stable" src="https://img.shields.io/pypi/v/principia-ai?style=flat-square&amp;logo=pypi&amp;logoColor=white&amp;label=PyPI%20stable"></a>
-  <a href="https://github.com/pzqpzq/Principia/blob/main/Principia-v1.4.1/core/LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/v1.4.1%20core-MIT-0F766E?style=flat-square"></a>
-  <a href="https://arxiv.org/abs/2606.29354"><img alt="ICML 2026" src="https://img.shields.io/badge/ICML-2026-6D4AFF?style=flat-square"></a>
+  <a href="./Principia-v1.4.2/"><img alt="Principia v1.4.2 source release" src="https://img.shields.io/badge/Principia-v1.4.2-111827?style=flat-square&amp;logo=github"></a>
+  <a href="#five-projects-ready-to-explore"><img alt="Five included demo projects" src="https://img.shields.io/badge/demo_projects-5-0F766E?style=flat-square"></a>
+  <a href="./scenario/"><img alt="Twenty independent public scenarios" src="https://img.shields.io/badge/public_scenarios-20-2563EB?style=flat-square"></a>
+  <a href="./Principia-v1.4.2/core-v1.4.2/LICENSE"><img alt="MIT licensed application" src="https://img.shields.io/badge/code-MIT-0F766E?style=flat-square"></a>
+  <a href="https://arxiv.org/abs/2606.29354"><img alt="ICML 2026 research" src="https://img.shields.io/badge/ICML-2026-6D4AFF?style=flat-square"></a>
 </p>
 
 <p align="center">
+  <a href="#start-v142-locally">Quick start</a> ·
+  <a href="#five-projects-ready-to-explore">Included projects</a> ·
+  <a href="#from-local-data-to-an-inspectable-rule">Discovery workflow</a> ·
+  <a href="#twenty-independent-public-test-scenarios">Public scenarios</a> ·
   <a href="#principia-v141">v1.4.1</a> ·
-  <a href="#scientific-object-model">Object model</a> ·
-  <a href="#from-retrieval-to-derivation">Workflow</a> ·
-  <a href="#global-principles-cloud">Cloud</a> ·
-  <a href="#install-and-open-v141">Quick start</a> ·
-  <a href="#principia-v133--evidence-grounded-idea-discovery">v1.3.3</a> ·
   <a href="#research-foundations">Research</a>
 </p>
+
+---
+
+# Principia v1.4.2
+
+**Bring a research goal and a local dataset. Principia connects scientific context with executable analysis to look for compact, interpretable relationships—and keeps the evidence behind each result available for inspection.**
+
+Version 1.4.2 brings dataset-native **Autonomous Scientific Discovery (ASD)** into the Principles workspace. Literature Principles provide scientific context; observations describe computed evidence; extracted Rules carry equations, calibration results, validation decisions, and a stated scope. A study map connects these objects so you can move from a promising relationship to the records that support it.
+
+The release includes **five completed public-data projects**, analyzed with **DeepSeek-V4-Pro**. Their saved maps, results, equations, and packaged evidence open locally without the original datasets or an API key. Connect your own data and models when you are ready to begin a new discovery.
+
+<p align="center">
+  <a href="./assets/screenshots-v1.4.2-sep7/main-page.png"><img src="./assets/screenshots-v1.4.2-sep7/main-page.png" alt="Principia v1.4.2 home: research goal input, scientific area filters, Principles map, and five projects in the sidebar" width="100%"></a>
+  <br><sub>A shared scientific workspace: explore Principles by area, enter a research goal, or return to a saved project.</sub>
+</p>
+
+## From local data to an inspectable Rule
+
+| Stage | What Principia does | What you can inspect |
+| :--- | :--- | :--- |
+| **Inventory & understand** | Reads supported files, profiles measurements, and connects variables with the research goal and scientific context. | Source inventory, formats, units, coverage, and interpretation. |
+| **Generate & evaluate** | Proposes candidate expressions, fits them on development data, and uses validation evidence to compare alternatives. | Executable expressions, fitted parameters, baselines, and candidate tests. |
+| **Challenge** | Applies recorded held-out checks and evidence gates before promoting an executable relationship. | Split definitions, errors, controls, failure reasons, and limits of applicability. |
+| **Synthesize & explore** | Presents supported Rules alongside observations and relevant Principles in a saved study map. | Typeset equations, plain-language interpretation, linked evidence, and the underlying numerical records. |
+
+**The result is a scientific object you can examine.** A strong fit alone does not establish a mechanism. Known identities, empirical relationships, and tentative interpretations retain their own evidential scope; unsuccessful candidates remain part of the study record. A dataset may produce observations without a Rule that passes the available checks.
+
+<p align="center">
+  <a href="./assets/screenshots-v1.4.2-sep7/project-page.png"><img src="./assets/screenshots-v1.4.2-sep7/project-page.png" alt="Rydberg electric-field calibration project with its saved study map, connected Principles, observations, and extracted Rule" width="100%"></a>
+  <br><sub>The Rydberg project: move between the study map, discovery results, and individual evidence records.</sub>
+</p>
+
+The workspace also supports **Discover again** with a new project by default, configurable reasoning and vision models, visible task activity and stop controls, resizable information panels, and project deletion. Data and workspace state remain separate, so repeated discovery does not require copying the source dataset into each project.
+
+## Five projects ready to explore
+
+These examples span atomic sensing, seismology, particle physics, thin-film metrology, and human movement. Three were selected from the initial twenty-scenario discovery campaign; two were added during subsequent user testing. They illustrate different kinds of useful scientific output, rather than a claim that every recovered relationship is a new law of nature.
+
+| Included project | Relationship to explore | Recorded evidence and scope |
+| :--- | :--- | :--- |
+| **Rydberg electric-field calibration** | Field amplitude follows a square-root RF-power form: $E_r(P)=b_r+\kappa_r\sqrt{P}$. | Optical and ion readouts have held-out RMSE of **0.0825 and 0.0923 V/m**, over **92% below** their development-mean baselines. Only two held-out power settings per readout; both share the same RF chain. |
+| **Earthquake magnitude scaling** | A one-parameter exponential describes conditional magnitude-exceedance fractions: $S(M)=\exp[-\beta(M-2.5)]$. | **18 development, 6 validation, and 7 test days**; test normalized RMSE **0.1267**, versus **0.6584** for the frozen linear baseline. Restricted to the retained `ml` catalog subset; it does not predict event times or locations. |
+| **ATLAS transverse momentum** | A parameter-free vector identity: $p_T=\sqrt{p_x^2+p_y^2}$, with a corresponding direction check. | **78,227 events** in two held-out period files; 99th-percentile relative magnitude error about **1.17 × 10⁻⁷**. This checks representation consistency and recovers known geometry. |
+| **Hafnia wafer measurements** | A spatial relationship connects measured thin-film thickness with position on a wafer. | Held-out normalized RMSE **0.7471**, **41.1% below** a constant baseline. A fit for the measured specimen; transfer to another wafer remains untested. |
+| **Walking dynamics** | Contact moment is reconstructed from normal load and pressure-center displacement. | An executable force-plate consistency relationship under the recorded coordinate convention; it is not evidence of a new biological mechanism. |
+
+Open **Dataset & evidence** for each project's provenance and selection rationale. Open a Rule to inspect its equation, calibration, comparisons, and limitations. Rounded display values are backed by full-precision records. The [demo guide](./Principia-v1.4.2/core-v1.4.2/docs/v1.4.2/demo-projects.md) explains portability, reruns, and deletion.
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="./assets/screenshots-v1.4.2-sep7/principle-page.png"><img src="./assets/screenshots-v1.4.2-sep7/principle-page.png" alt="Principle inspector showing thermodynamic favorability, reaction-rate distinctions, scientific scope, and supporting context" width="100%"></a>
+      <p><strong>Inspect a Principle.</strong><br>Read the scientific statement, its scope, and supporting context without leaving the project.</p>
+    </td>
+    <td width="50%" valign="top">
+      <a href="./assets/screenshots-v1.4.2-sep7/rule-page.png"><img src="./assets/screenshots-v1.4.2-sep7/rule-page.png" alt="Earthquake magnitude Rule inspector with a typeset exponential equation, validation metrics, interpretation, and evidence" width="100%"></a>
+      <p><strong>Interrogate a Rule.</strong><br>Follow a typeset equation through interpretation, quantitative checks, and evidence. Click either image for full resolution.</p>
+    </td>
+  </tr>
+</table>
+
+## Start v1.4.2 locally
+
+Use **Python 3.11 or 3.12** in a virtual environment. This is the GitHub source release; the commands below do not depend on a matching version being published to PyPI.
+
+```bash
+# Download the application without the separate public test corpus.
+git clone --depth 1 --filter=blob:none --sparse https://github.com/pzqpzq/Principia.git
+cd Principia
+git sparse-checkout set Principia-v1.4.2
+
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install "./Principia-v1.4.2/core-v1.4.2[asd,local]"
+principia open --working-directory ./principia-workspace --port 8142
+```
+
+On Windows, activate with `.venv\Scripts\Activate.ps1` in PowerShell. The application opens at **http://127.0.0.1:8142/**. Its frontend is already built; Node.js is needed only for frontend development. Dependency installation requires internet access. Once installed, the five demos and their packaged evidence can be browsed offline; external publisher links and remote model calls require a connection.
+
+Demos initialize **once in an empty workspace**. Existing projects are preserved, and deleted demos do not reappear on restart. To try the included projects separately from existing work, choose a new working directory.
+
+### Discover from your own data
+
+1. Choose **New research**, use **Add data** to connect a local folder, and describe your research goal.
+2. Open **Sources & model** to configure your provider credentials and select reasoning and vision models. The included examples used **DeepSeek-V4-Pro via SiliconFlow**; new runs use your own configuration.
+3. Start discovery and review the provider permission request. **View activity** shows task progress, models, source information, and stop controls.
+4. Inspect observations and Rules, follow the evidence, or use **Discover again** to change the goal, data, or models. Keep a new attempt as a separate project or explicitly overwrite the current project.
+
+Raw files remain in the selected folders. Remote analysis can send bounded profiles, excerpts, or previews after per-run permission; it is not a promise of zero network egress. No author credentials or original demo datasets are packaged with the application. A new computation on a demo requires reconnecting the relevant public data. See [ASD](./Principia-v1.4.2/core-v1.4.2/docs/v1.4.2/data-discovery.md), [privacy](./Principia-v1.4.2/core-v1.4.2/docs/v1.4/privacy-and-security.md), and [storage](./Principia-v1.4.2/core-v1.4.2/docs/v1.4.2/storage-policy.md).
+
+## Twenty independent public test scenarios
+
+The separate [`scenario/`](./scenario/) collection covers **twenty independent datasets** and a broad range of scientific formats. Each folder includes source and licensing records, checksums, official data or metadata, a scenario description, and a research brief. These are inputs for exploration and reproducibility; the collection is not a claim of uniform discovery quality across all domains.
+
+| Area | Public scenarios and providers |
+| :--- | :--- |
+| **Mathematics & astronomy** | [Integer sequences · OEIS](./scenario/01_mathematics_oeis_daily_sequences/) · [Stellar light curves · MAST](./scenario/02_astronomy_mast_tars_sector96/) |
+| **Physics** | [Gravitational-wave strain · GWOSC](./scenario/03_physics_gwosc_o4a_h1_strain/) · [Four-lepton events · ATLAS/CERN](./scenario/04_particle_physics_atlas_4lep_2015/) · [Rydberg RF sensing · NIST](./scenario/06_physics_nist_rydberg_rf_sensing/) |
+| **Biology & neuroscience** | [Multiomics · GEO](./scenario/05_biology_geo_gse303208_multiomics/) · [Multimodal gait · PhysioNet](./scenario/07_neuroscience_physionet_gait_s1/) · [Neural recordings · DANDI](./scenario/09_neuroscience_dandi_001176/) |
+| **Medical imaging** | [Breast MRI · TCIA/IDC](./scenario/08_medical_imaging_tcia_ea1141/) |
+| **Computing** | [Vulnerability records · NVD](./scenario/10_computer_security_nvd_recent_snapshot/) · [Inference benchmarks · MLPerf](./scenario/11_ai_mlperf_inference_v6_0/) |
+| **Materials & manufacturing** | [Hafnia wafer metrology · NIST](./scenario/12_semiconductor_nist_hafnia_wafer/) · [Encapsulant cure · NIST](./scenario/13_materials_nist_encapsulant_cure/) |
+| **Society & economics** | [Household trends · Census HTOPS](./scenario/14_sociology_census_htops_2026/) · [Household finances · Federal Reserve SHED](./scenario/15_economics_federal_reserve_shed_2025/) · [Prices and employment · BLS CPI/CES](./scenario/16_economics_bls_cpi_ces_2026/) |
+| **Earth, climate & transport** | [Earthquakes · USGS](./scenario/17_geography_usgs_comcat_2026_07/) · [Storm events · NOAA](./scenario/18_climate_noaa_storm_events_2025/) · [Vehicle safety · NHTSA](./scenario/19_transport_nhtsa_safety_2025_2026/) · [Sea-surface temperature anomalies · NOAA](./scenario/20_ocean_noaa_coral_ssta_20260816/) |
+
+Keep the scenarios separate when comparing discovery runs. Generated research briefs provide context, not measured evidence. Dataset access and reuse follow each publisher's terms, independently of the application's MIT license. **The private TJ scenario is not included.**
+
+To add a single scenario to the sparse checkout above, for example:
+
+```bash
+git sparse-checkout add scenario/06_physics_nist_rydberg_rf_sensing
+```
+
+## Built for inspection and continued work
+
+The release separates source data, runtime state, and portable demonstration results. Its demo bundle is compressed and checksummed; it carries saved study records, executable Rules, calibrations, and selected derived artifacts without shipping an old runtime database. A clean-release size gate excludes environments, caches, private folders, and credentials. Backend and frontend checks, schema validation, archive hygiene, and a fresh-workspace demo check are included in [v1.4.2 CI](./.github/workflows/principia-v142-ci.yml).
+
+Explore the [source](./Principia-v1.4.2/), read the [demo guide](./Principia-v1.4.2/core-v1.4.2/docs/v1.4.2/demo-projects.md), or browse the [recorded release checks](./Principia-v1.4.2/core-v1.4.2/qa-v1.4.2.json). Computational reproduction requires the original inputs and the recorded analysis conditions; a packaged result remains evidence to assess, not independent replication.
+
+**Help improve Principia.** Share a reproducible issue, a difficult public dataset, or a scientifically meaningful failure case in [GitHub Issues](https://github.com/pzqpzq/Principia/issues). Star or watch the repository to follow development of the Principles Cloud and data-driven scientific discovery.
 
 ---
 
