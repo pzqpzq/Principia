@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pzqpzq/Principia/schemas/meta-principle-v2.json",
+  "title": "Principia Meta-Principle v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "area",
+    "area_display",
+    "title",
+    "epistemic_type",
+    "principia_kind",
+    "maturity",
+    "stability",
+    "review_status",
+    "status",
+    "significance_class",
+    "introduced_period",
+    "recognition",
+    "argument",
+    "boundary",
+    "applications",
+    "basics",
+    "comment",
+    "evidence",
+    "tags",
+    "linking",
+    "explicit_relations",
+    "trace_id",
+    "version",
+    "content_digest"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^meta:[a-z0-9-]+:[a-z0-9-]+$"
+    },
+    "area": {
+      "type": "string",
+      "minLength": 2
+    },
+    "area_display": {
+      "type": "string",
+      "minLength": 2
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3
+    },
+    "epistemic_type": {
+      "type": "string",
+      "minLength": 2
+    },
+    "principia_kind": {
+      "enum": [
+        "theorem",
+        "mechanistic",
+        "empirical",
+        "heuristic",
+        "hypothesis"
+      ]
+    },
+    "maturity": {
+      "enum": [
+        "supported",
+        "replicated",
+        "established",
+        "contested",
+        "retired"
+      ]
+    },
+    "stability": {
+      "enum": [
+        "high",
+        "medium",
+        "context-dependent",
+        "contested"
+      ]
+    },
+    "review_status": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "active",
+        "retired"
+      ]
+    },
+    "significance_class": {
+      "type": "string"
+    },
+    "introduced_period": {
+      "type": "string"
+    },
+    "recognition": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "argument": {
+      "type": "string",
+      "minLength": 24
+    },
+    "boundary": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 8
+      }
+    },
+    "applications": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "basics": {
+      "type": "string",
+      "minLength": 12
+    },
+    "comment": {
+      "type": "string",
+      "minLength": 12
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "url",
+          "year",
+          "role",
+          "work_id"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^https://"
+          },
+          "year": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "role": {
+            "type": "string"
+          },
+          "work_id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "tags": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "linking": {
+      "type": "object"
+    },
+    "explicit_relations": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "trace_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "content_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

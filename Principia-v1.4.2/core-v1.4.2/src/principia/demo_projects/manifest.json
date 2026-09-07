@@ -1,0 +1,136 @@
+{
+  "schema": "principia.public-discovery-demos/v1",
+  "bundle": "public-v142.json.gz",
+  "sha256": "7bece5cbb35ad7be0e459ed97c600936cb0c32d138aef0bbc4c0a446bf05ba42",
+  "bytes": 1961188,
+  "expanded_bytes": 14328256,
+  "projects": [
+    {
+      "study_id": "study:01M1WTXW2AX2TP3KNK4ZFCD0FE",
+      "scenario": "12_semiconductor_nist_hafnia_wafer",
+      "title": "Hafnia wafer measurements",
+      "summary": "Wafer measurements connect thin-film thickness with spatial position, with interpolation checks on separated regions.",
+      "editorial_review": "Retained at the project owner’s request. The promoted spatial fit has held-out normalized RMSE 0.7471, 41.1% below a constant baseline. It applies to the measured specimen; replication on another wafer is pending.",
+      "selection_origin": "project_owner_retained_on_2026-09-07",
+      "source_access": [
+        {
+          "url": "https://data.nist.gov/od/id/mds2-3930",
+          "title": "NIST 200 mm hafnia-on-silicon wafer metrology collection",
+          "publisher": "National Institute of Standards and Technology",
+          "license": "NIST public data license",
+          "version": "1.0.1 manifest snapshot",
+          "identifiers": [
+            "doi:10.18434/mds2-3930"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "06_physics_nist_rydberg_rf_sensing",
+      "study_id": "study:01M1VJVD5K0K8QYABMYJ0SWFY9",
+      "title": "Rydberg electric-field calibration",
+      "summary": "Two atomic readouts share a square-root RF-power law, with separate calibrations and held-out error checks.",
+      "editorial_review": "Retained for a compact physical scaling form, two readout channels, and greater than 92% reduction in held-out RMSE versus a development-mean baseline. Only two held-out power settings per channel; the channels share one RF chain.",
+      "source_access": [
+        {
+          "url": "https://data.nist.gov/od/id/mds2-3951",
+          "title": "NIST Rydberg atom RF sensing: ionization-current versus optical readout",
+          "license": "NIST public data license",
+          "publisher": "National Institute of Standards and Technology",
+          "version": "1.0.3",
+          "identifiers": [
+            "doi:10.18434/mds2-3951"
+          ]
+        }
+      ],
+      "map_curation": {
+        "hidden_background_principles": [
+          "prn:socio-technical-systems:01M0Q6NRGNG0TJYQSX1TY39RH8",
+          "meta:biology-evolution:central-dogma"
+        ],
+        "reason": "Off-topic retrieved context hidden from the default map. Original discovery evidence and context receipts are preserved.",
+        "layout": "Evaluated rule centered among supporting findings and relevant background Principles."
+      }
+    },
+    {
+      "study_id": "study:01M1WW71QQ17J2G4RC6G1KD3K9",
+      "scenario": "07_neuroscience_physionet_gait_s1",
+      "title": "Walking dynamics",
+      "summary": "Force-plate measurements reveal a contact-moment constraint linking normal load and pressure-center displacement.",
+      "editorial_review": "Retained at the project owner’s request. The promoted relationship reconstructs a force-plate torque under its recorded coordinate convention. It is an instrument consistency rule, not a new biological mechanism.",
+      "selection_origin": "project_owner_retained_on_2026-09-07",
+      "source_access": [
+        {
+          "url": "https://physionet.org/content/multimodal-gait-dataset/1.0.0/",
+          "title": "Multimodal gait EEG, EMG, and force-plate data for participant S1",
+          "publisher": "PhysioNet",
+          "license": "CC BY 4.0",
+          "version": "1.0.0",
+          "identifiers": []
+        }
+      ]
+    },
+    {
+      "scenario": "04_particle_physics_atlas_4lep_2015",
+      "study_id": "study:01M1VJVBD6D9CARY2ECG6GEWSH",
+      "title": "ATLAS transverse momentum",
+      "summary": "Missing-momentum components reproduce the measured magnitude and direction across six ATLAS run periods.",
+      "editorial_review": "Retained as a parameter-free geometric consistency example. Two held-out files contain 78,227 events with magnitude errors near numerical precision. This recovers a known vector identity and validates representation consistency; it is not a new particle-physics law or an independent detector calibration.",
+      "source_access": [
+        {
+          "url": "https://opendata.cern.ch/record/93918",
+          "title": "ATLAS 2015 four-lepton open data across run periods",
+          "license": "CC0 1.0",
+          "publisher": "CERN Open Data / ATLAS Collaboration",
+          "version": "ODEO FEB2025 v0; 2015 periods D,E,F,G,H,J",
+          "identifiers": [
+            "doi:10.7483/OPENDATA.ATLAS.7UW9.C9LL"
+          ]
+        }
+      ],
+      "map_curation": {
+        "hidden_background_principles": [
+          "meta:information-control-complexity:shannon-nyquist-sampling",
+          "prn:socio-technical-systems:01M0PMYQNYS9T1H53GFS1AQ1QR"
+        ],
+        "reason": "Off-topic retrieved context hidden from the default map. Original discovery evidence and context receipts are preserved.",
+        "layout": "Evaluated rule centered among supporting findings and relevant background Principles."
+      }
+    },
+    {
+      "scenario": "17_geography_usgs_comcat_2026_07",
+      "study_id": "study:01M1VJVPK89Z9CKGDNVMSPCDAY",
+      "title": "Earthquake magnitude scaling",
+      "summary": "A one-parameter exponential law describes the fraction of catalog earthquakes above each magnitude threshold.",
+      "editorial_review": "Retained for a compact distribution law with 18 development, 6 validation, and 7 held-out days. Test normalized RMSE 0.1267 versus 0.6584 for the frozen linear baseline. Restricted to the ml scale and qualifying days above the query cutoff; no event-time or location prediction.",
+      "source_access": [
+        {
+          "url": "https://earthquake.usgs.gov/fdsnws/event/1",
+          "title": "USGS ComCat July 2026 global M2.5+ earthquakes",
+          "license": "U.S. Government public domain",
+          "publisher": "U.S. Geological Survey",
+          "version": "FDSN Event service snapshot",
+          "identifiers": []
+        }
+      ],
+      "map_curation": {
+        "hidden_background_principles": [
+          "prn:general:01M0BF5GW0DXKB1EWJ6FS7V2KH",
+          "meta:socio-technical-systems:diffusion-of-innovations",
+          "meta:socio-technical-systems:socio-technical-joint-optimization"
+        ],
+        "reason": "Off-topic retrieved context hidden from the default map. Original discovery evidence and context receipts are preserved.",
+        "layout": "Evaluated rule centered among supporting findings and relevant background Principles."
+      }
+    }
+  ],
+  "project_count": 5,
+  "source_count": 5,
+  "raw_data_included": false,
+  "knowledge": {
+    "file": "knowledge.pcg",
+    "sha256": "f9f9ba760122d68bdfaf4616ad82c17fe123a29c62a06a4671b51fa61d6912c6",
+    "release_id": "20260823-b0c8caa097b2",
+    "content_digest": "12ef612db2155158af4e8e0bb6d86847c8155f15d2acee473ec87718fe52d084"
+  }
+}

@@ -1,0 +1,295 @@
+{
+  "$defs": {
+    "ReviewAttestation": {
+      "additionalProperties": false,
+      "properties": {
+        "actor": {
+          "maxLength": 300,
+          "minLength": 1,
+          "title": "Actor",
+          "type": "string"
+        },
+        "basis": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Basis",
+          "type": "string"
+        },
+        "reviewed_at": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Reviewed At",
+          "type": "string"
+        },
+        "source_review_status": {
+          "default": "",
+          "maxLength": 100,
+          "title": "Source Review Status",
+          "type": "string"
+        },
+        "trace_id": {
+          "default": "",
+          "maxLength": 500,
+          "title": "Trace Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "actor",
+        "reviewed_at",
+        "basis"
+      ],
+      "title": "ReviewAttestation",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Shared scientific record for literature Principles and Meta-Principles.",
+  "properties": {
+    "applications": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100,
+      "title": "Applications",
+      "type": "array"
+    },
+    "area": {
+      "maxLength": 63,
+      "minLength": 2,
+      "pattern": "^[a-z0-9][a-z0-9-]+$",
+      "title": "Area",
+      "type": "string"
+    },
+    "area_display": {
+      "default": "",
+      "maxLength": 200,
+      "title": "Area Display",
+      "type": "string"
+    },
+    "argument": {
+      "maxLength": 50000,
+      "minLength": 1,
+      "title": "Argument",
+      "type": "string"
+    },
+    "boundary": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100,
+      "title": "Boundary",
+      "type": "array"
+    },
+    "claim": {
+      "maxLength": 20000,
+      "minLength": 1,
+      "title": "Claim",
+      "type": "string"
+    },
+    "conditions": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100,
+      "title": "Conditions",
+      "type": "array"
+    },
+    "content_digest": {
+      "default": "",
+      "title": "Content Digest",
+      "type": "string"
+    },
+    "created_at": {
+      "title": "Created At",
+      "type": "string"
+    },
+    "epistemic_type": {
+      "default": "",
+      "maxLength": 500,
+      "title": "Epistemic Type",
+      "type": "string"
+    },
+    "falsifier": {
+      "default": "",
+      "maxLength": 20000,
+      "title": "Falsifier",
+      "type": "string"
+    },
+    "generation_trace": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "maxItems": 200,
+      "title": "Generation Trace",
+      "type": "array"
+    },
+    "interpretation": {
+      "default": "",
+      "maxLength": 50000,
+      "title": "Interpretation",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "theorem",
+        "mechanistic",
+        "empirical",
+        "heuristic",
+        "hypothesis"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "legacy_ids": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100,
+      "title": "Legacy Ids",
+      "type": "array"
+    },
+    "maturity": {
+      "enum": [
+        "unassessed",
+        "supported",
+        "replicated",
+        "established",
+        "contested",
+        "retired"
+      ],
+      "title": "Maturity",
+      "type": "string"
+    },
+    "migration_provenance": {
+      "additionalProperties": true,
+      "title": "Migration Provenance",
+      "type": "object"
+    },
+    "principle_class": {
+      "enum": [
+        "literature",
+        "meta"
+      ],
+      "title": "Principle Class",
+      "type": "string"
+    },
+    "principle_id": {
+      "title": "Principle Id",
+      "type": "string"
+    },
+    "quality": {
+      "additionalProperties": true,
+      "title": "Quality",
+      "type": "object"
+    },
+    "recognition": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "maxItems": 100,
+      "title": "Recognition",
+      "type": "array"
+    },
+    "review_attestation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReviewAttestation"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "review_status": {
+      "default": "unassessed",
+      "enum": [
+        "reviewed",
+        "unassessed"
+      ],
+      "title": "Review Status",
+      "type": "string"
+    },
+    "revision": {
+      "minimum": 1,
+      "title": "Revision",
+      "type": "integer"
+    },
+    "schema_version": {
+      "const": "global-principle-v2",
+      "default": "global-principle-v2",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "scope": {
+      "additionalProperties": true,
+      "title": "Scope",
+      "type": "object"
+    },
+    "significance": {
+      "additionalProperties": true,
+      "title": "Significance",
+      "type": "object"
+    },
+    "stability": {
+      "default": "unknown",
+      "enum": [
+        "unknown",
+        "low",
+        "medium",
+        "high"
+      ],
+      "title": "Stability",
+      "type": "string"
+    },
+    "status": {
+      "default": "active",
+      "enum": [
+        "active",
+        "retired"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "tags": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 200,
+      "title": "Tags",
+      "type": "array"
+    },
+    "title": {
+      "maxLength": 500,
+      "minLength": 1,
+      "title": "Title",
+      "type": "string"
+    },
+    "updated_at": {
+      "title": "Updated At",
+      "type": "string"
+    },
+    "validity_period": {
+      "default": "",
+      "maxLength": 500,
+      "title": "Validity Period",
+      "type": "string"
+    }
+  },
+  "required": [
+    "principle_id",
+    "principle_class",
+    "revision",
+    "area",
+    "title",
+    "claim",
+    "argument",
+    "kind",
+    "maturity"
+  ],
+  "title": "PrincipleRevisionV2",
+  "type": "object"
+}

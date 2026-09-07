@@ -1,0 +1,50 @@
+{
+  "schema_version": "principia.v142-release-qa/v3",
+  "version": "1.4.2",
+  "release_state": "user_accepted_github_source_release",
+  "campaign": {
+    "model": "deepseek-ai/DeepSeek-V4-Pro",
+    "scenarios": 20,
+    "retained_projects": 3,
+    "source_corpus_unchanged": true,
+    "scientific_source_unchanged": true,
+    "charged_tokens": 1382932
+  },
+  "automated_checks": {
+    "backend": {
+      "passed": 567,
+      "skipped": 2,
+      "failed": 0
+    },
+    "frontend": {
+      "passed": 59,
+      "failed": 0
+    },
+    "demo_cli_storage_archive_tests": {
+      "passed": 33,
+      "failed": 0,
+      "scope": "Previous September 6 release-candidate run; current publication regressions reported separately"
+    },
+    "ruff": "passed",
+    "openapi": "passed",
+    "frontend_build": "passed",
+    "source_and_wheel_demo_reader": "passed: all five projects; no original source roots connected",
+    "browser": "all five demos passed desktop and compact viewport checks; zero page or API errors",
+    "exported_equations_parameters_and_gates": "820 records across 11 scientific and evidence tables identical after portable path redaction",
+    "publication_regressions": {
+      "passed": 7,
+      "failed": 0
+    },
+    "github_readme": "four screenshots, relative links and anchors checked; GitHub renders the three inline equations; v1.4.1 and earlier content preserved verbatim",
+    "archive_hygiene": "wheel and sdist passed nested data, credential and runtime-file scans"
+  },
+  "demo_manifest": "src/principia/demo_projects/manifest.json",
+  "selection_review": "docs/v1.4.2/demo-selection-review.json",
+  "raw_data_or_credentials_bundled": false,
+  "publication": "GitHub source release; no PyPI publication performed",
+  "demo_bundle_sha256": "7bece5cbb35ad7be0e459ed97c600936cb0c32d138aef0bbc4c0a446bf05ba42",
+  "date": "2026-09-07",
+  "bundled_projects": 5,
+  "additional_projects_retained_after_acceptance": 2,
+  "publication_review": "docs/v1.4.2/publication-review.json"
+}

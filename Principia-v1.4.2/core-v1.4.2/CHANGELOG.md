@@ -1,0 +1,131 @@
+# Changelog
+
+## 1.4.2 - 2026-09-07
+
+- Bundled five complete public-data projects, retaining Hafnia wafer measurements
+  and Walking dynamics alongside Rydberg calibration, earthquake magnitude
+  scaling, and ATLAS transverse momentum. Export preserves scientific records
+  while disconnecting machine-local source roots and clearing inherited consent.
+- Fixed generic discovery status text overriding descriptive project summaries,
+  including projects created by earlier builds, without mutating records on read.
+- Added curated public discovery demos analyzed with DeepSeek-V4-Pro. The
+  portable bundle includes recorded evidence, equation programs, study maps,
+  source attribution, and the verified public knowledge snapshot. It requires
+  neither the author's original datasets nor credentials for browsing.
+- Added one-time demo installation that respects existing projects and deletions,
+  with an explicit reconnect-data workflow for new discovery attempts.
+- Excluded screened-out findings from the default map while retaining their
+  tests and limitations in the result audit. Preserved curated project summaries.
+- Added clean source, wheel, and source-archive packaging checks for compressed
+  demo artifacts, credentials, machine paths, and duplicated runtime caches.
+
+- Added a dataset-centric autonomous scientific discovery data plane for raw,
+  heterogeneous, multimodal local data while preserving the v1.4.1 literature
+  and Principle workflows.
+- Added immutable asset/view provenance, bounded scientific profiling, computed
+  evidence, challenged candidate findings, and visibly distinct data-derived
+  Principle drafts.
+- Added read-only corpus safeguards, multimodal SiliconFlow requests, and
+  isolated autonomous analysis with deterministic operator fallback.
+
+## 1.4.1 - 2026-08-22
+
+- Replaced the multi-page Home/Results/settings path with one durable New
+  Research workspace: a compact goal bar, optional unselected local sources,
+  in-place online acquisition, streaming result tray, shared inspector, and
+  automatically persisted project/session graph.
+- Added Global Cloud schema v2 with a unified literature/Meta-Principle contract,
+  406 traceable reviewed Meta revisions, explicit foundation assessments/gaps,
+  richer relations, controlled scholarly areas, graph coordinates/RTree, and
+  memory-mapped 1,024-dimensional vector indexes.
+- Replaced the large DOM graph path with a Sigma.js/Graphology WebGL map using
+  area supernodes, zoom-dependent content, viewport queries, a Web Worker, and
+  bounded rich rendering; saved sessions retain real snapshot and virtual edges.
+- Added Meta-aware extraction after independent scientific validation. Solid
+  unlinked findings remain publishable as `ungrounded_solid`; unsupported claims
+  cannot be rehabilitated by semantic proximity to a Meta-Principle.
+
+- Added the Git-backed, reviewable `global-cloud/` canonical dataset with immutable
+  Work and Principle revisions, many-to-many provenance, deterministic shards,
+  verified `.pcg` snapshots, `.pcd` deltas, and rollback-safe background sync.
+- Added paper-first hybrid Global retrieval, SQLite pagination/facets, vector
+  memory mapping, visible FTS degradation, and pinned Global/Local/Combined
+  research-goal runs with exact-digest deduplication only.
+- Separated all privileged Cloud-maintenance code and UI into a local-only sibling
+  package; the public distribution retains read-only Cloud contracts, search,
+  validation, and snapshot infrastructure only.
+- Preserved all three v1.4.0 `.pcp` packages and migrated their verified baseline
+  of 18 Works, 62 unassessed Principles, 191 provenance links, and 36 relations
+  without silently upgrading review status.
+- Started the final Cloud migration from live release `20260821-06ae855fe489`
+  (676 Principles, 233 Works, 1,295 provenance links, 36 relations), while
+  retaining the package baseline only as compatibility history.
+
+## 1.3.3 - 2026-07-16
+
+- Consolidated project UX around one reusable `workspace/` evidence pool and
+  per-idea `outputs/<idea_id>/` research packs, with concise output-bearing
+  tutorials for the LLM-MAS, dynamic 3D reconstruction, and physics examples.
+- Hardened mathematical normalization so subscript and superscript operands are
+  explicitly braced (for example, `$R_{cf}$`), repeated scripts are rejected,
+  and every retained release formula is structurally checked and compiled with
+  strict KaTeX during QA.
+
+- Added observable, retrying, cross-domain retrieval with strict target
+  completion, source diagnostics, biomedical routing, explicit embedding-rerank
+  state, and a transparent process-local repeated-search stability anchor.
+- Normalized scholarly-title markup before identity matching and display, and
+  made per-provider query execution order deterministic so repeated retrievals
+  remain stable without weakening source-specific query plans.
+- Updated OpenAlex access for its key-based API using optional
+  `OPENALEX_API_KEY`, removed the retired `mailto` mechanism, and redacted
+  provider credentials from persisted source errors.
+- Added domain-neutral feature semantics and provenance-aware extraction cache identities.
+- Added recursive private-folder ingestion with portable `local://` identities,
+  bounded parsing, per-file diagnostics, selective cache invalidation, optional
+  Office parsers, and an extension registry for OCR/transcription/organization
+  formats.
+- Added explicit consent before private document content is sent to a remote
+  model. Original files are never copied, and shareable artifacts never expose
+  absolute source paths.
+- Added chunk-level extraction and real-LLM consolidation for long local
+  documents, with resumable checkpoints and parser/content fingerprints.
+- Added bounded real-LLM recovery for token-truncated JSON and unsafe decoded
+  control escapes; repairs remain source-grounded and unresolved output still
+  fails without being persisted.
+- Strengthened live proposal grounding with robust scientific anchor tokens,
+  structured methodology fields, and the complete research goal in generation
+  prompts. Failed-call usage is now persisted even when validation fails, while
+  invalid ideas remain fail-closed and unsaved.
+- Added strict canonical evidence references. Generation and validation plans
+  now resolve every citation by `(work_id, kind, record_id)` and hydrate source
+  text from the selected record. Mixed local/public packets require at least one
+  canonical citation from each source class, with one live grounded repair and
+  fail-closed persistence when the mix remains incomplete.
+- Removed live template fallbacks and generator-as-evidence leakage. Explicit
+  mock execution remains a labeled synthetic fixture and cannot satisfy release
+  showcase gates.
+- Added strict three-stage SciDialect-Evo generation as the direct API and CLI
+  default, while preserving explicit `calculus` compatibility. Also added
+  global evidence-packet constraints, comparison-input isolation, and LLM
+  call/token accounting.
+- Added shared LaTeX tokenization, normalization, structural validation, and
+  release-time strict KaTeX verification.
+- Canonicalized retained mathematical fields and supported Unicode notation to
+  safe LaTeX delimiters and commands before structural and KaTeX validation.
+- Added persisted background pipelines with weighted progress, safe-boundary
+  pause/resume, best-effort stop, notebook controls, terminal fallbacks, and CLI
+  run-control commands.
+- Added portable Markdown and JSON validation plans to every idea export.
+- Added idempotent workspace migrations, collision-resistant concurrent run
+  identifiers, byte-stable no-op workspace reopening, and stronger
+  cross-provider identity handling.
+- Canonicalized DOI/arXiv/OpenAlex transport forms and rechecked strict targets after SQLite reconciliation.
+- Added curated, output-bearing showcase gates that scan complete notebook JSON
+  for credentials, private paths, private excerpts, and transient UI state.
+- Added Python 3.10-3.13 CI, core and `[local]` smoke checks, and wheel-content
+  verification for both public packages and typing markers.
+
+## 1.3.2
+
+- Published the initial `principia-ai` V1.3 framework package.

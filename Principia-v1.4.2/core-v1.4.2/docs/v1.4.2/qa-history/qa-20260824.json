@@ -1,0 +1,182 @@
+{
+  "schema_version": "principia.v142-asd-qa/v1",
+  "version": "1.4.2",
+  "generated_at": "2026-08-24T07:17:08+08:00",
+  "release_state": "ready_for_human_evaluation_not_paper_level_claims",
+  "compatibility": {
+    "v1_4_1_baseline": {
+      "accepted": 262,
+      "failed": 155,
+      "unsupported": 75,
+      "oversized": 1
+    },
+    "matrix": "../evaluation/compatibility-matrix-v1.4.2.json",
+    "existing_public_contracts_preserved": true
+  },
+  "automated_tests": {
+    "core_backend": {
+      "passed": 419,
+      "skipped": 2,
+      "failed": 0,
+      "warnings": 3
+    },
+    "admin_backend": {
+      "passed": 39,
+      "skipped": 0,
+      "failed": 0,
+      "warnings": 1
+    },
+    "core_frontend": {
+      "test_files_passed": 7,
+      "tests_passed": 13,
+      "failed": 0,
+      "typecheck_passed": true,
+      "production_build_passed": true
+    },
+    "admin_frontend": {
+      "typecheck_passed": true,
+      "production_build_passed": true,
+      "test_script_present": false
+    }
+  },
+  "public_api": {
+    "core_openapi_version": "1.4.2",
+    "core_path_count": 123,
+    "data_discovery_path_count": 10,
+    "admin_openapi_version": "1.4.2",
+    "admin_path_count": 153
+  },
+  "frozen_corpus": {
+    "scenario_count": 20,
+    "file_count": 514,
+    "total_file_bytes": 800772591,
+    "digest": "b64fe053eae9dacca78e17b65bfa8e4309fe9d074b14020c13fb41d88faf0b15",
+    "manifest": "../evaluation/frozen-corpus-manifest.json",
+    "pre_post_unchanged": true,
+    "writes_inside_corpus": false
+  },
+  "deep_acceptance": {
+    "local": {
+      "matrix": "../evaluation/quality-gate-local-v10-matrix.json",
+      "accepted_scenarios": 20,
+      "executed_tests": 253,
+      "screened_or_held_back_tests": 236,
+      "surviving_exploratory_findings": 17,
+      "scenarios_with_findings": 12,
+      "minimum_tests_per_scenario": 1,
+      "complete_report_sets": 20
+    },
+    "siliconflow": {
+      "base_matrix": "../evaluation/quality-gate-remote-v5-matrix.json",
+      "full_budget_overrides": "../evaluation/quality-gate-full-budget-remote.json",
+      "override_rule": "Scenario 08 and 12 rows in the full-budget receipt supersede the corresponding base rows; all other rows are unchanged by the analysis-unit correction.",
+      "accepted_scenarios": 20,
+      "succeeded": 2,
+      "partial": 18,
+      "failed": 0,
+      "inventoried_assets": 514,
+      "executed_tests": 237,
+      "domain_hypotheses": 157,
+      "surviving_exploratory_findings": 5,
+      "scenarios_with_findings": 4,
+      "reasoning_holdbacks": 2,
+      "generated_python_successes": 20,
+      "vision_receipts": 7,
+      "prior_art_receipts": 7,
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Flash",
+      "vision_model": "Qwen/Qwen3-VL-32B-Instruct",
+      "raw_data_exported": false
+    }
+  },
+  "scientific_quality": {
+    "finding_quota_enforced": false,
+    "requested_two_to_three_findings_per_scenario_met": false,
+    "paper_level_central_claim_acceptance_met": false,
+    "possibly_novel_findings": 0,
+    "unconditional_novel_labels": 0,
+    "surviving_remote_findings": {
+      "count": 5,
+      "validation_level": "exploratory",
+      "novelty_status": "prior_art_found"
+    },
+    "latest_local_candidate_count": 17,
+    "latest_local_scenarios_with_candidates": 12,
+    "latest_local_zero_candidate_scenarios": [
+      "01_mathematics_oeis_daily_sequences",
+      "04_particle_physics_atlas_4lep_2015",
+      "05_biology_geo_gse303208_multiomics",
+      "08_medical_imaging_tcia_ea1141",
+      "10_computer_security_nvd_recent_snapshot",
+      "11_ai_mlperf_inference_v6_0",
+      "18_climate_noaa_storm_events_2025",
+      "19_transport_nhtsa_safety_2025_2026"
+    ],
+    "corrected_false_positive": "The initial 32-file hafnia regime candidate disappeared when the Deep analysis-unit cap was correctly expanded to all 72 eligible analyses.",
+    "policy": "Principia may propose domain hypotheses when justified, but exposes no finding without executed evidence, robustness, confounder, mechanism, and prior-art gates. Zero findings is a valid result. Local candidates remain exploratory until survivor-only current-literature review and domain-expert validation are complete."
+  },
+  "privacy_and_security": {
+    "remote_export_path_and_secret_scan_passed": true,
+    "secret_value_printed_or_persisted": false,
+    "consent_required_before_remote_egress": true,
+    "dicom_metadata_redacted_from_remote_previews": true,
+    "raw_data_exports": false,
+    "generated_code_ast_rejection_tested": true,
+    "generated_code_timeout_tested": true,
+    "network_process_and_filesystem_isolation_tested": true,
+    "archive_defenses_tested": true
+  },
+  "visual_qa": {
+    "desktop_passed": true,
+    "mobile_passed_before_final_css_fix": true,
+    "mobile_live_reverified_after_final_css_fix": false,
+    "mobile_static_cascade_fix_verified": true,
+    "keyboard_and_focus_flow_passed": true,
+    "finding_inspector_passed": true,
+    "console_errors": 0,
+    "mobile_provider_overlay_fixed": true,
+    "mobile_source_selection_done_control_added": true,
+    "consent_displays_exact_model_ids": true,
+    "latest_live_browser_rebuild_loaded": true,
+    "latest_live_browser_source_cards": "20 visible; 19 ready and scenario 13 truthfully partial",
+    "latest_live_browser_reasoning_model": "deepseek-ai/DeepSeek-V4-Flash",
+    "human_page_deep_run": {
+      "study_id": "study:01M0RD0G92352X2NB0HYXV66M7",
+      "scenario": "15_economics_federal_reserve_shed_2025",
+      "state": "succeeded",
+      "executed_tests": 2,
+      "surviving_findings": 1,
+      "held_back_tests": 1,
+      "prior_art_records": 10,
+      "novelty_status": "prior_art_found"
+    }
+  },
+  "distribution": {
+    "core_wheel": "principia_ai-1.4.2-py3-none-any.whl",
+    "core_wheel_sha256": "a71a9382e04097ce2e515b90cd6d54422157c5f825bc85649b6375ba90ccc3f9",
+    "core_sdist": "principia_ai-1.4.2.tar.gz",
+    "core_sdist_sha256": "507e03c5ffe840211e98e17456917010c626b1b51c5c306e123086ac3dd6b026",
+    "admin_wheel": "principia_admin_local-1.4.2-py3-none-any.whl",
+    "admin_wheel_sha256": "c6ce42e7f709c2aa5067c9ad1e1cec91493aa1080e63f4dfd4d8c60b93f18d5c",
+    "admin_sdist": "principia_admin_local-1.4.2.tar.gz",
+    "admin_sdist_sha256": "49f81c72dc6590eed1ae04c8842293d3680a523e3f9c4a41e8c327c31966c8a9",
+    "core_archive_scan": "../evaluation/release-archive-core-v1.4.2.json",
+    "admin_archive_scan": "../evaluation/release-archive-admin-v1.4.2.json",
+    "twine_metadata_checks_passed": true,
+    "secrets_excluded": true,
+    "generated_development_state_excluded": true
+  },
+  "known_non_blocking_notes": [
+    "Starlette emits one deprecation warning for its httpx test-client compatibility shim.",
+    "The scientific dependency stack emits one NumPy binary-size runtime warning and one xarray/netCDF4 deprecation warning in the synthetic format test.",
+    "The production frontend build reports a non-fatal chunk-size advisory.",
+    "OpenAlex was unavailable without a separate key; prior-art checks retained arXiv, Crossref, and Semantic Scholar receipts.",
+    "The final responsive CSS fix passed typecheck and production build; the in-app browser could not force a true mobile viewport for a final live recheck, so mobile live verification remains explicitly open.",
+    "An initial isolated distribution build attempt was blocked by the host Python certificate chain; the same source was successfully rebuilt without isolation using the already-locked local build backend, then passed Twine metadata and archive hygiene scans.",
+    "On macOS, framework Python reserves a virtual address range larger than 4 GiB, so the generated-code memory boundary is enforced by a parent RSS guard rather than RLIMIT_AS. Other platforms retain RLIMIT_AS."
+  ],
+  "github": {
+    "uploaded": false,
+    "push_performed": false,
+    "upload_authorized": false
+  }
+}

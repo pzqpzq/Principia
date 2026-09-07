@@ -1,0 +1,216 @@
+{
+  "schema": "principia.public-demo-selection/v1",
+  "version": "1.4.2",
+  "completed_at": "2026-09-06T15:48:25.275110+00:00",
+  "primary_model": "deepseek-ai/DeepSeek-V4-Pro",
+  "scenarios_tested": 20,
+  "private_TJ_included": false,
+  "independent_source_sets": true,
+  "source_corpus_unchanged": true,
+  "scientific_source_unchanged_during_campaign": true,
+  "retained_projects": 3,
+  "repeat_attempts": 0,
+  "selection_boundary": "Editorial selection of useful, interpretable examples from all twenty outcomes. This is not an estimate of uniform discovery success, novel scientific laws, or prospective confirmation. Partial studies can contain valid individual Rules while other analyses remain limited.",
+  "scenarios": [
+    {
+      "scenario": "01_mathematics_oeis_daily_sequences",
+      "state": "partial",
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Pro",
+      "successful_pro_reasoning_calls": 1,
+      "evaluated_law_families": 4,
+      "promoted_laws": 0,
+      "retained": false,
+      "review": "No executable law passed the complete scientific gate in this attempt. The original findings, failures, and limitations are preserved in the local campaign audit."
+    },
+    {
+      "scenario": "02_astronomy_mast_tars_sector96",
+      "state": "partial",
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Pro",
+      "successful_pro_reasoning_calls": 2,
+      "evaluated_law_families": 12,
+      "promoted_laws": 6,
+      "retained": false,
+      "review": "Several target-specific short-horizon fits passed, but they provide a narrower and more repetitive showcase than the retained compact laws."
+    },
+    {
+      "scenario": "03_physics_gwosc_o4a_h1_strain",
+      "state": "partial",
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Pro",
+      "successful_pro_reasoning_calls": 2,
+      "evaluated_law_families": 2,
+      "promoted_laws": 1,
+      "retained": false,
+      "review": "The promoted detector-spectrum fit uses cancellation-heavy coefficients and is less interpretable than the retained examples."
+    },
+    {
+      "scenario": "04_particle_physics_atlas_4lep_2015",
+      "state": "partial",
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Pro",
+      "successful_pro_reasoning_calls": 2,
+      "evaluated_law_families": 2,
+      "promoted_laws": 1,
+      "retained": true,
+      "review": "Retained as a parameter-free geometric consistency example. Two held-out files contain 78,227 events with magnitude errors near numerical precision. This recovers a known vector identity and validates representation consistency; it is not a new particle-physics law or an independent detector calibration."
+    },
+    {
+      "scenario": "05_biology_geo_gse303208_multiomics",
+      "state": "partial",
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Pro",
+      "successful_pro_reasoning_calls": 1,
+      "evaluated_law_families": 6,
+      "promoted_laws": 0,
+      "retained": false,
+      "review": "No executable law passed the complete scientific gate in this attempt. The original findings, failures, and limitations are preserved in the local campaign audit."
+    },
+    {
+      "scenario": "06_physics_nist_rydberg_rf_sensing",
+      "state": "partial",
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Pro",
+      "successful_pro_reasoning_calls": 2,
+      "evaluated_law_families": 16,
+      "promoted_laws": 1,
+      "retained": true,
+      "review": "Retained for a compact physical scaling form, two readout channels, and greater than 92% reduction in held-out RMSE versus a development-mean baseline. Only two held-out power settings per channel; the channels share one RF chain."
+    },
+    {
+      "scenario": "07_neuroscience_physionet_gait_s1",
+      "state": "partial",
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Pro",
+      "successful_pro_reasoning_calls": 2,
+      "evaluated_law_families": 23,
+      "promoted_laws": 1,
+      "retained": false,
+      "review": "A clean contact-force moment identity passed; the ATLAS example was chosen to represent parameter-free geometric constraints."
+    },
+    {
+      "scenario": "08_medical_imaging_tcia_ea1141",
+      "state": "partial",
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Pro",
+      "successful_pro_reasoning_calls": 2,
+      "evaluated_law_families": 1,
+      "promoted_laws": 0,
+      "retained": false,
+      "review": "No executable law passed the complete scientific gate in this attempt. The original findings, failures, and limitations are preserved in the local campaign audit."
+    },
+    {
+      "scenario": "09_neuroscience_dandi_001176",
+      "state": "partial",
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Pro",
+      "successful_pro_reasoning_calls": 2,
+      "evaluated_law_families": 8,
+      "promoted_laws": 6,
+      "retained": false,
+      "review": "Short-horizon fluorescence rules passed, but their forms and descriptions are repetitive and their scope is limited to the measured recordings."
+    },
+    {
+      "scenario": "10_computer_security_nvd_recent_snapshot",
+      "state": "partial",
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Pro",
+      "successful_pro_reasoning_calls": 2,
+      "evaluated_law_families": 1,
+      "promoted_laws": 0,
+      "retained": false,
+      "review": "No executable law passed the complete scientific gate in this attempt. The original findings, failures, and limitations are preserved in the local campaign audit."
+    },
+    {
+      "scenario": "11_ai_mlperf_inference_v6_0",
+      "state": "partial",
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Pro",
+      "successful_pro_reasoning_calls": 2,
+      "evaluated_law_families": 3,
+      "promoted_laws": 0,
+      "retained": false,
+      "review": "No executable law passed the complete scientific gate in this attempt. The original findings, failures, and limitations are preserved in the local campaign audit."
+    },
+    {
+      "scenario": "12_semiconductor_nist_hafnia_wafer",
+      "state": "partial",
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Pro",
+      "successful_pro_reasoning_calls": 2,
+      "evaluated_law_families": 9,
+      "promoted_laws": 1,
+      "retained": false,
+      "review": "The spatial thickness fit offers only moderate held-out accuracy and a limited one-coordinate interpretation."
+    },
+    {
+      "scenario": "13_materials_nist_encapsulant_cure",
+      "state": "partial",
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Pro",
+      "successful_pro_reasoning_calls": 2,
+      "evaluated_law_families": 14,
+      "promoted_laws": 0,
+      "retained": false,
+      "review": "No executable law passed the complete scientific gate in this attempt. The original findings, failures, and limitations are preserved in the local campaign audit."
+    },
+    {
+      "scenario": "14_sociology_census_htops_2026",
+      "state": "partial",
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Pro",
+      "successful_pro_reasoning_calls": 2,
+      "evaluated_law_families": 6,
+      "promoted_laws": 1,
+      "retained": false,
+      "review": "The unweighted ordinal survey association has modest prediction improvement and cannot establish objective productivity or causality."
+    },
+    {
+      "scenario": "15_economics_federal_reserve_shed_2025",
+      "state": "partial",
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Pro",
+      "successful_pro_reasoning_calls": 2,
+      "evaluated_law_families": 4,
+      "promoted_laws": 1,
+      "retained": false,
+      "review": "The survey response fit is less compact and interpretable, with confounding and coding limitations."
+    },
+    {
+      "scenario": "16_economics_bls_cpi_ces_2026",
+      "state": "partial",
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Pro",
+      "successful_pro_reasoning_calls": 2,
+      "evaluated_law_families": 15,
+      "promoted_laws": 2,
+      "retained": false,
+      "review": "The monthly-series forecasts passed internal gates but have narrow short-horizon scope; one offers only a small gain over persistence."
+    },
+    {
+      "scenario": "17_geography_usgs_comcat_2026_07",
+      "state": "partial",
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Pro",
+      "successful_pro_reasoning_calls": 2,
+      "evaluated_law_families": 7,
+      "promoted_laws": 1,
+      "retained": true,
+      "review": "Retained for a compact distribution law with 18 development, 6 validation, and 7 held-out days. Test normalized RMSE 0.1267 versus 0.6584 for the frozen linear baseline. Restricted to the ml scale and qualifying days above the query cutoff; no event-time or location prediction."
+    },
+    {
+      "scenario": "18_climate_noaa_storm_events_2025",
+      "state": "partial",
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Pro",
+      "successful_pro_reasoning_calls": 2,
+      "evaluated_law_families": 7,
+      "promoted_laws": 0,
+      "retained": false,
+      "review": "No executable law passed the complete scientific gate in this attempt. The original findings, failures, and limitations are preserved in the local campaign audit."
+    },
+    {
+      "scenario": "19_transport_nhtsa_safety_2025_2026",
+      "state": "partial",
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Pro",
+      "successful_pro_reasoning_calls": 2,
+      "evaluated_law_families": 1,
+      "promoted_laws": 0,
+      "retained": false,
+      "review": "No executable law passed the complete scientific gate in this attempt. The original findings, failures, and limitations are preserved in the local campaign audit."
+    },
+    {
+      "scenario": "20_ocean_noaa_coral_ssta_20260816",
+      "state": "partial",
+      "reasoning_model": "deepseek-ai/DeepSeek-V4-Pro",
+      "successful_pro_reasoning_calls": 1,
+      "evaluated_law_families": 2,
+      "promoted_laws": 0,
+      "retained": false,
+      "review": "No executable law passed the complete scientific gate in this attempt. The original findings, failures, and limitations are preserved in the local campaign audit."
+    }
+  ]
+}

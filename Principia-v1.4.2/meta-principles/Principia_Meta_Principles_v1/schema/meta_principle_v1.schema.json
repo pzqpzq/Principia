@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pzqpzq/Principia/meta-principle-v1.schema.json",
+  "title": "Principia Meta-Principle v1",
+  "type": "object",
+  "required": [
+    "id",
+    "area",
+    "title",
+    "argument",
+    "boundary",
+    "evidence",
+    "epistemic_type",
+    "principia_kind",
+    "applications",
+    "basics",
+    "comment",
+    "linking",
+    "trace_id",
+    "review_status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^meta:[a-z0-9-]+:[a-z0-9-]+$"
+    },
+    "area": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "epistemic_type": {
+      "type": "string"
+    },
+    "principia_kind": {
+      "enum": [
+        "theorem",
+        "mechanistic",
+        "empirical",
+        "heuristic",
+        "hypothesis"
+      ]
+    },
+    "maturity": {
+      "enum": [
+        "supported",
+        "replicated",
+        "established",
+        "contested",
+        "retired"
+      ]
+    },
+    "stability": {
+      "enum": [
+        "high",
+        "medium",
+        "context-dependent",
+        "contested"
+      ]
+    },
+    "argument": {
+      "type": "string"
+    },
+    "boundary": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "applications": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "basics": {
+      "type": "string"
+    },
+    "comment": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "url",
+          "role"
+        ],
+        "properties": {
+          "work_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "year": {
+            "type": [
+              "integer",
+              "string"
+            ]
+          },
+          "role": {
+            "type": "string"
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "linking": {
+      "type": "object",
+      "required": [
+        "relations",
+        "questions"
+      ],
+      "properties": {
+        "relations": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "supports",
+              "contradicts",
+              "refines",
+              "generalizes",
+              "specializes",
+              "depends_on",
+              "analogous_to",
+              "motivates"
+            ]
+          }
+        },
+        "questions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "trace_id": {
+      "type": "string"
+    },
+    "review_status": {
+      "enum": [
+        "curated_draft",
+        "reviewed",
+        "rejected"
+      ]
+    },
+    "content_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "additionalProperties": true
+}

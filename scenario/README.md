@@ -1,12 +1,12 @@
-# Local-Data Evaluation Corpus
+# Public Scientific Test Scenarios
 
-This directory contains exactly 20 newly installed, source-grounded evaluation scenarios plus the pre-existing `TJ-SHD` folder. The 20 new scenarios contain 493 files and 800,637,339 bytes (763.547 MiB). Every scenario passed the manifest, checksum, archive-safety, scientific-format, and folder-contract checks recorded in `VALIDATION_REPORT.json`.
+This directory contains **twenty independent public-data scenarios** for exploring and evaluating Principia. The private TJ scenario is not included. These input datasets are separate from the five portable demonstration projects bundled with v1.4.2.
 
-The installed total is 0.801 decimal GB, below the planning estimate of 0.9-1.1 GB. This reflects the current byte sizes of the locked deterministic selections; no unrelated or duplicated data were added merely to inflate the corpus.
+Each folder records the selected source version, file sizes, checksums, and provenance. Consult its `PROVENANCE.json`, `SHA256SUMS`, and `SCENARIO.md` before use. The corpus is approximately 0.8 GB; a sparse checkout can download only the scenario you need.
 
 ## Folder contract
 
-Each new scenario contains `SCENARIO.md`, `USER_BRIEF.txt`, `PROVENANCE.json`, `SHA256SUMS`, `raw/`, and `context/`.
+Each scenario contains `SCENARIO.md`, `USER_BRIEF.txt`, `PROVENANCE.json`, `SHA256SUMS`, `raw/`, and `context/`.
 
 - `raw/` contains official downloaded bytes. No scientific values were normalized, imputed, filtered, converted, or replaced with derived findings.
 - `context/` contains official manifests, codebooks, schemas, API responses, layouts, or source metadata.
@@ -45,6 +45,6 @@ Each new scenario contains `SCENARIO.md`, `USER_BRIEF.txt`, `PROVENANCE.json`, `
 
 This corpus supports hypothesis generation. No observed pattern should be described as novel until it has exact file/row/time provenance, units and computation, uncertainty, missingness and confounder analysis, falsifiers and negative evidence, comparison with the source publication, robustness checks, and a current literature novelty review.
 
-Human data are public and deidentified. Re-identification is prohibited. Controlled/private data and credentials are absent. License and redistribution terms remain scenario-specific; this local R&D corpus should not be automatically bundled into a commercial distribution.
+Human data are public and deidentified. Re-identification is prohibited. Controlled/private data and credentials are absent. License and redistribution terms remain scenario-specific; check each publisher's terms before further redistribution or commercial reuse. The application's MIT license does not replace dataset-specific licenses.
 
 
