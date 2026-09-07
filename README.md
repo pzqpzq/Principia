@@ -28,7 +28,7 @@
 
 Version 1.4.2 brings dataset-native **Autonomous Scientific Discovery (ASD)** into the Principles workspace. Literature Principles provide scientific context; observations describe computed evidence; extracted Rules carry equations, calibration results, validation decisions, and a stated scope. A study map connects these objects so you can move from a promising relationship to the records that support it.
 
-The release includes **five completed public-data projects**, analyzed with **DeepSeek-V4-Pro**. Their saved maps, results, equations, and packaged evidence open locally without the original datasets or an API key. Connect your own data and models when you are ready to begin a new discovery.
+The release includes **five demo public-data projects**, analyzed with **DeepSeek-V4-Pro**. Their saved maps, results, equations, and packaged evidence open locally without the original datasets or an API key. Connect your own data and models when you are ready to begin a new discovery.
 
 <p align="center">
   <a href="./assets/screenshots-v1.4.2-sep7/main-page.png"><img src="./assets/screenshots-v1.4.2-sep7/main-page.png" alt="Principia v1.4.2 home: research goal input, scientific area filters, Principles map, and five projects in the sidebar" width="100%"></a>
@@ -53,7 +53,7 @@ The release includes **five completed public-data projects**, analyzed with **De
 
 The workspace also supports **Discover again** with a new project by default, configurable reasoning and vision models, visible task activity and stop controls, resizable information panels, and project deletion. Data and workspace state remain separate, so repeated discovery does not require copying the source dataset into each project.
 
-## Five projects ready to explore
+## Five demo projects
 
 These examples span atomic sensing, seismology, particle physics, thin-film metrology, and human movement. Three were selected from the initial twenty-scenario discovery campaign; two were added during subsequent user testing. They illustrate different kinds of useful scientific output, rather than a claim that every recovered relationship is a new law of nature.
 
