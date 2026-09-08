@@ -227,6 +227,12 @@ export function ResearchGraph({
       style: { pointerEvents: "none" },
     });
     const titleContext = titleCanvas.getContext("2d");
+    // Virtual links sit behind node circles, while titles remain above them.
+    const virtualCanvas = renderer.createCanvas("virtual-connections", {
+      beforeLayer: "nodes",
+      style: { pointerEvents: "none" },
+    });
+    const virtualContext = virtualCanvas.getContext("2d");
     let dragged = "";
     let dragStart = { x: 0, y: 0 };
     let dragDistance = 0;
@@ -469,8 +475,10 @@ export function ResearchGraph({
     });
     const titleBuffer = document.createElement("canvas");
     const bufferContext = titleBuffer.getContext("2d");
+    const virtualBuffer = document.createElement("canvas");
+    const virtualBufferContext = virtualBuffer.getContext("2d");
     const drawEmbeddedTitles = () => {
-      if (!titleContext) return;
+      if (!titleContext || !virtualContext || !virtualBufferContext) return;
       const dimensions = renderer.getDimensions();
       const requestedPixelRatio = Math.max(1, window.devicePixelRatio || 1);
       if (
@@ -492,6 +500,14 @@ export function ResearchGraph({
       const pixelRatio = titleCanvas.width / Math.max(1, dimensions.width);
       bufferContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
       bufferContext.clearRect(0, 0, dimensions.width, dimensions.height);
+      for (const canvas of [virtualCanvas, virtualBuffer]) {
+        if (canvas.width !== titleCanvas.width) canvas.width = titleCanvas.width;
+        if (canvas.height !== titleCanvas.height) canvas.height = titleCanvas.height;
+      }
+      virtualCanvas.style.width = `${dimensions.width}px`;
+      virtualCanvas.style.height = `${dimensions.height}px`;
+      virtualBufferContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+      virtualBufferContext.clearRect(0, 0, dimensions.width, dimensions.height);
       const ratio = renderer.getCamera().getState().ratio;
       const itemCount = graph.order;
       const titleBudget =
@@ -515,17 +531,17 @@ export function ResearchGraph({
           continue;
         const from = renderer.framedGraphToViewport(sourceData);
         const to = renderer.framedGraphToViewport(targetData);
-        bufferContext.save();
-        bufferContext.beginPath();
-        bufferContext.moveTo(from.x, from.y);
-        bufferContext.lineTo(to.x, to.y);
-        bufferContext.setLineDash([9, 7]);
-        bufferContext.strokeStyle = "rgba(210,98,239,.92)";
-        bufferContext.lineWidth = 2.5;
-        bufferContext.shadowColor = "rgba(210,98,239,.45)";
-        bufferContext.shadowBlur = 5;
-        bufferContext.stroke();
-        bufferContext.restore();
+        virtualBufferContext.save();
+        virtualBufferContext.beginPath();
+        virtualBufferContext.moveTo(from.x, from.y);
+        virtualBufferContext.lineTo(to.x, to.y);
+        virtualBufferContext.setLineDash([9, 7]);
+        virtualBufferContext.strokeStyle = "rgba(210,98,239,.92)";
+        virtualBufferContext.lineWidth = 2.5;
+        virtualBufferContext.shadowColor = "rgba(210,98,239,.45)";
+        virtualBufferContext.shadowBlur = 5;
+        virtualBufferContext.stroke();
+        virtualBufferContext.restore();
       }
       for (const node of graph.nodes()) {
         const data = renderer.getNodeDisplayData(node);
@@ -636,6 +652,9 @@ export function ResearchGraph({
       titleContext.setTransform(1, 0, 0, 1, 0, 0);
       titleContext.clearRect(0, 0, titleCanvas.width, titleCanvas.height);
       titleContext.drawImage(titleBuffer, 0, 0);
+      virtualContext.setTransform(1, 0, 0, 1, 0, 0);
+      virtualContext.clearRect(0, 0, virtualCanvas.width, virtualCanvas.height);
+      virtualContext.drawImage(virtualBuffer, 0, 0);
     };
     renderer.on("afterRender", drawEmbeddedTitles);
     return () => {

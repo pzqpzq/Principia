@@ -4361,11 +4361,10 @@ export function ResearchWorkspacePage() {
         )
       ) : sessionId ? (
         <button
-          className="show-result-tray"
+          className={`show-result-tray${isDataProject ? "" : " manage-principles"}`}
           onClick={() => setTrayHidden(false)}
         >
-          {isDataProject ? "Study map" : "Results"}{" "}
-          <span>{isDataProject ? dataMapTotal : Number(trayPage.data?.total ?? 0)}</span>
+          {isDataProject ? <>Study map <span>{dataMapTotal}</span></> : "Manage Principles"}
         </button>
       ) : null}
 
@@ -4495,6 +4494,22 @@ export function ResearchWorkspacePage() {
           </div>
         )}
         <footer className="research-map-footer">
+          {sessionId ? (
+            <button
+              className="research-theme-toggle"
+              onClick={() =>
+                sendGraphOperations([
+                  {
+                    action: "theme",
+                    theme:
+                      sessionTheme === "daylight" ? "deep-space" : "daylight",
+                  },
+                ])
+              }
+            >
+              {sessionTheme === "daylight" ? "Starlight" : "Deep space"}
+            </button>
+          ) : null}
         <div className="research-map-legend" aria-label="Map legend">
           <span>
             <i className="ordinary" />
@@ -4562,19 +4577,6 @@ export function ResearchWorkspacePage() {
                 }}
               >
                 Derive Principles
-              </button>
-              <button
-                onClick={() =>
-                  sendGraphOperations([
-                    {
-                      action: "theme",
-                      theme:
-                        sessionTheme === "daylight" ? "deep-space" : "daylight",
-                    },
-                  ])
-                }
-              >
-                {sessionTheme === "daylight" ? "Starlight" : "Deep space"}
               </button>
             </>
           ) : (
@@ -5278,7 +5280,7 @@ export function ResearchWorkspacePage() {
               error={analyzeConnection.error ?? derivePrinciples.error}
             />
           ) : null}
-          {generatedPrinciples.map((item, index) => {
+          {studio === "principle" && generatedPrinciples.map((item, index) => {
             const proposal = record(item.proposal);
             const virtualId = text(item.virtual_id) || `virtual:${index}`;
             const candidateId = savedVirtualCandidates[virtualId] || "";

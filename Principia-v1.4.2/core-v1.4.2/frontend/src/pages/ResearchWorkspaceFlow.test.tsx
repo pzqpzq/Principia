@@ -228,3 +228,31 @@ it('refreshes activity inventory while faster status polling continues', async (
   expect(mock.get.mock.calls.filter(call=>String(call[0]).endsWith('/status')).length).toBeGreaterThan(1);
   expect(within(dialog).getByText('old-model')).not.toBeNull();
 }, 10000);
+
+it('keeps generated hypotheses out of the connection studio without losing the principle draft', async () => {
+  const principles = ['one', 'two'].map(id => ({
+    principle_id: `prn:${id}`, record_kind: 'principle',
+    payload: { title: `Principle ${id}`, claim: `Measured ${id}` },
+  }));
+  mock.get.mockImplementation(async (path: string) => {
+    if (path === '/api/v1/providers') return { data: { profiles: [{ provider: 'siliconflow', configured: true, models: [] }] } };
+    if (path === '/api/v1/research-sessions') return { data: { items: [{ session_id: 'search', kind: 'research', state: 'succeeded' }] } };
+    if (path.endsWith('/{session_id}')) return { data: { session_id: 'search', state: 'succeeded', active_run: { state: 'succeeded', goal: 'Explore relationships' } } };
+    if (path.endsWith('/graph')) return { data: { revision: 1, items: principles } };
+    return { data: { items: [], sources: [], profiles: [] } };
+  });
+  mock.post.mockResolvedValue({ data: { items: [{ virtual_id: 'virtual:one', proposal: { title: 'Generated hypothesis', claim: 'A falsifiable connection' } }] } });
+  open('/research/search');
+  await screen.findByText('prn:one');
+  fireEvent.click(screen.getByRole('button', { name: 'Derive Principles' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Add Principle one to selection' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Add Principle two to selection' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Derive virtual Principles' }));
+  await screen.findByText('Generated hypothesis');
+  fireEvent.click(screen.getByRole('button', { name: 'Derive connection' }));
+  expect(screen.queryByText('Generated hypothesis')).toBeNull();
+  expect(screen.queryByText('Virtual hypothesis')).toBeNull();
+  expect(screen.getByRole('button', { name: 'Manage Principles' }).textContent).toBe('Manage Principles');
+  fireEvent.click(screen.getByRole('button', { name: 'Derive Principles' }));
+  expect(screen.getByText('Generated hypothesis')).not.toBeNull();
+});
