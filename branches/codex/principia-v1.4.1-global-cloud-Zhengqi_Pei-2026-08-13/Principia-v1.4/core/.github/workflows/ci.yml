@@ -1,0 +1,166 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e ".[dev]"
+      - run: python -m pytest -q
+      - run: python -m ruff check src tests scripts
+        if: matrix.python-version == '3.12'
+      - run: python -m mypy src/principia src/principia_retrieval
+        if: matrix.python-version == '3.12'
+
+  local:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e ".[dev,local,notebook]"
+      - name: Optional parser import smoke
+        run: |
+          python - <<'PY'
+          import docx
+          import openpyxl
+          import pptx
+          import principia
+
+          assert principia.__version__ == "1.4.0"
+          assert principia.LocalCorpusConfig().max_files == 500
+          PY
+      - run: python -m pytest -q
+
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install build nbformat twine
+      - name: Verify checked-in live showcases and root README parity
+        run: |
+          for task in test1 test2 test3; do
+            test -f "examples/${task}/showcase.json"
+            python scripts/build_showcases.py verify "examples/${task}"
+          done
+          python scripts/build_showcases.py readme examples \
+            --readme README.md --check
+      - name: Provision strict KaTeX QA runtime
+        run: |
+          npm install --prefix "${RUNNER_TEMP}/principia-katex" \
+            --ignore-scripts --no-package-lock --no-save katex@0.16.22
+      - name: Strict KaTeX release-artifact audit
+        run: |
+          python scripts/check_release_math.py README.md CHANGELOG.md docs examples \
+            --node "$(command -v node)" \
+            --katex-module "${RUNNER_TEMP}/principia-katex/node_modules/katex" \
+            --report-json "${RUNNER_TEMP}/principia-release-math.json"
+      - run: python -m build
+      - run: python -m twine check dist/*
+      - name: Scan wheel and sdist for secrets, paths, and private sentinels
+        run: |
+          python scripts/check_release_archive.py dist/* \
+            --report-json "${RUNNER_TEMP}/principia-release-archive.json"
+      - name: Verify wheel contents
+        run: |
+          python - <<'PY'
+          import glob
+          import zipfile
+
+          wheel = glob.glob("dist/*.whl")
+          assert len(wheel) == 1, wheel
+          with zipfile.ZipFile(wheel[0]) as archive:
+              names = set(archive.namelist())
+          required = {
+              "principia/__init__.py",
+              "principia/py.typed",
+              "principia_retrieval/__init__.py",
+              "principia_retrieval/py.typed",
+          }
+          assert required <= names, sorted(required - names)
+          PY
+      - name: Installed-wheel import and CLI smoke
+        run: |
+          python -m venv "${RUNNER_TEMP}/principia-wheel"
+          "${RUNNER_TEMP}/principia-wheel/bin/python" -m pip install dist/*.whl
+          cd "${RUNNER_TEMP}"
+          "${RUNNER_TEMP}/principia-wheel/bin/python" - <<'PY'
+          import importlib.resources
+          import principia
+          import principia_retrieval
+
+          assert principia.__version__ == "1.4.0"
+          assert importlib.resources.files("principia").joinpath("py.typed").is_file()
+          assert importlib.resources.files("principia_retrieval").joinpath("py.typed").is_file()
+          PY
+          "${RUNNER_TEMP}/principia-wheel/bin/principia" \
+            --workspace "${RUNNER_TEMP}/principia-smoke-workspace" status
+      - name: Installed-wheel local-extra smoke
+        run: |
+          wheel="$(find dist -maxdepth 1 -name '*.whl' -print -quit)"
+          python -m venv "${RUNNER_TEMP}/principia-wheel-local"
+          "${RUNNER_TEMP}/principia-wheel-local/bin/python" -m pip install \
+            "principia-ai[local] @ file://${GITHUB_WORKSPACE}/${wheel}"
+          cd "${RUNNER_TEMP}"
+          "${RUNNER_TEMP}/principia-wheel-local/bin/python" - <<'PY'
+          import docx
+          import openpyxl
+          import pptx
+          import principia
+
+          assert principia.__version__ == "1.4.0"
+          assert principia.LocalCorpusConfig().max_file_bytes == 50 * 1024 * 1024
+          PY
+
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.16.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: pnpm
+          cache-dependency-path: frontend/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+        working-directory: frontend
+      - run: pnpm run build
+        working-directory: frontend
+      - name: Reject source maps and external asset references
+        run: |
+          test -f src/principia/ui_dist/index.html
+          test -z "$(find src/principia/ui_dist -name '*.map' -print -quit)"
+          ! grep -RIE "(src|href)=['\"]https?://|url\(['\"]?https?://" src/principia/ui_dist

@@ -1,0 +1,180 @@
+{
+  "$defs": {
+    "ReviewAttestation": {
+      "additionalProperties": false,
+      "properties": {
+        "actor": {
+          "maxLength": 300,
+          "minLength": 1,
+          "title": "Actor",
+          "type": "string"
+        },
+        "basis": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Basis",
+          "type": "string"
+        },
+        "reviewed_at": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Reviewed At",
+          "type": "string"
+        },
+        "source_review_status": {
+          "default": "",
+          "maxLength": 100,
+          "title": "Source Review Status",
+          "type": "string"
+        },
+        "trace_id": {
+          "default": "",
+          "maxLength": 500,
+          "title": "Trace Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "actor",
+        "reviewed_at",
+        "basis"
+      ],
+      "title": "ReviewAttestation",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "content_digest": {
+      "default": "",
+      "title": "Content Digest",
+      "type": "string"
+    },
+    "created_at": {
+      "title": "Created At",
+      "type": "string"
+    },
+    "migration_provenance": {
+      "additionalProperties": true,
+      "title": "Migration Provenance",
+      "type": "object"
+    },
+    "rationale": {
+      "default": "",
+      "maxLength": 20000,
+      "title": "Rationale",
+      "type": "string"
+    },
+    "relation_id": {
+      "maxLength": 300,
+      "minLength": 3,
+      "title": "Relation Id",
+      "type": "string"
+    },
+    "relation_role": {
+      "default": "peer",
+      "enum": [
+        "foundation",
+        "peer"
+      ],
+      "title": "Relation Role",
+      "type": "string"
+    },
+    "relation_type": {
+      "enum": [
+        "specializes",
+        "depends_on",
+        "refines",
+        "motivates",
+        "generalizes",
+        "analogous_to",
+        "supports",
+        "contradicts",
+        "bounded_by",
+        "contrasts_with",
+        "approximates",
+        "equivalent_to",
+        "consistent_with"
+      ],
+      "title": "Relation Type",
+      "type": "string"
+    },
+    "review_attestation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReviewAttestation"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "review_status": {
+      "default": "unassessed",
+      "enum": [
+        "reviewed",
+        "unassessed"
+      ],
+      "title": "Review Status",
+      "type": "string"
+    },
+    "revision": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Revision",
+      "type": "integer"
+    },
+    "schema_version": {
+      "const": "global-relation-v2",
+      "default": "global-relation-v2",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "source_principle_id": {
+      "title": "Source Principle Id",
+      "type": "string"
+    },
+    "status": {
+      "default": "proposed",
+      "enum": [
+        "active",
+        "retired",
+        "proposed"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "strength": {
+      "anyOf": [
+        {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Strength"
+    },
+    "target_principle_id": {
+      "title": "Target Principle Id",
+      "type": "string"
+    },
+    "unresolved_target": {
+      "default": false,
+      "title": "Unresolved Target",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "relation_id",
+    "source_principle_id",
+    "target_principle_id",
+    "relation_type"
+  ],
+  "title": "RelationRevisionV2",
+  "type": "object"
+}

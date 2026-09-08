@@ -1,0 +1,32 @@
+{
+  "idea_id": "Dynamic_Heuristic_Optimization_Of_Squeezed_State_Haloscopes_With_Continuum_Noise_Modeling",
+  "rows": [
+    {
+      "work_id": "W-AC731590915F",
+      "title": "Heuristic Search for JPA Parameter Optimization",
+      "mechanistic_similarity": "Both employ heuristic search algorithms (e.g., Nelder–Mead) to tune Josephson Parametric Amplifier (JPA) pump frequency and power for optimal noise performance.",
+      "essential_difference": "The prior work optimizes static parameters for specific conditions, whereas the generated idea implements a real-time feedback loop that continuously adjusts JPA parameters based on live continuum noise model outputs to counteract environmental drift.",
+      "potential_advantage": "Maintains optimal squeezing levels and scan speed dynamically under non-uniform magnetic fields and temperature gradients, preventing sensitivity loss due to parameter drift.",
+      "potential_weakness": "The computational latency of the continuous heuristic search may exceed the coherence time of rapid environmental fluctuations, causing the feedback loop to lag and destabilize the squeezed state."
+    },
+    {
+      "work_id": "W-D318B027CF02",
+      "title": "Analytical Treatment of Noise Propagation in Cryogenic Systems",
+      "mechanistic_similarity": "Both approaches model noise propagation through lossy transmission lines with temperature gradients ($T(x)$) as a continuum rather than using single-step attenuation approximations.",
+      "essential_difference": "The prior work establishes the analytical framework for noise estimation, while the generated idea actively integrates this continuum model into the control loop to drive the heuristic tuning of the JPA.",
+      "potential_advantage": "Provides a more accurate noise floor estimate ($S_{noise}(f)$) for the SNR integral, allowing the optimizer to distinguish between true axion signals and thermal noise variations caused by gradient shifts.",
+      "potential_weakness": "Errors in the continuum model's assumptions regarding loss tangents or gradient profiles could propagate directly into the feedback loop, causing the heuristic algorithm to converge on suboptimal or unstable JPA settings."
+    },
+    {
+      "work_id": "W-E045238F8846",
+      "title": "Dual-Path Interferometry for Noise Reduction",
+      "mechanistic_similarity": "Both utilize a dual-readout architecture to correlate signals and reject uncorrelated noise sources, aiming for configuration-independent signal validation.",
+      "essential_difference": "The prior work focuses on linear amplifiers and beam splitters for noise reduction, whereas the generated idea applies dual-chain cross-correlation specifically to validate squeezed-state candidates and veto readout artifacts in a JPA-based system.",
+      "potential_advantage": "Enhances false-positive rejection by ensuring candidate signals exhibit predicted coherence width across both chains, filtering out artifacts unique to a single amplification path.",
+      "potential_weakness": "If correlated noise sources (e.g., magnetic field fluctuations) affect both readout chains simultaneously, the dual-chain veto mechanism may fail to distinguish them from genuine axion signals."
+    }
+  ],
+  "model": "siliconflow:Qwen/Qwen3.5-397B-A17B",
+  "run_id": "RUN_93052018E5A6",
+  "created_at": "2026-07-16T11:18:34+00:00"
+}

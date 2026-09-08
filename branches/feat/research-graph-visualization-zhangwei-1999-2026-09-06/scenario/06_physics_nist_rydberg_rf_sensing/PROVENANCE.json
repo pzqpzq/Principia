@@ -1,0 +1,227 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "06_physics_nist_rydberg_rf_sensing",
+  "domain": "atomic physics",
+  "title": "NIST Rydberg atom RF sensing: ionization-current versus optical readout",
+  "publisher": "National Institute of Standards and Technology",
+  "authoritative_landing_url": "https://data.nist.gov/od/id/mds2-3951",
+  "authoritative_source_urls": [
+    "https://data.nist.gov/od/id/mds2-3951",
+    "https://doi.org/10.18434/mds2-3951"
+  ],
+  "identifiers": [
+    "doi:10.18434/mds2-3951"
+  ],
+  "release_or_version": "1.0.3",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "NIST public data license",
+  "deterministic_selection_rule": "First reserve activated because PhysioNet reported the planned MIMIC-IV demo unavailable in this region. Retain all 15 files in NIST mds2-3951 and the NERDm manifest.",
+  "exclusions": [
+    "No value-level preprocessing",
+    "No outcome-guided selection",
+    "No controlled-access or credential material"
+  ],
+  "ethics_restrictions": [
+    "Public/deidentified use only where human data are present",
+    "No re-identification",
+    "Generated USER_BRIEF is context, not evidence"
+  ],
+  "transport_and_headers": {
+    "status": "source metadata and mutable-feed companion metadata retained where publisher supplied it; browser-only endpoints are identified by URL",
+    "http_error_masquerade_check_required": true
+  },
+  "substitution": {
+    "replaces": "06_medicine_mimic_iv_demo_2_2",
+    "reason": "PhysioNet content page returned Data Not Available due to regional legal or policy restrictions",
+    "reserve_rank": 1
+  },
+  "files": [
+    {
+      "path": "context/mds2-3951_nerdm.json",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://data.nist.gov/od/id/mds2-3951",
+        "https://doi.org/10.18434/mds2-3951"
+      ],
+      "bytes": 28844,
+      "sha256": "861c7adee1fa7a8081854b6c17e8a38e1d91f662609ebcdba3fd09c61a89e377",
+      "mime_type": "application/json"
+    },
+    {
+      "path": "context/mimic_region_failure_evidence.html",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://data.nist.gov/od/id/mds2-3951",
+        "https://doi.org/10.18434/mds2-3951"
+      ],
+      "bytes": 40122,
+      "sha256": "152c53f5ab200979577990fa6477783fb1169634b8a33ad0766eef35aecaba39",
+      "mime_type": "text/html"
+    },
+    {
+      "path": "raw/3951_README.txt",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://data.nist.gov/od/id/mds2-3951",
+        "https://doi.org/10.18434/mds2-3951"
+      ],
+      "bytes": 12816,
+      "sha256": "5b9ef6b21f27c52dfb61921ff0246a410f441b238ff88e326a53079d8ca2ea68",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "raw/FIG1c_ExampleSpectraEIT_AT_Ion.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://data.nist.gov/od/id/mds2-3951",
+        "https://doi.org/10.18434/mds2-3951"
+      ],
+      "bytes": 112585,
+      "sha256": "8c0c74359a57ef77a94143473a40a6fc3b894af65d46352c422ee9932152ee82",
+      "mime_type": "text/csv"
+    },
+    {
+      "path": "raw/FIG2a_EITSpectra_with_CouplingRabiFrequency.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://data.nist.gov/od/id/mds2-3951",
+        "https://doi.org/10.18434/mds2-3951"
+      ],
+      "bytes": 11212427,
+      "sha256": "1bcd9985cdd180780fd335f717ed23d201ccd038a9e8f474f4a91f3459dbad02",
+      "mime_type": "text/csv"
+    },
+    {
+      "path": "raw/FIG2b_EITSpectra_with_ProbeRabiFrequency.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://data.nist.gov/od/id/mds2-3951",
+        "https://doi.org/10.18434/mds2-3951"
+      ],
+      "bytes": 11203067,
+      "sha256": "6dc0d63de4c627b013560753a5e47591576e88655677633cad7a914b001a0f62",
+      "mime_type": "text/csv"
+    },
+    {
+      "path": "raw/FIG3a_IonSpectra_with_CouplingRabiFrequency.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://data.nist.gov/od/id/mds2-3951",
+        "https://doi.org/10.18434/mds2-3951"
+      ],
+      "bytes": 11200758,
+      "sha256": "ada0718afdefd4a056c70ba7c7bd150e3c5db5f45f0fc42f3a80bc7c115abdf4",
+      "mime_type": "text/csv"
+    },
+    {
+      "path": "raw/FIG3b_IonSpectra_with_ProbeRabiFrequency.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://data.nist.gov/od/id/mds2-3951",
+        "https://doi.org/10.18434/mds2-3951"
+      ],
+      "bytes": 11199193,
+      "sha256": "284dbd4ac1f2e42ba10a24a7d8a74107ab6bdba34e1fa55fe82976c8dad322ff",
+      "mime_type": "text/csv"
+    },
+    {
+      "path": "raw/FIG4a_EIT_ION_WidthandAmplitude_with_CouplingRabiFrequency.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://data.nist.gov/od/id/mds2-3951",
+        "https://doi.org/10.18434/mds2-3951"
+      ],
+      "bytes": 567,
+      "sha256": "10a39ce31e8aeae652eff09e564e46b2fd8928eb1f3dd7544140499646875d79",
+      "mime_type": "text/csv"
+    },
+    {
+      "path": "raw/FIG4b_EIT_ION_WidthandAmplitude_with_ProbeRabiFrequency.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://data.nist.gov/od/id/mds2-3951",
+        "https://doi.org/10.18434/mds2-3951"
+      ],
+      "bytes": 1111,
+      "sha256": "8ad0582b1f2ea1486f4beb7defdfdfa14bb6986aa704ed0bde004a299d624318",
+      "mime_type": "text/csv"
+    },
+    {
+      "path": "raw/FIG5a_Measured_Efield_vs_AppliedSignalRFPower_for_EIT_ION.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://data.nist.gov/od/id/mds2-3951",
+        "https://doi.org/10.18434/mds2-3951"
+      ],
+      "bytes": 1123,
+      "sha256": "c0dff10f6bf391fe26d127acaaf94d6e6c1e088fb0498637229a1e8917f0186a",
+      "mime_type": "text/csv"
+    },
+    {
+      "path": "raw/FIG5b_BeatnoteAmp_vs_AppliedSignalRFPower_EIT.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://data.nist.gov/od/id/mds2-3951",
+        "https://doi.org/10.18434/mds2-3951"
+      ],
+      "bytes": 3714,
+      "sha256": "3d5cda40414d08315b63181cac5bf7dad62b09ba7a6b6078e5ac767253c33fde",
+      "mime_type": "text/csv"
+    },
+    {
+      "path": "raw/FIG5c_BeatnoteAmp_vs_AppliedSignalRFPower_Ion.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://data.nist.gov/od/id/mds2-3951",
+        "https://doi.org/10.18434/mds2-3951"
+      ],
+      "bytes": 4396,
+      "sha256": "0b8aa167f1301e88bd9cfeb436cc298cb8a3266332d67ee28a4bc3c5fd0d4a84",
+      "mime_type": "text/csv"
+    },
+    {
+      "path": "raw/FIG5d_NoiseSpectra_EIT.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://data.nist.gov/od/id/mds2-3951",
+        "https://doi.org/10.18434/mds2-3951"
+      ],
+      "bytes": 41262,
+      "sha256": "e5cc994806955c309d864bc20a989af3c0db06389b3d20f2e745ff86e2434ba0",
+      "mime_type": "text/csv"
+    },
+    {
+      "path": "raw/FIG5e_NoiseSpectra_Ion.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://data.nist.gov/od/id/mds2-3951",
+        "https://doi.org/10.18434/mds2-3951"
+      ],
+      "bytes": 46533,
+      "sha256": "56240d66cc249021989cd6b40196ab6a0532c4db94737f03050ec12440d66b04",
+      "mime_type": "text/csv"
+    },
+    {
+      "path": "raw/FIG6a_Sensitivity_with_CouplingRabiFrequency.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://data.nist.gov/od/id/mds2-3951",
+        "https://doi.org/10.18434/mds2-3951"
+      ],
+      "bytes": 401,
+      "sha256": "53635eb37588da11a55009d069c61e3fe19d17304bd797f28dee9022c6fa197f",
+      "mime_type": "text/csv"
+    },
+    {
+      "path": "raw/FIG6b_Sensitivity_with_ProbeRabiFrequency.csv",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://data.nist.gov/od/id/mds2-3951",
+        "https://doi.org/10.18434/mds2-3951"
+      ],
+      "bytes": 884,
+      "sha256": "5253038ae29277950b56c10a5f96b3a6790f594bc7c98af8b9cafe47634da3b4",
+      "mime_type": "text/csv"
+    }
+  ]
+}

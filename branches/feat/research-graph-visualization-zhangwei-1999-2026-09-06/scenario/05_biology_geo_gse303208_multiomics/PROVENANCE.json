@@ -1,0 +1,517 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "05_biology_geo_gse303208_multiomics",
+  "domain": "biology",
+  "title": "GEO GSE303208 host single-cell and intracellular microbial count matrices",
+  "publisher": "NCBI Gene Expression Omnibus",
+  "authoritative_landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+  "authoritative_source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+    "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+  ],
+  "identifiers": [
+    "GSE303208",
+    "GSM9120529",
+    "GSM9120530",
+    "GSM9120545",
+    "GSM9120547",
+    "GSM9120555",
+    "GSM9120567",
+    "GSM9120558",
+    "GSM9120569"
+  ],
+  "release_or_version": "author deposition available at retrieval",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "NCBI public access; deposited-data reuse terms follow the GEO record and source publication",
+  "deterministic_selection_rule": "Retain every deposited barcode, feature, matrix, and microbial supplemental file for the eight fixed GSM accessions, plus SOFT, MINiML, series, and sample metadata.",
+  "exclusions": [
+    "No value-level preprocessing",
+    "No outcome-guided selection",
+    "No controlled-access or credential material"
+  ],
+  "ethics_restrictions": [
+    "Public/deidentified use only where human data are present",
+    "No re-identification",
+    "Generated USER_BRIEF is context, not evidence"
+  ],
+  "transport_and_headers": {
+    "status": "source metadata and mutable-feed companion metadata retained where publisher supplied it; browser-only endpoints are identified by URL",
+    "http_error_masquerade_check_required": true
+  },
+  "substitution": null,
+  "files": [
+    {
+      "path": "context/GSE303208_family.soft.gz",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 7869,
+      "sha256": "014f0e506b6544e27276e1c4ec37e0700a7daf86e9d159eb6544236f2a7484e3",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "context/GSE303208_family.xml.tgz",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 7837,
+      "sha256": "e21bb2178a789f30a4d83989597c3630d3c335947696cf31527647aa2e0cee52",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "context/GSE303208_full.txt",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 4309,
+      "sha256": "0db3429a7ebc7ce7ecc48ef2aec8499671a8436a7b613cf3a40878ecbee4ba0e",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "context/GSM9120529.html",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 25712,
+      "sha256": "b7477145270dfcf0da307966cd48876dea898ded4a0393860e12036dd28de887",
+      "mime_type": "text/html"
+    },
+    {
+      "path": "context/GSM9120530.html",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 25712,
+      "sha256": "4e79b6802a49c89c38c49de3b8e7e45b47f06b3704d785c5f6871230f264831d",
+      "mime_type": "text/html"
+    },
+    {
+      "path": "context/GSM9120545.html",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 25712,
+      "sha256": "9ce5f5081936c9d68ea8d913a3d511c3088abc3b982c35741880fb938ed0a269",
+      "mime_type": "text/html"
+    },
+    {
+      "path": "context/GSM9120547.html",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 25711,
+      "sha256": "5355eae11a623a4924bd762a2c5ce2f41260ecf76392e7afc646e5997fea48d0",
+      "mime_type": "text/html"
+    },
+    {
+      "path": "context/GSM9120555.html",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 25727,
+      "sha256": "5e5ac7ed39a9250391ffb1282b0dd80752b7d4a3efa9c00cf1761477f65940c8",
+      "mime_type": "text/html"
+    },
+    {
+      "path": "context/GSM9120558.html",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 25712,
+      "sha256": "e247bc5a0018cb6180c4eae57f1f0d0f91d3958cc8736d9d04350db5d2bbc2a6",
+      "mime_type": "text/html"
+    },
+    {
+      "path": "context/GSM9120567.html",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 25729,
+      "sha256": "6e48356eaa50d6183d9f964a2081fc98fbf8896bf990c42a76b50ecd47e96169",
+      "mime_type": "text/html"
+    },
+    {
+      "path": "context/GSM9120569.html",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 25712,
+      "sha256": "4ea773121ae84643d0213dc1aa281bf88c1db5af6d8421eb8407139c86eb1891",
+      "mime_type": "text/html"
+    },
+    {
+      "path": "raw/GSM9120529/GSM9120529_b01st01_barcodes.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 4689,
+      "sha256": "464eb61a684f4fb057b30ad42bcf17f4f29768e425fec4a04fb45d175d20f84d",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120529/GSM9120529_b01st01_features.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 490811,
+      "sha256": "19f064284f44ca0c5eaa6937b5db7159430b88e28c683ebe7cca7b82fa8fbeee",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120529/GSM9120529_b01st01_matrix.mtx.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 293284,
+      "sha256": "40443cf0bd7ef11ba785eebb63286fff07adc1f8f697ad6cec2e9c8beb384ab6",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120529/GSM9120529_microbes.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 36803,
+      "sha256": "297a79235c91e383b43dc74d10c56c7706da4608e11d578df27a6521e1edbd70",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120530/GSM9120530_b01st02_barcodes.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 2139,
+      "sha256": "3ee0c4b20c8f7aa7220c2edffb4902e66ccc88c849abaee23b35c575fed93c11",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120530/GSM9120530_b01st02_features.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 490811,
+      "sha256": "5c5f075a150ba018d32424d1567a348850792d9162005805deb2224f0ce9a4df",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120530/GSM9120530_b01st02_matrix.mtx.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 149423,
+      "sha256": "d980a1b86380e208364eba1130a667479de5923446610cf9b1917d62824732db",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120530/GSM9120530_microbes.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 20927,
+      "sha256": "c69a4562313614461ee461c8cbe0cf0ae151d4d27bb3cd09113d862842c93dad",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120545/GSM9120545_b05st05_barcodes.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 8320,
+      "sha256": "5e97289cc0dae146a7b9bfb0ffaae9e296c5f7f788fbb447872544620f1096c0",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120545/GSM9120545_b05st05_features.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 490811,
+      "sha256": "1b918617a2ce8d0eb5f356b38437a8ea6c26613a496227f8ef903597c6c442da",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120545/GSM9120545_b05st05_matrix.mtx.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 5568057,
+      "sha256": "4c7b238f5bc61f3c7a6efe3f8162e379ea0d9844096bfab872cad320a4c46fec",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120545/GSM9120545_microbes.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 21137,
+      "sha256": "7084a43b67673441a77467be6f5cfd42cc565895a657d5f6d35094ebc9dc1085",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120547/GSM9120547_b05st07_barcodes.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 2808,
+      "sha256": "062fc513f4a4841770e6218ef3a1b380d637a16c50a0b28a13e6aa73749df59e",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120547/GSM9120547_b05st07_features.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 490811,
+      "sha256": "3dc926131bf309499d0b8d2bacf25aa9a4dc69f7400a284f374e237fdf56e0ae",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120547/GSM9120547_b05st07_matrix.mtx.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 566754,
+      "sha256": "f6e7bec5598b9367ac8318385c124bf1589bb479ce8603c372b6387604066cdd",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120547/GSM9120547_microbes.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 7739,
+      "sha256": "535370d5b75f6e57563d3022aa605409332984122abbc27cc4d21bc1910404a9",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120555/GSM9120555_b08st04_barcodes.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 19306,
+      "sha256": "36a147cf1cdaf3ed3bd389c942bd638b8ffca7a9a2725d9a0212bcd09749226e",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120555/GSM9120555_b08st04_features.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 490811,
+      "sha256": "8a4aa7101591214ab61379ffd0aec34678924bb735690844182b1eec7ad4def0",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120555/GSM9120555_b08st04_matrix.mtx.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 5955803,
+      "sha256": "deba690f2b304d7ae120dfea6222a28deac32c1ecad0f6b102d32acda625ce54",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120555/GSM9120555_microbes.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 40426,
+      "sha256": "f084f316f4af0000f4e488964142c9e1e7f1f7e2ddbb09f56ab3e8d515c2cbd7",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120558/GSM9120558_b08st07_barcodes.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 12263,
+      "sha256": "ddfe9d897ed993ac18fd94dba2a4080d0d0cd872e2aff55e35e47ac59e9da89f",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120558/GSM9120558_b08st07_features.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 490811,
+      "sha256": "ba2478579f831899e7bc075289e00eb04a87ac2fa6997da7c4df2896d62a5bb5",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120558/GSM9120558_b08st07_matrix.mtx.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 2539848,
+      "sha256": "d99cb00364640e2e56e61b62b93ab3c6ccc448b4444db8743478472e3ec6fea7",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120558/GSM9120558_microbes.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 31586,
+      "sha256": "2ef5eb3b75abbf1f5092ba3b8ae9fc600fec0cae3bfc02ae529edb2ea779ef75",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120567/GSM9120567_b11st04_barcodes.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 29482,
+      "sha256": "8268af6a494c98c8981d274418ad8bc75f44153110a00fe9b47dcc720ab098a6",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120567/GSM9120567_b11st04_features.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 490811,
+      "sha256": "843e0bf5dbff981a1a28d3469316e2034e7fbff4fe0748beb2639484dc49c5e6",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120567/GSM9120567_b11st04_matrix.mtx.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 21386483,
+      "sha256": "eecd1d9540caecc802cbb57e530a6166ded8b5f308afee324c8c9e1e9f18b158",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120567/GSM9120567_microbes.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 49802,
+      "sha256": "a23d77316ee0a408771fe6cc91a45eb2a61252e0af3481d54d1579f65f72930f",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120569/GSM9120569_b11st06_barcodes.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 15270,
+      "sha256": "f30cf5e942b8dd0e0262acde74bf43c635e6683ea1570d866264bc3a8b38ef70",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120569/GSM9120569_b11st06_features.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 490811,
+      "sha256": "b40fa49e064022859c1838cccd22bba28270e05ca0c37edc488ba47409744b1b",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120569/GSM9120569_b11st06_matrix.mtx.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 9105891,
+      "sha256": "b6b348b686672d7f07581b608c05ea2addd5e92604b9290e4a76ee3765f1597b",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/GSM9120569/GSM9120569_microbes.tsv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303208",
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303208/"
+      ],
+      "bytes": 26587,
+      "sha256": "069be07f7bd793efde78f997fcccac0c80a8ad2825fe1b6894d588bf965f238b",
+      "mime_type": "application/gzip"
+    }
+  ]
+}

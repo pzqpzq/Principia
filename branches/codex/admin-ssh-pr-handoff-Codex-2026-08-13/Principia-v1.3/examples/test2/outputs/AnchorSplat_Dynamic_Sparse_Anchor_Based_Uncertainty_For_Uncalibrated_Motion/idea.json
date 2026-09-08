@@ -1,0 +1,149 @@
+{
+  "id": "AnchorSplat_Dynamic_Sparse_Anchor_Based_Uncertainty_For_Uncalibrated_Motion",
+  "title": "AnchorSplat-Dynamic: Sparse Anchor-Based Uncertainty for Uncalibrated Motion",
+  "thesis": "By decoupling Gaussian primitives from the 2D pixel grid and anchoring them to a sparse set of 3D geometric proxies, we jointly optimize pose, motion, and heteroscedastic uncertainty for uncalibrated dynamic scenes, reducing redundancy in static regions while focusing capacity on moving objects.",
+  "mode": "scidialect_evo",
+  "novelty_claim": "First integration of sparse 3D anchor decoupling (AnchorSplat) with joint pose-uncertainty optimization specifically for uncalibrated dynamic sequences, replacing dense pixel-aligned formulations that fail under motion ambiguity.",
+  "mechanism_design": [
+    "A feed-forward encoder predicts sparse 3D anchors and associated Gaussian parameters (appearance, opacity, motion vectors, covariance). A differentiable renderer projects these into input views. A geometric prior module enforces epipolar and motion consistency constraints. An uncertainty head predicts per-Gaussian variance, gating gradient flow during test-time refinement to prevent overfitting to noise in uncalibrated views."
+  ],
+  "methodological_details": {
+    "summary": "Predict sparse anchors and motion-aware Gaussians from uncalibrated inputs, refine via uncertainty-gated optimization.",
+    "symbols": [
+      {
+        "symbol": "$\\mathcal{A}$",
+        "definition": "Set of sparse 3D anchors"
+      },
+      {
+        "symbol": "$\\Sigma_{u}$",
+        "definition": "Heteroscedastic uncertainty covariance per Gaussian"
+      }
+    ],
+    "equations": [
+      {
+        "name": "Uncertainty-Gated Loss",
+        "latex": "$$\\mathcal{L}_{total} = \\sum_{i \\in \\mathcal{A}} (1 - \\sigma_{u,i}) \\cdot \\mathcal{L}_{render}(i) + \\lambda \\mathcal{L}_{geo}(i)$$",
+        "explanation": "Rendering loss is weighted by inverse uncertainty to down-weight unreliable regions during pose refinement."
+      }
+    ],
+    "workflow": [
+      {
+        "step": "Anchor Prediction",
+        "detail": "Feed-forward network extracts sparse 3D anchors and initial motion vectors from input images."
+      },
+      {
+        "step": "Pose Hypothesis",
+        "detail": "Generate camera pose hypotheses using pixel-alignment principles on anchor projections."
+      },
+      {
+        "step": "Uncertainty Estimation",
+        "detail": "Predict per-Gaussian uncertainty maps based on feature variance and reprojection error."
+      },
+      {
+        "step": "Gated Refinement",
+        "detail": "Iteratively refine anchors and poses using uncertainty-weighted gradients."
+      }
+    ],
+    "reliability_checks": [
+      {
+        "check": "Calibration Validity",
+        "detail": "Verify Expected Calibration Error (ECE) <= 0.10 on held-out dynamic frames."
+      },
+      {
+        "check": "Selective Utility",
+        "detail": "Confirm median rendering error decreases when high-uncertainty Gaussians are masked."
+      }
+    ]
+  },
+  "method_variants": [
+    "Variant A: Fixed anchor count vs. Adaptive anchor density based on scene complexity.",
+    "Variant B: Sequential pose-then-uncertainty vs. Joint optimization (required by evidence)."
+  ],
+  "why_it_might_work": [
+    "Sparse anchors reduce the search space for dynamic motion, making the ill-posed uncalibrated problem tractable. Uncertainty gating prevents the optimizer from fitting noise in ambiguous regions."
+  ],
+  "validation_protocol": [
+    "Train on synthetic dynamic scenes (6-12 views). Evaluate on real-world uncalibrated sequences. Metrics: PSNR/SSIM, ECE, Risk-Coverage curves. Baselines: Dense pixel-aligned GS, Pose-dependent LRMs. Pass/Fail: ECE must be <= 0.10; masking top 20% uncertain Gaussians must reduce median error."
+  ],
+  "baselines": [
+    "FreeSplatter (static assumption)",
+    "Standard 3DGS (requires poses)",
+    "LGM (pose-dependent)"
+  ],
+  "metrics": [
+    "PSNR",
+    "SSIM",
+    "LPIPS",
+    "Expected Calibration Error",
+    "Risk-Coverage AUC"
+  ],
+  "risks": [
+    "Anchor collapse in textureless dynamic regions",
+    "Failure to converge if initial pose hypothesis is too far from ground truth"
+  ],
+  "assumptions": [
+    "Motion is locally rigid or smooth",
+    "Sparse views contain sufficient parallax for anchor triangulation"
+  ],
+  "derived_principles": [
+    "Sparsity enables robustness in dynamic uncalibrated settings",
+    "Uncertainty must gate optimization, not just report it"
+  ],
+  "evidence_work_ids": [
+    "W-B458587276BC",
+    "L-2C419FA26265065F632D",
+    "L-1486ADF79DC697C97165",
+    "L-3E96E2D1946E766D4041"
+  ],
+  "source_evidence": [
+    {
+      "work_id": "W-B458587276BC",
+      "work_title": "AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors",
+      "kind": "principles",
+      "record_id": "Decoupling_From_2D_Grid",
+      "record_type": "principle",
+      "title": "Decoupling from 2D Grid",
+      "text": "Pixel-aligned formulations entangle Gaussian representations with input images, leading to redundant primitives in plain regions and insufficient coverage in complex areas."
+    },
+    {
+      "work_id": "L-2C419FA26265065F632D",
+      "work_title": "dynamic reconstruction protocol",
+      "kind": "ideas",
+      "record_id": "Uncertainty_Aware_Dynamic_Reconstruction",
+      "record_type": "idea",
+      "title": "Uncertainty-aware dynamic reconstruction",
+      "text": "A synthetic sparse-view protocol for uncalibrated feed-forward 3D Gaussian splatting that reconstructs time-varying scenes from six to twelve uncalibrated views while exposing uncertainty that tracks geometric failure."
+    },
+    {
+      "work_id": "L-1486ADF79DC697C97165",
+      "work_title": "pose uncertainty design",
+      "kind": "ideas",
+      "record_id": "Joint_Optimization_Of_Pose_And_Uncertainty",
+      "record_type": "idea",
+      "title": "Joint Optimization of Pose and Uncertainty",
+      "text": "Pose and uncertainty must be optimized together rather than sequentially or independently."
+    },
+    {
+      "work_id": "L-3E96E2D1946E766D4041",
+      "work_title": "uncertainty protocol",
+      "kind": "principles",
+      "record_id": "Calibration_Validity",
+      "record_type": "principle",
+      "title": "Calibration Validity",
+      "text": "Uncertainty estimates are considered valid if the expected calibration error does not exceed 0.10."
+    },
+    {
+      "work_id": "L-3E96E2D1946E766D4041",
+      "work_title": "uncertainty protocol",
+      "kind": "principles",
+      "record_id": "Selective_Reconstruction_Utility",
+      "record_type": "principle",
+      "title": "Selective Reconstruction Utility",
+      "text": "Uncertainty estimates are useful if rejecting uncertain elements improves the median rendering error."
+    }
+  ],
+  "lineage": {},
+  "model": "siliconflow:Qwen/Qwen3.5-397B-A17B",
+  "run_id": "RUN_53F5596202F0",
+  "created_at": "2026-07-16T11:22:44+00:00"
+}

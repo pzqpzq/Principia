@@ -1,0 +1,73 @@
+name: Principia v1.4.1 CI
+
+on:
+  push:
+    paths: ["Principia-v1.4.1/**", "global-cloud/**", ".github/workflows/principia-v141-ci.yml"]
+  pull_request:
+    paths: ["Principia-v1.4.1/**", "global-cloud/**", ".github/workflows/principia-v141-ci.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Principia-v1.4.1/core
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: Principia-v1.4.1/core/pyproject.toml
+      - run: python -m pip install -e ".[dev,local,notebook]"
+      - run: python -m pytest -q
+      - run: python -m ruff check src tests scripts
+        if: matrix.python-version == '3.12'
+      - run: python scripts/validate_global_cloud.py ../../global-cloud
+        if: matrix.python-version == '3.12'
+
+  frontend-and-package:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Principia-v1.4.1/core
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: Principia-v1.4.1/core/pyproject.toml
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: pnpm
+          cache-dependency-path: Principia-v1.4.1/core/frontend/pnpm-lock.yaml
+      - run: python -m pip install build twine
+      - run: pnpm install --frozen-lockfile
+        working-directory: Principia-v1.4.1/core/frontend
+      - run: pnpm check && pnpm test -- --run && pnpm build
+        working-directory: Principia-v1.4.1/core/frontend
+      - run: python -m build && python -m twine check dist/*
+      - name: Verify wheel version and packaged UI
+        run: |
+          python - <<'PY'
+          import glob
+          import zipfile
+          wheel = glob.glob("dist/principia_ai-1.4.1-*.whl")
+          assert len(wheel) == 1, wheel
+          with zipfile.ZipFile(wheel[0]) as archive:
+              names = set(archive.namelist())
+          assert "principia/ui_dist/index.html" in names
+          assert "principia/openapi-v1.json" in names
+          PY

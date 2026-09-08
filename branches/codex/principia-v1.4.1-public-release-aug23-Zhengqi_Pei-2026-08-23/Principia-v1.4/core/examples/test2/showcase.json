@@ -1,0 +1,122 @@
+{
+  "audit": {
+    "authenticity_scan": "passed",
+    "code_cells": 6,
+    "code_lines": 56,
+    "output_kinds": [
+      "retrieval_local_metrics",
+      "extraction_provenance",
+      "evidence_counts",
+      "idea_card",
+      "comparison_validation"
+    ],
+    "privacy_scan": "passed",
+    "retained_outputs": 5,
+    "size_bytes": 15625
+  },
+  "notebook": "tutorial.ipynb",
+  "notebook_sha256": "496ec52724a28ff121777b1356b0dacb410c812b9d386727494d813104ead59a",
+  "outputs": [
+    {
+      "kind": "retrieval_local_metrics",
+      "payload": {
+        "embedding_rerank": "embedding_rerank",
+        "idea_id": "AnchorSplat_Dynamic_Sparse_Anchor_Based_Uncertainty_For_Uncalibrated_Motion",
+        "jaccard_at_20": 0.7391304347826086,
+        "judged_works": 50,
+        "local_documents": 5,
+        "online_works": 50,
+        "out_of_scope": 0,
+        "output": "outputs/AnchorSplat_Dynamic_Sparse_Anchor_Based_Uncertainty_For_Uncalibrated_Motion/",
+        "status": "complete",
+        "successful_sources": 3,
+        "top20_relevance": 1.0,
+        "top50_relevance": 1.0
+      },
+      "payload_sha256": "763e85eb0ca8b8e7bc607c99551d10f5dce8a4a743db3cb7de50f7758e55d229"
+    },
+    {
+      "kind": "extraction_provenance",
+      "payload": {
+        "content_types": {
+          "abstract": 15,
+          "html": 15,
+          "local_text": 3,
+          "pdf_text": 22
+        },
+        "feature_bundles": 55,
+        "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+        "provenance_complete": true
+      },
+      "payload_sha256": "f3429d415734b609a4475173717fe63a9c1af7e787f82a78e06e0b3b600af18f"
+    },
+    {
+      "kind": "evidence_counts",
+      "payload": {
+        "contributing_works": 9,
+        "ideas": 5,
+        "previews": [
+          {
+            "kind": "principles",
+            "title": "Decoupling from 2D Grid"
+          },
+          {
+            "kind": "principles",
+            "title": "Efficiency via Sparsity"
+          },
+          {
+            "kind": "takeaways",
+            "title": "Performance in Sparse Sequences"
+          }
+        ],
+        "principles": 5,
+        "takeaways": 5,
+        "total": 15
+      },
+      "payload_sha256": "bb13aee4ab22d3bafb07b5cd40dd2be8e05c5bc8bdf414df075cdedc002891ed"
+    },
+    {
+      "kind": "idea_card",
+      "payload": "**Execution origin:** `live_llm`  \n**Degraded:** `false`\n# AnchorSplat-Dynamic: Sparse Anchor-Based Uncertainty for Uncalibrated Motion\n**Mode:** `scidialect-evo`  \n**Model:** `siliconflow:Qwen/Qwen3.5-397B-A17B`\n**Thesis:** By decoupling Gaussian primitives from the 2D pixel grid and anchoring them to a sparse set of 3D geometric proxies, we jointly optimize pose, motion, and heteroscedastic uncertainty for uncalibrated dynamic scenes, reducing redundancy in static regions while focusing capacity on moving objects.\n**Novelty:** First integration of sparse 3D anchor decoupling (AnchorSplat) with joint pose-uncertainty optimization specifically for uncalibrated dynamic sequences, replacing dense pixel-aligned formulations that fail under motion ambiguity.\n## Mechanism\n- A feed-forward encoder predicts sparse 3D anchors and associated Gaussian parameters (appearance, opacity, motion vectors, covariance). A differentiable renderer projects these into input views. A geometric prior module enforces epipolar and motion consistency constraints. An uncertainty head predicts per-Gaussian variance, gating gradient flow during test-time refinement to prevent overfitting to noise in uncalibrated views.\n## Core equations\n$$\\mathcal{L}_{total} = \\sum_{i \\in \\mathcal{A}} (1 - \\sigma_{u,i}) \\cdot \\mathcal{L}_{render}(i) + \\lambda \\mathcal{L}_{geo}(i)$$\n## Validation\n- Train on synthetic dynamic scenes (6-12 views). Evaluate on real-world uncalibrated sequences. Metrics: PSNR/SSIM, ECE, Risk-Coverage curves. Baselines: Dense pixel-aligned GS, Pose-dependent LRMs. Pass/Fail: ECE must be <= 0.10; masking top 20% uncertain Gaussians must reduce median error.\n**Evidence:** 5 canonical records across 4 works.",
+      "payload_sha256": "c3b5dc99f1430003d5bf81e9faba7e85b21cec8d780cdc4a4edd2625888e8758"
+    },
+    {
+      "kind": "comparison_validation",
+      "payload": {
+        "artifacts": 7,
+        "highlights": [
+          {
+            "difference": "Prior work uses anchors primarily for static scene representation efficiency; the generated idea extends anchors to dynamic scenes by attaching motion vectors and integrating a heteroscedastic uncertainty head ($\\Sigma_{u}$) that actively gates gradient flow during joint pose-uncertainty optimization.",
+            "prior": "AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors"
+          },
+          {
+            "difference": "The prior predicts uncertainty as a passive output metric, whereas the generated idea implements an 'Uncertainty-Gated Loss' where $(1 - \\sigma_{u,i})$ explicitly modulates the rendering loss contribution per Gaussian during test-time refinement.",
+            "prior": "Geometry-conditioned feed-forward reconstruction"
+          },
+          {
+            "difference": "FreeSplatter assumes a static scene and optimizes dense Gaussians; the generated idea introduces sparse 3D anchors with explicit motion vectors and enforces epipolar/motion consistency constraints via a geometric prior module specifically for dynamic sequences.",
+            "prior": "FreeSplatter: Pose-free Gaussian Splatting for Sparse-view 3D Reconstruction"
+          }
+        ],
+        "prior_ideas_compared": 5,
+        "validation": "passed",
+        "validation_schema": "1.0"
+      },
+      "payload_sha256": "a41616474e57b458dd27dfdb3826a9685a1dde1ae268599b4e030dabe24efe64"
+    }
+  ],
+  "readme_row": {
+    "evidence_records": 15,
+    "feature_bundles": 55,
+    "local_documents": 5,
+    "mode": "scidialect-evo",
+    "online_works": 50,
+    "task_id": "test2",
+    "title": "Uncertainty-aware sparse-view dynamic 3D reconstruction",
+    "validation": "passed"
+  },
+  "schema_version": "principia.showcase.v1",
+  "source_notebook_sha256": "5fa43087a81f21d93ba5bdb84daa873b62b653c255e6d27bbb429bbbeb75bfad",
+  "task_id": "test2",
+  "title": "Uncertainty-aware sparse-view dynamic 3D reconstruction"
+}

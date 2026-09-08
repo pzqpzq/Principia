@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Principia Cloud Contribution",
+  "type": "object",
+  "required": ["schema_version", "contribution_id", "created_at", "upload_mode", "work_records"],
+  "properties": {
+    "schema_version": { "const": "principia-cloud-contribution-1.1" },
+    "contribution_id": { "type": "string" },
+    "created_at": { "type": "string" },
+    "created_by": { "type": "object" },
+    "upload_mode": { "enum": ["normal", "force"] },
+    "model_key": { "type": "string" },
+    "work_records": { "type": "array" },
+    "work_version_records": { "type": "array" },
+    "extraction_records": { "type": "array" },
+    "concept_records": { "type": "array" },
+    "relation_records": { "type": "array" },
+    "evidence_records": { "type": "array" },
+    "admin_operations": { "type": "array" },
+    "provenance": { "type": "object" }
+  }
+}

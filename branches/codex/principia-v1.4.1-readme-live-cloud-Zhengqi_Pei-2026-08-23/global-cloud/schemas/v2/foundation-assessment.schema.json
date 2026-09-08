@@ -1,0 +1,156 @@
+{
+  "$defs": {
+    "ReviewAttestation": {
+      "additionalProperties": false,
+      "properties": {
+        "actor": {
+          "maxLength": 300,
+          "minLength": 1,
+          "title": "Actor",
+          "type": "string"
+        },
+        "basis": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Basis",
+          "type": "string"
+        },
+        "reviewed_at": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Reviewed At",
+          "type": "string"
+        },
+        "source_review_status": {
+          "default": "",
+          "maxLength": 100,
+          "title": "Source Review Status",
+          "type": "string"
+        },
+        "trace_id": {
+          "default": "",
+          "maxLength": 500,
+          "title": "Trace Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "actor",
+        "reviewed_at",
+        "basis"
+      ],
+      "title": "ReviewAttestation",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "assessment_id": {
+      "maxLength": 300,
+      "minLength": 3,
+      "title": "Assessment Id",
+      "type": "string"
+    },
+    "content_digest": {
+      "default": "",
+      "title": "Content Digest",
+      "type": "string"
+    },
+    "created_at": {
+      "title": "Created At",
+      "type": "string"
+    },
+    "foundation_link_ids": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 4,
+      "title": "Foundation Link Ids",
+      "type": "array"
+    },
+    "frontier_candidate": {
+      "default": false,
+      "title": "Frontier Candidate",
+      "type": "boolean"
+    },
+    "generation_trace": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "maxItems": 100,
+      "title": "Generation Trace",
+      "type": "array"
+    },
+    "principle_id": {
+      "title": "Principle Id",
+      "type": "string"
+    },
+    "principle_revision": {
+      "minimum": 1,
+      "title": "Principle Revision",
+      "type": "integer"
+    },
+    "rationale": {
+      "maxLength": 20000,
+      "minLength": 1,
+      "title": "Rationale",
+      "type": "string"
+    },
+    "review_attestation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReviewAttestation"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "review_status": {
+      "default": "unassessed",
+      "enum": [
+        "reviewed",
+        "unassessed"
+      ],
+      "title": "Review Status",
+      "type": "string"
+    },
+    "revision": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Revision",
+      "type": "integer"
+    },
+    "schema_version": {
+      "const": "global-foundation-assessment-v1",
+      "default": "global-foundation-assessment-v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "updated_at": {
+      "title": "Updated At",
+      "type": "string"
+    },
+    "verdict": {
+      "enum": [
+        "grounded",
+        "ungrounded_solid",
+        "ambiguous",
+        "invalid"
+      ],
+      "title": "Verdict",
+      "type": "string"
+    }
+  },
+  "required": [
+    "assessment_id",
+    "principle_id",
+    "principle_revision",
+    "verdict",
+    "rationale"
+  ],
+  "title": "FoundationAssessmentRevision",
+  "type": "object"
+}

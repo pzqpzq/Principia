@@ -1,0 +1,155 @@
+CONSUMER COMPLAINTS
+
+The COMPLAINTS file contains all safety-related defect complaints received 
+by NHTSA since January 1, 1995.
+
+File characteristics:
+
+-  All the records are TAB delimited
+-  All dates are in YYYYMMDD format
+
+-  Maximum record length: 2824
+
+Change log:
+1. Fields 21 - 46 were added on Sept. 14, 2007
+2. Changed flat file extension from .lst to .txt on Sept. 14, 2007
+3. Field 47 was added on Oct. 15, 2007
+4. Field 34 was changed from CHAR(20) to CHAR(30) on Aug. 08, 2008
+5. Field 18 was changed from NUMBER(6) to NUMBER(7) on Jun. 18, 2010
+6. Complaint Type 'MIVQ' was added to Field 21 list on Mar. 21, 2013
+7. Complaint Type 'MAVQ' was added to Field 21 list on Jan. 17, 2014
+8. Field 48 was added on Apr. 24, 2014
+9. Field 49 was added on Sept. 29, 2015
+10. Flat file content changes May 17 - June 17, 2021
+11. Information message updated on June 28, 2021
+12. Fields 50-51 were added on April 30, 2026
+
+=======
+May 17 - June 17, 2021 - Flat file content changes.
+* Previously blank Y/N fields (such as crash or fire) will now show as N.
+* Previously blank values for numeric fields will now show as zero.
+* Manufacturer name, make, model and component name of the product(s) in a complaint may have changed over time and the new flat file will now reflect them.
+* If a complaint had multiple dealer contacts, only a single dealer's contact information will now show.
+* Additional minor differences due to data cleanup in a relatively small number of records in the flat file.
+=======
+June 28, 2021 - Flat file content changes.
+The NHTSA system that generates the complaints file underwent an update during the weekend of May 16-17, 2021. The update has caused discrepancies between the contents of the complaints file between the version posted on Friday, May 15, 2021 (before the system update) and the versions posted daily since Monday, May 17, 2021 (after the system update) and continuing to date. Lookup of complaints on the NHTSA public website are unaffected.
+We are working to resolve the issue. In the meantime, we will continue to publish data daily as it will contain newly received complaints by NHTSA. The complaint data is included in the single FLAT_CMPL.zip and the COMPLAINTS_RECEIVED_YYYY-YYYY.zip files, which contain the same data broken down into 5-year chunks by received date. Note that the format of the complaint files has not and will not change. Once resolved, you may still see minor data differences between the latest version and that from prior to the system update.
+We will continue to update this message as needed until the issue is resolved.
+=======
+April 30, 2026 - Flat file content changes.
+Added Field #50: State of Incident and Field #51: Vehicle Operator
+
+=======
+Last updated: April 30, 2026
+
+FIELDS:
+=======
+
+Field#  Name              Type/Size     Description
+------  ---------         ---------     --------------------------------------
+1       CMPLID            CHAR(9)       NHTSA'S INTERNAL UNIQUE SEQUENCE NUMBER.
+                                        IS AN UPDATEABLE FIELD,THUS DATA FOR A
+                                        GIVEN RECORD POTENTIALLY COULD CHANGE FROM
+                                        ONE DATA OUTPUT FILE TO THE NEXT.
+2       ODINO             CHAR(9)       NHTSA'S INTERNAL REFERENCE NUMBER.
+                                        THIS NUMBER MAY BE REPEATED FOR
+                                        MULTIPLE COMPONENTS.
+                                        ALSO, IF LDATE IS PRIOR TO DEC 15, 2002,
+                                        THIS NUMBER MAY BE REPEATED FOR MULTIPLE
+                                        PRODUCTS OWNED BY THE SAME COMPLAINANT.
+3       MFR_NAME          CHAR(40)      MANUFACTURER'S NAME
+4       MAKETXT           CHAR(25)      VEHICLE/EQUIPMENT MAKE
+5       MODELTXT          CHAR(256)     VEHICLE/EQUIPMENT MODEL
+6       YEARTXT           CHAR(4)       MODEL YEAR, 9999 IF UNKNOWN or N/A
+7       CRASH             CHAR(1)       WAS VEHICLE INVOLVED IN A CRASH, 'Y' OR 'N'
+8       FAILDATE          CHAR(8)       DATE OF INCIDENT (YYYYMMDD)
+9       FIRE              CHAR(1)       WAS VEHICLE INVOLVED IN A FIRE 'Y' OR 'N'
+10      INJURED           NUMBER(2)     NUMBER OF PERSONS INJURED
+11      DEATHS            NUMBER(2)     NUMBER OF FATALITIES
+12      COMPDESC          CHAR(128)     SPECIFIC COMPONENT'S DESCRIPTION
+13      CITY              CHAR(30)      CONSUMER'S CITY
+14      STATE             CHAR(2)       CONSUMER'S STATE CODE
+15      VIN               CHAR(11)      VEHICLE'S VIN#
+16      DATEA             CHAR(8)       DATE ADDED TO FILE (YYYYMMDD)
+17      LDATE             CHAR(8)       DATE COMPLAINT RECEIVED BY NHTSA (YYYYMMDD)
+18      MILES             NUMBER(7)     VEHICLE MILEAGE AT FAILURE
+19      OCCURENCES        NUMBER(4)     NUMBER OF OCCURRENCES
+20      CDESCR            CHAR(2048)    DESCRIPTION OF THE COMPLAINT
+21      CMPL_TYPE         CHAR(4)       SOURCE OF COMPLAINT CODE:
+                                          CAG  =CONSUMER ACTION GROUP
+                                          CON  =FORWARDED FROM A CONGRESSIONAL OFFICE
+                                          DP   =DEFECT PETITION,RESULT OF A DEFECT PETITION
+                                          EVOQ =HOTLINE VOQ
+                                          EWR  =EARLY WARNING REPORTING
+                                          INS  =INSURANCE COMPANY
+                                          IVOQ =NHTSA WEB SITE
+                                          LETR =CONSUMER LETTER
+                                          MAVQ =NHTSA MOBILE APP
+                                          MIVQ =NHTSA MOBILE APP
+                                          MVOQ =OPTICAL MARKED VOQ
+                                          RC   =RECALL COMPLAINT,RESULT OF A RECALL INVESTIGATION
+                                          RP   =RECALL PETITION,RESULT OF A RECALL PETITION
+                                          SVOQ =PORTABLE SAFETY COMPLAINT FORM (PDF)
+                                          VOQ  =NHTSA VEHICLE OWNERS QUESTIONNAIRE
+22      POLICE_RPT_YN     CHAR(1)       WAS INCIDENT REPORTED TO POLICE 'Y' OR 'N'
+23      PURCH_DT          CHAR(8)       DATE PURCHASED (YYYYMMDD)
+24      ORIG_OWNER_YN     CHAR(1)       WAS ORIGINAL OWNER 'Y' OR 'N'
+25      ANTI_BRAKES_YN    CHAR(1)       ANTI-LOCK BRAKES 'Y' OR 'N'
+26      CRUISE_CONT_YN    CHAR(1)       CRUISE CONTROL 'Y' OR 'N'
+27      NUM_CYLS          NUMBER(2)     NUMBER OF CYLINDERS
+28      DRIVE_TRAIN       CHAR(4)       DRIVE TRAIN TYPE [AWD,4WD,FWD,RWD]
+29      FUEL_SYS          CHAR(4)       FUEL SYSTEM CODE:
+                                           FI =FUEL INJECTION
+                                           TB =TURBO
+30      FUEL_TYPE         CHAR(4)       FUEL TYPE CODE:
+                                           BF =BIFUEL
+                                           CN =CNG/LPG
+                                           DS =DIESEL
+                                           GS =GAS
+                                           HE =HYBRID ELECTRIC
+31      TRANS_TYPE        CHAR(4)       VEHICLE TRANSMISSION TYPE [AUTO, MAN]
+32      VEH_SPEED         NUMBER(3)     VEHICLE SPEED
+33      DOT               CHAR(20)      DEPARTMENT OF TRANSPORTATION TIRE IDENTIFIER
+34      TIRE_SIZE         CHAR(30)      TIRE SIZE
+35      LOC_OF_TIRE       CHAR(4)       LOCATION OF TIRE CODE:
+                                           FSW =DRIVER SIDE FRONT
+                                           DSR =DRIVER SIDE REAR
+                                           FTR =PASSENGER SIDE FRONT
+                                           PSR =PASSENGER SIDE REAR
+                                           SPR =SPARE
+36      TIRE_FAIL_TYPE    CHAR(4)       TYPE OF TIRE FAILURE CODE:
+                                           BST =BLISTER
+                                           BLW =BLOWOUT
+                                           TTL =CRACK
+                                           OFR =OUT OF ROUND
+                                           TSW =PUNCTURE
+                                           TTR =ROAD HAZARD
+                                           TSP =TREAD SEPARATION
+37      ORIG_EQUIP_YN     CHAR(1)       WAS PART ORIGINAL EQUIPMENT 'Y' OR 'N'
+38      MANUF_DT          CHAR(8)       DATE OF MANUFACTURE (YYYYMMDD)
+39      SEAT_TYPE         CHAR(4)       TYPE OF CHILD SEAT CODE:
+                                           B  =BOOSTER
+                                           C  =CONVERTIBLE
+                                           I  =INFANT
+                                           IN =INTEGRATED
+                                           TD =TODDLER
+40     RESTRAINT_TYPE     CHAR(4)       INSTALLATION SYSTEM CODE;
+                                           A =VEHICLE SAFETY BELT
+                                           B =LATCH SYSTEM
+41     DEALER_NAME        CHAR(40)      DEALER'S NAME
+42     DEALER_TEL         CHAR(20)      DEALER'S TELEPHONE NUMBER
+43     DEALER_CITY        CHAR(30)      DEALER'S CITY
+44     DEALER_STATE       CHAR(2)       DEALER'S STATE CODE
+45     DEALER_ZIP         CHAR(10)      DEALER'S ZIPCODE
+46     PROD_TYPE          CHAR(4)       PRODUCT TYPE CODE:
+                                           V =VEHICLE
+                                           T =TIRES
+                                           E =EQUIPMENT
+                                           C =CHILD RESTRAINT
+47     REPAIRED_YN        CHAR(1)       WAS DEFECTIVE TIRE REPAIRED 'Y' OR 'N'
+48     MEDICAL_ATTN       CHAR(1)       WAS MEDICAL ATTENTION REQUIRED 'Y' OR 'N'
+49     VEHICLES_TOWED_YN  CHAR(1)       WAS VEHICLE TOWED 'Y' OR 'N'
+50     STATE_OF_INCIDENT  CHAR(2)       INCIDENT STATE CODE
+51     VEHICLE_OPERATOR   CHAR(40)      VEHICLE OPERATOR'S NAME
+

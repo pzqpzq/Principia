@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Principia Cloud Manifest",
+  "type": "object",
+  "required": ["schema_version", "snapshot_id", "created_at", "assets"],
+  "properties": {
+    "schema_version": { "const": "principia-cloud-1.1" },
+    "snapshot_id": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string" },
+    "counts": { "type": "object" },
+    "supported_model_keys": { "type": "array", "items": { "type": "string" } },
+    "route_indexes": { "type": "object" },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["asset_id", "kind", "url", "bytes", "sha256"],
+        "properties": {
+          "asset_id": { "type": "string" },
+          "kind": { "type": "string" },
+          "record_type": { "type": "string" },
+          "route_type": { "type": "string" },
+          "url": { "type": "string" },
+          "bytes": { "type": "integer", "maximum": 2147483647 },
+          "sha256": { "type": "string" }
+        }
+      }
+    },
+    "deltas": { "type": "array" },
+    "tombstones": { "type": "array" }
+  }
+}

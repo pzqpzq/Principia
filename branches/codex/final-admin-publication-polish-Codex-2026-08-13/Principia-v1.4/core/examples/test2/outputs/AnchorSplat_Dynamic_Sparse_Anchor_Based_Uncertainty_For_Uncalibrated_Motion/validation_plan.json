@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "idea_id": "AnchorSplat_Dynamic_Sparse_Anchor_Based_Uncertainty_For_Uncalibrated_Motion",
+  "idea_title": "AnchorSplat-Dynamic: Sparse Anchor-Based Uncertainty for Uncalibrated Motion",
+  "goal": "Develop uncertainty-aware sparse-view dynamic 3D reconstruction by combining feed-forward 3D Gaussian splatting with geometric priors for uncalibrated images.",
+  "thesis": "By decoupling Gaussian primitives from the 2D pixel grid and anchoring them to a sparse set of 3D geometric proxies, we jointly optimize pose, motion, and heteroscedastic uncertainty for uncalibrated dynamic scenes, reducing redundancy in static regions while focusing capacity on moving objects.",
+  "validation_protocol": [
+    "Train on synthetic dynamic scenes (6-12 views). Evaluate on real-world uncalibrated sequences. Metrics: PSNR/SSIM, ECE, Risk-Coverage curves. Baselines: Dense pixel-aligned GS, Pose-dependent LRMs. Pass/Fail: ECE must be <= 0.10; masking top 20% uncertain Gaussians must reduce median error."
+  ],
+  "baselines": [
+    "FreeSplatter (static assumption)",
+    "Standard 3DGS (requires poses)",
+    "LGM (pose-dependent)"
+  ],
+  "comparators": [
+    "FreeSplatter (static assumption)",
+    "Standard 3DGS (requires poses)",
+    "LGM (pose-dependent)"
+  ],
+  "metrics": [
+    "PSNR",
+    "SSIM",
+    "LPIPS",
+    "Expected Calibration Error",
+    "Risk-Coverage AUC"
+  ],
+  "risks": [
+    "Anchor collapse in textureless dynamic regions",
+    "Failure to converge if initial pose hypothesis is too far from ground truth"
+  ],
+  "assumptions": [
+    "Motion is locally rigid or smooth",
+    "Sparse views contain sufficient parallax for anchor triangulation"
+  ],
+  "evidence_references": [
+    {
+      "work_id": "W-B458587276BC",
+      "record_id": "Decoupling_From_2D_Grid",
+      "kind": "principles",
+      "title": "Decoupling from 2D Grid",
+      "text": "Pixel-aligned formulations entangle Gaussian representations with input images, leading to redundant primitives in plain regions and insufficient coverage in complex areas."
+    },
+    {
+      "work_id": "L-2C419FA26265065F632D",
+      "record_id": "Uncertainty_Aware_Dynamic_Reconstruction",
+      "kind": "ideas",
+      "title": "Uncertainty-aware dynamic reconstruction",
+      "text": "A synthetic sparse-view protocol for uncalibrated feed-forward 3D Gaussian splatting that reconstructs time-varying scenes from six to twelve uncalibrated views while exposing uncertainty that tracks geometric failure."
+    },
+    {
+      "work_id": "L-1486ADF79DC697C97165",
+      "record_id": "Joint_Optimization_Of_Pose_And_Uncertainty",
+      "kind": "ideas",
+      "title": "Joint Optimization of Pose and Uncertainty",
+      "text": "Pose and uncertainty must be optimized together rather than sequentially or independently."
+    },
+    {
+      "work_id": "L-3E96E2D1946E766D4041",
+      "record_id": "Calibration_Validity",
+      "kind": "principles",
+      "title": "Calibration Validity",
+      "text": "Uncertainty estimates are considered valid if the expected calibration error does not exceed 0.10."
+    },
+    {
+      "work_id": "L-3E96E2D1946E766D4041",
+      "record_id": "Selective_Reconstruction_Utility",
+      "kind": "principles",
+      "title": "Selective Reconstruction Utility",
+      "text": "Uncertainty estimates are useful if rejecting uncertain elements improves the median rendering error."
+    }
+  ],
+  "model": "siliconflow:Qwen/Qwen3.5-397B-A17B",
+  "mode": "scidialect_evo",
+  "run_id": "RUN_53F5596202F0",
+  "idea_created_at": "2026-07-16T11:22:44+00:00",
+  "created_at": "2026-07-16T11:23:02+00:00"
+}

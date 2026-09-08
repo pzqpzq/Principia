@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Principia Record</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="idea-page">
+    <main class="idea-shell">
+      <section class="idea-hero">
+        <p id="itemKind" class="eyebrow">Record</p>
+        <h1 id="itemTitle">Loading</h1>
+        <p id="itemSummary" class="subtle"></p>
+        <div class="idea-toolbar">
+          <label class="version-field">
+            <span>Version</span>
+            <select id="itemVersionSelect"></select>
+          </label>
+          <label class="model-field">
+            <span>Target LLM</span>
+            <select id="itemModelMode">
+              <option value="auto">Auto router</option>
+              <option value="qwen_27b">Qwen3.6-27B</option>
+              <option value="qwen_35b">Qwen3.6-35B-A3B</option>
+              <option value="strong">DeepSeek-V3</option>
+              <option value="deepseek_pro">DeepSeek-V4-Pro</option>
+              <option value="deepseek_r1">DeepSeek-R1</option>
+              <option value="kimi">Kimi-K2.6 Pro</option>
+              <option value="qwen_122b">Qwen3.5-122B-A10B</option>
+              <option value="qwen_397b">Qwen3.5-397B-A17B</option>
+              <option value="glm">GLM-5.1 Pro</option>
+              <option value="openai_gpt52_pro">OpenAI GPT-5.2 Pro</option>
+              <option value="openai_gpt5_pro">OpenAI GPT-5 Pro</option>
+              <option value="openai_gpt55">OpenAI GPT-5.5</option>
+              <option value="openai_gpt55_pro_20260423">OpenAI GPT-5.5 Pro 2026-04-23</option>
+            </select>
+          </label>
+          <button id="editItemBtn" type="button" class="secondary-btn">Edit</button>
+          <button id="refreshItemBtn" type="button" class="primary-btn">Regenerate</button>
+          <button id="cancelRefreshItemBtn" type="button" class="secondary-btn danger-btn" data-allow-busy="true" hidden>Cancel</button>
+          <button id="deleteItemBtn" type="button" class="secondary-btn danger-btn">Delete</button>
+        </div>
+        <div id="itemRunStatus" class="research-status">Ready</div>
+      </section>
+      <section id="itemBody" class="idea-section"></section>
+      <form id="itemEditForm" class="idea-section detail-edit" hidden>
+        <h2>Edit Current Record</h2>
+        <div id="itemEditFields" class="edit-field-grid"></div>
+        <details class="advanced-json">
+          <summary>Advanced JSON</summary>
+          <label class="full-field">
+            <span>Active payload</span>
+            <textarea id="itemEditInput" rows="10"></textarea>
+          </label>
+        </details>
+        <div class="modal-actions">
+          <button id="cancelItemEditBtn" type="button" class="secondary-btn">Cancel</button>
+          <button type="submit" class="primary-btn">Save Manual Version</button>
+        </div>
+      </form>
+    </main>
+    <script src="/item.js"></script>
+  </body>
+</html>

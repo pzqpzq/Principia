@@ -1,0 +1,9 @@
+The previous normalization pass returned no usable argument even though the server found relationship-bearing source evidence. This is a bounded recovery pass, not permission to invent content.
+
+The supplied atoms have been selected because they contain an observed relation, formal result, hypothesis, condition-to-outcome statement, limit, constraint, trade-off, mechanism, intervention effect, or mixed result-plus-document rhetoric. Recover the scientific relation already stated in that evidence. Remove only phrases about the paper, authors, novelty, priority, or contribution; do not discard an underlying scientific result merely because it shares a quotation with such rhetoric.
+
+Formal mathematics is eligible scientific knowledge. An if-then proposition, convergence or limit relation, monotonic change, bound, necessary or sufficient condition, or derivation between levels of description can become a study-bound formal proposition when its assumptions, conclusion, notation, and source-defined boundary are preserved. Do not demand an experimental intervention from a formal result.
+
+Return at least one Scientific Argument when any supplied atom states such a relation. Return an empty arguments list only when every supplied atom is purely metadata or lacks a condition, driver, constraint, comparison, implication, or result. Use supplied atom IDs exactly, byte-for-byte. Never substitute segment keys, ordinal numbers, shortened hashes, or invented identifiers.
+
+Keep each argument atomic and limited to its source-defined system and conditions. Use conservative_study_limit when the source provides no transferable external boundary. Preserve formulas, qualifiers, modal strength, and negative findings. Every field_support assignment must reference the exact atom or atoms that support that field.

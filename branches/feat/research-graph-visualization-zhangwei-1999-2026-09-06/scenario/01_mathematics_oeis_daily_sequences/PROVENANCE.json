@@ -1,0 +1,71 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "01_mathematics_oeis_daily_sequences",
+  "domain": "mathematics",
+  "title": "OEIS daily sequence corpus",
+  "publisher": "OEIS Foundation Inc.",
+  "authoritative_landing_url": "https://oeis.org/wiki/Download",
+  "authoritative_source_urls": [
+    "https://oeis.org/stripped.gz",
+    "https://oeis.org/names.gz",
+    "https://oeis.org/wiki/Download"
+  ],
+  "identifiers": [],
+  "release_or_version": "rolling snapshot",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "CC BY-SA 4.0",
+  "deterministic_selection_rule": "Freeze stripped.gz and names.gz in one retrieval window; no sequence-level selection.",
+  "exclusions": [
+    "No value-level preprocessing",
+    "No outcome-guided selection",
+    "No controlled-access or credential material"
+  ],
+  "ethics_restrictions": [
+    "Public/deidentified use only where human data are present",
+    "No re-identification",
+    "Generated USER_BRIEF is context, not evidence"
+  ],
+  "transport_and_headers": {
+    "status": "source metadata and mutable-feed companion metadata retained where publisher supplied it; browser-only endpoints are identified by URL",
+    "http_error_masquerade_check_required": true
+  },
+  "substitution": null,
+  "files": [
+    {
+      "path": "context/OEIS_Download.html",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://oeis.org/stripped.gz",
+        "https://oeis.org/names.gz",
+        "https://oeis.org/wiki/Download"
+      ],
+      "bytes": 17657,
+      "sha256": "01435e0a70c6cc9e4c66312ce985b2e5e33429a98fddaa88b83ba067907823bd",
+      "mime_type": "text/html"
+    },
+    {
+      "path": "raw/names.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://oeis.org/stripped.gz",
+        "https://oeis.org/names.gz",
+        "https://oeis.org/wiki/Download"
+      ],
+      "bytes": 7558398,
+      "sha256": "a01c8e0bb3dfbfa575d0493527e2bcd16b29f13175208f46cd093a12518065b9",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/stripped.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://oeis.org/stripped.gz",
+        "https://oeis.org/names.gz",
+        "https://oeis.org/wiki/Download"
+      ],
+      "bytes": 31870432,
+      "sha256": "cdfb3ed740deed9b62da9c58dca54ef77c1b555ff5fc2f53dd09e8afe040ee12",
+      "mime_type": "application/gzip"
+    }
+  ]
+}

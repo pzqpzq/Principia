@@ -1,0 +1,71 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "14_sociology_census_htops_2026",
+  "domain": "sociology",
+  "title": "Census HTOPS Household Pulse March and May 2026 public-use files",
+  "publisher": "U.S. Census Bureau",
+  "authoritative_landing_url": "https://www.census.gov/programs-surveys/household-pulse-survey/data/datasets.html",
+  "authoritative_source_urls": [
+    "https://www2.census.gov/programs-surveys/demo/datasets/hhp/2026/topical/HTOPS_HPS_2603_CSV.zip",
+    "https://www2.census.gov/programs-surveys/demo/datasets/hhp/2026/topical/HTOPS_HPS_2605_CSV.zip",
+    "https://www.census.gov/programs-surveys/household-pulse-survey/technical-documentation.html"
+  ],
+  "identifiers": [],
+  "release_or_version": "March and May 2026 releases",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "U.S. Census Bureau public-use data",
+  "deterministic_selection_rule": "Retain the March and May CSV PUF ZIPs as downloaded, with their embedded replicate weights and dictionaries, plus retrievable official 2026 questionnaire context.",
+  "exclusions": [
+    "No value-level preprocessing",
+    "No outcome-guided selection",
+    "No controlled-access or credential material"
+  ],
+  "ethics_restrictions": [
+    "Public/deidentified use only where human data are present",
+    "No re-identification",
+    "Generated USER_BRIEF is context, not evidence"
+  ],
+  "transport_and_headers": {
+    "status": "source metadata and mutable-feed companion metadata retained where publisher supplied it; browser-only endpoints are identified by URL",
+    "http_error_masquerade_check_required": true
+  },
+  "substitution": null,
+  "files": [
+    {
+      "path": "context/HTOPS_2605_Questionnaire_ENGLISH.pdf",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://www2.census.gov/programs-surveys/demo/datasets/hhp/2026/topical/HTOPS_HPS_2603_CSV.zip",
+        "https://www2.census.gov/programs-surveys/demo/datasets/hhp/2026/topical/HTOPS_HPS_2605_CSV.zip",
+        "https://www.census.gov/programs-surveys/household-pulse-survey/technical-documentation.html"
+      ],
+      "bytes": 352416,
+      "sha256": "ab4c33b161ac42c4c15531483cc36b9c9c7e9a032a2654cc3b298e0cb32af860",
+      "mime_type": "application/pdf"
+    },
+    {
+      "path": "raw/HTOPS_HPS_2603_CSV.zip",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www2.census.gov/programs-surveys/demo/datasets/hhp/2026/topical/HTOPS_HPS_2603_CSV.zip",
+        "https://www2.census.gov/programs-surveys/demo/datasets/hhp/2026/topical/HTOPS_HPS_2605_CSV.zip",
+        "https://www.census.gov/programs-surveys/household-pulse-survey/technical-documentation.html"
+      ],
+      "bytes": 19598367,
+      "sha256": "0729655808427e3be6d9cdefdef1fa44a3e7fc5bd10aa9aad96c56a990d48a54",
+      "mime_type": "application/zip"
+    },
+    {
+      "path": "raw/HTOPS_HPS_2605_CSV.zip",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www2.census.gov/programs-surveys/demo/datasets/hhp/2026/topical/HTOPS_HPS_2603_CSV.zip",
+        "https://www2.census.gov/programs-surveys/demo/datasets/hhp/2026/topical/HTOPS_HPS_2605_CSV.zip",
+        "https://www.census.gov/programs-surveys/household-pulse-survey/technical-documentation.html"
+      ],
+      "bytes": 19647452,
+      "sha256": "11a31898bab1f7653f5c41dec374286e8bb8efba731d62e2aee55526f25c3c85",
+      "mime_type": "application/zip"
+    }
+  ]
+}

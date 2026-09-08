@@ -1,0 +1,84 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "evidence_digest": {
+      "default": "",
+      "title": "Evidence Digest",
+      "type": "string"
+    },
+    "page": {
+      "anyOf": [
+        {
+          "maximum": 100000,
+          "minimum": 1,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Page"
+    },
+    "principle_id": {
+      "title": "Principle Id",
+      "type": "string"
+    },
+    "principle_revision": {
+      "minimum": 1,
+      "title": "Principle Revision",
+      "type": "integer"
+    },
+    "role": {
+      "default": "evidence",
+      "enum": [
+        "evidence",
+        "proof",
+        "falsifier",
+        "context"
+      ],
+      "title": "Role",
+      "type": "string"
+    },
+    "role_detail": {
+      "default": "",
+      "maxLength": 500,
+      "title": "Role Detail",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "global-principle-work-v2",
+      "default": "global-principle-work-v2",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "section": {
+      "default": "",
+      "maxLength": 500,
+      "title": "Section",
+      "type": "string"
+    },
+    "source_observations": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "maxItems": 100,
+      "title": "Source Observations",
+      "type": "array"
+    },
+    "work_id": {
+      "maxLength": 200,
+      "minLength": 3,
+      "title": "Work Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "principle_id",
+    "principle_revision",
+    "work_id"
+  ],
+  "title": "PrincipleWorkLinkV2",
+  "type": "object"
+}

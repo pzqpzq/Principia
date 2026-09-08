@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pzqpzq.github.io/Principia/cloud/schemas/v1/principle-work-link.schema.json",
+  "title": "Principia Global PrincipleWorkLink v1",
+  "type": "object",
+  "required": ["schema_version", "principle_id", "principle_revision", "work_id", "role"],
+  "properties": {
+    "schema_version": {"const": "global-principle-work-v1"},
+    "principle_revision": {"type": "integer", "minimum": 1},
+    "role": {"enum": ["evidence", "proof", "falsifier", "context"]}
+  },
+  "additionalProperties": true
+}

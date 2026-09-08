@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Principia Cloud Library</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/cloud.css" />
+  </head>
+  <body>
+    <main class="cloud-shell">
+      <header class="cloud-header">
+        <div>
+          <p class="eyebrow">Principia V1.1</p>
+          <h1>Cloud Library</h1>
+        </div>
+        <nav class="cloud-actions">
+          <a class="ghost-button" href="#cloudCrawler">Crawler</a>
+          <a class="ghost-button" href="#cloudSearch">Search</a>
+          <a class="ghost-button" href="/">Workspace</a>
+          <button id="refreshStats" type="button">Refresh</button>
+        </nav>
+      </header>
+
+      <section class="cloud-band stats-band" aria-label="Cloud snapshot stats">
+        <div class="stat">
+          <span>Snapshot</span>
+          <strong id="snapshotId">-</strong>
+        </div>
+        <div class="stat">
+          <span>Works</span>
+          <strong id="workCount">0</strong>
+        </div>
+        <div class="stat">
+          <span>Concepts</span>
+          <strong id="conceptCount">0</strong>
+        </div>
+        <div class="stat">
+          <span>Assets</span>
+          <strong id="assetCount">0</strong>
+        </div>
+        <div class="stat">
+          <span>Payload Cache</span>
+          <strong id="payloadCacheCount">0</strong>
+        </div>
+        <div class="stat">
+          <span>Admin Mode</span>
+          <strong id="adminMode">-</strong>
+        </div>
+      </section>
+
+      <section id="cloudCrawler" class="cloud-band crawler-band" aria-label="Cloud crawler">
+        <div class="crawler-head">
+          <div>
+            <h2>Auto Crawler</h2>
+            <span id="crawlCount">0 candidates</span>
+          </div>
+          <div id="crawlRunStatus" class="run-status">Idle</div>
+        </div>
+        <form id="crawlForm" class="crawler-form">
+          <div class="crawler-actions">
+            <label class="checkbox-row">
+              <input id="crawlForce" type="checkbox" />
+              <span>Force refresh</span>
+            </label>
+            <div class="button-row">
+              <button id="planCrawl" type="submit">Plan Crawl</button>
+              <button id="runCrawl" type="button">Run Research</button>
+            </div>
+          </div>
+          <div class="crawler-grid">
+            <input id="crawlKey" type="password" placeholder="Admin key" autocomplete="off" />
+            <input id="crawlVenues" type="search" value="ICLR,NeurIPS,ICML,CVPR,ACL" placeholder="Venues" autocomplete="off" />
+            <input id="crawlYears" type="search" value="2024,2025,2026" placeholder="Years" autocomplete="off" />
+            <input id="crawlTopics" type="search" placeholder="Topics" autocomplete="off" />
+            <input id="crawlRules" type="search" value="venue,recency,topic,citation" placeholder="Priority rules" autocomplete="off" />
+            <input id="crawlMax" type="number" min="1" max="1000" value="100" aria-label="Max papers" />
+            <input id="crawlModelMode" type="search" value="auto" placeholder="Model mode" autocomplete="off" />
+            <input id="crawlModelKey" type="search" placeholder="Model key" autocomplete="off" />
+            <input id="crawlFieldId" type="search" value="cloud-crawl" placeholder="Project ID" autocomplete="off" />
+            <input id="crawlTimeout" type="number" min="3" max="30" value="12" aria-label="Metadata timeout seconds" />
+          </div>
+        </form>
+      </section>
+
+      <section class="cloud-band search-band" aria-label="Cloud search">
+        <form id="cloudSearch" class="search-row">
+          <input id="query" name="query" type="search" placeholder="DOI, arXiv ID, title token, benchmark, baseline" autocomplete="off" />
+          <input id="venueFilter" name="venue" type="search" placeholder="Venue" autocomplete="off" />
+          <input id="yearFilter" name="year" type="number" inputmode="numeric" placeholder="Year" />
+          <select id="conceptTypeFilter" name="concept_type" aria-label="Concept type">
+            <option value="">All concepts</option>
+            <option value="principle">Principles</option>
+            <option value="existed_idea">Existed ideas</option>
+            <option value="takeaway_message">Takeaways</option>
+            <option value="benchmark">Benchmarks</option>
+            <option value="baseline">Baselines</option>
+            <option value="result_fact">Results</option>
+          </select>
+          <button type="submit">Search</button>
+        </form>
+        <div id="statusLine" class="status-line"></div>
+      </section>
+
+      <section class="cloud-grid">
+        <div class="cloud-panel">
+          <div class="panel-head">
+            <h2>Results</h2>
+            <span id="resultCount">0</span>
+          </div>
+          <div id="results" class="result-list"></div>
+        </div>
+        <div class="cloud-panel detail-panel">
+          <div class="panel-head">
+            <h2>Detail</h2>
+            <span id="detailKind">-</span>
+          </div>
+          <pre id="detailJson">{}</pre>
+        </div>
+      </section>
+
+      <section class="cloud-band upload-band" aria-label="Contribution export">
+        <div>
+          <h2>Contribution</h2>
+          <p id="uploadStatus">No local contribution prepared.</p>
+        </div>
+        <form id="uploadForm" class="operation-row">
+          <input id="uploadKey" type="password" placeholder="Admin key" autocomplete="off" />
+          <input id="uploadModelKey" type="search" placeholder="Model key" autocomplete="off" />
+          <input id="uploadWorkIds" type="search" placeholder="Work IDs, comma-separated" autocomplete="off" />
+          <select id="uploadMode" aria-label="Upload mode">
+            <option value="normal">Normal</option>
+            <option value="force">Force</option>
+          </select>
+          <button id="prepareContribution" type="submit">Prepare Pack</button>
+        </form>
+        <pre id="uploadJson">{}</pre>
+      </section>
+
+      <section class="cloud-grid ops-grid">
+        <div class="cloud-panel">
+          <div class="panel-head">
+            <h2>Admin Operation</h2>
+            <span id="adminOpKind">-</span>
+          </div>
+          <form id="adminForm" class="panel-form">
+            <input id="adminKey" type="password" placeholder="Admin key" autocomplete="off" />
+            <select id="adminAction" aria-label="Admin action">
+              <option value="edit">Edit</option>
+              <option value="delete">Delete</option>
+              <option value="merge-concepts">Merge Concepts</option>
+              <option value="split-concept">Split Concept</option>
+            </select>
+            <input id="adminTargetType" type="search" value="work" placeholder="Target type" autocomplete="off" />
+            <input id="adminReason" type="search" placeholder="Reason" autocomplete="off" />
+            <textarea id="adminPayload" rows="8" spellcheck="false">{"target_id": ""}</textarea>
+            <button type="submit">Export Operation</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script src="/cloud.js"></script>
+  </body>
+</html>

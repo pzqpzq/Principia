@@ -1,0 +1,63 @@
+Manufacturer Communications
+
+The Manufacturer Communications files contains manufacturer communications received by NHTSA since January 1, 1995.
+There are two types of files: Comma Separated Values (CSV) and Tab Separated Values (TSV). 
+Both are broken into 5-year chunks based on date received by NHTSA.
+
+The CSV file contains a small set of columns, such as the TSB/Document ID, product (Make, Model, Model Year) and Concise Summary of the communication.
+The CSV file contains one record per TSB/Document ID per product (Make, Model, Model Year). 
+For example, if a communication applied to 5 products and 3 components, there would be 5 records for that communication in the CSV file.
+The CSV file is intended to allow for basic keyword search of the Concise Summary.
+
+The TSV file (also called the "flat file") contains more data elements of the communication. All data elements are described below.
+The TSV file contains one record per TSB/Document ID per any value of any data element that has multiple values (e.g., product and component).
+For example, if a communication applied to 5 products and 3 components, there would be 5 x 3 = 15 records for that communication in the TSV file.
+
+Change Log
+===========
+1. Sep 14, 2007: Changed flat file extension from .lst to .txt.
+2. Aug 22, 2008: Field "BULNO" was changed from CHAR(12) to CHAR(16).
+3. Sep 18, 2008: Field "BULREP" was changed from CHAR(12) to CHAR(16).
+4. May 13, 2024: 
+   1) Renamed this file from "TSBS.txt" to "MfrComms.txt". 
+   2) Renamed and updated existing fields and added new fields as follows. Additionally, the order of the fields in the flat file has been updated.
+      -Renamed "BULNO" to "TSB/Document ID" and changed the length from CHAR(16) TO CHAR(25).
+      -Renamed "BULREP" to "Replacement Service Bulletin Number". Note that this field is deprecated and will not have values for new communications going forward. 
+      -Renamed "ID" to "NHTSA ID Number".
+      -Renamed "BULDTE" to "Mfr Communication Date".
+      -Renamed "COMPNAME" to "NHTSA Components"
+      -Renamed "MAKETXT" to "Make".
+      -Renamed "MODELTXT" to "Model".
+      -Renamed "YEARTXT" to "Model Year".
+      -Renamed "DATEE" to "Date Added to File".
+      -Renamed "SUMMARY" to "Summary" and changed the length from CHAR(240) TO CHAR(4000) (the additional space will be populated starting June 26th 2024).
+      -Added new field "MFR Internal Campaign ID / Software Version"
+      -Added new field "Communication Type".
+      -Added new field "Mfr Component System".
+      -Added new field "Mfr Component Subsystem".
+ 
+FIELDS
+=======
+
+Field#  Name                                           Type & Max Size/Format   Description
+------  --------------------------------------------   ----------------------   -------------------------------------------------------------------------------------------------------------------------------------------------------
+1       "NHTSA ID Number"                              NUMBER(9)                NHTSA identifier for this communication.
+2       "Replacement Service Bulletin Number"          CHAR(16)                 Replacement service bulletin number.
+3       "Date Added to File"                           DATE (YYYYMMDD)          Date this communication was added to this file.
+4       "TSB/Document ID"                              CHAR(128)                Identifier the manufacturer uses to identify the communication and the way it can be located by those searching for it.
+5       "Mfr Communication Date"                       DATE (YYYYMMDD)          Date the communication was disseminated by the manufacturer.
+6       "Mfr Internal Campaign ID/Software Version"    CHAR(128)                Manufacturer's unique identifier for the service campaign if this communication is a related one.
+7       "Communication Type"                           CHAR(40)                 Communication Type. Valid values are below (a link to the valid values will be provided in the future):
+                                                                                Service Bulletin / Repair Instructions
+                                                                                Service Campaign
+                                                                                Warranty Program / Extension
+                                                                                Over The Air
+                                                                                Emissions
+                                                                                Other
+8       "Make"                                         CHAR(128)                Make for the product(s) involved in the communication.
+9       "Model"                                        CHAR(256)                Model for the product(s) involved in the communication.
+10      "Model Year"                                   CHAR(4)                  Model Year for the product(s) involved in the communication, 9999 if unknown.
+11      "NHTSA Components"                             CHAR(256)                NHTSA Component(s) of the products involved in communications, up to five comma separated values.
+12      "Mfr Component System"                         CHAR(256)                Manufacturer's top-level component of the products involved in communications.
+13      "Mfr Component Subsystem"                      CHAR(256)                Manufacturer's component subsystem of the top-level component identified above.
+14      "Summary"                                      CHAR(4000)               Description of the communication’s most pertinent information, any related vehicle component information, and the general purpose for the communication.

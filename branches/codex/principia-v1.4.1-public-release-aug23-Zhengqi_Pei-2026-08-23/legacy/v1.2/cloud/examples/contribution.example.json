@@ -1,0 +1,144 @@
+{
+  "schema_version": "principia-cloud-contribution-1.1",
+  "contribution_id": "CONTRIB_example",
+  "created_at": "2026-06-13T00:00:00Z",
+  "created_by": {
+    "github_username": "pzqpzq",
+    "local_user_label": "local-admin"
+  },
+  "upload_mode": "normal",
+  "model_key": "siliconflow:Qwen/Qwen3.6-27B:auto:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+  "work_records": [
+    {
+      "record_type": "work",
+      "work_id": "W_example_cloud",
+      "identity": {
+        "canonical_title": "Example Cloud Library Paper",
+        "title_norm": "example cloud library paper",
+        "title_hash": "exampletitlehash",
+        "doi": "10.5555/principia.example",
+        "arxiv_id": "",
+        "openalex_id": "",
+        "crossref_id": "",
+        "semantic_scholar_id": "",
+        "authors": ["A. Researcher"],
+        "year": 2026,
+        "venue_or_source": "ICLR",
+        "source_type": "paper",
+        "source_urls": ["https://example.org/principia-cloud-paper"]
+      },
+      "source_state": {
+        "source_provider": "example",
+        "source_record_id": "example-cloud-paper",
+        "source_updated_at": "2026-06-13T00:00:00Z",
+        "title_hash": "exampletitlehash",
+        "abstract_hash": "exampleabstracthash",
+        "content_hash": "examplecontenthash"
+      },
+      "latest_by_model": {},
+      "relations": {},
+      "quality": {
+        "validation_level": "L1",
+        "identity_confidence": 1.0,
+        "verification_status": "llm_extracted",
+        "public_scope": "public_cloud"
+      },
+      "timestamps": {
+        "created_at": "2026-06-13T00:00:00Z",
+        "updated_at": "2026-06-13T00:00:00Z"
+      }
+    }
+  ],
+  "work_version_records": [
+    {
+      "record_type": "work_version",
+      "work_version_id": "WV_example_cloud_1",
+      "work_id": "W_example_cloud",
+      "title": "Example Cloud Library Paper",
+      "abstract": "A small public metadata fixture used to validate Principia Cloud Library contribution compaction.",
+      "title_hash": "exampletitlehash",
+      "abstract_hash": "exampleabstracthash",
+      "content_hash": "examplecontenthash",
+      "source_provider": "example",
+      "source_record_id": "example-cloud-paper",
+      "source_modified_at": "2026-06-13T00:00:00Z",
+      "source_updated_at": "2026-06-13T00:00:00Z",
+      "metadata": {},
+      "created_at": "2026-06-13T00:00:00Z"
+    }
+  ],
+  "extraction_records": [
+    {
+      "record_type": "extraction_run",
+      "extraction_run_id": "XR_example_cloud_1",
+      "work_id": "W_example_cloud",
+      "work_version_id": "WV_example_cloud_1",
+      "model_key": "siliconflow:Qwen/Qwen3.6-27B:auto:principia-work-extract-v1:principia-cloud-1.1:work_concepts",
+      "llm_provider": "siliconflow",
+      "llm_model": "Qwen/Qwen3.6-27B",
+      "model_mode": "auto",
+      "prompt_version": "principia-work-extract-v1",
+      "schema_version": "principia-cloud-1.1",
+      "extraction_task_type": "work_concepts",
+      "extraction_status": "completed",
+      "result_summary": {
+        "principle_count": 1
+      },
+      "created_at": "2026-06-13T00:00:00Z",
+      "completed_at": "2026-06-13T00:00:00Z"
+    }
+  ],
+  "concept_records": [
+    {
+      "record_type": "concept",
+      "concept_id": "C_example_principle",
+      "concept_type": "principle",
+      "canonical_key": "cache_reuse_when_source_unchanged",
+      "canonical_label": "Cache reuse when source is unchanged",
+      "aliases": [],
+      "payload": {
+        "title": "Cache reuse when source is unchanged",
+        "argument": "Reuse source-grounded cloud extraction when identity, source freshness, and model key are unchanged.",
+        "source_works": ["W_example_cloud"]
+      },
+      "support": {
+        "supporting_work_ids": ["W_example_cloud"],
+        "evidence_count": 1,
+        "confidence_score": 0.9,
+        "validation_level": "L1",
+        "verification_status": "llm_extracted"
+      },
+      "versioning": {
+        "active_version_id": "CV_example_principle_1",
+        "last_three_version_ids_by_model": {}
+      },
+      "timestamps": {
+        "created_at": "2026-06-13T00:00:00Z",
+        "updated_at": "2026-06-13T00:00:00Z"
+      }
+    }
+  ],
+  "relation_records": [],
+  "evidence_records": [
+    {
+      "record_type": "evidence",
+      "evidence_id": "EV_example_cloud_1",
+      "concept_id": "C_example_principle",
+      "work_id": "W_example_cloud",
+      "work_version_id": "WV_example_cloud_1",
+      "evidence_type": "abstract",
+      "locator": {
+        "source_url": "https://example.org/principia-cloud-paper"
+      },
+      "snippet": "A small public metadata fixture used to validate Principia Cloud Library contribution compaction.",
+      "claim_text": "Cloud extraction can be reused when source freshness and model key are unchanged.",
+      "confidence": 0.9,
+      "created_at": "2026-06-13T00:00:00Z"
+    }
+  ],
+  "admin_operations": [],
+  "provenance": {
+    "principia_version": "1.1.0",
+    "prompt_version": "principia-work-extract-v1"
+  }
+}

@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Principia v1</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [["$", "$"], ["\\(", "\\)"]],
+          displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+          processEscapes: true,
+          macros: {
+            argmax: "\\operatorname*{arg\\,max}",
+            argmin: "\\operatorname*{arg\\,min}",
+            softmax: "\\operatorname{softmax}",
+            sigmoid: "\\operatorname{sigmoid}",
+            KL: "\\operatorname{KL}",
+            E: "\\mathbb{E}",
+            R: "\\mathbb{R}",
+            N: "\\mathbb{N}",
+          },
+        },
+        svg: { fontCache: "global", linebreaks: { automatic: true, width: "container" } },
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="project-sidebar" aria-label="Projects">
+        <div class="brand-block">
+          <div class="brand-mark">P</div>
+          <div>
+            <h1>Principia</h1>
+            <p>Research workspace</p>
+          </div>
+        </div>
+        <button id="newProjectBtn" type="button" class="primary-btn">New Project</button>
+        <div id="projectList" class="project-list" aria-live="polite"></div>
+      </aside>
+
+      <section class="workspace">
+        <header class="workspace-header">
+          <div>
+            <p class="eyebrow">Active Project</p>
+            <h2 id="projectTitle">Loading</h2>
+            <p id="projectDescription" class="subtle">Select or create a project to begin.</p>
+          </div>
+        </header>
+
+        <section class="research-panel">
+          <label class="goal-field">
+            <span>Research Goal / Idea Draft</span>
+            <textarea id="goalInput" rows="5" placeholder="Describe the research goal or paste an idea draft."></textarea>
+          </label>
+          <div class="llm-row">
+            <label>
+              <span>LLM</span>
+              <select id="modelModeInput">
+                <option value="auto">Auto router</option>
+                <option value="qwen_27b">Qwen3.6-27B</option>
+                <option value="qwen_35b">Qwen3.6-35B-A3B</option>
+                <option value="strong">DeepSeek-V3</option>
+                <option value="deepseek_pro">DeepSeek-V4-Pro</option>
+                <option value="deepseek_r1">DeepSeek-R1</option>
+                <option value="kimi">Kimi-K2.6 Pro</option>
+                <option value="qwen_122b">Qwen3.5-122B-A10B</option>
+                <option value="qwen_397b">Qwen3.5-397B-A17B</option>
+                <option value="glm">GLM-5.1 Pro</option>
+                <option value="openai_gpt52_pro">OpenAI GPT-5.2 Pro</option>
+                <option value="openai_gpt5_pro">OpenAI GPT-5 Pro</option>
+                <option value="openai_gpt55">OpenAI GPT-5.5</option>
+                <option value="openai_gpt55_pro_20260423">OpenAI GPT-5.5 Pro 2026-04-23</option>
+              </select>
+            </label>
+            <label>
+              <span>Target works</span>
+              <input id="targetWorksInput" type="number" min="1" max="200" value="100" />
+            </label>
+            <div id="researchStatus" class="research-status">Ready</div>
+          </div>
+          <div class="header-actions research-actions" aria-label="Workspace actions">
+            <button id="researchBtn" type="button" class="primary-btn">Research</button>
+            <button id="cancelResearchBtn" type="button" class="secondary-btn danger-btn" data-allow-busy="true" hidden>Stop Research</button>
+            <button id="generateIdeaBtn" type="button" class="secondary-btn">Generate Idea</button>
+            <button id="cleanupRecordsBtn" type="button" class="secondary-btn">Repair Records</button>
+            <button id="clearRecordsBtn" type="button" class="secondary-btn danger-btn">Clear Local Records</button>
+            <button id="apiKeysBtn" type="button" class="secondary-btn">API Keys</button>
+          </div>
+        </section>
+
+        <section id="researchAtlas" class="research-atlas" aria-label="Research Atlas">
+          <div class="atlas-header">
+            <div>
+              <p class="eyebrow">Research Atlas</p>
+              <h3>Project Memory</h3>
+            </div>
+            <button id="refreshAtlasBtn" type="button" class="secondary-btn">Refresh</button>
+          </div>
+          <div id="atlasStats" class="atlas-stats" aria-live="polite"></div>
+          <div class="atlas-lower">
+            <div>
+              <span class="mini-label">Concept Mix</span>
+              <div id="atlasConcepts" class="atlas-chips"></div>
+            </div>
+            <div>
+              <span class="mini-label">Symbols</span>
+              <div id="atlasSymbols" class="atlas-chips"></div>
+            </div>
+          </div>
+        </section>
+
+        <nav id="tabRow" class="tab-row" aria-label="Project tabs"></nav>
+
+        <section class="content-layout">
+          <section class="tab-panel">
+            <div class="tab-toolbar">
+              <input id="tabSearchInput" type="search" placeholder="Search current tab" />
+              <label class="compact-select">
+                <span>Sort</span>
+                <select id="tabSortInput">
+                  <option value="composite">Composite</option>
+                  <option value="relevance">Relevance</option>
+                  <option value="work_year">Publication Time</option>
+                  <option value="modified">Modified</option>
+                </select>
+              </label>
+              <button id="reloadTabBtn" type="button" class="secondary-btn">Reload</button>
+            </div>
+            <div id="tabContent" class="tab-content" aria-live="polite"></div>
+            <button id="moreBtn" type="button" class="more-btn" hidden>More</button>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <section id="projectModal" class="modal-backdrop" hidden>
+      <form id="projectForm" class="form-modal" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+        <header>
+          <div>
+            <p class="eyebrow">Project</p>
+            <h2 id="projectModalTitle">New Project</h2>
+          </div>
+          <button id="cancelProjectModalBtn" type="button" class="secondary-btn">Cancel</button>
+        </header>
+        <label class="full-field">
+          <span>Title</span>
+          <input id="projectNameInput" type="text" required placeholder="e.g. Multimodal agent memory" />
+        </label>
+        <label class="full-field">
+          <span>Description</span>
+          <textarea id="projectDescriptionInput" rows="4" placeholder="Optional. You can skip this and fill it later."></textarea>
+        </label>
+        <div class="modal-actions">
+          <button id="skipProjectDescriptionBtn" type="button" class="secondary-btn">Skip Description</button>
+          <button id="saveProjectModalBtn" type="submit" class="primary-btn">Save Project</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="deleteProjectModal" class="modal-backdrop" hidden>
+      <article class="form-modal" role="dialog" aria-modal="true" aria-labelledby="deleteProjectTitle">
+        <header>
+          <div>
+            <p class="eyebrow">Delete Project</p>
+            <h2 id="deleteProjectTitle">Confirm deletion</h2>
+          </div>
+          <button id="cancelDeleteProjectBtn" type="button" class="secondary-btn">Cancel</button>
+        </header>
+        <p id="deleteProjectMessage" class="muted"></p>
+        <label class="checkbox-row">
+          <input id="deleteProjectLocalDataInput" type="checkbox" />
+          <span>Also remove local records used only by this project</span>
+        </label>
+        <div class="modal-actions">
+          <button id="confirmDeleteProjectBtn" type="button" class="danger-btn">Delete Project</button>
+        </div>
+      </article>
+    </section>
+
+    <section id="clearRecordsModal" class="modal-backdrop" hidden>
+      <article class="form-modal" role="dialog" aria-modal="true" aria-labelledby="clearRecordsTitle">
+        <header>
+          <div>
+            <p class="eyebrow">Local Records</p>
+            <h2 id="clearRecordsTitle">Clear local records</h2>
+          </div>
+          <button id="cancelClearRecordsBtn" type="button" class="secondary-btn">Cancel</button>
+        </header>
+        <p class="muted">This removes local works, extracted ideas, principles, takeaways, benchmarks, baselines, generated ideas, run history, evidence links, and v1 memory. Project shells are kept.</p>
+        <div class="modal-actions">
+          <button id="confirmClearRecordsBtn" type="button" class="danger-btn">Clear Local Records</button>
+        </div>
+      </article>
+    </section>
+
+    <section id="detailModal" class="modal-backdrop" hidden>
+      <article class="detail-modal" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+        <header>
+          <div>
+            <p id="detailKind" class="eyebrow">Details</p>
+            <h2 id="detailTitle">Record</h2>
+          </div>
+          <button id="closeDetailBtn" type="button" class="secondary-btn">Close</button>
+        </header>
+        <div class="detail-actions">
+          <label>
+            <span>Version</span>
+            <select id="detailVersionSelect"></select>
+          </label>
+          <button id="editDetailBtn" type="button" class="secondary-btn" hidden>Edit</button>
+          <button id="refreshDetailBtn" type="button" class="secondary-btn" hidden>Refresh</button>
+          <button id="cancelDetailRefreshBtn" type="button" class="secondary-btn danger-btn" data-allow-busy="true" hidden>Cancel Refresh</button>
+          <button id="detailAddMaterialBtn" type="button" class="secondary-btn">Add Material</button>
+          <button id="openDetailTabBtn" type="button" class="primary-btn">Details</button>
+        </div>
+        <div id="detailBody" class="detail-body"></div>
+        <form id="detailEditForm" class="detail-edit" hidden>
+          <div id="detailEditFields" class="edit-field-grid"></div>
+          <details class="advanced-json">
+            <summary>Advanced JSON</summary>
+            <label class="full-field">
+              <span>Active payload</span>
+              <textarea id="detailEditInput" rows="10"></textarea>
+            </label>
+          </details>
+          <div class="modal-actions">
+            <button id="cancelDetailEditBtn" type="button" class="secondary-btn">Cancel</button>
+            <button type="submit" class="primary-btn">Save Manual Version</button>
+          </div>
+        </form>
+      </article>
+    </section>
+
+    <section id="assemblerModal" class="modal-backdrop" hidden>
+      <div class="assembler-modal" role="dialog" aria-modal="true" aria-labelledby="assemblerTitle">
+        <header>
+          <div>
+            <p class="eyebrow">Generate Idea</p>
+            <h2 id="assemblerTitle">Compose from research evidence</h2>
+          </div>
+          <button id="closeAssemblerBtn" type="button" class="secondary-btn">Close</button>
+        </header>
+        <div class="assembler-grid">
+          <aside class="source-shelf">
+            <div class="shelf-controls">
+              <select id="assemblerSourceType">
+                <option value="works">Works</option>
+                <option value="existed_ideas">Existed Ideas</option>
+                <option value="benchmarks">Benchmarks</option>
+                <option value="baselines">Baselines</option>
+                <option value="principles">Principles</option>
+                <option value="takeaway_messages">Takeaway Messages</option>
+              </select>
+              <input id="assemblerSearchInput" type="search" placeholder="Filter evidence" />
+              <button id="selectAllEvidenceBtn" type="button" class="secondary-btn">Select All</button>
+              <button id="unselectAllEvidenceBtn" type="button" class="secondary-btn">Unselect All</button>
+            </div>
+            <div id="assemblerSources" class="assembler-sources"></div>
+          </aside>
+          <section id="assemblyCanvas" class="assembly-canvas">
+            <div class="selected-evidence-header">
+              <h3>Selected Evidence</h3>
+              <button id="clearSelectedEvidenceBtn" type="button" class="secondary-btn">Clear All</button>
+            </div>
+            <p class="muted">Add cards from the shelf, then generate one project idea.</p>
+            <div id="selectedEvidence" class="selected-evidence"></div>
+          </section>
+          <aside class="assembly-context">
+            <h3>Context</h3>
+            <div id="assemblyContext"></div>
+            <label class="full-field">
+              <span>Your idea note</span>
+              <textarea id="assemblerUserNote" rows="6" placeholder="Add your own hunch, mechanism, constraint, or draft. This will be prioritized."></textarea>
+            </label>
+            <section id="assemblerDetail" class="assembler-detail">
+              <p class="muted">Click an evidence card to inspect it before generation.</p>
+            </section>
+            <div class="modal-actions assembler-actions">
+              <label class="compact-select">
+                <span>Mode</span>
+                <select id="assemblerGenerationMode">
+                  <option value="standard">Standard</option>
+                  <option value="symbolic">Principia Calculus</option>
+                </select>
+              </label>
+              <label class="compact-select">
+                <span>LLM</span>
+                <select id="assemblerModelMode">
+                  <option value="auto">Auto router</option>
+                  <option value="qwen_27b">Qwen3.6-27B</option>
+                  <option value="qwen_35b">Qwen3.6-35B-A3B</option>
+                  <option value="strong">DeepSeek-V3</option>
+                  <option value="deepseek_pro">DeepSeek-V4-Pro</option>
+                  <option value="deepseek_r1">DeepSeek-R1</option>
+                  <option value="kimi">Kimi-K2.6 Pro</option>
+                  <option value="qwen_122b">Qwen3.5-122B-A10B</option>
+                  <option value="qwen_397b">Qwen3.5-397B-A17B</option>
+                  <option value="glm">GLM-5.1 Pro</option>
+                  <option value="openai_gpt52_pro">OpenAI GPT-5.2 Pro</option>
+                  <option value="openai_gpt5_pro">OpenAI GPT-5 Pro</option>
+                  <option value="openai_gpt55">OpenAI GPT-5.5</option>
+                  <option value="openai_gpt55_pro_20260423">OpenAI GPT-5.5 Pro 2026-04-23</option>
+                </select>
+              </label>
+              <button id="cancelIdeaGenerationBtn" type="button" class="secondary-btn danger-btn" data-allow-busy="true" hidden>Cancel</button>
+              <button id="assembleIdeaBtn" type="button" class="primary-btn">Generate Idea</button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="apiKeysModal" class="modal-backdrop" hidden>
+      <form id="apiKeysForm" class="form-modal" role="dialog" aria-modal="true" aria-labelledby="apiKeysTitle">
+        <header>
+          <div>
+            <p class="eyebrow">LLM Keys</p>
+            <h2 id="apiKeysTitle">API Keys</h2>
+          </div>
+          <button id="cancelApiKeysBtn" type="button" class="secondary-btn">Cancel</button>
+        </header>
+        <p id="apiKeysStatus" class="muted">Keys are saved locally in .env. Leave a field blank to keep its current value.</p>
+        <label class="full-field">
+          <span>SiliconFlow API key</span>
+          <input id="siliconflowKeyInput" type="password" autocomplete="off" placeholder="Leave blank to keep current key" />
+        </label>
+        <label class="full-field">
+          <span>OpenAI API key</span>
+          <input id="openaiKeyInput" type="password" autocomplete="off" placeholder="Leave blank to keep current key" />
+        </label>
+        <div class="modal-actions">
+          <button id="clearApiKeysFormBtn" type="button" class="secondary-btn">Clear Fields</button>
+          <button type="submit" class="primary-btn">Save Keys</button>
+        </div>
+      </form>
+    </section>
+
+    <div id="toastStack" class="toast-stack" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

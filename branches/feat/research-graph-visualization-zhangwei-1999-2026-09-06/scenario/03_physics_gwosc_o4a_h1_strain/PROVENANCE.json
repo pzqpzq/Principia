@@ -1,0 +1,56 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "03_physics_gwosc_o4a_h1_strain",
+  "domain": "physics",
+  "title": "GWOSC O4a H1 strain and detector-quality masks",
+  "publisher": "Gravitational Wave Open Science Center",
+  "authoritative_landing_url": "https://gwosc.org/O4/O4a/",
+  "authoritative_source_urls": [
+    "https://gwosc.org/archive/data/O4a_4KHZ_R1/1388314624/H-H1_GWOSC_O4a_4KHZ_R1-1388511232-4096.hdf5",
+    "https://gwosc.org/api/v2/strain-files/H1-1388511232-4kHz?format=json"
+  ],
+  "identifiers": [],
+  "release_or_version": "O4a 4 kHz R1",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "CC BY 4.0",
+  "deterministic_selection_rule": "Retain exactly H-H1_GWOSC_O4a_4KHZ_R1-1388511232-4096.hdf5 and its GWOSC API metadata.",
+  "exclusions": [
+    "No value-level preprocessing",
+    "No outcome-guided selection",
+    "No controlled-access or credential material"
+  ],
+  "ethics_restrictions": [
+    "Public/deidentified use only where human data are present",
+    "No re-identification",
+    "Generated USER_BRIEF is context, not evidence"
+  ],
+  "transport_and_headers": {
+    "status": "source metadata and mutable-feed companion metadata retained where publisher supplied it; browser-only endpoints are identified by URL",
+    "http_error_masquerade_check_required": true
+  },
+  "substitution": null,
+  "files": [
+    {
+      "path": "context/strain_file_api.json",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://gwosc.org/archive/data/O4a_4KHZ_R1/1388314624/H-H1_GWOSC_O4a_4KHZ_R1-1388511232-4096.hdf5",
+        "https://gwosc.org/api/v2/strain-files/H1-1388511232-4kHz?format=json"
+      ],
+      "bytes": 956,
+      "sha256": "fed04f5569cf7e853585879922328e2beae80edfc2fea68b1ba424130c559c5e",
+      "mime_type": "application/json"
+    },
+    {
+      "path": "raw/H-H1_GWOSC_O4a_4KHZ_R1-1388511232-4096.hdf5",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://gwosc.org/archive/data/O4a_4KHZ_R1/1388314624/H-H1_GWOSC_O4a_4KHZ_R1-1388511232-4096.hdf5",
+        "https://gwosc.org/api/v2/strain-files/H1-1388511232-4kHz?format=json"
+      ],
+      "bytes": 129225370,
+      "sha256": "b0d7ae53435952801347f8bf518bc8ef5a167dfdb790fe562a2214cc2072522a",
+      "mime_type": "application/x-hdf5"
+    }
+  ]
+}

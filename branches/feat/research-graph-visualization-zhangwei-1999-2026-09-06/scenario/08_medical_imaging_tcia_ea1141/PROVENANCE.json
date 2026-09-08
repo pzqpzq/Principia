@@ -1,0 +1,926 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "08_medical_imaging_tcia_ea1141",
+  "domain": "medical imaging",
+  "title": "EA1141 paired breast MR and mammography DICOM series",
+  "publisher": "The Cancer Imaging Archive / NCI Imaging Data Commons",
+  "authoritative_landing_url": "https://www.cancerimagingarchive.net/collection/ea1141/",
+  "authoritative_source_urls": [
+    "https://www.cancerimagingarchive.net/collection/ea1141/",
+    "https://portal.imaging.datacommons.cancer.gov/",
+    "s3://idc-open-data/"
+  ],
+  "identifiers": [
+    "doi:10.7937/2BAS-HR33",
+    "EA1141-1004399"
+  ],
+  "release_or_version": "EA1141 v2; IDC index current at retrieval",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "CC BY 4.0",
+  "deterministic_selection_rule": "Using the official IDC index, choose the first lexicographic patient and series pair with both MR and MG, 32-400 combined instances, and at most 180 MiB; tie-break by MR then MG SeriesInstanceUID.",
+  "exclusions": [
+    "No value-level preprocessing",
+    "No outcome-guided selection",
+    "No controlled-access or credential material"
+  ],
+  "ethics_restrictions": [
+    "Public/deidentified use only where human data are present",
+    "No re-identification",
+    "Generated USER_BRIEF is context, not evidence"
+  ],
+  "transport_and_headers": {
+    "status": "source metadata and mutable-feed companion metadata retained where publisher supplied it; browser-only endpoints are identified by URL",
+    "http_error_masquerade_check_required": true
+  },
+  "substitution": null,
+  "files": [
+    {
+      "path": "context/idc_deterministic_selection.json",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 1420,
+      "sha256": "4d2234704d7f09a744a4f4c3e320f0a85d43dcc35c45d0f27e5f26998a5c63e8",
+      "mime_type": "application/json"
+    },
+    {
+      "path": "context/mg_uid_file_urls.json",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 105,
+      "sha256": "f76a98b37e553263f9cb1fc788fdb4c6a5bd05f278025f683470baf759e6f794",
+      "mime_type": "application/json"
+    },
+    {
+      "path": "context/mr_uid_file_urls.json",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 7143,
+      "sha256": "50bbda387a37f1044c13611ac9fe7c98aff8aec3f5100670448eb970b50b556c",
+      "mime_type": "application/json"
+    },
+    {
+      "path": "raw/MG_1.3.6.1.4.1.14519.5.2.1.1620.1225.118330849799489129360385109830/f9d3cf2d-7930-4423-896c-7d51dcd36a0b.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 27267462,
+      "sha256": "9dab9c85dacf702b94a96dda5d203834bdc061138639d55eeff28be57659a0ea",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/060fae75-c189-42b9-85b6-93e64a8be0f4.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465160,
+      "sha256": "1472fe4bfd03ed0de92266f5e921d2715c2bed6097347d8f29c99f70f36b80df",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/0a63d038-e58f-4763-b3cf-4c7e5b7fa716.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465160,
+      "sha256": "8c49bdd4fb4e60cfa754a54ca5bcf8de422c23d8813ba8301ba798b63ecd3f33",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/163e8977-8a63-47a7-95bf-92c5febe7915.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "0b18b6afd31694c6c2fcd7359eab4269f90ec754e713a4bdb7fbdcdc23074f23",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/1709e648-a70b-435c-9cb8-abc84b0fe64e.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "fafac1b289e3461fe3d26107a5d1026f5cf7955feb11264d3a7171dc6052748f",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/18b0b5b1-5ff0-440f-9bbe-1f8f08a6e4d4.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465160,
+      "sha256": "5b0e1c73ac917358fa4632e8444373f3dca5a1216b6f1da055da6b6cc0b6ac0b",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/19527d46-e97b-4b32-937c-d9646d831b2a.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "f28ad5d493a22f20e77a21e4bc2fb55b79b22c59dcbec46fe1dc4552a60c28cb",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/19f6132a-fcc4-499a-a8bb-2f6acfac7fde.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "53f3115daa191130eef629b4e0990f33cfeb8c44ef513aff0454926fc28ba9ca",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/1b37ddd2-54b9-4058-a915-00c27da93136.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "cbfe86c6d2f2438845ac0ea64434f759f32ff44e63b69320faeaa98d73189b84",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/1c6a720a-dd65-4f71-8648-67bec4b93995.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "b41d17df3ca8eb793f40ad79a05ca4b1d85decccf2d17600ca23900af7a8db2a",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/1eccd6eb-92bc-45ea-8ad1-c1fb1b3bbec8.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465160,
+      "sha256": "26f17824132b315f5b03e30d0701f29649a552dcc41f38934d40e95a10939b1b",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/208f2bc3-818f-497c-9e43-f6114b65f399.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "356bc37450e40c0720a832ebc859ba9045924b66110734ffcbc372a7f370de6c",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/25b5bf38-bafa-46a2-8b75-f104d729e68a.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "5c76ed1846a21f080a72ef9138f147e28cc604da2d25ffebcb126c3a14fbebe7",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/2a0b85bf-4444-4b0a-8ce1-5aa24a7503ad.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "ab93c0b46a27278373b5c219f152b66d3c5c589233120f890561050e9b031ebe",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/2a6a5b9f-e7e3-42bf-95a9-04ca6c5e10d9.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "f91741300bef63380aae4f2f0133e5eaabf89f96794d631718d40c8ef36f9762",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/2dfedaf3-2230-4d22-ac51-2c435eba7d36.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "ada86703bf0dde7fe23667d92a86686a5e80288baa02eefc7e1e41d483f6a67a",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/2e1e9394-9bdb-44fb-85b6-add86b85b5f6.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465162,
+      "sha256": "856525e6ceafdb1e487875182d36d68eb09f3528b484e4c195ba732cac4226ee",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/37b0f5e9-2430-4022-9562-6992ddccddc2.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465160,
+      "sha256": "1afd6b060fd97baa96907ab4e46e0ce2e27bef821d3250c6a136ebf722f956ac",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/3b1768a2-366a-4645-b9a8-af315a2c96c7.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "6ae58ca491087b102dfd3f1a51d4c459995b62d7b78c9a29f45979130891bb93",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/3d47efa8-68cd-4ec3-86b7-49cf01707e9b.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "2b3330b0dbc2cf4b37affc031a43d2dc1b182620da502e0cc11b5e41a365914e",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/3eede498-a7f7-41c8-a8c1-ba112a47c3e2.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "67280341c120e1566fc61abe00b8ab921d601f4f118ef0ae6c9deae40ac2316d",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/4658bf6e-20d6-484b-a33d-8d05c840f82d.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "2baf46f56b7f375a9c51d88dbe49c096fb6eb1c9674bf84e0ef8b3bda06cdd27",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/4aa9cb2c-9880-42a2-883d-2d795a1e4ced.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "8953c8b4bab6a8b7031a2992425ba98333a934c5f0640231d55e2c38ef57464b",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/4d999c14-e723-430c-ae89-f017cd7a334a.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465160,
+      "sha256": "529d7fb08cfb03950e221c9750c641609385386ff4110667f94bba4158402834",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/4eef58b3-2caf-4e4b-a24f-122a0165456c.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "9b28c95ce9c209455f6ac53a57269416466c0e4e84637193f74f9d3d1ed7f013",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/56a26940-4a42-4781-8111-40f04a239bd6.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "ebf123cc223629b21cdc8bc2bacafe5599a3b31c16184aa1ee96f86b8908acd2",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/5b2d1df3-e1ae-407f-977d-b6f4e2e39e9f.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "fd39c95d37d4bf29dfe3ef330c8ba638448b77aeb980b637a52503d96d768e1f",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/5cb3f7ec-26c7-4b2a-acdc-5891958573f9.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "b614e9c1b423aa8d284ee1bbf7b4e8cfe8658cb9b6e49b87a154c08e202841cc",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/5d756e79-07e0-4563-9d04-5539322afaee.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "3071e6a58e26e699358e6adcb3f429fcb7a22792d89bedf1e73a35fbb9fb760f",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/68413971-60c5-4add-ad65-7bedf6b691ec.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "982f8aa9efdc0ff3460ea5275925436e198d6be86fc729cf383ea1893c4ce016",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/690bb02d-ce58-4dec-950b-9643b462698e.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "e18739015e8af61533911a6f9defbb867b58764ac75b00728b3ec0caba59836e",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/6aeac970-c685-4bb8-a98d-710dd2b01fde.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "f83b892700990886b951d8998c9d24d74eae2e35bf6f7bf806842af4286f050f",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/76cd0438-7871-437c-bd24-1c733cc03ebc.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465160,
+      "sha256": "f71fcdae9e6b6a963a9b1c506b777dae728c9985258696a2ccf96184d0af7c63",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/790fa529-b8d9-4022-a65a-1f5b8636f6a9.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465160,
+      "sha256": "1606f02f657cae5ece5e1337e073af56227ba003264c110927929c617b849b6c",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/7f752b93-e22f-4373-ba0c-32da9b32af2e.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465160,
+      "sha256": "f7f9daddb059b2b26977fb0f56244bfca2f2178234c28a5cf25a8cd88635ae5a",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/7f9809e7-59e1-4969-85b2-1cb744df6c11.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465160,
+      "sha256": "f57589d9ab486076845ada25825ed596fb6d3ba5e8bc90157263db818aaecb0d",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/80abeec8-363e-4b3f-b64c-3440412ad11b.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "2663cf059fdb4596926970d56bce6f02eee8dff745c3448e41c427ce33a7d483",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/827f0d68-5dd6-4b46-b483-1874a8b41372.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "49b7501acfa0fca87bc6eff27ba09242e1caa71245a3fd8fcb7958c3e884ae50",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/850840da-af12-473c-9c3d-de82031e3b92.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "391eea82c4dff48ad8f64d574b7875dfebacc4bee142a41a462e27b063528a53",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/855c14d4-a81c-4d79-9315-5affc4879060.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "c4957a6fdcd16e5844c8c598d7b914b61666a7f737dfbec1229c14dc97c2ad77",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/9607526a-fffe-49bf-bdfe-4c92223add76.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "b51f34700e40fe9be2c1791cdbae99f9081b1ee736a5f925d64a62cc7d9d5f91",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/97b26eb1-08a7-4c59-8922-b1e7ccdbdc89.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465160,
+      "sha256": "0cfe817d7c7534d91089e08023797a0d1ddb8c531b06816d0fc322582a458f78",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/9a49130c-9b12-4cc9-a535-6362e0890e7f.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "e899f0a8e932818a19106cfe6076447221c1f2224116e36eabcff320a0e97cf5",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/9dff6199-ff11-4688-bd05-c8814c253fe3.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465162,
+      "sha256": "52f15d6a8e64210227557f8d37b04cddc335bda651a3a375728c4518ad983d49",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/a39b7315-5bac-4150-baac-522c3f96a41c.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465160,
+      "sha256": "bb599d26d3e353848f37daf62c225aa890f307422afd3bd46bef03f6f3370096",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/a530d8fa-e651-44e4-be78-4aa0e4dd7f72.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465160,
+      "sha256": "c631e39fe12c858376ac1462eabd6fbb39e7c7e5cadc95e568bbb2bb7b7454b7",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/aaee4531-7d8b-4aef-9b95-abddc724bae0.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "2736beb25db0dae60794d96cba01501c4d7e053f5b21b847a29096671ed07a0e",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/af06b0ba-0d60-4895-b581-d1ef618f18f1.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "d38ffa40f3f5c216be6d77b685e216d72163900cd2f41deb7ad0da58040e5320",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/b788fcbc-16e9-4712-8d8c-2e0e3b102031.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465162,
+      "sha256": "cb261db74dee32f192b78d75c12b74f9742007cebc5a783110aa058c6099b82a",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/bf97fcf7-db9a-4c89-b180-209b2ca2bf57.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "38af430ec1ec243ffdc8ebc5a135d8b04e9ef4609b8565357e8d7fb8d060e58d",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/c092a1f1-bdf8-4656-8530-312bc05bb7b3.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465162,
+      "sha256": "84aa32867ceda9a2c07ce3fd943fd067abb594d0d5a1653a36dde07de04cfdc6",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/c3ae39ba-086d-4069-aaee-cae762f835d8.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465162,
+      "sha256": "5854193206b9f4509b25a442781d554fd68ca27db695c0a613acf6c121c1e4e5",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/c4984167-e82d-49f9-aea1-ae1415586860.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465162,
+      "sha256": "99b53749a625c0d66f0037ae0e3827ce5a6373f3ee7edd591cad65a32973ac94",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/c977a902-8c27-4c34-a3d4-66cf10f75ae6.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465160,
+      "sha256": "c4eee6861b22ef89c9de9eba7d3736a0bc80c315c965dbec3af3963c46456fde",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/cc6130aa-eb1b-4be0-b461-c54ae4208424.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465160,
+      "sha256": "85171a977ee0ae8de5af706f7ec5ca498e400569c032ec7fd1ac5df200bbb56d",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/d3d2b941-1bd5-46a4-9da7-12e54503f7bd.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "f08641b917fda0a9a8ce7fff3d5c55e7a81270c4fe253ce61dc739c36bb1104f",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/d52d28dd-1920-420c-91d4-5ab73dbbba87.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465162,
+      "sha256": "51adb8b748fe0ac1b99e618a075921fd6a288471e2b73678a57e7f6516f864e3",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/d6ecf216-72b3-4189-ae67-24765a1023e0.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "d01a7da651b28faa50f763c676f14e2f6c434729d4c7f47b79a7029d92b60896",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/d952e512-c240-4b07-81c5-39a3562f9a68.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "337d7c800856a42d30d3d744c313ca2f07e9176c9c57b4d14faac2c127e97818",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/da273a96-7b66-45d1-bf91-b5dc208836a6.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465162,
+      "sha256": "c3b247a3e18c8777e47de9b74a3295dc0eb1ea10838c2312731c6f357c65a259",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/db7dc0fd-cd77-4d5b-91d5-7bbd9686de08.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "b14dae7070ebab07e5d4cd9b9ad421d161f203a9f3c5ce831d01de4f9ff1e244",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/df3e7dbf-8d75-478a-8822-d1e1102fdf91.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "875fae4492e19fa11c18543e1a9ee5071c61d8f7ba7522abf8cc116325acb852",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/e714a46e-21df-4f6d-be3b-73f5f8b495fa.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465160,
+      "sha256": "d4c5898a8fa4a4a2c7877562aa7dba0e122e9cb7f8d18863317009b090ecd3ee",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/e8c34349-0692-4f65-b0ff-c06a0bb09f7c.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "bbe737242478a61f180e4221880a7fbf5f277433feb1aa8605a63b57fa40258a",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/ec685177-e469-4fee-af08-2111f48d6275.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465162,
+      "sha256": "956701129b343b4f168a3bfcdc5f09decc843a1aa86c1c0d9fc2159b40b398ea",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/eebc16a9-8dbe-4e12-8b04-5d81efb5c5d3.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "3f20dfce871ee2350f037aba902017aa51b91311afb77ca0f289ecb9eedb6bd2",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/f08cd721-939d-4fde-b571-4ce727ad9fd7.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465162,
+      "sha256": "99fb8c8d15dac4b81a730ddc2ebd46e12d7e71834979e985157ef6c45927b23c",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/f5983fe5-8042-492b-8a9e-5a9b693764b8.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "e20b779acd4325464a5d6e378dfc78f8b0c98f7ed23b7f657d2004e81d71cd2f",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/f71ce949-e15c-40a2-9a22-4bfd2e191df7.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "84767d10e81373b370baa6e06b273f8db1e149667b3a83659ee176d356714cb2",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/fa12a3cc-ae40-4568-b211-e07b29bbf271.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465174,
+      "sha256": "ed2732503108f252627b6b49949ae57e278b73e2b2b6392da82654c7b720b318",
+      "mime_type": "application/dicom"
+    },
+    {
+      "path": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/fbb22020-6432-48fe-a53b-1248baf03bf6.dcm",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.cancerimagingarchive.net/collection/ea1141/",
+        "https://portal.imaging.datacommons.cancer.gov/",
+        "s3://idc-open-data/"
+      ],
+      "bytes": 465162,
+      "sha256": "893e5649bc4ee03e7c3f8fc319745c227dd2a484799dc0780fc9246ef3a5b733",
+      "mime_type": "application/dicom"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "17_geography_usgs_comcat_2026_07",
+  "domain": "geography",
+  "title": "USGS ComCat July 2026 global M2.5+ earthquakes",
+  "publisher": "U.S. Geological Survey",
+  "authoritative_landing_url": "https://earthquake.usgs.gov/fdsnws/event/1",
+  "authoritative_source_urls": [
+    "https://earthquake.usgs.gov/fdsnws/event/1/query",
+    "https://earthquake.usgs.gov/fdsnws/event/1/count",
+    "https://earthquake.usgs.gov/fdsnws/event/1/version"
+  ],
+  "identifiers": [],
+  "release_or_version": "FDSN Event service snapshot",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "U.S. Government public domain",
+  "deterministic_selection_rule": "Query 2026-07-01 inclusive to 2026-08-01 exclusive, eventtype=earthquake, minmagnitude=2.5, orderby=time-asc; retain GeoJSON, QuakeML, count, and service version.",
+  "exclusions": [
+    "No value-level preprocessing",
+    "No outcome-guided selection",
+    "No controlled-access or credential material"
+  ],
+  "ethics_restrictions": [
+    "Public/deidentified use only where human data are present",
+    "No re-identification",
+    "Generated USER_BRIEF is context, not evidence"
+  ],
+  "transport_and_headers": {
+    "status": "source metadata and mutable-feed companion metadata retained where publisher supplied it; browser-only endpoints are identified by URL",
+    "http_error_masquerade_check_required": true
+  },
+  "substitution": null,
+  "files": [
+    {
+      "path": "context/count.txt",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://earthquake.usgs.gov/fdsnws/event/1/query",
+        "https://earthquake.usgs.gov/fdsnws/event/1/count",
+        "https://earthquake.usgs.gov/fdsnws/event/1/version"
+      ],
+      "bytes": 4,
+      "sha256": "5dec2555aa54ac568f403b140af7d6fcd39f041a3b7f2b69e283fd7d29a73a1c",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "context/service_version.txt",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://earthquake.usgs.gov/fdsnws/event/1/query",
+        "https://earthquake.usgs.gov/fdsnws/event/1/count",
+        "https://earthquake.usgs.gov/fdsnws/event/1/version"
+      ],
+      "bytes": 5,
+      "sha256": "f972084131b8c2eba9339f5bc95cf6d85183eb1b1af87c723f12c48542f84445",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "raw/usgs_2026-07_m2.5.geojson",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://earthquake.usgs.gov/fdsnws/event/1/query",
+        "https://earthquake.usgs.gov/fdsnws/event/1/count",
+        "https://earthquake.usgs.gov/fdsnws/event/1/version"
+      ],
+      "bytes": 1862884,
+      "sha256": "310528f127785a084eea2fc8799605de83e4d3c7fc5d26ca2982a9088d706e38",
+      "mime_type": "text/plain"
+    },
+    {
+      "path": "raw/usgs_2026-07_m2.5.quakeml",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://earthquake.usgs.gov/fdsnws/event/1/query",
+        "https://earthquake.usgs.gov/fdsnws/event/1/count",
+        "https://earthquake.usgs.gov/fdsnws/event/1/version"
+      ],
+      "bytes": 6316842,
+      "sha256": "16bc9bcf4ebcfca1a2334260f4982cf639babb98f47c8277866fb46bc1d363da",
+      "mime_type": "text/xml"
+    }
+  ]
+}

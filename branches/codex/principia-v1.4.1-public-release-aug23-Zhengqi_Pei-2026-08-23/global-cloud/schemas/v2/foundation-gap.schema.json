@@ -1,0 +1,82 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "area": {
+      "maxLength": 63,
+      "minLength": 2,
+      "pattern": "^[a-z0-9][a-z0-9-]+$",
+      "title": "Area",
+      "type": "string"
+    },
+    "created_at": {
+      "title": "Created At",
+      "type": "string"
+    },
+    "description": {
+      "maxLength": 20000,
+      "minLength": 1,
+      "title": "Description",
+      "type": "string"
+    },
+    "gap_id": {
+      "maxLength": 300,
+      "minLength": 3,
+      "title": "Gap Id",
+      "type": "string"
+    },
+    "principle_id": {
+      "default": "",
+      "title": "Principle Id",
+      "type": "string"
+    },
+    "rationale": {
+      "default": "",
+      "maxLength": 20000,
+      "title": "Rationale",
+      "type": "string"
+    },
+    "requested_target_id": {
+      "default": "",
+      "title": "Requested Target Id",
+      "type": "string"
+    },
+    "revision": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Revision",
+      "type": "integer"
+    },
+    "schema_version": {
+      "const": "global-foundation-gap-v1",
+      "default": "global-foundation-gap-v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "source_trace": {
+      "additionalProperties": true,
+      "title": "Source Trace",
+      "type": "object"
+    },
+    "status": {
+      "default": "open",
+      "enum": [
+        "open",
+        "resolved",
+        "retired"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "updated_at": {
+      "title": "Updated At",
+      "type": "string"
+    }
+  },
+  "required": [
+    "gap_id",
+    "area",
+    "description"
+  ],
+  "title": "FoundationGapRevision",
+  "type": "object"
+}

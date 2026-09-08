@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "idea_id": "Entropy_Constrained_Discrete_Codebook_With_Counterfactual_Decoding_And_Diversity_Aware_Calibrati",
+  "idea_title": "Entropy-Constrained Discrete Codebook with Counterfactual Decoding and Diversity-Aware Calibration",
+  "goal": "Design communication-efficient LLM multi-agent reasoning with compact learned machine dialects while preventing representational collapse and preserving causal interpretability.",
+  "thesis": "Imposing a per-task entropy floor on learned discrete messages prevents representational collapse while achieving token efficiency, provided that a counterfactual decoding protocol verifies causal interpretability and the entropy target is calibrated using real-time embedding diversity metrics.",
+  "validation_protocol": [
+    "Compare against standard CoT, uncompressed multi-agent baselines, and static codebook variants. Measure token reduction, accuracy, codebook entropy, success rate on counterfactual decoding tests, and embedding overlap. Specifically test scenarios where $S_{cos}$ approaches 0.88 to verify the dynamic calibration of $H_{target}$ prevents performance degradation."
+  ],
+  "baselines": [
+    "Standard Chain-of-Thought (CoT)",
+    "Unconstrained Discrete Communication",
+    "Self-Consistency without compression",
+    "Fixed-Threshold Entropy Regularization"
+  ],
+  "comparators": [
+    "Standard Chain-of-Thought (CoT)",
+    "Unconstrained Discrete Communication",
+    "Self-Consistency without compression",
+    "Fixed-Threshold Entropy Regularization"
+  ],
+  "metrics": [
+    "Tokens per task",
+    "Task Accuracy",
+    "Codebook Entropy (bits)",
+    "Counterfactual Decoding Success Rate",
+    "Max Pairwise Cosine Similarity",
+    "Reconstruction Error under Perturbation"
+  ],
+  "risks": [
+    "High entropy constraint might force usage of irrelevant tokens, reducing efficiency.",
+    "Decoder might learn to hallucinate rather than truly reconstruct.",
+    "Dynamic calibration might introduce training instability if $H_{target}$ fluctuates wildly."
+  ],
+  "assumptions": [
+    "A finite codebook size is sufficient for the task domain.",
+    "Counterfactual stability correlates with human interpretability.",
+    "Embedding cosine similarity > 0.88 is a reliable leading indicator of representational collapse."
+  ],
+  "evidence_references": [
+    {
+      "work_id": "L-AD934C6A69457BF4EB60",
+      "record_id": "Collapse_And_Interpretability_Metrics_For_Learned_Agent_Messages",
+      "kind": "ideas",
+      "title": "Collapse and interpretability metrics for learned agent messages",
+      "text": "A per-task entropy floor plus graph-grounded decoding prevents representational collapse while preserving compact communication."
+    },
+    {
+      "work_id": "L-9FED827F2B6580EEDF8B",
+      "record_id": "Counterfactual_Validity_Check",
+      "kind": "principles",
+      "title": "Counterfactual Validity Check",
+      "text": "A valid communication code must produce predictable action changes in response to minimal alterations in decoded propositions, distinguishing functional codes from decorative or uninterpretable channels."
+    },
+    {
+      "work_id": "W-6F281AC9C858",
+      "record_id": "Significant_Latency_Reduction_Via_Symbolic_Protocols",
+      "kind": "takeaways",
+      "title": "Significant Latency Reduction via Symbolic Protocols",
+      "text": "Using CLSR reduces latency-oriented generated token completion significantly compared to standard CoT while maintaining accuracy."
+    },
+    {
+      "work_id": "W-03240C942CD2",
+      "record_id": "Diagnostic_Guideline_For_Committee_Scaling",
+      "kind": "principles",
+      "title": "Diagnostic Guideline for Committee Scaling",
+      "text": "Before committing compute to additional agents in a homogeneous committee, measure embedding overlap. A committee with cosine similarity above 0.88 provides the effective diversity of roughly two independent chains, not the number of agents."
+    },
+    {
+      "work_id": "L-ED26DF60405BF08FF507",
+      "record_id": "Utility_Of_Learned_Machine_Dialects",
+      "kind": "ideas",
+      "title": "Utility of Learned Machine Dialects",
+      "text": "A learned machine dialect is considered useful only if it reduces transmitted tokens while simultaneously preserving task accuracy, counterfactual recoverability, and a human-readable audit path."
+    }
+  ],
+  "model": "siliconflow:Qwen/Qwen3.5-397B-A17B",
+  "mode": "scidialect_evo",
+  "run_id": "RUN_D35FD0E65AD8",
+  "idea_created_at": "2026-07-16T11:18:41+00:00",
+  "created_at": "2026-07-16T11:31:42+00:00"
+}

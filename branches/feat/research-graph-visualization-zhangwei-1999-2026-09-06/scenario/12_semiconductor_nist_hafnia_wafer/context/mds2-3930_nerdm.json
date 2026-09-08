@@ -1,0 +1,4601 @@
+{
+  "_schema": "https://data.nist.gov/od/dm/nerdm-schema/v0.7#",
+  "@context": [
+    "https://data.nist.gov/od/dm/nerdm-pub-context.jsonld",
+    {
+      "@base": "ark:/88434/mds2-3930"
+    }
+  ],
+  "@type": [
+    "nrdp:DataPublication",
+    "nrdp:PublicDataResource",
+    "dcat:Dataset"
+  ],
+  "_extensionSchemas": [
+    "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/PublicDataResource"
+  ],
+  "@id": "ark:/88434/mds2-3930",
+  "ediid": "ark:/88434/mds2-3930",
+  "version": "1.0.1",
+  "doi": "doi:10.18434/mds2-3930",
+  "title": "Nanometer-Scale Planar Reference Materials Project data:Year: 2025 Set: 00, ~10nm Hafnia on Silicon, deposited via ALD on 200mm wafers.",
+  "contactPoint": {
+    "fn": "Donald Windover",
+    "hasEmail": "mailto:donald.windover@nist.gov"
+  },
+  "modified": "2025-08-01",
+  "status": "available",
+  "landingPage": "https://data.nist.gov/od/id/mds2-3930",
+  "description": [
+    "Data directory name:  \"CHIPS-6-02-25-00-set\"Material under study: Set contains twelve, 200 mm wafers, each with 65 cycles ofatomic layer deposition of hafnia, using an Arradiance* Gemstar XT ALD System, Serial Number:  08.164310262022. *Any mention of commercial products within NIST web pages is forinformation only; it does not imply recommendation or endorsement by NIST.Blank Si wafers purchased from WaferPro: [PartNo:  F08041], SEMI standard, 200 mm, SSP, Prime, Float Zone, (100) orientation,with backside laser mark. The wafers were left with native silicon oxide fromproduction, and were deposited during four days, after 2 hour instrumenttemperature stability warm ups, and approximately 3 seconds per cycle, and withthree wafers loaded in top, middle, and bottom locations during each deposition.This deposition approach should provide four correlated sets of deposition.This should allow us to do run-to-run sister wafer correlations for the top,middle, and bottom of our deposition system. Deposition #1 on 2025/06/25included wafers: 25-01 (top of chamber), 25-02 (middle of chamber), 25-03(bottom of chamber). Deposition #2 on 2025/06/27 included wafers: 25-04 (top ofchamber), 25-05 (middle of chamber), 25-06 (bottom of chamber). Deposition #3 on2025/06/30 included wafers: 25-07 (top of chamber), 25-08 (middle of chamber),25-09 (bottom of chamber). Deposition #4 on 2025/07/02 included wafers: 25-10(top of chamber), 25-11 (middle of chamber), 25-12 (bottom of chamber).Wafers 25-02 (#1, middle), 24-04 (#2, top), 25-08 (#3, middle), & 25-12 (#4,bottom) were selected to be diced at a future date. All data contained in thisfirst data release are from whole wafer measurements.Measurements in this first release: This repository contains the X-rayreflectometry (XRR) and variable wavelength spectroscopic ellipsometry (SE) fromtwelve, 200mm wafers.Spectroscopic Ellipsometry (SE): SE was collected using a J.A. Woolam M-2000 DISpectroscopic Ellipsometer, Serial Number:  1212020.A full wafer map of SE was taken for the four wafers, which are to be diced anddistributed as pieces to the semiconductor community.  SE scans of all remainingwhole wafers is planned for a future release.  X-ray reflectivity (XRR):  XRR was collected using a Rigaku SmartLab 9kW Cu rotatinganode Instrument with a Graded parabolic mirror, a Ge 220 x 2 bounce monochromator, and a HyPix 3000 detector, Serial Number:  BD73000647-01.Nine, XRR measurements are takenfor each of the four wafers, which are to be diced.  These data sets are takenat the center of each wafer and at +/- 52.5 mm from the center in all quadrantdirections.  The XRR data will be used to reduce the uncertainty within the SEdata sets provided.  Preliminary XRR scans have been taken on the remainingeight wafers, with a more detailed mapping planned for a future release.  Boththe whole wafers and the diced portions will be available for distributionwithin the semiconductor community via the NIST Office of Reference Materials asa future research grade test material."
+  ],
+  "keyword": [
+    "thickness",
+    "semiconductor",
+    "hafnia",
+    "gate oxide",
+    "x-ray reflectivity",
+    "spectroscopic ellipsometry",
+    "density",
+    "roughness",
+    "thin films",
+    "hybrid metrology"
+  ],
+  "topic": [
+    {
+      "@type": "Concept",
+      "scheme": "https://data.nist.gov/od/dm/nist-themes/v1.1",
+      "tag": "Electronics: Thin-film electronics"
+    }
+  ],
+  "accessLevel": "public",
+  "license": "https://www.nist.gov/open/license",
+  "publisher": {
+    "name": "National Institute of Standards and Technology",
+    "@type": "org:Organization"
+  },
+  "language": [
+    "en"
+  ],
+  "bureauCode": [
+    "006:55"
+  ],
+  "programCode": [
+    "006:052"
+  ],
+  "_editStatus": "done",
+  "theme": [
+    "Electronics: Thin-film electronics"
+  ],
+  "components": [
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-03",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-03"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-03/data",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-03/data"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-03/data/raw",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-03/data/raw"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-03/data/raw/xrr",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-202-20250715-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-202-20250715-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-03%2Fdata%2Fraw%2Fxrr%2F6-02-25-03-202-20250715-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-202-20250715-15min",
+      "size": 19856,
+      "checksum": {
+        "hash": "cdfeddeafa6bc617dcf4b49c7e21c8d7bbe8d4ec6bfe96749bec509b1eb75660",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-263-20250715-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-263-20250715-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-03%2Fdata%2Fraw%2Fxrr%2F6-02-25-03-263-20250715-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-263-20250715-15min",
+      "size": 73000,
+      "checksum": {
+        "hash": "b2526a61460736e1cefd96121badac00c7f5db6671a23ed52b6cc847d86cc80d",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-245-20250715-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-245-20250715-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-03%2Fdata%2Fraw%2Fxrr%2F6-02-25-03-245-20250715-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-245-20250715-15min",
+      "size": 19906,
+      "checksum": {
+        "hash": "48a67e416e40d99ace0c5c03fc719cf827fcb69871e9912c404ed74461b8d341",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-263-20250715-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-263-20250715-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-03%2Fdata%2Fraw%2Fxrr%2F6-02-25-03-263-20250715-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-263-20250715-15min",
+      "size": 19964,
+      "checksum": {
+        "hash": "d8e05b0be497ff17f9433941af9690fffa1536e9fe879b65284f1cbe71119c1e",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-202-20250715-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-202-20250715-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-03%2Fdata%2Fraw%2Fxrr%2F6-02-25-03-202-20250715-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-202-20250715-15min",
+      "size": 72971,
+      "checksum": {
+        "hash": "1cf3c968f0879e728e4c0c5e094649c9f51d03d69066b5e7a73ccdf88fc04008",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-105-20250626-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-105-20250626-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-03%2Fdata%2Fraw%2Fxrr%2F6-02-25-03-105-20250626-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-105-20250626-15min",
+      "size": 19962,
+      "checksum": {
+        "hash": "64e14bc912745c53212c00fea4d8822365e06e9b47c49b87d45842349689bb2d",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-105-20250626-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-105-20250626-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-03%2Fdata%2Fraw%2Fxrr%2F6-02-25-03-105-20250626-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-105-20250626-15min",
+      "size": 72981,
+      "checksum": {
+        "hash": "ddadb37e2ad5bc3fba42de71ce545ca76dcec220a2ab7bb5910a1bf5e68e9c96",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-224-20250626-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-224-20250626-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-03%2Fdata%2Fraw%2Fxrr%2F6-02-25-03-224-20250626-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-224-20250626-15min",
+      "size": 73062,
+      "checksum": {
+        "hash": "0412ea08405b219db08ca9307d3af2202aaf1e10e777d17bdfd01e22ea635bd5",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-224-20250626-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-224-20250626-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-03%2Fdata%2Fraw%2Fxrr%2F6-02-25-03-224-20250626-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-224-20250626-15min",
+      "size": 19956,
+      "checksum": {
+        "hash": "5801c9446cc11b495f9ebde313e545ddf03149a4061977a1fec8e52ea3941bdc",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-245-20250715-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-245-20250715-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-03%2Fdata%2Fraw%2Fxrr%2F6-02-25-03-245-20250715-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-245-20250715-15min",
+      "size": 73068,
+      "checksum": {
+        "hash": "730cc5471ad74fa0f7d73321e465f6358e76a08d198c6103d1da19d67df059cd",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-03/CHIPS-6-02-25-03-measurements-20250716.png",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-03/CHIPS-6-02-25-03-measurements-20250716.png",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-03%2FCHIPS-6-02-25-03-measurements-20250716.png",
+      "mediaType": "image/png",
+      "title": "CHIPS-6-02-25-00-set/25-03/CHIPS-6-02-25-03-measurements-20250716",
+      "size": 65574,
+      "checksum": {
+        "hash": "e899583329b2980aafebc4ced3c21a94c6bc8f28df6fd9981444f0fb5b1ac1a6",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-06",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-06"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-06/data",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-06/data"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-06/data/raw",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-06/data/raw"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-06/data/raw/xrr",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-06/data/raw/xrr"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-06/data/raw/xrr/6-02-25-06-105-20250701-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-06/data/raw/xrr/6-02-25-06-105-20250701-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-06%2Fdata%2Fraw%2Fxrr%2F6-02-25-06-105-20250701-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-06/data/raw/xrr/6-02-25-06-105-20250701-15min",
+      "size": 19970,
+      "checksum": {
+        "hash": "9b8318db6ead8fcdff20f9aef4004e4d54c9d1add21e922803397f3b3ad96863",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-06/data/raw/xrr/6-02-25-06-224-20250701-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-06/data/raw/xrr/6-02-25-06-224-20250701-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-06%2Fdata%2Fraw%2Fxrr%2F6-02-25-06-224-20250701-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-06/data/raw/xrr/6-02-25-06-224-20250701-15min",
+      "size": 73063,
+      "checksum": {
+        "hash": "1f5e6580e21d81b0c7c6b4b22955017b7b55b54a56967fdf44f20f79da2329fc",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-06/data/raw/xrr/6-02-25-06-224-20250701-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-06/data/raw/xrr/6-02-25-06-224-20250701-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-06%2Fdata%2Fraw%2Fxrr%2F6-02-25-06-224-20250701-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-06/data/raw/xrr/6-02-25-06-224-20250701-15min",
+      "size": 19964,
+      "checksum": {
+        "hash": "d32eb91d90d22c9e8d7446efe5f8fa3c827b71cf3b057a27c814b06adf6464ad",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-06/data/raw/xrr/6-02-25-06-105-20250701-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-06/data/raw/xrr/6-02-25-06-105-20250701-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-06%2Fdata%2Fraw%2Fxrr%2F6-02-25-06-105-20250701-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-06/data/raw/xrr/6-02-25-06-105-20250701-15min",
+      "size": 73016,
+      "checksum": {
+        "hash": "67b171d314f936674015c85ac5441636763288f2473577b37ca12aeff2cfd686",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-06/CHIPS-6-02-25-06-measurements-20250716.png",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-06/CHIPS-6-02-25-06-measurements-20250716.png",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-06%2FCHIPS-6-02-25-06-measurements-20250716.png",
+      "mediaType": "image/png",
+      "title": "CHIPS-6-02-25-00-set/25-06/CHIPS-6-02-25-06-measurements-20250716",
+      "size": 64765,
+      "checksum": {
+        "hash": "b64105615df9674978f0985735760c95f3e8fcb8f3345f12a2a572b9b01e86f9",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/CHIPS-6-02-25-00-deposition-matrix.png",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/CHIPS-6-02-25-00-deposition-matrix.png",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2FCHIPS-6-02-25-00-deposition-matrix.png",
+      "mediaType": "image/png",
+      "title": "CHIPS-6-02-25-00-set/CHIPS-6-02-25-00-deposition-matrix",
+      "size": 35457,
+      "checksum": {
+        "hash": "9238655a8d414b05664811a1235eee859923631d11884390c90be648b1eefa6f",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-11",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-11"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-11/data",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-11/data"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-11/data/raw",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-11/data/raw"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-11/data/raw/xrr",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-11/data/raw/xrr"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-11/data/raw/xrr/6-02-25-11-224-20250703-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-11/data/raw/xrr/6-02-25-11-224-20250703-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-11%2Fdata%2Fraw%2Fxrr%2F6-02-25-11-224-20250703-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-11/data/raw/xrr/6-02-25-11-224-20250703-15min",
+      "size": 19833,
+      "checksum": {
+        "hash": "b05a0fc6a985cd0e5325330328eac56418d1674e27c3413f844974c7aeeedc8c",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-11/data/raw/xrr/6-02-25-11-224-20250703-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-11/data/raw/xrr/6-02-25-11-224-20250703-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-11%2Fdata%2Fraw%2Fxrr%2F6-02-25-11-224-20250703-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-11/data/raw/xrr/6-02-25-11-224-20250703-15min",
+      "size": 73043,
+      "checksum": {
+        "hash": "ca336156d5f4922b7882f14d3d21e5b3a2309177ab659c58f7e0caa52d46bb58",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-11/data/raw/xrr/6-02-25-11-105-20250703-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-11/data/raw/xrr/6-02-25-11-105-20250703-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-11%2Fdata%2Fraw%2Fxrr%2F6-02-25-11-105-20250703-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-11/data/raw/xrr/6-02-25-11-105-20250703-15min",
+      "size": 19949,
+      "checksum": {
+        "hash": "de2c68d1962e51886bfbe045d3513163170215e9b2ce8414cbcf72173f351082",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-11/data/raw/xrr/6-02-25-11-105-20250703-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-11/data/raw/xrr/6-02-25-11-105-20250703-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-11%2Fdata%2Fraw%2Fxrr%2F6-02-25-11-105-20250703-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-11/data/raw/xrr/6-02-25-11-105-20250703-15min",
+      "size": 73018,
+      "checksum": {
+        "hash": "7f9444fcc0d502e83aff8efa8cb8f426f96ad607f6cca94057636935e85bb115",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-11/CHIPS-6-02-25-11-measurements-20250716.png",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-11/CHIPS-6-02-25-11-measurements-20250716.png",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-11%2FCHIPS-6-02-25-11-measurements-20250716.png",
+      "mediaType": "image/png",
+      "title": "CHIPS-6-02-25-00-set/25-11/CHIPS-6-02-25-11-measurements-20250716",
+      "size": 64802,
+      "checksum": {
+        "hash": "e7ef13b4db2f27266058393eaf9ad081a47e844a2a68f87a3cf8a70d6d6a8cb1",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-05",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-05"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-05/data",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-05/data"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-05/data/raw",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-05/data/raw"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-05/data/raw/xrr",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-224-20250701-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-224-20250701-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-05%2Fdata%2Fraw%2Fxrr%2F6-02-25-05-224-20250701-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-224-20250701-15min",
+      "size": 73054,
+      "checksum": {
+        "hash": "e37df4e87f95bfb87f2e40902e4b204b5ad68973498da195275728c4481716a4",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-105-20250701-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-105-20250701-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-05%2Fdata%2Fraw%2Fxrr%2F6-02-25-05-105-20250701-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-105-20250701-15min",
+      "size": 73044,
+      "checksum": {
+        "hash": "f38a175cd65fdcd13b16dbe9c7a78dcc9f9ef812cd8084ddff6193df30db1413",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-224-20250701-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-224-20250701-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-05%2Fdata%2Fraw%2Fxrr%2F6-02-25-05-224-20250701-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-224-20250701-15min",
+      "size": 19936,
+      "checksum": {
+        "hash": "4af0c0346809c18b94bdd73445f5d29cfdd661c787820891373e7012bc064e4e",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-245-20250715-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-245-20250715-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-05%2Fdata%2Fraw%2Fxrr%2F6-02-25-05-245-20250715-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-245-20250715-15min",
+      "size": 19951,
+      "checksum": {
+        "hash": "b344bc5fdc017ced11fa353194845ad21b2f45db4b1c71356d0c1c9465c59785",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-105-20250701-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-105-20250701-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-05%2Fdata%2Fraw%2Fxrr%2F6-02-25-05-105-20250701-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-105-20250701-15min",
+      "size": 19970,
+      "checksum": {
+        "hash": "7719b0d7376a7f2b38de440c0d431cab5bc240fd9309c21e66a85b6656a90d24",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-263-20250715-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-263-20250715-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-05%2Fdata%2Fraw%2Fxrr%2F6-02-25-05-263-20250715-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-263-20250715-15min",
+      "size": 73026,
+      "checksum": {
+        "hash": "093767f249f0d5bb04c1cf273ded1865f50c047edafb50d746bd2bd004b27e18",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-263-20250715-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-263-20250715-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-05%2Fdata%2Fraw%2Fxrr%2F6-02-25-05-263-20250715-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-263-20250715-15min",
+      "size": 19988,
+      "checksum": {
+        "hash": "1b6d89e64514f98baf4ff493b40870f1f0b1c6af1ac6ef7a3becb99f917fb9ef",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-245-20250715-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-245-20250715-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-05%2Fdata%2Fraw%2Fxrr%2F6-02-25-05-245-20250715-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-245-20250715-15min",
+      "size": 73053,
+      "checksum": {
+        "hash": "e7ffc45f09d3848c45183ff90f7819cb18b676e16f26f9ad567c92b7e934d895",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-202-20250715-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-202-20250715-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-05%2Fdata%2Fraw%2Fxrr%2F6-02-25-05-202-20250715-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-202-20250715-15min",
+      "size": 19941,
+      "checksum": {
+        "hash": "459fd1c9ecd2e1247bb5729bc9e9a67dc87e81350d3eb552a4229daf2bb07325",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-202-20250715-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-202-20250715-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-05%2Fdata%2Fraw%2Fxrr%2F6-02-25-05-202-20250715-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-202-20250715-15min",
+      "size": 72966,
+      "checksum": {
+        "hash": "f17e6cfffe8fe9ee1b82d9d56f8665001e3711a58b3f4b1abab82f0f4db675ed",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-05/CHIPS-6-02-25-05-measurements-20250716.png",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-05/CHIPS-6-02-25-05-measurements-20250716.png",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-05%2FCHIPS-6-02-25-05-measurements-20250716.png",
+      "mediaType": "image/png",
+      "title": "CHIPS-6-02-25-00-set/25-05/CHIPS-6-02-25-05-measurements-20250716",
+      "size": 65503,
+      "checksum": {
+        "hash": "823737975378b3378ee6ae0138e664d925fb97c074fc91473ab2dd5003b86422",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/xrr",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-202-20250708-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-202-20250708-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fxrr%2F6-02-25-08-202-20250708-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-202-20250708-15min",
+      "size": 72963,
+      "checksum": {
+        "hash": "82e786511e5b01a888d45b6bac32e4fc24fd43a47e0bdbdc1a58eb00132897e5",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-263-20250708-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-263-20250708-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fxrr%2F6-02-25-08-263-20250708-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-263-20250708-15min",
+      "size": 19977,
+      "checksum": {
+        "hash": "fa2836a341daa08131050d325df667e8d8e87a2dac5084c2ed67637ae96a8515",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-224-20250701-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-224-20250701-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fxrr%2F6-02-25-08-224-20250701-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-224-20250701-15min",
+      "size": 19933,
+      "checksum": {
+        "hash": "8949689b7c50f889fc12d9398e48d6b12e00cc419f0825a8afe91150a7da9350",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-302-20250716-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-302-20250716-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fxrr%2F6-02-25-08-302-20250716-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-302-20250716-15min",
+      "size": 19849,
+      "checksum": {
+        "hash": "b8d95524e3c0140feed02f60e44ca3e4d0f9c9b4d5b0e2296f60c2a7da2ee75f",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-105-20250701-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-105-20250701-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fxrr%2F6-02-25-08-105-20250701-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-105-20250701-15min",
+      "size": 73013,
+      "checksum": {
+        "hash": "7c81cbfb9824af34c16e9e1d0192ce3813d380e6e96cc8b4be11b05c08ca6cd7",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-302-20250716-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-302-20250716-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fxrr%2F6-02-25-08-302-20250716-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-302-20250716-15min",
+      "size": 73017,
+      "checksum": {
+        "hash": "14041efccb0066426f64daf0f07e7352c70c7b9742d7617d6d560ed00f75e8d5",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-224-20250701-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-224-20250701-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fxrr%2F6-02-25-08-224-20250701-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-224-20250701-15min",
+      "size": 73069,
+      "checksum": {
+        "hash": "20ceca262cd112852f9b20bb79d451ddb483df7fee21dd52a7fb20d0c498ca93",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-245-20250708-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-245-20250708-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fxrr%2F6-02-25-08-245-20250708-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-245-20250708-15min",
+      "size": 19910,
+      "checksum": {
+        "hash": "ec052cfee57c51ddd8876e8d149a3cda0d9f7e19113120de2823c7269c62150c",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-343-20250716-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-343-20250716-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fxrr%2F6-02-25-08-343-20250716-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-343-20250716-15min",
+      "size": 19935,
+      "checksum": {
+        "hash": "99fa85cf4e715d6ef55abb9d8cd7fb964d71f1f3ea7b8c5bfaac25465136f9b9",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-202-20250708-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-202-20250708-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fxrr%2F6-02-25-08-202-20250708-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-202-20250708-15min",
+      "size": 19814,
+      "checksum": {
+        "hash": "7024669248540a18c2b46e0b4219fb530561a67602b61f150dbc0534d4c09885",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-361-20250716-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-361-20250716-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fxrr%2F6-02-25-08-361-20250716-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-361-20250716-15min",
+      "size": 72969,
+      "checksum": {
+        "hash": "12edad8031c2e1c9c5d5a73ea1f1a63293f1ab6520bcaa2dcf420bb1a7b7f397",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-324-20250716-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-324-20250716-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fxrr%2F6-02-25-08-324-20250716-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-324-20250716-15min",
+      "size": 73085,
+      "checksum": {
+        "hash": "13478b317676c467e732a7267b72ea36c1ef7b28da929e7fbf393d4cf019f281",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-343-20250716-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-343-20250716-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fxrr%2F6-02-25-08-343-20250716-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-343-20250716-15min",
+      "size": 73138,
+      "checksum": {
+        "hash": "a28fbc6a91e586e74ca8658918990f8c759cb07596dcab19cbb792ef4e18efb6",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-361-20250716-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-361-20250716-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fxrr%2F6-02-25-08-361-20250716-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-361-20250716-15min",
+      "size": 19996,
+      "checksum": {
+        "hash": "60fb7cb6882c6a12f3ed10563191bdb537a885fdcc92e4620c78323d18285279",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-263-20250708-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-263-20250708-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fxrr%2F6-02-25-08-263-20250708-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-263-20250708-15min",
+      "size": 72982,
+      "checksum": {
+        "hash": "b33b45fc520e669fa40d3c10fa52030ee07d27b5f7f311736a25731db82d01b4",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-105-20250701-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-105-20250701-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fxrr%2F6-02-25-08-105-20250701-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-105-20250701-15min",
+      "size": 19973,
+      "checksum": {
+        "hash": "facaf64bf1501f8279aceb97ce0cdd0e9abc4f88ae68074911ac8c3b6f3c5e85",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-324-20250716-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-324-20250716-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fxrr%2F6-02-25-08-324-20250716-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-324-20250716-15min",
+      "size": 19936,
+      "checksum": {
+        "hash": "c0a9fff98f1f2d0a0f7a9425a6fa2620bdfad792649ce7cd26a057038c5b4bb2",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-245-20250708-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-245-20250708-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fxrr%2F6-02-25-08-245-20250708-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-245-20250708-15min",
+      "size": 73041,
+      "checksum": {
+        "hash": "be9886a95ecc88fd8596d53839644b7d8a0aa37ac5afcec8c6ae96995dcff648",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/se",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/se"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-parameters.csv",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-parameters.csv",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-08-parameters.csv",
+      "mediaType": "text/csv",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-parameters",
+      "size": 10676,
+      "checksum": {
+        "hash": "e9e5a8d0ce0c4ada5790867ec9f6248b4443f5724b0659af562fb9d1c6463ffd",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-full.SE",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-full.SE",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-08-full.SE",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-full",
+      "size": 8121080,
+      "checksum": {
+        "hash": "31bdf2e4de85ee0094f688e28d8c2797e47ed1f000809acdad0d70a978e3703e",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-n.txt",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-n.txt",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-08-n.txt",
+      "mediaType": "text/plain",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-n",
+      "size": 3489,
+      "checksum": {
+        "hash": "a487a9bcd270c08485f878fe7b7e654a22fd74d52a0dbf51b3ab0e45207e0b47",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-n.png",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-n.png",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-08-n.png",
+      "mediaType": "image/png",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-n",
+      "size": 92075,
+      "checksum": {
+        "hash": "613ee9ea45f82395036e7f211b0e9389ce55f02c9fa3435fb580a124643b7a12",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-full.docx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-full.docx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-08-full.docx",
+      "mediaType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-full",
+      "size": 397351,
+      "checksum": {
+        "hash": "30c2740bd4d83d18990f0fb1f8d880e52deb97871d8fb95855a9d3dd7277c5a2",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-thickness.png",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-thickness.png",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-08-thickness.png",
+      "mediaType": "image/png",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-thickness",
+      "size": 84183,
+      "checksum": {
+        "hash": "87b48f0c2da9886b1e8408fb2ce6d31fd75778879001edd96b104a767e6ca5da",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-full.rtf",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-full.rtf",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-08-full.rtf",
+      "mediaType": "application/rtf",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-full",
+      "size": 39586756,
+      "checksum": {
+        "hash": "ddfd62d76f46fa79e1631693bc8bef3fb38d26e4995006beb1edfd62a7fd383c",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-105.txt",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-105.txt",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-08-105.txt",
+      "mediaType": "text/plain",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-105",
+      "size": 60003,
+      "checksum": {
+        "hash": "550476976dabff54ee8722b76771f1bfefc9a69ed7827f5c0cb9f6e7646f4e54",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-thickness.txt",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-thickness.txt",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-08-thickness.txt",
+      "mediaType": "text/plain",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-thickness",
+      "size": 3507,
+      "checksum": {
+        "hash": "57898545c063e66c2927d54e29f64398004a87442b5a44ceca92478f9825cb75",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-parameters.txt",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-parameters.txt",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-08-parameters.txt",
+      "mediaType": "text/plain",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-parameters",
+      "size": 13265,
+      "checksum": {
+        "hash": "95d865a0695f8e43c745106bbc95742711afdeff324293c23527a509bfca9603",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-parameters.xlsx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-parameters.xlsx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-08-parameters.xlsx",
+      "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "title": "CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-parameters",
+      "size": 21600,
+      "checksum": {
+        "hash": "823e9ff1d9c860598f3a6b3778ad0d37d4cccc0c2c59c33f955d5a59de4073b8",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-08/CHIPS-6-02-25-08-measurements-20250716.png",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-08/CHIPS-6-02-25-08-measurements-20250716.png",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-08%2FCHIPS-6-02-25-08-measurements-20250716.png",
+      "mediaType": "image/png",
+      "title": "CHIPS-6-02-25-00-set/25-08/CHIPS-6-02-25-08-measurements-20250716",
+      "size": 77641,
+      "checksum": {
+        "hash": "e2d1b70908706cfee89646d852817563ffc58c7e8080b6e80a8a12f859aaad20",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/xrr",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-263-20250708-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-263-20250708-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fxrr%2F6-02-25-02-263-20250708-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-263-20250708-15min",
+      "size": 73002,
+      "checksum": {
+        "hash": "fa83ac955d8f75dc642bef22a330151c56c265c3305a31e799dfb739606616e5",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-245-20250708-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-245-20250708-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fxrr%2F6-02-25-02-245-20250708-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-245-20250708-15min",
+      "size": 73061,
+      "checksum": {
+        "hash": "6a159451ae86da138e1d86bc129fc67ae50a4703deb9c261c7c76d6c7b56e602",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-105-20250626-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-105-20250626-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fxrr%2F6-02-25-02-105-20250626-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-105-20250626-15min",
+      "size": 19941,
+      "checksum": {
+        "hash": "d7c6008ad1cd1826516f4a2e4d3f0544751806ad95b2fac862e240535f5744ee",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-224-20250626-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-224-20250626-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fxrr%2F6-02-25-02-224-20250626-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-224-20250626-15min",
+      "size": 73068,
+      "checksum": {
+        "hash": "e2793d4e8a8be76784ebd8cbce09dcd6e032106124818a48bb88251f576cb23d",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-202-20250708-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-202-20250708-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fxrr%2F6-02-25-02-202-20250708-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-202-20250708-15min",
+      "size": 72950,
+      "checksum": {
+        "hash": "e5824ed5934adadbc53cde653e23281337c5b045246683603aa9f36b48f7b9fa",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-361-20250715-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-361-20250715-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fxrr%2F6-02-25-02-361-20250715-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-361-20250715-15min",
+      "size": 19868,
+      "checksum": {
+        "hash": "f9289c797aca4e7d9660641f2b558b4b39b9de01ce7840d4c8c8807bc73d0e95",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-343-20250715-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-343-20250715-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fxrr%2F6-02-25-02-343-20250715-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-343-20250715-15min",
+      "size": 73071,
+      "checksum": {
+        "hash": "d531555d7ff69f2f6431248a9bc266152a5d1a01f1f561bfee3a3b335ca095b5",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-343-20250715-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-343-20250715-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fxrr%2F6-02-25-02-343-20250715-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-343-20250715-15min",
+      "size": 19910,
+      "checksum": {
+        "hash": "659bce688766207d29253e673fb5ae4e828bf449ec6d64031f2d987bf67e9fe7",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-202-20250708-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-202-20250708-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fxrr%2F6-02-25-02-202-20250708-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-202-20250708-15min",
+      "size": 19877,
+      "checksum": {
+        "hash": "b8dbe38d31dea163e0e9a623e91f3f8f2a21057fbacfbffa61a19b144ece9577",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-263-20250708-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-263-20250708-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fxrr%2F6-02-25-02-263-20250708-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-263-20250708-15min",
+      "size": 19943,
+      "checksum": {
+        "hash": "e52f9963676ecf3211bbbde3cb1bedfef9a4a2281be9e7e01a1cd1ca5a31e1e9",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-302-20250715-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-302-20250715-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fxrr%2F6-02-25-02-302-20250715-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-302-20250715-15min",
+      "size": 19866,
+      "checksum": {
+        "hash": "8be45724c78856216fe460aad8bbee16ba6ca3601f079ec9a49cc820053b8327",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-105-20250626-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-105-20250626-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fxrr%2F6-02-25-02-105-20250626-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-105-20250626-15min",
+      "size": 72980,
+      "checksum": {
+        "hash": "7cb6d33be3f26a266863db12b41bdc94ec05c057762af3055b5be66ad97e72c4",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-245-20250708-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-245-20250708-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fxrr%2F6-02-25-02-245-20250708-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-245-20250708-15min",
+      "size": 19949,
+      "checksum": {
+        "hash": "471aa659c553b6b6c471692098aaf6f63268cc1d26c36b116b8ae364275f53f2",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-302-20250715-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-302-20250715-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fxrr%2F6-02-25-02-302-20250715-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-302-20250715-15min",
+      "size": 72988,
+      "checksum": {
+        "hash": "765e877b34b60addd549a0c84e3149b2dd1c9759381315c423b6e373c9e2725c",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-324-20250715-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-324-20250715-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fxrr%2F6-02-25-02-324-20250715-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-324-20250715-15min",
+      "size": 73030,
+      "checksum": {
+        "hash": "20c17398105f9f078c433e0d987ef3acf000eb1663ef0418fc589c6107d71b77",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-224-20250626-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-224-20250626-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fxrr%2F6-02-25-02-224-20250626-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-224-20250626-15min",
+      "size": 19911,
+      "checksum": {
+        "hash": "7caad1c4e50e41ad4a92e32891adff5a1b2ddc6837200439a77716a8906d284c",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-324-20250715-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-324-20250715-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fxrr%2F6-02-25-02-324-20250715-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-324-20250715-15min",
+      "size": 19905,
+      "checksum": {
+        "hash": "0b6ad75e737f8bf6503b8a7c29bf6b3fa0bfc9652d26ba82895a6d3e86d1b66d",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-361-20250715-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-361-20250715-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fxrr%2F6-02-25-02-361-20250715-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-361-20250715-15min",
+      "size": 72933,
+      "checksum": {
+        "hash": "eb4427bc5c39895bdd013758dff1d53c05abc6c2eefb07872ff8781a75921ac7",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/se",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/se"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-n.txt",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-n.txt",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-02-n.txt",
+      "mediaType": "text/plain",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-n",
+      "size": 3489,
+      "checksum": {
+        "hash": "d8c171d0339cf1b8a3d07c94e3658b7d4860344aa660c86fa399fcc0556e2acd",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-n.png",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-n.png",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-02-n.png",
+      "mediaType": "image/png",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-n",
+      "size": 90068,
+      "checksum": {
+        "hash": "6c721e56304f40e29391033f3cdd0bcdc3864033b103bd6806d76f005a29be67",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-thickness.txt",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-thickness.txt",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-02-thickness.txt",
+      "mediaType": "text/plain",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-thickness",
+      "size": 3505,
+      "checksum": {
+        "hash": "748fe6285006b92b91474168de6d87458818274e4a3b5c37dbb4cd226cb8e64f",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-35-02-parameters.csv",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-35-02-parameters.csv",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-35-02-parameters.csv",
+      "mediaType": "text/csv",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-35-02-parameters",
+      "size": 10553,
+      "checksum": {
+        "hash": "45e91437ac7a4785360b31169e9e7be57682cddc59aa01bc97ed5dd00a8a57ff",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-full.SE",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-full.SE",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-02-full.SE",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-full",
+      "size": 8120816,
+      "checksum": {
+        "hash": "08f22e4d52d55799be00fef77a376f643593da3fcca52ff04b0963d8a14bdf46",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-105.txt",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-105.txt",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-02-105.txt",
+      "mediaType": "text/plain",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-105",
+      "size": 60009,
+      "checksum": {
+        "hash": "d9f3fd64816fccb9a6d92e218e4482a2a6a65f340e6037c9d991b9cf21420133",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-full.rtf",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-full.rtf",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-02-full.rtf",
+      "mediaType": "application/rtf",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-full",
+      "size": 35592984,
+      "checksum": {
+        "hash": "851a45b8df187f50cc17fd1852fa5efac4632c00521cab3233c2e5bb128e73fc",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-parameters.txt",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-parameters.txt",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-02-parameters.txt",
+      "mediaType": "text/plain",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-parameters",
+      "size": 13130,
+      "checksum": {
+        "hash": "91a284eef650e99646e6fb9bcbc2a5e1a486339516f99c333860cc8d60b82cc2",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-thickness.png",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-thickness.png",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-02-thickness.png",
+      "mediaType": "image/png",
+      "title": "CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-thickness",
+      "size": 81279,
+      "checksum": {
+        "hash": "57357257b81fac221b575c366a570d7dd72071f2acdc06d476adbcf39e1cf343",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-02/CHIPS-6-02-25-02-measurements-20250716.png",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-02/CHIPS-6-02-25-02-measurements-20250716.png",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-02%2FCHIPS-6-02-25-02-measurements-20250716.png",
+      "mediaType": "image/png",
+      "title": "CHIPS-6-02-25-00-set/25-02/CHIPS-6-02-25-02-measurements-20250716",
+      "size": 77471,
+      "checksum": {
+        "hash": "110ac07c7bb5dd080d2ea352e652be2372c43c0a66761332713ae40d35931ace",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/README.txt",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/README.txt",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2FREADME.txt",
+      "mediaType": "text/plain",
+      "title": "CHIPS-6-02-25-00-set/README",
+      "size": 13719,
+      "checksum": {
+        "hash": "4a6d6a6ba351f26809e5b35b1b9c0853f39ede3de5a3ce6285f01331d9e9d118",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/measurement-details",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/measurement-details"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250716_Ge_220_x2_alignment.pdf",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250716_Ge_220_x2_alignment.pdf",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2Fmeasurement-details%2Fxrr-alignment-files%2F20250716_Ge_220_x2_alignment.pdf",
+      "mediaType": "application/pdf",
+      "title": "CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250716_Ge_220_x2_alignment",
+      "size": 282869,
+      "checksum": {
+        "hash": "43dedb72c13643e1b0a746669875c6f40711cf5082a975263586ccef72195974",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/BR_23_SmartLab brochure_en_A4_4064745726_Ver2_low-res.pdf",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/BR_23_SmartLab brochure_en_A4_4064745726_Ver2_low-res.pdf",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2Fmeasurement-details%2Fxrr-alignment-files%2FBR_23_SmartLab%20brochure_en_A4_4064745726_Ver2_low-res.pdf",
+      "mediaType": "application/pdf",
+      "title": "CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/BR_23_SmartLab brochure_en_A4_4064745726_Ver2_low-res",
+      "size": 2444621,
+      "checksum": {
+        "hash": "86e22ce835d5b92eacd55a1c8ba8a4031989c9f00c71f38adb3851ba5013737a",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250715_Ge_220_x2_alignment.pdf",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250715_Ge_220_x2_alignment.pdf",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2Fmeasurement-details%2Fxrr-alignment-files%2F20250715_Ge_220_x2_alignment.pdf",
+      "mediaType": "application/pdf",
+      "title": "CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250715_Ge_220_x2_alignment",
+      "size": 283856,
+      "checksum": {
+        "hash": "83c1f3c8dbb1f1daf6144cde5c453afc15f21d0c054665c030cffc4a62e0dac0",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250703_Ge_220_x2_alignment.pdf",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250703_Ge_220_x2_alignment.pdf",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2Fmeasurement-details%2Fxrr-alignment-files%2F20250703_Ge_220_x2_alignment.pdf",
+      "mediaType": "application/pdf",
+      "title": "CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250703_Ge_220_x2_alignment",
+      "size": 282446,
+      "checksum": {
+        "hash": "b81158606337d7003f68a819a7aad325168099c7cfa47800e08fedeb6de5d19a",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/README.txt",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/README.txt",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2Fmeasurement-details%2Fxrr-alignment-files%2FREADME.txt",
+      "mediaType": "text/plain",
+      "title": "CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/README",
+      "size": 353,
+      "checksum": {
+        "hash": "bd2df8213d83afb6c961bce4cac8d3aa30e514afb3c04eb69874353c419ea88a",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250626_Ge_220_x2_alignment_final.pdf",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250626_Ge_220_x2_alignment_final.pdf",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2Fmeasurement-details%2Fxrr-alignment-files%2F20250626_Ge_220_x2_alignment_final.pdf",
+      "mediaType": "application/pdf",
+      "title": "CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250626_Ge_220_x2_alignment_final",
+      "size": 282635,
+      "checksum": {
+        "hash": "2a60802f05a96864cbd1f5e7ffb744f9b292a536ca68c19d808c7e903a3db54f",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250708_Ge_220_x2_alignment.pdf",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250708_Ge_220_x2_alignment.pdf",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2Fmeasurement-details%2Fxrr-alignment-files%2F20250708_Ge_220_x2_alignment.pdf",
+      "mediaType": "application/pdf",
+      "title": "CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250708_Ge_220_x2_alignment",
+      "size": 284739,
+      "checksum": {
+        "hash": "043695052f30d5b6a8491d8547a14e48819b0b91ffc873766dbd915ed436e638",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250724_Ge_220_x2_alignment.pdf",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250724_Ge_220_x2_alignment.pdf",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2Fmeasurement-details%2Fxrr-alignment-files%2F20250724_Ge_220_x2_alignment.pdf",
+      "mediaType": "application/pdf",
+      "title": "CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250724_Ge_220_x2_alignment",
+      "size": 282812,
+      "checksum": {
+        "hash": "343fb0008e97743e5b78ae4dc97695a600da710b027c14b079d739093eb17ab9",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250701_Ge_220_x2_alignment.pdf",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250701_Ge_220_x2_alignment.pdf",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2Fmeasurement-details%2Fxrr-alignment-files%2F20250701_Ge_220_x2_alignment.pdf",
+      "mediaType": "application/pdf",
+      "title": "CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250701_Ge_220_x2_alignment",
+      "size": 282824,
+      "checksum": {
+        "hash": "5610f3eff44d0c07be419d559ebec0d08e11394b81fced4497214718ef85f5c2",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/measurement-details/se-collection-files",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/measurement-details/se-collection-files"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/measurement-details/se-collection-files/CHIPS-6-02-2s-standard.parms",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/measurement-details/se-collection-files/CHIPS-6-02-2s-standard.parms",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2Fmeasurement-details%2Fse-collection-files%2FCHIPS-6-02-2s-standard.parms",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/measurement-details/se-collection-files/CHIPS-6-02-2s-standard",
+      "size": 672,
+      "checksum": {
+        "hash": "caaa84e32d643097c2dd657d07415e68b1006e228942544b905b1f295d67685b",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/measurement-details/se-collection-files/README.txt",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/measurement-details/se-collection-files/README.txt",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2Fmeasurement-details%2Fse-collection-files%2FREADME.txt",
+      "mediaType": "text/plain",
+      "title": "CHIPS-6-02-25-00-set/measurement-details/se-collection-files/README",
+      "size": 405,
+      "checksum": {
+        "hash": "4fea099473dae8eb7f911a20ad81175ef55a8ade548fc6e45a0165b5c4c6700f",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/measurement-details/se-collection-files/CHIPS-6-02-200mm-targets.scan",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/measurement-details/se-collection-files/CHIPS-6-02-200mm-targets.scan",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2Fmeasurement-details%2Fse-collection-files%2FCHIPS-6-02-200mm-targets.scan",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/measurement-details/se-collection-files/CHIPS-6-02-200mm-targets",
+      "size": 2665,
+      "checksum": {
+        "hash": "fd536cb1e5e7da3ba46fba02c76fdd66e850d4a5579164c459366ff0a106f4b8",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/measurement-details/se-collection-files/m-2000-brochure.pdf",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/measurement-details/se-collection-files/m-2000-brochure.pdf",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2Fmeasurement-details%2Fse-collection-files%2Fm-2000-brochure.pdf",
+      "mediaType": "application/pdf",
+      "title": "CHIPS-6-02-25-00-set/measurement-details/se-collection-files/m-2000-brochure",
+      "size": 10834556,
+      "checksum": {
+        "hash": "9d03a90aa7000a8801c43f61799be5eebaa900c6f5db29180665597c1b49b75a",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/measurement-details/se-collection-files/CHIPS-6-02-25-00.mod",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/measurement-details/se-collection-files/CHIPS-6-02-25-00.mod",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2Fmeasurement-details%2Fse-collection-files%2FCHIPS-6-02-25-00.mod",
+      "mediaType": "audio/x-mod",
+      "title": "CHIPS-6-02-25-00-set/measurement-details/se-collection-files/CHIPS-6-02-25-00",
+      "size": 14156,
+      "checksum": {
+        "hash": "34960978d52eb98d2b8df41963680c4937b3506dc1d78549620636d53dac521d",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-12",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-12"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-12/data",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-12/data"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-12/data/raw",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-12/data/raw"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-12/data/raw/xrr",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-245-20250703-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-245-20250703-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-12%2Fdata%2Fraw%2Fxrr%2F6-02-25-12-245-20250703-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-245-20250703-15min",
+      "size": 19843,
+      "checksum": {
+        "hash": "e694f31f8080e0f3f77d86462795e1c9da05ac7f31563319eb1be52b9f4a0795",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-263-20250703-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-263-20250703-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-12%2Fdata%2Fraw%2Fxrr%2F6-02-25-12-263-20250703-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-263-20250703-15min",
+      "size": 19920,
+      "checksum": {
+        "hash": "3221754ffe9f4b800f4322bba38fda6b46d3026a0bc0ab83763d28e93e5ad4e3",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-224-20250703-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-224-20250703-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-12%2Fdata%2Fraw%2Fxrr%2F6-02-25-12-224-20250703-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-224-20250703-15min",
+      "size": 73052,
+      "checksum": {
+        "hash": "51ae807986fca2ce1773e02ecb084c4f7c0e17c56f6633e9f9c1bf5cd433da94",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-202-20250703-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-202-20250703-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-12%2Fdata%2Fraw%2Fxrr%2F6-02-25-12-202-20250703-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-202-20250703-15min",
+      "size": 19843,
+      "checksum": {
+        "hash": "2036459d3673ef9ef896bd7f1c3b0dfbaaa1ad0968236dd73c2a3c5950ffa94b",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-224-20250703-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-224-20250703-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-12%2Fdata%2Fraw%2Fxrr%2F6-02-25-12-224-20250703-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-224-20250703-15min",
+      "size": 19865,
+      "checksum": {
+        "hash": "5d663f3eb4d8927a50d67f7f97b5324bdfb912d50491ca0dc56ada2691c21029",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-263-20250703-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-263-20250703-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-12%2Fdata%2Fraw%2Fxrr%2F6-02-25-12-263-20250703-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-263-20250703-15min",
+      "size": 73090,
+      "checksum": {
+        "hash": "0131c5c3803593a4921a0c3977d7aadf1da05a564ec3fdf2019376231492837d",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-105-20250703-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-105-20250703-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-12%2Fdata%2Fraw%2Fxrr%2F6-02-25-12-105-20250703-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-105-20250703-15min",
+      "size": 19939,
+      "checksum": {
+        "hash": "86e6b9bb18fc4ed52d73ea767a7d6cad3129d8f6669aa0cca64f05fca59fdee7",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-202-20250703-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-202-20250703-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-12%2Fdata%2Fraw%2Fxrr%2F6-02-25-12-202-20250703-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-202-20250703-15min",
+      "size": 73043,
+      "checksum": {
+        "hash": "8792eafb2398f56508b4e200b03267252fce32f8ac363fee519824966bd861d9",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-245-20250703-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-245-20250703-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-12%2Fdata%2Fraw%2Fxrr%2F6-02-25-12-245-20250703-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-245-20250703-15min",
+      "size": 73149,
+      "checksum": {
+        "hash": "43182b2d0e759a48e0a43cb22c354e9c023b3570cd2f3723f03f00e0cbf84a07",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-105-20250703-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-105-20250703-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-12%2Fdata%2Fraw%2Fxrr%2F6-02-25-12-105-20250703-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-105-20250703-15min",
+      "size": 72997,
+      "checksum": {
+        "hash": "3ffb4bfdf4646ef4d03a2756dfed153998f6b256f0bcba003cba64068ea91fdc",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-12/CHIPS-6-02-25-12-measurements-20250716.png",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-12/CHIPS-6-02-25-12-measurements-20250716.png",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-12%2FCHIPS-6-02-25-12-measurements-20250716.png",
+      "mediaType": "image/png",
+      "title": "CHIPS-6-02-25-00-set/25-12/CHIPS-6-02-25-12-measurements-20250716",
+      "size": 77584,
+      "checksum": {
+        "hash": "572d74fbb93959aef4996d76c78b30035bb977e00a7f07d08366b8cd6a9a5f61",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-07",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-07"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-07/data",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-07/data"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-07/data/raw",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-07/data/raw"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-07/data/raw/xrr",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-07/data/raw/xrr"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-07/data/raw/xrr/6-02-25-07-105-20250701-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-07/data/raw/xrr/6-02-25-07-105-20250701-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-07%2Fdata%2Fraw%2Fxrr%2F6-02-25-07-105-20250701-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-07/data/raw/xrr/6-02-25-07-105-20250701-15min",
+      "size": 20081,
+      "checksum": {
+        "hash": "6cf1703116c0b5171d9142c7bf98e00674b164ac18daa6b08adcd42315d0644d",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-07/data/raw/xrr/6-02-25-07-224-20250701-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-07/data/raw/xrr/6-02-25-07-224-20250701-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-07%2Fdata%2Fraw%2Fxrr%2F6-02-25-07-224-20250701-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-07/data/raw/xrr/6-02-25-07-224-20250701-15min",
+      "size": 73125,
+      "checksum": {
+        "hash": "9e8e07eaa5cc1e8c9589184740a6786dafd571d3c6ecdc6324b0c83f20c3b6b5",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-07/data/raw/xrr/6-02-25-07-105-20250701-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-07/data/raw/xrr/6-02-25-07-105-20250701-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-07%2Fdata%2Fraw%2Fxrr%2F6-02-25-07-105-20250701-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-07/data/raw/xrr/6-02-25-07-105-20250701-15min",
+      "size": 72946,
+      "checksum": {
+        "hash": "4a73ee2298ef464fff2ab6b99379fa92ac2d0ce6fdbe93056cfe7e82b4f67897",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-07/data/raw/xrr/6-02-25-07-224-20250701-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-07/data/raw/xrr/6-02-25-07-224-20250701-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-07%2Fdata%2Fraw%2Fxrr%2F6-02-25-07-224-20250701-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-07/data/raw/xrr/6-02-25-07-224-20250701-15min",
+      "size": 20028,
+      "checksum": {
+        "hash": "6f91c8ff3a66c6d40f7039bfc1bf534d7227c0ddcb49245ecbbce118be5ea564",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-07/CHIPS-6-02-25-07-measurements-20250716.png",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-07/CHIPS-6-02-25-07-measurements-20250716.png",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-07%2FCHIPS-6-02-25-07-measurements-20250716.png",
+      "mediaType": "image/png",
+      "title": "CHIPS-6-02-25-00-set/25-07/CHIPS-6-02-25-07-measurements-20250716",
+      "size": 64754,
+      "checksum": {
+        "hash": "b773ee3c45082b74395468c5f1c1b32c11a01ecd416574c52aaf4a5079943c61",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-10",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-10"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-10/CHIPS-6-02-25-10-measurements-20250716.png",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-10/CHIPS-6-02-25-10-measurements-20250716.png",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-10%2FCHIPS-6-02-25-10-measurements-20250716.png",
+      "mediaType": "image/png",
+      "title": "CHIPS-6-02-25-00-set/25-10/CHIPS-6-02-25-10-measurements-20250716",
+      "size": 64798,
+      "checksum": {
+        "hash": "b1d742481ece9c6e2f8998fd34df6893cff2075386cbe3d3ea69ff460034db8b",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-10/data",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-10/data"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-10/data/raw",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-10/data/raw"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-10/data/raw/xrr",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-10/data/raw/xrr"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-10/data/raw/xrr/6-02-25-10-105-20250703-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-10/data/raw/xrr/6-02-25-10-105-20250703-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-10%2Fdata%2Fraw%2Fxrr%2F6-02-25-10-105-20250703-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-10/data/raw/xrr/6-02-25-10-105-20250703-15min",
+      "size": 20193,
+      "checksum": {
+        "hash": "8db64c391d2720e0f60ee66254cbf60fc3b0d44318a91655b075308d5eacbc60",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-10/data/raw/xrr/6-02-25-10-224-20250703-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-10/data/raw/xrr/6-02-25-10-224-20250703-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-10%2Fdata%2Fraw%2Fxrr%2F6-02-25-10-224-20250703-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-10/data/raw/xrr/6-02-25-10-224-20250703-15min",
+      "size": 73124,
+      "checksum": {
+        "hash": "464dc8132e15a2ce5674eec7da547a3faf875da92cd86dbeb0a63c904d3c0f0c",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-10/data/raw/xrr/6-02-25-10-105-20250703-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-10/data/raw/xrr/6-02-25-10-105-20250703-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-10%2Fdata%2Fraw%2Fxrr%2F6-02-25-10-105-20250703-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-10/data/raw/xrr/6-02-25-10-105-20250703-15min",
+      "size": 72953,
+      "checksum": {
+        "hash": "ec65393e41ed7c380c16dcb07c7f14ca0fba4ff3c443f8277d3f853b2fd357fd",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-10/data/raw/xrr/6-02-25-10-224-20250703-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-10/data/raw/xrr/6-02-25-10-224-20250703-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-10%2Fdata%2Fraw%2Fxrr%2F6-02-25-10-224-20250703-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-10/data/raw/xrr/6-02-25-10-224-20250703-15min",
+      "size": 19948,
+      "checksum": {
+        "hash": "4c7f5c3df53c3383b67a9f08ac796f47cb6748d2d0983ce231953b5e8bfb6314",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-09",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-09"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-09/CHIPS-6-02-25-09-measurements-20250716.png",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-09/CHIPS-6-02-25-09-measurements-20250716.png",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-09%2FCHIPS-6-02-25-09-measurements-20250716.png",
+      "mediaType": "image/png",
+      "title": "CHIPS-6-02-25-00-set/25-09/CHIPS-6-02-25-09-measurements-20250716",
+      "size": 64846,
+      "checksum": {
+        "hash": "188d85ee787c438b247f507ce3efa678925382ec987fc3e9d1ba38c231d321b1",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-09/data",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-09/data"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-09/data/raw",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-09/data/raw"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-09/data/raw/xrr",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-09/data/raw/xrr"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-09/data/raw/xrr/6-02-25-09-105-20250701-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-09/data/raw/xrr/6-02-25-09-105-20250701-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-09%2Fdata%2Fraw%2Fxrr%2F6-02-25-09-105-20250701-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-09/data/raw/xrr/6-02-25-09-105-20250701-15min",
+      "size": 19957,
+      "checksum": {
+        "hash": "4807c72da6ef53abc0c520fe9239039aeebb3f7e7aa0e392f0040697f4c39d32",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-09/data/raw/xrr/6-02-25-09-105-20250701-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-09/data/raw/xrr/6-02-25-09-105-20250701-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-09%2Fdata%2Fraw%2Fxrr%2F6-02-25-09-105-20250701-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-09/data/raw/xrr/6-02-25-09-105-20250701-15min",
+      "size": 72995,
+      "checksum": {
+        "hash": "0ebeaa5f0d02f01df84c32fd6060d6eb50ded56623c3a8dd9af94db7a6a0eb5a",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-09/data/raw/xrr/6-02-25-09-224-20250703-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-09/data/raw/xrr/6-02-25-09-224-20250703-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-09%2Fdata%2Fraw%2Fxrr%2F6-02-25-09-224-20250703-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-09/data/raw/xrr/6-02-25-09-224-20250703-15min",
+      "size": 73102,
+      "checksum": {
+        "hash": "b262cc73ca6fe451de2e61038d46fd6f0a8e8f498fc4408d9886b7a02c50fcdf",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-09/data/raw/xrr/6-02-25-09-224-20250703-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-09/data/raw/xrr/6-02-25-09-224-20250703-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-09%2Fdata%2Fraw%2Fxrr%2F6-02-25-09-224-20250703-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-09/data/raw/xrr/6-02-25-09-224-20250703-15min",
+      "size": 19776,
+      "checksum": {
+        "hash": "30f0e347947a557e8593bf9ec4e7adb5d0284feb301d4726645174d5048aec98",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-01",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-01"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-01/data",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-01/data"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-01/data/raw",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-01/data/raw"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-01/data/raw/xrr",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-01/data/raw/xrr"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-224-20250626-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-224-20250626-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-01%2Fdata%2Fraw%2Fxrr%2F6-02-25-01-224-20250626-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-224-20250626-15min",
+      "size": 20026,
+      "checksum": {
+        "hash": "b2ae0233252c645cbb417de2e4b1be6e759ab114f8b4e351c40696fac026a07f",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-202-20250626-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-202-20250626-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-01%2Fdata%2Fraw%2Fxrr%2F6-02-25-01-202-20250626-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-202-20250626-15min",
+      "size": 19888,
+      "checksum": {
+        "hash": "680360122afac019655e4b931cadc6c7555aeb0c94442d0efa943e246b3f8e2c",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-202-20250626-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-202-20250626-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-01%2Fdata%2Fraw%2Fxrr%2F6-02-25-01-202-20250626-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-202-20250626-15min",
+      "size": 73031,
+      "checksum": {
+        "hash": "c01682cb9243d15c0abd2c2ba81f04d4918fd0bef0a8080d28ba9f299a1424f2",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-105-20250626-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-105-20250626-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-01%2Fdata%2Fraw%2Fxrr%2F6-02-25-01-105-20250626-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-105-20250626-15min",
+      "size": 20140,
+      "checksum": {
+        "hash": "c7c3306fbed34fac5281027d6cfdf28e9681132d8829e485a78baad4d02de364",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-245-20250626-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-245-20250626-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-01%2Fdata%2Fraw%2Fxrr%2F6-02-25-01-245-20250626-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-245-20250626-15min",
+      "size": 19993,
+      "checksum": {
+        "hash": "8d51652becba5888fcb947057434e9fc57bd875c8cd203ca19eb69b80b55ebbd",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-245-20250626-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-245-20250626-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-01%2Fdata%2Fraw%2Fxrr%2F6-02-25-01-245-20250626-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-245-20250626-15min",
+      "size": 73075,
+      "checksum": {
+        "hash": "0a3a7d79d7b9a829e7da435efdbbe084958eb0d0863d78b5d8000433140a2310",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-105-20250626-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-105-20250626-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-01%2Fdata%2Fraw%2Fxrr%2F6-02-25-01-105-20250626-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-105-20250626-15min",
+      "size": 72923,
+      "checksum": {
+        "hash": "cf8607a1fee1b3536def92b57dadab594f73f2501d07a347fc573a92edcc5cf8",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-224-20250626-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-224-20250626-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-01%2Fdata%2Fraw%2Fxrr%2F6-02-25-01-224-20250626-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-224-20250626-15min",
+      "size": 73103,
+      "checksum": {
+        "hash": "ee1a01a118660e25462e5304932ee5d471b0ac620ba50b1ef2d2a9d2f064f062",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-01/CHIPS-6-02-25-01-measurements-20250716.png",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-01/CHIPS-6-02-25-01-measurements-20250716.png",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-01%2FCHIPS-6-02-25-01-measurements-20250716.png",
+      "mediaType": "image/png",
+      "title": "CHIPS-6-02-25-00-set/25-01/CHIPS-6-02-25-01-measurements-20250716",
+      "size": 65551,
+      "checksum": {
+        "hash": "55ac09f4de359b0b83daa0ce716ba6874789b842b63f891a4a4da0fedea1d56f",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/xrr",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-324-20250716-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-324-20250716-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fxrr%2F6-02-25-04-324-20250716-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-324-20250716-15min",
+      "size": 19938,
+      "checksum": {
+        "hash": "0fdf13a54ba300bda6a515db1540e5d50299086cfbd9b9dc42363472560f3ffd",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-105-20250701-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-105-20250701-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fxrr%2F6-02-25-04-105-20250701-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-105-20250701-15min",
+      "size": 20070,
+      "checksum": {
+        "hash": "ea6edb9caff41904f69a5247ac53c9912948a7968633f7430ff82c05507da7bf",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-202-20250708-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-202-20250708-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fxrr%2F6-02-25-04-202-20250708-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-202-20250708-15min",
+      "size": 72954,
+      "checksum": {
+        "hash": "daf53dd7a1640c4e70988c1786d1fc3fd8387023ddca5229d5ea5d2b8673a9f7",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-105-20250701-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-105-20250701-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fxrr%2F6-02-25-04-105-20250701-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-105-20250701-15min",
+      "size": 72916,
+      "checksum": {
+        "hash": "893e00732d555b40d211575724c4177bc7d4a000ad9274ccaf9e75ef098fd374",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-202-20250708-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-202-20250708-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fxrr%2F6-02-25-04-202-20250708-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-202-20250708-15min",
+      "size": 20017,
+      "checksum": {
+        "hash": "2f695d8e8d8aca0249ea1ad19a96d70f7daff7d6bf049d0bd4dc117094a0f5f0",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-361-20250716-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-361-20250716-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fxrr%2F6-02-25-04-361-20250716-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-361-20250716-15min",
+      "size": 19902,
+      "checksum": {
+        "hash": "287feb825c6152eaf611ab984a2e05985a8e8c6318b24c53fefdf6875ddb2a92",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-245-20250708-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-245-20250708-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fxrr%2F6-02-25-04-245-20250708-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-245-20250708-15min",
+      "size": 73027,
+      "checksum": {
+        "hash": "c62a2a4c73b72d06f4112226a2dd656a09d75767543a23b30bf5ca65d1c9cc31",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-302-20250716-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-302-20250716-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fxrr%2F6-02-25-04-302-20250716-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-302-20250716-15min",
+      "size": 72973,
+      "checksum": {
+        "hash": "757b31e0086ef4b98432fcb331d5554f16eeb541cf702ce0750b117672ab98e8",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-343-20250716-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-343-20250716-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fxrr%2F6-02-25-04-343-20250716-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-343-20250716-15min",
+      "size": 20020,
+      "checksum": {
+        "hash": "4761d0684481e349b2defe1f2fe6a744625d8e219158d1f2c155d4f23481a1e1",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-324-20250716-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-324-20250716-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fxrr%2F6-02-25-04-324-20250716-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-324-20250716-15min",
+      "size": 73156,
+      "checksum": {
+        "hash": "53e96a94a09b17a914fd16919a019a98cf7db4b9299b706ac008114efa7eaa75",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-361-20250716-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-361-20250716-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fxrr%2F6-02-25-04-361-20250716-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-361-20250716-15min",
+      "size": 72964,
+      "checksum": {
+        "hash": "a7565e5387ab693ebbaccd2a68927c009b1356acde60f23738baafaedd23aa7e",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-224-20250701-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-224-20250701-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fxrr%2F6-02-25-04-224-20250701-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-224-20250701-15min",
+      "size": 73127,
+      "checksum": {
+        "hash": "82232b0ad5d476acde5f0d76eaa79544542f73175f597732bbfb87b855da3308",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-302-20250716-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-302-20250716-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fxrr%2F6-02-25-04-302-20250716-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-302-20250716-15min",
+      "size": 19984,
+      "checksum": {
+        "hash": "123f69ac2493dd17fbfe7493f54a0975cef22068adeab96558b1561f37596cc6",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-263-20250708-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-263-20250708-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fxrr%2F6-02-25-04-263-20250708-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-263-20250708-15min",
+      "size": 73022,
+      "checksum": {
+        "hash": "9336976fc93080e9bd6fe8602be6e38bf33f87df001f88ffb8002a3391d7a91c",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-224-20250701-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-224-20250701-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fxrr%2F6-02-25-04-224-20250701-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-224-20250701-15min",
+      "size": 19982,
+      "checksum": {
+        "hash": "2d8e5cd27377fdcd4f42477b8b2567235c3b186da9be8c827e6f77ae1852ecc0",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-245-20250708-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-245-20250708-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fxrr%2F6-02-25-04-245-20250708-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-245-20250708-15min",
+      "size": 19998,
+      "checksum": {
+        "hash": "8c25486bb288e6e5b2ee90c4b963893b6f06cbd7f730d78a18db3603163ab8c2",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-263-20250708-15min.rasx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-263-20250708-15min.rasx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fxrr%2F6-02-25-04-263-20250708-15min.rasx",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-263-20250708-15min",
+      "size": 20062,
+      "checksum": {
+        "hash": "9237c79ac8cf2ec20c20f179de2872a8b387e116d33d06c5267b829559d8d2b2",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-343-20250716-15min.ras",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-343-20250716-15min.ras",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fxrr%2F6-02-25-04-343-20250716-15min.ras",
+      "mediaType": "image/x-cmu-raster",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-343-20250716-15min",
+      "size": 73103,
+      "checksum": {
+        "hash": "1aaed4103016bd00e066cf3718c8880f6daa5e1224b495fc01c48ebe21fabd56",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/se",
+      "@type": [
+        "nrdp:Subcollection"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/Subcollection"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/se"
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-thickness.png",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-thickness.png",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-04-thickness.png",
+      "mediaType": "image/png",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-thickness",
+      "size": 74891,
+      "checksum": {
+        "hash": "9bd7d3215bdd0c04994bf08f9dbe1f73fc6d28d933cbe525af0e12312efaef85",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-full.rtf",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-full.rtf",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-04-full.rtf",
+      "mediaType": "application/rtf",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-full",
+      "size": 23306874,
+      "checksum": {
+        "hash": "e3ae588e24fcd36ec98c0a1f628a655850405df3f0e5727f9e1ac3cf73987365",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-thickness.txt",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-thickness.txt",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-04-thickness.txt",
+      "mediaType": "text/plain",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-thickness",
+      "size": 3548,
+      "checksum": {
+        "hash": "a7e80dfcfd7fa22c7c7019adf2a923461c9cd5a98bbaef9a2387951eaf3343c8",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-full.SE",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-full.SE",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-04-full.SE",
+      "mediaType": "application/octet-stream",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-full",
+      "size": 8120816,
+      "checksum": {
+        "hash": "801e8b52c64022f9191229ccaae76b8e9e4d0666c8bf9afd75eb651c5e5e2945",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-n.png",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-n.png",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-04-n.png",
+      "mediaType": "image/png",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-n",
+      "size": 77844,
+      "checksum": {
+        "hash": "ad92eb1c23c60211d4817bf1b06408832cddc2ef263d031f3f0865e48f3218da",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-n.txt",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-n.txt",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-04-n.txt",
+      "mediaType": "text/plain",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-n",
+      "size": 3489,
+      "checksum": {
+        "hash": "4713fee99aad898a83bf9e294e8fea746f776ae6c0653ef8121ec162341789fd",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-105.txt",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-105.txt",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-04-105.txt",
+      "mediaType": "text/plain",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-105",
+      "size": 60029,
+      "checksum": {
+        "hash": "adf79bee7689b949fe6565b21dacfdbc21cb4c5754b802ce875d48ffa762cfa4",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-full.docx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-full.docx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-04-full.docx",
+      "mediaType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-full",
+      "size": 349909,
+      "checksum": {
+        "hash": "149baeee9f627ad1a588f1136c32971f20361ee2076b84734c4221150d1b14f1",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-parameters.txt",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-parameters.txt",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2Fdata%2Fraw%2Fse%2FCHIPS-6-02-25-04-parameters.txt",
+      "mediaType": "text/plain",
+      "title": "CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-parameters",
+      "size": 13061,
+      "checksum": {
+        "hash": "8a5aefda3524f1484931c7ac120ac24868f425ba2d018159e950e5f20698e20d",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/CHIPS-6-02-25-00-set/25-04/CHIPS-6-02-25-04-measurements-20250716.png",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "CHIPS-6-02-25-00-set/25-04/CHIPS-6-02-25-04-measurements-20250716.png",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3930/CHIPS-6-02-25-00-set%2F25-04%2FCHIPS-6-02-25-04-measurements-20250716.png",
+      "mediaType": "image/png",
+      "title": "CHIPS-6-02-25-00-set/25-04/CHIPS-6-02-25-04-measurements-20250716",
+      "size": 77594,
+      "checksum": {
+        "hash": "2b6653c4a873f2d7be31a9a512921070f297c7c61e8f5959234294730ee0818a",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    }
+  ],
+  "authors": [
+    {
+      "familyName": "Windover",
+      "fn": "Donald A Windover",
+      "givenName": "Donald",
+      "middleName": "A",
+      "affiliation": [
+        {
+          "title": "National Institute of Standards and Technology",
+          "subunits": [
+            "Materials Measurement Science Division"
+          ],
+          "@type": "org:Organization",
+          "@id": "ror:05xpvk416"
+        }
+      ],
+      "orcid": "0000-0002-8365-2092",
+      "@type": "foaf:Person"
+    },
+    {
+      "familyName": "Gorham",
+      "fn": "Justin M Gorham",
+      "givenName": "Justin",
+      "middleName": "M",
+      "affiliation": [
+        {
+          "title": "National Institute of Standards and Technology",
+          "subunits": [
+            "Materials Measurement Science Division"
+          ],
+          "@type": "org:Organization",
+          "@id": "ror:05xpvk416"
+        }
+      ],
+      "orcid": "0000-0002-0569-297X",
+      "@type": "foaf:Person"
+    },
+    {
+      "familyName": "Yung",
+      "fn": "Chris  Yung",
+      "givenName": "Chris",
+      "middleName": "",
+      "affiliation": [
+        {
+          "title": "National Institute of Standards and Technology",
+          "subunits": [
+            "Applied Physics Division"
+          ],
+          "@type": "org:Organization",
+          "@id": "ror:05xpvk416"
+        }
+      ],
+      "orcid": "0000-0002-7912-6591",
+      "@type": "foaf:Person"
+    }
+  ],
+  "annotated": "2026-03-24T20:41:01.672574",
+  "revised": "2025-12-04T15:07:15.259357",
+  "issued": null,
+  "firstIssued": "2025-12-04T15:07:15.259357",
+  "releaseHistory": {
+    "@id": "ark:/88434/mds2-3930/pdr:v",
+    "@type": [
+      "nrdr:ReleaseHistory"
+    ],
+    "hasRelease": [
+      {
+        "version": "1.0.0",
+        "issued": "2025-08-01",
+        "@id": "ark:/88434/mds2-3930/pdr:v/1.0.0",
+        "location": "https://data.nist.gov/od/id/ark:/88434/mds2-3930/pdr:v/1.0.0",
+        "description": "initial release"
+      },
+      {
+        "version": "1.0.1",
+        "issued": "2026-03-24",
+        "@id": "ark:/88434/mds2-3930/pdr:v/1.0.1",
+        "location": "https://data.nist.gov/od/id/ark:/88434/mds2-3930/pdr:v/1.0.1",
+        "description": "added to CHIPS collection"
+      }
+    ]
+  },
+  "isPartOf": [
+    {
+      "@type": [
+        "nrda:ScienceTheme",
+        "nrdp:PublicDataResource"
+      ],
+      "@id": "ark:/88434/pdr0-0002",
+      "title": "CHIPS Metrology Data"
+    }
+  ]
+}

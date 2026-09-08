@@ -1,0 +1,40 @@
+name: principia-cloud-crawl
+
+on:
+  workflow_dispatch:
+    inputs:
+      venues:
+        description: "Comma-separated venue names"
+        default: "ICLR,NeurIPS,ICML"
+      years:
+        description: "Year range, e.g. 2024-2026"
+        default: "2024-2026"
+      max_papers:
+        description: "Maximum papers"
+        default: "100"
+      model_key:
+        description: "Extraction model key"
+        default: ""
+      dry_run:
+        description: "true/false"
+        default: "true"
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: |
+          python principia.py cloud crawl \
+            --venues "${{ inputs.venues }}" \
+            --years "${{ inputs.years }}" \
+            --max-papers "${{ inputs.max_papers }}" \
+            --model-key "${{ inputs.model_key }}" \
+            --dry-run > crawl-plan.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: principia-cloud-crawl-plan
+          path: crawl-plan.json

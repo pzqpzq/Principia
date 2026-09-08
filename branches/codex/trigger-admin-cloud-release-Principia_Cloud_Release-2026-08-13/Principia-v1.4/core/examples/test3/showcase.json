@@ -1,0 +1,123 @@
+{
+  "audit": {
+    "authenticity_scan": "passed",
+    "code_cells": 6,
+    "code_lines": 56,
+    "output_kinds": [
+      "retrieval_local_metrics",
+      "extraction_provenance",
+      "evidence_counts",
+      "idea_card",
+      "comparison_validation"
+    ],
+    "privacy_scan": "passed",
+    "retained_outputs": 5,
+    "size_bytes": 15635
+  },
+  "notebook": "tutorial.ipynb",
+  "notebook_sha256": "a80ab39623e709fbea6108d4bf845eb6d1de045a518404d8c68a8a5981cccf6c",
+  "outputs": [
+    {
+      "kind": "retrieval_local_metrics",
+      "payload": {
+        "embedding_rerank": "embedding_rerank",
+        "idea_id": "Dynamic_Heuristic_Optimization_Of_Squeezed_State_Haloscopes_With_Continuum_Noise_Modeling",
+        "jaccard_at_20": 0.7391304347826086,
+        "judged_works": 50,
+        "local_documents": 5,
+        "online_works": 50,
+        "out_of_scope": 0,
+        "output": "outputs/Dynamic_Heuristic_Optimization_Of_Squeezed_State_Haloscopes_With_Continuum_Noise_Modeling/",
+        "status": "complete",
+        "successful_sources": 3,
+        "top20_relevance": 1.0,
+        "top50_relevance": 1.0
+      },
+      "payload_sha256": "376dd2df07594b03489fe92224a15500067331b14f0e6fb6a39799248a6e8953"
+    },
+    {
+      "kind": "extraction_provenance",
+      "payload": {
+        "content_types": {
+          "abstract": 16,
+          "html": 6,
+          "local_text": 4,
+          "pdf_text": 27,
+          "title_only": 2
+        },
+        "feature_bundles": 55,
+        "model": "siliconflow:Qwen/Qwen3.6-35B-A3B",
+        "provenance_complete": true
+      },
+      "payload_sha256": "8ece1a92b32fbf1ef4af9f42101820868f5ca4173894c5fb4c76bbdf6595db29"
+    },
+    {
+      "kind": "evidence_counts",
+      "payload": {
+        "contributing_works": 9,
+        "ideas": 5,
+        "previews": [
+          {
+            "kind": "ideas",
+            "title": "Optimization of Cavity Length under Non-Uniform Magnetic Fields"
+          },
+          {
+            "kind": "ideas",
+            "title": "Analytical Treatment of Noise Propagation in Cryogenic Systems"
+          },
+          {
+            "kind": "principles",
+            "title": "Broadband Noise Suppression via Parameter Tuning"
+          }
+        ],
+        "principles": 5,
+        "takeaways": 5,
+        "total": 15
+      },
+      "payload_sha256": "f8e197f4fd941b05aaf911e047a9ff67b01e1ad5603744ced796e4492e167819"
+    },
+    {
+      "kind": "idea_card",
+      "payload": "**Execution origin:** `live_llm`  \n**Degraded:** `false`\n# Dynamic Heuristic Optimization of Squeezed-State Haloscopes with Continuum Noise Modeling\n**Mode:** `scidialect-evo`  \n**Model:** `siliconflow:Qwen/Qwen3.5-397B-A17B`\n**Thesis:** Integrating real-time heuristic search algorithms with Josephson Parametric Amplifiers (JPAs) allows for dynamic stabilization of squeezed states against environmental drift, while modeling noise propagation as a continuum through lossy transmission lines maximizes broadband scan speed and maintains false-positive controls via configuration-independent rejection.\n**Novelty:** Unlike static parameter sets, this approach dynamically tunes JPA parameters to maintain optimal squeezing under non-uniform magnetic fields and temperature gradients, directly addressing the instability of predefined sets in realistic environments by incorporating continuum noise modeling.\n## Mechanism\n- A feedback loop where a heuristic search algorithm continuously adjusts JPA pump frequency and power based on real-time noise spectral density measurements derived from a continuum noise model. The system employs a dual-readout chain to enforce configuration-independent signal rejection, ensuring candidates are physical resonator responses rather than readout artifacts.\n## Core equations\n$$\\text{SNR}^{2} = T_{int} \\int \\frac{S_{ax}^{2}(f)}{S_{noise}(f)} df$$\n## Validation\n- Validate squeezing advantage using reported metrics; verify candidate signals appear in both readout chains with predicted coherence width; test rejection of signals correlating with configuration changes; compare continuum noise model predictions against measured noise spectra.\n**Evidence:** 5 canonical records across 5 works.",
+      "payload_sha256": "3cba703978e139ba32fc7dd907b6c25747a9889dc59d2fd45a3b8a187a417380"
+    },
+    {
+      "kind": "comparison_validation",
+      "payload": {
+        "artifacts": 7,
+        "highlights": [
+          {
+            "difference": "The prior work optimizes static parameters for specific conditions, whereas the generated idea implements a real-time feedback loop that continuously adjusts JPA parameters based on live continuum noise model outputs to counteract environmental drift.",
+            "prior": "Heuristic Search for JPA Parameter Optimization"
+          },
+          {
+            "difference": "The prior work establishes the analytical framework for noise estimation, while the generated idea actively integrates this continuum model into the control loop to drive the heuristic tuning of the JPA.",
+            "prior": "Analytical Treatment of Noise Propagation in Cryogenic Systems"
+          },
+          {
+            "difference": "The prior work focuses on linear amplifiers and beam splitters for noise reduction, whereas the generated idea applies dual-chain cross-correlation specifically to validate squeezed-state candidates and veto readout artifacts in a JPA-based system.",
+            "prior": "Dual-Path Interferometry for Noise Reduction"
+          }
+        ],
+        "prior_ideas_compared": 3,
+        "validation": "passed",
+        "validation_schema": "1.0"
+      },
+      "payload_sha256": "f7f5669703e9c5ab2d075ebb2d6d549114ebce36cd4ecd4bcd85b59da30afe48"
+    }
+  ],
+  "readme_row": {
+    "evidence_records": 15,
+    "feature_bundles": 55,
+    "local_documents": 5,
+    "mode": "scidialect-evo",
+    "online_works": 50,
+    "task_id": "test3",
+    "title": "Broadband squeezed-state axion sensing",
+    "validation": "passed"
+  },
+  "schema_version": "principia.showcase.v1",
+  "source_notebook_sha256": "b1bf9dfbfe43c3f952281b9d863bb137d79dd439539aa86f8a017aaeb0318ecf",
+  "task_id": "test3",
+  "title": "Broadband squeezed-state axion sensing"
+}

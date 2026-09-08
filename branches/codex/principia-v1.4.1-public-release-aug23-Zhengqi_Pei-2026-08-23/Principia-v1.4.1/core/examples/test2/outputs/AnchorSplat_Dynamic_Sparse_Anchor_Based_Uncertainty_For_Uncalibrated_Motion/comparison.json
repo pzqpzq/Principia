@@ -1,0 +1,48 @@
+{
+  "idea_id": "AnchorSplat_Dynamic_Sparse_Anchor_Based_Uncertainty_For_Uncalibrated_Motion",
+  "rows": [
+    {
+      "work_id": "W-B458587276BC",
+      "title": "AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors",
+      "mechanistic_similarity": "Both utilize a sparse set of 3D geometric anchors ($\\mathcal{A}$) to decouple Gaussian primitives from the 2D pixel grid, replacing dense pixel-aligned mappings with anchor-aligned representations.",
+      "essential_difference": "Prior work uses anchors primarily for static scene representation efficiency; the generated idea extends anchors to dynamic scenes by attaching motion vectors and integrating a heteroscedastic uncertainty head ($\\Sigma_{u}$) that actively gates gradient flow during joint pose-uncertainty optimization.",
+      "potential_advantage": "The uncertainty-gated loss ($\\mathcal{L}_{total}$) prevents the optimizer from fitting noise in ambiguous dynamic regions, a failure mode in static-only anchor methods when applied to uncalibrated motion.",
+      "potential_weakness": "Introducing motion vectors and uncertainty gating increases the non-convexity of the optimization landscape compared to the static anchor formulation, raising the risk of anchor collapse in textureless moving regions."
+    },
+    {
+      "work_id": "L-DA6DA8F4A75FE6E87F7F",
+      "title": "Geometry-conditioned feed-forward reconstruction",
+      "mechanistic_similarity": "Both employ a feed-forward encoder to predict camera hypotheses and heteroscedastic uncertainty directly from sparse uncalibrated inputs without external pose supervision.",
+      "essential_difference": "The prior predicts uncertainty as a passive output metric, whereas the generated idea implements an 'Uncertainty-Gated Loss' where $(1 - \\sigma_{u,i})$ explicitly modulates the rendering loss contribution per Gaussian during test-time refinement.",
+      "potential_advantage": "Active gating allows the system to dynamically ignore unreliable dynamic primitives during pose refinement, improving convergence stability in ill-posed uncalibrated settings compared to passive uncertainty reporting.",
+      "potential_weakness": "Reliance on the accuracy of the initial feed-forward uncertainty prediction; if the encoder underestimates uncertainty in high-motion areas, the gating mechanism may erroneously suppress valid gradient signals needed for pose correction."
+    },
+    {
+      "work_id": "W-0209EA1FE411",
+      "title": "FreeSplatter: Pose-free Gaussian Splatting for Sparse-view 3D Reconstruction",
+      "mechanistic_similarity": "Both address the uncalibrated sparse-view setting by jointly optimizing camera parameters and 3D Gaussian attributes without ground truth poses.",
+      "essential_difference": "FreeSplatter assumes a static scene and optimizes dense Gaussians; the generated idea introduces sparse 3D anchors with explicit motion vectors and enforces epipolar/motion consistency constraints via a geometric prior module specifically for dynamic sequences.",
+      "potential_advantage": "Sparse anchor parameterization significantly reduces the search space for dynamic motion, making the joint pose-motion optimization tractable where dense static formulations (like FreeSplatter) fail under motion ambiguity.",
+      "potential_weakness": "The assumption of locally rigid or smooth motion required for the geometric prior module may fail in highly deformable or chaotic dynamic scenes, leading to reconstruction artifacts not present in static baselines."
+    },
+    {
+      "work_id": "L-2C419FA26265065F632D",
+      "title": "Uncertainty-aware dynamic reconstruction",
+      "mechanistic_similarity": "Both target uncalibrated dynamic reconstruction using synthetic sparse-view protocols (6-12 views) and utilize uncertainty metrics to track geometric failure.",
+      "essential_difference": "The prior focuses on a training protocol and uncertainty exposure; the generated idea introduces a specific architectural mechanism: anchor-decoupled Gaussians with an uncertainty head that gates optimization gradients rather than just visualizing error maps.",
+      "potential_advantage": "By coupling uncertainty directly to the optimization loop via gradient gating, the method actively mitigates overfitting to noise during refinement, whereas the prior primarily uses uncertainty for post-hoc analysis or loss weighting without structural decoupling.",
+      "potential_weakness": "The added complexity of maintaining sparse anchors and motion vectors alongside uncertainty estimation may require more stringent hyperparameter tuning for the gating threshold compared to simpler dense dynamic formulations."
+    },
+    {
+      "work_id": "W-DFE3782A8072",
+      "title": "ArtSplat: Feed-Forward Articulated 3D Gaussian Splatting...",
+      "mechanistic_similarity": "Both handle dynamic content in uncalibrated sparse views by predicting motion-related parameters (articulation joints in ArtSplat vs. general motion vectors in the generated idea) in a single forward pass.",
+      "essential_difference": "ArtSplat relies on specific articulated skeleton templates for humans/objects; the generated idea uses general sparse 3D anchors with free-form motion vectors and uncertainty gating, avoiding rigid skeleton assumptions.",
+      "potential_advantage": "The anchor-based approach generalizes to non-articulated dynamic scenes (e.g., fluids, deformable objects) where skeleton-based priors in ArtSplat are inapplicable.",
+      "potential_weakness": "Lacking the strong structural prior of a skeleton, the anchor-based method may struggle to maintain temporal coherence in highly articulated regions compared to the specialized constraints of ArtSplat."
+    }
+  ],
+  "model": "siliconflow:Qwen/Qwen3.5-397B-A17B",
+  "run_id": "RUN_37492E891F89",
+  "created_at": "2026-07-16T11:23:01+00:00"
+}

@@ -1,0 +1,78 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "18_climate_noaa_storm_events_2025",
+  "domain": "climate",
+  "title": "NOAA Storm Events 2025 details, fatalities, and locations",
+  "publisher": "NOAA National Centers for Environmental Information",
+  "authoritative_landing_url": "https://www.ncei.noaa.gov/stormevents/ftp.jsp",
+  "authoritative_source_urls": [
+    "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/",
+    "https://www.ncei.noaa.gov/stormevents/ftp.jsp"
+  ],
+  "identifiers": [],
+  "release_or_version": "2025 files created 2026-08-19",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "U.S. Government public data",
+  "deterministic_selection_rule": "Retain the exact 2025 details, fatalities, and locations gzip files with c20260819, plus the official bulk CSV format PDF.",
+  "exclusions": [
+    "No value-level preprocessing",
+    "No outcome-guided selection",
+    "No controlled-access or credential material"
+  ],
+  "ethics_restrictions": [
+    "Public/deidentified use only where human data are present",
+    "No re-identification",
+    "Generated USER_BRIEF is context, not evidence"
+  ],
+  "transport_and_headers": {
+    "status": "source metadata and mutable-feed companion metadata retained where publisher supplied it; browser-only endpoints are identified by URL",
+    "http_error_masquerade_check_required": true
+  },
+  "substitution": null,
+  "files": [
+    {
+      "path": "context/Storm-Data-Bulk-csv-Format.pdf",
+      "role": "official_context_or_source_metadata",
+      "source_url_scope": [
+        "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/",
+        "https://www.ncei.noaa.gov/stormevents/ftp.jsp"
+      ],
+      "bytes": 341218,
+      "sha256": "3bd18968d34da43e192f8a7fb8e5548c4fa7d24ede016d2d068d849ee1392df6",
+      "mime_type": "application/pdf"
+    },
+    {
+      "path": "raw/StormEvents_details-ftp_v1.0_d2025_c20260819.csv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/",
+        "https://www.ncei.noaa.gov/stormevents/ftp.jsp"
+      ],
+      "bytes": 12585209,
+      "sha256": "d9b46b4c6aae554723cadbb9691f3d5258371c02e530ba815d6fe41e4550149f",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/StormEvents_fatalities-ftp_v1.0_d2025_c20260819.csv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/",
+        "https://www.ncei.noaa.gov/stormevents/ftp.jsp"
+      ],
+      "bytes": 10164,
+      "sha256": "00c2fad534b4702e8132621d582f181e7f1928bbe7d01752f3bf1d4ea42d1e81",
+      "mime_type": "application/gzip"
+    },
+    {
+      "path": "raw/StormEvents_locations-ftp_v1.0_d2025_c20260819.csv.gz",
+      "role": "official_payload",
+      "source_url_scope": [
+        "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/",
+        "https://www.ncei.noaa.gov/stormevents/ftp.jsp"
+      ],
+      "bytes": 1206372,
+      "sha256": "64847e91cf90e3bffbb8338f91b95bc6e527ff1f1b999b80336f24dc1187dc22",
+      "mime_type": "application/gzip"
+    }
+  ]
+}

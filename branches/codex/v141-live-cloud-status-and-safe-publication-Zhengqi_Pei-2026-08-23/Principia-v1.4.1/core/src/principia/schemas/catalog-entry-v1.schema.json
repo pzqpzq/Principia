@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "area": {
+      "title": "Area",
+      "type": "string"
+    },
+    "artifact_bytes": {
+      "exclusiveMinimum": 0,
+      "title": "Artifact Bytes",
+      "type": "integer"
+    },
+    "artifact_sha256": {
+      "title": "Artifact Sha256",
+      "type": "string"
+    },
+    "artifact_url": {
+      "title": "Artifact Url",
+      "type": "string"
+    },
+    "content_class": {
+      "default": "reviewed_capsules",
+      "enum": [
+        "reviewed_capsules",
+        "unassessed_candidates"
+      ],
+      "title": "Content Class",
+      "type": "string"
+    },
+    "content_digest": {
+      "title": "Content Digest",
+      "type": "string"
+    },
+    "display_name": {
+      "title": "Display Name",
+      "type": "string"
+    },
+    "package_version": {
+      "title": "Package Version",
+      "type": "string"
+    },
+    "principle_count": {
+      "minimum": 0,
+      "title": "Principle Count",
+      "type": "integer"
+    },
+    "relation_count": {
+      "minimum": 0,
+      "title": "Relation Count",
+      "type": "integer"
+    },
+    "released_at": {
+      "title": "Released At",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "catalog-entry-v1",
+      "default": "catalog-entry-v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "source_text_included": {
+      "const": false,
+      "default": false,
+      "title": "Source Text Included",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "area",
+    "display_name",
+    "package_version",
+    "artifact_url",
+    "artifact_sha256",
+    "artifact_bytes",
+    "content_digest",
+    "principle_count",
+    "relation_count",
+    "released_at"
+  ],
+  "title": "CatalogEntry",
+  "type": "object"
+}

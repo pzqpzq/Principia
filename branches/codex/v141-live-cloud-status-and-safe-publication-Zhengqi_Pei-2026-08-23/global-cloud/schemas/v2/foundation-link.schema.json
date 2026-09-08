@@ -1,0 +1,207 @@
+{
+  "$defs": {
+    "ReviewAttestation": {
+      "additionalProperties": false,
+      "properties": {
+        "actor": {
+          "maxLength": 300,
+          "minLength": 1,
+          "title": "Actor",
+          "type": "string"
+        },
+        "basis": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Basis",
+          "type": "string"
+        },
+        "reviewed_at": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Reviewed At",
+          "type": "string"
+        },
+        "source_review_status": {
+          "default": "",
+          "maxLength": 100,
+          "title": "Source Review Status",
+          "type": "string"
+        },
+        "trace_id": {
+          "default": "",
+          "maxLength": 500,
+          "title": "Trace Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "actor",
+        "reviewed_at",
+        "basis"
+      ],
+      "title": "ReviewAttestation",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "condition_compatibility": {
+      "default": "",
+      "maxLength": 10000,
+      "title": "Condition Compatibility",
+      "type": "string"
+    },
+    "confidence": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Confidence",
+      "type": "number"
+    },
+    "content_digest": {
+      "default": "",
+      "title": "Content Digest",
+      "type": "string"
+    },
+    "created_at": {
+      "title": "Created At",
+      "type": "string"
+    },
+    "direction": {
+      "default": "meta_to_principle",
+      "enum": [
+        "meta_to_principle",
+        "principle_to_meta"
+      ],
+      "title": "Direction",
+      "type": "string"
+    },
+    "generation_trace": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "maxItems": 100,
+      "title": "Generation Trace",
+      "type": "array"
+    },
+    "link_id": {
+      "maxLength": 300,
+      "minLength": 3,
+      "title": "Link Id",
+      "type": "string"
+    },
+    "meta_principle_id": {
+      "title": "Meta Principle Id",
+      "type": "string"
+    },
+    "meta_principle_revision": {
+      "minimum": 1,
+      "title": "Meta Principle Revision",
+      "type": "integer"
+    },
+    "principle_id": {
+      "title": "Principle Id",
+      "type": "string"
+    },
+    "principle_revision": {
+      "minimum": 1,
+      "title": "Principle Revision",
+      "type": "integer"
+    },
+    "rationale": {
+      "maxLength": 20000,
+      "minLength": 1,
+      "title": "Rationale",
+      "type": "string"
+    },
+    "relation_type": {
+      "enum": [
+        "specializes",
+        "depends_on",
+        "refines",
+        "motivates",
+        "generalizes",
+        "analogous_to",
+        "supports",
+        "contradicts",
+        "bounded_by",
+        "contrasts_with",
+        "approximates",
+        "equivalent_to",
+        "consistent_with"
+      ],
+      "title": "Relation Type",
+      "type": "string"
+    },
+    "review_attestation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReviewAttestation"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "review_status": {
+      "default": "unassessed",
+      "enum": [
+        "reviewed",
+        "unassessed"
+      ],
+      "title": "Review Status",
+      "type": "string"
+    },
+    "revision": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Revision",
+      "type": "integer"
+    },
+    "scale_compatibility": {
+      "default": "",
+      "maxLength": 10000,
+      "title": "Scale Compatibility",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "global-foundation-link-v1",
+      "default": "global-foundation-link-v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "status": {
+      "default": "proposed",
+      "enum": [
+        "active",
+        "retired",
+        "proposed"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "updated_at": {
+      "title": "Updated At",
+      "type": "string"
+    },
+    "variable_compatibility": {
+      "default": "",
+      "maxLength": 10000,
+      "title": "Variable Compatibility",
+      "type": "string"
+    }
+  },
+  "required": [
+    "link_id",
+    "principle_id",
+    "principle_revision",
+    "meta_principle_id",
+    "meta_principle_revision",
+    "relation_type",
+    "rationale",
+    "confidence"
+  ],
+  "title": "FoundationLinkRevision",
+  "type": "object"
+}

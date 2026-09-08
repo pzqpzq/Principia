@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NOAA Coral Reef Watch Daily 5km Satellite Sea Surface Temperature Anomaly (Version 3.1-clim19912020-v1)</title>
+
+        <!--STYLE: FOR BODY HEADER AND BODY FOOTER-->
+
+        <link rel="stylesheet" href="/css/root_body_header_dropdowntaskbar_style.css">
+        <link rel="stylesheet" href="/css/root_body_footer_dropdowntaskbar_style.css">
+        <link rel="stylesheet" href="/css/root_base_all_style.css">
+        <link rel="stylesheet" href="/css/root_top_message_board_style.css">
+
+        <!--STYLE: FOR MAIN BODY-->
+
+        <link rel="stylesheet" href="./css/style_5km_indivudual_product_ssta_clim19912020.css">
+        <link rel="stylesheet" href="./css/style_5km_top_message_board.css">
+
+        <!--INCLUDE: HEAD HEADER-->
+
+        <!--START OF HTML/HEAD TEXT FROM INCLUDE FILE root_html_head_wide.php-->
+
+        <link rel="icon" href="/favicon.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <meta name="Keywords" Content="Oceanography, Marine, Satellite,
+            Remote Sensing, Coral Reef, Coral Bleaching, Marine Biology,
+            Marine Ecology, Physical Oceanography, Environment, Publication,
+            in situ, observation, CREWS, CRW, NOAA, Government">
+        <meta name="Author" Content="NOAA Coral Reef Watch">
+
+        <!-- **************** for GSA federal Google Analytics ********************   -->
+        <script async id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&subagency=NOAA"></script>
+<!--// GA4 Google tag (gtag.js) - code updated 6/13/2023; main STAR tag created 3/1/2023 //-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6J8W8XXDSC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6J8W8XXDSC');
+</script>
+<script async src='https://siteimproveanalytics.com/js/siteanalyze_6294131.js'></script>
+	<!-- **********************************************************************   -->
+        <script rel="preload" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<!--// Add fancyBox 2.1.7 //-->
+<link rel="stylesheet" href="https://www.star.nesdis.noaa.gov/star/global/js/fancyapps/source/jquery.fancybox.css?v=2.1.7" media="screen">
+<script src="https://www.star.nesdis.noaa.gov/star/global/js/fancybox/jquery.fancybox.pack.js?v=2.1.7"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".fancybox").fancybox({
+                    beforeShow: function(){
+                        var fancyAlt = $(this.element).find('img').attr('alt');
+                        $(".fancybox-inner").find("img").attr("alt",fancyAlt);
+                    }
+                });
+            });
+            $(document).ready(function(){
+                $("#Map area").fancybox({
+                    beforeShow: function(){
+                        var fancyAlt = $(this.element).find('img').attr('alt');
+                        $(".fancybox-inner").find("img").attr("alt",fancyAlt);
+                    }
+                }); 
+            });
+        </script>
+
+        <!-- **** Defining Regional Virtual Stations Number Variable **** -->
+        
+        <!--END OF HTML/HEAD TEXT FROM INCLUDE FILE-->
+
+
+        <style>
+            body{
+                max-width: 960px;
+                margin: 0 auto;
+                border: 1px solid lightslategrey;
+                background-color: #EFEFEF;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!--INCLUDE: HEADER-->
+
+        
+        <div class="root-header">
+
+            <div class="root-header-banners">
+
+                <a class="root-header-banner-left" href="/index.php">
+                    <img class = 'root-header-crw-banner' src="/icons_gen/crw_banner_small2.png">
+                </a>
+
+                <a class="root-header-banner-right"  href="http://www.nesdis.noaa.gov">
+                    <img class = 'root-header-nesdis-banner' src="/icons_gen/banner_nesdis_small_4.png" height='50'>
+                </a>
+
+            </div>
+
+            <!--Blank ROW-->
+ 
+            <div class="blank-row-10px"></div>
+
+            <!--SPLITER-->
+
+            <div class = 'root-header-split-banner'></div>
+
+            <!--NAVIGATION-->
+
+            <div class="root-header-hyperlinks">
+
+                <div class="root-header-hyperlinks-left">
+                    
+                    <a class="root-header-link-pointer" href='/index.php'>Home</a>  
+
+                    <div class="root-header-dropdown">
+                        <span class="root-header-link-arrow">Key Products&#x25BC;</span>
+                        <div class="root-header-dropdown-content">
+                            <div>
+                                <div class = 'root-header-dropdown-header'>5km Satellite Products</div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/5km/index.php'>Main 5km Products</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/5km/index.php#data_access'>Data / Images</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/5km/index_5km_composite.php'>Composites</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/ge/index.php'>Google Earth Display</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/5km/methodology.php'>Methodology</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/5km/tutorial/welcome.php'>Tutorial</a>
+                                </div>
+                            </div>
+			    <div>
+                                <div class = 'root-header-dropdown-header-blank'>&nbsp;</div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/vs/map.php'>Virtual Stations</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+				    <a class='root-header-dropdown-link-text' href='/subscriptions/vs.php'>Bleaching Alert Emails</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/marine_heatwave/'>Marine Heatwaves</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/thermal_history/'>Thermal History</a>
+                                </div>
+                                <div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/disease/'>Coral Disease (SST-based)</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/disease_multifactor/'>Coral Disease (Multi-Factor)</a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class = 'root-header-dropdown-header'>Other Products</div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/satellite/bleachingoutlook_cfs/index.php'>4-Month Outlook</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/oc/'>Ocean Color</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+				    <a class='root-header-dropdown-link-text' 
+                                        href='https://storymaps.arcgis.com/stories/26f67fa930ae4594b88512ee0a65b841'>3rd Global Bleaching</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+				    <a class='root-header-dropdown-link-text' 
+                                        href='https://sos.noaa.gov/catalog/datasets/?fullText=Coral%20Reef%20watch'>Science On a Sphere</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/satellite/research/index.php'>Research Activities</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/50km/'>Retired 50km Products</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="root-header-dropdown">
+                        <span class="root-header-link-arrow">Condition Updates&#x25BC;</span>
+                        <div class="root-header-dropdown-content-single-column">
+                            <div>
+                                <div class='root-header-dropdown-link'>
+				    <a class='root-header-dropdown-link-text' 
+                                        href='/satellite/analyses_guidance/enso_current_conditions.php'>ENSO Conditions</a>
+				</div>
+                                <div class='root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text'
+                                        href='/product/5km/index_5km_ssta_clim19912020.php'>Track SST Anomaly (baseline 1991-2020)</a>
+                                </div>
+                                <div class='root-header-dropdown-link'>
+				    <a class='root-header-dropdown-link-text' 
+                                        href='/satellite/research/coral_bleaching_report.php'>Heat Stress Updates and Summaries</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="root-header-link-pointer" href='/product/index.php'>Products List</a>
+
+                </div>
+
+                <div class="root-header-hyperlinks-right">
+
+		    <a class="root-header-link-pointer" href='/satellite/research/coral_bleaching_report.php'>Report Bleaching</a>
+
+                    <div class="root-header-dropdown">
+                        <span class="root-header-link-arrow">Exploration&#x25BC;</span>
+                        <div class="root-header-dropdown-content-single-column">
+			    <div>
+				<div class='root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/about_us.php'>About Us</a>
+                                </div>
+				<div class='root-header-dropdown-link-blank'>
+                                    <div class='root-header-dropdown-link-text'>&nbsp;</div>
+                                </div>
+				<div class='root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/satellite/publications.php'>Publications</a>
+                                </div>
+				<div class='root-header-dropdown-link'>
+				    <a class='root-header-dropdown-link-text' 
+                                        href='/satellite/docs/recommendations_crw_citation.php'>How to Cite CRW Products</a>
+                                </div>
+				<div class='root-header-dropdown-link-blank'>
+                                    <div class='root-header-dropdown-link-text'>&nbsp;</div>
+                                </div>
+				<div class='root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/satellite/education/index.php'>Outreach & Education</a>
+                                </div>
+				<div class='root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/crtr/data_resources.php'>Online Data Resources</a>
+                                </div>
+				<div class='root-header-dropdown-link-blank'>
+                                    <div class='root-header-dropdown-link-text'>&nbsp;</div>
+                                </div>
+				<div class='root-header-dropdown-link'>
+				    <a class='root-header-dropdown-link-text' 
+                                        href='mailto:coralreefwatch@noaa.gov?subject=[Question for Coral Reef Watch]'>Contact Us</a>
+                                </div>
+			    </div>
+			</div>
+                    </div>
+
+                    <a class="root-header-link-pointer" href='/messages/announcements.php'>Announcements</a>
+
+                </div>
+            </div>
+
+            <!--SPLITER-->
+
+            <div class = 'root-header-split-banner'></div>
+
+        </div>
+
+        <script>
+            var dropdown = document.querySelector('.root-header-dropdown');
+            var dropdownContent = document.querySelector('.root-header-dropdown-content');
+
+            dropdown.addEventListener('mouseenter', function() {
+                dropdownContent.style.display = 'grid';
+            });
+    
+            dropdown.addEventListener('mouseleave', function() {
+                dropdownContent.style.display = 'none';
+            });
+        </script>
+
+
+        <!--INCLUDE: SPECIAL CORAL REEF WATCH TOP-LEVEL ANNOUNCEMENT-->
+
+                <!--TOP SPECIAL MESSAGE SECTION-->
+
+        <!--
+	<div class="root_top_message_board_container">
+            <p class="root_top_message_board_text">
+  USER ALERT: Notice goes here. If ..., please contact us at
+  <a href=
+  "mailto:coralreefwatch@noaa.gov?subject=[Question ... for Coral Reef Watch]">
+  coralreefwatch@noaa.gov</a>.
+            </p>
+        </div>
+        <div class="divider_navy_5px"></div>
+        -->
+
+        <!--END OF TOP SPECIAL MESSAGE SECTION-->
+
+
+        <!--INCLUDE: SPECIAL 5KM PRODUCTS ANNOUNCEMENT-->
+
+        
+
+        <!--TITLE SECTION-->
+
+        <div class="title-section">
+            <nobr>Daily Global 5km Satellite Sea Surface Temperature Anomaly (1991-2020 Baseline)</nobr>
+        </div>
+        <div class = 'subtitle'>
+	    (Standard SST anomaly based on nighttime SST, Version 3.1-clim19912020-v1, released June 1, 2026)
+	</div>
+        <div class = 'subtitle-ssta-clim19912020'>
+            (*** Not part of Coral Reef Watch coral bleaching heat stress monitoring product suite ***)
+        </div>
+
+        <!--CENTER SECTION-->
+
+        <!--MAP-->
+
+        <div class="map-ssta-clim19912020">
+
+	    <img src="/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_global_current.png" 
+                 usemap="#indexmap_global" alt="Global Sea Surface Temperature Anomaly (baseline 1991-2020) image" border='0' 
+                 width='930px'>
+            <!--
+	    <img src="/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_tropics_current.png"
+                 usemap="#indexmap_tropics" alt="Global Sea Surface Temperature Anomaly (baseline 1991-2020) image" border='0'
+                 width='930px'>
+            -->
+
+        </div>
+
+        <!--CURRENT DAILY VARIABLES-->
+
+        <div class = "currentDailyVariables-ssta-clim19912020">
+        </div>
+
+        <!--IMAGE TABLES-->
+        
+        <div class = 'image-links-ssta-clim19912020'>
+
+            <div class = "image-link-head">Regional Images:</div>
+
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_global_current.png">Global</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_tropics_current.png">Tropics</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_east_current.png">East</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_west_current.png">West</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_pacific_current.png">Pacific</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_indian_current.png">Indian</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_satlantic_current.png">S. Atlantic</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_triangle_current.png">Coral Triangle</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_caribbean_current.png">Caribbean</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_florida_current.png">Florida</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_hawaii_current.png">Hawaii</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_gbr_current.png">GBR</a>
+
+        </div>
+
+        <div class = 'image-links-ssta-clim19912020'>
+
+            <div class = "image-link-head">Special Images:</div>
+
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_natlantic_current.png">North Atlantic</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_natlmediterranean_current.png">NE Atlantic</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_neatlmediterranean_current.png">Mediterranean</a>
+
+            <!--
+
+            <div class = image-link-head>Animations (30d):</div>
+            
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_30day_45ns.gif">Tropics</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_30day_large.gif">Global</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_30day_east.gif">East</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_30day_west.gif">West</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_30day_pacific_930x580.gif">Pacific</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_30day_indian_930x580.gif">Indian</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_30day_satlantic_930x580.gif">S. Atlantic</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_30day_coraltriangle.gif">Coral Triangle</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_30day_crb_930x580.gif">Caribbean</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_30day_fl_930x580.gif">Florida</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_30day_hi_930x580.gif">Hawaii</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_30day_gbr_930x580.gif">GBR</a>
+
+            <div class = image-link-head>Animations (90d):</div>
+            
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_90day_45ns.gif">Tropics</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_90day_large.gif">Global</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_90day_east.gif">East</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_90day_west.gif">West</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_90day_pacific_930x580.gif">Pacific</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_90day_indian_930x580.gif">Indian</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_90day_satlantic_930x580.gif">S. Atlantic</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_90day_coraltriangle.gif">Coral Triangle</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_90day_crb_930x580.gif">Caribbean</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_90day_fl_930x580.gif">Florida</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_90day_hi_930x580.gif">Hawaii</a>
+            <a class = "image-link-item" href="/data_current/5km/v3.1-clim19912020-v1/animation/gif/ssta_animation_90day_gbr_930x580.gif">GBR</a>
+
+            -->
+
+        </div>
+        
+        <!--TITLE TILE VIEWS-->
+
+        <div class = 'zoom-details-ssta-clim19912020'>
+            Click on map above to zoom to small 60 x 40-degree tiles; use drop-down menu below to view larger 60 x 40-degree tiles.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+            Right-click outside clickable map area to save the image.
+        </div>    
+            
+        <!--TILE VIEWS-->
+    
+        <div class = 'view-tile-description-ssta-clim19912020'>60 x 40-degree tiles (by east/west hemispheres and low/high latitudes, updated daily)</div>
+        
+        <div class = 'view-tile-dropdown-ssta-clim19912020'>
+            <form name="menu_region_tile">
+            <select name="region">
+            <option value="newl">Low Latitudes: N. Hemi./E. Hemi. - West</option>
+            <option value="necl">Low Latitudes: N. Hemi./E. Hemi. - Center</option>
+            <option value="neel">Low Latitudes: N. Hemi./E. Hemi. - East</option>
+            <option value="nwwl">Low Latitudes: N. Hemi./W. Hemi. - West</option>
+            <option value="nwcl">Low Latitudes: N. Hemi./W. Hemi. - Center</option>
+            <option value="nwel">Low Latitudes: N. Hemi./W. Hemi. - East</option>
+            <option value="sewl">Low Latitudes: S. Hemi./E. Hemi. - West</option>
+            <option value="secl">Low Latitudes: S. Hemi./E. Hemi. - Center</option>
+            <option value="seel">Low Latitudes: S. Hemi./E. Hemi. - East</option>
+            <option value="swwl">Low Latitudes: S. Hemi./W. Hemi. - West</option>
+            <option value="swcl">Low Latitudes: S. Hemi./W. Hemi. - Center</option>
+            <option value="swel">Low Latitudes: S. Hemi./W. Hemi. - East</option>
+            <option value="newh">High Latitudes: N. Hemi./E. Hemi. - West</option>
+            <option value="nech">High Latitudes: N. Hemi./E. Hemi. - Center</option>
+            <option value="neeh">High Latitudes: N. Hemi./E. Hemi. - East</option>
+            <option value="nwwh">High Latitudes: N. Hemi./W. Hemi. - West</option>
+            <option value="nwch">High Latitudes: N. Hemi./W. Hemi. - Center</option>
+            <option value="nweh">High Latitudes: N. Hemi./W. Hemi. - East</option>
+            <option value="sewh">High Latitudes: S. Hemi./E. Hemi. - West</option>
+            <option value="sech">High Latitudes: S. Hemi./E. Hemi. - Center</option>
+            <option value="seeh">High Latitudes: S. Hemi./E. Hemi. - East</option>
+            <option value="swwh">High Latitudes: S. Hemi./W. Hemi. - West</option>
+            <option value="swch">High Latitudes: S. Hemi./W. Hemi. - Center</option>
+            <option value="sweh">High Latitudes: S. Hemi./W. Hemi. - East</option>
+            </select>
+            <input type="button"
+            onClick="location='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_'+
+            document.menu_region_tile.region.options[document.menu_region_tile.region.selectedIndex].value+
+            '_current.png';" value="View">
+            </input>
+            </form>
+        </div>
+
+        <div class = "currentDailyVariables-ssta-clim19912020">
+        </div>
+
+        <!--HISTORICAL IMAGE ACCESSES-->
+
+	<div class = 'form-container-archive'>
+
+2006-present Images:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<form name="menu_sst_region" class='form1'>
+<select name="region">
+<option value="global">Global</option>
+<option value="tropics">Tropics (45S-45N)</option>
+<option value="east">Eastern Hemisphere</option>
+<option value="west">Western Hemisphere</option>
+<option value="pacific">Pacific Ocean</option>
+<option value="indian">Indian Ocean</option>
+<option value="satlantic">South Atlantic Ocean</option>
+<option value="triangle">Coral Triangle</option>
+<option value="caribbean">Caribbean</option>
+<option value="florida">Florida</option>
+<option value="hawaii">Hawaiian Islands</option>
+<option value="gbr">Great Barrier Reef</option>
+<option value="natlantic">North Atlantic </option>
+<option value="natlmediterranean">NE Atlantic</option>
+<option value="neatlmediterranean">Mediterranean</option>
+</select>
+</form>
+<form name="menu_sst_year">
+<select name="year">
+<option value="2026">2026</option>
+<option value="2025">2025</option>
+<option value="2024">2024</option>
+<option value="2023">2023</option>
+<option value="2022">2022</option>
+<option value="2021">2021</option>
+<option value="2020">2020</option>
+<option value="2019">2019</option>
+<option value="2018">2018</option>
+<option value="2017">2017</option>
+<option value="2016">2016</option>
+<option value="2015">2015</option>
+<option value="2014">2014</option>
+<option value="2013">2013</option>
+<option value="2012">2012</option>
+<option value="2011">2011</option>
+<option value="2010">2010</option>
+<option value="2009">2009</option>
+<option value="2008">2008</option>
+<option value="2007">2007</option>
+<option value="2006">2006</option>
+</select>
+</form>
+<form name="menu_sst_month">
+<select name="month">
+<option value="01">Jan</option>
+<option value="02">Feb</option>
+<option value="03">Mar</option>
+<option value="04">Apr</option>
+<option value="05">May</option>
+<option value="06">Jun</option>
+<option value="07">Jul</option>
+<option value="08">Aug</option>
+<option value="09">Sep</option>
+<option value="10">Oct</option>
+<option value="11">Nov</option>
+<option value="12">Dec</option>
+</select>
+</form>
+<form name="menu_sst_day">
+<select name="day">
+<option value="01">1</option>
+<option value="02">2</option>
+<option value="03">3</option>
+<option value="04">4</option>
+<option value="05">5</option>
+<option value="06">6</option>
+<option value="07">7</option>
+<option value="08">8</option>
+<option value="09">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select>
+</form>
+
+<input type="button"
+onClick="location='/data/5km/v3.1-clim19912020-v1/image/daily/ssta/png/'+
+document.menu_sst_year.year.options[document.menu_sst_year.year.selectedIndex].value+'/'+
+document.menu_sst_month.month.options[document.menu_sst_month.month.selectedIndex].value+'/'+
+'ct5km_ssta_v3.1-clim19912020-v1_'+
+document.menu_sst_region.region.options[document.menu_sst_region.region.selectedIndex].value+'_'+
+document.menu_sst_year.year.options[document.menu_sst_year.year.selectedIndex].value+
+document.menu_sst_month.month.options[document.menu_sst_month.month.selectedIndex].value+
+document.menu_sst_day.day.options[document.menu_sst_day.day.selectedIndex].value+
+'.png';" value="View">
+</input>
+
+        </div>
+
+        <div class = "currentDailyVariables-ssta-clim19912020">
+        </div>
+
+        <!--DATA ACCESSES-->
+
+        <div class = 'image-links-ssta-clim19912020'>
+
+            <div class = "image-link-head">Data Accesses:</div>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            HTTPS:
+            <a class = "image-link-item" href="https://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1-clim19912020-v1/nc/v1.0/daily/ssta/">NetCDF files</a>
+            <a class = "image-link-item" href="https://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1-clim19912020-v1/image_plain/daily/ssta/png">Plain Images</a>
+            <a class = "image-link-item" href="https://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1-clim19912020-v1/image_browse/daily/ssta/png">Browse Images</a>
+
+            &nbsp;&nbsp;
+            |
+            &nbsp;&nbsp;&nbsp;
+
+            FTP:
+            <a class = "image-link-item" href="ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1-clim19912020-v1/nc/v1.0/daily/ssta/">NetCDF files</a>
+            <a class = "image-link-item" href="ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1-clim19912020-v1/image_plain/daily/ssta/png">Plain Images</a>
+            <a class = "image-link-item" href="ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1-clim19912020-v1/image_browse/daily/ssta/png">Browse Images</a>
+
+        </div>
+
+        <div class = 'image-links-ssta-clim19912020'>
+
+            <div class = "image-link-head">Daily Climatologies:</div>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+            HTTPS:
+            <a class = "image-link-item" href="https://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1-clim19912020-v1/climatology/nc">NetCDF files</a>
+            <a class = "image-link-item" href="https://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1-clim19912020-v1/climatology/image_plain/png">Plain Images</a>
+
+	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            |
+            &nbsp;&nbsp;&nbsp;
+
+            FTP:
+            <a class = "image-link-item" href="ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1-clim19912020-v1/climatology/nc/">NetCDF files</a>
+            <a class = "image-link-item" href="ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1-clim19912020-v1/climatology/image_plain/png">Plain Images</a>
+
+        </div>
+
+        <div class = "currentDailyVariables-ssta-clim19912020">
+        </div>
+
+        <!--LINK TO 5KM HOMEPAGE-->
+
+	<div class = 'website-version'>
+            <p>
+            <button type="button" class = 'version-button' onClick="location='index.php';">
+		&nbsp;&nbsp;&nbsp;&nbsp;
+                5km Coral Bleaching Heat Stress Monitoring Product Suite Home Page
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <br> 
+		(**** Climatological baseline of 1985-1990 plus 1993 ****)
+            </button>
+            <p>
+        </div>
+
+        <!--PAGE INFORMATION-->
+
+        <div class = 'page-information'>
+            
+            The NOAA Coral Reef Watch (CRW) daily global 5km Sea Surface Temperature 
+	    (SST) Anomaly product presented here is based on Coral Reef Watch's 
+            <a href="index_5km_sst.php">CoralTemp v3.1</a> and daily climatologies with 
+	    the reference (baseline) time period of 1991-2020, following the 
+            <a href="https://www.ncei.noaa.gov/products/land-based-station/us-climate-normals">
+            standard 30-year reference period <img src="/icons_gen/popup.gif"></a> 
+	    used by meterorologists and climate scientists to define "normal" weather 
+	    conditions. CoralTemp v3.1 is a satellite nighttime SST data set, spanning January 
+            1, 1985 to the present and updated in near real-time. 
+
+            <br><br>
+
+            The data and images provided here are for 2006-present only, as the 1991-2020 
+	    baseline period has been used for calculating SST Anomalies of 
+            <a href="/satellite/analyses_guidance/figs/oni_climatology_matchup.png">2006-present</a> 
+            according to the  
+            <a href="https://www.climate.gov/news-features/understanding-climate/climate-change-and-1991-2020-us-climate-normals">
+            guidance</a> on defining climatology for calculating SST anomaly. 
+
+            <br><br>
+
+            Note that this SST Anomaly product is provided in parallel to the SST Anomaly
+            product of Coral Reef Watch's daily global 5km Coral Bleaching Heat Stress
+            Monitoring Product Suite that is based on climatologies with a specific
+            reference (baseline) of 1985-1990 plus 1993 for its designed applications.
+
+            <br><br>
+
+	    Climatology: CoralTemp v3.1 SST values from January 1, 1991 to December 31,
+	    2000 were used to derive the daily climatologies. The daily climatology value 
+            for each calender day of year (other than the 29th of February) is the average 
+            daily SST value calculated among the 30 values of the day from the 30 years 
+	    (1991-2020). If ice was present at a data grid on any of those 30 days, the 
+	    climatolgy was not calculated for that day at that data grid and an ice flag
+	    was assigned. This leads to dark-grey no-data grids in high-latitudes shown 
+            in daily SST Anomaly images and flagged miss-data grids in netCDF data files. 
+            The daily climatology for February 29 was derived by averaging the climatology 
+            values for February 28 and March 1.  
+
+            <br><br>
+
+	    No-data grids: Most, if not all, of the no-data grids are in high latitude
+            regions with no corresponding daily climatology value avaiable due to the 
+	    presence of ice during the baseline time period. See the climatology section 
+            above for details. 
+ 
+        </div>
+
+        <div class = 'update-information'>
+            This product is updated each afternoon at about 13:30 U.S. Eastern Time.
+        </div>
+
+        <!--MAP NAVIGATION-->
+
+        <map name='indexmap_tropics'>
+            <area SHAPE='RECT' COORDS='17,50,115,159'  HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_newl_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='116,50,265,159' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_necl_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='267,50,414,159' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_neel_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='415,50,563,159' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_nwwl_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='564,50,713,159' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_nwcl_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='714,50,860,159' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_nwel_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='861,50,912,159' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_newl_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='17,160,115,267' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_sewl_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='116,160,265,267' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_secl_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='267,160,414,267' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_seel_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='415,160,563,267' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_swwl_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='564,160,713,267' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_swcl_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='714,160,862,267' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_swel_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='863,160,912,267' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_sewl_current.png'
+            ALT='Regional chart' TARGET='_top'>
+        </map>
+
+	<map name='indexmap_global'>
+
+            <area SHAPE='RECT' COORDS='50,60,142,159'  HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_newh_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='143,60,280,159' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_nech_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='281,60,418,159' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_neeh_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='419,60,556,159' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_nwwh_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='557,60,694,159' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_nwch_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='695,60,832,159' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_nweh_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='833,60,880,159' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_newh_current.png'
+            ALT='Regional chart' TARGET='_top'>
+
+            <area SHAPE='RECT' COORDS='50,160,142,264'  HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_newl_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='143,160,280,264' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_necl_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='281,160,418,264' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_neel_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='419,160,556,264' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_nwwl_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='557,160,694,264' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_nwcl_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='695,160,832,264' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_nwel_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='833,160,880,264' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_newl_current.png'
+            ALT='Regional chart' TARGET='_top'>
+
+	    <area SHAPE='RECT' COORDS='50,265,142,369' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_sewl_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='143,265,280,369' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_secl_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='281,265,418,369' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_seel_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='419,265,556,369' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_swwl_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='557,265,694,369' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_swcl_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='695,265,832,369' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_swel_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='833,265,880,369' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_sewl_current.png'
+            ALT='Regional chart' TARGET='_top'>
+
+	    <area SHAPE='RECT' COORDS='50,370,142,469' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_sewh_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='143,370,280,469' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_sech_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='281,370,418,469' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_seeh_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='419,370,556,469' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_swwh_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='557,370,694,469' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_swch_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='695,370,832,469' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_sweh_current.png'
+            ALT='Regional chart' TARGET='_top'>
+            <area SHAPE='RECT' COORDS='833,370,880,469' HREF='/data_current/5km/v3.1-clim19912020-v1/daily/png/ct5km_ssta_v3.1-clim19912020-v1_sewh_current.png'
+            ALT='Regional chart' TARGET='_top'>
+
+	</map>
+
+        <!--INCLUDE: FOOTER-->
+
+        
+        <div class = 'root-footer-split-banner'></div>
+
+        <div class="root-footer-taskbar">
+
+            <div class="root-footer-taskbar-left">
+                <a href="https://www.commerce.gov" class="root-footer-taskbar-link-left">DOC</a>
+                <a class="root-footer-taskbar-arrow">></a>  
+                <a href="https://www.noaa.gov" class="root-footer-taskbar-link-left">NOAA</a>
+                <a class="root-footer-taskbar-arrow">></a>
+                <a href="https://www.nesdis.noaa.gov" class="root-footer-taskbar-link-left">NESDIS</a>
+                <a class="root-footer-taskbar-arrow">></a>
+                <a href="https://www.star.nesdis.noaa.gov/star" class="root-footer-taskbar-link-left">STAR</a>
+                <a class="root-footer-taskbar-arrow">></a>
+                <a href="https://coralreefwatch.noaa.gov" class="root-footer-taskbar-link-left">CORAL REEF WATCH</a>
+            </div>
+
+            <div class="root-footer-taskbar-right">
+                <a href="https://www.coralreef.gov" class="root-footer-taskbar-link-right">USCRTF</a>
+                <a href="https://coralreef.noaa.gov" class="root-footer-taskbar-link-right">CRCP</a>
+                <a href="https://www.coris.noaa.gov/monitoring" class="root-footer-taskbar-link-right">NCRMP</a>
+                <a href="https://www.coris.noaa.gov" class="root-footer-taskbar-link-right">CoRIS</a>
+            </div>
+
+        </div>
+
+        <div class="root-footer">
+
+            <a class="root-footer-noaa-logo" href="http://www.noaa.gov">
+               <img class="root-footer-left" src="/icons_gen/noaalogo.gif" alt="NOAA logo" height='70px' width='70px' border="0">
+            </a>
+
+            <div class="root-footer-info-links">
+		<p>
+                    <a href="http://search.usa.gov/search?affiliate=noaa.gov" title='Click to access Search'>Search</a>
+                    |
+                    <a href="/satellite/docs/recommendations_crw_citation.php">How to cite Coral Reef Watch products and methods</a>
+                </p>
+
+                <p>
+                    <a href="http://www.star.nesdis.noaa.gov/star/productdisclaimer.php">Disclaimer</a>
+                    | 
+                    <a href="http://www.cio.noaa.gov/services_programs/info_quality.html">Information Quality</a>
+                    |
+                    <a href="http://www.star.nesdis.noaa.gov/star/accessibility.php">Accessibility Policy</a>
+		    | 
+                    <a href="http://www.star.nesdis.noaa.gov/star/privacy.php">Privacy Policy</a>
+                </p>
+
+                <p>
+                    <a href="https://www.star.nesdis.noaa.gov/star/survey.php">Customer Survey</a>
+                    |
+                    <a href="mailto:coralreefwatch@noaa.gov?subject=[Question for Coral Reef Watch]">Contact Us</a>
+                    |
+                    Owner: <a href="/index.php">NOAA Coral Reef Watch</a>
+                </p>
+            </div>
+
+            <a class="root-footer-dept-logo" href="http://www.doc.gov">
+               <img class="root-footer-right" src="/icons_gen/commerce.gif" alt="commerce logo" height='70px' width='70px' border="-1">
+            </a>
+
+        </div>
+
+
+    </body>
+</html>
+

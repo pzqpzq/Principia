@@ -1,0 +1,25 @@
+name: principia-cloud-compact
+
+on:
+  workflow_dispatch:
+    inputs:
+      input_dir:
+        description: "Directory containing contribution JSON files"
+        default: "cloud/contributions"
+      output_dir:
+        description: "Directory for compaction report"
+        default: "dist/cloud-compaction"
+
+jobs:
+  compact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python principia.py cloud compact --input "${{ inputs.input_dir }}" --out "${{ inputs.output_dir }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: principia-cloud-compaction-snapshot
+          path: "${{ inputs.output_dir }}"

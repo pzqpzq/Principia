@@ -1,0 +1,680 @@
+Current Employment Statistics: Employment, Hours, and Earnings--National (CE)          
+     ce.txt  
+
+Section Listing                                                                        
+                                                                                       
+1. Survey Definition                                                                   
+2. Text files listed in the survey directory                                           
+3. Time series, series file, data file, & mapping file definitions and relationships   
+4. Series file format and field definitions                                            
+5. Data file format and field definitions                                              
+6. Mapping file formats and field definitions                                          
+7. Data Element Dictionary                                                             
+                                                                                       
+======================================================================================
+Section 1                                                                              
+====================================================================================== 
+                                                                                       
+Definition of CURRENT EMPLOYMENT STATISTICS: EMPLOYMENT, HOURS, AND EARNINGS NATIONAL  
+(CE)                                                                                   
+                                                                                       
+Survey Description:                                                                    
+The Current Employment Statistics (CES) program provides estimates of employment,      
+hours, and earnings information on a national basis and in considerable industry       
+detail.  The Bureau of Labor Statistics collects payroll data each month from a sample 
+of business and government establishments in all nonfarm activities.                   
+                                                                                       
+Employment data include series for total employment, number of women employees, and    
+number of production or nonsupervisory employees. Estimates of average hourly          
+earnings, average weekly hours, average weekly earnings, and average weekly overtime   
+hours are produced for both all employees and for production or nonsupervisory         
+employees. Overtime hours are produced for manufacturing industries only.              
+                                                                                       
+A sample of approximately 119,000 businesses and government agencies representing      
+approximately 622,000 worksites throughout the United States is utilized for this      
+monthly survey. The sample contains about 324,000 employer units.                      
+                                                                                       
+All employment, hours and earnings series are classified according to the 2022 North   
+American Industry Classification System (NAICS). The industry code used in the survey 
+corresponds to the NAICS code, except in those cases where multiple industries have    
+been combined.                                                                         
+                                                                                       
+Summary of Data Available:                                                             
+For all employees, women employees, and production or nonsupervisory employees, CES    
+publishes about 3,800 monthly series. The series for all employees cover about
+900 industries on both a seasonally adjusted and not seasonally adjusted basis.        
+                                                                                       
+Approximately 2,100 series for AHE, AWH, and, in manufacturing, AWOH for both all 
+employee and production and nonsupervisory employees are published monthly on a not 
+seasonally adjusted basis and cover approximately 500 industries.
+
+Over 3,900 seasonally adjusted employment, hours, and earnings series for AE, PE, and 
+WE are published. About 7,100 derivative series such as average weekly earnings (AWE), 
+indexes, and constant-dollar series for AE and PE are also published for about
+500 industries.
+                                  
+Most employment series begin in 1990, although some series, including industry         
+supersectors, are available from 1939. Supersectors include: mining and logging;       
+construction; manufacturing; trade, transportation, and utilities; information;        
+financial activities; professional and business services; private education and health         
+services; leisure and hospitality; other services; and government. 
+
+Due to the 2025 lapse in appropriations, real earnings data for October 2025 and 
+total nonfarm collection rate values for October 2025 first preliminary estimates 
+and September 2025 second preliminary estimates are not available.
+                   
+                                                                                       
+Frequency of Observations:                                                             
+Data series are monthly in most cases; quarterly averages are available for total      
+employment, average weekly hours, and average overtime hours, seasonally adjusted      
+(datatypes 19, 20, 25, 36, and 37).                                                    
+                                                                                       
+Annual averages are available for all series that are not adjusted for seasonality     
+(except for the 12-month diffusion index series).                                      
+                                                                                       
+Data Characteristics:                                                                  
+Earnings are measured in dollars and are published to the nearest cent (two decimal    
+places). Average weekly and overtime hours are measured in hours and are published to 
+the nearest tenth of an hour (one decimal place).                                      
+                                                                                       
+Employment is measured in thousands of workers and is stored with no decimal place for 
+all supersectors and for both durable goods and nondurable goods in manufacturing.     
+Employment for all other industries are stored to one decimal place.                   
+                                                                                       
+Special characteristics of the data are footnoted where necessary. For example; I      
+indicates that the seasonally adjusted series is independently seasonally adjusted and 
+not used in aggregating to higher summary industries. For all employees, higher        
+summary series, such as total nonfarm, are aggregated up from the 3-digit NAICS level. 
+                                                                                       
+Release Schedule: https://www.bls.gov/ces/publications/news-release-schedule.htm                                 
+Releases are usually available on the third Friday following the week containing the   
+12th of the reference month (the reference period is the pay period that includes the  
+12th of the month). Each release contains first preliminary estimates for the          
+reference month, second preliminary estimates for the month preceding the reference    
+month, and third final estimates for the month two months prior to the reference       
+month.                                                                                 
+                                                                                       
+Each year with the release of January estimates in February, CES data are re-anchored  
+to universe counts of nonfarm employment or benchmarks for the most recent March. For  
+example, CES introduced March 2024 benchmark counts with the release of January 2025   
+first preliminary estimates in February 2025. On a not seasonally adjusted basis, all  
+series are subject to revision back to the prior year s benchmarked data (21 months of 
+data), while 5 years of seasonally adjusted estimates are subject to revision 
+(or more if required due to a series reconstruction).      
+                                                                                       
+References: BLS Handbook of Methods, Current Employment Statistics, National,
+https://www.bls.gov/opub/hom/ces/concepts.htm                  
+                                                                                       
+====================================================================================== 
+Section 2                                                                              
+====================================================================================== 
+                                                                                       
+Text files listed in the survey directory                                              
+                                                                                       
+Text files allow data users to retrieve large amounts of data with one selection.      
+These datasets are highly suited for statistical software that manipulate large        
+datasets. The files are arranged first on a broad industry base, followed by industry 
+specific groups. In addition to data files, a series of mapping files are also         
+available and provide a means for identifying all variables in the data files. This   
+section identifies and describes the multi-series text files available for download    
+from the LABSTAT database at https://download.bls.gov/pub/time.series/ce/.             
+                                                                                       
+These four files contain data for most or all supersectors combined.               
+                                                                                       
+   *ce.data.0.ALLCESSeries - contains the entire history of all series                
+             currently published by the CES program. With the release of November 2024 
+             data on December 6, 2024, new series reflecting the monthly collection rates
+             for the first preliminary, second preliminary, and third release of data for 
+             total nonfarm, as well as monthly response rates (at third release of data) 
+             for total private, have been included in this file. These series are identified 
+             as CEU00000000C1, CEU00000000C2, CEU00000000C3, and CEU05000000RR. 
+             These 4 additional series represent the only series changes to this file from 
+             the previous published version.             
+                                                                                       
+   *ce.data.01a.CurrentSeasAE - contains every seasonally adjusted all employee series 
+             and its complete history.                                 
+                                                                                       
+   *ce.data.02b.AllRealEarningsAE - contains the complete history of real              
+             earnings of all employees for every industry for which CES                
+             also publishes current dollar earnings series. The series in this         
+             file include (data type number in parenthesis):                           
+         *   Average Weekly Earnings of All Employees $82-84 (12)                      
+         *   Average Hourly Earnings of All Employees $82-84 (13)                      
+                                                                                       
+   *ce.data.03c.AllRealEarningsPE - contains the complete history of real              
+             earnings of production or nonsupervisory employees for every              
+             industry for which CES also publishes current dollar earnings             
+             series. The series in this file include:                                  
+         *   Average Weekly Earnings of Production Employees, $82-84 (31)              
+         *   Average Hourly Earnings of Production Employees, $82-84 (32) 
+
+The ce.data.Goog file contains the following datatypes, if applicable, for all supersectors
+listed in the ce.supersector mapping file: 
+         *   All employees
+	 *   Average weekly hours of all employees
+	 *   Average hourly earnings of all employees
+	 *   Average weekly earnings of all employees
+             
+                                                                                       
+The remaining CES text files are categorized first by Supersector, then by groups of   
+datatypes.                                                                             
+                                                                                       
+The list of CES supersectors in LABSTAT are shown in                                   
+https://download.bls.gov/pub/time.series/ce/ce.supersector.                            
+                                                                                       
+The list of CES datatypes in LABSTAT are shown in                                      
+https://download.bls.gov/pub/time.series/ce/ce.datatype.                               
+                                                                                       
+Each filename contains four parts separated by a period (.).                           
+For example:  ce.data.05b.TotalPrivate.AllEmployeeHoursAndEarnings                     
+                                                                                       
+The 4 parts to the filename are:                                                       
+                                                                                       
+1)  ce   - the data in the file pertain to the national estimates from the CES         
+           survey.                                                                     
+2)  data - the file contains data as opposed to mapping files (mentioned later).       
+3)  2 numerical digits plus 1 alpha character - the digits identify a                  
+           Supersector or other major industry grouping, and the alpha character       
+           represents a data type package label, where,                                
+                                                                                       
+    a - Employment - includes all employment datatypes                                 
+               (Datatype codes shown in parentheses):                                  
+                                                                                       
+           *  All employees (01)                                                       
+           *  Production or nonsupervisory employees (06)                              
+           *  Women employees (10)                                                     
+           *  1-month diffusion index (21)                                             
+           *  3-month diffusion index (22)                                             
+           *  6-month diffusion index (23)                                             
+           *  12-month diffusion index (24)                                            
+           *  All employee quarterly average (25)                                      
+           *  3-month moving average change (26)                                       
+                                                                                       
+    b - Hours and earnings of all employees - includes all hours and earnings          
+              datatypes for all employee payroll: (Data type numbers shown in          
+              parentheses)                                                             
+                                                                                       
+           *  Average weekly hours for all employees (02)                              
+           *  Average hourly earnings for all employees (03)                           
+           *  Average overtime hours of all employees (04)                             
+           *  Average weekly earnings of all employees (11)                            
+           *  Average weekly earnings of all employees $82-84 (12)                     
+           *  Average hourly earnings of all employees $82-84 (13)                     
+           *  Average hourly earnings of all employees excluding overtime (15)         
+           *  Index of aggregate weekly hours of all employees, 2007=100 (16)          
+           *  Index of aggregate weekly payrolls of all employees, 2007=100 (17)       
+           *  Quarterly average weekly hours of all employees (19)                     
+           *  Quarterly average weekly overtime hours of all employees (20)            
+           *  Aggregate weekly hours of all employees (56)                             
+           *  Aggregate weekly payrolls of all employees (57)                          
+           *  Aggregate weekly overtime hours of all employees (58)                    
+                                                                                       
+     c - Production employee hours and earnings - includes all hours and               
+              earnings data types for production or nonsupervisory                     
+              employees: (Data type numbers shown in parentheses)                      
+                                                                                       
+           *  Average weekly hours for production employees (07)                       
+           *  Average hourly earnings for production employees (08)                    
+           *  Average weekly overtime hours of production employees (09)               
+           *  Average weekly earnings of production employees (30)                     
+           *  Average weekly earnings of production employees, $82-84 (31)             
+           *  Average hourly earnings of production employees, $82-84 (32)             
+           *  Average hourly earnings of production employees excluding                
+              overtime (33)                                                            
+           *  Index of aggregate hours of production employees, 2002=100 (34)          
+           *  Index of aggregate payrolls of production employees, 2002=100 (35)       
+           *  Quarterly average weekly hours of production employees  (36)             
+           *  Quarterly average weekly overtime hours of production                    
+              employees (37)                                                           
+           *  Aggregate weekly hours of production employees (81)                      
+           *  Aggregate weekly payrolls of production employees (82)                   
+           *  Aggregate weekly overtime hours of production employees (83)             
+                                                                                       
+4)  File Description - a two phase descriptive listing of data file contents.          
+           The first half is the supersector or industry name (list of                 
+           supersectors and industries are in                                          
+           http://download.bls.gov/pub/time.series/ce/ce.supersector ).                
+           The second half is the data type grouping (employment, all employee         
+           hours and earnings, and production employee hours and earnings)             
+           described above.                                                            
+                                                                                       
+The complete list of data files available for retrieval on the text file page          
+follows.                                                                               
+                                                                                       
+  *  ce.data.0.ALLCESSeries                                                            
+                                                                                       
+  *  ce.data.01a.CurrentSeasAE                                                         
+                                                                                       
+  *  ce.data.02b.AllRealEarningsAE                                                     
+                                                                                       
+  *  ce.data.03c.AllRealEarningsPE                                                     
+                                                                                       
+  *  ce.data.00a.TotalNonfarm.Employment                                               
+                                                                                       
+  *  ce.data.05a.TotalPrivate.Employment                                               
+                                                                                       
+  *  ce.data.05b.TotalPrivate.AllEmployeeHoursAndEarnings                              
+                                                                                       
+  *  ce.data.05c.TotalPrivate.ProductionEmployeeHoursAndEarnings                       
+                                                                                       
+  *  ce.data.10a.MiningAndLogging.Employment                                           
+                                                                                       
+  *  ce.data.10b.MiningAndLogging.AllEmployeeHoursAndEarnings                          
+                                                                                       
+  *  ce.data.10c.MiningAndLogging.ProductionEmployeeHoursAndEarnings                   
+                                                                                       
+  *  ce.data.20a.Construction.Employment                                               
+                                                                                       
+  *  ce.data.20b.Construction.AllEmployeeHoursAndEarnings                              
+                                                                                       
+  *  ce.data.20c.Construction.ProductionEmployeeHoursAndEarnings                       
+                                                                                       
+  *  ce.data.30a.Manufacturing.Employment                                              
+                                                                                       
+  *  ce.data.30b.Manufacturing.AllEmployeeHoursAndEarnings                             
+                                                                                       
+  *  ce.data.30c.Manufacturing.ProductionEmployeeHoursAndEarnings                      
+                                                                                       
+  *  ce.data.31a.ManufacturingDurables.Employment                                      
+                                                                                       
+  *  ce.data.31b.ManufacturingDurables.AllEmployeeHoursAndEarnings                     
+                                                                                       
+  *  ce.data.31c.ManufacturingDurables.ProductionEmployeeHoursAndEarnings              
+                                                                                       
+  *  ce.data.32a.ManufacturingNondurables.Employment                                   
+                                                                                       
+  *  ce.data.32b.ManufacturingNondurables.AllEmployeeHoursAndEarnings                  
+                                                                                       
+  *  ce.data.32c.ManufacturingNondurables.ProductionEmployeeHoursAndEarnings           
+                                                                                       
+  *  ce.data.40a.TradeTransportationAndUtilities.Employment                            
+                                                                                       
+  *  ce.data.40b.TradeTransportationAndUtilities.AllEmployeeHoursAndEarnings           
+                                                                                       
+  *  ce.data.40c.TradeTransportationAndUtilities.ProductionEmployeeHoursAndEarnings    
+                                                                                       
+  *  ce.data.41a.WholesaleTrade.Employment                                             
+                                                                                       
+  *  ce.data.41b.WholesaleTrade.AllEmployeeHoursAndEarnings                            
+                                                                                       
+  *  ce.data.41c.WholesaleTrade.ProductionEmployeeHoursAndEarnings                            
+                                                                                       
+  *  ce.data.42a.RetailTrade.Employment                                                
+                                                                                       
+  *  ce.data.42b.RetailTrade.AllEmployeeHoursAndEarnings                               
+                                                                                       
+  *  ce.data.42c.RetailTrade.ProductionEmployeeHoursAndEarnings                        
+                                                                                       
+  *  ce.data.43a.TransportationAndWarehousingAndUtilities.Employment                   
+                                                                                       
+  *  ce.data.43b.TransportationAndWarehousingAndUtilities.AllEmployeeHoursAndEarnings  
+                                                                                       
+  *  ce.data.43c.TransportationAndWarehousingAndUtilities.                             
+        ProductionEmployeeHoursAndEarnings    (Very long name - all continuous)        
+                                                                                       
+  *  ce.data.50a.Information.Employment                                                
+                                                                                       
+  *  ce.data.50b.Information.AllEmployeeHoursAndEarnings                               
+                                                                                       
+  *  ce.data.50c.Information.ProductionEmployeeHoursAndEarnings                        
+                                                                                       
+  *  ce.data.55a.FinancialActivities.Employment                                        
+                                                                                       
+  *  ce.data.55b.FinancialActivities.AllEmployeeHoursAndEarnings                       
+                                                                                       
+  *  ce.data.55c.FinancialActivities.ProductionEmployeeHoursAndEarnings                
+                                                                                       
+  *  ce.data.60a.ProfessionalBusinessServices.Employment                               
+                                                                                       
+  *  ce.data.60b.ProfessionalBusinessServices.AllEmployeeHoursAndEarnings              
+                                                                                       
+  *  ce.data.60c.ProfessionalBusinessServices.ProductionEmployeeHoursAndEarnings       
+                                                                                       
+  *  ce.data.65a.PrivateEducationandHealthCare.Employment                                     
+                                                                                       
+  *  ce.data.65b.PrivateEducationandHealthCare.AllEmployeeHoursAndEarnings                    
+                                                                                       
+  *  ce.data.65c.PrivateEducationandHealthCare.ProductionEmployeeHoursAndEarnings             
+                                                                                       
+  *  ce.data.70a.LeisureAndHospitality.Employment                                      
+                                                                                       
+  *  ce.data.70b.LeisureAndHospitality.AllEmployeeHoursAndEarnings                     
+                                                                                       
+  *  ce.data.70c.LeisureAndHospitality.ProductionEmployeeHoursAndEarnings              
+                                                                                       
+  *  ce.data.80a.OtherServices.Employment                                              
+                                                                                       
+  *  ce.data.80b.OtherServices.AllEmployeeHoursAndEarnings                             
+                                                                                       
+  *  ce.data.80c.OtherServices.ProductionEmployeeHoursAndEarnings                      
+                                                                                       
+  *  ce.data.90a.Government.Employment 
+
+  *  ce.data.Goog                                                
+                                                                                       
+                                                                                       
+Additionally, the following files are available and will be described in later         
+sections of this document.                                                             
+                                                                                       
+   ce.contacts      -  Contact information for the national CES program                
+   ce.datatype      -  Data_type_code                  mapping file                    
+   ce.footnote      -  Footnote codes                  mapping file                    
+   ce.industry      -  Industry codes                  mapping file                    
+   ce.period        -  Period codes                    mapping file                    
+   ce.seasonal      -  Seasonal Adjustment codes       mapping file                    
+   ce.series        -  All available series numbers with series titles                 
+   ce.supersector   -  Super sector codes              mapping file                    
+   ce.txt           -  General information (this document)                             
+                                                                                       
+====================================================================================== 
+Section 3                                                                              
+====================================================================================== 
+Time series, series file, data file, & mapping file definitions and relationships      
+                                                                                       
+A time series refers to a set of data observed over an extended period of time         
+for a consistent time interval (i.e. monthly, quarterly, semi-annually, annually).     
+BLS time series data are typically produced at monthly intervals and represent data    
+ranging from a specific consumer item in a specific geographical area whose price      
+is gathered monthly to a category of worker in a specific industry whose employment    
+rate is being recorded monthly, etc.                                                   
+                                                                                       
+The text files are organized to provide data users with the necessary information to   
+interpret data files:                                                                  
+                                                                                       
+a)  a series file (only one series file per survey)                                    
+b)  mapping files                                                                      
+c)  data files                                                                         
+                                                                                       
+The series file contains a set of codes which, together, compose a series              
+identification code that serves to uniquely identify a single time series.             
+Additionally, the series file also contains the following series-level information:    
+                                                                                       
+a) the period and year corresponding to the first data observation                     
+b) the period and year corresponding to the most recent data observation.              
+                                                                                       
+The mapping files, or definition files, contain explanatory text descriptions          
+that correspond to various codes contained within each series identification code.     
+                                                                                       
+The data file contains one line of data for each observation period pertaining to a    
+specific time series.  Each line contains a reference to the following:                
+                                                                                       
+a) a series identification code                                                        
+b) year in which data is observed                                                      
+c) period for which data is observed (M13 indicates annual averages)                   
+d) value                                                                               
+e) footnote code (if necessary)                                                        
+                                                                                       
+====================================================================================== 
+Section 4                                                                              
+====================================================================================== 
+Series file format and field definitions                                               
+                                                                                       
+The first line of the ce.series files shows several fields or data elements separated  
+by tabs. Each of the remaining lines in ce.series represents one unique CES series.    
+Note that the field numbers are for reference only and do not exist in the LABSTAT     
+database. Data files are in ASCII text format.  Each data element is                   
+listed below and shows the length of the data element field followed by a value        
+(example). Each series record ends with a new line character.                          
+                                                                                       
+Field #   Data Element          Length     Value(Example)                              
+                                                                                       
+ 1        Series_id             17         CEU0500000001                               
+                                                                                       
+ 2        Supersector_code      2          05                                          
+                                                                                       
+ 3        NAICS tabcode         8          10113300 (industry code)                    
+                                                                                       
+ 4        Datatype Code         2          01                                          
+                                                                                       
+ 5        Series title          104        3 parts to series title;                    
+                                              Datatype,                                
+                                              Industry name, and                       
+                                              seasonality (adjusted or unadjusted)     
+                                                                                       
+ 6        Footnote_codes        10         I (Independent Seasonally Adjusted)         
+                                                                                       
+ 7        Begin_year            4          1939                                        
+                                                                                       
+ 8        Begin_period          3          M01 (January)                               
+                                                                                       
+ 9        End_year              4          2016                                        
+                                                                                       
+ 10       End_period            3          M12 (December)                              
+                                                                                       
+                                                                                       
+The series_id (CEU0500000001) can be broken out further into four variables:           
+                                                                                       
+     Variable                 Value                                                    
+     survey abbreviation      CE                                                       
+     seasonal (code)          U or S                                                   
+     CES industry_code        05000000, where 05 is the supersector, and 000000        
+                                        represents the NAICS industry code             
+     data_type_code           01                                                       
+                                                                                       
+====================================================================================== 
+Section 5                                                                              
+====================================================================================== 
+Data file format and field definitions 
+
+The first line of each data file shows several fields or data elements separated   
+by tabs. Each of the remaining lines in the data file represents one unique CES series 
+and data point and is divided into fields or data elements. Note that the field        
+numbers are for reference only and do not exist in the LABSTAT database. Data files    
+are in ASCII text format. Each data element is listed below and shows the name of the  
+element, the length of the data element field, and a value example.  Each data record  
+ends with a new line character.                                                        
+                                                                                       
+The ce.data file is partitioned into a number of separate files:  See Section 2        
+                                                                                       
+The above-referenced data files have the following format:                             
+                                                                                       
+Field #/Data Element                      Length          Value(Example)               
+                                                                                       
+ 1.     series_id                         17              CEU0500000001                
+                                                                                       
+ 2.     year                              4               2003                         
+                                                                                       
+ 3.     period                            3               M01                          
+                                                                                       
+ 4.     value                             12              103623                       
+                                                                                       
+ 5.     footnote_codes                    10              p (Preliminary)              
+                                                                                       
+                                                                                       
+====================================================================================== 
+Section 6                                                                              
+====================================================================================== 
+Mapping file formats and field definitions                                             
+                                                                                       
+The following represents file formats and field definitions for each mapping file.     
+Note that the field numbers are for reference only; they do not exist in the           
+LABSTAT database.  Mapping files are in ASCII text format.  Data elements are          
+separated by tabs; the first record of each file contains the data elements stored     
+in the file.  Each record ends with a new line character.                              
+                                                                                       
+File Name:  ce.datatype   https://download.bls.gov/pub/time.series/ce/ce.datatype      
+                                                                                       
+ Field #/Data Element           Length        Value (Example)                          
+                                                                                       
+ 1.      data_type_code         2             30                                       
+                                                                                       
+ 2.      data_type_text         100           Average Weekly Hours of All Employees    
+                                                                                       
+                                                                                       
+File Name:  ce.footnote   https://download.bls.gov/pub/time.series/ce/ce.footnote      
+                                                                                       
+ Field #/Data Element           Length        Value (Example)                          
+                                                                                       
+ 1.      footnote_code          1             I                                        
+                                                                                       
+ 2.      footnote_text          100           Text (Preliminary)                       
+                                                                                       
+                                                                                       
+File Name:  ce.industry   https://download.bls.gov/pub/time.series/ce/ce.industry      
+                                                                                       
+ Field #/Data Element           Length        Value(Example)                           
+                                                                                       
+ 1.      industry_code          8             05000000                                 
+                                                                                       
+ 2.      naics_code             13            236                                      
+                                                                                       
+ 3.      publishing_status      2 (AO)        Alpha characters displaying published    
+                                  (A)         datatypes for industry                   
+                                                                                       
+ 4.      industry_name          80            (Construction of buildings)              
+                                                                                       
+ 5.      display_level          1             Character displaying where industry      
+                                              lies in hierarchy of industries          
+                                                                                       
+                                                                                       
+File Name:  ce.period         https://download.bls.gov/pub/time.series/ce/ce.period    
+                                                                                       
+ Field #/Data Element          Length         Value (Example)                          
+                                                                                       
+ 1.      period                3              M02                                      
+                                                                                       
+ 2.      period_abbr           5              FEB                                      
+                                                                                       
+ 3.      period_name           20             February                                 
+                                                                                       
+                                                                                       
+File Name:  ce.series      https://download.bls.gov/pub/time.series/ce/ce.series       
+                                                                                       
+ Field #/Data Element          Length         Value (Example)                          
+                                                                                       
+ 1.      series_id             13             CES0500000001                            
+                                                                                       
+ 2.      supersector_code      2              05                                       
+                                                                                       
+ 3.      industry_code         8              05000000                                 
+                                                                                       
+ 4.      data_type_code        2              01                                       
+                                                                                       
+ 5.      seasonal              1              S  or U                                  
+                                                                                       
+ 6.      series_title          104            3 parts to series title; datatype,       
+                                                industry name, and seasonality         
+                                                                                       
+ 7.      begin_year            4              YYYY  (2006)                             
+                                                                                       
+ 8.      begin_period          3              M01-M13                                  
+                                                                                       
+ 9.      end_year              4              YYYY  (2017)                             
+                                                                                       
+ 10.     end_period            3              M01-M13                                  
+                                                                                       
+                                                                                       
+File Name:  ce.supersector  https://download.bls.gov/pub/time.series/ce/ce.supersector 
+                                                                                       
+ Field #/Data Element          Length         Value (Example)                          
+                                                                                       
+ 1.      supersector_code      2              05                                       
+                                                                                       
+ 2.      supersector_name      60             Manufacturing                            
+                                                                                       
+                                                                                       
+====================================================================================== 
+Section 7                                                                              
+====================================================================================== 
+Data Element Dictionary                                                                
+                                                                                       
+EMPLOYMENT, HOURS, AND EARNINGS--NATIONAL (CE) DATABASE ELEMENTS                       
+                                                                                       
+Data Element        Length   Value (Example)   Description                             
+                                                                                       
+begin_period        3        M01-M13           Identifies first data observation       
+                             Ex: M06=June      within the first year for which         
+                             M13=Annual Avg)   data is available for a given           
+                                               time series.                            
+                                                                                       
+begin_year          4        YYYY              Identifies first year for which         
+                             Ex: 2006          data is available for a given time      
+                                               Series                                  
+                                                                                       
+data_type_code      2        30                Code identifying the datatype           
+                                               of the observation.                     
+                                                                                       
+data_type_text      100      Text              Datatype name of the observation.       
+                             (All employees, thousands)                                
+                                                                                       
+end_period          3        M01-M13           Identifies last data observation        
+                             Ex: M06=June      within the last year for which          
+                             M=Monthly,        data is available for a given time      
+                             M13=Annual Avg)   series.                                 
+                                                                                       
+end_year            4        YYYY              Identifies last year for which          
+                             Ex: 2017          data is available for a given           
+                                               time series.                            
+                                                                                       
+footnote_code       1        p                 Identifies footnote for the data        
+                                               series.                                 
+                                                                                       
+footnote_codes      10       p, I              Identifies multiple footnotes           
+                                               for the data series.                    
+                                                                                       
+footnote_text       100      preliminary       Contains the text of the footnote.      
+                                                                                       
+industry_code       8        05000000          Code identifying industry.              
+                                                                                       
+industry_name       80       Text              Name of industry.                       
+                             (Grocery Stores)                                          
+                                                                                       
+naics_code          6        Numeric text      North American Industry Classification  
+                             (445110)          System (NAICS) code.                    
+                                                                                       
+period_abbr         5        Period name       Abbreviation of period name.            
+                             (JUN)             abbreviation                            
+                                                                                       
+Period              3        M01-M13           Identifies period for which             
+                             M06=June          data is observed.                       
+                             M13=Annual Average                                        
+                             M=Monthly                                                 
+                                                                                       
+period_name         20       Text (June)       Full name of period to which            
+                                               the data observation refers.            
+                                                                                       
+publishing_status   2        Alpha characters  one or two character(s) displaying the  
+                                               specific datatypes published for the    
+                                               industry.                               
+                             (A) Employment, average weekly hours, and average hourly  
+                                 and weekly earnings of all employees; employment of   
+                                 women; employment, average weekly hours, and average  
+                                 hourly and weekly earnings of production or           
+                                 nonsupervisory employees.                             
+                             (B) All employees and employment of women.                
+                             (C) All employees.                                        
+                             (D) Employment, average weekly hours, and average hourly  
+                                 and weekly earnings of all employees; employment,     
+                                 average weekly hours, and average hourly and weekly   
+                                 earnings of production or nonsupervisory employees.   
+                             (E) Employment, average weekly hours and average hourly   
+                                 and weekly earnings of all employees; employment of   
+                                 women.
+                             (F) Employment and average weekly hours of all employees; 
+                                 and employment and average weekly hours of production 
+                                 or nonsupervisory employees.                          
+                             (G) Employment, average weekly hours, and average hourly  
+                                 and weekly earnings of all employees.                 
+                             (H) All employees; employment of women; and employment,   
+                                 average weekly hours, and average hourly and weekly   
+                                 earnings of production or nonsupervisory employees.   
+                             (O) Average weekly overtime of production employees and   
+                                 of all employees.                                     
+                             (P) Average weekly overtime of production employees.      
+                             (T) Average weekly overtime of all employees.             
+                                                                                       
+Seasonal            1        S=Seasonally      Code identifying whether the            
+                               Adjusted        data are seasonally adjusted.           
+                             U=Unadjusted                                              
+                                                                                       
+series_id           17       CEU0500000001     Code identifying the specific series.   
+                                                                                       
+supersector_code    2        05                Code identifying the supersector.       
+                                                                                       
+supersector_name    60       Text              Describes the supersector.              
+                                                                                       
+value               12       103623            Data value for series.                  
+                                                                                       
+year                4        YYYY              Identifies year of observation.         
+                             (1990)                                                    
+                                                                                       

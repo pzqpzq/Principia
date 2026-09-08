@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pzqpzq.github.io/Principia/cloud/schemas/v1/work-revision.schema.json",
+  "title": "Principia Global WorkRevision v1",
+  "type": "object",
+  "required": ["schema_version", "work_id", "revision", "title", "abstract", "authors", "affiliations", "institutions", "availability", "content_digest"],
+  "properties": {
+    "schema_version": {"const": "global-work-v1"},
+    "work_id": {"type": "string", "minLength": 3},
+    "revision": {"type": "integer", "minimum": 1},
+    "title": {"type": "string", "minLength": 1},
+    "abstract": {"type": "string"},
+    "authors": {"type": "array", "items": {"type": "string"}},
+    "affiliations": {"type": "array"},
+    "institutions": {"type": "array", "items": {"type": "string"}},
+    "availability": {"type": "object", "required": ["status"], "properties": {"status": {"enum": ["available", "unavailable", "unknown", "probe_failed"]}}},
+    "content_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+data/*.sqlite
+!data/principia.sqlite
+data/*.sqlite-*
+data/server-*.log
+data/store.json
+data/store.legacy.json
+data/artifacts/**
+!data/artifacts/**/
+!data/artifacts/**/.gitkeep
+__pycache__/
+*.pyc
+.DS_Store
