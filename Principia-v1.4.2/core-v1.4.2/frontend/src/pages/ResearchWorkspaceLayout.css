@@ -272,3 +272,13 @@
 }
 /* Portaled findings share the viewport bounds used by the resize controller. */
 .research-modal.data-finding-modal { inset: 0; z-index: 1000; padding: 12px; }
+
+/* Match the existing studio controls for manual hypotheses. */
+.principle-mode-switch { display: flex; gap: 4px; padding: 4px; border-radius: 10px; background: #eeebf4; }
+.principle-mode-switch button { flex: 1; padding: 8px 10px; background: transparent; border-color: transparent; }
+.principle-mode-switch button[aria-pressed=true] { background: #fff; color: #6250ac; box-shadow: 0 2px 8px #32234c14; }
+.custom-principle-form fieldset { display: grid; gap: 12px; min-width: 0; padding: 0; margin: 0; border: 0; }
+.custom-principle-form label { display: grid; gap: 5px; font-size: 12px; color: #51455f; }
+.custom-principle-form label small { font-size: 10px; color: #81758d; }
+.custom-principle-form input, .custom-principle-form textarea, .custom-principle-form select { width: 100%; min-width: 0; padding: 9px 10px; border: 1px solid #d9d1e4; border-radius: 8px; background: #fff; color: #352d45; font: inherit; }
+.custom-principle-scores { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }

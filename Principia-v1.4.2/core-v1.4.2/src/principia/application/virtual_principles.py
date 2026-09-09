@@ -16,6 +16,7 @@ from ..domain import (
     canonical_sha256,
     event_id,
 )
+from ..domain.virtual import CustomPrincipleProposal
 from ..local import LocalDiscoveryService
 from ..persistence import V14WorkspaceRepository
 from ..providers import OpenAICompatibleProvider
@@ -138,7 +139,8 @@ class VirtualPrincipleService:
         trace: dict[str, Any],
     ) -> dict[str, Any]:
         parents = list(dict.fromkeys(proposal.contributing_principle_ids))
-        if not 2 <= len(parents) <= 20:
+        custom = isinstance(proposal, CustomPrincipleProposal)
+        if not custom and not 2 <= len(parents) <= 20:
             raise ValueError("A Virtual Principle must retain two to twenty parent Principles")
         for identifier in parents:
             self._detail(identifier)
@@ -185,7 +187,7 @@ class VirtualPrincipleService:
                 GenerationTrace(
                     event_id=event_id("virtual"),
                     operation=TraceOperation.MAP,
-                    actor="virtual-principle-synthesis",
+                    actor="custom-principle-authoring" if custom else "virtual-principle-synthesis",
                     provider=provider,
                     model=model,
                     prompt_template=str(provider_trace.get("prompt_template") or ""),

@@ -11,6 +11,7 @@ from ..domain import (
     LiteratureRunLimits,
     VirtualPrincipleProposal,
 )
+from ..domain.virtual import CustomPrincipleProposal
 from ..providers import ModelPolicy
 
 
@@ -411,6 +412,12 @@ class VirtualPrincipleSaveRequest(DomainModel):
     provider: str = Field(min_length=1, max_length=80)
     model: str = Field(min_length=1, max_length=200)
     trace: dict[str, Any] = Field(default_factory=dict)
+
+
+class CustomPrincipleSaveRequest(VirtualPrincipleSaveRequest):
+    proposal: CustomPrincipleProposal
+    provider: Literal["human"]
+    model: Literal["custom"]
 
 
 class PotentialRelationResponse(DomainModel):

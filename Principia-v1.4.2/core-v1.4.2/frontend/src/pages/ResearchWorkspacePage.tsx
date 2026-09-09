@@ -2,13 +2,14 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import type { PointerEvent as ReactPointerEvent } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import type { components } from "../api/schema";
 import { api, dataOrThrow } from "../api/client";
 import { ErrorState, LoadingState } from "../components/AsyncState";
 import { CloudStatusControl } from "../components/CloudStatusControl";
 import { ResearchRunStatus, finishedResearchStates } from "../components/ResearchRunStatus";
 import "./ResearchWorkspaceLayout.css";
+import { CustomPrincipleForm } from "../components/CustomPrincipleForm";
 import { DataDiscoveryPhases } from "../components/DataDiscoveryPhases";
 import { JobProgress, terminalJobStates } from "../components/JobProgress";
 import { DialogResizeHandle } from "../components/DialogResizeHandle";
@@ -52,13 +53,6 @@ type DataMapTray = "observations" | "principles" | "rules" | "extra";
 type Studio = "" | "connection" | "principle";
 type DiscoveryTab = "principles" | "observations" | "rules" | "extra";
 
-const INITIAL_ATLAS_VIEWPORT = {
-  min_x: -10_000,
-  max_x: 10_000,
-  min_y: -10_000,
-  max_y: 10_000,
-  zoom: 0.55,
-};
 
 const clamp = (value: number, minimum: number, maximum: number): number =>
   Math.min(Math.max(value, minimum), Math.max(minimum, maximum));
@@ -277,6 +271,7 @@ function DataActivityFeed({
 export function ResearchWorkspacePage() {
   const { sessionId = "" } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const [urlParams, setUrlParams] = useSearchParams();
   const queryClient = useQueryClient();
   const revisionBySessionRef = useRef(new Map<string, number>());
@@ -418,6 +413,7 @@ export function ResearchWorkspacePage() {
   const [addingPrinciples, setAddingPrinciples] = useState<string[]>([]);
   const [globalFinderMessage, setGlobalFinderMessage] = useState("");
   const [studio, setStudio] = useState<Studio>("");
+  const [principleMode, setPrincipleMode] = useState<"ai" | "custom">("ai");
   const [cart, setCart] = useState<string[]>([]);
   const [cartSearch, setCartSearch] = useState("");
   const [researchDirection, setResearchDirection] = useState("");
@@ -436,7 +432,7 @@ export function ResearchWorkspacePage() {
   const [onlineJobId, setOnlineJobId] = useState("");
   const [onlineSelected, setOnlineSelected] = useState<string[]>([]);
   const [onlineAcquireJobId, setOnlineAcquireJobId] = useState("");
-  const [atlasViewport, setAtlasViewport] = useState(INITIAL_ATLAS_VIEWPORT);
+  const [atlasSampleId] = useState(() => crypto.randomUUID());
   const [selectedAtlasAreas, setSelectedAtlasAreas] = useState<string[]>([]);
   const closeArtifactDrawer = () => {
     setArtifactDrawer("");
@@ -708,32 +704,15 @@ export function ResearchWorkspacePage() {
       Boolean(sessionId) && !terminal.has(activeRunState) ? 1_000 : false,
   });
   const cloudAtlas = useQuery({
-    queryKey: [
-      "global-webgl-atlas",
-      selectedAtlasAreas.join("|"),
-      atlasViewport,
-    ],
+    queryKey: ["global-webgl-atlas", atlasSampleId, location.key, selectedAtlasAreas.join("|")],
     enabled: !sessionId,
-    queryFn: async () =>
-      record(
-        dataOrThrow(
-          await api.GET("/api/v1/cloud/graph/viewport", {
-            params: {
-              query: {
-                ...atlasViewport,
-                areas: selectedAtlasAreas.join(","),
-                q: "",
-                limit: 96,
-              },
-            },
-          }),
-        ),
-      ),
-    staleTime: 60_000,
-    placeholderData: (previous, previousQuery) =>
-      previousQuery?.queryKey[1] === selectedAtlasAreas.join("|")
-        ? previous
-        : undefined,
+    queryFn: async () => record(dataOrThrow(await api.GET("/api/v1/cloud/graph/sample", {
+      params: { query: { areas: selectedAtlasAreas.join(",") } },
+    }))),
+    staleTime: Infinity,
+    refetchOnMount: "always",
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
   });
   const cloudAtlasAreas = useQuery({
     queryKey: ["global-webgl-atlas-areas"],
@@ -2369,7 +2348,6 @@ export function ResearchWorkspacePage() {
   const toggleAtlasArea = (area: string) => {
     setSelectedId("");
     setSelectedEdge(null);
-    setAtlasViewport(INITIAL_ATLAS_VIEWPORT);
     setSelectedAtlasAreas((current) =>
       current.includes(area)
         ? current.filter((value) => value !== area)
@@ -2453,31 +2431,7 @@ export function ResearchWorkspacePage() {
       ]);
       return;
     }
-    const paddingX = Math.max(120, (viewport.max_x - viewport.min_x) * 0.18);
-    const paddingY = Math.max(120, (viewport.max_y - viewport.min_y) * 0.18);
-    const next = {
-      min_x: viewport.min_x - paddingX,
-      max_x: viewport.max_x + paddingX,
-      min_y: viewport.min_y - paddingY,
-      max_y: viewport.max_y + paddingY,
-      zoom: viewport.zoom,
-    };
-    setAtlasViewport((current) => {
-      const span = Math.max(
-        1,
-        current.max_x - current.min_x,
-        current.max_y - current.min_y,
-      );
-      const moved = Math.max(
-        Math.abs(current.min_x - next.min_x),
-        Math.abs(current.max_x - next.max_x),
-        Math.abs(current.min_y - next.min_y),
-        Math.abs(current.max_y - next.max_y),
-      );
-      const zoomed =
-        Math.abs(current.zoom - next.zoom) / Math.max(0.01, current.zoom);
-      return moved / span < 0.04 && zoomed < 0.04 ? current : next;
-    });
+
   };
 
   useEffect(() => {
@@ -2745,11 +2699,11 @@ export function ResearchWorkspacePage() {
     setActionNotice("Virtual Principle added back to the graph and centered.");
   };
 
-  const saveVirtualLocally = async (item: UnknownRecord, index: number) => {
+  const saveVirtualLocally = async (item: UnknownRecord, index: number, provenance?: UnknownRecord) => {
     const proposal = record(
       item.proposal,
     ) as components["schemas"]["VirtualPrincipleProposal"];
-    const generation = record(
+    const generation = provenance ?? record(
       artifactRows.find(
         (artifact) => text(artifact.kind) === "virtual_principle",
       )?.payload,
@@ -4391,7 +4345,6 @@ export function ResearchWorkspacePage() {
                     type="button"
                     onClick={() => {
                       setSelectedAtlasAreas([]);
-                      setAtlasViewport(INITIAL_ATLAS_VIEWPORT);
                       setSelectedId("");
                     }}
                   >
@@ -4443,10 +4396,10 @@ export function ResearchWorkspacePage() {
                 : rows(cloudAtlas.data?.edges)
             }
             virtualEdges={virtualEdges}
-            contextLinks={!isDataProject}
+            contextLinks={Boolean(sessionId) && !isDataProject}
             selectedId={selectedId}
             theme={sessionTheme}
-            deferViewportUntilInteraction={!sessionId}
+            deferViewportUntilInteraction={false}
             initialViewport={sessionId ? savedGraphCamera(persistedViewport) : undefined}
             focusTarget={focusTarget}
             onSelect={(id) => {
@@ -4483,14 +4436,16 @@ export function ResearchWorkspacePage() {
                 moves.map((move) => ({ action: "move", ...move })),
               )
             }
-            onViewport={settleViewport}
+            onViewport={sessionId ? settleViewport : undefined}
           />
         ) : (
           <div className="research-graph-empty">
             {graph.error || canonicalWorkspace.error ? <><strong>The map could not be loaded</strong><p>Your saved records are preserved.</p><button onClick={() => void (isDataProject ? canonicalWorkspace.refetch() : graph.refetch())}>Retry loading map</button></>
               : sessionId && (isDataProject ? dataDiscoveryRunning || dataStudyLoading || canonicalWorkspace.isLoading : !terminal.has(activeRunState) || session.isLoading || graph.isLoading) ? <><span className="spinner" /><strong>Building your study map</strong><p>{isDataProject ? "Scientific records will appear as their evidence is ready. Follow progress above or open View activity." : "Principles appear automatically when the search results are published."}</p></>
               : sessionId ? <><strong>Your study map is empty</strong><p>{isDataProject ? "Open Results to inspect the completed run, or add background knowledge." : "No Principles were selected for this map. Refine the search or add a Principle."}</p><button onClick={() => setGlobalFinderOpen(true)}>Add Principle</button></>
-              : <><span className="spinner" /><strong>Opening the Principles map…</strong></>}
+              : cloudAtlas.error ? <ErrorState error={cloudAtlas.error} retry={() => void cloudAtlas.refetch()} />
+              : cloudAtlas.isLoading ? <><span className="spinner" /><strong>Opening the Principles map…</strong></>
+              : <><strong>No Principles available</strong><p>Choose another area or check the Cloud snapshot.</p></>}
           </div>
         )}
         <footer className="research-map-footer">
@@ -5138,6 +5093,11 @@ export function ResearchWorkspacePage() {
               ×
             </button>
           </header>
+          {studio === "principle" ? <div className="principle-mode-switch" role="group" aria-label="Principle creation mode">
+            <button aria-pressed={principleMode === "ai"} disabled={derivePrinciples.isPending} onClick={() => setPrincipleMode("ai")}>AI Polish</button>
+            <button aria-pressed={principleMode === "custom"} disabled={derivePrinciples.isPending} onClick={() => setPrincipleMode("custom")}>Custom</button>
+          </div> : null}
+          {studio !== "principle" || principleMode === "ai" ? <>
           <p>
             Select 2–20 Principles. Click any selected item to inspect it
             without covering this studio.
@@ -5219,6 +5179,14 @@ export function ResearchWorkspacePage() {
               );
             })}
           </div>
+          </> : null}
+          {studio === "principle" ? <div hidden={principleMode !== "custom"}>
+            <CustomPrincipleForm onSave={proposal => saveVirtualLocally(
+              { virtual_id: `custom:${crypto.randomUUID()}`, proposal }, 0,
+              { provider: "human", model: "custom", trace: { prompt_template: "user-authored" } },
+            )} />
+          </div> : null}
+          {studio !== "principle" || principleMode === "ai" ? <>
           {studio === "principle" ? (
             <textarea
               value={researchDirection}
@@ -5310,6 +5278,7 @@ export function ResearchWorkspacePage() {
               </article>
             );
           })}
+          </> : null}
         </aside>
       ) : null}
 

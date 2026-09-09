@@ -256,3 +256,62 @@ it('keeps generated hypotheses out of the connection studio without losing the p
   fireEvent.click(screen.getByRole('button', { name: 'Derive Principles' }));
   expect(screen.getByText('Generated hypothesis')).not.toBeNull();
 });
+
+it('samples the initial map again on reopening, without search or focus resampling', async () => {
+  let samples = 0;
+  mock.get.mockImplementation(async (path: string) => {
+    if (path === '/api/v1/cloud/graph/sample') {
+      samples += 1;
+      return { data: { seeds: [{id:`prn:seed-${samples}`}],
+        nodes: [{id:`prn:seed-${samples}`,title:'Sampled Principle'}, {id:'prn:neighbor',title:'Direct neighbor'}],
+        edges:[{source:`prn:seed-${samples}`,target:'prn:neighbor'}] } };
+    }
+    return { data: { items:[],sources:[],profiles:[] } };
+  });
+  const first = open('/research/new');
+  await screen.findByText('prn:seed-1');
+  expect(screen.getByText('prn:neighbor')).not.toBeNull();
+  expect(screen.queryByLabelText('Search Principles by meaning')).toBeNull();
+  focusManager.setFocused(false);
+  focusManager.setFocused(true);
+  await waitFor(() => expect(samples).toBe(1));
+  first.unmount();
+  open('/research/new');
+  await screen.findByText('prn:seed-2');
+  expect(mock.get.mock.calls.some(call => call[0] === '/api/v1/cloud/graph/search')).toBe(false);
+});
+
+it('allows Custom without an AI provider and saves human provenance through the existing API', async () => {
+  const graph = ['one','two'].map(id=>({principle_id:`prn:${id}`,payload:{title:`Principle ${id}`}}));
+  mock.get.mockImplementation(async (path: string) => {
+    if(path==='/api/v1/research-sessions')return {data:{items:[{session_id:'search',kind:'research',state:'succeeded'}]}};
+    if(path.endsWith('/{session_id}'))return {data:{session_id:'search',state:'succeeded',active_run:{state:'succeeded',goal:'Explore relationships'}}};
+    if(path.endsWith('/graph'))return {data:{revision:1,items:graph}};
+    return {data:{items:[],sources:[],profiles:[]}};
+  });
+  mock.post.mockResolvedValue({data:{candidate_id:'cand:custom'}});
+  mock.patch.mockResolvedValue({data:{revision:2}});
+  open('/research/search');
+  await screen.findByText('prn:one');
+  fireEvent.click(screen.getByRole('button',{name:'Derive Principles'}));
+  fireEvent.click(screen.getByRole('button',{name:'Custom'}));
+  expect(screen.queryByText('Add API key')).toBeNull();
+  expect(screen.queryByPlaceholderText('Search results to add')).toBeNull();
+  expect(screen.queryByText('Selected · 0/20')).toBeNull();
+  expect(screen.queryByRole('button', {name:'Add Principle one to selection'})).toBeNull();
+  fireEvent.click(screen.getByRole('button',{name:'AI Polish'}));
+  expect(screen.getByPlaceholderText('Search results to add')).not.toBeNull();
+  fireEvent.click(screen.getByRole('button',{name:'Custom'}));
+  for(const label of ['Title','Claim','Scope statement','Falsifier','Synthesis summary','Reliability rationale','Novelty rationale'])
+    fireEvent.change(screen.getByLabelText(label),{target:{value:`${label} describes a bounded scientific hypothesis.`}});
+  fireEvent.change(screen.getByLabelText('Area'),{target:{value:'test-area'}});
+  for(const label of ['Reliability score','Novelty score'])fireEvent.change(screen.getByLabelText(label),{target:{value:'70'}});
+  fireEvent.submit(screen.getByRole('button',{name:'Save locally & add to graph'}).closest('form')!);
+  await screen.findByText('Custom Principle saved locally and added to the graph.');
+  const saved=mock.post.mock.calls.find(call=>String(call[0]).endsWith('/virtual-principles/save'));
+  expect(saved?.[1].body).toMatchObject({provider:'human',model:'custom',proposal:{contributing_principle_ids:[]}});
+  expect(mock.post.mock.calls.some(call=>String(call[0]).endsWith('/generate'))).toBe(false);
+  expect(mock.patch).toHaveBeenCalledWith('/api/v1/research-sessions/{session_id}/graph', expect.objectContaining({
+    body: expect.objectContaining({operations: expect.arrayContaining([expect.objectContaining({action:'add', principle_id:'cand:custom'})])}),
+  }));
+});

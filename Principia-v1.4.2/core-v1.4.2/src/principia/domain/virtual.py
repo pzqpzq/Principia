@@ -38,6 +38,12 @@ class VirtualPrincipleProposal(DomainModel):
         return self
 
 
+class CustomPrincipleProposal(VirtualPrincipleProposal):
+    """A user-authored hypothesis with the same scientific fields and no AI parents."""
+
+    contributing_principle_ids: list[str] = Field(default_factory=list, max_length=0)
+
+
 class VirtualPrincipleBatch(DomainModel):
     cross_principle_map: list[str] = Field(default_factory=list, max_length=12)
     proposals: list[VirtualPrincipleProposal] = Field(min_length=1, max_length=5)
