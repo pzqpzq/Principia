@@ -9453,7 +9453,8 @@ body,
   background: rgba(8, 19, 36, 0.8);
   box-shadow: 0 16px 45px rgba(0, 0, 0, 0.3);
 }
-.research-graph-tools button {
+.research-graph-tools button,
+.research-theme-toggle {
   min-height: 36px;
   padding: 8px 12px;
   border-color: rgba(151, 192, 255, 0.25);
@@ -9462,9 +9463,17 @@ body,
   background: rgba(24, 45, 76, 0.78);
   font-size: 10px;
 }
-.research-graph-tools button:hover {
+.research-graph-tools button:hover,
+.research-theme-toggle:hover,
+.show-result-tray.manage-principles:hover {
   border-color: rgba(107, 205, 255, 0.62);
   background: rgba(34, 64, 101, 0.95);
+}
+.show-result-tray.manage-principles {
+  border-color: rgba(151, 192, 255, 0.25);
+  border-radius: 9px;
+  color: #dcecff;
+  background: rgba(24, 45, 76, 0.78);
 }
 .research-graph-tools span {
   padding: 7px 10px;

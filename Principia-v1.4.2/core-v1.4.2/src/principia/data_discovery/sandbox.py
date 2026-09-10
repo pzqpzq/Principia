@@ -5,7 +5,6 @@ import hashlib
 import json
 import os
 import re
-import resource
 import shutil
 import signal
 import site
@@ -17,6 +16,13 @@ from pathlib import Path
 from typing import Any
 
 from ..cancellation import TaskCancelled, check_cancelled
+
+try:  # pragma: no cover - exercise differs on macOS/Linux
+    import resource
+    HAVE_RESOURCE = True
+except ImportError:  # pragma: no cover - Windows has no resource module
+    resource = None
+    HAVE_RESOURCE = False
 
 ALLOWED_IMPORTS = {
     "collections",
@@ -229,6 +235,9 @@ class AnalysisSandbox:
         return "\n".join(rules)
 
     def _limits(self) -> None:
+        if not HAVE_RESOURCE:  # pragma: no cover - Windows sandbox is unavailable
+            return
+
         def set_soft(kind: int, value: int) -> None:
             _, hard = resource.getrlimit(kind)
             resource.setrlimit(kind, (min(value, hard), hard))

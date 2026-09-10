@@ -84,19 +84,41 @@ Open **Dataset & evidence** for each project's provenance and selection rational
 
 Use **Python 3.11 or 3.12** in a virtual environment. This is the GitHub source release; the commands below do not depend on a matching version being published to PyPI.
 
+**Download the application without the separate public test corpus.**
+
 ```bash
-# Download the application without the separate public test corpus.
 git clone --depth 1 --filter=blob:none --sparse https://github.com/pzqpzq/Principia.git
 cd Principia
 git sparse-checkout set Principia-v1.4.2
+```
 
+**For Linux or macOS**
+
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install "./Principia-v1.4.2/core-v1.4.2[asd,local]"
 principia open --working-directory ./principia-workspace --port 8142
 ```
 
-On Windows, activate with `.venv\Scripts\Activate.ps1` in PowerShell. The application opens at **http://127.0.0.1:8142/**. Its frontend is already built; Node.js is needed only for frontend development. Dependency installation requires internet access. Once installed, the five demos and their packaged evidence can be browsed offline; external publisher links and remote model calls require a connection.
+**For Windows**
+
+```bash
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install "./Principia-v1.4.2/core-v1.4.2[asd,local]"
+principia open --working-directory ./principia-workspace --port 8142
+
+# for Windows users after frontend changes
+# If the frontend code has been modified, rebuild the frontend and reinstall the local package using the following commands:
+cd "Principia\Principia-v1.4.2\core-v1.4.2\frontend"
+pnpm build
+
+cd ..
+pip install -e .
+```
+
+The application opens at **http://127.0.0.1:8142/**. Its frontend is already built; Node.js is needed only for frontend development. Dependency installation requires internet access. Once installed, the five demos and their packaged evidence can be browsed offline; external publisher links and remote model calls require a connection.
 
 Demos initialize **once in an empty workspace**. Existing projects are preserved, and deleted demos do not reappear on restart. To try the included projects separately from existing work, choose a new working directory.
 

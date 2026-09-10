@@ -28,6 +28,7 @@ from .models import (
     CandidateDisplayEditRequest,
     CatalogRefreshRequest,
     CollectionEditRequest,
+    CustomPrincipleSaveRequest,
     DataDiscoveryBlueprintPatchRequest,
     DataDiscoveryCreateRequest,
     DiscoveryRequest,
@@ -490,6 +491,12 @@ def create_app(
         if item is None or item.get("principle_class") != "meta":
             raise KeyError(principle_id)
         return item
+
+    @router.get("/cloud/graph/sample")
+    def cloud_graph_sample(areas: str = Query(default="", max_length=4_000)) -> dict[str, Any]:
+        return principia.global_cloud.sample_graph(
+            areas=[area.strip() for area in areas.split(",") if area.strip()],
+        )
 
     @router.get("/cloud/graph/viewport")
     def cloud_graph_viewport(
@@ -1069,7 +1076,7 @@ def create_app(
         )
 
     @router.post("/principles/virtual-principles/save")
-    def save_virtual_principle(request: VirtualPrincipleSaveRequest) -> dict[str, Any]:
+    def save_virtual_principle(request: VirtualPrincipleSaveRequest | CustomPrincipleSaveRequest) -> dict[str, Any]:
         return principia.virtual_principles.save(
             request.proposal,
             provider=request.provider,

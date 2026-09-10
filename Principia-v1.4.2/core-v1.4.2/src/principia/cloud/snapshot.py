@@ -5,6 +5,7 @@ import hashlib
 import json
 import math
 import os
+import random
 import re
 import shutil
 import ssl
@@ -1692,6 +1693,66 @@ class GlobalCloudSnapshotStore:
                 else [{"value": "literature", "count": sum(int(row["count"]) for row in areas)}]
             )
         return {"years": years, "venues": venues, "areas": areas, "principle_classes": classes}
+
+    def sample_graph(self, *, areas: list[str] | None = None) -> dict[str, Any]:
+        """Sample AI/ML and Meta-Principles, then expand their direct relationships."""
+        with self._connect() as conn:
+            if areas:
+                sampled = conn.execute(
+                    "SELECT * FROM current_principles WHERE status='active'"
+                    + f" AND area IN ({','.join('?' for _ in areas)}) ORDER BY RANDOM() LIMIT ?",
+                    [*areas, random.randint(3, 5)],
+                ).fetchall()
+            else:
+                sampled = conn.execute(
+                    "SELECT * FROM current_principles WHERE status='active'"
+                    " AND area='ai-ml' AND principle_class='literature' ORDER BY RANDOM() LIMIT ?",
+                    (random.randint(4, 6),),
+                ).fetchall()
+                sampled += conn.execute(
+                    "SELECT * FROM current_principles WHERE status='active'"
+                    " AND principle_class='meta' ORDER BY RANDOM() LIMIT ?",
+                    (random.randint(1, 2),),
+                ).fetchall()
+        seeds = [self._principle_item(dict(row)) for row in sampled]
+        nodes = {item["id"]: item for item in seeds}
+        edges: dict[str, dict[str, Any]] = {}
+        for seed in seeds:
+            identifier = seed["id"]
+            detail = self.principle(identifier) or {}
+            for relation in detail.get("relations") or []:
+                source = str(relation.get("source_principle_id") or identifier)
+                target = str(relation.get("target_principle_id") or "")
+                if not target or identifier not in {source, target}:
+                    continue
+                key = str(relation.get("relation_id") or f"{source}:{target}:{relation.get('relation_type', '')}")
+                edges.setdefault(key, {**relation, "source": source, "target": target,
+                                       "edge_class": "scientific"})
+            for field, child_key in (("foundations", "meta_principle"), ("linked_children", "principle")):
+                for foundation in detail.get(field) or []:
+                    link = foundation["link"]
+                    source, target = link["principle_id"], link["meta_principle_id"]
+                    child = foundation[child_key]
+                    child_id = child["principle_id"]
+                    nodes.setdefault(child_id, {**child, "id": child_id})
+                    edges.setdefault(link["link_id"], {**link, "source": source, "target": target,
+                                                       "edge_class": "foundation", "relation_type": "foundation"})
+        # Expand once from the sampled seeds; never traverse a neighbor's links.
+        for edge in edges.values():
+            for identifier in (edge["source"], edge["target"]):
+                if identifier not in nodes:
+                    detail = self.principle(identifier)
+                    if detail is not None:
+                        nodes[identifier] = {**detail, "id": identifier}
+        projected = []
+        for index, (identifier, item) in enumerate(nodes.items()):
+            angle = index * 2.399963
+            radius = math.sqrt(index + 1) * 160
+            projected.append({**item, "id": identifier,
+                              "record_kind": "meta_principle" if item.get("principle_class") == "meta" else "ordinary",
+                              "x": math.cos(angle) * radius, "y": math.sin(angle) * radius})
+        return {"seeds": seeds, "nodes": projected,
+                "edges": [edge for edge in edges.values() if edge["source"] in nodes and edge["target"] in nodes]}
 
     def graph_viewport(
         self,

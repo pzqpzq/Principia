@@ -123,6 +123,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/cloud/graph/sample": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Cloud Graph Sample */
+        get: operations["cloud_graph_sample_api_v1_cloud_graph_sample_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/cloud/graph/viewport": {
         parameters: {
             query?: never;
@@ -2467,6 +2484,63 @@ export interface components {
             /** Title */
             title: string;
         };
+        /**
+         * CustomPrincipleProposal
+         * @description A user-authored hypothesis with the same scientific fields and no AI parents.
+         */
+        CustomPrincipleProposal: {
+            /** Area */
+            area: string;
+            /** Assumptions */
+            assumptions?: string[];
+            /** Claim */
+            claim: string;
+            /** Conditions */
+            conditions?: string[];
+            /** Contributing Principle Ids */
+            contributing_principle_ids?: string[];
+            /**
+             * Derivation Level
+             * @enum {string}
+             */
+            derivation_level: "direct_composition" | "cross_context_generalization" | "boundary_hypothesis" | "mechanistic_bridge";
+            /** Exclusions */
+            exclusions?: string[];
+            /** Falsifier */
+            falsifier: string;
+            /** Novelty Rationale */
+            novelty_rationale: string;
+            /** Novelty Score */
+            novelty_score: number;
+            /** Reliability Rationale */
+            reliability_rationale: string;
+            /** Reliability Score */
+            reliability_score: number;
+            /** Scope Statement */
+            scope_statement: string;
+            /** Synthesis Summary */
+            synthesis_summary: string;
+            /** Title */
+            title: string;
+        };
+        /** CustomPrincipleSaveRequest */
+        CustomPrincipleSaveRequest: {
+            /**
+             * Model
+             * @constant
+             */
+            model: "custom";
+            proposal: components["schemas"]["CustomPrincipleProposal"];
+            /**
+             * Provider
+             * @constant
+             */
+            provider: "human";
+            /** Trace */
+            trace?: {
+                [key: string]: unknown;
+            };
+        };
         /** DataDiscoveryBlueprintPatchRequest */
         DataDiscoveryBlueprintPatchRequest: {
             /** Expected Edit Revision */
@@ -4059,6 +4133,39 @@ export interface operations {
                 "application/json": components["schemas"]["AreaVersionRequest"];
             };
         };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    cloud_graph_sample_api_v1_cloud_graph_sample_get: {
+        parameters: {
+            query?: {
+                areas?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
         responses: {
             /** @description Successful Response */
             200: {
@@ -7360,7 +7467,7 @@ export interface operations {
         };
         requestBody: {
             content: {
-                "application/json": components["schemas"]["VirtualPrincipleSaveRequest"];
+                "application/json": components["schemas"]["VirtualPrincipleSaveRequest"] | components["schemas"]["CustomPrincipleSaveRequest"];
             };
         };
         responses: {
