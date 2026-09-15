@@ -2,6 +2,9 @@ name: Principia v1.3.3 CI
 
 on:
   push:
+    # GitHub ignores path filters on tag pushes; dataset tags contain no v1.3 application.
+    branches: ["**"]
+    tags-ignore: ["asd-benchmark-*"]
     paths: ["Principia-v1.3/**"]
   pull_request:
     paths: ["Principia-v1.3/**"]
