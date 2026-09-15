@@ -1,0 +1,154 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "46_space_physics_mms1_plasma",
+  "domain": "space-plasma physics",
+  "title": "MMS1 magnetic field and plasma moments on 2025-06-01",
+  "publisher": "NASA Magnetospheric Multiscale / Space Physics Data Facility",
+  "authoritative_landing_url": "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/",
+  "authoritative_source_urls": [
+    "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/",
+    "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/fgm/srvy/l2/2025/06/mms1_fgm_srvy_l2_20250601_v5.512.0.cdf",
+    "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/fpi/fast/l2/dis-moms/2025/06/mms1_fpi_fast_l2_dis-moms_20250601100000_v3.4.1.cdf",
+    "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/fpi/fast/l2/des-moms/2025/06/mms1_fpi_fast_l2_des-moms_20250601100000_v3.4.1.cdf",
+    "https://spdf.gsfc.nasa.gov/data_use_policy.html"
+  ],
+  "identifiers": [
+    "10.48322/mxbx-r466",
+    "10.48322/kgr0-yb53",
+    "10.48322/550t-zy35"
+  ],
+  "release_or_version": "2025-06-01 FGM v5.512.0 and FPI v3.4.1",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "CC0 per NASA SPDF data-use policy",
+  "deterministic_selection_rule": "Whole daily magnetic survey CDF plus the complete matching 10:00-12:00 ion and electron moment files. No time-point filtering.",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": {
+    "description": "2025-06-01 daily FGM; ion/electron FPI moment files cover 10:00–12:00 UTC (first sample 10:00:04.084203, last 11:59:59.640192).",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": null,
+  "source_created_utc": null,
+  "source_updated_utc": null,
+  "source_inventory": null,
+  "author_preprocessing": "NASA Level-2 calibrated field data and distribution moments, not raw particle-event counts. FGM and FPI have different sampling and integration intervals; no resampling is supplied.",
+  "known_analyses_and_limitations": "Single-spacecraft, short-interval observations cannot alone establish universal plasma equations or resolve full spatial structure. Instrument quality/error flags and coordinate frames are material. Use the SPDF data-use acknowledgments.",
+  "related_publications": [],
+  "pinned_commit": null,
+  "source_context_request_failures": [],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-046",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-046",
+      "scenario_id": "46_space_physics_mms1_plasma",
+      "path": "context/data_use_policy.html",
+      "scenario_relative_path": "context/data_use_policy.html",
+      "bytes": 21941,
+      "sha256": "9c6d93d95d4ba66c006100fef9e1e0b9397cc39384d474df8fd3ff7686cbe634",
+      "role": "official_context",
+      "source_urls": [
+        "https://spdf.gsfc.nasa.gov/data_use_policy.html"
+      ],
+      "download_url": "https://spdf.gsfc.nasa.gov/data_use_policy.html",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:46:36.064127+00:00",
+      "license_or_terms": "CC0 per NASA SPDF data-use policy",
+      "citation_identifiers": [
+        "10.48322/mxbx-r466",
+        "10.48322/kgr0-yb53",
+        "10.48322/550t-zy35"
+      ],
+      "citation_url": "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/",
+      "source_version": "2025-06-01 FGM v5.512.0 and FPI v3.4.1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-046",
+      "scenario_id": "46_space_physics_mms1_plasma",
+      "path": "raw/fgm/srvy/l2/2025/06/mms1_fgm_srvy_l2_20250601_v5.512.0.cdf",
+      "scenario_relative_path": "raw/fgm/srvy/l2/2025/06/mms1_fgm_srvy_l2_20250601_v5.512.0.cdf",
+      "bytes": 90703826,
+      "sha256": "225bff7e10bc8b593f9f7980a68c84dc55c25c6ba9af0676ce61bad7c9ccded0",
+      "role": "official_data",
+      "source_urls": [
+        "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/fgm/srvy/l2/2025/06/mms1_fgm_srvy_l2_20250601_v5.512.0.cdf"
+      ],
+      "download_url": "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/fgm/srvy/l2/2025/06/mms1_fgm_srvy_l2_20250601_v5.512.0.cdf",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:02:58.142181+00:00",
+      "license_or_terms": "CC0 per NASA SPDF data-use policy",
+      "citation_identifiers": [
+        "10.48322/mxbx-r466",
+        "10.48322/kgr0-yb53",
+        "10.48322/550t-zy35"
+      ],
+      "citation_url": "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/",
+      "source_version": "2025-06-01 FGM v5.512.0 and FPI v3.4.1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-046",
+      "scenario_id": "46_space_physics_mms1_plasma",
+      "path": "raw/fpi/fast/l2/des-moms/2025/06/mms1_fpi_fast_l2_des-moms_20250601100000_v3.4.1.cdf",
+      "scenario_relative_path": "raw/fpi/fast/l2/des-moms/2025/06/mms1_fpi_fast_l2_des-moms_20250601100000_v3.4.1.cdf",
+      "bytes": 3272964,
+      "sha256": "2df52d88dd172e16ddb318a05dff33d92ea386849a6c8428574365f48d1cab2c",
+      "role": "official_data",
+      "source_urls": [
+        "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/fpi/fast/l2/des-moms/2025/06/mms1_fpi_fast_l2_des-moms_20250601100000_v3.4.1.cdf"
+      ],
+      "download_url": "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/fpi/fast/l2/des-moms/2025/06/mms1_fpi_fast_l2_des-moms_20250601100000_v3.4.1.cdf",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:59:35.580861+00:00",
+      "license_or_terms": "CC0 per NASA SPDF data-use policy",
+      "citation_identifiers": [
+        "10.48322/mxbx-r466",
+        "10.48322/kgr0-yb53",
+        "10.48322/550t-zy35"
+      ],
+      "citation_url": "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/",
+      "source_version": "2025-06-01 FGM v5.512.0 and FPI v3.4.1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-046",
+      "scenario_id": "46_space_physics_mms1_plasma",
+      "path": "raw/fpi/fast/l2/dis-moms/2025/06/mms1_fpi_fast_l2_dis-moms_20250601100000_v3.4.1.cdf",
+      "scenario_relative_path": "raw/fpi/fast/l2/dis-moms/2025/06/mms1_fpi_fast_l2_dis-moms_20250601100000_v3.4.1.cdf",
+      "bytes": 1952843,
+      "sha256": "6fd51a4938ee19f0b33b479aa92840ed02336739309407f01bf7f7b9b5ed26a4",
+      "role": "official_data",
+      "source_urls": [
+        "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/fpi/fast/l2/dis-moms/2025/06/mms1_fpi_fast_l2_dis-moms_20250601100000_v3.4.1.cdf"
+      ],
+      "download_url": "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/fpi/fast/l2/dis-moms/2025/06/mms1_fpi_fast_l2_dis-moms_20250601100000_v3.4.1.cdf",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:59:34.295716+00:00",
+      "license_or_terms": "CC0 per NASA SPDF data-use policy",
+      "citation_identifiers": [
+        "10.48322/mxbx-r466",
+        "10.48322/kgr0-yb53",
+        "10.48322/550t-zy35"
+      ],
+      "citation_url": "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/",
+      "source_version": "2025-06-01 FGM v5.512.0 and FPI v3.4.1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "96_transport_bikez",
+  "domain": "Cycling dynamics",
+  "title": "BikeZ-ETH - A Mass-Cycling Trajectory Dataset from a Controlled Experiment",
+  "publisher": "Riehl, Kevin (ETH Zurich); El-Baklish, Shaimaa K. (ETH Zurich); Ni, Ying-Chuan (ETH Zurich); Kouvelas, Anastasios (ETH Zurich); Makridis, Michail (ETH Zurich)",
+  "authoritative_landing_url": "https://zenodo.org/records/18098714",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/18098714",
+    "https://zenodo.org/api/records/18098714/files/TRAJECTORIES.zip/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.18098714"
+  ],
+  "release_or_version": "18098714",
+  "retrieval_finalized_utc": "2026-09-15T07:04:43.402233+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "bike",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "September 6, 2024; deposited December 2025.",
+  "source_publication_date": "2025-12-30",
+  "source_created_utc": "2026-01-07T16:17:01.716499+00:00",
+  "source_updated_utc": "2026-03-02T16:44:04.375181+00:00",
+  "source_inventory": [
+    {
+      "name": "TRAJECTORIES.zip",
+      "bytes": 27564329,
+      "selected": true
+    },
+    {
+      "name": "VIDEOS.zip",
+      "bytes": 27476041669,
+      "selected": false
+    }
+  ],
+  "author_preprocessing": "Twenty-one TXT sequences extracted by computer vision/Kalman processing; large original video collection omitted.",
+  "known_analyses_and_limitations": "Keep complete sequences and cyclist IDs together where available. Twenty-eight cyclists appear across sequences; tracker occlusions/identity ambiguity constrain individual-level inference.",
+  "related_publications": [],
+  "independent_groups": "complete sequence and cyclist where IDs permit",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-096",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-096",
+      "scenario_id": "96_transport_bikez",
+      "path": "raw/TRAJECTORIES.zip",
+      "scenario_relative_path": "raw/TRAJECTORIES.zip",
+      "bytes": 27564329,
+      "sha256": "851997645445c0e91ac1e4d08833bb80c13c9fee514d03cad84a9f792e33e5f0",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18098714"
+      ],
+      "download_url": "https://zenodo.org/api/records/18098714/files/TRAJECTORIES.zip/content",
+      "source_checksum": "md5:7ff7b1f26c456572956bd90604067bd7",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:44:02.004572+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18098714"
+      ],
+      "citation_url": "https://zenodo.org/records/18098714",
+      "source_version": "18098714",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18098714",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-096",
+      "scenario_id": "96_transport_bikez",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 9341,
+      "sha256": "e7a6299272968455ca32c4e196514b458f4f716c9a78ce128d47d009dc2f23dc",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/18098714"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:51.320884+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18098714"
+      ],
+      "citation_url": "https://zenodo.org/records/18098714",
+      "source_version": "18098714",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "scenario_id": "05_mathematics_graph_certificates",
+  "path": "raw/Code.zip",
+  "bytes": 8483,
+  "sha256": "5d55f3b98004cbc8527114e6bea0595e7770836691f48fdb939fe1823477b32f",
+  "checked_utc": "2026-09-15T06:35:34.029517+00:00",
+  "source_checksum_status": "verified",
+  "format": "ZIP",
+  "expanded_bytes": 23131,
+  "members": [
+    {
+      "name": "Code/readme.txt",
+      "bytes": 183,
+      "sha256": "2fa671aad2108b55dc84cb4dc9d9fb27b4e28546a1ce4db3a742de647caf3771",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "5468697320666f6c64657220",
+        "line_count": 1,
+        "preview_lines": [
+          "This folder contains MATLAB codes we wrote to verify all provided LS_+, LS_+^2, and LS_+^3-certificate packages. See the comments therein for more details on how to run these codes."
+        ],
+        "first_lines": [
+          "This folder contains MATLAB codes we wrote to verify all provided LS_+, LS_+^2, and LS_+^3-certificate packages. See the comments therein for more details on how to run these codes."
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "Code/Verify_LS_+^2_Cert.txt",
+      "bytes": 7296,
+      "sha256": "665af716f8a8084141b35cbbb29f128fc82edfad5e1493c3528449aedb5d5b59",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "25204d41544c414220436f64",
+        "line_count": 237,
+        "preview_lines": [
+          "% MATLAB Code for verifying all provided LS_+^2 certificate packages",
+          "% To use this code, the user will need to",
+          "% 1) Make sure the variable 'folderName' gives the path of the folder \"LS_+^2 certificate packages.zip\" is extracted to.",
+          "% 2) Copy and paste this entire text file and paste in MATLAB to execute the code. (The code was written for and tested in MATLAB R2023a but would probably also works for other recent versions.)",
+          ""
+        ],
+        "first_lines": [
+          "% MATLAB Code for verifying all provided LS_+^2 certificate packages",
+          "% To use this code, the user will need to",
+          "% 1) Make sure the variable 'folderName' gives the path of the folder \"LS_+^2 certificate packages.zip\" is extracted to.",
+          "% 2) Copy and paste this entire text file and paste in MATLAB to execute the code. (The code was written for and tested in MATLAB R2023a but would probably also works for other recent versions.)",
+          "",
+          "% Start with a clean slate",
+          "clearvars",
+          ""
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "Code/Verify_LS_+^3_Cert.txt",
+      "bytes": 10441,
+      "sha256": "65405025402f256e129cd1604fa3cd22a369b778b10112b0869bee868a779a71",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "25204d41544c414220436f64",
+        "line_count": 320,
+        "preview_lines": [
+          "% MATLAB Code for verifying all provided LS_+^3 certificate packages",
+          "% To use this code, the user will need to",
+          "% 1) Make sure the variable 'folderName' gives the path of the folder \"LS_+^3 certificate packages.zip\" is extracted to.",
+          "% 2) Copy and paste this entire text file and paste in MATLAB to execute the code. (The code was written for and tested in MATLAB R2023a but would probably also works for other recent versions.)",
+          ""
+        ],
+        "first_lines": [
+          "% MATLAB Code for verifying all provided LS_+^3 certificate packages",
+          "% To use this code, the user will need to",
+          "% 1) Make sure the variable 'folderName' gives the path of the folder \"LS_+^3 certificate packages.zip\" is extracted to.",
+          "% 2) Copy and paste this entire text file and paste in MATLAB to execute the code. (The code was written for and tested in MATLAB R2023a but would probably also works for other recent versions.)",
+          "",
+          "% Start with a clean slate",
+          "clearvars",
+          ""
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "Code/Verify_LS_+_Cert.txt",
+      "bytes": 5211,
+      "sha256": "2adfc4fcee2891cf0080141885a5610f0f2ee0c75f218428ca676c061836d17b",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "25204d41544c414220436f64",
+        "line_count": 176,
+        "preview_lines": [
+          "% MATLAB Code for verifying all provided LS_+ certificate packages",
+          "% To use this code, the user will need to",
+          "% 1) Make sure the variable 'folderName' gives the path of the folder \"LS_+ certificate packages.zip\" is extracted to.",
+          "% 2) Copy and paste this entire text file and paste in MATLAB to execute the code. (The code was written for and tested in MATLAB R2023a but would probably also works for other recent versions.)",
+          ""
+        ],
+        "first_lines": [
+          "% MATLAB Code for verifying all provided LS_+ certificate packages",
+          "% To use this code, the user will need to",
+          "% 1) Make sure the variable 'folderName' gives the path of the folder \"LS_+ certificate packages.zip\" is extracted to.",
+          "% 2) Copy and paste this entire text file and paste in MATLAB to execute the code. (The code was written for and tested in MATLAB R2023a but would probably also works for other recent versions.)",
+          "",
+          "% Start with a clean slate",
+          "clearvars",
+          ""
+        ],
+        "encoding_replacement_count": 0
+      }
+    }
+  ],
+  "checks": [
+    "all_member_CRCs",
+    "safe_paths_no_symlinks"
+  ],
+  "member_count": 4,
+  "status": "pass"
+}

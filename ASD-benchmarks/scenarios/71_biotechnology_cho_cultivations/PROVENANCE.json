@@ -1,0 +1,92 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "71_biotechnology_cho_cultivations",
+  "domain": "Bioprocess engineering",
+  "title": "Dataset Based on Chinese Hamster Ovary (CHO) Cultivations including Turbidity, Permittivity, O2 and CO2 Measurements",
+  "publisher": "Uhlendorff, Selina (Institute for Life Science Technologies (ILT.NRW), OWL University of Applied Sciences and Arts, Lemgo, Germany); Fulek, Ruwen (Institute Industrial IT (inIT), OWL University of Applied Sciences and Arts, Lemgo, Germany); Eimler, Jonas (Institute for Life Science Technologies (ILT.NRW), OWL University of Applied Sciences and Arts, Lemgo, Germany); Pein-Hackelbusch, Miriam (Institute for Life Science Technologies (ILT.NRW), OWL University of Applied Sciences and Arts, Lemgo, Germany); Frahm, Björn (Biotechnology and Bioprocess Engineering, OWL University of Applied Sciences and Arts, Lemgo, Germany)",
+  "authoritative_landing_url": "https://zenodo.org/records/20829178",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/20829178",
+    "https://zenodo.org/api/records/20829178/files/Dataset.zip/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.20829178"
+  ],
+  "release_or_version": "20829178",
+  "retrieval_finalized_utc": "2026-09-15T07:04:39.237125+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Campaign dates unknown; each cultivation lasts 161.5–328.5 hours.",
+  "source_publication_date": "2026-08-11",
+  "source_created_utc": "2026-08-11T15:29:36.103184+00:00",
+  "source_updated_utc": "2026-08-11T15:29:36.278521+00:00",
+  "source_inventory": [
+    {
+      "name": "Dataset.zip",
+      "bytes": 227627771,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Twelve original 16-sheet workbooks plus 48 author time-axis-aligned CSVs. Inline alignment corrects clock drift; aligned and original streams are not independent observations.",
+  "known_analyses_and_limitations": "Keep each parallel-reactor experiment pair together. Nine batch and three fed-batch experiments; use offline references with inline signals and keep modes explicit.",
+  "related_publications": [],
+  "independent_groups": "12 paired cultivation experiments, retain reactor pairs together",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-071",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-071",
+      "scenario_id": "71_biotechnology_cho_cultivations",
+      "path": "raw/Dataset.zip",
+      "scenario_relative_path": "raw/Dataset.zip",
+      "bytes": 227627771,
+      "sha256": "46a6b92b77883d56df3be015895d93c85b2b2547121af0b8bc0a92f3fbefd17b",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/20829178"
+      ],
+      "download_url": "https://zenodo.org/api/records/20829178/files/Dataset.zip/content",
+      "source_checksum": "md5:71b2a35b7df2ed11644ec9f177453772",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:23.487175+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.20829178"
+      ],
+      "citation_url": "https://zenodo.org/records/20829178",
+      "source_version": "20829178",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/20829178",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-071",
+      "scenario_id": "71_biotechnology_cho_cultivations",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 8271,
+      "sha256": "b50b5f5c718f130725bb3fa89a8aad264f9710d40bcf0338b5117bae81158808",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/20829178"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:43.241749+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.20829178"
+      ],
+      "citation_url": "https://zenodo.org/records/20829178",
+      "source_version": "20829178",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

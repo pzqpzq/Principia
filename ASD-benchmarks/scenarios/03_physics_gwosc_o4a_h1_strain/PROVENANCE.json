@@ -1,0 +1,71 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "03_physics_gwosc_o4a_h1_strain",
+  "domain": "physics",
+  "title": "GWOSC O4a H1 strain and detector-quality masks",
+  "publisher": "Gravitational Wave Open Science Center",
+  "authoritative_landing_url": "https://gwosc.org/O4/O4a/",
+  "authoritative_source_urls": [
+    "https://gwosc.org/archive/data/O4a_4KHZ_R1/1388314624/H-H1_GWOSC_O4a_4KHZ_R1-1388511232-4096.hdf5",
+    "https://gwosc.org/api/v2/strain-files/H1-1388511232-4kHz?format=json"
+  ],
+  "identifiers": [],
+  "release_or_version": "O4a 4 kHz R1",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "CC BY 4.0",
+  "deterministic_selection_rule": "Retain exactly H-H1_GWOSC_O4a_4KHZ_R1-1388511232-4096.hdf5 and its GWOSC API metadata.",
+  "substitution": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-003",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-003",
+      "scenario_id": "03_physics_gwosc_o4a_h1_strain",
+      "path": "context/strain_file_api.json",
+      "scenario_relative_path": "context/strain_file_api.json",
+      "bytes": 956,
+      "sha256": "fed04f5569cf7e853585879922328e2beae80edfc2fea68b1ba424130c559c5e",
+      "role": "official_context_or_source_metadata",
+      "source_urls": [
+        "https://gwosc.org/archive/data/O4a_4KHZ_R1/1388314624/H-H1_GWOSC_O4a_4KHZ_R1-1388511232-4096.hdf5",
+        "https://gwosc.org/api/v2/strain-files/H1-1388511232-4kHz?format=json"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-08-23T14:14:09.390874Z",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [],
+      "citation_url": "https://gwosc.org/O4/O4a/",
+      "source_version": "O4a 4 kHz R1",
+      "replay_note": "Frozen local asset with source record references; exact remote asset URL was not recorded in legacy schema. Replay from an intact release copy is supported.",
+      "rights_evidence_url": "https://gwosc.org/O4/O4a/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-003",
+      "scenario_id": "03_physics_gwosc_o4a_h1_strain",
+      "path": "raw/H-H1_GWOSC_O4a_4KHZ_R1-1388511232-4096.hdf5",
+      "scenario_relative_path": "raw/H-H1_GWOSC_O4a_4KHZ_R1-1388511232-4096.hdf5",
+      "bytes": 129225370,
+      "sha256": "b0d7ae53435952801347f8bf518bc8ef5a167dfdb790fe562a2214cc2072522a",
+      "role": "official_payload",
+      "source_urls": [
+        "https://gwosc.org/archive/data/O4a_4KHZ_R1/1388314624/H-H1_GWOSC_O4a_4KHZ_R1-1388511232-4096.hdf5",
+        "https://gwosc.org/api/v2/strain-files/H1-1388511232-4kHz?format=json"
+      ],
+      "download_url": "https://gwosc.org/archive/data/O4a_4KHZ_R1/1388314624/H-H1_GWOSC_O4a_4KHZ_R1-1388511232-4096.hdf5",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-08-23T14:14:09.390874Z",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [],
+      "citation_url": "https://gwosc.org/O4/O4a/",
+      "source_version": "O4a 4 kHz R1",
+      "replay_note": "explicit filename match to original recorded source URL",
+      "rights_evidence_url": "https://gwosc.org/O4/O4a/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

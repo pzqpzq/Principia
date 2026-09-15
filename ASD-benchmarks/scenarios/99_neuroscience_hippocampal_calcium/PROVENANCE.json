@@ -1,0 +1,97 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "99_neuroscience_hippocampal_calcium",
+  "domain": "Hippocampal neuroscience",
+  "title": "Mouse hippocampal calcium imaging during a context fear memory retrieval task",
+  "publisher": "Rozeske, Robert (University of Toronto); Runtz, Leonie (McGill University); Lee, J. Quinn (McGill University); Keinath, Alexandra (McGill University); Sossin, Aaron (McGill University); Brandon, Mark (McGill University)",
+  "authoritative_landing_url": "https://zenodo.org/records/21225888",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/21225888",
+    "https://zenodo.org/api/records/21225888/files/Data_ToUpload.zip/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.21225888"
+  ],
+  "release_or_version": "21225888",
+  "retrieval_finalized_utc": "2026-09-15T07:04:45.033247+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": {
+    "planned_source": "EPA AQS 2025",
+    "planned_url": "https://aqs.epa.gov/aqsweb/airdata/download_files.html",
+    "reason": "Repeated SSL connection timeouts for index and daily ozone payload",
+    "selection": "First three ordered measured-data reserves; preserves overall corpus breadth but reduces new survey and environmental additions."
+  },
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Source filenames include 2018–2021 sessions; release July 2026.",
+  "source_publication_date": "2026-07-21",
+  "source_created_utc": "2026-07-21T23:17:59.995372+00:00",
+  "source_updated_utc": "2026-07-21T23:18:00.211505+00:00",
+  "source_inventory": [
+    {
+      "name": "Data_ToUpload.zip",
+      "bytes": 399538366,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Processed MATLAB calcium/behavior products organized by experimental group, supporting the published fear-memory study.",
+  "known_analyses_and_limitations": "Animal/session holdouts, with cells and trials nested. Published representation findings are prior analysis; these are not raw fluorescence movies.",
+  "related_publications": [],
+  "independent_groups": "animal/session; trials and cells nested within animals",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-099",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-099",
+      "scenario_id": "99_neuroscience_hippocampal_calcium",
+      "path": "raw/Data_ToUpload.zip",
+      "scenario_relative_path": "raw/Data_ToUpload.zip",
+      "bytes": 399538366,
+      "sha256": "b60e32ee1401e6a6e4264a4f646d622ae2aa0b4cae5c24d6d0ae00a41b51b286",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/21225888"
+      ],
+      "download_url": "https://zenodo.org/api/records/21225888/files/Data_ToUpload.zip/content",
+      "source_checksum": "md5:8060dcdda6d2f03a2c14691c5c1f3ac9",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:22.174155+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.21225888"
+      ],
+      "citation_url": "https://zenodo.org/records/21225888",
+      "source_version": "21225888",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/21225888",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-099",
+      "scenario_id": "99_neuroscience_hippocampal_calcium",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 5399,
+      "sha256": "940f035c68b581fd1adcb10ddd79af94e97b9dfaa8e39c7f874ba955ae02ba4a",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/21225888"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:21:53.622654+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.21225888"
+      ],
+      "citation_url": "https://zenodo.org/records/21225888",
+      "source_version": "21225888",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

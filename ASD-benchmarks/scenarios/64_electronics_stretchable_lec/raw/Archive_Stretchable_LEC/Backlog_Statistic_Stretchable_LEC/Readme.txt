@@ -1,0 +1,1 @@
+The photocurrent of the devices were measurend with a SMU-controlled photodiode (V27 BPW21R 148) (data files which end with "pt"). Simultaneaously, the device was controlled by a SMU. Here, a voltage was applied and the current through the device was measured (data files which end with "it").

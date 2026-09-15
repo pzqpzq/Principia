@@ -1,0 +1,41 @@
+{
+  "scenario_id": "02_astronomy_mast_tars_sector96",
+  "path": "raw/hlsp_tars_tess_ffi_s0096-0000002056110539_tess_v01_lc.fits",
+  "bytes": 123840,
+  "sha256": "d3d2f1200d6bf0c4dd24a6936f0ff751ebdfa90fde14b1ac4a0d365a67534e3e",
+  "checked_utc": "2026-09-15T06:39:47.762163+00:00",
+  "format_extension": ".fits",
+  "checks": [],
+  "format": "FITS",
+  "HDUs": [
+    {
+      "name": "PRIMARY",
+      "shape": null,
+      "columns": null,
+      "units": null,
+      "header": {
+        "DATE-END": "2025-09-14T22:46:32.779",
+        "TSTART": "3907.7826151579193",
+        "TSTOP": "3933.4489904946263",
+        "TELESCOP": "TESS",
+        "INSTRUME": "TESS Photometer"
+      }
+    },
+    {
+      "name": "LIGHTCURVE",
+      "shape": [
+        9276
+      ],
+      "columns": [
+        "TIME",
+        "FLUX"
+      ],
+      "units": [
+        "d",
+        ""
+      ],
+      "header": {}
+    }
+  ],
+  "status": "pass"
+}

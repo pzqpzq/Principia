@@ -1,0 +1,144 @@
+{
+  "created": "2025-07-17T18:31:04.204341+00:00",
+  "modified": "2025-08-01T08:12:58.296863+00:00",
+  "id": 14922524,
+  "conceptrecid": "14922523",
+  "doi": "10.5281/zenodo.14922524",
+  "conceptdoi": "10.5281/zenodo.14922523",
+  "doi_url": "https://doi.org/10.5281/zenodo.14922524",
+  "metadata": {
+    "title": "Data set from: Operando laboratory XAS on battery materials using the DANOISE cell in a von Hámos spectrometer",
+    "doi": "10.5281/zenodo.14922524",
+    "publication_date": "2025-02-25",
+    "description": "<p><strong>Abstract: </strong>This work presents laboratory-based <em>operando </em>X-ray absorption spectroscopy (XAS) measurements on batteries using the \"Developed in Aarhus: New Operando In-house Scattering Electrochemical\" (DANOISE) cell. Operando XAS was conducted with von H&aacute;mos spectrometers optimized for X-ray absorption near edge structure (XANES) and extended X-ray absorption fine structure (EXAFS), enabling short acquisition times. LiFePO4 (LFP) and Na-ion battery materials (NaxFe0.6Mn0.4O2) were investigated, demonstrating the spectrometer&rsquo;s efficiency and broad spectral bandwidth. Fe K-edge XANES captured Fe species transition in LFP within 15 minutes, while Mn K-edge XANES on Na-ion materials highlighted challenges due to higher absorption. Fe K-edge EXAFS measurements revealed Fe species transitions during cycling, with some materials showing full reversibility upon discharge. These results establish operando XAS as a valuable tool for studying battery materials in real-time.</p>\n<p>&nbsp;</p>\n<p>This data set contains the raw data of the work \"Operando laboratory XAS on battery materials using the DANOISE cell in a von H&aacute;mos spectromete\" This includes the operando XANES and EXAFS measurements on Li-ion and Na-ion battery materials measuring the Fe&nbsp; and Mn K-edge, the galvanostatic potential profiles&nbsp; (potential-time curves) and the XRD measurment of the synthezised LFP used as referece material.</p>\n<p>Information on the data set:</p>\n<p>All the XAS data (XANES and EXAFS mesurments) have an inital measurment time of 300 s (5 min) per spectrum. Through binning of the data (e.g. 3x or 5x) the actual measurement time per spectrum is 15 to 25 mintes. In the data files the raw <em>&micro;</em>(<em>E</em>) is listed with the first column as the energy axis in eV as unit.</p>\n<p>Folder<strong> 01_XANES</strong> contains the XANES data of LFP and FMT. All the spectra of one sample are in one .dat file. In the filename the binning and the numbers of spectra are indicated, e. g. LFP_<strong>3x</strong>Bin_<strong>01-65</strong>.dat consist 3x binned spectra (15 min per spectrum) with the spectra from 001 to 065. The refence spectra are listed in a seperate file. For FMT 3x binned data ist listed. For LFP the unbinned data and the 3x binned data ist listed.</p>\n<p>Folder <strong>02_EXAFS</strong> includes the 3x and 5x binned data of F6M4 and FMM. While for the 3x binned data an evaluation with constant energy steps was choosen, for the 5x binned data constan k steps were used to increas the SNR for higher k/energy values. The reference spectra of Fe2O3, Fe3O4 and FeO are listed in seperate file.</p>\n<p>Folder <strong>03_galvanostatic-potential-profiles</strong> includes the galvanostatic potential profiles&nbsp; (potential-time curves) of LFP, FMT, F6M4 and FMM. In the data file, after a header until row 19, the data starts which consist of the total time in seconds (second column), the measured volateg, capacity and other paraemeter.</p>\n<p>Folder <strong>04_XRD</strong>&nbsp;contains the XRD measurements of the synthesized LFP reference sample. The data is organized into four columns: 2&theta;, measured intensity, calculated intensity, and the difference between the measured and calculated intensities. In addition, the folder includes the XRD measurements and refinements for the FMT, F6M4, and FMM samples. These datasets are provided in six columns: Q (in &Aring;⁻&sup1;), observed intensity, calculated intensity, difference curve, Q (&Aring;⁻&sup1;) at Bragg positions, and the corresponding Bragg peak intensities.</p>\n<p>Folder <strong>05_CIF</strong> includes the CIF files, used for EXAFS-fitting, optained by the XRD measurement. In the file \"O3_F5M5_Fe\" the partial occupancy of Fe and Mn at the same position is reduced to Fe, for the use in the Artemis software. Artemis of the Demeter software package can not generate an Feff input when partially occupancy are present. The partially uccupancy has to been manually inserted when generating the Feff input file before runnign the Feff calculation to obtain the scattering pathes.</p>\n<p>In addtion to the four folder above, three excel files are uplaoded as well which give an assigment of the spectra in Folder 01 and 02 to the corresponding charge, rest or discharge situation in the cell/sample.</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Praetz, Sebastian",
+        "affiliation": "Technische Universität Berlin",
+        "orcid": "0000-0001-6852-7616"
+      },
+      {
+        "name": "Johansen, Morten",
+        "affiliation": null,
+        "orcid": "0000-0002-9860-718X"
+      },
+      {
+        "name": "Schlesiger, Christopher",
+        "affiliation": null,
+        "orcid": "0000-0002-9407-4267"
+      },
+      {
+        "name": "Kober, Delf",
+        "affiliation": "Technische Universität Berlin",
+        "orcid": "0000-0002-0040-0931"
+      }
+    ],
+    "keywords": [
+      "XAS",
+      "XANES",
+      "EXAFS",
+      "Operando",
+      "Battery"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "10.1039/D5JA00155B",
+        "relation": "isPublishedIn",
+        "resource_type": "publication-article",
+        "scheme": "doi"
+      }
+    ],
+    "language": "eng",
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "journal": {
+      "title": "Journal of Analytical Atomic Spectrometry"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "14922523"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Data set from: Operando laboratory XAS on battery materials using the DANOISE cell in a von Hámos spectrometer",
+  "links": {
+    "self": "https://zenodo.org/api/records/14922524",
+    "self_html": "https://zenodo.org/records/14922524",
+    "preview_html": "https://zenodo.org/records/14922524?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.14922524",
+    "self_doi": "https://doi.org/10.5281/zenodo.14922524",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.14922524",
+    "reserve_doi": "https://zenodo.org/api/records/14922524/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/14922523",
+    "parent_html": "https://zenodo.org/records/14922523",
+    "parent_doi": "https://doi.org/10.5281/zenodo.14922523",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.14922523",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:14922524/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:14922524/sequence/default",
+    "files": "https://zenodo.org/api/records/14922524/files",
+    "media_files": "https://zenodo.org/api/records/14922524/media-files",
+    "archive": "https://zenodo.org/api/records/14922524/files-archive",
+    "archive_media": "https://zenodo.org/api/records/14922524/media-files-archive",
+    "latest": "https://zenodo.org/api/records/14922524/versions/latest",
+    "latest_html": "https://zenodo.org/records/14922524/latest",
+    "versions": "https://zenodo.org/api/records/14922524/versions",
+    "draft": "https://zenodo.org/api/records/14922524/draft",
+    "access_links": "https://zenodo.org/api/records/14922524/access/links",
+    "access_grants": "https://zenodo.org/api/records/14922524/access/grants",
+    "access_users": "https://zenodo.org/api/records/14922524/access/users",
+    "access_request": "https://zenodo.org/api/records/14922524/access/request",
+    "access": "https://zenodo.org/api/records/14922524/access",
+    "communities": "https://zenodo.org/api/records/14922524/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/14922524/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/14922524/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/14922524/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/14922524/quota-increase",
+    "requests": "https://zenodo.org/api/records/14922524/requests"
+  },
+  "updated": "2025-08-01T08:12:58.296863+00:00",
+  "recid": "14922524",
+  "revision": 6,
+  "files": [
+    {
+      "id": "d505f92e-8faf-4c72-be10-cb4dadcf8124",
+      "key": "data.zip",
+      "size": 6760031,
+      "checksum": "md5:d944463bb9aefb253459126aa012da0d",
+      "links": {
+        "self": "https://zenodo.org/api/records/14922524/files/data.zip/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "1110238"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 84,
+    "unique_downloads": 72,
+    "views": 188,
+    "unique_views": 172,
+    "version_downloads": 84,
+    "version_unique_downloads": 72,
+    "version_unique_views": 172,
+    "version_views": 188
+  },
+  "state": "done",
+  "submitted": true
+}

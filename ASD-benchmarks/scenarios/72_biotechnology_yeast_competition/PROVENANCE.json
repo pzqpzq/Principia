@@ -1,0 +1,99 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "72_biotechnology_yeast_competition",
+  "domain": "Food microbiology",
+  "title": "dataset of the data obtained for publication: Saccharomyces cerevisiae wine strains show a wide range of competitive abilities and differential nutrient uptake behavior in co-culture with S. kudriavzevii",
+  "publisher": "Contreras Ruiz, Alba (IATA-CSIC); Alonso del Real, Javier; Barrio, Eladio (Universitat de València); Querol, Amparo (Spanish National Research Council (CSIC))",
+  "authoritative_landing_url": "https://zenodo.org/records/18757697",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/18757697",
+    "https://zenodo.org/api/records/18757697/files/dataset%20competencias.xlsx/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.18757697"
+  ],
+  "release_or_version": "18757697",
+  "retrieval_finalized_utc": "2026-09-15T07:04:39.895292+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Campaign dates unknown; February 2026 deposit.",
+  "source_publication_date": "2026-02-24",
+  "source_created_utc": "2026-02-24T14:21:15.427628+00:00",
+  "source_updated_utc": "2026-02-24T14:21:15.796894+00:00",
+  "source_inventory": [
+    {
+      "name": "dataset competencias.xlsx",
+      "bytes": 269041,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Original eight-strain monoculture/competition workbook with biological triplicates and HPLC-related measurements.",
+  "known_analyses_and_limitations": "Hold out strain or full biological replicate. Technical readings within a replicate are not independent cultures.",
+  "related_publications": [
+    {
+      "identifier": "10.1016/j.fm.2023.104276",
+      "relation": "isPartOf",
+      "resource_type": "dataset",
+      "scheme": "doi"
+    }
+  ],
+  "independent_groups": "strain, culture condition and biological replicate",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-072",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-072",
+      "scenario_id": "72_biotechnology_yeast_competition",
+      "path": "raw/dataset competencias.xlsx",
+      "scenario_relative_path": "raw/dataset competencias.xlsx",
+      "bytes": 269041,
+      "sha256": "3c1bf733f9bf117bd945ab3f7eb5a1913f88cb85d5eeec4c70211dd00a90918a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18757697"
+      ],
+      "download_url": "https://zenodo.org/api/records/18757697/files/dataset%20competencias.xlsx/content",
+      "source_checksum": "md5:bdbae07b312412b6cf5620f77aa4a065",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:12.429487+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18757697"
+      ],
+      "citation_url": "https://zenodo.org/records/18757697",
+      "source_version": "18757697",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18757697",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-072",
+      "scenario_id": "72_biotechnology_yeast_competition",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 6370,
+      "sha256": "759ad6dbb0d30ab0839bf5797d479e76e1c5eca5254ae619ac02542f7c6afcbf",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/18757697"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:43.755765+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18757697"
+      ],
+      "citation_url": "https://zenodo.org/records/18757697",
+      "source_version": "18757697",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

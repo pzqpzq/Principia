@@ -1,0 +1,172 @@
+{
+  "created": "2026-01-07T16:17:01.716499+00:00",
+  "modified": "2026-03-02T16:44:04.375181+00:00",
+  "id": 18098714,
+  "conceptrecid": "18098713",
+  "doi": "10.5281/zenodo.18098714",
+  "conceptdoi": "10.5281/zenodo.18098713",
+  "doi_url": "https://doi.org/10.5281/zenodo.18098714",
+  "metadata": {
+    "title": "BikeZ-ETH - A Mass-Cycling Trajectory Dataset from a Controlled Experiment",
+    "doi": "10.5281/zenodo.18098714",
+    "publication_date": "2025-12-30",
+    "description": "<p><span lang=\"EN-GB\">This dataset presents aerial video recordings and trajectory data collected during a controlled mass-cycling experiment during the Cycling Research Board Annual Meeting in Z&uuml;rich on 06<sup>th</sup> September 2024 at H&ouml;nggerberg Campus of ETH Z&uuml;rich. 28 cyclists were recorded for a total duration of 30 minutes with a drone from above, and bicycle trajectories were extracted using computer vision and Kalman filtering methodology. As part of the controlled experiment, the number of simultaneous cyclists on the circular track varied between 6 and 22, two lane widths were tested (2.5 and 3.75m), and the flow was disrupted several times to observe acceleration and deacceleration manoeuvres.</span></p>\n<p><span lang=\"EN-GB\">The folder <strong>VIDEOS </strong>contains nine video recordings covering a duration of around half an hour (30:07) and 45,175 frames in total, at a framerate of 25 frames per second, and with a resolution of 3840 x 2160 pixels. The videos show more than 30 bicycles riding on the circular track of the Albert Einstein Garage at ETH Z&uuml;rich Campus H&ouml;nggerberg (Z&uuml;rich, Switzerland) during various experiments. The videos are provided in MP4 format.</span></p>\n<p><span lang=\"EN-GB\">The folder <strong>TRAJECTORIES </strong>contains the trajectories for each video, sequence, bicycle, and frame an exact bicycle position. The bicycle trajectories are provided as zipped CSV files, seperated by the comma symbol.<br>Each row consists of 12 columns:</span></p>\n<ul>\n<li>(1) Vehicle_ID</li>\n<li>(2) Frame_ID</li>\n<li>(3) GlobalTime (in seconds)</li>\n<li>(4) Cartesian_X (in meter)</li>\n<li>(5) Cartesian_Y (in meter)</li>\n<li>(6) Polar_X (in radians)</li>\n<li>(7) Polar_Y (in meter)</li>\n<li>(8) v_Length (in meter)</li>\n<li>(9) v_Width (in meter)</li>\n<li>(10) v_Vel (in m/s)</li>\n<li>(11) v_Angle (in radians)</li>\n<li>(12) v_AngleVel (in rad/s)</li>\n</ul>\n<p>&nbsp;</p>\n<p><span lang=\"EN-GB\"><strong>Source Code Repository</strong></span></p>\n<p><span lang=\"EN-GB\">The code to extract and process the bicycle trajectories from the videos is available on GitHub: https://github.com/DerKevinRiehl/mass_cycling_experiment</span></p>\n<p>&nbsp;</p>\n<p><strong><span lang=\"EN-GB\">Demonstrations</span></strong></p>\n<ul>\n<li><span lang=\"EN-GB\">https://youtu.be/-UbFwMcpJNk</span></li>\n<li><span lang=\"EN-GB\">https://youtu.be/b4SxqPf-qpQ</span></li>\n<li><span lang=\"EN-GB\">https://youtu.be/mCQmYtJ3D8w</span></li>\n</ul>\n<p>&nbsp;</p>\n<p><span lang=\"EN-GB\"><br><strong>Acknowledgements<br></strong>We would like to thank Catherine Elliot and the other organizers of the Cycling Research Board Annual Meeting (CRB2024), and the initiative Pro Velo Kanton Zurich for promoting the mass-cycling experiment amongst all the experiment participants. Additionally, we would like to thank Judith van den Hoeven for facilitating the coordination with participants, and Veloplan GmbH for the provision of bikes. Moreover, we thank following supporters that facilitated the experiment: Linghang Sun, Kimia Chavoshi, Yifan Zhang, Qishen Zhou.<strong><br></strong></span></p>\n<p>&nbsp;</p>\n<p><strong><span lang=\"EN-GB\">Publications</span></strong></p>\n<ul>\n<li>\"BikeZ-ETH -- A Longitudinal Trajectory Dataset from an Controlled Mass-Cycling Experiment\" (In Submission in \"Scientific Data)</li>\n<li>\"The Bicycle Fundamental Diagram: Empirical Insights into Bicycle Flow for Sustainable Urban Mobility\" (In Submisison in \"Nature Scientific Communications\")</li>\n</ul>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Riehl, Kevin",
+        "affiliation": "ETH Zurich",
+        "orcid": "0000-0003-4620-8379"
+      },
+      {
+        "name": "El-Baklish, Shaimaa K.",
+        "affiliation": "ETH Zurich",
+        "orcid": "0000-0001-6027-3439"
+      },
+      {
+        "name": "Ni, Ying-Chuan",
+        "affiliation": "ETH Zurich",
+        "orcid": "0000-0003-1856-5707"
+      },
+      {
+        "name": "Kouvelas, Anastasios",
+        "affiliation": "ETH Zurich",
+        "orcid": "0000-0003-4571-2530"
+      },
+      {
+        "name": "Makridis, Michail",
+        "affiliation": "ETH Zurich",
+        "orcid": "0000-0001-7462-4674"
+      }
+    ],
+    "dates": [
+      {
+        "type": "available"
+      }
+    ],
+    "version": "1.0",
+    "custom": {
+      "code:codeRepository": "https://github.com/DerKevinRiehl/mass_cycling_experiment",
+      "code:programmingLanguage": [
+        {
+          "id": "python",
+          "title": {
+            "en": "Python"
+          }
+        }
+      ],
+      "code:developmentStatus": {
+        "id": "active",
+        "title": {
+          "en": "Active"
+        }
+      }
+    },
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "grants": [
+      {
+        "code": "123.077 IP-SBM",
+        "internal_id": "05a2bhn71::123.077 IP-SBM",
+        "funder": {
+          "name": "Innosuisse – Swiss Innovation Agency"
+        },
+        "title": "BikeZ: Model Suite for Mass Cycling as a Service Simulation"
+      }
+    ],
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "18098713"
+          }
+        }
+      ]
+    }
+  },
+  "title": "BikeZ-ETH - A Mass-Cycling Trajectory Dataset from a Controlled Experiment",
+  "links": {
+    "self": "https://zenodo.org/api/records/18098714",
+    "self_html": "https://zenodo.org/records/18098714",
+    "preview_html": "https://zenodo.org/records/18098714?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.18098714",
+    "self_doi": "https://doi.org/10.5281/zenodo.18098714",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.18098714",
+    "reserve_doi": "https://zenodo.org/api/records/18098714/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/18098713",
+    "parent_html": "https://zenodo.org/records/18098713",
+    "parent_doi": "https://doi.org/10.5281/zenodo.18098713",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.18098713",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:18098714/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:18098714/sequence/default",
+    "files": "https://zenodo.org/api/records/18098714/files",
+    "media_files": "https://zenodo.org/api/records/18098714/media-files",
+    "archive": "https://zenodo.org/api/records/18098714/files-archive",
+    "archive_media": "https://zenodo.org/api/records/18098714/media-files-archive",
+    "latest": "https://zenodo.org/api/records/18098714/versions/latest",
+    "latest_html": "https://zenodo.org/records/18098714/latest",
+    "versions": "https://zenodo.org/api/records/18098714/versions",
+    "draft": "https://zenodo.org/api/records/18098714/draft",
+    "access_links": "https://zenodo.org/api/records/18098714/access/links",
+    "access_grants": "https://zenodo.org/api/records/18098714/access/grants",
+    "access_users": "https://zenodo.org/api/records/18098714/access/users",
+    "access_request": "https://zenodo.org/api/records/18098714/access/request",
+    "access": "https://zenodo.org/api/records/18098714/access",
+    "communities": "https://zenodo.org/api/records/18098714/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/18098714/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/18098714/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/18098714/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/18098714/quota-increase",
+    "requests": "https://zenodo.org/api/records/18098714/requests"
+  },
+  "updated": "2026-03-02T16:44:04.375181+00:00",
+  "recid": "18098714",
+  "revision": 8,
+  "files": [
+    {
+      "id": "47c75614-e79f-4685-b61b-dad495e0b64d",
+      "key": "TRAJECTORIES.zip",
+      "size": 27564329,
+      "checksum": "md5:7ff7b1f26c456572956bd90604067bd7",
+      "links": {
+        "self": "https://zenodo.org/api/records/18098714/files/TRAJECTORIES.zip/content"
+      }
+    },
+    {
+      "id": "b28031f3-4d8e-4f7c-a0ec-ebcf8ce0b403",
+      "key": "VIDEOS.zip",
+      "size": 27476041669,
+      "checksum": "md5:0d31ed53fd48bfc6930567e943409c07",
+      "links": {
+        "self": "https://zenodo.org/api/records/18098714/files/VIDEOS.zip/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "1294110"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 48,
+    "unique_downloads": 47,
+    "views": 345,
+    "unique_views": 319,
+    "version_downloads": 48,
+    "version_unique_downloads": 47,
+    "version_unique_views": 319,
+    "version_views": 345
+  },
+  "state": "done",
+  "submitted": true
+}

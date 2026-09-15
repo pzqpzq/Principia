@@ -1,0 +1,234 @@
+{
+  "scenario_id": "59_energy_portugal_pv",
+  "path": "raw/weather_files.zip",
+  "bytes": 2977466,
+  "sha256": "a0e2ba74f564a901b9546a2276d25e0855cc0aacabac4e32ce62ad7cfb30d68f",
+  "checked_utc": "2026-09-15T06:45:30.965634+00:00",
+  "source_checksum_status": "verified",
+  "format": "ZIP",
+  "expanded_bytes": 10203708,
+  "members": [
+    {
+      "name": "Lisbon_weather.csv",
+      "bytes": 1703455,
+      "sha256": "b806ad9d97c6e0ac52d950fc4bc685fb537d5b2388c99880a6f1125cb6beaa9d",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "74696d652c74656d70657261",
+        "delimiter": ",",
+        "header": [
+          "time",
+          "temperature_2m (°C)",
+          "relative_humidity_2m (%)",
+          "dew_point_2m (°C)",
+          "apparent_temperature (°C)",
+          "cloud_cover (%)",
+          "wind_speed_10m (km/h)",
+          "wind_direction_10m (°)",
+          "shortwave_radiation (W/m²)"
+        ],
+        "data_records": 35064,
+        "row_width_counts": {
+          "9": 35064
+        },
+        "first_lines": [
+          "time,temperature_2m (°C),relative_humidity_2m (%),dew_point_2m (°C),apparent_temperature (°C),cloud_cover (%),wind_speed_10m (km/h),wind_direction_10m (°),shortwave_radiation (W/m²)",
+          "01/01/19 12:00 AM,9.8,85,7.4,8,0,8.1,32,0",
+          "01/01/19 01:00 AM,9.1,87,7,7.1,0,8,36,0",
+          "01/01/19 02:00 AM,8.8,88,6.8,6.7,0,8.3,34,0",
+          "01/01/19 03:00 AM,8.5,88,6.6,6.3,0,9,37,0",
+          "01/01/19 04:00 AM,8.3,88,6.4,5.9,0,10.2,39,0",
+          "01/01/19 05:00 AM,8,89,6.2,5.5,0,10.4,44,0",
+          "01/01/19 06:00 AM,7.7,89,6,5.1,0,11.2,45,0"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "Faro_weather.csv",
+      "bytes": 1701045,
+      "sha256": "c8728220b55152ddd29a52c512cac05f366ae4778dae844b546f2308131b921c",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "74696d652c74656d70657261",
+        "delimiter": ",",
+        "header": [
+          "time",
+          "temperature_2m (°C)",
+          "relative_humidity_2m (%)",
+          "dew_point_2m (°C)",
+          "apparent_temperature (°C)",
+          "cloud_cover (%)",
+          "wind_speed_10m (km/h)",
+          "wind_direction_10m (°)",
+          "shortwave_radiation (W/m²)"
+        ],
+        "data_records": 35064,
+        "row_width_counts": {
+          "9": 35064
+        },
+        "first_lines": [
+          "time,temperature_2m (°C),relative_humidity_2m (%),dew_point_2m (°C),apparent_temperature (°C),cloud_cover (%),wind_speed_10m (km/h),wind_direction_10m (°),shortwave_radiation (W/m²)",
+          "01/01/19 12:00 AM,12.2,67,6.2,9.6,7,11.5,41,0",
+          "01/01/19 01:00 AM,12.3,66,6.2,9.3,3,14.1,50,0",
+          "01/01/19 02:00 AM,11.9,67,5.9,8.9,1,13.8,51,0",
+          "01/01/19 03:00 AM,11.4,67,5.4,8.1,4,14.8,45,0",
+          "01/01/19 04:00 AM,11.1,66,4.9,7.8,17,13.7,35,0",
+          "01/01/19 05:00 AM,10.9,66,4.7,8,26,11.4,28,0",
+          "01/01/19 06:00 AM,10.9,66,4.7,8,15,10.7,33,0"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "Braga_weather.csv",
+      "bytes": 1691432,
+      "sha256": "5ad11f02cd67a5c1ec289d4f20a7f214b86ac41f4430143da2616d99ff6459d3",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "74696d652c74656d70657261",
+        "delimiter": ",",
+        "header": [
+          "time",
+          "temperature_2m (°C)",
+          "relative_humidity_2m (%)",
+          "dew_point_2m (°C)",
+          "apparent_temperature (°C)",
+          "cloud_cover (%)",
+          "wind_speed_10m (km/h)",
+          "wind_direction_10m (°)",
+          "shortwave_radiation (W/m²)"
+        ],
+        "data_records": 35064,
+        "row_width_counts": {
+          "9": 35064
+        },
+        "first_lines": [
+          "time,temperature_2m (°C),relative_humidity_2m (%),dew_point_2m (°C),apparent_temperature (°C),cloud_cover (%),wind_speed_10m (km/h),wind_direction_10m (°),shortwave_radiation (W/m²)",
+          "01/01/19 12:00 AM,3.4,86,1.2,0.4,0,7,78,0",
+          "01/01/19 01:00 AM,2.8,86,0.7,-0.3,0,7.3,70,0",
+          "01/01/19 02:00 AM,2.4,87,0.4,-0.7,0,7,69,0",
+          "01/01/19 03:00 AM,2.2,86,0.2,-0.9,0,7.3,70,0",
+          "01/01/19 04:00 AM,2.1,85,-0.1,-1.3,0,8.3,72,0",
+          "01/01/19 05:00 AM,2.1,84,-0.4,-1.4,0,8.8,71,0",
+          "01/01/19 06:00 AM,2.1,82,-0.7,-1.5,0,8.9,69,0"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "Tavira_weather.csv",
+      "bytes": 1702193,
+      "sha256": "f367d9376c101a3c8f3d2e7adb6ee3847172bd026319b83aa894c715a2d77ea3",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "74696d652c74656d70657261",
+        "delimiter": ",",
+        "header": [
+          "time",
+          "temperature_2m (°C)",
+          "relative_humidity_2m (%)",
+          "dew_point_2m (°C)",
+          "apparent_temperature (°C)",
+          "cloud_cover (%)",
+          "wind_speed_10m (km/h)",
+          "wind_direction_10m (°)",
+          "shortwave_radiation (W/m²)"
+        ],
+        "data_records": 35064,
+        "row_width_counts": {
+          "9": 35064
+        },
+        "first_lines": [
+          "time,temperature_2m (°C),relative_humidity_2m (%),dew_point_2m (°C),apparent_temperature (°C),cloud_cover (%),wind_speed_10m (km/h),wind_direction_10m (°),shortwave_radiation (W/m²)",
+          "01/01/19 12:00 AM,11.5,71,6.5,9.1,21,10.5,16,0",
+          "01/01/19 01:00 AM,10.8,73,6.2,8.2,16,11.6,30,0",
+          "01/01/19 02:00 AM,10.2,74,5.8,7.5,6,11.9,25,0",
+          "01/01/19 03:00 AM,9.7,76,5.6,7.1,0,10.1,17,0",
+          "01/01/19 04:00 AM,9.5,76,5.4,6.8,11,10.7,14,0",
+          "01/01/19 05:00 AM,9.4,75,5.2,6.7,25,10.6,10,0",
+          "01/01/19 06:00 AM,9.5,74,5,6.9,22,9.7,4,0"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "Loule_weather.csv",
+      "bytes": 1697934,
+      "sha256": "8e0cce28b11a95f4ce37d865641205a8834d29ec00351a5eea80e75e447e014d",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "74696d652c74656d70657261",
+        "delimiter": ",",
+        "header": [
+          "time",
+          "temperature_2m (°C)",
+          "relative_humidity_2m (%)",
+          "dew_point_2m (°C)",
+          "apparent_temperature (°C)",
+          "cloud_cover (%)",
+          "wind_speed_10m (km/h)",
+          "wind_direction_10m (°)",
+          "shortwave_radiation (W/m²)"
+        ],
+        "data_records": 35064,
+        "row_width_counts": {
+          "9": 35064
+        },
+        "first_lines": [
+          "time,temperature_2m (°C),relative_humidity_2m (%),dew_point_2m (°C),apparent_temperature (°C),cloud_cover (%),wind_speed_10m (km/h),wind_direction_10m (°),shortwave_radiation (W/m²)",
+          "01/01/19 12:00 AM,10.8,70,5.5,8,6,11,52,0",
+          "01/01/19 01:00 AM,10.7,69,5.2,8,2,10.4,56,0",
+          "01/01/19 02:00 AM,10.3,69,4.8,7.5,1,10.7,57,0",
+          "01/01/19 03:00 AM,10.3,66,4.2,7.2,1,11.4,62,0",
+          "01/01/19 04:00 AM,9.8,68,4.1,7,15,9.3,62,0",
+          "01/01/19 05:00 AM,9.5,70,4.2,6.8,26,8.4,65,0",
+          "01/01/19 06:00 AM,9.7,69,4.3,7.1,22,8.2,67,0"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "Setubal_weather.csv",
+      "bytes": 1707649,
+      "sha256": "780c445c2fd6df3d758214a35f3235a9e81de17e558239022448d95444919e8c",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "74696d652c74656d70657261",
+        "delimiter": ",",
+        "header": [
+          "time",
+          "temperature_2m (°C)",
+          "relative_humidity_2m (%)",
+          "dew_point_2m (°C)",
+          "apparent_temperature (°C)",
+          "cloud_cover (%)",
+          "wind_speed_10m (km/h)",
+          "wind_direction_10m (°)",
+          "shortwave_radiation (W/m²)"
+        ],
+        "data_records": 35064,
+        "row_width_counts": {
+          "9": 35064
+        },
+        "first_lines": [
+          "time,temperature_2m (°C),relative_humidity_2m (%),dew_point_2m (°C),apparent_temperature (°C),cloud_cover (%),wind_speed_10m (km/h),wind_direction_10m (°),shortwave_radiation (W/m²)",
+          "01/01/19 12:00 AM,6.8,89,5.1,4.6,0,6.6,13,0",
+          "01/01/19 01:00 AM,5.4,93,4.3,3,1,7.2,360,0",
+          "01/01/19 02:00 AM,5.2,94,4.3,3,0,5.8,360,0",
+          "01/01/19 03:00 AM,5.1,95,4.3,2.9,9,5.8,353,0",
+          "01/01/19 04:00 AM,4.7,96,4.2,2.1,6,8.6,360,0",
+          "01/01/19 05:00 AM,4.3,96,3.7,1.6,0,9,5,0",
+          "01/01/19 06:00 AM,4,95,3.2,1.4,0,7.7,11,0"
+        ],
+        "encoding_replacement_count": 0
+      }
+    }
+  ],
+  "checks": [
+    "all_member_CRCs",
+    "safe_paths_no_symlinks"
+  ],
+  "member_count": 6,
+  "status": "pass"
+}

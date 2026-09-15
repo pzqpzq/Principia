@@ -1,0 +1,86 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "80_physiology_wearable_stress_exercise",
+  "domain": "Human physiology",
+  "title": "Wearable device measurements during stress and exercise",
+  "publisher": "Instituto Tecnológico de Buenos Aires",
+  "authoritative_landing_url": "https://physionet.org/content/wearable-device-dataset/1.0.1/",
+  "authoritative_source_urls": [
+    "https://physionet.org/content/wearable-device-dataset/1.0.1/",
+    "https://physionet.org/content/wearable-device-dataset/get-zip/1.0.1/"
+  ],
+  "identifiers": [
+    "10.13026/he0v-tf17"
+  ],
+  "release_or_version": "1.0.1",
+  "retrieval_finalized_utc": "2026-09-15T07:04:41.192026+00:00",
+  "license_or_access_terms": "ODC-By-1.0",
+  "deterministic_selection_rule": "complete specified source selection",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Calendar dates are shifted; use relative/session timing. Dataset version released June 2025.",
+  "source_publication_date": "2025-06-24",
+  "source_created_utc": null,
+  "source_updated_utc": null,
+  "source_inventory": [],
+  "author_preprocessing": "Native wearable exports plus annotations/notebook and known bad-trial descriptions. Different protocols have overlapping participant populations that require identifier reconciliation.",
+  "known_analyses_and_limitations": "Participant-level grouping across protocols; then complete session/time blocks. Deidentified observations do not support clinical diagnostic claims.",
+  "related_publications": [],
+  "independent_groups": "participant across sessions, then protocol and complete time blocks",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-080",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-080",
+      "scenario_id": "80_physiology_wearable_stress_exercise",
+      "path": "raw/wearable-device-dataset-1.0.1.zip",
+      "scenario_relative_path": "raw/wearable-device-dataset-1.0.1.zip",
+      "bytes": 73121143,
+      "sha256": "afbff3e8e7230bdc765d0ccfc5c3460964021cdfefa8e351f8ad8f78a1b27c48",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://physionet.org/content/wearable-device-dataset/1.0.1/"
+      ],
+      "download_url": "https://physionet.org/content/wearable-device-dataset/get-zip/1.0.1/",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:50:34.878086+00:00",
+      "license_or_terms": "ODC-By-1.0",
+      "citation_identifiers": [
+        "10.13026/he0v-tf17"
+      ],
+      "citation_url": "https://physionet.org/content/wearable-device-dataset/1.0.1/",
+      "source_version": "1.0.1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://physionet.org/content/wearable-device-dataset/1.0.1/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-080",
+      "scenario_id": "80_physiology_wearable_stress_exercise",
+      "path": "context/SOURCE_FACTS.json",
+      "scenario_relative_path": "context/SOURCE_FACTS.json",
+      "bytes": 925,
+      "sha256": "af0f2151291bb493e04525843550f65bb0517e82d1d052aa7f1ed40890a97834",
+      "role": "curator_factual_source_profile",
+      "source_urls": [
+        "https://physionet.org/content/wearable-device-dataset/1.0.1/"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "curator serialization, not a publisher file",
+      "retrieved_utc": "2026-09-15T07:04:41.192026+00:00",
+      "license_or_terms": "CC-BY-4.0 (proposed release terms for curator documentation; pending owner acceptance)",
+      "citation_identifiers": [
+        "10.13026/he0v-tf17"
+      ],
+      "citation_url": "https://physionet.org/content/wearable-device-dataset/1.0.1/",
+      "source_version": "1.0.1",
+      "replay_note": "Reconstruct exact curator metadata from frozen release copy.",
+      "rights_evidence_url": "https://physionet.org/content/wearable-device-dataset/1.0.1/",
+      "rights_evidence_scope": "Factual identifiers, file inventory and attribution; curator serialization."
+    }
+  ]
+}

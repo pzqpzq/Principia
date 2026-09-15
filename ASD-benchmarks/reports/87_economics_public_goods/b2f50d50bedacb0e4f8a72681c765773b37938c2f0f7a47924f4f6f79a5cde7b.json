@@ -1,0 +1,86 @@
+{
+  "scenario_id": "87_economics_public_goods",
+  "path": "raw/code_thresholdPGG.zip",
+  "bytes": 4158,
+  "sha256": "fb0a6120dc3c3e2d1fe2698e1355cc8ce519d985ddfc7a2d5e38b3e9f3da576d",
+  "checked_utc": "2026-09-15T06:46:26.651865+00:00",
+  "source_checksum_status": "verified",
+  "format": "ZIP",
+  "expanded_bytes": 12352,
+  "members": [
+    {
+      "name": "code_thresholdPGG/SimulateGame.m",
+      "bytes": 1431,
+      "sha256": "b18708d47e29388bf328d9c5f6b745e9e730b7a7238bc592a0adf5830d69be18",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "2566756e6374696f6e205b61",
+        "line_count": 34,
+        "preview_lines": [
+          "%function [averagepayoff1, averagepayoff2, actions1, actions2, payoffs1, payoffs2] = SimulateGame(strategy1, strategy2, payoffmatrix1, payoffmatrix2, gamerounds);",
+          "",
+          "function [averagepayoff1, averagepayoff2, actions1, actions2] = SimulateGame(strategy1, strategy2, payoffmatrix1, payoffmatrix2, gamerounds)",
+          "",
+          "% this function computes the average payoff over several rounds of a game"
+        ]
+      }
+    },
+    {
+      "name": "code_thresholdPGG/SimulateIntrospection.m",
+      "bytes": 3554,
+      "sha256": "887acc642fd70695545fd2e67510082a4af5ec9c332038744fa53cadb595507d",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e205b7374",
+        "line_count": 86,
+        "preview_lines": [
+          "function [strategyvector1, strategyvector2, finalstrategyvector1, finalstrategyvector2] = SimulateIntrospection(initialstrategy1, initialstrategy2, payoffmatrix1, payoffmatrix2, selectionstrength, tmax, gamerounds)",
+          "",
+          "%% Function SimulateIntrospection simulates the process of Introspection for tmax time steps for given initial reactive strategies",
+          "",
+          "numberstrategies1 = size(payoffmatrix1,1); % number of pure strategies (actions)"
+        ]
+      }
+    },
+    {
+      "name": "code_thresholdPGG/ThresholdPGG_CreateDataIntrospection.m",
+      "bytes": 6035,
+      "sha256": "6d77c83732e80faa6d59d56bedd579ab11f73371cba088db79752ae7a42aebc1",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e20546872",
+        "line_count": 97,
+        "preview_lines": [
+          "function ThresholdPGG_CreateDataIntrospection()",
+          "",
+          "%% SETTING THE PARAMETERS %%",
+          "tmax= 10^7;",
+          "numberiterations = 1; "
+        ]
+      }
+    },
+    {
+      "name": "code_thresholdPGG/createpayoffmatrix.m",
+      "bytes": 1332,
+      "sha256": "1d9d1b19acd20b17c73639e85046e9f0f11280018405f3dbf5581649e6a3f6b8",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e205b4d31",
+        "line_count": 22,
+        "preview_lines": [
+          "function [M1, M2, strategies1, strategies2] = createpayoffmatrix(endowments,productivities,threshold,reward,beta,gamma)",
+          "",
+          "% [M1, M2, strategies1, strategies2] = createpayoffmatrix(endowments,productivities,threshold,reward)",
+          "% Creates the payoff matrices M1 and M2 for the two players, and the list",
+          "% of strategies for each player"
+        ]
+      }
+    }
+  ],
+  "checks": [
+    "all_member_CRCs",
+    "safe_paths_no_symlinks"
+  ],
+  "member_count": 4,
+  "status": "pass"
+}

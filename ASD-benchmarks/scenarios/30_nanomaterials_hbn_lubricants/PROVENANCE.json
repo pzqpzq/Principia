@@ -1,0 +1,149 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "30_nanomaterials_hbn_lubricants",
+  "domain": "nanomaterials and surface science",
+  "title": "Particle size and surface modification of hBN lubricants",
+  "publisher": "Zenodo; originating researchers: Pavlinak, David (Brno University of Technology); Daněk, Lukáš (Brno University of Technology); Saldan, Ivan (Brno University of Technology); Spotz, Zdenek (Brno University of Technology); Regner, Jakub (University of Chemistry and Technology, Prague); Zazpe, Raul (University of Pardubice); Rodriguez-Pereira, Jhonatan (University of Pardubice); Sofer, Zdenek (University of Chemistry and Technology, Prague); Šperka, Petr (Brno University of Technology); Macak, Jan (Brno University of Technology)",
+  "authoritative_landing_url": "https://zenodo.org/records/17864405",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/17864405",
+    "https://zenodo.org/api/records/17864405/files/dataset.zip/content",
+    "https://zenodo.org/api/records/17864405/files/README.txt/content",
+    "https://zenodo.org/api/records/17864405"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.17864405"
+  ],
+  "release_or_version": "17864405",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "deterministic_selection_rule": "Complete source record, all released files.",
+  "substitution": {
+    "original_scenario_id": "30_biotechnology_yeast_fermentation",
+    "original_title": "Temperature and competing yeast populations",
+    "reason": "Dryad public individual-download endpoints returned HTTP 403; API payload endpoints required authorization; public browser navigation timed out. No successful payload transfer. Approved reserve used.",
+    "original_doi": "10.5061/dryad.cfxpnvxp3",
+    "reserve_record": 17864405,
+    "selected_utc": "2026-09-14T15:55:30.210116+00:00"
+  },
+  "data_origin": "measured_or_observed",
+  "measurement_dates": {
+    "description": "README states measurements 01/2025–06/2026. Publication field says 2025-12-09, but record creation is 2026-09-11 and linked article is 2026. This source chronology inconsistency is preserved.",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": "2025-12-09",
+  "source_created_utc": "2026-09-11T07:30:26.705137+00:00",
+  "source_updated_utc": "2026-09-11T07:30:26.980564+00:00",
+  "source_inventory": [
+    {
+      "name": "dataset.zip",
+      "bytes": 19590034,
+      "selected": true
+    },
+    {
+      "name": "README.txt",
+      "bytes": 1295,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "CSV measurement/figure exports and author-produced high-resolution figures; some tables contain bars/summary results rather than individual tribometer streams.",
+  "known_analyses_and_limitations": "The study is DOI 10.1016/j.triboint.2026.112407. Supplier, size and chemical treatment may be confounded. Image panels are published figure assets, not necessarily untouched microscope frames.",
+  "related_publications": [
+    {
+      "identifier": "10.5281/zenodo.17864952",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1016/j.triboint.2026.112407",
+      "relation": "isPublishedIn",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    }
+  ],
+  "pinned_commit": null,
+  "source_context_request_failures": [],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-030",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-030",
+      "scenario_id": "30_nanomaterials_hbn_lubricants",
+      "path": "context/zenodo_record.json",
+      "scenario_relative_path": "context/zenodo_record.json",
+      "bytes": 7959,
+      "sha256": "0b2348f5165d117b1600c85b5cd173d02ddef7a6c9b6c747242dcc5dc46c9399",
+      "role": "parsed_source_metadata_snapshot",
+      "source_urls": [
+        "https://zenodo.org/api/records/17864405"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:55:30.209717+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17864405"
+      ],
+      "citation_url": "https://zenodo.org/records/17864405",
+      "source_version": "17864405",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-030",
+      "scenario_id": "30_nanomaterials_hbn_lubricants",
+      "path": "raw/README.txt",
+      "scenario_relative_path": "raw/README.txt",
+      "bytes": 1295,
+      "sha256": "e5230b4f68ef1c46a85a414a2e75ba198fc3d0426d337ab2c430d88c35859483",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17864405/files/README.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17864405/files/README.txt/content",
+      "source_checksum": "md5:71155ab5d547f4011e864450be819fc4",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:55:31.793702+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17864405"
+      ],
+      "citation_url": "https://zenodo.org/records/17864405",
+      "source_version": "17864405",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17864405",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-030",
+      "scenario_id": "30_nanomaterials_hbn_lubricants",
+      "path": "raw/dataset.zip",
+      "scenario_relative_path": "raw/dataset.zip",
+      "bytes": 19590034,
+      "sha256": "658c7be90b88e2755fd568fd25842536a4e9d154ac3b1354cc1d91812251b195",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17864405/files/dataset.zip/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17864405/files/dataset.zip/content",
+      "source_checksum": "md5:0a8821c62cae6f646f75097467dde0fb",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:57:07.727964+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17864405"
+      ],
+      "citation_url": "https://zenodo.org/records/17864405",
+      "source_version": "17864405",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17864405",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

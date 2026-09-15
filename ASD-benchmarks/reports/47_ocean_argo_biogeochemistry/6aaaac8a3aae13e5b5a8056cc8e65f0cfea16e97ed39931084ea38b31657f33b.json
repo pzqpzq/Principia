@@ -1,0 +1,1355 @@
+{
+  "bytes": 4583498,
+  "sha256": "df865156a369ad9244bdaadac9f4987365f78943933bb68cfda5465b2f2f58d6",
+  "format_extension": ".nc",
+  "checks": [],
+  "format": "NetCDF",
+  "dimensions": {
+    "DATE_TIME": 14,
+    "STRING256": 256,
+    "STRING64": 64,
+    "STRING32": 32,
+    "STRING8": 8,
+    "STRING4": 4,
+    "STRING2": 2,
+    "N_PROF": 140,
+    "N_PARAM": 9,
+    "N_LEVELS": 560,
+    "N_CALIB": 1
+  },
+  "variables": [
+    {
+      "name": "DATA_TYPE",
+      "shape": [
+        32
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Data type",
+        "conventions": "Argo reference table 1"
+      }
+    },
+    {
+      "name": "FORMAT_VERSION",
+      "shape": [
+        4
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "File format version"
+      }
+    },
+    {
+      "name": "HANDBOOK_VERSION",
+      "shape": [
+        4
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Data handbook version"
+      }
+    },
+    {
+      "name": "REFERENCE_DATE_TIME",
+      "shape": [
+        14
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Date of reference for Julian days",
+        "conventions": "YYYYMMDDHHMISS"
+      }
+    },
+    {
+      "name": "DATE_CREATION",
+      "shape": [
+        14
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Date of file creation",
+        "conventions": "YYYYMMDDHHMISS"
+      }
+    },
+    {
+      "name": "DATE_UPDATE",
+      "shape": [
+        14
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Date of update of this file",
+        "conventions": "YYYYMMDDHHMISS"
+      }
+    },
+    {
+      "name": "PLATFORM_NUMBER",
+      "shape": [
+        140,
+        8
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Float unique identifier",
+        "conventions": "WMO float identifier : A9IIIII"
+      }
+    },
+    {
+      "name": "PROJECT_NAME",
+      "shape": [
+        140,
+        64
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Name of the project"
+      }
+    },
+    {
+      "name": "PI_NAME",
+      "shape": [
+        140,
+        64
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Name of the principal investigator"
+      }
+    },
+    {
+      "name": "STATION_PARAMETERS",
+      "shape": [
+        140,
+        9,
+        64
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "List of available parameters for the station",
+        "conventions": "Argo reference table 3"
+      }
+    },
+    {
+      "name": "CYCLE_NUMBER",
+      "shape": [
+        140
+      ],
+      "dtype": "int32",
+      "attributes": {
+        "_FillValue": "99999",
+        "long_name": "Float cycle number",
+        "conventions": "0...N, 0 : launch cycle (if exists), 1 : first complete cycle"
+      }
+    },
+    {
+      "name": "DIRECTION",
+      "shape": [
+        140
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Direction of the station profiles",
+        "conventions": "A: ascending profiles, D: descending profiles"
+      }
+    },
+    {
+      "name": "DATA_CENTRE",
+      "shape": [
+        140,
+        2
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Data centre in charge of float data processing",
+        "conventions": "Argo reference table 4"
+      }
+    },
+    {
+      "name": "PARAMETER_DATA_MODE",
+      "shape": [
+        140,
+        9
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Delayed mode or real time data",
+        "conventions": "R : real time; D : delayed mode; A : real time with adjustment"
+      }
+    },
+    {
+      "name": "PLATFORM_TYPE",
+      "shape": [
+        140,
+        32
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Type of float",
+        "conventions": "Argo reference table 23"
+      }
+    },
+    {
+      "name": "FLOAT_SERIAL_NO",
+      "shape": [
+        140,
+        32
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Serial number of the float"
+      }
+    },
+    {
+      "name": "FIRMWARE_VERSION",
+      "shape": [
+        140,
+        32
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Instrument firmware version"
+      }
+    },
+    {
+      "name": "WMO_INST_TYPE",
+      "shape": [
+        140,
+        4
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Coded instrument type",
+        "conventions": "Argo reference table 8"
+      }
+    },
+    {
+      "name": "JULD",
+      "shape": [
+        140
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "_FillValue": "999999.0",
+        "long_name": "Julian day (UTC) of the station relative to REFERENCE_DATE_TIME",
+        "standard_name": "time",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "conventions": "Relative julian days with decimal part (as parts of day)",
+        "axis": "T",
+        "resolution": "1.1574074051168282e-05"
+      }
+    },
+    {
+      "name": "JULD_QC",
+      "shape": [
+        140
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Quality on date and time",
+        "conventions": "Argo reference table 2"
+      }
+    },
+    {
+      "name": "JULD_LOCATION",
+      "shape": [
+        140
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "_FillValue": "999999.0",
+        "long_name": "Julian day (UTC) of the location relative to REFERENCE_DATE_TIME",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "conventions": "Relative julian days with decimal part (as parts of day)",
+        "resolution": "1.1574074051168282e-05"
+      }
+    },
+    {
+      "name": "LATITUDE",
+      "shape": [
+        140
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "_FillValue": "99999.0",
+        "long_name": "Latitude of the station, best estimate",
+        "standard_name": "latitude",
+        "units": "degree_north",
+        "valid_min": "-90.0",
+        "valid_max": "90.0",
+        "axis": "Y"
+      }
+    },
+    {
+      "name": "LONGITUDE",
+      "shape": [
+        140
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "_FillValue": "99999.0",
+        "long_name": "Longitude of the station, best estimate",
+        "standard_name": "longitude",
+        "units": "degree_east",
+        "valid_min": "-180.0",
+        "valid_max": "180.0",
+        "axis": "X"
+      }
+    },
+    {
+      "name": "POSITION_QC",
+      "shape": [
+        140
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Quality on position (latitude and longitude)",
+        "conventions": "Argo reference table 2"
+      }
+    },
+    {
+      "name": "POSITIONING_SYSTEM",
+      "shape": [
+        140,
+        8
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Positioning system"
+      }
+    },
+    {
+      "name": "CONFIG_MISSION_NUMBER",
+      "shape": [
+        140
+      ],
+      "dtype": "int32",
+      "attributes": {
+        "_FillValue": "99999",
+        "long_name": "Unique number denoting the missions performed by the float",
+        "conventions": "1...N, 1 : first complete mission"
+      }
+    },
+    {
+      "name": "PARAMETER",
+      "shape": [
+        140,
+        1,
+        9,
+        64
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "List of parameters with calibration information",
+        "conventions": "Argo reference table 3"
+      }
+    },
+    {
+      "name": "SCIENTIFIC_CALIB_EQUATION",
+      "shape": [
+        140,
+        1,
+        9,
+        256
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Calibration equation for this parameter"
+      }
+    },
+    {
+      "name": "SCIENTIFIC_CALIB_COEFFICIENT",
+      "shape": [
+        140,
+        1,
+        9,
+        256
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Calibration coefficients for this equation"
+      }
+    },
+    {
+      "name": "SCIENTIFIC_CALIB_COMMENT",
+      "shape": [
+        140,
+        1,
+        9,
+        256
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Comment applying to this parameter calibration"
+      }
+    },
+    {
+      "name": "SCIENTIFIC_CALIB_DATE",
+      "shape": [
+        140,
+        1,
+        9,
+        14
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "_FillValue": "b' '",
+        "long_name": "Date of calibration",
+        "conventions": "YYYYMMDDHHMISS"
+      }
+    },
+    {
+      "name": "PROFILE_PRES_QC",
+      "shape": [
+        140
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Global quality flag of PRES profile",
+        "conventions": "Argo reference table 2a",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PROFILE_TEMP_QC",
+      "shape": [
+        140
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Global quality flag of TEMP profile",
+        "conventions": "Argo reference table 2a",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PROFILE_PSAL_QC",
+      "shape": [
+        140
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Global quality flag of PSAL profile",
+        "conventions": "Argo reference table 2a",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PROFILE_DOXY_QC",
+      "shape": [
+        140
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Global quality flag of DOXY profile",
+        "conventions": "Argo reference table 2a",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PROFILE_CHLA_QC",
+      "shape": [
+        140
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Global quality flag of CHLA profile",
+        "conventions": "Argo reference table 2a",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PROFILE_CHLA_FLUORESCENCE_QC",
+      "shape": [
+        140
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Global quality flag of CHLA_FLUORESCENCE profile",
+        "conventions": "Argo reference table 2a",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PROFILE_BBP700_QC",
+      "shape": [
+        140
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Global quality flag of BBP700 profile",
+        "conventions": "Argo reference table 2a",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PROFILE_PH_IN_SITU_TOTAL_QC",
+      "shape": [
+        140
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Global quality flag of PH_IN_SITU_TOTAL profile",
+        "conventions": "Argo reference table 2a",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PROFILE_NITRATE_QC",
+      "shape": [
+        140
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Global quality flag of NITRATE profile",
+        "conventions": "Argo reference table 2a",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PRES",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Sea water pressure, equals 0 at sea-level",
+        "standard_name": "sea_water_pressure",
+        "_FillValue": "99999.0",
+        "units": "decibar",
+        "valid_min": "0.0",
+        "valid_max": "12000.0",
+        "C_format": "%.3f",
+        "FORTRAN_format": "F.3",
+        "resolution": "0.001",
+        "axis": "Z"
+      }
+    },
+    {
+      "name": "PRES_QC",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "quality flag",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PRES_ADJUSTED",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Sea water pressure, equals 0 at sea-level",
+        "standard_name": "sea_water_pressure",
+        "_FillValue": "99999.0",
+        "units": "decibar",
+        "valid_min": "0.0",
+        "valid_max": "12000.0",
+        "C_format": "%.3f",
+        "FORTRAN_format": "F.3",
+        "resolution": "0.001",
+        "axis": "Z"
+      }
+    },
+    {
+      "name": "PRES_ADJUSTED_QC",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "quality flag",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PRES_ADJUSTED_ERROR",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Contains the error on the adjusted values as determined by the delayed mode QC process",
+        "_FillValue": "99999.0",
+        "units": "decibar",
+        "C_format": "%.3f",
+        "FORTRAN_format": "F.3",
+        "resolution": "0.001"
+      }
+    },
+    {
+      "name": "TEMP",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Sea temperature in-situ ITS-90 scale",
+        "standard_name": "sea_water_temperature",
+        "_FillValue": "99999.0",
+        "units": "degree_Celsius",
+        "valid_min": "-2.5",
+        "valid_max": "40.0",
+        "C_format": "%.3f",
+        "FORTRAN_format": "F.3",
+        "resolution": "0.001"
+      }
+    },
+    {
+      "name": "TEMP_QC",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "quality flag",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "TEMP_dPRES",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "TEMP pressure displacement from original sampled value",
+        "_FillValue": "99999.0",
+        "units": "decibar"
+      }
+    },
+    {
+      "name": "TEMP_ADJUSTED",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Sea temperature in-situ ITS-90 scale",
+        "standard_name": "sea_water_temperature",
+        "_FillValue": "99999.0",
+        "units": "degree_Celsius",
+        "valid_min": "-2.5",
+        "valid_max": "40.0",
+        "C_format": "%.3f",
+        "FORTRAN_format": "F.3",
+        "resolution": "0.001"
+      }
+    },
+    {
+      "name": "TEMP_ADJUSTED_QC",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "quality flag",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "TEMP_ADJUSTED_ERROR",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Contains the error on the adjusted values as determined by the delayed mode QC process",
+        "_FillValue": "99999.0",
+        "units": "degree_Celsius",
+        "C_format": "%.3f",
+        "FORTRAN_format": "F.3",
+        "resolution": "0.001"
+      }
+    },
+    {
+      "name": "PSAL",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Practical salinity",
+        "standard_name": "sea_water_salinity",
+        "_FillValue": "99999.0",
+        "units": "psu",
+        "valid_min": "2.0",
+        "valid_max": "41.0",
+        "C_format": "%.4f",
+        "FORTRAN_format": "F.4",
+        "resolution": "1e-04"
+      }
+    },
+    {
+      "name": "PSAL_QC",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "quality flag",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PSAL_dPRES",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "PSAL pressure displacement from original sampled value",
+        "_FillValue": "99999.0",
+        "units": "decibar"
+      }
+    },
+    {
+      "name": "PSAL_ADJUSTED",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Practical salinity",
+        "standard_name": "sea_water_salinity",
+        "_FillValue": "99999.0",
+        "units": "psu",
+        "valid_min": "2.0",
+        "valid_max": "41.0",
+        "C_format": "%.4f",
+        "FORTRAN_format": "F.4",
+        "resolution": "1e-04"
+      }
+    },
+    {
+      "name": "PSAL_ADJUSTED_QC",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "quality flag",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PSAL_ADJUSTED_ERROR",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Contains the error on the adjusted values as determined by the delayed mode QC process",
+        "_FillValue": "99999.0",
+        "units": "psu",
+        "C_format": "%.4f",
+        "FORTRAN_format": "F.4",
+        "resolution": "1e-04"
+      }
+    },
+    {
+      "name": "DOXY",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Dissolved oxygen",
+        "standard_name": "moles_of_oxygen_per_unit_mass_in_sea_water",
+        "_FillValue": "99999.0",
+        "units": "micromole/kg",
+        "valid_min": "-5.0",
+        "valid_max": "600.0",
+        "C_format": "%.3f",
+        "FORTRAN_format": "F.3",
+        "resolution": "0.001"
+      }
+    },
+    {
+      "name": "DOXY_QC",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "quality flag",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "DOXY_dPRES",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "DOXY pressure displacement from original sampled value",
+        "_FillValue": "99999.0",
+        "units": "decibar"
+      }
+    },
+    {
+      "name": "DOXY_ADJUSTED",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Dissolved oxygen",
+        "standard_name": "moles_of_oxygen_per_unit_mass_in_sea_water",
+        "_FillValue": "99999.0",
+        "units": "micromole/kg",
+        "valid_min": "-5.0",
+        "valid_max": "600.0",
+        "C_format": "%.3f",
+        "FORTRAN_format": "F.3",
+        "resolution": "0.001"
+      }
+    },
+    {
+      "name": "DOXY_ADJUSTED_QC",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "quality flag",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "DOXY_ADJUSTED_ERROR",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Contains the error on the adjusted values as determined by the delayed mode QC process",
+        "_FillValue": "99999.0",
+        "units": "micromole/kg",
+        "C_format": "%.3f",
+        "FORTRAN_format": "F.3",
+        "resolution": "0.001"
+      }
+    },
+    {
+      "name": "CHLA",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Chlorophyll-A",
+        "standard_name": "mass_concentration_of_chlorophyll_a_in_sea_water",
+        "_FillValue": "99999.0",
+        "units": "mg/m3",
+        "C_format": "%.4f",
+        "FORTRAN_format": "F.4",
+        "resolution": "0.025"
+      }
+    },
+    {
+      "name": "CHLA_QC",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "quality flag",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "CHLA_dPRES",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "CHLA pressure displacement from original sampled value",
+        "_FillValue": "99999.0",
+        "units": "decibar"
+      }
+    },
+    {
+      "name": "CHLA_ADJUSTED",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Chlorophyll-A",
+        "standard_name": "mass_concentration_of_chlorophyll_a_in_sea_water",
+        "_FillValue": "99999.0",
+        "units": "mg/m3",
+        "C_format": "%.4f",
+        "FORTRAN_format": "F.4",
+        "resolution": "0.025"
+      }
+    },
+    {
+      "name": "CHLA_ADJUSTED_QC",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "quality flag",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "CHLA_ADJUSTED_ERROR",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Contains the error on the adjusted values as determined by the delayed mode QC process",
+        "_FillValue": "99999.0",
+        "units": "mg/m3",
+        "C_format": "%.4f",
+        "FORTRAN_format": "F.4",
+        "resolution": "0.025"
+      }
+    },
+    {
+      "name": "CHLA_FLUORESCENCE",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Chlorophyll fluorescence with factory calibration",
+        "_FillValue": "99999.0",
+        "units": "ru",
+        "valid_min": "-0.2",
+        "valid_max": "100.0",
+        "C_format": "%.4f",
+        "FORTRAN_format": "F.4",
+        "resolution": "0.025"
+      }
+    },
+    {
+      "name": "CHLA_FLUORESCENCE_QC",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "quality flag",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "CHLA_FLUORESCENCE_dPRES",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "CHLA_FLUORESCENCE pressure displacement from original sampled value",
+        "_FillValue": "99999.0",
+        "units": "decibar"
+      }
+    },
+    {
+      "name": "CHLA_FLUORESCENCE_ADJUSTED",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Chlorophyll fluorescence with factory calibration",
+        "_FillValue": "99999.0",
+        "units": "ru",
+        "valid_min": "-0.2",
+        "valid_max": "100.0",
+        "C_format": "%.4f",
+        "FORTRAN_format": "F.4",
+        "resolution": "0.025"
+      }
+    },
+    {
+      "name": "CHLA_FLUORESCENCE_ADJUSTED_QC",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "quality flag",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "CHLA_FLUORESCENCE_ADJUSTED_ERROR",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Contains the error on the adjusted values as determined by the delayed mode QC process",
+        "_FillValue": "99999.0",
+        "units": "ru",
+        "C_format": "%.4f",
+        "FORTRAN_format": "F.4",
+        "resolution": "0.025"
+      }
+    },
+    {
+      "name": "BBP700",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Particle backscattering at 700 nanometers",
+        "_FillValue": "99999.0",
+        "units": "m-1",
+        "C_format": "%.7f",
+        "FORTRAN_format": "F.7",
+        "resolution": "1e-07"
+      }
+    },
+    {
+      "name": "BBP700_QC",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "quality flag",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "BBP700_dPRES",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "BBP700 pressure displacement from original sampled value",
+        "_FillValue": "99999.0",
+        "units": "decibar"
+      }
+    },
+    {
+      "name": "BBP700_ADJUSTED",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Particle backscattering at 700 nanometers",
+        "_FillValue": "99999.0",
+        "units": "m-1",
+        "C_format": "%.7f",
+        "FORTRAN_format": "F.7",
+        "resolution": "1e-07"
+      }
+    },
+    {
+      "name": "BBP700_ADJUSTED_QC",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "quality flag",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "BBP700_ADJUSTED_ERROR",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Contains the error on the adjusted values as determined by the delayed mode QC process",
+        "_FillValue": "99999.0",
+        "units": "m-1",
+        "C_format": "%.7f",
+        "FORTRAN_format": "F.7",
+        "resolution": "1e-07"
+      }
+    },
+    {
+      "name": "PH_IN_SITU_TOTAL",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "pH",
+        "standard_name": "sea_water_ph_reported_on_total_scale",
+        "_FillValue": "99999.0",
+        "units": "dimensionless",
+        "C_format": "%.4f",
+        "FORTRAN_format": "F.4",
+        "resolution": "1e-04"
+      }
+    },
+    {
+      "name": "PH_IN_SITU_TOTAL_QC",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "quality flag",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PH_IN_SITU_TOTAL_dPRES",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "PH_IN_SITU_TOTAL pressure displacement from original sampled value",
+        "_FillValue": "99999.0",
+        "units": "decibar"
+      }
+    },
+    {
+      "name": "PH_IN_SITU_TOTAL_ADJUSTED",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "pH",
+        "standard_name": "sea_water_ph_reported_on_total_scale",
+        "_FillValue": "99999.0",
+        "units": "dimensionless",
+        "C_format": "%.4f",
+        "FORTRAN_format": "F.4",
+        "resolution": "1e-04"
+      }
+    },
+    {
+      "name": "PH_IN_SITU_TOTAL_ADJUSTED_QC",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "quality flag",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PH_IN_SITU_TOTAL_ADJUSTED_ERROR",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Contains the error on the adjusted values as determined by the delayed mode QC process",
+        "_FillValue": "99999.0",
+        "units": "dimensionless",
+        "C_format": "%.4f",
+        "FORTRAN_format": "F.4",
+        "resolution": "1e-04"
+      }
+    },
+    {
+      "name": "NITRATE",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Nitrate",
+        "standard_name": "moles_of_nitrate_per_unit_mass_in_sea_water",
+        "_FillValue": "99999.0",
+        "units": "micromole/kg",
+        "C_format": "%.3f",
+        "FORTRAN_format": "F.3",
+        "resolution": "0.001"
+      }
+    },
+    {
+      "name": "NITRATE_QC",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "quality flag",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "NITRATE_dPRES",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "NITRATE pressure displacement from original sampled value",
+        "_FillValue": "99999.0",
+        "units": "decibar"
+      }
+    },
+    {
+      "name": "NITRATE_ADJUSTED",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Nitrate",
+        "standard_name": "moles_of_nitrate_per_unit_mass_in_sea_water",
+        "_FillValue": "99999.0",
+        "units": "micromole/kg",
+        "C_format": "%.3f",
+        "FORTRAN_format": "F.3",
+        "resolution": "0.001"
+      }
+    },
+    {
+      "name": "NITRATE_ADJUSTED_QC",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "quality flag",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "NITRATE_ADJUSTED_ERROR",
+      "shape": [
+        140,
+        560
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "long_name": "Contains the error on the adjusted values as determined by the delayed mode QC process",
+        "_FillValue": "99999.0",
+        "units": "micromole/kg",
+        "C_format": "%.3f",
+        "FORTRAN_format": "F.3",
+        "resolution": "0.001"
+      }
+    }
+  ],
+  "attributes": {
+    "title": "Argo float vertical profile",
+    "institution": "AOML",
+    "source": "Argo float",
+    "history": "2026-07-24T02:08:01Z creation (software version 1.22 (version 12.05.2025 for ARGO_simplified_profile))",
+    "references": "http://www.argodatamgt.org/Documentation",
+    "user_manual_version": "1.0",
+    "Conventions": "Argo-3.1 CF-1.6",
+    "featureType": "trajectoryProfile",
+    "software_version": "1.22 (version 12.05.2025 for ARGO_simplified_profile)",
+    "id": "https://doi.org/10.17882/42182"
+  },
+  "path": "raw/5906486/5906486_Sprof.nc",
+  "scenario_id": "47_ocean_argo_biogeochemistry",
+  "verified_utc": "2026-09-14T16:02:55.066913+00:00",
+  "status": "pass"
+}

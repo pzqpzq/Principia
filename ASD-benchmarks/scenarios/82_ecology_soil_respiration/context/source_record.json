@@ -1,0 +1,272 @@
+{
+  "created": "2025-11-20T07:34:20.188707+00:00",
+  "modified": "2025-11-20T07:34:20.505141+00:00",
+  "id": 17519671,
+  "conceptrecid": "17519670",
+  "doi": "10.5281/zenodo.17519671",
+  "conceptdoi": "10.5281/zenodo.17519670",
+  "doi_url": "https://doi.org/10.5281/zenodo.17519671",
+  "metadata": {
+    "title": "Soil respiration dataset for European forest sites evaluating holistic management practices",
+    "doi": "10.5281/zenodo.17519671",
+    "publication_date": "2025-11-04",
+    "description": "<p><span lang=\"EN-US\">Data file \"holisoils_soil respiration dataset.csv\" of forest soil respiration, soil and undestory respiration, soil temperature and volumetric water content from European forest sites collected during 2021-2025.&nbsp; Readme file and the short description of sites treatments and ids of the plot are below. File outline of sites/subsite/treatments/point types/point codes is in file \"holisoils_data_structure.csv\".</span></p>\n<h1><span lang=\"EN-US\"><strong>Dataset&nbsp; readme file description:</strong></span></h1>\n<p><span lang=\"EN-US\">siteid: site name<br>country: country where site is located<br>date: date of measurement<br>subsiteid: site specific categorisation of treatment<br>point: site specific categorization of measurement points<br>ci: respiration slope parameter confidence interval<br>flux: respiration flux in g CO2/m2/h<br>slope: respiration fitted slope parameter<br>intc: respiration fitted intercept parameter<br>trim_head: respiration timeseries trimming from the beginning in seconds<br>trim_tail: respiration timeseries trimming from the end in seconds<br>area: soil area covered by chamber or collar in dm^2<br>volume: chamber + collar volume in dm^3<br>airtemp: air temperature (&deg;C)<br>tsmoisture: soil moisture SWC %<br>t05: soil temperature at 5cm depth (&deg;C)<br>t10: soil temperature at 10cm depth (&deg;C)<br>t30: soil temperature at 30cm depth (&deg;C)<br>treatment: generalised primary treatment across dataset<br>2nd_treatment: generalised secondary treatment across dataset<br>details: details of the generalised treatments when applicable<br>trenched: trenching treatment (True/False); true = trenching technique was applied to remove autotrophic signal of tree roots from total forest floor respiration</span></p>\n<h1><span lang=\"EN-US\"><strong>Description of study sites:</strong></span></h1>\n<h1><span lang=\"EN-US\">R&auml;nsk&auml;l&auml;nkorpi, Finland</span></h1>\n<p><span lang=\"EN-US\">The study was conducted at &lsquo;R&auml;nsk&auml;l&auml;nkorpi&rsquo; study site, which is a mature forestry-drained boreal peatland forest dominated by Norway Spruce and located in southern Finland (61&deg;11'N, 25&deg;16'E, 144 m a.s.l.). Two harvesting methods clearcutting (CC) and continuous-cover forestry with selection harvesting (CCF, 57% of basal area removed) were compared to a non-harvested control (C). Harvesting was conducted during March to June 2021.</span></p>\n<p><span lang=\"EN-US\">Manual chamber-based measurements of carbon dioxide (CO₂) from the soil were conducted biweekly between May and November during the period 2020-2024 in different locations within the C, CC, and CCF sites using different portable gas analysers (Licor-7810).</span></p>\n<p><span lang=\"EN-US\">Soil Temperature (Tsoil) soil temperature was measured using soil sensors (e.g., thermocouples) placed at 5cm depths. Water Table (WT) were monitored regularly across the sites, likely using manual dip wells or pressure transducers installed in the peat soil. Soil moisture was measured with a portable time-domain reflectometry (TDR) device (Delta-T Devices, ML2 Theta Probes).</span></p>\n<h1><span lang=\"EN-US\">Karstula, Finland</span></h1>\n<p><span lang=\"EN-US\">The study was conducted in a 62-year-old Scots pine (Pinus sylvestris) stand located in central Finland (62&deg;54&prime;43.343&Prime; N; 24&deg;34&prime;16.021&Prime; E), on sandy loam soil with well-drained conditions. The site features typical boreal understory vegetation dominated by ericoid species such as Vaccinium vitis-idaea, Vaccinium myrtillus, Empetrum nigrum, and Calluna vulgaris.</span></p>\n<p><span lang=\"EN-US\">A factorial fertilization experiment was initiated in 1959, comprising eight treatments: Control (CTRL), Ca, N, P, Ca+N, Ca+P, N+P, and Ca+N+P, replicated across three blocks (n = 24). Nitrogen fertilization was applied seven times between 1960 and 2020, totaling 1102 kg ha⁻&sup1;, using various fertilizer types including ammonium sulfate, urea, calcium nitrate, and saltpeter.</span></p>\n<p><span lang=\"EN-US\">Manual chamber-based measurements of carbon dioxide (CO₂) fluxes were conducted biweekly during the growing seasons of 2021&ndash;2023 using a 21.7 L dynamic chamber connected to LI-COR LI-7810 trace gas analyzers. Root exclusion trenching (1 &times; 2 m areas) was used to isolate heterotrophic respiration (Rh) from autotrophic sources. Measurements were taken from 12 plots (six per treatment).</span></p>\n<p><span lang=\"EN-US\">Soil Temperature (Tsoil) and Soil Moisture were continuously monitored at 5 cm depth using Soil Scout Oy sensors, recording data every 15 minutes since June 2021. These data were matched with gas flux measurements by timestamp.</span></p>\n<h1><span lang=\"EN-US\">Dobroc, Slovakia</span></h1>\n<p><span lang=\"EN-US\">The study was conducted at two adjacent forest sites (950 m a.s.l.) on deep Dystric Cambisol soils in the Veporske Mts. in central Slovakia. One site was a mixed-species stand located in the buffer zone of the Dobroc primary forest (declared a nature reserve in 1913), and the other was a Norway spruce monoculture planted approximately 70 years ago and managed through thinning. The study aimed to assess the roles of drought and disturbance in carbon sequestration and methane oxidation, focusing on long-term tree growth trends and soil GHG fluxes.</span></p>\n<p><span lang=\"EN-US\">Manual chamber-based measurements of carbon dioxide (CO₂) and methane (CH₄) fluxes from the soil were conducted biweekly since August 2021 using the LI-COR LI-7810 CH₄/CO₂/H₂O Trace Gas Analyzer. A root exclusion method was applied to separate heterotrophic (Rh) and autotrophic (Ra) respiration and quantify their contributions to total soil respiration (Rt).</span></p>\n<p><span lang=\"EN-US\">Soil Temperature (Tsoil) and soil water content was measured during chamber sampling campaigns, using soil temperature probes at standard depths.</span></p>\n<p>Soil Moisture, soil temperature and soil water potential were continually monitored inside and outside four trenching plots (two in each forest type) using Microlog V3A and Microlog SP3 from EMS Brno Ltd.</p>\n<h1><span lang=\"EN-US\">Germany</span></h1>\n<p><span lang=\"EN-US\">The study was conducted in mature Norway spruce (<em>Picea abies</em>) stands and mixed stands of Norway spruce and European beech (<em>Fagus sylvatica</em>) in Bavaria, Central Europe across <strong>three sites: Kranzberg, Kelheim, Wasserburg</strong>. The research focused on the effects of a precipitation gradient and tree mixture vs. monoculture on soil respiration and forest ecosystem responses. Sites were located along a gradient of low (385 mm, Kelheim) to medium (480 mm, Kranzberg) and high (640 mm, Wasserburg) precipitation during the vegetation period. Kranzberg has spruce stands on cambisol-luvisol soil, Wasserburg and Kelheim each have spruce and mixed stands on cambisol-luvisol and fusca-cambisol, respectively. Adjacent to Kranzberg is the long term drought legacy &ldquo;Kranzberg roof experiment&rdquo; with additional long-term measurements incl. soil respiration but different data structure, with data available upon request from site&rsquo;s data managers (Fabian Weikl, Florian Wilms, Karin Pritsch). &nbsp;</span></p>\n<p><span lang=\"EN-US\"><br>Manual chamber-based measurements of carbon dioxide (CO₂) were conducted biweekly with LI-COR LI-7810 during the vegetation periods of 2022 and 2023, (and monthly since autumn 2022 for drought legacy plots). Measurements included total soil respiration (Rs) and heterotrophic respiration (Rh).</span></p>\n<p><span lang=\"EN-US\"><br>Soil Temperature (Tsoil) and Soil Moisture were continuously recorded at all sites using automated sensors, allowing for detailed monitoring of environmental conditions across the precipitation gradient.<br></span></p>\n<p>&nbsp;</p>\n<h1><span lang=\"EN-US\">Netherlands</span></h1>\n<p><span lang=\"EN-US\">The study was conducted in Scots pine (<em>Pinus sylvestris</em>) monoculture forests located on poor sandy soils across <span lang=\"en-US\"><strong>three sites:</strong>&nbsp;<strong>Kroondomein&nbsp;</strong>(</span>52&deg; 12' 18.17\" N, 5&deg; 51' 54.47\" E<span lang=\"en-US\">)</span><strong><span lang=\"en-US\">, Zwolse Bos&nbsp;</span></strong><span lang=\"en-US\">(</span>52&deg; 25&prime; 14.41&Prime; N, 6&deg; 2&prime; 3.67&Prime; E<span lang=\"en-US\">)</span><strong><span lang=\"en-US\">, and National Park Hoge Veluwe&nbsp;</span></strong><span lang=\"en-US\">(</span>52&deg; 5' 24.0\" N, 5&deg; 48' 14.7\" E<span lang=\"en-US\">). </span>These forests were planted between 1968 and 1975 and feature understorey vegetation such as <em>Vaccinium myrtillus</em>, <em>Deschampsia flexuosa,</em> and mosses. Four forest management treatments were applied at each site in February&ndash;March 2019 as part of the Dutch Climate-Smart-Forestry project: Control (CTR), High-thinning (HT, ~20% BA reduction), Shelterwood (SW, ~80% BA reduction),&nbsp; and Clearcut (CC, 100% BA reduction), representing increasing felling intensity.</span></p>\n<p><span lang=\"EN-US\">Manual chamber-based measurements of carbon dioxide (CO₂) fluxes were conducted biweekly from May 2022 to September 2024 using the EGM-5 analyzer with a soil respiration chamber (SRC-2). A root exclusion trenching method was used to separate heterotrophic respiration from total soil respiration.</span></p>\n<p><span lang=\"EN-US\">Soil Temperature (Tsoil) and Soil Moisture were continuously recorded every 15 minutes using TOMST TMS-4 microclimate loggers installed at each treatment site.</span></p>\n<h1><span lang=\"EN-US\">St. Mitre, France</span></h1>\n<p><span lang=\"EN-US\">The study was conducted in a naturally established 60&ndash;70-year-old <em>Pinus halepensis</em> forest located in Southeast France (43&deg;3&rsquo;N; 5&deg;2&rsquo;E, 130 m a.s.l.). The site features calcareous, silty-sandy soils with an average depth of 60 cm and a Mediterranean climate characterized by hot, dry summers and mild winters. The forest understory is dominated by shrubs such as <em>Quercus ilex, Quercus coccifera</em>, and <em>Cistus albidus</em>.</span></p>\n<p><span lang=\"EN-US\">Five forest management treatments were applied: &nbsp;Control (C) &ndash; no thinning, no shrub removal; Moderate thinning with shrubs (M+); Moderate thinning without shrubs (M&minus;); Intense thinning with shrubs (I+); Intense thinning without shrubs (I&minus;). Thinning was implemented in 2007, and shrub removal began in 2016 and was repeated annually in winter to prevent regrowth.</span></p>\n<p><span lang=\"EN-US\">Manual chamber-based measurements of carbon dioxide (CO₂) emissions were conducted with EGM5 (PP Systems) analyzer with a soil respiration chamber (SRC-2). </span></p>\n<p><span lang=\"EN-US\">A root&nbsp;exclusion trenching method was also used to separate heterotrophic&nbsp;respiration from total soil respiration.<br></span></p>\n<p><span lang=\"EN-US\">Soil Temperature (Tsoil) and Soil Moisture were continuously recorded&nbsp;every 15 minutes using TOMST TMS-4 microclimate loggers installed at&nbsp;each treatment site.</span></p>\n<h1><span lang=\"EN-US\">St. Christol, France</span></h1>\n<p><span lang=\"EN-US\">The study was conducted in a deciduous oak forest dominated by <em>Quercus pubescens</em>, located in southern France (44&deg;02'58.0\"N; 5&deg;32'35.8\"E). The site features a Mediterranean climate (Csa) and Calcisol soils. Tree density averaged 1472 trees ha⁻&sup1;. The forest includes scattered <em>Pinus sylvestris, Torminalis glaberrima</em>, and <em>Castanea sativa</em>, with an understory of grasses and shrubs such as <em>Juniperus communis</em> and C<em>ytisus scoparius</em>.</span></p>\n<p><span lang=\"EN-US\">A canopy disturbance and slash management experiment was established in April 2022, with the same five treatments as in Gamiz, replicated across four blocks and monitored using 2-meter transects, for a total of&nbsp;40 plots.</span></p>\n<p><span lang=\"EN-US\">Manual chamber-based measurements of CO₂ fluxes were conducted monthly starting in February 2023 using the EGM-5 analyzer with a soil respiration chamber (SRC-2).</span></p>\n<p>Soil Temperature (Tsoil) and Soil Moisture&nbsp;were continuously recorded every 15 minutes using TOMST TMS-4&nbsp;microclimate loggers installed at each treatment site.</p>\n<h1><span lang=\"EN-US\">Solsona, Spain</span></h1>\n<p><span lang=\"EN-US\">The study was conducted in sub-Mediterranean black pine (<em>Pinus nigra subsp. salzmannii</em>) forests located in the southern foothills of the eastern Pre-Pyrenees, across <strong>two sites:</strong> <strong>Llobera (41&ordm;57'09\"N, 1&ordm;27'57\"E) and Secanella (41&ordm;56'15\"N, 1&ordm;26'06\"E). </strong></span><span lang=\"EN-US\">The research aimed to assess the impact of forest management strategies on soil carbon (C) stocks and dynamics, with a focus on increasing forest resistance and resilience to drought and reducing wildfire risk.</span></p>\n<p><span lang=\"EN-US\">Five forest management treatments were applied: Control (Cont) &ndash; no thinning or debris management; Light thinning with no burning (LthNB); Light thinning with prescribed burning (LthPB); Heavy thinning with no burning (HthNB); Heavy thinning with prescribed burning (HthPB).</span></p>\n<p><span lang=\"EN-US\">Thinning reduced basal area by 10% (light) or 40% (heavy), and prescribed burning was used to manage slash debris. Treatments were implemented between 2015 and 2017.</span></p>\n<p><span lang=\"EN-US\">Manual chamber-based measurements of carbon dioxide (CO₂) fluxes were conducted using the EGM-5 analyzer (PP Systems) with a soil respiration chamber (SRC-2). Measurements were taken inside and outside root-exclusion trenching areas from spring 2022 to summer 2024, with 28 sampling events per site.</span></p>\n<p><span lang=\"EN-US\">Soil Temperature (Tsoil) and Soil Moisture were continuously monitored using TOMST TMS-4 dataloggers and sensors, installed inside and outside one trenching area per treatment.</span></p>\n<p><span lang=\"EN-US\">&nbsp;</span></p>\n<h1>Gamiz, Spain</h1>\n<p>The study was conducted in a deciduous oak forest dominated by <em>Quercus faginea</em>, located in northern Spain (42&deg;49'2.32\"N; 2&deg;37'10.67\"W) at 580 m a.s.l. The site has an oceanic climate (Cfb) with approximately 750 mm of annual precipitation and an average temperature of 12&deg;C. The soil is classified as Luvisol with a clay loam texture. The forest includes scattered Acer campestris and Fraxinus excelsior, with an understory dominated by Crataegus monogyna, Juniperus communis, and Viburnum lantana.<br>A canopy disturbance and slash management experiment was established in October 2021, with five treatments replicated in four blocks: Control; CD50+Slash &ndash; 50% canopy removal with added harvest residuals; CD50&minus;Slash &ndash; 50% removal with residuals removed; CD100+Slash &ndash; 100% removal with residuals added;.CD100&minus;Slash &ndash; 100% removal with residuals removed</p>\n<p><br>Each treatment included two monitoring plots with 2-meter transects.</p>\n<p>Manual chamber-based measurements of CO₂ fluxes were conducted monthly starting in November 2021 using the EGM-5 analyzer with a soil respiration chamber (SRC-2, 1536 cm&sup3;).</p>\n<h1><span lang=\"EN-US\">Dumbrăvița, Romania<br></span></h1>\n<p><span lang=\"EN-US\">The study was conducted in a monodominant <em>Quercus robur</em> forest located in central Romania (45&deg;46'10.0\"N; 25&deg;28'26.0\"E) at 544 m a.s.l. The site has a humid continental climate (Dfb) with 590 mm annual precipitation and an average temperature of 7.3&deg;C. The soil is classified as Luvisol, and the understory is primarily composed of grasses. Tree density averaged 126 trees ha⁻&sup1;.</span></p>\n<p><span lang=\"EN-US\"><br>A canopy disturbance and slash management experiment was established in March 2022, with the same five treatments as in Gamiz and St. Christol, replicated across four blocks and monitored using 2-meter transects.</span></p>\n<p><span lang=\"EN-US\"><br>Manual chamber-based measurements of CO₂ fluxes were conducted monthly starting in May 2022 using the EGM-5 analyzer with a soil respiration chamber (SRC-2, 1447 cm&sup3;).</span></p>\n<p>&nbsp;</p>\n<h1><span lang=\"EN-US\">Kačerginė, Lithuania</span></h1>\n<p><span lang=\"EN-US\">The study was conducted in a first-generation Scots pine (Pinus sylvestris L.) stand located in Kačerginė forest, central Lithuania (54&deg;55&acute;N, 23&deg;43&acute;E), on sandy limnoglacial soils classified as Haplic Arenosol. The forest represents a typical Pinetum vacciniosum site, with ground vegetation dominated by mosses (Pleurozium schreberi, Dicranum spp., Hylocomium splendens) and grasses (Festuca ovina, Calluna vulgaris).&nbsp;A wood ash and nitrogen fertilization experiment was initiated in 2002 as part of the Wood-En-Man project, with Scots pine planted in 1964. In 2022, seven plots were selected for evaluating the long-term impact of nitrogen fertilization: N treatment (N) &ndash; 3 plots received 180 kg ha⁻&sup1; of ammonium nitrate; Control (C) &ndash; 3 untreated plots; Clearcut (CC) &ndash; 1 plot clearcut in 2018.</span></p>\n<p><span lang=\"EN-US\"><br>Manual chamber-based measurements of carbon dioxide (CO₂) fluxes were conducted with LICOR biweekly during the vegetative seasons of 2023 and 2024 to assess forest floor and microbial soil respiration. A trenching technique was used to separate autotrophic respiration (Ra) from total respiration (Rtot) and to quantify heterotrophic respiration (Rh). S</span><span lang=\"EN-US\">oil Temperature (Tsoil) and Soil Moisture were measured alongside CO₂ fluxes during the same biweekly campaign.<br></span></p>\n<p>&nbsp;</p>\n<h1><span lang=\"EN-US\">Rincondelbatovi, Uruguay</span></h1>\n<p><span lang=\"en-US\">The study was conducted in northern Uruguay at an experimental area established in August 2022 as part of the HoliSoils project (<strong>31&deg;55&rsquo;21.90&rsquo;&rsquo;S56&deg;00&rsquo;00.00&rsquo;&rsquo;W</strong>). The research aimed to assess the impact of Eucalyptus afforestation on sandy soils previously used for grazing, focusing on changes in soil carbon sequestration, respiration, and microbial activity. The area included a 30-year-old&nbsp;<em>Eucalyptus grandis</em>&nbsp;and&nbsp;<em>Eucalyptus dunnii</em>&nbsp;plantation (third rotation, planted in 2017) and adjacent native grassland.</span></p>\n<p><span lang=\"en-US\">Three vegetation levels were studied at the afforested site: Native pasture (CN); Forestation inside tree rows (Fin); Forestation between tree rows (Fbt)</span></p>\n<p><span lang=\"en-US\">Each level was replicated four times.</span></p>\n<p><span lang=\"en-US\">Manual chamber-based measurements of carbon dioxide (CO₂) fluxes were conducted biweekly from January 2023 until December 2024, using a LI-COR LI-870 CO₂/H₂O analyzer with a Smart Chamber. A trenching experiment was used to separate heterotrophic (Rh) and autotrophic (Ra) respiration components.</span></p>\n<p><span lang=\"en-US\">Soil Temperature (Tsoil) and Soil Moisture were monitored concurrently with CO₂ flux measurements. Additionally, soil samples (0&ndash;10 cm depth) were collected every six months starting in March 2023 to analyze physical, chemical, and biological properties, including SOC, pH, bulk density, nutrient concentrations, and microbial activity.</span></p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Lehtonen, Aleksi",
+        "affiliation": "Natural Resources Institute Finland",
+        "orcid": "0000-0003-1388-0388"
+      },
+      {
+        "name": "Mäkipää, Raisa",
+        "affiliation": "Natural Resources Institute Finland",
+        "orcid": "0000-0003-3146-4425"
+      },
+      {
+        "name": "Menichetti, Lorenzo",
+        "affiliation": "LUKE",
+        "orcid": "0000-0001-9524-9762"
+      },
+      {
+        "name": "Anttila, Jani",
+        "affiliation": "Natural Resources Institute Finland",
+        "orcid": "0000-0002-2102-1930"
+      },
+      {
+        "name": "Kupila, Taavi",
+        "affiliation": "Natural Resources Institute Finland",
+        "orcid": "0009-0001-6301-486X"
+      },
+      {
+        "name": "Tupek, Boris",
+        "affiliation": "Natural Resources Institute Finland",
+        "orcid": "0000-0003-3466-0237"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Salovaara, Petri Oskari",
+        "affiliation": "Natural Resources Institute Finland",
+        "type": "DataManager",
+        "orcid": "0009-0002-9770-3484"
+      },
+      {
+        "name": "Peltoniemi, Mikko",
+        "affiliation": "Natural Resources Institute Finland (Luke)",
+        "type": "DataManager",
+        "orcid": "0000-0003-2028-6969"
+      },
+      {
+        "name": "Bosela, Michal",
+        "affiliation": "Technická univerzita vo Zvolene",
+        "type": "DataManager",
+        "orcid": "0000-0001-6706-8614"
+      },
+      {
+        "name": "Filipek, Sara",
+        "affiliation": "Wageningen Environmental Research",
+        "type": "DataManager",
+        "orcid": "0000-0002-8869-5876"
+      },
+      {
+        "name": "Santonja, Mathieu",
+        "affiliation": "Aix-Marseille Université",
+        "type": "DataManager",
+        "orcid": "0000-0002-6322-6352"
+      },
+      {
+        "name": "Sterck, Frank",
+        "affiliation": "Wageningen University & Research",
+        "type": "DataManager",
+        "orcid": "0000-0001-7559-6572"
+      },
+      {
+        "name": "Weikl, Fabian Christopher",
+        "affiliation": "Technical University of Munich",
+        "type": "DataManager",
+        "orcid": "0000-0003-3973-6341"
+      },
+      {
+        "name": "Wilms, Florian",
+        "affiliation": "Technical University of Munich",
+        "type": "DataManager",
+        "orcid": "0009-0008-9751-7298"
+      },
+      {
+        "name": "Pritsch, Karin",
+        "affiliation": "Technical University of Munich",
+        "type": "DataManager",
+        "orcid": "0000-0001-6384-2473"
+      },
+      {
+        "name": "Casals, Pere",
+        "affiliation": "Centre de Ciència i Tecnologia Forestal de Catalunya",
+        "type": "DataManager",
+        "orcid": "0000-0002-0372-988X"
+      },
+      {
+        "name": "Curiel Yuste, Jorge",
+        "affiliation": "Ikerbasque",
+        "type": "DataManager",
+        "orcid": "0000-0002-3221-6960"
+      },
+      {
+        "name": "Garcia-Pausas, Jordi",
+        "affiliation": "Centre de Ciència i Tecnologia Forestal de Catalunya (CTFC)",
+        "type": "DataManager",
+        "orcid": "0000-0003-2727-3167"
+      },
+      {
+        "name": "Petritan, Ion Catalin",
+        "affiliation": "Universitatea Transilvania din Brasov Facultatea de Silvicultură şi Exploatări Forestiere",
+        "type": "DataManager",
+        "orcid": "0000-0001-6037-1717"
+      },
+      {
+        "name": "Aleinikovienė, Jūratė",
+        "affiliation": "Vytautas Magnus University",
+        "type": "DataManager",
+        "orcid": "0000-0003-4014-9507"
+      },
+      {
+        "name": "Van den Abbeele, Martin",
+        "affiliation": "Instituto Nacional de Investigación Agropecuaria",
+        "type": "DataManager",
+        "orcid": "0009-0005-0943-6593"
+      }
+    ],
+    "keywords": [
+      "soil respiration, temperature, volumetric soil water content, European forests, managements"
+    ],
+    "version": "version 1",
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "grants": [
+      {
+        "code": "101000289",
+        "internal_id": "10.13039/501100000780::101000289",
+        "funder": {
+          "name": "European Commission",
+          "doi": "10.13039/501100000780",
+          "acronym": "EC"
+        },
+        "title": "Holistic management practices, modelling and monitoring for European forest soils",
+        "acronym": "HoliSoils",
+        "program": "H2020-EU.3.2.",
+        "url": "https://cordis.europa.eu/projects/101000289"
+      }
+    ],
+    "communities": [
+      {
+        "id": "eu"
+      },
+      {
+        "id": "holisoils"
+      }
+    ],
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "17519670"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Soil respiration dataset for European forest sites evaluating holistic management practices",
+  "links": {
+    "self": "https://zenodo.org/api/records/17519671",
+    "self_html": "https://zenodo.org/records/17519671",
+    "preview_html": "https://zenodo.org/records/17519671?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.17519671",
+    "self_doi": "https://doi.org/10.5281/zenodo.17519671",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.17519671",
+    "reserve_doi": "https://zenodo.org/api/records/17519671/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/17519670",
+    "parent_html": "https://zenodo.org/records/17519670",
+    "parent_doi": "https://doi.org/10.5281/zenodo.17519670",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.17519670",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:17519671/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:17519671/sequence/default",
+    "files": "https://zenodo.org/api/records/17519671/files",
+    "media_files": "https://zenodo.org/api/records/17519671/media-files",
+    "archive": "https://zenodo.org/api/records/17519671/files-archive",
+    "archive_media": "https://zenodo.org/api/records/17519671/media-files-archive",
+    "latest": "https://zenodo.org/api/records/17519671/versions/latest",
+    "latest_html": "https://zenodo.org/records/17519671/latest",
+    "versions": "https://zenodo.org/api/records/17519671/versions",
+    "draft": "https://zenodo.org/api/records/17519671/draft",
+    "access_links": "https://zenodo.org/api/records/17519671/access/links",
+    "access_grants": "https://zenodo.org/api/records/17519671/access/grants",
+    "access_users": "https://zenodo.org/api/records/17519671/access/users",
+    "access_request": "https://zenodo.org/api/records/17519671/access/request",
+    "access": "https://zenodo.org/api/records/17519671/access",
+    "communities": "https://zenodo.org/api/records/17519671/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/17519671/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/17519671/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/17519671/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/17519671/quota-increase",
+    "requests": "https://zenodo.org/api/records/17519671/requests"
+  },
+  "updated": "2025-11-20T07:34:20.505141+00:00",
+  "recid": "17519671",
+  "revision": 4,
+  "files": [
+    {
+      "id": "1d6468fe-9111-4590-a726-63940a9395bd",
+      "key": "wp4_data_check_rcode.txt",
+      "size": 6164,
+      "checksum": "md5:8862ee39ab521c51bd54c0e27331c0fb",
+      "links": {
+        "self": "https://zenodo.org/api/records/17519671/files/wp4_data_check_rcode.txt/content"
+      }
+    },
+    {
+      "id": "306f5d78-097b-496e-b231-275a6d443dd8",
+      "key": "holisoils_soil_respiration_dataset.csv",
+      "size": 11215296,
+      "checksum": "md5:73021f0cdd62b54694782466e6ffce2b",
+      "links": {
+        "self": "https://zenodo.org/api/records/17519671/files/holisoils_soil_respiration_dataset.csv/content"
+      }
+    },
+    {
+      "id": "f431d174-d716-4656-9f39-c5f7409b6943",
+      "key": "holisois_data_structure.csv",
+      "size": 19595,
+      "checksum": "md5:b01b89b8055b2c8bf4354864b2a195d5",
+      "links": {
+        "self": "https://zenodo.org/api/records/17519671/files/holisois_data_structure.csv/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "437270"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 450,
+    "unique_downloads": 381,
+    "views": 298,
+    "unique_views": 273,
+    "version_downloads": 450,
+    "version_unique_downloads": 381,
+    "version_unique_views": 273,
+    "version_views": 298
+  },
+  "state": "done",
+  "submitted": true
+}

@@ -1,0 +1,403 @@
+{
+  "case_id": "P100-074",
+  "case_revision": 1,
+  "scenario_id": "74_biochemistry_kinase_biosensors",
+  "title": "Dataset from \"A triangulenum-based biosensor platform for mapping kinase activity in T cells\"",
+  "domain": "Biochemical sensing",
+  "question": "How do reaction conditions influence biosensor kinetics and fluorescence response across independent experiments?",
+  "data_origin": "measured_or_observed",
+  "source_version": "18911385",
+  "source_url": "https://zenodo.org/records/18911385",
+  "identifiers": [
+    "10.5281/zenodo.18911385"
+  ],
+  "publisher": "Orte, Angel (Universidad de Granada); GONZALEZ VERA, JUAN ANTONIO (Universidad de Granada); Salto-Giron, Carmen (Universidad de Granada)",
+  "release_date": "2026-03-08",
+  "measurement_dates": "Campaign dates unknown; March 2026 deposit.",
+  "variables_and_units": "fluorescence, spectra, reaction kinetics and TIFF images",
+  "independent_units": "independent experiments, enzyme and dose conditions",
+  "validation_design": "independent experiments, enzyme and dose conditions Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Kinetic/spectral CSVs and TIFF images; published analyses include standard Michaelis–Menten fits.",
+  "prior_analysis_and_limits": "Hold out biological/experimental replicate and complete dose conditions. Pixels or successive time samples are not independent experiments. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/Fig_S5A.csv",
+      "structure": {
+        "header": [
+          "Ext + Buffer",
+          "3.87651536509727E-4",
+          "1.76205243868058E-4"
+        ],
+        "data_records": 7,
+        "first_lines": [
+          "Ext + Buffer,3.87651536509727E-4,1.76205243868058E-4",
+          "Ext + Das 100 nM + Buffer,2.93675406446763E-4,2.5139712619858E-4",
+          "Src-OH,0.351787895874448,0.045195646277588",
+          "Src-OH + Ext,1,0.0180895430601969",
+          "Src-OH + Ext + Das 25 nM,0.346090592989381,0.00329201616287718",
+          "Src-OH + Ext + Das 50 nM,0.364251480124048,0.011282677369198",
+          "Src-OH + Ext + Das 100 nM,0.389801240484917,0.019887590976291",
+          "Src-OH + Ext + Das 200 nM,0.33908937129969,0.0171548512268974"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Fig_5A.csv",
+      "structure": {
+        "header": [
+          "Ext + Das 100 nM + Buffer",
+          "2.93675406446763E-4",
+          "2.5139712619858E-4"
+        ],
+        "data_records": 3,
+        "first_lines": [
+          "Ext + Das 100 nM + Buffer,2.93675406446763E-4,2.5139712619858E-4",
+          "Src-OH,0.351787895874448,0.045195646277588",
+          "Src-OH + Ext,1,0.0180895430601969",
+          "Src-OH + Ext + Das 50 nM,0.364251480124048,0.011282677369198"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Fig_S3B.csv",
+      "structure": {
+        "header": [
+          "Time (min)",
+          "BS 0,1uM",
+          "BS 0,25uM",
+          "BS 0,5uM",
+          "BS 0,75uM",
+          "BS 1uM",
+          "BS 2,5uM",
+          "BS 5uM",
+          "BS 7,5uM",
+          "BS 10uM"
+        ],
+        "data_records": 81,
+        "first_lines": [
+          "Time (min),\"BS 0,1uM\",\"BS 0,25uM\",\"BS 0,5uM\",\"BS 0,75uM\",BS 1uM,\"BS 2,5uM\",BS 5uM,\"BS 7,5uM\",BS 10uM",
+          "0,0,0,0,0,0,0,0,0,0",
+          "1,1,17.1407,0.87700000000001,0.637,8.40499999999999,6.12500000000011,37.01,10.323,5.15000000000009",
+          "2,2,26.5767,3.782,2.76999999999998,17.2536666666667,7.97000000000014,35.52,22.599,13.0900000000001",
+          "3,3,33.9617,6.791,3.93900000000002,25.7306666666666,14.4450000000001,48.04,34.2509999999999,17.78",
+          "4,4,41.3637,9.968,3.80599999999998,33.7066666666666,20.095,54.645,46.122,19.54",
+          "5,5,47.3107,12.326,6.06900000000002,36.9553333333333,24.35,60.46,54.9039999999999,20.8900000000001",
+          "6,6,51.4897,15.151,6.29399999999998,48.1186666666667,28.1650000000001,69.51,61.542,26.4400000000001"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Fig_S4A.csv",
+      "structure": {
+        "header": [
+          "",
+          "Ratio",
+          "SD"
+        ],
+        "data_records": 7,
+        "first_lines": [
+          ",Ratio,SD",
+          "Src-OH + Buffer,1,0.29542670477746",
+          "Src-OH + Ext 0.5 �g,1.12637811351572,0.00285830951408728",
+          "Src-OH + Ext 1 �g,1.14250714577379,0.00979991833401384",
+          "Src-OH + Ext 5 �g,1.12494895875868,0.04593711719069",
+          "Src-OH + Ext 10 �g,1.49203756635361,0.0445079624336463",
+          "Src-OH + Ext 20 �g,1.40485912617395,0.00347080440996328",
+          "Src-OH + Ext 40 �g,1.13229889750919,0.201306655777868"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Fig_S4B.csv",
+      "structure": {
+        "header": [
+          "",
+          "Ratio",
+          "SD"
+        ],
+        "data_records": 6,
+        "first_lines": [
+          ",Ratio,SD",
+          "Akt1-OH + Buffer,1,0.0662023917542689",
+          "Akt1-OH + Ext 0.5 �g,0.999794485898571,0.0358384975338308",
+          "Akt1-OH + Ext 1 �g,1.06312971628515,0.0459491458885204",
+          "Akt1-OH + Ext 5 �g,1.16753087981114,0.0817460852687226",
+          "Akt1-OH + Ext 10 �g,1.24057796888833,0.126603919460405",
+          "Akt1-OH + Ext 20 �g,1.4102166856372,0.189009343883004"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Fig_S1B.csv",
+      "structure": {
+        "header": [
+          "ATP / mM",
+          "Src-OH",
+          "Src-P"
+        ],
+        "data_records": 4,
+        "first_lines": [
+          "ATP / mM,Src-OH,Src-P",
+          "0,1.36401156,12.5234226",
+          "0.1,1.33910412,12.2032827",
+          "0.5,1.2902592,11.8125729",
+          "1,1.22232483,11.3205837"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Fig_7B-right.csv",
+      "structure": {
+        "header": [
+          "",
+          "HeLa",
+          "Akt1-Pep1-Ala",
+          "Akt1-Pep1-OH",
+          "Akt1-Pep1-OH + LY",
+          "Akt1-Pep1-OH + Insu"
+        ],
+        "data_records": 37,
+        "first_lines": [
+          ",HeLa,Akt1-Pep1-Ala,Akt1-Pep1-OH,Akt1-Pep1-OH + LY,Akt1-Pep1-OH + Insu",
+          ",Lifetime,Lifetime,Lifetime,Lifetime,Lifetime",
+          ",2.71,13.153,14.658,15.7,",
+          ",3.43,12.433,7.1,17.5,",
+          ",2.68,4.946,7.914,--,",
+          ",2.8,19.843,17.2,--,",
+          ",--,5.321,14.45,--,",
+          ",2.757,17.21,16.6,--,"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Fig_S7.csv",
+      "structure": {
+        "header": [
+          "Time / min",
+          "Relative MFI",
+          ""
+        ],
+        "data_records": 19,
+        "first_lines": [
+          "Time / min,Relative MFI,",
+          "0,1,0",
+          "5,1.04219198957143,0.0181659647546983",
+          "10,1.05271069628571,0.0239784399977212",
+          "15,1.05857987071429,0.0325431030743449",
+          "20,1.06443778257143,0.0333462763794562",
+          "25,1.06850177114286,0.0321958667997346",
+          "30,1.07121507114286,0.0336537683281989"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Fig_6B-left.csv",
+      "structure": {
+        "header": [
+          "",
+          "HeLa",
+          "Src-Pep1-Ala",
+          "Src-Pep1-OH",
+          "Src-Pep1-OH + Das"
+        ],
+        "data_records": 37,
+        "first_lines": [
+          ",HeLa,Src-Pep1-Ala,Src-Pep1-OH,Src-Pep1-OH + Das",
+          ",Intensity,,,",
+          ",145,337.915,332.723,214.72",
+          ",31.8,352.889,307.611,297.94",
+          ",181.3,313.196,551.936,373.956",
+          ",161.3,300.022,414.056,354.751",
+          ",173.065,299.324,347.709,243.828",
+          ",--,409.36,323.104,304.49"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Fig_6B-right.csv",
+      "structure": {
+        "header": [
+          "",
+          "HeLa",
+          "Src-Pep1-Ala",
+          "Src-Pep1-OH",
+          "Src-Pep1-OH + Das"
+        ],
+        "data_records": 38,
+        "first_lines": [
+          ",HeLa,Src-Pep1-Ala,Src-Pep1-OH,Src-Pep1-OH + Das",
+          ",Lifetime,,,",
+          ",2.71,6.883,8.105,8.085",
+          ",3.43,8.66,8.667,7.882",
+          ",2.68,6.452,5.784,7.797",
+          ",2.8,6.403,9.716,7.387",
+          ",--,6.449,8.788,7.525",
+          ",2.757,6.451,6.232,7.52"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Fig_S5B.csv",
+      "structure": {
+        "header": [
+          "",
+          "Eu3+ 50 �M",
+          ""
+        ],
+        "data_records": 9,
+        "first_lines": [
+          ",Eu3+ 50 �M,",
+          "Ext + Buffer,0.0010002857959417,4.28693912546442E-4",
+          "Ext + LY 10 �M + Buffer,5.71591883395256E-4,0",
+          "Akt1-OH,0.888253786796227,8.5738782509287E-4",
+          "Akt1-OH + Ext,1,0.007716490425836",
+          "Akt1-OH + Ext + LY 1 �M,0.859388396684767,0.0422977993712489",
+          "Akt1-OH + Ext + LY 2.5 �M,0.874249785653044,0.00885967419262651",
+          "Akt1-OH + Ext + LY 5 �M,0.841669048299514,0.0251500428693913"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Fig_S3A.csv",
+      "structure": {
+        "header": [
+          "Time (min)",
+          "BS 0,25uM",
+          "BS 0,5uM",
+          "BS 0,75uM",
+          "BS 1uM",
+          "BS 2,5uM",
+          "BS 5uM",
+          "BS 7,5uM",
+          "BS 10uM",
+          "BS 20uM",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "data_records": 123,
+        "first_lines": [
+          "Time (min),\"BS 0,25uM\",\"BS 0,5uM\",\"BS 0,75uM\",BS 1uM,\"BS 2,5uM\",BS 5uM,\"BS 7,5uM\",BS 10uM,BS 20uM,,,,,,,,,,,",
+          "0,0,0,0,0,0,0,0,0,0,--,--,--,--,--,--,--,--,--,--,--",
+          "0.75,0.0130499999999998,0.84559999999999,-0.104800000000001,1.02499999999998,0.176999999999993,4.42400000000004,5.51499999999999,10.86,38.136,--,--,--,--,--,--,--,--,--,--,--",
+          "1.5,0.126009999999999,1.3424,0.2972,3.57799999999997,5.18899999999999,9.80900000000003,10.646,32.331,71.966,--,--,--,--,--,--,--,--,--,--,--",
+          "2.25,0.30973,2.499,0.6937,6.46699999999998,12.893,15.372,16.356,55.525,104.516,--,--,--,--,--,--,--,--,--,--,--",
+          "3,0.48949,3.73309999999999,1.1692,10.469,22.838,21.569,22.349,79.4759999999999,133.546,--,--,--,--,--,--,--,--,--,--,--",
+          "3.75,0.728769999999999,4.8069,1.7609,14.77,34.745,27.853,28.436,104.557,161.056,--,--,--,--,--,--,--,--,--,--,--",
+          "4.5,0.93577,6.1545,2.279,19.649,48.392,34.405,34.243,129.789,214.776,--,--,--,--,--,--,--,--,--,--,--"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "text_or_instrument_native": 23,
+    "ZIP": 2,
+    "TIFF": 219,
+    "preserved_native": 11
+  },
+  "reader_limitations": [
+    {
+      "asset": "raw/Fig_7-and-S9.zip!/Fig_7-and-S9/Fig_7-and-S9_HeLa_Akt1-Pep-OH_Insu/desktop.ini",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/Fig_7-and-S9.zip!/Fig_7-and-S9/Fig_7-and-S9_HeLa_Akt1-Pep-OH_LY/desktop.ini",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/Fig_7-and-S9.zip!/Fig_7-and-S9/Fig_7-and-S9_HeLa_Akt1-Pep-OH/desktop.ini",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/Fig_7-and-S9.zip!/Fig_7-and-S9/Fig_7-and-S9_HeLa_Akt1-Pep-Ala/desktop.ini",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/Fig_7-and-S9.zip!/Fig_7-and-S9/Fig_7-and-S9_HeLa/desktop.ini",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/Fig_7-and-S9.zip!/Fig_7-and-S9/desktop.ini",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/Fig_6-and-S8.zip!/Fig_6-and-S8/Fig_6-and_S8_HeLa 2/desktop.ini",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Fig_6-and-S8.zip!/Fig_6-and-S8/Fig_6-and_S8_HeLa_Src-Pep-OH_Das/desktop.ini",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Fig_6-and-S8.zip!/Fig_6-and-S8/Fig_6-and_S8_HeLa_Src-Pep-Ala/desktop.ini",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Fig_6-and-S8.zip!/Fig_6-and-S8/Fig_6-and_S8_HeLa_Src-Pep-OH/desktop.ini",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Fig_6-and-S8.zip!/Fig_6-and-S8/desktop.ini",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    }
+  ],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 51726689,
+  "expanded_source_equivalent_bytes": 115967931,
+  "installed_folder_bytes": 51762517,
+  "source_asset_count": 26,
+  "asset_paths": [
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_S5A.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_5A.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_S3B.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_S4A.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_S4B.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_S1B.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_7B-right.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_S7.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_6B-left.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_6B-right.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_S5B.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_S3A.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_2A.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_9C.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_S1A.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_7B-left.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_2B.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_8.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_4A.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_S6.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_7-and-S9.zip",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_6-and-S8.zip",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_9B.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_4B.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/raw/Fig_5B.csv",
+    "scenarios/74_biochemistry_kinase_biosensors/context/source_record.json"
+  ],
+  "local_folder": "scenarios/74_biochemistry_kinase_biosensors",
+  "size_exception": false,
+  "modalities": [
+    "images",
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 51768831,
+  "expanded_release_folder_equivalent_bytes": 116010073
+}

@@ -1,0 +1,154 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "56_structures_timber_concrete",
+  "domain": "Structural engineering",
+  "title": "Experimental data of timber-concrete composite T-beams using adhesively bonded perfobond connections with large spacing",
+  "publisher": "Appavuravther, Elif; Vandoren, Bram; Henriques, José (Hasselt University)",
+  "authoritative_landing_url": "https://zenodo.org/records/17967735",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/17967735",
+    "https://zenodo.org/api/records/17967735/files/experimental%20results_summary.xlsx/content",
+    "https://zenodo.org/api/records/17967735/files/strain%20gauge_P-NWC.xlsx/content",
+    "https://zenodo.org/api/records/17967735/files/slip.xlsx/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.17967735"
+  ],
+  "release_or_version": "17967735",
+  "retrieval_finalized_utc": "2026-09-15T07:04:33.326420+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Campaign dates unknown.",
+  "source_publication_date": "2025-12-17",
+  "source_created_utc": "2025-12-17T18:24:37.210021+00:00",
+  "source_updated_utc": "2025-12-17T18:24:37.520027+00:00",
+  "source_inventory": [
+    {
+      "name": "experimental results_summary.xlsx",
+      "bytes": 574420,
+      "selected": true
+    },
+    {
+      "name": "strain gauge_P-NWC.xlsx",
+      "bytes": 5892056,
+      "selected": true
+    },
+    {
+      "name": "slip.xlsx",
+      "bytes": 67053,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Three source workbooks contain experimental summaries, strain-gauge responses and slip measurements.",
+  "known_analyses_and_limitations": "Hold out beams/tests where identifiable; time rows from one beam are repeated observations. Sparse beam counts limit material-population inference.",
+  "related_publications": [],
+  "independent_groups": "beams and loading tests",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-056",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-056",
+      "scenario_id": "56_structures_timber_concrete",
+      "path": "raw/experimental results_summary.xlsx",
+      "scenario_relative_path": "raw/experimental results_summary.xlsx",
+      "bytes": 574420,
+      "sha256": "926abca57a92ebc22f901004ff8a2633b55c814b9022cae85a2c099e23505ba4",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17967735"
+      ],
+      "download_url": "https://zenodo.org/api/records/17967735/files/experimental%20results_summary.xlsx/content",
+      "source_checksum": "md5:d30ac8e324d509b42b602cafee051163",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:18:20.905628+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17967735"
+      ],
+      "citation_url": "https://zenodo.org/records/17967735",
+      "source_version": "17967735",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17967735",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-056",
+      "scenario_id": "56_structures_timber_concrete",
+      "path": "raw/strain gauge_P-NWC.xlsx",
+      "scenario_relative_path": "raw/strain gauge_P-NWC.xlsx",
+      "bytes": 5892056,
+      "sha256": "02554cc1d7da3a582246dbc1cf865d4044104c0d37539b30165f514d4926434a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17967735"
+      ],
+      "download_url": "https://zenodo.org/api/records/17967735/files/strain%20gauge_P-NWC.xlsx/content",
+      "source_checksum": "md5:f0bc5e6a78424d982f3e9bd9cb40edb0",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:19:03.343588+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17967735"
+      ],
+      "citation_url": "https://zenodo.org/records/17967735",
+      "source_version": "17967735",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17967735",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-056",
+      "scenario_id": "56_structures_timber_concrete",
+      "path": "raw/slip.xlsx",
+      "scenario_relative_path": "raw/slip.xlsx",
+      "bytes": 67053,
+      "sha256": "a1fb2688501ec88feaeb8f0069c4e07ec1b6cf7f06840e221a890b7de2e1fcd7",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17967735"
+      ],
+      "download_url": "https://zenodo.org/api/records/17967735/files/slip.xlsx/content",
+      "source_checksum": "md5:533cb537ca5414afef7a278b91be047d",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:18:22.580204+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17967735"
+      ],
+      "citation_url": "https://zenodo.org/records/17967735",
+      "source_version": "17967735",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17967735",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-056",
+      "scenario_id": "56_structures_timber_concrete",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 5207,
+      "sha256": "b1a88a07e0c32a294fcd6d036ff6038820fea77b5b05ebc5bc4976a8e8d2e508",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/17967735"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:41.494815+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17967735"
+      ],
+      "citation_url": "https://zenodo.org/records/17967735",
+      "source_version": "17967735",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

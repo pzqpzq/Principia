@@ -1,0 +1,470 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "27_fluid_dynamics_kth_boiling",
+  "domain": "thermal-fluid engineering",
+  "title": "KTH boiling two-phase water flow",
+  "publisher": "Zenodo; originating researchers: Le Corre, Jean-Marie (Westinghouse Electric Sweden); Li, Haipeng (KTH Royal Institute of Technology); Grishchenko, Dmitry (KTH Royal Institute of Technology); Kipiela, Aleksander (KTH Royal Institute of Technology); Persson, Max (KTH Royal Institute of Technology); Kudinov, Pavel (KTH Royal Institute of Technology); Anglart, Henryk (KTH Royal Institute of Technology)",
+  "authoritative_landing_url": "https://zenodo.org/records/14627088",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/14627088",
+    "https://zenodo.org/api/records/14627088/files/ID_20230809_Run_10.xml/content",
+    "https://zenodo.org/api/records/14627088/files/readme.txt/content",
+    "https://zenodo.org/api/records/14627088/files/ID_20230810_Run_07.xml/content",
+    "https://zenodo.org/api/records/14627088/files/ID_20230809_Run_16.xml/content",
+    "https://zenodo.org/api/records/14627088/files/ID_20230808_Run_07.xml/content",
+    "https://zenodo.org/api/records/14627088/files/ID_20230630_Run_31.xml/content",
+    "https://zenodo.org/api/records/14627088/files/ID_20230809_Run_18.xml/content",
+    "https://zenodo.org/api/records/14627088/files/ID_20230809_Run_13.xml/content",
+    "https://zenodo.org/api/records/14627088/files/ID_20230809_Run_20.xml/content",
+    "https://zenodo.org/api/records/14627088/files/ID_20230808_Run_02.xml/content",
+    "https://zenodo.org/api/records/14627088/files/ID_20230809_Run_09.xml/content",
+    "https://zenodo.org/api/records/14627088/files/ID_20230810_Run_04.xml/content",
+    "https://zenodo.org/api/records/14627088/files/ID_20230630_Run_32.xml/content",
+    "https://zenodo.org/api/records/14627088"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.14627088"
+  ],
+  "release_or_version": "14627088",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "deterministic_selection_rule": "Complete source record unless otherwise specified.",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": {
+    "description": "Test filenames/header dates identify a 2023 campaign; repository released 2025-01-10. No date is inferred from release alone.",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": "2025-01-10",
+  "source_created_utc": "2025-01-11T19:02:31.250872+00:00",
+  "source_updated_utc": "2025-01-11T19:02:32.127482+00:00",
+  "source_inventory": [
+    {
+      "name": "ID_20230809_Run_10.xml",
+      "bytes": 448527,
+      "selected": true
+    },
+    {
+      "name": "readme.txt",
+      "bytes": 892,
+      "selected": true
+    },
+    {
+      "name": "ID_20230810_Run_07.xml",
+      "bytes": 448396,
+      "selected": true
+    },
+    {
+      "name": "ID_20230809_Run_16.xml",
+      "bytes": 448728,
+      "selected": true
+    },
+    {
+      "name": "ID_20230808_Run_07.xml",
+      "bytes": 449000,
+      "selected": true
+    },
+    {
+      "name": "ID_20230630_Run_31.xml",
+      "bytes": 3463,
+      "selected": true
+    },
+    {
+      "name": "ID_20230809_Run_18.xml",
+      "bytes": 448529,
+      "selected": true
+    },
+    {
+      "name": "ID_20230809_Run_13.xml",
+      "bytes": 448935,
+      "selected": true
+    },
+    {
+      "name": "ID_20230809_Run_20.xml",
+      "bytes": 448637,
+      "selected": true
+    },
+    {
+      "name": "ID_20230808_Run_02.xml",
+      "bytes": 448414,
+      "selected": true
+    },
+    {
+      "name": "ID_20230809_Run_09.xml",
+      "bytes": 448466,
+      "selected": true
+    },
+    {
+      "name": "ID_20230810_Run_04.xml",
+      "bytes": 448598,
+      "selected": true
+    },
+    {
+      "name": "ID_20230630_Run_32.xml",
+      "bytes": 3469,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Source-defined experimental profiles suitable for code validation; these are measured/derived profile products rather than untouched sensor voltages.",
+  "known_analyses_and_limitations": "The data accompany Experimental investigation of the internal structure of boiling two-phase water flow under LWR core operating conditions. Spatial samples in one run share boundary conditions and calibrations.",
+  "related_publications": [],
+  "pinned_commit": null,
+  "source_context_request_failures": [],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-027",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-027",
+      "scenario_id": "27_fluid_dynamics_kth_boiling",
+      "path": "context/zenodo_record.json",
+      "scenario_relative_path": "context/zenodo_record.json",
+      "bytes": 10327,
+      "sha256": "93293c772264c741d13304f609f1ca2777936a57b0ddbe9bd14d72ec3a32ef49",
+      "role": "parsed_source_metadata_snapshot",
+      "source_urls": [
+        "https://zenodo.org/api/records/14627088"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:40:21.621949+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14627088"
+      ],
+      "citation_url": "https://zenodo.org/records/14627088",
+      "source_version": "14627088",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-027",
+      "scenario_id": "27_fluid_dynamics_kth_boiling",
+      "path": "raw/ID_20230630_Run_31.xml",
+      "scenario_relative_path": "raw/ID_20230630_Run_31.xml",
+      "bytes": 3463,
+      "sha256": "11da9acf56b29d3ebb663cf61ba4a160eb0edbe8b0bf9437db6e670c37053029",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/14627088/files/ID_20230630_Run_31.xml/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/14627088/files/ID_20230630_Run_31.xml/content",
+      "source_checksum": "md5:0ee8f29a38de0d2155f33875349a4673",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:04.416109+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14627088"
+      ],
+      "citation_url": "https://zenodo.org/records/14627088",
+      "source_version": "14627088",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14627088",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-027",
+      "scenario_id": "27_fluid_dynamics_kth_boiling",
+      "path": "raw/ID_20230630_Run_32.xml",
+      "scenario_relative_path": "raw/ID_20230630_Run_32.xml",
+      "bytes": 3469,
+      "sha256": "a0208939e43d75a145423b58344d6081e6758cccd94bb0376d9dc64b33ec46aa",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/14627088/files/ID_20230630_Run_32.xml/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/14627088/files/ID_20230630_Run_32.xml/content",
+      "source_checksum": "md5:8e3954cbbbb0ab8f9f74995e90d66204",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:18.950118+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14627088"
+      ],
+      "citation_url": "https://zenodo.org/records/14627088",
+      "source_version": "14627088",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14627088",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-027",
+      "scenario_id": "27_fluid_dynamics_kth_boiling",
+      "path": "raw/ID_20230808_Run_02.xml",
+      "scenario_relative_path": "raw/ID_20230808_Run_02.xml",
+      "bytes": 448414,
+      "sha256": "8f3fd25212b5155b68408f7c81da6a5732d33330ce0db4e8792b37f82cc18253",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/14627088/files/ID_20230808_Run_02.xml/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/14627088/files/ID_20230808_Run_02.xml/content",
+      "source_checksum": "md5:5df9c5a57375919fc9fccc6952fd2bd9",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:15.416523+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14627088"
+      ],
+      "citation_url": "https://zenodo.org/records/14627088",
+      "source_version": "14627088",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14627088",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-027",
+      "scenario_id": "27_fluid_dynamics_kth_boiling",
+      "path": "raw/ID_20230808_Run_07.xml",
+      "scenario_relative_path": "raw/ID_20230808_Run_07.xml",
+      "bytes": 449000,
+      "sha256": "4dd6080296b4871392f9d1ffb9ab7c298ae2c5f7981c944434872f6a17ad4fa0",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/14627088/files/ID_20230808_Run_07.xml/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/14627088/files/ID_20230808_Run_07.xml/content",
+      "source_checksum": "md5:1897bb9e6235177410a8c4c8b5b81f53",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:09.712502+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14627088"
+      ],
+      "citation_url": "https://zenodo.org/records/14627088",
+      "source_version": "14627088",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14627088",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-027",
+      "scenario_id": "27_fluid_dynamics_kth_boiling",
+      "path": "raw/ID_20230809_Run_09.xml",
+      "scenario_relative_path": "raw/ID_20230809_Run_09.xml",
+      "bytes": 448466,
+      "sha256": "5afa379168fefdfc879b09e1bd74c0f3563e94ce24826b6d2e53a33db1d6546b",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/14627088/files/ID_20230809_Run_09.xml/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/14627088/files/ID_20230809_Run_09.xml/content",
+      "source_checksum": "md5:0e0c7d31e78bac4b1f630672feb3d89a",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:17.633498+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14627088"
+      ],
+      "citation_url": "https://zenodo.org/records/14627088",
+      "source_version": "14627088",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14627088",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-027",
+      "scenario_id": "27_fluid_dynamics_kth_boiling",
+      "path": "raw/ID_20230809_Run_10.xml",
+      "scenario_relative_path": "raw/ID_20230809_Run_10.xml",
+      "bytes": 448527,
+      "sha256": "be3ef7afa5038564c85f426e77def6f7b9698a63b1e7d156500659d1b08829a8",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/14627088/files/ID_20230809_Run_10.xml/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/14627088/files/ID_20230809_Run_10.xml/content",
+      "source_checksum": "md5:6198d4f19b0d0310d89f6c5eceaba3d4",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:50.506934+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14627088"
+      ],
+      "citation_url": "https://zenodo.org/records/14627088",
+      "source_version": "14627088",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14627088",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-027",
+      "scenario_id": "27_fluid_dynamics_kth_boiling",
+      "path": "raw/ID_20230809_Run_13.xml",
+      "scenario_relative_path": "raw/ID_20230809_Run_13.xml",
+      "bytes": 448935,
+      "sha256": "3973af33c647a7572c8d896680c1e569ceb09a1bc58b543bf4a8c12281e2a708",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/14627088/files/ID_20230809_Run_13.xml/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/14627088/files/ID_20230809_Run_13.xml/content",
+      "source_checksum": "md5:c662e4a5b2187e860b0f867592c9b47a",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:10.021093+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14627088"
+      ],
+      "citation_url": "https://zenodo.org/records/14627088",
+      "source_version": "14627088",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14627088",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-027",
+      "scenario_id": "27_fluid_dynamics_kth_boiling",
+      "path": "raw/ID_20230809_Run_16.xml",
+      "scenario_relative_path": "raw/ID_20230809_Run_16.xml",
+      "bytes": 448728,
+      "sha256": "2efa4c2ba02ea9801929eb047c55d9dd6bf0fad4c3cb4d5dc5c514e480feb66a",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/14627088/files/ID_20230809_Run_16.xml/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/14627088/files/ID_20230809_Run_16.xml/content",
+      "source_checksum": "md5:2a0b27c999b9370ebe247b863b4d0376",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:02.951532+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14627088"
+      ],
+      "citation_url": "https://zenodo.org/records/14627088",
+      "source_version": "14627088",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14627088",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-027",
+      "scenario_id": "27_fluid_dynamics_kth_boiling",
+      "path": "raw/ID_20230809_Run_18.xml",
+      "scenario_relative_path": "raw/ID_20230809_Run_18.xml",
+      "bytes": 448529,
+      "sha256": "07d0b80bcd2b90fb9084511a14a178e531108930eb1748852a3fc5a999a554d5",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/14627088/files/ID_20230809_Run_18.xml/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/14627088/files/ID_20230809_Run_18.xml/content",
+      "source_checksum": "md5:2f268d06b8d6969e468cbce1d47a02b9",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:06.601400+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14627088"
+      ],
+      "citation_url": "https://zenodo.org/records/14627088",
+      "source_version": "14627088",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14627088",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-027",
+      "scenario_id": "27_fluid_dynamics_kth_boiling",
+      "path": "raw/ID_20230809_Run_20.xml",
+      "scenario_relative_path": "raw/ID_20230809_Run_20.xml",
+      "bytes": 448637,
+      "sha256": "93c4bf580cf5a8639e2754d84a38cf1908eedc7908f7a8700f906189f9ef3c32",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/14627088/files/ID_20230809_Run_20.xml/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/14627088/files/ID_20230809_Run_20.xml/content",
+      "source_checksum": "md5:ccd4b9e3df9fb2e41b5ec00e95dba14b",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:17.033777+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14627088"
+      ],
+      "citation_url": "https://zenodo.org/records/14627088",
+      "source_version": "14627088",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14627088",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-027",
+      "scenario_id": "27_fluid_dynamics_kth_boiling",
+      "path": "raw/ID_20230810_Run_04.xml",
+      "scenario_relative_path": "raw/ID_20230810_Run_04.xml",
+      "bytes": 448598,
+      "sha256": "e0966e37be931742ec6fb57b8f5ec2a3e4dd155fec31dc6745686e42834e6cb4",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/14627088/files/ID_20230810_Run_04.xml/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/14627088/files/ID_20230810_Run_04.xml/content",
+      "source_checksum": "md5:aebbe9aa54a7322ca021e5df6b63d28b",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:19.900073+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14627088"
+      ],
+      "citation_url": "https://zenodo.org/records/14627088",
+      "source_version": "14627088",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14627088",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-027",
+      "scenario_id": "27_fluid_dynamics_kth_boiling",
+      "path": "raw/ID_20230810_Run_07.xml",
+      "scenario_relative_path": "raw/ID_20230810_Run_07.xml",
+      "bytes": 448396,
+      "sha256": "a818e3c3b9ba36224f127dcd0c3e40e2e9602950c6938cf8f95449e32d0e45e4",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/14627088/files/ID_20230810_Run_07.xml/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/14627088/files/ID_20230810_Run_07.xml/content",
+      "source_checksum": "md5:e3941151ea1a336345a318950b083cef",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:01.056015+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14627088"
+      ],
+      "citation_url": "https://zenodo.org/records/14627088",
+      "source_version": "14627088",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14627088",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-027",
+      "scenario_id": "27_fluid_dynamics_kth_boiling",
+      "path": "raw/readme.txt",
+      "scenario_relative_path": "raw/readme.txt",
+      "bytes": 892,
+      "sha256": "fe9e98bad2e91697ed5ad8ea7114e82735f3720ef056e29a6e7d8152883e4e70",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/14627088/files/readme.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/14627088/files/readme.txt/content",
+      "source_checksum": "md5:c6871784cfc44402d63e1b97927ba260",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:51.875797+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14627088"
+      ],
+      "citation_url": "https://zenodo.org/records/14627088",
+      "source_version": "14627088",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14627088",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

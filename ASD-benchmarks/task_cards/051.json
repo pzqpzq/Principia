@@ -1,0 +1,377 @@
+{
+  "case_id": "P100-051",
+  "case_revision": 1,
+  "scenario_id": "51_semiconductor_heterostructure_memories",
+  "title": "Data set for \"Non-volatile memories based on patterned metal–semiconductor heterostructures of niobium disulfide and molybdenum disulfide\"",
+  "domain": "Semiconductor memories",
+  "question": "How does electrical stability depend on device geometry and operating history across the released devices?",
+  "data_origin": "mixed_measured_and_computational",
+  "source_version": "19003428",
+  "source_url": "https://zenodo.org/records/19003428",
+  "identifiers": [
+    "10.5281/zenodo.19003428"
+  ],
+  "publisher": "Wang, Zhenyu; Migliato Marega, Guilherme (Cornell University); Collette, Eloi; Tripathi, Mukesh; Ji, Hyun Goo; Tao, Zhi; Zheng, Nan; Radenovic, Aleksandra; Giusi, Gino; Iannaccone, Giuseppe; Zhang, Jianhua; Kis, Andras (École Polytechnique Fédérale de Lausanne)",
+  "release_date": "2026-03-13",
+  "measurement_dates": "Whole-campaign dates unknown; publication/deposit dates are recorded separately.",
+  "variables_and_units": "Raman/XPS spectra, voltage/current, retention and endurance",
+  "independent_units": "devices; temperatures and complete sweeps",
+  "validation_design": "devices; temperatures and complete sweeps Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Electrical/spectroscopy figure-source CSVs; several supplementary files contain electrostatic/model quantities. The 2026 source paper already analyzes memory behavior.",
+  "prior_analysis_and_limits": "Group entire sweeps and retention/endurance series by device. Thirty-six FET sweeps do not establish independent fabrication lots. Separate model inputs from observed responses. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/Figure 3f-Retention time.csv",
+      "structure": {
+        "header": [
+          "Gds(uS/um) Vp-12.5V 300K'",
+          "Gds(uS/um) Vp-12.5V 425K'",
+          "Gds(uS/um) Vp12.5V 300K'",
+          "Gds(uS/um) Vp12.5V 425K'",
+          "t Vp-12.5V 300K'",
+          "t Vp-12.5V 425K'",
+          "t Vp12.5V 300K'",
+          "t Vp12.5V 425K'"
+        ],
+        "data_records": 118900,
+        "first_lines": [
+          "Gds(uS/um) Vp-12.5V 300K',Gds(uS/um) Vp-12.5V 425K',Gds(uS/um) Vp12.5V 300K',Gds(uS/um) Vp12.5V 425K',t Vp-12.5V 300K',t Vp-12.5V 425K',t Vp12.5V 300K',t Vp12.5V 425K'",
+          "0.00064,0.000926,1.20E-10,2.57E-10,0,0,0,0",
+          "0.000577,0.000815,1.14E-10,9.10E-10,1,1,1,1",
+          "0.000542,0.000758,1.62E-10,3.59E-10,2,2,2,2",
+          "0.000522,0.000717,1.41E-10,5.56E-10,3,3,3,3",
+          "0.000503,0.000687,1.27E-10,7.57E-10,4,4,4,4",
+          "0.000489,0.000669,1.17E-10,4.55E-10,5,5,5,5",
+          "0.000477,0.000653,1.01E-10,7.28E-10,6,6,6,6"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Supplementary Figure 2-XPS NbS2.csv",
+      "structure": {
+        "header": [
+          "Binding Energy",
+          "Intensity"
+        ],
+        "data_records": 1376,
+        "first_lines": [
+          "Binding Energy,Intensity",
+          "1100,11412.5",
+          "1099.2,11125",
+          "1098.4,11212.5",
+          "1097.6,10900",
+          "1096.8,10362.5",
+          "1096,11262.5",
+          "1095.2,10787.5"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Supplementary Figure 11-TLM-Rc of heterostructure and MoS2.csv",
+      "structure": {
+        "header": [
+          "Channel Length",
+          "R_total·W (Ω·µm)",
+          "Channel Length",
+          "R_total·W (Ω·µm)",
+          ""
+        ],
+        "data_records": 12,
+        "first_lines": [
+          "Channel Length,R_total·W (Ω·µm),Channel Length,R_total·W (Ω·µm),",
+          "µm,Ω·µm,µm,Ω·µm,",
+          "NbS2-MoS2,NbS2-MoS2,NbS2-MoS2,NbS2-MoS2,",
+          "2,1603,2,14839,",
+          "4,3545,4,19974,",
+          "6,4682,6,25032,",
+          "8,5058,8,33504,",
+          "10,5284,10,37066,"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Figure 2d-G-T of HT.csv",
+      "structure": {
+        "header": [
+          "1/T",
+          "g(20V)",
+          "g(15V)",
+          "g(10V)",
+          "g(5V)",
+          "g(0V)"
+        ],
+        "data_records": 5,
+        "first_lines": [
+          "1/T,g(20V),g(15V),g(10V),g(5V),g(0V)",
+          "0.003333333,0.0000378,0.0000218,0.00001016,0.00000292,0.000000102",
+          "0.004,0.00003,0.00001736,0.00000814,0.0000024,9.44E-08",
+          "0.005,0.0000244,0.00001408,0.00000654,0.000001866,0.000000063",
+          "0.006666667,0.00001766,0.00001018,0.00000474,0.00000137,4.94E-08",
+          "0.01,0.00001108,0.0000064,0.00000298,0.000000858,3.08E-08"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Figure 1e-MoS2 Raman.csv",
+      "structure": {
+        "header": [
+          "'Raman shift-before sul'",
+          "'Intensity-before sul'",
+          "'Raman shift-after sul'",
+          "'Intensity-after sul'"
+        ],
+        "data_records": 990,
+        "first_lines": [
+          "'Raman shift-before sul','Intensity-before sul','Raman shift-after sul','Intensity-after sul'",
+          "928.277,3411.54,928.277,3444.72",
+          "927.508,3381.61,927.508,3301.59",
+          "926.74,3351.09,926.74,3248.97",
+          "925.971,3073.77,925.971,3134.57",
+          "925.201,2976.01,925.201,3205.53",
+          "924.434,2990.43,924.434,3133.45",
+          "923.664,2982.41,923.664,3071.14"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Supplementary Figure 15-MoS2 and HT memory comparision.csv",
+      "structure": {
+        "header": [
+          "Vg MoS2'",
+          "Ids MoS2'",
+          "Vg HT'",
+          "Ids HT'"
+        ],
+        "data_records": 481,
+        "first_lines": [
+          "Vg MoS2',Ids MoS2',Vg HT',Ids HT'",
+          "12,1.43E-07,12,7.68E-06",
+          "11.9,1.39E-07,11.9,6.89E-06",
+          "11.8,1.38E-07,11.8,6.49E-06",
+          "11.7,1.36E-07,11.7,6.00E-06",
+          "11.6,1.32E-07,11.6,5.76E-06",
+          "11.5,1.27E-07,11.5,5.38E-06",
+          "11.4,1.23E-07,11.4,5.05E-06"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Supplementary Figure 14b-Vg sweep under different Vds of MoS2.csv",
+      "structure": {
+        "header": [
+          "Vg",
+          "Ids",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "data_records": 402,
+        "first_lines": [
+          "Vg,Ids,,,,,,",
+          ",Vds=50mV,Vds=20mV,Vds=100mV,Vds=200mV,,,",
+          "0,9.23423E-10,3.67856E-10,1.81365E-09,3.70834E-09,,,",
+          "0.2,1.18608E-09,4.75964E-10,2.42148E-09,4.71964E-09,,,",
+          "0.4,1.48158E-09,5.92261E-10,2.97683E-09,5.89552E-09,,,",
+          "0.6,1.80991E-09,7.1909E-10,3.64609E-09,7.27561E-09,,,",
+          "0.8,2.17107E-09,8.69306E-10,4.33239E-09,8.72764E-09,,,",
+          "1,2.56506E-09,1.02813E-09,5.17788E-09,1.0091E-08,,,"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Supplementary Figure 16a-Vg sweep-different sweep rate.csv",
+      "structure": {
+        "header": [
+          "'Vg 0.25V/s'",
+          "'Isd 0.25V/s'",
+          "'Vg 0.5V/s'",
+          "'Isd 0.5V/s'",
+          "'Vg 1V/s'",
+          "'Isd 1V/s'",
+          "'Vg 2.5V/s'",
+          "'Isd 2.5V/s'"
+        ],
+        "data_records": 481,
+        "first_lines": [
+          "'Vg 0.25V/s','Isd 0.25V/s','Vg 0.5V/s','Isd 0.5V/s','Vg 1V/s','Isd 1V/s','Vg 2.5V/s','Isd 2.5V/s'",
+          "12,7.68434e-06,12,7.95147e-06,12,8.20738e-06,12,8.39978e-06",
+          "11.9,6.8942e-06,11.752,7.5946e-06,11.876,7.86892e-06,11.251,7.70192e-06",
+          "11.8,6.4894e-06,11.502,6.69227e-06,11.252,5.69722e-06,10.001,4.21196e-06",
+          "11.7,6.00259e-06,11.252,5.85153e-06,10.627,4.14719e-06,8.751,1.86373e-06",
+          "11.6,5.75624e-06,11.002,5.21716e-06,10.002,2.89814e-06,7.501,6.65925e-07",
+          "11.5,5.38398e-06,10.752,4.56248e-06,9.376,1.8669e-06,6.25,1.88976e-07",
+          "11.4,5.04801e-06,10.501,3.93319e-06,8.751,1.10922e-06,5,3.25247e-08"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Figure 2c-Ids-Vg of HT and MoS2.csv",
+      "structure": {
+        "header": [
+          "Vg HT",
+          "Id(T=300K) HT",
+          "Id(T=250K) HT",
+          "Id(T=200K) HT",
+          "Id(T=150K) HT",
+          "Id(T=100K) HT",
+          "Vg MoS2",
+          "Id(T=300K) MoS2"
+        ],
+        "data_records": 201,
+        "first_lines": [
+          "Vg HT,Id(T=300K) HT,Id(T=250K) HT,Id(T=200K) HT,Id(T=150K) HT,Id(T=100K) HT,Vg MoS2,Id(T=300K) MoS2",
+          "-20,4.05E-12,1.83E-12,9.81E-13,1.64E-12,1.23E-12,19.6,1.89E-07",
+          "-19.8,2.77E-12,1.71E-12,2.18E-12,1.42E-12,1.16E-12,19.4,1.85E-07",
+          "-19.6,2.36E-12,2.15E-12,1.94E-12,5.26E-12,8.09E-13,19.2,1.82E-07",
+          "-19.4,4.9E-13,9.72E-13,1.23E-12,4E-13,1.51E-13,19,1.79E-07",
+          "-19.2,1.89E-12,4.32E-12,2.91E-12,7.21E-12,3.89E-13,18.8,1.75E-07",
+          "-19,1.58E-12,3.64E-12,2.58E-12,6.51E-13,4.11E-12,18.6,1.72E-07",
+          "-18.8,2.73E-12,2.72E-12,5.65E-13,1.16E-12,3.86E-12,18.4,1.68E-07"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Supplementary Figure 16b-Vg sweep-different T.csv",
+      "structure": {
+        "header": [
+          "Vg",
+          "'Isd T300K'",
+          "'Isd T200K'",
+          "'Isd T100K'",
+          "'Isd T10K'"
+        ],
+        "data_records": 2721,
+        "first_lines": [
+          "Vg,'Isd T300K','Isd T200K','Isd T100K','Isd T10K'",
+          "12,7.68434e-06,5.17737e-06,2.29574e-06,7.26187e-07",
+          "11.9,6.8942e-06,4.66387e-06,2.07854e-06,6.59061e-07",
+          "11.8,6.4894e-06,4.40184e-06,1.96832e-06,6.25092e-07",
+          "11.7,6.00259e-06,4.10765e-06,1.85668e-06,5.92606e-07",
+          "11.6,5.75624e-06,3.93893e-06,1.78034e-06,5.68228e-07",
+          "11.5,5.38398e-06,3.71322e-06,1.69422e-06,5.4309e-07",
+          "11.4,5.04801e-06,3.50315e-06,1.61015e-06,5.17859e-07"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Supplementary Figure 5-XPS MoS2.csv",
+      "structure": {
+        "header": [
+          "'Binding Energy'",
+          "Intensity"
+        ],
+        "data_records": 2751,
+        "first_lines": [
+          "'Binding Energy',Intensity",
+          "1100,15430",
+          "1099.2,15975",
+          "1098.4,16100",
+          "1097.6,16540",
+          "1096.8,15880",
+          "1096,15680",
+          "1095.2,15845"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Supplementary Figure 13a-SBH analysis-Ids-T under various Vg.csv",
+      "structure": {
+        "header": [
+          "Temperature",
+          "'1/T'",
+          "'Isd (Vg=-30V)'",
+          "'Isd (Vg=-25V)'",
+          "'Isd (Vg=-20V)'",
+          "'Isd (Vg=-15V)'",
+          "'Isd (Vg=-10V)'",
+          "'Isd (Vg=-5V)'",
+          "'Isd (Vg=0V)'",
+          "'Isd (Vg=5V)'",
+          "'Isd (Vg=10V)'",
+          "'Isd (Vg=15V)'",
+          "'Isd (Vg=20V)'",
+          "'Isd (Vg=25V)'",
+          "'Isd (Vg=30V)'"
+        ],
+        "data_records": 11,
+        "first_lines": [
+          "Temperature,'1/T','Isd (Vg=-30V)','Isd (Vg=-25V)','Isd (Vg=-20V)','Isd (Vg=-15V)','Isd (Vg=-10V)','Isd (Vg=-5V)','Isd (Vg=0V)','Isd (Vg=5V)','Isd (Vg=10V)','Isd (Vg=15V)','Isd (Vg=20V)','Isd (Vg=25V)','Isd (Vg=30V)'",
+          "125,0.008,-3.779e-11,2.3258e-11,1.321e-11,-3.459e-11,2.5082e-11,-3.7122e-11,2.3611e-10,1.41644e-09,4.31248e-09,9.8995e-09,1.94223e-08,3.4991e-08,5.97663e-08",
+          "150,0.00667,-4.72e-12,1.659e-11,-4.31e-11,-1.1988e-11,2.4424e-11,-4.39e-12,3.89746e-10,2.02188e-09,5.79486e-09,1.27719e-08,2.50969e-08,4.53146e-08,7.57375e-08",
+          "175,0.00571,-1.562e-12,-1.3866e-11,1.27691e-11,3.4438e-11,-1.4432e-11,6.762e-11,5.52658e-10,2.81602e-09,7.77876e-09,1.70849e-08,3.26869e-08,5.80447e-08,9.58596e-08",
+          "200,0.005,3.3412e-11,3.2472e-11,4.0712e-11,4.437e-13,4.9462e-11,1.10438e-10,9.0524e-10,4.44194e-09,1.15647e-08,2.44065e-08,4.56698e-08,7.94223e-08,1.2788e-07",
+          "225,0.00444,-4.0378e-11,-2.4816e-11,-2.019e-11,-1.9034e-11,-1.4406e-11,1.31422e-10,1.30174e-09,5.72564e-09,1.45698e-08,2.98125e-08,5.47842e-08,9.31545e-08,1.4945e-07",
+          "250,0.004,-5.0998e-11,4.2376e-11,3.7152e-11,4.3706e-11,8.093e-11,2.93942e-10,2.21224e-09,8.63066e-09,2.10423e-08,4.16177e-08,7.44011e-08,1.2241e-07,1.9081e-07",
+          "275,0.00364,7.3196e-11,8.694e-12,-4.7048e-11,-2.9438e-11,1.37298e-10,3.84214e-10,3.19784e-09,1.19639e-08,2.77345e-08,5.34323e-08,9.3472e-08,1.5114e-07,2.2999e-07"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "text_or_instrument_native": 35
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 6987008,
+  "expanded_source_equivalent_bytes": 6987008,
+  "installed_folder_bytes": 7031818,
+  "source_asset_count": 36,
+  "asset_paths": [
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Figure 3f-Retention time.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Supplementary Figure 2-XPS NbS2.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Supplementary Figure 11-TLM-Rc of heterostructure and MoS2.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Figure 2d-G-T of HT.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Figure 1e-MoS2 Raman.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Supplementary Figure 15-MoS2 and HT memory comparision.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Supplementary Figure 14b-Vg sweep under different Vds of MoS2.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Supplementary Figure 16a-Vg sweep-different sweep rate.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Figure 2c-Ids-Vg of HT and MoS2.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Supplementary Figure 16b-Vg sweep-different T.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Supplementary Figure 5-XPS MoS2.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Supplementary Figure 13a-SBH analysis-Ids-T under various Vg.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Figure 2e-Vg sweep of 36 FET.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Supplementary Figure 10-I-V NbS2.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Supplementary Figure 9-Voltage potential of probes.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Supplementary Figure 6b-Raman line scans of NbS2.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Supplementary Figure 6a-Raman line scans of MoS2.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Figure 3e-Gds-pulses.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Supplementary Figure 13b-SBH-Vg.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Figure 3c-Ids-Vds under different Vg of FGFET.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Figure 3d-Ids-t.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Figure 3g-Endurance.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Figure 1d-NbS2 Raman.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Supplementary Figure 14a-Vg sweep under different Vds of heterostructure.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Figure 3b-memory of heterostructure FGFET.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Supplementary Figure 17a-Vg sweep-different Vmax.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Figure 2g-Distribution of mobility and SS.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Supplementary Figure 17b-Vg sweep-different Vds.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Supplementary Figure 4-Raman NbS2 under different T.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Figure 4a&b-Ids-Vg with scaling down.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Figure 4c-PW with different tcg.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Figure 2f-distribution of Ids.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Supplementary Figure 12-Ea vs Vg.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Supplementary Figure 14c-Vds sweep under different Vg of heterostructure.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/raw/Supplementary Figure 14d-Vds sweep under different Vg of MoS2.csv",
+    "scenarios/51_semiconductor_heterostructure_memories/context/source_record.json"
+  ],
+  "local_folder": "scenarios/51_semiconductor_heterostructure_memories",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 7052535,
+  "expanded_release_folder_equivalent_bytes": 7052535
+}

@@ -1,0 +1,21 @@
+{
+  "scenario_id": "87_economics_public_goods",
+  "path": "raw/ThresholdPGG_4P_ExperimentalData.mat",
+  "bytes": 17159,
+  "sha256": "76b02d921d02ad652cb952a71173e84b206135e4deb7bfc6235b9387738a6b05",
+  "checked_utc": "2026-09-15T06:49:31.192778+00:00",
+  "source_checksum_status": "verified",
+  "format": "MATLAB",
+  "variables": [
+    {
+      "name": "all_data",
+      "shape": [
+        1
+      ],
+      "type": "MatlabOpaque"
+    }
+  ],
+  "reader_limitation": "MCOS table object preserved; SciPy decodes opaque object/workspace, not MATLAB table semantics. Source XLSX alternative retained.",
+  "coverage": "MAT envelope, opaque table and function-workspace decoded without execution",
+  "status": "pass"
+}

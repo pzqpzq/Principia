@@ -1,0 +1,33 @@
+{
+  "scenario_id": "75_biology_endothelial_mechanics",
+  "path": "raw/covariates.csv",
+  "bytes": 413,
+  "sha256": "d5e67a11ce65468422d5b09f9f488da7414cdecdf88b4489e9a25e7742a5deb1",
+  "checked_utc": "2026-09-15T06:51:23.152295+00:00",
+  "source_checksum_status": "verified",
+  "format": "text_or_instrument_native",
+  "signature_hex": "73616d706c652c646f6e6f72",
+  "delimiter": ",",
+  "header": [
+    "sample",
+    "donor",
+    "stress",
+    "pressure"
+  ],
+  "data_records": 24,
+  "row_width_counts": {
+    "4": 24
+  },
+  "first_lines": [
+    "sample,donor,stress,pressure",
+    "11,A,HSS,1000kpa",
+    "12,A,HSS,200kpa",
+    "13,A,HSS,30kpa",
+    "14,A,LSS,1000kpa",
+    "15,A,LSS,200kpa",
+    "16,A,LSS,30kpa",
+    "21,B,HSS,1000kpa"
+  ],
+  "encoding_replacement_count": 0,
+  "status": "pass"
+}

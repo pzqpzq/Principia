@@ -1,0 +1,331 @@
+{
+  "case_id": "P100-084",
+  "case_revision": 1,
+  "scenario_id": "84_biomaterials_cellulose_afm",
+  "title": "Experimental dataset on Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment",
+  "domain": "Surface mechanics",
+  "question": "How do surface preparation and local topography relate to AFM mechanical response?",
+  "data_origin": "measured_or_observed",
+  "source_version": "20281797",
+  "source_url": "https://zenodo.org/records/20281797",
+  "identifiers": [
+    "10.5281/zenodo.20281797"
+  ],
+  "publisher": "Kanakousaki, Eleni (FORTH Institute of Electronic Structure and Laser); Kavatzikidou, Paraskevi (Foundation for Research and Technology Hellas); Daskalakis, Panagiotis; Alexaki, Konstantina (Foundation for Research and Technology Hellas); Maragkaki, Stella (Ruhr University Bochum); Manousaki, Alexandra (Foundation for Research and Technology Hellas); Dwivedi, Jagrati (Deutsches Elektronen-Synchrotron DESY); Kenanakis, George (Institute of Electronic Structure and Laser); Keller, Thomas F. (Deutsches Elektronen-Synchrotron DESY); Stratakis, Emmanuel (Biomimetic.); RANELLA, ANTHI (Foundation for Research and Technology Hellas)",
+  "release_date": "2026-04-27",
+  "measurement_dates": "Some source measurements dated August 2023; release April 2026.",
+  "variables_and_units": "AFM topography, mechanical maps and roughness",
+  "independent_units": "surface preparation and independent scan region",
+  "validation_design": "surface preparation and independent scan region Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Native SPM/TXT files, images and derived maps for flat, low-roughness and high-roughness cellulose acetate.",
+  "prior_analysis_and_limits": "Group samples and scan regions, not pixels. Cellular-response measurements from the associated article are absent; this case supports surface mechanics only. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA High Roughness/230807_CA_high.0_00022.pfc-56F0_ForceCurveIndex_32640.spm.txt",
+      "structure": {
+        "first_lines": [
+          "Calc_Ramp_Ex_nm\tCalc_Ramp_Rt_nm\tDefl_nm_Ex\tDefl_nm_Rt\tDefl_pN_Ex\tDefl_pN_Rt\t",
+          "0.000000e+000\t4.418287e+001\t-6.253700e-002\t1.505103e+000\t-1.297762e+003\t3.123375e+004\t",
+          "3.478966e-001\t4.383497e+001\t-6.253700e-002\t1.459241e+000\t-1.297762e+003\t3.028203e+004\t",
+          "6.957932e-001\t4.348708e+001\t-6.253700e-002\t1.405041e+000\t-1.297762e+003\t2.915727e+004\t",
+          "1.043690e+000\t4.313918e+001\t-6.670614e-002\t1.342502e+000\t-1.384279e+003\t2.785947e+004\t",
+          "1.391586e+000\t4.279128e+001\t-6.253700e-002\t1.267455e+000\t-1.297762e+003\t2.630211e+004\t",
+          "1.739483e+000\t4.244339e+001\t-5.836787e-002\t1.179901e+000\t-1.211244e+003\t2.448518e+004\t",
+          "2.087380e+000\t4.209549e+001\t-5.419873e-002\t1.071500e+000\t-1.124727e+003\t2.223566e+004\t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA High Roughness/230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32907.spm.txt",
+      "structure": {
+        "first_lines": [
+          "Calc_Ramp_Ex_nm\tCalc_Ramp_Rt_nm\tDefl_nm_Ex\tDefl_nm_Rt\tDefl_pN_Ex\tDefl_pN_Rt\t",
+          "0.000000e+000\t4.418287e+001\t1.250778e-002\t1.851152e+000\t2.595602e+002\t3.841491e+004\t",
+          "3.478966e-001\t4.383497e+001\t1.250778e-002\t1.805290e+000\t2.595602e+002\t3.746320e+004\t",
+          "6.957932e-001\t4.348708e+001\t4.169261e-003\t1.751089e+000\t8.652008e+001\t3.633843e+004\t",
+          "1.043690e+000\t4.313918e+001\t-4.169133e-003\t1.684381e+000\t-8.651744e+001\t3.495411e+004\t",
+          "1.391586e+000\t4.279128e+001\t-1.250740e-002\t1.600996e+000\t-2.595523e+002\t3.322371e+004\t",
+          "1.739483e+000\t4.244339e+001\t-2.084567e-002\t1.500934e+000\t-4.325872e+002\t3.114723e+004\t",
+          "2.087380e+000\t4.209549e+001\t-2.084567e-002\t1.388364e+000\t-4.325872e+002\t2.881119e+004\t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA High Roughness/230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_30859.spm.txt",
+      "structure": {
+        "first_lines": [
+          "Calc_Ramp_Ex_nm\tCalc_Ramp_Rt_nm\tDefl_nm_Ex\tDefl_nm_Rt\tDefl_pN_Ex\tDefl_pN_Rt\t",
+          "0.000000e+000\t4.418287e+001\t-3.335307e-002\t1.726074e+000\t-6.921395e+002\t3.581931e+004\t",
+          "3.478966e-001\t4.383497e+001\t-3.335307e-002\t1.684381e+000\t-6.921395e+002\t3.495411e+004\t",
+          "6.957932e-001\t4.348708e+001\t-3.752220e-002\t1.630181e+000\t-7.786570e+002\t3.382935e+004\t",
+          "1.043690e+000\t4.313918e+001\t-4.586047e-002\t1.559304e+000\t-9.516918e+002\t3.235851e+004\t",
+          "1.391586e+000\t4.279128e+001\t-5.002960e-002\t1.480088e+000\t-1.038209e+003\t3.071463e+004\t",
+          "1.739483e+000\t4.244339e+001\t-5.002960e-002\t1.388364e+000\t-1.038209e+003\t2.881119e+004\t",
+          "2.087380e+000\t4.209549e+001\t-5.419873e-002\t1.279963e+000\t-1.124727e+003\t2.656166e+004\t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA High Roughness/230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_33925.spm.txt",
+      "structure": {
+        "first_lines": [
+          "Calc_Ramp_Ex_nm\tCalc_Ramp_Rt_nm\tDefl_nm_Ex\tDefl_nm_Rt\tDefl_pN_Ex\tDefl_pN_Rt\t",
+          "0.000000e+000\t4.418287e+001\t8.338521e-003\t2.230555e+000\t1.730402e+002\t4.628825e+004\t",
+          "3.478966e-001\t4.383497e+001\t1.250778e-002\t2.172185e+000\t2.595602e+002\t4.507696e+004\t",
+          "6.957932e-001\t4.348708e+001\t1.667704e-002\t2.113815e+000\t3.460803e+002\t4.386568e+004\t",
+          "1.043690e+000\t4.313918e+001\t1.250778e-002\t2.042938e+000\t2.595602e+002\t4.239484e+004\t",
+          "1.391586e+000\t4.279128e+001\t1.250778e-002\t1.959553e+000\t2.595602e+002\t4.066444e+004\t",
+          "1.739483e+000\t4.244339e+001\t1.250778e-002\t1.859490e+000\t2.595602e+002\t3.858796e+004\t",
+          "2.087380e+000\t4.209549e+001\t8.338521e-003\t1.746920e+000\t1.730402e+002\t3.625191e+004\t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA High Roughness/230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32388.spm.txt",
+      "structure": {
+        "first_lines": [
+          "Calc_Ramp_Ex_nm\tCalc_Ramp_Rt_nm\tDefl_nm_Ex\tDefl_nm_Rt\tDefl_pN_Ex\tDefl_pN_Rt\t",
+          "0.000000e+000\t4.418287e+001\t-1.667653e-002\t1.963722e+000\t-3.460698e+002\t4.075096e+004\t",
+          "3.478966e-001\t4.383497e+001\t-1.667653e-002\t1.926198e+000\t-3.460698e+002\t3.997228e+004\t",
+          "6.957932e-001\t4.348708e+001\t-2.501480e-002\t1.884506e+000\t-5.191046e+002\t3.910708e+004\t",
+          "1.043690e+000\t4.313918e+001\t-3.335307e-002\t1.830305e+000\t-6.921395e+002\t3.798232e+004\t",
+          "1.391586e+000\t4.279128e+001\t-4.169133e-002\t1.755259e+000\t-8.651744e+002\t3.642495e+004\t",
+          "1.739483e+000\t4.244339e+001\t-4.586047e-002\t1.671874e+000\t-9.516918e+002\t3.469455e+004\t",
+          "2.087380e+000\t4.209549e+001\t-3.752220e-002\t1.567642e+000\t-7.786570e+002\t3.253155e+004\t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Low Roughness/230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32378.spm.txt",
+      "structure": {
+        "first_lines": [
+          "Calc_Ramp_Ex_nm\tCalc_Ramp_Rt_nm\tDefl_nm_Ex\tDefl_nm_Rt\tDefl_pN_Ex\tDefl_pN_Rt\t",
+          "0.000000e+000\t4.418287e+001\t-1.883736e-001\t1.609787e+000\t-3.909111e+003\t3.340614e+004\t",
+          "3.478966e-001\t4.383497e+001\t-1.883736e-001\t1.575536e+000\t-3.909111e+003\t3.269538e+004\t",
+          "6.957932e-001\t4.348708e+001\t-1.926548e-001\t1.528442e+000\t-3.997954e+003\t3.171807e+004\t",
+          "1.043690e+000\t4.313918e+001\t-1.926548e-001\t1.468503e+000\t-3.997954e+003\t3.047422e+004\t",
+          "1.391586e+000\t4.279128e+001\t-1.883736e-001\t1.395720e+000\t-3.909111e+003\t2.896384e+004\t",
+          "1.739483e+000\t4.244339e+001\t-1.926548e-001\t1.305812e+000\t-3.997954e+003\t2.709807e+004\t",
+          "2.087380e+000\t4.209549e+001\t-1.969361e-001\t1.190215e+000\t-4.086797e+003\t2.469922e+004\t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Low Roughness/230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32384.spm.txt",
+      "structure": {
+        "first_lines": [
+          "Calc_Ramp_Ex_nm\tCalc_Ramp_Rt_nm\tDefl_nm_Ex\tDefl_nm_Rt\tDefl_pN_Ex\tDefl_pN_Rt\t",
+          "0.000000e+000\t4.418287e+001\t-1.712487e-001\t1.588381e+000\t-3.553737e+003\t3.296191e+004\t",
+          "3.478966e-001\t4.383497e+001\t-1.755300e-001\t1.562693e+000\t-3.642580e+003\t3.242884e+004\t",
+          "6.957932e-001\t4.348708e+001\t-1.840924e-001\t1.532723e+000\t-3.820267e+003\t3.180692e+004\t",
+          "1.043690e+000\t4.313918e+001\t-1.926548e-001\t1.494191e+000\t-3.997954e+003\t3.100730e+004\t",
+          "1.391586e+000\t4.279128e+001\t-2.012173e-001\t1.438533e+000\t-4.175641e+003\t2.985230e+004\t",
+          "1.739483e+000\t4.244339e+001\t-1.969361e-001\t1.370032e+000\t-4.086797e+003\t2.843076e+004\t",
+          "2.087380e+000\t4.209549e+001\t-1.883736e-001\t1.280123e+000\t-3.909111e+003\t2.656499e+004\t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Low Roughness/230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_34177.spm.txt",
+      "structure": {
+        "first_lines": [
+          "Calc_Ramp_Ex_nm\tCalc_Ramp_Rt_nm\tDefl_nm_Ex\tDefl_nm_Rt\tDefl_pN_Ex\tDefl_pN_Rt\t",
+          "0.000000e+000\t4.418287e+001\t-1.584051e-001\t1.712540e+000\t-3.287207e+003\t3.553845e+004\t",
+          "3.478966e-001\t4.383497e+001\t-1.626863e-001\t1.686852e+000\t-3.376050e+003\t3.500538e+004\t",
+          "6.957932e-001\t4.348708e+001\t-1.626863e-001\t1.648319e+000\t-3.376050e+003\t3.420576e+004\t",
+          "1.043690e+000\t4.313918e+001\t-1.626863e-001\t1.601225e+000\t-3.376050e+003\t3.322845e+004\t",
+          "1.391586e+000\t4.279128e+001\t-1.626863e-001\t1.541286e+000\t-3.376050e+003\t3.198461e+004\t",
+          "1.739483e+000\t4.244339e+001\t-1.626863e-001\t1.459940e+000\t-3.376050e+003\t3.029653e+004\t",
+          "2.087380e+000\t4.209549e+001\t-1.669675e-001\t1.352906e+000\t-3.464894e+003\t2.807538e+004\t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Low Roughness/230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32904.spm.txt",
+      "structure": {
+        "first_lines": [
+          "Calc_Ramp_Ex_nm\tCalc_Ramp_Rt_nm\tDefl_nm_Ex\tDefl_nm_Rt\tDefl_pN_Ex\tDefl_pN_Rt\t",
+          "0.000000e+000\t4.418287e+001\t-1.584051e-001\t1.669726e+000\t-3.287207e+003\t3.464999e+004\t",
+          "3.478966e-001\t4.383497e+001\t-1.584051e-001\t1.648319e+000\t-3.287207e+003\t3.420576e+004\t",
+          "6.957932e-001\t4.348708e+001\t-1.626863e-001\t1.618350e+000\t-3.376050e+003\t3.358384e+004\t",
+          "1.043690e+000\t4.313918e+001\t-1.712487e-001\t1.571255e+000\t-3.553737e+003\t3.260653e+004\t",
+          "1.391586e+000\t4.279128e+001\t-1.712487e-001\t1.511316e+000\t-3.553737e+003\t3.136269e+004\t",
+          "1.739483e+000\t4.244339e+001\t-1.755300e-001\t1.429971e+000\t-3.642580e+003\t2.967461e+004\t",
+          "2.087380e+000\t4.209549e+001\t-1.755300e-001\t1.322937e+000\t-3.642580e+003\t2.745346e+004\t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Flat/230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_32893.spm.txt",
+      "structure": {
+        "first_lines": [
+          "Calc_Ramp_Ex_nm\tCalc_Ramp_Rt_nm\tDefl_nm_Ex\tDefl_nm_Rt\tDefl_pN_Ex\tDefl_pN_Rt\t",
+          "0.000000e+000\t4.418287e+001\t-4.880589e-001\t1.378595e+000\t-1.012815e+004\t2.860846e+004\t",
+          "3.478966e-001\t4.383497e+001\t-4.794965e-001\t1.361469e+000\t-9.950463e+003\t2.825307e+004\t",
+          "6.957932e-001\t4.348708e+001\t-4.709341e-001\t1.335781e+000\t-9.772776e+003\t2.771999e+004\t",
+          "1.043690e+000\t4.313918e+001\t-4.580904e-001\t1.310093e+000\t-9.506246e+003\t2.718692e+004\t",
+          "1.391586e+000\t4.279128e+001\t-4.538092e-001\t1.271561e+000\t-9.417402e+003\t2.638730e+004\t",
+          "1.739483e+000\t4.244339e+001\t-4.495279e-001\t1.220185e+000\t-9.328560e+003\t2.532115e+004\t",
+          "2.087380e+000\t4.209549e+001\t-4.495279e-001\t1.160246e+000\t-9.328560e+003\t2.407730e+004\t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Flat/230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_36494.spm.txt",
+      "structure": {
+        "first_lines": [
+          "Calc_Ramp_Ex_nm\tCalc_Ramp_Rt_nm\tDefl_nm_Ex\tDefl_nm_Rt\tDefl_pN_Ex\tDefl_pN_Rt\t",
+          "0.000000e+000\t4.418287e+001\t-4.409655e-001\t1.370032e+000\t-9.150872e+003\t2.843076e+004\t",
+          "3.478966e-001\t4.383497e+001\t-4.409655e-001\t1.335781e+000\t-9.150872e+003\t2.771999e+004\t",
+          "6.957932e-001\t4.348708e+001\t-4.495279e-001\t1.301530e+000\t-9.328560e+003\t2.700922e+004\t",
+          "1.043690e+000\t4.313918e+001\t-4.495279e-001\t1.267279e+000\t-9.328560e+003\t2.629846e+004\t",
+          "1.391586e+000\t4.279128e+001\t-4.452467e-001\t1.224466e+000\t-9.239716e+003\t2.540999e+004\t",
+          "1.739483e+000\t4.244339e+001\t-4.366843e-001\t1.173090e+000\t-9.062029e+003\t2.434384e+004\t",
+          "2.087380e+000\t4.209549e+001\t-4.324031e-001\t1.104588e+000\t-8.973186e+003\t2.292230e+004\t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Flat/230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_34949.spm.txt",
+      "structure": {
+        "first_lines": [
+          "Calc_Ramp_Ex_nm\tCalc_Ramp_Rt_nm\tDefl_nm_Ex\tDefl_nm_Rt\tDefl_pN_Ex\tDefl_pN_Rt\t",
+          "0.000000e+000\t4.418287e+001\t-4.709341e-001\t1.404283e+000\t-9.772776e+003\t2.914153e+004\t",
+          "3.478966e-001\t4.383497e+001\t-4.666528e-001\t1.387157e+000\t-9.683933e+003\t2.878615e+004\t",
+          "6.957932e-001\t4.348708e+001\t-4.623716e-001\t1.365750e+000\t-9.595090e+003\t2.834192e+004\t",
+          "1.043690e+000\t4.313918e+001\t-4.623716e-001\t1.344344e+000\t-9.595090e+003\t2.789769e+004\t",
+          "1.391586e+000\t4.279128e+001\t-4.623716e-001\t1.310093e+000\t-9.595090e+003\t2.718692e+004\t",
+          "1.739483e+000\t4.244339e+001\t-4.623716e-001\t1.267279e+000\t-9.595090e+003\t2.629846e+004\t",
+          "2.087380e+000\t4.209549e+001\t-4.623716e-001\t1.207340e+000\t-9.595090e+003\t2.505461e+004\t"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "ZIP": 1,
+    "preserved_native": 22,
+    "text_or_instrument_native": 14,
+    "publisher_OS_metadata": 6,
+    "JPEG": 48,
+    "TIFF": 4,
+    "DOCX": 1
+  },
+  "reader_limitations": [
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/Thumbs.db",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA High Roughness/230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_33925.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA High Roughness/230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32907.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA High Roughness/230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_30859.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA High Roughness/230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32388.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA High Roughness/230807_CA_high.0_00022.pfc-56F0_ForceCurveIndex_32640.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Low Roughness/230804_CA_Low.0_00013.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Low Roughness/230804_CA_Low.0_00012.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Low Roughness/230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32378.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Low Roughness/230804_CA_Low.0_00016.pfc-57FA_ForceCurveIndex_33924.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Low Roughness/230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32384.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Low Roughness/230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32904.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Low Roughness/230804_CA_Low.0_00016.pfc-57FA_ForceCurveIndex_32130.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Low Roughness/230804_CA_Low.0_00016.pfc-57FA_ForceCurveIndex_33149.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Low Roughness/230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_34177.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Flat/230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_32893.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Flat/230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_34949.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Flat/230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_33161.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Flat/230804_CA_Flat.0_00002.pfc-A6C_ForceCurveIndex_32644.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Flat/230804_CA_Flat.0_00002.pfc-A6C_ForceCurveIndex_35460.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Flat/230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_36494.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip!/NFFA DESY Raw data/CA Flat/230804_CA_Flat.0_00002.pfc-A6C_ForceCurveIndex_33661.spm",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    }
+  ],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 10081425,
+  "expanded_source_equivalent_bytes": 12958956,
+  "installed_folder_bytes": 10092419,
+  "source_asset_count": 3,
+  "asset_paths": [
+    "scenarios/84_biomaterials_cellulose_afm/raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip",
+    "scenarios/84_biomaterials_cellulose_afm/raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_README.docx",
+    "scenarios/84_biomaterials_cellulose_afm/context/source_record.json"
+  ],
+  "local_folder": "scenarios/84_biomaterials_cellulose_afm",
+  "size_exception": false,
+  "modalities": [
+    "images",
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 10091210,
+  "expanded_release_folder_equivalent_bytes": 12968741
+}

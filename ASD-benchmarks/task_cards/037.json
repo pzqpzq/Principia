@@ -1,0 +1,248 @@
+{
+  "case_id": "P100-037",
+  "case_revision": 1,
+  "scenario_id": "37_networks_router_power",
+  "title": "Carrier-router power under packet and load changes",
+  "domain": "computer networking",
+  "question": "How do traffic load and operating history affect measured router power?",
+  "data_origin": "measured_or_observed",
+  "source_version": "17282065",
+  "source_url": "https://zenodo.org/records/17282065",
+  "identifiers": [
+    "10.5281/zenodo.17282065"
+  ],
+  "publisher": "Zenodo; originating researchers: Lentisco, Carlos M. (Universidad Politécnica de Madrid); De la Osa Mostazo, David (Telefónica Innovación Digital (Spain)); Karamchandani Batra, Amit (Universidad Politécnica de Madrid); González Sánchez, Daniel (Universidad Politécnica de Madrid); de la Cal García, Luis (Universidad Politécnica de Madrid); Bellido Triana, Luis (Universidad Politécnica de Madrid); Mozo Velasco, Bonifacio Alberto (Universidad Politécnica de Madrid); Pastor Perales, Antonio (Telefónica Innovación Digital (Spain)); R. Lopez, Diego (Telefónica Innovación Digital (Spain))",
+  "release_date": "2025-12-02",
+  "measurement_dates": "Physical lab experiments released 2025-10-06; native DateTime columns give run-specific observation times.",
+  "variables_and_units": "Variables and units are preserved in native column headers, instrument metadata and source dictionaries; see evidence anchors below.",
+  "independent_units": "Complete experiment/traffic configuration and chronological blocks.",
+  "validation_design": "Complete experiment/traffic configuration and chronological blocks. Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Instrument/lab-measurement CSV exports with source traffic-control settings; energy is not directly a separate measured response unless time integration is performed later.",
+  "prior_analysis_and_limits": "The source was collected for network-equipment energy modeling. Throughput, packet size and packet rate have structural dependencies. Run histories and repeated rows cannot be treated as independent laboratory replicates. Fifteen router-power CSVs; time-correlated operating transients must stay within run groups.",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/TC3.2_multiple_traffic_flows_modelA_iteration1.csv",
+      "structure": {
+        "header": [
+          "DateTime",
+          "Times_s",
+          "Throughput_Percentage",
+          "Throughput_Gbps",
+          "PacketSize_B",
+          "Power_Consumption",
+          "Packet_Rate"
+        ],
+        "data_records": 6585
+      }
+    },
+    {
+      "asset": "raw/TC3.2_multiple_traffic_flows_modelA_iteration3.csv",
+      "structure": {
+        "header": [
+          "DateTime",
+          "Times_s",
+          "Throughput_Percentage",
+          "Throughput_Gbps",
+          "PacketSize_B",
+          "Power_Consumption",
+          "Packet_Rate"
+        ],
+        "data_records": 6585
+      }
+    },
+    {
+      "asset": "raw/TC3.2_multiple_traffic_flows_modelB_iteration2.csv",
+      "structure": {
+        "header": [
+          "DateTime",
+          "Times_s",
+          "Throughput_Percentage",
+          "Throughput_Gbps",
+          "PacketSize_B",
+          "Power_Consumption",
+          "Packet_Rate"
+        ],
+        "data_records": 6585
+      }
+    },
+    {
+      "asset": "raw/TC3.2_traffic_load_packet_length_variation_modelA_iteration2.csv",
+      "structure": {
+        "header": [
+          "DateTime",
+          "Times_s",
+          "Throughput_Percentage",
+          "Throughput_Gbps",
+          "PacketSize_B",
+          "Power_Consumption",
+          "Packet_Rate"
+        ],
+        "data_records": 6606
+      }
+    },
+    {
+      "asset": "raw/TC3.2_traffic_load_packet_length_variation_modelA_iteration3.csv",
+      "structure": {
+        "header": [
+          "DateTime",
+          "Times_s",
+          "Throughput_Percentage",
+          "Throughput_Gbps",
+          "PacketSize_B",
+          "Power_Consumption",
+          "Packet_Rate"
+        ],
+        "data_records": 6609
+      }
+    },
+    {
+      "asset": "raw/TC3.2_traffic_load_packet_length_variation_modelB_iteration1.csv",
+      "structure": {
+        "header": [
+          "DateTime",
+          "Times_s",
+          "Throughput_Percentage",
+          "Throughput_Gbps",
+          "PacketSize_B",
+          "Power_Consumption",
+          "Packet_Rate"
+        ],
+        "data_records": 6593
+      }
+    },
+    {
+      "asset": "raw/TC3.2_multiple_traffic_flows_modelB_iteration1.csv",
+      "structure": {
+        "header": [
+          "DateTime",
+          "Times_s",
+          "Throughput_Percentage",
+          "Throughput_Gbps",
+          "PacketSize_B",
+          "Power_Consumption",
+          "Packet_Rate"
+        ],
+        "data_records": 6585
+      }
+    },
+    {
+      "asset": "raw/TC3.2_multiple_traffic_flows_modelA_iteration2.csv",
+      "structure": {
+        "header": [
+          "DateTime",
+          "Times_s",
+          "Throughput_Percentage",
+          "Throughput_Gbps",
+          "PacketSize_B",
+          "Power_Consumption",
+          "Packet_Rate"
+        ],
+        "data_records": 6535
+      }
+    },
+    {
+      "asset": "raw/TC3.2_traffic_load_packet_length_variation_modelB_iteration3.csv",
+      "structure": {
+        "header": [
+          "DateTime",
+          "Times_s",
+          "Throughput_Percentage",
+          "Throughput_Gbps",
+          "PacketSize_B",
+          "Power_Consumption",
+          "Packet_Rate"
+        ],
+        "data_records": 6593
+      }
+    },
+    {
+      "asset": "raw/TC3.2_traffic_load_variation_modelA_iteration3.csv",
+      "structure": {
+        "header": [
+          "DateTime",
+          "Times_s",
+          "Throughput_Percentage",
+          "Throughput_Gbps",
+          "PacketSize_B",
+          "Power_Consumption",
+          "Packet_Rate"
+        ],
+        "data_records": 1320
+      }
+    },
+    {
+      "asset": "raw/TC3.2_traffic_load_variation_modelA_iteration1.csv",
+      "structure": {
+        "header": [
+          "DateTime",
+          "Times_s",
+          "Throughput_Percentage",
+          "Throughput_Gbps",
+          "PacketSize_B",
+          "Power_Consumption",
+          "Packet_Rate"
+        ],
+        "data_records": 1319
+      }
+    },
+    {
+      "asset": "raw/TC3.2_traffic_load_packet_length_variation_modelB_iteration2.csv",
+      "structure": {
+        "header": [
+          "DateTime",
+          "Times_s",
+          "Throughput_Percentage",
+          "Throughput_Gbps",
+          "PacketSize_B",
+          "Power_Consumption",
+          "Packet_Rate"
+        ],
+        "data_records": 6593
+      }
+    }
+  ],
+  "format_counts": {
+    "text_or_instrument_native": 15
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "source_asset_bytes": 4611671,
+  "expanded_source_equivalent_bytes": 4611671,
+  "installed_folder_bytes": 4648707,
+  "source_asset_count": 16,
+  "asset_paths": [
+    "scenarios/37_networks_router_power/context/zenodo_record.json",
+    "scenarios/37_networks_router_power/raw/TC3.2_multiple_traffic_flows_modelA_iteration1.csv",
+    "scenarios/37_networks_router_power/raw/TC3.2_multiple_traffic_flows_modelA_iteration2.csv",
+    "scenarios/37_networks_router_power/raw/TC3.2_multiple_traffic_flows_modelA_iteration3.csv",
+    "scenarios/37_networks_router_power/raw/TC3.2_multiple_traffic_flows_modelB_iteration1.csv",
+    "scenarios/37_networks_router_power/raw/TC3.2_multiple_traffic_flows_modelB_iteration2.csv",
+    "scenarios/37_networks_router_power/raw/TC3.2_multiple_traffic_flows_modelB_iteration3.csv",
+    "scenarios/37_networks_router_power/raw/TC3.2_traffic_load_packet_length_variation_modelA_iteration1.csv",
+    "scenarios/37_networks_router_power/raw/TC3.2_traffic_load_packet_length_variation_modelA_iteration2.csv",
+    "scenarios/37_networks_router_power/raw/TC3.2_traffic_load_packet_length_variation_modelA_iteration3.csv",
+    "scenarios/37_networks_router_power/raw/TC3.2_traffic_load_packet_length_variation_modelB_iteration1.csv",
+    "scenarios/37_networks_router_power/raw/TC3.2_traffic_load_packet_length_variation_modelB_iteration2.csv",
+    "scenarios/37_networks_router_power/raw/TC3.2_traffic_load_packet_length_variation_modelB_iteration3.csv",
+    "scenarios/37_networks_router_power/raw/TC3.2_traffic_load_variation_modelA_iteration1.csv",
+    "scenarios/37_networks_router_power/raw/TC3.2_traffic_load_variation_modelA_iteration2.csv",
+    "scenarios/37_networks_router_power/raw/TC3.2_traffic_load_variation_modelA_iteration3.csv"
+  ],
+  "local_folder": "scenarios/37_networks_router_power",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 4646090,
+  "expanded_release_folder_equivalent_bytes": 4646090
+}

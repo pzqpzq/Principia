@@ -1,0 +1,1672 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "66_chemistry_mof_hydrogen",
+  "domain": "Hydrogen storage",
+  "title": "Replication Data for : Boosting hydrogen storage and release in MOF-5 / graphite hybrids via in situ synthesis",
+  "publisher": "[{'authorName': {'typeName': 'authorName', 'multiple': False, 'typeClass': 'primitive', 'value': 'Jimenez Lopez, Laura'}, 'authorAffiliation': {'typeName': 'authorAffiliation', 'multiple': False, 'typeClass': 'primitive', 'value': 'IJL ; Université de Lorraine, CNRS ; France'}, 'authorIdentifierScheme': {'typeName': 'authorIdentifierScheme', 'multiple': False, 'typeClass': 'controlledVocabulary', 'value': 'ORCID'}, 'authorIdentifier': {'typeName': 'authorIdentifier', 'multiple': False, 'typeClass': 'primitive', 'value': '0000-0002-5525-1953'}}, {'authorName': {'typeName': 'authorName', 'multiple': False, 'typeClass': 'primitive', 'value': 'Morales Ospino, Rafael'}, 'authorAffiliation': {'typeName': 'authorAffiliation', 'multiple': False, 'typeClass': 'primitive', 'value': 'IJL ; Université de Lorraine, CNRS ; France'}, 'authorIdentifierScheme': {'typeName': 'authorIdentifierScheme', 'multiple': False, 'typeClass': 'controlledVocabulary', 'value': 'ORCID'}, 'authorIdentifier': {'typeName': 'authorIdentifier', 'multiple': False, 'typeClass': 'primitive', 'value': '0000-0002-9763-9067'}}, {'authorName': {'typeName': 'authorName', 'multiple': False, 'typeClass': 'primitive', 'value': 'Sumbhaniya, Haroon Osman'}, 'authorAffiliation': {'typeName': 'authorAffiliation', 'multiple': False, 'typeClass': 'primitive', 'value': 'IJL ; Université de Lorraine, CNRS ; France'}, 'authorIdentifierScheme': {'typeName': 'authorIdentifierScheme', 'multiple': False, 'typeClass': 'controlledVocabulary', 'value': 'ORCID'}, 'authorIdentifier': {'typeName': 'authorIdentifier', 'multiple': False, 'typeClass': 'primitive', 'value': '0000-0002-0076-9771'}}, {'authorName': {'typeName': 'authorName', 'multiple': False, 'typeClass': 'primitive', 'value': 'Castro Gutierrez, Jimena'}, 'authorAffiliation': {'typeName': 'authorAffiliation', 'multiple': False, 'typeClass': 'primitive', 'value': 'IJL ; Université de Lorraine, CNRS ; France'}, 'authorIdentifierScheme': {'typeName': 'authorIdentifierScheme', 'multiple': False, 'typeClass': 'controlledVocabulary', 'value': 'ORCID'}, 'authorIdentifier': {'typeName': 'authorIdentifier', 'multiple': False, 'typeClass': 'primitive', 'value': '0000-0002-6319-2498'}}, {'authorName': {'typeName': 'authorName', 'multiple': False, 'typeClass': 'primitive', 'value': 'Sdanghi, Giuseppe'}, 'authorAffiliation': {'typeName': 'authorAffiliation', 'multiple': False, 'typeClass': 'primitive', 'value': 'LEMTA ; Université de Lorraine, CNRS ; France'}, 'authorIdentifierScheme': {'typeName': 'authorIdentifierScheme', 'multiple': False, 'typeClass': 'controlledVocabulary', 'value': 'ORCID'}, 'authorIdentifier': {'typeName': 'authorIdentifier', 'multiple': False, 'typeClass': 'primitive', 'value': '0000-0003-4479-4220'}}, {'authorName': {'typeName': 'authorName', 'multiple': False, 'typeClass': 'primitive', 'value': 'Dalí, Sergio García'}, 'authorAffiliation': {'typeName': 'authorAffiliation', 'multiple': False, 'typeClass': 'primitive', 'value': 'IJL ; Université de Lorraine, CNRS ; France'}, 'authorIdentifierScheme': {'typeName': 'authorIdentifierScheme', 'multiple': False, 'typeClass': 'controlledVocabulary', 'value': 'ORCID'}, 'authorIdentifier': {'typeName': 'authorIdentifier', 'multiple': False, 'typeClass': 'primitive', 'value': '0000-0002-0042-0430'}}, {'authorName': {'typeName': 'authorName', 'multiple': False, 'typeClass': 'primitive', 'value': 'Fierro, Vanessa'}, 'authorAffiliation': {'typeName': 'authorAffiliation', 'multiple': False, 'typeClass': 'primitive', 'value': 'IJL ; Université de Lorraine, CNRS ; France'}, 'authorIdentifierScheme': {'typeName': 'authorIdentifierScheme', 'multiple': False, 'typeClass': 'controlledVocabulary', 'value': 'ORCID'}, 'authorIdentifier': {'typeName': 'authorIdentifier', 'multiple': False, 'typeClass': 'primitive', 'value': '0000-0001-7081-3697'}}, {'authorName': {'typeName': 'authorName', 'multiple': False, 'typeClass': 'primitive', 'value': 'Celzard, Alain'}, 'authorAffiliation': {'typeName': 'authorAffiliation', 'multiple': False, 'typeClass': 'primitive', 'value': 'IJL ; Université de Lorraine, CNRS ; France ; IUF, France'}, 'authorIdentifierScheme': {'typeName': 'authorIdentifierScheme', 'multiple': False, 'typeClass': 'controlledVocabulary', 'value': 'ORCID'}, 'authorIdentifier': {'typeName': 'authorIdentifier', 'multiple': False, 'typeClass': 'primitive', 'value': '0000-0003-0073-9545'}}]",
+  "authoritative_landing_url": "https://doi.org/10.57745/KR8BIW",
+  "authoritative_source_urls": [
+    "https://doi.org/10.57745/KR8BIW",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765975?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765886?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765883?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765884?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765885?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765890?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765889?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765888?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765923?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765922?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765924?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765921?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/764064?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765932?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765930?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765931?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765929?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765935?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765933?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765936?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765934?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765937?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765939?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765938?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765940?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765941?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765943?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765944?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765945?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765942?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765949?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765948?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765952?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765950?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765951?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/764063?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/764067?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/764065?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/764066?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/764068?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/764062?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765956?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765953?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765954?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765955?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765958?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765959?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765960?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765957?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765963?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765964?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765961?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765962?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765965?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765966?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765969?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765968?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765967?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765973?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765970?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765971?format=original",
+    "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765972?format=original"
+  ],
+  "identifiers": [
+    "doi:10.57745/KR8BIW"
+  ],
+  "release_or_version": "1.0",
+  "retrieval_finalized_utc": "2026-09-15T07:04:34.704084+00:00",
+  "license_or_access_terms": "etalab 2.0",
+  "deterministic_selection_rule": "complete specified source selection",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Campaign dates unknown; source study is from 2025 and dataset release September 2026.",
+  "source_publication_date": "2026-09-10",
+  "source_created_utc": null,
+  "source_updated_utc": null,
+  "source_inventory": [],
+  "author_preprocessing": "Original CSVs, spectroscopy, micrographs and README. Dataverse TAB checksums apply to ingested tables, not the retained original CSV bytes.",
+  "known_analyses_and_limitations": "Group formulation, specimen and complete adsorption cycles. Distinguish pore descriptors derived from adsorption from independently measured responses.",
+  "related_publications": [],
+  "independent_groups": "material formulation, temperature and adsorption cycle",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-066",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/1.README for Dataset .pdf",
+      "scenario_relative_path": "raw/1.README for Dataset .pdf",
+      "bytes": 162202,
+      "sha256": "a437478a3d886e802855134a56b4e4dd65ede554a48729c1929dd85c5ba6639e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765975?format=original",
+      "source_checksum": "md5:b9ca16b732e2be5846e2e252f0e678e6",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:19:45.524212+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/AR--MOF-5 +10%EG.csv",
+      "scenario_relative_path": "raw/AR--MOF-5 +10%EG.csv",
+      "bytes": 1998,
+      "sha256": "9dbf5de0651739c35e37eb2fbc62088bd3a3eec47759f49be90b9cd7e2d1c9da",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765886?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:43.316596+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/AR--MOF-5 +1%EG.csv",
+      "scenario_relative_path": "raw/AR--MOF-5 +1%EG.csv",
+      "bytes": 3003,
+      "sha256": "db1c003dbc929c70ed952d2efe831ac18da219790638ddda0031fa51b0b0b6cc",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765883?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:43.171023+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/AR--MOF-5 +5%EG.csv",
+      "scenario_relative_path": "raw/AR--MOF-5 +5%EG.csv",
+      "bytes": 2437,
+      "sha256": "107929dff90b4fddf305cc4a09440c2c0ab396d20094ee1566da2b06b27d7aa7",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765884?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:43.010715+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/AR--MOF-5 .csv",
+      "scenario_relative_path": "raw/AR--MOF-5 .csv",
+      "bytes": 3110,
+      "sha256": "1aaa7c78055ddb0d1505de840698db9958dd2d0dcbf073362cae2785a87a0d5d",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765885?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:44.226846+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/CILE1-EXCESS H2 MOF-5+5%EG.csv",
+      "scenario_relative_path": "raw/CILE1-EXCESS H2 MOF-5+5%EG.csv",
+      "bytes": 519,
+      "sha256": "de8d39e47a85564c101c585126d84f2b39b5ad529528a21f7e25710627af6565",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765890?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:44.589819+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/CILE2-EXCESS H2 MOF-5+5%EG.csv",
+      "scenario_relative_path": "raw/CILE2-EXCESS H2 MOF-5+5%EG.csv",
+      "bytes": 479,
+      "sha256": "f693c36ce57d2275cc6c5d488379b96e86de7531a8041d0d8ed9dc875876f5ff",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765889?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:46.863725+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/CILE3-EXCESS H2 MOF-5+5%EG.csv",
+      "scenario_relative_path": "raw/CILE3-EXCESS H2 MOF-5+5%EG.csv",
+      "bytes": 519,
+      "sha256": "002c40177f8783ea383e6d75cd9b4d465a398210dafad3dd743d560a6cd72968",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765888?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:46.052072+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/DTG--MOF-5 + 10%EG.csv",
+      "scenario_relative_path": "raw/DTG--MOF-5 + 10%EG.csv",
+      "bytes": 3594,
+      "sha256": "b01d380b70a400c5965a28f1cdb2bbf788947eb1c9bca658b2ee447217823713",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765923?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:46.197009+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/DTG--MOF-5 + 1%EG.csv",
+      "scenario_relative_path": "raw/DTG--MOF-5 + 1%EG.csv",
+      "bytes": 3281,
+      "sha256": "60fd7cefc8dd3452c2641d0ef459a0d4ae58a3708628b48cb416f336b679bef6",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765922?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:47.095907+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/DTG--MOF-5 + 5%EG.csv",
+      "scenario_relative_path": "raw/DTG--MOF-5 + 5%EG.csv",
+      "bytes": 3240,
+      "sha256": "c44ccf00d63b030243abb007832acc2c141a561a05620996458eadce8a643554",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765924?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:47.348121+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/DTG--MOF-5.csv",
+      "scenario_relative_path": "raw/DTG--MOF-5.csv",
+      "bytes": 2951,
+      "sha256": "d47b68ad994bb9089f905c54490e4bfae20dc1eb7d34a5db9741be9a0b093b51",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765921?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:48.169990+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/EG.jpg",
+      "scenario_relative_path": "raw/EG.jpg",
+      "bytes": 3100928,
+      "sha256": "8c0fc1f729f8604b3e40bda01a40f9517c9654fb57199774bbc12290268f6877",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/764064?format=original",
+      "source_checksum": "md5:01d6644753d4b395c32c51b9df435aaf",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:20:12.562303+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/EXCESS H2 160 K-- MOF-5 + 10%EG.csv",
+      "scenario_relative_path": "raw/EXCESS H2 160 K-- MOF-5 + 10%EG.csv",
+      "bytes": 438,
+      "sha256": "2b755368fb8ced401c5af4f7129348c9178a32f576172c13e73fe9783e547734",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765932?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:49.272724+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/EXCESS H2 160 K-- MOF-5 + 1%EG.csv",
+      "scenario_relative_path": "raw/EXCESS H2 160 K-- MOF-5 + 1%EG.csv",
+      "bytes": 437,
+      "sha256": "aa5e65b2b0d5938d5dbe90d7295d00de8a148ccad1068108f67cb219cb47c998",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765930?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:49.834306+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/EXCESS H2 160 K-- MOF-5 + 5%EG.csv",
+      "scenario_relative_path": "raw/EXCESS H2 160 K-- MOF-5 + 5%EG.csv",
+      "bytes": 438,
+      "sha256": "12d684504d87e2146119d9e9eaac26f0cab62033c931f62c243a90c7b85b5d3a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765931?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:50.019626+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/EXCESS H2 160 K-- MOF-5.csv",
+      "scenario_relative_path": "raw/EXCESS H2 160 K-- MOF-5.csv",
+      "bytes": 438,
+      "sha256": "149cd924d81d40bf8019e769e868d89aead93d8a9238bb579bc27d5e3f468ba1",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765929?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:50.035145+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/EXCESS H2 273 K-- MOF-5 + 10% EG.csv",
+      "scenario_relative_path": "raw/EXCESS H2 273 K-- MOF-5 + 10% EG.csv",
+      "bytes": 445,
+      "sha256": "9d089da3fd7eb36d4987fd54cc70ed5c1165ab691905af68a8396d54e0022edf",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765935?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:50.965757+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/EXCESS H2 273 K-- MOF-5 + 1% EG.csv",
+      "scenario_relative_path": "raw/EXCESS H2 273 K-- MOF-5 + 1% EG.csv",
+      "bytes": 445,
+      "sha256": "59c053187c7688b81899bca37709ee5995bb9dcb69023f162bb444309daa6d70",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765933?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:52.122154+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/EXCESS H2 273 K-- MOF-5 + 5% EG.csv",
+      "scenario_relative_path": "raw/EXCESS H2 273 K-- MOF-5 + 5% EG.csv",
+      "bytes": 445,
+      "sha256": "75e891f4659f88556d14190aefe93b8bd714baaa3007f80877c25ba243d50787",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765936?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:52.616088+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/EXCESS H2 273 K-- MOF-5.csv",
+      "scenario_relative_path": "raw/EXCESS H2 273 K-- MOF-5.csv",
+      "bytes": 445,
+      "sha256": "b8ad98b751fee39dc6923de38de226b9f292ce2e1fc44b02baef35e1290bd81b",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765934?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:52.733970+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/EXCESS H2 77 K--MOF-5+10%EG.csv",
+      "scenario_relative_path": "raw/EXCESS H2 77 K--MOF-5+10%EG.csv",
+      "bytes": 501,
+      "sha256": "8569b2d18419ab7d8d4e006d45656547d0314c78d49a50255a08a06aca91da83",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765937?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:53.042722+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/EXCESS H2 77 K--MOF-5+1%EG.csv",
+      "scenario_relative_path": "raw/EXCESS H2 77 K--MOF-5+1%EG.csv",
+      "bytes": 463,
+      "sha256": "d5c34815377ef0550117bbc91928f0e5b512d1b15d0c4aa244413bfab4379b78",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765939?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:53.779385+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/EXCESS H2 77 K--MOF-5+5%EG.csv",
+      "scenario_relative_path": "raw/EXCESS H2 77 K--MOF-5+5%EG.csv",
+      "bytes": 479,
+      "sha256": "fc54de92a86fc97d5be06f2eb1c52e056e354defe34b88fd2306654dfbf43c11",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765938?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:54.849154+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/EXCESS H2 77 K--MOF-5.csv",
+      "scenario_relative_path": "raw/EXCESS H2 77 K--MOF-5.csv",
+      "bytes": 463,
+      "sha256": "7e9018dc72cd0d6cec283084bbfe0a9d8430b96222f8c2de6bfdc5cc589b2a07",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765940?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:55.380780+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/FTIR .csv",
+      "scenario_relative_path": "raw/FTIR .csv",
+      "bytes": 113071,
+      "sha256": "f1bcb6954c5769c3e85e9231b940c5c005543c37005b53bdc19cf290543bb53e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765941?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:56.017248+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/H2--MOF-5 + 10% EG.csv",
+      "scenario_relative_path": "raw/H2--MOF-5 + 10% EG.csv",
+      "bytes": 2015,
+      "sha256": "1076ac55021c7dc9a58ede2c8885bc3f5f6805a69994475664235685be9f69aa",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765943?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:56.701840+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/H2--MOF-5 + 1% EG.csv",
+      "scenario_relative_path": "raw/H2--MOF-5 + 1% EG.csv",
+      "bytes": 1987,
+      "sha256": "9f1af4469a0d722d3efaa2abdf40ce177017ef7331bf2d359ff51002f82b1d11",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765944?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:56.589385+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/H2--MOF-5 + 5% EG.csv",
+      "scenario_relative_path": "raw/H2--MOF-5 + 5% EG.csv",
+      "bytes": 1999,
+      "sha256": "06e03673b963e644356151a2020b5f5ece4765df639320c6afdba6e6b7866163",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765945?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:57.604271+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/H2--MOF-5 .csv",
+      "scenario_relative_path": "raw/H2--MOF-5 .csv",
+      "bytes": 1693,
+      "sha256": "f51036e7128b8dc752ffc7ec4cb43c853924287fe7dcd28f95f92313fe91a988",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765942?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:58.883694+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/H2O--EG.csv",
+      "scenario_relative_path": "raw/H2O--EG.csv",
+      "bytes": 613,
+      "sha256": "2c8851884ff9f2f64dbbd65f4a5884b873b052f76a4df4d5b9941ff04b623709",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765949?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:59.827436+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/H2O--MOF-5 + 10% EG.csv",
+      "scenario_relative_path": "raw/H2O--MOF-5 + 10% EG.csv",
+      "bytes": 904,
+      "sha256": "bd44de866b8b8e4d08e409df2d6ff1b5c72c50222d964ce5966c6005cf2df1bd",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765948?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:19:59.679156+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/H2O--MOF-5 + 1% EG.csv",
+      "scenario_relative_path": "raw/H2O--MOF-5 + 1% EG.csv",
+      "bytes": 1017,
+      "sha256": "0c6d1d7555eb7edc397a91652fc0089c335c571eba9d8accf354ed5fd03d56b8",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765952?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:00.071754+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/H2O--MOF-5 + 5% EG.csv",
+      "scenario_relative_path": "raw/H2O--MOF-5 + 5% EG.csv",
+      "bytes": 998,
+      "sha256": "b85575932aa6e9c79d18ca3dc76053c51d951c8c2fc09016f70e17101ceb3060",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765950?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:00.363280+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/H2O--MOF-5 .csv",
+      "scenario_relative_path": "raw/H2O--MOF-5 .csv",
+      "bytes": 888,
+      "sha256": "434d37cfe9e569fdd528c5fd9a21f51adfe865d91d9b6795e93374fd7f2dcdeb",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765951?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:01.667725+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/MOF-5+10%EG.jpg",
+      "scenario_relative_path": "raw/MOF-5+10%EG.jpg",
+      "bytes": 2783353,
+      "sha256": "077954abf83e0c00a48d0ab09b26d786d90397a676a6ef9ca07105dc094b08e6",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/764063?format=original",
+      "source_checksum": "md5:c67da1144bbcb6a9552dafa4888bd3f9",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:20:17.561494+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/MOF-5+10%EG.tif",
+      "scenario_relative_path": "raw/MOF-5+10%EG.tif",
+      "bytes": 890712,
+      "sha256": "821c343f1db667b73eafaecf99adfec7fa96d3caf3f9ed3829c569074cba7dd9",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/764067?format=original",
+      "source_checksum": "md5:1a84aadb876f90a0d6801ba98490bc9b",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:20:07.625938+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/MOF-5+1%EG.jpg",
+      "scenario_relative_path": "raw/MOF-5+1%EG.jpg",
+      "bytes": 2576958,
+      "sha256": "01e302a189466ee4896028c812650a9ca131380c78e3ee3abb9d2c338e7c1f25",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/764065?format=original",
+      "source_checksum": "md5:19d7033955c7cf43c12128991ed5dba6",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:20:04.621824+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/MOF-5+1%EG.tif",
+      "scenario_relative_path": "raw/MOF-5+1%EG.tif",
+      "bytes": 890712,
+      "sha256": "095fc32fb7893c0e41daa2ca97375a3b6de33b7f3cc5ca1408b19de630be842d",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/764066?format=original",
+      "source_checksum": "md5:e96093213a996d41760f7cfb5f1f3466",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:20:04.756251+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/MOF-5 + 5%EG.tif",
+      "scenario_relative_path": "raw/MOF-5 + 5%EG.tif",
+      "bytes": 890712,
+      "sha256": "8b500acaaac5fb7afebf951a8d06acaaf0696fa28318e67e42449650be5ac18d",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/764068?format=original",
+      "source_checksum": "md5:07a895b71e5e364f2b13905bbc8db2dd",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:20:06.502634+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/MOF-5.jpg",
+      "scenario_relative_path": "raw/MOF-5.jpg",
+      "bytes": 3142775,
+      "sha256": "c54ea3373f35d82b1646d2d84b3602fd6a21714f8a5fa5c38db8a695c8f0e6c8",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/764062?format=original",
+      "source_checksum": "md5:214f4b289156d186a710efc4202a10f1",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:20:25.733706+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/N2--MOF-5 + 10% EG.csv",
+      "scenario_relative_path": "raw/N2--MOF-5 + 10% EG.csv",
+      "bytes": 2517,
+      "sha256": "0977760b1178c120bcd53dee55bb62fb5561be4341ed5256d4af778586c0e809",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765956?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:07.706361+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/N2--MOF-5 + 1% EG.csv",
+      "scenario_relative_path": "raw/N2--MOF-5 + 1% EG.csv",
+      "bytes": 2522,
+      "sha256": "58147a922a6c01ef1223f14c2d64e8d6bdd10318bf2e7310748692c751cbf27a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765953?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:09.276646+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/N2--MOF-5 + 5% EG.csv",
+      "scenario_relative_path": "raw/N2--MOF-5 + 5% EG.csv",
+      "bytes": 2295,
+      "sha256": "20ec7183fee43e2e9d148af1b9193206ff01bcac778f1b8ac6a100101550605b",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765954?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:10.376965+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/N2--MOF-5 .csv",
+      "scenario_relative_path": "raw/N2--MOF-5 .csv",
+      "bytes": 2811,
+      "sha256": "c46e09dd5243f14b374ed447fafc0c9f47e1a7f9170961ce2623fff62742decc",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765955?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:10.401089+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/PSD--MOF-5 +10% EG.csv",
+      "scenario_relative_path": "raw/PSD--MOF-5 +10% EG.csv",
+      "bytes": 8031,
+      "sha256": "e10d40c2809dcb438a5e66db75b9d9cd6bf8fe679be2213064aeb843cdb86b6f",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765958?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:12.329289+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/PSD--MOF-5 +1% EG.csv",
+      "scenario_relative_path": "raw/PSD--MOF-5 +1% EG.csv",
+      "bytes": 8836,
+      "sha256": "7a65d5c810763683b35018310cafb6e4a8d0fa3a2c4aad9ceaebbb80c23d8e0d",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765959?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:13.309430+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/PSD--MOF-5 +5% EG.csv",
+      "scenario_relative_path": "raw/PSD--MOF-5 +5% EG.csv",
+      "bytes": 8830,
+      "sha256": "c763fbf096fc033c6db0139b0dda4e0b90c7729d22574d61975afc356b562698",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765960?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:13.217182+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/PSD--MOF-5 .csv",
+      "scenario_relative_path": "raw/PSD--MOF-5 .csv",
+      "bytes": 8845,
+      "sha256": "06be2b4ddd05e4f2a914e3504c1b6cfe695d0c0afdeeadbb1a548f8556df4852",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765957?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:15.306631+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/TGA--EG.csv",
+      "scenario_relative_path": "raw/TGA--EG.csv",
+      "bytes": 3240,
+      "sha256": "e6d99e84a1abca43d1eebd336c33e8da90b6bceb1452271fd346ccba87623a48",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765963?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:15.973621+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/TGA--MOF-5+10%EG.csv",
+      "scenario_relative_path": "raw/TGA--MOF-5+10%EG.csv",
+      "bytes": 3241,
+      "sha256": "bdb8ca69a0b41bf021431837013e983c5aba9e37e523a725ded801bd204e1e64",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765964?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:15.974799+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/TGA--MOF-5+1%EG.csv",
+      "scenario_relative_path": "raw/TGA--MOF-5+1%EG.csv",
+      "bytes": 3532,
+      "sha256": "440a20d7fa44d79ba63afb7dda607737f5b2070dfea6016e4413ec3c865377a5",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765961?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:16.872863+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/TGA--MOF-5+5%EG.csv",
+      "scenario_relative_path": "raw/TGA--MOF-5+5%EG.csv",
+      "bytes": 3593,
+      "sha256": "96e10fc2c5de599cf08fb720929cae0a27cbf01e935b885805905a897594c04d",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765962?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:18.182086+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/TGA--MOF-5.csv",
+      "scenario_relative_path": "raw/TGA--MOF-5.csv",
+      "bytes": 3593,
+      "sha256": "801ea461d5fa991cea16d1f1532e58f7037ec4b1ecc524ebc90749e54b25e9a3",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765965?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:18.820022+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/TOTAL H2 77 K-- MOF-5 + 10% EG.csv",
+      "scenario_relative_path": "raw/TOTAL H2 77 K-- MOF-5 + 10% EG.csv",
+      "bytes": 472,
+      "sha256": "844d380b30c2e2c8bc9fd1ca2d57e3fe5a44d1fdb97efe3e9361aa76e7dab17b",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765966?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:18.678964+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/TOTAL H2 77 K-- MOF-5 + 1% EG.csv",
+      "scenario_relative_path": "raw/TOTAL H2 77 K-- MOF-5 + 1% EG.csv",
+      "bytes": 477,
+      "sha256": "f5f3bbb7c1b1b1e810e8799ce53243b25a46645898b75faae3b9e40d37e63c2b",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765969?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:19.864904+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/TOTAL H2 77 K-- MOF-5 + 5% EG.csv",
+      "scenario_relative_path": "raw/TOTAL H2 77 K-- MOF-5 + 5% EG.csv",
+      "bytes": 472,
+      "sha256": "a09b6d58fb759ef24faff35c0516628da0f0eaeb9d43bf13254ddba4aa5596aa",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765968?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:20.798786+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/TOTAL H2 77 K-- MOF-5 .csv",
+      "scenario_relative_path": "raw/TOTAL H2 77 K-- MOF-5 .csv",
+      "bytes": 473,
+      "sha256": "79edc56c0ad5570f8a1100359a00813b721f8383e2fd2197e610d4ec4e8894e2",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765967?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:20.899246+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/XRD--MOF-5+10%EG.csv",
+      "scenario_relative_path": "raw/XRD--MOF-5+10%EG.csv",
+      "bytes": 47091,
+      "sha256": "2441f388fdd577b0fac4addca663774788692f0c1a15ac6d698265ad5779e399",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765973?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:21.746244+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/XRD--MOF-5+1%EG.csv",
+      "scenario_relative_path": "raw/XRD--MOF-5+1%EG.csv",
+      "bytes": 69099,
+      "sha256": "9010e4191b29ceb9e2c53b0de9467a759e4921fbc6e27fd7b1a459c100af66b4",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765970?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:22.224620+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/XRD--MOF-5+5%EG.csv",
+      "scenario_relative_path": "raw/XRD--MOF-5+5%EG.csv",
+      "bytes": 63295,
+      "sha256": "50762d0762921a0076147dcd9ee2aa5033cd1da1fd58d44e4828555f79f200e5",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765971?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:22.874800+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "raw/XRD--MOF-5.csv",
+      "scenario_relative_path": "raw/XRD--MOF-5.csv",
+      "bytes": 68905,
+      "sha256": "b6dd1856cd6a0087101a0d848dc8d1861b5984baddc065657806b2b38c24e99c",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/765972?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:20:23.912099+00:00",
+      "license_or_terms": "etalab 2.0",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-066",
+      "scenario_id": "66_chemistry_mof_hydrogen",
+      "path": "context/SOURCE_FACTS.json",
+      "scenario_relative_path": "context/SOURCE_FACTS.json",
+      "bytes": 27432,
+      "sha256": "4ac305f58a1cc92006682ccc98315045d0586012647d2ddc7270b52d04d368d4",
+      "role": "curator_factual_source_profile",
+      "source_urls": [
+        "https://doi.org/10.57745/KR8BIW"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "curator serialization, not a publisher file",
+      "retrieved_utc": "2026-09-15T07:04:34.704084+00:00",
+      "license_or_terms": "CC-BY-4.0 (proposed release terms for curator documentation; pending owner acceptance)",
+      "citation_identifiers": [
+        "doi:10.57745/KR8BIW"
+      ],
+      "citation_url": "https://doi.org/10.57745/KR8BIW",
+      "source_version": "1.0",
+      "replay_note": "Reconstruct exact curator metadata from frozen release copy.",
+      "rights_evidence_url": "https://doi.org/10.57745/KR8BIW",
+      "rights_evidence_scope": "Factual identifiers, file inventory and attribution; curator serialization."
+    }
+  ]
+}

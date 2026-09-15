@@ -1,0 +1,99 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "58_polymer_pdlla_rheology",
+  "domain": "Polymer physics",
+  "title": "Differential scanning calorimetry, gel permeation chromatography and linear rheology measurements of poly(D,L-lactide) (Aldrich 805734)",
+  "publisher": "Bacova, Petra (Universidad de Cádiz); García Laynez, María del Carmen; Vlassopoulos, Dimitris (University of Crete); Molina, Sergio I. (Universidad de Cadiz Campus de Rio San Pedro)",
+  "authoritative_landing_url": "https://zenodo.org/records/17294879",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/17294879",
+    "https://zenodo.org/api/records/17294879/files/PDLLA15k_DSC_GPC_rheo.zip/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.17294879"
+  ],
+  "release_or_version": "17294879",
+  "retrieval_finalized_utc": "2026-09-15T07:04:33.377416+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Rheology performed in summer 2024; DSC/GPC dates remain source-file specific.",
+  "source_publication_date": "2025-10-08",
+  "source_created_utc": "2025-10-08T17:53:47.544139+00:00",
+  "source_updated_utc": "2025-10-08T17:53:47.836053+00:00",
+  "source_inventory": [
+    {
+      "name": "PDLLA15k_DSC_GPC_rheo.zip",
+      "bytes": 1124027,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Native instrument exports plus text versions; DSC/GPC calibration context and manufacturer certificate supplied. Rheology was not corrected for rheometer compliance.",
+  "known_analyses_and_limitations": "One polymer batch. Validate across complete temperature/frequency sweeps; compliance artifacts may mimic constitutive effects. Native proprietary formats may need vendor software.",
+  "related_publications": [
+    {
+      "identifier": "10.5281/zenodo.17287460",
+      "relation": "cites",
+      "resource_type": "publication-technicalnote",
+      "scheme": "doi"
+    }
+  ],
+  "independent_groups": "temperature/frequency sweeps within one polymer batch",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-058",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-058",
+      "scenario_id": "58_polymer_pdlla_rheology",
+      "path": "raw/PDLLA15k_DSC_GPC_rheo.zip",
+      "scenario_relative_path": "raw/PDLLA15k_DSC_GPC_rheo.zip",
+      "bytes": 1124027,
+      "sha256": "a556a226ac4759039ec860a9a113a4036017755ecef3caac78a7e22854837c4b",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17294879"
+      ],
+      "download_url": "https://zenodo.org/api/records/17294879/files/PDLLA15k_DSC_GPC_rheo.zip/content",
+      "source_checksum": "md5:21709db61ae25bb0789933aea2558d66",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:18:30.417847+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17294879"
+      ],
+      "citation_url": "https://zenodo.org/records/17294879",
+      "source_version": "17294879",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17294879",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-058",
+      "scenario_id": "58_polymer_pdlla_rheology",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 8478,
+      "sha256": "09da2ed050b95bfb048bfc08672d4bf1ab781f21d79d386a8424de5e2ed51be4",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/17294879"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:41.886905+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17294879"
+      ],
+      "citation_url": "https://zenodo.org/records/17294879",
+      "source_version": "17294879",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "91_communications_private_5g",
+  "domain": "Private 5G networking",
+  "title": "Measurement dataset and analysis code for \"Measurement-Driven Modeling of End-to-End Latency in an Indoor Private Standalone 5G Network\"",
+  "publisher": "[{'person_or_org': {'type': 'personal', 'name': 'Bodur, Osman', 'given_name': 'Osman', 'family_name': 'Bodur', 'identifiers': [{'identifier': '0000-0002-4102-8646', 'scheme': 'orcid'}]}, 'role': {'id': 'contactperson', 'title': {'ar': 'مسؤول الاتصال', 'cs': 'Kontaktní osoba', 'de': 'Kontaktperson', 'en': 'Contact person', 'es': 'Persona de contacto', 'sv': 'Kontaktperson'}}, 'affiliations': [{'name': 'TU Wien'}]}, {'person_or_org': {'type': 'personal', 'name': 'Çağlayan, Sami', 'given_name': 'Sami', 'family_name': 'Çağlayan'}, 'role': {'id': 'contactperson', 'title': {'ar': 'مسؤول الاتصال', 'cs': 'Kontaktní osoba', 'de': 'Kontaktperson', 'en': 'Contact person', 'es': 'Persona de contacto', 'sv': 'Kontaktperson'}}, 'affiliations': [{'id': '03ewx7v96', 'name': 'TOBB University of Economics and Technology', 'identifiers': [{'identifier': '03ewx7v96', 'scheme': 'ror'}, {'identifier': 'grid.412749.d', 'scheme': 'grid'}, {'identifier': '0000 0000 9058 8063', 'scheme': 'isni'}]}]}, {'person_or_org': {'type': 'personal', 'name': 'Demir, Neslihan', 'given_name': 'Neslihan', 'family_name': 'Demir', 'identifiers': [{'identifier': '0000-0001-8641-7787', 'scheme': 'orcid'}]}, 'role': {'id': 'contactperson', 'title': {'ar': 'مسؤول الاتصال', 'cs': 'Kontaktní osoba', 'de': 'Kontaktperson', 'en': 'Contact person', 'es': 'Persona de contacto', 'sv': 'Kontaktperson'}}, 'affiliations': [{'id': '00qsyw664', 'name': 'Istanbul Aydın University', 'identifiers': [{'identifier': '00qsyw664', 'scheme': 'ror'}, {'identifier': 'grid.449300.a', 'scheme': 'grid'}, {'identifier': '0000 0004 0403 6369', 'scheme': 'isni'}]}]}, {'person_or_org': {'type': 'personal', 'name': 'Poszvek, Günther', 'given_name': 'Günther', 'family_name': 'Poszvek', 'identifiers': [{'identifier': '0000-0001-8435-564X', 'scheme': 'orcid'}]}, 'role': {'id': 'contactperson', 'title': {'ar': 'مسؤول الاتصال', 'cs': 'Kontaktní osoba', 'de': 'Kontaktperson', 'en': 'Contact person', 'es': 'Persona de contacto', 'sv': 'Kontaktperson'}}, 'affiliations': [{'name': 'TU Wien'}]}, {'person_or_org': {'type': 'personal', 'name': 'Bleicher, Friedrich', 'given_name': 'Friedrich', 'family_name': 'Bleicher', 'identifiers': [{'identifier': '0000-0003-3429-867X', 'scheme': 'orcid'}]}, 'role': {'id': 'contactperson', 'title': {'ar': 'مسؤول الاتصال', 'cs': 'Kontaktní osoba', 'de': 'Kontaktperson', 'en': 'Contact person', 'es': 'Persona de contacto', 'sv': 'Kontaktperson'}}, 'affiliations': [{'name': 'TU Wien'}]}]",
+  "authoritative_landing_url": "https://researchdata.tuwien.ac.at/records/hja53-s8y18",
+  "authoritative_source_urls": [
+    "https://researchdata.tuwien.ac.at/records/hja53-s8y18",
+    "https://researchdata.tuwien.ac.at/api/records/hja53-s8y18/files/raw_throughput_logs.zip/content",
+    "https://researchdata.tuwien.ac.at/api/records/hja53-s8y18/files/code.zip/content",
+    "https://researchdata.tuwien.ac.at/api/records/hja53-s8y18/files/raw_latency_logs.zip/content",
+    "https://researchdata.tuwien.ac.at/api/records/hja53-s8y18/files/data.zip/content",
+    "https://researchdata.tuwien.ac.at/api/records/hja53-s8y18/files/LICENSE.md/content",
+    "https://researchdata.tuwien.ac.at/api/records/hja53-s8y18/files/README.md/content"
+  ],
+  "identifiers": [
+    "10.48436/hja53-s8y18"
+  ],
+  "release_or_version": "1.0.0",
+  "retrieval_finalized_utc": "2026-09-15T07:04:42.377045+00:00",
+  "license_or_access_terms": "cc-by-4.0; mit",
+  "deterministic_selection_rule": "complete specified source selection",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "June 3–July 3, 2025; dataset released September 2026.",
+  "source_publication_date": "2026-09-01",
+  "source_created_utc": null,
+  "source_updated_utc": null,
+  "source_inventory": [],
+  "author_preprocessing": "All 245 raw runs and source processed tables/code. Three invalid one-way-delay runs are retained and flagged; processed tables replace them with cell means.",
+  "known_analyses_and_limitations": "Hold out locations or whole runs. Fit against achieved throughput, not only target rate. Raw and imputed versions must not be mixed without disclosure.",
+  "related_publications": [],
+  "independent_groups": "location and complete run, invalid clocks retained",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-091",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-091",
+      "scenario_id": "91_communications_private_5g",
+      "path": "raw/raw_throughput_logs.zip",
+      "scenario_relative_path": "raw/raw_throughput_logs.zip",
+      "bytes": 48535,
+      "sha256": "07f477d2fda65361e8dbb0b6edd953fa7f102ab132b7c99c5b0bbdc689d8e8da",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://researchdata.tuwien.ac.at/records/hja53-s8y18"
+      ],
+      "download_url": "https://researchdata.tuwien.ac.at/api/records/hja53-s8y18/files/raw_throughput_logs.zip/content",
+      "source_checksum": "md5:8c7670365f22506e751319344519f78c",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:35.874654+00:00",
+      "license_or_terms": "CC-BY-4.0",
+      "citation_identifiers": [
+        "10.48436/hja53-s8y18"
+      ],
+      "citation_url": "https://researchdata.tuwien.ac.at/records/hja53-s8y18",
+      "source_version": "1.0.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://researchdata.tuwien.ac.at/records/hja53-s8y18",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-091",
+      "scenario_id": "91_communications_private_5g",
+      "path": "raw/code.zip",
+      "scenario_relative_path": "raw/code.zip",
+      "bytes": 66470,
+      "sha256": "ce6bb0aa6132c1212cac776b19d99d185ffc391858bb945b26489646487f1fc7",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://researchdata.tuwien.ac.at/records/hja53-s8y18"
+      ],
+      "download_url": "https://researchdata.tuwien.ac.at/api/records/hja53-s8y18/files/code.zip/content",
+      "source_checksum": "md5:2cafab0eca705601a95543d62535e604",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:37.646066+00:00",
+      "license_or_terms": "MIT",
+      "citation_identifiers": [
+        "10.48436/hja53-s8y18"
+      ],
+      "citation_url": "https://researchdata.tuwien.ac.at/records/hja53-s8y18",
+      "source_version": "1.0.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://researchdata.tuwien.ac.at/records/hja53-s8y18",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-091",
+      "scenario_id": "91_communications_private_5g",
+      "path": "raw/raw_latency_logs.zip",
+      "scenario_relative_path": "raw/raw_latency_logs.zip",
+      "bytes": 320863,
+      "sha256": "5f615d1262992d97ac36415baf481b3cce65fa7b28f9790fb375e1d95cdcb44e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://researchdata.tuwien.ac.at/records/hja53-s8y18"
+      ],
+      "download_url": "https://researchdata.tuwien.ac.at/api/records/hja53-s8y18/files/raw_latency_logs.zip/content",
+      "source_checksum": "md5:12623ee7d9b0c78f9362e80c79db2c54",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:38.042505+00:00",
+      "license_or_terms": "CC-BY-4.0",
+      "citation_identifiers": [
+        "10.48436/hja53-s8y18"
+      ],
+      "citation_url": "https://researchdata.tuwien.ac.at/records/hja53-s8y18",
+      "source_version": "1.0.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://researchdata.tuwien.ac.at/records/hja53-s8y18",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-091",
+      "scenario_id": "91_communications_private_5g",
+      "path": "raw/data.zip",
+      "scenario_relative_path": "raw/data.zip",
+      "bytes": 27703,
+      "sha256": "89f952e2a0f299f728fe99a8ae0711c2d3a3e899f6df7ec4cd43bb63fcbd9330",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://researchdata.tuwien.ac.at/records/hja53-s8y18"
+      ],
+      "download_url": "https://researchdata.tuwien.ac.at/api/records/hja53-s8y18/files/data.zip/content",
+      "source_checksum": "md5:b5ec7d38467ba99382868a058880e4a5",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:38.442309+00:00",
+      "license_or_terms": "CC-BY-4.0",
+      "citation_identifiers": [
+        "10.48436/hja53-s8y18"
+      ],
+      "citation_url": "https://researchdata.tuwien.ac.at/records/hja53-s8y18",
+      "source_version": "1.0.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://researchdata.tuwien.ac.at/records/hja53-s8y18",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-091",
+      "scenario_id": "91_communications_private_5g",
+      "path": "raw/LICENSE.md",
+      "scenario_relative_path": "raw/LICENSE.md",
+      "bytes": 1784,
+      "sha256": "33110a4aeac0a4b758b41ff6a6680bc9bb53ba20b5e7b396913f94cc9a49cee4",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://researchdata.tuwien.ac.at/records/hja53-s8y18"
+      ],
+      "download_url": "https://researchdata.tuwien.ac.at/api/records/hja53-s8y18/files/LICENSE.md/content",
+      "source_checksum": "md5:279b20b60efa6ebd234fd1e9eae20bd4",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:38.960476+00:00",
+      "license_or_terms": "CC-BY-4.0",
+      "citation_identifiers": [
+        "10.48436/hja53-s8y18"
+      ],
+      "citation_url": "https://researchdata.tuwien.ac.at/records/hja53-s8y18",
+      "source_version": "1.0.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://researchdata.tuwien.ac.at/records/hja53-s8y18",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-091",
+      "scenario_id": "91_communications_private_5g",
+      "path": "raw/README.md",
+      "scenario_relative_path": "raw/README.md",
+      "bytes": 6820,
+      "sha256": "7abc0571f8468840e9b36f6f55fd79260f79c841008345c1cc74de553bdd266e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://researchdata.tuwien.ac.at/records/hja53-s8y18"
+      ],
+      "download_url": "https://researchdata.tuwien.ac.at/api/records/hja53-s8y18/files/README.md/content",
+      "source_checksum": "md5:ce818c8f2f63171c5dcd638e86397a80",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:39.455750+00:00",
+      "license_or_terms": "CC-BY-4.0",
+      "citation_identifiers": [
+        "10.48436/hja53-s8y18"
+      ],
+      "citation_url": "https://researchdata.tuwien.ac.at/records/hja53-s8y18",
+      "source_version": "1.0.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://researchdata.tuwien.ac.at/records/hja53-s8y18",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-091",
+      "scenario_id": "91_communications_private_5g",
+      "path": "context/SOURCE_FACTS.json",
+      "scenario_relative_path": "context/SOURCE_FACTS.json",
+      "bytes": 5467,
+      "sha256": "892629d4fe2afe529f9ae5fb26e752d70e2a5cb76fdebae26bc836c85b389b19",
+      "role": "curator_factual_source_profile",
+      "source_urls": [
+        "https://researchdata.tuwien.ac.at/records/hja53-s8y18"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "curator serialization, not a publisher file",
+      "retrieved_utc": "2026-09-15T07:04:42.377045+00:00",
+      "license_or_terms": "CC-BY-4.0 (proposed release terms for curator documentation; pending owner acceptance)",
+      "citation_identifiers": [
+        "10.48436/hja53-s8y18"
+      ],
+      "citation_url": "https://researchdata.tuwien.ac.at/records/hja53-s8y18",
+      "source_version": "1.0.0",
+      "replay_note": "Reconstruct exact curator metadata from frozen release copy.",
+      "rights_evidence_url": "https://researchdata.tuwien.ac.at/records/hja53-s8y18",
+      "rights_evidence_scope": "Factual identifiers, file inventory and attribution; curator serialization."
+    }
+  ]
+}

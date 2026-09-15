@@ -1,0 +1,759 @@
+{
+  "scenario_id": "63_physics_magnon_noise",
+  "path": "raw/iRRYHMPwMObNsUOM.tar",
+  "bytes": 2485248,
+  "sha256": "8575eb92da7a9600641dee09cea62e67adf9bd837edd2086acd65eca72c6c12e",
+  "checked_utc": "2026-09-15T06:45:33.897198+00:00",
+  "source_checksum_status": "verified",
+  "format": "TAR",
+  "members": [
+    {
+      "name": "10.48606-iRRYHMPwMObNsUOM/data/readme.txt",
+      "bytes": 1689,
+      "sha256": "a3a63108e9355a6988bcef27e584740f234e56fc5c2c6a17b0da1617664077c0",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "230d0a2320436f7079726967",
+        "line_count": 35,
+        "preview_lines": [
+          "#",
+          "# Copyright 2022 FIZ Karlsruhe - Leibniz-Institut fuer Informationsinfrastruktur GmbH",
+          "#",
+          "# Licensed under the Apache License, Version 2.0 (the \"License\");",
+          "# you may not use this file except in compliance with the License."
+        ],
+        "first_lines": [
+          "#",
+          "# Copyright 2022 FIZ Karlsruhe - Leibniz-Institut fuer Informationsinfrastruktur GmbH",
+          "#",
+          "# Licensed under the Apache License, Version 2.0 (the \"License\");",
+          "# you may not use this file except in compliance with the License.",
+          "# You may obtain a copy of the License at",
+          "#",
+          "#     http://www.apache.org/licenses/LICENSE-2.0"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "10.48606-iRRYHMPwMObNsUOM/data/descriptive-md/dataset.desc_md.xml",
+      "bytes": 8402,
+      "sha256": "8322a897a0cd8225f2098a99db2ad0a803aab5ef2fc4db4dde33c8bd032190f7",
+      "structure": {
+        "format": "XML",
+        "root": "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-dataset}radarDataset",
+        "element_count": 99,
+        "top_tags": [
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}identifier",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}relatedIdentifiers",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}creators",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}contributors",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}title",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}additionalTitles",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}descriptions",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}keywords",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}publishers",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}productionYear",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}publicationYear",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}language",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}subjectAreas",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}resource",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}software"
+        ]
+      }
+    },
+    {
+      "name": "10.48606-iRRYHMPwMObNsUOM/data/technical-md/dataset.tech_md.xml",
+      "bytes": 630,
+      "sha256": "59b10160002cd11d538c46fd75136a745536bc78c0ec44faffae0467fd15109b",
+      "structure": {
+        "format": "XML",
+        "root": "{http://radar-service.eu/schemas/dataset-technical-metadata/v10}dataset",
+        "element_count": 12,
+        "top_tags": [
+          "{http://radar-service.eu/schemas/dataset-technical-metadata/v10}retentionPeriod",
+          "{http://radar-service.eu/schemas/dataset-technical-metadata/v10}archiveDate",
+          "{http://radar-service.eu/schemas/dataset-technical-metadata/v10}archiveCreator",
+          "{http://radar-service.eu/schemas/dataset-technical-metadata/v10}responsibleEmail",
+          "{http://radar-service.eu/schemas/dataset-technical-metadata/v10}numberOfPendingNotificationMailsSent",
+          "{http://radar-service.eu/schemas/dataset-technical-metadata/v10}size",
+          "{http://radar-service.eu/schemas/dataset-technical-metadata/v10}access",
+          "{http://radar-service.eu/schemas/dataset-technical-metadata/v10}blocked",
+          "{http://radar-service.eu/schemas/dataset-technical-metadata/v10}schema"
+        ]
+      }
+    },
+    {
+      "name": "10.48606-iRRYHMPwMObNsUOM/data/dataset/Figure3_noise-power-spectral-density-dependence-of-termination-temperature.h5",
+      "bytes": 8376,
+      "sha256": "22d03d6b676741ecfb666498a43c6d849a15edf140031c02804efa543626befd",
+      "structure": {
+        "format": "HDF5",
+        "datasets": [
+          {
+            "name": "Sn_off",
+            "shape": [
+              5
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Off-resonance noise",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_off_err",
+            "shape": [
+              5
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Error of off-resonance noise",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_on",
+            "shape": [
+              4
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "On-resonance noise",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_on_err",
+            "shape": [
+              4
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Error of on-resonance noise",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "T",
+            "shape": [
+              5
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Temperature of the 50 Ohm resistor",
+              "Unit": "K"
+            }
+          }
+        ],
+        "coverage": "hierarchy and first element/chunk per dataset"
+      }
+    },
+    {
+      "name": "10.48606-iRRYHMPwMObNsUOM/data/descriptive-md/dataset/Figure3_noise-power-spectral-density-dependence-of-termination-temperature.h5.desc_md.xml",
+      "bytes": 1153,
+      "sha256": "d957e21a49a26af1a931d09e2db738c73b0060478aafd633d23e76bce45c7a01",
+      "structure": {
+        "format": "XML",
+        "root": "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-file}radarFile",
+        "element_count": 14,
+        "top_tags": [
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}creators",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}title",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}productionYear",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}subjectAreas",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}resource"
+        ]
+      }
+    },
+    {
+      "name": "10.48606-iRRYHMPwMObNsUOM/data/dataset/Figure2_noise-power-spectral-density-as-function-of-frequency-feld-for-different-termination-temperatures.h5",
+      "bytes": 1677952,
+      "sha256": "36c43afaabfe9783ebc34ac9c110efbef3c8ca58cc8e7847706634cdfe851b52",
+      "structure": {
+        "format": "HDF5",
+        "datasets": [
+          {
+            "name": "B_a",
+            "shape": [
+              68
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "magnetic field - panel a)",
+              "Unit": "T"
+            }
+          },
+          {
+            "name": "B_b",
+            "shape": [
+              68
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "magnetic field - panel b)",
+              "Unit": "T"
+            }
+          },
+          {
+            "name": "B_c",
+            "shape": [
+              68
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "magnetic field - panel c)",
+              "Unit": "T"
+            }
+          },
+          {
+            "name": "Sn_a",
+            "shape": [
+              68,
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "noise power spectral density - panel a)",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_b",
+            "shape": [
+              68,
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "noise power spectral density - panel b)",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_c",
+            "shape": [
+              68,
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "noise power spectral density - panel c)",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_d",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "noise power spectral density - panel d)",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_e",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "noise power spectral density - panel e)",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_f",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "noise power spectral density - panel f)",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "f",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "frequency",
+              "Unit": "Hz"
+            }
+          }
+        ],
+        "coverage": "hierarchy and first element/chunk per dataset"
+      }
+    },
+    {
+      "name": "10.48606-iRRYHMPwMObNsUOM/data/descriptive-md/dataset/Figure2_noise-power-spectral-density-as-function-of-frequency-feld-for-different-termination-temperatures.h5.desc_md.xml",
+      "bytes": 1184,
+      "sha256": "5945974a2e4d43bf781418a152cde8ef0c03b9aa0101a9964107f9356ec056c3",
+      "structure": {
+        "format": "XML",
+        "root": "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-file}radarFile",
+        "element_count": 14,
+        "top_tags": [
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}creators",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}title",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}productionYear",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}subjectAreas",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}resource"
+        ]
+      }
+    },
+    {
+      "name": "10.48606-iRRYHMPwMObNsUOM/data/dataset/Figure6_noise-power-spectral-density-as-function-of-frequency-for-diﬀerent-ﬁelds.h5",
+      "bytes": 667544,
+      "sha256": "03aaed1be73fe35df7295bdb64d3d105f5a9254bba48506921fa20683e0801c0",
+      "structure": {
+        "format": "HDF5",
+        "datasets": [
+          {
+            "name": "B_195K",
+            "shape": [
+              15
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Magnetic field at 195.0K",
+              "Unit": "T"
+            }
+          },
+          {
+            "name": "B_293K",
+            "shape": [
+              21
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Magnetic field at 293.0K",
+              "Unit": "T"
+            }
+          },
+          {
+            "name": "B_352K",
+            "shape": [
+              15
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Magnetic field at 352.0K",
+              "Unit": "T"
+            }
+          },
+          {
+            "name": "B_389K",
+            "shape": [
+              15
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Magnetic field at 389.0K",
+              "Unit": "T"
+            }
+          },
+          {
+            "name": "B_77K",
+            "shape": [
+              15
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Magnetic field at 77.0K",
+              "Unit": "T"
+            }
+          },
+          {
+            "name": "Sn_195K",
+            "shape": [
+              15,
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Trace at 195.0K",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_293K",
+            "shape": [
+              21,
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Trace at 293.0K",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_352K",
+            "shape": [
+              15,
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Trace at 352.0K",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_389K",
+            "shape": [
+              15,
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Trace at 389.0K",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_77K",
+            "shape": [
+              15,
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Trace at 77.0K",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "f",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "frequency",
+              "Unit": "Hz"
+            }
+          }
+        ],
+        "coverage": "hierarchy and first element/chunk per dataset"
+      }
+    },
+    {
+      "name": "10.48606-iRRYHMPwMObNsUOM/data/descriptive-md/dataset/Figure6_noise-power-spectral-density-as-function-of-frequency-for-diﬀerent-ﬁelds.h5.desc_md.xml",
+      "bytes": 1163,
+      "sha256": "cdbed08235ee0625c11e3d71ec9cbf164b44e75bd2e2ed62dc23848cb92016ac",
+      "structure": {
+        "format": "XML",
+        "root": "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-file}radarFile",
+        "element_count": 14,
+        "top_tags": [
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}creators",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}title",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}productionYear",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}subjectAreas",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}resource"
+        ]
+      }
+    },
+    {
+      "name": "10.48606-iRRYHMPwMObNsUOM/data/dataset/README.txt",
+      "bytes": 2894,
+      "sha256": "fd3b7f1973d5101dea6c5a40d8f095936248a06a82c0b2a1ff2071c9abb76db8",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "0d0a5449544c45203a0d0ae2",
+        "line_count": 36,
+        "preview_lines": [
+          "",
+          "TITLE :",
+          "“",
+          "Inductive magnon noise spectroscopy of an yttrium iron garnet (Y3Fe5O12) thin film",
+          "“"
+        ],
+        "first_lines": [
+          "",
+          "TITLE :",
+          "“",
+          "Inductive magnon noise spectroscopy of an yttrium iron garnet (Y3Fe5O12) thin film",
+          "“",
+          "",
+          "DESCRIPTION OF THE DATA PACKAGE :",
+          "“"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "10.48606-iRRYHMPwMObNsUOM/data/descriptive-md/dataset/README.txt.desc_md.xml",
+      "bytes": 1086,
+      "sha256": "c4b9dc3af030e84a37dd293687a5224840fdebe0aa10e1da7fc6598a6aea6eaa",
+      "structure": {
+        "format": "XML",
+        "root": "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-file}radarFile",
+        "element_count": 14,
+        "top_tags": [
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}creators",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}title",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}productionYear",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}subjectAreas",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}resource"
+        ]
+      }
+    },
+    {
+      "name": "10.48606-iRRYHMPwMObNsUOM/data/dataset/Figure5_polynomial-background-subtraction.h5",
+      "bytes": 40232,
+      "sha256": "205cce2666a0dca20d100409d92b929b77a1960e2bc14f59d11ee7c5a5217e16",
+      "structure": {
+        "format": "HDF5",
+        "datasets": [
+          {
+            "name": "Sn",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Noise power spectral density - panel a)",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_BG_removed",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Noise power spectral density with removed background - panel b)",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "c0",
+            "shape": [],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "constant offset from fit",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "f",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Frequency",
+              "Unit": "Hz"
+            }
+          },
+          {
+            "name": "fit_result",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "fit of PolynomialModel (ModelResult.best_fit with lmfit package used) - panel a) [solid line]",
+              "Unit": "nV^2/Hz"
+            }
+          }
+        ],
+        "coverage": "hierarchy and first element/chunk per dataset"
+      }
+    },
+    {
+      "name": "10.48606-iRRYHMPwMObNsUOM/data/descriptive-md/dataset/Figure5_polynomial-background-subtraction.h5.desc_md.xml",
+      "bytes": 1120,
+      "sha256": "1217f45ab30ddc17b2582b4c0d41205284c07fadd601dd8a30c5f6cd7e0d428d",
+      "structure": {
+        "format": "XML",
+        "root": "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-file}radarFile",
+        "element_count": 14,
+        "top_tags": [
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}creators",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}title",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}productionYear",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}subjectAreas",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}resource"
+        ]
+      }
+    },
+    {
+      "name": "10.48606-iRRYHMPwMObNsUOM/data/dataset/Figure4_comparison-of-FMR-with-iMNS.h5",
+      "bytes": 40224,
+      "sha256": "1e0768c54333400d3c7aea23d5b8d24c8dda03445e00efea0a68149c48fe5c1e",
+      "structure": {
+        "format": "HDF5",
+        "datasets": [
+          {
+            "name": "S21_imag",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Imaginary part of S21 - panel a)",
+              "Unit": ""
+            }
+          },
+          {
+            "name": "S21_real",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Real part of S21 - panel a)",
+              "Unit": ""
+            }
+          },
+          {
+            "name": "Sn_77K",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Noise power spectral density at 77K - panel b)",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "f",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Frequency",
+              "Unit": "Hz"
+            }
+          }
+        ],
+        "coverage": "hierarchy and first element/chunk per dataset"
+      }
+    },
+    {
+      "name": "10.48606-iRRYHMPwMObNsUOM/data/descriptive-md/dataset/Figure4_comparison-of-FMR-with-iMNS.h5.desc_md.xml",
+      "bytes": 1114,
+      "sha256": "4ddace539de281954a5966d07840ea759b4fc67361b394654d747da982fd2ae2",
+      "structure": {
+        "format": "XML",
+        "root": "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-file}radarFile",
+        "element_count": 14,
+        "top_tags": [
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}creators",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}title",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}productionYear",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}subjectAreas",
+          "{http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements}resource"
+        ]
+      }
+    },
+    {
+      "name": "10.48606-iRRYHMPwMObNsUOM/bagit.txt",
+      "bytes": 55,
+      "sha256": "e91f941be5973ff71f1dccbdd1a32d598881893a7f21be516aca743da38b1689",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "42616749742d56657273696f",
+        "line_count": 2,
+        "preview_lines": [
+          "BagIt-Version: 0.97",
+          "Tag-File-Character-Encoding: UTF-8"
+        ],
+        "first_lines": [
+          "BagIt-Version: 0.97",
+          "Tag-File-Character-Encoding: UTF-8"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "10.48606-iRRYHMPwMObNsUOM/manifest-md5.txt",
+      "bytes": 1662,
+      "sha256": "148f786c0206b559c210e9b8c4f2ade730b110415c490b09ebafa98fd388f9b5",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "316265306634303531616165",
+        "line_count": 15,
+        "preview_lines": [
+          "1be0f4051aae94046cb6150a1f022477  data/dataset/Figure4_comparison-of-FMR-with-iMNS.h5",
+          "aeaa36dcd6b669dfe97d3242242c7d9e  data/dataset/README.txt",
+          "de1da31a2bc60901d390c5b8464fdb80  data/descriptive-md/dataset.desc_md.xml",
+          "feb3ca14e0789b436b79d99792aac2e0  data/descriptive-md/dataset/Figure2_noise-power-spectral-density-as-function-of-frequency-feld-for-different-termination-temperatures.h5.desc_md.xml",
+          "9604d4e0d1e607b5d63b03b1c3fca8df  data/dataset/Figure3_noise-power-spectral-density-dependence-of-termination-temperature.h5"
+        ],
+        "first_lines": [
+          "1be0f4051aae94046cb6150a1f022477  data/dataset/Figure4_comparison-of-FMR-with-iMNS.h5",
+          "aeaa36dcd6b669dfe97d3242242c7d9e  data/dataset/README.txt",
+          "de1da31a2bc60901d390c5b8464fdb80  data/descriptive-md/dataset.desc_md.xml",
+          "feb3ca14e0789b436b79d99792aac2e0  data/descriptive-md/dataset/Figure2_noise-power-spectral-density-as-function-of-frequency-feld-for-different-termination-temperatures.h5.desc_md.xml",
+          "9604d4e0d1e607b5d63b03b1c3fca8df  data/dataset/Figure3_noise-power-spectral-density-dependence-of-termination-temperature.h5",
+          "c032963f4d07ec67db254741f986d5ba  data/dataset/Figure2_noise-power-spectral-density-as-function-of-frequency-feld-for-different-termination-temperatures.h5",
+          "86c91836441076dcfafeee229f149116  data/descriptive-md/dataset/Figure3_noise-power-spectral-density-dependence-of-termination-temperature.h5.desc_md.xml",
+          "8a205ef241c02c306c7e124d0b5d12e7  data/descriptive-md/dataset/Figure6_noise-power-spectral-density-as-function-of-frequency-for-diﬀerent-ﬁelds.h5.desc_md.xml"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "10.48606-iRRYHMPwMObNsUOM/bag-info.txt",
+      "bytes": 105,
+      "sha256": "ef207673b06d4dcedd0bcad4b8024ffd76b6d7ae297e1482938eafe7830cb424",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "42616767696e672d44617465",
+        "line_count": 4,
+        "preview_lines": [
+          "Bagging-Date: 2025-04-14",
+          "Bag-Size: 2.5 MB",
+          "Payload-Oxum: 2454763.15",
+          "External-Identifier: iRRYHMPwMObNsUOM"
+        ],
+        "first_lines": [
+          "Bagging-Date: 2025-04-14",
+          "Bag-Size: 2.5 MB",
+          "Payload-Oxum: 2454763.15",
+          "External-Identifier: iRRYHMPwMObNsUOM"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "10.48606-iRRYHMPwMObNsUOM/tagmanifest-md5.txt",
+      "bytes": 95,
+      "sha256": "c572fe0f4a54d2840dc2c698ecae1a92ab3d0b86229a42cdeeebb180f7a2cd14",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "396535616439383165306432",
+        "line_count": 2,
+        "preview_lines": [
+          "9e5ad981e0d29adc278f6a294b8c2aca  bagit.txt",
+          "9a75596ddec1497f58dd13f55b847ece  manifest-md5.txt"
+        ],
+        "first_lines": [
+          "9e5ad981e0d29adc278f6a294b8c2aca  bagit.txt",
+          "9a75596ddec1497f58dd13f55b847ece  manifest-md5.txt"
+        ],
+        "encoding_replacement_count": 0
+      }
+    }
+  ],
+  "expanded_bytes": 2456680,
+  "checks": [
+    "all_archive_members_streamed",
+    "safe_paths_no_links"
+  ],
+  "member_count": 19,
+  "status": "pass"
+}

@@ -1,0 +1,2374 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "64_electronics_stretchable_lec",
+  "domain": "Flexible optoelectronics",
+  "title": "Experimental data of manuscript \"Stretchable Light-Emitting Electrochemical Cells Fabricated by Spray-Coating\", Gellner et al.",
+  "publisher": "[{'id': 21527066, 'full_name': 'Sandra Gellner', 'first_name': 'Sandra', 'last_name': 'Gellner', 'is_active': True, 'url_name': 'Sandra_Gellner', 'orcid_id': ''}]",
+  "authoritative_landing_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+  "authoritative_source_urls": [
+    "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+    "https://ndownloader.figshare.com/files/55316894",
+    "https://ndownloader.figshare.com/files/55316900",
+    "https://ndownloader.figshare.com/files/55316891",
+    "https://ndownloader.figshare.com/files/55316903",
+    "https://ndownloader.figshare.com/files/55316897",
+    "https://ndownloader.figshare.com/files/55316906",
+    "https://ndownloader.figshare.com/files/55316921",
+    "https://ndownloader.figshare.com/files/55316912",
+    "https://ndownloader.figshare.com/files/55316927",
+    "https://ndownloader.figshare.com/files/55316939",
+    "https://ndownloader.figshare.com/files/55316933",
+    "https://ndownloader.figshare.com/files/55316954",
+    "https://ndownloader.figshare.com/files/55316909",
+    "https://ndownloader.figshare.com/files/55316918",
+    "https://ndownloader.figshare.com/files/55316945",
+    "https://ndownloader.figshare.com/files/55316915",
+    "https://ndownloader.figshare.com/files/55316948",
+    "https://ndownloader.figshare.com/files/55316924",
+    "https://ndownloader.figshare.com/files/55316951",
+    "https://ndownloader.figshare.com/files/55316942",
+    "https://ndownloader.figshare.com/files/55316936",
+    "https://ndownloader.figshare.com/files/55316930",
+    "https://ndownloader.figshare.com/files/55316963",
+    "https://ndownloader.figshare.com/files/55316957",
+    "https://ndownloader.figshare.com/files/55316960",
+    "https://ndownloader.figshare.com/files/55316966",
+    "https://ndownloader.figshare.com/files/55316975",
+    "https://ndownloader.figshare.com/files/55316969",
+    "https://ndownloader.figshare.com/files/55316972",
+    "https://ndownloader.figshare.com/files/55316984",
+    "https://ndownloader.figshare.com/files/55316978",
+    "https://ndownloader.figshare.com/files/55316981",
+    "https://ndownloader.figshare.com/files/55316990",
+    "https://ndownloader.figshare.com/files/55316987",
+    "https://ndownloader.figshare.com/files/55316993",
+    "https://ndownloader.figshare.com/files/55316996",
+    "https://ndownloader.figshare.com/files/55316999",
+    "https://ndownloader.figshare.com/files/55317005",
+    "https://ndownloader.figshare.com/files/55317002",
+    "https://ndownloader.figshare.com/files/55317008",
+    "https://ndownloader.figshare.com/files/55317011",
+    "https://ndownloader.figshare.com/files/55317020",
+    "https://ndownloader.figshare.com/files/55317014",
+    "https://ndownloader.figshare.com/files/55317017",
+    "https://ndownloader.figshare.com/files/55317023",
+    "https://ndownloader.figshare.com/files/55317026",
+    "https://ndownloader.figshare.com/files/55317029",
+    "https://ndownloader.figshare.com/files/55317038",
+    "https://ndownloader.figshare.com/files/55317035",
+    "https://ndownloader.figshare.com/files/55317032",
+    "https://ndownloader.figshare.com/files/55317041",
+    "https://ndownloader.figshare.com/files/55317044",
+    "https://ndownloader.figshare.com/files/55317047",
+    "https://ndownloader.figshare.com/files/55317050",
+    "https://ndownloader.figshare.com/files/55317053",
+    "https://ndownloader.figshare.com/files/55317062",
+    "https://ndownloader.figshare.com/files/55317056",
+    "https://ndownloader.figshare.com/files/55317071",
+    "https://ndownloader.figshare.com/files/55317059",
+    "https://ndownloader.figshare.com/files/55317083",
+    "https://ndownloader.figshare.com/files/55317077",
+    "https://ndownloader.figshare.com/files/55317074",
+    "https://ndownloader.figshare.com/files/55317065",
+    "https://ndownloader.figshare.com/files/55317089",
+    "https://ndownloader.figshare.com/files/55317086",
+    "https://ndownloader.figshare.com/files/55317080",
+    "https://ndownloader.figshare.com/files/55317068",
+    "https://ndownloader.figshare.com/files/55317095",
+    "https://ndownloader.figshare.com/files/55317092",
+    "https://ndownloader.figshare.com/files/55317098",
+    "https://ndownloader.figshare.com/files/55317104",
+    "https://ndownloader.figshare.com/files/55317110",
+    "https://ndownloader.figshare.com/files/55317113",
+    "https://ndownloader.figshare.com/files/55317101",
+    "https://ndownloader.figshare.com/files/55317125",
+    "https://ndownloader.figshare.com/files/55317107",
+    "https://ndownloader.figshare.com/files/55317116",
+    "https://ndownloader.figshare.com/files/55317122",
+    "https://ndownloader.figshare.com/files/55317119",
+    "https://ndownloader.figshare.com/files/55317131",
+    "https://ndownloader.figshare.com/files/55317128",
+    "https://ndownloader.figshare.com/files/55317134",
+    "https://ndownloader.figshare.com/files/55317137",
+    "https://ndownloader.figshare.com/files/55317140",
+    "https://ndownloader.figshare.com/files/55317143",
+    "https://ndownloader.figshare.com/files/55317149",
+    "https://ndownloader.figshare.com/files/55317146",
+    "https://ndownloader.figshare.com/files/55317152",
+    "https://ndownloader.figshare.com/files/55317155"
+  ],
+  "identifiers": [
+    "10.6084/m9.figshare.29298161.v1"
+  ],
+  "release_or_version": "1",
+  "retrieval_finalized_utc": "2026-09-15T07:04:34.414339+00:00",
+  "license_or_access_terms": "CC BY 4.0",
+  "deterministic_selection_rule": "complete specified source selection",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Device-file dates where provided; whole-campaign acquisition dates unknown.",
+  "source_publication_date": "2025-06-11T19:38:52Z",
+  "source_created_utc": null,
+  "source_updated_utc": null,
+  "source_inventory": [],
+  "author_preprocessing": "Measured current/luminance traces, microscopy TIFFs and Origin project files. Preserve original Figshare folder hierarchy because filenames recur.",
+  "known_analyses_and_limitations": "At least 17 identified devices with uneven loading-group counts. Hold out devices and full strain sweeps; images and fitted project outputs are supporting context.",
+  "related_publications": [],
+  "independent_groups": "device and polymer-loading group; complete strain sweeps",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-064",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no1_20v_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no1_20v_it.txt",
+      "bytes": 165340,
+      "sha256": "827a281d07a36f1ebbac0c3f57413cc9deaeb0eed1c9060d4ff75c6712155a7a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316894",
+      "source_checksum": "md5:7e4359d3ffef352c45aaaed1b27b519f",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:33:36.545761+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no1_20v_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no1_20v_pt.txt",
+      "bytes": 165658,
+      "sha256": "dbd6c8ad9adc0aaf08e2303b958e6c7193b9a90b209fd5c7dcc95e72935064ad",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316900",
+      "source_checksum": "md5:b5d4720fb1b9c6347e2aaa73b57c2b42",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:33:39.549141+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no2_40V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no2_40V_it.txt",
+      "bytes": 278356,
+      "sha256": "803260d67c8131b204a7b3bf2ad794fe4a2d61b7a81a891e62d7978380f775f5",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316891",
+      "source_checksum": "md5:aa39f8eec269713466fb8152c8217ec9",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:33:42.566568+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no2_40V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no2_40V_pt.txt",
+      "bytes": 278769,
+      "sha256": "9de13b326dc6b643198920d9e99ba034eba702f6f6a360a9d2745f2deddf34e4",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316903",
+      "source_checksum": "md5:3e2bf7733eff44c025879966f5985cb1",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:33:45.975571+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no3_20v_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no3_20v_it.txt",
+      "bytes": 22506,
+      "sha256": "814f4ab88840504397d2346f0a32002182a8718fa16c237e14be60062e3201b6",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316897",
+      "source_checksum": "md5:6d5590e42d7e3ef4f5f2e6c26f9246cf",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:33:48.593711+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no3_20v_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no3_20v_pt.txt",
+      "bytes": 23322,
+      "sha256": "9d23f8a1d4b875cddc38028486453ba372b97b3f04bb9a3ffc1afc262ba67e85",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316906",
+      "source_checksum": "md5:3a5d0e4926021aa64f37e3b4b9edd311",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:33:48.829087+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no1_40V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no1_40V_it.txt",
+      "bytes": 287806,
+      "sha256": "36d6472d0028c014ca1688ff6128be277f2a6af6ffb6e31ebd9701241fd35e26",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316921",
+      "source_checksum": "md5:7860a23a9f591121f43edc36ba0a3f95",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:33:52.415390+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no1_40V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no1_40V_pt.txt",
+      "bytes": 288671,
+      "sha256": "12c25168ac45eadcd21ccd90bf0708b6c7fc27b734442844dbd4a197fb1a6a21",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316912",
+      "source_checksum": "md5:0b48c33193951df185291a35c391e1c6",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:33:55.672343+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no2_40V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no2_40V_it.txt",
+      "bytes": 420456,
+      "sha256": "67a7178524571257940b0fff63beeff1e964c6ac0bf54496c9f6bae112a769f6",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316927",
+      "source_checksum": "md5:2ed5c9f8bd0788689871e9406aa61d5f",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:01.178194+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no2_40V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no2_40V_pt.txt",
+      "bytes": 172687,
+      "sha256": "e08cef4a41533b47f2da7417898c97e6297d7134cb589db7bfe9c6eb966f102e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316939",
+      "source_checksum": "md5:7ade0f829b6ec37e9bac7fe0e177c372",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:33:58.824609+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no3_30V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no3_30V_it.txt",
+      "bytes": 5846,
+      "sha256": "87370d54c97953592e7e04ba1fb021eef148e9bca214197fb9bc1544a2a47b0a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316933",
+      "source_checksum": "md5:3e3ed9dae2145e7121bde4717cf35c89",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:01.467443+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no3_30V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no3_30V_pt.txt",
+      "bytes": 5810,
+      "sha256": "67644107aec66d3e3b3e90f8baa0cf6b20e04a361f7d2831bcf47bf365c60c04",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316954",
+      "source_checksum": "md5:1bc3d4e9ff473381f4ac9b9f0a4d578d",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:03.823109+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no4_40V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no4_40V_it.txt",
+      "bytes": 118826,
+      "sha256": "d57dabda68266419d27cb00179912c9e513f25287d926fbeeeed97544b4906f0",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316909",
+      "source_checksum": "md5:4d2ef29375ee99b7ce8cc194676072ff",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:04.449060+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no4_40V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no4_40V_pt.txt",
+      "bytes": 119042,
+      "sha256": "a1da6639d8c3f50e74a99c7ed3f4b1166bc847846cf540a70fc6561f9ee47971",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316918",
+      "source_checksum": "md5:a1c17df9fd29ab4bce77b0c133807bad",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:07.009620+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no5_40V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no5_40V_it.txt",
+      "bytes": 138143,
+      "sha256": "5d8898ed0ac7a77aeefd76fe856079d07edf1700df7dc0f3c1b57ddf12849daf",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316945",
+      "source_checksum": "md5:e165ee3098190c099fa040f342e9a96f",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:07.476213+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no5_40V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no5_40V_pt.txt",
+      "bytes": 138719,
+      "sha256": "6818474b82790b5e5af6846b084b15a78ab9d32c05b639b59bf8bd55aaa9dbd8",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316915",
+      "source_checksum": "md5:516bb25e8a5cc11487e23b96c5d1776e",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:09.965477+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no6_40V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no6_40V_it.txt",
+      "bytes": 129676,
+      "sha256": "e6e535629f3659ca5bc2f6920ac32f93996e3ed706cb335dca5c285d55821e4c",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316948",
+      "source_checksum": "md5:4d0a6b16e885e117aa1cf8ad4db771f2",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:11.834411+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no6_40V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no6_40V_pt.txt",
+      "bytes": 122841,
+      "sha256": "4b38c080c081d9b2d18462b2ee6251be278010018c4bd9ac974f9e7503673c21",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316924",
+      "source_checksum": "md5:42602c4732004661ef7af8faaf9ac02f",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:12.869324+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no7_40V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no7_40V_it.txt",
+      "bytes": 214586,
+      "sha256": "b2fba6305d1f6da587edf1429feae571ed04a3db72ba72a6579ee4a198fd66a3",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316951",
+      "source_checksum": "md5:60b1fd518fd57d45a199d858812e1ae2",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:16.004928+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no7_40V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no7_40V_pt.txt",
+      "bytes": 215961,
+      "sha256": "52fdf9b7f5e80c8ccc7b32d21d841118ae5e5ca8bd2b6db1e538808b12c25160",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316942",
+      "source_checksum": "md5:5f700c899f5d8f5aa576fd842a5c44f3",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:17.516584+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no1_25V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no1_25V_it.txt",
+      "bytes": 3059,
+      "sha256": "b4e168fc4b026a7516dd7b6a96282f605bde46ca996edc77a2c9ca20db2fce4f",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316936",
+      "source_checksum": "md5:ea60b04bd67b3bf6aae316fa6528994c",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:18.585396+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no1_25V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no1_25V_pt.txt",
+      "bytes": 2923,
+      "sha256": "afbf3b642bb91a76f6f7e6ddc143b3666e5c5dde688523335ee6235c8fdab888",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316930",
+      "source_checksum": "md5:4b3126ae6386ca5875d97831c7148be4",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:20.135808+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no2_25V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no2_25V_it.txt",
+      "bytes": 4665,
+      "sha256": "b964f1ac6531155c65b9c26d38b14c0362895dee4188acf23d9ec46409ecdb97",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316963",
+      "source_checksum": "md5:62315dee192b0d99d238e34f7cb21f34",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:21.179135+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no2_25V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no2_25V_pt.txt",
+      "bytes": 4524,
+      "sha256": "ebaa3c331fbbc21b9412bba311047b75fb922b89a0db937ce91a0b9bfef7d75a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316957",
+      "source_checksum": "md5:a5d3438b0dbca031526a835c5fa19946",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:22.687059+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_15V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_15V_it.txt",
+      "bytes": 37696,
+      "sha256": "becc3aeaf827e1c38f482c70b7b0d31b4c7eb7a62f9e10bb7784fd844e332b97",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316960",
+      "source_checksum": "md5:ea6e0ac7036c6571563b0a9e32335146",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:23.853244+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_15V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_15V_pt.txt",
+      "bytes": 35036,
+      "sha256": "a8ffc486bdd0549de38dae8840b9394b6f9985252c6393390db36e1805bce3c4",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316966",
+      "source_checksum": "md5:926725bdde40c0750facd1ab52f599c6",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:25.710167+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_25V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_25V_it.txt",
+      "bytes": 1926,
+      "sha256": "9964471c3357f7c1487dcee2870cd334f05d9ed8de78dd0a91f20b4a89554cc5",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316975",
+      "source_checksum": "md5:0bbccdbe323a91b97056ba0814375b7a",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:26.465118+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_25V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_25V_pt.txt",
+      "bytes": 1926,
+      "sha256": "b45c08d08edcc32626268b3965c81e4598bc1eb841747a68131c3512d793e076",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316969",
+      "source_checksum": "md5:e9b55165cee331254cc49433104e65a4",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:28.524043+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_30V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_30V_it.txt",
+      "bytes": 1086,
+      "sha256": "4b0157b8eda9c4703bae2e932cfe5cfdca79c821035e68b52e0951bf7335dd6d",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316972",
+      "source_checksum": "md5:f46e83f7f3baa4d5829721f643f14557",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:29.148764+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_30V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_30V_pt.txt",
+      "bytes": 1156,
+      "sha256": "8ea7f846c95a475355e6c6b95ab4dd9d6f6c2f131d6bee7b4dcd176f6df755df",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316984",
+      "source_checksum": "md5:c4e30f061779cd617861b878a9473575",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:32.107635+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_35V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_35V_it.txt",
+      "bytes": 806,
+      "sha256": "47f72c610299adcd0d6b71cd9348e04add72933d7ba915333184b11fe073325c",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316978",
+      "source_checksum": "md5:d3b2e921a0c8da0e8639ef867e8eae79",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:31.894655+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_35V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_35V_pt.txt",
+      "bytes": 806,
+      "sha256": "eb9dd5a5bbacef5e1565831c5c1bd8b7d5f8865a3a9bad47cd967acc57ced11e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316981",
+      "source_checksum": "md5:674f4d25d961d47e1ee83ab0d80e549e",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:34.438062+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_40V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_40V_it.txt",
+      "bytes": 876,
+      "sha256": "5434f0c6675d22397ac929d16d5db5b584de2f8c9092044c220728466d5dff6a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316990",
+      "source_checksum": "md5:cf2eb9665f34c44ca456036e807e3b31",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:35.137226+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_40V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_40V_pt.txt",
+      "bytes": 876,
+      "sha256": "48f5bdc610d2a2f7f0b24086b9b2cf7e90b24c4dd12cc9b9539c7a319aad1318",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316987",
+      "source_checksum": "md5:e14deb1fb9d1b57144d8db7b8e644cc6",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:37.083482+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no4_20V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no4_20V_it.txt",
+      "bytes": 1506,
+      "sha256": "b400a0def284458a98346fe4a0790c08c7c8f385f2621471284ece6f58e504c5",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316993",
+      "source_checksum": "md5:ee4eaa60143c64b9646029530e9a422a",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:37.744675+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no4_20V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no4_20V_pt.txt",
+      "bytes": 1576,
+      "sha256": "694c1f7c088586b21a46acdbaff738eb56da5c90e785954a4e3f78c189a82d44",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316996",
+      "source_checksum": "md5:e1f46a00d68c151709c90a5aa0d6bdeb",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:38.557552+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no5_20V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no5_20V_it.txt",
+      "bytes": 185817,
+      "sha256": "76bd4884c2a81e3971e319db65437fa08b1304e671176f6e3943a7127d964516",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55316999",
+      "source_checksum": "md5:05ef7e3045656281491679a357e94fca",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:42.179152+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no5_20V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no5_20V_pt.txt",
+      "bytes": 186946,
+      "sha256": "1a71b92a08f53de3fc7f35cabcdabfb1a3cf3eb4ec8411cf3c035eb9e35aa1ce",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317005",
+      "source_checksum": "md5:932a17b9b4a31edc9af9c723bf5e4c8d",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:40.729267+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no1_20V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no1_20V_it.txt",
+      "bytes": 220836,
+      "sha256": "0c0c1c5fdff31bdfbcabfb4a746ffdc2ae25c8bca8ea4cacba5767b976c6b612",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317002",
+      "source_checksum": "md5:01598b37bf18ad5c70cae7351c6c55f7",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:45.217183+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no1_20V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no1_20V_pt.txt",
+      "bytes": 223430,
+      "sha256": "23de76c7bfc96786b3312a85757d6b4556f0079a00b9c4b989dad9981a2a1ad6",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317008",
+      "source_checksum": "md5:7981034d2981a081864c169d43f8a676",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:44.975152+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_20V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_20V_it.txt",
+      "bytes": 166916,
+      "sha256": "fea4caaf0cc2037ed18e86a46310aa86cb9c41011e0c2a2ad5ea20f7a59eb444",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317011",
+      "source_checksum": "md5:ca5e0d0f138cddf1deae53305bd2f85d",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:44.171783+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_20V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_20V_pt.txt",
+      "bytes": 167126,
+      "sha256": "d3648fded89dd93bd2acef257ac3cfeb473df2453e707a3f7714cd44f2136fbf",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317020",
+      "source_checksum": "md5:d85d7b2ec60ff62cc487f798e3aec055",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:45.090249+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_25V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_25V_it.txt",
+      "bytes": 130586,
+      "sha256": "55a93ea6bd4833fdbc5df809a2deb0019aecdcdce6449f9c7538b93c43d8f3b1",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317014",
+      "source_checksum": "md5:1b430b17a6ab8e1634b852d0e0b260f0",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:47.360495+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_25V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_25V_pt.txt",
+      "bytes": 130796,
+      "sha256": "1c658ec1e6dc864a5f159a933f6e48e0a72f930e853d20f740016a851d12aa1a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317017",
+      "source_checksum": "md5:a62a5940e7bacd38dc79be3b7ddd7efe",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:48.079327+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_30V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_30V_it.txt",
+      "bytes": 100136,
+      "sha256": "03ee04daf3714c8e2989dc4afb1c36aeca7a2f6831b6778460ad3de050c1eb1d",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317023",
+      "source_checksum": "md5:2d928eb4813ae05ba5b8f1ca5b5b14a6",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:48.002711+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_30V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_30V_pt.txt",
+      "bytes": 100766,
+      "sha256": "1aec5c30ff79361dce630d4b40282352ad0e2a3bb15fcb88b47d2295e00616c9",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317026",
+      "source_checksum": "md5:d63524117ca62b52ae1c30915529dce2",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:48.231394+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_35V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_35V_it.txt",
+      "bytes": 126386,
+      "sha256": "dc6432e85deecfff0f65cc223b695573c90200b8a206cd35beac20caf21aa788",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317029",
+      "source_checksum": "md5:bc380b1f9ecfab06b622b96970550f56",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:50.629048+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_35V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_35V_pt.txt",
+      "bytes": 126806,
+      "sha256": "56360989ddff67d1bee8573189577f30e569df6a89b007c343f6df2cc6d9a796",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317038",
+      "source_checksum": "md5:a3c1fe23416ab4cd27323cbde7dd7a3f",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:50.984788+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_40V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_40V_it.txt",
+      "bytes": 6196,
+      "sha256": "9644f5b060404eb6bc6fa8927dc4ba63dbe4830a291fdac492a02303c5fc87d1",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317035",
+      "source_checksum": "md5:6ad7a25228e1bd06a1e16d1bea0c1c4e",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:50.642674+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_40V_it_2.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_40V_it_2.txt",
+      "bytes": 129466,
+      "sha256": "082dd6e42cc72c4484922a883e6e9fd61a6f10d2132e343529f4589af6510703",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317032",
+      "source_checksum": "md5:e6a508553addb0b95d12273779bfba0d",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:51.386248+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_40V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_40V_pt.txt",
+      "bytes": 6546,
+      "sha256": "4484366a335f474be6e90b68242e1ff3fdb7a12fe176d9d599cb00484c9cb94e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317041",
+      "source_checksum": "md5:0f5721a7934d13e0edb847f407288006",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:53.266534+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_40V_pt_2.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_40V_pt_2.txt",
+      "bytes": 130613,
+      "sha256": "31bd82f1eb67038c39bda191abf31a3c33bc0db1de6a0e8969927f8d58aa91fc",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317044",
+      "source_checksum": "md5:456f551647f9dd69860e3285d8cac768",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:53.770996+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/Readme.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/Readme.txt",
+      "bytes": 293,
+      "sha256": "9c8a0f3eb941179aa2f3fd90b0bcde8fdd9ca6deedf8417a7b469c8b0b2a4e87",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317047",
+      "source_checksum": "md5:8a38cc0e3ad7e752ff52fd28504febdd",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:53.483505+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Resistance Electrodes/AgNW.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Resistance Electrodes/AgNW.txt",
+      "bytes": 195,
+      "sha256": "d3ac50e977af44f19dadb9f7874b9ebaaf5c5118cf23719cd25a1870e0114288",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317050",
+      "source_checksum": "md5:7a87fa71ccda706426f59aeedaa1f218",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:54.652892+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Resistance Electrodes/PEDOT_PSS.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Resistance Electrodes/PEDOT_PSS.txt",
+      "bytes": 166,
+      "sha256": "34ace1834ca2ee39bff85312baa3df16474b323805c2f90605dfc254862af090",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317053",
+      "source_checksum": "md5:ef3a081f5753fe499cb364a3a0c70b07",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:55.981912+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Resistance Electrodes/PEDOT_PSS_AgNW.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Resistance Electrodes/PEDOT_PSS_AgNW.txt",
+      "bytes": 138,
+      "sha256": "959773caf4353f839f46845b06642049cd2926fbb9ba0391a95d21115d30cb6a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317062",
+      "source_checksum": "md5:9d0f0dfd60a55d438bc0652af06250a7",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:56.817220+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Resistance Electrodes/Resistance Electrodes.opju",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Resistance Electrodes/Resistance Electrodes.opju",
+      "bytes": 165632,
+      "sha256": "23f83fbd44313a40d10a79e5244fc8dbd2e815e2f68b455629bc301872c2359c",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317056",
+      "source_checksum": "md5:31b9c3367ddd381978ffd4e2632856a4",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:56.763920+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Stretchable LEC.opju",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Stretchable LEC.opju",
+      "bytes": 1318475,
+      "sha256": "47cf8e473f42a16800162dc26f193601b26cda61c61ed31b7e60aa5b7252152c",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317071",
+      "source_checksum": "md5:a27a960ef1cf7905e9a3fa9359eaa6e2",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:01.175352+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Stretchable LECs/0wt%_no1_20v_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Stretchable LECs/0wt%_no1_20v_it.txt",
+      "bytes": 165340,
+      "sha256": "827a281d07a36f1ebbac0c3f57413cc9deaeb0eed1c9060d4ff75c6712155a7a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317059",
+      "source_checksum": "md5:7e4359d3ffef352c45aaaed1b27b519f",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:59.591237+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Stretchable LECs/0wt%_no1_20v_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Stretchable LECs/0wt%_no1_20v_pt.txt",
+      "bytes": 165658,
+      "sha256": "dbd6c8ad9adc0aaf08e2303b958e6c7193b9a90b209fd5c7dcc95e72935064ad",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317083",
+      "source_checksum": "md5:b5d4720fb1b9c6347e2aaa73b57c2b42",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:00.062344+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Stretchable LECs/0wt%_no2_40V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Stretchable LECs/0wt%_no2_40V_it.txt",
+      "bytes": 278356,
+      "sha256": "803260d67c8131b204a7b3bf2ad794fe4a2d61b7a81a891e62d7978380f775f5",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317077",
+      "source_checksum": "md5:aa39f8eec269713466fb8152c8217ec9",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:00.063708+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Stretchable LECs/0wt%_no2_40V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Stretchable LECs/0wt%_no2_40V_pt.txt",
+      "bytes": 278769,
+      "sha256": "9de13b326dc6b643198920d9e99ba034eba702f6f6a360a9d2745f2deddf34e4",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317074",
+      "source_checksum": "md5:3e2bf7733eff44c025879966f5985cb1",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:03.073703+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Stretchable LECs/30wt%_no1_40V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Stretchable LECs/30wt%_no1_40V_it.txt",
+      "bytes": 287806,
+      "sha256": "36d6472d0028c014ca1688ff6128be277f2a6af6ffb6e31ebd9701241fd35e26",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317065",
+      "source_checksum": "md5:7860a23a9f591121f43edc36ba0a3f95",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:03.221422+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Stretchable LECs/30wt%_no1_40V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Stretchable LECs/30wt%_no1_40V_pt.txt",
+      "bytes": 288671,
+      "sha256": "12c25168ac45eadcd21ccd90bf0708b6c7fc27b734442844dbd4a197fb1a6a21",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317089",
+      "source_checksum": "md5:0b48c33193951df185291a35c391e1c6",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:03.408084+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Stretchable LECs/30wt%_no2_40V_it.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Stretchable LECs/30wt%_no2_40V_it.txt",
+      "bytes": 420456,
+      "sha256": "67a7178524571257940b0fff63beeff1e964c6ac0bf54496c9f6bae112a769f6",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317086",
+      "source_checksum": "md5:2ed5c9f8bd0788689871e9406aa61d5f",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:08.179800+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Stretchable LECs/30wt%_no2_40V_pt.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Stretchable LECs/30wt%_no2_40V_pt.txt",
+      "bytes": 172687,
+      "sha256": "e08cef4a41533b47f2da7417898c97e6297d7134cb589db7bfe9c6eb966f102e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317080",
+      "source_checksum": "md5:7ade0f829b6ec37e9bac7fe0e177c372",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:06.321435+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Stretchable LECs/Readme.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Stretchable LECs/Readme.txt",
+      "bytes": 1023,
+      "sha256": "1ad7d43be3590ea2d64762ec198659edefbb95f1ae1afcb37de0e8e7cd863641",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317068",
+      "source_checksum": "md5:2d22f359aefeb21c8e6b4ce0fa42c198",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:05.885007+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/AgNW_0%Stretch.tif",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/AgNW_0%Stretch.tif",
+      "bytes": 410222,
+      "sha256": "da022ef32daf16279d45988ef0a778e24c028cb3415ddec636dcac57686edd8a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317095",
+      "source_checksum": "md5:f8c8a4ace547883f4ed13008e28f36ca",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:08.283552+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/AgNW_10%Stretch.tif",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/AgNW_10%Stretch.tif",
+      "bytes": 311912,
+      "sha256": "320924643417be0e7c03d247487fac34cc9d5e351155d51c07e995591365c1e9",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317092",
+      "source_checksum": "md5:64bb4a5a7fe85c7c863310ebec26e16a",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:09.357347+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/AgNW_20%Stretch.tif",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/AgNW_20%Stretch.tif",
+      "bytes": 466658,
+      "sha256": "338a6cfccca08aa7eb10492054eaa88af5a94c7dc75ccb7404eb5b339e2b79b6",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317098",
+      "source_checksum": "md5:d7d808329971b5da579466cbc41589b2",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:14.830713+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/AgNW_30%Stretch.tif",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/AgNW_30%Stretch.tif",
+      "bytes": 399058,
+      "sha256": "2f4ed7fd21a0c301605784a80cece1d46ef71bff7c63dc4320cbaa530c3b28b6",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317104",
+      "source_checksum": "md5:68dbc19726faffa889fa6210129b9a88",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:11.787655+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/PEDOT_PSS_0%Stretch.tif",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/PEDOT_PSS_0%Stretch.tif",
+      "bytes": 404730,
+      "sha256": "3d0c153fc63ac94ad0cec50013d3e50793657ac18b77a4b527d1c7f1efb991f8",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317110",
+      "source_checksum": "md5:3c2906adc30b04b427cac6bf969d72e4",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:11.803180+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/PEDOT_PSS_10%Stretch.tif",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/PEDOT_PSS_10%Stretch.tif",
+      "bytes": 383268,
+      "sha256": "928cff2ea6d081d240cee5a8e7d592a35dbc4f9018b8bb584a781611985daba7",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317113",
+      "source_checksum": "md5:0a195fb6acb222f93275f245e6ebc85d",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:16.543361+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/PEDOT_PSS_20%Stretch.tif",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/PEDOT_PSS_20%Stretch.tif",
+      "bytes": 220346,
+      "sha256": "1465bfee65a21de518b6e4963c87c25189a6f032a914399fb3585934d4d5bd79",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317101",
+      "source_checksum": "md5:6cce89290cf1f3b90f6ab581aeae0895",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:16.676216+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/PEDOT_PSS_30%Stretch.tif",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/PEDOT_PSS_30%Stretch.tif",
+      "bytes": 296490,
+      "sha256": "83797660807728f10546488f89bf44d2dd5159dc264c02e04b687ed462dfcdda",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317125",
+      "source_checksum": "md5:99c67fe86d9704c76429bead1681ab4d",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:15.376870+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/Rigid Reference LEC/0wt%_spray_5sw.csv",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/Rigid Reference LEC/0wt%_spray_5sw.csv",
+      "bytes": 179912,
+      "sha256": "2a984036fe483a0fa6f42a1b6de8d0705c998b3ebbffb52ecbf1d2b7dbf55be9",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317107",
+      "source_checksum": "md5:31c31bc5b1205a7568ad52f0de6cac94",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:18.637447+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/Rigid Reference LEC/30wt%_spray_5sw.csv",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/Rigid Reference LEC/30wt%_spray_5sw.csv",
+      "bytes": 181076,
+      "sha256": "81f9b907126e588f2993e981829de30b7808b0a5229aae608454da7edf87f893",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317116",
+      "source_checksum": "md5:c2d71f0e8b75f6fa118bed4e07579f9a",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:20.741211+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/Rigid Reference LEC/50wt%_spray_5sw.csv",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/Rigid Reference LEC/50wt%_spray_5sw.csv",
+      "bytes": 83785,
+      "sha256": "5072558ee011549b02b70054a746c0822fa9f2185ae9b32b0a2880bf2bbaba23",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317122",
+      "source_checksum": "md5:b13b09954b5e90c18cac2575892b5774",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:19.413369+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/Rigid Reference LEC/70wt%_spray_5sw.csv",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/Rigid Reference LEC/70wt%_spray_5sw.csv",
+      "bytes": 85314,
+      "sha256": "6ea91972463f61dae71d622042b8489c70b94eb3e1fe939b0a9671e045908a66",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317119",
+      "source_checksum": "md5:a716a3a6c5328b26c4084a6da3e40de4",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:21.101516+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/Rigid Reference LEC/Readme.txt",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/Rigid Reference LEC/Readme.txt",
+      "bytes": 88,
+      "sha256": "6aef067c49b35fa14d9e9b15e0c428f1b6f930146d1c66b70d3b1057bc409b4e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317131",
+      "source_checksum": "md5:e5defb1a43939024e16e7232a3c572fb",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:21.931715+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/Rigid Reference LEC/Rigid Reference LEC.opju",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/Rigid Reference LEC/Rigid Reference LEC.opju",
+      "bytes": 603875,
+      "sha256": "5926643a617b4b4e9253940a32b679e8479f63a66663740d61fd88ab392eb7b7",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317128",
+      "source_checksum": "md5:32f24220ed87ede6cde3352812c7db8a",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:23.034395+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/AgNW_0%Stretch_1.41kx.tif",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/AgNW_0%Stretch_1.41kx.tif",
+      "bytes": 887315,
+      "sha256": "c881b8e05e6b05db17ddbedb9738f356b7113841f16e200e73b07c6bd21cc76e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317134",
+      "source_checksum": "md5:c4e305533c46b8dde3f48ba43f5765fa",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:31.223232+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/AgNW_10%Stretch_1.67kx.tif",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/AgNW_10%Stretch_1.67kx.tif",
+      "bytes": 887316,
+      "sha256": "afa9a0a2cde05634323a6410a3a3de89df72afaf8eb53a6b1fba76a4f2d72eb1",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317137",
+      "source_checksum": "md5:d4fe9a7edbd6868e87c1754daed681e1",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:36.078381+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/AgNW_20%Stretch_1.46x.tif",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/AgNW_20%Stretch_1.46x.tif",
+      "bytes": 887315,
+      "sha256": "2f97e0caf9f2db1161757093f17cac8fc6dfc2a3b99e7da74aa2bb8f730f9e11",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317140",
+      "source_checksum": "md5:2140868030db6badaf767ff304c686b9",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:25.342703+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/AgNW_30%Stretch_1.25x.tif",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/AgNW_30%Stretch_1.25x.tif",
+      "bytes": 887315,
+      "sha256": "aab68fc47b541fdc45939c4069dbdd59c25bf0e1aa972c6cf583b48805602665",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317143",
+      "source_checksum": "md5:1d05dddc5eabb743089b583b8f05890d",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:28.078613+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/PEDOT_PSS_0%Stretch_842x.tif",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/PEDOT_PSS_0%Stretch_842x.tif",
+      "bytes": 887274,
+      "sha256": "b8a67537bf26d71d698649f53bde32a6574b32949848c17f94ce9ae21ca2f9b3",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317149",
+      "source_checksum": "md5:7ba1bfe49ec8fa50872cb7b7fa7b7eba",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:30.306322+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/PEDOT_PSS_10%Stretch_1.03kx.tif",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/PEDOT_PSS_10%Stretch_1.03kx.tif",
+      "bytes": 887315,
+      "sha256": "5804062bdb18e75b0a1828f2b10dfe2879ff5c316d82a76d1658ef8243995e59",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317146",
+      "source_checksum": "md5:4a502223b94d141b303cf35b6a4c4352",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:37.000682+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/PEDOT_PSS_20%Stretch_1.15kx.tif",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/PEDOT_PSS_20%Stretch_1.15kx.tif",
+      "bytes": 887315,
+      "sha256": "4d34a510f9317083455da532dc0e0997e22c4ad68feaf7e354e98ba7c0a85e02",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317152",
+      "source_checksum": "md5:ffe069005191b1e0ff31a56599fae1f3",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:34.112837+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/PEDOT_PSS_30%Stretch_1.25x.tif",
+      "scenario_relative_path": "raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/PEDOT_PSS_30%Stretch_1.25x.tif",
+      "bytes": 887310,
+      "sha256": "dcfabe3f09c5672b42c0071b27fe836c298c918d0034af40b98ab59f51c7de7c",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1"
+      ],
+      "download_url": "https://ndownloader.figshare.com/files/55317155",
+      "source_checksum": "md5:ed24bd281c1e52dd9b7f75f3ad3297df",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:40.837759+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-064",
+      "scenario_id": "64_electronics_stretchable_lec",
+      "path": "context/figshare.json",
+      "scenario_relative_path": "context/figshare.json",
+      "bytes": 35035,
+      "sha256": "6352c3afc4165407a0688e2ef38d87f6e34e93a54cd994b823d0f48bbc658d12",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://api.figshare.com/v2/articles/29298161/versions/1"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:19:12.397524+00:00",
+      "license_or_terms": "CC0-1.0 (Figshare metadata)",
+      "citation_identifiers": [
+        "10.6084/m9.figshare.29298161.v1"
+      ],
+      "citation_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://info.figshare.com/user-guide/figshare-policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

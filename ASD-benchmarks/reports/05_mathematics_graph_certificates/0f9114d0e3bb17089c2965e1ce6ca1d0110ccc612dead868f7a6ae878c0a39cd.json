@@ -1,0 +1,117 @@
+{
+  "scenario_id": "05_mathematics_graph_certificates",
+  "path": "raw/List of 4-minimal graphs.zip",
+  "bytes": 18480,
+  "sha256": "25335c59ec2f501a779203a43ea0e8446ebaf69fd9a6b8a5faf6357ab8e265f4",
+  "checked_utc": "2026-09-15T06:35:34.031293+00:00",
+  "source_checksum_status": "verified",
+  "format": "ZIP",
+  "expanded_bytes": 137136,
+  "members": [
+    {
+      "name": "List of 4-minimal graphs/4Minimal.csv",
+      "bytes": 108885,
+      "sha256": "5b52168bd19616b2b51f7846030ebb810fcf9a8bcfff50287c9a112fd1762efa",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4b7c46497745645f3f3f6b64",
+        "delimiter": ",",
+        "header": [
+          "K|FIwEd_??kd",
+          "KxFJoEdj??ld"
+        ],
+        "data_records": 4106,
+        "row_width_counts": {
+          "2": 4106
+        },
+        "first_lines": [
+          "K|FIwEd_??kd,KxFJoEdj??ld",
+          "K|FIwEd_G?k`,K|FIwEdoG?kd",
+          "K|FIwEd_G?kd,K|FIwEdoG?kd",
+          "K|FIwEdOG?s`,K|FIwEdoG?s`",
+          "K|FIwEdo??cd,K|FIwEdoG?kd",
+          "K|FIwEdo??kd,K|FIwEdoG?kd",
+          "K|FIwEdoG?c`,K|FIwEdoG?kd",
+          "K|FIwEdoG?cd,K|FIwEdoG?kd"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "List of 4-minimal graphs/4MinimalWithCertificate.csv",
+      "bytes": 27149,
+      "sha256": "626f1e3f8b20acd4e23840fb034e52c110acf2f452b2a43f10deedfd060d37db",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "34343037322c4b7c46497745",
+        "delimiter": ",",
+        "header": [
+          "44072",
+          "K|FIwEdoG?s`",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "2",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "4"
+        ],
+        "data_records": 569,
+        "row_width_counts": {
+          "15": 569
+        },
+        "first_lines": [
+          "44072,K|FIwEdoG?s`,1,1,1,1,1,1,2,1,1,1,1,1,4",
+          "44126,K|FIwEdoG?kd,1,1,1,1,1,1,2,1,1,1,1,1,4",
+          "87884,K|FKwD`g??gd,1,1,1,1,1,1,2,1,1,1,1,1,4",
+          "87950,K|FKwD`gG?i@,1,1,1,1,1,1,2,1,1,1,1,1,4",
+          "109392,K|FJoEl_G?md,1,1,1,1,1,1,2,1,1,1,1,1,4",
+          "115011,K|FJoElcG?md,1,1,1,1,1,1,2,1,1,1,1,1,4",
+          "121302,K|FJoElg??md,1,1,1,1,1,1,2,1,1,1,1,1,4",
+          "132770,K|FJoElo??md,1,1,1,1,1,1,2,1,1,1,1,1,4"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "List of 4-minimal graphs/readme.txt",
+      "bytes": 1102,
+      "sha256": "fefa519211f50bb85490d62a777866f46facc2e3e69212683d6dc22046b46c3c",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4465736372697074696f6e20",
+        "line_count": 10,
+        "preview_lines": [
+          "Description of files in this folder:",
+          "",
+          "4MinimalWithCertificate.csv: Each row describes a graph for which we provide a LS_+^3 certificate package.",
+          "-- Column 1 is the \"reference number\" of the graph -- e.g. Column 1 says \"44072\" means the LS_+^3 certificate package for the graph in question is in folder \"Cert_44072\" inside LS_+^3 certificate packages.zip.",
+          "-- Column 2 gives the graph in graph6 format."
+        ],
+        "first_lines": [
+          "Description of files in this folder:",
+          "",
+          "4MinimalWithCertificate.csv: Each row describes a graph for which we provide a LS_+^3 certificate package.",
+          "-- Column 1 is the \"reference number\" of the graph -- e.g. Column 1 says \"44072\" means the LS_+^3 certificate package for the graph in question is in folder \"Cert_44072\" inside LS_+^3 certificate packages.zip.",
+          "-- Column 2 gives the graph in graph6 format.",
+          "-- Columns 3 to 15 give the coefficients of the facet-inducing inequality of STAB(G) that is violated by the point described in the certificate package.",
+          "",
+          "4Minimal.csv: This gives the complete list of 4-minimal graphs in our discovery, one per row. There are two cases for each row:"
+        ],
+        "encoding_replacement_count": 0
+      }
+    }
+  ],
+  "checks": [
+    "all_member_CRCs",
+    "safe_paths_no_symlinks"
+  ],
+  "member_count": 3,
+  "status": "pass"
+}

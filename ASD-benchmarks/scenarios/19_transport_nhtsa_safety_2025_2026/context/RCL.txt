@@ -1,0 +1,58 @@
+RECALLS
+
+The RECALL file contains all NHTSA safety-related defect and compliance 
+campaigns since 1967.
+
+File characteristics:
+
+-  All the records are TAB delimited
+-  All dates are in YYYYMMDD format
+
+-  Maximum Record length: 17,108
+
+Change log:
+1.Field# 23 added as of Sept. 14, 2007
+2.Changed flat file extension from .lst to .txt as of Sept. 14, 2007
+3.Field# 24 added as of March 14, 2008
+4.Field#s 25,26,27 added as of March 23, 2020
+5.Fields #19 has been reduced to char(3). - May 2025
+	Fields #20 and #22 have been increased to 6000 characters. 
+	Fields #28 and #29 were added. All Descriptions have been updated.
+
+Last Updated May 2025
+
+
+FIELDS:
+=======
+
+Field#   Name                Type/Size   Description                      
+------   ---------           ---------   --------------------------------------
+1        RECORD_ID           NUMBER(9)   Running Sequence Number, Which Uniquely Identifies The Record
+2        CAMPNO              CHAR(12)    NHTSA Recall Number
+3        MAKETXT             CHAR(25)    Vehicle/Equipment Make
+4        MODELTXT            CHAR(256)   Vehicle/Equipment Model
+5        YEARTXT             CHAR(4)     Vehicle/Equipment Model Year, 9999 If Unknown Or N/A
+6        MFGCAMPNO           CHAR(20)    Manufacturer Campaign Number
+7        COMPNAME            CHAR(256)   Component Description
+8        MFGNAME             CHAR(40)    Manufacturer that filed Part 573 Defect/Noncompliance Report
+9        BGMAN               CHAR(8)     Begin Date of Manufacturing
+10       ENDMAN              CHAR(8)     End Date of Manufacturing
+11       RCLTYPECD           CHAR(4)     Vehicle, Equipment, Child Restraint, Or Tire Part 573 Defect/Noncompliance Report
+12       POTAFF              NUMBER(9)   Potential Number of Units Affected              
+13       ODATE               CHAR(8)     Date Manufacturer Notified Owners
+14       INFLUENCED_BY       CHAR(36)    Recall Initiated By (MFR/OVSC/ODI)
+15       MFGTXT              CHAR(40)    Manufacturers of Recalled Vehicles/Equipment/Child Restraint/Tires
+16       RCDATE              CHAR(8)     Part 573 Defect/Noncompliance Report Received Date
+17       DATEA               CHAR(8)     Record Creation Date
+18       RPNO                CHAR(3)     Regulation Part Number
+19       FMVSS               CHAR(3)     Federal Motor Vehicle Safety Standard Number
+20       DESC_DEFECT         CHAR(6000)  Defect Summary
+21       CONEQUENCE_DEFECT   CHAR(2000)  Consequence Summary	
+22       CORRECTIVE_ACTION   CHAR(6000)  Corrective Summary
+23       NOTES               CHAR(2000)  Recall Notes
+24       RCL_CMPT_ID         CHAR(27)    Number That Uniquely Identifies A Recalled Component
+25       MFR_COMP_NAME       CHAR(50)    Manufacturer-Supplied Component Name
+26       MFR_COMP_DESC       CHAR(200)   Manufacturer-Supplied Component Description
+27       MFR_COMP_PTNO       CHAR(100)   Manufacturer-Supplied Component Part Number
+28		 DO_NOT_DRIVE		 CHAR(3)	 Consumer Advisory: Do Not Drive
+29		 PARK_OUTSIDE	     CHAR(3)	 Consumer Advisory: Park Outside

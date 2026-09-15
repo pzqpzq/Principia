@@ -1,0 +1,294 @@
+{
+  "case_id": "P100-080",
+  "case_revision": 1,
+  "scenario_id": "80_physiology_wearable_stress_exercise",
+  "title": "Wearable device measurements during stress and exercise",
+  "domain": "Human physiology",
+  "question": "How do physiological responses and sensor reliability vary across stress and exercise protocols?",
+  "data_origin": "measured_or_observed",
+  "source_version": "1.0.1",
+  "source_url": "https://physionet.org/content/wearable-device-dataset/1.0.1/",
+  "identifiers": [
+    "10.13026/he0v-tf17"
+  ],
+  "publisher": "Instituto Tecnológico de Buenos Aires",
+  "release_date": "2025-06-24",
+  "measurement_dates": "Calendar dates are shifted; use relative/session timing. Dataset version released June 2025.",
+  "variables_and_units": "wearable BVP/EDA/temperature/acceleration, protocol and annotations",
+  "independent_units": "participant across sessions, then protocol and complete time blocks",
+  "validation_design": "participant across sessions, then protocol and complete time blocks Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Native wearable exports plus annotations/notebook and known bad-trial descriptions. Different protocols have overlapping participant populations that require identifier reconciliation.",
+  "prior_analysis_and_limits": "Participant-level grouping across protocols; then complete session/time blocks. Deidentified observations do not support clinical diagnostic claims. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/wearable-device-dataset-1.0.1.zip!/wearable-device-dataset-from-induced-stress-and-structured-exercise-sessions-1.0.1/Data_Dictionary.csv",
+      "structure": {
+        "header": [
+          "Code",
+          "Variable Name",
+          "Description",
+          "Sampling Frequency (Hz)",
+          "Units"
+        ],
+        "data_records": 7,
+        "first_lines": [
+          "Code,Variable Name,Description,Sampling Frequency (Hz),Units",
+          "EDA,Electrodermal Activity,Data from the electrodermal activity sensor,4,microsiemens (uS)",
+          "TEMP,Skin Temperature,Data from temperature sensor ,4,Celsius (�C)",
+          "BVP,Blood Volume Pulse,Data from photoplethysmograph,64,-",
+          "HR,Heart Rate,Average heart rate extracted from the BVP signal,1,beats per minute (BPM)",
+          "IBI,Inter Beat Interval,Time between individuals heart beats extracted from the BVP signal  ,-,-",
+          "ACC,3-axis Accelerometer,Data from 3-axis accelerometer sensor (x;y;z),32,1/64g",
+          "tags,Event mark times,Each mark corresponds to a physical button press on the device,-,-"
+        ]
+      }
+    },
+    {
+      "asset": "raw/wearable-device-dataset-1.0.1.zip!/wearable-device-dataset-from-induced-stress-and-structured-exercise-sessions-1.0.1/LICENSE.txt",
+      "structure": {
+        "first_lines": [
+          "# ODC Attribution License (ODC-By)",
+          "",
+          "### Preamble",
+          "",
+          "The Open Data Commons Attribution License is a license agreement",
+          "intended to allow users to freely share, modify, and use this Database",
+          "subject only to the attribution requirements set out in Section 4.",
+          ""
+        ]
+      }
+    },
+    {
+      "asset": "raw/wearable-device-dataset-1.0.1.zip!/wearable-device-dataset-from-induced-stress-and-structured-exercise-sessions-1.0.1/README.txt",
+      "structure": {
+        "first_lines": [
+          "# FILES",
+          "- 'Stress_Level_v1.csv' and 'Stress_Level_v2.csv' contain self-reported stress levels during the stress protocol for each stage of the study,  respectively.",
+          "- 'subject-info.csv' contains demographic data such as age, weight, and height for all participants.",
+          "- 'data_constraints.txt' contains detailed information of issues such as incorrect wristband placements, incomplete protocols, and connection problems. ",
+          "- 'Wearable_Dataset.ipynb'  is a Jupyter Notebook that provides visualizations of all recorded signals and includes sample code for managing the data.",
+          "- The main folder 'Wearable_Dataset' contains three folders for each type of activity: 'STRESS', 'AEROBIC' and 'ANAEROBIC'.",
+          "- Each of these folders includes participant subfolders named as 'S01','S02','f01',etc.",
+          "- Each of the folders corresponding to each participant contains Empatica E4 files: 'ACC.csv', 'BVP.csv', 'EDA.csv', 'HR.csv', 'IBI.csv', 'tags.csv' and 'TEMP.csv'."
+        ]
+      }
+    },
+    {
+      "asset": "raw/wearable-device-dataset-1.0.1.zip!/wearable-device-dataset-from-induced-stress-and-structured-exercise-sessions-1.0.1/SHA256SUMS.txt",
+      "structure": {
+        "first_lines": [
+          "70642e6a04c617181f62438aca2399a204e233e2b4d0a5c7bad2efbc48921ecb Data_Dictionary.csv",
+          "86c0ad300f6d380591298bc03652e30b81f65954bbf22435812bcfd46812ab06 LICENSE.txt",
+          "7fe978ade3de804f8d91b68cfb56fd7fb03499f87669a6824d08efa6819bfc33 README.txt",
+          "728ddaa128851f80b48a715b5144a9c5d4573652bc71b9797861795121bf1370 Stress_Level_v1.csv",
+          "cbb51cd349f2a46d4942c393124b285d3cc37e510a30b0b72dcd8c023022dbf1 Stress_Level_v2.csv",
+          "47a3c4ec2c47f36c2917be32dd4f076f443ae56c1ca79c3b128703b60456dfdb Wearable_Dataset.ipynb",
+          "d222dd2737337f5c8dce7ad2ab85cc8f600834fca38ee10656021b0fbd2c58b8 Wearable_Dataset/AEROBIC/S01/ACC.csv",
+          "5730b09b8c79faef6625a47d2b9b9bf1cf2732e1a25e6189afc9ea27e6c2d687 Wearable_Dataset/AEROBIC/S01/BVP.csv"
+        ]
+      }
+    },
+    {
+      "asset": "raw/wearable-device-dataset-1.0.1.zip!/wearable-device-dataset-from-induced-stress-and-structured-exercise-sessions-1.0.1/Stress_Level_v1.csv",
+      "structure": {
+        "header": [
+          "",
+          "Baseline",
+          "Stroop",
+          "First Rest",
+          "TMCT",
+          "Second Rest",
+          "Real Opinion",
+          "Opposite Opinion",
+          "Subtract"
+        ],
+        "data_records": 18,
+        "first_lines": [
+          ",Baseline,Stroop,First Rest,TMCT,Second Rest,Real Opinion,Opposite Opinion,Subtract",
+          "S01,3.00,4.50,4.00,4.00,5.50,6.00,7.00,7.00",
+          "S02,2.00,4.00,2.00,2.00,2.00,4.00,5.00,4.00",
+          "S03,3.00,3.00,3.00,4.00,3.00,3.00,3.00,3.00",
+          "S04,3.00,3.00,2.00,3.00,1.00,1.00,1.00,1.00",
+          "S05,1.00,2.00,1.00,4.00,1.00,2.00,2.00,3.00",
+          "S06,2.00,3.00,2.00,5.00,3.00,3.00,3.00,5.00",
+          "S07,5.00,6.00,6.00,8.00,7.00,8.00,9.00,9.00"
+        ]
+      }
+    },
+    {
+      "asset": "raw/wearable-device-dataset-1.0.1.zip!/wearable-device-dataset-from-induced-stress-and-structured-exercise-sessions-1.0.1/Stress_Level_v2.csv",
+      "structure": {
+        "header": [
+          "",
+          "Baseline",
+          "TMCT",
+          "First Rest",
+          "Real Opinion",
+          "Opposite Opinion",
+          "Second Rest",
+          "Subtract"
+        ],
+        "data_records": 18,
+        "first_lines": [
+          ",Baseline,TMCT,First Rest,Real Opinion,Opposite Opinion,Second Rest,Subtract",
+          "f01,2.00,5.00,2.00,3.00,4.00,2.00,3.00",
+          "f02,3.00,5.00,1.00,2.00,3.00,2.00,3.00",
+          "f03,5.00,8.00,1.00,3.00,5.00,1.00,6.00",
+          "f04,2.00,4.00,3.00,3.00,4.00,1.00,4.00",
+          "f05,3.00,4.00,3.00,3.00,3.00,2.00,3.00",
+          "f06,3.00,4.00,1.00,2.00,3.00,1.00,3.00",
+          "f07,1.00,4.00,1.00,3.00,1.00,1.00,3.00"
+        ]
+      }
+    },
+    {
+      "asset": "raw/wearable-device-dataset-1.0.1.zip!/wearable-device-dataset-from-induced-stress-and-structured-exercise-sessions-1.0.1/Wearable_Dataset/AEROBIC/S01/ACC.csv",
+      "structure": {
+        "header": [
+          "2013-03-03 17:43:37",
+          "2013-03-03 17:43:37",
+          "2013-03-03 17:43:37"
+        ],
+        "data_records": 65287,
+        "first_lines": [
+          "2013-03-03 17:43:37,2013-03-03 17:43:37,2013-03-03 17:43:37",
+          "32.0,32.0,32.0",
+          "54.0,-20.0,20.0",
+          "54.0,-20.0,22.0",
+          "55.0,-20.0,23.0",
+          "50.0,-20.0,22.0",
+          "49.0,-20.0,22.0",
+          "49.0,-19.0,21.0"
+        ]
+      }
+    },
+    {
+      "asset": "raw/wearable-device-dataset-1.0.1.zip!/wearable-device-dataset-from-induced-stress-and-structured-exercise-sessions-1.0.1/Wearable_Dataset/AEROBIC/S01/BVP.csv",
+      "structure": {
+        "header": [
+          "2013-03-03 17:43:37"
+        ],
+        "data_records": 130571,
+        "first_lines": [
+          "2013-03-03 17:43:37",
+          "64.0",
+          "-0.0",
+          "-0.0",
+          "-0.0",
+          "-0.0",
+          "-0.0",
+          "-0.0"
+        ]
+      }
+    },
+    {
+      "asset": "raw/wearable-device-dataset-1.0.1.zip!/wearable-device-dataset-from-induced-stress-and-structured-exercise-sessions-1.0.1/Wearable_Dataset/AEROBIC/S01/EDA.csv",
+      "structure": {
+        "header": [
+          "2013-03-03 17:43:37"
+        ],
+        "data_records": 8161,
+        "first_lines": [
+          "2013-03-03 17:43:37",
+          "4.0",
+          "0.0",
+          "0.069175",
+          "0.178062",
+          "0.18831",
+          "0.131945",
+          "0.198559"
+        ]
+      }
+    },
+    {
+      "asset": "raw/wearable-device-dataset-1.0.1.zip!/wearable-device-dataset-from-induced-stress-and-structured-exercise-sessions-1.0.1/Wearable_Dataset/AEROBIC/S01/HR.csv",
+      "structure": {
+        "header": [
+          "2013-03-03 17:43:47"
+        ],
+        "data_records": 2032,
+        "first_lines": [
+          "2013-03-03 17:43:47",
+          "1.0",
+          "109.0",
+          "91.0",
+          "93.33",
+          "123.0",
+          "110.4",
+          "106.17"
+        ]
+      }
+    },
+    {
+      "asset": "raw/wearable-device-dataset-1.0.1.zip!/wearable-device-dataset-from-induced-stress-and-structured-exercise-sessions-1.0.1/Wearable_Dataset/AEROBIC/S01/IBI.csv",
+      "structure": {
+        "header": [
+          "2013-03-03 17:43:37",
+          "2013-03-03 17:43:37"
+        ],
+        "data_records": 990,
+        "first_lines": [
+          "2013-03-03 17:43:37,2013-03-03 17:43:37",
+          "15.125,0.562500",
+          "15.6875,0.562500",
+          "16.25,0.562500",
+          "16.84375,0.593750",
+          "17.46875,0.625000",
+          "18.046875,0.578125",
+          "18.625,0.578125"
+        ]
+      }
+    },
+    {
+      "asset": "raw/wearable-device-dataset-1.0.1.zip!/wearable-device-dataset-from-induced-stress-and-structured-exercise-sessions-1.0.1/Wearable_Dataset/AEROBIC/S01/TEMP.csv",
+      "structure": {
+        "header": [
+          "2013-03-03 17:43:37"
+        ],
+        "data_records": 8161,
+        "first_lines": [
+          "2013-03-03 17:43:37",
+          "4.0",
+          "35.89",
+          "35.89",
+          "35.89",
+          "35.89",
+          "35.89",
+          "35.89"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "ZIP": 1,
+    "text_or_instrument_native": 708,
+    "JSON": 1
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "ODC-By-1.0",
+  "source_asset_bytes": 73122068,
+  "expanded_source_equivalent_bytes": 259376639,
+  "installed_folder_bytes": 73189549,
+  "source_asset_count": 2,
+  "asset_paths": [
+    "scenarios/80_physiology_wearable_stress_exercise/raw/wearable-device-dataset-1.0.1.zip",
+    "scenarios/80_physiology_wearable_stress_exercise/context/SOURCE_FACTS.json"
+  ],
+  "local_folder": "scenarios/80_physiology_wearable_stress_exercise",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 73128161,
+  "expanded_release_folder_equivalent_bytes": 259382732
+}

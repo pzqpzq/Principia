@@ -1,0 +1,373 @@
+{
+  "case_id": "P100-076",
+  "case_revision": 1,
+  "scenario_id": "76_neuroscience_neuronal_maturation",
+  "title": "Dataset accompanying the paper \"Environmental stiffness regulates neuronal maturation via Piezo1-mediated TTR activity\"",
+  "domain": "Cellular neuroscience",
+  "question": "How do mechanical perturbations relate to neuronal maturation and calcium responses across conditions?",
+  "data_origin": "measured_or_observed",
+  "source_version": "12802682",
+  "source_url": "https://zenodo.org/records/12802682",
+  "identifiers": [
+    "10.5281/zenodo.12802682"
+  ],
+  "publisher": "Kreysing, Eva (University of Cambridge); Gautier, Hélène (University of Cambridge); Humphrey, Robert (University of Cambridge); Mooslehner, Katrin (University of Cambridge); Muresan, Leila (University of Cambridge); Haarhoff, Daniel (Makespace Cambridge); Mukherjee, Sudipta (University of Cambridge); Zhao, Xiaohui (University of Cambridge); Winkel, Alexander; Dimitracopoulos, Andrea (University of Cambridge); Pillai, Eva (University of Cambridge); Kárádottir, Ragnhildur Thora (University of Cambridge); Franze, Kristian (University of Cambridge); Gampl, Niklas (Friedrich-Alexander-University Erlangen-Nürnberg); Vásquez-Sepúlveda, Sebastián (Friedrich-Alexander-University Erlangen-Nürnberg); Boric, Tina (Friedrich-Alexander-Universität Erlangen-Nürnberg)",
+  "release_date": "2024-07-23",
+  "measurement_dates": "Metadata publication field July 2024; archive named June 2025 and paper published November 2025. Actual experiment dates remain file-specific.",
+  "variables_and_units": "calcium imaging, mechanical response and maturation measurements",
+  "independent_units": "biological replicates and perturbation conditions",
+  "validation_design": "biological replicates and perturbation conditions Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Measurement tables, illustrative calcium MOVs, ODS and source documents. Some electrophysiology is summarized, not native ABF.",
+  "prior_analysis_and_limits": "Use biological replicates/conditions; illustrative movies cannot alone establish replicate counts. Preserve inconsistent release metadata. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/Supplementary_Information_Data_1__RNA_seq_analysis.csv",
+      "structure": {
+        "header": [
+          "STable1:Sample table input summary with mapping statistics and number of genes detected.",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "data_records": 25,
+        "first_lines": [
+          "STable1:Sample table input summary with mapping statistics and number of genes detected.,,,,,,,,,,,,,,,,,",
+          "Sample,Number of raw reads,Number of reads after trimming,% Removed,Number of Uniquely mapped Reads,% Uniquely Mapped,% Multiple Loci,% Unmapped,Number of genes detected,,sampleName,fileName,condition,replicate,origin,surface,treatment,group",
+          "H1_1R_10__S3_R1,\"15,500,893\",\"15,499,997\",0.0058,\"13,140,340\",84.78,13.46,1.76,\"16,481\",,H1_1R_10,H1_1R_10_count.txt,Piezo1 KD 1,1,H_10,fast,Piezo1 KD 1,H1_10",
+          "H1_1R_100_S4_R1,\"16,415,920\",\"16,414,929\",0.006,\"13,679,315\",83.33,14.73,1.94,\"16,425\",,H1_1R_100,H1_1R_100_count.txt,Piezo1 KD 1,1,H_100,slow,Piezo1 KD 1,H1_100",
+          "H1_2R_10__S9_R1,\"15,535,815\",\"15,534,943\",0.0056,\"13,278,071\",85.47,12.77,1.76,\"16,371\",,H1_2R_10,H1_2R_10_count.txt,Piezo1 KD 1,2,H_10,fast,Piezo1 KD 1,H1_10",
+          "H1_2R_100_S10_R1,\"20,519,924\",\"20,518,651\",0.0062,\"17,448,244\",85.04,13.19,1.78,\"16,809\",,H1_2R_100,H1_2R_100_count.txt,Piezo1 KD 1,2,H_100,slow,Piezo1 KD 1,H1_100",
+          "H1_3R_10__S15_R1,\"14,867,722\",\"14,866,881\",0.0057,\"12,607,775\",84.8,13.48,1.71,\"16,327\",,H1_3R_10,H1_3R_10_count.txt,Piezo1 KD 1,3,H_10,fast,Piezo1 KD 1,H1_10",
+          "H1_3R_100_S16_R1,\"15,151,764\",\"15,151,024\",0.0049,\"12,842,544\",84.76,13.42,1.82,\"16,393\",,H1_3R_100,H1_3R_100_count.txt,Piezo1 KD 1,3,H_100,slow,Piezo1 KD 1,H1_100"
+        ]
+      }
+    },
+    {
+      "asset": "raw/20250611_data.zip!/20250611_data/Correlation_stiffness_synapses/figure-5d--Averaged_AFM_Data_afterThresholding.csv",
+      "structure": {
+        "header": [
+          "x",
+          "y",
+          "modulus_binary"
+        ],
+        "data_records": 216,
+        "first_lines": [
+          "x,y,modulus_binary",
+          "-2.4081662942701727e-05,-0.00025905704993157936,stiff",
+          "4.40794095556079e-06,-0.00025791187814374917,stiff",
+          "2.9510636479541022e-05,-0.0002524579962453719,stiff",
+          "5.055090167890795e-05,-0.0002451888946842015,stiff",
+          "-6.661798856924674e-05,-0.00023057815521376526,stiff",
+          "-4.6736608368082414e-05,-0.00023686292042807673,stiff",
+          "-2.276890424472586e-05,-0.0002396737412245996,stiff"
+        ]
+      }
+    },
+    {
+      "asset": "raw/20250611_data.zip!/20250611_data/Correlation_stiffness_synapses/figure-5b--Averaged_AFM_Data_beforeThresholding.csv",
+      "structure": {
+        "header": [
+          "x",
+          "y",
+          "modulus"
+        ],
+        "data_records": 420,
+        "first_lines": [
+          "x,y,modulus",
+          "-0.00010009397453614524,-0.00022945097110589494,283.4015",
+          "-9.048592893120795e-05,-0.00023804429270944918,257.10085",
+          "-7.970886606364067e-05,-0.00024677281566493883,257.10085",
+          "-6.751563350690886e-05,-0.00025541949462040757,237.67610000000002",
+          "-5.355966044006449e-05,-0.00026358018457193035,214.0817",
+          "-3.7328317046457493e-05,-0.00027052271861706433,272.8621",
+          "-1.7967683538262517e-05,-0.00027490947398742005,248.07605"
+        ]
+      }
+    },
+    {
+      "asset": "raw/20250611_data.zip!/20250611_data/Correlation_stiffness_synapses/figure-5d--Averaged_FM1-43_Data_afterThresholding.csv",
+      "structure": {
+        "header": [
+          "x",
+          "y",
+          "modulus_binary"
+        ],
+        "data_records": 216,
+        "first_lines": [
+          "x,y,modulus_binary",
+          "-2.4081662942701727e-05,-0.00025905704993157936,stiff",
+          "4.40794095556079e-06,-0.00025791187814374917,stiff",
+          "2.9510636479541022e-05,-0.0002524579962453719,stiff",
+          "5.055090167890795e-05,-0.0002451888946842015,stiff",
+          "-6.661798856924674e-05,-0.00023057815521376526,stiff",
+          "-4.6736608368082414e-05,-0.00023686292042807673,stiff",
+          "-2.276890424472586e-05,-0.0002396737412245996,stiff"
+        ]
+      }
+    },
+    {
+      "asset": "raw/20250611_data.zip!/20250611_data/Correlation_stiffness_synapses/figure-5c--Averaged_FM1-43_Data_beforeThresholding.csv",
+      "structure": {
+        "header": [
+          "x",
+          "y",
+          "FM143_normalized_intensity"
+        ],
+        "data_records": 74496,
+        "first_lines": [
+          "x,y,FM143_normalized_intensity",
+          "-8.34655017626649e-05,-0.00027993606037049896,0.0",
+          "-8.272781253546431e-05,-0.0002802475708754961,0.0",
+          "-8.198491304945826e-05,-0.00028055859348176176,0.0",
+          "-8.123677018553443e-05,-0.0002808690692815894,0.0",
+          "-8.048335113280882e-05,-0.00028117893797392096,0.0",
+          "-7.972462341271743e-05,-0.00028148813784402855,0.0",
+          "-7.896055490389095e-05,-0.00028179660574338797,0.0"
+        ]
+      }
+    },
+    {
+      "asset": "raw/20250611_data.zip!/20250611_data/Patch-clamp/figure-2h-resting-potential.csv",
+      "structure": {
+        "header": [
+          "filename",
+          "resting potential (mV)",
+          "Measurement ID",
+          "date",
+          "Stiffness",
+          "div",
+          "Condition"
+        ],
+        "data_records": 41,
+        "first_lines": [
+          "filename,resting potential (mV),Measurement ID,date,Stiffness,div,Condition",
+          "20250416_100Pa_DIV7_H2_D2S3_C1_axo_0000.abf,-54.9446868896484,20250416_100Pa_DIV7_H2_D2S3_C1,20250416,100Pa,DIV7,P1 KD",
+          "20250416_100Pa_DIV7_H2_D2S3_C2_axo_0000.abf,-44.0208587646484,20250416_100Pa_DIV7_H2_D2S3_C2,20250416,100Pa,DIV7,P1 KD",
+          "20250416_100Pa_DIV7_H2_D2S3_C3_axo_0000.abf,-50.6032867431641,20250416_100Pa_DIV7_H2_D2S3_C3,20250416,100Pa,DIV7,P1 KD",
+          "20250416_100Pa_DIV7_HWT_D2S5_C7_axo_0000.abf,-31.7355194091797,20250416_100Pa_DIV7_HWT_D2S5_C7,20250416,100Pa,DIV7,Control",
+          "20250416_100Pa_DIV7_HWT_D2S6_C1_axo_0000.abf,-33.5876007080078,20250416_100Pa_DIV7_HWT_D2S6_C1,20250416,100Pa,DIV7,Control",
+          "20250416_100Pa_DIV7_HWT_D2S6_C2_axo_0000.abf,-37.9755554199219,20250416_100Pa_DIV7_HWT_D2S6_C2,20250416,100Pa,DIV7,Control",
+          "20250416_100Pa_DIV7_HWT_D2S6_C3_axo_0000.abf,-40.1632995605469,20250416_100Pa_DIV7_HWT_D2S6_C3,20250416,100Pa,DIV7,Control"
+        ]
+      }
+    },
+    {
+      "asset": "raw/20250611_data.zip!/20250611_data/Patch-clamp/figure-2e-membrane-resistance.csv",
+      "structure": {
+        "header": [
+          "date",
+          "div",
+          "stiffness",
+          "Interpolated Membrane Resistance, MOhms",
+          "orig filename"
+        ],
+        "data_records": 100,
+        "first_lines": [
+          "date,div,stiffness,\"Interpolated Membrane Resistance, MOhms\",orig filename",
+          "140726,5,0.1k,2774.98655653278,140726_5DIV_100Pa1c1_0000.abf",
+          "140726,5,0.1k,4403.67093151338,140726_5DIV_100Pa1c3_0000.abf",
+          "140726,5,10k,1915.04018861662,140726_5DIV_10kPa1c1_0000.abf",
+          "140726,5,10k,3764.3413872531,140726_5DIV_10kPa1c2_0000.abf",
+          "140726,5,10k,3065.86234943634,140726_5DIV_10kPa1c3_0000.abf",
+          "140726,5,10k,739.712593804423,140726_5DIV_10kPa1c4_0000.abf",
+          "140726,5,10k,1531.98531307445,140726_5DIV_10kPa1c5_0000.abf"
+        ]
+      }
+    },
+    {
+      "asset": "raw/20250611_data.zip!/20250611_data/Patch-clamp/figure-2h-membrane-resistance.csv",
+      "structure": {
+        "header": [
+          "Filename",
+          "InterpolatedMembraneR",
+          "Measurement ID",
+          "date",
+          "Stiffness",
+          "div",
+          "Condition"
+        ],
+        "data_records": 65,
+        "first_lines": [
+          "Filename,InterpolatedMembraneR,Measurement ID,date,Stiffness,div,Condition",
+          "20250415_100Pa_DIV7_H2_D1S4_C3_0000.abf,1725.82823752212,20250415_100Pa_DIV7_H2_D1S4_C3,20250415,100Pa,DIV7,P1 KD",
+          "20250415_100Pa_DIV7_H2_D1S4_C4_0000.abf,2954.12067306509,20250415_100Pa_DIV7_H2_D1S4_C4,20250415,100Pa,DIV7,P1 KD",
+          "20250415_100Pa_DIV7_H2_D1S4_C5_0000.abf,413.423922622601,20250415_100Pa_DIV7_H2_D1S4_C5,20250415,100Pa,DIV7,P1 KD",
+          "20250415_100Pa_DIV7_HWT_D1S6_C2_0000.abf,1188.03210280995,20250415_100Pa_DIV7_HWT_D1S6_C2,20250415,100Pa,DIV7,Control",
+          "20250415_100Pa_DIV7_HWT_D1S6_C3_0000.abf,570.662568257583,20250415_100Pa_DIV7_HWT_D1S6_C3,20250415,100Pa,DIV7,Control",
+          "20250415_100Pa_DIV7_HWT_D1S6_C4_0000.abf,554.883004698319,20250415_100Pa_DIV7_HWT_D1S6_C4,20250415,100Pa,DIV7,Control",
+          "20250415_10kPa_DIV7_H2_D1S2_C5_0000.abf,248.313481130469,20250415_10kPa_DIV7_H2_D1S2_C5,20250415,10kPa,DIV7,P1 KD"
+        ]
+      }
+    },
+    {
+      "asset": "raw/20250611_data.zip!/20250611_data/Patch-clamp/figure-2e-resting-potential.csv",
+      "structure": {
+        "header": [
+          "date",
+          "div",
+          "stiffness",
+          "resting potential (mV)",
+          "orig filename"
+        ],
+        "data_records": 125,
+        "first_lines": [
+          "date,div,stiffness,resting potential (mV),orig filename",
+          "140701,4,10k,-47.414703,140701_4DIV_10kPa1c3scope_0000.abf",
+          "141121,5,10k,-32.294586,141121_10kPa1c1scop_0001.abf",
+          "141126,10,10k,-59.9196,141126_10DIV_10kPa1c1scop_0002.abf",
+          "141020,14,100,-44.511993,141020_14DIV_100Pa1c2scop_0001.abf",
+          "150811,14,100,-42.554993,150811_14div_100Pa1c4axo_0001.abf",
+          "141022,5,100,-37.396088,141022_5DIV_100Pa2c1oscop_0001.abf",
+          "140701,4,10k,-75.32136,140701_4DIV_10kPa2c6scope_0000.abf"
+        ]
+      }
+    },
+    {
+      "asset": "raw/20250611_data.zip!/20250611_data/Patch-clamp/figure-2h-FI-curve-data.csv",
+      "structure": {
+        "header": [
+          "filename",
+          "sweep",
+          "applied current",
+          "spike count",
+          "stimulus range",
+          "Measurement ID",
+          "date",
+          "Stiffness",
+          "div",
+          "Condition",
+          "dish",
+          "cell",
+          "frequency",
+          "use for FI (manually confirmed)"
+        ],
+        "data_records": 780,
+        "first_lines": [
+          "filename,sweep,applied current,spike count,stimulus range,Measurement ID,date,Stiffness,div,Condition,dish,cell,frequency,use for FI (manually confirmed)",
+          "20250416_100Pa_DIV7_H2_D2S3_C1_0003.abf,0,-10,0,-10.0 to 66.0,20250416_100Pa_DIV7_H2_D2S3_C1,20250416,0.1kPa,DIV7,P1 KD,D2S3,C1,0,y",
+          "20250416_100Pa_DIV7_H2_D2S3_C1_0003.abf,19,66,1,-10.0 to 66.0,20250416_100Pa_DIV7_H2_D2S3_C1,20250416,0.1kPa,DIV7,P1 KD,D2S3,C1,5,y",
+          "20250416_100Pa_DIV7_H2_D2S3_C1_0003.abf,18,62,1,-10.0 to 66.0,20250416_100Pa_DIV7_H2_D2S3_C1,20250416,0.1kPa,DIV7,P1 KD,D2S3,C1,5,y",
+          "20250416_100Pa_DIV7_H2_D2S3_C1_0003.abf,17,58,1,-10.0 to 66.0,20250416_100Pa_DIV7_H2_D2S3_C1,20250416,0.1kPa,DIV7,P1 KD,D2S3,C1,5,y",
+          "20250416_100Pa_DIV7_H2_D2S3_C1_0003.abf,16,54,0,-10.0 to 66.0,20250416_100Pa_DIV7_H2_D2S3_C1,20250416,0.1kPa,DIV7,P1 KD,D2S3,C1,0,y",
+          "20250416_100Pa_DIV7_H2_D2S3_C1_0003.abf,15,50,0,-10.0 to 66.0,20250416_100Pa_DIV7_H2_D2S3_C1,20250416,0.1kPa,DIV7,P1 KD,D2S3,C1,0,y",
+          "20250416_100Pa_DIV7_H2_D2S3_C1_0003.abf,13,42,0,-10.0 to 66.0,20250416_100Pa_DIV7_H2_D2S3_C1,20250416,0.1kPa,DIV7,P1 KD,D2S3,C1,0,y"
+        ]
+      }
+    },
+    {
+      "asset": "raw/20250611_data.zip!/20250611_data/Patch-clamp/figure-2g-current-densities.csv",
+      "structure": {
+        "header": [
+          "Measurement ID",
+          "Filename",
+          "Voltage, mV",
+          "InterpolatedMembraneC",
+          "InterpolatedSeriesR",
+          "Type",
+          "Current, pA",
+          "Current density, pA/pF",
+          "date",
+          "Stiffness",
+          "div",
+          "Condition",
+          "dish",
+          "dish id",
+          "cell",
+          "Type--Stiffness",
+          "Type--Condition"
+        ],
+        "data_records": 3660,
+        "first_lines": [
+          "Measurement ID,Filename,\"Voltage, mV\",InterpolatedMembraneC,InterpolatedSeriesR,Type,\"Current, pA\",\"Current density, pA/pF\",date,Stiffness,div,Condition,dish,dish id,cell,Type--Stiffness,Type--Condition",
+          "20250415_100Pa_DIV7_H2_D1S4_C3,20250415_100Pa_DIV7_H2_D1S4_C3_0001.abf,-120,21.3296920003072,27.7022802496206,INa,-43.6401346459548,-2.0459805348022,20250415,0.1kPa,DIV7,P1 KD,D1S4,20250415-DIV7-100Pa-D1S4,C3,INa 0.1kPa,INa P1 KD",
+          "20250415_100Pa_DIV7_H2_D1S4_C3,20250415_100Pa_DIV7_H2_D1S4_C3_0001.abf,-110,21.3296920003072,27.7022802496206,IKa,50.3540015145633,2.36074677092562,20250415,0.1kPa,DIV7,P1 KD,D1S4,20250415-DIV7-100Pa-D1S4,C3,IKa 0.1kPa,IKa P1 KD",
+          "20250415_100Pa_DIV7_H2_D1S4_C3,20250415_100Pa_DIV7_H2_D1S4_C3_0001.abf,-100,21.3296920003072,27.7022802496206,IKa,48.5229469140337,2.27490143380105,20250415,0.1kPa,DIV7,P1 KD,D1S4,20250415-DIV7-100Pa-D1S4,C3,IKa 0.1kPa,IKa P1 KD",
+          "20250415_100Pa_DIV7_H2_D1S4_C3,20250415_100Pa_DIV7_H2_D1S4_C3_0001.abf,-90,21.3296920003072,27.7022802496206,IKa,58.5937472169463,2.74705078798617,20250415,0.1kPa,DIV7,P1 KD,D1S4,20250415-DIV7-100Pa-D1S4,C3,IKa 0.1kPa,IKa P1 KD",
+          "20250415_100Pa_DIV7_H2_D1S4_C3,20250415_100Pa_DIV7_H2_D1S4_C3_0001.abf,-80,21.3296920003072,27.7022802496206,IKa,53.7109349488675,2.51812988898733,20250415,0.1kPa,DIV7,P1 KD,D1S4,20250415-DIV7-100Pa-D1S4,C3,IKa 0.1kPa,IKa P1 KD",
+          "20250415_100Pa_DIV7_H2_D1S4_C3,20250415_100Pa_DIV7_H2_D1S4_C3_0001.abf,-70,21.3296920003072,27.7022802496206,IKa,59.5092745172111,2.78997345654846,20250415,0.1kPa,DIV7,P1 KD,D1S4,20250415-DIV7-100Pa-D1S4,C3,IKa 0.1kPa,IKa P1 KD",
+          "20250415_100Pa_DIV7_H2_D1S4_C3,20250415_100Pa_DIV7_H2_D1S4_C3_0001.abf,-60,21.3296920003072,27.7022802496206,IKa,59.2040987504562,2.77566590036103,20250415,0.1kPa,DIV7,P1 KD,D1S4,20250415-DIV7-100Pa-D1S4,C3,IKa 0.1kPa,IKa P1 KD"
+        ]
+      }
+    },
+    {
+      "asset": "raw/20250611_data.zip!/20250611_data/Patch-clamp/figure-2e-spontaneous-ap-counts.csv",
+      "structure": {
+        "header": [
+          "Stiffness",
+          "DIV",
+          "number of cells",
+          "number of active cells",
+          "Active fraction"
+        ],
+        "data_records": 14,
+        "first_lines": [
+          "Stiffness,DIV,number of cells,number of active cells,Active fraction",
+          "100 Pa,2,1,0,0.0",
+          "100 Pa,3,2,0,0.0",
+          "100 Pa,4,4,0,0.0",
+          "100 Pa,5,7,2,0.2857142857142857",
+          "100 Pa,7,9,5,0.5555555555555556",
+          "100 Pa,10,9,4,0.4444444444444444",
+          "100 Pa,14,9,4,0.4444444444444444"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "DOCX": 2,
+    "video": 4,
+    "ODS": 1,
+    "text_or_instrument_native": 72,
+    "ZIP": 1
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 20668669,
+  "expanded_source_equivalent_bytes": 24965881,
+  "installed_folder_bytes": 20693507,
+  "source_asset_count": 10,
+  "asset_paths": [
+    "scenarios/76_neuroscience_neuronal_maturation/raw/Supplementary_Information_Methods_1__Buffers_and_Media.docx",
+    "scenarios/76_neuroscience_neuronal_maturation/raw/Supplementary_Information_Videos.docx",
+    "scenarios/76_neuroscience_neuronal_maturation/raw/Video4--Calcium_imaging_P1KD_stiff_gel_DIV7.mov",
+    "scenarios/76_neuroscience_neuronal_maturation/raw/Video2--Calcium_imaging_CTRL_stiff_gel_DIV7.mov",
+    "scenarios/76_neuroscience_neuronal_maturation/raw/Video3--Calcium_imaging_P1KD_soft_gel_DIV7.mov",
+    "scenarios/76_neuroscience_neuronal_maturation/raw/Video1--Calcium_imaging_CTRL_soft_gel_DIV7.mov",
+    "scenarios/76_neuroscience_neuronal_maturation/raw/Supplementary_Information_Data_2__Key_resources.ods",
+    "scenarios/76_neuroscience_neuronal_maturation/raw/Supplementary_Information_Data_1__RNA_seq_analysis.csv",
+    "scenarios/76_neuroscience_neuronal_maturation/raw/20250611_data.zip",
+    "scenarios/76_neuroscience_neuronal_maturation/context/SOURCE_FACTS.json"
+  ],
+  "local_folder": "scenarios/76_neuroscience_neuronal_maturation",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text",
+    "video"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 20689351,
+  "expanded_release_folder_equivalent_bytes": 24986563
+}

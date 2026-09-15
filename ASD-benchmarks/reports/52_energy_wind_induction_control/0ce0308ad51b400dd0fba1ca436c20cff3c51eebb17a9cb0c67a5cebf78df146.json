@@ -1,0 +1,30 @@
+{
+  "scenario_id": "52_energy_wind_induction_control",
+  "path": "raw/WF_Power.mat",
+  "bytes": 1293,
+  "sha256": "d73babd79c6a7921f302a0edaad94f21069b37a7e174757bdf734f3fe0500d1c",
+  "checked_utc": "2026-09-15T06:23:12.411432+00:00",
+  "source_checksum_status": "verified",
+  "format": "MATLAB",
+  "variables": [
+    {
+      "name": "WF_Power",
+      "shape": [
+        1,
+        1
+      ],
+      "type": "struct"
+    }
+  ],
+  "struct_fields": [
+    {
+      "name": "WF_Power",
+      "fields": [
+        "WT1",
+        "WT2",
+        "WT3"
+      ]
+    }
+  ],
+  "status": "pass"
+}

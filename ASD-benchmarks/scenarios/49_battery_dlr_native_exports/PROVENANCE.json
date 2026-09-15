@@ -1,0 +1,211 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "49_battery_dlr_native_exports",
+  "domain": "battery diagnostics and laboratory data integration",
+  "title": "DLR lithium-graphite cell GITT and quasi-open-circuit measurements",
+  "publisher": "Zenodo; originating researchers: Clark, Simon (SINTEF); Tolchard, Julian (SINTEF Industry); Kopljar, Dennis (German Aerospace Center); Schmitt, Christina (German Aerospace Center); Barbers, Elias (Forschungszentrum Jülich)",
+  "authoritative_landing_url": "https://zenodo.org/records/17295469",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/17295469",
+    "https://zenodo.org/api/records/17295469/files/metadata.json/content",
+    "https://zenodo.org/api/records/17295469/files/DLR__LiGrHydra0b__20221114__GITT__25degC__Basytec.txt/content",
+    "https://zenodo.org/api/records/17295469/files/DLR__LiGrHydra0b__20230131__POCV__25degC__Basytec.txt/content",
+    "https://zenodo.org/api/records/17295469"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.17295469"
+  ],
+  "release_or_version": "0.5.0",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "deterministic_selection_rule": "Complete GITT and POCV Basytec exports for the same DLR LiGrHydra0b cell at 25 deg C, plus full original multi-file metadata.json. Other cells/vendors and source files explicitly labeled Time_Bug/Outlier_Bug excluded by this cell-level selection.",
+  "substitution": {
+    "original_scenario_id": "49_hydrology_usgs_geysers",
+    "original_title": "Yellowstone geyser water, chemistry and meteorological campaign",
+    "original_doi": "10.5066/P1YA3AJZ",
+    "reason": "Four public JPEG attachments have persistent publisher MD5 mismatches despite matching byte counts. The mismatch was reproduced through the named-file route; the parent image also mismatched in the official all-files ZIP. Numerical files passed, but the planned full bundle did not meet strict checksum admission. Approved DLR reserve used.",
+    "selected_utc": "2026-09-14T16:18:42.350509+00:00"
+  },
+  "data_origin": "measured_or_observed",
+  "measurement_dates": {
+    "description": "Basytec headers: GITT 2022-11-14 10:40:01 to 2022-12-10 02:27:48; POCV 2023-01-31 19:39:26 to 2023-02-06 18:20:34. Both exports were converted by source software on 2025-09-05; repository publication 2025-10-08.",
+    "status": "explicit native instrument-export headers; source timezone unspecified"
+  },
+  "source_publication_date": "2025-10-08",
+  "source_created_utc": "2025-10-08T13:37:14.448265+00:00",
+  "source_updated_utc": "2025-10-09T13:18:26.510253+00:00",
+  "source_inventory": [
+    {
+      "name": "metadata.json",
+      "bytes": 13841,
+      "selected": true
+    },
+    {
+      "name": "FZJ__INR21700__20250606__HPPC__25degC__Digatron.csv",
+      "bytes": 13275587,
+      "selected": false
+    },
+    {
+      "name": "DLR__LiGrHydra0b__20221114__GITT__25degC__Basytec.txt",
+      "bytes": 62380666,
+      "selected": true
+    },
+    {
+      "name": "DLR__LiLNMOHydra0b__20221125__POCV__25degC__Basytec.txt",
+      "bytes": 4060881,
+      "selected": false
+    },
+    {
+      "name": "DLR__LiGrHydra0b__20230131__POCV__25degC__Basytec.txt",
+      "bytes": 9257892,
+      "selected": true
+    },
+    {
+      "name": "DLR__LiLNMOHydra0b__20221130__GITT__25degC__Basytec.txt",
+      "bytes": 63013852,
+      "selected": false
+    },
+    {
+      "name": "SINTEF__SLPBA842124HV__2024-10-23__Rate_25degC__Neware__Time_Bug.csv",
+      "bytes": 3151396,
+      "selected": false
+    },
+    {
+      "name": "SINTEF__NaCR32140-MP10-04__2025-08-25__GITT_0p05C_25degC__BioLogic.mpt",
+      "bytes": 74699943,
+      "selected": false
+    },
+    {
+      "name": "SINTEF__LiGrR2032__2024-04-30__25degC__Landt.txt",
+      "bytes": 2808323,
+      "selected": false
+    },
+    {
+      "name": "SINTEF__SLPBA842124HV-06__20241011__DCIR__0p1C__25degC__Novonix.csv",
+      "bytes": 119483324,
+      "selected": false
+    },
+    {
+      "name": "SINTEF__NaCR32140-MP10-04__2025-08-25__CCCV_0p02C_25degC__BioLogic__Outlier_Bug.mpt",
+      "bytes": 53617142,
+      "selected": false
+    },
+    {
+      "name": "SINTEF__LiGrR2032__2024-04-30__25degC__Landt.csv",
+      "bytes": 2589396,
+      "selected": false
+    }
+  ],
+  "author_preprocessing": "Original laboratory battery-cycler exports. The broader source record includes files explicitly labeled with time/outlier bugs for pipeline testing; those are not selected. Full metadata describes both selected and omitted files.",
+  "known_analyses_and_limitations": "This DLR record was released for battery data-pipeline and workflow testing. GITT and POCV belong to the same cell at different times and are not independent cells. The metadata includes other laboratories/files not present in this coherent subset. Absolute state of charge and history depend on source protocol and capacity definitions.",
+  "related_publications": [],
+  "pinned_commit": null,
+  "source_context_request_failures": [],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-049",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-049",
+      "scenario_id": "49_battery_dlr_native_exports",
+      "path": "context/zenodo_record.json",
+      "scenario_relative_path": "context/zenodo_record.json",
+      "bytes": 17302,
+      "sha256": "c13ee009c904937d3ba678f9ebba4d3b1fcd08a82c3bced3e787548d3725ea98",
+      "role": "parsed_source_metadata_snapshot",
+      "source_urls": [
+        "https://zenodo.org/api/records/17295469"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:18:42.350054+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17295469"
+      ],
+      "citation_url": "https://zenodo.org/records/17295469",
+      "source_version": "0.5.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-049",
+      "scenario_id": "49_battery_dlr_native_exports",
+      "path": "raw/DLR__LiGrHydra0b__20221114__GITT__25degC__Basytec.txt",
+      "scenario_relative_path": "raw/DLR__LiGrHydra0b__20221114__GITT__25degC__Basytec.txt",
+      "bytes": 62380666,
+      "sha256": "9e9c27472a4b28e1ec78ca16acde4a8d8734b730035ed8f64b3c98d912c10017",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17295469/files/DLR__LiGrHydra0b__20221114__GITT__25degC__Basytec.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17295469/files/DLR__LiGrHydra0b__20221114__GITT__25degC__Basytec.txt/content",
+      "source_checksum": "md5:26eb1804d891c87bff7af244927be602",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:25:55.510289+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17295469"
+      ],
+      "citation_url": "https://zenodo.org/records/17295469",
+      "source_version": "0.5.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17295469",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-049",
+      "scenario_id": "49_battery_dlr_native_exports",
+      "path": "raw/DLR__LiGrHydra0b__20230131__POCV__25degC__Basytec.txt",
+      "scenario_relative_path": "raw/DLR__LiGrHydra0b__20230131__POCV__25degC__Basytec.txt",
+      "bytes": 9257892,
+      "sha256": "f4d41fc0daa3f80f5c7cd46d31b4fe0c69074aa5f2ef0f07d2d247a7ce4526b9",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17295469/files/DLR__LiGrHydra0b__20230131__POCV__25degC__Basytec.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17295469/files/DLR__LiGrHydra0b__20230131__POCV__25degC__Basytec.txt/content",
+      "source_checksum": "md5:9e5b47be4a13c71a66d20714d3e016b6",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:19:36.475260+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17295469"
+      ],
+      "citation_url": "https://zenodo.org/records/17295469",
+      "source_version": "0.5.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17295469",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-049",
+      "scenario_id": "49_battery_dlr_native_exports",
+      "path": "raw/metadata.json",
+      "scenario_relative_path": "raw/metadata.json",
+      "bytes": 13841,
+      "sha256": "ebaa6644d4a79599776f56ea21e0f47cb56cb7f96660877e1da7e6bd26513228",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17295469/files/metadata.json/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17295469/files/metadata.json/content",
+      "source_checksum": "md5:4c601a19e3388388ef7796132da3806b",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:18:43.925836+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17295469"
+      ],
+      "citation_url": "https://zenodo.org/records/17295469",
+      "source_version": "0.5.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17295469",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

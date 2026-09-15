@@ -1,0 +1,123 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "75_biology_endothelial_mechanics",
+  "domain": "Mechanobiology",
+  "title": "Substrate Stiffness and Shear Stress Orchestrate Endothelial Inflammation and Remodelling via Mechanosensitive Pathways",
+  "publisher": "Agus, Salim",
+  "authoritative_landing_url": "https://zenodo.org/records/17925228",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/17925228",
+    "https://zenodo.org/api/records/17925228/files/rawcount_AGRF_CAGRF21067088_H7WFGDRX2.rds/content",
+    "https://zenodo.org/api/records/17925228/files/covariates.csv/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.17925228"
+  ],
+  "release_or_version": "17925228",
+  "retrieval_finalized_utc": "2026-09-15T07:04:40.290444+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Campaign dates unknown; December 2025 deposit.",
+  "source_publication_date": "2025-12-14",
+  "source_created_utc": "2025-12-14T00:34:33.667711+00:00",
+  "source_updated_utc": "2025-12-14T00:41:13.982210+00:00",
+  "source_inventory": [
+    {
+      "name": "rawcount_AGRF_CAGRF21067088_H7WFGDRX2.rds",
+      "bytes": 3387122,
+      "selected": true
+    },
+    {
+      "name": "covariates.csv",
+      "bytes": 413,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Author-generated RNA count matrix, not sequencing reads. Twenty-four samples: four donors by two shear conditions by three stiffness conditions. Published differential expression is known.",
+  "known_analyses_and_limitations": "Leave out whole donors; all six conditions from a donor stay together. Four donors limit precision and generalization; avoid gene-wise leakage through normalization.",
+  "related_publications": [],
+  "independent_groups": "four donors; keep six samples of each donor together",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-075",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-075",
+      "scenario_id": "75_biology_endothelial_mechanics",
+      "path": "raw/rawcount_AGRF_CAGRF21067088_H7WFGDRX2.rds",
+      "scenario_relative_path": "raw/rawcount_AGRF_CAGRF21067088_H7WFGDRX2.rds",
+      "bytes": 3387122,
+      "sha256": "d05bbbea466d76ad19b2007e4a990ba528947d472085ecd72e9bd45bf2b28329",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17925228"
+      ],
+      "download_url": "https://zenodo.org/api/records/17925228/files/rawcount_AGRF_CAGRF21067088_H7WFGDRX2.rds/content",
+      "source_checksum": "md5:d4888afc3e620b95e4c58fb071d0b0c8",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:32:11.070839+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17925228"
+      ],
+      "citation_url": "https://zenodo.org/records/17925228",
+      "source_version": "17925228",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17925228",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-075",
+      "scenario_id": "75_biology_endothelial_mechanics",
+      "path": "raw/covariates.csv",
+      "scenario_relative_path": "raw/covariates.csv",
+      "bytes": 413,
+      "sha256": "d5e67a11ce65468422d5b09f9f488da7414cdecdf88b4489e9a25e7742a5deb1",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17925228"
+      ],
+      "download_url": "https://zenodo.org/api/records/17925228/files/covariates.csv/content",
+      "source_checksum": "md5:50e41be3fe589ca4534898b42c56347a",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:31:55.095576+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17925228"
+      ],
+      "citation_url": "https://zenodo.org/records/17925228",
+      "source_version": "17925228",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17925228",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-075",
+      "scenario_id": "75_biology_endothelial_mechanics",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 8736,
+      "sha256": "47581cb2cf707ec94ae7dcdd42b56aaf69bd795c8224a6a184e70ed8d637a920",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/17925228"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:45.906452+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17925228"
+      ],
+      "citation_url": "https://zenodo.org/records/17925228",
+      "source_version": "17925228",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

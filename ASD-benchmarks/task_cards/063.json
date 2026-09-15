@@ -1,0 +1,558 @@
+{
+  "case_id": "P100-063",
+  "case_revision": 1,
+  "scenario_id": "63_physics_magnon_noise",
+  "title": "Magnon shot noise measurements",
+  "domain": "Spintronics",
+  "question": "How does microwave noise change with field, frequency and thermal termination in the measured magnetic film?",
+  "data_origin": "measured_or_observed",
+  "source_version": "1",
+  "source_url": "https://kondata.uni-konstanz.de/radar/en/dataset/iRRYHMPwMObNsUOM",
+  "identifiers": [
+    "10.48606/iRRYHMPwMObNsUOM"
+  ],
+  "publisher": "University of Konstanz researchers",
+  "release_date": "2025-04-14",
+  "measurement_dates": "Campaign dates unknown; source analysis published 2024 and dataset released April 2025.",
+  "variables_and_units": "microwave noise spectra and thermal references",
+  "independent_units": "field, frequency and termination settings within one 74 nm YIG film",
+  "validation_design": "field, frequency and termination settings within one 74 nm YIG film Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Five HDF5 figure datasets and README; experimental spectra are processed for a published magnon shot-noise study.",
+  "prior_analysis_and_limits": "One 74 nm YIG film. Validation is within-system across complete conditions; no independent-film replication is available. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/iRRYHMPwMObNsUOM.tar!/10.48606-iRRYHMPwMObNsUOM/data/readme.txt",
+      "structure": {
+        "first_lines": [
+          "#",
+          "# Copyright 2022 FIZ Karlsruhe - Leibniz-Institut fuer Informationsinfrastruktur GmbH",
+          "#",
+          "# Licensed under the Apache License, Version 2.0 (the \"License\");",
+          "# you may not use this file except in compliance with the License.",
+          "# You may obtain a copy of the License at",
+          "#",
+          "#     http://www.apache.org/licenses/LICENSE-2.0"
+        ]
+      }
+    },
+    {
+      "asset": "raw/iRRYHMPwMObNsUOM.tar!/10.48606-iRRYHMPwMObNsUOM/data/dataset/Figure3_noise-power-spectral-density-dependence-of-termination-temperature.h5",
+      "structure": {
+        "datasets": [
+          {
+            "name": "Sn_off",
+            "shape": [
+              5
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Off-resonance noise",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_off_err",
+            "shape": [
+              5
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Error of off-resonance noise",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_on",
+            "shape": [
+              4
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "On-resonance noise",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_on_err",
+            "shape": [
+              4
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Error of on-resonance noise",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "T",
+            "shape": [
+              5
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Temperature of the 50 Ohm resistor",
+              "Unit": "K"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/iRRYHMPwMObNsUOM.tar!/10.48606-iRRYHMPwMObNsUOM/data/dataset/Figure2_noise-power-spectral-density-as-function-of-frequency-feld-for-different-termination-temperatures.h5",
+      "structure": {
+        "datasets": [
+          {
+            "name": "B_a",
+            "shape": [
+              68
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "magnetic field - panel a)",
+              "Unit": "T"
+            }
+          },
+          {
+            "name": "B_b",
+            "shape": [
+              68
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "magnetic field - panel b)",
+              "Unit": "T"
+            }
+          },
+          {
+            "name": "B_c",
+            "shape": [
+              68
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "magnetic field - panel c)",
+              "Unit": "T"
+            }
+          },
+          {
+            "name": "Sn_a",
+            "shape": [
+              68,
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "noise power spectral density - panel a)",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_b",
+            "shape": [
+              68,
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "noise power spectral density - panel b)",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_c",
+            "shape": [
+              68,
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "noise power spectral density - panel c)",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_d",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "noise power spectral density - panel d)",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_e",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "noise power spectral density - panel e)",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_f",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "noise power spectral density - panel f)",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "f",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "frequency",
+              "Unit": "Hz"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/iRRYHMPwMObNsUOM.tar!/10.48606-iRRYHMPwMObNsUOM/data/dataset/Figure6_noise-power-spectral-density-as-function-of-frequency-for-diﬀerent-ﬁelds.h5",
+      "structure": {
+        "datasets": [
+          {
+            "name": "B_195K",
+            "shape": [
+              15
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Magnetic field at 195.0K",
+              "Unit": "T"
+            }
+          },
+          {
+            "name": "B_293K",
+            "shape": [
+              21
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Magnetic field at 293.0K",
+              "Unit": "T"
+            }
+          },
+          {
+            "name": "B_352K",
+            "shape": [
+              15
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Magnetic field at 352.0K",
+              "Unit": "T"
+            }
+          },
+          {
+            "name": "B_389K",
+            "shape": [
+              15
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Magnetic field at 389.0K",
+              "Unit": "T"
+            }
+          },
+          {
+            "name": "B_77K",
+            "shape": [
+              15
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Magnetic field at 77.0K",
+              "Unit": "T"
+            }
+          },
+          {
+            "name": "Sn_195K",
+            "shape": [
+              15,
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Trace at 195.0K",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_293K",
+            "shape": [
+              21,
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Trace at 293.0K",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_352K",
+            "shape": [
+              15,
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Trace at 352.0K",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_389K",
+            "shape": [
+              15,
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Trace at 389.0K",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_77K",
+            "shape": [
+              15,
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Trace at 77.0K",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "f",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "frequency",
+              "Unit": "Hz"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/iRRYHMPwMObNsUOM.tar!/10.48606-iRRYHMPwMObNsUOM/data/dataset/README.txt",
+      "structure": {
+        "first_lines": [
+          "",
+          "TITLE :",
+          "“",
+          "Inductive magnon noise spectroscopy of an yttrium iron garnet (Y3Fe5O12) thin film",
+          "“",
+          "",
+          "DESCRIPTION OF THE DATA PACKAGE :",
+          "“"
+        ]
+      }
+    },
+    {
+      "asset": "raw/iRRYHMPwMObNsUOM.tar!/10.48606-iRRYHMPwMObNsUOM/data/dataset/Figure5_polynomial-background-subtraction.h5",
+      "structure": {
+        "datasets": [
+          {
+            "name": "Sn",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Noise power spectral density - panel a)",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "Sn_BG_removed",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Noise power spectral density with removed background - panel b)",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "c0",
+            "shape": [],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "constant offset from fit",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "f",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Frequency",
+              "Unit": "Hz"
+            }
+          },
+          {
+            "name": "fit_result",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "fit of PolynomialModel (ModelResult.best_fit with lmfit package used) - panel a) [solid line]",
+              "Unit": "nV^2/Hz"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/iRRYHMPwMObNsUOM.tar!/10.48606-iRRYHMPwMObNsUOM/data/dataset/Figure4_comparison-of-FMR-with-iMNS.h5",
+      "structure": {
+        "datasets": [
+          {
+            "name": "S21_imag",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Imaginary part of S21 - panel a)",
+              "Unit": ""
+            }
+          },
+          {
+            "name": "S21_real",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Real part of S21 - panel a)",
+              "Unit": ""
+            }
+          },
+          {
+            "name": "Sn_77K",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Noise power spectral density at 77K - panel b)",
+              "Unit": "nV^2/Hz"
+            }
+          },
+          {
+            "name": "f",
+            "shape": [
+              1001
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Description": "Frequency",
+              "Unit": "Hz"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/iRRYHMPwMObNsUOM.tar!/10.48606-iRRYHMPwMObNsUOM/bagit.txt",
+      "structure": {
+        "first_lines": [
+          "BagIt-Version: 0.97",
+          "Tag-File-Character-Encoding: UTF-8"
+        ]
+      }
+    },
+    {
+      "asset": "raw/iRRYHMPwMObNsUOM.tar!/10.48606-iRRYHMPwMObNsUOM/manifest-md5.txt",
+      "structure": {
+        "first_lines": [
+          "1be0f4051aae94046cb6150a1f022477  data/dataset/Figure4_comparison-of-FMR-with-iMNS.h5",
+          "aeaa36dcd6b669dfe97d3242242c7d9e  data/dataset/README.txt",
+          "de1da31a2bc60901d390c5b8464fdb80  data/descriptive-md/dataset.desc_md.xml",
+          "feb3ca14e0789b436b79d99792aac2e0  data/descriptive-md/dataset/Figure2_noise-power-spectral-density-as-function-of-frequency-feld-for-different-termination-temperatures.h5.desc_md.xml",
+          "9604d4e0d1e607b5d63b03b1c3fca8df  data/dataset/Figure3_noise-power-spectral-density-dependence-of-termination-temperature.h5",
+          "c032963f4d07ec67db254741f986d5ba  data/dataset/Figure2_noise-power-spectral-density-as-function-of-frequency-feld-for-different-termination-temperatures.h5",
+          "86c91836441076dcfafeee229f149116  data/descriptive-md/dataset/Figure3_noise-power-spectral-density-dependence-of-termination-temperature.h5.desc_md.xml",
+          "8a205ef241c02c306c7e124d0b5d12e7  data/descriptive-md/dataset/Figure6_noise-power-spectral-density-as-function-of-frequency-for-diﬀerent-ﬁelds.h5.desc_md.xml"
+        ]
+      }
+    },
+    {
+      "asset": "raw/iRRYHMPwMObNsUOM.tar!/10.48606-iRRYHMPwMObNsUOM/bag-info.txt",
+      "structure": {
+        "first_lines": [
+          "Bagging-Date: 2025-04-14",
+          "Bag-Size: 2.5 MB",
+          "Payload-Oxum: 2454763.15",
+          "External-Identifier: iRRYHMPwMObNsUOM"
+        ]
+      }
+    },
+    {
+      "asset": "raw/iRRYHMPwMObNsUOM.tar!/10.48606-iRRYHMPwMObNsUOM/tagmanifest-md5.txt",
+      "structure": {
+        "first_lines": [
+          "9e5ad981e0d29adc278f6a294b8c2aca  bagit.txt",
+          "9a75596ddec1497f58dd13f55b847ece  manifest-md5.txt"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "TAR": 1,
+    "text_or_instrument_native": 6,
+    "XML": 8,
+    "HDF5": 5
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "CC-BY-4.0",
+  "source_asset_bytes": 2486192,
+  "expanded_source_equivalent_bytes": 2457624,
+  "installed_folder_bytes": 2531648,
+  "source_asset_count": 2,
+  "asset_paths": [
+    "scenarios/63_physics_magnon_noise/raw/iRRYHMPwMObNsUOM.tar",
+    "scenarios/63_physics_magnon_noise/context/SOURCE_FACTS.json"
+  ],
+  "local_folder": "scenarios/63_physics_magnon_noise",
+  "size_exception": false,
+  "modalities": [
+    "scientific_arrays_or_events",
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 2492089,
+  "expanded_release_folder_equivalent_bytes": 2463521
+}

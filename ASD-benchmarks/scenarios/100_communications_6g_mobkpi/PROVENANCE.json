@@ -1,0 +1,92 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "100_communications_6g_mobkpi",
+  "domain": "Mobile communications",
+  "title": "6G-MOBKPI results: Network-layer and radio-related measurements from mobility experiments on the 6G-SANDBOX Málaga platform",
+  "publisher": "Meleiro-Estévez, Alicia (Universidade de Vigo); Otero Mosquera, Javier (Universidade de Vigo); Fondo-Ferreiro, Pablo (Universidade de Vigo); Gil-Castiñeira, Felipe (Universidade de Vigo); Luque-Schempp, Francisco (University of Malaga); Merino-Gomez, Pedro (Universidad de Málaga)",
+  "authoritative_landing_url": "https://zenodo.org/records/14635635",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/14635635",
+    "https://zenodo.org/api/records/14635635/files/6G-MOBKPI_dataset.zip/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.14635635"
+  ],
+  "release_or_version": "14635635",
+  "retrieval_finalized_utc": "2026-09-15T07:04:46.218604+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Source run filenames dated November 20–22, 2024; release January 2025.",
+  "source_publication_date": "2025-01-12",
+  "source_created_utc": "2025-01-12T23:18:49.092133+00:00",
+  "source_updated_utc": "2025-01-12T23:18:49.296249+00:00",
+  "source_inventory": [
+    {
+      "name": "6G-MOBKPI_dataset.zip",
+      "bytes": 491220,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Complete 46-CSV experimental archive spanning indoor/outdoor routes and TCP/UDP conditions.",
+  "known_analyses_and_limitations": "Hold out entire runs/routes/protocol conditions; repeated time rows are dependent. Controlled trial results do not establish all-network transfer.",
+  "related_publications": [],
+  "independent_groups": "complete trajectory/run and protocol condition",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-100",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-100",
+      "scenario_id": "100_communications_6g_mobkpi",
+      "path": "raw/6G-MOBKPI_dataset.zip",
+      "scenario_relative_path": "raw/6G-MOBKPI_dataset.zip",
+      "bytes": 491220,
+      "sha256": "36b060bcc62aee4e0673955228a36a3161ef32ff8ea91a0d86a4ee780a56a3eb",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14635635"
+      ],
+      "download_url": "https://zenodo.org/api/records/14635635/files/6G-MOBKPI_dataset.zip/content",
+      "source_checksum": "md5:20e288b6540882b75256656a1c285913",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:04.132572+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14635635"
+      ],
+      "citation_url": "https://zenodo.org/records/14635635",
+      "source_version": "14635635",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14635635",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-100",
+      "scenario_id": "100_communications_6g_mobkpi",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 7060,
+      "sha256": "c37a00a021bcd7003d8f3bfdfd391b2802cbcff5c36f53ce3f680540ac630330",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/14635635"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:52.174080+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14635635"
+      ],
+      "citation_url": "https://zenodo.org/records/14635635",
+      "source_version": "14635635",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

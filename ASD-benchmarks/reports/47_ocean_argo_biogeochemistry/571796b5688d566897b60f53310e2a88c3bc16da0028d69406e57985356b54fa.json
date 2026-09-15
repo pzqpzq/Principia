@@ -1,0 +1,800 @@
+{
+  "bytes": 174880,
+  "sha256": "a88170b3f574ea7ec5a52f2fdb809fef10072536109bc07a093a93ec083b2472",
+  "format_extension": ".nc",
+  "checks": [],
+  "format": "NetCDF",
+  "dimensions": {
+    "DATE_TIME": 14,
+    "STRING4096": 4096,
+    "STRING1024": 1024,
+    "STRING256": 256,
+    "STRING128": 128,
+    "STRING64": 64,
+    "STRING32": 32,
+    "STRING16": 16,
+    "STRING8": 8,
+    "STRING4": 4,
+    "STRING2": 2,
+    "N_PARAM": 11,
+    "N_SENSOR": 8,
+    "N_CONFIG_PARAM": 8,
+    "N_LAUNCH_CONFIG_PARAM": 8,
+    "N_MISSIONS": 148,
+    "N_POSITIONING_SYSTEM": 2,
+    "N_TRANS_SYSTEM": 1
+  },
+  "variables": [
+    {
+      "name": "DATA_TYPE",
+      "shape": [
+        16
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Data type",
+        "conventions": "Argo reference table 1",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "FORMAT_VERSION",
+      "shape": [
+        4
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "File format version",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "HANDBOOK_VERSION",
+      "shape": [
+        4
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Data handbook version",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "DATE_CREATION",
+      "shape": [
+        14
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Date of file creation",
+        "conventions": "YYYYMMDDHHMISS",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "DATE_UPDATE",
+      "shape": [
+        14
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Date of update of this file",
+        "conventions": "YYYYMMDDHHMISS",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PLATFORM_NUMBER",
+      "shape": [
+        8
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Float unique identifier",
+        "conventions": "WMO float identifier : A9IIIII",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PTT",
+      "shape": [
+        256
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Transmission identifier (ARGOS, ORBCOMM, etc.)",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "TRANS_SYSTEM",
+      "shape": [
+        1,
+        16
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Telecommunications system used",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "TRANS_SYSTEM_ID",
+      "shape": [
+        1,
+        32
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Program identifier used by the transmission system",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "TRANS_FREQUENCY",
+      "shape": [
+        1,
+        16
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Frequency of transmission from the float",
+        "units": "hertz",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "POSITIONING_SYSTEM",
+      "shape": [
+        2,
+        8
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Positioning system",
+        "conventions": "Argo reference table 22",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PLATFORM_FAMILY",
+      "shape": [
+        256
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Category of instrument",
+        "conventions": "Argo reference table 22",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PLATFORM_TYPE",
+      "shape": [
+        32
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Type of float",
+        "conventions": "Argo reference table 23",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PLATFORM_MAKER",
+      "shape": [
+        256
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Name of the manufacturer",
+        "conventions": "Argo reference table 24",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "FIRMWARE_VERSION",
+      "shape": [
+        32
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Firmware version for the float",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "MANUAL_VERSION",
+      "shape": [
+        16
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Manual version for the float",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "FLOAT_SERIAL_NO",
+      "shape": [
+        32
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Serial number of the float",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "STANDARD_FORMAT_ID",
+      "shape": [
+        16
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Standard format number to describe the data format type for each float",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "DAC_FORMAT_ID",
+      "shape": [
+        16
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Format number used by the DAC to describe the data format type for each float",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "WMO_INST_TYPE",
+      "shape": [
+        4
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Coded instrument type",
+        "conventions": "Argo reference table 8",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PROJECT_NAME",
+      "shape": [
+        64
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Program under which the float was deployed",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "DATA_CENTRE",
+      "shape": [
+        2
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Data centre in charge of float real-time processing",
+        "conventions": "Argo reference table 4",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PI_NAME",
+      "shape": [
+        64
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Name of the principal investigator",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "ANOMALY",
+      "shape": [
+        256
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Describe any anomalies or problems the float may have had",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "BATTERY_TYPE",
+      "shape": [
+        64
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Type of battery packs in the float",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "BATTERY_PACKS",
+      "shape": [
+        64
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Configuration of battery packs in the float",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "CONTROLLER_BOARD_TYPE_PRIMARY",
+      "shape": [
+        32
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Type of primary controller board",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "CONTROLLER_BOARD_TYPE_SECONDARY",
+      "shape": [
+        32
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Type of secondary controller board",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "CONTROLLER_BOARD_SERIAL_NO_PRIMARY",
+      "shape": [
+        32
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Serial number of the primary controller board",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "CONTROLLER_BOARD_SERIAL_NO_SECONDARY",
+      "shape": [
+        32
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Serial number of the secondary controller board",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "SPECIAL_FEATURES",
+      "shape": [
+        1024
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Extra features of the float (algorithms, compressee etc.)",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "FLOAT_OWNER",
+      "shape": [
+        64
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Float owner",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "OPERATING_INSTITUTION",
+      "shape": [
+        64
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Operating institution of the float",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "CUSTOMISATION",
+      "shape": [
+        1024
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Float customisation, i.e. (institution and modifications)",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "LAUNCH_DATE",
+      "shape": [
+        14
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Date (UTC) of the deployment",
+        "conventions": "YYYYMMDDHHMISS",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "LAUNCH_LATITUDE",
+      "shape": [],
+      "dtype": "float64",
+      "attributes": {
+        "long_name": "Latitude of the float when deployed",
+        "units": "degree_north",
+        "_FillValue": "99999.0",
+        "valid_min": "-90.0",
+        "valid_max": "90.0",
+        "axis": "Y"
+      }
+    },
+    {
+      "name": "LAUNCH_LONGITUDE",
+      "shape": [],
+      "dtype": "float64",
+      "attributes": {
+        "long_name": "Longitude of the float when deployed",
+        "units": "degree_east",
+        "_FillValue": "99999.0",
+        "valid_min": "-180.0",
+        "valid_max": "180.0",
+        "axis": "X"
+      }
+    },
+    {
+      "name": "LAUNCH_QC",
+      "shape": [],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Quality on launch date, time and location",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "START_DATE",
+      "shape": [
+        14
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Date (UTC) of the first descent of the float",
+        "conventions": "YYYYMMDDHHMISS",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "START_DATE_QC",
+      "shape": [],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Quality on start date",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "STARTUP_DATE",
+      "shape": [
+        14
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Date (UTC) of the activation of the float",
+        "conventions": "YYYYMMDDHHMISS",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "STARTUP_DATE_QC",
+      "shape": [],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Quality on startup date",
+        "conventions": "Argo reference table 2",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "DEPLOYMENT_PLATFORM",
+      "shape": [
+        128
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Identifier of the deployment platform",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "DEPLOYMENT_CRUISE_ID",
+      "shape": [
+        32
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Identification number or reference number of the cruise used to deploy the float",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "DEPLOYMENT_REFERENCE_STATION_ID",
+      "shape": [
+        256
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Identifier or reference number of co-located stations used to verify the first profile",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "END_MISSION_DATE",
+      "shape": [
+        14
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Date (UTC) of the end of mission of the float",
+        "conventions": "YYYYMMDDHHMISS",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "END_MISSION_STATUS",
+      "shape": [],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Status of the end of mission of the float",
+        "conventions": "T:No more transmission received, R:Retrieved",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "LAUNCH_CONFIG_PARAMETER_NAME",
+      "shape": [
+        8,
+        128
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Name of configuration parameter at launch",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "LAUNCH_CONFIG_PARAMETER_VALUE",
+      "shape": [
+        8
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "long_name": "Value of configuration parameter at launch",
+        "_FillValue": "99999.0"
+      }
+    },
+    {
+      "name": "CONFIG_PARAMETER_NAME",
+      "shape": [
+        8,
+        128
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Name of configuration parameter",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "CONFIG_PARAMETER_VALUE",
+      "shape": [
+        148,
+        8
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "long_name": "Value of configuration parameter",
+        "_FillValue": "99999.0"
+      }
+    },
+    {
+      "name": "CONFIG_MISSION_NUMBER",
+      "shape": [
+        148
+      ],
+      "dtype": "int32",
+      "attributes": {
+        "long_name": "Unique number denoting the missions performed by the float",
+        "conventions": "1...N, 1 : first complete mission",
+        "_FillValue": "99999"
+      }
+    },
+    {
+      "name": "CONFIG_MISSION_COMMENT",
+      "shape": [
+        148,
+        256
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Comment on configuration",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "SENSOR",
+      "shape": [
+        8,
+        32
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Name of the sensor mounted on the float",
+        "conventions": "Argo reference table 25",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "SENSOR_MAKER",
+      "shape": [
+        8,
+        256
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Name of the sensor manufacturer",
+        "conventions": "Argo reference table 26",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "SENSOR_MODEL",
+      "shape": [
+        8,
+        256
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Type of sensor",
+        "conventions": "Argo reference table 27",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "SENSOR_SERIAL_NO",
+      "shape": [
+        8,
+        16
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Serial number of the sensor",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PARAMETER",
+      "shape": [
+        11,
+        64
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Name of parameter computed from float measurements",
+        "conventions": "Argo reference table 3",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PARAMETER_SENSOR",
+      "shape": [
+        11,
+        128
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Name of the sensor that measures this parameter",
+        "conventions": "Argo reference table 25",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PARAMETER_UNITS",
+      "shape": [
+        11,
+        32
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Units of accuracy and resolution of the parameter",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PARAMETER_ACCURACY",
+      "shape": [
+        11,
+        32
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Accuracy of the parameter",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PARAMETER_RESOLUTION",
+      "shape": [
+        11,
+        32
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Resolution of the parameter",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PREDEPLOYMENT_CALIB_EQUATION",
+      "shape": [
+        11,
+        4096
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Calibration equation for this parameter",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PREDEPLOYMENT_CALIB_COEFFICIENT",
+      "shape": [
+        11,
+        4096
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Calibration coefficients for this equation",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "PREDEPLOYMENT_CALIB_COMMENT",
+      "shape": [
+        11,
+        1024
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Comment applying to this parameter calibration",
+        "_FillValue": "b' '"
+      }
+    }
+  ],
+  "attributes": {
+    "title": "Argo float metadata file",
+    "institution": "AOML",
+    "source": "Argo float",
+    "history": "2026-07-05T21:24:59Z creation",
+    "references": "http://www.argodatamgt.org/Documentation",
+    "comment": "free text",
+    "id": "https://doi.org/10.17882/42182",
+    "user_manual_version": "3.2 ",
+    "Conventions": "Argo-3.1 CF-1.6"
+  },
+  "path": "raw/5906483/5906483_meta.nc",
+  "scenario_id": "47_ocean_argo_biogeochemistry",
+  "verified_utc": "2026-09-14T16:02:54.873139+00:00",
+  "status": "pass"
+}

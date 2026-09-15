@@ -1,0 +1,125 @@
+{
+  "created": "2025-01-09T02:49:47.786198+00:00",
+  "modified": "2025-01-09T02:49:48.001194+00:00",
+  "id": 14619074,
+  "conceptrecid": "14619073",
+  "doi": "10.5281/zenodo.14619074",
+  "conceptdoi": "10.5281/zenodo.14619073",
+  "doi_url": "https://doi.org/10.5281/zenodo.14619074",
+  "metadata": {
+    "title": "Erythromycin fermentation process dataset",
+    "doi": "10.5281/zenodo.14619074",
+    "publication_date": "2025-01-09",
+    "description": "<p>The dataset used in this study is derived from the historical production data of the erythromycin fermentation process (EFP) from Yichang HEC Changjiang Pharmaceutical Co., Ltd in 2022. Due to the independence between fermentation batches, the construction of the EFP dataset ensures that all samples remain within a single batch. The EFP dataset comprises 406 fermentation batches, with data sampled hourly. The sample lengths vary based on actual production durations, with an average of 154 hours per batch. The target variable for the EFP dataset is the chemical potency during fermentation. The dataset includes 23 process variables categorized as follows: 5 process condition variables (Num.1-5); 6 cumulative feed variables (Num.6-11); 5 physicochemical indicators (Num.12-16); 7 biochemical indicators (Num.17-23).&nbsp;</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Yan, Xuefeng",
+        "affiliation": "East China University of Science and Technology"
+      },
+      {
+        "name": "Sun, Yifei",
+        "affiliation": "East China University of Science and Technology"
+      }
+    ],
+    "custom": {
+      "code:codeRepository": "https://github.com/MoE-RAG/MASTER"
+    },
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "14619073"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Erythromycin fermentation process dataset",
+  "links": {
+    "self": "https://zenodo.org/api/records/14619074",
+    "self_html": "https://zenodo.org/records/14619074",
+    "preview_html": "https://zenodo.org/records/14619074?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.14619074",
+    "self_doi": "https://doi.org/10.5281/zenodo.14619074",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.14619074",
+    "reserve_doi": "https://zenodo.org/api/records/14619074/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/14619073",
+    "parent_html": "https://zenodo.org/records/14619073",
+    "parent_doi": "https://doi.org/10.5281/zenodo.14619073",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.14619073",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:14619074/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:14619074/sequence/default",
+    "files": "https://zenodo.org/api/records/14619074/files",
+    "media_files": "https://zenodo.org/api/records/14619074/media-files",
+    "archive": "https://zenodo.org/api/records/14619074/files-archive",
+    "archive_media": "https://zenodo.org/api/records/14619074/media-files-archive",
+    "latest": "https://zenodo.org/api/records/14619074/versions/latest",
+    "latest_html": "https://zenodo.org/records/14619074/latest",
+    "versions": "https://zenodo.org/api/records/14619074/versions",
+    "draft": "https://zenodo.org/api/records/14619074/draft",
+    "access_links": "https://zenodo.org/api/records/14619074/access/links",
+    "access_grants": "https://zenodo.org/api/records/14619074/access/grants",
+    "access_users": "https://zenodo.org/api/records/14619074/access/users",
+    "access_request": "https://zenodo.org/api/records/14619074/access/request",
+    "access": "https://zenodo.org/api/records/14619074/access",
+    "communities": "https://zenodo.org/api/records/14619074/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/14619074/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/14619074/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/14619074/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/14619074/quota-increase",
+    "requests": "https://zenodo.org/api/records/14619074/requests"
+  },
+  "updated": "2025-01-09T02:49:48.001194+00:00",
+  "recid": "14619074",
+  "revision": 3,
+  "files": [
+    {
+      "id": "449803f0-d706-4573-baba-30c4275c39db",
+      "key": "EFP_long.csv",
+      "size": 8025512,
+      "checksum": "md5:6f65e6af4bc8f5e750414372b8cf81ca",
+      "links": {
+        "self": "https://zenodo.org/api/records/14619074/files/EFP_long.csv/content"
+      }
+    },
+    {
+      "id": "3022ebbf-12a4-4ada-b272-40cc164c5c0b",
+      "key": "data_loader.py",
+      "size": 32389,
+      "checksum": "md5:fe7b1c368aaeb8c29c4f33512e78e962",
+      "links": {
+        "self": "https://zenodo.org/api/records/14619074/files/data_loader.py/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "1245371"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 532,
+    "unique_downloads": 420,
+    "views": 520,
+    "unique_views": 450,
+    "version_downloads": 532,
+    "version_unique_downloads": 420,
+    "version_unique_views": 450,
+    "version_views": 520
+  },
+  "state": "done",
+  "submitted": true
+}

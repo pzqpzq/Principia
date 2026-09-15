@@ -1,0 +1,160 @@
+{
+  "created": "2025-01-12T23:18:49.092133+00:00",
+  "modified": "2025-01-12T23:18:49.296249+00:00",
+  "id": 14635635,
+  "conceptrecid": "14635634",
+  "doi": "10.5281/zenodo.14635635",
+  "conceptdoi": "10.5281/zenodo.14635634",
+  "doi_url": "https://doi.org/10.5281/zenodo.14635635",
+  "metadata": {
+    "title": "6G-MOBKPI results: Network-layer and radio-related measurements from mobility experiments on the 6G-SANDBOX Málaga platform",
+    "doi": "10.5281/zenodo.14635635",
+    "publication_date": "2025-01-12",
+    "description": "<p>This dataset contains the results from the experiments executed on the \"6G-MOBKPI: KPI measurement in 6G networks under mobility scenarios\" project, which has been selected as an innovative experiment in the second Open Call of the 6G-SANDBOX project funded by the HORIZON-SNS-JU-2022 (Grant Agreement No 101096328).</p>\n<p>The dataset have been captured through different experiments executed on the M&aacute;laga platform, provided by the 6G-SANDBOX project. The data has been autonomously captured by our proposed KPI measurement tool under programmable mobility scenarios.</p>\n<p>The results are organized in three main folders according to our three network configurations considered:</p>\n<ul>\n<li>FR1 Micro - FR1 Micro Indoor (Random Shape)</li>\n<li>FR1 Micro - FR1 Micro Indoor (Rectangular Shape)</li>\n<li>FR1 Micro - FR1 Micro Outdoor (Rectangular Shape)</li>\n</ul>\n<p>Inside each folder, there are three subfolders containing the results for the IPERF TCP, IPERF UDP and PING experiments. Inside some of these folders, there are additional subfolders for the different configurations of the experiment (e.g., target UDP bitrate, ICMP packet size). Finally, the measurements inside each particular experiment subfolder are stored in two comma-separated value (CSV) files: one for the network-layer KPIs (e.g., throughput, latency, packet loss) and another for the radio-related metrics (e.g., cell ID, RSSI, RSRP, RSRQ). The first file of each CSV file contains the name of the fields stored in that file.</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Meleiro-Estévez, Alicia",
+        "affiliation": "Universidade de Vigo"
+      },
+      {
+        "name": "Otero Mosquera, Javier",
+        "affiliation": "Universidade de Vigo",
+        "orcid": "0000-0002-8552-5871"
+      },
+      {
+        "name": "Fondo-Ferreiro, Pablo",
+        "affiliation": "Universidade de Vigo",
+        "orcid": "0000-0002-7732-8288"
+      },
+      {
+        "name": "Gil-Castiñeira, Felipe",
+        "affiliation": "Universidade de Vigo",
+        "orcid": "0000-0002-5164-0855"
+      },
+      {
+        "name": "Luque-Schempp, Francisco",
+        "affiliation": "University of Malaga",
+        "orcid": "0000-0001-8389-5660"
+      },
+      {
+        "name": "Merino-Gomez, Pedro",
+        "affiliation": "Universidad de Málaga",
+        "orcid": "0000-0003-2456-4946"
+      }
+    ],
+    "keywords": [
+      "6G",
+      "KPI",
+      "mobility",
+      "experiments",
+      "RSSI",
+      "latency",
+      "throughput"
+    ],
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "grants": [
+      {
+        "code": "101096328",
+        "internal_id": "10.13039/501100000780::101096328",
+        "funder": {
+          "name": "European Commission",
+          "doi": "10.13039/501100000780",
+          "acronym": "EC"
+        },
+        "title": "6G-MOBKPI - 6G-SANDBOX (HORIZON-SNS-JU-2022)"
+      }
+    ],
+    "communities": [
+      {
+        "id": "eu"
+      }
+    ],
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "14635634"
+          }
+        }
+      ]
+    }
+  },
+  "title": "6G-MOBKPI results: Network-layer and radio-related measurements from mobility experiments on the 6G-SANDBOX Málaga platform",
+  "links": {
+    "self": "https://zenodo.org/api/records/14635635",
+    "self_html": "https://zenodo.org/records/14635635",
+    "preview_html": "https://zenodo.org/records/14635635?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.14635635",
+    "self_doi": "https://doi.org/10.5281/zenodo.14635635",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.14635635",
+    "reserve_doi": "https://zenodo.org/api/records/14635635/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/14635634",
+    "parent_html": "https://zenodo.org/records/14635634",
+    "parent_doi": "https://doi.org/10.5281/zenodo.14635634",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.14635634",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:14635635/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:14635635/sequence/default",
+    "files": "https://zenodo.org/api/records/14635635/files",
+    "media_files": "https://zenodo.org/api/records/14635635/media-files",
+    "archive": "https://zenodo.org/api/records/14635635/files-archive",
+    "archive_media": "https://zenodo.org/api/records/14635635/media-files-archive",
+    "latest": "https://zenodo.org/api/records/14635635/versions/latest",
+    "latest_html": "https://zenodo.org/records/14635635/latest",
+    "versions": "https://zenodo.org/api/records/14635635/versions",
+    "draft": "https://zenodo.org/api/records/14635635/draft",
+    "access_links": "https://zenodo.org/api/records/14635635/access/links",
+    "access_grants": "https://zenodo.org/api/records/14635635/access/grants",
+    "access_users": "https://zenodo.org/api/records/14635635/access/users",
+    "access_request": "https://zenodo.org/api/records/14635635/access/request",
+    "access": "https://zenodo.org/api/records/14635635/access",
+    "communities": "https://zenodo.org/api/records/14635635/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/14635635/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/14635635/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/14635635/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/14635635/quota-increase",
+    "requests": "https://zenodo.org/api/records/14635635/requests"
+  },
+  "updated": "2025-01-12T23:18:49.296249+00:00",
+  "recid": "14635635",
+  "revision": 4,
+  "files": [
+    {
+      "id": "da694a37-acd9-451e-9415-82cf501ad137",
+      "key": "6G-MOBKPI_dataset.zip",
+      "size": 491220,
+      "checksum": "md5:20e288b6540882b75256656a1c285913",
+      "links": {
+        "self": "https://zenodo.org/api/records/14635635/files/6G-MOBKPI_dataset.zip/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "125253"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 70,
+    "unique_downloads": 67,
+    "views": 247,
+    "unique_views": 234,
+    "version_downloads": 70,
+    "version_unique_downloads": 67,
+    "version_unique_views": 234,
+    "version_views": 247
+  },
+  "state": "done",
+  "submitted": true
+}

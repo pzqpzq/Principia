@@ -1,0 +1,92 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "97_transport_pedestrian_feet",
+  "domain": "Crowd biomechanics",
+  "title": "Data of the crowd movement experiment.",
+  "publisher": "Ma, Yi",
+  "authoritative_landing_url": "https://zenodo.org/records/14737521",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/14737521",
+    "https://zenodo.org/api/records/14737521/files/Data.zip/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.14737521"
+  ],
+  "release_or_version": "14737521",
+  "retrieval_finalized_utc": "2026-09-15T07:04:43.692675+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "September 2022 experiment; January 2025 deposit.",
+  "source_publication_date": "2025-01-25",
+  "source_created_utc": "2025-01-25T08:17:56.370074+00:00",
+  "source_updated_utc": "2025-01-25T08:17:56.488175+00:00",
+  "source_inventory": [
+    {
+      "name": "Data.zip",
+      "bytes": 56086516,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Three experimental MP4s and 34 DAT figure-source tables. These tables are not established as a complete raw tracking export.",
+  "known_analyses_and_limitations": "Group recordings/runs. Video can support mechanism checks, but published figure tables alone may lack person IDs and independent replication.",
+  "related_publications": [],
+  "independent_groups": "recording/run and density condition",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-097",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-097",
+      "scenario_id": "97_transport_pedestrian_feet",
+      "path": "raw/Data.zip",
+      "scenario_relative_path": "raw/Data.zip",
+      "bytes": 56086516,
+      "sha256": "757596b9d182482df15b9306330f7a6c4eb6db9ca45674a41c45de57358ca205",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14737521"
+      ],
+      "download_url": "https://zenodo.org/api/records/14737521/files/Data.zip/content",
+      "source_checksum": "md5:f4283d6c947f810758075e39ba39ea60",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:44:01.824695+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14737521"
+      ],
+      "citation_url": "https://zenodo.org/records/14737521",
+      "source_version": "14737521",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14737521",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-097",
+      "scenario_id": "97_transport_pedestrian_feet",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 4160,
+      "sha256": "442000f16eb82030d80caee66ae1e273b96472de1f67b6a424080efafaa046d0",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/14737521"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:50.777331+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14737521"
+      ],
+      "citation_url": "https://zenodo.org/records/14737521",
+      "source_version": "14737521",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

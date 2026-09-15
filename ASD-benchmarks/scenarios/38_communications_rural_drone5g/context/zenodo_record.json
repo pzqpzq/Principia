@@ -1,0 +1,232 @@
+{
+  "created": "2025-08-01T08:31:17.431150+00:00",
+  "modified": "2025-08-01T08:31:18.171085+00:00",
+  "id": 16673883,
+  "conceptrecid": "16673882",
+  "doi": "10.5281/zenodo.16673883",
+  "conceptdoi": "10.5281/zenodo.16673882",
+  "doi_url": "https://doi.org/10.5281/zenodo.16673883",
+  "metadata": {
+    "title": "RuralDrone5G_RadioLatencyDataset",
+    "doi": "10.5281/zenodo.16673883",
+    "publication_date": "2025-08-01",
+    "description": "<p>The dataset comprises&nbsp; CSV files, each representing a different measurement iteration labeled from <code>fligth1</code> to <code>fligth5</code>. These files collectively form a comprehensive dataset of radio network parameters, likely derived from performance monitoring in the 5G SA private network deployed in the experimental farm La Mayora, M&aacute;laga, Spain. This 5G private network is part of the Victoria Network experimentation platform. The measurements have been collected using a Nemo Handy onboarded in a drone.</p>\n<p>The NR band used is \"NR n40 TDD\".</p>\n<p>The files include:</p>\n<ul>\n<li>\n<p><strong>Physical layer parameters</strong> such as BWP ID, BWP type, bandwidth, numerology, subcarrier spacing.</p>\n</li>\n<li>\n<p><strong>Radio quality indicators</strong> including RSRP, RSRQ, SINR.</p>\n</li>\n<li>\n<p><strong>HARQ and MIMO configurations</strong>, scheduling information, and potentially signaling or decoding parameters.</p>\n</li>\n<li>\n<p><strong>Timestamps (<code>Time</code>)</strong> that allow tracking the temporal progression of each measurement session.</p>\n</li>\n<li><strong>Dronetelemetry</strong></li>\n</ul>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Pérez-Aguilar, Adrián",
+        "affiliation": null,
+        "orcid": "0000-0001-7012-1551"
+      },
+      {
+        "name": "Diaz Zayas, Almudena",
+        "affiliation": null,
+        "orcid": "0000-0002-1226-6135"
+      }
+    ],
+    "keywords": [
+      "RSRP",
+      "RSRQ",
+      "SINR",
+      "MAC",
+      "RLC",
+      "PDSCH",
+      "5G SA"
+    ],
+    "dates": [
+      {
+        "type": "collected"
+      }
+    ],
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "communities": [
+      {
+        "id": "6gpath"
+      }
+    ],
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "16673882"
+          }
+        }
+      ]
+    }
+  },
+  "title": "RuralDrone5G_RadioLatencyDataset",
+  "links": {
+    "self": "https://zenodo.org/api/records/16673883",
+    "self_html": "https://zenodo.org/records/16673883",
+    "preview_html": "https://zenodo.org/records/16673883?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.16673883",
+    "self_doi": "https://doi.org/10.5281/zenodo.16673883",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.16673883",
+    "reserve_doi": "https://zenodo.org/api/records/16673883/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/16673882",
+    "parent_html": "https://zenodo.org/records/16673882",
+    "parent_doi": "https://doi.org/10.5281/zenodo.16673882",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.16673882",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:16673883/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:16673883/sequence/default",
+    "files": "https://zenodo.org/api/records/16673883/files",
+    "media_files": "https://zenodo.org/api/records/16673883/media-files",
+    "thumbnails": {
+      "10": "https://zenodo.org/api/iiif/record:16673883:RTT_dronefligth.png/full/%5E10,/0/default.jpg",
+      "50": "https://zenodo.org/api/iiif/record:16673883:RTT_dronefligth.png/full/%5E50,/0/default.jpg",
+      "100": "https://zenodo.org/api/iiif/record:16673883:RTT_dronefligth.png/full/%5E100,/0/default.jpg",
+      "250": "https://zenodo.org/api/iiif/record:16673883:RTT_dronefligth.png/full/%5E250,/0/default.jpg",
+      "750": "https://zenodo.org/api/iiif/record:16673883:RTT_dronefligth.png/full/%5E750,/0/default.jpg",
+      "1200": "https://zenodo.org/api/iiif/record:16673883:RTT_dronefligth.png/full/%5E1200,/0/default.jpg"
+    },
+    "archive": "https://zenodo.org/api/records/16673883/files-archive",
+    "archive_media": "https://zenodo.org/api/records/16673883/media-files-archive",
+    "latest": "https://zenodo.org/api/records/16673883/versions/latest",
+    "latest_html": "https://zenodo.org/records/16673883/latest",
+    "versions": "https://zenodo.org/api/records/16673883/versions",
+    "draft": "https://zenodo.org/api/records/16673883/draft",
+    "access_links": "https://zenodo.org/api/records/16673883/access/links",
+    "access_grants": "https://zenodo.org/api/records/16673883/access/grants",
+    "access_users": "https://zenodo.org/api/records/16673883/access/users",
+    "access_request": "https://zenodo.org/api/records/16673883/access/request",
+    "access": "https://zenodo.org/api/records/16673883/access",
+    "communities": "https://zenodo.org/api/records/16673883/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/16673883/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/16673883/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/16673883/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/16673883/quota-increase",
+    "requests": "https://zenodo.org/api/records/16673883/requests"
+  },
+  "updated": "2025-08-01T08:31:18.171085+00:00",
+  "recid": "16673883",
+  "revision": 4,
+  "files": [
+    {
+      "id": "86017d89-9956-4764-afcb-d3e7d83bc324",
+      "key": "drontelemetry_fligth4.csv",
+      "size": 55572,
+      "checksum": "md5:15de96de8a76669d149ec1300f3236af",
+      "links": {
+        "self": "https://zenodo.org/api/records/16673883/files/drontelemetry_fligth4.csv/content"
+      }
+    },
+    {
+      "id": "b5549306-78b7-48fa-9b62-e1d7466b8323",
+      "key": "drontelemetry_fligth3.csv",
+      "size": 25302,
+      "checksum": "md5:2e3bf50985bf46a3428bf054f0b5b73b",
+      "links": {
+        "self": "https://zenodo.org/api/records/16673883/files/drontelemetry_fligth3.csv/content"
+      }
+    },
+    {
+      "id": "88bdbedd-7278-4073-a7d0-d41b8ed1a488",
+      "key": "25Mar31_115849.1_5G-radio_parameters_fligth1.csv",
+      "size": 14240160,
+      "checksum": "md5:ba3065f814f7d46081eeebf2033854df",
+      "links": {
+        "self": "https://zenodo.org/api/records/16673883/files/25Mar31_115849.1_5G-radio_parameters_fligth1.csv/content"
+      }
+    },
+    {
+      "id": "bd1c2d47-4976-42ec-8ade-cbd45be4eeb2",
+      "key": "25Mar31_154916.1_5G-radio_parameters_fligth2.csv",
+      "size": 26808427,
+      "checksum": "md5:5568ecddc5764bbb2048e30af617e505",
+      "links": {
+        "self": "https://zenodo.org/api/records/16673883/files/25Mar31_154916.1_5G-radio_parameters_fligth2.csv/content"
+      }
+    },
+    {
+      "id": "5bd3fa08-b604-41bc-9c7e-54276faa5d3c",
+      "key": "drontelemetry_fligth1.csv",
+      "size": 59010,
+      "checksum": "md5:b2d03ef63d4ca5390d833a557b146abc",
+      "links": {
+        "self": "https://zenodo.org/api/records/16673883/files/drontelemetry_fligth1.csv/content"
+      }
+    },
+    {
+      "id": "7a2dc087-6e60-4fe6-922b-4c932ddc3125",
+      "key": "25Mar31_160622.1_5G-radio_parametes_fligth3.csv",
+      "size": 7466475,
+      "checksum": "md5:45af69a966170ad12e6d61ab60a9900d",
+      "links": {
+        "self": "https://zenodo.org/api/records/16673883/files/25Mar31_160622.1_5G-radio_parametes_fligth3.csv/content"
+      }
+    },
+    {
+      "id": "3765d3a3-b329-47a2-8f32-88ed589ab86d",
+      "key": "25Mar31_162831.1_5G-radio_parameters_fligth5.csv",
+      "size": 8625100,
+      "checksum": "md5:a44d5dbf19975400fccf26440ad54adc",
+      "links": {
+        "self": "https://zenodo.org/api/records/16673883/files/25Mar31_162831.1_5G-radio_parameters_fligth5.csv/content"
+      }
+    },
+    {
+      "id": "d83d62f6-fb16-4647-8c31-661c283a645f",
+      "key": "drontelemetry_fligth2.csv",
+      "size": 97699,
+      "checksum": "md5:b7d22d4969f505f3aebea87971706a58",
+      "links": {
+        "self": "https://zenodo.org/api/records/16673883/files/drontelemetry_fligth2.csv/content"
+      }
+    },
+    {
+      "id": "e2f61b5a-ff73-4bd1-ae58-c8cb25f7ad46",
+      "key": "drontelemetry_fligth5.csv",
+      "size": 29606,
+      "checksum": "md5:c342fd04623883c3eeebaf5a5eb36c94",
+      "links": {
+        "self": "https://zenodo.org/api/records/16673883/files/drontelemetry_fligth5.csv/content"
+      }
+    },
+    {
+      "id": "124e4bbd-c564-4e7a-a51c-107b41b20261",
+      "key": "25Mar31_161127.1_5G-radio_parameters_fligth4.csv",
+      "size": 13566809,
+      "checksum": "md5:4360d13798235638376d19d9b57a58bc",
+      "links": {
+        "self": "https://zenodo.org/api/records/16673883/files/25Mar31_161127.1_5G-radio_parameters_fligth4.csv/content"
+      }
+    },
+    {
+      "id": "be833a32-5558-4243-b4f3-65a60b65616d",
+      "key": "RTT_dronefligth.png",
+      "size": 62570,
+      "checksum": "md5:b13d1cb0b9246edeaa5915a172bf5187",
+      "links": {
+        "self": "https://zenodo.org/api/records/16673883/files/RTT_dronefligth.png/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "1376248"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 610,
+    "unique_downloads": 548,
+    "views": 273,
+    "unique_views": 257,
+    "version_downloads": 610,
+    "version_unique_downloads": 548,
+    "version_unique_views": 257,
+    "version_views": 273
+  },
+  "state": "done",
+  "submitted": true
+}

@@ -1,0 +1,169 @@
+{
+  "case_id": "P100-088",
+  "case_revision": 1,
+  "scenario_id": "88_psychology_risk_feedback",
+  "title": "Release for manuscript submission of Nasioulas et al. 2025",
+  "domain": "Decision science",
+  "question": "How do feedback conditions change risky choices across repeated decisions and experiments?",
+  "data_origin": "measured_or_observed",
+  "source_version": "17807047",
+  "source_url": "https://zenodo.org/records/17807047",
+  "identifiers": [
+    "10.5281/zenodo.17807047"
+  ],
+  "publisher": "Nasioulas, Antonios; Potier, Elise; Cerrotti, Fabien; Lebreton, Mael; Palminteri, Stefano",
+  "release_date": "2025-12-03",
+  "measurement_dates": "Exact experiment dates unknown; December 2025 release.",
+  "variables_and_units": "choices, feedback and risky outcomes",
+  "independent_units": "participant and experiment; older comparison study separately",
+  "validation_design": "participant and experiment; older comparison study separately Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Pinned archive combines new Nasioulas study observations and explicitly older Erev comparison data plus source analysis.",
+  "prior_analysis_and_limits": "Participant and experiment holdouts. Do not merge older comparison study as new participants without provenance; published fitted choice models are known. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/anasioulas/riskyDecisionMakingFeedback-v1.0.0.zip!/anasioulas-riskyDecisionMakingFeedback-65ac539/Erev2017_data.csv",
+      "structure": {
+        "header": [
+          "EXP",
+          "TYPE_FEEDBACK",
+          "SURETHING",
+          "EXPID",
+          "BLOCK",
+          "TRIAL",
+          "RISKYBETTER",
+          "FEEDBACK",
+          "MAG_RISKY1",
+          "MAG_RISKY2",
+          "P_RISKY",
+          "P_RISKY_CAT",
+          "P_SURE",
+          "MAG_SURE1",
+          "MAG_SURE2",
+          "RISKY_CHOICE",
+          "OPTIMAL_CHOICE",
+          "REPEAT_RISKY",
+          "OUT",
+          "CF_OUT",
+          "RTIME",
+          "PREVIOUS_RISKY_CHOICE",
+          "PREVIOUS_RISKY_OUT_MAX",
+          "CONDITION"
+        ],
+        "data_records": 71075,
+        "first_lines": [
+          "EXP,TYPE_FEEDBACK,SURETHING,EXPID,BLOCK,TRIAL,RISKYBETTER,FEEDBACK,MAG_RISKY1,MAG_RISKY2,P_RISKY,P_RISKY_CAT,P_SURE,MAG_SURE1,MAG_SURE2,RISKY_CHOICE,OPTIMAL_CHOICE,REPEAT_RISKY,OUT,CF_OUT,RTIME,PREVIOUS_RISKY_CHOICE,PREVIOUS_RISKY_OUT_MAX,CONDITION",
+          "8,1,1,5,1,1,1,0,4,0,0.8,2,1,3,3,0,0,NaN,3,4,0,NaN,NaN,byProb",
+          "8,1,1,5,1,2,1,0,4,0,0.8,2,1,3,3,0,0,NaN,3,4,0,0,1,byProb",
+          "8,1,1,5,1,3,1,0,4,0,0.8,2,1,3,3,0,0,NaN,3,4,0,0,1,byProb",
+          "8,1,1,5,1,4,1,0,4,0,0.8,2,1,3,3,0,0,NaN,3,4,0,0,1,byProb",
+          "8,1,1,5,1,5,1,0,4,0,0.8,2,1,3,3,0,0,NaN,3,4,0,0,1,byProb",
+          "8,1,1,5,1,6,1,1,4,0,0.8,2,1,3,3,0,0,NaN,3,4,0,NaN,NaN,byProb",
+          "8,1,1,5,1,7,1,1,4,0,0.8,2,1,3,3,0,0,NaN,3,4,0,0,1,byProb"
+        ]
+      }
+    },
+    {
+      "asset": "raw/anasioulas/riskyDecisionMakingFeedback-v1.0.0.zip!/anasioulas-riskyDecisionMakingFeedback-65ac539/Nasioulas2024_data.csv",
+      "structure": {
+        "header": [
+          "EXP",
+          "TYPE_FEEDBACK",
+          "BLOCK_INSTRUCTIONS",
+          "SURETHING",
+          "EXPID",
+          "BLOCK",
+          "TRIAL",
+          "RISKYBETTER",
+          "FEEDBACK",
+          "VALENCE",
+          "MAG_RISKY",
+          "P_RISKY",
+          "MAG_SURE1",
+          "MAG_SURE2",
+          "P_SURE",
+          "RISKY_CHOICE",
+          "OPTIMAL_CHOICE",
+          "REPEAT_RISKY",
+          "OUT",
+          "CF_OUT",
+          "INV",
+          "RTIME",
+          "PREVIOUS_RISKY_CHOICE",
+          "PREVIOUS_RISKY_OUT_MAX",
+          "PREVIOUS_OUT_POS"
+        ],
+        "data_records": 133200,
+        "first_lines": [
+          "EXP,TYPE_FEEDBACK,BLOCK_INSTRUCTIONS,SURETHING,EXPID,BLOCK,TRIAL,RISKYBETTER,FEEDBACK,VALENCE,MAG_RISKY,P_RISKY,MAG_SURE1,MAG_SURE2,P_SURE,RISKY_CHOICE,OPTIMAL_CHOICE,REPEAT_RISKY,OUT,CF_OUT,INV,RTIME,PREVIOUS_RISKY_CHOICE,PREVIOUS_RISKY_OUT_MAX,PREVIOUS_OUT_POS",
+          "1,0,0,1,57549891,1,1,1,1,1,60,0.1,5,5,1,1,1,NaN,0,5,1,5271,NaN,NaN,NaN",
+          "1,0,0,1,57549891,1,2,1,1,1,60,0.1,5,5,1,1,1,1,0,5,0,1276,1,0,0",
+          "1,0,0,1,57549891,1,3,1,1,1,60,0.1,5,5,1,1,1,1,0,5,1,1256,1,0,0",
+          "1,0,0,1,57549891,1,4,1,1,1,60,0.1,5,5,1,1,1,1,0,5,1,1156,1,0,0",
+          "1,0,0,1,57549891,1,5,1,1,1,60,0.1,5,5,1,1,1,1,0,5,1,4361,1,0,0",
+          "1,0,0,1,57549891,1,6,1,1,1,60,0.1,5,5,1,1,1,1,0,5,1,27843,1,0,0",
+          "1,0,0,1,57549891,1,7,1,1,1,60,0.1,5,5,1,1,1,1,0,5,1,1438,1,0,0"
+        ]
+      }
+    },
+    {
+      "asset": "raw/anasioulas/riskyDecisionMakingFeedback-v1.0.0.zip!/anasioulas-riskyDecisionMakingFeedback-65ac539/Nasioulas2024_data_readMe.txt",
+      "structure": {
+        "first_lines": [
+          "",
+          "=== Nasioulas2024_data.csv ===",
+          "",
+          "EXP: number of experiment, as mentioned in the manuscript Nasioulas_2024 [values: 1-7]",
+          "TYPE_FEEDBACK: 0: partial, 1: complete",
+          "BLOCK_INSTRUCTIONS: whether instructions at the beginning of each block informing about the availability of feedback in the upcoming block were present (1) or not (0)",
+          "SURETHING: whether there was a sure-thing lottery (1) or a safe low-variance 50/50 option (0)",
+          "EXPID: random unique identifier for each participant/submission"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "ZIP": 1,
+    "text_or_instrument_native": 8,
+    "preserved_native": 3
+  },
+  "reader_limitations": [
+    {
+      "asset": "raw/anasioulas/riskyDecisionMakingFeedback-v1.0.0.zip!/anasioulas-riskyDecisionMakingFeedback-65ac539/generate_glmm.R",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/anasioulas/riskyDecisionMakingFeedback-v1.0.0.zip!/anasioulas-riskyDecisionMakingFeedback-65ac539/generate_glmm_main.R",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/anasioulas/riskyDecisionMakingFeedback-v1.0.0.zip!/anasioulas-riskyDecisionMakingFeedback-65ac539/generate_glmm_utils.R",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    }
+  ],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 1668956,
+  "expanded_source_equivalent_bytes": 14031677,
+  "installed_folder_bytes": 1675657,
+  "source_asset_count": 2,
+  "asset_paths": [
+    "scenarios/88_psychology_risk_feedback/raw/anasioulas/riskyDecisionMakingFeedback-v1.0.0.zip",
+    "scenarios/88_psychology_risk_feedback/context/source_record.json"
+  ],
+  "local_folder": "scenarios/88_psychology_risk_feedback",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 1675248,
+  "expanded_release_folder_equivalent_bytes": 14037969
+}

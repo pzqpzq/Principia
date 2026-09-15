@@ -1,0 +1,98 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "22_electronics_perovskite_memristors",
+  "domain": "electronic devices",
+  "title": "Lead-free perovskite memristors",
+  "publisher": "Zenodo; originating researchers: Kim, So-Yeon (Instituto de Tecnología Química); Rivera-Sierra, Gonzalo (Instituto de Tecnología Química); Shiferaw Mengesha, Bitania (Universitat Rovira i Virgili); Iniguez, Benjamin (Universitat Rovira i Virgili); Bisquert, Juan (Instituto de Tecnología Química)",
+  "authoritative_landing_url": "https://zenodo.org/records/17278410",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/17278410",
+    "https://zenodo.org/api/records/17278410/files/dataset.zip/content",
+    "https://zenodo.org/api/records/17278410"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.17278410"
+  ],
+  "release_or_version": "v1",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "deterministic_selection_rule": "Complete source record unless otherwise specified.",
+  "substitution": null,
+  "data_origin": "mixed_measured_and_computational",
+  "measurement_dates": {
+    "description": "Full acquisition calendar not specified in the deposited record; released 2025-10-06.",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": "2025-10-06",
+  "source_created_utc": "2025-10-06T11:29:55.596314+00:00",
+  "source_updated_utc": "2025-11-12T08:23:13.240410+00:00",
+  "source_inventory": [
+    {
+      "name": "dataset.zip",
+      "bytes": 6534354,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Autolab PGSTAT204 measurements; authors used ZView, OriginLab and Excel for processing/fits, and MATLAB/Simulink for simulation. Figure tables and model outputs coexist.",
+  "known_analyses_and_limitations": "The deposit supports the published lead-free bismuth-halide memristor study. Its README and actual figure filenames do not match perfectly. WMF/SLX/SSC are preserved but not executed or rendered here; no reconstructed missing figures are supplied.",
+  "related_publications": [],
+  "pinned_commit": null,
+  "source_context_request_failures": [],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-022",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-022",
+      "scenario_id": "22_electronics_perovskite_memristors",
+      "path": "context/zenodo_record.json",
+      "scenario_relative_path": "context/zenodo_record.json",
+      "bytes": 6380,
+      "sha256": "2d233abf64411a020cc3f8e44c02c201bb15968b10c1bbf37bb055e6c57eca41",
+      "role": "parsed_source_metadata_snapshot",
+      "source_urls": [
+        "https://zenodo.org/api/records/17278410"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:40:18.982181+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17278410"
+      ],
+      "citation_url": "https://zenodo.org/records/17278410",
+      "source_version": "v1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-022",
+      "scenario_id": "22_electronics_perovskite_memristors",
+      "path": "raw/dataset.zip",
+      "scenario_relative_path": "raw/dataset.zip",
+      "bytes": 6534354,
+      "sha256": "4bf7369123a570fd55138a0faec86829bce0bec643532d702591828036260939",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17278410/files/dataset.zip/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17278410/files/dataset.zip/content",
+      "source_checksum": "md5:d7e37e017e20d60b9ff379539a3d0a89",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:49.682474+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17278410"
+      ],
+      "citation_url": "https://zenodo.org/records/17278410",
+      "source_version": "v1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17278410",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

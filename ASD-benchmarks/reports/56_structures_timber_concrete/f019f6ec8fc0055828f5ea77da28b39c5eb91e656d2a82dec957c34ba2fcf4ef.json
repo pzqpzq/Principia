@@ -1,0 +1,141 @@
+{
+  "scenario_id": "56_structures_timber_concrete",
+  "path": "raw/slip.xlsx",
+  "bytes": 67053,
+  "sha256": "a1fb2688501ec88feaeb8f0069c4e07ec1b6cf7f06840e221a890b7de2e1fcd7",
+  "checked_utc": "2026-09-15T06:23:24.619888+00:00",
+  "source_checksum_status": "verified",
+  "format": "Excel_OpenXML",
+  "sheets": [
+    {
+      "name": "lwc",
+      "rows": 42,
+      "columns": 10,
+      "first_rows": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          "=AVERAGE(F6,F12)",
+          "=AVERAGE(G6,G12)",
+          "=AVERAGE(H6,H12)",
+          "=AVERAGE(I6,I12)",
+          "=AVERAGE(J6,J12)"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          "=[1]A!$R$201",
+          "=[1]A!$R$258",
+          "=[1]A!$R$289",
+          "=[1]A!$R$320",
+          "=-[1]A!$D$288"
+        ],
+        [
+          null,
+          null,
+          "A",
+          null,
+          null,
+          "30 % Failure load",
+          "60 % Failure load",
+          "90 % Failure load",
+          "Fmax",
+          "F1"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          "distance",
+          "slip",
+          "slip",
+          "slip",
+          "slip",
+          "slip"
+        ]
+      ]
+    },
+    {
+      "name": "nwc",
+      "rows": 42,
+      "columns": 9,
+      "first_rows": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          "=[2]A!$R$297",
+          "=[2]A!$R$380",
+          "=[2]A!$R$459",
+          "=[2]A!$R$470"
+        ],
+        [
+          null,
+          null,
+          "A",
+          null,
+          null,
+          "30 % Failure load",
+          "60 % Failure load",
+          "90 % Failure load",
+          "Fmax"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          "distance",
+          "slip",
+          "slip",
+          "slip",
+          null
+        ]
+      ]
+    }
+  ],
+  "status": "pass"
+}

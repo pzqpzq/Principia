@@ -1,0 +1,346 @@
+{
+  "case_id": "P100-100",
+  "case_revision": 1,
+  "scenario_id": "100_communications_6g_mobkpi",
+  "title": "6G-MOBKPI results: Network-layer and radio-related measurements from mobility experiments on the 6G-SANDBOX Málaga platform",
+  "domain": "Mobile communications",
+  "question": "How do mobility route and packet settings relate to radio quality and communication reliability?",
+  "data_origin": "measured_or_observed",
+  "source_version": "14635635",
+  "source_url": "https://zenodo.org/records/14635635",
+  "identifiers": [
+    "10.5281/zenodo.14635635"
+  ],
+  "publisher": "Meleiro-Estévez, Alicia (Universidade de Vigo); Otero Mosquera, Javier (Universidade de Vigo); Fondo-Ferreiro, Pablo (Universidade de Vigo); Gil-Castiñeira, Felipe (Universidade de Vigo); Luque-Schempp, Francisco (University of Malaga); Merino-Gomez, Pedro (Universidad de Málaga)",
+  "release_date": "2025-01-12",
+  "measurement_dates": "Source run filenames dated November 20–22, 2024; release January 2025.",
+  "variables_and_units": "radio quality, latency, packet loss, routes and packet settings",
+  "independent_units": "complete trajectory/run and protocol condition",
+  "validation_design": "complete trajectory/run and protocol condition Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Complete 46-CSV experimental archive spanning indoor/outdoor routes and TCP/UDP conditions.",
+  "prior_analysis_and_limits": "Hold out entire runs/routes/protocol conditions; repeated time rows are dependent. Controlled trial results do not establish all-network transfer. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/6G-MOBKPI_dataset.zip!/FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/IPERF TCP/2024-11-22_11-16-18_iperf_tcp.csv",
+      "structure": {
+        "header": [
+          "Timestamp",
+          "Iperf Bytes",
+          "Iperf Bits per Second",
+          "Iperf Retransmits",
+          "Iperf RTT",
+          "Iperf RTT Variance",
+          "Iperf Snd Cwnd",
+          "Iperf Snd Wnd"
+        ],
+        "data_records": 704,
+        "first_lines": [
+          "Timestamp,Iperf Bytes,Iperf Bits per Second,Iperf Retransmits,Iperf RTT,Iperf RTT Variance,Iperf Snd Cwnd,Iperf Snd Wnd",
+          "1732270578.100064,211636,16920050.832882475,0,22397,4219,35048,142464",
+          "1732270578.200085,102448,8194119.46219829,0,33500,3912,41788,385024",
+          "1732270578.30009,99752,7979760.945744903,0,38819,3635,45832,573824",
+          "1732270578.400102,90316,7224413.292564475,0,68427,4917,49876,663168",
+          "1732270578.500098,83576,6686347.41857039,0,62733,6686,53920,663168",
+          "1732270578.600076,82228,6579687.53615236,0,64299,3008,57964,663168",
+          "1732270578.700102,79532,6360906.382785528,0,66783,3716,62008,663168"
+        ]
+      }
+    },
+    {
+      "asset": "raw/6G-MOBKPI_dataset.zip!/FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/IPERF TCP/2024-11-22_11-16-18_rssi_position.csv",
+      "structure": {
+        "header": [
+          "Timestamp",
+          "CellId",
+          "RSSI",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 647,
+        "first_lines": [
+          "Timestamp,CellId,RSSI,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732270578.6997643,0.0,-99,-91.0,-17.0,,,",
+          "1732270578.812502,0.0,-99,-92.0,-19.0,,,",
+          "1732270578.923239,0.0,-99,-93.0,-19.0,,,",
+          "1732270579.0357907,0.0,-99,-92.0,-18.0,,,",
+          "1732270579.168686,0.0,-99,-92.0,-19.0,,,",
+          "1732270579.3102658,0.0,-99,-90.0,-19.0,,,",
+          "1732270579.4189312,0.0,-99,-92.0,-19.0,,,"
+        ]
+      }
+    },
+    {
+      "asset": "raw/6G-MOBKPI_dataset.zip!/FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/IPERF UDP/100M/2024-11-22_11-42-23_iperf_udp.csv",
+      "structure": {
+        "header": [
+          "Timestamp",
+          "Iperf Bytes",
+          "Iperf Bits per Second"
+        ],
+        "data_records": 670,
+        "first_lines": [
+          "Timestamp,Iperf Bytes,Iperf Bits per Second",
+          "1732272143.100063,1239488,99096605.5713653",
+          "1732272143.200059,1249624,99973918.42853937",
+          "1732272143.300061,670424,53632848.28390675",
+          "1732272143.400064,598024,47840486.4007343",
+          "1732272143.500271,965816,77105670.5134641",
+          "1732272143.600064,965816,77425549.33133323",
+          "1732272143.700062,948440,75876719.5952525"
+        ]
+      }
+    },
+    {
+      "asset": "raw/6G-MOBKPI_dataset.zip!/FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/IPERF UDP/100M/2024-11-22_11-42-23_rssi_position.csv",
+      "structure": {
+        "header": [
+          "Timestamp",
+          "CellId",
+          "RSSI",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 612,
+        "first_lines": [
+          "Timestamp,CellId,RSSI,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732272143.3165476,3,-85,-86,-12,,,",
+          "1732272143.4143891,3,-85,-86,-11,,,",
+          "1732272143.511112,3,-79,-85,-11,,,",
+          "1732272143.6241426,3,-79,-83,-11,,,",
+          "1732272143.7344356,3,-79,-84,-11,,,",
+          "1732272143.8363667,3,-79,-79,-11,,,",
+          "1732272143.9836354,3,-79,-80,-11,,,"
+        ]
+      }
+    },
+    {
+      "asset": "raw/6G-MOBKPI_dataset.zip!/FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/IPERF UDP/10M/2024-11-22_11-31-40_iperf_udp.csv",
+      "structure": {
+        "header": [
+          "Timestamp",
+          "Iperf Bytes",
+          "Iperf Bits per Second"
+        ],
+        "data_records": 706,
+        "first_lines": [
+          "Timestamp,Iperf Bytes,Iperf Bits per Second",
+          "1732271500.100062,124016,9915132.838622276",
+          "1732271500.20006,125364,10029320.858819995",
+          "1732271500.300061,125364,10029019.72304949",
+          "1732271500.400062,125364,10029019.72304949",
+          "1732271500.500077,124016,9919792.079908306",
+          "1732271500.60006,125364,10030825.314010493",
+          "1732271500.700061,125364,10029019.72304949"
+        ]
+      }
+    },
+    {
+      "asset": "raw/6G-MOBKPI_dataset.zip!/FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/IPERF UDP/10M/2024-11-22_11-31-40_rssi_position.csv",
+      "structure": {
+        "header": [
+          "Timestamp",
+          "CellId",
+          "RSSI",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 670,
+        "first_lines": [
+          "Timestamp,CellId,RSSI,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732271500.0399,0,-91,-87,-14,,,",
+          "1732271500.132693,0,-81,-87,-13,,,",
+          "1732271500.2283876,0,-81,-87,-13,,,",
+          "1732271500.3245084,0,-81,-86,-13,,,",
+          "1732271500.4210217,0,-81,-86,-12,,,",
+          "1732271500.5468352,0,-81,-87,-13,,,",
+          "1732271500.6452618,0,-81,-87,-12,,,"
+        ]
+      }
+    },
+    {
+      "asset": "raw/6G-MOBKPI_dataset.zip!/FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/IPERF UDP/1M/2024-11-22_11-29-23_iperf_udp.csv",
+      "structure": {
+        "header": [
+          "Timestamp",
+          "Iperf Bytes",
+          "Iperf Bits per Second"
+        ],
+        "data_records": 819,
+        "first_lines": [
+          "Timestamp,Iperf Bytes,Iperf Bits per Second",
+          "1732271364.100066,13480,1077688.739086049",
+          "1732271364.20006,12132,970618.2727942033",
+          "1732271364.30006,12132,970559.9855375292",
+          "1732271364.400064,13480,1078356.839286233",
+          "1732271364.500063,12132,970569.6754895584",
+          "1732271364.600061,12132,970579.437950322",
+          "1732271364.700061,12132,970559.9855375292"
+        ]
+      }
+    },
+    {
+      "asset": "raw/6G-MOBKPI_dataset.zip!/FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/IPERF UDP/1M/2024-11-22_11-29-23_rssi_position.csv",
+      "structure": {
+        "header": [
+          "Timestamp",
+          "CellId",
+          "RSSI",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 796,
+        "first_lines": [
+          "Timestamp,CellId,RSSI,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732271363.819876,0,-99,-87,-17,,,",
+          "1732271363.9429715,0,-99,-89,-17,,,",
+          "1732271364.037532,0,-99,-89,-17,,,",
+          "1732271364.1333652,0,-99,-89,-17,,,",
+          "1732271364.2303934,0,-99,-87,-16,,,",
+          "1732271364.3249772,0,-99,-85,-15,,,",
+          "1732271364.4218652,0,-89,-84,-14,,,"
+        ]
+      }
+    },
+    {
+      "asset": "raw/6G-MOBKPI_dataset.zip!/FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/IPERF UDP/50M/2024-11-22_11-35-33_iperf_udp.csv",
+      "structure": {
+        "header": [
+          "Timestamp",
+          "Iperf Bytes",
+          "Iperf Bits per Second"
+        ],
+        "data_records": 301,
+        "first_lines": [
+          "Timestamp,Iperf Bytes,Iperf Bits per Second",
+          "1732271733.100072,619744,49543850.18646227",
+          "1732271733.200058,625536,50049886.05853847",
+          "1732271733.300062,624088,49925041.7742186",
+          "1732271733.400058,625536,50044881.530856326",
+          "1732271733.500058,625536,50042879.254302986",
+          "1732271733.600066,624088,49923044.45223223",
+          "1732271733.700061,625536,50045381.1928159"
+        ]
+      }
+    },
+    {
+      "asset": "raw/6G-MOBKPI_dataset.zip!/FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/IPERF UDP/50M/2024-11-22_11-35-33_rssi_position.csv",
+      "structure": {
+        "header": [
+          "Timestamp",
+          "CellId",
+          "RSSI",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 277,
+        "first_lines": [
+          "Timestamp,CellId,RSSI,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732271733.883978,3.0,-83,-84.0,-12.0,,,",
+          "1732271734.002285,3.0,-83,-84.0,-12.0,22.569,-5.048,0.473",
+          "1732271734.112531,3.0,-83,-84.0,-12.0,,,",
+          "1732271734.2263317,3.0,-83,-83.0,-12.0,,,",
+          "1732271734.3374765,3.0,-83,-83.0,-12.0,22.555,-5.064,0.524",
+          "1732271734.4499683,3.0,-83,-82.0,-12.0,,,",
+          "1732271734.5621295,3.0,-83,-82.0,-12.0,22.561,-5.065,0.525"
+        ]
+      }
+    },
+    {
+      "asset": "raw/6G-MOBKPI_dataset.zip!/FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/PING/1000B/2024-11-22_11-08-47_ping.csv",
+      "structure": {
+        "header": [
+          "Timestamp",
+          "ICMP Seq",
+          "Ping Time (ms)",
+          "Ping Time Average (ms)",
+          "Lost",
+          "Lost Percentage"
+        ],
+        "data_records": 1017,
+        "first_lines": [
+          "Timestamp,ICMP Seq,Ping Time (ms),Ping Time Average (ms),Lost,Lost Percentage",
+          "1732270127.7509,0,78.1,78.1,False,0",
+          "1732270127.81126,1,38.4,58.2,False,0",
+          "1732270127.93126,2,58.4,58.3,False,0",
+          "1732270128.01579,3,42.9,54.4,False,0",
+          "1732270128.13227,4,59.4,55.4,False,0",
+          "1732270128.21119,5,38.3,52.6,False,0",
+          "1732270128.33582,6,62.9,54.1,False,0"
+        ]
+      }
+    },
+    {
+      "asset": "raw/6G-MOBKPI_dataset.zip!/FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/PING/1000B/2024-11-22_11-08-47_rssi_position.csv",
+      "structure": {
+        "header": [
+          "Timestamp",
+          "RSSI",
+          "CellId",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 1016,
+        "first_lines": [
+          "Timestamp,RSSI,CellId,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732270127.6668153,-93,0.0,-84.0,-14.0,,,",
+          "1732270127.7745948,-93,0.0,-84.0,-14.0,,,",
+          "1732270127.869853,-93,0.0,-83.0,-14.0,,,",
+          "1732270127.9664526,-93,0.0,-83.0,-14.0,,,",
+          "1732270128.0621436,-93,0.0,-82.0,-14.0,,,",
+          "1732270128.159374,-93,0.0,-82.0,-14.0,,,",
+          "1732270128.2556186,-93,0.0,-84.0,-15.0,,,"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "ZIP": 1,
+    "text_or_instrument_native": 46
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 498280,
+  "expanded_source_equivalent_bytes": 2010302,
+  "installed_folder_bytes": 506580,
+  "source_asset_count": 2,
+  "asset_paths": [
+    "scenarios/100_communications_6g_mobkpi/raw/6G-MOBKPI_dataset.zip",
+    "scenarios/100_communications_6g_mobkpi/context/source_record.json"
+  ],
+  "local_folder": "scenarios/100_communications_6g_mobkpi",
+  "size_exception": false,
+  "modalities": [
+    "spatial_or_georeferenced",
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 504494,
+  "expanded_release_folder_equivalent_bytes": 2016516
+}

@@ -1,0 +1,259 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "09_neuroscience_dandi_001176",
+  "domain": "neuroscience",
+  "title": "DANDI 001176 acetylcholine, axon imaging, pupil, and behavior NWB sessions",
+  "publisher": "DANDI Archive",
+  "authoritative_landing_url": "https://dandiarchive.org/dandiset/001176/0.260610.2204",
+  "authoritative_source_urls": [
+    "https://api.dandiarchive.org/api/dandisets/001176/versions/0.260610.2204/",
+    "https://api.dandiarchive.org/api/assets/"
+  ],
+  "identifiers": [
+    "doi:10.48324/dandi.001176/0.260610.2204"
+  ],
+  "release_or_version": "0.260610.2204",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "CC BY 4.0",
+  "deterministic_selection_rule": "Retain the seven fixed NWB assets listed in the acquisition contract from subjects 16, 18, and 22713.",
+  "substitution": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-009",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-009",
+      "scenario_id": "09_neuroscience_dandi_001176",
+      "path": "context/assets.json",
+      "scenario_relative_path": "context/assets.json",
+      "bytes": 36083,
+      "sha256": "33385c2abbb6ecd2a27f2ce536403e80138945848ecce11751884b549a7334e9",
+      "role": "official_context_or_source_metadata",
+      "source_urls": [
+        "https://api.dandiarchive.org/api/dandisets/001176/versions/0.260610.2204/",
+        "https://api.dandiarchive.org/api/assets/"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-08-23T14:14:09.390874Z",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.48324/dandi.001176/0.260610.2204"
+      ],
+      "citation_url": "https://dandiarchive.org/dandiset/001176/0.260610.2204",
+      "source_version": "0.260610.2204",
+      "replay_note": "Frozen local asset with source record references; exact remote asset URL was not recorded in legacy schema. Replay from an intact release copy is supported.",
+      "rights_evidence_url": "https://dandiarchive.org/dandiset/001176/0.260610.2204",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-009",
+      "scenario_id": "09_neuroscience_dandi_001176",
+      "path": "context/dandiset_version.json",
+      "scenario_relative_path": "context/dandiset_version.json",
+      "bytes": 3504,
+      "sha256": "4834a872ae98bccf51ec989d4aef92e3f210ad9ac52ac74b9a0c2bcd5f73a139",
+      "role": "official_context_or_source_metadata",
+      "source_urls": [
+        "https://api.dandiarchive.org/api/dandisets/001176/versions/0.260610.2204/",
+        "https://api.dandiarchive.org/api/assets/"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-08-23T14:14:09.390874Z",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.48324/dandi.001176/0.260610.2204"
+      ],
+      "citation_url": "https://dandiarchive.org/dandiset/001176/0.260610.2204",
+      "source_version": "0.260610.2204",
+      "replay_note": "Frozen local asset with source record references; exact remote asset URL was not recorded in legacy schema. Replay from an intact release copy is supported.",
+      "rights_evidence_url": "https://dandiarchive.org/dandiset/001176/0.260610.2204",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-009",
+      "scenario_id": "09_neuroscience_dandi_001176",
+      "path": "raw/sub-16/sub-16_ses-16-1-2-Ach-M1_behavior+ophys.nwb",
+      "scenario_relative_path": "raw/sub-16/sub-16_ses-16-1-2-Ach-M1_behavior+ophys.nwb",
+      "bytes": 4311973,
+      "sha256": "94aa2c8a4bd9119bfbc26cd26d6283832196c6f170021375c11b6e318fb3e987",
+      "role": "official_payload",
+      "source_urls": [
+        "https://api.dandiarchive.org/api/dandisets/001176/versions/0.260610.2204/",
+        "https://api.dandiarchive.org/api/assets/"
+      ],
+      "download_url": "https://api.dandiarchive.org/api/assets/4550467f-b94d-406b-8e30-24dd6d4941c1/download/",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-08-23T14:14:09.390874Z",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.48324/dandi.001176/0.260610.2204"
+      ],
+      "citation_url": "https://dandiarchive.org/dandiset/001176/0.260610.2204",
+      "source_version": "0.260610.2204",
+      "replay_note": "resolved from frozen authoritative metadata",
+      "rights_evidence_url": "https://dandiarchive.org/dandiset/001176/0.260610.2204",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-009",
+      "scenario_id": "09_neuroscience_dandi_001176",
+      "path": "raw/sub-16/sub-16_ses-16-3-1-Ach-M1_behavior+ophys.nwb",
+      "scenario_relative_path": "raw/sub-16/sub-16_ses-16-3-1-Ach-M1_behavior+ophys.nwb",
+      "bytes": 7880355,
+      "sha256": "17520a6770693e86e1b181ea9cd8aa6ca9d92ffc934b1862908f2ae5fd18022c",
+      "role": "official_payload",
+      "source_urls": [
+        "https://api.dandiarchive.org/api/dandisets/001176/versions/0.260610.2204/",
+        "https://api.dandiarchive.org/api/assets/"
+      ],
+      "download_url": "https://api.dandiarchive.org/api/assets/4b99f1c4-7522-4160-aad1-d2d0a552a443/download/",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-08-23T14:14:09.390874Z",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.48324/dandi.001176/0.260610.2204"
+      ],
+      "citation_url": "https://dandiarchive.org/dandiset/001176/0.260610.2204",
+      "source_version": "0.260610.2204",
+      "replay_note": "resolved from frozen authoritative metadata",
+      "rights_evidence_url": "https://dandiarchive.org/dandiset/001176/0.260610.2204",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-009",
+      "scenario_id": "09_neuroscience_dandi_001176",
+      "path": "raw/sub-16/sub-16_ses-16-4-1-Ach-M1_behavior+ophys.nwb",
+      "scenario_relative_path": "raw/sub-16/sub-16_ses-16-4-1-Ach-M1_behavior+ophys.nwb",
+      "bytes": 7995712,
+      "sha256": "dc23e412aea7d600cdf03e9d94fa715e7995728de54678f57fc6f766403c4906",
+      "role": "official_payload",
+      "source_urls": [
+        "https://api.dandiarchive.org/api/dandisets/001176/versions/0.260610.2204/",
+        "https://api.dandiarchive.org/api/assets/"
+      ],
+      "download_url": "https://api.dandiarchive.org/api/assets/b9e24aca-6472-4853-a696-afab966a725e/download/",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-08-23T14:14:09.390874Z",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.48324/dandi.001176/0.260610.2204"
+      ],
+      "citation_url": "https://dandiarchive.org/dandiset/001176/0.260610.2204",
+      "source_version": "0.260610.2204",
+      "replay_note": "resolved from frozen authoritative metadata",
+      "rights_evidence_url": "https://dandiarchive.org/dandiset/001176/0.260610.2204",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-009",
+      "scenario_id": "09_neuroscience_dandi_001176",
+      "path": "raw/sub-18/sub-18_ses-18-1-2-Ach-M1_behavior+ophys.nwb",
+      "scenario_relative_path": "raw/sub-18/sub-18_ses-18-1-2-Ach-M1_behavior+ophys.nwb",
+      "bytes": 5001950,
+      "sha256": "2e5bca4e5d34459afa84dffdea808d751b9dfa3633eb2b071a2cadd27c16dfb6",
+      "role": "official_payload",
+      "source_urls": [
+        "https://api.dandiarchive.org/api/dandisets/001176/versions/0.260610.2204/",
+        "https://api.dandiarchive.org/api/assets/"
+      ],
+      "download_url": "https://api.dandiarchive.org/api/assets/07ff70b6-ba5b-4a6e-9384-9230a4ab46c4/download/",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-08-23T14:14:09.390874Z",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.48324/dandi.001176/0.260610.2204"
+      ],
+      "citation_url": "https://dandiarchive.org/dandiset/001176/0.260610.2204",
+      "source_version": "0.260610.2204",
+      "replay_note": "resolved from frozen authoritative metadata",
+      "rights_evidence_url": "https://dandiarchive.org/dandiset/001176/0.260610.2204",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-009",
+      "scenario_id": "09_neuroscience_dandi_001176",
+      "path": "raw/sub-22713/sub-22713_ses-22713-2-1-Ach-V1_behavior+ophys.nwb",
+      "scenario_relative_path": "raw/sub-22713/sub-22713_ses-22713-2-1-Ach-V1_behavior+ophys.nwb",
+      "bytes": 1767522,
+      "sha256": "7665f26b42b24abdfd0c44fcd1092835fea1f64951e8fe974548cbc6a4899a7b",
+      "role": "official_payload",
+      "source_urls": [
+        "https://api.dandiarchive.org/api/dandisets/001176/versions/0.260610.2204/",
+        "https://api.dandiarchive.org/api/assets/"
+      ],
+      "download_url": "https://api.dandiarchive.org/api/assets/be84b6ff-7016-4ed8-af63-aa0e07c02530/download/",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-08-23T14:14:09.390874Z",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.48324/dandi.001176/0.260610.2204"
+      ],
+      "citation_url": "https://dandiarchive.org/dandiset/001176/0.260610.2204",
+      "source_version": "0.260610.2204",
+      "replay_note": "resolved from frozen authoritative metadata",
+      "rights_evidence_url": "https://dandiarchive.org/dandiset/001176/0.260610.2204",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-009",
+      "scenario_id": "09_neuroscience_dandi_001176",
+      "path": "raw/sub-22713/sub-22713_ses-22713-2-2-Ach-V1_behavior+ophys.nwb",
+      "scenario_relative_path": "raw/sub-22713/sub-22713_ses-22713-2-2-Ach-V1_behavior+ophys.nwb",
+      "bytes": 1755210,
+      "sha256": "ff1eca2449c8c8ac56c92b1a00e0ecd5d8a1e121a0d6e0b1ae6fe11d77119075",
+      "role": "official_payload",
+      "source_urls": [
+        "https://api.dandiarchive.org/api/dandisets/001176/versions/0.260610.2204/",
+        "https://api.dandiarchive.org/api/assets/"
+      ],
+      "download_url": "https://api.dandiarchive.org/api/assets/aa5a2c8d-9c5c-45d5-8be6-7d9219c16243/download/",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-08-23T14:14:09.390874Z",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.48324/dandi.001176/0.260610.2204"
+      ],
+      "citation_url": "https://dandiarchive.org/dandiset/001176/0.260610.2204",
+      "source_version": "0.260610.2204",
+      "replay_note": "resolved from frozen authoritative metadata",
+      "rights_evidence_url": "https://dandiarchive.org/dandiset/001176/0.260610.2204",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-009",
+      "scenario_id": "09_neuroscience_dandi_001176",
+      "path": "raw/sub-22713/sub-22713_ses-22713-2-3-Ach-V1_behavior+ophys.nwb",
+      "scenario_relative_path": "raw/sub-22713/sub-22713_ses-22713-2-3-Ach-V1_behavior+ophys.nwb",
+      "bytes": 2195078,
+      "sha256": "49e771afcf06a1a65d3ace6c8100a820a0553332c0ad5014bf119c6f763da36c",
+      "role": "official_payload",
+      "source_urls": [
+        "https://api.dandiarchive.org/api/dandisets/001176/versions/0.260610.2204/",
+        "https://api.dandiarchive.org/api/assets/"
+      ],
+      "download_url": "https://api.dandiarchive.org/api/assets/351da07f-7142-4ee0-9a9e-e59a7e470328/download/",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-08-23T14:14:09.390874Z",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.48324/dandi.001176/0.260610.2204"
+      ],
+      "citation_url": "https://dandiarchive.org/dandiset/001176/0.260610.2204",
+      "source_version": "0.260610.2204",
+      "replay_note": "resolved from frozen authoritative metadata",
+      "rights_evidence_url": "https://dandiarchive.org/dandiset/001176/0.260610.2204",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

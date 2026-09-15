@@ -1,0 +1,130 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "84_biomaterials_cellulose_afm",
+  "domain": "Surface mechanics",
+  "title": "Experimental dataset on Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment",
+  "publisher": "Kanakousaki, Eleni (FORTH Institute of Electronic Structure and Laser); Kavatzikidou, Paraskevi (Foundation for Research and Technology Hellas); Daskalakis, Panagiotis; Alexaki, Konstantina (Foundation for Research and Technology Hellas); Maragkaki, Stella (Ruhr University Bochum); Manousaki, Alexandra (Foundation for Research and Technology Hellas); Dwivedi, Jagrati (Deutsches Elektronen-Synchrotron DESY); Kenanakis, George (Institute of Electronic Structure and Laser); Keller, Thomas F. (Deutsches Elektronen-Synchrotron DESY); Stratakis, Emmanuel (Biomimetic.); RANELLA, ANTHI (Foundation for Research and Technology Hellas)",
+  "authoritative_landing_url": "https://zenodo.org/records/20281797",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/20281797",
+    "https://zenodo.org/api/records/20281797/files/Microstructured%20cellulose%20acetate%20biointerfaces%20regulate%20mesenchymal%20stem%20cell%20response%20and%20promote%20osteogenic%20commitment_Dataset.zip/content",
+    "https://zenodo.org/api/records/20281797/files/Microstructured%20cellulose%20acetate%20biointerfaces%20regulate%20mesenchymal%20stem%20cell%20response%20and%20promote%20osteogenic%20commitment_README.docx/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.20281797"
+  ],
+  "release_or_version": "20281797",
+  "retrieval_finalized_utc": "2026-09-15T07:04:41.776314+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Some source measurements dated August 2023; release April 2026.",
+  "source_publication_date": "2026-04-27",
+  "source_created_utc": "2026-05-19T08:17:13.083442+00:00",
+  "source_updated_utc": "2026-05-19T08:17:13.407067+00:00",
+  "source_inventory": [
+    {
+      "name": "Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip",
+      "bytes": 5440639,
+      "selected": true
+    },
+    {
+      "name": "Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_README.docx",
+      "bytes": 4632050,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Native SPM/TXT files, images and derived maps for flat, low-roughness and high-roughness cellulose acetate.",
+  "known_analyses_and_limitations": "Group samples and scan regions, not pixels. Cellular-response measurements from the associated article are absent; this case supports surface mechanics only.",
+  "related_publications": [
+    {
+      "identifier": "10.1016/j.mtcomm.2026.114808",
+      "relation": "isSupplementTo",
+      "resource_type": "publication",
+      "scheme": "doi"
+    }
+  ],
+  "independent_groups": "surface preparation and independent scan region",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-084",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-084",
+      "scenario_id": "84_biomaterials_cellulose_afm",
+      "path": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip",
+      "scenario_relative_path": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip",
+      "bytes": 5440639,
+      "sha256": "0102b2289400d96f1dc2e53c768ee731f1f13ed7ce9c63493a2fabe95fcdfba5",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/20281797"
+      ],
+      "download_url": "https://zenodo.org/api/records/20281797/files/Microstructured%20cellulose%20acetate%20biointerfaces%20regulate%20mesenchymal%20stem%20cell%20response%20and%20promote%20osteogenic%20commitment_Dataset.zip/content",
+      "source_checksum": "md5:379ce831b4c1553f9afd7a40c5f1786c",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:30.530094+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.20281797"
+      ],
+      "citation_url": "https://zenodo.org/records/20281797",
+      "source_version": "20281797",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/20281797",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-084",
+      "scenario_id": "84_biomaterials_cellulose_afm",
+      "path": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_README.docx",
+      "scenario_relative_path": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_README.docx",
+      "bytes": 4632050,
+      "sha256": "c5d6383b376c00c7f94aae9225e3cd5d65545225407d7234977073f4b7969704",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/20281797"
+      ],
+      "download_url": "https://zenodo.org/api/records/20281797/files/Microstructured%20cellulose%20acetate%20biointerfaces%20regulate%20mesenchymal%20stem%20cell%20response%20and%20promote%20osteogenic%20commitment_README.docx/content",
+      "source_checksum": "md5:36011a1aef15ea2a2ad2610c072d73b2",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:40.522296+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.20281797"
+      ],
+      "citation_url": "https://zenodo.org/records/20281797",
+      "source_version": "20281797",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/20281797",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-084",
+      "scenario_id": "84_biomaterials_cellulose_afm",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 8736,
+      "sha256": "ef11fb5666ecbaab705ab789cf8c3ecc7442a00656a32c391f85bf369454a26f",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/20281797"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:47.784846+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.20281797"
+      ],
+      "citation_url": "https://zenodo.org/records/20281797",
+      "source_version": "20281797",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

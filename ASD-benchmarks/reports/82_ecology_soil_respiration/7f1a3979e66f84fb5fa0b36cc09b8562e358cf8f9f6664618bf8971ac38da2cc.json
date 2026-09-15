@@ -1,0 +1,51 @@
+{
+  "scenario_id": "82_ecology_soil_respiration",
+  "path": "raw/holisoils_soil_respiration_dataset.csv",
+  "bytes": 11215296,
+  "sha256": "bcbf7e1a87b056ee8deb75f8b3fd10c1bfba9a725030da8dede1bf3bf9b57438",
+  "checked_utc": "2026-09-15T06:46:26.033658+00:00",
+  "source_checksum_status": "verified",
+  "format": "text_or_instrument_native",
+  "signature_hex": "22736974656964222c22636f",
+  "delimiter": ",",
+  "header": [
+    "siteid",
+    "country",
+    "date",
+    "subsiteid",
+    "point",
+    "ci",
+    "flux",
+    "slope",
+    "intc",
+    "trim_head",
+    "trim_tail",
+    "area",
+    "volume",
+    "airtemp",
+    "tsmoisture",
+    "t05",
+    "t10",
+    "t30",
+    "treatment",
+    "2nd_treatment",
+    "details",
+    "trenched"
+  ],
+  "data_records": 50140,
+  "row_width_counts": {
+    "22": 50140
+  },
+  "first_lines": [
+    "\"siteid\",\"country\",\"date\",\"subsiteid\",\"point\",\"ci\",\"flux\",\"slope\",\"intc\",\"trim_head\",\"trim_tail\",\"area\",\"volume\",\"airtemp\",\"tsmoisture\",\"t05\",\"t10\",\"t30\",\"treatment\",\"2nd_treatment\",\"details\",\"trenched\"",
+    "\"Dobroc\",\"Slovakia\",2021-08-25,\"DP-MC\",\"T1\",0.0021110610744447,0.45591655493692,0.337845094616373,428.911345573556,0,0,7.06858347057703,14.1371669411541,13,NA,12.5,NA,NA,\"Control\",NA,NA,\"True\"",
+    "\"Dobroc\",\"Slovakia\",2021-08-25,\"DP-MC\",\"T2\",0.0024995894701831,0.515973269655111,0.382214941433824,452.371089561591,0,12,7.06858347057703,14.1371669411541,12.9,NA,12.5,NA,NA,\"Control\",NA,NA,\"True\"",
+    "\"Dobroc\",\"Slovakia\",2021-08-25,\"DP-MC\",\"T3\",0.0033550526887959,0.49800771564955,0.369035653545384,448.10428629001,6,0,7.06858347057703,14.1371669411541,13,NA,12.5,NA,NA,\"Control\",NA,NA,\"True\"",
+    "\"Dobroc\",\"Slovakia\",2021-08-25,\"DP-MC\",\"T4\",0.0026837326372465,0.300416034818253,0.222537685393259,436.403894715084,0,0,7.06858347057703,14.1371669411541,12.9,NA,12.5,NA,NA,\"Control\",NA,NA,\"True\"",
+    "\"Dobroc\",\"Slovakia\",2021-08-25,\"DP-MC\",\"C1\",0.0031865783362271,0.776127400742834,0.574928017527719,448.747215166725,0,10,7.06858347057703,14.1371669411541,12.9,NA,12.5,NA,NA,\"Control\",NA,NA,\"False\"",
+    "\"Dobroc\",\"Slovakia\",2021-08-25,\"DP-MC\",\"C2\",0.0037206181288262,0.390825251136984,0.289610878392233,438.31226964432,0,0,7.06858347057703,14.1371669411541,13,NA,12.5,NA,NA,\"Control\",NA,NA,\"False\"",
+    "\"Dobroc\",\"Slovakia\",2021-08-25,\"DP-MC\",\"C3\",0.0033787013151917,0.409467714511754,0.303001241855497,441.458580592179,0,0,7.06858347057703,14.1371669411541,12.6,NA,12.5,NA,NA,\"Control\",NA,NA,\"False\""
+  ],
+  "encoding_replacement_count": 0,
+  "status": "pass"
+}

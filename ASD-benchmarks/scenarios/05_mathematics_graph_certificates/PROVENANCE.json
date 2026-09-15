@@ -1,0 +1,225 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "05_mathematics_graph_certificates",
+  "domain": "Combinatorial optimization",
+  "title": "Dataset for \"A Computational Search for Minimal Obstruction Graphs for the Lovász-Schrijver SDP Hierarchy\"",
+  "publisher": "[{'name': 'Au, Yu Hin', 'affiliation': 'University of Saskatchewan', 'orcid': '0009-0002-5685-1640'}, {'name': 'Tunçel, Levent', 'affiliation': 'University of Waterloo'}]",
+  "authoritative_landing_url": "https://zenodo.org/records/15483991",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/15483991",
+    "https://zenodo.org/api/records/15483991/files/LS_+%5E2%20certificate%20packages.zip/content",
+    "https://zenodo.org/api/records/15483991/files/Tables%20of%20graphs.zip/content",
+    "https://zenodo.org/api/records/15483991/files/LS_+%20certificate%20packages.zip/content",
+    "https://zenodo.org/api/records/15483991/files/Code.zip/content",
+    "https://zenodo.org/api/records/15483991/files/List%20of%204-minimal%20graphs.zip/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.15483991"
+  ],
+  "release_or_version": "15483991",
+  "retrieval_finalized_utc": "2026-09-15T07:04:46.237447+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "Five complete graph and certificate packages; omit oversized third-level certificate archive",
+  "substitution": {
+    "planned_source": "Original benchmark slot 05: GEO GSE303208",
+    "reason": "Public GEO access does not specify depositor data redistribution permission; article CC BY-NC-ND terms do not establish dataset rights. Original files preserved outside release candidate.",
+    "original_preserved": true
+  },
+  "data_origin": "computational_experiment",
+  "measurement_dates": "No measurement date; computational dataset published May 2025.",
+  "source_publication_date": "2025-05-30",
+  "source_created_utc": null,
+  "source_updated_utc": null,
+  "source_inventory": [
+    {
+      "name": "LS_+^3 certificate packages.zip",
+      "bytes": 448298925,
+      "selected": false
+    },
+    {
+      "name": "LS_+^2 certificate packages.zip",
+      "bytes": 229842,
+      "selected": true
+    },
+    {
+      "name": "Tables of graphs.zip",
+      "bytes": 3941,
+      "selected": true
+    },
+    {
+      "name": "LS_+ certificate packages.zip",
+      "bytes": 4247,
+      "selected": true
+    },
+    {
+      "name": "Code.zip",
+      "bytes": 8483,
+      "selected": true
+    },
+    {
+      "name": "List of 4-minimal graphs.zip",
+      "bytes": 18480,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Exact graph/certificate packages and source verification code; published search results are disclosed.",
+  "known_analyses_and_limitations": "Independent graph instances and exact certificate checks. Third-level certificate archive excluded by size; no claim of verifying omitted certificates.",
+  "related_publications": [],
+  "independent_groups": "graph instances and exact certificates; separate generation from checking",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-005",
+  "case_revision": 2,
+  "files": [
+    {
+      "case_id": "P100-005",
+      "scenario_id": "05_mathematics_graph_certificates",
+      "path": "raw/LS_+^2 certificate packages.zip",
+      "scenario_relative_path": "raw/LS_+^2 certificate packages.zip",
+      "bytes": 229842,
+      "sha256": "91fc721c34ab62598fc10e9f29516e315ab26039358a46fe0fc2f76bd8fdf9e3",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/15483991"
+      ],
+      "download_url": "https://zenodo.org/api/records/15483991/files/LS_+%5E2%20certificate%20packages.zip/content",
+      "source_checksum": "md5:e837cd958a6c4bc821385264942c0ecc",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:31:19.946441+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.15483991"
+      ],
+      "citation_url": "https://zenodo.org/records/15483991",
+      "source_version": "15483991",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15483991",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-005",
+      "scenario_id": "05_mathematics_graph_certificates",
+      "path": "raw/Tables of graphs.zip",
+      "scenario_relative_path": "raw/Tables of graphs.zip",
+      "bytes": 3941,
+      "sha256": "b7350804a5fe7bf03d204f82f5ba81e0c48ed87fc4b024f3d4d822c7fed50121",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/15483991"
+      ],
+      "download_url": "https://zenodo.org/api/records/15483991/files/Tables%20of%20graphs.zip/content",
+      "source_checksum": "md5:02bda6552ed377b1a6a3ef5b01168343",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:31:15.644927+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.15483991"
+      ],
+      "citation_url": "https://zenodo.org/records/15483991",
+      "source_version": "15483991",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15483991",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-005",
+      "scenario_id": "05_mathematics_graph_certificates",
+      "path": "raw/LS_+ certificate packages.zip",
+      "scenario_relative_path": "raw/LS_+ certificate packages.zip",
+      "bytes": 4247,
+      "sha256": "4783fe51465ec0d300fdc377bcb94229a898788663241cdbddb15d5e64495c87",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/15483991"
+      ],
+      "download_url": "https://zenodo.org/api/records/15483991/files/LS_+%20certificate%20packages.zip/content",
+      "source_checksum": "md5:7f2ab38387be5fc5630d1db073bae45a",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:31:15.700998+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.15483991"
+      ],
+      "citation_url": "https://zenodo.org/records/15483991",
+      "source_version": "15483991",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15483991",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-005",
+      "scenario_id": "05_mathematics_graph_certificates",
+      "path": "raw/Code.zip",
+      "scenario_relative_path": "raw/Code.zip",
+      "bytes": 8483,
+      "sha256": "5d55f3b98004cbc8527114e6bea0595e7770836691f48fdb939fe1823477b32f",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/15483991"
+      ],
+      "download_url": "https://zenodo.org/api/records/15483991/files/Code.zip/content",
+      "source_checksum": "md5:f4f72cd3d69c23763fa7ede8e4f34f64",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:31:16.547025+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.15483991"
+      ],
+      "citation_url": "https://zenodo.org/records/15483991",
+      "source_version": "15483991",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15483991",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-005",
+      "scenario_id": "05_mathematics_graph_certificates",
+      "path": "raw/List of 4-minimal graphs.zip",
+      "scenario_relative_path": "raw/List of 4-minimal graphs.zip",
+      "bytes": 18480,
+      "sha256": "25335c59ec2f501a779203a43ea0e8446ebaf69fd9a6b8a5faf6357ab8e265f4",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/15483991"
+      ],
+      "download_url": "https://zenodo.org/api/records/15483991/files/List%20of%204-minimal%20graphs.zip/content",
+      "source_checksum": "md5:9f391a58451464c1deacfc1705e51f75",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:31:17.174120+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.15483991"
+      ],
+      "citation_url": "https://zenodo.org/records/15483991",
+      "source_version": "15483991",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15483991",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-005",
+      "scenario_id": "05_mathematics_graph_certificates",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 7025,
+      "sha256": "df86bcec79136a0dfaa7876e1466cb6961dd50e72824146b43bc94d9eaa156c0",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/15483991"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:30:46.404680+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15483991"
+      ],
+      "citation_url": "https://zenodo.org/records/15483991",
+      "source_version": "15483991",
+      "replay_note": "Frozen local asset with source record references; exact remote asset URL was not recorded in legacy schema. Replay from an intact release copy is supported.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

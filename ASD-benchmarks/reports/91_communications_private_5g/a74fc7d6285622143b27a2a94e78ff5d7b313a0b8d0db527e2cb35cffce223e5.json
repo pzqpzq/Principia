@@ -1,0 +1,414 @@
+{
+  "scenario_id": "91_communications_private_5g",
+  "path": "raw/code.zip",
+  "bytes": 66470,
+  "sha256": "ce6bb0aa6132c1212cac776b19d99d185ffc391858bb945b26489646487f1fc7",
+  "checked_utc": "2026-09-15T06:46:27.093939+00:00",
+  "source_checksum_status": "verified",
+  "format": "ZIP",
+  "expanded_bytes": 180869,
+  "members": [
+    {
+      "name": "code/01_parse_achieved_bandwidth.m",
+      "bytes": 6990,
+      "sha256": "5ba4133d764c5a253badef81b30bcd0c6f70925983f2a074c2a3c13e61ece866",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e20706172",
+        "line_count": 169,
+        "preview_lines": [
+          "function parse_achieved_bandwidth()",
+          "% STAGE 1 - Achieved bandwidth extraction from raw iPerf UDP client logs.",
+          "%",
+          "% Parses the 210 raw iPerf .txt files (UTF-16LE) in \"5G exercises/5G exercises/\"",
+          "% and extracts, per (location qIdx, target bandwidth B_Mbps, trial):"
+        ]
+      }
+    },
+    {
+      "name": "code/02_fit_model.m",
+      "bytes": 8474,
+      "sha256": "de2d7832766b8f042bfb829ae24364a57dc311ea18cf6c6c292dc1fbb9ec4774",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e20666974",
+        "line_count": 198,
+        "preview_lines": [
+          "function fit_achieved_bandwidth_model()",
+          "% STAGE 2 - Refit the published queueing model using ACHIEVED bandwidth.",
+          "%   L(b,q) = L0 + beta*b + theta/(C-b) + gamma(q)",
+          "% This time b = achieved_Mbps_server (Stage 1 output), not the target rate",
+          "% used in Stage 0. Per the paper's own methodology (Sec 4.3.2): \"bi denotes"
+        ]
+      }
+    },
+    {
+      "name": "code/03_cross_validate.m",
+      "bytes": 7918,
+      "sha256": "e9588a1ed675c3d726b98ef8d42e753ea5a395525af93c4c4116abc4e0c68e4a",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e2063726f",
+        "line_count": 170,
+        "preview_lines": [
+          "function cross_validate_model()",
+          "% STAGE 3 - Cross-validation of the published queueing model, using",
+          "% ACHIEVED bandwidth (per Stage 2's corrected methodology - achieved_b",
+          "% reproduces the paper almost exactly, unlike Stage 0's target-b check).",
+          "%"
+        ]
+      }
+    },
+    {
+      "name": "code/04_bootstrap_ci.m",
+      "bytes": 5763,
+      "sha256": "d223a8b8d0d12d7d2816ca441233a389a77eda514b104e2c1a0a4a03d7e41e45",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e20626f6f",
+        "line_count": 141,
+        "preview_lines": [
+          "function bootstrap_confidence_intervals()",
+          "% STAGE 4 - Parameter confidence intervals for the published queueing",
+          "% model, using ACHIEVED bandwidth (Stage 2's corrected variable).",
+          "%",
+          "%   L(b,q) = L0 + beta*b + theta/(C-b) + gamma_q"
+        ]
+      }
+    },
+    {
+      "name": "code/05_tail_jitter_stats.m",
+      "bytes": 9450,
+      "sha256": "6ea593112eb695b181bd07d89bb546c7f2fc17acf08b2327fe033b733d775032",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e20746169",
+        "line_count": 178,
+        "preview_lines": [
+          "function tail_jitter_stats()",
+          "% STAGE 5 - Jitter, packet loss, and tail-latency statistics.",
+          "%",
+          "% Reuses the already-parsed raw iPerf3 fields from Stage 1",
+          "% (revision_work/stage_1/achieved_bandwidth_210.csv) - no re-parsing of the"
+        ]
+      }
+    },
+    {
+      "name": "code/06_gamma_bandwidth_corr.m",
+      "bytes": 4070,
+      "sha256": "c9d66e6a67d5bda7406d6b7c634bfc06a185c08e5fc925faeb8a5bc57eeaa7bb",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e20737461",
+        "line_count": 86,
+        "preview_lines": [
+          "function stage8_gamma_bandwidth_correlation()",
+          "% STAGE 8 - Correlation between location offset (gamma_q) and achieved",
+          "% bandwidth variability (Reviewer 2, Comment 4: radio-layer metrics",
+          "% (RSRP/RSRQ/SINR/MCS/retransmission) are never used, so gamma_q is a",
+          "% \"black box\". No direct RSRP/SINR measurements exist, so this stage uses"
+        ]
+      }
+    },
+    {
+      "name": "code/07_metallic_flag.m",
+      "bytes": 8784,
+      "sha256": "07009a88a5d4db505df307f15aeeff6f915485b632dcd6e4ccd01b442c904f79",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e20737461",
+        "line_count": 214,
+        "preview_lines": [
+          "function stage9_metallic_flag_comparison()",
+          "% STAGE 9 - Metallic-environment flag vs full location offsets (Reviewer 2,",
+          "% Comment 4). Tests whether a single binary \"metallic environment\" term",
+          "% can substitute for the published model's 6 free location offsets",
+          "% (gamma_2..gamma_7), using the SAME train/test + leave-one-location-out"
+        ]
+      }
+    },
+    {
+      "name": "code/08_baseline_comparison.m",
+      "bytes": 24183,
+      "sha256": "6433c74832f09178cc7c6e051fa601529a1a01b447dfd372d5cf4f88ff5aa5cb",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e20737461",
+        "line_count": 513,
+        "preview_lines": [
+          "function stage10_corrected_baseline_comparison()",
+          "% STAGE 10 - Corrected baseline comparison + location-term ablation",
+          "% (Reviewer 1, Comment 4 - methodological fix to Stage 7).",
+          "%",
+          "% PROBLEM FIXED: Stage 7 compared the proposed model (a) against a minimal"
+        ]
+      }
+    },
+    {
+      "name": "code/09_urllc_supplementary.m",
+      "bytes": 39849,
+      "sha256": "bd8f2c9ca2e9919fced419c9468c3c0b88f879a26a3cd10e0299f0a919f387d4",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e20737461",
+        "line_count": 773,
+        "preview_lines": [
+          "function stage11_urllc_supplementary_analysis()",
+          "% STAGE 11 - Trial-level latency distribution and threshold-exceedance",
+          "% analysis (Reviewer 2, Comment 5: exclusive use of mean latency, absence",
+          "% of percentile / jitter / packet-loss / tail-latency analysis).",
+          "%"
+        ]
+      }
+    },
+    {
+      "name": "code/10_imputation_sensitivity.m",
+      "bytes": 8530,
+      "sha256": "010c8b1a18629fcab11d7701839b7af203c7ee6503bf34419e31d976145ac78c",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e20737461",
+        "line_count": 205,
+        "preview_lines": [
+          "function stage11_addendum_b50_meanfill_sensitivity()",
+          "% STAGE 11 ADDENDUM - Sensitivity check for the 3 mean-filled rows at",
+          "% B=50 Mbps (qIdx=1, trial=3,4,5; latency_ms/stdev_ms mean-filled from",
+          "% trials 1-2 of the same cell due to the known iPerf3 Server-Report",
+          "% overflow bug documented in Stage 1 and re-confirmed in Stage 11's"
+        ]
+      }
+    },
+    {
+      "name": "code/LICENSE-MIT.txt",
+      "bytes": 1469,
+      "sha256": "a0ab2bf5b7d92545fac4aeec27a23dd509d34f4bda9fdb79bcf3932fac138835",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d4954204c6963656e73650a",
+        "line_count": 30,
+        "preview_lines": [
+          "MIT License",
+          "",
+          "Copyright (c) 2026 Osman Bodur, Sami Çağlayan, Neslihan Demir, Günther Poszvek,",
+          "Friedrich Bleicher",
+          ""
+        ],
+        "first_lines": [
+          "MIT License",
+          "",
+          "Copyright (c) 2026 Osman Bodur, Sami Çağlayan, Neslihan Demir, Günther Poszvek,",
+          "Friedrich Bleicher",
+          "",
+          "Permission is hereby granted, free of charge, to any person obtaining a copy",
+          "of this software and associated documentation files (the \"Software\"), to deal",
+          "in the Software without restriction, including without limitation the rights"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "code/figures/make_fig10_combined.m",
+      "bytes": 10907,
+      "sha256": "94ce5aabe4d2893dbf3369f043f0a3a2bcfb4e716382dc828c6b727e19438643",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e20737461",
+        "line_count": 221,
+        "preview_lines": [
+          "function stage11_addendum_fig10_combined()",
+          "% STAGE 11 ADDENDUM - Combines the two figures that were both mistakenly",
+          "% labeled \"Figure 10\" in stage11_summary.txt (the ECDF figure in the",
+          "% proposed Section 3.3 text, and the threshold-exceedance figure in the",
+          "% Reviewer 3 / Comment 3 note) into a single two-panel manuscript figure:"
+        ]
+      }
+    },
+    {
+      "name": "code/figures/make_stage1_figures.m",
+      "bytes": 4020,
+      "sha256": "2fa494c44a310486a52a3645d90f1d038354ff90703eb223f4524ebb5445f56c",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e206d616b",
+        "line_count": 77,
+        "preview_lines": [
+          "function make_stage1_figures()",
+          "% Stage 1 - comparison figures for the achieved-bandwidth extraction.",
+          "% NOTE: the paper's Figure 8 (bandwidth boxplot per location) comes from a",
+          "% SEPARATE TCP-only bandwidth benchmark (k*_bandwidthResult*.txt / bandwidthAnalysis.m),",
+          "% not from the UDP latency-test files parsed in Stage 1. The two are shown"
+        ]
+      }
+    },
+    {
+      "name": "code/figures/make_stage2_figures.m",
+      "bytes": 5466,
+      "sha256": "fd5ec151119e8d3bafcafa38e9426fa5269211ceb4ddf658a7ff53a23249e21c",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e206d616b",
+        "line_count": 121,
+        "preview_lines": [
+          "function make_stage2_figures()",
+          "% Stage 2 - comparison figures: published paper vs Stage 0 (target-b) vs",
+          "% Stage 2 (achieved-b). Mirrors the style of stage_0/make_stage0_figures.m",
+          "% and stage_1/make_stage1_figures.m. Outputs PNGs into",
+          "% revision_work/stage_2/figures/."
+        ]
+      }
+    },
+    {
+      "name": "code/figures/make_stage3_figures.m",
+      "bytes": 4815,
+      "sha256": "52b985f203271843e1ce322f08e22ca3e4432a3a0a32e479f04473318c771178",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e206d616b",
+        "line_count": 112,
+        "preview_lines": [
+          "function make_stage3_figures()",
+          "% Stage 3 - cross-validation figures. Mirrors the style of",
+          "% stage_0/make_stage0_figures.m, stage_1/make_stage1_figures.m,",
+          "% stage_2/make_stage2_figures.m. Outputs PNGs into",
+          "% revision_work/stage_3/figures/."
+        ]
+      }
+    },
+    {
+      "name": "code/figures/make_stage4_figures.m",
+      "bytes": 4541,
+      "sha256": "11c9531e03770218a286c9f7f1cae4f616b0db3e4a9046a66fad6869c6112c69",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e206d616b",
+        "line_count": 94,
+        "preview_lines": [
+          "function make_stage4_figures()",
+          "% Stage 4 - confidence interval figures. Mirrors the style of the",
+          "% stage_0..stage_3 figure scripts. Outputs PNGs into",
+          "% revision_work/stage_4/figures/.",
+          ""
+        ]
+      }
+    },
+    {
+      "name": "code/figures/make_stage5_figures.m",
+      "bytes": 4610,
+      "sha256": "60ed07cd82bd9c059c2365c27679dcfa77a6d9397590a194af09d64408673d77",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e206d616b",
+        "line_count": 94,
+        "preview_lines": [
+          "function make_stage5_figures()",
+          "% Stage 5 - jitter/loss/tail-latency figures. Mirrors the style of the",
+          "% stage_0..stage_4 figure scripts. Outputs PNGs into",
+          "% revision_work/stage_5/figures/.",
+          "%"
+        ]
+      }
+    },
+    {
+      "name": "code/figures/make_stage8_scatter.m",
+      "bytes": 4816,
+      "sha256": "e4a8d649536e4a9b13eb2cf26f9929b109e877043995848725c3e92fce9c245d",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e20737461",
+        "line_count": 82,
+        "preview_lines": [
+          "function stage8_make_scatter_svg()",
+          "% Builds a self-contained HTML report with two inline SVG scatter plots",
+          "% (pooled SD vs gamma_q, within-level SD vs gamma_q). Pure string",
+          "% generation - no MATLAB figure/graphics objects, no saveas/print, so",
+          "% none of the known hang risk from earlier stages applies."
+        ]
+      }
+    },
+    {
+      "name": "code/python/refit_all_models.py",
+      "bytes": 6303,
+      "sha256": "1ff5bbc838a43e0b201f01034d6f4dc45d2de6c7ce6693fe047b9db6561ba327",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "222222426573206d6f64656c",
+        "line_count": 172,
+        "preview_lines": [
+          "\"\"\"Bes modeli de fit eder. Nonlineerlik sadece C'de; C verildiginde model lineer.",
+          "Bu yuzden profil edilmis en kucuk kareler kullaniyoruz (scipy gerekmiyor).\"\"\"",
+          "import os",
+          "",
+          "# Paths are resolved relative to this script so the package is self-contained."
+        ]
+      }
+    },
+    {
+      "name": "code/python/requirements.txt",
+      "bytes": 422,
+      "sha256": "b229b1d971fac4c69a5c781be69acb7304791f6e032a69696ebffd7c1c9db668",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "2320446570656e64656e6369",
+        "line_count": 11,
+        "preview_lines": [
+          "# Dependencies for the Python verification scripts.",
+          "#",
+          "# NumPy is the only third-party dependency; everything else comes from the",
+          "# Python standard library. The scripts were developed and tested with",
+          "# Python 3.14.6 under Windows 11, using both NumPy 2.4.6 and NumPy 2.5.2."
+        ],
+        "first_lines": [
+          "# Dependencies for the Python verification scripts.",
+          "#",
+          "# NumPy is the only third-party dependency; everything else comes from the",
+          "# Python standard library. The scripts were developed and tested with",
+          "# Python 3.14.6 under Windows 11, using both NumPy 2.4.6 and NumPy 2.5.2.",
+          "# Results agree between the two NumPy versions to at least six significant",
+          "# figures.",
+          "#"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "code/python/robustness_and_bootstrap.py",
+      "bytes": 6048,
+      "sha256": "77584a139417e46726c5d38b39542fc32f519aa89983e42a9b9c1d8419d7aadc",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "0d0a696d706f7274206f730d",
+        "line_count": 149,
+        "preview_lines": [
+          "",
+          "import os",
+          "",
+          "# Paths are resolved relative to this script so the package is self-contained.",
+          "_HERE = os.path.dirname(os.path.abspath(__file__))"
+        ]
+      }
+    },
+    {
+      "name": "code/python/verify_optimizer_settings.py",
+      "bytes": 3441,
+      "sha256": "b5ba68b00881158188fcefa30fe86f31665cc49587c9e25dfa3e7cfc6ecc80cb",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "0d0a696d706f7274206f730d",
+        "line_count": 102,
+        "preview_lines": [
+          "",
+          "import os",
+          "",
+          "# Paths are resolved relative to this script so the package is self-contained.",
+          "_HERE = os.path.dirname(os.path.abspath(__file__))"
+        ]
+      }
+    }
+  ],
+  "checks": [
+    "all_member_CRCs",
+    "safe_paths_no_symlinks"
+  ],
+  "member_count": 22,
+  "status": "pass"
+}

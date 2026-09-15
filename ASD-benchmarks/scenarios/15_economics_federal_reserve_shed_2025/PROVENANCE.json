@@ -1,0 +1,77 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "15_economics_federal_reserve_shed_2025",
+  "domain": "economics",
+  "title": "Federal Reserve 2025 SHED public-use microdata",
+  "publisher": "Board of Governors of the Federal Reserve System",
+  "authoritative_landing_url": "https://www.federalreserve.gov/consumerscommunities/shed_data.htm",
+  "authoritative_source_urls": [
+    "https://www.federalreserve.gov/consumerscommunities/files/SHED_public_use_data_2025_%28CSV%29.zip",
+    "https://www.federalreserve.gov/consumerscommunities/files/SHED_2025codebook.pdf"
+  ],
+  "identifiers": [
+    "doi:10.17016/datasets.002"
+  ],
+  "release_or_version": "2025 public-use release updated July 2026",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "Federal Reserve public-use data terms",
+  "deterministic_selection_rule": "Retain the official 2025 CSV ZIP and matching 2025 codebook PDF.",
+  "substitution": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-015",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-015",
+      "scenario_id": "15_economics_federal_reserve_shed_2025",
+      "path": "context/SHED_2025_codebook.pdf",
+      "scenario_relative_path": "context/SHED_2025_codebook.pdf",
+      "bytes": 863597,
+      "sha256": "143137652f0464c57704ee60fa17d2eb94a24ed976bde26a0287920bf250c6df",
+      "role": "official_context_or_source_metadata",
+      "source_urls": [
+        "https://www.federalreserve.gov/consumerscommunities/files/SHED_public_use_data_2025_%28CSV%29.zip",
+        "https://www.federalreserve.gov/consumerscommunities/files/SHED_2025codebook.pdf"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-08-23T14:14:09.390874Z",
+      "license_or_terms": "Federal Reserve public-use data terms",
+      "citation_identifiers": [
+        "doi:10.17016/datasets.002"
+      ],
+      "citation_url": "https://www.federalreserve.gov/consumerscommunities/shed_data.htm",
+      "source_version": "2025 public-use release updated July 2026",
+      "replay_note": "Frozen local asset with source record references; exact remote asset URL was not recorded in legacy schema. Replay from an intact release copy is supported.",
+      "rights_evidence_url": "https://www.federalreserve.gov/consumerscommunities/shed_data.htm",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-015",
+      "scenario_id": "15_economics_federal_reserve_shed_2025",
+      "path": "raw/SHED_public_use_data_2025_CSV.zip",
+      "scenario_relative_path": "raw/SHED_public_use_data_2025_CSV.zip",
+      "bytes": 4676794,
+      "sha256": "a4ab3f7d042f16d63626b1af9aeb6f0b8a0b39e412fa94b87265bc67fe26de14",
+      "role": "official_payload",
+      "source_urls": [
+        "https://www.federalreserve.gov/consumerscommunities/files/SHED_public_use_data_2025_%28CSV%29.zip",
+        "https://www.federalreserve.gov/consumerscommunities/files/SHED_2025codebook.pdf"
+      ],
+      "download_url": "https://www.federalreserve.gov/consumerscommunities/files/SHED_public_use_data_2025_%28CSV%29.zip",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-08-23T14:14:09.390874Z",
+      "license_or_terms": "Federal Reserve public-use data terms",
+      "citation_identifiers": [
+        "doi:10.17016/datasets.002"
+      ],
+      "citation_url": "https://www.federalreserve.gov/consumerscommunities/shed_data.htm",
+      "source_version": "2025 public-use release updated July 2026",
+      "replay_note": "resolved from frozen authoritative metadata",
+      "rights_evidence_url": "https://www.federalreserve.gov/consumerscommunities/shed_data.htm",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

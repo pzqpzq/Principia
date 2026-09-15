@@ -1,0 +1,657 @@
+{
+  "scenario_id": "81_agroforestry_digitaf_soils",
+  "path": "raw/DigitAF_Soil_All_LLs_Data.xlsx",
+  "bytes": 25609776,
+  "sha256": "1ef5ef519343df43aca49634f1290709cb6270860798a8a239ef278aff16523d",
+  "checked_utc": "2026-09-15T06:46:25.835183+00:00",
+  "source_checksum_status": "verified",
+  "format": "Excel_OpenXML",
+  "sheets": [
+    {
+      "name": "Information",
+      "rows": 6,
+      "columns": 1,
+      "first_rows": [
+        [
+          "Methods to Verify and Account for the Carbon and Soil Health Benefits of Agroforestry"
+        ],
+        [
+          null
+        ],
+        [
+          "This dataset contains the data from a soil health assessment across eight sites in seleceted Living Lab farms in Portugal, Finland, Spain, Italy, United Kingdom"
+        ],
+        [
+          null
+        ],
+        [
+          "References"
+        ]
+      ]
+    },
+    {
+      "name": "Data Ph, C, Bulk density, worms",
+      "rows": 859,
+      "columns": 34,
+      "first_rows": [
+        [
+          "Sample ID",
+          "Country",
+          "Living Lab name",
+          "Soil sample Nr.",
+          "Transect",
+          "Field ID",
+          "Treatment code",
+          "Treatment",
+          "Distance from tree row (m)",
+          "Direction from tree row",
+          "Distance from tree row R1 towards NE (DE silvopasture only)",
+          "Sampling date",
+          "Agroforestry practice",
+          "Age of practice",
+          "Sample depth (cm)",
+          "Lat",
+          "Long",
+          "Elevation (m asl)",
+          "pH/H2O",
+          "pH/KCl",
+          "difference",
+          "Bulk density (g/cm3)",
+          "N (%)",
+          "Corg (%)",
+          "C stocks (t/ha)",
+          "Nr of earthworms (nr) Spring 2025",
+          "Earthworm weight (gr fresh weight)",
+          "Nr of earthworms (nr) Autumn 2025",
+          "Nr of earthworms (nr) Jan 2026",
+          "Nr of earthworms (nr) March 2026",
+          "Clay (%)",
+          "Silt (%)",
+          "Sand (%)",
+          "Course > 2mm (%)"
+        ],
+        [
+          "1",
+          "Finland",
+          "Sammallahti",
+          "0",
+          null,
+          "1",
+          "PG",
+          "permanent grass",
+          null,
+          null,
+          null,
+          "2025-05-26 00:00:00",
+          "Open pasture (no AF)",
+          "100",
+          "0-20",
+          "62.589749",
+          "29.233859",
+          "82",
+          "5.23",
+          "5",
+          "=S2-T2",
+          "0.8983957219251337",
+          "0.3247382342815395",
+          "3.42047619819641",
+          "61.458823668128",
+          "1",
+          "0.4",
+          null,
+          null,
+          null,
+          "10.63",
+          "73.97",
+          "15.400000000000006",
+          "0"
+        ],
+        [
+          "2",
+          "Finland",
+          "Sammallahti",
+          "0",
+          null,
+          "1",
+          "PG",
+          "permanent grass",
+          null,
+          null,
+          null,
+          "2025-05-26 00:00:00",
+          "Open pasture (no AF)",
+          "100",
+          "20-40",
+          "62.589749",
+          "29.233859",
+          "82",
+          "5.49",
+          "4.7",
+          "=S3-T3",
+          "1.142857142857143",
+          "0.1679454445838925",
+          "1.30906897783279",
+          "29.92157663617806",
+          null,
+          null,
+          null,
+          null,
+          null,
+          "9.48",
+          "64.78",
+          "25.739999999999995",
+          "0"
+        ],
+        [
+          "3",
+          "Finland",
+          "Sammallahti",
+          "1",
+          null,
+          "1",
+          "PG",
+          "permanent grass",
+          null,
+          null,
+          null,
+          "2025-05-26 00:00:00",
+          "Open pasture (no AF)",
+          "100",
+          "0-20",
+          "62.590242",
+          "29.233638",
+          "83",
+          "5.13",
+          "5.05",
+          "=S4-T4",
+          "0.7761650114591292",
+          "0.5676673352718355",
+          "7.229800939559935",
+          "112.23037058201517",
+          "5",
+          "1",
+          null,
+          null,
+          null,
+          "5.37",
+          "54.85",
+          "39.78",
+          "0"
+        ],
+        [
+          "4",
+          "Finland",
+          "Sammallahti",
+          "1",
+          null,
+          "1",
+          "PG",
+          "permanent grass",
+          null,
+          null,
+          null,
+          "2025-05-26 00:00:00",
+          "Open pasture (no AF)",
+          "100",
+          "20-40",
+          "62.590242",
+          "29.233638",
+          "83",
+          "5.31",
+          "4.91",
+          "=S5-T5",
+          "0.781257957728546",
+          "0.5082623213529585",
+          "6.90796732902527",
+          "107.93808895059604",
+          null,
+          null,
+          null,
+          null,
+          null,
+          "5.07",
+          "60.49999999999999",
+          "34.43000000000001",
+          "0"
+        ]
+      ]
+    },
+    {
+      "name": "Portugal metadata",
+      "rows": 1000,
+      "columns": 12,
+      "first_rows": [
+        [
+          "Location:",
+          "MVARC, Moinhos de Vento de Baixo, Mértola, Portugal",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Contact:",
+          "Jo Smith, [source contact omitted from curator metadata]",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Project:",
+          "DIGITAF",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Date:",
+          "6-10th May 2025",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Sampling description:",
+          "A nested design was used with ‘Treatment’ at the highest level (silvopasture/forestry /grassland-shrubland). Within each treatment there were four sampling tran",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "name": "Finland metadata",
+      "rows": 12,
+      "columns": 2,
+      "first_rows": [
+        [
+          "Location:",
+          "Sammallahden tila, Liperi, Pohjois-Karjala, Finland"
+        ],
+        [
+          "Contact:",
+          "Michael den Herder, [source contact omitted from curator metadata]"
+        ],
+        [
+          "Project:",
+          "DIGITAF"
+        ],
+        [
+          "Date:",
+          "26-28.2025, 30.5.2025, 2.6.2025"
+        ],
+        [
+          "Sampling description:",
+          "To explore the effects of agroforestry management on soil health, soil samples were taken in three treatments using a stratified random sampling design: Permane"
+        ]
+      ]
+    },
+    {
+      "name": "Spain metadata",
+      "rows": 33,
+      "columns": 21,
+      "first_rows": [
+        [
+          "Location:",
+          "Majadas de Tiétar, Spain",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Contact:",
+          "Victor Rolo, [source contact omitted from curator metadata]",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Project:",
+          "DIGITAF",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Date:",
+          "2025-05-01 00:00:00",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Sampling description:",
+          "The sampling design followed an “individual isolated” framework, where the influence of an isolated tree is assessed. Six central trees were selected (See figur",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "name": "Italy metadata",
+      "rows": 1000,
+      "columns": 13,
+      "first_rows": [
+        [
+          "Location:",
+          "Arnino LTE, \"E. Avanzi\" Agri-environmental Research Centre (CiRAA), University of Pisa, Italy",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Contact:",
+          "Alice Ripamonti, [source contact omitted from curator metadata], Alberto Mantino [source contact omitted from curator metadata]",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Project:",
+          "DIGITAF",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Date:",
+          "May 2025; November 2025",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Sampling description:",
+          "A grid of 25 sampling points was performed on the control and agroforestry plots. Additional 6 sampling points were performed along the tree row (TR). Two depth",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "name": "UK metadata",
+      "rows": 61,
+      "columns": 6,
+      "first_rows": [
+        [
+          "Location:",
+          "Clapham Park, Bedfordshire, United Kingdom",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Contact:",
+          "Paul Burgess ([source contact omitted from curator metadata]); Laura Cumplido-Marin ([source contact omitted from curator metadata]); Elsa Webb ([source contact omitted from curator metadata])",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Project:",
+          "DIGITAF",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Date:",
+          "18-19 September 2025",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Sampling description:",
+          "A silvopastoral and woodland system was planted on an area of grassland at Clapham Park near Bedford in the UK in February 1998 (Burgess et al. 2000).  The silv",
+          null,
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "name": "NL metadata",
+      "rows": 32,
+      "columns": 2,
+      "first_rows": [
+        [
+          "column",
+          "description"
+        ],
+        [
+          "parcel",
+          "Parcel identification, here SP = silvopasture"
+        ],
+        [
+          "repetition",
+          "Repetition of sample, here A to F (6 repetitions)"
+        ],
+        [
+          "position",
+          "Position with regards to treeline. W10 = west of trees at mid distance (+- 10 meters), W5 = west of trees at quarter distance (+- 5 meters), nul = inside tree r"
+        ],
+        [
+          "depth",
+          "Depth of sample, 0-30 centimeters = 0_30,  30-60 centimeters = 30_60"
+        ]
+      ]
+    },
+    {
+      "name": "Czechia metadata",
+      "rows": 12,
+      "columns": 2,
+      "first_rows": [
+        [
+          "Location:",
+          null
+        ],
+        [
+          "Contact:",
+          null
+        ],
+        [
+          "Project:",
+          null
+        ],
+        [
+          "Date:",
+          null
+        ],
+        [
+          "Sampling description:",
+          null
+        ]
+      ]
+    },
+    {
+      "name": "Germany metadata",
+      "rows": 12,
+      "columns": 2,
+      "first_rows": [
+        [
+          "Location:",
+          null
+        ],
+        [
+          "Contact:",
+          null
+        ],
+        [
+          "Project:",
+          null
+        ],
+        [
+          "Date:",
+          null
+        ],
+        [
+          "Sampling description:",
+          null
+        ]
+      ]
+    }
+  ],
+  "status": "pass"
+}

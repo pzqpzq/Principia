@@ -1,0 +1,133 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "33_biomedical_but_smartphone_ppg",
+  "domain": "biomedical sensing",
+  "title": "Smartphone PPG with ECG reference and acquisition disturbances",
+  "publisher": "Brno University of Technology; PhysioNet",
+  "authoritative_landing_url": "https://www.physionet.org/content/butppg/2.0.0/",
+  "authoritative_source_urls": [
+    "https://www.physionet.org/content/butppg/2.0.0/",
+    "https://www.physionet.org/content/butppg/get-zip/2.0.0/",
+    "https://www.physionet.org/files/butppg/2.0.0/LICENSE.txt",
+    "https://www.physionet.org/files/butppg/2.0.0/SHA256SUMS.txt"
+  ],
+  "identifiers": [],
+  "release_or_version": "2.0.0; 2024-08-23",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "CC BY 4.0",
+  "deterministic_selection_rule": "Entire official PhysioNet version ZIP, with source checksum list and license. No participant selection.",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": {
+    "description": "August 2020–December 2021 observations; source version 2.0.0 published 2024-08-23.",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": null,
+  "source_created_utc": null,
+  "source_updated_utc": null,
+  "source_inventory": null,
+  "author_preprocessing": "PPG was extracted from smartphone video; signals were manually synchronized and segmented by source authors. PPG 30 Hz, ECG 1,000 Hz, ACC 100 Hz per documentation. The package is not raw video.",
+  "known_analyses_and_limitations": "The database was designed for PPG quality and heart-rate evaluation and has existing published analyses. Source quality flags mark some recordings unreliable; they are retained. Segments from a participant are strongly dependent; clinical deployment is outside acquisition acceptance. Read-only checks found 48 ECG and 48 PPG headers declaring a single frame with 10,000 or 300 channels, respectively; the other 3,840 recordings use conventional multiframe layouts. Header/data byte lengths and all 27,125 publisher-listed member hashes match. Preserve this source orientation difference.",
+  "related_publications": [],
+  "pinned_commit": null,
+  "source_context_request_failures": [],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-033",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-033",
+      "scenario_id": "33_biomedical_but_smartphone_ppg",
+      "path": "context/LICENSE.txt",
+      "scenario_relative_path": "context/LICENSE.txt",
+      "bytes": 14842,
+      "sha256": "9a78e7f22742dde9f66ae235ec793ba2212019dc4d0ced75c4da09ced0b35fb2",
+      "role": "official_context",
+      "source_urls": [
+        "https://www.physionet.org/files/butppg/2.0.0/LICENSE.txt"
+      ],
+      "download_url": "https://www.physionet.org/files/butppg/2.0.0/LICENSE.txt",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:55:43.603169+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [],
+      "citation_url": "https://www.physionet.org/content/butppg/2.0.0/",
+      "source_version": "2.0.0; 2024-08-23",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://www.physionet.org/content/butppg/2.0.0/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-033",
+      "scenario_id": "33_biomedical_but_smartphone_ppg",
+      "path": "context/SHA256SUMS.txt",
+      "scenario_relative_path": "context/SHA256SUMS.txt",
+      "bytes": 2344284,
+      "sha256": "3536e14265e271d4e4bf8494e714547ac7ed691f37f5ea28ed8f62e3dcc8a0db",
+      "role": "official_context",
+      "source_urls": [
+        "https://www.physionet.org/files/butppg/2.0.0/SHA256SUMS.txt"
+      ],
+      "download_url": "https://www.physionet.org/files/butppg/2.0.0/SHA256SUMS.txt",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:56:22.306703+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [],
+      "citation_url": "https://www.physionet.org/content/butppg/2.0.0/",
+      "source_version": "2.0.0; 2024-08-23",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://www.physionet.org/content/butppg/2.0.0/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-033",
+      "scenario_id": "33_biomedical_but_smartphone_ppg",
+      "path": "raw/brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0.zip",
+      "scenario_relative_path": "raw/brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0.zip",
+      "bytes": 90951417,
+      "sha256": "9b910fc884f63eca1c5d3a00c5710f838e0053dce94f8a02196bd0adc2ffa33c",
+      "role": "official_data",
+      "source_urls": [
+        "https://www.physionet.org/content/butppg/get-zip/2.0.0/"
+      ],
+      "download_url": "https://www.physionet.org/content/butppg/get-zip/2.0.0/",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:09:17.763386+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [],
+      "citation_url": "https://www.physionet.org/content/butppg/2.0.0/",
+      "source_version": "2.0.0; 2024-08-23",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://www.physionet.org/content/butppg/2.0.0/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-033",
+      "scenario_id": "33_biomedical_but_smartphone_ppg",
+      "path": "context/SOURCE_FACTS.json",
+      "scenario_relative_path": "context/SOURCE_FACTS.json",
+      "bytes": 1656,
+      "sha256": "32979b6912b38571023a8be622bc886828915dbc623a6f15f91a8e1b460e7da2",
+      "role": "curator_factual_source_profile",
+      "source_urls": [
+        "https://www.physionet.org/content/butppg/2.0.0/"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "curator serialization, not a publisher file",
+      "retrieved_utc": "2026-09-14T16:29:13.689556+00:00",
+      "license_or_terms": "CC-BY-4.0 (proposed release terms for curator documentation; pending owner acceptance)",
+      "citation_identifiers": [],
+      "citation_url": "https://www.physionet.org/content/butppg/2.0.0/",
+      "source_version": "2.0.0; 2024-08-23",
+      "replay_note": "Reconstruct exact curator metadata from frozen release copy.",
+      "rights_evidence_url": "https://www.physionet.org/content/butppg/2.0.0/",
+      "rights_evidence_scope": "Factual identifiers, file inventory and attribution; curator serialization."
+    }
+  ]
+}

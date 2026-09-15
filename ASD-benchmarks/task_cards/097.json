@@ -1,0 +1,56 @@
+{
+  "case_id": "P100-097",
+  "case_revision": 1,
+  "scenario_id": "97_transport_pedestrian_feet",
+  "title": "Data of the crowd movement experiment.",
+  "domain": "Crowd biomechanics",
+  "question": "How do observed gait and spacing change across pedestrian-density conditions?",
+  "data_origin": "measured_or_observed",
+  "source_version": "14737521",
+  "source_url": "https://zenodo.org/records/14737521",
+  "identifiers": [
+    "10.5281/zenodo.14737521"
+  ],
+  "publisher": "Ma, Yi",
+  "release_date": "2025-01-25",
+  "measurement_dates": "September 2022 experiment; January 2025 deposit.",
+  "variables_and_units": "experimental MP4s and DAT figure-source tables",
+  "independent_units": "recording/run and density condition",
+  "validation_design": "recording/run and density condition Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Three experimental MP4s and 34 DAT figure-source tables. These tables are not established as a complete raw tracking export.",
+  "prior_analysis_and_limits": "Group recordings/runs. Video can support mechanism checks, but published figure tables alone may lack person IDs and independent replication. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [],
+  "format_counts": {
+    "ZIP": 1,
+    "video": 3,
+    "text_or_instrument_native": 34
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 56090676,
+  "expanded_source_equivalent_bytes": 57703452,
+  "installed_folder_bytes": 56096729,
+  "source_asset_count": 2,
+  "asset_paths": [
+    "scenarios/97_transport_pedestrian_feet/raw/Data.zip",
+    "scenarios/97_transport_pedestrian_feet/context/source_record.json"
+  ],
+  "local_folder": "scenarios/97_transport_pedestrian_feet",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text",
+    "video"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 56096323,
+  "expanded_release_folder_equivalent_bytes": 57709099
+}

@@ -1,0 +1,89 @@
+{
+  "bytes": 9951,
+  "sha256": "036087004d6b6e87e7fb4b2bf513ac33788faae21b0edb4641fa3c32c07e7260",
+  "format_extension": ".xlsx",
+  "checks": [
+    "publisher_md5"
+  ],
+  "format": "Excel_OpenXML",
+  "sheets": [
+    {
+      "name": "Sheet1",
+      "rows": 7,
+      "columns": 9,
+      "first_rows": [
+        [
+          "Specimen",
+          "Width \n [mm]",
+          "Thickness \n [mm]",
+          "E-modulus \n [GPa]",
+          "Max stress \n [MPa]",
+          "Linear strain \n [%]",
+          "Uniform strain \n [%]",
+          "Estimated strain \n [%]",
+          "Comments"
+        ],
+        [
+          "EQA02-01",
+          "25.01",
+          "4.15",
+          "38.54736399751401",
+          "1020.108043529576",
+          "2.6463756214182754",
+          "3.3066508660881695",
+          "1.1777860409865943",
+          null
+        ],
+        [
+          "EQA02-02",
+          "25.19",
+          "4.35",
+          "37.6611578838428",
+          "991.3368651125013",
+          "2.63225275274343",
+          "3.1615617617621705",
+          "1.5513559312486718",
+          null
+        ],
+        [
+          "EQA02-12",
+          "25.26",
+          "4.18",
+          "38.9740975524965",
+          "1009.0381468138063",
+          "2.5889968214265218",
+          "3.135367011114944",
+          "1.540575547435203",
+          null
+        ],
+        [
+          "Average",
+          null,
+          null,
+          "=AVERAGE(D2:D4)",
+          "=AVERAGE(E2:E4)",
+          "=AVERAGE(F2:F4)",
+          "=AVERAGE(G2:G4)",
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "name": "Sheet2",
+      "rows": 1,
+      "columns": 1,
+      "first_rows": []
+    },
+    {
+      "name": "Sheet3",
+      "rows": 1,
+      "columns": 1,
+      "first_rows": []
+    }
+  ],
+  "path": "raw/EQA02 StaticTestResults.xlsx",
+  "scenario_id": "24_materials_dtu_composite_fatigue",
+  "verified_utc": "2026-09-14T15:58:02.067395+00:00",
+  "status": "pass"
+}

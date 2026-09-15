@@ -1,0 +1,54 @@
+{
+  "case_id": "P100-001",
+  "case_revision": 1,
+  "scenario_id": "01_mathematics_oeis_daily_sequences",
+  "title": "OEIS daily sequence corpus",
+  "domain": "mathematics",
+  "question": "How do sequence-family descriptors relate to growth and recurrence behavior beyond the supplied definitions?",
+  "data_origin": "curated_mathematical_reference",
+  "source_version": "rolling snapshot",
+  "source_url": "https://oeis.org/wiki/Download",
+  "identifiers": [],
+  "publisher": "OEIS Foundation Inc.",
+  "release_date": "See source record; legacy retrieval vintage recorded",
+  "measurement_dates": "Not fully established in the legacy metadata; source filenames/headers and public context preserve available dates. Release dates are not substituted for measurement dates.",
+  "variables_and_units": "Variables and units are preserved in native column headers, instrument metadata and source dictionaries; see evidence anchors below.",
+  "independent_units": "Sequence family and accession; reference entries are curated mathematical objects, not experimental replicates.",
+  "validation_design": "Sequence family and accession; reference entries are curated mathematical objects, not experimental replicates. Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Curated mathematical definitions and values; existing formulas are disclosed reference knowledge. No measurement date applies.",
+  "prior_analysis_and_limits": "Curated mathematical definitions and values; existing formulas are disclosed reference knowledge. No measurement date applies. Curated mathematical definitions and values; existing formulas are disclosed reference knowledge. No measurement date applies.",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [],
+  "format_counts": {
+    "GZIP": 2,
+    "text_or_instrument_native": 2
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Original development corpus (source-aware)",
+  "license_or_terms": "CC BY-SA 4.0",
+  "source_asset_bytes": 39446487,
+  "expanded_source_equivalent_bytes": 120575549,
+  "installed_folder_bytes": 39457256,
+  "source_asset_count": 3,
+  "asset_paths": [
+    "scenarios/01_mathematics_oeis_daily_sequences/context/OEIS_Download.html",
+    "scenarios/01_mathematics_oeis_daily_sequences/raw/names.gz",
+    "scenarios/01_mathematics_oeis_daily_sequences/raw/stripped.gz"
+  ],
+  "local_folder": "scenarios/01_mathematics_oeis_daily_sequences",
+  "size_exception": false,
+  "modalities": [
+    "computational_or_mathematical_records",
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 39452936,
+  "expanded_release_folder_equivalent_bytes": 120581998
+}

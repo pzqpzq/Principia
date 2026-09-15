@@ -1,0 +1,105 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "26_chemistry_ag_zeolite_catalysis",
+  "domain": "catalysis",
+  "title": "Silver zeolite methanol dehydrogenation experiments",
+  "publisher": "Zenodo; originating researchers: Palkovits, Regina; Simitsis, Natalia (RWTH Aachen University); Mebrahtu, Chalachew (RWTH Aachen University); Müller, Felix (RWTH Aachen University); Zobel, Mirijam (Forschungszentrum Jülich)",
+  "authoritative_landing_url": "https://zenodo.org/records/15691695",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/15691695",
+    "https://zenodo.org/api/records/15691695/files/zenodo%20raw%20data.7z/content",
+    "https://zenodo.org/api/records/15691695"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.15691695"
+  ],
+  "release_or_version": "15691695",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "deterministic_selection_rule": "Complete source record unless otherwise specified.",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": {
+    "description": "Instrument headers include 2023 measurements (for example physisorption on 2023-02-17); complete campaign dates not asserted. Released 2025-06-18; deposited 2025-06-20.",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": "2025-06-18",
+  "source_created_utc": "2025-06-20T11:04:36.401012+00:00",
+  "source_updated_utc": "2025-06-20T11:04:36.576953+00:00",
+  "source_inventory": [
+    {
+      "name": "zenodo raw data.7z",
+      "bytes": 24974731,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Source characterization includes instrument reductions, baseline-corrected products and figure-oriented catalytic tables alongside some raw exports. Instrument headers preserve original units and sample identifiers.",
+  "known_analyses_and_limitations": "DOI 10.1039/d5cy00544b already reports Ag/Hbeta-catalyzed methanol dehydrogenation. Multiple characterizations of one catalyst are not independent catalysts. A broad claim needs additional synthesis batches; original 7z is retained without a duplicate extracted tree.",
+  "related_publications": [
+    {
+      "identifier": "10.1039/d5cy00544b",
+      "relation": "isSourceOf",
+      "resource_type": "publication",
+      "scheme": "doi"
+    }
+  ],
+  "pinned_commit": null,
+  "source_context_request_failures": [],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-026",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-026",
+      "scenario_id": "26_chemistry_ag_zeolite_catalysis",
+      "path": "context/zenodo_record.json",
+      "scenario_relative_path": "context/zenodo_record.json",
+      "bytes": 7889,
+      "sha256": "11b41bf7ded47daf6c53e277ab9e1d83d78315dce26a30c6d6484ce028e3e9e4",
+      "role": "parsed_source_metadata_snapshot",
+      "source_urls": [
+        "https://zenodo.org/api/records/15691695"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:40:20.710055+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15691695"
+      ],
+      "citation_url": "https://zenodo.org/records/15691695",
+      "source_version": "15691695",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-026",
+      "scenario_id": "26_chemistry_ag_zeolite_catalysis",
+      "path": "raw/zenodo raw data.7z",
+      "scenario_relative_path": "raw/zenodo raw data.7z",
+      "bytes": 24974731,
+      "sha256": "9bd3bd5b551d5d82d2e287b1bc002c92097b36a66ad8066a9d2133f7006a3502",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15691695/files/zenodo%20raw%20data.7z/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15691695/files/zenodo%20raw%20data.7z/content",
+      "source_checksum": "md5:dff9697f73399be1e75619efff185ad4",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:45:34.406419+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15691695"
+      ],
+      "citation_url": "https://zenodo.org/records/15691695",
+      "source_version": "15691695",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15691695",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

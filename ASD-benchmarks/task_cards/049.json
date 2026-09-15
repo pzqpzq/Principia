@@ -1,0 +1,56 @@
+{
+  "case_id": "P100-049",
+  "case_revision": 1,
+  "scenario_id": "49_battery_dlr_native_exports",
+  "title": "DLR lithium-graphite cell GITT and quasi-open-circuit measurements",
+  "domain": "battery diagnostics and laboratory data integration",
+  "question": "How do charge history and operating conditions relate to battery response within this half-cell?",
+  "data_origin": "measured_or_observed",
+  "source_version": "0.5.0",
+  "source_url": "https://zenodo.org/records/17295469",
+  "identifiers": [
+    "10.5281/zenodo.17295469"
+  ],
+  "publisher": "Zenodo; originating researchers: Clark, Simon (SINTEF); Tolchard, Julian (SINTEF Industry); Kopljar, Dennis (German Aerospace Center); Schmitt, Christina (German Aerospace Center); Barbers, Elias (Forschungszentrum Jülich)",
+  "release_date": "2025-10-08",
+  "measurement_dates": "Basytec headers: GITT 2022-11-14 10:40:01 to 2022-12-10 02:27:48; POCV 2023-01-31 19:39:26 to 2023-02-06 18:20:34. Both exports were converted by source software on 2025-09-05; repository publication 2025-10-08.",
+  "variables_and_units": "Variables and units are preserved in native column headers, instrument metadata and source dictionaries; see evidence anchors below.",
+  "independent_units": "Complete cycle and operating blocks within one cell.",
+  "validation_design": "Complete cycle and operating blocks within one cell. Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Original laboratory battery-cycler exports. The broader source record includes files explicitly labeled with time/outlier bugs for pipeline testing; those are not selected. Full metadata describes both selected and omitted files.",
+  "prior_analysis_and_limits": "This DLR record was released for battery data-pipeline and workflow testing. GITT and POCV belong to the same cell at different times and are not independent cells. The metadata includes other laboratories/files not present in this coherent subset. Absolute state of charge and history depend on source protocol and capacity definitions. DLR native exports; one half-cell limits cross-cell generalization. Source processing/format details preserved.",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [],
+  "format_counts": {
+    "JSON": 1,
+    "text_or_instrument_native": 2
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "source_asset_bytes": 71669701,
+  "expanded_source_equivalent_bytes": 71669701,
+  "installed_folder_bytes": 71693143,
+  "source_asset_count": 4,
+  "asset_paths": [
+    "scenarios/49_battery_dlr_native_exports/context/zenodo_record.json",
+    "scenarios/49_battery_dlr_native_exports/raw/DLR__LiGrHydra0b__20221114__GITT__25degC__Basytec.txt",
+    "scenarios/49_battery_dlr_native_exports/raw/DLR__LiGrHydra0b__20230131__POCV__25degC__Basytec.txt",
+    "scenarios/49_battery_dlr_native_exports/raw/metadata.json"
+  ],
+  "local_folder": "scenarios/49_battery_dlr_native_exports",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 71683076,
+  "expanded_release_folder_equivalent_bytes": 71683076
+}

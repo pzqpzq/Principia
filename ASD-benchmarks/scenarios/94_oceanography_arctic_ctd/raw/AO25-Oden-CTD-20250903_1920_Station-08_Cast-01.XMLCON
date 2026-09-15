@@ -1,0 +1,232 @@
+<SBE_InstrumentConfiguration SB_ConfigCTD_FileVersion="7.26.4.0">
+  <Instrument Type="8">
+    <Name>SBE 911plus/917plus CTD</Name>
+    <FrequencyChannelsSuppressed>0</FrequencyChannelsSuppressed>
+    <VoltageWordsSuppressed>0</VoltageWordsSuppressed>
+    <ComputerInterface>0</ComputerInterface>
+    
+    
+    
+    
+    <DeckUnitVersion>1</DeckUnitVersion>
+    <ScansToAverage>1</ScansToAverage>
+    <SurfaceParVoltageAdded>0</SurfaceParVoltageAdded>
+    <ScanTimeAdded>1</ScanTimeAdded>
+    <NmeaPositionDataAdded>1</NmeaPositionDataAdded>
+    <NmeaDepthDataAdded>0</NmeaDepthDataAdded>
+    <NmeaTimeAdded>0</NmeaTimeAdded>
+    <NmeaDeviceConnectedToPC>0</NmeaDeviceConnectedToPC>
+    <SensorArray Size="13">
+    <Sensor index="0" SensorID="55"><TemperatureSensor SensorID="55" SB_ConfigCTD_FileVersion="7.23.0.2">
+  <SerialNumber>5986</SerialNumber>
+  <CalibrationDate>05-Nov-24</CalibrationDate>
+  <UseG_J>1</UseG_J>
+  <A>0.00000000e+000</A>
+  <B>0.00000000e+000</B>
+  <C>0.00000000e+000</C>
+  <D>0.00000000e+000</D>
+  <F0_Old>0.000</F0_Old>
+  <G>4.32006975e-003</G>
+  <H>6.35502541e-004</H>
+  <I>2.21212520e-005</I>
+  <J>2.11498967e-006</J>
+  <F0>1000.000</F0>
+  <Slope>1.00000000</Slope>
+  <Offset>0.0000</Offset>
+</TemperatureSensor></Sensor><Sensor index="1" SensorID="3"><ConductivitySensor SensorID="3" SB_ConfigCTD_FileVersion="7.23.0.2">
+  <SerialNumber>4514</SerialNumber>
+  <CalibrationDate>05-Nov-24</CalibrationDate>
+  <UseG_J>1</UseG_J>
+  
+  <SeriesR>0.0000</SeriesR>
+  <CellConst>2000.0000</CellConst>
+  <ConductivityType>0</ConductivityType>
+  <Coefficients equation="0">
+    <A>0.00000000e+000</A>
+    <B>0.00000000e+000</B>
+    <C>0.00000000e+000</C>
+    <D>0.00000000e+000</D>
+    <M>0.0</M>
+    <CPcor>-9.57000000e-008</CPcor>
+  </Coefficients>
+  <Coefficients equation="1">
+    <G>-9.96362443e+000</G>
+    <H>1.41311847e+000</H>
+    <I>-1.15814819e-003</I>
+    <J>1.49283778e-004</J>
+    <CPcor>-9.57000000e-008</CPcor>
+    <CTcor>3.2500e-006</CTcor>
+    
+    <WBOTC>0.00000000e+000</WBOTC>
+  </Coefficients>
+  <Slope>1.00000000</Slope>
+  <Offset>0.00000</Offset>
+</ConductivitySensor></Sensor><Sensor index="2" SensorID="45"><PressureSensor SensorID="45">
+          <SerialNumber>0859</SerialNumber>
+          <CalibrationDate>11-Nov-24</CalibrationDate>
+          <C1>-4.648516e+004</C1>
+          <C2>-4.933033e-001</C2>
+          <C3>1.319670e-002</C3>
+          <D1>3.810200e-002</D1>
+          <D2>0.000000e+000</D2>
+          <T1>2.999741e+001</T1>
+          <T2>-3.827524e-004</T2>
+          <T3>3.422160e-006</T3>
+          <T4>5.278920e-009</T4>
+          <Slope>0.99997</Slope>
+          <Offset>-1.5392</Offset>
+          <T5>0.000000e+000</T5>
+          <AD590M>1.287960e-002</AD590M>
+          <AD590B>-8.33499e+000</AD590B>
+        </PressureSensor></Sensor><Sensor index="3" SensorID="55"><TemperatureSensor SensorID="55" SB_ConfigCTD_FileVersion="7.23.0.2">
+  <SerialNumber>6385</SerialNumber>
+  <CalibrationDate>05-Nov-24</CalibrationDate>
+  <UseG_J>1</UseG_J>
+  <A>0.00000000e+000</A>
+  <B>0.00000000e+000</B>
+  <C>0.00000000e+000</C>
+  <D>0.00000000e+000</D>
+  <F0_Old>0.000</F0_Old>
+  <G>4.34824283e-003</G>
+  <H>6.37602805e-004</H>
+  <I>2.21861259e-005</I>
+  <J>2.08119977e-006</J>
+  <F0>1000.000</F0>
+  <Slope>1.00000000</Slope>
+  <Offset>0.0000</Offset>
+</TemperatureSensor></Sensor><Sensor index="4" SensorID="3"><ConductivitySensor SensorID="3" SB_ConfigCTD_FileVersion="7.23.0.2">
+  <SerialNumber>4822</SerialNumber>
+  <CalibrationDate>05-Nov-24</CalibrationDate>
+  <UseG_J>1</UseG_J>
+  
+  <SeriesR>0.0000</SeriesR>
+  <CellConst>2000.0000</CellConst>
+  <ConductivityType>0</ConductivityType>
+  <Coefficients equation="0">
+    <A>0.00000000e+000</A>
+    <B>0.00000000e+000</B>
+    <C>0.00000000e+000</C>
+    <D>0.00000000e+000</D>
+    <M>0.0</M>
+    <CPcor>-9.57000000e-008</CPcor>
+  </Coefficients>
+  <Coefficients equation="1">
+    <G>-9.84512462e+000</G>
+    <H>1.22302069e+000</H>
+    <I>-6.80818411e-005</I>
+    <J>5.63409765e-005</J>
+    <CPcor>-9.57000000e-008</CPcor>
+    <CTcor>3.2500e-006</CTcor>
+    
+    <WBOTC>0.00000000e+000</WBOTC>
+  </Coefficients>
+  <Slope>1.00000000</Slope>
+  <Offset>0.00000</Offset>
+</ConductivitySensor></Sensor><Sensor index="5" SensorID="38"><OxygenSensor SensorID="38" SB_ConfigCTD_FileVersion="7.23.0.2">
+  <SerialNumber>3969</SerialNumber>
+  <CalibrationDate>14-Mar-25</CalibrationDate>
+  <Use2007Equation>1</Use2007Equation>
+  <CalibrationCoefficients equation="0">
+    
+    <Boc>0.0000</Boc>
+    <Soc>0.0000e+000</Soc>
+    <offset>0.0000</offset>
+    <Pcor>0.00e+000</Pcor>
+    <Tcor>0.0000</Tcor>
+    <Tau>0.0</Tau>
+  </CalibrationCoefficients>
+  <CalibrationCoefficients equation="1">
+    
+    <Soc>6.1864e-001</Soc>
+    <offset>-0.4868</offset>
+    <A>-3.4714e-003</A>
+    <B> 1.2890e-004</B>
+    <C>-2.3168e-006</C>
+    <D0> 2.5826e+000</D0>
+    <D1> 1.92634e-004</D1>
+    <D2>-4.64803e-002</D2>
+    <E> 3.6000e-002</E>
+    <Tau20> 1.4000</Tau20>
+    <H1>-3.3000e-002</H1>
+    <H2> 5.0000e+003</H2>
+    <H3> 1.4500e+003</H3>
+  </CalibrationCoefficients>
+</OxygenSensor></Sensor><Sensor index="6" SensorID="38"><OxygenSensor SensorID="38" SB_ConfigCTD_FileVersion="7.23.0.2">
+  <SerialNumber>3835</SerialNumber>
+  <CalibrationDate>12-Mar-25</CalibrationDate>
+  <Use2007Equation>1</Use2007Equation>
+  <CalibrationCoefficients equation="0">
+    
+    <Boc>0.0000</Boc>
+    <Soc>0.0000e+000</Soc>
+    <offset>0.0000</offset>
+    <Pcor>0.00e+000</Pcor>
+    <Tcor>0.0000</Tcor>
+    <Tau>0.0</Tau>
+  </CalibrationCoefficients>
+  <CalibrationCoefficients equation="1">
+    
+    <Soc>5.2847e-001</Soc>
+    <offset>-0.4856</offset>
+    <A>-3.2273e-003</A>
+    <B> 1.3662e-004</B>
+    <C>-2.5407e-006</C>
+    <D0> 2.5826e+000</D0>
+    <D1> 1.92634e-004</D1>
+    <D2>-4.64803e-002</D2>
+    <E> 3.6000e-002</E>
+    <Tau20> 1.1100</Tau20>
+    <H1>-3.3000e-002</H1>
+    <H2> 5.0000e+003</H2>
+    <H3> 1.4500e+003</H3>
+  </CalibrationCoefficients>
+</OxygenSensor></Sensor><Sensor index="7" SensorID="0"><AltimeterSensor SensorID="0">
+          <SerialNumber>91561</SerialNumber>
+          <CalibrationDate>2024-06-04</CalibrationDate>
+          <ScaleFactor>14.286</ScaleFactor>
+          <Offset>0.000</Offset>
+        </AltimeterSensor></Sensor><Sensor index="8" SensorID="42"><PAR_BiosphericalLicorChelseaSensor SensorID="42">
+          <SerialNumber>707782</SerialNumber>
+          <CalibrationDate>2025-03-27</CalibrationDate>
+          <M>1.00000000</M>
+          <B>0.00000000</B>
+          <CalibrationConstant>0.05294</CalibrationConstant>
+          <ConversionUnits>2</ConversionUnits>
+          <Multiplier>1.00000000</Multiplier>
+          <Offset>0</Offset>
+        </PAR_BiosphericalLicorChelseaSensor></Sensor><Sensor index="9" SensorID="68"><Fluorometer SensorID="68" SB_ConfigCTD_FileVersion="7.26.4.0">
+  <SerialNumber>216K00148</SerialNumber>
+  <CalibrationDate>2025-04-11</CalibrationDate>
+  <ScaleFactor>1.00000000e+000</ScaleFactor>
+  <Offset>0.00000000e+000</Offset>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <MeasuredParameter>6</MeasuredParameter>
+</Fluorometer></Sensor><Sensor index="10" SensorID="27"><NotInUse SensorID="27">
+          <SerialNumber />
+          <CalibrationDate />
+          <OutputType>2</OutputType>
+          <Free>1</Free>
+        </NotInUse></Sensor><Sensor index="11" SensorID="20"><FluoroWetlabECO_AFL_FL_Sensor SensorID="20">
+          <SerialNumber>6255</SerialNumber>
+          <CalibrationDate>2025-03-05</CalibrationDate>
+          <ScaleFactor>0.60000000e+001</ScaleFactor>
+          
+          <Vblank>0.0930</Vblank>
+        </FluoroWetlabECO_AFL_FL_Sensor></Sensor><Sensor index="12" SensorID="67"><TurbidityMeter SensorID="67">
+          <SerialNumber>6255</SerialNumber>
+          <CalibrationDate>2025-03-05</CalibrationDate>
+          <ScaleFactor>5.000000</ScaleFactor>
+          
+          <DarkVoltage>0.090000</DarkVoltage>
+        </TurbidityMeter></Sensor></SensorArray>
+  </Instrument>
+</SBE_InstrumentConfiguration>

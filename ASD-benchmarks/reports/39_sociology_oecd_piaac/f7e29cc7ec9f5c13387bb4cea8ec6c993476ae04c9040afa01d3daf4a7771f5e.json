@@ -1,0 +1,375 @@
+{
+  "bytes": 288096,
+  "sha256": "02bb30f84763ba27871daee7ee1133c3c98e26d716173272e313e596ce7908d2",
+  "format_extension": ".xlsx",
+  "checks": [],
+  "format": "Excel_OpenXML",
+  "sheets": [
+    {
+      "name": "PUF",
+      "rows": 2484,
+      "columns": 13,
+      "first_rows": [
+        [
+          "Sequence",
+          "Variable",
+          "Label",
+          "Level",
+          "Width",
+          "Decimals",
+          "Range Minimum",
+          "Range Maximum",
+          "Value Scheme Detailed",
+          "Missing Scheme Detailed: SPSS",
+          "Missing Scheme Detailed: SAS",
+          "Domain",
+          "Comment"
+        ],
+        [
+          "1",
+          "SEQID",
+          "Sequential ID (randomly derived)",
+          "Nominal",
+          "5",
+          "0",
+          null,
+          null,
+          null,
+          "Sysmis: Not administered",
+          ".: Not administered",
+          "Data Processing",
+          "Trend to cycle 1."
+        ],
+        [
+          "2",
+          "CNTRYID",
+          "Country ID",
+          "Nominal",
+          "3",
+          "0",
+          null,
+          null,
+          "36: Australia; 40: Austria; 56: Belgium; 124: Canada; 152: Chile; 191: Croatia; 203: Czech Republic; 208: Denmark; 233: Estonia; 246: Finland; 250: France; 276:",
+          "Sysmis: Not administered",
+          ".: Not administered",
+          "Sampling / weighting",
+          "Trend to cycle 1."
+        ],
+        [
+          "3",
+          "CNTRYID_E",
+          "Participating country or sub-national entity code (numeric)",
+          "Nominal",
+          "4",
+          "0",
+          null,
+          null,
+          "36: Australia; 40: Austria; 56: Belgium; 124: Canada; 152: Chile; 191: Croatia; 203: Czech Republic; 208: Denmark; 233: Estonia; 246: Finland; 250: France; 276:",
+          null,
+          null,
+          "Data Processing",
+          "Trend to cycle 1."
+        ],
+        [
+          "4",
+          "AGE_R",
+          "Person age",
+          "Nominal",
+          "2",
+          "0",
+          null,
+          null,
+          null,
+          "99: Not stated or inferred; Sysmis: Not administered",
+          ".: Not administered; .N: Not stated or inferred",
+          "Sampling / weighting",
+          "New item. Required. Resolved age. Equal to CALCAGE for BQ respondents and imputed from CI_AGE and DI_Q03 (age range) for Doorstep Interview respondents."
+        ]
+      ]
+    },
+    {
+      "name": "ISCO08",
+      "rows": 620,
+      "columns": 2,
+      "first_rows": [
+        [
+          "Value",
+          "ValueLabel"
+        ],
+        [
+          "0",
+          "Armed forces occupations"
+        ],
+        [
+          "01",
+          "Commissioned armed forces officers"
+        ],
+        [
+          "011",
+          "Commissioned armed forces officers"
+        ],
+        [
+          "0110",
+          "Commissioned armed forces officers"
+        ]
+      ]
+    },
+    {
+      "name": "ISCO08_2digit",
+      "rows": 54,
+      "columns": 2,
+      "first_rows": [
+        [
+          "Value",
+          "ValueLabel"
+        ],
+        [
+          "0",
+          "Armed forces occupations"
+        ],
+        [
+          "01",
+          "Commissioned armed forces officers"
+        ],
+        [
+          "02",
+          "Non-commissioned armed forces officers"
+        ],
+        [
+          "03",
+          "Armed forces occupations, other ranks"
+        ]
+      ]
+    },
+    {
+      "name": "ISIC4",
+      "rows": 767,
+      "columns": 2,
+      "first_rows": [
+        [
+          "Code",
+          "Description"
+        ],
+        [
+          "A",
+          "Agriculture, forestry and fishing"
+        ],
+        [
+          "01",
+          "Crop and animal production, hunting and related service activities"
+        ],
+        [
+          "011",
+          "Growing of non-perennial crops"
+        ],
+        [
+          "0111",
+          "Growing of cereals (except rice), leguminous crops and oil seeds"
+        ]
+      ]
+    },
+    {
+      "name": "ISIC4_2digit",
+      "rows": 110,
+      "columns": 2,
+      "first_rows": [
+        [
+          "Value",
+          "ValueLabel"
+        ],
+        [
+          "01",
+          "Crop and animal production, hunting and related service activities"
+        ],
+        [
+          "02",
+          "Forestry and logging"
+        ],
+        [
+          "03",
+          "Fishing and aquaculture"
+        ],
+        [
+          "05",
+          "Mining of coal and lignite"
+        ]
+      ]
+    },
+    {
+      "name": "Languages",
+      "rows": 485,
+      "columns": 3,
+      "first_rows": [
+        [
+          "Alpha-3 (terminologic)",
+          "English name",
+          "French Name"
+        ],
+        [
+          "abk",
+          "Abkhazian",
+          "abkhaze"
+        ],
+        [
+          "ace",
+          "Achinese",
+          "aceh"
+        ],
+        [
+          "ach",
+          "Acoli",
+          "acoli"
+        ],
+        [
+          "ada",
+          "Adangme",
+          "adangme"
+        ]
+      ]
+    },
+    {
+      "name": "BQLANG_DALANG",
+      "rows": 92,
+      "columns": 2,
+      "first_rows": [
+        [
+          "Value",
+          "ValueLabel"
+        ],
+        [
+          "1",
+          "deu-AUT"
+        ],
+        [
+          "10",
+          "deu-DEU"
+        ],
+        [
+          "11",
+          "dan-DNK"
+        ],
+        [
+          "12",
+          "cat-ESP"
+        ]
+      ]
+    },
+    {
+      "name": "CNT_H_BRTH",
+      "rows": 250,
+      "columns": 3,
+      "first_rows": [
+        [
+          "Code",
+          "Country or area name",
+          "ISO ALPHA-3 code"
+        ],
+        [
+          "4",
+          "Afghanistan",
+          "AFG"
+        ],
+        [
+          "248",
+          "Åland Islands",
+          "ALA"
+        ],
+        [
+          "8",
+          "Albania",
+          "ALB"
+        ],
+        [
+          "12",
+          "Algeria",
+          "DZA"
+        ]
+      ]
+    },
+    {
+      "name": "REG_TL2",
+      "rows": 533,
+      "columns": 2,
+      "first_rows": [
+        [
+          "Value",
+          "ValueLabel"
+        ],
+        [
+          "AT11",
+          "Burgenland"
+        ],
+        [
+          "AT12",
+          "Niederoesterreich"
+        ],
+        [
+          "AT13",
+          "Wien"
+        ],
+        [
+          "AT21",
+          "Kaernten"
+        ]
+      ]
+    },
+    {
+      "name": "REG_TL2_new",
+      "rows": 330,
+      "columns": 2,
+      "first_rows": [
+        [
+          "Value",
+          "ValueLabel"
+        ],
+        [
+          "AT11",
+          "Burgenland"
+        ],
+        [
+          "AT12",
+          "Lower Austria"
+        ],
+        [
+          "AT13",
+          "Vienna"
+        ],
+        [
+          "AT21",
+          "Carinthia"
+        ]
+      ]
+    },
+    {
+      "name": "REG_MACRO",
+      "rows": 94,
+      "columns": 2,
+      "first_rows": [
+        [
+          "Value",
+          "ValueLabel"
+        ],
+        [
+          "AT1",
+          "Eastern Austria"
+        ],
+        [
+          "AT2",
+          "Southern Austria"
+        ],
+        [
+          "AT3",
+          "Western Austria"
+        ],
+        [
+          "ATZ",
+          "Austria, not regionalised"
+        ]
+      ]
+    }
+  ],
+  "path": "context/piaac-cy2-international-codebook.xlsx",
+  "scenario_id": "39_sociology_oecd_piaac",
+  "verified_utc": "2026-09-14T15:58:15.550139+00:00",
+  "status": "pass"
+}

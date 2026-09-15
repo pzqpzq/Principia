@@ -1,0 +1,84 @@
+{
+  "case_id": "P100-089",
+  "case_revision": 1,
+  "scenario_id": "89_psychology_age_risk",
+  "title": "Dataset : Contextual influences on risk-taking in children and adults",
+  "domain": "Behavioral science",
+  "question": "How does task context change risk-taking across age groups and experiment variants?",
+  "data_origin": "measured_or_observed",
+  "source_version": "15412216",
+  "source_url": "https://zenodo.org/records/15412216",
+  "identifiers": [
+    "10.5281/zenodo.15412216"
+  ],
+  "publisher": "Lacombe, Pénélope (Institute of Biology, University of Neuchatel, Neuchatel, Switzerland)",
+  "release_date": "2025-05-14",
+  "measurement_dates": "Acquisition dates unknown; May 2025 release.",
+  "variables_and_units": "age, context, trial and risk-taking responses",
+  "independent_units": "participant and experiment variant",
+  "validation_design": "participant and experiment variant Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Complete source CSV for four experimental variants; retain supplied participant and condition encodings.",
+  "prior_analysis_and_limits": "Hold out participants and variants. Age associations are not causal effects; participant counts must come from source IDs, not row counts. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/raw data.csv",
+      "structure": {
+        "header": [
+          "Subject",
+          "Age",
+          "Sex",
+          "Protocol",
+          "Session",
+          "Block",
+          "Trial",
+          "Risk+AF8-Option",
+          "Risk+AF8-Prob",
+          "Hidden",
+          "Choice",
+          "EV"
+        ],
+        "data_records": 27667,
+        "first_lines": [
+          "Subject,Age,Sex,Protocol,Session,Block,Trial,Risk+AF8-Option,Risk+AF8-Prob,Hidden,Choice,EV",
+          "f3bbc7cf7420c9e4b089c363b2db5f23312b46062e61a4f9ac789e67bbf3d71d,adult,F,E1.1,1,1,1,6,0.5,1,1,3",
+          "f3bbc7cf7420c9e4b089c363b2db5f23312b46062e61a4f9ac789e67bbf3d71d,adult,F,E1.1,1,1,2,6,0.5,0,1,3",
+          "f3bbc7cf7420c9e4b089c363b2db5f23312b46062e61a4f9ac789e67bbf3d71d,adult,F,E1.1,1,1,3,6,0.5,1,1,3",
+          "f3bbc7cf7420c9e4b089c363b2db5f23312b46062e61a4f9ac789e67bbf3d71d,adult,F,E1.1,1,1,4,6,0.5,0,1,3",
+          "f3bbc7cf7420c9e4b089c363b2db5f23312b46062e61a4f9ac789e67bbf3d71d,adult,F,E1.1,1,1,5,6,0.5,0,1,3",
+          "f3bbc7cf7420c9e4b089c363b2db5f23312b46062e61a4f9ac789e67bbf3d71d,adult,F,E1.1,1,1,6,6,0.5,1,1,3",
+          "f3bbc7cf7420c9e4b089c363b2db5f23312b46062e61a4f9ac789e67bbf3d71d,adult,F,E1.1,1,1,7,6,0.5,1,1,3"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "text_or_instrument_native": 1
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 2680602,
+  "expanded_source_equivalent_bytes": 2680602,
+  "installed_folder_bytes": 2687013,
+  "source_asset_count": 2,
+  "asset_paths": [
+    "scenarios/89_psychology_age_risk/raw/raw data.csv",
+    "scenarios/89_psychology_age_risk/context/source_record.json"
+  ],
+  "local_folder": "scenarios/89_psychology_age_risk",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 2686361,
+  "expanded_release_folder_equivalent_bytes": 2686361
+}

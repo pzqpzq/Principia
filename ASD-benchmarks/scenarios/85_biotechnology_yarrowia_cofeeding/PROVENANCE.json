@@ -1,0 +1,130 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "85_biotechnology_yarrowia_cofeeding",
+  "domain": "Metabolic biotechnology",
+  "title": "Acetate co-feeding increases Ethylene Glycol assimilation and Glycolic Acid production in Yarrowia lipolytica",
+  "publisher": "Agrimi, Gennaro (University of Bari Aldo Moro); Messina, Eugenia (University of Bari Aldo Moro); Barile, Serena (University of Bari Aldo Moro); Lazar, Zbigniew (Wrocław University of Environmental and Life Sciences); Fosso, Bruno (University of Bari); Antonacci, Ylenia (National Research Council)",
+  "authoritative_landing_url": "https://zenodo.org/records/17396158",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/17396158",
+    "https://zenodo.org/api/records/17396158/files/DATA.zip/content",
+    "https://zenodo.org/api/records/17396158/files/readme.txt/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.17396158"
+  ],
+  "release_or_version": "17396158",
+  "retrieval_finalized_utc": "2026-09-15T07:04:41.830717+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Growth June 2023–December 2024; isotopes January–September 2025; flux/expression analyses July/September 2025.",
+  "source_publication_date": "2025-10-20",
+  "source_created_utc": "2025-10-28T13:14:00.723650+00:00",
+  "source_updated_utc": "2026-01-08T15:26:35.000507+00:00",
+  "source_inventory": [
+    {
+      "name": "DATA.zip",
+      "bytes": 2296181,
+      "selected": true
+    },
+    {
+      "name": "readme.txt",
+      "bytes": 19414,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Raw and processed cultivation/isotope tables, derived flux/expression products and publication figures. Metadata says CC BY 4.0; README says CC0; retain both and comply with attribution.",
+  "known_analyses_and_limitations": "Group cultivations/conditions. Derived fluxes are model-dependent, not independent isotope measurements; source acetate benefit is a known finding.",
+  "related_publications": [
+    {
+      "identifier": "10.1016/j.biortech.2025.133540",
+      "relation": "isDocumentedBy",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    }
+  ],
+  "independent_groups": "cultivation and substrate condition",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-085",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-085",
+      "scenario_id": "85_biotechnology_yarrowia_cofeeding",
+      "path": "raw/DATA.zip",
+      "scenario_relative_path": "raw/DATA.zip",
+      "bytes": 2296181,
+      "sha256": "5c06acaf42c1f930100d53ea506ec0a8bc542fec45ef5af4cd59311069364ed2",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17396158"
+      ],
+      "download_url": "https://zenodo.org/api/records/17396158/files/DATA.zip/content",
+      "source_checksum": "md5:720332b67a9a928f3730a96e78ea2621",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:28.968966+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17396158"
+      ],
+      "citation_url": "https://zenodo.org/records/17396158",
+      "source_version": "17396158",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17396158",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-085",
+      "scenario_id": "85_biotechnology_yarrowia_cofeeding",
+      "path": "raw/readme.txt",
+      "scenario_relative_path": "raw/readme.txt",
+      "bytes": 19414,
+      "sha256": "691224db90be129f8674b33316a14cad6207f54a4d0b34fc6d3f398ce169c8af",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17396158"
+      ],
+      "download_url": "https://zenodo.org/api/records/17396158/files/readme.txt/content",
+      "source_checksum": "md5:38e27d7f3085b66c7c3aa35288010250",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:30.437576+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17396158"
+      ],
+      "citation_url": "https://zenodo.org/records/17396158",
+      "source_version": "17396158",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17396158",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-085",
+      "scenario_id": "85_biotechnology_yarrowia_cofeeding",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 8964,
+      "sha256": "20fd41824ce4651d4611f6b54856e4bf8066d222e593d94d46c8051b9a9e585c",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/17396158"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:47.977402+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17396158"
+      ],
+      "citation_url": "https://zenodo.org/records/17396158",
+      "source_version": "17396158",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

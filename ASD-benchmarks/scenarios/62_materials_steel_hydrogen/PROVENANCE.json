@@ -1,0 +1,104 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "62_materials_steel_hydrogen",
+  "domain": "Hydrogen embrittlement",
+  "title": "Hydrogen permeation test on MS AHSS grade 1300",
+  "publisher": "[{'profile_id': '3353cea0-e164-4a9d-9fb6-a2b7c03caf85', 'first_name': 'Giuseppe', 'last_name': 'Macoretta'}]; [{'id': '08e70505-a89d-591c-9d2c-ed4b065b49cf', 'name': 'Universita degli Studi di Pisa Dipartimento di Ingegneria Civile e Industriale'}, {'id': '4aa396d7-9c07-58cc-8431-0035bd5ebfa2', 'name': 'Universita degli Studi di Pisa', 'ror_id': 'https://ror.org/03ad39j10'}]",
+  "authoritative_landing_url": "https://data.mendeley.com/datasets/tnsgf7v76z/1",
+  "authoritative_source_urls": [
+    "https://data.mendeley.com/datasets/tnsgf7v76z/1",
+    "https://data.mendeley.com/public-files/datasets/tnsgf7v76z/files/64121556-2ab2-4aec-8a20-4bc51d48ad44/file_downloaded"
+  ],
+  "identifiers": [
+    {
+      "id": "10.17632/tnsgf7v76z.1",
+      "status": "allocated",
+      "prefix": "10.17632"
+    }
+  ],
+  "release_or_version": "1",
+  "retrieval_finalized_utc": "2026-09-15T07:04:34.225893+00:00",
+  "license_or_access_terms": "CC BY 4.0",
+  "deterministic_selection_rule": "complete specified source selection",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Campaign dates unknown; deposited February 2025.",
+  "source_publication_date": "2025-02-12T20:28:02.505Z",
+  "source_created_utc": null,
+  "source_updated_utc": null,
+  "source_inventory": [
+    {
+      "name": "Permeation_MS AHSS 1300.xlsx",
+      "bytes": 88885,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Original electrochemical permeation workbook, including step/ramp conditions; published experiment already estimates transport properties.",
+  "known_analyses_and_limitations": "Keep current ramps and repeated measurements from each specimen together. Restrict inferred properties to the tested steel and measured boundary conditions.",
+  "related_publications": [],
+  "independent_groups": "specimen and temperature, keep current ramps grouped",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-062",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-062",
+      "scenario_id": "62_materials_steel_hydrogen",
+      "path": "raw/Permeation_MS AHSS 1300.xlsx",
+      "scenario_relative_path": "raw/Permeation_MS AHSS 1300.xlsx",
+      "bytes": 88885,
+      "sha256": "117d75a3f8329456732beada95b8f2be8bda688da88e6b8c7c83a9ee49698b3b",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/tnsgf7v76z/1"
+      ],
+      "download_url": "https://data.mendeley.com/public-files/datasets/tnsgf7v76z/files/64121556-2ab2-4aec-8a20-4bc51d48ad44/file_downloaded",
+      "source_checksum": "sha256:117d75a3f8329456732beada95b8f2be8bda688da88e6b8c7c83a9ee49698b3b",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:47.765909+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        {
+          "id": "10.17632/tnsgf7v76z.1",
+          "status": "allocated",
+          "prefix": "10.17632"
+        }
+      ],
+      "citation_url": "https://data.mendeley.com/datasets/tnsgf7v76z/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://data.mendeley.com/datasets/tnsgf7v76z/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-062",
+      "scenario_id": "62_materials_steel_hydrogen",
+      "path": "context/SOURCE_FACTS.json",
+      "scenario_relative_path": "context/SOURCE_FACTS.json",
+      "bytes": 1532,
+      "sha256": "89b811cbc81794072ad18505968d5a9e6dd874bd1180ef9c331de3060013d92b",
+      "role": "curator_factual_source_profile",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/tnsgf7v76z/1"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "curator serialization, not a publisher file",
+      "retrieved_utc": "2026-09-15T07:04:34.225893+00:00",
+      "license_or_terms": "CC-BY-4.0 (proposed release terms for curator documentation; pending owner acceptance)",
+      "citation_identifiers": [
+        {
+          "id": "10.17632/tnsgf7v76z.1",
+          "status": "allocated",
+          "prefix": "10.17632"
+        }
+      ],
+      "citation_url": "https://data.mendeley.com/datasets/tnsgf7v76z/1",
+      "source_version": "1",
+      "replay_note": "Reconstruct exact curator metadata from frozen release copy.",
+      "rights_evidence_url": "https://data.mendeley.com/datasets/tnsgf7v76z/1",
+      "rights_evidence_scope": "Factual identifiers, file inventory and attribution; curator serialization."
+    }
+  ]
+}

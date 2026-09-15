@@ -1,0 +1,100 @@
+{
+  "case_id": "P100-086",
+  "case_revision": 1,
+  "scenario_id": "86_biotechnology_industrial_fermentation",
+  "title": "Erythromycin fermentation process dataset",
+  "domain": "Industrial fermentation",
+  "question": "How do chemical-potency trajectories vary across independent fermentation batches and recorded cultivation time?",
+  "data_origin": "measured_or_observed",
+  "source_version": "14619074",
+  "source_url": "https://zenodo.org/records/14619074",
+  "identifiers": [
+    "10.5281/zenodo.14619074"
+  ],
+  "publisher": "Yan, Xuefeng (East China University of Science and Technology); Sun, Yifei (East China University of Science and Technology)",
+  "release_date": "2025-01-09",
+  "measurement_dates": "Description says 2022; retained rows span December 26, 2021 to November 14, 2022 in file order. Preserve mismatch.",
+  "variables_and_units": "hourly process variables and fermentation response",
+  "independent_units": "complete fermentation batches, chronological batch blocks",
+  "validation_design": "complete fermentation batches, chronological batch blocks Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Historical industrial exports: 50,536 rows, 406 batches, and hx as the chemical-potency target selected by the source loader. Several process abbreviations and physical units are not defined in the deposit; no meanings are guessed.",
+  "prior_analysis_and_limits": "Keep all samples of each batch together. Restrict currently defensible modeling to documented target/time/batch structure and explicitly source-unit or dimensionless response; physical laws involving unmapped process variables need an additional verified dictionary. The description claims an average of 154 samples per batch, while the retained 50,536 rows imply about 124.5; preserve this inconsistency. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/EFP_long.csv",
+      "structure": {
+        "header": [
+          "date",
+          "batch_id",
+          "hh",
+          "te",
+          "fi",
+          "wi",
+          "zs",
+          "phzx",
+          "doz",
+          "bl1mt",
+          "bl2mt",
+          "bl3mt",
+          "bl4mt",
+          "btmt",
+          "bymt",
+          "bcmt",
+          "phlx",
+          "jn",
+          "nd",
+          "ht",
+          "zt",
+          "nn",
+          "our",
+          "cer",
+          "rq",
+          "kla",
+          "hx"
+        ],
+        "data_records": 50536,
+        "first_lines": [
+          "date,batch_id,hh,te,fi,wi,zs,phzx,doz,bl1mt,bl2mt,bl3mt,bl4mt,btmt,bymt,bcmt,phlx,jn,nd,ht,zt,nn,our,cer,rq,kla,hx",
+          "2021/12/26 10:00,1,30,31.1,5286,276.7,101,7.14,38,0,0,0,0,14104,534,174,7.21,46,139,1.34,4.46,30.2,30.68390083,32.01950073,1.043499947,2527.850098,1691",
+          "2021/12/26 11:00,1,31,31,5302,277.9,101,7.12,30,0,0,0,0,14650,564,187,7.21,46,153,1.35,4.4,29.9,32.69900131,31.75499916,0.971099973,2380.943115,1750",
+          "2021/12/26 12:00,1,32,31,5245,277.1,101,7.1,37,0,0,0,0,15171,596,201,7.21,46,166,1.37,4.35,29.5,32.78419876,31.6135006,0.964299977,2645.802002,1810",
+          "2021/12/26 13:00,1,33,31,5330,277.7,101,7.08,33,0,0,0,0,15671,625,215,7.2,46,179,1.38,4.29,29.2,33.39490128,31.66570091,0.948199987,2536.666992,1869",
+          "2021/12/26 14:00,1,34,31,5310,276.6,101,7.08,29,0,0,0,0,16162,656,227,7.2,46,193,1.4,4.23,28.8,31.91990089,31.11120033,0.974699974,2264.86499,1928",
+          "2021/12/26 15:00,1,35,31,5260,277.2,101,7.06,27,0,0,0,0,16653,687,238,7.2,46,206,1.41,4.18,28.5,28.80489922,30.69309998,1.065600038,2010.536987,1988",
+          "2021/12/26 16:00,1,36,31,5294,275.9,101,7.08,33,0,0,0,0,17097,718,253,7.2,46,219,1.43,4.12,28.1,31.34250069,32.11289978,1.024600029,2335.11792,2047"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "text_or_instrument_native": 2
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 8063338,
+  "expanded_source_equivalent_bytes": 8063338,
+  "installed_folder_bytes": 8072607,
+  "source_asset_count": 3,
+  "asset_paths": [
+    "scenarios/86_biotechnology_industrial_fermentation/raw/EFP_long.csv",
+    "scenarios/86_biotechnology_industrial_fermentation/raw/data_loader.py",
+    "scenarios/86_biotechnology_industrial_fermentation/context/source_record.json"
+  ],
+  "local_folder": "scenarios/86_biotechnology_industrial_fermentation",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 8072009,
+  "expanded_release_folder_equivalent_bytes": 8072009
+}

@@ -1,0 +1,668 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "93_biology_solute_carrier_facs",
+  "domain": "Membrane transporter biology",
+  "title": "Flow cytometry FCS files: Cell surface VVL staining of MFSD5, SLC30A8 and SLC30A8-D110N-D224N OE cells",
+  "publisher": "Teoh, Shao Thing (CeMM Research Center for Molecular Medicine)",
+  "authoritative_landing_url": "https://zenodo.org/records/14720967",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/14720967",
+    "https://zenodo.org/api/records/14720967/files/Specimen_001_A2_A02.fcs/content",
+    "https://zenodo.org/api/records/14720967/files/Specimen_001_B1_B01.fcs/content",
+    "https://zenodo.org/api/records/14720967/files/Specimen_001_C1_C01.fcs/content",
+    "https://zenodo.org/api/records/14720967/files/Specimen_001_C2_C02.fcs/content",
+    "https://zenodo.org/api/records/14720967/files/Specimen_001_F4_F04.fcs/content",
+    "https://zenodo.org/api/records/14720967/files/Specimen_001_D3_D03.fcs/content",
+    "https://zenodo.org/api/records/14720967/files/Specimen_001_E1_E01.fcs/content",
+    "https://zenodo.org/api/records/14720967/files/Specimen_001_D1_D01.fcs/content",
+    "https://zenodo.org/api/records/14720967/files/Specimen_001_E2_E02.fcs/content",
+    "https://zenodo.org/api/records/14720967/files/Specimen_001_E3_E03.fcs/content",
+    "https://zenodo.org/api/records/14720967/files/Specimen_001_F3_F03.fcs/content",
+    "https://zenodo.org/api/records/14720967/files/Specimen_001_B2_B02.fcs/content",
+    "https://zenodo.org/api/records/14720967/files/Specimen_001_D4_D04.fcs/content",
+    "https://zenodo.org/api/records/14720967/files/Specimen_001_E4_E04.fcs/content",
+    "https://zenodo.org/api/records/14720967/files/Specimen_001_F1_F01.fcs/content",
+    "https://zenodo.org/api/records/14720967/files/Specimen_001_F2_F02.fcs/content",
+    "https://zenodo.org/api/records/14720967/files/Specimen_001_D2_D02.fcs/content",
+    "https://zenodo.org/api/records/14720967/files/20230823%20sample%20list.xlsx/content",
+    "https://zenodo.org/api/records/14720967/files/Specimen_001_A1_A01.fcs/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.14720967"
+  ],
+  "release_or_version": "14720967",
+  "retrieval_finalized_utc": "2026-09-15T07:04:42.480082+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": {
+    "planned_source": "Potsdam Soil Moisture Observatory",
+    "planned_url": "https://b2share.eudat.eu/records/bxamy-4zh85",
+    "reason": "Repeated TLS connection failures for record and API",
+    "selection": "First three ordered measured-data reserves; preserves overall corpus breadth but reduces new survey and environmental additions."
+  },
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Sample list and acquisition naming dated August 23, 2023; released January 2025.",
+  "source_publication_date": "2025-01-22",
+  "source_created_utc": "2025-01-22T18:10:52.479840+00:00",
+  "source_updated_utc": "2025-07-21T21:20:17.343595+00:00",
+  "source_inventory": [
+    {
+      "name": "Specimen_001_A2_A02.fcs",
+      "bytes": 633872,
+      "selected": true
+    },
+    {
+      "name": "Specimen_001_B1_B01.fcs",
+      "bytes": 295101,
+      "selected": true
+    },
+    {
+      "name": "Specimen_001_C1_C01.fcs",
+      "bytes": 254782,
+      "selected": true
+    },
+    {
+      "name": "Specimen_001_C2_C02.fcs",
+      "bytes": 366866,
+      "selected": true
+    },
+    {
+      "name": "Specimen_001_F4_F04.fcs",
+      "bytes": 429474,
+      "selected": true
+    },
+    {
+      "name": "Specimen_001_D3_D03.fcs",
+      "bytes": 590586,
+      "selected": true
+    },
+    {
+      "name": "Specimen_001_E1_E01.fcs",
+      "bytes": 542930,
+      "selected": true
+    },
+    {
+      "name": "Specimen_001_D1_D01.fcs",
+      "bytes": 531084,
+      "selected": true
+    },
+    {
+      "name": "Specimen_001_E2_E02.fcs",
+      "bytes": 447814,
+      "selected": true
+    },
+    {
+      "name": "Specimen_001_E3_E03.fcs",
+      "bytes": 587366,
+      "selected": true
+    },
+    {
+      "name": "Specimen_001_F3_F03.fcs",
+      "bytes": 575102,
+      "selected": true
+    },
+    {
+      "name": "Specimen_001_B2_B02.fcs",
+      "bytes": 459294,
+      "selected": true
+    },
+    {
+      "name": "Specimen_001_D4_D04.fcs",
+      "bytes": 511878,
+      "selected": true
+    },
+    {
+      "name": "Specimen_001_E4_E04.fcs",
+      "bytes": 421662,
+      "selected": true
+    },
+    {
+      "name": "Specimen_001_F1_F01.fcs",
+      "bytes": 618586,
+      "selected": true
+    },
+    {
+      "name": "Specimen_001_F2_F02.fcs",
+      "bytes": 634098,
+      "selected": true
+    },
+    {
+      "name": "Specimen_001_D2_D02.fcs",
+      "bytes": 590614,
+      "selected": true
+    },
+    {
+      "name": "20230823 sample list.xlsx",
+      "bytes": 11616,
+      "selected": true
+    },
+    {
+      "name": "Specimen_001_A1_A01.fcs",
+      "bytes": 236861,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Eighteen native FCS files plus sample list for MFSD5, SLC30A8 wild-type and transport-deficient mutations; source study already compares VVL staining.",
+  "known_analyses_and_limitations": "Events nested within samples. Use sample/biological replicate groups; if independent cultures cannot be verified, limit inference to within-sample distributional characterization.",
+  "related_publications": [
+    {
+      "identifier": "10.1101/2024.09.23.614124",
+      "relation": "isDescribedBy",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1038/s44320-025-00106-4",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    }
+  ],
+  "independent_groups": "biological replicate and perturbation; events nested within samples",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-093",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-093",
+      "scenario_id": "93_biology_solute_carrier_facs",
+      "path": "raw/Specimen_001_A2_A02.fcs",
+      "scenario_relative_path": "raw/Specimen_001_A2_A02.fcs",
+      "bytes": 633872,
+      "sha256": "25c30c25f94e450dabd0369d6a24f2286588e477b3a1c5c8be00ab9280279ce7",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14720967"
+      ],
+      "download_url": "https://zenodo.org/api/records/14720967/files/Specimen_001_A2_A02.fcs/content",
+      "source_checksum": "md5:f56775ac1a1b1c3168442d34198e380a",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:16.004439+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14720967"
+      ],
+      "citation_url": "https://zenodo.org/records/14720967",
+      "source_version": "14720967",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14720967",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-093",
+      "scenario_id": "93_biology_solute_carrier_facs",
+      "path": "raw/Specimen_001_B1_B01.fcs",
+      "scenario_relative_path": "raw/Specimen_001_B1_B01.fcs",
+      "bytes": 295101,
+      "sha256": "1d9a5f4fc9fd08f478d191335c101dee0a4e57ff737efa53cd47300d3f5b265f",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14720967"
+      ],
+      "download_url": "https://zenodo.org/api/records/14720967/files/Specimen_001_B1_B01.fcs/content",
+      "source_checksum": "md5:a3de3a06918cf7815b13231996e9a370",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:15.300768+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14720967"
+      ],
+      "citation_url": "https://zenodo.org/records/14720967",
+      "source_version": "14720967",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14720967",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-093",
+      "scenario_id": "93_biology_solute_carrier_facs",
+      "path": "raw/Specimen_001_C1_C01.fcs",
+      "scenario_relative_path": "raw/Specimen_001_C1_C01.fcs",
+      "bytes": 254782,
+      "sha256": "ca046567c3256edae7a7985f40184082e650d5fb411dcfe254315b354d5247e3",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14720967"
+      ],
+      "download_url": "https://zenodo.org/api/records/14720967/files/Specimen_001_C1_C01.fcs/content",
+      "source_checksum": "md5:e31e4a8f83668206f42fe34f3ba11e0b",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:15.472081+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14720967"
+      ],
+      "citation_url": "https://zenodo.org/records/14720967",
+      "source_version": "14720967",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14720967",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-093",
+      "scenario_id": "93_biology_solute_carrier_facs",
+      "path": "raw/Specimen_001_C2_C02.fcs",
+      "scenario_relative_path": "raw/Specimen_001_C2_C02.fcs",
+      "bytes": 366866,
+      "sha256": "db2b776ff683797171ff951dbd868b36bddd03a4aac007eb07b6bc4437df464d",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14720967"
+      ],
+      "download_url": "https://zenodo.org/api/records/14720967/files/Specimen_001_C2_C02.fcs/content",
+      "source_checksum": "md5:0978b1ba29638c0468cbb4ab18fdb69d",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:17.413609+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14720967"
+      ],
+      "citation_url": "https://zenodo.org/records/14720967",
+      "source_version": "14720967",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14720967",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-093",
+      "scenario_id": "93_biology_solute_carrier_facs",
+      "path": "raw/Specimen_001_F4_F04.fcs",
+      "scenario_relative_path": "raw/Specimen_001_F4_F04.fcs",
+      "bytes": 429474,
+      "sha256": "d880bf1202aba1bce8592313026ee2dae1c936e68ce6884c28463c4eec288338",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14720967"
+      ],
+      "download_url": "https://zenodo.org/api/records/14720967/files/Specimen_001_F4_F04.fcs/content",
+      "source_checksum": "md5:0739f25a0f652c465d0bd9ac8b545dd0",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:18.133581+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14720967"
+      ],
+      "citation_url": "https://zenodo.org/records/14720967",
+      "source_version": "14720967",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14720967",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-093",
+      "scenario_id": "93_biology_solute_carrier_facs",
+      "path": "raw/Specimen_001_D3_D03.fcs",
+      "scenario_relative_path": "raw/Specimen_001_D3_D03.fcs",
+      "bytes": 590586,
+      "sha256": "ed8d1f37b1e32778c9fb042e19e09fae8f722d29ff7510ff4d3d31c19d5ee17f",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14720967"
+      ],
+      "download_url": "https://zenodo.org/api/records/14720967/files/Specimen_001_D3_D03.fcs/content",
+      "source_checksum": "md5:a574b7d8d09e2660913ca6d8cab0066d",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:19.305691+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14720967"
+      ],
+      "citation_url": "https://zenodo.org/records/14720967",
+      "source_version": "14720967",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14720967",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-093",
+      "scenario_id": "93_biology_solute_carrier_facs",
+      "path": "raw/Specimen_001_E1_E01.fcs",
+      "scenario_relative_path": "raw/Specimen_001_E1_E01.fcs",
+      "bytes": 542930,
+      "sha256": "999dea685995a7f5f509aa210b3409a34332355195c3e8326ca42a40d291ef4b",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14720967"
+      ],
+      "download_url": "https://zenodo.org/api/records/14720967/files/Specimen_001_E1_E01.fcs/content",
+      "source_checksum": "md5:8eab87422fa0a3aeed9a195279253197",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:20.001416+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14720967"
+      ],
+      "citation_url": "https://zenodo.org/records/14720967",
+      "source_version": "14720967",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14720967",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-093",
+      "scenario_id": "93_biology_solute_carrier_facs",
+      "path": "raw/Specimen_001_D1_D01.fcs",
+      "scenario_relative_path": "raw/Specimen_001_D1_D01.fcs",
+      "bytes": 531084,
+      "sha256": "8b286771b07997be080ec26438b367e534c956eca23dab8fedc811ca828e41b4",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14720967"
+      ],
+      "download_url": "https://zenodo.org/api/records/14720967/files/Specimen_001_D1_D01.fcs/content",
+      "source_checksum": "md5:0e66b63ecd0c47924ffaca96bd85adf4",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:20.808506+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14720967"
+      ],
+      "citation_url": "https://zenodo.org/records/14720967",
+      "source_version": "14720967",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14720967",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-093",
+      "scenario_id": "93_biology_solute_carrier_facs",
+      "path": "raw/Specimen_001_E2_E02.fcs",
+      "scenario_relative_path": "raw/Specimen_001_E2_E02.fcs",
+      "bytes": 447814,
+      "sha256": "9759ef62e60e1b986132f6549d5a81bd4d168aa68b5f0790b91cc03593b9e3c5",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14720967"
+      ],
+      "download_url": "https://zenodo.org/api/records/14720967/files/Specimen_001_E2_E02.fcs/content",
+      "source_checksum": "md5:cda4fea5d140f0f7633f07deceae4764",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:21.539077+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14720967"
+      ],
+      "citation_url": "https://zenodo.org/records/14720967",
+      "source_version": "14720967",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14720967",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-093",
+      "scenario_id": "93_biology_solute_carrier_facs",
+      "path": "raw/Specimen_001_E3_E03.fcs",
+      "scenario_relative_path": "raw/Specimen_001_E3_E03.fcs",
+      "bytes": 587366,
+      "sha256": "d0df9abcd6253839c16d07cfc08d2a184c1bbb1fb71f06836a67219da4b3d930",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14720967"
+      ],
+      "download_url": "https://zenodo.org/api/records/14720967/files/Specimen_001_E3_E03.fcs/content",
+      "source_checksum": "md5:608046739617e2d91c44ca04f233fe69",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:22.451909+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14720967"
+      ],
+      "citation_url": "https://zenodo.org/records/14720967",
+      "source_version": "14720967",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14720967",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-093",
+      "scenario_id": "93_biology_solute_carrier_facs",
+      "path": "raw/Specimen_001_F3_F03.fcs",
+      "scenario_relative_path": "raw/Specimen_001_F3_F03.fcs",
+      "bytes": 575102,
+      "sha256": "074d49f0fbf0fb48031920c81821fe9bbc2f23c0a4199e5c8157c8e18ab36e51",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14720967"
+      ],
+      "download_url": "https://zenodo.org/api/records/14720967/files/Specimen_001_F3_F03.fcs/content",
+      "source_checksum": "md5:ec2c44ea3c2977e5362df7e87f1311d2",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:23.337671+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14720967"
+      ],
+      "citation_url": "https://zenodo.org/records/14720967",
+      "source_version": "14720967",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14720967",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-093",
+      "scenario_id": "93_biology_solute_carrier_facs",
+      "path": "raw/Specimen_001_B2_B02.fcs",
+      "scenario_relative_path": "raw/Specimen_001_B2_B02.fcs",
+      "bytes": 459294,
+      "sha256": "1cf2c3787e92ed5948fd00f66aa08ec9cf92ec2385c1eedef37dd27f6eba4b84",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14720967"
+      ],
+      "download_url": "https://zenodo.org/api/records/14720967/files/Specimen_001_B2_B02.fcs/content",
+      "source_checksum": "md5:7c0f0e3b430015087af912cccd83f4a3",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:25.386437+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14720967"
+      ],
+      "citation_url": "https://zenodo.org/records/14720967",
+      "source_version": "14720967",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14720967",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-093",
+      "scenario_id": "93_biology_solute_carrier_facs",
+      "path": "raw/Specimen_001_D4_D04.fcs",
+      "scenario_relative_path": "raw/Specimen_001_D4_D04.fcs",
+      "bytes": 511878,
+      "sha256": "20d1950ff557cecd9f5565f097f08b5136c95fbd71edf88108d1612cfa1ad4d5",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14720967"
+      ],
+      "download_url": "https://zenodo.org/api/records/14720967/files/Specimen_001_D4_D04.fcs/content",
+      "source_checksum": "md5:e6f2577737c4b48862a9052f859baa26",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:25.731038+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14720967"
+      ],
+      "citation_url": "https://zenodo.org/records/14720967",
+      "source_version": "14720967",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14720967",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-093",
+      "scenario_id": "93_biology_solute_carrier_facs",
+      "path": "raw/Specimen_001_E4_E04.fcs",
+      "scenario_relative_path": "raw/Specimen_001_E4_E04.fcs",
+      "bytes": 421662,
+      "sha256": "891bac647a39ecedfc9d17a1a06a360859c593863c5877351738e4a83337f282",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14720967"
+      ],
+      "download_url": "https://zenodo.org/api/records/14720967/files/Specimen_001_E4_E04.fcs/content",
+      "source_checksum": "md5:c17e4f2ce6d836925a36d30f3a893d21",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:26.266030+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14720967"
+      ],
+      "citation_url": "https://zenodo.org/records/14720967",
+      "source_version": "14720967",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14720967",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-093",
+      "scenario_id": "93_biology_solute_carrier_facs",
+      "path": "raw/Specimen_001_F1_F01.fcs",
+      "scenario_relative_path": "raw/Specimen_001_F1_F01.fcs",
+      "bytes": 618586,
+      "sha256": "8804f060933117d0080c08adca63447ec7a21c72157c4ce181e73fed0f595088",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14720967"
+      ],
+      "download_url": "https://zenodo.org/api/records/14720967/files/Specimen_001_F1_F01.fcs/content",
+      "source_checksum": "md5:f960215676153642be0b433f48d0c248",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:32.127494+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14720967"
+      ],
+      "citation_url": "https://zenodo.org/records/14720967",
+      "source_version": "14720967",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14720967",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-093",
+      "scenario_id": "93_biology_solute_carrier_facs",
+      "path": "raw/Specimen_001_F2_F02.fcs",
+      "scenario_relative_path": "raw/Specimen_001_F2_F02.fcs",
+      "bytes": 634098,
+      "sha256": "13a432fc9b8ec768dc2b3211427de66a9239a29827dbb455f44f56e1c90ed048",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14720967"
+      ],
+      "download_url": "https://zenodo.org/api/records/14720967/files/Specimen_001_F2_F02.fcs/content",
+      "source_checksum": "md5:56be2ec8abf6ac0d424094a727816b43",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:32.558230+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14720967"
+      ],
+      "citation_url": "https://zenodo.org/records/14720967",
+      "source_version": "14720967",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14720967",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-093",
+      "scenario_id": "93_biology_solute_carrier_facs",
+      "path": "raw/Specimen_001_D2_D02.fcs",
+      "scenario_relative_path": "raw/Specimen_001_D2_D02.fcs",
+      "bytes": 590614,
+      "sha256": "14d6509b0f673340a194aacb57248b5602865ddc1d3226ad481e9d0191c14923",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14720967"
+      ],
+      "download_url": "https://zenodo.org/api/records/14720967/files/Specimen_001_D2_D02.fcs/content",
+      "source_checksum": "md5:4f892200cc99ead244adc1b776ac59e6",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:37.904582+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14720967"
+      ],
+      "citation_url": "https://zenodo.org/records/14720967",
+      "source_version": "14720967",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14720967",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-093",
+      "scenario_id": "93_biology_solute_carrier_facs",
+      "path": "raw/20230823 sample list.xlsx",
+      "scenario_relative_path": "raw/20230823 sample list.xlsx",
+      "bytes": 11616,
+      "sha256": "b439fc4a0336d0fee230f2866f625a59f0422870088bf568969aa7b1d7988a3f",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14720967"
+      ],
+      "download_url": "https://zenodo.org/api/records/14720967/files/20230823%20sample%20list.xlsx/content",
+      "source_checksum": "md5:f2ded8d9f0826074ce61701ed3ccb9ef",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:33.480345+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14720967"
+      ],
+      "citation_url": "https://zenodo.org/records/14720967",
+      "source_version": "14720967",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14720967",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-093",
+      "scenario_id": "93_biology_solute_carrier_facs",
+      "path": "raw/Specimen_001_A1_A01.fcs",
+      "scenario_relative_path": "raw/Specimen_001_A1_A01.fcs",
+      "bytes": 236861,
+      "sha256": "6fa3eb59406c7de9e00a2b02b8e779134c556be314743bfc0464232fb55a043f",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14720967"
+      ],
+      "download_url": "https://zenodo.org/api/records/14720967/files/Specimen_001_A1_A01.fcs/content",
+      "source_checksum": "md5:145f6f13276af64365918cb74d988c7e",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:35.350892+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14720967"
+      ],
+      "citation_url": "https://zenodo.org/records/14720967",
+      "source_version": "14720967",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14720967",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-093",
+      "scenario_id": "93_biology_solute_carrier_facs",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 11098,
+      "sha256": "b8aaec3eac8d4a096b9d84d98375a1a1d8da3391d562d03bf10bb66987b78196",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/14720967"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:21:52.276483+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14720967"
+      ],
+      "citation_url": "https://zenodo.org/records/14720967",
+      "source_version": "14720967",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

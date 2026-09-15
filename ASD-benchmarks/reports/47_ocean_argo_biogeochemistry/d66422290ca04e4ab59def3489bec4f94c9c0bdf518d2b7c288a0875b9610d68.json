@@ -1,0 +1,151 @@
+{
+  "bytes": 288212,
+  "sha256": "5c674ae6bda5dac255b17319b29d8762b6d49902c35c9effe5d15d37ce672f93",
+  "format_extension": ".nc",
+  "checks": [],
+  "format": "NetCDF",
+  "dimensions": {
+    "DATE_TIME": 14,
+    "STRING128": 128,
+    "STRING32": 32,
+    "STRING8": 8,
+    "STRING4": 4,
+    "STRING2": 2,
+    "N_TECH_PARAM": 1100
+  },
+  "variables": [
+    {
+      "name": "PLATFORM_NUMBER",
+      "shape": [
+        8
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Float unique identifier",
+        "conventions": "WMO float identifier : A9IIIII",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "DATA_TYPE",
+      "shape": [
+        32
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Data type",
+        "conventions": "Argo reference table 1",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "FORMAT_VERSION",
+      "shape": [
+        4
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "File format version",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "HANDBOOK_VERSION",
+      "shape": [
+        4
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Data handbook version",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "DATA_CENTRE",
+      "shape": [
+        2
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Data centre in charge of float data processing",
+        "conventions": "Argo reference table 4",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "DATE_CREATION",
+      "shape": [
+        14
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Date of file creation",
+        "conventions": "YYYYMMDDHHMISS",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "DATE_UPDATE",
+      "shape": [
+        14
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Date of update of this file",
+        "conventions": "YYYYMMDDHHMISS",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "TECHNICAL_PARAMETER_NAME",
+      "shape": [
+        1100,
+        128
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Name of technical parameter",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "TECHNICAL_PARAMETER_VALUE",
+      "shape": [
+        1100,
+        128
+      ],
+      "dtype": "|S1",
+      "attributes": {
+        "long_name": "Value of technical parameter",
+        "_FillValue": "b' '"
+      }
+    },
+    {
+      "name": "CYCLE_NUMBER",
+      "shape": [
+        1100
+      ],
+      "dtype": "int32",
+      "attributes": {
+        "conventions": "0...N, 0 : launch cycle (if exists), 1 : first complete cycle",
+        "long_name": "Float cycle number",
+        "_FillValue": "99999"
+      }
+    }
+  ],
+  "attributes": {
+    "title": "Argo float technical data file",
+    "institution": "AOML",
+    "source": "Argo float",
+    "history": "2026-07-05T21:24:59Z creation",
+    "references": "http://www.argodatamgt.org/Documentation",
+    "comment": "free text",
+    "id": "https://doi.org/10.17882/42182",
+    "user_manual_version": "3.2 ",
+    "Conventions": "Argo-3.1 CF-1.6"
+  },
+  "path": "raw/5906483/5906483_tech.nc",
+  "scenario_id": "47_ocean_argo_biogeochemistry",
+  "verified_utc": "2026-09-14T16:02:54.900232+00:00",
+  "status": "pass"
+}

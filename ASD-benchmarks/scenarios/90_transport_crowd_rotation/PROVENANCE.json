@@ -1,0 +1,102 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "90_transport_crowd_rotation",
+  "domain": "Pedestrian dynamics",
+  "title": "Individual locomotor bias drives counterclockwise motion in pedestrian crowds",
+  "publisher": "Echeverría-Huarte, Iñaki (Universidad de Navarra); Feliciani, Claudio (The University of Tokyo); Nishinari, Katsuhiro; Sánchez, Angel (Grupo Interdisciplinar de Sistemas Complejos (GISC)); Garcimartín, Angel (Universidad de Navarra); Zuriguel, Iker (Universidad de Navarra)",
+  "authoritative_landing_url": "https://zenodo.org/records/19592341",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/19592341",
+    "https://zenodo.org/api/records/19592341/files/ExperimentalData.zip/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.19592341"
+  ],
+  "release_or_version": "19592341",
+  "retrieval_finalized_utc": "2026-09-15T07:04:42.172411+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "crowd",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Acquisition dates vary by experiment; April 2026 v3 release.",
+  "source_publication_date": "2026-04-15",
+  "source_created_utc": "2026-04-15T10:44:46.229796+00:00",
+  "source_updated_utc": "2026-04-15T10:47:10.690001+00:00",
+  "source_inventory": [
+    {
+      "name": "SourceData.xlsx",
+      "bytes": 33682353,
+      "selected": false
+    },
+    {
+      "name": "ExperimentalData.zip",
+      "bytes": 64727907,
+      "selected": true
+    },
+    {
+      "name": "Codes.zip",
+      "bytes": 21124,
+      "selected": false
+    }
+  ],
+  "author_preprocessing": "Complete experimental archive across Spain/Japan, age cohorts and individual/group tasks; author trajectories/derived tables and source PDF/code preserved.",
+  "known_analyses_and_limitations": "Group entire cohort/experiment; country, age and protocol can be confounded. Do not split trajectory points randomly.",
+  "related_publications": [],
+  "independent_groups": "experiment, participant/cohort and country",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-090",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-090",
+      "scenario_id": "90_transport_crowd_rotation",
+      "path": "raw/ExperimentalData.zip",
+      "scenario_relative_path": "raw/ExperimentalData.zip",
+      "bytes": 64727907,
+      "sha256": "2e421df218b9a2f8e5fde65cf71f0ef838ae0627cfb702c0cb8f95866ca41f14",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19592341"
+      ],
+      "download_url": "https://zenodo.org/api/records/19592341/files/ExperimentalData.zip/content",
+      "source_checksum": "md5:7bd3047e946e4ef8a14aa7e954989169",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:49.429654+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19592341"
+      ],
+      "citation_url": "https://zenodo.org/records/19592341",
+      "source_version": "19592341",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19592341",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-090",
+      "scenario_id": "90_transport_crowd_rotation",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 6888,
+      "sha256": "07c4c1a70345a38818f9d18cd94a04077fad6a833bf2f1637ed123d4634d25c3",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/19592341"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:49.384097+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.19592341"
+      ],
+      "citation_url": "https://zenodo.org/records/19592341",
+      "source_version": "19592341",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

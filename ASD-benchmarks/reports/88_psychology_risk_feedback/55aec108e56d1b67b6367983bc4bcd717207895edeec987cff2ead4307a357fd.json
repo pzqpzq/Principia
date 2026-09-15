@@ -1,0 +1,264 @@
+{
+  "scenario_id": "88_psychology_risk_feedback",
+  "path": "raw/anasioulas/riskyDecisionMakingFeedback-v1.0.0.zip",
+  "bytes": 1663590,
+  "sha256": "30c32b0a1d0c7c8c05598acbabc4e8c8d13c2e95843908f3ab6ce7cb6fef5dc9",
+  "checked_utc": "2026-09-15T06:46:26.661480+00:00",
+  "source_checksum_status": "verified",
+  "format": "ZIP",
+  "expanded_bytes": 14026311,
+  "members": [
+    {
+      "name": "anasioulas-riskyDecisionMakingFeedback-65ac539/.Rhistory",
+      "bytes": 11196,
+      "sha256": "e458b51070b328dd69de071ae932c11f63d6fc0c2fef0b8e4fe959627611e617",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "6c6962726172792864706c79",
+        "line_count": 250,
+        "preview_lines": [
+          "library(dplyr)",
+          "library(lme4)",
+          "# --- Detect path of current script (works in RStudio interactive mode too) ---",
+          "script_dir <- tryCatch({",
+          "dirname(rstudioapi::getSourceEditorContext()$path)"
+        ]
+      }
+    },
+    {
+      "name": "anasioulas-riskyDecisionMakingFeedback-65ac539/Erev2017_data.csv",
+      "bytes": 4628965,
+      "sha256": "8de5899f1e488f4de39a82b64f64d7bb92189a13a6384248267ef6f322a2b030",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4558502c545950455f464545",
+        "delimiter": ",",
+        "header": [
+          "EXP",
+          "TYPE_FEEDBACK",
+          "SURETHING",
+          "EXPID",
+          "BLOCK",
+          "TRIAL",
+          "RISKYBETTER",
+          "FEEDBACK",
+          "MAG_RISKY1",
+          "MAG_RISKY2",
+          "P_RISKY",
+          "P_RISKY_CAT",
+          "P_SURE",
+          "MAG_SURE1",
+          "MAG_SURE2",
+          "RISKY_CHOICE",
+          "OPTIMAL_CHOICE",
+          "REPEAT_RISKY",
+          "OUT",
+          "CF_OUT",
+          "RTIME",
+          "PREVIOUS_RISKY_CHOICE",
+          "PREVIOUS_RISKY_OUT_MAX",
+          "CONDITION"
+        ],
+        "data_records": 71075,
+        "row_width_counts": {
+          "24": 71075
+        },
+        "first_lines": [
+          "EXP,TYPE_FEEDBACK,SURETHING,EXPID,BLOCK,TRIAL,RISKYBETTER,FEEDBACK,MAG_RISKY1,MAG_RISKY2,P_RISKY,P_RISKY_CAT,P_SURE,MAG_SURE1,MAG_SURE2,RISKY_CHOICE,OPTIMAL_CHOICE,REPEAT_RISKY,OUT,CF_OUT,RTIME,PREVIOUS_RISKY_CHOICE,PREVIOUS_RISKY_OUT_MAX,CONDITION",
+          "8,1,1,5,1,1,1,0,4,0,0.8,2,1,3,3,0,0,NaN,3,4,0,NaN,NaN,byProb",
+          "8,1,1,5,1,2,1,0,4,0,0.8,2,1,3,3,0,0,NaN,3,4,0,0,1,byProb",
+          "8,1,1,5,1,3,1,0,4,0,0.8,2,1,3,3,0,0,NaN,3,4,0,0,1,byProb",
+          "8,1,1,5,1,4,1,0,4,0,0.8,2,1,3,3,0,0,NaN,3,4,0,0,1,byProb",
+          "8,1,1,5,1,5,1,0,4,0,0.8,2,1,3,3,0,0,NaN,3,4,0,0,1,byProb",
+          "8,1,1,5,1,6,1,1,4,0,0.8,2,1,3,3,0,0,NaN,3,4,0,NaN,NaN,byProb",
+          "8,1,1,5,1,7,1,1,4,0,0.8,2,1,3,3,0,0,NaN,3,4,0,0,1,byProb"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "anasioulas-riskyDecisionMakingFeedback-65ac539/Nasioulas2024_data.csv",
+      "bytes": 9351673,
+      "sha256": "0573ec721003821fd2407385164846804e7d6d592fe0094c3e1995a52e1938c7",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4558502c545950455f464545",
+        "delimiter": ",",
+        "header": [
+          "EXP",
+          "TYPE_FEEDBACK",
+          "BLOCK_INSTRUCTIONS",
+          "SURETHING",
+          "EXPID",
+          "BLOCK",
+          "TRIAL",
+          "RISKYBETTER",
+          "FEEDBACK",
+          "VALENCE",
+          "MAG_RISKY",
+          "P_RISKY",
+          "MAG_SURE1",
+          "MAG_SURE2",
+          "P_SURE",
+          "RISKY_CHOICE",
+          "OPTIMAL_CHOICE",
+          "REPEAT_RISKY",
+          "OUT",
+          "CF_OUT",
+          "INV",
+          "RTIME",
+          "PREVIOUS_RISKY_CHOICE",
+          "PREVIOUS_RISKY_OUT_MAX",
+          "PREVIOUS_OUT_POS"
+        ],
+        "data_records": 133200,
+        "row_width_counts": {
+          "25": 133200
+        },
+        "first_lines": [
+          "EXP,TYPE_FEEDBACK,BLOCK_INSTRUCTIONS,SURETHING,EXPID,BLOCK,TRIAL,RISKYBETTER,FEEDBACK,VALENCE,MAG_RISKY,P_RISKY,MAG_SURE1,MAG_SURE2,P_SURE,RISKY_CHOICE,OPTIMAL_CHOICE,REPEAT_RISKY,OUT,CF_OUT,INV,RTIME,PREVIOUS_RISKY_CHOICE,PREVIOUS_RISKY_OUT_MAX,PREVIOUS_OUT_POS",
+          "1,0,0,1,57549891,1,1,1,1,1,60,0.1,5,5,1,1,1,NaN,0,5,1,5271,NaN,NaN,NaN",
+          "1,0,0,1,57549891,1,2,1,1,1,60,0.1,5,5,1,1,1,1,0,5,0,1276,1,0,0",
+          "1,0,0,1,57549891,1,3,1,1,1,60,0.1,5,5,1,1,1,1,0,5,1,1256,1,0,0",
+          "1,0,0,1,57549891,1,4,1,1,1,60,0.1,5,5,1,1,1,1,0,5,1,1156,1,0,0",
+          "1,0,0,1,57549891,1,5,1,1,1,60,0.1,5,5,1,1,1,1,0,5,1,4361,1,0,0",
+          "1,0,0,1,57549891,1,6,1,1,1,60,0.1,5,5,1,1,1,1,0,5,1,27843,1,0,0",
+          "1,0,0,1,57549891,1,7,1,1,1,60,0.1,5,5,1,1,1,1,0,5,1,1438,1,0,0"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "anasioulas-riskyDecisionMakingFeedback-65ac539/Nasioulas2024_data_readMe.txt",
+      "bytes": 2799,
+      "sha256": "8aa6bbedad0a7b3afb10daa2e2c1b1ffd58c1d2a99bb486e4f8436c2d8e981d3",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "0a3d3d3d204e6173696f756c",
+        "line_count": 47,
+        "preview_lines": [
+          "",
+          "=== Nasioulas2024_data.csv ===",
+          "",
+          "EXP: number of experiment, as mentioned in the manuscript Nasioulas_2024 [values: 1-7]",
+          "TYPE_FEEDBACK: 0: partial, 1: complete"
+        ],
+        "first_lines": [
+          "",
+          "=== Nasioulas2024_data.csv ===",
+          "",
+          "EXP: number of experiment, as mentioned in the manuscript Nasioulas_2024 [values: 1-7]",
+          "TYPE_FEEDBACK: 0: partial, 1: complete",
+          "BLOCK_INSTRUCTIONS: whether instructions at the beginning of each block informing about the availability of feedback in the upcoming block were present (1) or not (0)",
+          "SURETHING: whether there was a sure-thing lottery (1) or a safe low-variance 50/50 option (0)",
+          "EXPID: random unique identifier for each participant/submission"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "anasioulas-riskyDecisionMakingFeedback-65ac539/README.md",
+      "bytes": 1425,
+      "sha256": "e819541eff0414ed130c90fa423f0e35a18a7786e8da44d1e8e24da1566b2f96",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "23204461746120616e642043",
+        "line_count": 45,
+        "preview_lines": [
+          "# Data and Code for *Nasioulas et al., 2024 (in press)*",
+          "",
+          "This repository provides open access to the dataset and analysis scripts accompanying **Nasioulas et al., 2024 (in press)**.",
+          "",
+          "---"
+        ]
+      }
+    },
+    {
+      "name": "anasioulas-riskyDecisionMakingFeedback-65ac539/generate_figure.m",
+      "bytes": 12735,
+      "sha256": "5f7c9249dc83db2c0df68266793392774e8405e4bfee86c925c333efe731bb56",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e2067656e",
+        "line_count": 341,
+        "preview_lines": [
+          "function generate_figure(figID, dataFile)",
+          "% generate_paper_figure(figID, dataFile)",
+          "%",
+          "% Examples:",
+          "%   generate_paper_figure('Figure5A', 'Nasioulas2024_data.csv');"
+        ]
+      }
+    },
+    {
+      "name": "anasioulas-riskyDecisionMakingFeedback-65ac539/generate_figures_main.m",
+      "bytes": 2831,
+      "sha256": "855fb25dd5312c6f37632dc8fa0999697b5211b77085d992cbfd007078345ff9",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "25252046696775726520320a",
+        "line_count": 47,
+        "preview_lines": [
+          "%% Figure 2",
+          "generate_figure('Figure2A', 'Nasioulas2024_data.csv'); % R-rates(FEEDBACK), Exp1",
+          "generate_figure('Figure2B', 'Nasioulas2024_data.csv'); % O-rates(FEEDBACK, risky/sureBetter), Exp1",
+          "generate_figure('Figure2C', 'Nasioulas2024_data.csv'); % R-rates(FEEDBACK, TRIAL), Exp1",
+          "generate_figure('Figure2D', 'Nasioulas2024_data.csv'); % R-rates(FEEDBACK), Exp2"
+        ]
+      }
+    },
+    {
+      "name": "anasioulas-riskyDecisionMakingFeedback-65ac539/generate_glmm.R",
+      "bytes": 1274,
+      "sha256": "02ce2e404d6a41063b9d4a6791d30dd507ddb9808e35af26d4b528c29afd20ff",
+      "structure": {
+        "format": "preserved_native",
+        "signature_hex": "6c696272617279286c6d6534290a0a67",
+        "reader_limitation": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+      }
+    },
+    {
+      "name": "anasioulas-riskyDecisionMakingFeedback-65ac539/generate_glmm_main.R",
+      "bytes": 6916,
+      "sha256": "7e6732e87031c61e1d2e89b81a669930f31ec5c6f083240701e38c7bb9d22ca9",
+      "structure": {
+        "format": "preserved_native",
+        "signature_hex": "6c6962726172792864706c7972290a6c",
+        "reader_limitation": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+      }
+    },
+    {
+      "name": "anasioulas-riskyDecisionMakingFeedback-65ac539/generate_glmm_utils.R",
+      "bytes": 2669,
+      "sha256": "6bf62db074e2e5b8b88baeb5f4464baad88c43e765fbc650b8ac89e516c6bec5",
+      "structure": {
+        "format": "preserved_native",
+        "signature_hex": "232052656d6f76652073706563696669",
+        "reader_limitation": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+      }
+    },
+    {
+      "name": "anasioulas-riskyDecisionMakingFeedback-65ac539/violinPlot.m",
+      "bytes": 3828,
+      "sha256": "2d14afd34d5e54e7d824f7903add2db5a0ce1074f92ef9fd239ebaa127c2a426",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e2076696f",
+        "line_count": 118,
+        "preview_lines": [
+          "function violinPlot(data, colors, connectLines)",
+          "%",
+          "% Usage:",
+          "%   simpleViolinPlot(data, colors, connectLines)",
+          "%"
+        ]
+      }
+    }
+  ],
+  "checks": [
+    "all_member_CRCs",
+    "safe_paths_no_symlinks"
+  ],
+  "member_count": 11,
+  "status": "pass"
+}

@@ -1,0 +1,1241 @@
+{
+  "bytes": 3272964,
+  "sha256": "2df52d88dd172e16ddb318a05dff33d92ea386849a6c8428574365f48d1cab2c",
+  "format_extension": ".cdf",
+  "checks": [],
+  "format": "NASA_CDF",
+  "variables": [
+    {
+      "name": "Epoch",
+      "last_record": 1599,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "Nanoseconds since J2000",
+        "DELTA_PLUS_VAR": "Epoch_plus_var",
+        "DELTA_MINUS_VAR": "Epoch_minus_var",
+        "FIELDNAM": "Time tags",
+        "FILLVAL": "-9223372036854775808",
+        "LABLAXIS": "Epoch",
+        "MONOTON": "INCREASE",
+        "REFERENCE_POSITION": "Rotating Earth Geoid",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1.0e-9>s",
+        "TIME_BASE": "J2000",
+        "TIME_SCALE": "Terrestrial Time",
+        "UNITS": "ns",
+        "VALIDMIN": "-315575942816000000",
+        "VALIDMAX": "3155716868184000000",
+        "VAR_NOTES": "MMS1 FPI/DES survey data begin-time; derived from survey packet time.",
+        "VAR_TYPE": "support_data"
+      },
+      "start_utc": "['2025-06-01T10:00:04.084203000']",
+      "end_utc": "['2025-06-01T11:59:59.640192000']"
+    },
+    {
+      "name": "Epoch_plus_var",
+      "last_record": 0,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES epoch plus var",
+        "FIELDNAM": "MMS1 FPI/DES epoch plus var",
+        "FORMAT": "F4.2",
+        "SI_CONVERSION": "1.0>s",
+        "UNITS": "s",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "4.5",
+        "VAR_TYPE": "support_data"
+      }
+    },
+    {
+      "name": "Epoch_minus_var",
+      "last_record": 0,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES epoch minus var",
+        "FIELDNAM": "MMS1 FPI/DES epoch minus var",
+        "FORMAT": "F4.2",
+        "SI_CONVERSION": "1.0>s",
+        "UNITS": "s",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "4.5",
+        "VAR_TYPE": "support_data"
+      }
+    },
+    {
+      "name": "mms1_des_errorflags_fast",
+      "last_record": 1599,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES vector of data-quality indicators at survey-start time",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES dataQuality errorFlags",
+        "FILLVAL": "4294967295",
+        "FORMAT": "I10",
+        "LABLAXIS": "errFlags",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": " > ",
+        "UNITS": "32-bit error flags",
+        "VALIDMIN": "0",
+        "VALIDMAX": "4294967294",
+        "VAR_NOTES": "Value of zero signifies no quality errors. For non-zero values: Bit-0 = manually flagged interval, Bit-1 = overcounting/saturation effects likely present in skymap, Bit-2 = reported spacecraft potential above 20V, Bit-3 = invalid/unavailable spacecraft potential, Bit-4 = significant (>10%) cold plasma (<10eV) component, Bit-5 = significant (>25%) hot plasma (>30keV) component, Bit-6 = high sonic Mach number (v/vth > 2.5), Bit-7 = low calculated density (n_DES < 0.05 cm^-3), Bit-8 = bentPipe magn",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_compressionloss_fast",
+      "last_record": 0,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES compression lossless/lossy indicator at survey-start time",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES compression flag",
+        "FILLVAL": "255",
+        "FORMAT": "I1",
+        "LABLAXIS": "compressFlag",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": " > ",
+        "UNITS": "0, 1",
+        "VALIDMIN": "0",
+        "VALIDMAX": "1",
+        "VAR_NOTES": "FPI/DES compression loss indicator, 0=lossless, 1=lossy",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_startdelphi_count_fast",
+      "last_record": 1599,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES Del-Phi (obs spin-phase) count at survey-start time",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES start Del-Phi count",
+        "FILLVAL": "65535",
+        "FORMAT": "I4.4",
+        "LABLAXIS": "DelPhi_cnt",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": " > ",
+        "UNITS": "del-phi counts",
+        "VALIDMIN": "0",
+        "VALIDMAX": "5761",
+        "VAR_NOTES": "Nominally, spin-phase counts range over [0000, 5759] cnts.  Each count represents 1/16 deg of observatory spin-phase.  Zero spin-phase angle indicates obs +X-axis aligned with the sun-sensor axis.",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_startdelphi_angle_fast",
+      "last_record": 1599,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES Del-Phi (obs spin-phase) angle at survey-start time",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES start Del-Phi angle",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "DelPhi_ang",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "0.0174532925>rad",
+        "UNITS": "deg",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "360.0",
+        "VAR_NOTES": "Nominally, spin-phase angles range over [0, 360) deg.  Each count represents 1/16 deg of observatory spin-phase.  Zero spin-phase angle indicates obs +X-axis aligned with the sun-sensor axis.",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_pitchangdist_lowen_fast",
+      "last_record": 1599,
+      "dimensions": [
+        30
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron pitch-angle distribution for \"low\" energies during this survey",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "mms1_des_alpha_fast",
+        "DISPLAY_TYPE": "spectrogram",
+        "FIELDNAM": "MMS1 FPI/DES pitchAngDist_lowEn",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "PAD_low",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1.e4>m^-2 s^-1 sr^-1",
+        "UNITS": "keV/(cm^2 s sr keV)",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "1e+30",
+        "VAR_NOTES": "Low energy bin: energy steps 0-10 (of total steps 0-31). Pitch-angle bin size: 6 deg. Note that pitch angles are calculated in the spacecraft frame; i.e., not shifted by the bulk velocity.",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_pitchangdist_miden_fast",
+      "last_record": 1599,
+      "dimensions": [
+        30
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron pitch-angle distribution for \"mid\" energies during this survey",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "mms1_des_alpha_fast",
+        "DISPLAY_TYPE": "spectrogram",
+        "FIELDNAM": "MMS1 FPI/DES pitchAngDist_midEn",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "PAD_mid",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1.e4>m^-2 s^-1 sr^-1",
+        "UNITS": "keV/(cm^2 s sr keV)",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "1e+30",
+        "VAR_NOTES": "Mid energy bin: energy steps 11-20 (of total steps 0-31). Pitch-angle bin size: 6 deg. Note that pitch angles are calculated in the spacecraft frame; i.e., not shifted by the bulk velocity.",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_pitchangdist_highen_fast",
+      "last_record": 1599,
+      "dimensions": [
+        30
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron pitch-angle distribution for \"high\" energies during this survey",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "mms1_des_alpha_fast",
+        "DISPLAY_TYPE": "spectrogram",
+        "FIELDNAM": "MMS1 FPI/DES pitchAngDist_highEn",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "PAD_high",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1.e4>m^-2 s^-1 sr^-1",
+        "UNITS": "keV/(cm^2 s sr keV)",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "1e+30",
+        "VAR_NOTES": "High energy bin: energy steps 21-31 (of total steps 0-31). Pitch-angle bin size: 6 deg. Note that pitch angles are calculated in the spacecraft frame; i.e., not shifted by the bulk velocity.",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_energyspectr_px_fast",
+      "last_record": 1599,
+      "dimensions": [
+        32
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron energy spectrum \"near\" +X_DBCS during this survey",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "mms1_des_energy_fast",
+        "DISPLAY_TYPE": "spectrogram",
+        "FIELDNAM": "MMS1 FPI/DES energySpectr_pX",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "DEF_px",
+        "SCALETYP": "log",
+        "SI_CONVERSION": "1.e4>m^-2 s^-1 sr^-1",
+        "UNITS": "keV/(cm^2 s sr keV)",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "1e+30",
+        "VAR_NOTES": "Differential energy flux by energy bin, averaged (weighted by solid angle) over particles whose DBCS flow direction is within 45 degrees (polar and azimuthal) of the +x axis (instrument look angles: 45deg <= theta < 135deg and 135deg <= phi < 225deg).",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_energyspectr_mx_fast",
+      "last_record": 1599,
+      "dimensions": [
+        32
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron energy spectrum \"near\" -X_DBCS during this survey",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "mms1_des_energy_fast",
+        "DISPLAY_TYPE": "spectrogram",
+        "FIELDNAM": "MMS1 FPI/DES energySpectr_mX",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "DEF_mx",
+        "SCALETYP": "log",
+        "SI_CONVERSION": "1.e4>m^-2 s^-1 sr^-1",
+        "UNITS": "keV/(cm^2 s sr keV)",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "1e+30",
+        "VAR_NOTES": "Differential energy flux by energy bin, averaged (weighted by solid angle) over particles whose DBCS flow direction is within 45 degrees (polar and azimuthal) of the -x axis (instrument look angles: 45deg <= theta < 135deg and phi >= 315deg or phi < 45deg).",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_energyspectr_py_fast",
+      "last_record": 1599,
+      "dimensions": [
+        32
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron energy spectrum \"near\" +Y_DBCS during this survey",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "mms1_des_energy_fast",
+        "DISPLAY_TYPE": "spectrogram",
+        "FIELDNAM": "MMS1 FPI/DES energySpectr_pY",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "DEF_py",
+        "SCALETYP": "log",
+        "SI_CONVERSION": "1.e4>m^-2 s^-1 sr^-1",
+        "UNITS": "keV/(cm^2 s sr keV)",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "1e+30",
+        "VAR_NOTES": "Differential energy flux by energy bin, averaged (weighted by solid angle) over particles whose DBCS flow direction is within 45 degrees (polar and azimuthal) of the +y axis (instrument look angles: 45deg <= theta < 135deg and 225deg <= phi < 315deg).",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_energyspectr_my_fast",
+      "last_record": 1599,
+      "dimensions": [
+        32
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron energy spectrum \"near\" -Y_DBCS during this survey",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "mms1_des_energy_fast",
+        "DISPLAY_TYPE": "spectrogram",
+        "FIELDNAM": "MMS1 FPI/DES energySpectr_mY",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "DEF_my",
+        "SCALETYP": "log",
+        "SI_CONVERSION": "1.e4>m^-2 s^-1 sr^-1",
+        "UNITS": "keV/(cm^2 s sr keV)",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "1e+30",
+        "VAR_NOTES": "Differential energy flux by energy bin, averaged (weighted by solid angle) over particles whose DBCS flow direction is within 45 degrees (polar and azimuthal) of the -y axis (instrument look angles: 45deg <= theta < 135deg and 45deg <= phi < 135deg).",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_energyspectr_pz_fast",
+      "last_record": 1599,
+      "dimensions": [
+        32
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron energy spectrum \"near\" +Z_DBCS during this survey",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "mms1_des_energy_fast",
+        "DISPLAY_TYPE": "spectrogram",
+        "FIELDNAM": "MMS1 FPI/DES energySpectr_pZ",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "DEF_pz",
+        "SCALETYP": "log",
+        "SI_CONVERSION": "1.e4>m^-2 s^-1 sr^-1",
+        "UNITS": "keV/(cm^2 s sr keV)",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "1e+30",
+        "VAR_NOTES": "Differential energy flux by energy bin, averaged (weighted by solid angle) over particles whose DBCS flow direction is within 45 degrees (polar and azimuthal) of the +z axis (instrument look angles: 135deg <= theta < 180deg and 0deg <= phi < 360deg).",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_energyspectr_mz_fast",
+      "last_record": 1599,
+      "dimensions": [
+        32
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron energy spectrum \"near\" -Z_DBCS during this survey",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "mms1_des_energy_fast",
+        "DISPLAY_TYPE": "spectrogram",
+        "FIELDNAM": "MMS1 FPI/DES energySpectr_mZ",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "DEF_mz",
+        "SCALETYP": "log",
+        "SI_CONVERSION": "1.e4>m^-2 s^-1 sr^-1",
+        "UNITS": "keV/(cm^2 s sr keV)",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "1e+30",
+        "VAR_NOTES": "Differential energy flux by energy bin, averaged (weighted by solid angle) over particles whose DBCS flow direction is within 45 degrees (polar and azimuthal) of the -z axis (instrument look angles: 0deg <= theta < 45deg and 0deg <= phi < 360deg).",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_energyspectr_par_fast",
+      "last_record": 1599,
+      "dimensions": [
+        32
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron energy parallel to the magnetic field direction during this survey",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "mms1_des_energy_fast",
+        "DISPLAY_TYPE": "spectrogram",
+        "FIELDNAM": "MMS1 FPI/DES energySpectr_par",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "DEF_par",
+        "SCALETYP": "log",
+        "SI_CONVERSION": "1.e4>m^-2 s^-1 sr^-1",
+        "UNITS": "keV/(cm^2 s sr keV)",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "1e+30",
+        "VAR_NOTES": "Differential energy flux by energy bin, averaged (weighted by solid angle) over particles whose DBCS flow direction (not instrument look direction) is within 30 degrees of the magnetic field direction.",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_energyspectr_anti_fast",
+      "last_record": 1599,
+      "dimensions": [
+        32
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron energy anti-parallel to the magnetic field direction during this survey",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "mms1_des_energy_fast",
+        "DISPLAY_TYPE": "spectrogram",
+        "FIELDNAM": "MMS1 FPI/DES energySpectr_anti",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "DEF_anti-par",
+        "SCALETYP": "log",
+        "SI_CONVERSION": "1.e4>m^-2 s^-1 sr^-1",
+        "UNITS": "keV/(cm^2 s sr keV)",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "1e+30",
+        "VAR_NOTES": "Differential energy flux by energy bin, averaged (weighted by solid angle) over particles whose DBCS flow direction (not instrument look direction) is within 150 degrees of the magnetic field direction.",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_energyspectr_perp_fast",
+      "last_record": 1599,
+      "dimensions": [
+        32
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron energy perpendicular to the magnetic field direction during this survey",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "mms1_des_energy_fast",
+        "DISPLAY_TYPE": "spectrogram",
+        "FIELDNAM": "MMS1 FPI/DES energySpectr_perp",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "DEF_perp",
+        "SCALETYP": "log",
+        "SI_CONVERSION": "1.e4>m^-2 s^-1 sr^-1",
+        "UNITS": "keV/(cm^2 s sr keV)",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "1e+30",
+        "VAR_NOTES": "Differential energy flux by energy bin, averaged (weighted by solid angle) over particles whose DBCS flow direction (not instrument look direction) is within 60-120 degrees of the magnetic field direction.",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_energyspectr_omni_fast",
+      "last_record": 1599,
+      "dimensions": [
+        32
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES omni-directional electron energy spectrum during this survey",
+        "DEPEND_0": "Epoch",
+        "DEPEND_1": "mms1_des_energy_fast",
+        "DISPLAY_TYPE": "spectrogram",
+        "FIELDNAM": "MMS1 FPI/DES energySpectr_omni",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "DEF_omni",
+        "SCALETYP": "log",
+        "SI_CONVERSION": "1.e4>m^-2 s^-1 sr^-1",
+        "UNITS": "keV/(cm^2 s sr keV)",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "1e+30",
+        "VAR_NOTES": "Differential energy flux by energy bin, averaged (weighted by solid angle) over all directions (flow or look).",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_numberdensity_fast",
+      "last_record": 1599,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron number density during this survey",
+        "DELTA_PLUS_VAR": "mms1_des_numberdensity_err_fast",
+        "DELTA_MINUS_VAR": "mms1_des_numberdensity_err_fast",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES number density",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "N",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1e6>m^-3",
+        "UNITS": "cm^-3",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "100000.0",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_numberdensity_err_fast",
+      "last_record": 1599,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron number density error during this survey",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES number density error",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "N_err",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1e6>m^-3",
+        "UNITS": "cm^-3",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "100000.0",
+        "VAR_TYPE": "support_data"
+      }
+    },
+    {
+      "name": "mms1_des_densityextrapolation_low_fast",
+      "last_record": 1599,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES estimated (via extrapolation to 0) contribution to density integral below 10eV",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES density extrapolation (low)",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "N",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1e6>m^-3",
+        "UNITS": "cm^-3",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "100000.0",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_densityextrapolation_high_fast",
+      "last_record": 1599,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES estimated (via extrapolation to infinity) contribution to density integral above 30keV",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES density extrapolation (high)",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "N",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1e6>m^-3",
+        "UNITS": "cm^-3",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "100000.0",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_bulkv_dbcs_fast",
+      "last_record": 1599,
+      "dimensions": [
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron bulk-velocity vector in DBCS during this survey",
+        "COORDINATE_SYSTEM": "DBCS>Despun Body Coordinate System",
+        "DELTA_PLUS_VAR": "mms1_des_bulkv_err_fast",
+        "DELTA_MINUS_VAR": "mms1_des_bulkv_err_fast",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES DBCS bulk v",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "mms1_des_bulkv_dbcs_label_fast",
+        "REPRESENTATION_1": "mms1_des_cartrep_fast",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": "1",
+        "UNITS": "km/s",
+        "VALIDMIN": "-110000.0",
+        "VALIDMAX": "110000.0",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_bulkv_spintone_dbcs_fast",
+      "last_record": 1599,
+      "dimensions": [
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron bulk-velocity estimated spintone vector in DBCS during this survey",
+        "COORDINATE_SYSTEM": "DBCS>Despun Body Coordinate System",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES DBCS bulk v spintone",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "mms1_des_bulkv_spintone_dbcs_label_fast",
+        "REPRESENTATION_1": "mms1_des_cartrep_fast",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": "1",
+        "UNITS": "km/s",
+        "VALIDMIN": "-110000.0",
+        "VALIDMAX": "110000.0",
+        "VAR_NOTES": "Estimated systematic error (positive or negative) in spin-plane bulk velocity (km/s) due to imperfect sensor suite flat-fielding. This can be subtracted from bulk velocity to obtain the corrected velocity vector.",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_bulkv_gse_fast",
+      "last_record": 1599,
+      "dimensions": [
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron bulk-velocity vector in GSE during this survey",
+        "COORDINATE_SYSTEM": "GSE>Geocentric Solar Ecliptic",
+        "DELTA_PLUS_VAR": "mms1_des_bulkv_err_fast",
+        "DELTA_MINUS_VAR": "mms1_des_bulkv_err_fast",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES GSE bulk v",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "mms1_des_bulkv_gse_label_fast",
+        "REPRESENTATION_1": "mms1_des_cartrep_fast",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": "1",
+        "UNITS": "km/s",
+        "VALIDMIN": "-110000.0",
+        "VALIDMAX": "110000.0",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_bulkv_spintone_gse_fast",
+      "last_record": 1599,
+      "dimensions": [
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron bulk-velocity estimated spintone vector in GSE during this survey",
+        "COORDINATE_SYSTEM": "GSE>Geocentric Solar Ecliptic",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES GSE bulk v spintone",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "mms1_des_bulkv_spintone_gse_label_fast",
+        "REPRESENTATION_1": "mms1_des_cartrep_fast",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": "1",
+        "UNITS": "km/s",
+        "VALIDMIN": "-110000.0",
+        "VALIDMAX": "110000.0",
+        "VAR_NOTES": "Estimated systematic error (positive or negative) in spin-plane bulk velocity (km/s) due to imperfect sensor suite flat-fielding. This can be subtracted from bulk velocity to obtain the corrected velocity vector.",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_bulkv_err_fast",
+      "last_record": 1599,
+      "dimensions": [
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron bulk-velocity error vector during this survey",
+        "COORDINATE_SYSTEM": "DBCS>Despun Body Coordinate System",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES bulk v error",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "mms1_des_bulkv_err_label_fast",
+        "REPRESENTATION_1": "mms1_des_cartrep_fast",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1.0e3>m s^-1",
+        "TENSOR_ORDER": "1",
+        "UNITS": "km/s",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "220000.0",
+        "VAR_NOTES": "Error can be applied to either DBCS or GSE coordinate system",
+        "VAR_TYPE": "support_data"
+      }
+    },
+    {
+      "name": "mms1_des_prestensor_dbcs_fast",
+      "last_record": 1599,
+      "dimensions": [
+        3,
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron pressure tensor in DBCS during this survey",
+        "COORDINATE_SYSTEM": "DBCS>Despun Body Coordinate System",
+        "DELTA_PLUS_VAR": "mms1_des_prestensor_err_fast",
+        "DELTA_MINUS_VAR": "mms1_des_prestensor_err_fast",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES DBCS pres tensor",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P_DBCS",
+        "LABL_PTR_1": "mms1_des_cartrep_fast",
+        "LABL_PTR_2": "mms1_des_cartrep_fast",
+        "REPRESENTATION_1": "mms1_des_cartrep_fast",
+        "REPRESENTATION_2": "mms1_des_cartrep_fast",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1.0e-9>Pa",
+        "TENSOR_ORDER": "2",
+        "UNITS": "nPa",
+        "VALIDMIN": "-100000.0",
+        "VALIDMAX": "100000.0",
+        "VAR_NOTES": "The 3x3 matrix is represented as: Row1) Pxx Pxy Pxz, Row2) Pyx Pyy Pyz, Row3) Pzx Pzy Pzz. Note that Pij=Pji.",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_prestensor_gse_fast",
+      "last_record": 1599,
+      "dimensions": [
+        3,
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron pressure tensor in GSE during this survey",
+        "COORDINATE_SYSTEM": "GSE>Geocentric Solar Ecliptic",
+        "DELTA_PLUS_VAR": "mms1_des_prestensor_err_fast",
+        "DELTA_MINUS_VAR": "mms1_des_prestensor_err_fast",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES GSE pres tensor",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P_GSE",
+        "LABL_PTR_1": "mms1_des_cartrep_fast",
+        "LABL_PTR_2": "mms1_des_cartrep_fast",
+        "REPRESENTATION_1": "mms1_des_cartrep_fast",
+        "REPRESENTATION_2": "mms1_des_cartrep_fast",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1.0e-9>Pa",
+        "TENSOR_ORDER": "2",
+        "UNITS": "nPa",
+        "VALIDMIN": "-100000.0",
+        "VALIDMAX": "100000.0",
+        "VAR_NOTES": "The 3x3 matrix is represented as: Row1) Pxx Pxy Pxz, Row2) Pyx Pyy Pyz, Row3) Pzx Pzy Pzz. Note that Pij=Pji.",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_prestensor_err_fast",
+      "last_record": 1599,
+      "dimensions": [
+        3,
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron pressure tensor error during this survey",
+        "COORDINATE_SYSTEM": "DBCS>Despun Body Coordinate System",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES Pres error",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "P_err",
+        "LABL_PTR_1": "mms1_des_cartrep_fast",
+        "LABL_PTR_2": "mms1_des_cartrep_fast",
+        "REPRESENTATION_1": "mms1_des_cartrep_fast",
+        "REPRESENTATION_2": "mms1_des_cartrep_fast",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1.0e-9>Pa",
+        "TENSOR_ORDER": "2",
+        "UNITS": "nPa",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "200000.0",
+        "VAR_NOTES": "Error can be applied to either DBCS or GSE coordinate system",
+        "VAR_TYPE": "support_data"
+      }
+    },
+    {
+      "name": "mms1_des_temptensor_dbcs_fast",
+      "last_record": 1599,
+      "dimensions": [
+        3,
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron temperature tensor in DBCS during this survey",
+        "COORDINATE_SYSTEM": "DBCS>Despun Body Coordinate System",
+        "DELTA_PLUS_VAR": "mms1_des_temptensor_err_fast",
+        "DELTA_MINUS_VAR": "mms1_des_temptensor_err_fast",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES DBCS temp tensor",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "T_DBCS",
+        "LABL_PTR_1": "mms1_des_cartrep_fast",
+        "LABL_PTR_2": "mms1_des_cartrep_fast",
+        "REPRESENTATION_1": "mms1_des_cartrep_fast",
+        "REPRESENTATION_2": "mms1_des_cartrep_fast",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "11604.50520>K",
+        "TENSOR_ORDER": "2",
+        "UNITS": "eV",
+        "VALIDMIN": "-30000.0",
+        "VALIDMAX": "30000.0",
+        "VAR_NOTES": "The 3x3 matrix is represented as: Row1) Txx Txy Txz, Row2) Tyx Tyy Tyz, Row3) Tzx Tzy Tzz. Note that Tij=Tji.",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_temptensor_gse_fast",
+      "last_record": 1599,
+      "dimensions": [
+        3,
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron temperature tensor in GSE during this survey",
+        "COORDINATE_SYSTEM": "GSE>Geocentric Solar Ecliptic",
+        "DELTA_PLUS_VAR": "mms1_des_temptensor_err_fast",
+        "DELTA_MINUS_VAR": "mms1_des_temptensor_err_fast",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES GSE temp tensor",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "T_GSE",
+        "LABL_PTR_1": "mms1_des_cartrep_fast",
+        "LABL_PTR_2": "mms1_des_cartrep_fast",
+        "REPRESENTATION_1": "mms1_des_cartrep_fast",
+        "REPRESENTATION_2": "mms1_des_cartrep_fast",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "11604.50520>K",
+        "TENSOR_ORDER": "2",
+        "UNITS": "eV",
+        "VALIDMIN": "-30000.0",
+        "VALIDMAX": "30000.0",
+        "VAR_NOTES": "The 3x3 matrix is represented as: Row1) Txx Txy Txz, Row2) Tyx Tyy Tyz, Row3) Tzx Tzy Tzz. Note that Tij=Tji.",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_temptensor_err_fast",
+      "last_record": 1599,
+      "dimensions": [
+        3,
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron temperature tensor error during this survey",
+        "COORDINATE_SYSTEM": "DBCS>Despun Body Coordinate System",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES DBCS temp error",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "T_err",
+        "LABL_PTR_1": "mms1_des_cartrep_fast",
+        "LABL_PTR_2": "mms1_des_cartrep_fast",
+        "REPRESENTATION_1": "mms1_des_cartrep_fast",
+        "REPRESENTATION_2": "mms1_des_cartrep_fast",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "11604.50520>K",
+        "TENSOR_ORDER": "2",
+        "UNITS": "eV",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "60000.0",
+        "VAR_NOTES": "Error can be applied to either DBCS or GSE coordinate system",
+        "VAR_TYPE": "support_data"
+      }
+    },
+    {
+      "name": "mms1_des_heatq_dbcs_fast",
+      "last_record": 1599,
+      "dimensions": [
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron heat-flux vector in DBCS during this survey",
+        "COORDINATE_SYSTEM": "DBCS>Despun Body Coordinate System",
+        "DELTA_PLUS_VAR": "mms1_des_heatq_err_fast",
+        "DELTA_MINUS_VAR": "mms1_des_heatq_err_fast",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES DBCS heatq",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "mms1_des_heatq_dbcs_label_fast",
+        "REPRESENTATION_1": "mms1_des_cartrep_fast",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1.0e-3>W m^-2",
+        "TENSOR_ORDER": "1",
+        "UNITS": "mW/m^2",
+        "VALIDMIN": "-100000000.0",
+        "VALIDMAX": "100000000.0",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_heatq_gse_fast",
+      "last_record": 1599,
+      "dimensions": [
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron heat-flux vector in GSE during this survey",
+        "COORDINATE_SYSTEM": "GSE>Geocentric Solar Ecliptic",
+        "DELTA_PLUS_VAR": "mms1_des_heatq_err_fast",
+        "DELTA_MINUS_VAR": "mms1_des_heatq_err_fast",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES GSE heatq",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "mms1_des_heatq_gse_label_fast",
+        "REPRESENTATION_1": "mms1_des_cartrep_fast",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1.0e-3>W m^-2",
+        "TENSOR_ORDER": "1",
+        "UNITS": "mW/m^2",
+        "VALIDMIN": "-100000000.0",
+        "VALIDMAX": "100000000.0",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_heatq_err_fast",
+      "last_record": 1599,
+      "dimensions": [
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron heat-flux error vector during this survey",
+        "COORDINATE_SYSTEM": "DBCS>Despun Body Coordinate System",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI/DES heatq error",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "mms1_des_heatq_err_label_fast",
+        "REPRESENTATION_1": "mms1_des_cartrep_fast",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "1.0e-3>W m^-2",
+        "TENSOR_ORDER": "1",
+        "UNITS": "mW/m^2",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "200000000.0",
+        "VAR_NOTES": "Error can be applied to either DBCS or GSE coordinate system",
+        "VAR_TYPE": "support_data"
+      }
+    },
+    {
+      "name": "mms1_des_alpha_fast",
+      "last_record": 0,
+      "dimensions": [
+        30
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES fast survey sky-map pitch angles",
+        "DELTA_PLUS_VAR": "mms1_des_alpha_delta_fast",
+        "DELTA_MINUS_VAR": "mms1_des_alpha_delta_fast",
+        "FIELDNAM": "MMS1 FPI/DES alpha",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "pitch_ang",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "0.0174532925>rad",
+        "UNITS": "deg",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "180.0",
+        "VAR_NOTES": "Pitch-angles angles used in pitch angle spectrograms (bent Pipe field)",
+        "VAR_TYPE": "support_data"
+      }
+    },
+    {
+      "name": "mms1_des_alpha_delta_fast",
+      "last_record": 0,
+      "dimensions": [
+        30
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES fast survey sky-map pitch angle deltas",
+        "FIELDNAM": "MMS1 FPI/DES alpha delta",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "delta pitch_ang",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "0.0174532925>rad",
+        "UNITS": "deg",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "10.0",
+        "VAR_NOTES": "Pitch angle deltas",
+        "VAR_TYPE": "support_data"
+      }
+    },
+    {
+      "name": "mms1_des_energy_fast",
+      "last_record": 1599,
+      "dimensions": [
+        32
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES fast survey sky-map energies",
+        "DELTA_PLUS_VAR": "mms1_des_energy_delta_fast",
+        "DELTA_MINUS_VAR": "mms1_des_energy_delta_fast",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "MMS1 FPI/DES energy",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "energy",
+        "SCALETYP": "log",
+        "SI_CONVERSION": "1.6021773E-19>J",
+        "UNITS": "eV",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "30000.0",
+        "VAR_NOTES": "Geometric mean of parity 0 and parity 1 energies in the 64-step FPI energy table",
+        "VAR_TYPE": "support_data"
+      }
+    },
+    {
+      "name": "mms1_des_energy_delta_fast",
+      "last_record": 1599,
+      "dimensions": [
+        32
+      ],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES fast survey sky-map delta energies",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "MMS1 FPI/DES delta energy",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "delta energy",
+        "SCALETYP": "log",
+        "SI_CONVERSION": "1.6021773E-19>J",
+        "UNITS": "eV",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "5000.0",
+        "VAR_NOTES": "Note that the deltas are provided to indicate that FPI is reporting the energy bin centers. These do not necessarily reflect the energy bandwidth that is sampled by FPI at a given energy step.",
+        "VAR_TYPE": "support_data"
+      }
+    },
+    {
+      "name": "mms1_des_temppara_fast",
+      "last_record": 1599,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron parallel temperature during this BP",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI1/DES tempPara",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "eT_para",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "11604.50520>K",
+        "UNITS": "eV",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "1e+30",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_tempperp_fast",
+      "last_record": 1599,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "MMS1 FPI/DES electron perpendicular temperature during this BP",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "MMS1 FPI1/DES tempPerp",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABLAXIS": "eT_perp",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": "11604.50520>K",
+        "UNITS": "eV",
+        "VALIDMIN": "0.0",
+        "VALIDMAX": "1e+30",
+        "VAR_TYPE": "data"
+      }
+    },
+    {
+      "name": "mms1_des_bulkv_dbcs_label_fast",
+      "last_record": 0,
+      "dimensions": [
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS/FPI DBCS velocity label",
+        "FIELDNAM": "MMS/FPI DBCS velocity label",
+        "FORMAT": "A7",
+        "VAR_TYPE": "metadata"
+      }
+    },
+    {
+      "name": "mms1_des_bulkv_gse_label_fast",
+      "last_record": 0,
+      "dimensions": [
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS/FPI GSE velocity label",
+        "FIELDNAM": "MMS/FPI GSE velocity label",
+        "FORMAT": "A6",
+        "VAR_TYPE": "metadata"
+      }
+    },
+    {
+      "name": "mms1_des_bulkv_spintone_dbcs_label_fast",
+      "last_record": 0,
+      "dimensions": [
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS/FPI DBCS velocity spintone label",
+        "FIELDNAM": "MMS/FPI DBCS velocity spintone label",
+        "FORMAT": "A16",
+        "VAR_TYPE": "metadata"
+      }
+    },
+    {
+      "name": "mms1_des_bulkv_spintone_gse_label_fast",
+      "last_record": 0,
+      "dimensions": [
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS/FPI GSE velocity spintone label",
+        "FIELDNAM": "MMS/FPI GSE velocity spintone label",
+        "FORMAT": "A15",
+        "VAR_TYPE": "metadata"
+      }
+    },
+    {
+      "name": "mms1_des_bulkv_err_label_fast",
+      "last_record": 0,
+      "dimensions": [
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS/FPI err velocity label",
+        "FIELDNAM": "MMS/FPI err velocity label",
+        "FORMAT": "A6",
+        "VAR_TYPE": "metadata"
+      }
+    },
+    {
+      "name": "mms1_des_heatq_dbcs_label_fast",
+      "last_record": 0,
+      "dimensions": [
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS/FPI DBCS heat flux label",
+        "FIELDNAM": "MMS/FPI DBCS heat flux label",
+        "FORMAT": "A7",
+        "VAR_TYPE": "metadata"
+      }
+    },
+    {
+      "name": "mms1_des_heatq_gse_label_fast",
+      "last_record": 0,
+      "dimensions": [
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS/FPI GSE heat flux label",
+        "FIELDNAM": "MMS/FPI GSE heat flux label",
+        "FORMAT": "A6",
+        "VAR_TYPE": "metadata"
+      }
+    },
+    {
+      "name": "mms1_des_heatq_err_label_fast",
+      "last_record": 0,
+      "dimensions": [
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS/FPI err heat flux label",
+        "FIELDNAM": "MMS/FPI err heat flux label",
+        "FORMAT": "A6",
+        "VAR_TYPE": "metadata"
+      }
+    },
+    {
+      "name": "mms1_des_cartrep_fast",
+      "last_record": 0,
+      "dimensions": [
+        3
+      ],
+      "attributes": {
+        "CATDESC": "MMS/FPI cartesian representation variable",
+        "FIELDNAM": "MMS/FPI cartesian representation",
+        "FORMAT": "A1",
+        "VAR_TYPE": "metadata"
+      }
+    }
+  ],
+  "attributes": {
+    "Project": "['STP>Solar-Terrestrial Physics']",
+    "Source_name": "['MMS1>MMS Satellite Number 1']",
+    "Discipline": "['Space Physics>Magnetospheric Science']",
+    "Data_type": "['fast_l2_des-moms']",
+    "Descriptor": "['DES>Dual Electron Spectrometers']",
+    "File_naming_convention": "['source_descriptor_datatype_yyyyMMddHHmmss']",
+    "Data_version": "['3.4.1']",
+    "PI_name": "['J. Burch, B. Giles']",
+    "PI_affiliation": "['SwRI, GSFC']",
+    "TEXT": "['FPI usually operates in Fast Survey (FS) Mode in the MMS Region Of Interest (ROI) for the current Mission Phase. Data are taken at burst (30/150 ms for DES/DIS) resolution in this mode. Data are also made available at survey (4.5 s) resolution.  Per mission design, not all burst-resolution data are downlinked, but all survey data are downlinked. Planning around calibration activities, avoidance of Earth radiation belts, etc, when possible, FPI usually operates in Slow Survey (SS) Mode (60 s re",
+    "Instrument_type": "['Plasma and Solar Wind', 'Particles (space)']",
+    "Mission_group": "['MMS']",
+    "Logical_source": "['mms1_fpi_fast_l2_des-moms']",
+    "Logical_file_id": "['mms1_fpi_fast_l2_des-moms_20250601100000_v3.4.1']",
+    "Logical_source_description": "['MMS Satellite Number 1 Dual Electron Spectrometer FastSurvey-resolution distribution moments']",
+    "Time_resolution": "['4.5 seconds']",
+    "Rules_of_use": "['See FPI Version Release Notes (https://lasp.colorado.edu/mms/sdc/public/datasets/fpi/) for rules of use.']",
+    "Generated_by": "['FPI ITF, NASA/GSFC Code 673']",
+    "Generation_date": "['Wed Jul 16 20:09:17 2025']",
+    "Generation_site": "['ITF']",
+    "MODS": "['See FPI Version Release Notes (https://lasp.colorado.edu/mms/sdc/public/datasets/fpi/) for data set modification history.']",
+    "LINK_TEXT": "['MMS home page', 'SMART package home page', 'Science Data Center', 'FPI overview']",
+    "LINK_TITLE": "['at GSFC', 'at SWRI', 'at LASP', 'at NASA']",
+    "HTTP_LINK": "['http://mms.gsfc.nasa.gov', 'http://mms.space.swri.edu', 'http://lasp.colorado.edu/mms/sdc', 'http://www.nasa.gov/mission_pages/mms/spacecraft/instruments.html#fpi']",
+    "Skeleton_version": "['$Revision: 9428 $']",
+    "Skeleton_revdate": "['$Date: 2020-11-03 16:21:33 -0500 (Tue, 03 Nov 2020) $']",
+    "Correction_table_name": "['mms1_des_fast_f1ct_v50-1621_1634_p15-17.cdf']",
+    "Correction_table_rev": "['00000']",
+    "Correction_table_scaling_factor": "['0.83000']",
+    "Energy_table_name": "['energies_des_15-17.txt']",
+    "Dead_time_correction": "['100 ns']",
+    "Magnetic_field_filenames": "['mms1_fgm_srvy_l2_20250601_v5.505.0.cdf mms1_fgm_srvy_l2_20250602_v5.505.0.cdf']",
+    "Spacecraft_potential_filenames": "['mms1_edp_fast_l2_scpot_20250601000000_v2.9.2.cdf mms1_edp_fast_l2_scpot_20250602000000_v2.9.2.cdf']",
+    "Spacecraft_potential_scaling_factor": "['1.0']",
+    "Spacecraft_potential_offset": "['0.0']",
+    "Photoelectron_model_filenames": "['mms_fpi_fast_l2_des-bgdist_v1.1.0_p15-17.cdf']",
+    "Photoelectron_model_scaling_factor": "['0.5700000']",
+    "Photoelectron_filter": "['Off']",
+    "Low_energy_extrapolation": "['Enabled']",
+    "High_energy_extrapolation": "['Enabled']",
+    "Spacecraft_attitude_filenames": "['MMS1_DEFATT_2025152_2025153.V00']",
+    "Lower_energy_integration_limit": "['10.00eV']",
+    "Upper_energy_integration_limit": "['30000.00eV']",
+    "Energy_e0": "['100.00eV']",
+    "Scp_energy_fraction": "['1.00eV']",
+    "Skymap_avgN": "['1']"
+  },
+  "path": "raw/fpi/fast/l2/des-moms/2025/06/mms1_fpi_fast_l2_des-moms_20250601100000_v3.4.1.cdf",
+  "scenario_id": "46_space_physics_mms1_plasma",
+  "verified_utc": "2026-09-14T16:00:19.418729+00:00",
+  "status": "pass"
+}

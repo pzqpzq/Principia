@@ -1,0 +1,836 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "74_biochemistry_kinase_biosensors",
+  "domain": "Biochemical sensing",
+  "title": "Dataset from \"A triangulenum-based biosensor platform for mapping kinase activity in T cells\"",
+  "publisher": "Orte, Angel (Universidad de Granada); GONZALEZ VERA, JUAN ANTONIO (Universidad de Granada); Salto-Giron, Carmen (Universidad de Granada)",
+  "authoritative_landing_url": "https://zenodo.org/records/18911385",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/18911385",
+    "https://zenodo.org/api/records/18911385/files/Fig_S5A.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_5A.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_S3B.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_S4A.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_S4B.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_S1B.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_7B-right.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_S7.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_6B-left.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_6B-right.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_S5B.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_S3A.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_2A.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_9C.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_S1A.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_7B-left.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_2B.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_8.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_4A.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_S6.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_7-and-S9.zip/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_6-and-S8.zip/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_9B.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_4B.csv/content",
+    "https://zenodo.org/api/records/18911385/files/Fig_5B.csv/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.18911385"
+  ],
+  "release_or_version": "18911385",
+  "retrieval_finalized_utc": "2026-09-15T07:04:40.098086+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Campaign dates unknown; March 2026 deposit.",
+  "source_publication_date": "2026-03-08",
+  "source_created_utc": "2026-03-16T09:00:13.925543+00:00",
+  "source_updated_utc": "2026-03-16T09:00:16.661856+00:00",
+  "source_inventory": [
+    {
+      "name": "Fig_S5A.csv",
+      "bytes": 451,
+      "selected": true
+    },
+    {
+      "name": "Fig_5A.csv",
+      "bytes": 207,
+      "selected": true
+    },
+    {
+      "name": "Fig_S3B.csv",
+      "bytes": 7009,
+      "selected": true
+    },
+    {
+      "name": "Fig_S4A.csv",
+      "bytes": 382,
+      "selected": true
+    },
+    {
+      "name": "Fig_S4B.csv",
+      "bytes": 332,
+      "selected": true
+    },
+    {
+      "name": "Fig_S1B.csv",
+      "bytes": 126,
+      "selected": true
+    },
+    {
+      "name": "Fig_7B-right.csv",
+      "bytes": 794,
+      "selected": true
+    },
+    {
+      "name": "Fig_S7.csv",
+      "bytes": 752,
+      "selected": true
+    },
+    {
+      "name": "Fig_6B-left.csv",
+      "bytes": 935,
+      "selected": true
+    },
+    {
+      "name": "Fig_6B-right.csv",
+      "bytes": 783,
+      "selected": true
+    },
+    {
+      "name": "Fig_S5B.csv",
+      "bytes": 511,
+      "selected": true
+    },
+    {
+      "name": "Fig_S3A.csv",
+      "bytes": 10562,
+      "selected": true
+    },
+    {
+      "name": "Fig_2A.csv",
+      "bytes": 3944,
+      "selected": true
+    },
+    {
+      "name": "Fig_9C.csv",
+      "bytes": 166,
+      "selected": true
+    },
+    {
+      "name": "Fig_S1A.csv",
+      "bytes": 127,
+      "selected": true
+    },
+    {
+      "name": "Fig_7B-left.csv",
+      "bytes": 737,
+      "selected": true
+    },
+    {
+      "name": "Fig_2B.csv",
+      "bytes": 8032,
+      "selected": true
+    },
+    {
+      "name": "Fig_8.csv",
+      "bytes": 216,
+      "selected": true
+    },
+    {
+      "name": "Fig_4A.csv",
+      "bytes": 37918,
+      "selected": true
+    },
+    {
+      "name": "Fig_S6.csv",
+      "bytes": 351,
+      "selected": true
+    },
+    {
+      "name": "Fig_7-and-S9.zip",
+      "bytes": 19838092,
+      "selected": true
+    },
+    {
+      "name": "Fig_6-and-S8.zip",
+      "bytes": 31756638,
+      "selected": true
+    },
+    {
+      "name": "Fig_9B.csv",
+      "bytes": 82,
+      "selected": true
+    },
+    {
+      "name": "Fig_4B.csv",
+      "bytes": 37963,
+      "selected": true
+    },
+    {
+      "name": "Fig_5B.csv",
+      "bytes": 206,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Kinetic/spectral CSVs and TIFF images; published analyses include standard Michaelis–Menten fits.",
+  "known_analyses_and_limitations": "Hold out biological/experimental replicate and complete dose conditions. Pixels or successive time samples are not independent experiments.",
+  "related_publications": [],
+  "independent_groups": "independent experiments, enzyme and dose conditions",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-074",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_S5A.csv",
+      "scenario_relative_path": "raw/Fig_S5A.csv",
+      "bytes": 451,
+      "sha256": "3126662a03c693672fdfbbee395f63d454b39056d33a6458a5f495c988f3e0fc",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_S5A.csv/content",
+      "source_checksum": "md5:0a4b524ab21ce24ed5f3d7c0cec5badf",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:13.726415+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_5A.csv",
+      "scenario_relative_path": "raw/Fig_5A.csv",
+      "bytes": 207,
+      "sha256": "545e933f8707602d7a8cba8b30f165e5a37e986993765673713de5175ab61e77",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_5A.csv/content",
+      "source_checksum": "md5:2b08b4583e48fc2b8362876e9dff2d1c",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:16.063323+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_S3B.csv",
+      "scenario_relative_path": "raw/Fig_S3B.csv",
+      "bytes": 7009,
+      "sha256": "e46d6e9f59902ca3613e78edcf667d542de907ccfbe5ffb8596e7d1375aafb82",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_S3B.csv/content",
+      "source_checksum": "md5:e502a4eb29b471db9a17123061532178",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:17.444912+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_S4A.csv",
+      "scenario_relative_path": "raw/Fig_S4A.csv",
+      "bytes": 382,
+      "sha256": "b1cb2fb7c721c1750671765fe1c92616ca7ac61000f6c237c7c4078275fd5a3c",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_S4A.csv/content",
+      "source_checksum": "md5:7279982da8671783bd4fbb918c810186",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:19.240528+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_S4B.csv",
+      "scenario_relative_path": "raw/Fig_S4B.csv",
+      "bytes": 332,
+      "sha256": "f132dfa2c87946b6e8ff0bb718327837acf9506f4d94d0879ef0ffc7a9bfaae3",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_S4B.csv/content",
+      "source_checksum": "md5:eca1e063a094eb167e2b6af7747890fc",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:20.567049+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_S1B.csv",
+      "scenario_relative_path": "raw/Fig_S1B.csv",
+      "bytes": 126,
+      "sha256": "9d5bb34c36644abd6a889db4324a7526d1201c985f5ec19117306a035b82ede7",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_S1B.csv/content",
+      "source_checksum": "md5:eaf898d0f2598881afe01b4a795a3ac5",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:21.968690+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_7B-right.csv",
+      "scenario_relative_path": "raw/Fig_7B-right.csv",
+      "bytes": 794,
+      "sha256": "182b8e1505bf005b222de1cb95336217008b71a95e36910f6764f3a8c9ef76db",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_7B-right.csv/content",
+      "source_checksum": "md5:8dc67e3e55bbf8f55d7784e8b8b10756",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:23.267415+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_S7.csv",
+      "scenario_relative_path": "raw/Fig_S7.csv",
+      "bytes": 752,
+      "sha256": "f4bbfca74a7ff3b988fc5cf75fa35c0bcb9393cf19b9dcf62ed69ba7060b0caa",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_S7.csv/content",
+      "source_checksum": "md5:044d18956d86263c5974eeee6efe78ca",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:23.400791+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_6B-left.csv",
+      "scenario_relative_path": "raw/Fig_6B-left.csv",
+      "bytes": 935,
+      "sha256": "c680fbfd9d209aab288e46eb28b8a1fa0cda68b7606ebbbc974035405555e00a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_6B-left.csv/content",
+      "source_checksum": "md5:b3cd5d580d0542d02836deb5bec053e7",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:24.708287+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_6B-right.csv",
+      "scenario_relative_path": "raw/Fig_6B-right.csv",
+      "bytes": 783,
+      "sha256": "21a6bae1fa205360b9da73b77c66a4329239d286703d5716ad87c3e34fee5c94",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_6B-right.csv/content",
+      "source_checksum": "md5:435ed17c6ef98622f9f252c3b611f4c8",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:24.635591+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_S5B.csv",
+      "scenario_relative_path": "raw/Fig_S5B.csv",
+      "bytes": 511,
+      "sha256": "847770993f45df6bea712f927589084836c3e2f3bc9278b7b1d56dac9a34eb5d",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_S5B.csv/content",
+      "source_checksum": "md5:f4981ecc58b4da1a0788820afff86874",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:26.028023+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_S3A.csv",
+      "scenario_relative_path": "raw/Fig_S3A.csv",
+      "bytes": 10562,
+      "sha256": "9f7f8cdaaee4e7b1bdd1a29a2dfa14e982ce996d0b8693dd21ed163007a816ed",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_S3A.csv/content",
+      "source_checksum": "md5:ae987058d924f288c3df73e73319eee4",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:26.435481+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_2A.csv",
+      "scenario_relative_path": "raw/Fig_2A.csv",
+      "bytes": 3944,
+      "sha256": "1df63e49af7456ca35b9b6553cd99c64ed4c742743fd772167b4f0b3d4ee4300",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_2A.csv/content",
+      "source_checksum": "md5:1e3a03ea672ee7711f8e070c9560edec",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:27.313550+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_9C.csv",
+      "scenario_relative_path": "raw/Fig_9C.csv",
+      "bytes": 166,
+      "sha256": "51bae3cccce8a6622e4874e39d3cb66e4acb59829f0c0a97df6a4a151aed1e01",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_9C.csv/content",
+      "source_checksum": "md5:5bfe510c234566cc6995c2ec1490c644",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:27.739481+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_S1A.csv",
+      "scenario_relative_path": "raw/Fig_S1A.csv",
+      "bytes": 127,
+      "sha256": "971c4e5c95fe1a91cddf7bf0beb8a3125e008db16f2fc0c3f28099b085514b9e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_S1A.csv/content",
+      "source_checksum": "md5:5b69c084b00fbb201cf81eace78f13ad",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:28.913397+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_7B-left.csv",
+      "scenario_relative_path": "raw/Fig_7B-left.csv",
+      "bytes": 737,
+      "sha256": "051e20cbe6684b5bcfe8d5d5dc337006cc6689d7a45f0ccfc3e25cd1d1a9f0f9",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_7B-left.csv/content",
+      "source_checksum": "md5:1ac96be7f9cfa9e52fdd8645ba30f60f",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:29.166966+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_2B.csv",
+      "scenario_relative_path": "raw/Fig_2B.csv",
+      "bytes": 8032,
+      "sha256": "65bf3dc3fe423cbd6d684c61c13af7a0e07d59dc207267de25ef24866de3531b",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_2B.csv/content",
+      "source_checksum": "md5:c6da2380e178a0c7b0b97d6bc26f9b17",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:30.247289+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_8.csv",
+      "scenario_relative_path": "raw/Fig_8.csv",
+      "bytes": 216,
+      "sha256": "019310143edfa7ad0fb37a0d799cb7b9081b9a1070362bb2dcee5fe8a62cdb4c",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_8.csv/content",
+      "source_checksum": "md5:a26bb3a6aa3392cdd7a75d1822e9bebb",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:30.745478+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_4A.csv",
+      "scenario_relative_path": "raw/Fig_4A.csv",
+      "bytes": 37918,
+      "sha256": "72f7913ce0877f5f37655c4ed7ff527594b52f5b2a730d6e915ac67949bee610",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_4A.csv/content",
+      "source_checksum": "md5:f60fa84cd0ef0e1a05c77e2a0b4792ae",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:31.854878+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_S6.csv",
+      "scenario_relative_path": "raw/Fig_S6.csv",
+      "bytes": 351,
+      "sha256": "c4a831d67efda5bb199e33766b8a9e83e45bf2547953432be9d6c9a2d62ecbad",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_S6.csv/content",
+      "source_checksum": "md5:23346164a1b86a3071f7f8aed549cf0b",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:32.086963+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_7-and-S9.zip",
+      "scenario_relative_path": "raw/Fig_7-and-S9.zip",
+      "bytes": 19838092,
+      "sha256": "0684243ec1f1cbc2d0c88ab2c52ba50437ba51d397d760d9e9837d8ef14c55d4",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_7-and-S9.zip/content",
+      "source_checksum": "md5:f86be17447db5d867ffacbcc8cd16e93",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:28:31.782514+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_6-and-S8.zip",
+      "scenario_relative_path": "raw/Fig_6-and-S8.zip",
+      "bytes": 31756638,
+      "sha256": "5cba8fec7025159e65aee45d1c0b1e6c841cc776291591791adb301fecdc89e1",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_6-and-S8.zip/content",
+      "source_checksum": "md5:a14f4698add4a88d103ec97f7f4ba344",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:31:19.747437+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_9B.csv",
+      "scenario_relative_path": "raw/Fig_9B.csv",
+      "bytes": 82,
+      "sha256": "bbb447422ecdb0e9af395b08d37acb4dc17510373803c55b0153763e7c2db9aa",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_9B.csv/content",
+      "source_checksum": "md5:635256a36b1c3b7d420d4d4af81bfcb9",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:28:33.304970+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_4B.csv",
+      "scenario_relative_path": "raw/Fig_4B.csv",
+      "bytes": 37963,
+      "sha256": "7e0e2510a23335d349ca6e083c86601bc4f1e9e1f0008b1a83b3aeac4b58f6f3",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_4B.csv/content",
+      "source_checksum": "md5:87a493625eda11273fb74c75e0be57fc",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:28:34.929323+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "raw/Fig_5B.csv",
+      "scenario_relative_path": "raw/Fig_5B.csv",
+      "bytes": 206,
+      "sha256": "b2cb0e90b1ce16cc93677db9edc7f0a86099a09b8b436267e817aa4e1905861c",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18911385"
+      ],
+      "download_url": "https://zenodo.org/api/records/18911385/files/Fig_5B.csv/content",
+      "source_checksum": "md5:f4f1a8cc164c93a67492fad0f87f9591",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:28:37.466558+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18911385",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-074",
+      "scenario_id": "74_biochemistry_kinase_biosensors",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 19373,
+      "sha256": "dd4d22a6ef93c7e054cf999b6847fbd81b6d5c404b1f095c8f8149c872e5aa39",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/18911385"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:44.893684+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18911385"
+      ],
+      "citation_url": "https://zenodo.org/records/18911385",
+      "source_version": "18911385",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

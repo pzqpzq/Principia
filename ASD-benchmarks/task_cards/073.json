@@ -1,0 +1,420 @@
+{
+  "case_id": "P100-073",
+  "case_revision": 1,
+  "scenario_id": "73_agriculture_rumen_fermentation",
+  "title": "Dataset for publication \"Impact of algae species from the Baltic Sea region on ruminal fermentation parameters and Methane Mitigation using an in vitro gas production system\"",
+  "domain": "Animal nutrition",
+  "question": "How do algae treatments affect fermentation kinetics and gas composition across trials?",
+  "data_origin": "measured_or_observed",
+  "source_version": "18335590",
+  "source_url": "https://zenodo.org/records/18335590",
+  "identifiers": [
+    "10.5281/zenodo.18335590"
+  ],
+  "publisher": "Brunnbauer, Sophia (Friedrich-Loeffler-Institut); Meyer, Ulrich (Friedrich-Loeffler-Institut); Kluess, Jeannette (Friedrich-Loeffler-Institut); Billenkamp, Fabian (Friedrich-Loeffler-Institut); Visscher, Christian (University of Veterinary Medicine Hannover, Foundation); Reich, Marlene (Universität Greifswald); Schweder, Thomas (Universität Greifswald); Schulz, Christian (University of Rostock); Paschen, Mathias (University of Rostock); Dänicke, Sven (Friedrich-Loeffler-Institut); von Soosten, Dirk (Friedrich-Loeffler-Institut)",
+  "release_date": "2026-01-22",
+  "measurement_dates": "Campaign dates unknown; publication field January 2026 differs from later record creation.",
+  "variables_and_units": "gas production, composition, pH and fatty acids",
+  "independent_units": "trial, algae treatment and vessel replicate",
+  "validation_design": "trial, algae treatment and vessel replicate Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Seventeen native CSV tables/legends spanning three trials, four macroalgae and two microalgae treatments.",
+  "prior_analysis_and_limits": "Hold out entire trial/vessel replicate. Differences in protocol across trials constrain pooling and causal comparisons. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/12_legend_invitro_gasdata_01.csv",
+      "structure": {
+        "header": [
+          "Parameter",
+          "Definition"
+        ],
+        "data_records": 20,
+        "first_lines": [
+          "\"Parameter\";\"Definition\"",
+          "\"DG\";\"run (1-4)\"",
+          "\"Flask\";\"flask randomly allocated to the substrates (1-25)\"",
+          "\"GasProduction\";\"gas produced in psi, measured by the ANKOM gas production system\"",
+          "\"Timepoint\";\"Time in minutes were the gasvolume was evaluated by the system\"",
+          "\"replicate\";\"replicate per run\"",
+          "\"Algae\";\"algae used as the substrate added at 4% to the base diet\"",
+          "\"Alge_1\";\"Colaconema spp.\""
+        ]
+      }
+    },
+    {
+      "asset": "raw/14_legend_invitro_gasdata_02.csv",
+      "structure": {
+        "header": [
+          "Parameter",
+          "Definition"
+        ],
+        "data_records": 20,
+        "first_lines": [
+          "\"Parameter\";\"Definition\"",
+          "\"DG\";\"run (1-4)\"",
+          "\"Flask\";\"flask randomly allocated to the substrates (1-25)\"",
+          "\"GasProduction\";\"gas produced in psi, measured by the ANKOM Rf gas production system\"",
+          "\"Timepoint\";\"Time in minutes were the gasvolume was evaluated by the system\"",
+          "\"replicate\";\"replicate per run\"",
+          "\"Algae\";\"algae extracts used as the substrate added at 2% to the base diet\"",
+          "\"Alge_1\";\"Colaconema spp.\""
+        ]
+      }
+    },
+    {
+      "asset": "raw/16_legend_invitro_gasdata_03.csv",
+      "structure": {
+        "header": [
+          "Parameter",
+          "Definition"
+        ],
+        "data_records": 17,
+        "first_lines": [
+          "\"Parameter\";\"Definition\"",
+          "\"DG\";\"run (1-4)\"",
+          "\"Flask\";\"flask randomly allocated to the substrates (1-25)\"",
+          "\"GasProduction\";\"gas produced in psi, measured by the ANKOM Rf Gas production system\"",
+          "\"Timepoint\";\"Time in minutes were the gasvolume was evaluated by the system\"",
+          "\"replicate\";\"replicate per run\"",
+          "\"Algae\";\"algae used as the substrate\"",
+          "\"Alge_1\";\"Colaconema spp.\""
+        ]
+      }
+    },
+    {
+      "asset": "raw/09_invitro_fermentationData_03.csv",
+      "structure": {
+        "header": [
+          "ID",
+          "AL",
+          "VN",
+          "T",
+          "R",
+          "pH",
+          "Gas",
+          "CH4",
+          "DMD",
+          "Gas2",
+          "CH4_2",
+          "N2",
+          "CO2",
+          "H2",
+          "C2_mmol",
+          "C3_mmol",
+          "C4iso_mmol",
+          "C4_mmol",
+          "C5iso_mmol",
+          "C5_mmol",
+          "C2",
+          "C3",
+          "C4iso",
+          "C4",
+          "C5iso",
+          "C5",
+          "SCFAs",
+          "SCFAs_2",
+          "SCFAs_3",
+          "BCR"
+        ],
+        "data_records": 96,
+        "first_lines": [
+          "\"ID\";\"AL\";\"VN\";\"T\";\"R\";\"pH\";\"Gas\";\"CH4\";\"DMD\";\"Gas2\";\"CH4_2\";\"N2\";\"CO2\";\"H2\";\"C2_mmol\";\"C3_mmol\";\"C4iso_mmol\";\"C4_mmol\";\"C5iso_mmol\";\"C5_mmol\";\"C2\";\"C3\";\"C4iso\";\"C4\";\"C5iso\";\"C5\";\"SCFAs\";\"SCFAs_2\";\"SCFAs_3\";\"BCR\"",
+          "\"1\";\"A1\";\"1\";\"1\";\"1_1\";\"7.18\";\"36.8529\";\"2.2038\";\"97.4\";\"75.5802\";\"4.5197\";\"1.7157\";\"16.93\";\"0.0\";\"34.25\";\"11.088\";\"0.979\";\"7.525\";\"1.854\";\"1.125\";\"60.277\";\"19.512\";\"1.723\";\"13.244\";\"3.263\";\"1.98\";\"56.8208\";\"11.3642\";\"11.6675\";\"0.0749\"",
+          "\"2\";\"A1\";\"1\";\"1\";\"1_2\";\"7.23\";\"38.6728\";\"2.1927\";\"97.6\";\"79.1502\";\"4.4878\";\"2.2767\";\"16.305\";\"0.0\";\"33.863\";\"11.108\";\"0.967\";\"7.404\";\"1.863\";\"1.129\";\"60.111\";\"19.719\";\"1.716\";\"13.144\";\"3.306\";\"2.004\";\"56.3333\";\"11.2667\";\"11.5437\";\"0.0756\"",
+          "\"3\";\"A1\";\"1\";\"1\";\"1_3\";\"7.23\";\"38.6728\";\"2.185\";\"96.6\";\"79.9686\";\"4.5182\";\"0.8541\";\"16.7934\";\"0.0632\";\"36.442\";\"12.863\";\"1.088\";\"8.275\";\"2.05\";\"1.242\";\"58.814\";\"20.761\";\"1.755\";\"13.357\";\"3.309\";\"2.004\";\"61.9583\";\"12.3917\";\"12.8278\";\"0.0761\"",
+          "\"4\";\"A2\";\"1\";\"1\";\"2_1\";\"7.18\";\"35.488\";\"1.4905\";\"78.8\";\"89.9341\";\"3.7772\";\"2.7115\";\"19.5157\";\"0.0\";\"32.829\";\"11.396\";\"0.788\";\"6.938\";\"1.45\";\"0.888\";\"60.473\";\"20.992\";\"1.451\";\"12.779\";\"2.671\";\"1.635\";\"54.2875\";\"10.8575\";\"13.7786\";\"0.0611\"",
+          "\"5\";\"A2\";\"1\";\"1\";\"2_2\";\"7.19\";\"34.578\";\"1.7116\";\"80.6\";\"85.674\";\"4.2409\";\"2.5458\";\"18.6769\";\"0.0617\";\"32.204\";\"11.146\";\"0.763\";\"6.871\";\"1.425\";\"0.863\";\"60.454\";\"20.923\";\"1.431\";\"12.898\";\"2.675\";\"1.619\";\"53.2708\";\"10.6542\";\"13.2186\";\"0.0607\"",
+          "\"6\";\"A2\";\"1\";\"1\";\"2_3\";\"7.28\";\"34.578\";\"1.3451\";\"82.4\";\"83.8052\";\"3.26\";\"9.1386\";\"16.6772\";\"0.0746\";\"30.288\";\"9.771\";\"0.738\";\"6.483\";\"1.379\";\"0.833\";\"61.192\";\"19.743\";\"1.491\";\"13.102\";\"2.787\";\"1.684\";\"49.4917\";\"9.8983\";\"12.0125\";\"0.0634\"",
+          "\"7\";\"A3\";\"1\";\"1\";\"3_1\";\"7.27\";\"20.9288\";\"1.0067\";\"75.8\";\"55.1339\";\"2.6519\";\"2.2466\";\"10.1446\";\"0.0\";\"28.796\";\"8.046\";\"0.65\";\"7.246\";\"1.242\";\"0.75\";\"61.623\";\"17.218\";\"1.391\";\"15.506\";\"2.657\";\"1.605\";\"46.7292\";\"9.3458\";\"12.3296\";\"0.0599\""
+        ]
+      }
+    },
+    {
+      "asset": "raw/06_legend_invitro_fermentationData_01.csv",
+      "structure": {
+        "header": [
+          "Parameter",
+          "definition"
+        ],
+        "data_records": 33,
+        "first_lines": [
+          "\"Parameter\";\"definition\"",
+          "\"ID\";\"ongoing ID\"",
+          "\"VN\";\"experimental run (1-4)\"",
+          "\"DMD\";\"Dry matter degradability in %\"",
+          "\"AL\";\"test substrate added at 4% to the base diet\"",
+          "\"algae_1\";\"Colaconema spp.\"",
+          "\"algae_2\";\"Ulva intestinalis\"",
+          "\"algae_3\";\"Ceramium spp.\""
+        ]
+      }
+    },
+    {
+      "asset": "raw/13_invitro_gasdata_02.csv",
+      "structure": {
+        "header": [
+          "DG",
+          "Flask",
+          "GasProduction",
+          "Timepoint",
+          "replicate",
+          "Algae",
+          "AlgenRep",
+          "DMD_g",
+          "kPa",
+          "GasMol",
+          "GasVolume",
+          "Hour",
+          "GasDM"
+        ],
+        "data_records": 3871,
+        "first_lines": [
+          "\"DG\";\"Flask\";\"GasProduction\";\"Timepoint\";\"replicate\";\"Algae\";\"AlgenRep\";\"DMD_g\";\"kPa\";\"GasMol\";\"GasVolume\";\"Hour\";\"GasDM\"",
+          "\"1\";\"16\";\"0.0\";\"0\";\"1_16\";\"Alge_1\";\"Alge_1_1_16\";\"0.8933\";\"0.0\";\"0.0\";\"0.0\";\"0\";\"0.0\"",
+          "\"1\";\"16\";\"1.164501\";\"60\";\"1_16\";\"Alge_1\";\"Alge_1_1_16\";\"0.8933\";\"8.02895\";\"0.00065\";\"7.052101\";\"1\";\"7.894437\"",
+          "\"1\";\"16\";\"2.219829\";\"120\";\"1_16\";\"Alge_1\";\"Alge_1_1_16\";\"0.8933\";\"15.305185\";\"0.001239\";\"16.151585\";\"2\";\"18.080808\"",
+          "\"1\";\"16\";\"3.493502\";\"180\";\"1_16\";\"Alge_1\";\"Alge_1_1_16\";\"0.8933\";\"24.086849\";\"0.00195\";\"29.573325\";\"3\";\"33.105704\"",
+          "\"1\";\"16\";\"5.240253\";\"240\";\"1_16\";\"Alge_1\";\"Alge_1_1_16\";\"0.8933\";\"36.130274\";\"0.002925\";\"49.592192\";\"4\";\"55.515719\"",
+          "\"1\";\"16\";\"7.023395\";\"300\";\"1_16\";\"Alge_1\";\"Alge_1_1_16\";\"0.8933\";\"48.424603\";\"0.00392\";\"70.748494\";\"5\";\"79.19903\"",
+          "\"1\";\"16\";\"8.369849\";\"360\";\"1_16\";\"Alge_1\";\"Alge_1_1_16\";\"0.8933\";\"57.708076\";\"0.004672\";\"86.900079\";\"6\";\"97.279838\""
+        ]
+      }
+    },
+    {
+      "asset": "raw/03_invitro_SCFA_03.csv",
+      "structure": {
+        "header": [
+          "AL",
+          "VN",
+          "R",
+          "T0_C2",
+          "T0_C3",
+          "T0_C4",
+          "T0_C4iso",
+          "T0_C5",
+          "T0_C5iso",
+          "T1_C2",
+          "T1_C3",
+          "T1_C4",
+          "T1_C4iso",
+          "T1_C5",
+          "T1_C5iso",
+          "delta_C2",
+          "delta_C3",
+          "delta_C4",
+          "delta_C4iso",
+          "delta_C5",
+          "delta_C5iso"
+        ],
+        "data_records": 48,
+        "first_lines": [
+          "\"AL\";\"VN\";\"R\";\"T0_C2\";\"T0_C3\";\"T0_C4\";\"T0_C4iso\";\"T0_C5\";\"T0_C5iso\";\"T1_C2\";\"T1_C3\";\"T1_C4\";\"T1_C4iso\";\"T1_C5\";\"T1_C5iso\";\"delta_C2\";\"delta_C3\";\"delta_C4\";\"delta_C4iso\";\"delta_C5\";\"delta_C5iso\"",
+          "\"A1\";\"1\";\"1_1\";\"62.219\";\"20.734\";\"13.862\";\"0.634\";\"1.307\";\"1.243\";\"60.277\";\"19.512\";\"13.244\";\"1.723\";\"1.98\";\"3.263\";\"-1.942\";\"-1.223\";\"-0.618\";\"1.089\";\"0.673\";\"2.021\"",
+          "\"A1\";\"1\";\"1_2\";\"62.219\";\"20.734\";\"13.862\";\"0.634\";\"1.307\";\"1.243\";\"60.111\";\"19.719\";\"13.144\";\"1.716\";\"2.004\";\"3.306\";\"-2.108\";\"-1.015\";\"-0.719\";\"1.082\";\"0.697\";\"2.064\"",
+          "\"A1\";\"1\";\"1_3\";\"62.219\";\"20.734\";\"13.862\";\"0.634\";\"1.307\";\"1.243\";\"58.814\";\"20.761\";\"13.357\";\"1.755\";\"2.004\";\"3.309\";\"-3.405\";\"0.027\";\"-0.506\";\"1.121\";\"0.697\";\"2.066\"",
+          "\"A2\";\"1\";\"2_1\";\"61.24\";\"21.44\";\"14.086\";\"0.652\";\"1.318\";\"1.263\";\"60.473\";\"20.992\";\"12.779\";\"1.451\";\"1.635\";\"2.671\";\"-0.768\";\"-0.449\";\"-1.307\";\"0.798\";\"0.316\";\"1.408\"",
+          "\"A2\";\"1\";\"2_2\";\"61.24\";\"21.44\";\"14.086\";\"0.652\";\"1.318\";\"1.263\";\"60.454\";\"20.923\";\"12.898\";\"1.431\";\"1.619\";\"2.675\";\"-0.787\";\"-0.517\";\"-1.188\";\"0.779\";\"0.301\";\"1.412\"",
+          "\"A2\";\"1\";\"2_3\";\"61.24\";\"21.44\";\"14.086\";\"0.652\";\"1.318\";\"1.263\";\"61.192\";\"19.743\";\"13.102\";\"1.491\";\"1.684\";\"2.787\";\"-0.048\";\"-1.697\";\"-0.984\";\"0.839\";\"0.366\";\"1.524\"",
+          "\"A3\";\"1\";\"3_1\";\"61.034\";\"21.404\";\"14.298\";\"0.636\";\"1.343\";\"1.285\";\"61.623\";\"17.218\";\"15.506\";\"1.391\";\"1.605\";\"2.657\";\"0.589\";\"-4.186\";\"1.208\";\"0.756\";\"0.262\";\"1.372\""
+        ]
+      }
+    },
+    {
+      "asset": "raw/04_legend_invitro_SCFA_01-03.csv",
+      "structure": {
+        "header": [
+          "Parameter",
+          "Definition"
+        ],
+        "data_records": 31,
+        "first_lines": [
+          "\"Parameter\";\"Definition\"",
+          "\"VN\";\"experimental run (1-4)\"",
+          "\"R\";\"replicate per run (AL_replicatenumber)\"",
+          "\"AL\";\"test substrates\"",
+          "\"algae_1\";\"Colaconema spp. added at  4% to the base diet\"",
+          "\"algae_2\";\"Ulva intestinalis added at  4% to the base diet\"",
+          "\"algae_3\";\"Ceramium spp. added at  4% to the base diet\"",
+          "\"algae_4\";\"Pylaiella litoralis added at  4% to the base diet\""
+        ]
+      }
+    },
+    {
+      "asset": "raw/01_invitro_SCFA_01.csv",
+      "structure": {
+        "header": [
+          "AL",
+          "VN",
+          "R",
+          "T1_C2",
+          "T1_C3",
+          "T1_C4",
+          "T1_C4iso",
+          "T1_C5",
+          "T1_C5iso",
+          "T2_C2",
+          "T2_C3",
+          "T2_C4",
+          "T2_C4iso",
+          "T2_C5",
+          "T2_C5iso",
+          "delta_C2",
+          "delta_C3",
+          "delta_C4",
+          "delta_C4iso",
+          "delta_C5",
+          "delta_C5iso"
+        ],
+        "data_records": 79,
+        "first_lines": [
+          "\"AL\";\"VN\";\"R\";\"T1_C2\";\"T1_C3\";\"T1_C4\";\"T1_C4iso\";\"T1_C5\";\"T1_C5iso\";\"T2_C2\";\"T2_C3\";\"T2_C4\";\"T2_C4iso\";\"T2_C5\";\"T2_C5iso\";\"delta_C2\";\"delta_C3\";\"delta_C4\";\"delta_C4iso\";\"delta_C5\";\"delta_C5iso\"",
+          "\"algae_1\";\"1\";\"1_1\";\"55.931\";\"28.489\";\"11.627\";\"0.609\";\"1.985\";\"1.36\";\"54.882\";\"28.102\";\"10.882\";\"1.155\";\"2.744\";\"2.234\";\"-1.048\";\"-0.387\";\"-0.745\";\"0.545\";\"0.76\";\"0.875\"",
+          "\"algae_1\";\"1\";\"1_2\";\"55.931\";\"28.489\";\"11.627\";\"0.609\";\"1.985\";\"1.36\";\"54.444\";\"28.408\";\"11.002\";\"1.188\";\"2.639\";\"2.318\";\"-1.486\";\"-0.081\";\"-0.625\";\"0.579\";\"0.654\";\"0.959\"",
+          "\"algae_1\";\"1\";\"1_3\";\"55.931\";\"28.489\";\"11.627\";\"0.609\";\"1.985\";\"1.36\";\"54.187\";\"29.095\";\"10.568\";\"1.222\";\"2.665\";\"2.263\";\"-1.744\";\"0.606\";\"-1.059\";\"0.613\";\"0.68\";\"0.904\"",
+          "\"algae_2\";\"1\";\"2_1\";\"55.93\";\"28.638\";\"11.505\";\"0.634\";\"1.933\";\"1.361\";\"54.217\";\"28.229\";\"11.218\";\"1.229\";\"2.706\";\"2.401\";\"-1.713\";\"-0.409\";\"-0.287\";\"0.595\";\"0.773\";\"1.04\"",
+          "\"algae_2\";\"1\";\"2_2\";\"55.93\";\"28.638\";\"11.505\";\"0.634\";\"1.933\";\"1.361\";\"54.66\";\"28.56\";\"10.672\";\"1.193\";\"2.669\";\"2.245\";\"-1.269\";\"-0.078\";\"-0.833\";\"0.559\";\"0.736\";\"0.885\"",
+          "\"algae_2\";\"1\";\"2_3\";\"55.93\";\"28.638\";\"11.505\";\"0.634\";\"1.933\";\"1.361\";\"55.457\";\"27.929\";\"10.592\";\"1.188\";\"2.634\";\"2.2\";\"-0.473\";\"-0.708\";\"-0.912\";\"0.553\";\"0.701\";\"0.839\"",
+          "\"algae_3\";\"1\";\"3_1\";\"55.777\";\"28.805\";\"11.501\";\"0.637\";\"1.926\";\"1.354\";\"54.947\";\"28.4\";\"10.639\";\"1.189\";\"2.629\";\"2.195\";\"-0.83\";\"-0.405\";\"-0.861\";\"0.552\";\"0.703\";\"0.841\""
+        ]
+      }
+    },
+    {
+      "asset": "raw/02_invitro_SCFA_02.csv",
+      "structure": {
+        "header": [
+          "AL",
+          "VN",
+          "R",
+          "T1_C2",
+          "T1_C3",
+          "T1_C4",
+          "T1_C4iso",
+          "T1_C5",
+          "T1_C5iso",
+          "T2_C2",
+          "T2_C3",
+          "T2_C4",
+          "T2_C4iso",
+          "T2_C5",
+          "T2_C5iso",
+          "delta_C2",
+          "delta_C3",
+          "delta_C4",
+          "delta_C4iso",
+          "delta_C5",
+          "delta_C5iso"
+        ],
+        "data_records": 84,
+        "first_lines": [
+          "\"AL\";\"VN\";\"R\";\"T1_C2\";\"T1_C3\";\"T1_C4\";\"T1_C4iso\";\"T1_C5\";\"T1_C5iso\";\"T2_C2\";\"T2_C3\";\"T2_C4\";\"T2_C4iso\";\"T2_C5\";\"T2_C5iso\";\"delta_C2\";\"delta_C3\";\"delta_C4\";\"delta_C4iso\";\"delta_C5\";\"delta_C5iso\"",
+          "\"algaeE_1\";\"1\";\"1_1\";\"62.24\";\"20.369\";\"13.944\";\"0.544\";\"1.606\";\"1.296\";\"57.918\";\"21.84\";\"13.78\";\"1.259\";\"2.396\";\"2.807\";\"-4.323\";\"1.471\";\"-0.164\";\"0.715\";\"0.79\";\"1.511\"",
+          "\"algaeE_1\";\"1\";\"1_2\";\"NA\";\"NA\";\"NA\";\"NA\";\"NA\";\"NA\";\"NA\";\"NA\";\"NA\";\"NA\";\"NA\";\"NA\";\"NA\";\"NA\";\"NA\";\"NA\";\"NA\";\"NA\"",
+          "\"algaeE_1\";\"1\";\"1_3\";\"62.24\";\"20.369\";\"13.944\";\"0.544\";\"1.606\";\"1.296\";\"57.236\";\"22.42\";\"13.775\";\"1.281\";\"2.431\";\"2.856\";\"-5.004\";\"2.051\";\"-0.169\";\"0.738\";\"0.824\";\"1.56\"",
+          "\"algaeE_2\";\"1\";\"2_1\";\"61.223\";\"20.622\";\"14.551\";\"0.568\";\"1.691\";\"1.344\";\"56.549\";\"21.674\";\"14.345\";\"1.435\";\"2.65\";\"3.346\";\"-4.675\";\"1.052\";\"-0.205\";\"0.867\";\"0.959\";\"2.002\"",
+          "\"algaeE_2\";\"1\";\"2_2\";\"61.223\";\"20.622\";\"14.551\";\"0.568\";\"1.691\";\"1.344\";\"59.035\";\"22.451\";\"12.998\";\"1.057\";\"2.172\";\"2.288\";\"-2.189\";\"1.829\";\"-1.553\";\"0.489\";\"0.481\";\"0.943\"",
+          "\"algaeE_2\";\"1\";\"2_3\";\"61.223\";\"20.622\";\"14.551\";\"0.568\";\"1.691\";\"1.344\";\"57.713\";\"21.778\";\"13.643\";\"1.346\";\"2.495\";\"3.026\";\"-3.51\";\"1.155\";\"-0.908\";\"0.777\";\"0.804\";\"1.682\"",
+          "\"algaeE_3\";\"1\";\"3_1\";\"60.826\";\"20.819\";\"14.66\";\"0.602\";\"1.711\";\"1.383\";\"58.371\";\"20.881\";\"13.789\";\"1.355\";\"2.491\";\"3.113\";\"-2.454\";\"0.061\";\"-0.87\";\"0.753\";\"0.78\";\"1.73\""
+        ]
+      }
+    },
+    {
+      "asset": "raw/00_invitro_data_overwiev.csv",
+      "structure": {
+        "header": [
+          "number",
+          "file_name",
+          "brief_description",
+          "detailed_description",
+          "file_format"
+        ],
+        "data_records": 17,
+        "first_lines": [
+          "number;file_name;brief_description;detailed_description;file_format",
+          "0;00_invitro_data_overview.csv;Table of contents;Table of contents declaring all files within this dataset;csv",
+          "1;01_invitro_SCFA_01.csv;concentrations SCFA Trial 1.1;concentrations of the different short chain fatty acids for both timepoints and their rate of change for Trial 1.1;csv",
+          "2;02_invitro_SCFA__02.csv;concentrations SCFA Trial 1.2;concentrations of the different short chain fatty acids for both timepoints and their rate of change for Trial 1.2;csv",
+          "3;03_invitro_SCFA__03.csv;concentrations SCFA Trial 2;concentrations of the different short chain fatty acids for both timepoints and their rate of change for Trial 2;csv",
+          "4;04_legend_invitro_SCFA_01-03.csv;legend SCFA Trial 1.1 to 2;legend on all abbreviations used in files number 01-03;csv",
+          "5;05_invitro_fermentationData__01.csv;data on fermentation parameters Trial 2;data on gas composition, final gas volume, dry matter degradability, SCFA-concentration and pH for Trial 1.1, all corrected for Blancs;csv",
+          "6;06_legend_invitro_fermentationData_01.csv;legend fermentation data Trial 1.1;legend on all abbreviations used in the fermentation dataset for Trial 2;csv"
+        ]
+      }
+    },
+    {
+      "asset": "raw/11_invitro_gasdata_01.csv",
+      "structure": {
+        "header": [
+          "DG",
+          "Flask",
+          "GasProduction",
+          "Timepoint",
+          "replicate",
+          "Algae",
+          "AlgenRep",
+          "DMD_g",
+          "kPa",
+          "GasMol",
+          "GasVolume",
+          "Hour",
+          "GasDM"
+        ],
+        "data_records": 3773,
+        "first_lines": [
+          "\"DG\";\"Flask\";\"GasProduction\";\"Timepoint\";\"replicate\";\"Algae\";\"AlgenRep\";\"DMD_g\";\"kPa\";\"GasMol\";\"GasVolume\";\"Hour\";\"GasDM\"",
+          "\"1\";\"2\";\"0.0\";\"0\";\"1_2\";\"Alge_1\";\"Alge_1_1_2\";\"0.9044\";\"0.0\";\"0.0\";\"0.0\";\"0\";\"0.0\"",
+          "\"1\";\"2\";\"0.764204\";\"60\";\"1_2\";\"Alge_1\";\"Alge_1_1_2\";\"0.9044\";\"5.268998\";\"0.000427\";\"4.549742\";\"1\";\"5.030675\"",
+          "\"1\";\"2\";\"1.819532\";\"120\";\"1_2\";\"Alge_1\";\"Alge_1_1_2\";\"0.9044\";\"12.545234\";\"0.001016\";\"14.786663\";\"2\";\"16.349693\"",
+          "\"1\";\"2\";\"3.275158\";\"180\";\"1_2\";\"Alge_1\";\"Alge_1_1_2\";\"0.9044\";\"22.581421\";\"0.001828\";\"31.620709\";\"3\";\"34.96319\"",
+          "\"1\";\"2\";\"5.0583\";\"240\";\"1_2\";\"Alge_1\";\"Alge_1_1_2\";\"0.9044\";\"34.87575\";\"0.002823\";\"53.459473\";\"4\";\"59.11043\"",
+          "\"1\";\"2\";\"6.586707\";\"300\";\"1_2\";\"Alge_1\";\"Alge_1_1_2\";\"0.9044\";\"45.413747\";\"0.003676\";\"72.340903\";\"5\";\"79.987731\"",
+          "\"1\";\"2\";\"7.787598\";\"360\";\"1_2\";\"Alge_1\";\"Alge_1_1_2\";\"0.9044\";\"53.693601\";\"0.004347\";\"86.900079\";\"6\";\"96.08589\""
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "text_or_instrument_native": 17
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 1297631,
+  "expanded_source_equivalent_bytes": 1297631,
+  "installed_folder_bytes": 1322320,
+  "source_asset_count": 18,
+  "asset_paths": [
+    "scenarios/73_agriculture_rumen_fermentation/raw/12_legend_invitro_gasdata_01.csv",
+    "scenarios/73_agriculture_rumen_fermentation/raw/14_legend_invitro_gasdata_02.csv",
+    "scenarios/73_agriculture_rumen_fermentation/raw/16_legend_invitro_gasdata_03.csv",
+    "scenarios/73_agriculture_rumen_fermentation/raw/09_invitro_fermentationData_03.csv",
+    "scenarios/73_agriculture_rumen_fermentation/raw/06_legend_invitro_fermentationData_01.csv",
+    "scenarios/73_agriculture_rumen_fermentation/raw/13_invitro_gasdata_02.csv",
+    "scenarios/73_agriculture_rumen_fermentation/raw/03_invitro_SCFA_03.csv",
+    "scenarios/73_agriculture_rumen_fermentation/raw/04_legend_invitro_SCFA_01-03.csv",
+    "scenarios/73_agriculture_rumen_fermentation/raw/01_invitro_SCFA_01.csv",
+    "scenarios/73_agriculture_rumen_fermentation/raw/02_invitro_SCFA_02.csv",
+    "scenarios/73_agriculture_rumen_fermentation/raw/00_invitro_data_overwiev.csv",
+    "scenarios/73_agriculture_rumen_fermentation/raw/11_invitro_gasdata_01.csv",
+    "scenarios/73_agriculture_rumen_fermentation/raw/05_invitro_fermentationData_01.csv",
+    "scenarios/73_agriculture_rumen_fermentation/raw/08_legend_invitro_fermentationData_02.csv",
+    "scenarios/73_agriculture_rumen_fermentation/raw/10_legend_invitro_fermentationData_03.csv",
+    "scenarios/73_agriculture_rumen_fermentation/raw/15_invitro_gasdata_03.csv",
+    "scenarios/73_agriculture_rumen_fermentation/raw/07_invitro_fermentationData_02.csv",
+    "scenarios/73_agriculture_rumen_fermentation/context/source_record.json"
+  ],
+  "local_folder": "scenarios/73_agriculture_rumen_fermentation",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 1330409,
+  "expanded_release_folder_equivalent_bytes": 1330409
+}

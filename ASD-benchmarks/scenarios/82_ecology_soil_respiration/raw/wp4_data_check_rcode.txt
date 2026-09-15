@@ -1,0 +1,162 @@
+
+## CHECK HoliSoilS respiration and micro-climate data ######################################
+# boris.tupek@luke.fi
+# Nov 2025
+
+# to run in R rename to "wp4_data_check.r"
+
+rm(list=ls())
+
+##read the data 
+# NOTE: change the file path to the folder where data is located on your pc
+data_holisoils <- read.csv("D:/LUKE/HoliSoils/DATA/WP4 for ZENODO/updated/holisoils_soil_respiration_dataset.csv")
+
+names(data_holisoils)
+# [1] "siteid"         "country"        "date"           "subsiteid"      "point"          "ci"             "flux"          
+#[8] "slope"          "intc"           "trim_head"      "trim_tail"      "area"           "volume"         "airtemp"       
+#[15] "tsmoisture"     "t05"            "t10"            "t30"            "treatment"      "X2nd_treatment" "details"       
+#[22] "trenched"
+
+##variables explained
+#siteid: Site name
+#country
+#date: date of measurement
+#subsiteid: site specific categorisation of treatment
+#point: site specific categorization of measurement points
+#ci: respiration slope parameter confidence interval
+#flux: respiration flux in g/m2/h
+#slope: respiration fitted slope parameter
+#intc: respiration fitted intercept parameter
+#trim_head: respiration timeseries trimming from the beginning in seconds
+#trim_tail: respiration timeseries trimming from the end in seconds
+#area: soil area covered by chamber or collar in dm^2
+#volume: chamber + collar volume in dm^3
+#airtemp: Air temperature (°C)
+#tsmoisture: soil moisture SWC %
+#t05: soil temperature at 5cm depth (°C)
+#t10: soil temperature at 10cm depth (°C)
+#t30: soil temperature at 30cm depth (°C)
+#treatment: generalised primary treatment across dataset
+#2nd_treatment: generalised secondary treatment across dataset
+#details: details of the generalised treatments when applicable
+#trenched: Trenching treatment (True/False)
+
+# Load necessary libraries
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(Hmisc)
+library(tibble)
+
+#preview the data file
+glimpse(data_holisoils)
+str(data_holisoils)
+#View(data_holisoils)
+
+unique(data_holisoils$X2nd_treatment)
+
+#statistical summary of all CO2 and meteorological data 
+describe(data_holisoils[,c("flux","airtemp", "t05", "t10", "t30","tsmoisture")])
+
+
+#fix the site name
+data_holisoils$siteid <- sub("RÃ¤nskÃ¤lÃ¤nkorpi", "Ränskälänkorpi",data_holisoils$siteid)
+#print site names
+unique(data_holisoils$siteid)
+
+
+# Create a nested summary table to explore daa structure
+summary_table <- data_holisoils %>%
+  distinct(siteid, subsiteid, point, treatment, X2nd_treatment) %>%
+  arrange(siteid, subsiteid, point) %>%
+  group_by(siteid, subsiteid, treatment, X2nd_treatment) %>%
+  summarise(points = list(unique(point)), .groups = "drop")
+print(summary_table)
+#View(summary_table)
+
+# Convert list of points to a single string per row
+summary_table_clean <- summary_table %>%
+  mutate(points = sapply(points, function(x) paste(sort(unique(x)), collapse = ", ")))
+
+# View the cleaned data structure
+View(summary_table_clean)
+
+#write.csv(summary_table_clean, "D:/LUKE/HoliSoils/DATA/WP4 for ZENODO/updated/holisois_data_structure.csv", row.names = FALSE)
+
+
+## DATA Cleaning and Outlier Identification ##########################
+
+# range for each selected data
+sapply(data_holisoils[, c("flux", "airtemp", "t05", "t10", "t30", "tsmoisture")],
+       function(x) range(x, na.rm = TRUE))
+#flux airtemp  t05    t10   t30 tsmoisture
+#[1,] -1.926989   -11.4 -8.0 -0.300   0.0      0.024
+#[2,] 10.968533  2547.0 41.6 22.125 713.4     87.400
+
+# Define realistic ranges 
+range_temps <- c(-15, 50)
+range_flux <- c(0, 5)
+range_moisture <- c(0, 100)
+
+# 1) Flag outliers
+data_holisoils <- data_holisoils %>%
+  mutate(outlier_airtemp = airtemp < range_temps[1] | airtemp > range_temps[2],
+         outlier_t05 = t05 < range_temps[1] | t05 > range_temps[2],
+         outlier_t10 = t10 < range_temps[1] | t10 > range_temps[2],
+         outlier_t30 = t30 < range_temps[1] | t30 > range_temps[2],
+         outlier_flux = flux < range_flux[1] | flux > range_flux[2],
+         outlier_moisture = tsmoisture < range_moisture[1] | tsmoisture > range_moisture[2])
+
+# 2) Extract rows with any outlier
+outlier_rows <- data_holisoils %>%
+  filter(outlier_airtemp | outlier_t05 | outlier_t10 | outlier_t30 | outlier_flux | outlier_moisture)
+
+# Check outliers
+nrow(outlier_rows)
+View(outlier_rows) # Inspect outliers
+
+#Filter to Keep Realistic Values
+cleaned_data <- data_holisoils %>%
+  filter((airtemp >= range_temps[1] & airtemp <= range_temps[2] | is.na(airtemp)),
+         (t05 >= range_temps[1] & t05 <= range_temps[2] | is.na(t05)),
+         (t10 >= range_temps[1] & t10 <= range_temps[2] | is.na(t10)),
+         (t30 >= range_temps[1] & t30 <= range_temps[2] | is.na(t30)),
+         (flux >= range_flux[1] & flux <= range_flux[2] | is.na(flux)),
+         (tsmoisture >= range_moisture[1] & tsmoisture <= range_moisture[2] | is.na(tsmoisture)))
+
+
+
+#Histogram for CO2 flux:
+ggplot(cleaned_data, aes(x = flux)) +
+  geom_histogram(binwidth = 0.1, fill = 'steelblue', color = 'black') +
+  facet_wrap(~ siteid) +
+  labs(title = "Histogram of CO2 fluxes by Site", x = "CO2 (g/m2/h)", y = "Count") +
+  theme_bw()
+
+
+#Histogram for soil moisture:
+ggplot(cleaned_data, aes(x = tsmoisture)) +
+  geom_histogram(binwidth = 2, fill = 'darkorange', color = 'black') +
+  facet_wrap(~ siteid) +
+  labs(title = "Histogram of Soil moisture by Site", x = "Soil Moisture (%)", y = "Count") +
+  theme_bw()
+
+
+#Reshape Temperature Data for Plotting
+temp_data <- cleaned_data %>%
+  select(siteid, airtemp, t05, t10, t30) %>%
+  pivot_longer(cols = c(airtemp, t05, t10, t30),
+               names_to = "temperature_type",
+               values_to = "temperature") %>%
+  filter(!is.na(temperature))
+
+#Density plot for temperatures:
+ggplot(temp_data, aes(x = temperature, color = temperature_type)) +
+  geom_density() +
+  facet_wrap(~ siteid) +
+  labs(title = "Density plot of Temperature variables by Site",
+       x = "Temperature (°C)", y = "Density", color = "Variable") +
+  theme_bw()
+
+
+

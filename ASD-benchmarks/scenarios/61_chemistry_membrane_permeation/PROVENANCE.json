@@ -1,0 +1,123 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "61_chemistry_membrane_permeation",
+  "domain": "Membrane engineering",
+  "title": "DATASET - Results permeation tests double-skin Pd-based membranes, conventional Pd-based membranes and porous membranes",
+  "publisher": "Ververs, Wout Jacob René (Eindhoven University of Technology); Arratibel, Alba (Fundación Tecnalia Research & Innovation); Di Felice, Luca (Eindhoven University of Technology); Gallucci, Fausto (Eindhoven University of Technology)",
+  "authoritative_landing_url": "https://zenodo.org/records/10691625",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/10691625",
+    "https://zenodo.org/api/records/10691625/files/DataPorousMembranes.xlsx/content",
+    "https://zenodo.org/api/records/10691625/files/DataPalladiumBasedMembranes.xlsx/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.10691625"
+  ],
+  "release_or_version": "10691625",
+  "retrieval_finalized_utc": "2026-09-15T07:04:34.209263+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Campaign dates unknown; deposited February 2024.",
+  "source_publication_date": "2024-02-22",
+  "source_created_utc": "2024-07-24T09:49:03.459937+00:00",
+  "source_updated_utc": "2025-07-24T12:51:35.933493+00:00",
+  "source_inventory": [
+    {
+      "name": "DataPorousMembranes.xlsx",
+      "bytes": 50313,
+      "selected": true
+    },
+    {
+      "name": "DataPalladiumBasedMembranes.xlsx",
+      "bytes": 21629,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Two workbooks for porous and palladium-based membranes support the published mass-transfer analysis.",
+  "known_analyses_and_limitations": "Hold out membrane variants or operating-condition blocks. Separate bulk transport from membrane-limited behavior; published fits are disclosed.",
+  "related_publications": [],
+  "independent_groups": "membrane specimens and operating conditions",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-061",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-061",
+      "scenario_id": "61_chemistry_membrane_permeation",
+      "path": "raw/DataPorousMembranes.xlsx",
+      "scenario_relative_path": "raw/DataPorousMembranes.xlsx",
+      "bytes": 50313,
+      "sha256": "64e3a835815493c739fec72acb2593e1ca67ee34bb04d0e1021dab1e5e095a58",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/10691625"
+      ],
+      "download_url": "https://zenodo.org/api/records/10691625/files/DataPorousMembranes.xlsx/content",
+      "source_checksum": "md5:9549a9d166ee1b3958440f760dc76e46",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:18:31.985052+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.10691625"
+      ],
+      "citation_url": "https://zenodo.org/records/10691625",
+      "source_version": "10691625",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/10691625",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-061",
+      "scenario_id": "61_chemistry_membrane_permeation",
+      "path": "raw/DataPalladiumBasedMembranes.xlsx",
+      "scenario_relative_path": "raw/DataPalladiumBasedMembranes.xlsx",
+      "bytes": 21629,
+      "sha256": "042e32db5d70257c5d322a472ac85991fa1668036ea58f606f915a2932ff1af8",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/10691625"
+      ],
+      "download_url": "https://zenodo.org/api/records/10691625/files/DataPalladiumBasedMembranes.xlsx/content",
+      "source_checksum": "md5:f4eec195c254ed7ded3c2598c0ff9775",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:18:33.423823+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.10691625"
+      ],
+      "citation_url": "https://zenodo.org/records/10691625",
+      "source_version": "10691625",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/10691625",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-061",
+      "scenario_id": "61_chemistry_membrane_permeation",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 6771,
+      "sha256": "d2d2fd1910a69e7b9de9838f69430bd4607764b57ec94bbfb38420ce56ac566e",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/10691625"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:42.365373+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.10691625"
+      ],
+      "citation_url": "https://zenodo.org/records/10691625",
+      "source_version": "10691625",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "68_physics_acoustic_levitation",
+  "domain": "Nonlinear dynamics",
+  "title": "Sparse identification of nonlinear dynamics applied to the levitation of acoustically large objects",
+  "publisher": "Akbarzade, Mehdi",
+  "authoritative_landing_url": "https://zenodo.org/records/16033764",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/16033764",
+    "https://zenodo.org/api/records/16033764/files/MATLAB%20Code%20PSD%20AND%20TIME%20SERIES%20DATA.txt/content",
+    "https://zenodo.org/api/records/16033764/files/MATLAB%20Code%20SINDy.txt/content",
+    "https://zenodo.org/api/records/16033764/files/Data.rar/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.16033764"
+  ],
+  "release_or_version": "16033764",
+  "retrieval_finalized_utc": "2026-09-15T07:04:34.863141+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Acquisition dates not specified in deposit metadata.",
+  "source_publication_date": "2025-07-17",
+  "source_created_utc": "2025-07-17T12:45:19.801872+00:00",
+  "source_updated_utc": "2025-07-17T12:45:20.136685+00:00",
+  "source_inventory": [
+    {
+      "name": "MATLAB Code PSD AND TIME SERIES DATA.txt",
+      "bytes": 2897,
+      "selected": true
+    },
+    {
+      "name": "MATLAB Code SINDy.txt",
+      "bytes": 11706,
+      "selected": true
+    },
+    {
+      "name": "Data.rar",
+      "bytes": 328760,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Original RAR data and analysis scripts. Published work already applies SINDy and a Duffing-type interpretation; code is not a discovery oracle.",
+  "known_analyses_and_limitations": "Single-system validation only. Fit on complete earlier cycles and test later cycles with boundary gaps. A restatement of the supplied fitted model is reproduction.",
+  "related_publications": [],
+  "independent_groups": "complete oscillation cycles within one experimental system",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-068",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-068",
+      "scenario_id": "68_physics_acoustic_levitation",
+      "path": "raw/MATLAB Code PSD AND TIME SERIES DATA.txt",
+      "scenario_relative_path": "raw/MATLAB Code PSD AND TIME SERIES DATA.txt",
+      "bytes": 2897,
+      "sha256": "898e7d3a30d0046d96c8f8892a0ff3c4c2cb46e5a5faa53392d7e4c877b3502c",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/16033764"
+      ],
+      "download_url": "https://zenodo.org/api/records/16033764/files/MATLAB%20Code%20PSD%20AND%20TIME%20SERIES%20DATA.txt/content",
+      "source_checksum": "md5:a7eb7fadffd023701cfdf981729021bf",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:05.179049+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.16033764"
+      ],
+      "citation_url": "https://zenodo.org/records/16033764",
+      "source_version": "16033764",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/16033764",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-068",
+      "scenario_id": "68_physics_acoustic_levitation",
+      "path": "raw/MATLAB Code SINDy.txt",
+      "scenario_relative_path": "raw/MATLAB Code SINDy.txt",
+      "bytes": 11706,
+      "sha256": "4950ffb628cc9b30dd13a9219938db22d0295159efeae6caae9659b452abb82e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/16033764"
+      ],
+      "download_url": "https://zenodo.org/api/records/16033764/files/MATLAB%20Code%20SINDy.txt/content",
+      "source_checksum": "md5:7e2de6e1385884053e35034dcf1250cf",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:06.675758+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.16033764"
+      ],
+      "citation_url": "https://zenodo.org/records/16033764",
+      "source_version": "16033764",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/16033764",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-068",
+      "scenario_id": "68_physics_acoustic_levitation",
+      "path": "raw/Data.rar",
+      "scenario_relative_path": "raw/Data.rar",
+      "bytes": 328760,
+      "sha256": "38f849ce6973bf140cf3975c2826e71607df346935419fde36ab668c7c66cbe1",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/16033764"
+      ],
+      "download_url": "https://zenodo.org/api/records/16033764/files/Data.rar/content",
+      "source_checksum": "md5:4847447902a72d9459fff9aab45dc73e",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:09.089180+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.16033764"
+      ],
+      "citation_url": "https://zenodo.org/records/16033764",
+      "source_version": "16033764",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/16033764",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-068",
+      "scenario_id": "68_physics_acoustic_levitation",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 4837,
+      "sha256": "a24dee7058d93c244833f7ae26a2763d06540cdf810fc4a0193df7c96262c775",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/16033764"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:43.383071+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.16033764"
+      ],
+      "citation_url": "https://zenodo.org/records/16033764",
+      "source_version": "16033764",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "18_climate_noaa_storm_events_2025",
+  "domain": "climate",
+  "title": "NOAA Storm Events 2025 details, fatalities, and locations",
+  "publisher": "NOAA National Centers for Environmental Information",
+  "authoritative_landing_url": "https://www.ncei.noaa.gov/stormevents/ftp.jsp",
+  "authoritative_source_urls": [
+    "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/",
+    "https://www.ncei.noaa.gov/stormevents/ftp.jsp"
+  ],
+  "identifiers": [],
+  "release_or_version": "2025 files created 2026-08-19",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "U.S. Government public data",
+  "deterministic_selection_rule": "Retain the exact 2025 details, fatalities, and locations gzip files with c20260819, plus the official bulk CSV format PDF.",
+  "substitution": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-018",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-018",
+      "scenario_id": "18_climate_noaa_storm_events_2025",
+      "path": "context/Storm-Data-Bulk-csv-Format.pdf",
+      "scenario_relative_path": "context/Storm-Data-Bulk-csv-Format.pdf",
+      "bytes": 341218,
+      "sha256": "3bd18968d34da43e192f8a7fb8e5548c4fa7d24ede016d2d068d849ee1392df6",
+      "role": "official_context_or_source_metadata",
+      "source_urls": [
+        "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/",
+        "https://www.ncei.noaa.gov/stormevents/ftp.jsp"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-08-23T14:14:09.390874Z",
+      "license_or_terms": "U.S. Government public data",
+      "citation_identifiers": [],
+      "citation_url": "https://www.ncei.noaa.gov/stormevents/ftp.jsp",
+      "source_version": "2025 files created 2026-08-19",
+      "replay_note": "Frozen local asset with source record references; exact remote asset URL was not recorded in legacy schema. Replay from an intact release copy is supported.",
+      "rights_evidence_url": "https://www.ncei.noaa.gov/stormevents/ftp.jsp",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-018",
+      "scenario_id": "18_climate_noaa_storm_events_2025",
+      "path": "raw/StormEvents_details-ftp_v1.0_d2025_c20260819.csv.gz",
+      "scenario_relative_path": "raw/StormEvents_details-ftp_v1.0_d2025_c20260819.csv.gz",
+      "bytes": 12585209,
+      "sha256": "d9b46b4c6aae554723cadbb9691f3d5258371c02e530ba815d6fe41e4550149f",
+      "role": "official_payload",
+      "source_urls": [
+        "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/",
+        "https://www.ncei.noaa.gov/stormevents/ftp.jsp"
+      ],
+      "download_url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/StormEvents_details-ftp_v1.0_d2025_c20260819.csv.gz",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-08-23T14:14:09.390874Z",
+      "license_or_terms": "U.S. Government public data",
+      "citation_identifiers": [],
+      "citation_url": "https://www.ncei.noaa.gov/stormevents/ftp.jsp",
+      "source_version": "2025 files created 2026-08-19",
+      "replay_note": "resolved from frozen authoritative metadata",
+      "rights_evidence_url": "https://www.ncei.noaa.gov/stormevents/ftp.jsp",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-018",
+      "scenario_id": "18_climate_noaa_storm_events_2025",
+      "path": "raw/StormEvents_fatalities-ftp_v1.0_d2025_c20260819.csv.gz",
+      "scenario_relative_path": "raw/StormEvents_fatalities-ftp_v1.0_d2025_c20260819.csv.gz",
+      "bytes": 10164,
+      "sha256": "00c2fad534b4702e8132621d582f181e7f1928bbe7d01752f3bf1d4ea42d1e81",
+      "role": "official_payload",
+      "source_urls": [
+        "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/",
+        "https://www.ncei.noaa.gov/stormevents/ftp.jsp"
+      ],
+      "download_url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/StormEvents_fatalities-ftp_v1.0_d2025_c20260819.csv.gz",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-08-23T14:14:09.390874Z",
+      "license_or_terms": "U.S. Government public data",
+      "citation_identifiers": [],
+      "citation_url": "https://www.ncei.noaa.gov/stormevents/ftp.jsp",
+      "source_version": "2025 files created 2026-08-19",
+      "replay_note": "resolved from frozen authoritative metadata",
+      "rights_evidence_url": "https://www.ncei.noaa.gov/stormevents/ftp.jsp",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-018",
+      "scenario_id": "18_climate_noaa_storm_events_2025",
+      "path": "raw/StormEvents_locations-ftp_v1.0_d2025_c20260819.csv.gz",
+      "scenario_relative_path": "raw/StormEvents_locations-ftp_v1.0_d2025_c20260819.csv.gz",
+      "bytes": 1206372,
+      "sha256": "64847e91cf90e3bffbb8338f91b95bc6e527ff1f1b999b80336f24dc1187dc22",
+      "role": "official_payload",
+      "source_urls": [
+        "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/",
+        "https://www.ncei.noaa.gov/stormevents/ftp.jsp"
+      ],
+      "download_url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/StormEvents_locations-ftp_v1.0_d2025_c20260819.csv.gz",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-08-23T14:14:09.390874Z",
+      "license_or_terms": "U.S. Government public data",
+      "citation_identifiers": [],
+      "citation_url": "https://www.ncei.noaa.gov/stormevents/ftp.jsp",
+      "source_version": "2025 files created 2026-08-19",
+      "replay_note": "resolved from frozen authoritative metadata",
+      "rights_evidence_url": "https://www.ncei.noaa.gov/stormevents/ftp.jsp",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

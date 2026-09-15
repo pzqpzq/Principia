@@ -1,0 +1,574 @@
+{
+  "case_id": "P100-094",
+  "case_revision": 1,
+  "scenario_id": "94_oceanography_arctic_ctd",
+  "title": "Conductivity Temperature Depth (CTD) Data from Canada-Sweden Arctic Ocean 2025 Expedition on IB Oden, 9 August - 19 September 2025",
+  "domain": "Physical oceanography",
+  "question": "How do measured vertical water-column properties vary across the retained Arctic stations?",
+  "data_origin": "measured_or_observed",
+  "source_version": "17530624",
+  "source_url": "https://zenodo.org/records/17530624",
+  "identifiers": [
+    "10.5281/zenodo.17530624"
+  ],
+  "publisher": "Planat, Noémie (McGill University); Doriot, Vincent (University of Gothenburg); Rotermund, Lina M.; Muchowski, Julia C. (Swedish Polar Research Secretariat); Swedish Polar Research Secretariat",
+  "release_date": "2025-11-28",
+  "measurement_dates": "August 9–September 19, 2025 campaign.",
+  "variables_and_units": "CTD sensor counts, calibrated profiles, bottle values and calibration",
+  "independent_units": "station and full cast, six selected stations",
+  "validation_design": "station and full cast, six selected stations Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Instrument HEX, calibration XMLCON, HDR/BL/BTL, TXT/CSV outputs and logsheet retained for stations 02/04/06/08/10/12.",
+  "prior_analysis_and_limits": "Hold out full stations/casts. Calibration products and raw counts are linked representations. Station 06 filename times differ between metadata and measurement products; preserve both. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.csv",
+      "structure": {
+        "header": [
+          "time",
+          "lat",
+          "lon",
+          "pressure",
+          "pump",
+          "T1",
+          "T2",
+          "S1",
+          "S2",
+          "OXY1_SAT",
+          "OXY1_ML",
+          "OXY2_SAT",
+          "OXY2_ML",
+          "FLUOR",
+          "TURB",
+          "CDOM",
+          "PAR",
+          "DESC",
+          "ALTIM",
+          "CNT",
+          "T1_quality_flag",
+          "T2_quality_flag",
+          "S1_quality_flag",
+          "S2_quality_flag",
+          "OXY1_quality_flag",
+          "OXY2_quality_flag"
+        ],
+        "data_records": 12476,
+        "first_lines": [
+          "time,lat,lon,pressure,pump,T1,T2,S1,S2,OXY1_SAT,OXY1_ML,OXY2_SAT,OXY2_ML,FLUOR,TURB,CDOM,PAR,DESC,ALTIM,CNT,T1_quality_flag,T2_quality_flag,S1_quality_flag,S2_quality_flag,OXY1_quality_flag,OXY2_quality_flag",
+          "2025-08-30 03:34:44.167,83.38998,177.41552,0.2,0.0,-1.6296,-1.6002,30.7665,30.8282,89.333,7.6996,82.908,7.1371,0.1672,0.1666,1.1581,9999.0,0.048,104.39,3389.0,2,2,2,2,2,2",
+          "2025-08-30 03:34:44.986,83.38998,177.41552,0.4,0.0,-1.636,-1.6267,30.9431,31.0483,88.155,7.5899,86.601,7.4486,0.1776,0.1666,1.1284,9999.0,0.183,104.4,3409.0,2,2,2,2,2,2",
+          "2025-08-30 03:34:45.789,83.38998,177.41552,0.6,0.0,-1.6362,-1.6301,31.1527,31.161,87.011,7.4803,87.902,7.5552,0.1819,0.1618,1.131,9999.0,0.248,104.42,3428.0,2,2,2,2,2,2",
+          "2025-08-30 03:34:46.598,83.38998,177.41552,0.8,0.0,-1.6361,-1.6339,31.1428,31.1994,86.125,7.4046,87.758,7.5415,0.1823,0.1545,1.1748,9999.0,0.248,104.43,3447.0,2,2,2,2,2,2",
+          "2025-08-30 03:34:47.471,83.38998,177.41552,1.0,0.0,-1.636,-1.621,31.4006,31.4639,85.396,7.3284,87.138,7.4715,0.1819,0.1544,1.1183,9999.0,0.241,104.46,3468.0,2,2,2,2,2,2",
+          "2025-08-30 03:34:54.124,83.39,177.41552,1.2,0.0,-1.6032,-1.5864,31.5833,31.6185,82.952,7.1037,84.373,7.2201,0.2168,0.15,1.1619,9999.0,0.173,104.47,3628.0,2,2,2,2,2,2",
+          "2025-08-30 03:35:13.383,83.39,177.41552,1.4,0.0,-1.5665,-1.6091,31.8131,31.9069,76.576,6.5399,78.154,6.6779,0.2625,0.1362,1.1697,9999.0,0.093,104.43,4090.0,2,2,2,2,2,2"
+        ]
+      }
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.csv",
+      "structure": {
+        "header": [
+          "time",
+          "lat",
+          "lon",
+          "pressure",
+          "pump",
+          "T1",
+          "T2",
+          "S1",
+          "S2",
+          "OXY1_SAT",
+          "OXY1_ML",
+          "OXY2_SAT",
+          "OXY2_ML",
+          "FLUOR",
+          "TURB",
+          "CDOM",
+          "PAR",
+          "DESC",
+          "ALTIM",
+          "CNT",
+          "T1_quality_flag",
+          "T2_quality_flag",
+          "S1_quality_flag",
+          "S2_quality_flag",
+          "OXY1_quality_flag",
+          "OXY2_quality_flag"
+        ],
+        "data_records": 2522,
+        "first_lines": [
+          "time,lat,lon,pressure,pump,T1,T2,S1,S2,OXY1_SAT,OXY1_ML,OXY2_SAT,OXY2_ML,FLUOR,TURB,CDOM,PAR,DESC,ALTIM,CNT,T1_quality_flag,T2_quality_flag,S1_quality_flag,S2_quality_flag,OXY1_quality_flag,OXY2_quality_flag",
+          "2025-08-23 05:22:05.062,85.4143,-167.28544,4.6,0.0,-1.6161,-1.3609,26.519,0.2314,80.629,7.1599,63.367,6.7309,0.0354,0.0298,1.0909,9999.0,0.059,104.43,242.0,2,2,2,2,2,2",
+          "2025-08-23 05:22:06.596,85.4143,-167.28549,4.8,0.0,-1.6156,-1.3639,26.5185,0.2887,80.477,7.1464,62.803,6.6689,0.0354,0.0356,1.0574,9999.0,0.101,104.43,279.0,2,2,2,2,2,2",
+          "2025-08-23 05:22:07.926,85.4143,-167.28551,5.0,0.0,-1.6157,-1.3666,26.5194,0.3895,80.209,7.1226,62.481,6.6305,0.0354,0.0349,1.049,9999.0,0.144,104.43,311.0,2,2,2,2,2,2",
+          "2025-08-23 05:22:09.126,85.41428,-167.28554,5.2,0.0,-1.6162,-1.3691,26.5214,0.4902,80.044,7.1079,62.638,6.6429,0.0354,0.0351,1.0714,9999.0,0.163,104.43,340.0,2,2,2,2,2,2",
+          "2025-08-23 05:22:10.246,85.41428,-167.28558,5.4,0.0,-1.6168,-1.3715,26.5238,0.5661,79.808,7.087,63.284,6.7082,0.0421,0.0277,1.0688,9999.0,0.172,104.43,367.0,2,2,2,2,2,2",
+          "2025-08-23 05:22:11.187,85.41428,-167.2856,5.6,0.0,-1.6174,-1.3734,26.5246,0.6295,79.597,7.0683,64.236,6.8065,0.0427,0.0344,1.0866,9999.0,0.193,104.43,389.0,2,2,2,2,2,2",
+          "2025-08-23 05:22:11.961,85.41428,-167.28563,5.8,0.0,-1.6173,-1.3751,26.5254,0.6751,79.455,7.0556,65.116,6.8978,0.0396,0.0342,1.0857,9999.0,0.229,104.43,408.0,2,2,2,2,2,2"
+        ]
+      }
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250830_0332_Station-06_Cast-01_Metadata.txt",
+      "structure": {
+        "first_lines": [
+          "## CTD metadata",
+          "expedition = ArcticOcean-Canada-Sweden_2025",
+          "station = 6",
+          "cast = 1",
+          "raw_file_name = AO25-CTD-20250830_0332_Station-06_Cast-01",
+          "processed_file_name = AO25-CTD-20250830_0332_Station-06_Cast-01",
+          "date = 2025-08-30           # year-month-day",
+          "time_start = 03:32           # in UTC"
+        ]
+      }
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01_Metadata.txt",
+      "structure": {
+        "first_lines": [
+          "## CTD metadata",
+          "expedition = ArcticOcean-Canada-Sweden_2025",
+          "station = 12",
+          "cast = 1",
+          "raw_file_name = AO25-CTD-20250915_1621_Station-12_Cast-01",
+          "processed_file_name = AO25-CTD-20250915_1621_Station-12_Cast-01",
+          "date = 2025-09-15           # year-month-day",
+          "time_start = 16:21           # in UTC"
+        ]
+      }
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.csv",
+      "structure": {
+        "header": [
+          "time",
+          "lat",
+          "lon",
+          "pressure",
+          "pump",
+          "T1",
+          "T2",
+          "S1",
+          "S2",
+          "OXY1_SAT",
+          "OXY1_ML",
+          "OXY2_SAT",
+          "OXY2_ML",
+          "FLUOR",
+          "TURB",
+          "CDOM",
+          "PAR",
+          "DESC",
+          "ALTIM",
+          "CNT",
+          "T1_quality_flag",
+          "T2_quality_flag",
+          "S1_quality_flag",
+          "S2_quality_flag",
+          "OXY1_quality_flag",
+          "OXY2_quality_flag"
+        ],
+        "data_records": 21529,
+        "first_lines": [
+          "time,lat,lon,pressure,pump,T1,T2,S1,S2,OXY1_SAT,OXY1_ML,OXY2_SAT,OXY2_ML,FLUOR,TURB,CDOM,PAR,DESC,ALTIM,CNT,T1_quality_flag,T2_quality_flag,S1_quality_flag,S2_quality_flag,OXY1_quality_flag,OXY2_quality_flag",
+          "2025-09-11 09:28:46.528,86.81516,-1.68155,0.2,0.0,-1.6271,-1.6266,29.9044,27.6964,83.542,7.2443,92.112,8.1138,0.008,0.0445,0.8543,9999.0,0.13,104.36,4070.0,0,0,2,2,2,2",
+          "2025-09-11 09:28:48.068,86.81516,-1.68154,0.4,0.0,-1.6306,-1.6433,29.809,27.6754,82.894,7.1937,92.769,8.1766,0.0046,0.0402,0.8836,9999.0,0.129,104.37,4107.0,0,0,2,2,2,2",
+          "2025-09-11 09:28:49.667,86.81516,-1.68151,0.6,0.0,-1.6389,-1.6723,29.7593,27.6718,82.137,7.1321,91.185,8.0436,0.0133,0.044,0.8509,9999.0,0.122,104.39,4145.0,0,0,2,2,2,2",
+          "2025-09-11 09:28:53.659,86.81515,-1.68143,0.8,0.0,-1.629,-1.6393,29.8303,27.6708,81.539,7.0747,86.528,7.626,0.0231,0.0433,0.8838,9999.0,0.087,104.42,4241.0,0,0,2,2,2,2",
+          "2025-09-11 09:28:56.054,86.81514,-1.68139,1.0,0.0,-1.6224,-1.6263,29.8568,27.6449,81.165,7.0397,83.751,7.3799,0.0364,0.041,0.893,9999.0,0.113,104.43,4298.0,0,0,2,2,2,2",
+          "2025-09-11 09:29:00.977,86.81514,-1.68129,1.2,0.0,-1.6232,-1.6294,29.8467,27.5998,80.72,7.0017,81.485,7.1832,0.0429,0.0438,0.872,9999.0,0.118,104.43,4416.0,0,0,2,2,2,2",
+          "2025-09-11 09:29:34.764,86.8151,-1.68069,1.4,0.0,-1.6234,-1.6224,29.8712,27.6029,81.645,7.0808,73.897,6.5129,0.0718,0.0374,0.8513,9999.0,0.087,104.43,5227.0,0,0,2,2,2,2"
+        ]
+      }
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01_Metadata.txt",
+      "structure": {
+        "first_lines": [
+          "## CTD metadata",
+          "expedition = ArcticOcean-Canada-Sweden_2025",
+          "station = 8",
+          "cast = 1",
+          "raw_file_name = AO25-CTD-20250903_1920_Station-08_Cast-01",
+          "processed_file_name = AO25-CTD-20250903_1920_Station-08_Cast-01",
+          "date = 2025-09-03           # year-month-day",
+          "time_start = 19:20           # in UTC"
+        ]
+      }
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01_Metadata.txt",
+      "structure": {
+        "first_lines": [
+          "## CTD metadata",
+          "expedition = ArcticOcean-Canada-Sweden_2025",
+          "station = 4",
+          "cast = 1",
+          "raw_file_name = AO25-CTD-20250823_0516_Station-04_Cast-01",
+          "processed_file_name = AO25-CTD-20250823_0516_Station-04_Cast-01",
+          "date = 2025-08-23           # year-month-day",
+          "time_start = 05:16           # in UTC"
+        ]
+      }
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.csv",
+      "structure": {
+        "header": [
+          "time",
+          "lat",
+          "lon",
+          "pressure",
+          "pump",
+          "T1",
+          "T2",
+          "S1",
+          "S2",
+          "OXY1_SAT",
+          "OXY1_ML",
+          "OXY2_SAT",
+          "OXY2_ML",
+          "FLUOR",
+          "TURB",
+          "CDOM",
+          "PAR",
+          "DESC",
+          "ALTIM",
+          "CNT",
+          "T1_quality_flag",
+          "T2_quality_flag",
+          "S1_quality_flag",
+          "S2_quality_flag",
+          "OXY1_quality_flag",
+          "OXY2_quality_flag"
+        ],
+        "data_records": 6980,
+        "first_lines": [
+          "time,lat,lon,pressure,pump,T1,T2,S1,S2,OXY1_SAT,OXY1_ML,OXY2_SAT,OXY2_ML,FLUOR,TURB,CDOM,PAR,DESC,ALTIM,CNT,T1_quality_flag,T2_quality_flag,S1_quality_flag,S2_quality_flag,OXY1_quality_flag,OXY2_quality_flag",
+          "2025-08-15 10:55:08.142,87.65062,-4.19912,0.2,0.0,-1.4271,-1.4269,30.6664,30.5996,73.913,6.3403,93.277,8.005,-0.0132,0.3346,0.6225,9999.0,0.209,104.36,3244.0,0,0,2,2,2,2",
+          "2025-08-15 10:55:09.070,87.65062,-4.19914,0.4,0.0,-1.4273,-1.427,30.7681,30.7048,72.862,6.2456,89.726,7.6946,-0.0136,0.1648,0.6197,9999.0,0.204,104.36,3267.0,0,0,2,2,2,2",
+          "2025-08-15 10:55:09.938,87.65062,-4.19915,0.6,0.0,-1.4314,-1.4304,30.916,30.8345,71.965,6.1629,87.738,7.5178,-0.0068,0.1574,0.6433,9999.0,0.219,104.36,3288.0,0,0,2,2,2,2",
+          "2025-08-15 10:55:10.846,87.65062,-4.19917,0.8,0.0,-1.4342,-1.433,31.1224,30.9468,71.127,6.0827,90.619,7.759,0.0,0.1543,0.6552,9999.0,0.228,104.37,3309.0,0,0,2,2,2,2",
+          "2025-08-15 10:55:11.747,87.65062,-4.19919,1.0,0.0,-1.4339,-1.4335,31.2798,31.0253,70.532,6.025,91.654,7.8434,-0.0044,0.1533,0.6369,9999.0,0.222,104.38,3331.0,0,0,2,2,2,2",
+          "2025-08-15 10:55:16.845,87.65062,-4.19928,1.2,0.0,-1.433,-1.4319,31.2061,31.0239,71.189,6.0843,89.45,7.6544,0.0029,0.1448,0.6122,9999.0,0.165,104.39,3453.0,0,0,2,2,2,2",
+          "2025-08-15 10:55:29.241,87.65062,-4.19952,1.4,0.0,-1.4317,-1.4299,30.8796,30.8743,73.218,6.2719,85.173,7.2959,0.0091,0.1356,0.626,9999.0,0.088,104.41,3751.0,0,0,2,2,2,2"
+        ]
+      }
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.csv",
+      "structure": {
+        "header": [
+          "time",
+          "lat",
+          "lon",
+          "pressure",
+          "pump",
+          "T1",
+          "T2",
+          "S1",
+          "S2",
+          "OXY1_SAT",
+          "OXY1_ML",
+          "OXY2_SAT",
+          "OXY2_ML",
+          "FLUOR",
+          "TURB",
+          "CDOM",
+          "PAR",
+          "DESC",
+          "ALTIM",
+          "CNT",
+          "T1_quality_flag",
+          "T2_quality_flag",
+          "S1_quality_flag",
+          "S2_quality_flag",
+          "OXY1_quality_flag",
+          "OXY2_quality_flag"
+        ],
+        "data_records": 15952,
+        "first_lines": [
+          "time,lat,lon,pressure,pump,T1,T2,S1,S2,OXY1_SAT,OXY1_ML,OXY2_SAT,OXY2_ML,FLUOR,TURB,CDOM,PAR,DESC,ALTIM,CNT,T1_quality_flag,T2_quality_flag,S1_quality_flag,S2_quality_flag,OXY1_quality_flag,OXY2_quality_flag",
+          "2025-09-15 16:23:16.800,81.39332,-2.49548,0.2,0.0,-1.6282,-1.6273,29.6199,29.6595,89.203,7.7512,98.838,8.5857,0.5517,9.1096,0.604,9999.0,0.354,104.36,3164.0,0,0,2,2,2,2",
+          "2025-09-15 16:23:17.240,81.39332,-2.49548,0.4,0.0,-1.6306,-1.6275,29.8817,29.9116,88.942,7.7146,99.702,8.6453,0.1469,2.0512,0.5807,9999.0,0.434,104.36,3175.0,0,0,2,2,2,2",
+          "2025-09-15 16:23:17.731,81.39332,-2.49548,0.6,0.0,-1.6321,-1.6279,30.0195,30.0577,88.418,7.6619,101.06,8.754,0.0429,0.2812,0.6035,9999.0,0.441,57.09,3187.0,0,0,2,2,2,2",
+          "2025-09-15 16:23:18.206,81.39332,-2.49548,0.8,0.0,-1.6318,-1.6288,30.1055,30.1345,87.899,7.6122,102.416,8.8669,0.0348,0.2345,0.6062,9999.0,0.432,104.21,3198.0,0,0,2,2,2,2",
+          "2025-09-15 16:23:18.663,81.39331,-2.49548,1.0,0.0,-1.6319,-1.629,30.1719,30.2176,87.572,7.5804,102.997,8.9119,0.0288,0.1974,0.6621,9999.0,0.425,85.19,3209.0,0,0,2,2,2,2",
+          "2025-09-15 16:23:19.114,81.3933,-2.49548,1.2,0.0,-1.6311,-1.6289,30.2344,30.2824,87.239,7.5481,102.829,8.8933,0.0303,0.1921,0.6069,9999.0,0.422,-0.94,3220.0,0,0,2,2,2,2",
+          "2025-09-15 16:23:19.582,81.3933,-2.49548,1.4,0.0,-1.6301,-1.6288,30.2949,30.3822,86.762,7.5033,101.651,8.7852,0.0365,0.1727,0.5862,9999.0,0.437,58.85,3231.0,0,0,2,2,2,2"
+        ]
+      }
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01_Metadata.txt",
+      "structure": {
+        "first_lines": [
+          "## CTD metadata",
+          "expedition = ArcticOcean-Canada-Sweden_2025",
+          "station = 2",
+          "cast = 1",
+          "raw_file_name = AO25-CTD-20250815_1052_Station-01_Cast-01",
+          "processed_file_name = AO25-CTD-20250815_1052_Station-01_Cast-01",
+          "date = 2025-08-15           # year-month-day",
+          "time_start = 10:52           # in UTC"
+        ]
+      }
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.csv",
+      "structure": {
+        "header": [
+          "time",
+          "lat",
+          "lon",
+          "pressure",
+          "pump",
+          "T1",
+          "T2",
+          "S1",
+          "S2",
+          "OXY1_SAT",
+          "OXY1_ML",
+          "OXY2_SAT",
+          "OXY2_ML",
+          "FLUOR",
+          "TURB",
+          "CDOM",
+          "PAR",
+          "DESC",
+          "ALTIM",
+          "CNT",
+          "T1_quality_flag",
+          "T2_quality_flag",
+          "S1_quality_flag",
+          "S2_quality_flag",
+          "OXY1_quality_flag",
+          "OXY2_quality_flag"
+        ],
+        "data_records": 4057,
+        "first_lines": [
+          "time,lat,lon,pressure,pump,T1,T2,S1,S2,OXY1_SAT,OXY1_ML,OXY2_SAT,OXY2_ML,FLUOR,TURB,CDOM,PAR,DESC,ALTIM,CNT,T1_quality_flag,T2_quality_flag,S1_quality_flag,S2_quality_flag,OXY1_quality_flag,OXY2_quality_flag",
+          "2025-09-03 19:21:41.880,85.15952,151.38983,0.2,0.0,-1.7385,-1.7366,32.0031,31.9946,89.623,7.6796,91.509,7.8413,0.1154,3.0562,0.7546,9999.0,0.208,104.36,3046.0,0,0,2,2,2,2",
+          "2025-09-03 19:21:43.490,85.15952,151.38984,0.4,0.0,-1.7385,-1.7376,32.124,32.108,86.909,7.4407,93.729,8.0252,0.149,3.1351,0.7811,9999.0,0.127,104.36,3085.0,0,0,2,2,2,2",
+          "2025-09-03 19:21:44.958,85.15952,151.38985,0.6,0.0,-1.739,-1.7387,32.2398,32.1965,84.902,7.2629,93.943,8.0387,0.0924,3.1154,0.8126,9999.0,0.128,104.37,3120.0,0,0,2,2,2,2",
+          "2025-09-03 19:21:56.267,85.1595,151.38992,0.8,0.0,-1.709,-1.7216,32.2184,32.1409,79.279,6.7775,82.191,7.0327,0.1357,3.1922,0.7991,9999.0,0.088,104.43,3391.0,0,0,2,2,2,2",
+          "2025-09-03 19:21:59.867,85.1595,151.38994,1.0,0.0,-1.7125,-1.7085,32.2244,32.1223,77.745,6.6466,79.864,6.832,0.1461,3.2025,0.7666,9999.0,0.121,104.43,3478.0,0,0,2,2,2,2",
+          "2025-09-03 19:22:17.020,85.15947,151.39005,1.2,0.0,-1.7354,-1.7338,32.1273,32.0465,75.455,6.4593,76.637,6.5639,0.1401,3.2652,0.7785,9999.0,0.075,104.41,3889.0,0,0,2,2,2,2",
+          "2025-09-03 19:22:20.132,85.15946,151.39008,1.4,0.0,-1.7382,-1.7374,32.1135,32.03,74.948,6.4171,77.099,6.605,0.1313,3.2768,0.7901,9999.0,0.127,104.41,3964.0,0,0,2,2,2,2"
+        ]
+      }
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01_Metadata.txt",
+      "structure": {
+        "first_lines": [
+          "## CTD metadata",
+          "expedition = ArcticOcean-Canada-Sweden_2025",
+          "station = 10",
+          "cast = 1",
+          "raw_file_name = AO25-CTD-20250911_0929_Station-10_Cast-01",
+          "processed_file_name = AO25-CTD-20250911_0929_Station-10_Cast-01",
+          "date = 2025-09-11           # year-month-day",
+          "time_start = 09:29           # in UTC"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "text_or_instrument_native": 14,
+    "preserved_native": 30
+  },
+  "reader_limitations": [
+    {
+      "asset": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.hdr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.hex",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.XMLCON",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01_Upcast.btl",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01_Upcast.btl",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.hex",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.hex",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.hex",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.XMLCON",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.hdr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01_Upcast.btl",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01_Upcast.btl",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.bl",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.hdr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.bl",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.hdr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.bl",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.hex",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01_Upcast.btl",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.hex",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.bl",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01_Upcast.btl",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.XMLCON",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.bl",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.XMLCON",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.hdr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.bl",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.XMLCON",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.XMLCON",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.hdr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    }
+  ],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 92624105,
+  "expanded_source_equivalent_bytes": 92624105,
+  "installed_folder_bytes": 92710169,
+  "source_asset_count": 45,
+  "asset_paths": [
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.csv",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.hdr",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.hex",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.XMLCON",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01_Upcast.btl",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01_Upcast.btl",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.csv",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250830_0332_Station-06_Cast-01_Metadata.txt",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.hex",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.hex",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.hex",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.XMLCON",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01_Metadata.txt",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.hdr",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01_Upcast.btl",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01_Upcast.btl",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.bl",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.csv",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01_Metadata.txt",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01_Metadata.txt",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.hdr",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.bl",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.csv",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.hdr",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.bl",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.hex",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01_Upcast.btl",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.csv",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.hex",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.bl",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01_Upcast.btl",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.XMLCON",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.bl",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01_Metadata.txt",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.csv",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01_Metadata.txt",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.XMLCON",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.hdr",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.bl",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.XMLCON",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.XMLCON",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD_logsheet.csv",
+    "scenarios/94_oceanography_arctic_ctd/raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.hdr",
+    "scenarios/94_oceanography_arctic_ctd/raw/README.txt",
+    "scenarios/94_oceanography_arctic_ctd/context/SOURCE_FACTS.json"
+  ],
+  "local_folder": "scenarios/94_oceanography_arctic_ctd",
+  "size_exception": false,
+  "modalities": [
+    "spatial_or_georeferenced",
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 92710618,
+  "expanded_release_folder_equivalent_bytes": 92710618
+}

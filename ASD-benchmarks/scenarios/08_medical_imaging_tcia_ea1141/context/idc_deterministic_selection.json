@@ -1,0 +1,18 @@
+{
+  "selection_query": "WITH mr AS (\n  SELECT * FROM index WHERE collection_id='ea1141' AND Modality='MR'\n), mg AS (\n  SELECT * FROM index WHERE collection_id='ea1141' AND Modality='MG'\n)\nSELECT\n  mr.PatientID,\n  mr.SeriesInstanceUID AS mr_uid,\n  mr.SeriesDescription AS mr_description,\n  mr.instanceCount AS mr_instances,\n  mr.series_size_MB AS mr_size_mb,\n  mg.SeriesInstanceUID AS mg_uid,\n  mg.SeriesDescription AS mg_description,\n  mg.instanceCount AS mg_instances,\n  mg.series_size_MB AS mg_size_mb,\n  mr.instanceCount + mg.instanceCount AS total_instances,\n  mr.series_size_MB + mg.series_size_MB AS total_size_mb,\n  mr.source_DOI,\n  mr.license_short_name\nFROM mr JOIN mg USING(PatientID)\nWHERE mr.instanceCount + mg.instanceCount BETWEEN 32 AND 400\n  AND mr.series_size_MB + mg.series_size_MB <= 180\nORDER BY mr.PatientID, mr.SeriesInstanceUID, mg.SeriesInstanceUID\nLIMIT 1",
+  "selected": {
+    "PatientID": "EA1141-1004399",
+    "mr_uid": "1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495",
+    "mr_description": "T2 FS AX",
+    "mr_instances": 70,
+    "mr_size_mb": 32.56,
+    "mg_uid": "1.3.6.1.4.1.14519.5.2.1.1620.1225.118330849799489129360385109830",
+    "mg_description": "L CC",
+    "mg_instances": 1,
+    "mg_size_mb": 27.27,
+    "total_instances": 71,
+    "total_size_mb": 59.83,
+    "source_DOI": "10.7937/2bas-hr33",
+    "license_short_name": "CC BY 4.0"
+  }
+}

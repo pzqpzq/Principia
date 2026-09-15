@@ -1,0 +1,216 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "83_ecology_hive_microclimate",
+  "domain": "Animal ecology",
+  "title": "Hive Monitoring (Apis mellifera and Stingless Bees) and Rainfall Data - Federal University of Ceará (UFC) Apiary - Brazil",
+  "publisher": "JUCÁ DOS SANTOS, FELIPE (Universidade Federal do Ceará); abrahao bomfim, isac gabriel (Universidade Federal do Ceará); G. Gomes, Danielo (Universidade Federal do Ceará); Coelho, Alexandre; Rafael Braga, Antonio (Universidade Federal do Ceará); Cavalcante, Marcelo Casimiro (University for International Integration of the Afro-Brazilian Lusophony); Freitas, Breno M. (Universidade Federal do Ceará)",
+  "authoritative_landing_url": "https://zenodo.org/records/20399470",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/20399470",
+    "https://zenodo.org/api/records/20399470/files/dadosColmeia1Apis.csv/content",
+    "https://zenodo.org/api/records/20399470/files/DadosMeliponas.csv/content",
+    "https://zenodo.org/api/records/20399470/files/dadosColmeia2Apis.csv/content",
+    "https://zenodo.org/api/records/20399470/files/Dados%20Pluviom%C3%A9tricos%20Set25-Mar26.csv/content",
+    "https://zenodo.org/api/records/20399470/files/Dados%20Pluviom%C3%A9tricos%20(jan25-mai25).csv/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.20399470"
+  ],
+  "release_or_version": "20399470",
+  "retrieval_finalized_utc": "2026-09-15T07:04:41.715645+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "December 2024–April 2026 in source sensor periods.",
+  "source_publication_date": "2026-05-26",
+  "source_created_utc": "2026-05-26T17:17:25.341140+00:00",
+  "source_updated_utc": "2026-05-26T17:17:25.881558+00:00",
+  "source_inventory": [
+    {
+      "name": "dadosColmeia1Apis.csv",
+      "bytes": 268775,
+      "selected": true
+    },
+    {
+      "name": "DadosMeliponas.csv",
+      "bytes": 3378627,
+      "selected": true
+    },
+    {
+      "name": "dadosColmeia2Apis.csv",
+      "bytes": 609522,
+      "selected": true
+    },
+    {
+      "name": "Dados Pluviométricos Set25-Mar26.csv",
+      "bytes": 6310,
+      "selected": true
+    },
+    {
+      "name": "Dados Pluviométricos (jan25-mai25).csv",
+      "bytes": 4140,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Five native sensor/rainfall CSVs; two identified Apis hives and a stingless-bee series from a different window.",
+  "known_analyses_and_limitations": "Block by hive and time. Species and season are confounded; a cross-species difference cannot be isolated from this record alone.",
+  "related_publications": [],
+  "independent_groups": "hive and complete time blocks, species/season confounding",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-083",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-083",
+      "scenario_id": "83_ecology_hive_microclimate",
+      "path": "raw/dadosColmeia1Apis.csv",
+      "scenario_relative_path": "raw/dadosColmeia1Apis.csv",
+      "bytes": 268775,
+      "sha256": "d23e556d970eac22a47b5c70dadce83e626cdf7b0a3d878a2280bf81ee7a5382",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/20399470"
+      ],
+      "download_url": "https://zenodo.org/api/records/20399470/files/dadosColmeia1Apis.csv/content",
+      "source_checksum": "md5:84206d6ca170906019874e0ed5f27650",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:32.681818+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.20399470"
+      ],
+      "citation_url": "https://zenodo.org/records/20399470",
+      "source_version": "20399470",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/20399470",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-083",
+      "scenario_id": "83_ecology_hive_microclimate",
+      "path": "raw/DadosMeliponas.csv",
+      "scenario_relative_path": "raw/DadosMeliponas.csv",
+      "bytes": 3378627,
+      "sha256": "94afdf7c2baae419e5639737eb81caceb8221e24726196b30e992d1222c0d843",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/20399470"
+      ],
+      "download_url": "https://zenodo.org/api/records/20399470/files/DadosMeliponas.csv/content",
+      "source_checksum": "md5:e1315f0db0f3505362d2feacb7ac9c67",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:51.928239+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.20399470"
+      ],
+      "citation_url": "https://zenodo.org/records/20399470",
+      "source_version": "20399470",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/20399470",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-083",
+      "scenario_id": "83_ecology_hive_microclimate",
+      "path": "raw/dadosColmeia2Apis.csv",
+      "scenario_relative_path": "raw/dadosColmeia2Apis.csv",
+      "bytes": 609522,
+      "sha256": "5dc04fa9222ead3708257d40075d364c4fb5beb218f0aa841be26153df4e4a45",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/20399470"
+      ],
+      "download_url": "https://zenodo.org/api/records/20399470/files/dadosColmeia2Apis.csv/content",
+      "source_checksum": "md5:064d28fd61b0578ac19c1399d88cde14",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:38.650823+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.20399470"
+      ],
+      "citation_url": "https://zenodo.org/records/20399470",
+      "source_version": "20399470",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/20399470",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-083",
+      "scenario_id": "83_ecology_hive_microclimate",
+      "path": "raw/Dados Pluviométricos Set25-Mar26.csv",
+      "scenario_relative_path": "raw/Dados Pluviométricos Set25-Mar26.csv",
+      "bytes": 6310,
+      "sha256": "df999fe4e4b4a08b708892b386f0200d8f939cef6cf25794f5818b587aa8d537",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/20399470"
+      ],
+      "download_url": "https://zenodo.org/api/records/20399470/files/Dados%20Pluviom%C3%A9tricos%20Set25-Mar26.csv/content",
+      "source_checksum": "md5:7f5a382b91571da0d22ec2dc49a62158",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:40.144380+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.20399470"
+      ],
+      "citation_url": "https://zenodo.org/records/20399470",
+      "source_version": "20399470",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/20399470",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-083",
+      "scenario_id": "83_ecology_hive_microclimate",
+      "path": "raw/Dados Pluviométricos (jan25-mai25).csv",
+      "scenario_relative_path": "raw/Dados Pluviométricos (jan25-mai25).csv",
+      "bytes": 4140,
+      "sha256": "6cf88c3910c1b5dccf61d72aab8f7209acacad16963d09c02ff2702a244ac6b1",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/20399470"
+      ],
+      "download_url": "https://zenodo.org/api/records/20399470/files/Dados%20Pluviom%C3%A9tricos%20(jan25-mai25).csv/content",
+      "source_checksum": "md5:bd2e825c82894c4449d2d77e56656473",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:41.541607+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.20399470"
+      ],
+      "citation_url": "https://zenodo.org/records/20399470",
+      "source_version": "20399470",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/20399470",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-083",
+      "scenario_id": "83_ecology_hive_microclimate",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 10181,
+      "sha256": "d5f5576045ab44af2e6c86558a61070da1a0dd01b6bfbc682ed8ad77e81acdf7",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/20399470"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:48.074418+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.20399470"
+      ],
+      "citation_url": "https://zenodo.org/records/20399470",
+      "source_version": "20399470",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

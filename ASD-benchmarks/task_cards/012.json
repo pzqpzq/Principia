@@ -1,0 +1,774 @@
+{
+  "case_id": "P100-012",
+  "case_revision": 1,
+  "scenario_id": "12_semiconductor_nist_hafnia_wafer",
+  "title": "NIST 200 mm hafnia-on-silicon wafer metrology collection",
+  "domain": "semiconductors",
+  "question": "How do spatial location and measurement method relate to hafnia film properties?",
+  "data_origin": "measured_or_observed",
+  "source_version": "1.0.1 manifest snapshot",
+  "source_url": "https://data.nist.gov/od/id/mds2-3930",
+  "identifiers": [
+    "doi:10.18434/mds2-3930"
+  ],
+  "publisher": "National Institute of Standards and Technology",
+  "release_date": "See source record; legacy retrieval vintage recorded",
+  "measurement_dates": "Not fully established in the legacy metadata; source filenames/headers and public context preserve available dates. Release dates are not substituted for measurement dates.",
+  "variables_and_units": "Variables and units are preserved in native column headers, instrument metadata and source dictionaries; see evidence anchors below.",
+  "independent_units": "Wafer and measurement region; repeated instruments on one position stay grouped.",
+  "validation_design": "Wafer and measurement region; repeated instruments on one position stay grouped. Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "NIST ALD hafnia/silicon campaign, 2025 instrument files, maps and derived fits. Source calibration and geometry are essential.",
+  "prior_analysis_and_limits": "NIST ALD hafnia/silicon campaign, 2025 instrument files, maps and derived fits. Source calibration and geometry are essential. NIST ALD hafnia/silicon campaign, 2025 instrument files, maps and derived fits. Source calibration and geometry are essential.",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-thickness.txt",
+      "structure": {
+        "first_lines": [
+          "Thickness # 1 in nm vs. Position",
+          "X (cm)\tY (cm)\tZ",
+          "-2.750000\t9.000000\t9.447187",
+          "-1.000000\t9.000000\t9.093151",
+          "0.000000\t9.000000\t9.059955",
+          "1.000000\t9.000000\t9.050508",
+          "2.750000\t9.000000\t9.008091",
+          "5.250000\t8.000000\t9.097247"
+        ]
+      }
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/measurement-details/se-collection-files/README.txt",
+      "structure": {
+        "first_lines": [
+          "NOTES on 2025/08/01:",
+          "",
+          "J.A. Woollam proprietary setup files:",
+          "",
+          "CHIPS-6-02-200mm-targets.scan (target locations for measurements)",
+          "CHIPS-6-02-25-00.mod (single film layer Cauchy model on Silicon)",
+          "CHIPS-6-02-2s-standard.params (2s of data, taken at 3 incident angles, for each point)",
+          "m-2000-brochure.pdf (Instrument capabilities brochure for the tool used to collect the SE data (Courtesy J.A. Woollam))"
+        ]
+      }
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-35-02-parameters.csv",
+      "structure": {
+        "header": [
+          "X (cm)",
+          "Y (cm)",
+          "MSE",
+          "Absolute MSE",
+          "Thickness # 1 (nm)",
+          "A",
+          "B",
+          "C",
+          "n of Cauchy @ 632.8 nm",
+          "Thickness # 1 (nm) Error",
+          "A Error",
+          "B Error",
+          "C Error",
+          "n of Cauchy @ 632.8 nm Error"
+        ],
+        "data_records": 119,
+        "first_lines": [
+          "X (cm),Y (cm),MSE,Absolute MSE,Thickness # 1 (nm),A,B,C,n of Cauchy @ 632.8 nm,Thickness # 1 (nm) Error,A Error,B Error,C Error,n of Cauchy @ 632.8 nm Error",
+          "-2.75,9,6.09,0,9.34,2.25,-0.02333,0.00098059,2.19785,0.014,0.0177,0.00653,0.00049868,0",
+          "-1,9,6.359,0,9.01,2.248,-0.01928,0.00059796,2.20386,0.014,0.0191,0.007095,0.00054292,0",
+          "0,9,6.379,0,8.98,2.248,-0.01926,0.00059023,2.20396,0.014,0.0192,0.007139,0.00054629,0",
+          "1,9,6.442,0,8.96,2.25,-0.01908,0.00056229,2.20547,0.014,0.0194,0.007215,0.00055243,0",
+          "2.75,9,6.39,0,8.86,2.245,-0.01802,0.00048971,2.20312,0.014,0.0196,0.007283,0.00055705,0",
+          "5.25,8,6.269,0,9.07,2.248,-0.02186,0.00079949,2.19805,0.014,0.0189,0.006969,0.00053195,0",
+          "2.75,8,6.346,0,8.96,2.248,-0.0182,0.000513,2.20533,0.014,0.0192,0.007122,0.00054527,0"
+        ]
+      }
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-thickness.txt",
+      "structure": {
+        "first_lines": [
+          "Thickness # 1 in nm vs. Position",
+          "X (cm)\tY (cm)\tZ",
+          "-2.750000\t9.000000\t8.843725",
+          "-1.000000\t9.000000\t8.820707",
+          "0.000000\t9.000000\t8.919334",
+          "1.000000\t9.000000\t9.012464",
+          "2.750000\t9.000000\t8.987383",
+          "5.250000\t8.000000\t9.117528"
+        ]
+      }
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-thickness.txt",
+      "structure": {
+        "first_lines": [
+          "Thickness # 1 in nm vs. Position",
+          "X (cm)\tY (cm)\tZ",
+          "-2.750000\t9.000000\t9.343893",
+          "-1.000000\t9.000000\t9.006163",
+          "0.000000\t9.000000\t8.982939",
+          "1.000000\t9.000000\t8.964163",
+          "2.750000\t9.000000\t8.860349",
+          "5.250000\t8.000000\t9.070111"
+        ]
+      }
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/README.txt",
+      "structure": {
+        "first_lines": [
+          "Notes on: 2025/08/01 (D. Windover)",
+          "",
+          "DATE_Ge_220_x2_alignment.pdf (PDFs of the instrument optics alignment prior to each day's scans.  This PDF contains the optics and instrument configuration used for the measurements)",
+          "BR_23_SmartLab brochure_en_A4_4064745726_Ver2_low-res.pdf (Rigaku SmartLab instrument used for XRR measurements of whole wafers)."
+        ]
+      }
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-parameters.txt",
+      "structure": {
+        "first_lines": [
+          "X (cm)\tY (cm)\tMSE\tAbsolute MSE\tThickness # 1 (nm)\tA\tB\tC\tn of Cauchy @ 632.8 nm\tThickness # 1 (nm) Error\tA Error\tB Error\tC Error\tn of Cauchy @ 632.8 nm Error",
+          "-2.75000\t9.00000\t6.875\t0.000\t9.45\t2.263\t-0.02339\t0.00080545\t2.20935\t0.015\t0.0192\t0.007168\t0.00054941\t0.000000",
+          "-1.00000\t9.00000\t6.990\t0.000\t9.09\t2.255\t-0.01742\t0.00032827\t2.21336\t0.015\t0.0204\t0.007627\t0.00058534\t0.000000",
+          "0.00000\t9.00000\t7.031\t0.000\t9.06\t2.260\t-0.01860\t0.00039948\t2.21606\t0.016\t0.0205\t0.007674\t0.00058970\t0.000000",
+          "1.00000\t9.00000\t7.002\t0.000\t9.05\t2.259\t-0.01847\t0.00038662\t2.21518\t0.015\t0.0205\t0.007660\t0.00058841\t0.000000",
+          "2.75000\t9.00000\t7.163\t0.000\t9.01\t2.262\t-0.01930\t0.00039119\t2.21652\t0.016\t0.0210\t0.007860\t0.00060393\t0.000000",
+          "5.25000\t8.00000\t7.069\t0.000\t9.10\t2.260\t-0.02024\t0.00050359\t2.21299\t0.016\t0.0206\t0.007694\t0.00059042\t0.000000",
+          "2.75000\t8.00000\t7.216\t0.000\t9.03\t2.261\t-0.01784\t0.00031189\t2.21885\t0.016\t0.0210\t0.007884\t0.00060647\t0.000000"
+        ]
+      }
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-n.txt",
+      "structure": {
+        "first_lines": [
+          "n of Cauchy @ 632.8 nm vs. Position",
+          "X (cm)\tY (cm)\tZ",
+          "-2.750000\t9.000000\t2.209352",
+          "-1.000000\t9.000000\t2.213364",
+          "0.000000\t9.000000\t2.216062",
+          "1.000000\t9.000000\t2.215184",
+          "2.750000\t9.000000\t2.216518",
+          "5.250000\t8.000000\t2.212988"
+        ]
+      }
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-105.txt",
+      "structure": {
+        "first_lines": [
+          "Spectroscopic Data At X=0, Y=0",
+          "Wavelength (nm)\tPsi (65.00, 70.00, 75.00�)\tDelta (65.00, 70.00, 75.00�)\t\t\t\t\t\t\t\t\tModel\t",
+          "300.349365\t33.853100\t118.383392\t33.994221\t118.255882\t32.776501\t101.682487\t32.945408\t101.738258\t32.746986\t80.589661\t32.890182\t80.905602\t",
+          "301.942047\t33.572948\t118.647568\t33.701218\t118.544128\t32.432526\t101.902519\t32.610802\t101.972595\t32.367599\t80.774086\t32.541294\t81.024483\t",
+          "303.534760\t33.302143\t118.958862\t33.438000\t118.809021\t32.164143\t102.163666\t32.309383\t102.187645\t32.101231\t80.826790\t32.226295\t81.131874\t",
+          "305.127502\t33.045864\t119.170052\t33.201450\t119.060570\t31.909044\t102.516724\t32.037285\t102.394157\t31.739973\t81.098007\t31.940666\t81.238113\t",
+          "306.720245\t32.848862\t119.404495\t32.988319\t119.305832\t31.640041\t102.674797\t31.790611\t102.599480\t31.500624\t81.189781\t31.680040\t81.349930\t",
+          "308.312988\t32.662533\t119.723312\t32.795570\t119.549545\t31.397858\t102.799149\t31.565815\t102.808380\t31.263872\t81.298889\t31.440550\t81.471390\t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-parameters.xlsx",
+      "structure": {
+        "sheets": [
+          {
+            "name": "Sheet1",
+            "rows": 120,
+            "columns": 14,
+            "first_rows": [
+              [
+                "X (cm)",
+                "Y (cm)",
+                "MSE",
+                "Absolute MSE",
+                "Thickness # 1 (nm)",
+                "A",
+                "B",
+                "C",
+                "n of Cauchy @ 632.8 nm",
+                "Thickness # 1 (nm) Error",
+                "A Error",
+                "B Error",
+                "C Error",
+                "n of Cauchy @ 632.8 nm Error"
+              ],
+              [
+                "-2.75",
+                "9",
+                "6.875",
+                "0",
+                "9.45",
+                "2.263",
+                "-0.02339",
+                "0.00080545",
+                "2.20935",
+                "0.015",
+                "0.0192",
+                "0.007168",
+                "0.00054941",
+                "0"
+              ],
+              [
+                "-1",
+                "9",
+                "6.99",
+                "0",
+                "9.09",
+                "2.255",
+                "-0.01742",
+                "0.00032827",
+                "2.21336",
+                "0.015",
+                "0.0204",
+                "0.007627",
+                "0.00058534",
+                "0"
+              ],
+              [
+                "0",
+                "9",
+                "7.031",
+                "0",
+                "9.06",
+                "2.26",
+                "-0.0186",
+                "0.00039948",
+                "2.21606",
+                "0.016",
+                "0.0205",
+                "0.007674",
+                "0.0005897",
+                "0"
+              ],
+              [
+                "1",
+                "9",
+                "7.002",
+                "0",
+                "9.05",
+                "2.259",
+                "-0.01847",
+                "0.00038662",
+                "2.21518",
+                "0.015",
+                "0.0205",
+                "0.00766",
+                "0.00058841",
+                "0"
+              ]
+            ]
+          },
+          {
+            "name": "Sheet2",
+            "rows": 1,
+            "columns": 1,
+            "first_rows": []
+          },
+          {
+            "name": "Sheet3",
+            "rows": 1,
+            "columns": 1,
+            "first_rows": []
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-n.txt",
+      "structure": {
+        "first_lines": [
+          "n of Cauchy @ 632.8 nm vs. Position",
+          "X (cm)\tY (cm)\tZ",
+          "-2.750000\t9.000000\t2.197849",
+          "-1.000000\t9.000000\t2.203862",
+          "0.000000\t9.000000\t2.203956",
+          "1.000000\t9.000000\t2.205472",
+          "2.750000\t9.000000\t2.203117",
+          "5.250000\t8.000000\t2.198055"
+        ]
+      }
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-n.txt",
+      "structure": {
+        "first_lines": [
+          "n of Cauchy @ 632.8 nm vs. Position",
+          "X (cm)\tY (cm)\tZ",
+          "-2.750000\t9.000000\t2.168359",
+          "-1.000000\t9.000000\t2.167880",
+          "0.000000\t9.000000\t2.167905",
+          "1.000000\t9.000000\t2.161557",
+          "2.750000\t9.000000\t2.164866",
+          "5.250000\t8.000000\t2.159216"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "PDF": 9,
+    "Rigaku RASX/ZIP": 56,
+    "text_or_instrument_native": 17,
+    "preserved_native": 65,
+    "PNG": 19,
+    "Excel_OpenXML": 1,
+    "DOCX": 2
+  },
+  "reader_limitations": [
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-105-20250626-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-263-20250708-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-11/data/raw/xrr/6-02-25-11-105-20250703-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-263-20250715-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-202-20250703-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-245-20250715-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-10/data/raw/xrr/6-02-25-10-105-20250703-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-09/data/raw/xrr/6-02-25-09-224-20250703-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-324-20250716-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/measurement-details/se-collection-files/CHIPS-6-02-200mm-targets.scan",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-245-20250626-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-361-20250716-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-10/data/raw/xrr/6-02-25-10-224-20250703-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-09/data/raw/xrr/6-02-25-09-105-20250701-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-263-20250703-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-202-20250715-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-full.SE",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-343-20250716-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-245-20250715-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-full.SE",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-202-20250708-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-224-20250626-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-245-20250703-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-202-20250708-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-07/data/raw/xrr/6-02-25-07-105-20250701-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-302-20250716-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-105-20250701-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-224-20250701-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-343-20250715-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-105-20250703-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-224-20250701-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-full.rtf",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-06/data/raw/xrr/6-02-25-06-224-20250701-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-224-20250626-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-224-20250626-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-105-20250626-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-07/data/raw/xrr/6-02-25-07-224-20250701-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-302-20250715-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-324-20250715-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-11/data/raw/xrr/6-02-25-11-224-20250703-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-361-20250715-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-105-20250701-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/measurement-details/se-collection-files/CHIPS-6-02-25-00.mod",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-202-20250626-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-343-20250716-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-full.rtf",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/measurement-details/se-collection-files/CHIPS-6-02-2s-standard.parms",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-105-20250701-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-263-20250708-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-224-20250703-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-full.SE",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-105-20250626-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-263-20250715-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-361-20250716-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-224-20250701-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-202-20250715-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-06/data/raw/xrr/6-02-25-06-105-20250701-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-full.rtf",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-302-20250716-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-202-20250708-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-245-20250708-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-245-20250708-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-245-20250708-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-324-20250716-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-263-20250708-15min.ras",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    }
+  ],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Original development corpus (source-aware)",
+  "license_or_terms": "NIST public data license",
+  "source_asset_bytes": 145927632,
+  "expanded_source_equivalent_bytes": 145927632,
+  "installed_folder_bytes": 146031998,
+  "source_asset_count": 170,
+  "asset_paths": [
+    "scenarios/12_semiconductor_nist_hafnia_wafer/context/mds2-3930_nerdm.json",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-01/CHIPS-6-02-25-01-measurements-20250716.png",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-105-20250626-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-105-20250626-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-202-20250626-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-202-20250626-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-224-20250626-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-224-20250626-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-245-20250626-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-01/data/raw/xrr/6-02-25-01-245-20250626-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/CHIPS-6-02-25-02-measurements-20250716.png",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-105.txt",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-full.SE",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-full.rtf",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-n.png",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-n.txt",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-parameters.txt",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-thickness.png",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-25-02-thickness.txt",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-35-02-parameters.csv",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-105-20250626-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-105-20250626-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-202-20250708-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-202-20250708-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-224-20250626-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-224-20250626-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-245-20250708-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-245-20250708-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-263-20250708-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-263-20250708-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-302-20250715-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-302-20250715-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-324-20250715-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-324-20250715-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-343-20250715-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-343-20250715-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-361-20250715-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-02/data/raw/xrr/6-02-25-02-361-20250715-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-03/CHIPS-6-02-25-03-measurements-20250716.png",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-105-20250626-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-105-20250626-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-202-20250715-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-202-20250715-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-224-20250626-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-224-20250626-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-245-20250715-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-245-20250715-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-263-20250715-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-03/data/raw/xrr/6-02-25-03-263-20250715-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/CHIPS-6-02-25-04-measurements-20250716.png",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-105.txt",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-full.SE",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-full.docx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-full.rtf",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-n.png",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-n.txt",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-parameters.txt",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-thickness.png",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/se/CHIPS-6-02-25-04-thickness.txt",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-105-20250701-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-105-20250701-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-202-20250708-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-202-20250708-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-224-20250701-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-224-20250701-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-245-20250708-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-245-20250708-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-263-20250708-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-263-20250708-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-302-20250716-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-302-20250716-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-324-20250716-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-324-20250716-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-343-20250716-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-343-20250716-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-361-20250716-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-04/data/raw/xrr/6-02-25-04-361-20250716-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-05/CHIPS-6-02-25-05-measurements-20250716.png",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-105-20250701-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-105-20250701-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-202-20250715-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-202-20250715-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-224-20250701-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-224-20250701-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-245-20250715-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-245-20250715-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-263-20250715-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-05/data/raw/xrr/6-02-25-05-263-20250715-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-06/CHIPS-6-02-25-06-measurements-20250716.png",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-06/data/raw/xrr/6-02-25-06-105-20250701-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-06/data/raw/xrr/6-02-25-06-105-20250701-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-06/data/raw/xrr/6-02-25-06-224-20250701-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-06/data/raw/xrr/6-02-25-06-224-20250701-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-07/CHIPS-6-02-25-07-measurements-20250716.png",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-07/data/raw/xrr/6-02-25-07-105-20250701-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-07/data/raw/xrr/6-02-25-07-105-20250701-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-07/data/raw/xrr/6-02-25-07-224-20250701-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-07/data/raw/xrr/6-02-25-07-224-20250701-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/CHIPS-6-02-25-08-measurements-20250716.png",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-105.txt",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-full.SE",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-full.docx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-full.rtf",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-n.png",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-n.txt",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-parameters.csv",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-parameters.txt",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-parameters.xlsx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-thickness.png",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/se/CHIPS-6-02-25-08-thickness.txt",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-105-20250701-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-105-20250701-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-202-20250708-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-202-20250708-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-224-20250701-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-224-20250701-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-245-20250708-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-245-20250708-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-263-20250708-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-263-20250708-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-302-20250716-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-302-20250716-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-324-20250716-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-324-20250716-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-343-20250716-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-343-20250716-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-361-20250716-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-08/data/raw/xrr/6-02-25-08-361-20250716-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-09/CHIPS-6-02-25-09-measurements-20250716.png",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-09/data/raw/xrr/6-02-25-09-105-20250701-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-09/data/raw/xrr/6-02-25-09-105-20250701-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-09/data/raw/xrr/6-02-25-09-224-20250703-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-09/data/raw/xrr/6-02-25-09-224-20250703-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-10/CHIPS-6-02-25-10-measurements-20250716.png",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-10/data/raw/xrr/6-02-25-10-105-20250703-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-10/data/raw/xrr/6-02-25-10-105-20250703-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-10/data/raw/xrr/6-02-25-10-224-20250703-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-10/data/raw/xrr/6-02-25-10-224-20250703-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-11/CHIPS-6-02-25-11-measurements-20250716.png",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-11/data/raw/xrr/6-02-25-11-105-20250703-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-11/data/raw/xrr/6-02-25-11-105-20250703-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-11/data/raw/xrr/6-02-25-11-224-20250703-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-11/data/raw/xrr/6-02-25-11-224-20250703-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-12/CHIPS-6-02-25-12-measurements-20250716.png",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-105-20250703-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-105-20250703-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-202-20250703-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-202-20250703-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-224-20250703-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-224-20250703-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-245-20250703-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-245-20250703-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-263-20250703-15min.ras",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/25-12/data/raw/xrr/6-02-25-12-263-20250703-15min.rasx",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/CHIPS-6-02-25-00-deposition-matrix.png",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/README.txt",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/measurement-details/se-collection-files/CHIPS-6-02-200mm-targets.scan",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/measurement-details/se-collection-files/CHIPS-6-02-25-00.mod",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/measurement-details/se-collection-files/CHIPS-6-02-2s-standard.parms",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/measurement-details/se-collection-files/README.txt",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/measurement-details/se-collection-files/m-2000-brochure.pdf",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250626_Ge_220_x2_alignment_final.pdf",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250701_Ge_220_x2_alignment.pdf",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250703_Ge_220_x2_alignment.pdf",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250708_Ge_220_x2_alignment.pdf",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250715_Ge_220_x2_alignment.pdf",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250716_Ge_220_x2_alignment.pdf",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/20250724_Ge_220_x2_alignment.pdf",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/BR_23_SmartLab brochure_en_A4_4064745726_Ver2_low-res.pdf",
+    "scenarios/12_semiconductor_nist_hafnia_wafer/raw/CHIPS-6-02-25-00-set/measurement-details/xrr-alignment-files/README.txt"
+  ],
+  "local_folder": "scenarios/12_semiconductor_nist_hafnia_wafer",
+  "size_exception": true,
+  "modalities": [
+    "images",
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 146216538,
+  "expanded_release_folder_equivalent_bytes": 146216538
+}

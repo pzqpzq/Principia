@@ -1,0 +1,129 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "35_bioacoustics_ungulate_calls",
+  "domain": "bioacoustics and animal welfare",
+  "title": "Ungulate vocalizations and production context",
+  "publisher": "Zenodo; originating researchers: Lefèvre, Romain Adrien (University of Copenhagen); Sypherd, Ciara Cleo-Rose (Harvard University); Mandel-Briefer, Élodie Floriane (University of Copenhagen)",
+  "authoritative_landing_url": "https://zenodo.org/records/14636641",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/14636641",
+    "https://zenodo.org/api/records/14636641/files/SoundsDatabase.zip/content",
+    "https://zenodo.org/api/records/14636641/files/Data%20S1.zip/content",
+    "https://zenodo.org/api/records/14636641"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.14636641"
+  ],
+  "release_or_version": "14636641",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "deterministic_selection_rule": "Complete SoundsDatabase.zip and Data S1.zip; all seven species and 3181 recorded calls retained.",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": {
+    "description": "Multiple original studies and acquisition periods, not one 2025 recording campaign. Deposit 2025.",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": "2025",
+  "source_created_utc": "2025-01-13T07:02:10.059447+00:00",
+  "source_updated_utc": "2025-01-27T20:55:28.843842+00:00",
+  "source_inventory": [
+    {
+      "name": "SoundsDatabase.zip",
+      "bytes": 286854334,
+      "selected": true
+    },
+    {
+      "name": "Data S1.zip",
+      "bytes": 19330,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Extracted/segmented animal contact calls rather than continuous microphone streams; source contextual labels and original filenames are retained. The source spelling WidlBoar is not corrected.",
+  "known_analyses_and_limitations": "The source study is DOI 10.1016/j.isci.2025.111834 (PMC11847267). Valence is a context-derived label, not direct access to animal internal state. Animal, study and recording conditions may confound acoustic associations.",
+  "related_publications": [],
+  "pinned_commit": null,
+  "source_context_request_failures": [],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-035",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-035",
+      "scenario_id": "35_bioacoustics_ungulate_calls",
+      "path": "context/zenodo_record.json",
+      "scenario_relative_path": "context/zenodo_record.json",
+      "bytes": 7346,
+      "sha256": "f7da36509587ec03692ca4ae1de6085ea0a3a9fe82f8f69caa131d32f7e41261",
+      "role": "parsed_source_metadata_snapshot",
+      "source_urls": [
+        "https://zenodo.org/api/records/14636641"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:40:23.182669+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14636641"
+      ],
+      "citation_url": "https://zenodo.org/records/14636641",
+      "source_version": "14636641",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-035",
+      "scenario_id": "35_bioacoustics_ungulate_calls",
+      "path": "raw/Data S1.zip",
+      "scenario_relative_path": "raw/Data S1.zip",
+      "bytes": 19330,
+      "sha256": "ec2883fb18dc354b7700e2a87813e4befa5d8b79c918ecc659026643609ec38d",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/14636641/files/Data%20S1.zip/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/14636641/files/Data%20S1.zip/content",
+      "source_checksum": "md5:5ec435eadfa87a1e1f1b7282f2538644",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:47:40.532658+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14636641"
+      ],
+      "citation_url": "https://zenodo.org/records/14636641",
+      "source_version": "14636641",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14636641",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-035",
+      "scenario_id": "35_bioacoustics_ungulate_calls",
+      "path": "raw/SoundsDatabase.zip",
+      "scenario_relative_path": "raw/SoundsDatabase.zip",
+      "bytes": 286854334,
+      "sha256": "2af4f5458f5ab9a14817d55fc037e3ae7df01224b8c329bf42a4ba647065eee2",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/14636641/files/SoundsDatabase.zip/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/14636641/files/SoundsDatabase.zip/content",
+      "source_checksum": "md5:46a08a874f8b0b57cc2bbd1d5286bfef",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:19:04.089375+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14636641"
+      ],
+      "citation_url": "https://zenodo.org/records/14636641",
+      "source_version": "14636641",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14636641",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

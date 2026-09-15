@@ -1,0 +1,35 @@
+{
+  "scenario_id": "69_robotics_gearbox_thermal",
+  "path": "raw/validation/long-term/theta_dot_1=1p2566_theta_dot_2=0p3142.csv",
+  "bytes": 36144164,
+  "sha256": "1e17f06bfc59f3b526dceca385f9a19c3d3518cafd84cc32d776c6c9140c8e18",
+  "checked_utc": "2026-09-15T06:30:16.006686+00:00",
+  "source_checksum_status": "not available for retained representation",
+  "format": "text_or_instrument_native",
+  "signature_hex": "742c545f4c2c545f482c545f",
+  "delimiter": ",",
+  "header": [
+    "t",
+    "T_L",
+    "T_H",
+    "T_E",
+    "theta_dot",
+    "tau_f"
+  ],
+  "data_records": 576001,
+  "row_width_counts": {
+    "6": 576001
+  },
+  "first_lines": [
+    "t,T_L,T_H,T_E,theta_dot,tau_f",
+    "0,20.77,20.76,21.26,0.0148387893004558,1.86307102941662",
+    "0.0249999999999986,20.77,20.77,21.26,0.0130899693899575,1.86640076907509",
+    "0.0499999999999972,20.77,20.77,21.28,0.0205983758320371,1.85035767546873",
+    "0.0750000000000028,20.76,20.77,21.28,0.0207973433667644,1.84942695418232",
+    "0.100000000000001,20.76,20.77,21.28,0.0275308236209586,1.83325899469784",
+    "0.125,20.75,20.76,21.28,0.028630381049715,1.83019434052745",
+    "0.149999999999999,20.76,20.76,21.28,0.0316148940706253,1.8237718420289"
+  ],
+  "encoding_replacement_count": 0,
+  "status": "pass"
+}

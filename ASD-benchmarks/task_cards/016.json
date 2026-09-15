@@ -1,0 +1,146 @@
+{
+  "case_id": "P100-016",
+  "case_revision": 1,
+  "scenario_id": "16_economics_bls_cpi_ces_2026",
+  "title": "BLS CPI and CES selected bulk time-series files",
+  "domain": "economics",
+  "question": "How do price and employment changes relate across industries and time periods?",
+  "data_origin": "measured_or_observed",
+  "source_version": "bulk directory snapshot dated 2026-08-12",
+  "source_url": "https://download.bls.gov/pub/time.series/",
+  "identifiers": [],
+  "publisher": "U.S. Bureau of Labor Statistics",
+  "release_date": "See source record; legacy retrieval vintage recorded",
+  "measurement_dates": "Not fully established in the legacy metadata; source filenames/headers and public context preserve available dates. Release dates are not substituted for measurement dates.",
+  "variables_and_units": "Variables and units are preserved in native column headers, instrument metadata and source dictionaries; see evidence anchors below.",
+  "independent_units": "Industry/series and chronological blocks with release vintage fixed.",
+  "validation_design": "Industry/series and chronological blocks with release vintage fixed. Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "BLS CPI/CES published statistical series; seasonal adjustment and revisions are source processing. Common trends and identities are not causal rules.",
+  "prior_analysis_and_limits": "BLS CPI/CES published statistical series; seasonal adjustment and revisions are source processing. Common trends and identities are not causal rules. BLS CPI/CES published statistical series; seasonal adjustment and revisions are source processing. Common trends and identities are not causal rules.",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/CE/ce.txt",
+      "structure": {
+        "first_lines": [
+          "Current Employment Statistics: Employment, Hours, and Earnings--National (CE)          ",
+          "     ce.txt  ",
+          "",
+          "Section Listing                                                                        ",
+          "                                                                                       ",
+          "1. Survey Definition                                                                   ",
+          "2. Text files listed in the survey directory                                           ",
+          "3. Time series, series file, data file, & mapping file definitions and relationships   "
+        ]
+      }
+    },
+    {
+      "asset": "raw/CU/cu.txt",
+      "structure": {
+        "first_lines": [
+          "\t\t\t\tConsumer Price Index (CU)",
+          "\t\t\t\t\tcu.txt",
+          "",
+          "Section Listing",
+          "",
+          "1. Survey Definition",
+          "2. FTP files listed in the survey directory.",
+          "3. Time series, series file, data file, & mapping file definitions and relationships"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "preserved_native": 12,
+    "text_or_instrument_native": 2
+  },
+  "reader_limitations": [
+    {
+      "asset": "raw/CU/cu.data.12.USHousing",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CE/ce.industry",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CU/cu.data.15.USMedical",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CU/cu.footnote",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CU/cu.series",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CE/ce.data.50a.Information.Employment",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CU/cu.data.1.AllItems",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CU/cu.item",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CE/ce.data.00a.TotalNonfarm.Employment",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CE/ce.data.30a.Manufacturing.Employment",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CU/cu.area",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/CE/ce.series",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    }
+  ],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Original development corpus (source-aware)",
+  "license_or_terms": "U.S. Government public data",
+  "source_asset_bytes": 14920354,
+  "expanded_source_equivalent_bytes": 14920354,
+  "installed_folder_bytes": 14937532,
+  "source_asset_count": 16,
+  "asset_paths": [
+    "scenarios/16_economics_bls_cpi_ces_2026/context/CE_directory.html",
+    "scenarios/16_economics_bls_cpi_ces_2026/context/CU_directory.html",
+    "scenarios/16_economics_bls_cpi_ces_2026/raw/CE/ce.data.00a.TotalNonfarm.Employment",
+    "scenarios/16_economics_bls_cpi_ces_2026/raw/CE/ce.data.30a.Manufacturing.Employment",
+    "scenarios/16_economics_bls_cpi_ces_2026/raw/CE/ce.data.50a.Information.Employment",
+    "scenarios/16_economics_bls_cpi_ces_2026/raw/CE/ce.industry",
+    "scenarios/16_economics_bls_cpi_ces_2026/raw/CE/ce.series",
+    "scenarios/16_economics_bls_cpi_ces_2026/raw/CE/ce.txt",
+    "scenarios/16_economics_bls_cpi_ces_2026/raw/CU/cu.area",
+    "scenarios/16_economics_bls_cpi_ces_2026/raw/CU/cu.data.1.AllItems",
+    "scenarios/16_economics_bls_cpi_ces_2026/raw/CU/cu.data.12.USHousing",
+    "scenarios/16_economics_bls_cpi_ces_2026/raw/CU/cu.data.15.USMedical",
+    "scenarios/16_economics_bls_cpi_ces_2026/raw/CU/cu.footnote",
+    "scenarios/16_economics_bls_cpi_ces_2026/raw/CU/cu.item",
+    "scenarios/16_economics_bls_cpi_ces_2026/raw/CU/cu.series",
+    "scenarios/16_economics_bls_cpi_ces_2026/raw/CU/cu.txt"
+  ],
+  "local_folder": "scenarios/16_economics_bls_cpi_ces_2026",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 14945509,
+  "expanded_release_folder_equivalent_bytes": 14945509
+}

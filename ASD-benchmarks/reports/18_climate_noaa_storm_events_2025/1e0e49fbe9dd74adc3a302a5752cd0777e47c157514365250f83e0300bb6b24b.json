@@ -1,0 +1,45 @@
+{
+  "scenario_id": "18_climate_noaa_storm_events_2025",
+  "path": "raw/StormEvents_fatalities-ftp_v1.0_d2025_c20260819.csv.gz",
+  "bytes": 10164,
+  "sha256": "00c2fad534b4702e8132621d582f181e7f1928bbe7d01752f3bf1d4ea42d1e81",
+  "checked_utc": "2026-09-15T06:40:09.860492+00:00",
+  "format": "GZIP",
+  "expanded_bytes": 67734,
+  "checks": [
+    "gzip_CRC"
+  ],
+  "inner": {
+    "format": "text_or_instrument_native",
+    "signature_hex": "4641545f594541524d4f4e54",
+    "delimiter": ",",
+    "header": [
+      "FAT_YEARMONTH",
+      "FAT_DAY",
+      "FAT_TIME",
+      "FATALITY_ID",
+      "EVENT_ID",
+      "FATALITY_TYPE",
+      "FATALITY_DATE",
+      "FATALITY_AGE",
+      "FATALITY_SEX",
+      "FATALITY_LOCATION"
+    ],
+    "data_records": 895,
+    "row_width_counts": {
+      "10": 895
+    },
+    "first_lines": [
+      "FAT_YEARMONTH,FAT_DAY,FAT_TIME,FATALITY_ID,EVENT_ID,FATALITY_TYPE,FATALITY_DATE,FATALITY_AGE,FATALITY_SEX,FATALITY_LOCATION",
+      "202512,4,0,60389,1296292,\"I\",\"12/04/2025 00:00:00\",40,\"M\",\"Vehicle/Towed Trailer\"",
+      "202512,1,0,60391,1296789,\"I\",\"12/01/2025 00:00:00\",35,\"F\",\"Boating\"",
+      "202512,3,0,60393,1297305,\"D\",\"12/03/2025 00:00:00\",32,\"M\",\"In Water\"",
+      "202512,25,0,60553,1298352,\"I\",\"12/25/2025 00:00:00\",75,\"F\",\"Vehicle/Towed Trailer\"",
+      "202512,26,0,60562,1298509,\"D\",\"12/26/2025 00:00:00\",44,\"M\",\"In Water\"",
+      "202512,28,0,60564,1298713,\"D\",\"12/28/2025 00:00:00\",39,\"M\",\"In Water\"",
+      "202512,4,0,61251,1299337,\"I\",\"12/04/2025 00:00:00\",32,\"F\",\"Vehicle/Towed Trailer\""
+    ],
+    "encoding_replacement_count": 0
+  },
+  "status": "pass"
+}

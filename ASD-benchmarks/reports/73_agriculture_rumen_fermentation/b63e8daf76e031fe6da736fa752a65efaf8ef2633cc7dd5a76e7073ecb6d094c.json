@@ -1,0 +1,34 @@
+{
+  "scenario_id": "73_agriculture_rumen_fermentation",
+  "path": "raw/00_invitro_data_overwiev.csv",
+  "bytes": 2765,
+  "sha256": "d8149907cfe60de9f1244e5a90820308761e53e5226942f04a65007f9bdcc323",
+  "checked_utc": "2026-09-15T06:30:17.078072+00:00",
+  "source_checksum_status": "verified",
+  "format": "text_or_instrument_native",
+  "signature_hex": "efbbbf6e756d6265723b6669",
+  "delimiter": ";",
+  "header": [
+    "number",
+    "file_name",
+    "brief_description",
+    "detailed_description",
+    "file_format"
+  ],
+  "data_records": 17,
+  "row_width_counts": {
+    "5": 17
+  },
+  "first_lines": [
+    "number;file_name;brief_description;detailed_description;file_format",
+    "0;00_invitro_data_overview.csv;Table of contents;Table of contents declaring all files within this dataset;csv",
+    "1;01_invitro_SCFA_01.csv;concentrations SCFA Trial 1.1;concentrations of the different short chain fatty acids for both timepoints and their rate of change for Trial 1.1;csv",
+    "2;02_invitro_SCFA__02.csv;concentrations SCFA Trial 1.2;concentrations of the different short chain fatty acids for both timepoints and their rate of change for Trial 1.2;csv",
+    "3;03_invitro_SCFA__03.csv;concentrations SCFA Trial 2;concentrations of the different short chain fatty acids for both timepoints and their rate of change for Trial 2;csv",
+    "4;04_legend_invitro_SCFA_01-03.csv;legend SCFA Trial 1.1 to 2;legend on all abbreviations used in files number 01-03;csv",
+    "5;05_invitro_fermentationData__01.csv;data on fermentation parameters Trial 2;data on gas composition, final gas volume, dry matter degradability, SCFA-concentration and pH for Trial 1.1, all corrected for Blancs;csv",
+    "6;06_legend_invitro_fermentationData_01.csv;legend fermentation data Trial 1.1;legend on all abbreviations used in the fermentation dataset for Trial 2;csv"
+  ],
+  "encoding_replacement_count": 0,
+  "status": "pass"
+}

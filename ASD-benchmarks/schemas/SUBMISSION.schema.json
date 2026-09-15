@@ -1,0 +1,240 @@
+{
+  "type": "object",
+  "required": [
+    "schema_version",
+    "case_id",
+    "corpus_version",
+    "input_manifest_sha256",
+    "outcome",
+    "exposure_log",
+    "run_config",
+    "transformations",
+    "rules"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "case_id": {
+      "type": "string",
+      "pattern": "^P100-[0-9]{3}$"
+    },
+    "corpus_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input_manifest_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "outcome": {
+      "enum": [
+        "reproduction",
+        "validated_extension",
+        "novelty_candidate",
+        "justified_abstention",
+        "falsified"
+      ]
+    },
+    "exposure_log": {
+      "type": "array",
+      "minItems": 0
+    },
+    "run_config": {
+      "type": "object",
+      "required": [
+        "software",
+        "seeds",
+        "budget",
+        "stopping_rule"
+      ],
+      "properties": {}
+    },
+    "transformations": {
+      "type": "array",
+      "minItems": 0
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "required": [
+          "expression",
+          "execution_language",
+          "variables",
+          "parameters",
+          "applicability",
+          "evidence_anchors",
+          "uncertainty",
+          "baselines",
+          "grouped_validation",
+          "falsifiers",
+          "negative_results",
+          "prior_art"
+        ],
+        "properties": {
+          "expression": {
+            "type": "string",
+            "minLength": 1
+          },
+          "execution_language": {
+            "type": "string",
+            "minLength": 1
+          },
+          "variables": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "symbol",
+                "definition",
+                "unit",
+                "source_anchor"
+              ],
+              "properties": {
+                "symbol": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "definition": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "unit": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source_anchor": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "parameters": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+              "type": "object",
+              "required": [
+                "name",
+                "estimate",
+                "unit",
+                "uncertainty"
+              ],
+              "properties": {}
+            }
+          },
+          "applicability": {
+            "type": "object",
+            "required": [
+              "population_or_system",
+              "input_domain",
+              "extrapolation_limits"
+            ],
+            "properties": {}
+          },
+          "evidence_anchors": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "asset_sha256",
+                "path",
+                "selection"
+              ],
+              "properties": {
+                "asset_sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "path": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "selection": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "uncertainty": {
+            "type": "object",
+            "required": [
+              "method",
+              "independent_unit",
+              "limitations"
+            ],
+            "properties": {}
+          },
+          "baselines": {
+            "type": "array",
+            "minItems": 1
+          },
+          "grouped_validation": {
+            "type": "object",
+            "required": [
+              "group_key",
+              "development_groups",
+              "validation_groups",
+              "locked_test_status",
+              "leakage_controls"
+            ],
+            "properties": {}
+          },
+          "falsifiers": {
+            "type": "array",
+            "minItems": 0
+          },
+          "negative_results": {
+            "type": "array",
+            "minItems": 0
+          },
+          "prior_art": {
+            "type": "object",
+            "required": [
+              "source_relationships",
+              "literature_search_date",
+              "references",
+              "adjudication_status"
+            ],
+            "properties": {}
+          }
+        }
+      }
+    },
+    "abstention_reason": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Principia-100 future scientific submission",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "outcome": {
+            "const": "justified_abstention"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "abstention_reason"
+        ]
+      },
+      "else": {
+        "properties": {
+          "rules": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
+}

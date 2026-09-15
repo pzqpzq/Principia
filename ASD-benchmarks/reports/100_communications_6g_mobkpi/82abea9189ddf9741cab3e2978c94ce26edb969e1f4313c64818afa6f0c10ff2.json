@@ -1,0 +1,1555 @@
+{
+  "scenario_id": "100_communications_6g_mobkpi",
+  "path": "raw/6G-MOBKPI_dataset.zip",
+  "bytes": 491220,
+  "sha256": "36b060bcc62aee4e0673955228a36a3161ef32ff8ea91a0d86a4ee780a56a3eb",
+  "checked_utc": "2026-09-15T06:46:33.760844+00:00",
+  "source_checksum_status": "verified",
+  "format": "ZIP",
+  "expanded_bytes": 2003242,
+  "members": [
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/IPERF TCP/2024-11-22_11-16-18_iperf_tcp.csv",
+      "bytes": 42569,
+      "sha256": "e47f8ce64a26afedbfacc2b1ba0e671e21e195b36f2263ca9df2101c1f261a6e",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4970",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "Iperf Bytes",
+          "Iperf Bits per Second",
+          "Iperf Retransmits",
+          "Iperf RTT",
+          "Iperf RTT Variance",
+          "Iperf Snd Cwnd",
+          "Iperf Snd Wnd"
+        ],
+        "data_records": 704,
+        "row_width_counts": {
+          "8": 704
+        },
+        "first_lines": [
+          "Timestamp,Iperf Bytes,Iperf Bits per Second,Iperf Retransmits,Iperf RTT,Iperf RTT Variance,Iperf Snd Cwnd,Iperf Snd Wnd",
+          "1732270578.100064,211636,16920050.832882475,0,22397,4219,35048,142464",
+          "1732270578.200085,102448,8194119.46219829,0,33500,3912,41788,385024",
+          "1732270578.30009,99752,7979760.945744903,0,38819,3635,45832,573824",
+          "1732270578.400102,90316,7224413.292564475,0,68427,4917,49876,663168",
+          "1732270578.500098,83576,6686347.41857039,0,62733,6686,53920,663168",
+          "1732270578.600076,82228,6579687.53615236,0,64299,3008,57964,663168",
+          "1732270578.700102,79532,6360906.382785528,0,66783,3716,62008,663168"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/IPERF TCP/2024-11-22_11-16-18_rssi_position.csv",
+      "bytes": 31277,
+      "sha256": "1821a7c4ec3b3f162845b204fa380f88e5a2b934d3d2e5dfc0afdee9190bc863",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4365",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "CellId",
+          "RSSI",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 647,
+        "row_width_counts": {
+          "8": 647
+        },
+        "first_lines": [
+          "Timestamp,CellId,RSSI,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732270578.6997643,0.0,-99,-91.0,-17.0,,,",
+          "1732270578.812502,0.0,-99,-92.0,-19.0,,,",
+          "1732270578.923239,0.0,-99,-93.0,-19.0,,,",
+          "1732270579.0357907,0.0,-99,-92.0,-18.0,,,",
+          "1732270579.168686,0.0,-99,-92.0,-19.0,,,",
+          "1732270579.3102658,0.0,-99,-90.0,-19.0,,,",
+          "1732270579.4189312,0.0,-99,-92.0,-19.0,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/IPERF UDP/100M/2024-11-22_11-42-23_iperf_udp.csv",
+      "bytes": 28613,
+      "sha256": "9c9eced54d87e514018813c66985fe13710bddfc594d153ee6a2361c28301357",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4970",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "Iperf Bytes",
+          "Iperf Bits per Second"
+        ],
+        "data_records": 670,
+        "row_width_counts": {
+          "3": 670
+        },
+        "first_lines": [
+          "Timestamp,Iperf Bytes,Iperf Bits per Second",
+          "1732272143.100063,1239488,99096605.5713653",
+          "1732272143.200059,1249624,99973918.42853937",
+          "1732272143.300061,670424,53632848.28390675",
+          "1732272143.400064,598024,47840486.4007343",
+          "1732272143.500271,965816,77105670.5134641",
+          "1732272143.600064,965816,77425549.33133323",
+          "1732272143.700062,948440,75876719.5952525"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/IPERF UDP/100M/2024-11-22_11-42-23_rssi_position.csv",
+      "bytes": 26027,
+      "sha256": "5062bbe121fb7c394b94c77e5092a920464684cc2b3fc78ff879014f2053ac44",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4365",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "CellId",
+          "RSSI",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 612,
+        "row_width_counts": {
+          "8": 612
+        },
+        "first_lines": [
+          "Timestamp,CellId,RSSI,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732272143.3165476,3,-85,-86,-12,,,",
+          "1732272143.4143891,3,-85,-86,-11,,,",
+          "1732272143.511112,3,-79,-85,-11,,,",
+          "1732272143.6241426,3,-79,-83,-11,,,",
+          "1732272143.7344356,3,-79,-84,-11,,,",
+          "1732272143.8363667,3,-79,-79,-11,,,",
+          "1732272143.9836354,3,-79,-80,-11,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/IPERF UDP/10M/2024-11-22_11-31-40_iperf_udp.csv",
+      "bytes": 30219,
+      "sha256": "8b988ff58fc3627db3e9f3982ffc98ac3fad8ca910640696b7d41291a69251c0",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4970",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "Iperf Bytes",
+          "Iperf Bits per Second"
+        ],
+        "data_records": 706,
+        "row_width_counts": {
+          "3": 706
+        },
+        "first_lines": [
+          "Timestamp,Iperf Bytes,Iperf Bits per Second",
+          "1732271500.100062,124016,9915132.838622276",
+          "1732271500.20006,125364,10029320.858819995",
+          "1732271500.300061,125364,10029019.72304949",
+          "1732271500.400062,125364,10029019.72304949",
+          "1732271500.500077,124016,9919792.079908306",
+          "1732271500.60006,125364,10030825.314010493",
+          "1732271500.700061,125364,10029019.72304949"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/IPERF UDP/10M/2024-11-22_11-31-40_rssi_position.csv",
+      "bytes": 28593,
+      "sha256": "87b5f5ad4ed831a0f24392e176d02148b9a8e672db634e1a923d62d9df97022f",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4365",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "CellId",
+          "RSSI",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 670,
+        "row_width_counts": {
+          "8": 670
+        },
+        "first_lines": [
+          "Timestamp,CellId,RSSI,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732271500.0399,0,-91,-87,-14,,,",
+          "1732271500.132693,0,-81,-87,-13,,,",
+          "1732271500.2283876,0,-81,-87,-13,,,",
+          "1732271500.3245084,0,-81,-86,-13,,,",
+          "1732271500.4210217,0,-81,-86,-12,,,",
+          "1732271500.5468352,0,-81,-87,-13,,,",
+          "1732271500.6452618,0,-81,-87,-12,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/IPERF UDP/1M/2024-11-22_11-29-23_iperf_udp.csv",
+      "bytes": 34274,
+      "sha256": "61ad0537851e55d5a757f6b9a109457d29b2b42c381c8b29f6501dcc618cb6be",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4970",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "Iperf Bytes",
+          "Iperf Bits per Second"
+        ],
+        "data_records": 819,
+        "row_width_counts": {
+          "3": 819
+        },
+        "first_lines": [
+          "Timestamp,Iperf Bytes,Iperf Bits per Second",
+          "1732271364.100066,13480,1077688.739086049",
+          "1732271364.20006,12132,970618.2727942033",
+          "1732271364.30006,12132,970559.9855375292",
+          "1732271364.400064,13480,1078356.839286233",
+          "1732271364.500063,12132,970569.6754895584",
+          "1732271364.600061,12132,970579.437950322",
+          "1732271364.700061,12132,970559.9855375292"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/IPERF UDP/1M/2024-11-22_11-29-23_rssi_position.csv",
+      "bytes": 33886,
+      "sha256": "18ef73162f0e63ba5d37a49621f7061d18934e0ed46e00ede0d15fb88ed93636",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4365",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "CellId",
+          "RSSI",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 796,
+        "row_width_counts": {
+          "8": 796
+        },
+        "first_lines": [
+          "Timestamp,CellId,RSSI,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732271363.819876,0,-99,-87,-17,,,",
+          "1732271363.9429715,0,-99,-89,-17,,,",
+          "1732271364.037532,0,-99,-89,-17,,,",
+          "1732271364.1333652,0,-99,-89,-17,,,",
+          "1732271364.2303934,0,-99,-87,-16,,,",
+          "1732271364.3249772,0,-99,-85,-15,,,",
+          "1732271364.4218652,0,-89,-84,-14,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/IPERF UDP/50M/2024-11-22_11-35-33_iperf_udp.csv",
+      "bytes": 11667,
+      "sha256": "fd3f7523994edb4ad594f57302d50efc068bf44dd03ff7aa034f6445f23665e4",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4970",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "Iperf Bytes",
+          "Iperf Bits per Second"
+        ],
+        "data_records": 301,
+        "row_width_counts": {
+          "3": 301
+        },
+        "first_lines": [
+          "Timestamp,Iperf Bytes,Iperf Bits per Second",
+          "1732271733.100072,619744,49543850.18646227",
+          "1732271733.200058,625536,50049886.05853847",
+          "1732271733.300062,624088,49925041.7742186",
+          "1732271733.400058,625536,50044881.530856326",
+          "1732271733.500058,625536,50042879.254302986",
+          "1732271733.600066,624088,49923044.45223223",
+          "1732271733.700061,625536,50045381.1928159"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/IPERF UDP/50M/2024-11-22_11-35-33_rssi_position.csv",
+      "bytes": 13516,
+      "sha256": "2400a9168481e9911396daaec02d1972038e10bc49d01c767036cec8ac3ca26f",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4365",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "CellId",
+          "RSSI",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 277,
+        "row_width_counts": {
+          "8": 277
+        },
+        "first_lines": [
+          "Timestamp,CellId,RSSI,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732271733.883978,3.0,-83,-84.0,-12.0,,,",
+          "1732271734.002285,3.0,-83,-84.0,-12.0,22.569,-5.048,0.473",
+          "1732271734.112531,3.0,-83,-84.0,-12.0,,,",
+          "1732271734.2263317,3.0,-83,-83.0,-12.0,,,",
+          "1732271734.3374765,3.0,-83,-83.0,-12.0,22.555,-5.064,0.524",
+          "1732271734.4499683,3.0,-83,-82.0,-12.0,,,",
+          "1732271734.5621295,3.0,-83,-82.0,-12.0,22.561,-5.065,0.525"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/PING/1000B/2024-11-22_11-08-47_ping.csv",
+      "bytes": 39476,
+      "sha256": "ed5aebdd486ba990601694325dd184e19fa446217fdaa2d61edff7daa2ed6d87",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4943",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "ICMP Seq",
+          "Ping Time (ms)",
+          "Ping Time Average (ms)",
+          "Lost",
+          "Lost Percentage"
+        ],
+        "data_records": 1017,
+        "row_width_counts": {
+          "6": 1017
+        },
+        "first_lines": [
+          "Timestamp,ICMP Seq,Ping Time (ms),Ping Time Average (ms),Lost,Lost Percentage",
+          "1732270127.7509,0,78.1,78.1,False,0",
+          "1732270127.81126,1,38.4,58.2,False,0",
+          "1732270127.93126,2,58.4,58.3,False,0",
+          "1732270128.01579,3,42.9,54.4,False,0",
+          "1732270128.13227,4,59.4,55.4,False,0",
+          "1732270128.21119,5,38.3,52.6,False,0",
+          "1732270128.33582,6,62.9,54.1,False,0"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/PING/1000B/2024-11-22_11-08-47_rssi_position.csv",
+      "bytes": 48811,
+      "sha256": "b642b714abf26677ec97779fcb8aad839d7550a3df3f22d26282f13911b445f5",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c5253",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "RSSI",
+          "CellId",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 1016,
+        "row_width_counts": {
+          "8": 1016
+        },
+        "first_lines": [
+          "Timestamp,RSSI,CellId,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732270127.6668153,-93,0.0,-84.0,-14.0,,,",
+          "1732270127.7745948,-93,0.0,-84.0,-14.0,,,",
+          "1732270127.869853,-93,0.0,-83.0,-14.0,,,",
+          "1732270127.9664526,-93,0.0,-83.0,-14.0,,,",
+          "1732270128.0621436,-93,0.0,-82.0,-14.0,,,",
+          "1732270128.159374,-93,0.0,-82.0,-14.0,,,",
+          "1732270128.2556186,-93,0.0,-84.0,-15.0,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/PING/100B/2024-11-22_11-06-27_ping.csv",
+      "bytes": 24904,
+      "sha256": "ed382a1671249fec78ab0a01a6b6f35d3bd9d7fbad67afa25fb0c7be10d60049",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4943",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "ICMP Seq",
+          "Ping Time (ms)",
+          "Ping Time Average (ms)",
+          "Lost",
+          "Lost Percentage"
+        ],
+        "data_records": 642,
+        "row_width_counts": {
+          "6": 642
+        },
+        "first_lines": [
+          "Timestamp,ICMP Seq,Ping Time (ms),Ping Time Average (ms),Lost,Lost Percentage",
+          "1732269987.16145,0,13.8,13.8,False,0",
+          "1732269987.25634,1,8.61,11.2,False,0",
+          "1732269987.36097,2,13.2,11.9,False,0",
+          "1732269987.45648,3,8.73,11.1,False,0",
+          "1732269987.55698,4,9.24,10.7,False,0",
+          "1732269987.65849,5,10.7,10.7,False,0",
+          "1732269987.76102,6,13.3,11.1,False,0"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/PING/100B/2024-11-22_11-06-27_rssi_position.csv",
+      "bytes": 30814,
+      "sha256": "e3fe938b7ed667d1a4708af9776efba5486c8da888ed51160fc541d8f210a613",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c5253",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "RSSI",
+          "CellId",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 633,
+        "row_width_counts": {
+          "8": 633
+        },
+        "first_lines": [
+          "Timestamp,RSSI,CellId,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732269987.1414587,-101,0.0,-92.0,-18.0,,,",
+          "1732269987.2536533,-103,0.0,-92.0,-17.0,,,",
+          "1732269987.3481195,-103,0.0,-92.0,-17.0,,,",
+          "1732269987.4438071,-103,0.0,-92.0,-17.0,,,",
+          "1732269987.5401301,-103,0.0,-92.0,-17.0,,,",
+          "1732269987.6349468,-103,0.0,-92.0,-15.0,,,",
+          "1732269987.7463508,-103,0.0,-91.0,-15.0,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/PING/20B/2024-11-22_11-04-17_ping.csv",
+      "bytes": 25542,
+      "sha256": "88bba17d50f4fd1903117993cf327bc3a4870154344bef3ab66a6130357e437d",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4943",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "ICMP Seq",
+          "Ping Time (ms)",
+          "Ping Time Average (ms)",
+          "Lost",
+          "Lost Percentage"
+        ],
+        "data_records": 658,
+        "row_width_counts": {
+          "6": 658
+        },
+        "first_lines": [
+          "Timestamp,ICMP Seq,Ping Time (ms),Ping Time Average (ms),Lost,Lost Percentage",
+          "1732269857.50194,0,,,True,100",
+          "1732269857.59202,1,90.1,90.1,False,50",
+          "1732269857.61392,2,12.0,51.1,False,33",
+          "1732269857.71156,3,9.28,37.1,False,25",
+          "1732269857.81155,4,9.64,30.3,False,20",
+          "1732269857.91392,5,12.0,26.6,False,16",
+          "1732269858.01244,6,10.5,23.9,False,14"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/PING/20B/2024-11-22_11-04-17_rssi_position.csv",
+      "bytes": 27740,
+      "sha256": "dc438d6b67ec4e723259263c631202ebda7b9b83357bc38df5443b846c776c17",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c5253",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "RSSI",
+          "CellId",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 654,
+        "row_width_counts": {
+          "8": 654
+        },
+        "first_lines": [
+          "Timestamp,RSSI,CellId,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732269857.3956814,-97,0,-87,-17,,,",
+          "1732269857.5148096,-97,0,-87,-16,,,",
+          "1732269857.641507,-97,0,-84,-14,,,",
+          "1732269857.7391586,-97,0,-84,-14,,,",
+          "1732269857.8344498,-97,0,-83,-13,,,",
+          "1732269857.9292634,-97,0,-84,-14,23.227,-5.857,0.396",
+          "1732269858.0279949,-97,0,-89,-17,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Outdoor (Rectangular Shape)/IPERF TCP/2024-11-21_11-30-19_iperf_tcp.csv",
+      "bytes": 90454,
+      "sha256": "0e1fe074de58d28a685595344c170055cd571b9e4cc62e228771c4c8e332b097",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4970",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "Iperf Bytes",
+          "Iperf Bits per Second",
+          "Iperf Retransmits",
+          "Iperf RTT",
+          "Iperf RTT Variance",
+          "Iperf Snd Cwnd",
+          "Iperf Snd Wnd"
+        ],
+        "data_records": 1389,
+        "row_width_counts": {
+          "8": 1389
+        },
+        "first_lines": [
+          "Timestamp,Iperf Bytes,Iperf Bits per Second,Iperf Retransmits,Iperf RTT,Iperf RTT Variance,Iperf Snd Cwnd,Iperf Snd Wnd",
+          "1732185019.100141,335936,26837040.77156594,0,20718,1706,39096,139392",
+          "1732185019.200097,130320,10430189.454299152,0,24676,1253,46336,457984",
+          "1732185019.300076,260640,20855580.02563836,0,27136,2325,55024,785280",
+          "1732185019.400074,260640,20851617.59869535,0,30187,715,65160,1225472",
+          "1732185019.500082,390960,31274296.988637358,0,31679,2769,78192,1481984",
+          "1732185019.600085,195480,15637931.390070537,0,25426,3067,92672,1481984",
+          "1732185019.700075,521280,41706569.48459554,0,19967,1629,112944,1481984"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Outdoor (Rectangular Shape)/IPERF TCP/2024-11-21_11-30-19_rssi_position.csv",
+      "bytes": 62881,
+      "sha256": "0037cadd22802c906ab89e278a68b0d255054db7653a473b014c664403fd48b8",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4365",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "CellId",
+          "RSSI",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 1289,
+        "row_width_counts": {
+          "8": 1289
+        },
+        "first_lines": [
+          "Timestamp,CellId,RSSI,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732185019.1581104,0.0,-101,-74.0,-17.0,,,",
+          "1732185019.2722542,0.0,-101,-75.0,-19.0,,,",
+          "1732185019.381667,0.0,-101,-76.0,-19.0,,,",
+          "1732185019.5072443,0.0,-101,-76.0,-19.0,,,",
+          "1732185019.6230648,0.0,-101,-77.0,-19.0,,,",
+          "1732185019.7502525,0.0,-101,-77.0,-18.0,,,",
+          "1732185019.8630602,0.0,-101,-76.0,-17.0,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Outdoor (Rectangular Shape)/IPERF UDP/100M/2024-11-21_12-37-08_iperf_udp.csv",
+      "bytes": 58646,
+      "sha256": "fe49f711fba79ce7d8f549c3be64b0142b8b0368b3978a44bde400f9673f6bd9",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4970",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "Iperf Bytes",
+          "Iperf Bits per Second"
+        ],
+        "data_records": 1397,
+        "row_width_counts": {
+          "3": 1397
+        },
+        "first_lines": [
+          "Timestamp,Iperf Bytes,Iperf Bits per Second",
+          "1732189028.100058,1238812,99047515.6010796",
+          "1732189028.200072,1250944,100061510.25681059",
+          "1732189028.300037,513588,41101426.048860274",
+          "1732189028.400063,652432,52180994.73335925",
+          "1732189028.500059,920684,73657665.91747706",
+          "1732189028.600059,847892,67831358.989234",
+          "1732189028.700058,683436,54675425.05257845"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Outdoor (Rectangular Shape)/IPERF UDP/100M/2024-11-21_12-37-08_rssi_position.csv",
+      "bytes": 64377,
+      "sha256": "34a64eeb90f0c4919e4b267c888affcb0e6c17c3937fc71179fa07a6dd6cff55",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4365",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "CellId",
+          "RSSI",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 1327,
+        "row_width_counts": {
+          "8": 1327
+        },
+        "first_lines": [
+          "Timestamp,CellId,RSSI,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732189028.4408014,0.0,-71,-74.0,-14.0,,,",
+          "1732189028.5495872,0.0,-71,-74.0,-14.0,,,",
+          "1732189028.6462643,0.0,-71,-75.0,-15.0,,,",
+          "1732189028.742004,0.0,-71,-75.0,-15.0,,,",
+          "1732189028.8380058,0.0,-71,-74.0,-15.0,,,",
+          "1732189028.949556,0.0,-71,-74.0,-14.0,,,",
+          "1732189029.0639172,0.0,-71,-73.0,-14.0,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Outdoor (Rectangular Shape)/IPERF UDP/10M/2024-11-21_12-19-58_iperf_udp.csv",
+      "bytes": 53444,
+      "sha256": "86757dc74ca7b8f80243878c859b828b0d07ddc9c00134a85e03d80412ee402b",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4970",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "Iperf Bytes",
+          "Iperf Bits per Second"
+        ],
+        "data_records": 1245,
+        "row_width_counts": {
+          "3": 1245
+        },
+        "first_lines": [
+          "Timestamp,Iperf Bytes,Iperf Bits per Second",
+          "1732187998.100063,124016,9915033.17219565",
+          "1732187998.200095,125364,10025911.534481727",
+          "1732187998.300069,125364,10031728.353317335",
+          "1732187998.400066,125364,10029420.99233804",
+          "1732187998.500062,124016,9921676.81465284",
+          "1732187998.60006,125364,10029320.858819995",
+          "1732187998.700063,125364,10028819.474037256"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Outdoor (Rectangular Shape)/IPERF UDP/10M/2024-11-21_12-19-58_rssi_position.csv",
+      "bytes": 59683,
+      "sha256": "5d42ec4bb6099ca57d3c346102693d0637f6bd4d9474b7bd6be4f9a68afc1cc2",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4365",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "CellId",
+          "RSSI",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 1238,
+        "row_width_counts": {
+          "8": 1238
+        },
+        "first_lines": [
+          "Timestamp,CellId,RSSI,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732187998.8502707,1.0,-99,-72.0,-14.0,,,",
+          "1732187998.9620085,1.0,-99,-74.0,-14.0,,,",
+          "1732187999.0584712,1.0,-99,-74.0,-15.0,20.463,-5.243,0.401",
+          "1732187999.1546516,1.0,-99,-75.0,-17.0,20.473,-5.321,0.647",
+          "1732187999.249738,1.0,-99,-75.0,-16.0,,,",
+          "1732187999.3472755,1.0,-99,-75.0,-16.0,,,",
+          "1732187999.4418871,1.0,-99,-75.0,-15.0,20.604,-5.343,0.253"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Outdoor (Rectangular Shape)/IPERF UDP/1M/2024-11-21_11-57-53_iperf_udp.csv",
+      "bytes": 58579,
+      "sha256": "58fe4f79d04bbf9e4aa0292e69a09b88dc2afb353e625fa8d2880cddda60156e",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4970",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "Iperf Bytes",
+          "Iperf Bits per Second"
+        ],
+        "data_records": 1406,
+        "row_width_counts": {
+          "3": 1406
+        },
+        "first_lines": [
+          "Timestamp,Iperf Bytes,Iperf Bits per Second",
+          "1732186673.100361,13480,1074521.0111575716",
+          "1732186673.200068,12132,973412.097859831",
+          "1732186673.300061,12132,970627.9639101388",
+          "1732186673.400059,13480,1078421.59772258",
+          "1732186673.500059,12132,970559.9855375292",
+          "1732186673.600137,12132,969803.5375455564",
+          "1732186673.70006,12132,971307.909619237"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Outdoor (Rectangular Shape)/IPERF UDP/1M/2024-11-21_11-57-53_rssi_position.csv",
+      "bytes": 68246,
+      "sha256": "b355ab69766f9698f3882b50fcffc83e9db024fa2597d289f119db12e254babb",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4365",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "CellId",
+          "RSSI",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 1420,
+        "row_width_counts": {
+          "8": 1420
+        },
+        "first_lines": [
+          "Timestamp,CellId,RSSI,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732186673.767412,0.0,-101,-75.0,-14.0,,,",
+          "1732186673.877364,0.0,-101,-75.0,-14.0,,,",
+          "1732186673.969795,0.0,-71,-75.0,-14.0,,,",
+          "1732186674.0688045,0.0,-71,-74.0,-14.0,,,",
+          "1732186674.1613452,0.0,-71,-74.0,-14.0,,,",
+          "1732186674.2572284,0.0,-71,-74.0,-14.0,,,",
+          "1732186674.354057,0.0,-71,-75.0,-14.0,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Outdoor (Rectangular Shape)/IPERF UDP/50M/2024-11-21_12-22-58_iperf_udp.csv",
+      "bytes": 54519,
+      "sha256": "4369a44afa15ec8ff62e0018f771a85ce170a06b407a199f9990f2bf0affe6cb",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4970",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "Iperf Bytes",
+          "Iperf Bits per Second"
+        ],
+        "data_records": 1325,
+        "row_width_counts": {
+          "3": 1325
+        },
+        "first_lines": [
+          "Timestamp,Iperf Bytes,Iperf Bits per Second",
+          "1732188178.100058,620080,49577646.546786316",
+          "1732188178.200061,625472,50036260.60164824",
+          "1732188178.300061,624124,49929919.25598622",
+          "1732188178.400058,625472,50039261.725213446",
+          "1732188178.500064,625472,50034758.31102848",
+          "1732188178.60006,624124,49931917.012872435",
+          "1732188178.700058,625472,50038762.13432772"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Outdoor (Rectangular Shape)/IPERF UDP/50M/2024-11-21_12-22-58_rssi_position.csv",
+      "bytes": 62844,
+      "sha256": "0a41f6f145e24d213344c2452996adaf9352840e0961177e678df1d518ea07a5",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4365",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "CellId",
+          "RSSI",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 1300,
+        "row_width_counts": {
+          "8": 1300
+        },
+        "first_lines": [
+          "Timestamp,CellId,RSSI,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732188178.3077295,0.0,-97,-74.0,-16.0,,,",
+          "1732188178.3997862,0.0,-97,-74.0,-16.0,,,",
+          "1732188178.4946842,0.0,-97,-72.0,-15.0,,,",
+          "1732188178.5906587,0.0,-97,-72.0,-16.0,,,",
+          "1732188178.6873698,0.0,-97,-70.0,-15.0,20.525,-5.081,0.295",
+          "1732188178.8252878,0.0,-97,-71.0,-15.0,,,",
+          "1732188178.9677093,0.0,-97,-71.0,-14.0,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Outdoor (Rectangular Shape)/PING/1000B/2024-11-20_19-16-32_ping.csv",
+      "bytes": 56995,
+      "sha256": "12265857f221be78b250056000dbe02d80586776c47ac2ae9a011f8043e30fb9",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4943",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "ICMP Seq",
+          "Ping Time (ms)",
+          "Ping Time Average (ms)",
+          "Lost",
+          "Lost Percentage"
+        ],
+        "data_records": 1460,
+        "row_width_counts": {
+          "6": 1460
+        },
+        "first_lines": [
+          "Timestamp,ICMP Seq,Ping Time (ms),Ping Time Average (ms),Lost,Lost Percentage",
+          "1732126592.91129,0,28.0,28.0,False,0",
+          "1732126593.03126,1,47.9,38.0,False,0",
+          "1732126593.10626,2,22.9,32.9,False,0",
+          "1732126593.22624,3,42.9,35.4,False,0",
+          "1732126593.30524,4,21.9,32.7,False,0",
+          "1732126593.42623,5,42.9,34.4,False,0",
+          "1732126593.50714,6,23.8,32.9,False,0"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Outdoor (Rectangular Shape)/PING/1000B/2024-11-20_19-16-32_rssi_position.csv",
+      "bytes": 70431,
+      "sha256": "9156c832f8a9dcc0ada133af3dab7a481170fcccb5d24407c25907c9f1e85d22",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c5253",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "RSSI",
+          "CellId",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 1460,
+        "row_width_counts": {
+          "8": 1460
+        },
+        "first_lines": [
+          "Timestamp,RSSI,CellId,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732126592.8759453,-99,0.0,-75.0,-14.0,,,",
+          "1732126592.9886332,-99,0.0,-75.0,-14.0,,,",
+          "1732126593.085113,-99,0.0,-75.0,-14.0,,,",
+          "1732126593.1807394,-99,0.0,-75.0,-14.0,,,",
+          "1732126593.2773008,-99,0.0,-75.0,-14.0,,,",
+          "1732126593.3716638,-99,0.0,-75.0,-14.0,,,",
+          "1732126593.4682837,-99,0.0,-75.0,-14.0,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Outdoor (Rectangular Shape)/PING/100B/2024-11-20_19-11-32_ping.csv",
+      "bytes": 54593,
+      "sha256": "3eb3ebbc7f999202a61a3a8aa1d1915fd20888de8edf26e901c295c0d3b570af",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4943",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "ICMP Seq",
+          "Ping Time (ms)",
+          "Ping Time Average (ms)",
+          "Lost",
+          "Lost Percentage"
+        ],
+        "data_records": 1398,
+        "row_width_counts": {
+          "6": 1398
+        },
+        "first_lines": [
+          "Timestamp,ICMP Seq,Ping Time (ms),Ping Time Average (ms),Lost,Lost Percentage",
+          "1732126292.14965,0,36.0,36.0,False,0",
+          "1732126292.22753,1,13.9,25.0,False,0",
+          "1732126292.34954,2,35.8,28.6,False,0",
+          "1732126292.42954,3,15.9,25.4,False,0",
+          "1732126292.55455,4,40.9,28.5,False,0",
+          "1732126292.62955,5,15.9,26.4,False,0",
+          "1732126292.75508,6,41.4,28.5,False,0"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Outdoor (Rectangular Shape)/PING/100B/2024-11-20_19-11-32_rssi_position.csv",
+      "bytes": 67112,
+      "sha256": "e7196e436a08dd31af99bcb7f7eae0be6cdd816755c36f2af5ca1d073f263627",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c5253",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "RSSI",
+          "CellId",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 1397,
+        "row_width_counts": {
+          "8": 1397
+        },
+        "first_lines": [
+          "Timestamp,RSSI,CellId,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732126292.1079197,-89,0.0,-75.0,-12.0,,,",
+          "1732126292.216387,-89,0.0,-75.0,-12.0,,,",
+          "1732126292.3123882,-89,0.0,-75.0,-12.0,,,",
+          "1732126292.4063973,-89,0.0,-76.0,-12.0,,,",
+          "1732126292.5042663,-93,0.0,-76.0,-12.0,,,",
+          "1732126292.599231,-93,0.0,-76.0,-12.0,,,",
+          "1732126292.695286,-93,0.0,-76.0,-12.0,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Outdoor (Rectangular Shape)/PING/20B/2024-11-20_19-05-38_ping.csv",
+      "bytes": 54558,
+      "sha256": "1bf3b0eaabf67f96f4d3ad26beac118f690c792375c62a50ba46f41182659ff0",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4943",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "ICMP Seq",
+          "Ping Time (ms)",
+          "Ping Time Average (ms)",
+          "Lost",
+          "Lost Percentage"
+        ],
+        "data_records": 1395,
+        "row_width_counts": {
+          "6": 1395
+        },
+        "first_lines": [
+          "Timestamp,ICMP Seq,Ping Time (ms),Ping Time Average (ms),Lost,Lost Percentage",
+          "1732125938.77165,0,12.1,12.1,False,0",
+          "1732125938.87007,1,10.5,11.3,False,0",
+          "1732125938.97711,2,17.5,13.4,False,0",
+          "1732125939.07014,3,10.5,12.7,False,0",
+          "1732125939.17017,4,10.6,12.2,False,0",
+          "1732125939.27021,5,10.6,12.0,False,0",
+          "1732125939.37726,6,17.7,12.8,False,0"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Outdoor (Rectangular Shape)/PING/20B/2024-11-20_19-05-38_rssi_position.csv",
+      "bytes": 67333,
+      "sha256": "202b7d29050ccc6dc51f606d495247a82933e7bb18453b6fd4d6f67012972b34",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c5253",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "RSSI",
+          "CellId",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 1395,
+        "row_width_counts": {
+          "8": 1395
+        },
+        "first_lines": [
+          "Timestamp,RSSI,CellId,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732125938.7403963,-99,0.0,-74.0,-14.0,,,",
+          "1732125938.8482347,-99,0.0,-76.0,-15.0,19.453,-4.442,0.407",
+          "1732125938.9387977,-99,0.0,-76.0,-15.0,,,",
+          "1732125939.0341275,-99,0.0,-75.0,-15.0,,,",
+          "1732125939.13068,-99,0.0,-75.0,-15.0,,,",
+          "1732125939.2270775,-99,0.0,-74.0,-15.0,19.514,-4.483,0.394",
+          "1732125939.32228,-99,0.0,-74.0,-15.0,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Random Shape)/IPERF TCP/2024-11-22_17-32-17_iperf_tcp.csv",
+      "bytes": 44263,
+      "sha256": "11fb8fd24e8a768abdd69d67a63183684f6a5e202f5fa5e4eb228d12c8ace7cf",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4970",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "Iperf Bytes",
+          "Iperf Bits per Second",
+          "Iperf Retransmits",
+          "Iperf RTT",
+          "Iperf RTT Variance",
+          "Iperf Snd Cwnd",
+          "Iperf Snd Wnd"
+        ],
+        "data_records": 729,
+        "row_width_counts": {
+          "8": 729
+        },
+        "first_lines": [
+          "Timestamp,Iperf Bytes,Iperf Bits per Second,Iperf Retransmits,Iperf RTT,Iperf RTT Variance,Iperf Snd Cwnd,Iperf Snd Wnd",
+          "1732293137.100068,191416,15302873.596168835,0,22412,2843,36396,150528",
+          "1732293137.200072,202200,16175352.589293497,0,23106,1441,43136,449792",
+          "1732293137.300066,190068,15206352.940442517,0,19889,1669,53920,862208",
+          "1732293137.400064,241292,19303746.599234182,0,21894,2377,63356,1055872",
+          "1732293137.50008,280384,22427132.132820815,0,27532,2647,76836,1055872",
+          "1732293137.600454,392268,31264511.264264394,0,26911,3323,94360,1055872",
+          "1732293137.700073,258816,20784468.586265,0,35060,3921,107840,1055872"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Random Shape)/IPERF TCP/2024-11-22_17-32-17_rssi_position.csv",
+      "bytes": 29244,
+      "sha256": "5d135defa94062770437b0d26f2da17a1969a68a78ff797a75f310681d795e23",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4365",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "CellId",
+          "RSSI",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 691,
+        "row_width_counts": {
+          "8": 691
+        },
+        "first_lines": [
+          "Timestamp,CellId,RSSI,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732293137.5032263,0,-97,-81,-14,,,",
+          "1732293137.6091704,0,-97,-82,-14,,,",
+          "1732293137.7050478,0,-97,-82,-14,,,",
+          "1732293137.8001628,0,-97,-82,-14,,,",
+          "1732293137.8995557,0,-97,-82,-14,,,",
+          "1732293138.0294943,0,-97,-82,-14,,,",
+          "1732293138.1225927,0,-97,-83,-14,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Random Shape)/IPERF UDP/100M/2024-11-22_17-40-41_iperf_udp.csv",
+      "bytes": 28000,
+      "sha256": "8270e2c5808e81498fd58bf5329edeba579e44c3065ace64afeb0ce5ad01a0b7",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4970",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "Iperf Bytes",
+          "Iperf Bits per Second"
+        ],
+        "data_records": 699,
+        "row_width_counts": {
+          "3": 699
+        },
+        "first_lines": [
+          "Timestamp,Iperf Bytes,Iperf Bits per Second",
+          "1732293641.100061,1238812,99044543.42924982",
+          "1732293641.200061,718484,57478719.14350034",
+          "1732293641.300061,88968,7117439.89394188",
+          "1732293641.400281,671304,53586428.65983714",
+          "1732293641.500058,0,0.0",
+          "1732293641.600066,401704,32133748.2032013",
+          "1732293641.700062,0,0.0"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Random Shape)/IPERF UDP/100M/2024-11-22_17-40-41_rssi_position.csv",
+      "bytes": 30986,
+      "sha256": "6b32c88807a6d49502090f3f2d1f35fc05e0eccbbfdc55935040c8422f3d93ec",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4365",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "CellId",
+          "RSSI",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 640,
+        "row_width_counts": {
+          "8": 640
+        },
+        "first_lines": [
+          "Timestamp,CellId,RSSI,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732293641.1942792,0.0,-77,-83.0,-15.0,,,",
+          "1732293641.3154812,0.0,-77,-83.0,-15.0,,,",
+          "1732293641.4321823,0.0,-77,-83.0,-14.0,,,",
+          "1732293641.5449147,0.0,-77,-83.0,-14.0,,,",
+          "1732293641.6562755,0.0,-77,-84.0,-15.0,,,",
+          "1732293641.767276,0.0,-77,-84.0,-15.0,,,",
+          "1732293641.8789232,0.0,-77,-85.0,-16.0,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Random Shape)/IPERF UDP/10M/2024-11-22_17-46-59_iperf_udp.csv",
+      "bytes": 27873,
+      "sha256": "344c2357c8ce4988311595bf74939fa803a16010a0de447e617fd13275e7b7e8",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4970",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "Iperf Bytes",
+          "Iperf Bits per Second"
+        ],
+        "data_records": 688,
+        "row_width_counts": {
+          "3": 688
+        },
+        "first_lines": [
+          "Timestamp,Iperf Bytes,Iperf Bits per Second",
+          "1732294019.100238,124528,9938585.88366858",
+          "1732294019.20006,124528,9980004.440931186",
+          "1732294019.300058,125976,10078281.839369418",
+          "1732294019.400062,124528,9961841.28209466",
+          "1732294019.500072,124528,9961243.85875201",
+          "1732294019.600066,125976,10078685.091783922",
+          "1732294019.700158,124528,9953083.038262943"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Random Shape)/IPERF UDP/10M/2024-11-22_17-46-59_rssi_position.csv",
+      "bytes": 31879,
+      "sha256": "0db458b402eac1e94c932cb40a26425787ee2c8c1f52dcf4d621098809712238",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4365",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "CellId",
+          "RSSI",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 658,
+        "row_width_counts": {
+          "8": 658
+        },
+        "first_lines": [
+          "Timestamp,CellId,RSSI,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732294019.1268961,0.0,-91,-79.0,-12.0,,,",
+          "1732294019.2272017,0.0,-91,-80.0,-13.0,,,",
+          "1732294019.3228207,0.0,-91,-80.0,-13.0,,,",
+          "1732294019.4232795,0.0,-91,-80.0,-12.0,,,",
+          "1732294019.546095,0.0,-91,-80.0,-12.0,,,",
+          "1732294019.6590908,0.0,-91,-80.0,-12.0,,,",
+          "1732294019.7762945,0.0,-91,-80.0,-13.0,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Random Shape)/IPERF UDP/1M/2024-11-22_17-43-02_iperf_udp.csv",
+      "bytes": 46337,
+      "sha256": "1ae90a359ea72c297d8c4d12efc6a6313bc15ea8085cc372298be2b98981c814",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4970",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "Iperf Bytes",
+          "Iperf Bits per Second"
+        ],
+        "data_records": 1097,
+        "row_width_counts": {
+          "3": 1097
+        },
+        "first_lines": [
+          "Timestamp,Iperf Bytes,Iperf Bits per Second",
+          "1732293783.100139,13032,1041112.8581065381",
+          "1732293783.200062,13032,1043363.3925286758",
+          "1732293783.300058,11584,926757.0653862283",
+          "1732293783.400059,13032,1042549.5758812813",
+          "1732293783.500066,13032,1042487.0510793944",
+          "1732293783.600058,11584,926794.1475489466",
+          "1732293783.700061,13032,1042528.7593380357"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Random Shape)/IPERF UDP/1M/2024-11-22_17-43-02_rssi_position.csv",
+      "bytes": 52227,
+      "sha256": "90a220df11d2497df9334c782dd82a916a49377910470c7d9f4cdd26f8996323",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4365",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "CellId",
+          "RSSI",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 1089,
+        "row_width_counts": {
+          "8": 1089
+        },
+        "first_lines": [
+          "Timestamp,CellId,RSSI,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732293782.9587057,0.0,-87,-79.0,-14.0,,,",
+          "1732293783.0683682,0.0,-87,-77.0,-13.0,,,",
+          "1732293783.1616085,0.0,-87,-75.0,-12.0,,,",
+          "1732293783.2738495,0.0,-87,-73.0,-12.0,,,",
+          "1732293783.4035683,0.0,-87,-72.0,-12.0,,,",
+          "1732293783.5119529,0.0,-87,-72.0,-12.0,,,",
+          "1732293783.60988,0.0,-87,-73.0,-12.0,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Random Shape)/PING/1000B/2024-11-22_17-29-19_ping.csv",
+      "bytes": 36581,
+      "sha256": "021069b666e682005233b98d25bf60c7aacea3f35d24af665b03033d2a6f5333",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4943",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "ICMP Seq",
+          "Ping Time (ms)",
+          "Ping Time Average (ms)",
+          "Lost",
+          "Lost Percentage"
+        ],
+        "data_records": 942,
+        "row_width_counts": {
+          "6": 942
+        },
+        "first_lines": [
+          "Timestamp,ICMP Seq,Ping Time (ms),Ping Time Average (ms),Lost,Lost Percentage",
+          "1732292959.05203,0,26.3,26.3,False,0",
+          "1732292959.17205,1,45.8,36.0,False,0",
+          "1732292959.25556,2,29.7,33.9,False,0",
+          "1732292959.37207,3,46.2,37.0,False,0",
+          "1732292959.45208,4,26.3,34.9,False,0",
+          "1732292959.5706,5,44.8,36.5,False,0",
+          "1732292959.65213,6,26.3,35.1,False,0"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Random Shape)/PING/1000B/2024-11-22_17-29-19_rssi_position.csv",
+      "bytes": 44939,
+      "sha256": "1c643622c461ac52bb2ee68a79c8af04c9ddcd13146ec983b063b47b0f170bc6",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c5253",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "RSSI",
+          "CellId",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 942,
+        "row_width_counts": {
+          "8": 942
+        },
+        "first_lines": [
+          "Timestamp,RSSI,CellId,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732292959.019523,-99,0.0,-80.0,-14.0,,,",
+          "1732292959.1249719,-99,0.0,-80.0,-14.0,,,",
+          "1732292959.219956,-99,0.0,-79.0,-14.0,,,",
+          "1732292959.316353,-99,0.0,-79.0,-14.0,,,",
+          "1732292959.4131522,-99,0.0,-79.0,-14.0,,,",
+          "1732292959.507454,-99,0.0,-79.0,-14.0,,,",
+          "1732292959.6035273,-99,0.0,-80.0,-14.0,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Random Shape)/PING/100B/2024-11-22_17-26-13_ping.csv",
+      "bytes": 30325,
+      "sha256": "02834ad72f30436d56c408d100d67f09fd11dbc8e8d3e6293e74064ee0835c87",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4943",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "ICMP Seq",
+          "Ping Time (ms)",
+          "Ping Time Average (ms)",
+          "Lost",
+          "Lost Percentage"
+        ],
+        "data_records": 781,
+        "row_width_counts": {
+          "6": 781
+        },
+        "first_lines": [
+          "Timestamp,ICMP Seq,Ping Time (ms),Ping Time Average (ms),Lost,Lost Percentage",
+          "1732292773.47428,0,,,True,100",
+          "1732292773.54729,1,73.0,73.0,False,50",
+          "1732292773.58428,2,10.1,41.5,False,33",
+          "1732292773.68427,3,10.0,31.0,False,25",
+          "1732292773.78673,4,12.5,26.4,False,20",
+          "1732292773.88669,5,12.4,23.6,False,16",
+          "1732292773.98665,6,12.4,21.7,False,14"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Random Shape)/PING/100B/2024-11-22_17-26-13_rssi_position.csv",
+      "bytes": 37421,
+      "sha256": "a5785ed8efdbe9d977fae078a7d2b0fef12ac6a4802a1b4f846ee9ba55b39637",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c5253",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "RSSI",
+          "CellId",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 781,
+        "row_width_counts": {
+          "8": 781
+        },
+        "first_lines": [
+          "Timestamp,RSSI,CellId,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732292773.3676124,-91,0.0,-79.0,-12.0,,,",
+          "1732292773.4743369,-91,0.0,-80.0,-13.0,,,",
+          "1732292773.5885465,-91,0.0,-80.0,-13.0,,,",
+          "1732292773.6831245,-91,0.0,-80.0,-13.0,,,",
+          "1732292773.7805302,-91,0.0,-80.0,-13.0,,,",
+          "1732292773.8747296,-91,0.0,-79.0,-13.0,,,",
+          "1732292773.9722097,-91,0.0,-79.0,-13.0,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Random Shape)/PING/20B/2024-11-22_17-23-35_ping.csv",
+      "bytes": 36047,
+      "sha256": "e05cf446d07cab7f2070ab0b33594cf94d5eb6dacd317516bdcf8835a57d6f6e",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c4943",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "ICMP Seq",
+          "Ping Time (ms)",
+          "Ping Time Average (ms)",
+          "Lost",
+          "Lost Percentage"
+        ],
+        "data_records": 928,
+        "row_width_counts": {
+          "6": 928
+        },
+        "first_lines": [
+          "Timestamp,ICMP Seq,Ping Time (ms),Ping Time Average (ms),Lost,Lost Percentage",
+          "1732292615.34641,0,,,True,100",
+          "1732292615.44241,1,96.0,96.0,False,50",
+          "1732292615.45642,2,10.1,53.0,False,33",
+          "1732292615.55891,3,12.5,39.5,False,25",
+          "1732292615.65639,4,10.0,32.2,False,20",
+          "1732292615.75637,5,9.99,27.7,False,16",
+          "1732292615.85547,6,8.94,24.6,False,14"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "FR1 Micro - FR1 Micro Indoor (Random Shape)/PING/20B/2024-11-22_17-23-35_rssi_position.csv",
+      "bytes": 44497,
+      "sha256": "34dc488205d2b961e2b4f8d672bc88b9c81fba01dd188303aaa35c8e3b959345",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d657374616d702c5253",
+        "delimiter": ",",
+        "header": [
+          "Timestamp",
+          "RSSI",
+          "CellId",
+          "RSRP",
+          "RSRQ",
+          "X Position",
+          "Y Position",
+          "Z Position"
+        ],
+        "data_records": 928,
+        "row_width_counts": {
+          "8": 928
+        },
+        "first_lines": [
+          "Timestamp,RSSI,CellId,RSRP,RSRQ,X Position,Y Position,Z Position",
+          "1732292615.240351,-77,0.0,-81.0,-15.0,,,",
+          "1732292615.3611574,-77,0.0,-81.0,-15.0,,,",
+          "1732292615.4567509,-77,0.0,-80.0,-15.0,,,",
+          "1732292615.5528226,-77,0.0,-81.0,-15.0,,,",
+          "1732292615.6485982,-77,0.0,-82.0,-16.0,,,",
+          "1732292615.7440126,-77,0.0,-82.0,-16.0,,,",
+          "1732292615.8406396,-77,0.0,-82.0,-16.0,,,"
+        ],
+        "encoding_replacement_count": 0
+      }
+    }
+  ],
+  "checks": [
+    "all_member_CRCs",
+    "safe_paths_no_symlinks"
+  ],
+  "member_count": 46,
+  "status": "pass"
+}

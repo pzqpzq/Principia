@@ -1,0 +1,314 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "59_energy_portugal_pv",
+  "domain": "Photovoltaic energy",
+  "title": "Photovoltaic Power Production Dataset",
+  "publisher": "[{'institution': {'name': 'National Technical University of Athens'}, 'profile_id': '0a263ae2-b497-32a9-b995-703d2c563342', 'first_name': 'Elissaios', 'last_name': 'Sarmas'}, {'first_name': 'Nuno', 'last_name': 'Matias'}, {'first_name': 'Catarina', 'last_name': 'Pereira'}, {'first_name': 'Ana Rita', 'last_name': 'Antunes'}]; []",
+  "authoritative_landing_url": "https://data.mendeley.com/datasets/dbh93b6vp8/3",
+  "authoritative_source_urls": [
+    "https://data.mendeley.com/datasets/dbh93b6vp8/3",
+    "https://data.mendeley.com/public-files/datasets/dbh93b6vp8/files/cdd90295-1758-46a0-9d16-6e1b8dd3efb9/file_downloaded",
+    "https://data.mendeley.com/public-files/datasets/dbh93b6vp8/files/eeef3660-07ac-4edd-9029-d31e15c6f121/file_downloaded",
+    "https://data.mendeley.com/public-files/datasets/dbh93b6vp8/files/db215193-1ac3-434b-8b6f-ef6ca8218dab/file_downloaded",
+    "https://data.mendeley.com/public-files/datasets/dbh93b6vp8/files/b7c0607a-5fb3-4cb4-826b-4cb71fbf47ee/file_downloaded",
+    "https://data.mendeley.com/public-files/datasets/dbh93b6vp8/files/e046ad26-5d32-43de-8a21-0b45e0b45aca/file_downloaded",
+    "https://data.mendeley.com/public-files/datasets/dbh93b6vp8/files/9c7f5ec5-627a-42e7-8e40-38ddb5847e31/file_downloaded",
+    "https://data.mendeley.com/public-files/datasets/dbh93b6vp8/files/42f26f35-ebc5-40dc-a4a3-0e6926de893a/file_downloaded"
+  ],
+  "identifiers": [
+    {
+      "id": "10.17632/dbh93b6vp8.3",
+      "status": "allocated",
+      "prefix": "10.17632"
+    }
+  ],
+  "release_or_version": "3",
+  "retrieval_finalized_utc": "2026-09-15T07:04:33.494568+00:00",
+  "license_or_access_terms": "CC BY 4.0",
+  "deterministic_selection_rule": "complete specified source selection",
+  "substitution": null,
+  "data_origin": "mixed_measured_and_computational",
+  "measurement_dates": "Original plant/weather files predate the February 2025 v3 release; exact coverage is in workbook/archive time columns.",
+  "source_publication_date": "2025-02-25T15:55:47.266Z",
+  "source_created_utc": null,
+  "source_updated_utc": null,
+  "source_inventory": [
+    {
+      "name": "data_processing_and_visualization.py",
+      "bytes": 2208,
+      "selected": true
+    },
+    {
+      "name": "Figures.zip",
+      "bytes": 25247596,
+      "selected": true
+    },
+    {
+      "name": "plotting_functions.py",
+      "bytes": 3988,
+      "selected": true
+    },
+    {
+      "name": "PV Plants Datasets.xlsx",
+      "bytes": 8693799,
+      "selected": true
+    },
+    {
+      "name": "PV Plants Metadata.xlsx",
+      "bytes": 10227,
+      "selected": true
+    },
+    {
+      "name": "requirements.txt",
+      "bytes": 1151,
+      "selected": true
+    },
+    {
+      "name": "weather_files.zip",
+      "bytes": 2977466,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Source workbooks, weather files, figures and processing code. Specific energy/avoided emissions and source plots are derived; supplied code is preserved, not run. The archive weather fields have an unresolved upstream provider and may be modeled/reanalysis products; they are not counted as measured-only evidence.",
+  "known_analyses_and_limitations": "Hold out whole plants or time blocks. Verify weather-provider attribution and join timestamps before modeling. Derived emissions cannot be independent evidence for energy laws. Primary eligibility rests on the measured PV production and plant metadata; use weather only with its unresolved origin explicitly bounded.",
+  "related_publications": [],
+  "independent_groups": "nine plants and complete time blocks",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-059",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-059",
+      "scenario_id": "59_energy_portugal_pv",
+      "path": "raw/data_processing_and_visualization.py",
+      "scenario_relative_path": "raw/data_processing_and_visualization.py",
+      "bytes": 2208,
+      "sha256": "72c1f578ff30ad1973e43a33a0af0ffcb76fe4c52af9d78af311f8623d009679",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/dbh93b6vp8/3"
+      ],
+      "download_url": "https://data.mendeley.com/public-files/datasets/dbh93b6vp8/files/cdd90295-1758-46a0-9d16-6e1b8dd3efb9/file_downloaded",
+      "source_checksum": "sha256:72c1f578ff30ad1973e43a33a0af0ffcb76fe4c52af9d78af311f8623d009679",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:30:03.016579+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        {
+          "id": "10.17632/dbh93b6vp8.3",
+          "status": "allocated",
+          "prefix": "10.17632"
+        }
+      ],
+      "citation_url": "https://data.mendeley.com/datasets/dbh93b6vp8/3",
+      "source_version": "3",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://data.mendeley.com/datasets/dbh93b6vp8/3",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-059",
+      "scenario_id": "59_energy_portugal_pv",
+      "path": "raw/Figures.zip",
+      "scenario_relative_path": "raw/Figures.zip",
+      "bytes": 25247596,
+      "sha256": "554295aebd920654d63a8605617e4d8d4b77bcd4713a7610f0883b18a2044510",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/dbh93b6vp8/3"
+      ],
+      "download_url": "https://data.mendeley.com/public-files/datasets/dbh93b6vp8/files/eeef3660-07ac-4edd-9029-d31e15c6f121/file_downloaded",
+      "source_checksum": "sha256:554295aebd920654d63a8605617e4d8d4b77bcd4713a7610f0883b18a2044510",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:38:49.863249+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        {
+          "id": "10.17632/dbh93b6vp8.3",
+          "status": "allocated",
+          "prefix": "10.17632"
+        }
+      ],
+      "citation_url": "https://data.mendeley.com/datasets/dbh93b6vp8/3",
+      "source_version": "3",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://data.mendeley.com/datasets/dbh93b6vp8/3",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-059",
+      "scenario_id": "59_energy_portugal_pv",
+      "path": "raw/plotting_functions.py",
+      "scenario_relative_path": "raw/plotting_functions.py",
+      "bytes": 3988,
+      "sha256": "8891c66482152aa709ef86947ea59d75cf0223869813dbb898a3903295bef64c",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/dbh93b6vp8/3"
+      ],
+      "download_url": "https://data.mendeley.com/public-files/datasets/dbh93b6vp8/files/db215193-1ac3-434b-8b6f-ef6ca8218dab/file_downloaded",
+      "source_checksum": "sha256:8891c66482152aa709ef86947ea59d75cf0223869813dbb898a3903295bef64c",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:30:05.980744+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        {
+          "id": "10.17632/dbh93b6vp8.3",
+          "status": "allocated",
+          "prefix": "10.17632"
+        }
+      ],
+      "citation_url": "https://data.mendeley.com/datasets/dbh93b6vp8/3",
+      "source_version": "3",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://data.mendeley.com/datasets/dbh93b6vp8/3",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-059",
+      "scenario_id": "59_energy_portugal_pv",
+      "path": "raw/PV Plants Datasets.xlsx",
+      "scenario_relative_path": "raw/PV Plants Datasets.xlsx",
+      "bytes": 8693799,
+      "sha256": "5a62b75851aececf6539da047f16edde27c05328378a39bcf3b24f18c0809eb4",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/dbh93b6vp8/3"
+      ],
+      "download_url": "https://data.mendeley.com/public-files/datasets/dbh93b6vp8/files/b7c0607a-5fb3-4cb4-826b-4cb71fbf47ee/file_downloaded",
+      "source_checksum": "sha256:5a62b75851aececf6539da047f16edde27c05328378a39bcf3b24f18c0809eb4",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:44.662917+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        {
+          "id": "10.17632/dbh93b6vp8.3",
+          "status": "allocated",
+          "prefix": "10.17632"
+        }
+      ],
+      "citation_url": "https://data.mendeley.com/datasets/dbh93b6vp8/3",
+      "source_version": "3",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://data.mendeley.com/datasets/dbh93b6vp8/3",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-059",
+      "scenario_id": "59_energy_portugal_pv",
+      "path": "raw/PV Plants Metadata.xlsx",
+      "scenario_relative_path": "raw/PV Plants Metadata.xlsx",
+      "bytes": 10227,
+      "sha256": "54f7538eb220d106d7d945bc65a467a9530d54c18db8da8358aa6fd3db97ea76",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/dbh93b6vp8/3"
+      ],
+      "download_url": "https://data.mendeley.com/public-files/datasets/dbh93b6vp8/files/e046ad26-5d32-43de-8a21-0b45e0b45aca/file_downloaded",
+      "source_checksum": "sha256:54f7538eb220d106d7d945bc65a467a9530d54c18db8da8358aa6fd3db97ea76",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:30:08.484582+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        {
+          "id": "10.17632/dbh93b6vp8.3",
+          "status": "allocated",
+          "prefix": "10.17632"
+        }
+      ],
+      "citation_url": "https://data.mendeley.com/datasets/dbh93b6vp8/3",
+      "source_version": "3",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://data.mendeley.com/datasets/dbh93b6vp8/3",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-059",
+      "scenario_id": "59_energy_portugal_pv",
+      "path": "raw/requirements.txt",
+      "scenario_relative_path": "raw/requirements.txt",
+      "bytes": 1151,
+      "sha256": "003a320d141897a630dc14462add79e87ac45151f732a39b3b018e3acbb1ed0d",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/dbh93b6vp8/3"
+      ],
+      "download_url": "https://data.mendeley.com/public-files/datasets/dbh93b6vp8/files/9c7f5ec5-627a-42e7-8e40-38ddb5847e31/file_downloaded",
+      "source_checksum": "sha256:003a320d141897a630dc14462add79e87ac45151f732a39b3b018e3acbb1ed0d",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:30:12.123964+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        {
+          "id": "10.17632/dbh93b6vp8.3",
+          "status": "allocated",
+          "prefix": "10.17632"
+        }
+      ],
+      "citation_url": "https://data.mendeley.com/datasets/dbh93b6vp8/3",
+      "source_version": "3",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://data.mendeley.com/datasets/dbh93b6vp8/3",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-059",
+      "scenario_id": "59_energy_portugal_pv",
+      "path": "raw/weather_files.zip",
+      "scenario_relative_path": "raw/weather_files.zip",
+      "bytes": 2977466,
+      "sha256": "a0e2ba74f564a901b9546a2276d25e0855cc0aacabac4e32ce62ad7cfb30d68f",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/dbh93b6vp8/3"
+      ],
+      "download_url": "https://data.mendeley.com/public-files/datasets/dbh93b6vp8/files/42f26f35-ebc5-40dc-a4a3-0e6926de893a/file_downloaded",
+      "source_checksum": "sha256:a0e2ba74f564a901b9546a2276d25e0855cc0aacabac4e32ce62ad7cfb30d68f",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:30:54.179419+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        {
+          "id": "10.17632/dbh93b6vp8.3",
+          "status": "allocated",
+          "prefix": "10.17632"
+        }
+      ],
+      "citation_url": "https://data.mendeley.com/datasets/dbh93b6vp8/3",
+      "source_version": "3",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://data.mendeley.com/datasets/dbh93b6vp8/3",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-059",
+      "scenario_id": "59_energy_portugal_pv",
+      "path": "context/SOURCE_FACTS.json",
+      "scenario_relative_path": "context/SOURCE_FACTS.json",
+      "bytes": 4817,
+      "sha256": "183a39adaeb0874b34a1162198b41dd9c8b5b4ff6045c27821452f0a6e41ac2e",
+      "role": "curator_factual_source_profile",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/dbh93b6vp8/3"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "curator serialization, not a publisher file",
+      "retrieved_utc": "2026-09-15T07:04:33.494568+00:00",
+      "license_or_terms": "CC-BY-4.0 (proposed release terms for curator documentation; pending owner acceptance)",
+      "citation_identifiers": [
+        {
+          "id": "10.17632/dbh93b6vp8.3",
+          "status": "allocated",
+          "prefix": "10.17632"
+        }
+      ],
+      "citation_url": "https://data.mendeley.com/datasets/dbh93b6vp8/3",
+      "source_version": "3",
+      "replay_note": "Reconstruct exact curator metadata from frozen release copy.",
+      "rights_evidence_url": "https://data.mendeley.com/datasets/dbh93b6vp8/3",
+      "rights_evidence_scope": "Factual identifiers, file inventory and attribution; curator serialization."
+    }
+  ]
+}

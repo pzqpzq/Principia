@@ -1,0 +1,211 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "34_neuroscience_unc13_calcium",
+  "domain": "synaptic neuroscience",
+  "title": "Presynaptic Unc13 calcium-dose response",
+  "publisher": "Zenodo; originating researchers: Walter, Alexander (University of Copenhagen)",
+  "authoritative_landing_url": "https://zenodo.org/records/15629377",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/15629377",
+    "https://zenodo.org/api/records/15629377/files/Figure%205.zip/content",
+    "https://zenodo.org/api/records/15629377"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.15629377"
+  ],
+  "release_or_version": "15629377",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "deterministic_selection_rule": "Complete Figure 5.zip, including all mutant/control calcium-dose recordings and source context; other figure archives excluded.",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": {
+    "description": "ABF headers include 2020 acquisitions; source record released in 2025. Individual ABF timestamps are recorded by read-only inspection.",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": "2025-06-10",
+  "source_created_utc": "2025-09-09T16:08:51.451046+00:00",
+  "source_updated_utc": "2025-09-09T16:08:52.537114+00:00",
+  "source_inventory": [
+    {
+      "name": "Figure 2.zip",
+      "bytes": 75238,
+      "selected": false
+    },
+    {
+      "name": "Figure S2.zip",
+      "bytes": 1883510671,
+      "selected": false
+    },
+    {
+      "name": "Figure 3.zip",
+      "bytes": 1348723560,
+      "selected": false
+    },
+    {
+      "name": "Figure 6.zip",
+      "bytes": 101690,
+      "selected": false
+    },
+    {
+      "name": "Figure 1.zip",
+      "bytes": 2285288504,
+      "selected": false
+    },
+    {
+      "name": "Figure 4.zip",
+      "bytes": 1003794278,
+      "selected": false
+    },
+    {
+      "name": "Figure 5.zip",
+      "bytes": 96099760,
+      "selected": true
+    },
+    {
+      "name": "Figure S6.zip",
+      "bytes": 25983,
+      "selected": false
+    },
+    {
+      "name": "Figure S5.zip",
+      "bytes": 63894,
+      "selected": false
+    },
+    {
+      "name": "Figure S8.zip",
+      "bytes": 1023530420,
+      "selected": false
+    },
+    {
+      "name": "Figure S3.zip",
+      "bytes": 606159711,
+      "selected": false
+    },
+    {
+      "name": "Figure S7.zip",
+      "bytes": 294232,
+      "selected": false
+    },
+    {
+      "name": "Figure 7.zip",
+      "bytes": 574653540,
+      "selected": false
+    },
+    {
+      "name": "Figure S1.zip",
+      "bytes": 261383783,
+      "selected": false
+    },
+    {
+      "name": "Figure S10.zip",
+      "bytes": 338076843,
+      "selected": false
+    },
+    {
+      "name": "Figure S4.zip",
+      "bytes": 1117003569,
+      "selected": false
+    },
+    {
+      "name": "Figure S13.zip",
+      "bytes": 25947,
+      "selected": false
+    },
+    {
+      "name": "Figure S14.zip",
+      "bytes": 69697,
+      "selected": false
+    },
+    {
+      "name": "Figure S9.zip",
+      "bytes": 1342600690,
+      "selected": false
+    },
+    {
+      "name": "Figure S11.zip",
+      "bytes": 241857850,
+      "selected": false
+    },
+    {
+      "name": "Figure S12.zip",
+      "bytes": 14291403,
+      "selected": false
+    }
+  ],
+  "author_preprocessing": "ABF electrophysiology alongside source workbook/Prism analyses. The protocol exchanges bath solution sequentially, so order and dose are linked.",
+  "known_analyses_and_limitations": "The Copenhagen Unc13 study is already published (PMC12403152). The archive is one complete figure experiment, not every experiment in the paper. Counts deviate from an ideal five-records-per-cell design; do not silently complete missing recordings.",
+  "related_publications": [
+    {
+      "identifier": "10.1073/pnas.2514151122",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1101/2025.01.10.632340",
+      "relation": "isDocumentedBy",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    }
+  ],
+  "pinned_commit": null,
+  "source_context_request_failures": [],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-034",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-034",
+      "scenario_id": "34_neuroscience_unc13_calcium",
+      "path": "context/zenodo_record.json",
+      "scenario_relative_path": "context/zenodo_record.json",
+      "bytes": 12612,
+      "sha256": "6a192c8d446dcf39d0e8c3c35d3054ea8160486248669112999211df88fc6bb0",
+      "role": "parsed_source_metadata_snapshot",
+      "source_urls": [
+        "https://zenodo.org/api/records/15629377"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:40:22.246050+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15629377"
+      ],
+      "citation_url": "https://zenodo.org/records/15629377",
+      "source_version": "15629377",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-034",
+      "scenario_id": "34_neuroscience_unc13_calcium",
+      "path": "raw/Figure 5.zip",
+      "scenario_relative_path": "raw/Figure 5.zip",
+      "bytes": 96099760,
+      "sha256": "d720964f33d3cee40157dbae98685fc72121d67b01ab3288f971fa613e807994",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15629377/files/Figure%205.zip/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15629377/files/Figure%205.zip/content",
+      "source_checksum": "md5:b068123e0913ae4723b0e31643993f4a",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:56:56.055520+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15629377"
+      ],
+      "citation_url": "https://zenodo.org/records/15629377",
+      "source_version": "15629377",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15629377",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

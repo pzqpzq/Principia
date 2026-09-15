@@ -1,0 +1,351 @@
+{
+  "case_id": "P100-002",
+  "case_revision": 1,
+  "scenario_id": "02_astronomy_mast_tars_sector96",
+  "title": "MAST TARS TESS Sector 96 light curves and vetting images",
+  "domain": "astronomy",
+  "question": "How do variability timescales and amplitudes behave across the retained stellar light curves?",
+  "data_origin": "measured_or_observed",
+  "source_version": "TARS v01; TESS Sector 96",
+  "source_url": "https://archive.stsci.edu/hlsp/tars",
+  "identifiers": [
+    "doi:10.17909/2sff-fn29"
+  ],
+  "publisher": "Space Telescope Science Institute / MAST",
+  "release_date": "See source record; legacy retrieval vintage recorded",
+  "measurement_dates": "Not fully established in the legacy metadata; source filenames/headers and public context preserve available dates. Release dates are not substituted for measurement dates.",
+  "variables_and_units": "Variables and units are preserved in native column headers, instrument metadata and source dictionaries; see evidence anchors below.",
+  "independent_units": "Target star and complete time blocks; eight source-selected FITS/preview pairs.",
+  "validation_design": "Target star and complete time blocks; eight source-selected FITS/preview pairs. Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "TESS sector 96 calibrated/processed light curves; JPEGs are previews. Target selection is fixed, not a population-random sample.",
+  "prior_analysis_and_limits": "TESS sector 96 calibrated/processed light curves; JPEGs are previews. Target selection is fixed, not a population-random sample. TESS sector 96 calibrated/processed light curves; JPEGs are previews. Target selection is fixed, not a population-random sample.",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/hlsp_tars_tess_ffi_s0096-0000000002733028_tess_v01_lc.fits",
+      "structure": {
+        "HDUs": [
+          {
+            "name": "PRIMARY",
+            "shape": null,
+            "columns": null,
+            "units": null,
+            "header": {
+              "DATE-END": "2025-09-14T22:46:55.007",
+              "TSTART": "3907.782324000357",
+              "TSTOP": "3933.44924776499",
+              "TELESCOP": "TESS",
+              "INSTRUME": "TESS Photometer"
+            }
+          },
+          {
+            "name": "LIGHTCURVE",
+            "shape": [
+              9276
+            ],
+            "columns": [
+              "TIME",
+              "FLUX"
+            ],
+            "units": [
+              "d",
+              ""
+            ],
+            "header": {}
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/hlsp_tars_tess_ffi_s0096-0000000278960483_tess_v01_lc.fits",
+      "structure": {
+        "HDUs": [
+          {
+            "name": "PRIMARY",
+            "shape": null,
+            "columns": null,
+            "units": null,
+            "header": {
+              "DATE-END": "2025-09-14T22:37:56.408",
+              "TSTART": "3907.776046431189",
+              "TSTOP": "3933.443013982592",
+              "TELESCOP": "TESS",
+              "INSTRUME": "TESS Photometer"
+            }
+          },
+          {
+            "name": "LIGHTCURVE",
+            "shape": [
+              10730
+            ],
+            "columns": [
+              "TIME",
+              "FLUX"
+            ],
+            "units": [
+              "d",
+              ""
+            ],
+            "header": {}
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/hlsp_tars_tess_ffi_s0096-0000000350184430_tess_v01_lc.fits",
+      "structure": {
+        "HDUs": [
+          {
+            "name": "PRIMARY",
+            "shape": null,
+            "columns": null,
+            "units": null,
+            "header": {
+              "DATE-END": "2025-09-14T22:37:34.277",
+              "TSTART": "3907.776337855945",
+              "TSTOP": "3933.44275783886",
+              "TELESCOP": "TESS",
+              "INSTRUME": "TESS Photometer"
+            }
+          },
+          {
+            "name": "LIGHTCURVE",
+            "shape": [
+              10730
+            ],
+            "columns": [
+              "TIME",
+              "FLUX"
+            ],
+            "units": [
+              "d",
+              ""
+            ],
+            "header": {}
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/hlsp_tars_tess_ffi_s0096-0000000063725713_tess_v01_lc.fits",
+      "structure": {
+        "HDUs": [
+          {
+            "name": "PRIMARY",
+            "shape": null,
+            "columns": null,
+            "units": null,
+            "header": {
+              "DATE-END": "2025-09-14T22:45:30.799",
+              "TSTART": "3908.6285731830094",
+              "TSTOP": "3933.448273134845",
+              "TELESCOP": "TESS",
+              "INSTRUME": "TESS Photometer"
+            }
+          },
+          {
+            "name": "LIGHTCURVE",
+            "shape": [
+              9950
+            ],
+            "columns": [
+              "TIME",
+              "FLUX"
+            ],
+            "units": [
+              "d",
+              ""
+            ],
+            "header": {}
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/hlsp_tars_tess_ffi_s0096-0000002056110539_tess_v01_lc.fits",
+      "structure": {
+        "HDUs": [
+          {
+            "name": "PRIMARY",
+            "shape": null,
+            "columns": null,
+            "units": null,
+            "header": {
+              "DATE-END": "2025-09-14T22:46:32.779",
+              "TSTART": "3907.7826151579193",
+              "TSTOP": "3933.4489904946263",
+              "TELESCOP": "TESS",
+              "INSTRUME": "TESS Photometer"
+            }
+          },
+          {
+            "name": "LIGHTCURVE",
+            "shape": [
+              9276
+            ],
+            "columns": [
+              "TIME",
+              "FLUX"
+            ],
+            "units": [
+              "d",
+              ""
+            ],
+            "header": {}
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/hlsp_tars_tess_ffi_s0096-0000000231055285_tess_v01_lc.fits",
+      "structure": {
+        "HDUs": [
+          {
+            "name": "PRIMARY",
+            "shape": null,
+            "columns": null,
+            "units": null,
+            "header": {
+              "DATE-END": "2025-09-14T22:42:56.397",
+              "TSTART": "3907.7795297121943",
+              "TSTOP": "3933.4464860735834",
+              "TELESCOP": "TESS",
+              "INSTRUME": "TESS Photometer"
+            }
+          },
+          {
+            "name": "LIGHTCURVE",
+            "shape": [
+              10174
+            ],
+            "columns": [
+              "TIME",
+              "FLUX"
+            ],
+            "units": [
+              "d",
+              ""
+            ],
+            "header": {}
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/hlsp_tars_tess_ffi_s0096-0000000201249388_tess_v01_lc.fits",
+      "structure": {
+        "HDUs": [
+          {
+            "name": "PRIMARY",
+            "shape": null,
+            "columns": null,
+            "units": null,
+            "header": {
+              "DATE-END": "2025-09-14T22:43:55.701",
+              "TSTART": "3908.627995643943",
+              "TSTOP": "3933.4471724616433",
+              "TELESCOP": "TESS",
+              "INSTRUME": "TESS Photometer"
+            }
+          },
+          {
+            "name": "LIGHTCURVE",
+            "shape": [
+              9950
+            ],
+            "columns": [
+              "TIME",
+              "FLUX"
+            ],
+            "units": [
+              "d",
+              ""
+            ],
+            "header": {}
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/hlsp_tars_tess_ffi_s0096-0000000149351953_tess_v01_lc.fits",
+      "structure": {
+        "HDUs": [
+          {
+            "name": "PRIMARY",
+            "shape": null,
+            "columns": null,
+            "units": null,
+            "header": {
+              "DATE-END": "2025-09-14T22:39:42.939",
+              "TSTART": "3907.777281529449",
+              "TSTOP": "3933.444246983224",
+              "TELESCOP": "TESS",
+              "INSTRUME": "TESS Photometer"
+            }
+          },
+          {
+            "name": "LIGHTCURVE",
+            "shape": [
+              10730
+            ],
+            "columns": [
+              "TIME",
+              "FLUX"
+            ],
+            "units": [
+              "d",
+              ""
+            ],
+            "header": {}
+          }
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "JPEG": 8,
+    "FITS": 8
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Original development corpus (source-aware)",
+  "license_or_terms": "CC BY 4.0",
+  "source_asset_bytes": 2508765,
+  "expanded_source_equivalent_bytes": 2508765,
+  "installed_folder_bytes": 2529408,
+  "source_asset_count": 17,
+  "asset_paths": [
+    "scenarios/02_astronomy_mast_tars_sector96/context/mast_selection.json",
+    "scenarios/02_astronomy_mast_tars_sector96/raw/hlsp_tars_tess_ffi_s0096-0000000002733028_tess_v01_lc.fits",
+    "scenarios/02_astronomy_mast_tars_sector96/raw/hlsp_tars_tess_ffi_s0096-0000000002733028_tess_v01_preview.jpeg",
+    "scenarios/02_astronomy_mast_tars_sector96/raw/hlsp_tars_tess_ffi_s0096-0000000063725713_tess_v01_lc.fits",
+    "scenarios/02_astronomy_mast_tars_sector96/raw/hlsp_tars_tess_ffi_s0096-0000000063725713_tess_v01_preview.jpeg",
+    "scenarios/02_astronomy_mast_tars_sector96/raw/hlsp_tars_tess_ffi_s0096-0000000149351953_tess_v01_lc.fits",
+    "scenarios/02_astronomy_mast_tars_sector96/raw/hlsp_tars_tess_ffi_s0096-0000000149351953_tess_v01_preview.jpeg",
+    "scenarios/02_astronomy_mast_tars_sector96/raw/hlsp_tars_tess_ffi_s0096-0000000201249388_tess_v01_lc.fits",
+    "scenarios/02_astronomy_mast_tars_sector96/raw/hlsp_tars_tess_ffi_s0096-0000000201249388_tess_v01_preview.jpeg",
+    "scenarios/02_astronomy_mast_tars_sector96/raw/hlsp_tars_tess_ffi_s0096-0000000231055285_tess_v01_lc.fits",
+    "scenarios/02_astronomy_mast_tars_sector96/raw/hlsp_tars_tess_ffi_s0096-0000000231055285_tess_v01_preview.jpeg",
+    "scenarios/02_astronomy_mast_tars_sector96/raw/hlsp_tars_tess_ffi_s0096-0000000278960483_tess_v01_lc.fits",
+    "scenarios/02_astronomy_mast_tars_sector96/raw/hlsp_tars_tess_ffi_s0096-0000000278960483_tess_v01_preview.jpeg",
+    "scenarios/02_astronomy_mast_tars_sector96/raw/hlsp_tars_tess_ffi_s0096-0000000350184430_tess_v01_lc.fits",
+    "scenarios/02_astronomy_mast_tars_sector96/raw/hlsp_tars_tess_ffi_s0096-0000000350184430_tess_v01_preview.jpeg",
+    "scenarios/02_astronomy_mast_tars_sector96/raw/hlsp_tars_tess_ffi_s0096-0000002056110539_tess_v01_lc.fits",
+    "scenarios/02_astronomy_mast_tars_sector96/raw/hlsp_tars_tess_ffi_s0096-0000002056110539_tess_v01_preview.jpeg"
+  ],
+  "local_folder": "scenarios/02_astronomy_mast_tars_sector96",
+  "size_exception": false,
+  "modalities": [
+    "images",
+    "scientific_arrays_or_events"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 2538277,
+  "expanded_release_folder_equivalent_bytes": 2538277
+}

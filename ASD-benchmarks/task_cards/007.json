@@ -1,0 +1,789 @@
+{
+  "case_id": "P100-007",
+  "case_revision": 1,
+  "scenario_id": "07_neuroscience_physionet_gait_s1",
+  "title": "Multimodal gait EEG, EMG, and force-plate data for participant S1",
+  "domain": "neuroscience",
+  "question": "How do gait-speed conditions relate to physiological and biomechanical signal coupling?",
+  "data_origin": "measured_or_observed",
+  "source_version": "1.0.0",
+  "source_url": "https://physionet.org/content/multimodal-gait-dataset/1.0.0/",
+  "identifiers": [],
+  "publisher": "PhysioNet",
+  "release_date": "See source record; legacy retrieval vintage recorded",
+  "measurement_dates": "Not fully established in the legacy metadata; source filenames/headers and public context preserve available dates. Release dates are not substituted for measurement dates.",
+  "variables_and_units": "Variables and units are preserved in native column headers, instrument metadata and source dictionaries; see evidence anchors below.",
+  "independent_units": "Complete trials and gait conditions within participant S1.",
+  "validation_design": "Complete trials and gait conditions within participant S1. Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "One participant, multimodal EEG/EMG/gait exports. No between-person clinical or neurological generalization.",
+  "prior_analysis_and_limits": "One participant, multimodal EEG/EMG/gait exports. No between-person clinical or neurological generalization. One participant, multimodal EEG/EMG/gait exports. No between-person clinical or neurological generalization.",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/EMG_Data/EMG_S1_0.5.csv",
+      "structure": {
+        "header": [
+          "X [s]",
+          "R TIBIALIS ANTERIOR: EMG 1->MAV [Volts]",
+          "L TIBIALIS ANTERIOR: EMG 2->MAV [Volts]",
+          "R VASTUS LATERALIS: EMG 3->MAV [Volts]",
+          "L VASTUS LATERALIS: EMG 4->MAV [Volts]",
+          "R RECTUS FEMORIS: EMG 5->MAV [Volts]",
+          "L RECTUS FEMORIS: EMG 6->MAV [Volts]",
+          "R GASTROCNEMIUS MEDIAL HEAD: EMG 7->MAV [Volts]",
+          "L GASTROCNEMIUS MEDIAL HEAD: EMG 8->MAV [Volts]",
+          "R SEMITENDINOSUS: EMG 9->MAV [Volts]",
+          "L SEMITENDINOSUS: EMG 10->MAV [Volts]",
+          "R GASTROCNEMIUS LATERAL HEAD: EMG 11->MAV [Volts]",
+          "L GASTROCNEMIUS LATERAL HEAD: EMG 12->MAV [Volts]"
+        ],
+        "data_records": 969,
+        "first_lines": [
+          "X [s],R TIBIALIS ANTERIOR: EMG 1->MAV [Volts],L TIBIALIS ANTERIOR: EMG 2->MAV [Volts],R VASTUS LATERALIS: EMG 3->MAV [Volts],L VASTUS LATERALIS: EMG 4->MAV [Volts],R RECTUS FEMORIS: EMG 5->MAV [Volts],L RECTUS FEMORIS: EMG 6->MAV [Volts],R GASTROCNEMIUS MEDIAL HEAD: EMG 7->MAV [Volts],L GASTROCNEMIUS MEDIAL HEAD: EMG 8->MAV [Volts],R SEMITENDINOSUS: EMG 9->MAV [Volts],L SEMITENDINOSUS: EMG 10->MAV [Volts],R GASTROCNEMIUS LATERAL HEAD: EMG 11->MAV [Volts],L GASTROCNEMIUS LATERAL HEAD: EMG 12->MAV [Volts]",
+          "0.062307692307692175,6.786704310002278e-06,3.751430562222898e-06,5.926476963461861e-06,7.130795267329404e-06,1.2193547966650916e-05,1.0105223690715093e-05,6.2712672715292685e-06,8.602972973174399e-06,5.545319313426944e-06,1.1024897674379493e-05,1.6436636955319272e-05,4.826365042731595e-06",
+          "0.12461538461538436,6.756631330281e-06,3.7192594466735803e-06,6.0894306066927585e-06,8.551219449515202e-06,1.2609674240119754e-05,9.650631997004666e-06,7.254584077287518e-06,6.562905324850969e-06,5.514546948622486e-06,1.1482286871474419e-05,1.5535846015997854e-05,4.365479013065017e-06",
+          "0.18692307692307655,7.537130287479007e-06,3.7808041734403255e-06,6.640535629761265e-06,1.3312542929592534e-05,1.3034892334928827e-05,9.591185392565649e-06,8.000114432604732e-06,6.340505073154645e-06,5.601968409270815e-06,1.2045281182319438e-05,1.5733768203792428e-05,4.100417101682297e-06",
+          "0.24923076923076873,8.430228101730108e-06,3.750031812425429e-06,6.8797207835776435e-06,1.7637458314112563e-05,1.1992128912415486e-05,9.858345425565555e-06,8.621855981753393e-06,5.8957045955783846e-06,5.759327072496489e-06,1.1613768782107551e-05,1.5757546856320913e-05,4.98722058163518e-06",
+          "0.31153846153846093,8.184748594667705e-06,3.845146366643348e-06,5.820172425075043e-06,1.3563617354842942e-05,1.2736959897807764e-05,9.993324189849772e-06,1.3818188745536494e-05,2.722165001429744e-05,5.505455100755322e-06,1.1671816628696281e-05,1.639187713398845e-05,5.2257063636318435e-06",
+          "0.3738461538461531,7.1433839408996395e-06,3.82696271306789e-06,5.932071919545479e-06,1.6996833793806823e-05,1.3531446277189236e-05,9.939472565179131e-06,1.3004819322048889e-05,8.001163504782009e-05,5.391457495799538e-06,1.1806795363848247e-05,1.590721245250393e-05,5.044569063272774e-06",
+          "0.4361538461538453,6.955252939633283e-06,3.6584141033320822e-06,6.0684494184689205e-06,3.216760766804328e-05,1.4368594367416184e-05,1.038707056674563e-05,8.814183275518416e-06,7.438239115155435e-05,5.645329485541121e-06,1.1189250059118195e-05,1.596945650893152e-05,4.691386295500403e-06"
+        ]
+      }
+    },
+    {
+      "asset": "raw/EEG_Data/S1_1_raw.edf",
+      "structure": {
+        "channels": [
+          {
+            "label": "EEG P3-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG C3-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG F3-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG Fz-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG F4-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG C4-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG P4-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG Cz-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "CM",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG A1-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG Fp1-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG Fp2-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG T3-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG T5-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG O1-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG O2-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG X3-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG X2-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG F7-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG F8-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG X1-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG A2-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG T6-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG T4-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "Trigger",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "units"
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/EMG_Data/EMG_S1_1.csv",
+      "structure": {
+        "header": [
+          "X [s]",
+          "R TIBIALIS ANTERIOR: EMG 1->MAV [Volts]",
+          "L TIBIALIS ANTERIOR: EMG 2->MAV [Volts]",
+          "R VASTUS LATERALIS: EMG 3->MAV [Volts]",
+          "L VASTUS LATERALIS: EMG 4->MAV [Volts]",
+          "R RECTUS FEMORIS: EMG 5->MAV [Volts]",
+          "L RECTUS FEMORIS: EMG 6->MAV [Volts]",
+          "R GASTROCNEMIUS MEDIAL HEAD: EMG 7->MAV [Volts]",
+          "L GASTROCNEMIUS MEDIAL HEAD: EMG 8->MAV [Volts]",
+          "R SEMITENDINOSUS: EMG 9->MAV [Volts]",
+          "L SEMITENDINOSUS: EMG 10->MAV [Volts]",
+          "R GASTROCNEMIUS LATERAL HEAD: EMG 11->MAV [Volts]",
+          "L GASTROCNEMIUS LATERAL HEAD: EMG 12->MAV [Volts]"
+        ],
+        "data_records": 985,
+        "first_lines": [
+          "X [s],R TIBIALIS ANTERIOR: EMG 1->MAV [Volts],L TIBIALIS ANTERIOR: EMG 2->MAV [Volts],R VASTUS LATERALIS: EMG 3->MAV [Volts],L VASTUS LATERALIS: EMG 4->MAV [Volts],R RECTUS FEMORIS: EMG 5->MAV [Volts],L RECTUS FEMORIS: EMG 6->MAV [Volts],R GASTROCNEMIUS MEDIAL HEAD: EMG 7->MAV [Volts],L GASTROCNEMIUS MEDIAL HEAD: EMG 8->MAV [Volts],R SEMITENDINOSUS: EMG 9->MAV [Volts],L SEMITENDINOSUS: EMG 10->MAV [Volts],R GASTROCNEMIUS LATERAL HEAD: EMG 11->MAV [Volts],L GASTROCNEMIUS LATERAL HEAD: EMG 12->MAV [Volts]",
+          "0.062307692307692175,1.9520866696372727e-05,3.6206480231726346e-06,8.947063925527724e-06,3.3723010549617056e-05,0.00022932262636885526,1.099412530128537e-05,7.993470391056689e-05,0.00020886600058886984,8.297347490326956e-06,1.1753643116207968e-05,1.730036111666777e-05,6.841255337993365e-06",
+          "0.12461538461538436,3.205360988166224e-05,3.557704555608628e-06,1.4783321862665844e-05,3.617570756115166e-05,0.0006134533045795365,9.994023572090782e-06,4.711108572858317e-05,0.0001897647565421323,8.530937659164314e-06,1.2345311733004867e-05,1.520993872645704e-05,8.828170734413258e-06",
+          "0.18692307692307655,2.3944393429549867e-05,3.6136543011859127e-06,1.5926095439292946e-05,2.0109038436070627e-05,0.0006625506078532813,1.0143689143641647e-05,7.3629866930010245e-06,8.812994318271686e-05,7.37837286592935e-06,1.1797703546534422e-05,1.535051247287811e-05,1.056820785336754e-05",
+          "0.24923076923076873,1.216207623997434e-05,3.580084456681713e-06,7.690292716707367e-06,1.133402000021988e-05,0.00038418593220868047,1.04080517128106e-05,9.733857223655681e-06,4.2293812491323024e-05,6.497164362665823e-06,1.1569708291621813e-05,1.646531115113703e-05,1.6070166053575956e-05",
+          "0.31153846153846093,1.343982857401708e-05,3.5577045451873346e-06,6.419534092572121e-06,1.620724290892402e-05,0.0002145253174451985,1.0374481846516422e-05,1.655622954620147e-05,3.474199531320702e-05,7.583288843685902e-06,1.2002619477868848e-05,1.5987640180033697e-05,2.6750972718758703e-05",
+          "0.3738461538461531,2.2143510996860034e-05,3.5458152164361916e-06,5.804086879142764e-06,2.3405877158448144e-05,0.0001933896011488893,1.046400143422943e-05,4.020408924366355e-05,2.5776747716813966e-05,7.091630449688561e-06,1.1593486978730047e-05,1.57512525509181e-05,2.6303374781851592e-05",
+          "0.4361538461538453,3.161510385372897e-05,3.624144881086977e-06,6.702779699215474e-06,2.170220740988308e-05,0.00022919533992222797,1.0214325705248939e-05,3.659393174118009e-05,2.2511380707612715e-05,6.4552020631936106e-06,1.1293456447702965e-05,1.726539254415608e-05,1.5314844505572487e-05"
+        ]
+      }
+    },
+    {
+      "asset": "raw/subject-info.csv",
+      "structure": {
+        "header": [
+          "Subject",
+          "IMPAIRED/HEALTHY",
+          "GENDER",
+          "DOB",
+          "Age",
+          "HEIGHT(mm)",
+          "BMI",
+          "WEIGHT(kg)",
+          "FOOT LENGTH (mm)",
+          "L-UPPER ARM",
+          "L-LOWER ARM",
+          "L-UPPER LEG",
+          "L-LOWER LEG",
+          "L-LEG",
+          "NECK",
+          "SHOULDER",
+          "C-CHEST",
+          "C-WAIST",
+          "C-HIP",
+          "C-THIGH",
+          "C-ANKLE",
+          "C-UPPER ARM",
+          "C-WRIST",
+          "Normal Speed (m/s)"
+        ],
+        "data_records": 64,
+        "first_lines": [
+          "Subject,IMPAIRED/HEALTHY,GENDER,DOB,Age,HEIGHT(mm),BMI,WEIGHT(kg),FOOT LENGTH (mm),L-UPPER ARM,L-LOWER ARM,L-UPPER LEG,L-LOWER LEG,L-LEG,NECK,SHOULDER,C-CHEST,C-WAIST,C-HIP,C-THIGH,C-ANKLE,C-UPPER ARM,C-WRIST,Normal Speed (m/s)",
+          "S1,H,M,07/11/2002,22,1790,33.39,107,265,340,320,510,390,900,170,260,1190,990,1090,670,330,430,210,1.02",
+          "S2,H,M,10/09/2001,23,1660,18.51,51,250,330,290,510,460,930,130,220,800,760,830,370,260,260,180,0.92",
+          "S3,H,M,19/06/2002,22,1710,37.62,110,250,375,280,565,440,945,130,230,1220,1200,1280,670,300,430,230,0.99",
+          "S4,H,M,23/12/1987,37,1750,36.51,111.8,310,380,350,560,470,1030,220,265,1180,1225,1280,680,310,395,205,1.02",
+          "S5,H,M,13/04/1997,27,1740,24.05,72.8,270,360,310,520,490,960,160,220,880,870,970,550,280,340,200,1.00",
+          "S6,H,M,09/06/1996,28,1800,24.69,80,280,350,310,550,470,960,150,230,950,870,940,620,280,330,200,1.10",
+          "S7,H,M,20/07/1999,25,1760,24.73,76.6,260,310,320,580,460,1010,150,200,910,890,950,600,280,310,200,1.05"
+        ]
+      }
+    },
+    {
+      "asset": "raw/FP_Data/FP_S1_0.5.csv",
+      "structure": {
+        "header": [
+          "1:Timestamp",
+          "1:Sync",
+          "1:Aux",
+          "1:Fx",
+          "1:Fy",
+          "1:Fz",
+          "1:Mx",
+          "1:My",
+          "1:Mz",
+          "1:COPx",
+          "1:COPy",
+          "2:Timestamp",
+          "2:Sync",
+          "2:Aux",
+          "2:Fx",
+          "2:Fy",
+          "2:Fz",
+          "2:Mx",
+          "2:My",
+          "2:Mz",
+          "2:COPx",
+          "2:COPy"
+        ],
+        "data_records": 55486,
+        "first_lines": [
+          "1:Timestamp,1:Sync,1:Aux,1:Fx,1:Fy,1:Fz,1:Mx,1:My,1:Mz,1:COPx,1:COPy,2:Timestamp,2:Sync,2:Aux,2:Fx,2:Fy,2:Fz,2:Mx,2:My,2:Mz,2:COPx,2:COPy",
+          "0.000000,0.000000,0.000000,63.835224,55.968079,780.625610,1045.232422,362.724792,-110.394402,-0.464659,1.338968,0.000000,0.000000,0.000000,9.222563,-51.347530,184.819458,197.170410,-89.044373,-31.151104,0.481791,1.066827",
+          "0.000000,0.000000,0.000000,64.903343,55.815491,785.813599,1051.580322,365.166199,-111.126823,-0.464698,1.338206,0.000000,0.000000,0.000000,6.323380,-50.584583,181.767700,193.752441,-87.335327,-27.611052,0.480478,1.065934",
+          "0.000000,0.000000,0.000000,65.208519,55.662903,791.001587,1056.218994,367.363464,-110.516472,-0.464428,1.335293,0.000000,0.000000,0.000000,4.950084,-50.126820,178.410767,189.357910,-85.260132,-26.634485,0.477887,1.061359",
+          "0.000000,0.000000,0.000000,65.666283,55.815491,794.968872,1060.125244,369.560730,-110.150261,-0.464874,1.333543,0.000000,0.000000,0.000000,5.865615,-49.211288,172.612427,183.986816,-82.208374,-27.611052,0.476260,1.065896",
+          "0.000000,0.000000,0.000000,66.886993,55.968079,799.851685,1066.717041,372.246277,-111.493034,-0.465394,1.333644,0.000000,0.000000,0.000000,7.238912,-47.227638,164.067505,175.441895,-78.057983,-27.977262,0.475767,1.069327",
+          "0.000000,0.000000,0.000000,69.023232,55.662903,806.565552,1075.506104,375.542175,-113.934456,-0.465607,1.333439,0.000000,0.000000,0.000000,6.781146,-44.175869,155.827515,166.896973,-74.273804,-25.902060,0.476641,1.071037",
+          "0.000000,0.000000,0.000000,70.854294,54.747368,813.889771,1085.271729,378.838135,-115.399300,-0.465466,1.333438,0.000000,0.000000,0.000000,4.492319,-41.581863,151.555054,162.990723,-72.076477,-22.362007,0.475580,1.075456"
+        ]
+      }
+    },
+    {
+      "asset": "raw/EEG_Data/S1_0.5_raw.edf",
+      "structure": {
+        "channels": [
+          {
+            "label": "EEG P3-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG C3-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG F3-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG Fz-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG F4-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG C4-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG P4-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG Cz-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "CM",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG A1-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG Fp1-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG Fp2-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG T3-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG T5-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG O1-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG O2-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG X3-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG X2-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG F7-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG F8-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG X1-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG A2-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG T6-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG T4-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "Trigger",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "units"
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/EEG_Data/S1_0.75_raw.edf",
+      "structure": {
+        "channels": [
+          {
+            "label": "EEG P3-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG C3-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG F3-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG Fz-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG F4-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG C4-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG P4-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG Cz-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "CM",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG A1-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG Fp1-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG Fp2-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG T3-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG T5-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG O1-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG O2-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG X3-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG X2-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG F7-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG F8-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG X1-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG A2-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG T6-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "EEG T4-Pz",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "uV"
+          },
+          {
+            "label": "Trigger",
+            "sample_rate": 300.0,
+            "samples": 17400,
+            "unit": "units"
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/FP_Data/FP_S1_1.csv",
+      "structure": {
+        "header": [
+          "1:Timestamp",
+          "1:Sync",
+          "1:Aux",
+          "1:Fx",
+          "1:Fy",
+          "1:Fz",
+          "1:Mx",
+          "1:My",
+          "1:Mz",
+          "1:COPx",
+          "1:COPy",
+          "2:Timestamp",
+          "2:Sync",
+          "2:Aux",
+          "2:Fx",
+          "2:Fy",
+          "2:Fz",
+          "2:Mx",
+          "2:My",
+          "2:Mz",
+          "2:COPx",
+          "2:COPy"
+        ],
+        "data_records": 57152,
+        "first_lines": [
+          "1:Timestamp,1:Sync,1:Aux,1:Fx,1:Fy,1:Fz,1:Mx,1:My,1:Mz,1:COPx,1:COPy,2:Timestamp,2:Sync,2:Aux,2:Fx,2:Fy,2:Fz,2:Mx,2:My,2:Mz,2:COPx,2:COPy",
+          "0.000000,0.000000,0.000000,5.088652,5.156105,4.255493,7.386597,0.906921,-6.145939,0.000000,0.000000,0.000000,0.000000,0.000000,-74.243347,-46.006931,1066.170288,1143.707520,-511.653381,54.176384,0.479898,1.072725",
+          "0.000000,0.000000,0.000000,4.936063,5.919048,5.476196,7.630737,1.639343,-4.436948,0.000000,0.000000,0.000000,0.000000,0.000000,-75.006287,-43.412926,1063.728882,1142.730957,-510.676819,57.472298,0.480082,1.074269",
+          "0.000000,0.000000,0.000000,6.919714,5.766460,5.171021,7.386597,2.982117,-5.291444,0.000000,0.000000,0.000000,0.000000,0.000000,-77.600296,-39.598213,1058.235718,1138.824707,-509.822327,62.843414,0.481766,1.076154",
+          "0.000000,0.000000,0.000000,7.224891,5.003517,6.391724,8.851440,3.592499,-5.047302,0.000000,0.000000,0.000000,0.000000,0.000000,-80.041710,-38.224918,1060.677124,1142.242676,-511.409241,65.406898,0.482154,1.076900",
+          "0.000000,0.000000,0.000000,4.936063,4.850929,7.917603,6.654175,2.615906,-2.483815,0.000000,0.000000,0.000000,0.000000,0.000000,-80.194298,-40.818920,1070.137573,1151.275879,-514.216980,64.186188,0.480515,1.075820",
+          "0.000000,0.000000,0.000000,2.799824,4.850929,6.086548,1.527222,1.517273,0.934167,0.000000,0.000000,0.000000,0.000000,0.000000,-77.142532,-45.854343,1078.682495,1157.623535,-515.925964,61.134422,0.478293,1.073183",
+          "0.000000,0.000000,0.000000,0.968762,2.562101,3.034790,-0.425903,0.784851,4.962503,0.000000,0.000000,0.000000,0.000000,0.000000,-75.769234,-49.363880,1080.208374,1158.600098,-516.414246,60.157852,0.478069,1.072571"
+        ]
+      }
+    },
+    {
+      "asset": "raw/EMG_Data/EMG_S1_0.75.csv",
+      "structure": {
+        "header": [
+          "X [s]",
+          "R TIBIALIS ANTERIOR: EMG 1->MAV [Volts]",
+          "L TIBIALIS ANTERIOR: EMG 2->MAV [Volts]",
+          "R VASTUS LATERALIS: EMG 3->MAV [Volts]",
+          "L VASTUS LATERALIS: EMG 4->MAV [Volts]",
+          "R RECTUS FEMORIS: EMG 5->MAV [Volts]",
+          "L RECTUS FEMORIS: EMG 6->MAV [Volts]",
+          "R GASTROCNEMIUS MEDIAL HEAD: EMG 7->MAV [Volts]",
+          "L GASTROCNEMIUS MEDIAL HEAD: EMG 8->MAV [Volts]",
+          "R SEMITENDINOSUS: EMG 9->MAV [Volts]",
+          "L SEMITENDINOSUS: EMG 10->MAV [Volts]",
+          "R GASTROCNEMIUS LATERAL HEAD: EMG 11->MAV [Volts]",
+          "L GASTROCNEMIUS LATERAL HEAD: EMG 12->MAV [Volts]"
+        ],
+        "data_records": 977,
+        "first_lines": [
+          "X [s],R TIBIALIS ANTERIOR: EMG 1->MAV [Volts],L TIBIALIS ANTERIOR: EMG 2->MAV [Volts],R VASTUS LATERALIS: EMG 3->MAV [Volts],L VASTUS LATERALIS: EMG 4->MAV [Volts],R RECTUS FEMORIS: EMG 5->MAV [Volts],L RECTUS FEMORIS: EMG 6->MAV [Volts],R GASTROCNEMIUS MEDIAL HEAD: EMG 7->MAV [Volts],L GASTROCNEMIUS MEDIAL HEAD: EMG 8->MAV [Volts],R SEMITENDINOSUS: EMG 9->MAV [Volts],L SEMITENDINOSUS: EMG 10->MAV [Volts],R GASTROCNEMIUS LATERAL HEAD: EMG 11->MAV [Volts],L GASTROCNEMIUS LATERAL HEAD: EMG 12->MAV [Volts]",
+          "0.062307692307692175,2.5100455273966798e-05,3.68009462097992e-06,5.085832004899279e-06,6.171257120968221e-06,6.774465291385923e-05,9.956257475588851e-06,1.2457211157605267e-05,2.531586179846575e-05,6.194336375860606e-06,1.163335114900595e-05,1.667022711728805e-05,1.828018112727629e-05",
+          "0.12461538461538436,2.9195976756805447e-05,3.6703034093458578e-06,6.181747652315532e-06,6.163564016740489e-06,8.304061437082547e-05,1.0405254203978604e-05,8.794600855092465e-06,1.5227423045871546e-05,6.200630711816757e-06,1.1522850406227765e-05,1.6828285174597114e-05,1.269499761325695e-05",
+          "0.18692307692307655,2.7683934814130377e-05,3.6982782925557936e-06,5.3676788373498615e-06,5.029182892476077e-06,5.9418631127527985e-05,1.0147885364375497e-05,1.2160677493019041e-05,1.107735054214724e-05,5.7635233299417145e-06,1.1831972802175036e-05,1.4884031489733237e-05,6.485275031072509e-06",
+          "0.24923076923076873,1.8042394696019907e-05,3.702474528684737e-06,5.271864910364835e-06,6.18944076175391e-06,5.996623914631035e-05,1.0266079208065548e-05,1.0992726505776317e-05,1.2617367303372855e-05,5.496363286520515e-06,1.1662724819198426e-05,1.5280575278116735e-05,5.268368042266047e-06",
+          "0.31153846153846093,9.836664891101539e-06,3.618549904634468e-06,6.2216118789611604e-06,1.1724968850757022e-05,7.540067613144666e-05,9.75413903248068e-06,8.044174881642145e-06,3.485249590606069e-05,6.042572679850385e-06,1.1978141478863336e-05,1.620024925159669e-05,5.669807493783689e-06",
+          "0.3738461538461531,6.7692199972195034e-06,3.6038630971309735e-06,5.9145876493952676e-06,1.0415045419165381e-05,5.729184128355769e-05,9.52964063879828e-06,8.141387574293428e-06,0.00013283588896229048,6.172655823159327e-06,1.1262684055661036e-05,1.6553432027421876e-05,5.979629213707464e-06",
+          "0.4361538461538453,7.045471866954737e-06,3.6661071902699405e-06,1.0584293386273203e-05,6.976234100145954e-06,4.611448066071944e-05,1.0968248521692203e-05,6.542623543263441e-06,0.00013374437312781615,6.317425797893368e-06,1.1023498919845072e-05,1.620934110064809e-05,5.454400952942251e-06"
+        ]
+      }
+    },
+    {
+      "asset": "raw/FP_Data/FP_S1_0.75.csv",
+      "structure": {
+        "header": [
+          "1:Timestamp",
+          "1:Sync",
+          "1:Aux",
+          "1:Fx",
+          "1:Fy",
+          "1:Fz",
+          "1:Mx",
+          "1:My",
+          "1:Mz",
+          "1:COPx",
+          "1:COPy",
+          "2:Timestamp",
+          "2:Sync",
+          "2:Aux",
+          "2:Fx",
+          "2:Fy",
+          "2:Fz",
+          "2:Mx",
+          "2:My",
+          "2:Mz",
+          "2:COPx",
+          "2:COPy"
+        ],
+        "data_records": 50534,
+        "first_lines": [
+          "1:Timestamp,1:Sync,1:Aux,1:Fx,1:Fy,1:Fz,1:Mx,1:My,1:Mz,1:COPx,1:COPy,2:Timestamp,2:Sync,2:Aux,2:Fx,2:Fy,2:Fz,2:Mx,2:My,2:Mz,2:COPx,2:COPy",
+          "0.000000,0.000000,0.000000,74.516418,63.444916,790.086060,1036.931641,398.979797,-122.235268,-0.504983,1.312429,0.000000,0.000000,0.000000,6.475969,-45.091400,103.032104,94.142822,-45.709229,-22.728218,0.443641,0.913723",
+          "0.000000,0.000000,0.000000,74.974182,64.055267,794.968872,1041.082031,400.810852,-124.432541,-0.504184,1.309588,0.000000,0.000000,0.000000,5.255261,-44.481045,94.486938,88.039307,-41.924988,-21.385441,0.443712,0.931762",
+          "0.000000,0.000000,0.000000,74.669006,64.665619,801.682739,1045.964844,402.397766,-126.019463,-0.501941,1.304712,0.000000,0.000000,0.000000,3.271611,-41.276688,85.331665,76.808594,-38.751160,-18.821953,0.454124,0.900118",
+          "0.000000,0.000000,0.000000,76.957832,63.750092,803.513794,1048.406250,404.595032,-127.972595,-0.503532,1.304777,0.000000,0.000000,0.000000,1.593137,-37.767151,73.429810,60.939453,-35.821472,-15.037759,0.487833,0.829901",
+          "0.000000,0.000000,0.000000,81.230309,60.545731,804.734497,1050.603760,406.914429,-131.756790,-0.505651,1.305528,0.000000,0.000000,0.000000,0.982783,-34.715382,63.053833,51.417969,-32.769714,-11.741847,0.519710,0.815461",
+          "0.000000,0.000000,0.000000,84.587257,57.646553,811.143188,1056.463135,409.722046,-136.761688,-0.505117,1.302437,0.000000,0.000000,0.000000,0.677606,-30.748081,55.424438,44.582031,-29.229675,-9.056290,0.527379,0.804375",
+          "0.000000,0.000000,0.000000,87.944206,56.731018,817.857056,1063.787354,413.140015,-140.667969,-0.505149,1.300701,0.000000,0.000000,0.000000,-0.085336,-25.865250,48.710571,32.130737,-26.055786,-6.004519,0.534910,0.659626"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "text_or_instrument_native": 7,
+    "EDF": 3
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Original development corpus (source-aware)",
+  "license_or_terms": "CC BY 4.0",
+  "source_asset_bytes": 39130179,
+  "expanded_source_equivalent_bytes": 39130179,
+  "installed_folder_bytes": 39213172,
+  "source_asset_count": 11,
+  "asset_paths": [
+    "scenarios/07_neuroscience_physionet_gait_s1/raw/EEG_Data/S1_0.5_raw.edf",
+    "scenarios/07_neuroscience_physionet_gait_s1/raw/EEG_Data/S1_0.75_raw.edf",
+    "scenarios/07_neuroscience_physionet_gait_s1/raw/EEG_Data/S1_1_raw.edf",
+    "scenarios/07_neuroscience_physionet_gait_s1/raw/EMG_Data/EMG_S1_0.5.csv",
+    "scenarios/07_neuroscience_physionet_gait_s1/raw/EMG_Data/EMG_S1_0.75.csv",
+    "scenarios/07_neuroscience_physionet_gait_s1/raw/EMG_Data/EMG_S1_1.csv",
+    "scenarios/07_neuroscience_physionet_gait_s1/raw/FP_Data/FP_S1_0.5.csv",
+    "scenarios/07_neuroscience_physionet_gait_s1/raw/FP_Data/FP_S1_0.75.csv",
+    "scenarios/07_neuroscience_physionet_gait_s1/raw/FP_Data/FP_S1_1.csv",
+    "scenarios/07_neuroscience_physionet_gait_s1/raw/subject-info.csv",
+    "scenarios/07_neuroscience_physionet_gait_s1/context/SOURCE_FACTS.json"
+  ],
+  "local_folder": "scenarios/07_neuroscience_physionet_gait_s1",
+  "size_exception": false,
+  "modalities": [
+    "instrument_signals_or_cell_events",
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 39148583,
+  "expanded_release_folder_equivalent_bytes": 39148583
+}

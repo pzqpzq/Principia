@@ -1,0 +1,16 @@
+{
+  "bytes": 1269227,
+  "sha256": "6cf7ca2a4dd8907437e2e4b4728f62b353712ff09b322223a61e01aecee02411",
+  "format_extension": ".parquet",
+  "checks": [
+    "all_rows_decoded"
+  ],
+  "format": "Parquet",
+  "rows": 52132,
+  "row_groups": 1,
+  "schema": "VendorID: int32\nlpep_pickup_datetime: timestamp[us]\nlpep_dropoff_datetime: timestamp[us]\nstore_and_fwd_flag: large_string\nRatecodeID: int64\nPULocationID: int32\nDOLocationID: int32\npassenger_count: int64\ntrip_distance: double\nfare_amount: double\nextra: double\nmta_tax: double\ntip_amount: double\ntolls_amount: double\nehail_fee: double\nimprovement_surcharge: double\ntotal_amount: double\npayment_type: int64\ntrip_type: int64\ncongestion_surcharge: double\ncbd_congestion_fee: double",
+  "path": "raw/green_tripdata_2025-04.parquet",
+  "scenario_id": "40_transport_nyc_green_taxi_2025",
+  "verified_utc": "2026-09-14T15:58:15.948545+00:00",
+  "status": "pass"
+}

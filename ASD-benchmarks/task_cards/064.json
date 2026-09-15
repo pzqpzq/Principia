@@ -1,0 +1,338 @@
+{
+  "case_id": "P100-064",
+  "case_revision": 1,
+  "scenario_id": "64_electronics_stretchable_lec",
+  "title": "Experimental data of manuscript \"Stretchable Light-Emitting Electrochemical Cells Fabricated by Spray-Coating\", Gellner et al.",
+  "domain": "Flexible optoelectronics",
+  "question": "How do polymer fraction and deformation influence emission stability across fabricated cells?",
+  "data_origin": "measured_or_observed",
+  "source_version": "1",
+  "source_url": "https://figshare.com/articles/dataset/Experimental_data_of_manuscript_Stretchable_Light-Emitting_Electrochemical_Cells_Fabricated_by_Spray-Coating_Gellner_et_al_/29298161/1",
+  "identifiers": [
+    "10.6084/m9.figshare.29298161.v1"
+  ],
+  "publisher": "[{'id': 21527066, 'full_name': 'Sandra Gellner', 'first_name': 'Sandra', 'last_name': 'Gellner', 'is_active': True, 'url_name': 'Sandra_Gellner', 'orcid_id': ''}]",
+  "release_date": "2025-06-11T19:38:52Z",
+  "measurement_dates": "Device-file dates where provided; whole-campaign acquisition dates unknown.",
+  "variables_and_units": "current, voltage, luminance, strain and microscopy",
+  "independent_units": "device and polymer-loading group; complete strain sweeps",
+  "validation_design": "device and polymer-loading group; complete strain sweeps Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Measured current/luminance traces, microscopy TIFFs and Origin project files. Preserve original Figshare folder hierarchy because filenames recur.",
+  "prior_analysis_and_limits": "At least 17 identified devices with uneven loading-group counts. Hold out devices and full strain sweeps; images and fitted project outputs are supporting context. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no1_20v_it.txt",
+      "structure": {
+        "first_lines": [
+          "# Step \t    Time    \t  Current   \t  Voltage   \tAbsolute time\tTemperature \t",
+          "#   i  \t     s      \t     A      \t     V      \t     s      \t     C      \t",
+          "2022-11-16T21:11:45.389015",
+          "  0  \t0.000000e+00\t5.015730e-06\t2.000000e+01\t1.196138e+04\t   nan    \t",
+          "  1  \t4.200000e-01\t4.782432e-06\t2.000000e+01\t1.196180e+04\t   nan    \t",
+          "  2  \t9.100000e-01\t4.856191e-06\t2.000000e+01\t1.196229e+04\t   nan    \t",
+          "  3  \t1.420000e+00\t5.142786e-06\t2.000000e+01\t1.196280e+04\t   nan    \t",
+          "  4  \t1.920000e+00\t5.497634e-06\t2.000000e+01\t1.196330e+04\t   nan    \t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no1_20v_pt.txt",
+      "structure": {
+        "first_lines": [
+          "# Step \t    Time    \t  Current   \t  Voltage   \tAbsolute time\tTemperature \t",
+          "#   i  \t     s      \t     A      \t     V      \t     s      \t     C      \t",
+          "2022-11-16T21:11:42.016684",
+          "  0  \t0.000000e+00\t-1.251325e-10\t0.000000e+00\t1.196250e+04\t   nan    \t",
+          "  1  \t5.100000e-01\t-1.273323e-10\t0.000000e+00\t1.196301e+04\t   nan    \t",
+          "  2  \t1.010000e+00\t-1.195944e-10\t0.000000e+00\t1.196351e+04\t   nan    \t",
+          "  3  \t1.510000e+00\t-1.233117e-10\t0.000000e+00\t1.196401e+04\t   nan    \t",
+          "  4  \t2.010000e+00\t-1.247910e-10\t0.000000e+00\t1.196451e+04\t   nan    \t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no2_40V_it.txt",
+      "structure": {
+        "first_lines": [
+          "# Step \t    Time    \t  Current   \t  Voltage   \tAbsolute time\tTemperature \t",
+          "#   i  \t     s      \t     A      \t     V      \t     s      \t     C      \t",
+          "2022-11-21T23:42:02.534378",
+          "  0  \t0.000000e+00\t5.326350e-05\t4.000000e+01\t4.743478e+03\t   nan    \t",
+          "  1  \t4.930000e-01\t3.492399e-05\t4.000000e+01\t4.743971e+03\t   nan    \t",
+          "  2  \t9.870000e-01\t3.364213e-05\t4.000000e+01\t4.744465e+03\t   nan    \t",
+          "  3  \t1.487000e+00\t3.357088e-05\t4.000000e+01\t4.744965e+03\t   nan    \t",
+          "  4  \t1.980000e+00\t3.394893e-05\t4.000000e+01\t4.745458e+03\t   nan    \t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no2_40V_pt.txt",
+      "structure": {
+        "first_lines": [
+          "# Step \t    Time    \t  Current   \t  Voltage   \tAbsolute time\tTemperature \t",
+          "#   i  \t     s      \t     A      \t     V      \t     s      \t     C      \t",
+          "2022-11-21T23:41:57.755447",
+          "  0  \t0.000000e+00\t-3.641062e-11\t0.000000e+00\t1.528272e+04\t   nan    \t",
+          "  1  \t5.000000e-01\t-3.948304e-11\t0.000000e+00\t1.528322e+04\t   nan    \t",
+          "  2  \t9.900000e-01\t-4.050726e-11\t0.000000e+00\t1.528371e+04\t   nan    \t",
+          "  3  \t1.500000e+00\t-3.861066e-11\t0.000000e+00\t1.528422e+04\t   nan    \t",
+          "  4  \t1.990000e+00\t-4.282092e-11\t0.000000e+00\t1.528471e+04\t   nan    \t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no3_20v_it.txt",
+      "structure": {
+        "first_lines": [
+          "# Step \t    Time    \t  Current   \t  Voltage   \tAbsolute time\tTemperature \t",
+          "#   i  \t     s      \t     A      \t     V      \t     s      \t     C      \t",
+          "2022-11-16T20:35:50.233655",
+          "  0  \t0.000000e+00\t8.648141e-07\t2.000000e+01\t9.823586e+03\t   nan    \t",
+          "  1  \t5.000000e-01\t1.242436e-06\t2.000000e+01\t9.824086e+03\t   nan    \t",
+          "  2  \t1.000000e+00\t1.490319e-06\t2.000000e+01\t9.824586e+03\t   nan    \t",
+          "  3  \t1.500000e+00\t2.170513e-06\t2.000000e+01\t9.825086e+03\t   nan    \t",
+          "  4  \t1.997000e+00\t2.542582e-06\t2.000000e+01\t9.825583e+03\t   nan    \t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no3_20v_pt.txt",
+      "structure": {
+        "first_lines": [
+          "# Step \t    Time    \t  Current   \t  Voltage   \tAbsolute time\tTemperature \t",
+          "#   i  \t     s      \t     A      \t     V      \t     s      \t     C      \t",
+          "2022-11-16T20:35:45.693445",
+          "  0  \t0.000000e+00\t-1.271810e-10\t0.000000e+00\t9.821074e+03\t   nan    \t",
+          "  1  \t5.000000e-01\t-1.226292e-10\t0.000000e+00\t9.821574e+03\t   nan    \t",
+          "  2  \t1.001000e+00\t-1.342740e-10\t0.000000e+00\t9.822075e+03\t   nan    \t",
+          "  3  \t1.502000e+00\t-1.255876e-10\t0.000000e+00\t9.822576e+03\t   nan    \t",
+          "  4  \t1.999000e+00\t-1.215670e-10\t0.000000e+00\t9.823073e+03\t   nan    \t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no1_40V_it.txt",
+      "structure": {
+        "first_lines": [
+          "# Step \t    Time    \t  Current   \t  Voltage   \tAbsolute time\tTemperature \t",
+          "#   i  \t     s      \t     A      \t     V      \t     s      \t     C      \t",
+          "2022-11-21T22:22:14.422373",
+          "  0  \t0.000000e+00\t4.114716e-05\t4.000000e+01\t4.347656e+00\t   nan    \t",
+          "  1  \t4.179690e-01\t3.577039e-05\t4.000000e+01\t4.765625e+00\t   nan    \t",
+          "  2  \t9.179690e-01\t3.497275e-05\t4.000000e+01\t5.265625e+00\t   nan    \t",
+          "  3  \t1.422852e+00\t3.505736e-05\t4.000000e+01\t5.770508e+00\t   nan    \t",
+          "  4  \t1.919922e+00\t3.521259e-05\t4.000000e+01\t6.267578e+00\t   nan    \t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no1_40V_pt.txt",
+      "structure": {
+        "first_lines": [
+          "# Step \t    Time    \t  Current   \t  Voltage   \tAbsolute time\tTemperature \t",
+          "#   i  \t     s      \t     A      \t     V      \t     s      \t     C      \t",
+          "2022-11-21T22:22:02.173960",
+          "  0  \t0.000000e+00\t-8.742805e-11\t0.000000e+00\t1.053069e+04\t   nan    \t",
+          "  1  \t5.000000e-01\t-8.435562e-11\t0.000000e+00\t1.053119e+04\t   nan    \t",
+          "  2  \t1.000000e+00\t-8.503828e-11\t0.000000e+00\t1.053169e+04\t   nan    \t",
+          "  3  \t1.490000e+00\t-8.610063e-11\t0.000000e+00\t1.053218e+04\t   nan    \t",
+          "  4  \t1.990000e+00\t-8.469703e-11\t0.000000e+00\t1.053268e+04\t   nan    \t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no2_40V_it.txt",
+      "structure": {
+        "first_lines": [
+          "# Step \t    Time    \t  Current   \t  Voltage   \tAbsolute time\tTemperature \t",
+          "#   i  \t     s      \t     A      \t     V      \t     s      \t     C      \t",
+          "2023-01-13T22:15:02.650019",
+          "  0  \t0.000000e+00\t1.582595e-04\t4.000000e+01\t6.429234e+03\t   nan    \t",
+          "  1  \t1.750000e-01\t1.249395e-04\t4.000000e+01\t6.429409e+03\t   nan    \t",
+          "  2  \t3.560000e-01\t1.118049e-04\t4.000000e+01\t6.429590e+03\t   nan    \t",
+          "  3  \t6.190000e-01\t1.031768e-04\t4.000000e+01\t6.429853e+03\t   nan    \t",
+          "  4  \t9.290000e-01\t9.544301e-05\t4.000000e+01\t6.430163e+03\t   nan    \t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no2_40V_pt.txt",
+      "structure": {
+        "first_lines": [
+          "# Step \t    Time    \t  Current   \t  Voltage   \tAbsolute time\tTemperature \t",
+          "#   i  \t     s      \t     A      \t     V      \t     s      \t     C      \t",
+          "2023-01-13T22:14:56.205111",
+          "  0  \t0.000000e+00\t-2.641258e-10\t0.000000e+00\t6.469194e+03\t   nan    \t",
+          "  1  \t2.450000e-01\t-2.683297e-10\t0.000000e+00\t6.469439e+03\t   nan    \t",
+          "  2  \t4.910000e-01\t-2.599223e-10\t0.000000e+00\t6.469685e+03\t   nan    \t",
+          "  3  \t7.430000e-01\t-2.624447e-10\t0.000000e+00\t6.469937e+03\t   nan    \t",
+          "  4  \t9.930000e-01\t-2.536165e-10\t0.000000e+00\t6.470187e+03\t   nan    \t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no3_30V_it.txt",
+      "structure": {
+        "first_lines": [
+          "# Step \t    Time    \t  Current   \t  Voltage   \tAbsolute time\tTemperature \t",
+          "#   i  \t     s      \t     A      \t     V      \t     s      \t     C      \t",
+          "2022-11-16T18:03:57.252999",
+          "  0  \t0.000000e+00\t1.078187e-04\t3.000000e+01\t7.918545e+02\t   nan    \t",
+          "  1  \t4.287000e-01\t9.989855e-05\t3.000000e+01\t7.922832e+02\t   nan    \t",
+          "  2  \t8.496000e-01\t9.214911e-05\t3.000000e+01\t7.927041e+02\t   nan    \t",
+          "  3  \t1.346700e+00\t8.500194e-05\t3.000000e+01\t7.932012e+02\t   nan    \t",
+          "  4  \t1.844700e+00\t7.890182e-05\t3.000000e+01\t7.936992e+02\t   nan    \t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no3_30V_pt.txt",
+      "structure": {
+        "first_lines": [
+          "# Step \t    Time    \t  Current   \t  Voltage   \tAbsolute time\tTemperature \t",
+          "#   i  \t     s      \t     A      \t     V      \t     s      \t     C      \t",
+          "2022-11-16T18:03:54.238503",
+          "  0  \t0.000000e+00\t-1.697957e-10\t0.000000e+00\t7.844561e+02\t   nan    \t",
+          "  1  \t4.990000e-01\t-1.707440e-10\t0.000000e+00\t7.849551e+02\t   nan    \t",
+          "  2  \t9.990000e-01\t-1.727545e-10\t0.000000e+00\t7.854551e+02\t   nan    \t",
+          "  3  \t1.493100e+00\t-1.624361e-10\t0.000000e+00\t7.859492e+02\t   nan    \t",
+          "  4  \t1.997000e+00\t-1.711232e-10\t0.000000e+00\t7.864531e+02\t   nan    \t"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "text_or_instrument_native": 70,
+    "preserved_native": 3,
+    "TIFF": 16
+  },
+  "reader_limitations": [
+    {
+      "asset": "raw/Archive_Stretchable_LEC/Resistance Electrodes/Resistance Electrodes.opju",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Archive_Stretchable_LEC/Stretchable LEC.opju",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Archive_Stretchable_LEC/Supplementary/Rigid Reference LEC/Rigid Reference LEC.opju",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    }
+  ],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "CC BY 4.0",
+  "source_asset_bytes": 20256741,
+  "expanded_source_equivalent_bytes": 20256741,
+  "installed_folder_bytes": 20359326,
+  "source_asset_count": 90,
+  "asset_paths": [
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no1_20v_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no1_20v_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no2_40V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no2_40V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no3_20v_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/0wt% PU/0wt%_no3_20v_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no1_40V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no1_40V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no2_40V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no2_40V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no3_30V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no3_30V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no4_40V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no4_40V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no5_40V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no5_40V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no6_40V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no6_40V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no7_40V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/30wt% PU/30wt%_no7_40V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no1_25V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no1_25V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no2_25V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no2_25V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_15V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_15V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_25V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_25V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_30V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_30V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_35V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_35V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_40V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no3_40V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no4_20V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no4_20V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no5_20V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/50wt% PU/50wt%_no5_20V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no1_20V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no1_20V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_20V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_20V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_25V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_25V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_30V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_30V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_35V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_35V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_40V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_40V_it_2.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_40V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/70wt% PU/70wt%_no2_40V_pt_2.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Backlog_Statistic_Stretchable_LEC/Readme.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Resistance Electrodes/AgNW.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Resistance Electrodes/PEDOT_PSS.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Resistance Electrodes/PEDOT_PSS_AgNW.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Resistance Electrodes/Resistance Electrodes.opju",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Stretchable LEC.opju",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Stretchable LECs/0wt%_no1_20v_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Stretchable LECs/0wt%_no1_20v_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Stretchable LECs/0wt%_no2_40V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Stretchable LECs/0wt%_no2_40V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Stretchable LECs/30wt%_no1_40V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Stretchable LECs/30wt%_no1_40V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Stretchable LECs/30wt%_no2_40V_it.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Stretchable LECs/30wt%_no2_40V_pt.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Stretchable LECs/Readme.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/AgNW_0%Stretch.tif",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/AgNW_10%Stretch.tif",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/AgNW_20%Stretch.tif",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/AgNW_30%Stretch.tif",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/PEDOT_PSS_0%Stretch.tif",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/PEDOT_PSS_10%Stretch.tif",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/PEDOT_PSS_20%Stretch.tif",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/AFM images Electrodes/PEDOT_PSS_30%Stretch.tif",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/Rigid Reference LEC/0wt%_spray_5sw.csv",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/Rigid Reference LEC/30wt%_spray_5sw.csv",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/Rigid Reference LEC/50wt%_spray_5sw.csv",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/Rigid Reference LEC/70wt%_spray_5sw.csv",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/Rigid Reference LEC/Readme.txt",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/Rigid Reference LEC/Rigid Reference LEC.opju",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/AgNW_0%Stretch_1.41kx.tif",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/AgNW_10%Stretch_1.67kx.tif",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/AgNW_20%Stretch_1.46x.tif",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/AgNW_30%Stretch_1.25x.tif",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/PEDOT_PSS_0%Stretch_842x.tif",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/PEDOT_PSS_10%Stretch_1.03kx.tif",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/PEDOT_PSS_20%Stretch_1.15kx.tif",
+    "scenarios/64_electronics_stretchable_lec/raw/Archive_Stretchable_LEC/Supplementary/SEM images Electrodes/PEDOT_PSS_30%Stretch_1.25x.tif",
+    "scenarios/64_electronics_stretchable_lec/context/figshare.json"
+  ],
+  "local_folder": "scenarios/64_electronics_stretchable_lec",
+  "size_exception": false,
+  "modalities": [
+    "images",
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 20440418,
+  "expanded_release_folder_equivalent_bytes": 20440418
+}

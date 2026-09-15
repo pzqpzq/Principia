@@ -1,0 +1,216 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "55_materials_slag_printing",
+  "domain": "Construction materials",
+  "title": "CARBCOMN - Dataset of Early Research Outcomes - Mix Design of 3D-printable Mixes Based on Industrial Slags",
+  "publisher": "Lorika, Denis Ayena (Department of Structural Engineering and Building Materials, Ghent University, Ghent, Belgium)",
+  "authoritative_landing_url": "https://zenodo.org/records/17092152",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/17092152",
+    "https://zenodo.org/api/records/17092152/files/08.2025_Micro-CT%20data.xlsx/content",
+    "https://zenodo.org/api/records/17092152/files/08.2025_mixes_strength-results.xlsx/content",
+    "https://zenodo.org/api/records/17092152/files/08.2025_TGA.xlsx/content",
+    "https://zenodo.org/api/records/17092152/files/08.2025_Rheology%20tests.xlsx/content",
+    "https://zenodo.org/api/records/17092152/files/08.2025_CARBCOMN%20Dataset_Early-research%20results.pdf/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.17092152"
+  ],
+  "release_or_version": "17092152",
+  "retrieval_finalized_utc": "2026-09-15T07:04:33.189282+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Campaign dates unknown.",
+  "source_publication_date": "2025-09-10",
+  "source_created_utc": "2025-09-10T10:56:33.861035+00:00",
+  "source_updated_utc": "2025-09-10T10:56:34.436657+00:00",
+  "source_inventory": [
+    {
+      "name": "08.2025_Micro-CT data.xlsx",
+      "bytes": 32481947,
+      "selected": true
+    },
+    {
+      "name": "08.2025_mixes_strength-results.xlsx",
+      "bytes": 181119,
+      "selected": true
+    },
+    {
+      "name": "08.2025_TGA.xlsx",
+      "bytes": 567557,
+      "selected": true
+    },
+    {
+      "name": "08.2025_Rheology tests.xlsx",
+      "bytes": 1190858,
+      "selected": true
+    },
+    {
+      "name": "08.2025_CARBCOMN Dataset_Early-research results.pdf",
+      "bytes": 482116,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Original workbooks contain mix/strength, rheology, TGA and micro-CT descriptors. Micro-CT workbook is a derived product, not full voxel tomography.",
+  "known_analyses_and_limitations": "Group by formulation and specimen batch. Do not use derived strength predictors calculated from the response as independent inputs.",
+  "related_publications": [],
+  "independent_groups": "mixes and specimen batches",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-055",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-055",
+      "scenario_id": "55_materials_slag_printing",
+      "path": "raw/08.2025_Micro-CT data.xlsx",
+      "scenario_relative_path": "raw/08.2025_Micro-CT data.xlsx",
+      "bytes": 32481947,
+      "sha256": "1063a677f84ea0d52fe15a5cab123f4185e88fc9bdbee7a34da34cc33fd919a5",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17092152"
+      ],
+      "download_url": "https://zenodo.org/api/records/17092152/files/08.2025_Micro-CT%20data.xlsx/content",
+      "source_checksum": "md5:a2b3a252d606924b4edc4494382bd264",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:02.783316+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17092152"
+      ],
+      "citation_url": "https://zenodo.org/records/17092152",
+      "source_version": "17092152",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17092152",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-055",
+      "scenario_id": "55_materials_slag_printing",
+      "path": "raw/08.2025_mixes_strength-results.xlsx",
+      "scenario_relative_path": "raw/08.2025_mixes_strength-results.xlsx",
+      "bytes": 181119,
+      "sha256": "bfd01900019552a81c9f414c6d13d052dc8dcf06273631dbff58cf1b7934ebac",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17092152"
+      ],
+      "download_url": "https://zenodo.org/api/records/17092152/files/08.2025_mixes_strength-results.xlsx/content",
+      "source_checksum": "md5:ee7ca1f3de0690153faeb596bbbb3a64",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:18:01.720442+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17092152"
+      ],
+      "citation_url": "https://zenodo.org/records/17092152",
+      "source_version": "17092152",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17092152",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-055",
+      "scenario_id": "55_materials_slag_printing",
+      "path": "raw/08.2025_TGA.xlsx",
+      "scenario_relative_path": "raw/08.2025_TGA.xlsx",
+      "bytes": 567557,
+      "sha256": "2e7f5582b04457972e0c89554a785c27f07d44129af84bf38798934e418f8285",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17092152"
+      ],
+      "download_url": "https://zenodo.org/api/records/17092152/files/08.2025_TGA.xlsx/content",
+      "source_checksum": "md5:2d7da8111ca5c0f2c42c834b45bb7612",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:18:08.605252+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17092152"
+      ],
+      "citation_url": "https://zenodo.org/records/17092152",
+      "source_version": "17092152",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17092152",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-055",
+      "scenario_id": "55_materials_slag_printing",
+      "path": "raw/08.2025_Rheology tests.xlsx",
+      "scenario_relative_path": "raw/08.2025_Rheology tests.xlsx",
+      "bytes": 1190858,
+      "sha256": "7697c76bd1c02614a7ffddd1f261be7215e3a42aca2aba0262fa7138b9caac63",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17092152"
+      ],
+      "download_url": "https://zenodo.org/api/records/17092152/files/08.2025_Rheology%20tests.xlsx/content",
+      "source_checksum": "md5:b6b15d198e44628d16f51c7c41ba3426",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:18:16.807705+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17092152"
+      ],
+      "citation_url": "https://zenodo.org/records/17092152",
+      "source_version": "17092152",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17092152",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-055",
+      "scenario_id": "55_materials_slag_printing",
+      "path": "raw/08.2025_CARBCOMN Dataset_Early-research results.pdf",
+      "scenario_relative_path": "raw/08.2025_CARBCOMN Dataset_Early-research results.pdf",
+      "bytes": 482116,
+      "sha256": "23fc7b9716e5e0216f158463771c781dab6f95160c3fe0b6277cf5a91dbf07dd",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17092152"
+      ],
+      "download_url": "https://zenodo.org/api/records/17092152/files/08.2025_CARBCOMN%20Dataset_Early-research%20results.pdf/content",
+      "source_checksum": "md5:e5b67f4a2de956a4e1a5706296fda9f2",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:18:13.458727+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17092152"
+      ],
+      "citation_url": "https://zenodo.org/records/17092152",
+      "source_version": "17092152",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17092152",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-055",
+      "scenario_id": "55_materials_slag_printing",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 8584,
+      "sha256": "1087e2536ca0ba70f223aaa49574a6957f565f02798ddd815f87543287754441",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/17092152"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:40.967876+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17092152"
+      ],
+      "citation_url": "https://zenodo.org/records/17092152",
+      "source_version": "17092152",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "case_id": "P100-091",
+  "case_revision": 1,
+  "scenario_id": "91_communications_private_5g",
+  "title": "Measurement dataset and analysis code for \"Measurement-Driven Modeling of End-to-End Latency in an Indoor Private Standalone 5G Network\"",
+  "domain": "Private 5G networking",
+  "question": "How do location and traffic conditions affect latency distributions across repeated private-network tests?",
+  "data_origin": "measured_or_observed",
+  "source_version": "1.0.0",
+  "source_url": "https://researchdata.tuwien.ac.at/records/hja53-s8y18",
+  "identifiers": [
+    "10.48436/hja53-s8y18"
+  ],
+  "publisher": "[{'person_or_org': {'type': 'personal', 'name': 'Bodur, Osman', 'given_name': 'Osman', 'family_name': 'Bodur', 'identifiers': [{'identifier': '0000-0002-4102-8646', 'scheme': 'orcid'}]}, 'role': {'id': 'contactperson', 'title': {'ar': 'مسؤول الاتصال', 'cs': 'Kontaktní osoba', 'de': 'Kontaktperson', 'en': 'Contact person', 'es': 'Persona de contacto', 'sv': 'Kontaktperson'}}, 'affiliations': [{'name': 'TU Wien'}]}, {'person_or_org': {'type': 'personal', 'name': 'Çağlayan, Sami', 'given_name': 'Sami', 'family_name': 'Çağlayan'}, 'role': {'id': 'contactperson', 'title': {'ar': 'مسؤول الاتصال', 'cs': 'Kontaktní osoba', 'de': 'Kontaktperson', 'en': 'Contact person', 'es': 'Persona de contacto', 'sv': 'Kontaktperson'}}, 'affiliations': [{'id': '03ewx7v96', 'name': 'TOBB University of Economics and Technology', 'identifiers': [{'identifier': '03ewx7v96', 'scheme': 'ror'}, {'identifier': 'grid.412749.d', 'scheme': 'grid'}, {'identifier': '0000 0000 9058 8063', 'scheme': 'isni'}]}]}, {'person_or_org': {'type': 'personal', 'name': 'Demir, Neslihan', 'given_name': 'Neslihan', 'family_name': 'Demir', 'identifiers': [{'identifier': '0000-0001-8641-7787', 'scheme': 'orcid'}]}, 'role': {'id': 'contactperson', 'title': {'ar': 'مسؤول الاتصال', 'cs': 'Kontaktní osoba', 'de': 'Kontaktperson', 'en': 'Contact person', 'es': 'Persona de contacto', 'sv': 'Kontaktperson'}}, 'affiliations': [{'id': '00qsyw664', 'name': 'Istanbul Aydın University', 'identifiers': [{'identifier': '00qsyw664', 'scheme': 'ror'}, {'identifier': 'grid.449300.a', 'scheme': 'grid'}, {'identifier': '0000 0004 0403 6369', 'scheme': 'isni'}]}]}, {'person_or_org': {'type': 'personal', 'name': 'Poszvek, Günther', 'given_name': 'Günther', 'family_name': 'Poszvek', 'identifiers': [{'identifier': '0000-0001-8435-564X', 'scheme': 'orcid'}]}, 'role': {'id': 'contactperson', 'title': {'ar': 'مسؤول الاتصال', 'cs': 'Kontaktní osoba', 'de': 'Kontaktperson', 'en': 'Contact person', 'es': 'Persona de contacto', 'sv': 'Kontaktperson'}}, 'affiliations': [{'name': 'TU Wien'}]}, {'person_or_org': {'type': 'personal', 'name': 'Bleicher, Friedrich', 'given_name': 'Friedrich', 'family_name': 'Bleicher', 'identifiers': [{'identifier': '0000-0003-3429-867X', 'scheme': 'orcid'}]}, 'role': {'id': 'contactperson', 'title': {'ar': 'مسؤول الاتصال', 'cs': 'Kontaktní osoba', 'de': 'Kontaktperson', 'en': 'Contact person', 'es': 'Persona de contacto', 'sv': 'Kontaktperson'}}, 'affiliations': [{'name': 'TU Wien'}]}]",
+  "release_date": "2026-09-01",
+  "measurement_dates": "June 3–July 3, 2025; dataset released September 2026.",
+  "variables_and_units": "latency, throughput, target rate and raw iPerf logs",
+  "independent_units": "location and complete run, invalid clocks retained",
+  "validation_design": "location and complete run, invalid clocks retained Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "All 245 raw runs and source processed tables/code. Three invalid one-way-delay runs are retained and flagged; processed tables replace them with cell means.",
+  "prior_analysis_and_limits": "Hold out locations or whole runs. Fit against achieved throughput, not only target rate. Raw and imputed versions must not be mixed without disclosure. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/code.zip!/code/LICENSE-MIT.txt",
+      "structure": {
+        "first_lines": [
+          "MIT License",
+          "",
+          "Copyright (c) 2026 Osman Bodur, Sami Çağlayan, Neslihan Demir, Günther Poszvek,",
+          "Friedrich Bleicher",
+          "",
+          "Permission is hereby granted, free of charge, to any person obtaining a copy",
+          "of this software and associated documentation files (the \"Software\"), to deal",
+          "in the Software without restriction, including without limitation the rights"
+        ]
+      }
+    },
+    {
+      "asset": "raw/code.zip!/code/python/requirements.txt",
+      "structure": {
+        "first_lines": [
+          "# Dependencies for the Python verification scripts.",
+          "#",
+          "# NumPy is the only third-party dependency; everything else comes from the",
+          "# Python standard library. The scripts were developed and tested with",
+          "# Python 3.14.6 under Windows 11, using both NumPy 2.4.6 and NumPy 2.5.2.",
+          "# Results agree between the two NumPy versions to at least six significant",
+          "# figures.",
+          "#"
+        ]
+      }
+    },
+    {
+      "asset": "raw/raw_latency_logs.zip!/latency/k4_latency_100M_1.txt",
+      "structure": {
+        "first_lines": [
+          "------------------------------------------------------------",
+          "Client connecting to 192.168.78.27, UDP port 5201 with pid 14276 (1/0 flows/load)",
+          "TOS defaults to 0x0 (dscp=0,ecn=0) (Nagle on)",
+          "Sending 1470 byte datagrams, IPG target: 0.00 us (kalman adjust)",
+          "UDP buffer size: 64.0 KByte (default)",
+          "------------------------------------------------------------",
+          "[  1] local 128.130.104.39 port 52186 connected with 192.168.78.27 port 5201 on 2025-07-02 16:47:54.566 (Bat� Avrupa Yaz Saati)",
+          "[ ID] Interval        Transfer     Bandwidth      Write/Err/Timeo  PPS"
+        ]
+      }
+    },
+    {
+      "asset": "raw/raw_latency_logs.zip!/latency/k4_latency_100M_2.txt",
+      "structure": {
+        "first_lines": [
+          "------------------------------------------------------------",
+          "Client connecting to 192.168.78.27, UDP port 5201 with pid 7144 (1/0 flows/load)",
+          "TOS defaults to 0x0 (dscp=0,ecn=0) (Nagle on)",
+          "Sending 1470 byte datagrams, IPG target: 0.00 us (kalman adjust)",
+          "UDP buffer size: 64.0 KByte (default)",
+          "------------------------------------------------------------",
+          "[  1] local 128.130.104.39 port 61987 connected with 192.168.78.27 port 5201 on 2025-07-02 16:49:21.830 (Bat� Avrupa Yaz Saati)",
+          "[ ID] Interval        Transfer     Bandwidth      Write/Err/Timeo  PPS"
+        ]
+      }
+    },
+    {
+      "asset": "raw/raw_latency_logs.zip!/latency/k4_latency_100M_3.txt",
+      "structure": {
+        "first_lines": [
+          "------------------------------------------------------------",
+          "Client connecting to 192.168.78.27, UDP port 5201 with pid 22224 (1/0 flows/load)",
+          "TOS defaults to 0x0 (dscp=0,ecn=0) (Nagle on)",
+          "Sending 1470 byte datagrams, IPG target: 0.00 us (kalman adjust)",
+          "UDP buffer size: 64.0 KByte (default)",
+          "------------------------------------------------------------",
+          "[  1] local 128.130.104.39 port 62855 connected with 192.168.78.27 port 5201 on 2025-07-02 16:52:24.029 (Bat� Avrupa Yaz Saati)",
+          "[ ID] Interval        Transfer     Bandwidth      Write/Err/Timeo  PPS"
+        ]
+      }
+    },
+    {
+      "asset": "raw/raw_latency_logs.zip!/latency/k4_latency_100M_4.txt",
+      "structure": {
+        "first_lines": [
+          "------------------------------------------------------------",
+          "Client connecting to 192.168.78.27, UDP port 5201 with pid 20548 (1/0 flows/load)",
+          "TOS defaults to 0x0 (dscp=0,ecn=0) (Nagle on)",
+          "Sending 1470 byte datagrams, IPG target: 0.00 us (kalman adjust)",
+          "UDP buffer size: 64.0 KByte (default)",
+          "------------------------------------------------------------",
+          "[  1] local 128.130.104.39 port 62856 connected with 192.168.78.27 port 5201 on 2025-07-02 16:53:53.175 (Bat� Avrupa Yaz Saati)",
+          "[ ID] Interval        Transfer     Bandwidth      Write/Err/Timeo  PPS"
+        ]
+      }
+    },
+    {
+      "asset": "raw/raw_latency_logs.zip!/latency/k4_latency_100M_5.txt",
+      "structure": {
+        "first_lines": [
+          "------------------------------------------------------------",
+          "Client connecting to 192.168.78.27, UDP port 5201 with pid 21772 (1/0 flows/load)",
+          "TOS defaults to 0x0 (dscp=0,ecn=0) (Nagle on)",
+          "Sending 1470 byte datagrams, IPG target: 0.00 us (kalman adjust)",
+          "UDP buffer size: 64.0 KByte (default)",
+          "------------------------------------------------------------",
+          "[  1] local 128.130.104.39 port 50743 connected with 192.168.78.27 port 5201 on 2025-07-02 16:55:18.274 (Bat� Avrupa Yaz Saati)",
+          "[ ID] Interval        Transfer     Bandwidth      Write/Err/Timeo  PPS"
+        ]
+      }
+    },
+    {
+      "asset": "raw/raw_latency_logs.zip!/latency/k4_latency_10M_1.txt",
+      "structure": {
+        "first_lines": [
+          "------------------------------------------------------------",
+          "Client connecting to 192.168.78.27, UDP port 5201 with pid 21612 (1/0 flows/load)",
+          "TOS defaults to 0x0 (dscp=0,ecn=0) (Nagle on)",
+          "Sending 1470 byte datagrams, IPG target: 0.00 us (kalman adjust)",
+          "UDP buffer size: 64.0 KByte (default)",
+          "------------------------------------------------------------",
+          "[  1] local 128.130.104.39 port 56743 connected with 192.168.78.27 port 5201 on 2025-07-02 16:26:45.431 (Bat� Avrupa Yaz Saati)",
+          "[ ID] Interval        Transfer     Bandwidth      Write/Err/Timeo  PPS"
+        ]
+      }
+    },
+    {
+      "asset": "raw/raw_latency_logs.zip!/latency/k4_latency_10M_2.txt",
+      "structure": {
+        "first_lines": [
+          "------------------------------------------------------------",
+          "Client connecting to 192.168.78.27, UDP port 5201 with pid 7912 (1/0 flows/load)",
+          "TOS defaults to 0x0 (dscp=0,ecn=0) (Nagle on)",
+          "Sending 1470 byte datagrams, IPG target: 0.00 us (kalman adjust)",
+          "UDP buffer size: 64.0 KByte (default)",
+          "------------------------------------------------------------",
+          "[  1] local 128.130.104.39 port 63341 connected with 192.168.78.27 port 5201 on 2025-07-02 16:28:17.169 (Bat� Avrupa Yaz Saati)",
+          "[ ID] Interval        Transfer     Bandwidth      Write/Err/Timeo  PPS"
+        ]
+      }
+    },
+    {
+      "asset": "raw/raw_latency_logs.zip!/latency/k4_latency_10M_3.txt",
+      "structure": {
+        "first_lines": [
+          "------------------------------------------------------------",
+          "Client connecting to 192.168.78.27, UDP port 5201 with pid 8740 (1/0 flows/load)",
+          "TOS defaults to 0x0 (dscp=0,ecn=0) (Nagle on)",
+          "Sending 1470 byte datagrams, IPG target: 0.00 us (kalman adjust)",
+          "UDP buffer size: 64.0 KByte (default)",
+          "------------------------------------------------------------",
+          "[  1] local 128.130.104.39 port 61590 connected with 192.168.78.27 port 5201 on 2025-07-02 16:31:31.640 (Bat� Avrupa Yaz Saati)",
+          "[ ID] Interval        Transfer     Bandwidth      Write/Err/Timeo  PPS"
+        ]
+      }
+    },
+    {
+      "asset": "raw/raw_latency_logs.zip!/latency/k4_latency_10M_4.txt",
+      "structure": {
+        "first_lines": [
+          "------------------------------------------------------------",
+          "Client connecting to 192.168.78.27, UDP port 5201 with pid 14588 (1/0 flows/load)",
+          "TOS defaults to 0x0 (dscp=0,ecn=0) (Nagle on)",
+          "Sending 1470 byte datagrams, IPG target: 0.00 us (kalman adjust)",
+          "UDP buffer size: 64.0 KByte (default)",
+          "------------------------------------------------------------",
+          "[  1] local 128.130.104.39 port 49952 connected with 192.168.78.27 port 5201 on 2025-07-02 16:32:50.928 (Bat� Avrupa Yaz Saati)",
+          "[ ID] Interval        Transfer     Bandwidth      Write/Err/Timeo  PPS"
+        ]
+      }
+    },
+    {
+      "asset": "raw/raw_latency_logs.zip!/latency/k4_latency_10M_5.txt",
+      "structure": {
+        "first_lines": [
+          "------------------------------------------------------------",
+          "Client connecting to 192.168.78.27, UDP port 5201 with pid 19060 (1/0 flows/load)",
+          "TOS defaults to 0x0 (dscp=0,ecn=0) (Nagle on)",
+          "Sending 1470 byte datagrams, IPG target: 0.00 us (kalman adjust)",
+          "UDP buffer size: 64.0 KByte (default)",
+          "------------------------------------------------------------",
+          "[  1] local 128.130.104.39 port 61103 connected with 192.168.78.27 port 5201 on 2025-07-02 16:34:30.574 (Bat� Avrupa Yaz Saati)",
+          "[ ID] Interval        Transfer     Bandwidth      Write/Err/Timeo  PPS"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "ZIP": 4,
+    "text_or_instrument_native": 282
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0; mit",
+  "source_asset_bytes": 477642,
+  "expanded_source_equivalent_bytes": 2708255,
+  "installed_folder_bytes": 509420,
+  "source_asset_count": 7,
+  "asset_paths": [
+    "scenarios/91_communications_private_5g/raw/raw_throughput_logs.zip",
+    "scenarios/91_communications_private_5g/raw/code.zip",
+    "scenarios/91_communications_private_5g/raw/raw_latency_logs.zip",
+    "scenarios/91_communications_private_5g/raw/data.zip",
+    "scenarios/91_communications_private_5g/raw/LICENSE.md",
+    "scenarios/91_communications_private_5g/raw/README.md",
+    "scenarios/91_communications_private_5g/context/SOURCE_FACTS.json"
+  ],
+  "local_folder": "scenarios/91_communications_private_5g",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 493750,
+  "expanded_release_folder_equivalent_bytes": 2724363
+}

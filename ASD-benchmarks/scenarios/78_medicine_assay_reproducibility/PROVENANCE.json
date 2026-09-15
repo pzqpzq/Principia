@@ -1,0 +1,92 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "78_medicine_assay_reproducibility",
+  "domain": "Preclinical reproducibility",
+  "title": "Data for study \"A Multicenter Study to Standardize a Mouse Pneumonia Model with Pseudomonas aeruginosa and Klebsiella pneumoniae for Antibiotic Development\"",
+  "publisher": "Hansen, Jon Ulf (Statens Serum Institut); Arrazuria, Rakel (Paul-Ehrlich-Institut, Federal Institute for Vaccines and Biomedicines); Hoover, Jennifer (GSK); Kerscher, Bernhard (Paul-Ehrlich-Institut, Federal Institute for Vaccines and Biomedicines); Huseby, Douglas (Uppsala University); Sordello, Sylvie (Infectious Diseases, Evotec); Gribbon, Philip (Fraunhofer Institute for Translational Medicine and Pharmacology (ITMP)); Gadiya, Yojana (Fraunhofer Society); von Berlin, Leonie (Fraunhofer Institute for Translational Medicine and Pharmacology (ITMP)); Witt, Gesa (Fraunhofer Institute for Translational Medicine and Pharmacology (ITMP)); Tassi, Natália (Paul-Ehrlich-Institut, Federal Institute for Vaccines and Biomedicines); Rosenborg, Frederikke (Statens Serum Institut); Cao, Sha (Uppsala University); Bekeredjian-Ding, Isabelle (Philipps University of Marburg); Lindahl, Otto (Uppsala University); Hughes, Diarmaid (Uppsala University); Friberg, Lena (Uppsala University); Vingsbo Lundberg, Carina (Statens Serum Institut)",
+  "authoritative_landing_url": "https://zenodo.org/records/15124940",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/15124940",
+    "https://zenodo.org/api/records/15124940/files/standard_model_data_V1.0.zip/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.15124940"
+  ],
+  "release_or_version": "15124940",
+  "retrieval_finalized_utc": "2026-09-15T07:04:40.953876+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Campaign dates unknown; April 2025 deposit.",
+  "source_publication_date": "2025-04-02",
+  "source_created_utc": "2025-04-04T18:42:53.056424+00:00",
+  "source_updated_utc": "2025-11-21T10:20:43.256855+00:00",
+  "source_inventory": [
+    {
+      "name": "standard_model_data_V1.0.zip",
+      "bytes": 7147342,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Forty-nine source workbooks: GSK, PEI and SSI experiments plus overview, including unsuccessful runs.",
+  "known_analyses_and_limitations": "Leave out laboratories or whole runs, with calibration standards treated explicitly. Preclinical assay validity does not establish clinical efficacy.",
+  "related_publications": [],
+  "independent_groups": "laboratory and entire assay run, retaining failed runs",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-078",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-078",
+      "scenario_id": "78_medicine_assay_reproducibility",
+      "path": "raw/standard_model_data_V1.0.zip",
+      "scenario_relative_path": "raw/standard_model_data_V1.0.zip",
+      "bytes": 7147342,
+      "sha256": "17fe9e015f8818627ebecbdc686a3ab0ffa20f3126ef1c1ce53d18ad57af70b4",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/15124940"
+      ],
+      "download_url": "https://zenodo.org/api/records/15124940/files/standard_model_data_V1.0.zip/content",
+      "source_checksum": "md5:36174ca4f67a70105230ec474890d0e3",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:33:36.549959+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.15124940"
+      ],
+      "citation_url": "https://zenodo.org/records/15124940",
+      "source_version": "15124940",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15124940",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-078",
+      "scenario_id": "78_medicine_assay_reproducibility",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 11252,
+      "sha256": "0afd436cba4b3466baf9b1b1fccaa217ee9824a96777a5b5b1e1cf66d27f701f",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/15124940"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:46.397481+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15124940"
+      ],
+      "citation_url": "https://zenodo.org/records/15124940",
+      "source_version": "15124940",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

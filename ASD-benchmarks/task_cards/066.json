@@ -1,0 +1,375 @@
+{
+  "case_id": "P100-066",
+  "case_revision": 1,
+  "scenario_id": "66_chemistry_mof_hydrogen",
+  "title": "Replication Data for : Boosting hydrogen storage and release in MOF-5 / graphite hybrids via in situ synthesis",
+  "domain": "Hydrogen storage",
+  "question": "How does graphite loading affect adsorption/release response across gases, temperature and cycles?",
+  "data_origin": "measured_or_observed",
+  "source_version": "1.0",
+  "source_url": "https://doi.org/10.57745/KR8BIW",
+  "identifiers": [
+    "doi:10.57745/KR8BIW"
+  ],
+  "publisher": "[{'authorName': {'typeName': 'authorName', 'multiple': False, 'typeClass': 'primitive', 'value': 'Jimenez Lopez, Laura'}, 'authorAffiliation': {'typeName': 'authorAffiliation', 'multiple': False, 'typeClass': 'primitive', 'value': 'IJL ; Université de Lorraine, CNRS ; France'}, 'authorIdentifierScheme': {'typeName': 'authorIdentifierScheme', 'multiple': False, 'typeClass': 'controlledVocabulary', 'value': 'ORCID'}, 'authorIdentifier': {'typeName': 'authorIdentifier', 'multiple': False, 'typeClass': 'primitive', 'value': '0000-0002-5525-1953'}}, {'authorName': {'typeName': 'authorName', 'multiple': False, 'typeClass': 'primitive', 'value': 'Morales Ospino, Rafael'}, 'authorAffiliation': {'typeName': 'authorAffiliation', 'multiple': False, 'typeClass': 'primitive', 'value': 'IJL ; Université de Lorraine, CNRS ; France'}, 'authorIdentifierScheme': {'typeName': 'authorIdentifierScheme', 'multiple': False, 'typeClass': 'controlledVocabulary', 'value': 'ORCID'}, 'authorIdentifier': {'typeName': 'authorIdentifier', 'multiple': False, 'typeClass': 'primitive', 'value': '0000-0002-9763-9067'}}, {'authorName': {'typeName': 'authorName', 'multiple': False, 'typeClass': 'primitive', 'value': 'Sumbhaniya, Haroon Osman'}, 'authorAffiliation': {'typeName': 'authorAffiliation', 'multiple': False, 'typeClass': 'primitive', 'value': 'IJL ; Université de Lorraine, CNRS ; France'}, 'authorIdentifierScheme': {'typeName': 'authorIdentifierScheme', 'multiple': False, 'typeClass': 'controlledVocabulary', 'value': 'ORCID'}, 'authorIdentifier': {'typeName': 'authorIdentifier', 'multiple': False, 'typeClass': 'primitive', 'value': '0000-0002-0076-9771'}}, {'authorName': {'typeName': 'authorName', 'multiple': False, 'typeClass': 'primitive', 'value': 'Castro Gutierrez, Jimena'}, 'authorAffiliation': {'typeName': 'authorAffiliation', 'multiple': False, 'typeClass': 'primitive', 'value': 'IJL ; Université de Lorraine, CNRS ; France'}, 'authorIdentifierScheme': {'typeName': 'authorIdentifierScheme', 'multiple': False, 'typeClass': 'controlledVocabulary', 'value': 'ORCID'}, 'authorIdentifier': {'typeName': 'authorIdentifier', 'multiple': False, 'typeClass': 'primitive', 'value': '0000-0002-6319-2498'}}, {'authorName': {'typeName': 'authorName', 'multiple': False, 'typeClass': 'primitive', 'value': 'Sdanghi, Giuseppe'}, 'authorAffiliation': {'typeName': 'authorAffiliation', 'multiple': False, 'typeClass': 'primitive', 'value': 'LEMTA ; Université de Lorraine, CNRS ; France'}, 'authorIdentifierScheme': {'typeName': 'authorIdentifierScheme', 'multiple': False, 'typeClass': 'controlledVocabulary', 'value': 'ORCID'}, 'authorIdentifier': {'typeName': 'authorIdentifier', 'multiple': False, 'typeClass': 'primitive', 'value': '0000-0003-4479-4220'}}, {'authorName': {'typeName': 'authorName', 'multiple': False, 'typeClass': 'primitive', 'value': 'Dalí, Sergio García'}, 'authorAffiliation': {'typeName': 'authorAffiliation', 'multiple': False, 'typeClass': 'primitive', 'value': 'IJL ; Université de Lorraine, CNRS ; France'}, 'authorIdentifierScheme': {'typeName': 'authorIdentifierScheme', 'multiple': False, 'typeClass': 'controlledVocabulary', 'value': 'ORCID'}, 'authorIdentifier': {'typeName': 'authorIdentifier', 'multiple': False, 'typeClass': 'primitive', 'value': '0000-0002-0042-0430'}}, {'authorName': {'typeName': 'authorName', 'multiple': False, 'typeClass': 'primitive', 'value': 'Fierro, Vanessa'}, 'authorAffiliation': {'typeName': 'authorAffiliation', 'multiple': False, 'typeClass': 'primitive', 'value': 'IJL ; Université de Lorraine, CNRS ; France'}, 'authorIdentifierScheme': {'typeName': 'authorIdentifierScheme', 'multiple': False, 'typeClass': 'controlledVocabulary', 'value': 'ORCID'}, 'authorIdentifier': {'typeName': 'authorIdentifier', 'multiple': False, 'typeClass': 'primitive', 'value': '0000-0001-7081-3697'}}, {'authorName': {'typeName': 'authorName', 'multiple': False, 'typeClass': 'primitive', 'value': 'Celzard, Alain'}, 'authorAffiliation': {'typeName': 'authorAffiliation', 'multiple': False, 'typeClass': 'primitive', 'value': 'IJL ; Université de Lorraine, CNRS ; France ; IUF, France'}, 'authorIdentifierScheme': {'typeName': 'authorIdentifierScheme', 'multiple': False, 'typeClass': 'controlledVocabulary', 'value': 'ORCID'}, 'authorIdentifier': {'typeName': 'authorIdentifier', 'multiple': False, 'typeClass': 'primitive', 'value': '0000-0003-0073-9545'}}]",
+  "release_date": "2026-09-10",
+  "measurement_dates": "Campaign dates unknown; source study is from 2025 and dataset release September 2026.",
+  "variables_and_units": "gas pressure, adsorption, thermal/spectral response and microscopy",
+  "independent_units": "material formulation, temperature and adsorption cycle",
+  "validation_design": "material formulation, temperature and adsorption cycle Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Original CSVs, spectroscopy, micrographs and README. Dataverse TAB checksums apply to ingested tables, not the retained original CSV bytes.",
+  "prior_analysis_and_limits": "Group formulation, specimen and complete adsorption cycles. Distinguish pore descriptors derived from adsorption from independently measured responses. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/AR--MOF-5 +10%EG.csv",
+      "structure": {
+        "header": [
+          "Relative pressure Adsorption (p/p) ",
+          "Quantity Adsorbed (cm3 g-1 STP) ",
+          "Relative pressure Desorption (p/p) ",
+          "Quantity Desorbed (cm3 g-1 STP)"
+        ],
+        "data_records": 59,
+        "first_lines": [
+          "Relative pressure Adsorption (p/p) ,Quantity Adsorbed (cm3 g-1 STP) ,Relative pressure Desorption (p/p) ,Quantity Desorbed (cm3 g-1 STP)",
+          "0.00002,6.40768,0.98707,604.03443",
+          "0.00007,12.77290,0.96041,590.13765",
+          "0.00019,19.05549,0.93109,575.21261",
+          "0.00038,25.24700,0.90670,566.25740",
+          "0.00064,31.35994,0.88424,560.72462",
+          "0.00096,37.39259,0.85848,556.11176",
+          "0.00135,43.34000,0.83263,552.51397"
+        ]
+      }
+    },
+    {
+      "asset": "raw/AR--MOF-5 +1%EG.csv",
+      "structure": {
+        "header": [
+          "Relative pressure Adsorption (p/p) ",
+          "Quantity Adsorbed (cm3 g-1 STP) ",
+          "Relative pressure Desorption (p/p) ",
+          "Quantity Desorbed (cm3 g-1 STP)"
+        ],
+        "data_records": 72,
+        "first_lines": [
+          "Relative pressure Adsorption (p/p) ,Quantity Adsorbed (cm3 g-1 STP) ,Relative pressure Desorption (p/p) ,Quantity Desorbed (cm3 g-1 STP)",
+          "0.000040400,6.135007664,0.988476884,990.300562000",
+          "0.000116000,11.806142150,0.954310528,979.580719400",
+          "0.000209000,17.126270370,0.923211911,971.670339600",
+          "0.000317000,22.442367020,0.901815073,967.547248900",
+          "0.000445000,28.043654660,0.881239078,964.805399300",
+          "0.000602000,34.108001260,0.856459447,961.504451300",
+          "0.000776000,40.130701360,0.850311761,960.019294000"
+        ]
+      }
+    },
+    {
+      "asset": "raw/AR--MOF-5 +5%EG.csv",
+      "structure": {
+        "header": [
+          "Relative pressure Adsorption (p/p) ",
+          "Quantity Adsorbed (cm3 g-1 STP) ",
+          "Relative pressure Desorption (p/p) ",
+          "Quantity Desorbed (cm3 g-1 STP)"
+        ],
+        "data_records": 70,
+        "first_lines": [
+          "Relative pressure Adsorption (p/p) ,Quantity Adsorbed (cm3 g-1 STP) ,Relative pressure Desorption (p/p) ,Quantity Desorbed (cm3 g-1 STP)",
+          "0.000109,5.794941,0.988013,1018.234681",
+          "0.000225,11.373969,0.961617,1004.370635",
+          "0.000366,17.387265,0.931344,990.660442",
+          "0.000521,23.383102,0.905040,984.050467",
+          "0.000692,29.358186,0.882823,980.547542",
+          "0.000882,35.312632,0.857727,977.115382",
+          "0.001090,41.241187,0.850612,976.023697"
+        ]
+      }
+    },
+    {
+      "asset": "raw/AR--MOF-5 .csv",
+      "structure": {
+        "header": [
+          "Relative pressure Adsorption (p/p) ",
+          "Quantity Adsorbed (cm3 g-1 STP) ",
+          "Relative pressure Desorption (p/p) ",
+          "Quantity Desorbed (cm3 g-1 STP)"
+        ],
+        "data_records": 74,
+        "first_lines": [
+          "Relative pressure Adsorption (p/p) ,Quantity Adsorbed (cm3 g-1 STP) ,Relative pressure Desorption (p/p) ,Quantity Desorbed (cm3 g-1 STP)",
+          "0.000014900,6.205269611,0.990812282,884.678186100",
+          "0.000041200,12.313845600,0.954672562,876.640720500",
+          "0.000079700,18.280376910,0.921643147,873.533520500",
+          "0.000134000,24.114011020,0.900436401,872.700872500",
+          "0.000205000,29.831504370,0.880303473,872.239895000",
+          "0.000292000,35.469624560,0.855106233,871.827371600",
+          "0.000398000,41.092083870,0.830363545,871.142558100"
+        ]
+      }
+    },
+    {
+      "asset": "raw/CILE1-EXCESS H2 MOF-5+5%EG.csv",
+      "structure": {
+        "header": [
+          "Pressure adsorption (bar)",
+          "Excess H2 adsorbed (wt.%)",
+          "Pressure desorption (bar)",
+          "Excess H2 desorbed (wt.%)"
+        ],
+        "data_records": 14,
+        "first_lines": [
+          "Pressure adsorption (bar),Excess H2 adsorbed (wt.%),Pressure desorption (bar),Excess H2 desorbed (wt.%)",
+          "0.127000,0.251550,126.924020,3.863480",
+          "1.259960,1.389370,122.679320,3.964350",
+          "3.210760,2.436340,107.732310,4.207110",
+          "5.390940,3.193320,86.587860,4.599840",
+          "9.179370,4.022310,63.643650,4.927780",
+          "14.926620,4.697690,45.664200,5.212170",
+          "24.951100,5.216990,,"
+        ]
+      }
+    },
+    {
+      "asset": "raw/CILE2-EXCESS H2 MOF-5+5%EG.csv",
+      "structure": {
+        "header": [
+          "Pressure adsorption (bar)",
+          "Excess H2 adsorbed (wt.%)",
+          "Pressure desorption (bar)",
+          "Excess H2 desorbed (wt.%)"
+        ],
+        "data_records": 14,
+        "first_lines": [
+          "Pressure adsorption (bar),Excess H2 adsorbed (wt.%),Pressure desorption (bar),Excess H2 desorbed (wt.%)",
+          "0.12600,0.24967,127.33245,3.84712",
+          "1.26345,1.40123,123.11234,3.97845",
+          "3.22456,2.45321,107.99876,4.18765",
+          "5.41234,3.22456,86.77654,4.62345",
+          "9.11234,4.08765,63.88765,4.91234",
+          "14.99876,4.72345,45.77654,5.18765",
+          "24.88765,5.24321,,"
+        ]
+      }
+    },
+    {
+      "asset": "raw/CILE3-EXCESS H2 MOF-5+5%EG.csv",
+      "structure": {
+        "header": [
+          "Pressure adsorption (bar)",
+          "Excess H2 adsorbed (wt.%)",
+          "Pressure desorption (bar)",
+          "Excess H2 desorbed (wt.%)"
+        ],
+        "data_records": 14,
+        "first_lines": [
+          "Pressure adsorption (bar),Excess H2 adsorbed (wt.%),Pressure desorption (bar),Excess H2 desorbed (wt.%)",
+          "0.131000,0.247830,127.112340,3.891240",
+          "1.243210,1.423450,122.334560,4.012340",
+          "3.287650,2.387650,108.998760,4.156780",
+          "5.376540,3.312340,86.776540,4.687650",
+          "9.112340,4.187650,64.112340,4.876540",
+          "14.876540,4.812340,45.887650,5.312340",
+          "24.887650,5.187650,,"
+        ]
+      }
+    },
+    {
+      "asset": "raw/DTG--MOF-5 + 10%EG.csv",
+      "structure": {
+        "header": [
+          "Temperature (K) ",
+          "Mass loss (wt.%)"
+        ],
+        "data_records": 176,
+        "first_lines": [
+          "Temperature (K) ,Mass loss (wt.%)",
+          "301.94800,-0.06240",
+          "306.94800,-0.19907",
+          "311.94800,-0.17284",
+          "316.94800,-0.10885",
+          "321.94800,-0.11516",
+          "326.94800,-0.09285",
+          "331.94800,-0.04510"
+        ]
+      }
+    },
+    {
+      "asset": "raw/DTG--MOF-5 + 1%EG.csv",
+      "structure": {
+        "header": [
+          "Temperature (K) ",
+          "Mass loss (wt.%)"
+        ],
+        "data_records": 176,
+        "first_lines": [
+          "Temperature (K) ,Mass loss (wt.%)",
+          "293.499,-0.24513",
+          "298.499,-0.023532",
+          "303.499,0.13073",
+          "308.499,0.19299",
+          "313.499,0.19356",
+          "318.499,0.13862",
+          "323.499,0.16731"
+        ]
+      }
+    },
+    {
+      "asset": "raw/DTG--MOF-5 + 5%EG.csv",
+      "structure": {
+        "header": [
+          "Temperature (K) ",
+          "Mass loss (wt.%)"
+        ],
+        "data_records": 176,
+        "first_lines": [
+          "Temperature (K) ,Mass loss (wt.%)",
+          "293.2900,-0.2625",
+          "298.2900,-0.1980",
+          "303.2900,-0.1518",
+          "308.2900,-0.1084",
+          "313.2900,-0.1159",
+          "318.2900,-0.1037",
+          "323.2900,-0.0769"
+        ]
+      }
+    },
+    {
+      "asset": "raw/DTG--MOF-5.csv",
+      "structure": {
+        "header": [
+          "Temperature (K) ",
+          "Mass loss (wt.%)"
+        ],
+        "data_records": 175,
+        "first_lines": [
+          "Temperature (K) ,Mass loss (wt.%)",
+          "300.3,-0.55576",
+          "305.3,-0.1673",
+          "310.3,-0.11066",
+          "315.3,-0.081942",
+          "320.3,-0.11365",
+          "325.3,-0.12737",
+          "330.3,-0.071839"
+        ]
+      }
+    },
+    {
+      "asset": "raw/EXCESS H2 160 K-- MOF-5 + 10%EG.csv",
+      "structure": {
+        "header": [
+          "Pressure adsorbed (bar)",
+          " H2 adsorbed (wt.%)",
+          "Pressure desorbed (bar)",
+          " H2 desorbed (wt.%)"
+        ],
+        "data_records": 13,
+        "first_lines": [
+          "Pressure adsorbed (bar), H2 adsorbed (wt.%),Pressure desorbed (bar), H2 desorbed (wt.%)",
+          "0.41,0.02102,133.94811,1.62435",
+          "2.80892,0.13534,125.77456,1.60813",
+          "5.49666,0.24692,105.71739,1.53762",
+          "7.88599,0.33673,79.13101,1.4194",
+          "12.87664,0.49191,51.35811,1.17718",
+          "19.89171,0.68318,31.74058,0.9021",
+          "32.16133,0.93036,,"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "PDF": 1,
+    "text_or_instrument_native": 54,
+    "JPEG": 4,
+    "TIFF": 3
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "etalab 2.0",
+  "source_asset_bytes": 14933707,
+  "expanded_source_equivalent_bytes": 14933707,
+  "installed_folder_bytes": 15051161,
+  "source_asset_count": 63,
+  "asset_paths": [
+    "scenarios/66_chemistry_mof_hydrogen/raw/1.README for Dataset .pdf",
+    "scenarios/66_chemistry_mof_hydrogen/raw/AR--MOF-5 +10%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/AR--MOF-5 +1%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/AR--MOF-5 +5%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/AR--MOF-5 .csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/CILE1-EXCESS H2 MOF-5+5%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/CILE2-EXCESS H2 MOF-5+5%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/CILE3-EXCESS H2 MOF-5+5%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/DTG--MOF-5 + 10%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/DTG--MOF-5 + 1%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/DTG--MOF-5 + 5%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/DTG--MOF-5.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/EG.jpg",
+    "scenarios/66_chemistry_mof_hydrogen/raw/EXCESS H2 160 K-- MOF-5 + 10%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/EXCESS H2 160 K-- MOF-5 + 1%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/EXCESS H2 160 K-- MOF-5 + 5%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/EXCESS H2 160 K-- MOF-5.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/EXCESS H2 273 K-- MOF-5 + 10% EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/EXCESS H2 273 K-- MOF-5 + 1% EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/EXCESS H2 273 K-- MOF-5 + 5% EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/EXCESS H2 273 K-- MOF-5.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/EXCESS H2 77 K--MOF-5+10%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/EXCESS H2 77 K--MOF-5+1%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/EXCESS H2 77 K--MOF-5+5%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/EXCESS H2 77 K--MOF-5.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/FTIR .csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/H2--MOF-5 + 10% EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/H2--MOF-5 + 1% EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/H2--MOF-5 + 5% EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/H2--MOF-5 .csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/H2O--EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/H2O--MOF-5 + 10% EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/H2O--MOF-5 + 1% EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/H2O--MOF-5 + 5% EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/H2O--MOF-5 .csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/MOF-5+10%EG.jpg",
+    "scenarios/66_chemistry_mof_hydrogen/raw/MOF-5+10%EG.tif",
+    "scenarios/66_chemistry_mof_hydrogen/raw/MOF-5+1%EG.jpg",
+    "scenarios/66_chemistry_mof_hydrogen/raw/MOF-5+1%EG.tif",
+    "scenarios/66_chemistry_mof_hydrogen/raw/MOF-5 + 5%EG.tif",
+    "scenarios/66_chemistry_mof_hydrogen/raw/MOF-5.jpg",
+    "scenarios/66_chemistry_mof_hydrogen/raw/N2--MOF-5 + 10% EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/N2--MOF-5 + 1% EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/N2--MOF-5 + 5% EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/N2--MOF-5 .csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/PSD--MOF-5 +10% EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/PSD--MOF-5 +1% EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/PSD--MOF-5 +5% EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/PSD--MOF-5 .csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/TGA--EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/TGA--MOF-5+10%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/TGA--MOF-5+1%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/TGA--MOF-5+5%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/TGA--MOF-5.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/TOTAL H2 77 K-- MOF-5 + 10% EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/TOTAL H2 77 K-- MOF-5 + 1% EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/TOTAL H2 77 K-- MOF-5 + 5% EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/TOTAL H2 77 K-- MOF-5 .csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/XRD--MOF-5+10%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/XRD--MOF-5+1%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/XRD--MOF-5+5%EG.csv",
+    "scenarios/66_chemistry_mof_hydrogen/raw/XRD--MOF-5.csv",
+    "scenarios/66_chemistry_mof_hydrogen/context/SOURCE_FACTS.json"
+  ],
+  "local_folder": "scenarios/66_chemistry_mof_hydrogen",
+  "size_exception": false,
+  "modalities": [
+    "images",
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 15031863,
+  "expanded_release_folder_equivalent_bytes": 15031863
+}

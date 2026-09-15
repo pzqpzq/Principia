@@ -1,0 +1,99 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "54_materials_microfracture",
+  "domain": "Fracture mechanics",
+  "title": "Data set: Enhanced crack stability in micro scale fracture testing via optimized bridge notches",
+  "publisher": "Okotete, Eloho (Karlsruhe Institute of Technology); Muslija, Alban (Karlsruhe Institute of Technology); Hohmann, Judith (Karlsruhe Institute of Technology); Kohl, Manfred (Karlsruhe Institute of Technology); Brinckmann, Steffen (Forschungszentrum Jülich); Lee, Subin (Karlsruhe Institute of Technology); Kirchlechner, Christoph (Karlsruhe Institute of Technology)",
+  "authoritative_landing_url": "https://zenodo.org/records/15581944",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/15581944",
+    "https://zenodo.org/api/records/15581944/files/Data%20for%20publication.zip/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.15581944"
+  ],
+  "release_or_version": "15581944",
+  "retrieval_finalized_utc": "2026-09-15T07:04:32.991225+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Campaign dates unknown.",
+  "source_publication_date": "2025-06-03",
+  "source_created_utc": "2025-06-03T07:40:39.795330+00:00",
+  "source_updated_utc": "2025-08-05T14:59:16.289545+00:00",
+  "source_inventory": [
+    {
+      "name": "Data for publication.zip",
+      "bytes": 36678522,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Experimental text exports and author analysis workbook support the source fracture publication.",
+  "known_analyses_and_limitations": "Hold out entire specimens/geometries. Published toughness estimates and fitted parameters must not be treated as unseen target laws.",
+  "related_publications": [
+    {
+      "identifier": "10.1016/j.msea.2025.148479",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    }
+  ],
+  "independent_groups": "specimens and notch geometries",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-054",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-054",
+      "scenario_id": "54_materials_microfracture",
+      "path": "raw/Data for publication.zip",
+      "scenario_relative_path": "raw/Data for publication.zip",
+      "bytes": 36678522,
+      "sha256": "6981c22d36dc139ee7e53aa6f12a2a16cb80a875b0a9a546250ae261765b55df",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/15581944"
+      ],
+      "download_url": "https://zenodo.org/api/records/15581944/files/Data%20for%20publication.zip/content",
+      "source_checksum": "md5:adcb5e7bd19aecc2ea70b5aaf2c23901",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:41.524317+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.15581944"
+      ],
+      "citation_url": "https://zenodo.org/records/15581944",
+      "source_version": "15581944",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15581944",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-054",
+      "scenario_id": "54_materials_microfracture",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 6288,
+      "sha256": "21b0b6de717efe2569368200363bec814485ee6309c7a1be23e087b9a2928f18",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/15581944"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:40.451020+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15581944"
+      ],
+      "citation_url": "https://zenodo.org/records/15581944",
+      "source_version": "15581944",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

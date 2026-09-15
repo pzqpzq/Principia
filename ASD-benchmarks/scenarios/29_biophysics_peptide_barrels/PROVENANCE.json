@@ -1,0 +1,141 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "29_biophysics_peptide_barrels",
+  "domain": "molecular biophysics",
+  "title": "Confinement and catalysis in designed peptide barrels",
+  "publisher": "Zenodo; originating researchers: Petrenas, Rokas (University of Bristol); Oliver, Thomas A.A. (University of Bristol); Woolfson, Derek N. (University of Bristol)",
+  "authoritative_landing_url": "https://zenodo.org/records/13335904",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/13335904",
+    "https://zenodo.org/api/records/13335904/files/9a5f_xtal_structure.zip/content",
+    "https://zenodo.org/api/records/13335904/files/main_data.zip/content",
+    "https://zenodo.org/api/records/13335904"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.13335904"
+  ],
+  "release_or_version": "13335904",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "deterministic_selection_rule": "Complete main_data.zip and crystal-structure ZIP; 1.638 GB supplementary archive excluded.",
+  "substitution": {
+    "original_scenario_id": "29_biology_calcium_signaling",
+    "original_title": "Starvation-induced calcium signaling",
+    "reason": "Dryad public individual-download endpoints returned HTTP 403; API payload endpoints required authorization; public browser navigation timed out. No successful payload transfer. Approved reserve used.",
+    "original_doi": "10.5061/dryad.cc2fqz6m4",
+    "reserve_record": 13335904,
+    "selected_utc": "2026-09-14T15:55:30.208447+00:00"
+  },
+  "data_origin": "mixed_measured_and_computational",
+  "measurement_dates": {
+    "description": "Public release 2025-01-11; precise measurement times must be obtained per instrument acquisition header and are not asserted for the whole study.",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": "2025-01-11",
+  "source_created_utc": "2025-01-11T13:00:16.629768+00:00",
+  "source_updated_utc": "2025-01-11T13:00:16.832317+00:00",
+  "source_inventory": [
+    {
+      "name": "9a5f_xtal_structure.zip",
+      "bytes": 810533,
+      "selected": true
+    },
+    {
+      "name": "main_data.zip",
+      "bytes": 85912498,
+      "selected": true
+    },
+    {
+      "name": "supplementary_data.zip",
+      "bytes": 1638396891,
+      "selected": false
+    }
+  ],
+  "author_preprocessing": "Mixed instrument files, processed spectroscopic tables, structural refinement products and computational/model context. Included source scripts and pickle objects were not executed/deserialized.",
+  "known_analyses_and_limitations": "The data support Confinement and Catalysis Within De Novo Designed Peptide Barrels. This selection is a complete source main-data package, not the complete record; excluded supplementary data may be needed for particular supporting claims.",
+  "related_publications": [],
+  "pinned_commit": null,
+  "source_context_request_failures": [],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-029",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-029",
+      "scenario_id": "29_biophysics_peptide_barrels",
+      "path": "context/zenodo_record.json",
+      "scenario_relative_path": "context/zenodo_record.json",
+      "bytes": 5338,
+      "sha256": "4819ef84f99a40dda89f3cf252f08c0afb2ced9bd0b46629273e10a8b35fe8c4",
+      "role": "parsed_source_metadata_snapshot",
+      "source_urls": [
+        "https://zenodo.org/api/records/13335904"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:55:30.207908+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.13335904"
+      ],
+      "citation_url": "https://zenodo.org/records/13335904",
+      "source_version": "13335904",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-029",
+      "scenario_id": "29_biophysics_peptide_barrels",
+      "path": "raw/9a5f_xtal_structure.zip",
+      "scenario_relative_path": "raw/9a5f_xtal_structure.zip",
+      "bytes": 810533,
+      "sha256": "346a87807ed03d6f2204a78fa1629b968fbde2afcd6faa218aadd26480bfae12",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/13335904/files/9a5f_xtal_structure.zip/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/13335904/files/9a5f_xtal_structure.zip/content",
+      "source_checksum": "md5:461207854d0c9f758f1c2f72cf2d2643",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:55:33.463470+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.13335904"
+      ],
+      "citation_url": "https://zenodo.org/records/13335904",
+      "source_version": "13335904",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/13335904",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-029",
+      "scenario_id": "29_biophysics_peptide_barrels",
+      "path": "raw/main_data.zip",
+      "scenario_relative_path": "raw/main_data.zip",
+      "bytes": 85912498,
+      "sha256": "00495cd0339d327186b74212cf52e9f2a92c46b4abbf9a70c12e530a582ce63c",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/13335904/files/main_data.zip/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/13335904/files/main_data.zip/content",
+      "source_checksum": "md5:2a1c7e5ccba9bf2d5f61c896605bf4d9",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:03:14.239780+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.13335904"
+      ],
+      "citation_url": "https://zenodo.org/records/13335904",
+      "source_version": "13335904",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/13335904",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

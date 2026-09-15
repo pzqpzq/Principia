@@ -1,0 +1,92 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "57_materials_syntactic_foam",
+  "domain": "Suspension rheology",
+  "title": "Rheological Data For Syntactic Foam",
+  "publisher": "Beckwith, Caleb (New York University); Gupta, Nikhil (New York University)",
+  "authoritative_landing_url": "https://zenodo.org/records/19699588",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/19699588",
+    "https://zenodo.org/api/records/19699588/files/Rheological_Data_For_Syntactic_Foam.zip/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.19699588"
+  ],
+  "release_or_version": "19699588",
+  "retrieval_finalized_utc": "2026-09-15T07:04:33.356010+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Dates unknown; 2026 release is not an acquisition date.",
+  "source_publication_date": "2026-04-22",
+  "source_created_utc": "2026-04-22T18:32:39.245940+00:00",
+  "source_updated_utc": "2026-04-22T18:32:39.462090+00:00",
+  "source_inventory": [
+    {
+      "name": "Rheological_Data_For_Syntactic_Foam.zip",
+      "bytes": 343805,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Complete rheological CSV archive. The archive has 50 CSV files whereas source-related narrative described 45; preserve actual inventory.",
+  "known_analyses_and_limitations": "Group by formulation and replicate sweep. Use measured ranges only; no extrapolation across unmeasured particle systems.",
+  "related_publications": [],
+  "independent_groups": "formulations and replicate tests",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-057",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-057",
+      "scenario_id": "57_materials_syntactic_foam",
+      "path": "raw/Rheological_Data_For_Syntactic_Foam.zip",
+      "scenario_relative_path": "raw/Rheological_Data_For_Syntactic_Foam.zip",
+      "bytes": 343805,
+      "sha256": "a2a7a84d92bf84a69e6f6c49e0ae976d916cc63fa46ff28bccd08a7ebdd4e218",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19699588"
+      ],
+      "download_url": "https://zenodo.org/api/records/19699588/files/Rheological_Data_For_Syntactic_Foam.zip/content",
+      "source_checksum": "md5:ef9df53250cb9984fa1697b87d781db1",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:18:25.695608+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19699588"
+      ],
+      "citation_url": "https://zenodo.org/records/19699588",
+      "source_version": "19699588",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19699588",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-057",
+      "scenario_id": "57_materials_syntactic_foam",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 4648,
+      "sha256": "c26771c759db5ef2c9e00d8f44a9dab3a4faf95786391eb330112d3f55e41e07",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/19699588"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:41.668756+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.19699588"
+      ],
+      "citation_url": "https://zenodo.org/records/19699588",
+      "source_version": "19699588",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

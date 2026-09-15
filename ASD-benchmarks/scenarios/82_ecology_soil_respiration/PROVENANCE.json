@@ -1,0 +1,154 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "82_ecology_soil_respiration",
+  "domain": "Forest ecology",
+  "title": "Soil respiration dataset for European forest sites evaluating holistic management practices",
+  "publisher": "Lehtonen, Aleksi (Natural Resources Institute Finland); Mäkipää, Raisa (Natural Resources Institute Finland); Menichetti, Lorenzo (LUKE); Anttila, Jani (Natural Resources Institute Finland); Kupila, Taavi (Natural Resources Institute Finland); Tupek, Boris (Natural Resources Institute Finland)",
+  "authoritative_landing_url": "https://zenodo.org/records/17519671",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/17519671",
+    "https://zenodo.org/api/records/17519671/files/wp4_data_check_rcode.txt/content",
+    "https://zenodo.org/api/records/17519671/files/holisoils_soil_respiration_dataset.csv/content",
+    "https://zenodo.org/api/records/17519671/files/holisois_data_structure.csv/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.17519671"
+  ],
+  "release_or_version": "17519671",
+  "retrieval_finalized_utc": "2026-09-15T07:04:41.646909+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "2021–2025 measurements; November 2025 release.",
+  "source_publication_date": "2025-11-04",
+  "source_created_utc": "2025-11-20T07:34:20.188707+00:00",
+  "source_updated_utc": "2025-11-20T07:34:20.505141+00:00",
+  "source_inventory": [
+    {
+      "name": "wp4_data_check_rcode.txt",
+      "bytes": 6164,
+      "selected": true
+    },
+    {
+      "name": "holisoils_soil_respiration_dataset.csv",
+      "bytes": 11215296,
+      "selected": true
+    },
+    {
+      "name": "holisois_data_structure.csv",
+      "bytes": 19595,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Source chamber flux values are derived from concentration slopes; structure CSV and source checking code preserved.",
+  "known_analyses_and_limitations": "Hold out sites/plots and full temporal blocks. Chamber and treatment differences constrain transfer; preserve missingness and quality metadata.",
+  "related_publications": [],
+  "independent_groups": "site, plot and full time blocks",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-082",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-082",
+      "scenario_id": "82_ecology_soil_respiration",
+      "path": "raw/wp4_data_check_rcode.txt",
+      "scenario_relative_path": "raw/wp4_data_check_rcode.txt",
+      "bytes": 6164,
+      "sha256": "47781536dd0914c6deb68f5ba9755e85c79109ea8150c570746005dffdf6b6a9",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17519671"
+      ],
+      "download_url": "https://zenodo.org/api/records/17519671/files/wp4_data_check_rcode.txt/content",
+      "source_checksum": "md5:8862ee39ab521c51bd54c0e27331c0fb",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:32:12.765695+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17519671"
+      ],
+      "citation_url": "https://zenodo.org/records/17519671",
+      "source_version": "17519671",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17519671",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-082",
+      "scenario_id": "82_ecology_soil_respiration",
+      "path": "raw/holisoils_soil_respiration_dataset.csv",
+      "scenario_relative_path": "raw/holisoils_soil_respiration_dataset.csv",
+      "bytes": 11215296,
+      "sha256": "bcbf7e1a87b056ee8deb75f8b3fd10c1bfba9a725030da8dede1bf3bf9b57438",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17519671"
+      ],
+      "download_url": "https://zenodo.org/api/records/17519671/files/holisoils_soil_respiration_dataset.csv/content",
+      "source_checksum": "md5:73021f0cdd62b54694782466e6ffce2b",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:11.175183+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17519671"
+      ],
+      "citation_url": "https://zenodo.org/records/17519671",
+      "source_version": "17519671",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17519671",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-082",
+      "scenario_id": "82_ecology_soil_respiration",
+      "path": "raw/holisois_data_structure.csv",
+      "scenario_relative_path": "raw/holisois_data_structure.csv",
+      "bytes": 19595,
+      "sha256": "861367b7e3f01626478776a8acc1528fd7fde2a49a13f1f555163f9669f38b8d",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17519671"
+      ],
+      "download_url": "https://zenodo.org/api/records/17519671/files/holisois_data_structure.csv/content",
+      "source_checksum": "md5:b01b89b8055b2c8bf4354864b2a195d5",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:32:58.133322+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17519671"
+      ],
+      "citation_url": "https://zenodo.org/records/17519671",
+      "source_version": "17519671",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17519671",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-082",
+      "scenario_id": "82_ecology_soil_respiration",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 28912,
+      "sha256": "061acf808ceb29447be67af8166eb97277c909c25630fb1cb88f38bc160389f2",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/17519671"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:47.127538+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17519671"
+      ],
+      "citation_url": "https://zenodo.org/records/17519671",
+      "source_version": "17519671",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

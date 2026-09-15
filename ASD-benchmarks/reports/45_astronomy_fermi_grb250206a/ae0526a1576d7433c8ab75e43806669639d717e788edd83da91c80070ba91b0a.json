@@ -1,0 +1,195 @@
+{
+  "bytes": 129600,
+  "sha256": "b091d9ff7a46a887929e0c136766441db34e90cc1843873a203ab123500b3a5c",
+  "format_extension": ".fit",
+  "checks": [],
+  "format": "FITS",
+  "HDUs": [
+    {
+      "name": "PRIMARY",
+      "shape": null,
+      "columns": null,
+      "units": null,
+      "header": {
+        "DATE-OBS": "2025-02-06T19:49:23",
+        "DATE-END": "2025-02-06T19:59:38",
+        "TSTART": "760564163.806468",
+        "TSTOP": "760564778.216548",
+        "TELESCOP": "GLAST",
+        "INSTRUME": "GBM",
+        "DATATYPE": "TRIGDAT"
+      }
+    },
+    {
+      "name": "TRIGRATE",
+      "shape": [
+        1
+      ],
+      "columns": [
+        "TIME",
+        "ENDTIME",
+        "SCATTITD",
+        "EIC",
+        "TRIGRATE"
+      ],
+      "units": [
+        "s",
+        "s",
+        "",
+        "km",
+        "count/s"
+      ],
+      "header": {
+        "DATE-OBS": "2025-02-06T19:49:23",
+        "DATE-END": "2025-02-06T19:59:38",
+        "TSTART": "760564163.806468",
+        "TSTOP": "760564778.216548",
+        "TELESCOP": "GLAST",
+        "INSTRUME": "GBM",
+        "DATATYPE": "TRIGDAT"
+      }
+    },
+    {
+      "name": "BCKRATES",
+      "shape": [
+        1
+      ],
+      "columns": [
+        "TIME",
+        "ENDTIME",
+        "QUALITY",
+        "BCKRATES"
+      ],
+      "units": [
+        "s",
+        "s",
+        "",
+        "count/s"
+      ],
+      "header": {
+        "DATE-OBS": "2025-02-06T19:49:23",
+        "DATE-END": "2025-02-06T19:59:38",
+        "TSTART": "760564163.806468",
+        "TSTOP": "760564778.216548",
+        "TELESCOP": "GLAST",
+        "INSTRUME": "GBM",
+        "DETNAM": "ALL",
+        "DATATYPE": "TRIGDAT"
+      }
+    },
+    {
+      "name": "OB_CALC",
+      "shape": [
+        2
+      ],
+      "columns": [
+        "TIME",
+        "RA",
+        "DEC",
+        "STATERR",
+        "LOCALG",
+        "EVTCLASS",
+        "RELIABLT",
+        "INTNSITY",
+        "HDRATIO",
+        "FLUENCE",
+        "SIGMA",
+        "LOCRATES",
+        "TRIG_TS",
+        "TR_SCAZ",
+        "TR_SCZEN"
+      ],
+      "units": [
+        "s",
+        "deg",
+        "deg",
+        "deg",
+        "",
+        "",
+        "",
+        "count",
+        "",
+        "count",
+        "",
+        "count/s",
+        "s",
+        "degree",
+        "degree"
+      ],
+      "header": {
+        "DATE-OBS": "2025-02-06T19:49:23",
+        "DATE-END": "2025-02-06T19:59:38",
+        "TSTART": "760564163.806468",
+        "TSTOP": "760564778.216548",
+        "TELESCOP": "GLAST",
+        "INSTRUME": "GBM",
+        "DETNAM": "ALL",
+        "DATATYPE": "TRIGDAT"
+      }
+    },
+    {
+      "name": "MAXRATES",
+      "shape": [
+        2
+      ],
+      "columns": [
+        "TIME",
+        "ENDTIME",
+        "SCATTITD",
+        "EIC",
+        "MAXRATES"
+      ],
+      "units": [
+        "s",
+        "s",
+        "",
+        "km",
+        "count/s"
+      ],
+      "header": {
+        "DATE-OBS": "2025-02-06T19:49:23",
+        "DATE-END": "2025-02-06T19:59:38",
+        "TSTART": "760564163.806468",
+        "TSTOP": "760564778.216548",
+        "TELESCOP": "GLAST",
+        "INSTRUME": "GBM",
+        "DETNAM": "ALL",
+        "DATATYPE": "TRIGDAT"
+      }
+    },
+    {
+      "name": "EVNTRATE",
+      "shape": [
+        161
+      ],
+      "columns": [
+        "TIME",
+        "ENDTIME",
+        "SCATTITD",
+        "EIC",
+        "RATE"
+      ],
+      "units": [
+        "s",
+        "s",
+        "",
+        "km",
+        "count/s"
+      ],
+      "header": {
+        "DATE-OBS": "2025-02-06T19:49:23",
+        "DATE-END": "2025-02-06T19:59:38",
+        "TSTART": "760564163.806468",
+        "TSTOP": "760564778.216548",
+        "TELESCOP": "GLAST",
+        "INSTRUME": "GBM",
+        "DETNAM": "ALL",
+        "DATATYPE": "TRIGDAT"
+      }
+    }
+  ],
+  "path": "raw/glg_trigdat_all_bn250206827_v01.fit",
+  "scenario_id": "45_astronomy_fermi_grb250206a",
+  "verified_utc": "2026-09-14T16:00:19.119472+00:00",
+  "status": "pass"
+}

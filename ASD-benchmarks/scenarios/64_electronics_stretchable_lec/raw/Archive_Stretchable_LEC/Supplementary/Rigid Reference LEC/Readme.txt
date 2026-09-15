@@ -1,0 +1,1 @@
+The rigid reference LECs were measured in a commercial setup: M6000 PMX, McScience, KOR.

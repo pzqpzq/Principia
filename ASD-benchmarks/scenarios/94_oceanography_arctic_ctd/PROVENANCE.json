@@ -1,0 +1,1637 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "94_oceanography_arctic_ctd",
+  "domain": "Physical oceanography",
+  "title": "Conductivity Temperature Depth (CTD) Data from Canada-Sweden Arctic Ocean 2025 Expedition on IB Oden, 9 August - 19 September 2025",
+  "publisher": "Planat, Noémie (McGill University); Doriot, Vincent (University of Gothenburg); Rotermund, Lina M.; Muchowski, Julia C. (Swedish Polar Research Secretariat); Swedish Polar Research Secretariat",
+  "authoritative_landing_url": "https://zenodo.org/records/17530624",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/17530624",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.csv/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.hdr/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.hex/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.XMLCON/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01_Upcast.btl/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01_Upcast.btl/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.csv/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250830_0332_Station-06_Cast-01_Metadata.txt/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.hex/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.hex/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.hex/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.XMLCON/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01_Metadata.txt/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.hdr/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01_Upcast.btl/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01_Upcast.btl/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.bl/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.csv/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01_Metadata.txt/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01_Metadata.txt/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.hdr/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.bl/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.csv/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.hdr/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.bl/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.hex/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01_Upcast.btl/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.csv/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.hex/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.bl/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01_Upcast.btl/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.XMLCON/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.bl/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01_Metadata.txt/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.csv/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01_Metadata.txt/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.XMLCON/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.hdr/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.bl/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.XMLCON/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.XMLCON/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD_logsheet.csv/content",
+    "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.hdr/content",
+    "https://zenodo.org/api/records/17530624/files/README.txt/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.17530624"
+  ],
+  "release_or_version": "17530624",
+  "retrieval_finalized_utc": "2026-09-15T07:04:42.853799+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "ctd",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "August 9–September 19, 2025 campaign.",
+  "source_publication_date": "2025-11-28",
+  "source_created_utc": "2025-11-28T14:39:05.517484+00:00",
+  "source_updated_utc": "2025-12-03T14:10:40.679339+00:00",
+  "source_inventory": [
+    {
+      "name": "AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.csv",
+      "bytes": 2162478,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250816_1956_Station-03_Cast-01_Metadata.txt",
+      "bytes": 1157,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250816_1956_Station-03_Cast-01.hex",
+      "bytes": 25657207,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.hdr",
+      "bytes": 652,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250831_1013_Station-07_Cast-01_Upcast.btl",
+      "bytes": 45186,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.hex",
+      "bytes": 16232812,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250816_1956_Station-03_Cast-01.bl",
+      "bytes": 1182,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.XMLCON",
+      "bytes": 8191,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250826_1327_Station-05_Cast-01.hdr",
+      "bytes": 652,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250903_1920_Station-08_Cast-01_Upcast.btl",
+      "bytes": 45186,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250815_1052_Station-02_Cast-01_Upcast.btl",
+      "bytes": 45180,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250907_1305_Station-09_Cast-01_Metadata.txt",
+      "bytes": 1101,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250914_0025_Station-11_Cast-01.XMLCON",
+      "bytes": 8191,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250907_1305_Station-09_Cast-01.hex",
+      "bytes": 17737840,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.csv",
+      "bytes": 435805,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250816_1956_Station-03_Cast-01.XMLCON",
+      "bytes": 8191,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250830_0332_Station-06_Cast-01_Metadata.txt",
+      "bytes": 1103,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.hex",
+      "bytes": 7308982,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250831_1013_Station-07_Cast-01_Metadata.txt",
+      "bytes": 1173,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.hex",
+      "bytes": 21186376,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250826_1327_Station-05_Cast-01.hex",
+      "bytes": 16933456,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.hex",
+      "bytes": 8700341,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.XMLCON",
+      "bytes": 8191,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250914_0025_Station-11_Cast-01_Upcast.btl",
+      "bytes": 45186,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250915_1621_Station-12_Cast-01_Metadata.txt",
+      "bytes": 1121,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.hdr",
+      "bytes": 652,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250915_1621_Station-12_Cast-01_Upcast.btl",
+      "bytes": 45186,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250823_0516_Station-04_Cast-01_Upcast.btl",
+      "bytes": 45180,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.bl",
+      "bytes": 1182,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250813_1455_Station-01_Cast-01_Metadata.txt",
+      "bytes": 1133,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.csv",
+      "bytes": 3732726,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250903_1920_Station-08_Cast-01_Metadata.txt",
+      "bytes": 1117,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250816_1956_Station-03_Cast-01.csv",
+      "bytes": 3734892,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250907_1305_Station-09_Cast-01.csv",
+      "bytes": 2399786,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250826_1327_Station-05_Cast-01.csv",
+      "bytes": 2206067,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250826_1327_Station-05_Cast-01.bl",
+      "bytes": 1180,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250826_1327_Station-05_Cast-01_Metadata.txt",
+      "bytes": 1115,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250907_1305_Station-09_Cast-01.bl",
+      "bytes": 1180,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250823_0516_Station-04_Cast-01_Metadata.txt",
+      "bytes": 1123,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.hdr",
+      "bytes": 646,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.bl",
+      "bytes": 1182,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.csv",
+      "bytes": 1198897,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250816_1956_Station-03_Cast-01.hdr",
+      "bytes": 667,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250914_0025_Station-11_Cast-01.csv",
+      "bytes": 3198862,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250914_0025_Station-11_Cast-01_Metadata.txt",
+      "bytes": 1120,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.hdr",
+      "bytes": 646,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.bl",
+      "bytes": 1178,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.hex",
+      "bytes": 20683552,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250911_0929_Station-10_Cast-01_Upcast.btl",
+      "bytes": 45186,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.csv",
+      "bytes": 2757546,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250907_1305_Station-09_Cast-01.XMLCON",
+      "bytes": 8191,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.hex",
+      "bytes": 7152490,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.bl",
+      "bytes": 1134,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250830_0516_Station-06_Cast-01_Upcast.btl",
+      "bytes": 45186,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250831_1013_Station-07_Cast-01.hex",
+      "bytes": 12554536,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250914_0025_Station-11_Cast-01.bl",
+      "bytes": 1182,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.XMLCON",
+      "bytes": 8191,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250826_1327_Station-05_Cast-01_Upcast.btl",
+      "bytes": 45186,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250907_1305_Station-09_Cast-01_Upcast.btl",
+      "bytes": 45186,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250831_1013_Station-07_Cast-01.bl",
+      "bytes": 1172,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250826_1327_Station-05_Cast-01.XMLCON",
+      "bytes": 8191,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250813_1455_Station-01_Cast-01.hdr",
+      "bytes": 644,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.bl",
+      "bytes": 1134,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250831_1013_Station-07_Cast-01.hdr",
+      "bytes": 652,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250815_1052_Station-02_Cast-01_Metadata.txt",
+      "bytes": 1161,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.csv",
+      "bytes": 698561,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250816_1956_Station-03_Cast-01_Upcast.btl",
+      "bytes": 45201,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250907_1305_Station-09_Cast-01.hdr",
+      "bytes": 652,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250813_1455_Station-01_Cast-01.bl",
+      "bytes": 96,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250911_0929_Station-10_Cast-01_Metadata.txt",
+      "bytes": 1214,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.XMLCON",
+      "bytes": 8191,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250831_1013_Station-07_Cast-01.csv",
+      "bytes": 1401778,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.hdr",
+      "bytes": 652,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.bl",
+      "bytes": 1140,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250914_0025_Station-11_Cast-01.hdr",
+      "bytes": 652,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250813_1455_Station-01_Cast-01.hex",
+      "bytes": 3092105,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.XMLCON",
+      "bytes": 8191,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250813_1455_Station-01_Cast-01.XMLCON",
+      "bytes": 11314,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250914_0025_Station-11_Cast-01.hex",
+      "bytes": 22040320,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.XMLCON",
+      "bytes": 8191,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250831_1013_Station-07_Cast-01.XMLCON",
+      "bytes": 8191,
+      "selected": false
+    },
+    {
+      "name": "AO25-Oden-CTD_logsheet.csv",
+      "bytes": 3602,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.hdr",
+      "bytes": 652,
+      "selected": true
+    },
+    {
+      "name": "README.txt",
+      "bytes": 837,
+      "selected": true
+    },
+    {
+      "name": "AO25-Oden-CTD-20250813_1455_Station-01_Cast-01.csv",
+      "bytes": 366900,
+      "selected": false
+    }
+  ],
+  "author_preprocessing": "Instrument HEX, calibration XMLCON, HDR/BL/BTL, TXT/CSV outputs and logsheet retained for stations 02/04/06/08/10/12.",
+  "known_analyses_and_limitations": "Hold out full stations/casts. Calibration products and raw counts are linked representations. Station 06 filename times differ between metadata and measurement products; preserve both.",
+  "related_publications": [
+    {
+      "identifier": "10.48515/w8yg-ez41",
+      "relation": "isContinuedBy",
+      "resource_type": "dataset",
+      "scheme": "doi"
+    }
+  ],
+  "independent_groups": "station and full cast, six selected stations",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-094",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.csv",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.csv",
+      "bytes": 2162478,
+      "sha256": "c0eb71c2ee444b5d0acae5dabac3a24e84dca61795a4858e2898bc8a2d794b40",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.csv/content",
+      "source_checksum": "md5:62d9f136623732ab9fa026743d742364",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:36:28.663143+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.hdr",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.hdr",
+      "bytes": 652,
+      "sha256": "421d5f437c4f4c813efb36e00b80cc85b046c7ffffc712e8912c12ed678da1e7",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.hdr/content",
+      "source_checksum": "md5:8605f1130e8d957be0c3367c9d8ec3e0",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:36:30.067792+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.hex",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.hex",
+      "bytes": 16232812,
+      "sha256": "088a619dff5730b0cb0bfdccb6b4bb4889aff64952b150e877beaaa2f4848656",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.hex/content",
+      "source_checksum": "md5:c2e1b24e1254f8a1b27ec604eadcef9a",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:44:02.399297+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.XMLCON",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.XMLCON",
+      "bytes": 8191,
+      "sha256": "61c996f837238a81a1d10aaad621632d9325b2cd2d41ca153b87bf76b126b0dd",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.XMLCON/content",
+      "source_checksum": "md5:0d81866dd14663c31a7c3b1c1dc00733",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:08.424681+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01_Upcast.btl",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01_Upcast.btl",
+      "bytes": 45186,
+      "sha256": "0ed584496a5abbb097ef3d5e665183d74c1e9580337d2604e484642944b14f4c",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01_Upcast.btl/content",
+      "source_checksum": "md5:9755a5a37da328b1791df398330630b9",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:06.678726+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01_Upcast.btl",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01_Upcast.btl",
+      "bytes": 45180,
+      "sha256": "cec92f975957994ea857ecf720cb08c641b7260d340c4f60a68ed7418d1df65f",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01_Upcast.btl/content",
+      "source_checksum": "md5:222a2c2539081b41576934104531d837",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:07.358454+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.csv",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.csv",
+      "bytes": 435805,
+      "sha256": "2b838343288a71b5df8c1ff09419b37f3e2584d3d04b1123cf6c010620728664",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.csv/content",
+      "source_checksum": "md5:2c60b31df04c5c5b2a688b2e762afb69",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:03.228896+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250830_0332_Station-06_Cast-01_Metadata.txt",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250830_0332_Station-06_Cast-01_Metadata.txt",
+      "bytes": 1103,
+      "sha256": "32a06ceaf2ab6cafb76092f5a4a02cdf66b656f1e7e8ed658ceb04113305f965",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250830_0332_Station-06_Cast-01_Metadata.txt/content",
+      "source_checksum": "md5:69e10410ef83d6f6f61a6d3ce0717593",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:12.571761+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.hex",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.hex",
+      "bytes": 7308982,
+      "sha256": "fbacd77fd5ee5bf93aedb1bc9cb64f77fafa538c55909cdc59ef722a01f0e3f8",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.hex/content",
+      "source_checksum": "md5:880b4ae92dc04a2fb49528cac98248bf",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:44:03.214283+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.hex",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.hex",
+      "bytes": 21186376,
+      "sha256": "60bf642ec3280db1937284b350245d0f72f779ae317dda4c6b2acdc21a913f10",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.hex/content",
+      "source_checksum": "md5:15b3f326325f7291183ddb857dbe2764",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:44:02.224569+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.hex",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.hex",
+      "bytes": 8700341,
+      "sha256": "39a2da7030066d6986d90d63ce31535218db4ac0e6b04c8f332f2145360ce5fe",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.hex/content",
+      "source_checksum": "md5:7b42cf08a7ac6ef687749a5a7ca80e4c",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:44:02.456927+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.XMLCON",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.XMLCON",
+      "bytes": 8191,
+      "sha256": "61c996f837238a81a1d10aaad621632d9325b2cd2d41ca153b87bf76b126b0dd",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.XMLCON/content",
+      "source_checksum": "md5:0d81866dd14663c31a7c3b1c1dc00733",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:09.484670+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01_Metadata.txt",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01_Metadata.txt",
+      "bytes": 1121,
+      "sha256": "0b4ba4a90200dda7654126aeac06601299af94b50cc480a8d0104625161a204b",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01_Metadata.txt/content",
+      "source_checksum": "md5:34f674c611b954d96d1d5c35f42de995",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:12.205303+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.hdr",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.hdr",
+      "bytes": 652,
+      "sha256": "7cb3cfb3a7ba028d2db4679088c7a2287eb4edb0cfa5b83b858ab728bc2af556",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.hdr/content",
+      "source_checksum": "md5:133b9d7712fd7e7efb1438b191cac6d0",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:13.127587+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01_Upcast.btl",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01_Upcast.btl",
+      "bytes": 45186,
+      "sha256": "6bbf12133fd85e807d8ae7aa22f956e1eaf8ad4b87852883f15710a29c10d4ad",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01_Upcast.btl/content",
+      "source_checksum": "md5:21483c8e68e3f4ad61e0f2151cfbd639",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:05.769427+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01_Upcast.btl",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01_Upcast.btl",
+      "bytes": 45180,
+      "sha256": "1c537123345e63cc213d882e944cd894c59a921b0be116569056d5ced699d5ed",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01_Upcast.btl/content",
+      "source_checksum": "md5:e36df1cfcd82bedf825aa2d8c677f2fd",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:08.906051+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.bl",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.bl",
+      "bytes": 1182,
+      "sha256": "cc6f20b42ec47eaa31dce93743a258e45367527d2d50aa970452ce8d227512fe",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.bl/content",
+      "source_checksum": "md5:9e1023153b69f03eb3dbe7c8a5c55e8e",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:10.878476+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.csv",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.csv",
+      "bytes": 3732726,
+      "sha256": "ab27285a51940bdcb879d1294d424a28440ef41f128f55c303d214100a108f61",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.csv/content",
+      "source_checksum": "md5:251e44cac55eea39e0002b4284dc4440",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:12.454585+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01_Metadata.txt",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01_Metadata.txt",
+      "bytes": 1117,
+      "sha256": "c82c0b2e7ff18a41678bf805e4fc58a182386b84bdf3aacf4821696d66721680",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01_Metadata.txt/content",
+      "source_checksum": "md5:3faf6633b8040c512b291b062ce140ce",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:12.227774+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01_Metadata.txt",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01_Metadata.txt",
+      "bytes": 1123,
+      "sha256": "ef75ac018869d47a160e0fa6ffa3e0028db6461c23d10a2df8b409ae606a54ed",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01_Metadata.txt/content",
+      "source_checksum": "md5:622912d374fba979b69ffda90371d3d8",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:12.057354+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.hdr",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.hdr",
+      "bytes": 646,
+      "sha256": "1bd8e6861e8ef2ee8a1e83cbdb300e546ee64fdd0121ab24983227a5b7623bc8",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.hdr/content",
+      "source_checksum": "md5:c11f34bec6d6255bb71b82c1f8249606",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:13.014980+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.bl",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.bl",
+      "bytes": 1182,
+      "sha256": "573e031cba4545498317ce62629a94205fc9fa707be41adb197c87ae9ebe6494",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01.bl/content",
+      "source_checksum": "md5:ffb8f4d0829beeb5fffdd2e718e83272",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:11.197951+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.csv",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.csv",
+      "bytes": 1198897,
+      "sha256": "db12963305afae1bc48c8ffd49ce355e20208f316c7886fd7d5ff074879bad99",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.csv/content",
+      "source_checksum": "md5:217d2eb64b77ce07f3214ddfa2864e5a",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:41:58.591107+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.hdr",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.hdr",
+      "bytes": 646,
+      "sha256": "62f23d926d1884017f79849561b68a1772d6d69fb88f5b1bb08a5f15dbd115b3",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.hdr/content",
+      "source_checksum": "md5:bd6d97241a923cc9318af1029f34ddeb",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:13.389391+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.bl",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.bl",
+      "bytes": 1178,
+      "sha256": "021e83e79d0f504bbd24aaa44ad7fd60ca04b5ed67d1acde5e9b30de1550185a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.bl/content",
+      "source_checksum": "md5:e73561b4aba1785600f8353241cf3082",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:11.183282+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.hex",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.hex",
+      "bytes": 20683552,
+      "sha256": "fe5a43482b14da751df19d243a551db48399e7db024a0f4ea3f5b19b93aa2729",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.hex/content",
+      "source_checksum": "md5:24ae8686ce8d0f6c7b8c39d74a115693",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:44:02.316997+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01_Upcast.btl",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01_Upcast.btl",
+      "bytes": 45186,
+      "sha256": "efec1c508ab8c6ed0e013b0de433ff0e3bcff0c67480d75d9c377080ca9029f8",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01_Upcast.btl/content",
+      "source_checksum": "md5:92a59a07eddf48ff25adca48e15b2f73",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:06.696003+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.csv",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.csv",
+      "bytes": 2757546,
+      "sha256": "14ba2eddc891c4f5280bff90fd2a801c552838b3334a80c6f66e2e9b34ac8d6c",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.csv/content",
+      "source_checksum": "md5:18c543e3502d4df9a72372b19d650566",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:00.043536+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.hex",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.hex",
+      "bytes": 7152490,
+      "sha256": "33c2ba575c7ccbc2d16556497c06e6138694dfc15815414cabd10d5297985340",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.hex/content",
+      "source_checksum": "md5:480cc26aba02d311d89ce671c8b00d7f",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:44:03.246537+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.bl",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.bl",
+      "bytes": 1134,
+      "sha256": "e316f513ecac3f86a2ea4836332665cd9384865b6dac2ab4e5b74108fb11552b",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.bl/content",
+      "source_checksum": "md5:28077f04eb421d9a65a02c2d45498719",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:11.618178+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01_Upcast.btl",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01_Upcast.btl",
+      "bytes": 45186,
+      "sha256": "02d3c635c1ec0c63f7b8e71cfa3e9ebf1f5c3892553c305b976b10adab125dc0",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01_Upcast.btl/content",
+      "source_checksum": "md5:ccf8331388102a199590c694504bb469",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:07.027306+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.XMLCON",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.XMLCON",
+      "bytes": 8191,
+      "sha256": "61c996f837238a81a1d10aaad621632d9325b2cd2d41ca153b87bf76b126b0dd",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.XMLCON/content",
+      "source_checksum": "md5:0d81866dd14663c31a7c3b1c1dc00733",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:09.288511+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.bl",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.bl",
+      "bytes": 1134,
+      "sha256": "ed85cc8be5a8b21365e018c6fe1c799fb96cc10c41bf428c3c7962e4a8ab3b5b",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250823_0516_Station-04_Cast-01.bl/content",
+      "source_checksum": "md5:9cf7a949a8857b057e7efc63adf20383",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:11.651860+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01_Metadata.txt",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01_Metadata.txt",
+      "bytes": 1161,
+      "sha256": "89ad8dd8973c37fe51745d6b7632b158c980352d60420cc54222506da80550be",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01_Metadata.txt/content",
+      "source_checksum": "md5:3b63e910a1461e03b6f92a90cf6eea9c",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:11.255862+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.csv",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.csv",
+      "bytes": 698561,
+      "sha256": "8aa055a5ca645563996370e6dc3071256614d602fc8b45a380acee7b998f85e7",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.csv/content",
+      "source_checksum": "md5:3b0b85eb3a251f07c440e3f981130658",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:01.609495+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01_Metadata.txt",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01_Metadata.txt",
+      "bytes": 1214,
+      "sha256": "3c1e57f61bce403b3502c8837e0d7c27593bc14a78476e54823aa897287d9ac4",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250911_0929_Station-10_Cast-01_Metadata.txt/content",
+      "source_checksum": "md5:71cd483a23e08bf957d4261adb74cc9f",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:10.897493+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.XMLCON",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.XMLCON",
+      "bytes": 8191,
+      "sha256": "61c996f837238a81a1d10aaad621632d9325b2cd2d41ca153b87bf76b126b0dd",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250915_1621_Station-12_Cast-01.XMLCON/content",
+      "source_checksum": "md5:0d81866dd14663c31a7c3b1c1dc00733",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:09.551887+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.hdr",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.hdr",
+      "bytes": 652,
+      "sha256": "2cafe4f7c68d12a0307ecac9ad8723c26533e79ea03d11ebd88f44ed85f74a39",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.hdr/content",
+      "source_checksum": "md5:00c9ed158553f4ed548b32d9bd6b46b3",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:12.564756+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.bl",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.bl",
+      "bytes": 1140,
+      "sha256": "e2b9824f7cc54df05853dfddf62dac0136a732384010b1fa1a7d455dff182037",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.bl/content",
+      "source_checksum": "md5:c2302c6d52449eb0e432216b28b2bee1",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:11.192801+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.XMLCON",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.XMLCON",
+      "bytes": 8191,
+      "sha256": "61c996f837238a81a1d10aaad621632d9325b2cd2d41ca153b87bf76b126b0dd",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250815_1052_Station-02_Cast-01.XMLCON/content",
+      "source_checksum": "md5:0d81866dd14663c31a7c3b1c1dc00733",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:09.719333+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.XMLCON",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.XMLCON",
+      "bytes": 8191,
+      "sha256": "61c996f837238a81a1d10aaad621632d9325b2cd2d41ca153b87bf76b126b0dd",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250830_0516_Station-06_Cast-01.XMLCON/content",
+      "source_checksum": "md5:0d81866dd14663c31a7c3b1c1dc00733",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:09.891103+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD_logsheet.csv",
+      "scenario_relative_path": "raw/AO25-Oden-CTD_logsheet.csv",
+      "bytes": 3602,
+      "sha256": "da03b0349f8eac6d4050c79d011dbbb05ed561fe5ead8da3acfa509dff03d76a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD_logsheet.csv/content",
+      "source_checksum": "md5:4ab9de3f79453f10cf01ea6fffdf52fc",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:10.728602+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.hdr",
+      "scenario_relative_path": "raw/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.hdr",
+      "bytes": 652,
+      "sha256": "e3e68da3d20c12c28b31ed251044eae35ddcc829c59604bdad5e905490031150",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/AO25-Oden-CTD-20250903_1920_Station-08_Cast-01.hdr/content",
+      "source_checksum": "md5:53ad07db6ad18ebb4170b8ec43584165",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:12.989612+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "raw/README.txt",
+      "scenario_relative_path": "raw/README.txt",
+      "bytes": 837,
+      "sha256": "e3c8251944fd26fad99c6d31964c29316d73b0ed31ae04471a32fa790b98aa6a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": "https://zenodo.org/api/records/17530624/files/README.txt/content",
+      "source_checksum": "md5:e6555b5676d980962ea1eb689b55cb42",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:13.023233+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-094",
+      "scenario_id": "94_oceanography_arctic_ctd",
+      "path": "context/SOURCE_FACTS.json",
+      "scenario_relative_path": "context/SOURCE_FACTS.json",
+      "bytes": 31161,
+      "sha256": "61c5c3f7be25437311d2a546fb8ce27b5efbd3d40fa6c3a8aa8495c1a2bb79c1",
+      "role": "curator_factual_source_profile",
+      "source_urls": [
+        "https://zenodo.org/records/17530624"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "curator serialization, not a publisher file",
+      "retrieved_utc": "2026-09-15T07:04:42.853799+00:00",
+      "license_or_terms": "CC-BY-4.0 (proposed release terms for curator documentation; pending owner acceptance)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17530624"
+      ],
+      "citation_url": "https://zenodo.org/records/17530624",
+      "source_version": "17530624",
+      "replay_note": "Reconstruct exact curator metadata from frozen release copy.",
+      "rights_evidence_url": "https://zenodo.org/records/17530624",
+      "rights_evidence_scope": "Factual identifiers, file inventory and attribution; curator serialization."
+    }
+  ]
+}

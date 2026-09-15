@@ -1,0 +1,174 @@
+{
+  "scenario_id": "03_physics_gwosc_o4a_h1_strain",
+  "path": "raw/H-H1_GWOSC_O4a_4KHZ_R1-1388511232-4096.hdf5",
+  "bytes": 129225370,
+  "sha256": "b0d7ae53435952801347f8bf518bc8ef5a167dfdb790fe562a2214cc2072522a",
+  "checked_utc": "2026-09-15T06:39:51.176630+00:00",
+  "format_extension": ".hdf5",
+  "checks": [],
+  "format": "HDF5",
+  "datasets": [
+    {
+      "name": "meta/Description",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "meta/DescriptionURL",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "meta/Detector",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "meta/Duration",
+      "shape": [],
+      "dtype": "int64",
+      "attributes": {}
+    },
+    {
+      "name": "meta/FrameType",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "meta/GPSstart",
+      "shape": [],
+      "dtype": "int64",
+      "attributes": {}
+    },
+    {
+      "name": "meta/Observatory",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "meta/StrainChannel",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "meta/Type",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "meta/UTCstart",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "quality/injections/GWOSCmeta",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "quality/injections/InjDescriptions",
+      "shape": [
+        5
+      ],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "quality/injections/InjShortnames",
+      "shape": [
+        5
+      ],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "quality/injections/Injmask",
+      "shape": [
+        4096
+      ],
+      "dtype": "uint32",
+      "attributes": {
+        "Bits": "5",
+        "Description": "A bitmask encoded as an integer-valued timeseries. The first \"Bits\" bits might be used, for each there is an entry in \"Bits\", \"Shortnames\", \"Descriptions\", one for each bit.",
+        "Npoints": "4096",
+        "Xlabel": "GPS time",
+        "Xspacing": "1.0",
+        "Xstart": "1388511232",
+        "Xunits": "second",
+        "Ylabel": "Injmask"
+      }
+    },
+    {
+      "name": "quality/simple/DQDescriptions",
+      "shape": [
+        9
+      ],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "quality/simple/DQShortnames",
+      "shape": [
+        9
+      ],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "quality/simple/DQmask",
+      "shape": [
+        4096
+      ],
+      "dtype": "uint32",
+      "attributes": {
+        "Bits": "9",
+        "Description": "A bitmask encoded as an integer-valued timeseries. The first \"Bits\" bits might be used, for each there is an entry in \"Bits\", \"Shortnames\", \"Descriptions\", one for each bit.",
+        "Npoints": "4096",
+        "Xlabel": "GPS time",
+        "Xspacing": "1.0",
+        "Xstart": "1388511232",
+        "Xunits": "second",
+        "Ylabel": "DQmask"
+      }
+    },
+    {
+      "name": "quality/simple/GWOSCmeta",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "strain/GWOSCmeta",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "strain/Strain",
+      "shape": [
+        16777216
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "Npoints": "16777216",
+        "Xlabel": "GPS time",
+        "Xspacing": "0.000244140625",
+        "Xstart": "1388511232",
+        "Xunits": "second",
+        "Ylabel": "Strain",
+        "Yunits": ""
+      }
+    }
+  ],
+  "attributes": {},
+  "status": "pass"
+}

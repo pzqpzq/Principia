@@ -1,0 +1,178 @@
+{
+  "scenario_id": "20_ocean_noaa_coral_ssta_20260816",
+  "path": "raw/ct5km_ssta_v3.1-clim19912020-v1_20260816.nc",
+  "bytes": 10707615,
+  "sha256": "a72401223bebfb8d8df5ffadfc46db3ebc17ccb40160f802daaf26c411ef8267",
+  "checked_utc": "2026-09-15T06:40:16.514855+00:00",
+  "format_extension": ".nc",
+  "checks": [],
+  "format": "NetCDF",
+  "dimensions": {
+    "time": 1,
+    "lon": 7200,
+    "lat": 3600
+  },
+  "variables": [
+    {
+      "name": "time",
+      "shape": [
+        1
+      ],
+      "dtype": "int32",
+      "attributes": {
+        "axis": "T",
+        "coverage_content_type": "coordinate",
+        "long_name": "reference time of the data",
+        "standard_name": "time",
+        "units": "seconds since 1981-01-01 00:00:00"
+      }
+    },
+    {
+      "name": "lat",
+      "shape": [
+        3600
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "axis": "Y",
+        "comment": "equirectangular projection and grid centers",
+        "coverage_content_type": "coordinate",
+        "long_name": "latitude",
+        "standard_name": "latitude",
+        "units": "degrees_north",
+        "valid_max": "89.975",
+        "valid_min": "-89.975"
+      }
+    },
+    {
+      "name": "lon",
+      "shape": [
+        7200
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "axis": "X",
+        "comment": "equirectangular projection and grid centers",
+        "coverage_content_type": "coordinate",
+        "long_name": "longitude",
+        "standard_name": "longitude",
+        "units": "degrees_east",
+        "valid_max": "179.975",
+        "valid_min": "-179.975"
+      }
+    },
+    {
+      "name": "sea_surface_temperature_anomaly",
+      "shape": [
+        1,
+        3600,
+        7200
+      ],
+      "dtype": "int16",
+      "attributes": {
+        "_FillValue": "-32768",
+        "coverage_content_type": "physicalMeasurement",
+        "grid_mapping": "crs",
+        "long_name": "sea surface temperature anomaly",
+        "standard_name": "N/A",
+        "units": "degree_Celsius",
+        "scale_factor": "0.01",
+        "valid_max": "1500",
+        "valid_min": "-1500"
+      }
+    },
+    {
+      "name": "mask",
+      "shape": [
+        1,
+        3600,
+        7200
+      ],
+      "dtype": "uint8",
+      "attributes": {
+        "_FillValue": "251",
+        "comment": "A 2D array, in the same size as the data array in the X and Y directions, classifying land, missing, and ice pixels that are all flagged by the same missing_value (specified by the variable attribute _FillValue) in the data array(s), along with water (data) pixels.",
+        "coordinates": "time lat lon",
+        "coverage_content_type": "thematicClassification",
+        "flag_values": "[0 1 2 4]",
+        "flag_meanings": "valid-water land missing ice",
+        "grid_mapping": "crs",
+        "long_name": "pixel characteristics flag array",
+        "units": "pixel_classification"
+      }
+    },
+    {
+      "name": "crs",
+      "shape": [],
+      "dtype": "int16",
+      "attributes": {
+        "grid_mapping_name": "latitude_longitude",
+        "epsg_code": "EPSG:4326",
+        "semi_major_axis": "6.378137e+06",
+        "inverse_flattening": "298.2572",
+        "comment": "This is a container variable that describes the grid_mapping used by the data in this file. This variable does not contain any data; only information about the geographic coordinate system."
+      }
+    }
+  ],
+  "attributes": {
+    "acknowledgement": "NOAA Coral Reef Watch Program",
+    "cdm_data_type": "Grid",
+    "comment": "This is a data file of the NOAA Coral Reef Watch Daily Global 5km Satellite Sea Surface Temperature Aonomaly product derived using a standard daily climatology of 1991-2020 baseline time period.",
+    "contributor_name": "NOAA Coral Reef Watch Program",
+    "contributor_role": "Collecting source data and deriving products; performing quality control of products; disseminating, storing, and submitting data to archive",
+    "Conventions": "CF-1.6, ACDD-1.3",
+    "creator_email": "[source contact omitted from curator metadata]",
+    "creator_institution": "NOAA/NESDIS/STAR Coral Reef Watch Program",
+    "creator_name": "NOAA Coral Reef Watch Program",
+    "creator_type": "group",
+    "creator_url": "https://coralreefwatch.noaa.gov/",
+    "date_created": "20260522T120000Z",
+    "date_issued": "20260817T144200Z",
+    "date_metadata_modified": "20260522T120000Z",
+    "date_modified": "20260522T120000Z",
+    "geospatial_bounds_crs": "EPSG:4326",
+    "geospatial_bounds": "POLYGON((-90.0 180.0, 90.0 180.0, 90.0 -180.0, -90.0 -180.0, -90.0 180.0))",
+    "geospatial_lat_max": "89.975",
+    "geospatial_lat_min": "-89.975",
+    "geospatial_lat_resolution": "0.05",
+    "geospatial_lat_units": "degrees_north",
+    "geospatial_lon_max": "179.975",
+    "geospatial_lon_min": "-179.975",
+    "geospatial_lon_resolution": "0.05",
+    "geospatial_lon_units": "degrees_east",
+    "history": "This is a data file of the NOAA Coral Reef Watch Daily Global 5km Satellite Sea Surface Temperature Aonomaly Product Version 1.0 based on CoralTemp v3.1 and standard daily climatology of 1991-2020 baseline time period and in its NetCDF File Version 1.0 (v1.0).",
+    "id": "Satellite_Daily_Global_5km_SST_Anomaly",
+    "institution": "NOAA/NESDIS/STAR Coral Reef Watch Program",
+    "instrument": "See CoralTemp v3.1 or NOAA NESDIS operational daily global 5km Geo-Polar Blended Night-only SST Analysis data file of the same date.",
+    "instrument_vocabulary": "NOAA NODC Ocean Archive System Instruments",
+    "keywords": "Oceans > Ocean Temperature > Sea Surface Temperature,  Oceans > Ocean Temperature > Water Temperature,  Spectral/Engineering > Infrared Wavelengths > Thermal Infrared, Oceans > Ocean Temperature > Sea Surface Temperature Anomaly",
+    "keywords_vocabulary": "NASA Global Change Master Directory (GCMD) Science Keywords",
+    "license": "The data produced by Coral Reef Watch are available for use without restriction, but Coral Reef Watch relies on the ethics and integrity of the user to ensure that the source of the data and products is appropriately cited and credited. When using these data and products, credit and courtesy should be given to NOAA Coral Reef Watch. Please include the appropriate DOI associated with this dataset in the citation. For more information, visit the NOAA Coral Reef Watch website: https://coralreefwatc",
+    "metadata_link": "https://coralreefwatch.noaa.gov",
+    "naming_authority": "gov.noaa.coralreefwatch",
+    "ncei_template_version": "NCEI_NetCDF_Grid_Template_v2.0",
+    "platform": "See CoralTemp v3.1 or NOAA NESDIS operational daily global 5km Geo-Polar Blended Night-only SST Analysis data file of the same date.",
+    "platform_vocabulary": "NOAA NODC Ocean Archive System Platforms",
+    "processing_level": "Derived from L4 satellite sea surface temperaure analysis",
+    "product_version": "3.1",
+    "program": "NOAA Coral Reef Watch Program",
+    "project": "NOAA Coral Reef Watch Program",
+    "publisher_email": "[source contact omitted from curator metadata]",
+    "publisher_institution": "NOAA/NESDIS/STAR Coral Reef Watch Program",
+    "publisher_name": "NOAA Coral Reef Watch Program",
+    "publisher_type": "group",
+    "publisher_url": "https://coralreefwatch.noaa.gov",
+    "references": "https://coralreefwatch.noaa.gov",
+    "source": "Coral Reef Watch Daily Global 5km Satellite Sea Surface Temperature v3.1 (CoralTemp v3.1)",
+    "spatial_resolution": "0.05 degrees",
+    "standard_name_vocabulary": "CF Standard Name Table v27",
+    "summary": "This is a data file of the NOAA Coral Reef Watch Daily Global 5km Satellite Sea Surface Temperature Aonomaly Product derived using a standard daily climatology of 1991-2020 baseline time period.",
+    "time_coverage_duration": "P1D",
+    "time_coverage_end": "20260817T000000Z",
+    "time_coverage_resolution": "P1D",
+    "time_coverage_start": "20260816T000000Z",
+    "title": "NOAA Coral Reef Watch Daily Global 5km Satellite Sea Surface Temperature Anomaly (1991-2020 Climatological Baseline) ",
+    "uuid": "4ac72e30-55e7-11f1-a660-3cecef1a7304"
+  },
+  "status": "pass"
+}

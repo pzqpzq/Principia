@@ -1,0 +1,212 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "95_atmosphere_mountain_weather",
+  "domain": "Atmospheric boundary layer",
+  "title": "Observational data and model output to \"SNOWstorm (v1.0) - a deep-learning based model for near-surface winds and drifting snow in mountain environments\"",
+  "publisher": "Saigger, Manuel (Friedrich-Alexander-Universität Erlangen-Nürnberg Naturwissenschaftliche Fakultät); Goger, Brigitta (ETH Zurich); Moelg, Thomas (Friedrich-Alexander-Universität Erlangen-Nürnberg)",
+  "authoritative_landing_url": "https://zenodo.org/records/18670232",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/18670232",
+    "https://zenodo.org/api/records/18670232/files/202101-03_ImHinterenEis_FRecDR_calc_TKE.csv/content",
+    "https://zenodo.org/api/records/18670232/files/2021_AWS_HEF.csv/content",
+    "https://zenodo.org/api/records/18670232/files/data_sth_202102.csv/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.18670232"
+  ],
+  "release_or_version": "18670232",
+  "retrieval_finalized_utc": "2026-09-15T07:04:43.271868+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "weather",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "January–March 2021 observations; February 2026 deposit.",
+  "source_publication_date": "2026-02-17",
+  "source_created_utc": "2026-02-17T13:12:37.139847+00:00",
+  "source_updated_utc": "2026-02-17T13:12:38.170367+00:00",
+  "source_inventory": [
+    {
+      "name": "202101-03_ImHinterenEis_FRecDR_calc_TKE.csv",
+      "bytes": 6481677,
+      "selected": true
+    },
+    {
+      "name": "ds_S_ERA_W_20210208_21.nc",
+      "bytes": 3162797,
+      "selected": false
+    },
+    {
+      "name": "2021_AWS_HEF.csv",
+      "bytes": 3559259,
+      "selected": true
+    },
+    {
+      "name": "data_sth_202102.csv",
+      "bytes": 50778,
+      "selected": true
+    },
+    {
+      "name": "ts_snowstorm_obs_20210208.nc",
+      "bytes": 17159,
+      "selected": false
+    },
+    {
+      "name": "ds_snow_acc_hefles_20210208.nc",
+      "bytes": 3896245,
+      "selected": false
+    },
+    {
+      "name": "ds_S_ERA_G_20210208_21.nc",
+      "bytes": 1852499,
+      "selected": false
+    },
+    {
+      "name": "ds_snow_acc_glo30_20210208.nc",
+      "bytes": 2846712,
+      "selected": false
+    },
+    {
+      "name": "ds_S_WD1_G_20210208_21.nc",
+      "bytes": 1852499,
+      "selected": false
+    },
+    {
+      "name": "ds_S_WD1_W_20210208_21.nc",
+      "bytes": 3162797,
+      "selected": false
+    },
+    {
+      "name": "ds_S_WD2_G_20210208_21.nc",
+      "bytes": 1852499,
+      "selected": false
+    },
+    {
+      "name": "ds_S_WD2_W_20210208_21.nc",
+      "bytes": 3162797,
+      "selected": false
+    }
+  ],
+  "author_preprocessing": "Only three observed-station CSVs retained; source TKE is calculated from measurements. Simulation NetCDFs excluded.",
+  "known_analyses_and_limitations": "Use sites/full weather-event blocks. Calculated turbulence measures may contain the same wind moments used as predictors; avoid accounting identities.",
+  "related_publications": [
+    {
+      "identifier": "10.5194/tc-18-849-2024",
+      "relation": "isDescribedBy",
+      "resource_type": "publication",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5194/egusphere-2025-5608",
+      "relation": "isDescribedBy",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    }
+  ],
+  "independent_groups": "site and complete weather/time blocks",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-095",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-095",
+      "scenario_id": "95_atmosphere_mountain_weather",
+      "path": "raw/202101-03_ImHinterenEis_FRecDR_calc_TKE.csv",
+      "scenario_relative_path": "raw/202101-03_ImHinterenEis_FRecDR_calc_TKE.csv",
+      "bytes": 6481677,
+      "sha256": "01cffbe63e5e38f1a3c52fb3056e427c734211fc73fe8a5472b6d36d2944919e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18670232"
+      ],
+      "download_url": "https://zenodo.org/api/records/18670232/files/202101-03_ImHinterenEis_FRecDR_calc_TKE.csv/content",
+      "source_checksum": "md5:7a39640437e881633591cd1cf35750e5",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:36:02.804920+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18670232"
+      ],
+      "citation_url": "https://zenodo.org/records/18670232",
+      "source_version": "18670232",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18670232",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-095",
+      "scenario_id": "95_atmosphere_mountain_weather",
+      "path": "raw/2021_AWS_HEF.csv",
+      "scenario_relative_path": "raw/2021_AWS_HEF.csv",
+      "bytes": 3559259,
+      "sha256": "23e671d5f9aadd091c734ac66f61b7877c0c06a13b8d49fb61aa112b891f10b5",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18670232"
+      ],
+      "download_url": "https://zenodo.org/api/records/18670232/files/2021_AWS_HEF.csv/content",
+      "source_checksum": "md5:fc2cad5e10a64948a99510969da41fd4",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:43.635861+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18670232"
+      ],
+      "citation_url": "https://zenodo.org/records/18670232",
+      "source_version": "18670232",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18670232",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-095",
+      "scenario_id": "95_atmosphere_mountain_weather",
+      "path": "raw/data_sth_202102.csv",
+      "scenario_relative_path": "raw/data_sth_202102.csv",
+      "bytes": 50778,
+      "sha256": "48576777f4e4946f7e42356a00e5a263d584c87591964ebeed3fe0d458b85617",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18670232"
+      ],
+      "download_url": "https://zenodo.org/api/records/18670232/files/data_sth_202102.csv/content",
+      "source_checksum": "md5:26ff4369f981f9dcb08bdc517850bcee",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:22.434233+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18670232"
+      ],
+      "citation_url": "https://zenodo.org/records/18670232",
+      "source_version": "18670232",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18670232",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-095",
+      "scenario_id": "95_atmosphere_mountain_weather",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 10941,
+      "sha256": "79e87b495f1c7d095a79b63052583ba9dbaabd993450bfd61c63a4fcd10b17dc",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/18670232"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:50.403869+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18670232"
+      ],
+      "citation_url": "https://zenodo.org/records/18670232",
+      "source_version": "18670232",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

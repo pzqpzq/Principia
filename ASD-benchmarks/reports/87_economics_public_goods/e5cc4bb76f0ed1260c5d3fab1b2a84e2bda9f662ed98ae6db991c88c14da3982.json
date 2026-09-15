@@ -1,0 +1,86 @@
+{
+  "scenario_id": "87_economics_public_goods",
+  "path": "raw/code_linearPGG.zip",
+  "bytes": 3990,
+  "sha256": "841d4f0eb56bdc92a798e7c5fd8428b7a6894c767943efe24dba5ac33ba874e3",
+  "checked_utc": "2026-09-15T06:46:26.651933+00:00",
+  "source_checksum_status": "verified",
+  "format": "ZIP",
+  "expanded_bytes": 11363,
+  "members": [
+    {
+      "name": "code_linearPGG/LinearPGG_CreateDataIntrospection.m",
+      "bytes": 5301,
+      "sha256": "e122a93adcfe03e7587bf1b370546787104dec23945480d1440c477563f084a1",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e204c696e",
+        "line_count": 85,
+        "preview_lines": [
+          "function LinearPGG_CreateDataIntrospection()",
+          "",
+          "%% SETTING THE PARAMETERS %%",
+          "tmax= 10;",
+          "numberiterations = 1; "
+        ]
+      }
+    },
+    {
+      "name": "code_linearPGG/SimulateGame.m",
+      "bytes": 1266,
+      "sha256": "f8dd9ef7c1ec532e94d725bfe386d6b391b2b2807cf7dfb5b3bb65e6c9e967e6",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e205b6176",
+        "line_count": 31,
+        "preview_lines": [
+          "function [averagepayoff1, averagepayoff2, actions1, actions2] = SimulateGame(strategy1, strategy2, payoffmatrix1, payoffmatrix2, gamerounds)",
+          "",
+          "% this function computes the average payoff over several rounds of a game",
+          "% for given conditional/reactive strategies of the 2 players",
+          ""
+        ]
+      }
+    },
+    {
+      "name": "code_linearPGG/SimulateIntrospection.m",
+      "bytes": 3552,
+      "sha256": "fbc2b2710b1332822be0034d8608d7a8dccd5daf269b514162faaef320a13093",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e205b7374",
+        "line_count": 83,
+        "preview_lines": [
+          "function [strategyvector1, strategyvector2, finalstrategyvector1, finalstrategyvector2] = SimulateIntrospection(initialstrategy1, initialstrategy2, payoffmatrix1, payoffmatrix2, selectionstrength, tmax, gamerounds)",
+          "",
+          "%% Function SimulateIntrospection simulates the process of Introspection for tmax time steps for given initial reactive strategies",
+          "",
+          "numberstrategies1 = size(payoffmatrix1,1); % number of pure strategies (actions)"
+        ]
+      }
+    },
+    {
+      "name": "code_linearPGG/createpayoffmatrix.m",
+      "bytes": 1244,
+      "sha256": "ef0a753f781c1484fa1fb6e30f76790f7718d238b3b9400b18dc44cc491cc8e5",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "66756e6374696f6e205b4d31",
+        "line_count": 22,
+        "preview_lines": [
+          "function [M1, M2, strategies1, strategies2] = createpayoffmatrix(endowments,productivities,beta,gamma)",
+          "",
+          "% [M1, M2, strategies1, strategies2] = createpayoffmatrix(endowments,productivities,threshold,reward)",
+          "% Creates the payoff matrices M1 and M2 for the two players, and the list",
+          "% of strategies for each player"
+        ]
+      }
+    }
+  ],
+  "checks": [
+    "all_member_CRCs",
+    "safe_paths_no_symlinks"
+  ],
+  "member_count": 4,
+  "status": "pass"
+}

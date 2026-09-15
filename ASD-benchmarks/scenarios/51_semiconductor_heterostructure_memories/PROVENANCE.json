@@ -1,0 +1,1146 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "51_semiconductor_heterostructure_memories",
+  "domain": "Semiconductor memories",
+  "title": "Data set for \"Non-volatile memories based on patterned metal–semiconductor heterostructures of niobium disulfide and molybdenum disulfide\"",
+  "publisher": "Wang, Zhenyu; Migliato Marega, Guilherme (Cornell University); Collette, Eloi; Tripathi, Mukesh; Ji, Hyun Goo; Tao, Zhi; Zheng, Nan; Radenovic, Aleksandra; Giusi, Gino; Iannaccone, Giuseppe; Zhang, Jianhua; Kis, Andras (École Polytechnique Fédérale de Lausanne)",
+  "authoritative_landing_url": "https://zenodo.org/records/19003428",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/19003428",
+    "https://zenodo.org/api/records/19003428/files/Figure%203f-Retention%20time.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%202-XPS%20NbS2.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2011-TLM-Rc%20of%20heterostructure%20and%20MoS2.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Figure%202d-G-T%20of%20HT.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Figure%201e-MoS2%20Raman.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2015-MoS2%20and%20HT%20memory%20comparision.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2014b-Vg%20sweep%20under%20different%20Vds%20of%20MoS2.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2016a-Vg%20sweep-different%20sweep%20rate.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Figure%202c-Ids-Vg%20of%20HT%20and%20MoS2.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2016b-Vg%20sweep-different%20T.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%205-XPS%20MoS2.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2013a-SBH%20analysis-Ids-T%20under%20various%20Vg.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Figure%202e-Vg%20sweep%20of%2036%20FET.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2010-I-V%20NbS2.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%209-Voltage%20potential%20of%20probes.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%206b-Raman%20line%20scans%20of%20NbS2.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%206a-Raman%20line%20scans%20of%20MoS2.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Figure%203e-Gds-pulses.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2013b-SBH-Vg.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Figure%203c-Ids-Vds%20under%20different%20Vg%20of%20FGFET.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Figure%203d-Ids-t.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Figure%203g-Endurance.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Figure%201d-NbS2%20Raman.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2014a-Vg%20sweep%20under%20different%20Vds%20of%20heterostructure.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Figure%203b-memory%20of%20heterostructure%20FGFET.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2017a-Vg%20sweep-different%20Vmax.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Figure%202g-Distribution%20of%20mobility%20and%20SS.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2017b-Vg%20sweep-different%20Vds.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%204-Raman%20NbS2%20under%20different%20T.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Figure%204a&b-Ids-Vg%20with%20scaling%20down.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Figure%204c-PW%20with%20different%20tcg.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Figure%202f-distribution%20of%20Ids.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2012-Ea%20vs%20Vg.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2014c-Vds%20sweep%20under%20different%20Vg%20of%20heterostructure.csv/content",
+    "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2014d-Vds%20sweep%20under%20different%20Vg%20of%20MoS2.csv/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.19003428"
+  ],
+  "release_or_version": "19003428",
+  "retrieval_finalized_utc": "2026-09-15T07:04:30.764825+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "mixed_measured_and_computational",
+  "measurement_dates": "Whole-campaign dates unknown; publication/deposit dates are recorded separately.",
+  "source_publication_date": "2026-03-13",
+  "source_created_utc": "2026-05-21T12:53:48.171450+00:00",
+  "source_updated_utc": "2026-05-21T12:53:49.604512+00:00",
+  "source_inventory": [
+    {
+      "name": "Figure 3f-Retention time.csv",
+      "bytes": 3799387,
+      "selected": true
+    },
+    {
+      "name": "Supplementary Figure 2-XPS NbS2.csv",
+      "bytes": 18776,
+      "selected": true
+    },
+    {
+      "name": "Supplementary Figure 11-TLM-Rc of heterostructure and MoS2.csv",
+      "bytes": 329,
+      "selected": true
+    },
+    {
+      "name": "Figure 2d-G-T of HT.csv",
+      "bytes": 352,
+      "selected": true
+    },
+    {
+      "name": "Figure 1e-MoS2 Raman.csv",
+      "bytes": 32270,
+      "selected": true
+    },
+    {
+      "name": "Supplementary Figure 15-MoS2 and HT memory comparision.csv",
+      "bytes": 13473,
+      "selected": true
+    },
+    {
+      "name": "Supplementary Figure 14b-Vg sweep under different Vds of MoS2.csv",
+      "bytes": 22388,
+      "selected": true
+    },
+    {
+      "name": "Supplementary Figure 16a-Vg sweep-different sweep rate.csv",
+      "bytes": 16460,
+      "selected": true
+    },
+    {
+      "name": "Figure 2c-Ids-Vg of HT and MoS2.csv",
+      "bytes": 13742,
+      "selected": true
+    },
+    {
+      "name": "Supplementary Figure 16b-Vg sweep-different T.csv",
+      "bytes": 38730,
+      "selected": true
+    },
+    {
+      "name": "Supplementary Figure 5-XPS MoS2.csv",
+      "bytes": 23543,
+      "selected": true
+    },
+    {
+      "name": "Supplementary Figure 13a-SBH analysis-Ids-T under various Vg.csv",
+      "bytes": 1996,
+      "selected": true
+    },
+    {
+      "name": "Figure 2e-Vg sweep of 36 FET.csv",
+      "bytes": 87396,
+      "selected": true
+    },
+    {
+      "name": "Supplementary Figure 10-I-V NbS2.csv",
+      "bytes": 1305,
+      "selected": true
+    },
+    {
+      "name": "Supplementary Figure 9-Voltage potential of probes.csv",
+      "bytes": 45,
+      "selected": true
+    },
+    {
+      "name": "Supplementary Figure 6b-Raman line scans of NbS2.csv",
+      "bytes": 131005,
+      "selected": true
+    },
+    {
+      "name": "Supplementary Figure 6a-Raman line scans of MoS2.csv",
+      "bytes": 130441,
+      "selected": true
+    },
+    {
+      "name": "Figure 3e-Gds-pulses.csv",
+      "bytes": 16910,
+      "selected": true
+    },
+    {
+      "name": "Supplementary Figure 13b-SBH-Vg.csv",
+      "bytes": 563,
+      "selected": true
+    },
+    {
+      "name": "Figure 3c-Ids-Vds under different Vg of FGFET.csv",
+      "bytes": 4401,
+      "selected": true
+    },
+    {
+      "name": "Figure 3d-Ids-t.csv",
+      "bytes": 427165,
+      "selected": true
+    },
+    {
+      "name": "Figure 3g-Endurance.csv",
+      "bytes": 1964197,
+      "selected": true
+    },
+    {
+      "name": "Figure 1d-NbS2 Raman.csv",
+      "bytes": 16534,
+      "selected": true
+    },
+    {
+      "name": "Supplementary Figure 14a-Vg sweep under different Vds of heterostructure.csv",
+      "bytes": 22528,
+      "selected": true
+    },
+    {
+      "name": "Figure 3b-memory of heterostructure FGFET.csv",
+      "bytes": 6968,
+      "selected": true
+    },
+    {
+      "name": "Supplementary Figure 17a-Vg sweep-different Vmax.csv",
+      "bytes": 24193,
+      "selected": true
+    },
+    {
+      "name": "Figure 2g-Distribution of mobility and SS.csv",
+      "bytes": 1694,
+      "selected": true
+    },
+    {
+      "name": "Supplementary Figure 17b-Vg sweep-different Vds.csv",
+      "bytes": 25570,
+      "selected": true
+    },
+    {
+      "name": "Supplementary Figure 4-Raman NbS2 under different T.csv",
+      "bytes": 94450,
+      "selected": true
+    },
+    {
+      "name": "Figure 4a&b-Ids-Vg with scaling down.csv",
+      "bytes": 21662,
+      "selected": true
+    },
+    {
+      "name": "Figure 4c-PW with different tcg.csv",
+      "bytes": 674,
+      "selected": true
+    },
+    {
+      "name": "Figure 2f-distribution of Ids.csv",
+      "bytes": 840,
+      "selected": true
+    },
+    {
+      "name": "Supplementary Figure 12-Ea vs Vg.csv",
+      "bytes": 65,
+      "selected": true
+    },
+    {
+      "name": "Supplementary Figure 14c-Vds sweep under different Vg of heterostructure.csv",
+      "bytes": 4786,
+      "selected": true
+    },
+    {
+      "name": "Supplementary Figure 14d-Vds sweep under different Vg of MoS2.csv",
+      "bytes": 4758,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Electrical/spectroscopy figure-source CSVs; several supplementary files contain electrostatic/model quantities. The 2026 source paper already analyzes memory behavior.",
+  "known_analyses_and_limitations": "Group entire sweeps and retention/endurance series by device. Thirty-six FET sweeps do not establish independent fabrication lots. Separate model inputs from observed responses.",
+  "related_publications": [],
+  "independent_groups": "devices; temperatures and complete sweeps",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-051",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Figure 3f-Retention time.csv",
+      "scenario_relative_path": "raw/Figure 3f-Retention time.csv",
+      "bytes": 3799387,
+      "sha256": "c9bf7314a08fb9942c658f06fcd4ade51e8c50106e093b33241d3b81440e156f",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Figure%203f-Retention%20time.csv/content",
+      "source_checksum": "md5:2c9d9dd1463a5e969829eae013647fa0",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:18:03.477436+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Supplementary Figure 2-XPS NbS2.csv",
+      "scenario_relative_path": "raw/Supplementary Figure 2-XPS NbS2.csv",
+      "bytes": 18776,
+      "sha256": "b6f989a841039a4020f8197e411270e6f3c27a426b9bd86c385e18f4e235ba8d",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%202-XPS%20NbS2.csv/content",
+      "source_checksum": "md5:89baec2e32352bed00f6037d12828d9f",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:26.579921+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Supplementary Figure 11-TLM-Rc of heterostructure and MoS2.csv",
+      "scenario_relative_path": "raw/Supplementary Figure 11-TLM-Rc of heterostructure and MoS2.csv",
+      "bytes": 329,
+      "sha256": "37474a3ad18a8223bffdbcd0106e39730f8c6fe05bdb339b5f28c6015f4ac4e1",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2011-TLM-Rc%20of%20heterostructure%20and%20MoS2.csv/content",
+      "source_checksum": "md5:8a612d0a3bf5437d4e4298c0828ed736",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:27.872118+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Figure 2d-G-T of HT.csv",
+      "scenario_relative_path": "raw/Figure 2d-G-T of HT.csv",
+      "bytes": 352,
+      "sha256": "9934060eb81d64d87968469742cea3297c843ae258c1fe7ebba0635da5b062b7",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Figure%202d-G-T%20of%20HT.csv/content",
+      "source_checksum": "md5:20d9fc14049063fd4305d4cf4324a923",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:28.021949+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Figure 1e-MoS2 Raman.csv",
+      "scenario_relative_path": "raw/Figure 1e-MoS2 Raman.csv",
+      "bytes": 32270,
+      "sha256": "e7c90c58b0511662c3d1f11e379dec824dfcfda08134c7b043bab04dd40cd42c",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Figure%201e-MoS2%20Raman.csv/content",
+      "source_checksum": "md5:7ee07ee81e26945a8f2f34e1f9f8edaf",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:29.423576+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Supplementary Figure 15-MoS2 and HT memory comparision.csv",
+      "scenario_relative_path": "raw/Supplementary Figure 15-MoS2 and HT memory comparision.csv",
+      "bytes": 13473,
+      "sha256": "4e1c9faf457554d67da35f1eaadd9ac7326c9c83b37b4c1ae334894e33c43435",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2015-MoS2%20and%20HT%20memory%20comparision.csv/content",
+      "source_checksum": "md5:22d6a41923ebe743fa7082f29fa46b31",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:29.602770+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Supplementary Figure 14b-Vg sweep under different Vds of MoS2.csv",
+      "scenario_relative_path": "raw/Supplementary Figure 14b-Vg sweep under different Vds of MoS2.csv",
+      "bytes": 22388,
+      "sha256": "ca0ad9f1b6fbbcb228edc85367e027d2fe0c2a34fa822c68d040423b99b6a8a4",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2014b-Vg%20sweep%20under%20different%20Vds%20of%20MoS2.csv/content",
+      "source_checksum": "md5:6e7b3c2b3c9e8666208cce98583d8eed",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:31.066885+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Supplementary Figure 16a-Vg sweep-different sweep rate.csv",
+      "scenario_relative_path": "raw/Supplementary Figure 16a-Vg sweep-different sweep rate.csv",
+      "bytes": 16460,
+      "sha256": "52636afa47ff33358794f8fb0edbf9b861f5ed363d154adc5a52058e8f5e5730",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2016a-Vg%20sweep-different%20sweep%20rate.csv/content",
+      "source_checksum": "md5:1e7e38969f319b38c847ae24bc64c36f",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:31.025734+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Figure 2c-Ids-Vg of HT and MoS2.csv",
+      "scenario_relative_path": "raw/Figure 2c-Ids-Vg of HT and MoS2.csv",
+      "bytes": 13742,
+      "sha256": "e320dab795d1001a5ef5e6f57189206704ddc8bc93433e22faa5fb589de7145a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Figure%202c-Ids-Vg%20of%20HT%20and%20MoS2.csv/content",
+      "source_checksum": "md5:0525cf4f9d0e87c671a960fe0272deda",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:32.426211+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Supplementary Figure 16b-Vg sweep-different T.csv",
+      "scenario_relative_path": "raw/Supplementary Figure 16b-Vg sweep-different T.csv",
+      "bytes": 38730,
+      "sha256": "6feaae6fb99660fe685e8d5fa99c7ed8dbc16cda50927f8912108577a2a55892",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2016b-Vg%20sweep-different%20T.csv/content",
+      "source_checksum": "md5:81b9ffd0efdfec1392cef9d9d091b351",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:32.565292+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Supplementary Figure 5-XPS MoS2.csv",
+      "scenario_relative_path": "raw/Supplementary Figure 5-XPS MoS2.csv",
+      "bytes": 23543,
+      "sha256": "028e2aef134ab620d5b008c1685ada35e2f8c91bf79efc0785a9a097ec7d7900",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%205-XPS%20MoS2.csv/content",
+      "source_checksum": "md5:fa776536502e27ffc6e0616bcc9459ba",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:34.970864+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Supplementary Figure 13a-SBH analysis-Ids-T under various Vg.csv",
+      "scenario_relative_path": "raw/Supplementary Figure 13a-SBH analysis-Ids-T under various Vg.csv",
+      "bytes": 1996,
+      "sha256": "811ff89783166f093af4fc932dde55920d8d1bcb3ade97ccc388cd6e75f32e67",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2013a-SBH%20analysis-Ids-T%20under%20various%20Vg.csv/content",
+      "source_checksum": "md5:85f1b729552e3249352536e303908235",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:33.979440+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Figure 2e-Vg sweep of 36 FET.csv",
+      "scenario_relative_path": "raw/Figure 2e-Vg sweep of 36 FET.csv",
+      "bytes": 87396,
+      "sha256": "d085783652415cca892f51c5e5db06f0ac4777a9fa30bf2b9f7ed30892fb9cfa",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Figure%202e-Vg%20sweep%20of%2036%20FET.csv/content",
+      "source_checksum": "md5:2bf46860180bf2e82e52674e93e4b066",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:35.745169+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Supplementary Figure 10-I-V NbS2.csv",
+      "scenario_relative_path": "raw/Supplementary Figure 10-I-V NbS2.csv",
+      "bytes": 1305,
+      "sha256": "3dce28a259128ea651d5b7fa819c7d206b53e81dd083dac72a531985d44a80d9",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2010-I-V%20NbS2.csv/content",
+      "source_checksum": "md5:b6ed84de52a7c948a4b0abab1a193412",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:36.230998+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Supplementary Figure 9-Voltage potential of probes.csv",
+      "scenario_relative_path": "raw/Supplementary Figure 9-Voltage potential of probes.csv",
+      "bytes": 45,
+      "sha256": "da79103dc354280455af20864110ebc672e109c3cae5d7a9cf31ea83f54a2680",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%209-Voltage%20potential%20of%20probes.csv/content",
+      "source_checksum": "md5:da178c189e41881b5840f3b15a301a83",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:37.101721+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Supplementary Figure 6b-Raman line scans of NbS2.csv",
+      "scenario_relative_path": "raw/Supplementary Figure 6b-Raman line scans of NbS2.csv",
+      "bytes": 131005,
+      "sha256": "7c21c1eec9e6c4a0d54c8a0a592cd8673efb936d41b8de31a9373d991dc44a60",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%206b-Raman%20line%20scans%20of%20NbS2.csv/content",
+      "source_checksum": "md5:42f5937213ab49251808de2fdf500a35",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:38.255056+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Supplementary Figure 6a-Raman line scans of MoS2.csv",
+      "scenario_relative_path": "raw/Supplementary Figure 6a-Raman line scans of MoS2.csv",
+      "bytes": 130441,
+      "sha256": "0afd6b2880b807e2ef051d25d474adb30f82c50a83ae3fffc54ec36e1f9df45f",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%206a-Raman%20line%20scans%20of%20MoS2.csv/content",
+      "source_checksum": "md5:776f8306d461f367f6ed45bb86987883",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:38.799250+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Figure 3e-Gds-pulses.csv",
+      "scenario_relative_path": "raw/Figure 3e-Gds-pulses.csv",
+      "bytes": 16910,
+      "sha256": "8d624310ae5cf861bce1b116676fe84dd238ce56211baaf57a7b2bdba1a34019",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Figure%203e-Gds-pulses.csv/content",
+      "source_checksum": "md5:104ea5bfa476709e1b7f0e8142e78fb1",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:39.837584+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Supplementary Figure 13b-SBH-Vg.csv",
+      "scenario_relative_path": "raw/Supplementary Figure 13b-SBH-Vg.csv",
+      "bytes": 563,
+      "sha256": "2d6d83c0cc73dc3c04b909741e9f1adc93d2ebb0cbf337535d3826aed9f1b0b5",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2013b-SBH-Vg.csv/content",
+      "source_checksum": "md5:f29ef445bdff6bcda4ab9c794d6aef5f",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:40.120428+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Figure 3c-Ids-Vds under different Vg of FGFET.csv",
+      "scenario_relative_path": "raw/Figure 3c-Ids-Vds under different Vg of FGFET.csv",
+      "bytes": 4401,
+      "sha256": "8d98579c733802b172065ccbe062af5737c67a847b27dd424e466f00bd5adf27",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Figure%203c-Ids-Vds%20under%20different%20Vg%20of%20FGFET.csv/content",
+      "source_checksum": "md5:7b78d90b546bdf538a1143cfe87ac047",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:41.267610+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Figure 3d-Ids-t.csv",
+      "scenario_relative_path": "raw/Figure 3d-Ids-t.csv",
+      "bytes": 427165,
+      "sha256": "c6f3015d91c1553fd351e1b2e3ba4b44ab6b2cdcd4b0a82f019b396464d5b4b5",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Figure%203d-Ids-t.csv/content",
+      "source_checksum": "md5:3d8d851f965d0a16f0def1a81f68ad12",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:42.556048+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Figure 3g-Endurance.csv",
+      "scenario_relative_path": "raw/Figure 3g-Endurance.csv",
+      "bytes": 1964197,
+      "sha256": "e51632166c817f396d12f7ffc60630cf8e0f3601b595c07d6c74d08d7bc15769",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Figure%203g-Endurance.csv/content",
+      "source_checksum": "md5:bca7b6b132ffbfde27482685479efc50",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:53.690135+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Figure 1d-NbS2 Raman.csv",
+      "scenario_relative_path": "raw/Figure 1d-NbS2 Raman.csv",
+      "bytes": 16534,
+      "sha256": "d08cc864d6822b938a965939adfcac47362384ab58bca9746db7c83c47b3169f",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Figure%201d-NbS2%20Raman.csv/content",
+      "source_checksum": "md5:419669709584bb703db52ee0a17a27f3",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:44.477374+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Supplementary Figure 14a-Vg sweep under different Vds of heterostructure.csv",
+      "scenario_relative_path": "raw/Supplementary Figure 14a-Vg sweep under different Vds of heterostructure.csv",
+      "bytes": 22528,
+      "sha256": "03dac9bb5103b42e5f7e9db3f60e030fce934c69b0f550def5da15d1cb316762",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2014a-Vg%20sweep%20under%20different%20Vds%20of%20heterostructure.csv/content",
+      "source_checksum": "md5:0f2ac53b83ebcbe95c2f5dbb97469090",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:46.016717+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Figure 3b-memory of heterostructure FGFET.csv",
+      "scenario_relative_path": "raw/Figure 3b-memory of heterostructure FGFET.csv",
+      "bytes": 6968,
+      "sha256": "18846882e8924faa6cd4f04c6b74f81dd61c78cc3f3d616be1603a0f3e1da4b5",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Figure%203b-memory%20of%20heterostructure%20FGFET.csv/content",
+      "source_checksum": "md5:0fa161f6a9ef62f5ca3a36ea301aafeb",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:47.553664+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Supplementary Figure 17a-Vg sweep-different Vmax.csv",
+      "scenario_relative_path": "raw/Supplementary Figure 17a-Vg sweep-different Vmax.csv",
+      "bytes": 24193,
+      "sha256": "45302a42c80dd81b318c147eb838331454d57c5b03b2ef180090c15f165b16de",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2017a-Vg%20sweep-different%20Vmax.csv/content",
+      "source_checksum": "md5:5c991d56bd9695f95a7ce0b1b5b9a3af",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:49.128385+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Figure 2g-Distribution of mobility and SS.csv",
+      "scenario_relative_path": "raw/Figure 2g-Distribution of mobility and SS.csv",
+      "bytes": 1694,
+      "sha256": "e4fcbc78059592c530948c76bcf9deda895fa329b9273052167bedc55d2a4e31",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Figure%202g-Distribution%20of%20mobility%20and%20SS.csv/content",
+      "source_checksum": "md5:3fd5e05c0a75a90cc26ffe2bf2757c97",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:51.498029+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Supplementary Figure 17b-Vg sweep-different Vds.csv",
+      "scenario_relative_path": "raw/Supplementary Figure 17b-Vg sweep-different Vds.csv",
+      "bytes": 25570,
+      "sha256": "d97e5d678a8acd3a801aa5c2b4749441f0a4354c13cf09b319a297c7f9d1b87b",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2017b-Vg%20sweep-different%20Vds.csv/content",
+      "source_checksum": "md5:b5b07da146db7fd11797737435e8fd5a",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:52.983186+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Supplementary Figure 4-Raman NbS2 under different T.csv",
+      "scenario_relative_path": "raw/Supplementary Figure 4-Raman NbS2 under different T.csv",
+      "bytes": 94450,
+      "sha256": "05c87522b775e0bd10fa385909b9e745fdba83c47bf85ca3f9c810d38e6b24c0",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%204-Raman%20NbS2%20under%20different%20T.csv/content",
+      "source_checksum": "md5:f3fd40caf99a00f143ce0cc31393a7cc",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:55.748447+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Figure 4a&b-Ids-Vg with scaling down.csv",
+      "scenario_relative_path": "raw/Figure 4a&b-Ids-Vg with scaling down.csv",
+      "bytes": 21662,
+      "sha256": "cd2767dfb6a78851764188664d6c870c50ad22ecb69d07c2dd084eda16fb6905",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Figure%204a&b-Ids-Vg%20with%20scaling%20down.csv/content",
+      "source_checksum": "md5:6f232f3d37a7e3ee213b3226aace87c7",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:55.166848+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Figure 4c-PW with different tcg.csv",
+      "scenario_relative_path": "raw/Figure 4c-PW with different tcg.csv",
+      "bytes": 674,
+      "sha256": "676ee59b012cc4c98b56b6dc4870f717e30f06d36185bc63ecf7b6ed70e05bbe",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Figure%204c-PW%20with%20different%20tcg.csv/content",
+      "source_checksum": "md5:ffab89f18646488cd9da24050f480568",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:56.880484+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Figure 2f-distribution of Ids.csv",
+      "scenario_relative_path": "raw/Figure 2f-distribution of Ids.csv",
+      "bytes": 840,
+      "sha256": "a4b415669bf995e423a3c368bb301a9336c81834c46f2bda8592b08f1ed866db",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Figure%202f-distribution%20of%20Ids.csv/content",
+      "source_checksum": "md5:8bdecf08755e991a498edc76ad1e03cd",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:57.512616+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Supplementary Figure 12-Ea vs Vg.csv",
+      "scenario_relative_path": "raw/Supplementary Figure 12-Ea vs Vg.csv",
+      "bytes": 65,
+      "sha256": "dbd6032503abf249588773c3597d464e9c10d72c41235e492a7c73b1ef03d5a8",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2012-Ea%20vs%20Vg.csv/content",
+      "source_checksum": "md5:b671310dec016ecfe037918db1f10861",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:58.225921+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Supplementary Figure 14c-Vds sweep under different Vg of heterostructure.csv",
+      "scenario_relative_path": "raw/Supplementary Figure 14c-Vds sweep under different Vg of heterostructure.csv",
+      "bytes": 4786,
+      "sha256": "1bb8e2df59147def1fc01de59a95ef2dde79da9b0dbdcdb33496b7ede67c4c51",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2014c-Vds%20sweep%20under%20different%20Vg%20of%20heterostructure.csv/content",
+      "source_checksum": "md5:5bc6c8547496db59c3002c7c3eb72361",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:59.825169+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "raw/Supplementary Figure 14d-Vds sweep under different Vg of MoS2.csv",
+      "scenario_relative_path": "raw/Supplementary Figure 14d-Vds sweep under different Vg of MoS2.csv",
+      "bytes": 4758,
+      "sha256": "232275f909dd183bda4726d5651490c1883c716194467c40aab49d80bc8287cd",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19003428"
+      ],
+      "download_url": "https://zenodo.org/api/records/19003428/files/Supplementary%20Figure%2014d-Vds%20sweep%20under%20different%20Vg%20of%20MoS2.csv/content",
+      "source_checksum": "md5:1424734f1d52cebe587dd7fead3e9835",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:59.669274+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19003428",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-051",
+      "scenario_id": "51_semiconductor_heterostructure_memories",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 17412,
+      "sha256": "5ee5955cfad64ab0bcb16a758a14d0e521714ed3ba3257e2ed86edcf683cdda1",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/19003428"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:40.670088+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.19003428"
+      ],
+      "citation_url": "https://zenodo.org/records/19003428",
+      "source_version": "19003428",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

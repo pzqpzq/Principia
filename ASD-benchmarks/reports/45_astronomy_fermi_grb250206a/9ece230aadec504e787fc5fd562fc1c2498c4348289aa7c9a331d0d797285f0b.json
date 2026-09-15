@@ -1,0 +1,84 @@
+{
+  "bytes": 31680,
+  "sha256": "355866c38c3c10fa1d0226243416ef36b67a5b28cce544c636552c7c33a7fe58",
+  "format_extension": ".rsp",
+  "checks": [],
+  "format": "FITS",
+  "HDUs": [
+    {
+      "name": "PRIMARY",
+      "shape": null,
+      "columns": null,
+      "units": null,
+      "header": {
+        "DATE-OBS": "2025-02-06T19:49:24",
+        "DATE-END": "2025-02-06T19:59:38",
+        "TSTART": "760564163.8065",
+        "TSTOP": "760564778.2165",
+        "TELESCOP": "GLAST",
+        "INSTRUME": "GBM",
+        "DETNAM": "NAI_02"
+      }
+    },
+    {
+      "name": "EBOUNDS",
+      "shape": [
+        8
+      ],
+      "columns": [
+        "CHANNEL",
+        "E_MIN",
+        "E_MAX"
+      ],
+      "units": [
+        "",
+        "keV",
+        "keV"
+      ],
+      "header": {
+        "DATE-OBS": "2025-02-06T19:49:24",
+        "DATE-END": "2025-02-06T19:59:38",
+        "TSTART": "760564163.8065",
+        "TSTOP": "760564778.2165",
+        "TELESCOP": "GLAST",
+        "INSTRUME": "GBM",
+        "DETNAM": "NAI_02"
+      }
+    },
+    {
+      "name": "SPECRESP MATRIX",
+      "shape": [
+        140
+      ],
+      "columns": [
+        "ENERG_LO",
+        "ENERG_HI",
+        "N_GRP",
+        "F_CHAN",
+        "N_CHAN",
+        "MATRIX"
+      ],
+      "units": [
+        "keV",
+        "keV",
+        "",
+        "",
+        "",
+        "cm**2"
+      ],
+      "header": {
+        "DATE-OBS": "2025-02-06T19:49:24",
+        "DATE-END": "2025-02-06T19:59:38",
+        "TSTART": "760564163.8065",
+        "TSTOP": "760564778.2165",
+        "TELESCOP": "GLAST",
+        "INSTRUME": "GBM",
+        "DETNAM": "NAI_02"
+      }
+    }
+  ],
+  "path": "raw/glg_ctime_n2_bn250206827_v01.rsp",
+  "scenario_id": "45_astronomy_fermi_grb250206a",
+  "verified_utc": "2026-09-14T16:00:15.445935+00:00",
+  "status": "pass"
+}

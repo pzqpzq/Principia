@@ -1,0 +1,82 @@
+{
+  "bytes": 2561928,
+  "sha256": "6ac7ab23fbcf2860c776e6c1f384275b84c7217bfabd764884148b7a6ee29be6",
+  "format_extension": ".hdf5",
+  "checks": [
+    "publisher_md5"
+  ],
+  "format": "HDF5",
+  "datasets": [
+    {
+      "name": "Scattering/2025-11-16_12_56_31/USB",
+      "shape": [
+        1,
+        11,
+        1,
+        151,
+        96
+      ],
+      "dtype": "complex128",
+      "attributes": {
+        "Unit": "fsu complex"
+      }
+    },
+    {
+      "name": "Scattering/2025-11-16_12_56_31/df",
+      "shape": [
+        1
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "Unit": "Hz"
+      }
+    },
+    {
+      "name": "Scattering/2025-11-16_12_56_31/freq comb",
+      "shape": [
+        1,
+        96
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "Unit": "Hz"
+      }
+    },
+    {
+      "name": "Scattering/2025-11-16_12_56_31/freq pumps",
+      "shape": [
+        1,
+        96
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "Unit": "Hz"
+      }
+    },
+    {
+      "name": "Scattering/2025-11-16_12_56_31/pump phase sweep",
+      "shape": [
+        1
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "Unit": "rad"
+      }
+    },
+    {
+      "name": "Scattering/2025-11-16_12_56_31/pump pwr sweep",
+      "shape": [
+        11
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "Unit": "fsu"
+      }
+    }
+  ],
+  "attributes": {},
+  "path": "raw/Data_Img.hdf5",
+  "scenario_id": "28_physics_parametric_microwave",
+  "verified_utc": "2026-09-14T15:58:08.712765+00:00",
+  "status": "pass"
+}

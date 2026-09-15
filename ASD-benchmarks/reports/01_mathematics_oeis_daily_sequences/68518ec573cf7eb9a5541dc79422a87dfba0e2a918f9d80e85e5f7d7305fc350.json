@@ -1,0 +1,25 @@
+{
+  "scenario_id": "01_mathematics_oeis_daily_sequences",
+  "path": "raw/names.gz",
+  "bytes": 7558398,
+  "sha256": "a01c8e0bb3dfbfa575d0493527e2bcd16b29f13175208f46cd093a12518065b9",
+  "checked_utc": "2026-09-15T06:39:46.236906+00:00",
+  "format": "GZIP",
+  "expanded_bytes": 38882913,
+  "checks": [
+    "gzip_CRC"
+  ],
+  "inner": {
+    "format": "text_or_instrument_native",
+    "signature_hex": "23204f454953205365717565",
+    "line_count": 399007,
+    "preview_lines": [
+      "# OEIS Sequence Names (http://oeis.org/names.gz)",
+      "# Last Modified: August 23 00:20 EDT 2026",
+      "# Use of this content is governed by the",
+      "# OEIS End-User License: http://oeis.org/LICENSE",
+      "A000001 Number of groups of order n."
+    ]
+  },
+  "status": "pass"
+}

@@ -1,0 +1,264 @@
+{
+  "@context": "https://schema.org",
+  "@type": "DataCatalog",
+  "@id": "https://w3id.org/battery-data-alliance/registry/catalog/five-star",
+  "name": "Battery Datasets for Testing Data Pipelines and Workflow Automation",
+  "description": "A catalog of open battery test datasets covering multiple vendors, formats, and chemistries for interoperability and parser validation.",
+  "publisher": {
+    "@type": "ResearchOrganization",
+    "@id": "https://ror.org/01f677e56",
+    "name": "SINTEF"
+  },
+  "version": "0.5.0",
+  "creator": [
+    {
+      "@type": "Person",
+      "@id": "https://orcid.org/0000-0002-8758-6109",
+      "name": "Simon Clark",
+      "affiliation": { "@id": "https://ror.org/01f677e56"}
+    }
+  ],
+  "contributor": [
+    {
+      "@type": "Person",
+      "@id": "https://orcid.org/0000-0003-0934-4515",
+      "name": "Julian Tolchard",
+      "affiliation": { "@id": "https://ror.org/01f677e56"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://orcid.org/0000-0002-2228-2016",
+      "name": "Dennis Kopljar",
+      "affiliation": { 
+        "@type": "ResearchOrganization",
+        "@id": "https://ror.org/04bwf3e34",
+        "name": "German Aerospace Center"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://orcid.org/0000-0002-4095-7611",
+      "name": "Christina Schmitt",
+      "affiliation": { "@id": "https://ror.org/04bwf3e34"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://orcid.org/0000-0002-5836-2210",
+      "name": "Elias Barbers",
+      "affiliation": { 
+        "@type": "ResearchOrganization",
+        "@id": "https://ror.org/02nv7yv05",
+        "name": "Jülich Research Centre"}
+    }
+  ],
+  "dataset": [
+    {
+      "@type": "Dataset",
+      "@id": "https://doi.org/10.5281/zenodo.16994937#biologic-na-cccv-outlier",
+      "identifier": "biologic-na-cccv-outlier",
+      "name": "BioLogic CCCV of Na-ion (with outliers)",
+      "creator": [
+        { "@type": "Person", "@id": "https://orcid.org/0000-0002-0000-0001", "name": "Example Creator A", "affiliation": { "@type": "Organization", "name": "Your Lab" } }
+      ],
+      "provider": { "@type": "Organization", "@id": "https://w3id.org/battery-data-alliance/org/biologic", "name": "BioLogic" },
+      "isBasedOn": { "@type": "SoftwareApplication", "@id": "https://w3id.org/battery-data-alliance/software/biologic-mpt", "name": "biologic-mpt" },
+      "keywords": ["na-ion", "cccv", "outlier"],
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "distribution": [{
+        "@type": "DataDownload",
+        "@id": "https://zenodo.org/records/17289383/files/SINTEF__NaCR32140-MP10-04__2025-08-25__CCCV_0p02C_25degC__BioLogic__Outlier_Bug.mpt",
+        "name": "Raw BioLogic MPT file",
+        "contentUrl": "https://zenodo.org/records/17289383/files/SINTEF__NaCR32140-MP10-04__2025-08-25__CCCV_0p02C_25degC__BioLogic__Outlier_Bug.mpt",
+        "encodingFormat": "application/octet-stream"
+      }]
+    },
+
+    {
+      "@type": "Dataset",
+      "@id": "https://doi.org/10.5281/zenodo.16994937#biologic-na-gitt",
+      "identifier": "biologic-na-gitt",
+      "name": "BioLogic GITT of Na-ion",
+      "creator": [
+        { "@type": "Person", "@id": "https://orcid.org/0000-0002-0000-0002", "name": "Example Creator B", "affiliation": { "@type": "Organization", "name": "Your Lab" } }
+      ],
+      "provider": { "@type": "Organization", "@id": "https://w3id.org/battery-data-alliance/org/biologic", "name": "BioLogic" },
+      "isBasedOn": { "@type": "SoftwareApplication", "@id": "https://w3id.org/battery-data-alliance/software/biologic-mpt", "name": "biologic-mpt" },
+      "keywords": ["na-ion", "gitt"],
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "distribution": [{
+        "@type": "DataDownload",
+        "@id": "https://zenodo.org/records/17289383/files/SINTEF__NaCR32140-MP10-04__2025-08-25__GITT_0p05C_25degC__BioLogic.mpt",
+        "name": "Raw BioLogic MPT file",
+        "contentUrl": "https://zenodo.org/records/17289383/files/SINTEF__NaCR32140-MP10-04__2025-08-25__GITT_0p05C_25degC__BioLogic.mpt",
+        "encodingFormat": "application/octet-stream"
+      }]
+    },
+
+    {
+      "@type": "Dataset",
+      "@id": "https://doi.org/10.5281/zenodo.16994937#neware-li-rate-nonmonotonic",
+      "identifier": "neware-li-rate-nonmonotonic",
+      "name": "NEWARE Li-ion Rate (non-monotonic time)",
+      "creator": [
+        { "@type": "Person", "@id": "https://orcid.org/0000-0002-0000-0003", "name": "Example Creator C", "affiliation": { "@type": "Organization", "name": "Your Lab" } }
+      ],
+      "provider": { "@type": "Organization", "@id": "https://w3id.org/battery-data-alliance/org/neware", "name": "NEWARE" },
+      "isBasedOn": { "@type": "SoftwareApplication", "@id": "https://w3id.org/battery-data-alliance/software/neware-csv", "name": "neware-csv" },
+      "keywords": ["li-ion", "rate", "time-bug"],
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "distribution": [{
+        "@type": "DataDownload",
+        "@id": "https://zenodo.org/records/17289383/files/SINTEF__SLPBA842124HV__2024-10-23__Rate_25degC__Neware__Time_Bug.csv",
+        "name": "NEWARE CSV file",
+        "contentUrl": "https://zenodo.org/records/17289383/files/SINTEF__SLPBA842124HV__2024-10-23__Rate_25degC__Neware__Time_Bug.csv",
+        "encodingFormat": "text/csv"
+      }]
+    },
+
+    {
+      "@type": "Dataset",
+      "@id": "https://doi.org/10.5281/zenodo.16994937#landt-csv-li-graphite-cycling",
+      "identifier": "landt-csv-li-graphite-cycling",
+      "name": "Landt Li-Graphite Half-Cell Cycling (CSV)",
+      "creator": [
+        { "@type": "Person", "@id": "https://orcid.org/0000-0002-0000-0004", "name": "Example Creator D", "affiliation": { "@type": "Organization", "name": "Your Lab" } }
+      ],
+      "provider": { "@type": "Organization", "@id": "https://w3id.org/battery-data-alliance/org/landt", "name": "LANDT Instruments" },
+      "isBasedOn": { "@type": "SoftwareApplication", "@id": "https://w3id.org/battery-data-alliance/software/landt-csv", "name": "landt-csv" },
+      "keywords": ["li-graphite", "cycling"],
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "distribution": [{
+        "@type": "DataDownload",
+        "@id": "https://zenodo.org/records/17289383/files/SINTEF__LiGrR2032__2024-04-30__25degC__Landt.csv",
+        "name": "Landt CSV file",
+        "contentUrl": "https://zenodo.org/records/17289383/files/SINTEF__LiGrR2032__2024-04-30__25degC__Landt.csv",
+        "encodingFormat": "text/csv"
+      }]
+    },
+
+    {
+      "@type": "Dataset",
+      "@id": "https://doi.org/10.5281/zenodo.16994937#landt-txt-li-graphite-cycling",
+      "identifier": "landt-txt-li-graphite-cycling",
+      "name": "Landt Li-Graphite Half-Cell Cycling (TXT)",
+      "creator": [
+        { "@type": "Person", "@id": "https://orcid.org/0000-0002-0000-0005", "name": "Example Creator E", "affiliation": { "@type": "Organization", "name": "Your Lab" } }
+      ],
+      "provider": { "@type": "Organization", "@id": "https://w3id.org/battery-data-alliance/org/landt", "name": "LANDT Instruments" },
+      "isBasedOn": { "@type": "SoftwareApplication", "@id": "https://w3id.org/battery-data-alliance/software/landt-txt", "name": "landt-txt" },
+      "keywords": ["li-graphite", "cycling"],
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "distribution": [{
+        "@type": "DataDownload",
+        "@id": "https://zenodo.org/records/17289383/files/SINTEF__LiGrR2032__2024-04-30__25degC__Landt.txt",
+        "name": "Landt TXT file",
+        "contentUrl": "https://zenodo.org/records/17289383/files/SINTEF__LiGrR2032__2024-04-30__25degC__Landt.txt",
+        "encodingFormat": "text/plain"
+      }]
+    },
+
+    {
+      "@type": "Dataset",
+      "@id": "https://doi.org/10.5281/zenodo.16994937#basytec-txt-li-graphite-gitt",
+      "identifier": "basytec-txt-li-graphite-gitt",
+      "name": "Basytec Li-Graphite Half-Cell GITT",
+      "creator": [
+        { "@type": "Person", "@id": "https://orcid.org/0000-0002-0000-0006", "name": "Example Creator F", "affiliation": { "@type": "Organization", "name": "Your Lab" } }
+      ],
+      "provider": { "@type": "Organization", "@id": "https://w3id.org/battery-data-alliance/org/basytec", "name": "Basytec" },
+      "isBasedOn": { "@type": "SoftwareApplication", "@id": "https://w3id.org/battery-data-alliance/software/basytec-txt", "name": "basytec-txt" },
+      "keywords": ["li-graphite", "gitt"],
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "distribution": [{
+        "@type": "DataDownload",
+        "@id": "https://zenodo.org/records/17289383/files/DLR__LiGrHydra0b__20221114__GITT__25degC__Basytec.txt",
+        "name": "Basytec TXT file",
+        "contentUrl": "https://zenodo.org/records/17289383/files/DLR__LiGrHydra0b__20221114__GITT__25degC__Basytec.txt",
+        "encodingFormat": "text/plain"
+      }]
+    },
+
+    {
+      "@type": "Dataset",
+      "@id": "https://doi.org/10.5281/zenodo.16994937#basytec-txt-li-graphite-pocv",
+      "identifier": "basytec-txt-li-graphite-pocv",
+      "name": "Basytec Li-Graphite Half-Cell POCV",
+      "creator": [
+        { "@type": "Person", "@id": "https://orcid.org/0000-0002-0000-0007", "name": "Example Creator G", "affiliation": { "@type": "Organization", "name": "Your Lab" } }
+      ],
+      "provider": { "@type": "Organization", "@id": "https://w3id.org/battery-data-alliance/org/basytec", "name": "Basytec" },
+      "isBasedOn": { "@type": "SoftwareApplication", "@id": "https://w3id.org/battery-data-alliance/software/basytec-txt", "name": "basytec-txt" },
+      "keywords": ["li-graphite", "pocv"],
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "distribution": [{
+        "@type": "DataDownload",
+        "@id": "https://zenodo.org/records/17289383/files/DLR__LiGrHydra0b__20230131__POCV__25degC__Basytec.txt",
+        "name": "Basytec TXT file",
+        "contentUrl": "https://zenodo.org/records/17289383/files/DLR__LiGrHydra0b__20230131__POCV__25degC__Basytec.txt",
+        "encodingFormat": "text/plain"
+      }]
+    },
+
+    {
+      "@type": "Dataset",
+      "@id": "https://doi.org/10.5281/zenodo.16994937#basytec-txt-li-lnmo-gitt",
+      "identifier": "basytec-txt-li-lnmo-gitt",
+      "name": "Basytec Li-LNMO Half-Cell GITT",
+      "creator": [
+        { "@type": "Person", "@id": "https://orcid.org/0000-0002-0000-0008", "name": "Example Creator H", "affiliation": { "@type": "Organization", "name": "Your Lab" } }
+      ],
+      "provider": { "@type": "Organization", "@id": "https://w3id.org/battery-data-alliance/org/basytec", "name": "Basytec" },
+      "isBasedOn": { "@type": "SoftwareApplication", "@id": "https://w3id.org/battery-data-alliance/software/basytec-txt", "name": "basytec-txt" },
+      "keywords": ["li-lnmo", "gitt"],
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "distribution": [{
+        "@type": "DataDownload",
+        "@id": "https://zenodo.org/records/17289383/files/DLR__LiLNMOHydra0b__20221130__GITT__25degC__Basytec.txt",
+        "name": "Basytec TXT file",
+        "contentUrl": "https://zenodo.org/records/17289383/files/DLR__LiLNMOHydra0b__20221130__GITT__25degC__Basytec.txt",
+        "encodingFormat": "text/plain"
+      }]
+    },
+
+    {
+      "@type": "Dataset",
+      "@id": "https://doi.org/10.5281/zenodo.16994937#basytec-txt-li-lnmo-pocv",
+      "identifier": "basytec-txt-li-lnmo-pocv",
+      "name": "Basytec Li-LNMO Half-Cell POCV",
+      "creator": [
+        { "@type": "Person", "@id": "https://orcid.org/0000-0002-0000-0009", "name": "Example Creator I", "affiliation": { "@type": "Organization", "name": "Your Lab" } }
+      ],
+      "provider": { "@type": "Organization", "@id": "https://w3id.org/battery-data-alliance/org/basytec", "name": "Basytec" },
+      "isBasedOn": { "@type": "SoftwareApplication", "@id": "https://w3id.org/battery-data-alliance/software/basytec-txt", "name": "basytec-txt" },
+      "keywords": ["li-lnmo", "pocv"],
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "distribution": [{
+        "@type": "DataDownload",
+        "@id": "https://zenodo.org/records/17289383/files/DLR__LiLNMOHydra0b__20221125__POCV__25degC__Basytec.txt",
+        "name": "Basytec TXT file",
+        "contentUrl": "https://zenodo.org/records/17289383/files/DLR__LiLNMOHydra0b__20221125__POCV__25degC__Basytec.txt",
+        "encodingFormat": "text/plain"
+      }]
+    },
+
+    {
+      "@type": "Dataset",
+      "@id": "https://doi.org/10.5281/zenodo.16994937#digatron-csv-li-ion-hppc",
+      "identifier": "digatron-csv-li-ion-hppc",
+      "name": "Digatron INR21700 HPPC",
+      "creator": [
+        { "@type": "Person", "@id": "https://orcid.org/0000-0002-0000-0010", "name": "Example Creator J", "affiliation": { "@type": "Organization", "name": "Your Lab" } }
+      ],
+      "provider": { "@type": "Organization", "@id": "https://w3id.org/battery-data-alliance/org/digatron", "name": "Digatron" },
+      "isBasedOn": { "@type": "SoftwareApplication", "@id": "https://w3id.org/battery-data-alliance/software/digatron-csv", "name": "digatron-csv" },
+      "keywords": ["li-ion", "inr21700", "hppc"],
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "distribution": [{
+        "@type": "DataDownload",
+        "@id": "https://zenodo.org/records/17289383/files/FZJ__INR21700__20250606__HPPC__25degC__Digatron.csv",
+        "name": "Digatron CSV file",
+        "contentUrl": "https://zenodo.org/records/17289383/files/FZJ__INR21700__20250606__HPPC__25degC__Digatron.csv",
+        "encodingFormat": "text/csv"
+      }]
+    }
+  ]
+}

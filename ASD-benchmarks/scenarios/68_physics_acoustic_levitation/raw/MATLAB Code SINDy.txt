@@ -1,0 +1,432 @@
+MATLAB Code: SINDy
+
+clear all, close all, clc
+figpath = '../figures/';
+addpath('./utils');
+ 
+%% generate Data
+polyorder = 4;  % search space up to fifth order polynomials
+usesine = 1;    % no trig functions
+n = 2;          % 3D system
+ 
+ 
+Ain=1*0.001;
+Omega=39;
+ 
+Cd=1.06;
+r=0.71*.001;
+rhoa=1.19;
+Alpha=3.06*10^-6;
+Beta=1315;
+rhop=34;
+Mp=4/3*pi*r^3*rhop;
+a=1/Mp*1/Beta*pi/8*Cd*(2*r)^2*rhoa
+b=Beta*Alpha/Mp
+b/6
+f=Beta^2/Mp*Alpha*Ain
+ 
+ 
+ 
+ 
+A = [0  1; -b 0];
+B=  [0  0; 0 -a];
+C=  [0  0; b/6 0];
+F=  [0  0; f   0];
+ 
+ 
+tspan=0:.00001:2;   % time span
+x0 = [0.001; 0];        % initial conditions
+options = odeset('RelTol',1e-4,'AbsTol',1e-4*ones(1,n));
+ 
+ 
+[t,x]=ode45(@funxyp,tspan,x0,options);  % integrate
+ 
+%% compute Derivative 
+eps = 0;      % noise strength
+for i=1:length(x)
+    dx(i,:) = A*(x(i,:).^1)' + B*(x(i,:).^2)'+ C*(x(i,:).^3)' + F*(cos(x(i,:)).*[sin(Omega*t(i)) sin(Omega*t(i))])';
+end
+dx = dx + eps*randn(size(dx));   % add noise
+ 
+%% pool Data  (i.e., build library of nonlinear time series)
+Theta = poolData(x,n,polyorder,usesine);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+m = size(Theta,2);
+ 
+%% compute Sparse regression: sequential least squares
+lambda = .000001;      % lambda is our sparsification knob.
+Xi = sparsifyDynamics(Theta,dx,lambda,n);
+ 
+digits(4);
+Yi=vpa(Xi)
+ 
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+syms y1 y2 y1y1 y1y2 y2y2 y1y1y1 y1y1y2 y1y2y2 y2y2y2 y1y1y1y1 y1y1y1y2 y1y1y2y2 y1y2y2y2 y2y2y2y2 y1Sin(Omegat) y2Sin(Omegat) Siny1Sin(Omegat) ...
+    Siny2Sin(Omegat) Cosy1Sin(Omegat) Cosy2Sin(Omegat) 
+ 
+VS=[1 y1 y2 y1y1 y1y2 y2y2 y1y1y1 y1y1y2 y1y2y2 y2y2y2 y1y1y1y1 y1y1y1y2 y1y1y2y2 y1y2y2y2 y2y2y2y2 y1Sin(Omegat) y2Sin(Omegat) Siny1Sin(Omegat) ...
+    Siny2Sin(Omegat) Cosy1Sin(Omegat) Cosy2Sin(Omegat)];
+ 
+ydot1=VS.'.*Xi(:,1)
+ 
+ydot2=vpa(VS.'.*Xi(:,2))
+
+clc
+clear all
+ 
+%% Initialize variables.
+filename = 'C:\Users\Mehdi\Desktop\New folder (2)\scop5\scope_905.csv';
+delimiter = ',';
+startRow = 3;
+ 
+formatSpec = '%f%f%[^\n\r]';
+ 
+%% Open the text file.
+fileID = fopen(filename,'r');
+ 
+dataArray = textscan(fileID, formatSpec, 'Delimiter', delimiter, 'EmptyValue' ,NaN,'HeaderLines' ,startRow-1, 'ReturnOnError', false);
+ 
+%% Close the text file.
+fclose(fileID);
+second = dataArray{:, 1};
+Volt = dataArray{:, 2};
+ 
+%% Clear temporary variables
+clearvars filename delimiter startRow formatSpec fileID dataArray ans;
+ 
+%% Laser Doppler Vibrometter Volt--->Velocity;
+% Sensitivity of LDV
+Velo=500;  % Check it from LDV  
+Sen=Velo/4;
+second=second-second(1,1);
+ 
+second(1,:)=[];
+Volt(1,:)=[];
+Velocity=Sen*Volt; %  Unit : [mm/s]
+displacment=cumtrapz(second,Velocity);  %  Unit : [mm]
+figure
+plot(second,Velocity,'b')
+%% Figures: Displacment, Accelaration
+figure
+plot(second,displacment,'r')
+figure
+plot(displacment,Velocity)
+acc = diff(Velocity)./diff(second);  %  Unit : [mm/s^2]
+k1=size(second);
+kn=k1(1,1);
+second(kn,:)=[];
+figure
+plot(second,acc,'g')
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%V = diff(displacment)./diff(second);
+%L1=size(second);
+%Ln=L1(1,1);
+%second(Ln,:)=[];
+%acc=diff(V)./diff(second);
+%second(Ln-1,:)=[];
+%plot(second,acc,'g')
+ 
+ 
+%% generate Data  %SINDy
+polyorder = 9;  % search space up to fifth order polynomials
+usesine = 1;    % no trig functions
+n = 2;          % 2D system
+ 
+x=[displacment,Velocity];
+k1=size(x);
+kn=k1(1,1);
+x(kn,:)=[];
+x(kn-1,:)=[];
+Velocity(kn,:)=[];
+Velocity(kn-1,:)=[];
+acc(kn-1,:)=[];
+dx=[Velocity,acc];
+Theta = poolData(x,n,polyorder,usesine);
+ 
+m = size(Theta,2);
+ 
+%% compute Sparse regression: sequential least squares
+lambda = .000001;      % lambda is our sparsification knob.
+Xi = sparsifyDynamics(Theta,dx,lambda,n);
+ 
+digits(4);
+Yi=vpa(Xi)
+ 
+ 
+syms y1 y2 y1y1 y1y2 y2y2 y1y1y1 y1y1y2 y1y2y2 y2y2y2 y1y1y1y1 y1y1y1y2 y1y1y2y2 y1y2y2y2 y2y2y2y2 y1Sin(Omegat) y2Sin(Omegat) Siny1Sin(Omegat) ...
+    Siny2Sin(Omegat) Cosy1Sin(Omegat) Cosy2Sin(Omegat) 
+ 
+VS=[1 y1 y2 y1y1 y1y2 y2y2 y1y1y1 y1y1y2 y1y2y2 y2y2y2 y1y1y1y1 y1y1y1y2 y1y1y2y2 y1y2y2y2 y2y2y2y2 y1Sin(Omegat) y2Sin(Omegat) Siny1Sin(Omegat) ...
+    Siny2Sin(Omegat) Cosy1Sin(Omegat) Cosy2Sin(Omegat)];
+ 
+ 
+ydot1=VS.'.*Xi(:,1)
+ 
+ydot2=vpa(VS.'.*Xi(:,2))
+
+
+function ydot=funxyp(t,Y)
+ 
+Ain=1*0.001;
+Omega=39;
+ 
+Cd=1.06;
+r=0.71*.001;
+rhoa=1.19;
+Alpha=3.06*10^-6;
+Beta=1315;
+rhop=34;
+Mp=4/3*pi*r^3*rhop;
+a=1/Mp*1/Beta*pi/8*Cd*(2*r)^2*rhoa;
+b=Beta*Alpha/Mp;
+f=Beta^2/Mp*Alpha*Ain;
+ 
+ 
+ 
+A = [0  1; -b 0];
+B=  [0  0; 0 -a];
+C=  [0  0; b/6 0];
+F=  [0  0; f   0];
+ 
+ 
+ydot=A*[Y(1);Y(2)].^1+B*[Y(1);Y(2)].^2+C*[Y(1);Y(2)].^3+F*[cos(Y(1))*sin(Omega*t);cos(Y(2))*sin(Omega*t)];
+function yout = poolData(yin,nVars,polyorder,usesine)
+ 
+Omega=30;
+t=0.0001:0.0001:0.1997;
+n = size(yin,1);
+% yout = zeros(n,1+nVars+(nVars*(nVars+1)/2)+(nVars*(nVars+1)*(nVars+2)/(2*3))+11);
+ 
+ind = 1;
+% poly order 0
+yout(:,ind) = ones(n,1);
+ind = ind+1;
+ 
+% poly order 1
+for i=1:nVars
+    yout(:,ind) = yin(:,i);
+    ind = ind+1;
+end
+ 
+if(polyorder>=2)
+    % poly order 2
+    for i=1:nVars
+        for j=i:nVars
+            yout(:,ind) = 1*abs(yin(:,i)).*yin(:,j);
+            ind = ind+1;
+        end
+    end
+end
+ 
+if(polyorder>=3)
+    % poly order 3
+    for i=1:nVars
+        for j=i:nVars
+            for k=j:nVars
+                yout(:,ind) = yin(:,i).*yin(:,j).*yin(:,k);
+                ind = ind+1;
+            end
+        end
+    end
+end
+ 
+if(polyorder>=4)
+    % poly order 4
+    for i=1:nVars
+        for j=i:nVars
+            for k=j:nVars
+                for l=k:nVars
+                    yout(:,ind) = 0*yin(:,i).*yin(:,j).*yin(:,k).*yin(:,l);
+                    ind = ind+1;
+                end
+            end
+        end
+    end
+end
+ 
+if(polyorder>=5)
+    % poly order 5
+    for i=1:nVars
+        for j=i:nVars
+            for k=j:nVars
+                for l=k:nVars
+                    for m=l:nVars
+                        yout(:,ind) = yin(:,i).*yin(:,j).*yin(:,k).*yin(:,l).*yin(:,m);
+                        ind = ind+1;
+                    end
+                end
+            end
+        end
+    end
+end
+ 
+if(polyorder>=6)
+    % poly order 6
+    for i=1:nVars
+        for j=i:nVars
+            for k=j:nVars
+                for l=k:nVars
+                    for m=l:nVars
+                        for m1=m:nVars
+                            yout(:,ind) = 0*yin(:,i).*yin(:,j).*yin(:,k).*yin(:,l).*yin(:,m).*yin(:,m1);
+                            ind = ind+1;
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+ 
+if(polyorder>=7)
+    % poly order 7
+    for i=1:nVars
+        for j=i:nVars
+            for k=j:nVars
+                for l=k:nVars
+                    for m=l:nVars
+                        for m1=m:nVars
+                            for m2=m1:nVars
+                                yout(:,ind) = yin(:,i).*yin(:,j).*yin(:,k).*yin(:,l).*yin(:,m).*yin(:,m1).*yin(:,m2);
+                                ind = ind+1;
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+ 
+if(polyorder>=8)
+    % poly order 8
+    for i=1:nVars
+        for j=i:nVars
+            for k=j:nVars
+                for l=k:nVars
+                    for m=l:nVars
+                        for m1=m:nVars
+                            for m2=m1:nVars
+                                for m3=m2:nVars
+                                    yout(:,ind) = 0*yin(:,i).*yin(:,j).*yin(:,k).*yin(:,l).*yin(:,m).*yin(:,m1).*yin(:,m2).*yin(:,m3);
+                                    ind = ind+1;
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+ 
+if(polyorder>=9)
+    % poly order 9
+    for i=1:nVars
+        for j=i:nVars
+            for k=j:nVars
+                for l=k:nVars
+                    for m=l:nVars
+                        for m1=m:nVars
+                            for m2=m1:nVars
+                                for m3=m2:nVars
+                                    for m4=m3:nVars
+                                        yout(:,ind) = yin(:,i).*yin(:,j).*yin(:,k).*yin(:,l).*yin(:,m).*yin(:,m1).*yin(:,m2).*yin(:,m3).*yin(:,m4);
+                                        ind = ind+1;
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+ 
+if(polyorder>=10)
+    % poly order 10
+    for i=1:nVars
+        for j=i:nVars
+            for k=j:nVars
+                for l=k:nVars
+                    for m=l:nVars
+                        for m1=m:nVars
+                            for m2=m1:nVars
+                                for m3=m2:nVars
+                                    for m4=m3:nVars
+                                        for m5=m4:nVars
+                                            yout(:,ind) = 0*yin(:,i).*yin(:,j).*yin(:,k).*yin(:,l).*yin(:,m).*yin(:,m1).*yin(:,m2).*yin(:,m3).*yin(:,m4).*yin(:,m5);
+                                            ind = ind+1;
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+ 
+if(polyorder>=11)
+    % poly order 11
+    for i=1:nVars
+        for j=i:nVars
+            for k=j:nVars
+                for l=k:nVars
+                    for m=l:nVars
+                        for m1=m:nVars
+                            for m2=m1:nVars
+                                for m3=m2:nVars
+                                    for m4=m3:nVars
+                                        for m5=m4:nVars
+                                            for m6=m5:nVars
+                                                yout(:,ind) = yin(:,i).*yin(:,j).*yin(:,k).*yin(:,l).*yin(:,m).*yin(:,m1).*yin(:,m2).*yin(:,m3).*yin(:,m4).*yin(:,m5).*yin(:,m6);
+                                                ind = ind+1;
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+ 
+if(usesine)
+   
+        
+           yout=[yout (yin).*[sin(Omega*t) ; sin(Omega*t)]' sin(yin).*[cos(Omega*t) ; cos(Omega*t)]' cos(yin).*[sin(Omega*t) ; sin(Omega*t)]'];
+         
+       
+      %end
+end
+function Xi = sparsifyDynamics(Theta,dXdt,lambda,n)
+Xi = Theta\dXdt;  % initial guess: Least-squares
+ 
+% lambda is our sparsification knob.
+for k=1:10
+    smallinds = (abs(Xi)<lambda);   % find small coefficients
+    Xi(smallinds)=0;                % and threshold
+    for ind = 1:n                   % n is state dimension
+        biginds = ~smallinds(:,ind);
+        % Regress dynamics onto remaining terms to find sparse Xi
+        Xi(biginds,ind) = Theta(:,biginds)\dXdt(:,ind); 
+    end
+end
+
+
+function ykplus1 = sparseGalerkinDiscrete(t,y,ahat)
+
+yPool = poolData1D(y',length(y));
+ykplus1 = (yPool*ahat)';
+
+

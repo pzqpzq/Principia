@@ -1,0 +1,106 @@
+{
+  "bytes": 576000,
+  "sha256": "96ca392e9a0f7012f6fcf13e3154c21293fb7e87b19b6152acef65b5c0f8bd09",
+  "format_extension": ".pha",
+  "checks": [],
+  "format": "FITS",
+  "HDUs": [
+    {
+      "name": "PRIMARY",
+      "shape": null,
+      "columns": null,
+      "units": null,
+      "header": {
+        "DATE-OBS": "2025-02-06T18:44:56",
+        "DATE-END": "2025-02-06T20:58:18",
+        "TSTART": "760560296.359584",
+        "TSTOP": "760568298.31128",
+        "TELESCOP": "GLAST",
+        "INSTRUME": "GBM",
+        "DETNAM": "NAI_11",
+        "DATATYPE": "CSPEC"
+      }
+    },
+    {
+      "name": "EBOUNDS",
+      "shape": [
+        128
+      ],
+      "columns": [
+        "CHANNEL",
+        "E_MIN",
+        "E_MAX"
+      ],
+      "units": [
+        "none",
+        "keV",
+        "keV"
+      ],
+      "header": {
+        "DATE-OBS": "2025-02-06T18:44:56",
+        "DATE-END": "2025-02-06T20:58:18",
+        "TSTART": "760560296.359584",
+        "TSTOP": "760568298.31128",
+        "TELESCOP": "GLAST",
+        "INSTRUME": "GBM",
+        "DETNAM": "NAI_11"
+      }
+    },
+    {
+      "name": "SPECTRUM",
+      "shape": [
+        1948
+      ],
+      "columns": [
+        "COUNTS",
+        "EXPOSURE",
+        "QUALITY",
+        "TIME",
+        "ENDTIME"
+      ],
+      "units": [
+        "count",
+        "s",
+        "",
+        "s",
+        "s"
+      ],
+      "header": {
+        "DATE-OBS": "2025-02-06T18:44:56",
+        "DATE-END": "2025-02-06T20:58:18",
+        "TSTART": "760560296.359584",
+        "TSTOP": "760568298.31128",
+        "TELESCOP": "GLAST",
+        "INSTRUME": "GBM",
+        "DETNAM": "NAI_11"
+      }
+    },
+    {
+      "name": "GTI",
+      "shape": [
+        3
+      ],
+      "columns": [
+        "START",
+        "STOP"
+      ],
+      "units": [
+        "s",
+        "s"
+      ],
+      "header": {
+        "DATE-OBS": "2025-02-06T18:44:56",
+        "DATE-END": "2025-02-06T20:58:18",
+        "TSTART": "760560296.359584",
+        "TSTOP": "760568298.31128",
+        "TELESCOP": "GLAST",
+        "INSTRUME": "GBM",
+        "DETNAM": "NAI_11"
+      }
+    }
+  ],
+  "path": "raw/glg_cspec_nb_bn250206827_v00.pha",
+  "scenario_id": "45_astronomy_fermi_grb250206a",
+  "verified_utc": "2026-09-14T16:00:13.620203+00:00",
+  "status": "pass"
+}

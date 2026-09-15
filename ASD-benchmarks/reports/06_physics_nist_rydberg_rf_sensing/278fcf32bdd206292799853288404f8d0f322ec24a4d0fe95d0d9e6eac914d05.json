@@ -1,0 +1,33 @@
+{
+  "scenario_id": "06_physics_nist_rydberg_rf_sensing",
+  "path": "raw/FIG6b_Sensitivity_with_ProbeRabiFrequency.csv",
+  "bytes": 884,
+  "sha256": "5253038ae29277950b56c10a5f96b3a6790f594bc7c98af8b9cafe47634da3b4",
+  "checked_utc": "2026-09-15T06:39:51.730071+00:00",
+  "format": "text_or_instrument_native",
+  "signature_hex": "4f6d6567615f702f32706920",
+  "delimiter": ",",
+  "header": [
+    "Omega_p/2pi (MHz)",
+    "EIT_Sensitivity (�V/m/Hz^1/2)",
+    "EIT_std  (�V/m/Hz^1/2)",
+    "ION_Sensitivity  (�V/m/Hz^1/2)",
+    "ION_std  (�V/m/Hz^1/2)"
+  ],
+  "data_records": 15,
+  "row_width_counts": {
+    "5": 15
+  },
+  "first_lines": [
+    "Omega_p/2pi (MHz),EIT_Sensitivity (�V/m/Hz^1/2),EIT_std  (�V/m/Hz^1/2),ION_Sensitivity  (�V/m/Hz^1/2),ION_std  (�V/m/Hz^1/2)",
+    "0.512,25.05366667,0.633676048,133.89,0",
+    "1.025,9.699566667,0.73562284,72.18,0",
+    "1.537,4.681466667,0.37542266,34.97266667,1.517308582",
+    "2.05,3.571566667,0.117690456,40.181,0",
+    "2.51,4.455733333,0.22308145,23.85933333,0.63346218",
+    "2.988,5.897533333,0.442069501,23.11366667,1.478180413",
+    "3.475,6.566666667,0.122080725,22.416,0.600871867"
+  ],
+  "encoding_replacement_count": 4,
+  "status": "pass"
+}

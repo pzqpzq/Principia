@@ -1,0 +1,134 @@
+{
+  "case_id": "P100-082",
+  "case_revision": 1,
+  "scenario_id": "82_ecology_soil_respiration",
+  "title": "Soil respiration dataset for European forest sites evaluating holistic management practices",
+  "domain": "Forest ecology",
+  "question": "How do temperature, moisture and treatment jointly relate to forest-soil respiration across sites?",
+  "data_origin": "measured_or_observed",
+  "source_version": "17519671",
+  "source_url": "https://zenodo.org/records/17519671",
+  "identifiers": [
+    "10.5281/zenodo.17519671"
+  ],
+  "publisher": "Lehtonen, Aleksi (Natural Resources Institute Finland); Mäkipää, Raisa (Natural Resources Institute Finland); Menichetti, Lorenzo (LUKE); Anttila, Jani (Natural Resources Institute Finland); Kupila, Taavi (Natural Resources Institute Finland); Tupek, Boris (Natural Resources Institute Finland)",
+  "release_date": "2025-11-04",
+  "measurement_dates": "2021–2025 measurements; November 2025 release.",
+  "variables_and_units": "soil respiration flux, temperature, moisture and treatments",
+  "independent_units": "site, plot and full time blocks",
+  "validation_design": "site, plot and full time blocks Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Source chamber flux values are derived from concentration slopes; structure CSV and source checking code preserved.",
+  "prior_analysis_and_limits": "Hold out sites/plots and full temporal blocks. Chamber and treatment differences constrain transfer; preserve missingness and quality metadata. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/wp4_data_check_rcode.txt",
+      "structure": {
+        "first_lines": [
+          "",
+          "## CHECK HoliSoilS respiration and micro-climate data ######################################",
+          "# [source contact omitted from curator metadata]",
+          "# Nov 2025",
+          "",
+          "# to run in R rename to \"wp4_data_check.r\"",
+          "",
+          "rm(list=ls())"
+        ]
+      }
+    },
+    {
+      "asset": "raw/holisoils_soil_respiration_dataset.csv",
+      "structure": {
+        "header": [
+          "siteid",
+          "country",
+          "date",
+          "subsiteid",
+          "point",
+          "ci",
+          "flux",
+          "slope",
+          "intc",
+          "trim_head",
+          "trim_tail",
+          "area",
+          "volume",
+          "airtemp",
+          "tsmoisture",
+          "t05",
+          "t10",
+          "t30",
+          "treatment",
+          "2nd_treatment",
+          "details",
+          "trenched"
+        ],
+        "data_records": 50140,
+        "first_lines": [
+          "\"siteid\",\"country\",\"date\",\"subsiteid\",\"point\",\"ci\",\"flux\",\"slope\",\"intc\",\"trim_head\",\"trim_tail\",\"area\",\"volume\",\"airtemp\",\"tsmoisture\",\"t05\",\"t10\",\"t30\",\"treatment\",\"2nd_treatment\",\"details\",\"trenched\"",
+          "\"Dobroc\",\"Slovakia\",2021-08-25,\"DP-MC\",\"T1\",0.0021110610744447,0.45591655493692,0.337845094616373,428.911345573556,0,0,7.06858347057703,14.1371669411541,13,NA,12.5,NA,NA,\"Control\",NA,NA,\"True\"",
+          "\"Dobroc\",\"Slovakia\",2021-08-25,\"DP-MC\",\"T2\",0.0024995894701831,0.515973269655111,0.382214941433824,452.371089561591,0,12,7.06858347057703,14.1371669411541,12.9,NA,12.5,NA,NA,\"Control\",NA,NA,\"True\"",
+          "\"Dobroc\",\"Slovakia\",2021-08-25,\"DP-MC\",\"T3\",0.0033550526887959,0.49800771564955,0.369035653545384,448.10428629001,6,0,7.06858347057703,14.1371669411541,13,NA,12.5,NA,NA,\"Control\",NA,NA,\"True\"",
+          "\"Dobroc\",\"Slovakia\",2021-08-25,\"DP-MC\",\"T4\",0.0026837326372465,0.300416034818253,0.222537685393259,436.403894715084,0,0,7.06858347057703,14.1371669411541,12.9,NA,12.5,NA,NA,\"Control\",NA,NA,\"True\"",
+          "\"Dobroc\",\"Slovakia\",2021-08-25,\"DP-MC\",\"C1\",0.0031865783362271,0.776127400742834,0.574928017527719,448.747215166725,0,10,7.06858347057703,14.1371669411541,12.9,NA,12.5,NA,NA,\"Control\",NA,NA,\"False\"",
+          "\"Dobroc\",\"Slovakia\",2021-08-25,\"DP-MC\",\"C2\",0.0037206181288262,0.390825251136984,0.289610878392233,438.31226964432,0,0,7.06858347057703,14.1371669411541,13,NA,12.5,NA,NA,\"Control\",NA,NA,\"False\"",
+          "\"Dobroc\",\"Slovakia\",2021-08-25,\"DP-MC\",\"C3\",0.0033787013151917,0.409467714511754,0.303001241855497,441.458580592179,0,0,7.06858347057703,14.1371669411541,12.6,NA,12.5,NA,NA,\"Control\",NA,NA,\"False\""
+        ]
+      }
+    },
+    {
+      "asset": "raw/holisois_data_structure.csv",
+      "structure": {
+        "header": [
+          "siteid",
+          "subsiteid",
+          "treatment",
+          "X2nd_treatment",
+          "points"
+        ],
+        "data_records": 73,
+        "first_lines": [
+          "\"siteid\",\"subsiteid\",\"treatment\",\"X2nd_treatment\",\"points\"",
+          "\"Dobroc\",\"DP-MC\",\"Control\",NA,\"C1, C2, C3, C4, C5, C6, T1, T2, T3, T4\"",
+          "\"Dobroc\",\"DP-MIX\",\"Mixed Forest\",NA,\"C1, C2, C3, C4, C5, C6, T1, T2, T3, T4\"",
+          "\"Dumbravita\",\"clear_cut\",\"Clearcut\",\"No slash\",\"1, 2, 3, 31, 32, 33, 34, 35, 36, 4, 5, 6, 61, 62, 63, 64, 65, 66, 91, 92, 93, 94, 95, 96\"",
+          "\"Dumbravita\",\"clear_cut\",\"Clearcut\",\"Slash\",\"10, 100, 101, 102, 11, 12, 37, 38, 39, 40, 41, 42, 67, 68, 69, 7, 70, 71, 72, 8, 9, 97, 98, 99\"",
+          "\"Dumbravita\",\"control\",\"Control\",NA,\"115, 116, 117, 118, 119, 120, 13, 14, 15, 16, 17, 18, 55, 56, 57, 58, 59, 60, 73, 74, 75, 76, 77, 78\"",
+          "\"Dumbravita\",\"thinning\",\"Thinning\",\"No slash\",\"103, 104, 105, 106, 107, 108, 19, 20, 21, 22, 23, 24, 49, 50, 51, 52, 53, 54, 85, 86, 87, 88, 89, 90\"",
+          "\"Dumbravita\",\"thinning\",\"Thinning\",\"Slash\",\"109, 110, 111, 112, 113, 114, 25, 26, 27, 28, 29, 30, 43, 44, 45, 46, 47, 48, 79, 80, 81, 82, 83, 84\""
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "text_or_instrument_native": 3
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 11269967,
+  "expanded_source_equivalent_bytes": 11269967,
+  "installed_folder_bytes": 11298377,
+  "source_asset_count": 4,
+  "asset_paths": [
+    "scenarios/82_ecology_soil_respiration/raw/wp4_data_check_rcode.txt",
+    "scenarios/82_ecology_soil_respiration/raw/holisoils_soil_respiration_dataset.csv",
+    "scenarios/82_ecology_soil_respiration/raw/holisois_data_structure.csv",
+    "scenarios/82_ecology_soil_respiration/context/source_record.json"
+  ],
+  "local_folder": "scenarios/82_ecology_soil_respiration",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 11279383,
+  "expanded_release_folder_equivalent_bytes": 11279383
+}

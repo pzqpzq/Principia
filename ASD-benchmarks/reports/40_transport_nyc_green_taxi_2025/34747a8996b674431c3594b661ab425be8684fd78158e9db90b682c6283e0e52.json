@@ -1,0 +1,69 @@
+{
+  "bytes": 1022574,
+  "sha256": "f6d711917bb4340f8f644d5366c51665489eb2d426dd1a4a55677721ae5adf17",
+  "format_extension": ".zip",
+  "checks": [
+    "all_member_CRCs",
+    "safe_member_paths_no_symlinks"
+  ],
+  "format": "ZIP",
+  "expanded_bytes": 1648965,
+  "members": [
+    {
+      "name": "taxi_zones/taxi_zones.cpg",
+      "bytes": 5,
+      "crc32": "0e813c50",
+      "structure": {
+        "format": "preserved_native",
+        "signature_hex": "5554462d38"
+      }
+    },
+    {
+      "name": "taxi_zones/taxi_zones.dbf",
+      "bytes": 59927,
+      "crc32": "00e55d27",
+      "structure": {
+        "format": "preserved_native",
+        "signature_hex": "037e021207010000e100e30000000000"
+      }
+    },
+    {
+      "name": "taxi_zones/taxi_zones.prj",
+      "bytes": 565,
+      "crc32": "41cd8b3a",
+      "structure": {
+        "format": "preserved_native",
+        "signature_hex": "50524f4a43535b224e41445f31393833"
+      }
+    },
+    {
+      "name": "taxi_zones/taxi_zones.shp",
+      "bytes": 1586264,
+      "crc32": "ce46b5a8",
+      "structure": {
+        "format": "preserved_native",
+        "signature_hex": "0000270a000000000000000000000000"
+      }
+    },
+    {
+      "name": "taxi_zones/taxi_zones.shx",
+      "bytes": 2204,
+      "crc32": "3648ed25",
+      "structure": {
+        "format": "preserved_native",
+        "signature_hex": "0000270a000000000000000000000000"
+      }
+    }
+  ],
+  "member_format_counts": {
+    ".cpg": 1,
+    ".dbf": 1,
+    ".prj": 1,
+    ".shp": 1,
+    ".shx": 1
+  },
+  "path": "context/taxi_zones.zip",
+  "scenario_id": "40_transport_nyc_green_taxi_2025",
+  "verified_utc": "2026-09-14T15:58:16.019499+00:00",
+  "status": "pass"
+}

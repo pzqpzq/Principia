@@ -1,0 +1,27 @@
+{
+  "scenario_id": "10_computer_security_nvd_recent_snapshot",
+  "path": "raw/nvdcve-2.0-recent.json.gz",
+  "bytes": 1735840,
+  "sha256": "9e0f8664e912de3c21bcdac26a6d7051b50de15a0b169be32d6456a2677604ba",
+  "checked_utc": "2026-09-15T06:40:05.017198+00:00",
+  "format": "GZIP",
+  "expanded_bytes": 19264128,
+  "checks": [
+    "gzip_CRC"
+  ],
+  "inner": {
+    "format": "JSON",
+    "root_type": "dict",
+    "top_level_keys": [
+      "resultsPerPage",
+      "startIndex",
+      "totalResults",
+      "format",
+      "version",
+      "timestamp",
+      "vulnerabilities"
+    ],
+    "length": 7
+  },
+  "status": "pass"
+}

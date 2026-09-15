@@ -1,0 +1,38 @@
+name: ASD benchmark integrity
+
+on:
+  push:
+    branches: [main]
+    paths: ["ASD-benchmarks/**", ".github/workflows/asd-benchmark-ci.yml"]
+  pull_request:
+    paths: ["ASD-benchmarks/**", ".github/workflows/asd-benchmark-ci.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: asd-benchmark-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  inventory-and-tools:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: ASD-benchmarks
+          lfs: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify regular files and frozen LFS pointer metadata
+        run: python ASD-benchmarks/tools/verify_git_release.py ASD-benchmarks --allow-lfs-pointers
+      - name: Exercise corruption and replay safeguards
+        working-directory: ASD-benchmarks
+        run: |
+          python tools/test_replay.py
+          python tools/test_publication.py
+      # Full source-byte validation is performed for publication after LFS download.
+      # This job deliberately reports pointers separately and does not claim remote payload verification.

@@ -1,0 +1,104 @@
+MATLAB Code: PSD AND TIME SERIES DATA
+
+clc
+clear all
+close all
+fmax = 500;
+ 
+% Initialize variables.
+load('G:/OCTAVECSV1/data1195de.mat');
+ 
+
+%Volt = noisy_s;
+Volt = denoised_s;
+ 
+signal = Volt;
+time = t;
+ 
+% Define the sampling frequency and time step
+Fs = 1 / (time(2) - time(1));  % Sampling frequency (Hz)
+dt = 1 / Fs;                   % Time step
+ 
+% Perform the FFT
+N = length(signal);             % Length of the signal
+freq = Fs * (0:(N/2)) / N;      % Frequency vector
+fft_signal = fft(signal);
+fft_amplitude = abs(fft_signal / N);  % FFT amplitude in volts (V)
+ 
+% Compute the Power Spectral Density (PSD)
+psd = (1 / (Fs * N)) * abs(fft_signal).^2;  % PSD in volts squared per hertz (V²/Hz)
+ 
+% Plot the time series data
+ 
+figure
+plot(time, signal, 'LineWidth', 2)
+xlabel('Time [s]', 'FontName', 'Times New Roman', 'FontSize', 24)
+ylabel('Amplitude [V]', 'FontName', 'Times New Roman', 'FontSize', 24)
+ 
+set(gca, 'FontName', 'Times New Roman', 'FontSize', 24)
+ 
+% plot 2: Power Spectral Density (PSD) with logarithmic y-axis
+figure
+semilogy(freq, psd(1:N/2+1), 'LineWidth', 2)
+xlim([0 fmax])
+xlabel('Frequency [Hz]', 'FontName', 'Times New Roman', 'FontSize', 24)
+ylabel('PSD [V²/Hz]', 'FontName', 'Times New Roman', 'FontSize', 24)
+ 
+set(gca, 'FontName', 'Times New Roman', 'FontSize', 24)
+ 
+% Display the maximum PSD value and its corresponding frequency
+[max_psd, max_psd_idx] = max(psd);
+disp(['Maximum PSD: ' num2str(max_psd) ' V²/Hz at frequency: ' num2str(freq(max_psd_idx)) ' Hz'])
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+psd_dB = 10 * log10(psd);
+psd=psd_dB;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+figure
+plot(freq, psd(1:N/2+1), 'LineWidth', 2)
+xlim([0 250])
+figure;
+subplot(3,1,1);
+plot(time, velocity,'k');
+xlabel('Time');
+ylabel('Velocity');
+title('Velocity vs Time');
+ 
+subplot(3,1,2);
+plot(time(1:end-1), acceleration_smoothed);
+xlabel('Time');
+ylabel('Acceleration');
+title('Acceleration vs Time');
+ 
+subplot(3,1,3);
+plot(time, displacement_stationary);
+xlabel('Time');
+ylabel('Displacement');
+title('Displacement vs Time');
+ 
+%Plot the Phase Space
+figure
+plot(displacement_stationary, velocity);
+xlabel('Displacement');
+ylabel('Velocity');
+title('Phase space-Moving Average');
+hold on
+ 
+load('G:/OCTAVECSV/data21142DENOIS.mat');
+denoised_s=500/4*denoised_s;
+displacement2 = cumtrapz(t, denoised_s'); 
+% Estimate and remove the trend
+trend = polyval(polyfit(t, displacement2, 1), t);  % Estimate the linear trend
+displacement_stationary2 = displacement2 - trend;  % Subtract the trend from the original data
+ 
+%Plot the Phase Space
+figure
+plot(displacement_stationary2, denoised_s');
+xlabel('Displacement');
+ylabel('Velocity');
+title('Phase space-GHKSS');
+hold on
+ 
+% Set default font properties
+set(0, 'DefaultAxesFontName', 'Times New Roman');
+set(0, 'DefaultAxesFontSize', 20);

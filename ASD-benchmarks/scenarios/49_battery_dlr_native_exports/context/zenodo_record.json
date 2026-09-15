@@ -1,0 +1,268 @@
+{
+  "created": "2025-10-08T13:37:14.448265+00:00",
+  "modified": "2025-10-09T13:18:26.510253+00:00",
+  "id": 17295469,
+  "conceptrecid": "16994937",
+  "doi": "10.5281/zenodo.17295469",
+  "conceptdoi": "10.5281/zenodo.16994937",
+  "doi_url": "https://doi.org/10.5281/zenodo.17295469",
+  "metadata": {
+    "title": "Battery Datasets for Testing Data Pipelines and Workflow Automation",
+    "doi": "10.5281/zenodo.17295469",
+    "publication_date": "2025-10-08",
+    "description": "<p>This record contains battery datasets exported from different cyclers. It is intended to be used for testing and validating battery data pipelines and workflow automation. The datasets cover various battery chemistries and test types. Some contain common bugs that can occur during testing (e.g. bumping the connection cables) or from software export routines. Including data with bugs is done intentionally to verify data processing robustness.&nbsp;</p>\n<table style=\"border-collapse: collapse; width: 100.025%; height: 431.207px;\"><colgroup><col style=\"width: 43.5688%;\"><col style=\"width: 9.35642%;\"><col style=\"width: 9.82897%;\"><col style=\"width: 3.78037%;\"><col style=\"width: 6.33213%;\"><col style=\"width: 10.018%;\"><col style=\"width: 17.1062%;\"></colgroup>\n<tbody>\n<tr style=\"height: 39.2045px;\">\n<td style=\"height: 39.2045px;\"><strong>Filename</strong></td>\n<td style=\"height: 39.2045px;\"><strong>File Type</strong></td>\n<td style=\"height: 39.2045px;\"><strong>Cycler Manufacturer</strong></td>\n<td style=\"height: 39.2045px;\"><strong>Cell Type</strong></td>\n<td style=\"height: 39.2045px;\"><strong>Chemistry</strong></td>\n<td style=\"height: 39.2045px;\"><strong>Test Type</strong></td>\n<td style=\"height: 39.2045px;\"><strong>Bug Present</strong></td>\n</tr>\n<tr style=\"height: 58.7642px;\">\n<td style=\"height: 58.7642px;\"><a href=\"https://zenodo.org/uploads/16994938\" target=\"_blank\" rel=\"noopener noreferrer\">SINTEF__NaCR32140-MP10-04__2025-08-25__CCCV_0p02C_25degC__BioLogic__Outlier_Bug.mpt</a></td>\n<td style=\"height: 58.7642px;\">.mpt</td>\n<td style=\"height: 58.7642px;\">Bio-Logic</td>\n<td style=\"height: 58.7642px;\">Full Cell</td>\n<td style=\"height: 58.7642px;\">Na-ion</td>\n<td style=\"height: 58.7642px;\">CCCV Cycling at C/50</td>\n<td style=\"height: 58.7642px;\">Voltage and Current Outlier</td>\n</tr>\n<tr style=\"height: 39.2045px;\">\n<td style=\"height: 39.2045px;\"><a href=\"https://zenodo.org/uploads/16994938\" target=\"_blank\" rel=\"noopener noreferrer\">SINTEF__NaCR32140-MP10-04__2025-08-25__GITT_0p05C_25degC__BioLogic.mpt</a></td>\n<td style=\"height: 39.2045px;\">.mpt</td>\n<td style=\"height: 39.2045px;\">Bio-Logic</td>\n<td style=\"height: 39.2045px;\">Full Cell</td>\n<td style=\"height: 39.2045px;\">Na-ion</td>\n<td style=\"height: 39.2045px;\">GITT</td>\n<td style=\"height: 39.2045px;\">None</td>\n</tr>\n<tr style=\"height: 39.2045px;\">\n<td style=\"height: 39.2045px;\"><a href=\"https://zenodo.org/uploads/16994938\" target=\"_blank\" rel=\"noopener noreferrer\">SINTEF__SLPBA842124HV__2024-10-23__Rate_25degC__Neware__Time_Bug.csv</a></td>\n<td style=\"height: 39.2045px;\">.csv</td>\n<td style=\"height: 39.2045px;\">Neware</td>\n<td style=\"height: 39.2045px;\">Full Cell</td>\n<td style=\"height: 39.2045px;\">Li-ion</td>\n<td style=\"height: 39.2045px;\">Rate Capability</td>\n<td style=\"height: 39.2045px;\">Non-monotonic Total Time</td>\n</tr>\n<tr style=\"height: 39.2045px;\">\n<td style=\"height: 39.2045px;\"><a href=\"https://zenodo.org/api/records/17035637/draft/files/SINTEF__LiGrR2032__2024-04-30__25degC__Landt.csv/content\" target=\"_blank\" rel=\"noopener noreferrer\">SINTEF__LiGrR2032__2024-04-30__25degC__Landt.csv</a></td>\n<td style=\"height: 39.2045px;\">.csv</td>\n<td style=\"height: 39.2045px;\">Landt</td>\n<td style=\"height: 39.2045px;\">Half-Cell</td>\n<td style=\"height: 39.2045px;\">Li-Graphite</td>\n<td style=\"height: 39.2045px;\">Cycling</td>\n<td style=\"height: 39.2045px;\">None</td>\n</tr>\n<tr style=\"height: 39.2045px;\">\n<td style=\"height: 39.2045px;\"><a href=\"https://zenodo.org/api/records/17035637/draft/files/SINTEF__LiGrR2032__2024-04-30__25degC__Landt.txt/content\" target=\"_blank\" rel=\"noopener noreferrer\">SINTEF__LiGrR2032__2024-04-30__25degC__Landt.txt</a></td>\n<td style=\"height: 39.2045px;\">.txt</td>\n<td style=\"height: 39.2045px;\">Landt</td>\n<td style=\"height: 39.2045px;\">Half-Cell</td>\n<td style=\"height: 39.2045px;\">Li-Graphite</td>\n<td style=\"height: 39.2045px;\">Cycling</td>\n<td style=\"height: 39.2045px;\">None</td>\n</tr>\n<tr>\n<td><a href=\"https://zenodo.org/api/records/17295469/draft/files/SINTEF__SLPBA842124HV-06__20241011__DCIR__0p1C__25degC__Novonix.csv/content\" target=\"_blank\" rel=\"noopener noreferrer\">SINTEF__SLPBA842124HV-06__20241011__DCIR__0p1C__25degC__Novonix.csv</a></td>\n<td>.csv</td>\n<td>Novonix</td>\n<td>Full-Cell</td>\n<td>LCO-Graphite</td>\n<td>DCIR</td>\n<td>None</td>\n</tr>\n<tr style=\"height: 39.2045px;\">\n<td style=\"height: 39.2045px;\">\n<div><a href=\"https://zenodo.org/api/records/17079898/draft/files/DLR__LiGrHydra0b__20221114__GITT__25degC__Basytec.txt/content\" target=\"_blank\" rel=\"noopener noreferrer\">DLR__LiGrHydra0b__20221114__GITT__25degC__Basytec.txt</a></div>\n</td>\n<td style=\"height: 39.2045px;\">.txt</td>\n<td style=\"height: 39.2045px;\">Basytec</td>\n<td style=\"height: 39.2045px;\">Half-Cell</td>\n<td style=\"height: 39.2045px;\">Li-Graphite</td>\n<td style=\"height: 39.2045px;\">GITT</td>\n<td style=\"height: 39.2045px;\">None</td>\n</tr>\n<tr style=\"height: 39.2045px;\">\n<td style=\"height: 39.2045px;\"><a href=\"https://zenodo.org/api/records/17079898/draft/files/DLR__LiGrHydra0b__20230131__POCV__25degC__Basytec.txt/content\" target=\"_blank\" rel=\"noopener noreferrer\">DLR__LiGrHydra0b__20230131__POCV__25degC__Basytec.txt</a></td>\n<td style=\"height: 39.2045px;\">.txt</td>\n<td style=\"height: 39.2045px;\">Basytec</td>\n<td style=\"height: 39.2045px;\">Half-Cell</td>\n<td style=\"height: 39.2045px;\">Li-Graphite</td>\n<td style=\"height: 39.2045px;\">POCV</td>\n<td style=\"height: 39.2045px;\">None</td>\n</tr>\n<tr style=\"height: 39.2045px;\">\n<td style=\"height: 39.2045px;\"><a href=\"https://zenodo.org/api/records/17079898/draft/files/DLR__LiLNMOHydra0b__20221130__GITT__25degC__Basytec.txt/content\" target=\"_blank\" rel=\"noopener noreferrer\">DLR__LiLNMOHydra0b__20221130__GITT__25degC__Basytec.txt</a></td>\n<td style=\"height: 39.2045px;\">.txt</td>\n<td style=\"height: 39.2045px;\">Basytec</td>\n<td style=\"height: 39.2045px;\">Half-Cell</td>\n<td style=\"height: 39.2045px;\">Li-LNMO</td>\n<td style=\"height: 39.2045px;\">GITT</td>\n<td style=\"height: 39.2045px;\">None</td>\n</tr>\n<tr style=\"height: 19.6023px;\">\n<td style=\"height: 19.6023px;\"><a href=\"https://zenodo.org/api/records/17079898/draft/files/DLR__LiLNMOHydra0b__20221125__POCV__25degC__Basytec.txt/content\" target=\"_blank\" rel=\"noopener noreferrer\">DLR__LiLNMOHydra0b__20221125__POCV__25degC__Basytec.txt</a></td>\n<td style=\"height: 19.6023px;\">.txt</td>\n<td style=\"height: 19.6023px;\">Basytec</td>\n<td style=\"height: 19.6023px;\">Half-Cell</td>\n<td style=\"height: 19.6023px;\">Li-LNMO</td>\n<td style=\"height: 19.6023px;\">POCV</td>\n<td style=\"height: 19.6023px;\">None</td>\n</tr>\n<tr style=\"height: 39.2045px;\">\n<td style=\"height: 39.2045px;\">\n<div><a href=\"https://zenodo.org/api/records/17289383/draft/files/FZJ__INR21700__20250606__HPPC__25degC__Digatron.csv/content\" target=\"_blank\" rel=\"noopener noreferrer\">FZJ__INR21700__20250606__HPPC__25degC__Digatron.csv</a></div>\n</td>\n<td style=\"height: 39.2045px;\">.csv</td>\n<td style=\"height: 39.2045px;\">Digatron</td>\n<td style=\"height: 39.2045px;\">Full Cell</td>\n<td style=\"height: 39.2045px;\">Li-ion</td>\n<td style=\"height: 39.2045px;\">HPPC</td>\n<td style=\"height: 39.2045px;\">Time unit is s in the header and ms in the data</td>\n</tr>\n</tbody>\n</table>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Clark, Simon",
+        "affiliation": "SINTEF",
+        "orcid": "0000-0002-8758-6109"
+      },
+      {
+        "name": "Tolchard, Julian",
+        "affiliation": "SINTEF Industry",
+        "orcid": "0000-0003-0934-4515"
+      },
+      {
+        "name": "Kopljar, Dennis",
+        "affiliation": "German Aerospace Center",
+        "orcid": "0000-0002-2228-2016"
+      },
+      {
+        "name": "Schmitt, Christina",
+        "affiliation": "German Aerospace Center",
+        "orcid": "0000-0002-4095-7611"
+      },
+      {
+        "name": "Barbers, Elias",
+        "affiliation": "Forschungszentrum Jülich",
+        "orcid": "0000-0002-5836-2210"
+      }
+    ],
+    "keywords": [
+      "Na-ion",
+      "Li-ion",
+      "GITT",
+      "CCCV",
+      "LNMO",
+      "Graphite"
+    ],
+    "version": "0.5.0",
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "grants": [
+      {
+        "code": "101103997",
+        "internal_id": "10.13039/501100000780::101103997",
+        "funder": {
+          "name": "European Commission",
+          "doi": "10.13039/501100000780",
+          "acronym": "EC"
+        },
+        "title": "DIGITAL SOLUTIONS FOR ACCELERATED BATTERY TESTING",
+        "acronym": "DigiBatt",
+        "program": "HORIZON.2.5",
+        "url": "https://cordis.europa.eu/projects/101103997",
+        "doi": "10.3030/101103997"
+      }
+    ],
+    "communities": [
+      {
+        "id": "digibatt"
+      },
+      {
+        "id": "sintef-battery-lab"
+      },
+      {
+        "id": "eu"
+      },
+      {
+        "id": "battery-knowledge-base"
+      }
+    ],
+    "relations": {
+      "version": [
+        {
+          "index": 4,
+          "is_last": false,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "16994937"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Battery Datasets for Testing Data Pipelines and Workflow Automation",
+  "links": {
+    "self": "https://zenodo.org/api/records/17295469",
+    "self_html": "https://zenodo.org/records/17295469",
+    "preview_html": "https://zenodo.org/records/17295469?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.17295469",
+    "self_doi": "https://doi.org/10.5281/zenodo.17295469",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.17295469",
+    "reserve_doi": "https://zenodo.org/api/records/17295469/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/16994937",
+    "parent_html": "https://zenodo.org/records/16994937",
+    "parent_doi": "https://doi.org/10.5281/zenodo.16994937",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.16994937",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:17295469/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:17295469/sequence/default",
+    "files": "https://zenodo.org/api/records/17295469/files",
+    "media_files": "https://zenodo.org/api/records/17295469/media-files",
+    "archive": "https://zenodo.org/api/records/17295469/files-archive",
+    "archive_media": "https://zenodo.org/api/records/17295469/media-files-archive",
+    "latest": "https://zenodo.org/api/records/17295469/versions/latest",
+    "latest_html": "https://zenodo.org/records/17295469/latest",
+    "versions": "https://zenodo.org/api/records/17295469/versions",
+    "draft": "https://zenodo.org/api/records/17295469/draft",
+    "access_links": "https://zenodo.org/api/records/17295469/access/links",
+    "access_grants": "https://zenodo.org/api/records/17295469/access/grants",
+    "access_users": "https://zenodo.org/api/records/17295469/access/users",
+    "access_request": "https://zenodo.org/api/records/17295469/access/request",
+    "access": "https://zenodo.org/api/records/17295469/access",
+    "communities": "https://zenodo.org/api/records/17295469/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/17295469/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/17295469/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/17295469/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/17295469/quota-increase",
+    "requests": "https://zenodo.org/api/records/17295469/requests"
+  },
+  "updated": "2025-10-09T13:18:26.510253+00:00",
+  "recid": "17295469",
+  "revision": 6,
+  "files": [
+    {
+      "id": "f030c5a2-7cb5-4a05-97a7-eaddb53e8417",
+      "key": "metadata.json",
+      "size": 13841,
+      "checksum": "md5:4c601a19e3388388ef7796132da3806b",
+      "links": {
+        "self": "https://zenodo.org/api/records/17295469/files/metadata.json/content"
+      }
+    },
+    {
+      "id": "22f0bedc-b39e-498a-a97b-6cdc3e2597fb",
+      "key": "FZJ__INR21700__20250606__HPPC__25degC__Digatron.csv",
+      "size": 13275587,
+      "checksum": "md5:ef75214f8bca7f9654a2524f7db364b0",
+      "links": {
+        "self": "https://zenodo.org/api/records/17295469/files/FZJ__INR21700__20250606__HPPC__25degC__Digatron.csv/content"
+      }
+    },
+    {
+      "id": "c5b1201b-2a74-4b09-b3a2-72de631c002e",
+      "key": "DLR__LiGrHydra0b__20221114__GITT__25degC__Basytec.txt",
+      "size": 62380666,
+      "checksum": "md5:26eb1804d891c87bff7af244927be602",
+      "links": {
+        "self": "https://zenodo.org/api/records/17295469/files/DLR__LiGrHydra0b__20221114__GITT__25degC__Basytec.txt/content"
+      }
+    },
+    {
+      "id": "29512657-37ee-4b16-9c39-8841594da05e",
+      "key": "DLR__LiLNMOHydra0b__20221125__POCV__25degC__Basytec.txt",
+      "size": 4060881,
+      "checksum": "md5:5e6bd90f2f01b777fe871e7f867d3ee0",
+      "links": {
+        "self": "https://zenodo.org/api/records/17295469/files/DLR__LiLNMOHydra0b__20221125__POCV__25degC__Basytec.txt/content"
+      }
+    },
+    {
+      "id": "d2ef191e-f197-4fa6-bf4f-7a68691a8005",
+      "key": "DLR__LiGrHydra0b__20230131__POCV__25degC__Basytec.txt",
+      "size": 9257892,
+      "checksum": "md5:9e5b47be4a13c71a66d20714d3e016b6",
+      "links": {
+        "self": "https://zenodo.org/api/records/17295469/files/DLR__LiGrHydra0b__20230131__POCV__25degC__Basytec.txt/content"
+      }
+    },
+    {
+      "id": "16f3cbf6-d613-430f-ad5c-a2b33481e612",
+      "key": "DLR__LiLNMOHydra0b__20221130__GITT__25degC__Basytec.txt",
+      "size": 63013852,
+      "checksum": "md5:4c72b750dead3747e9bfe82413ecc9cd",
+      "links": {
+        "self": "https://zenodo.org/api/records/17295469/files/DLR__LiLNMOHydra0b__20221130__GITT__25degC__Basytec.txt/content"
+      }
+    },
+    {
+      "id": "1d991fa4-3c2b-49f0-82fb-42ab7a844cd7",
+      "key": "SINTEF__SLPBA842124HV__2024-10-23__Rate_25degC__Neware__Time_Bug.csv",
+      "size": 3151396,
+      "checksum": "md5:e2075f6ffd08ea0d9f1e686cebbf2d1e",
+      "links": {
+        "self": "https://zenodo.org/api/records/17295469/files/SINTEF__SLPBA842124HV__2024-10-23__Rate_25degC__Neware__Time_Bug.csv/content"
+      }
+    },
+    {
+      "id": "701e598a-fdea-4bd2-91c1-5fde1454356c",
+      "key": "SINTEF__NaCR32140-MP10-04__2025-08-25__GITT_0p05C_25degC__BioLogic.mpt",
+      "size": 74699943,
+      "checksum": "md5:91854f0e74db18b13e640220bf8d42f0",
+      "links": {
+        "self": "https://zenodo.org/api/records/17295469/files/SINTEF__NaCR32140-MP10-04__2025-08-25__GITT_0p05C_25degC__BioLogic.mpt/content"
+      }
+    },
+    {
+      "id": "e8221488-ddd1-48e1-8be7-8a8eeafe041e",
+      "key": "SINTEF__LiGrR2032__2024-04-30__25degC__Landt.txt",
+      "size": 2808323,
+      "checksum": "md5:fdfa79a7881662ba5d871a8d7d5357b1",
+      "links": {
+        "self": "https://zenodo.org/api/records/17295469/files/SINTEF__LiGrR2032__2024-04-30__25degC__Landt.txt/content"
+      }
+    },
+    {
+      "id": "e5584cf3-22e2-4289-ae98-8a65d4792b6b",
+      "key": "SINTEF__SLPBA842124HV-06__20241011__DCIR__0p1C__25degC__Novonix.csv",
+      "size": 119483324,
+      "checksum": "md5:54a40efd324d1dba5995fa4f3e65717d",
+      "links": {
+        "self": "https://zenodo.org/api/records/17295469/files/SINTEF__SLPBA842124HV-06__20241011__DCIR__0p1C__25degC__Novonix.csv/content"
+      }
+    },
+    {
+      "id": "452fcc5a-a981-43c3-874b-64164dce8513",
+      "key": "SINTEF__NaCR32140-MP10-04__2025-08-25__CCCV_0p02C_25degC__BioLogic__Outlier_Bug.mpt",
+      "size": 53617142,
+      "checksum": "md5:627f276281d2de9ad3ffe9494c7b115d",
+      "links": {
+        "self": "https://zenodo.org/api/records/17295469/files/SINTEF__NaCR32140-MP10-04__2025-08-25__CCCV_0p02C_25degC__BioLogic__Outlier_Bug.mpt/content"
+      }
+    },
+    {
+      "id": "237a30e3-0ad0-4dca-8515-f5ff1bd1e45b",
+      "key": "SINTEF__LiGrR2032__2024-04-30__25degC__Landt.csv",
+      "size": 2589396,
+      "checksum": "md5:819f9f245126cce4f538e3a3d5883636",
+      "links": {
+        "self": "https://zenodo.org/api/records/17295469/files/SINTEF__LiGrR2032__2024-04-30__25degC__Landt.csv/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "98042"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 5417,
+    "unique_downloads": 4662,
+    "views": 1841,
+    "unique_views": 1718,
+    "version_downloads": 605,
+    "version_unique_downloads": 583,
+    "version_unique_views": 332,
+    "version_views": 346
+  },
+  "state": "done",
+  "submitted": true
+}

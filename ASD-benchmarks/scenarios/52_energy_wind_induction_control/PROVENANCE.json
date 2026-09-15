@@ -1,0 +1,222 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "52_energy_wind_induction_control",
+  "domain": "Wind energy",
+  "title": "Data Supplement for 'Dynamic induction control for mitigation of wake-induced power losses: a wind tunnel study under different inflow conditions'",
+  "publisher": "Zúñiga Inestroza, Manuel Alejandro (ForWind Zentrum für Windenergieforschung); Hulsman, Paul (ForWind Zentrum für Windenergieforschung); Petrović, Vlaho (ForWind Zentrum für Windenergieforschung); Kühn, Martin (ForWind Zentrum für Windenergieforschung)",
+  "authoritative_landing_url": "https://zenodo.org/records/15356141",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/15356141",
+    "https://zenodo.org/api/records/15356141/files/WF_Power.mat/content",
+    "https://zenodo.org/api/records/15356141/files/NoTurbine_ABL_Type_II.mat/content",
+    "https://zenodo.org/api/records/15356141/files/WT1_ABL_Type_II.mat/content",
+    "https://zenodo.org/api/records/15356141/files/WT2_ABL_Type_II.mat/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.15356141"
+  ],
+  "release_or_version": "15356141",
+  "retrieval_finalized_utc": "2026-09-15T07:04:31.524856+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "wind",
+  "substitution": null,
+  "data_origin": "mixed_measured_and_computational",
+  "measurement_dates": "Measurement dates not established in metadata.",
+  "source_publication_date": "2025-05-07",
+  "source_created_utc": "2025-05-07T13:20:09.078569+00:00",
+  "source_updated_utc": "2025-05-07T13:20:09.625054+00:00",
+  "source_inventory": [
+    {
+      "name": "WF_Power.mat",
+      "bytes": 1293,
+      "selected": true
+    },
+    {
+      "name": "WT1_ABL_Type_I.mat",
+      "bytes": 126341224,
+      "selected": false
+    },
+    {
+      "name": "WT1_Uniform_Inflow.mat",
+      "bytes": 226394356,
+      "selected": false
+    },
+    {
+      "name": "NoTurbine_ABL_Type_II.mat",
+      "bytes": 40247886,
+      "selected": true
+    },
+    {
+      "name": "WT1_ABL_Type_II.mat",
+      "bytes": 140903013,
+      "selected": true
+    },
+    {
+      "name": "NoTurbine_ABL_Type_I.mat",
+      "bytes": 53948229,
+      "selected": false
+    },
+    {
+      "name": "NoTurbine_Uniform_Inflow.mat",
+      "bytes": 41753628,
+      "selected": false
+    },
+    {
+      "name": "WT2_ABL_Type_I.mat",
+      "bytes": 85246064,
+      "selected": false
+    },
+    {
+      "name": "WT2_ABL_Type_II.mat",
+      "bytes": 91132624,
+      "selected": true
+    },
+    {
+      "name": "WT2_Uniform_Inflow.mat",
+      "bytes": 145361208,
+      "selected": false
+    }
+  ],
+  "author_preprocessing": "Lidar-derived/interpolated velocity fields and measured turbine power; WF_Power also contains virtual third-turbine power and other inflow columns. Published DIC analyses are prior results.",
+  "known_analyses_and_limitations": "Use ABL Type II consistently. Virtual power is a prediction, not a third independent measured turbine. Leave out complete operating conditions/positions; no field-farm extrapolation claim.",
+  "related_publications": [
+    {
+      "identifier": "10.5194/wes-2024-171",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    }
+  ],
+  "independent_groups": "turbine configuration, inflow and complete runs",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-052",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-052",
+      "scenario_id": "52_energy_wind_induction_control",
+      "path": "raw/WF_Power.mat",
+      "scenario_relative_path": "raw/WF_Power.mat",
+      "bytes": 1293,
+      "sha256": "d73babd79c6a7921f302a0edaad94f21069b37a7e174757bdf734f3fe0500d1c",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/15356141"
+      ],
+      "download_url": "https://zenodo.org/api/records/15356141/files/WF_Power.mat/content",
+      "source_checksum": "md5:2e638885e7e08eff88d47a26e8e6d19e",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:17:26.329693+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.15356141"
+      ],
+      "citation_url": "https://zenodo.org/records/15356141",
+      "source_version": "15356141",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15356141",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-052",
+      "scenario_id": "52_energy_wind_induction_control",
+      "path": "raw/NoTurbine_ABL_Type_II.mat",
+      "scenario_relative_path": "raw/NoTurbine_ABL_Type_II.mat",
+      "bytes": 40247886,
+      "sha256": "cb09bbe085c8fac9d151db6f20a3aa5c57aa2d681129df1d6948ab8ef0fa035f",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/15356141"
+      ],
+      "download_url": "https://zenodo.org/api/records/15356141/files/NoTurbine_ABL_Type_II.mat/content",
+      "source_checksum": "md5:f438d1cf2e74357e06d7a984bbd81ffe",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:21.434258+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.15356141"
+      ],
+      "citation_url": "https://zenodo.org/records/15356141",
+      "source_version": "15356141",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15356141",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-052",
+      "scenario_id": "52_energy_wind_induction_control",
+      "path": "raw/WT1_ABL_Type_II.mat",
+      "scenario_relative_path": "raw/WT1_ABL_Type_II.mat",
+      "bytes": 140903013,
+      "sha256": "326d1ae3f5617149559edb35b85ffffa5cd6705d77ba90772205f93be7e69041",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/15356141"
+      ],
+      "download_url": "https://zenodo.org/api/records/15356141/files/WT1_ABL_Type_II.mat/content",
+      "source_checksum": "md5:5b82aca4fde74e7d9b4384c99c6ec7ed",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:24.244856+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.15356141"
+      ],
+      "citation_url": "https://zenodo.org/records/15356141",
+      "source_version": "15356141",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15356141",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-052",
+      "scenario_id": "52_energy_wind_induction_control",
+      "path": "raw/WT2_ABL_Type_II.mat",
+      "scenario_relative_path": "raw/WT2_ABL_Type_II.mat",
+      "bytes": 91132624,
+      "sha256": "c9bbb434a41d0b6bdfe2939668c8a741f7de48d987ad393338ea1a728add905a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/15356141"
+      ],
+      "download_url": "https://zenodo.org/api/records/15356141/files/WT2_ABL_Type_II.mat/content",
+      "source_checksum": "md5:b10341e3931455a35ad64f2f7b01054f",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:49.593691+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.15356141"
+      ],
+      "citation_url": "https://zenodo.org/records/15356141",
+      "source_version": "15356141",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15356141",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-052",
+      "scenario_id": "52_energy_wind_induction_control",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 13966,
+      "sha256": "20d2c9e61a6edaf46d2b623fcb864ea3e3b5f074d888c8a7cb7a5dc3d9548437",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/15356141"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:40.171696+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15356141"
+      ],
+      "citation_url": "https://zenodo.org/records/15356141",
+      "source_version": "15356141",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

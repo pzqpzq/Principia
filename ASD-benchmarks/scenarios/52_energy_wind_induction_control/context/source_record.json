@@ -1,0 +1,226 @@
+{
+  "created": "2025-05-07T13:20:09.078569+00:00",
+  "modified": "2025-05-07T13:20:09.625054+00:00",
+  "id": 15356141,
+  "conceptrecid": "15356140",
+  "doi": "10.5281/zenodo.15356141",
+  "conceptdoi": "10.5281/zenodo.15356140",
+  "doi_url": "https://doi.org/10.5281/zenodo.15356141",
+  "metadata": {
+    "title": "Data Supplement for 'Dynamic induction control for mitigation of wake-induced power losses: a wind tunnel study under different inflow conditions'",
+    "doi": "10.5281/zenodo.15356141",
+    "publication_date": "2025-05-07",
+    "description": "<p><span lang=\"EN-US\">This database contains experimental data from a wind tunnel investigation of dynamic induction control (DIC) in single- and two-turbine configurations, under baseline uniform inflow and two realistic atmospheric boundary layer inflows. A WindScanner lidar is used to remotely map the time-averaged wake characteristics of each turbine in vertical cross-sections at different downstream locations, while an active grid generates atmospheric-like inflows.</span></p>\n<p><span lang=\"EN-US\">The measurement campaign is conducted in the large wind tunnel at ForWind-Universit&auml;t Oldenburg, Germany. The wind tunnel has a cross-section of 3 m x 3 m and and a closed test section length of 30 m. The model wind turbines are two in-house developed MoWiTO 0.6, with a rotor diameter of D = 0.58 m, thrust coeffcient C_T = 0.86, power coefficient C_P = 0.37, and tip-speed ratio TSR = 5.6 at an inflow wind speed of 7 m/s.&nbsp;</span></p>\n<p><span lang=\"EN-US\">The database contains 10 unique .mat files, each comprising a structure array with different data containers (fields) corresponding to specific inflow and turbine operational conditions.</span></p>\n<p><span lang=\"EN-US\">Within each substructure, the following parameters are provided:</span></p>\n<ul>\n<li><span lang=\"EN-US\">x_Global_frame [m]: x-coordinate referenced to WT1&rsquo;s hub height</span></li>\n<li><span lang=\"EN-US\">y_Global_frame [m]: y-coordinate referenced to WT1&rsquo;s hub height</span></li>\n<li><span lang=\"EN-US\">z_Global_frame [m]: z-coordinate referenced to WT1&rsquo;s hub height</span></li>\n<li><span lang=\"EN-US\">vlos [m/s]: line-of-sight wind speed</span></li>\n<li><span lang=\"EN-US\">sigma [m/s]: spectrum width</span></li>\n<li><span lang=\"EN-US\">yy [m]: y-coordinate of the interpolation grid referenced to WT1&rsquo;s hub height</span></li>\n<li><span lang=\"EN-US\">zz [m]: z-coordinate of the interpolation grid referenced to WT1&rsquo;s hub height</span></li>\n<li><span lang=\"EN-US\">uu [m/s]: streamwise velocity component at each point on the interpolation grid</span></li>\n<li><span lang=\"EN-US\">uREWS [m/s]: rotor equivalent wind speed</span></li>\n<li><span lang=\"EN-US\">uREWS_eUQ [m/s]: uncertainty in rotor equivalent wind speed, based on standard error propagation</span></li>\n</ul>\n<p><strong><span lang=\"EN-US\">Inflow measurements</span></strong></p>\n<p><span lang=\"EN-US\">The following .mat files correspond to WindScanner measurements of the inflow along the empty wind tunnel test section:</span></p>\n<ul>\n<li><span lang=\"EN-US\">NoTurbine_Uniform_Inflow: x/D = 0, 2, 5, 7</span></li>\n<li><span lang=\"EN-US\">NoTurbine_ABL_Type_I: </span>x/D = 0, 2, 5, 7, 9</li>\n<li>NoTurbine_ABL_Type_II: x/D = 0, 2, 5, 7, 9</li>\n</ul>\n<p><strong>Single-turbine configuration</strong></p>\n<p><span lang=\"EN-US\">The following .mat files correspond to WindScanner measurements in the wake of WT1, operating in greedy and DIC modes:</span></p>\n<ul>\n<li><span lang=\"EN-US\">WT1_Uniform_Inflow: x/D = 2, 4, 5</span></li>\n<li><span lang=\"EN-US\">WT1_ABL_Type_I: x/D = 2, 4, 5</span></li>\n<li><span lang=\"EN-US\">WT1_ABL_Type_II: x/D = 2, 4, 5</span></li>\n</ul>\n<p><strong><span lang=\"EN-US\">Two-turbine configuration</span></strong></p>\n<p><span lang=\"EN-US\">The following .mat files correspond to WindScanner measurements in the wake of WT2, in response to WT1 operating in greedy and DIC modes, while WT2 remains in greedy mode throughout:</span></p>\n<ul>\n<li><span lang=\"EN-US\">WT2_Uniform_Inflow: x/D = 2, 4</span></li>\n<li><span lang=\"EN-US\">WT2_ABL_Type_I: x/D = 2, 4</span></li>\n<li><span lang=\"EN-US\">WT2_ABL_Type_II: x/D = 2, 4</span></li>\n</ul>\n<p><strong><span lang=\"EN-US\">Virtual three-turbine configuration</span></strong></p>\n<p><span lang=\"EN-US\">The following .mat file contains mean power values and their associated uncertainties for individual turbines (WT1, WT2, WT3), based on either turbine power measurements or virtual power estimates:</span></p>\n<ul>\n<li><span lang=\"EN-US\">WF_Power: WT1, WT2, WT3</span></li>\n</ul>\n<p><span lang=\"EN-US\">Within each field, the following parameters are provided:</span></p>\n<ul>\n<li><span lang=\"EN-US\">Preal [W]: 10-min average of the measured electrical power</span></li>\n<li><span lang=\"EN-US\">Preal_error [W]: power uncertainty based on the statistical margin of error</span></li>\n<li><span lang=\"EN-US\">Pvirt [W]: virtual power based on the rotor equivalent wind speed</span></li>\n<li><span lang=\"EN-US\">Preal_error [W]: virtual power uncertainty based on standard error propagation</span></li>\n</ul>\n<p><span lang=\"EN-US\">Data structure:</span></p>\n<p><strong><span lang=\"EN-US\">Rows 1&ndash;4:</span></strong><span lang=\"EN-US\">&nbsp;WT1 operating in different modes</span></p>\n<ul>\n<li><span lang=\"EN-US\">Row 1: Greedy mode&nbsp;</span></li>\n<li><span lang=\"EN-US\">Row 2: DIC mode at&nbsp;<em>St</em> = 0.25</span></li>\n<li><span lang=\"EN-US\">Row 3: DIC mode at&nbsp;<em>St</em> = 0.30</span></li>\n<li><span lang=\"EN-US\">Row 4: DIC mode at&nbsp;<em>St</em> = 0.40</span></li>\n</ul>\n<p><strong>Columns 1&ndash;4:</strong>&nbsp;Different inflow conditions</p>\n<ul>\n<li><span lang=\"EN-US\">Column 1: Uniform inflow (A = 1&deg;)</span></li>\n<li><span lang=\"EN-US\">Column 2: Uniform inflow (A = 2&deg;)</span></li>\n<li><span lang=\"EN-US\">Column 3: ABL Type-I inflow (A = 2&deg;)</span></li>\n<li><span lang=\"EN-US\">Column 4: ABL Type-I inflow (A = 2&deg;)</span></li>\n</ul>\n<p><span lang=\"EN-US\">Note: WT2 and WT3 remain in greedy mode throughout.</span></p>\n<p>When using this database please reference to the journal paper.</p>\n<p>All data has been included without warranty, express or implied.</p>\n<p>For further questions, please contact the corresponding author.</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Zúñiga Inestroza, Manuel Alejandro",
+        "affiliation": "ForWind Zentrum für Windenergieforschung",
+        "orcid": "0000-0002-9371-1308"
+      },
+      {
+        "name": "Hulsman, Paul",
+        "affiliation": "ForWind Zentrum für Windenergieforschung",
+        "orcid": "0000-0002-1167-0531"
+      },
+      {
+        "name": "Petrović, Vlaho",
+        "affiliation": "ForWind Zentrum für Windenergieforschung",
+        "orcid": "0000-0001-6838-618X"
+      },
+      {
+        "name": "Kühn, Martin",
+        "affiliation": "ForWind Zentrum für Windenergieforschung",
+        "orcid": "0000-0003-0506-9288"
+      }
+    ],
+    "keywords": [
+      "Wind farm flow control",
+      "Active wake mixing",
+      "The pulse method",
+      "WindScanner lidar",
+      "Wind tunnel experiments"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "10.5194/wes-2024-171",
+        "relation": "isSupplementTo",
+        "resource_type": "publication-article",
+        "scheme": "doi"
+      }
+    ],
+    "version": "1.0",
+    "language": "eng",
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "journal": {
+      "title": "Wind Energy Science"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "15356140"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Data Supplement for 'Dynamic induction control for mitigation of wake-induced power losses: a wind tunnel study under different inflow conditions'",
+  "links": {
+    "self": "https://zenodo.org/api/records/15356141",
+    "self_html": "https://zenodo.org/records/15356141",
+    "preview_html": "https://zenodo.org/records/15356141?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.15356141",
+    "self_doi": "https://doi.org/10.5281/zenodo.15356141",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.15356141",
+    "reserve_doi": "https://zenodo.org/api/records/15356141/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/15356140",
+    "parent_html": "https://zenodo.org/records/15356140",
+    "parent_doi": "https://doi.org/10.5281/zenodo.15356140",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.15356140",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:15356141/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:15356141/sequence/default",
+    "files": "https://zenodo.org/api/records/15356141/files",
+    "media_files": "https://zenodo.org/api/records/15356141/media-files",
+    "archive": "https://zenodo.org/api/records/15356141/files-archive",
+    "archive_media": "https://zenodo.org/api/records/15356141/media-files-archive",
+    "latest": "https://zenodo.org/api/records/15356141/versions/latest",
+    "latest_html": "https://zenodo.org/records/15356141/latest",
+    "versions": "https://zenodo.org/api/records/15356141/versions",
+    "draft": "https://zenodo.org/api/records/15356141/draft",
+    "access_links": "https://zenodo.org/api/records/15356141/access/links",
+    "access_grants": "https://zenodo.org/api/records/15356141/access/grants",
+    "access_users": "https://zenodo.org/api/records/15356141/access/users",
+    "access_request": "https://zenodo.org/api/records/15356141/access/request",
+    "access": "https://zenodo.org/api/records/15356141/access",
+    "communities": "https://zenodo.org/api/records/15356141/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/15356141/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/15356141/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/15356141/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/15356141/quota-increase",
+    "requests": "https://zenodo.org/api/records/15356141/requests"
+  },
+  "updated": "2025-05-07T13:20:09.625054+00:00",
+  "recid": "15356141",
+  "revision": 4,
+  "files": [
+    {
+      "id": "63fec71a-5686-4d72-b2df-395df5499c6f",
+      "key": "WF_Power.mat",
+      "size": 1293,
+      "checksum": "md5:2e638885e7e08eff88d47a26e8e6d19e",
+      "links": {
+        "self": "https://zenodo.org/api/records/15356141/files/WF_Power.mat/content"
+      }
+    },
+    {
+      "id": "90cef50d-7ccf-41fb-931b-130a43ffc094",
+      "key": "WT1_ABL_Type_I.mat",
+      "size": 126341224,
+      "checksum": "md5:261cee9637e40b39ec8e329318d3871b",
+      "links": {
+        "self": "https://zenodo.org/api/records/15356141/files/WT1_ABL_Type_I.mat/content"
+      }
+    },
+    {
+      "id": "9c2e4885-7e0b-4840-98ac-11730dacbf98",
+      "key": "WT1_Uniform_Inflow.mat",
+      "size": 226394356,
+      "checksum": "md5:98f63a99adf7b39f273589b6c5ac53d6",
+      "links": {
+        "self": "https://zenodo.org/api/records/15356141/files/WT1_Uniform_Inflow.mat/content"
+      }
+    },
+    {
+      "id": "d568d13e-9857-4988-8797-be0153d30cdc",
+      "key": "NoTurbine_ABL_Type_II.mat",
+      "size": 40247886,
+      "checksum": "md5:f438d1cf2e74357e06d7a984bbd81ffe",
+      "links": {
+        "self": "https://zenodo.org/api/records/15356141/files/NoTurbine_ABL_Type_II.mat/content"
+      }
+    },
+    {
+      "id": "b51fc327-ab01-4ecd-bfaa-fc8955057586",
+      "key": "WT1_ABL_Type_II.mat",
+      "size": 140903013,
+      "checksum": "md5:5b82aca4fde74e7d9b4384c99c6ec7ed",
+      "links": {
+        "self": "https://zenodo.org/api/records/15356141/files/WT1_ABL_Type_II.mat/content"
+      }
+    },
+    {
+      "id": "5d92551b-0b57-47f9-8596-8c5fd2a4ba47",
+      "key": "NoTurbine_ABL_Type_I.mat",
+      "size": 53948229,
+      "checksum": "md5:445d67ed583304e0b2dd4b6bcdda383e",
+      "links": {
+        "self": "https://zenodo.org/api/records/15356141/files/NoTurbine_ABL_Type_I.mat/content"
+      }
+    },
+    {
+      "id": "31cac2bb-1076-4121-a9d2-a3fefdd33608",
+      "key": "NoTurbine_Uniform_Inflow.mat",
+      "size": 41753628,
+      "checksum": "md5:26e23a95b7b2bc1f0ea167c16e9133f2",
+      "links": {
+        "self": "https://zenodo.org/api/records/15356141/files/NoTurbine_Uniform_Inflow.mat/content"
+      }
+    },
+    {
+      "id": "d464c0bb-b3e3-48c6-b9c6-b8f0b82e9cec",
+      "key": "WT2_ABL_Type_I.mat",
+      "size": 85246064,
+      "checksum": "md5:eb87de58e36fbba22e3031082f355980",
+      "links": {
+        "self": "https://zenodo.org/api/records/15356141/files/WT2_ABL_Type_I.mat/content"
+      }
+    },
+    {
+      "id": "4d616995-5bba-4ff4-a7ba-d3014ddc8fd2",
+      "key": "WT2_ABL_Type_II.mat",
+      "size": 91132624,
+      "checksum": "md5:b10341e3931455a35ad64f2f7b01054f",
+      "links": {
+        "self": "https://zenodo.org/api/records/15356141/files/WT2_ABL_Type_II.mat/content"
+      }
+    },
+    {
+      "id": "87fc9798-fc67-4083-8c2b-eb04ccf385c8",
+      "key": "WT2_Uniform_Inflow.mat",
+      "size": 145361208,
+      "checksum": "md5:0e39f72f6afc8a6faf25dd2cab806537",
+      "links": {
+        "self": "https://zenodo.org/api/records/15356141/files/WT2_Uniform_Inflow.mat/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "1314121"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 912,
+    "unique_downloads": 900,
+    "views": 149,
+    "unique_views": 144,
+    "version_downloads": 912,
+    "version_unique_downloads": 900,
+    "version_unique_views": 144,
+    "version_views": 149
+  },
+  "state": "done",
+  "submitted": true
+}

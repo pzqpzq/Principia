@@ -1,0 +1,417 @@
+{
+  "case_id": "P100-060",
+  "case_revision": 1,
+  "scenario_id": "60_acoustics_ultrasonic_transmission",
+  "title": "Ultrasonic Pulse Transmission Tests: Datasets in MATLABv6 format - Test Series 3, Reference Tests on Air",
+  "domain": "Acoustic sensing",
+  "question": "How do distance, pulse width and excitation frequency affect transmitted acoustic waveform features?",
+  "data_origin": "measured_or_observed",
+  "source_version": "17266427",
+  "source_url": "https://zenodo.org/records/17266427",
+  "identifiers": [
+    "10.3217/vh1zt-xbz34"
+  ],
+  "publisher": "Harden, Jakob (Graz University of Technology)",
+  "release_date": "2025-10-04",
+  "measurement_dates": "Original test-series record published July 2023; retained MATLAB export headers dated September 2025.",
+  "variables_and_units": "transmit/receive waveforms and reference conditions",
+  "independent_units": "sensor types, distances and pulse conditions",
+  "validation_design": "sensor types, distances and pulse conditions Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Author conversion from GNU Octave binary v4 into MATLAB v6 files. SciPy may read headers but not all Octave structures; source technical description and reader requirements are retained.",
+  "prior_analysis_and_limits": "Group complete sensor/condition tests. Native-reader compatibility is separate from authenticated bytes; do not silently convert source files. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/ts3_d00_f110_w050.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "dataset",
+            "shape": [
+              1,
+              1
+            ],
+            "type": "struct"
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/ts3_d00_f110_w100.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "dataset",
+            "shape": [
+              1,
+              1
+            ],
+            "type": "struct"
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/ts3_d50_f110_w125.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "dataset",
+            "shape": [
+              1,
+              1
+            ],
+            "type": "struct"
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/ts3_d50_f110_w025.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "dataset",
+            "shape": [
+              1,
+              1
+            ],
+            "type": "struct"
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/ts3_d50_f110_w150.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "dataset",
+            "shape": [
+              1,
+              1
+            ],
+            "type": "struct"
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/ts3_d50_f110_w100.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "dataset",
+            "shape": [
+              1,
+              1
+            ],
+            "type": "struct"
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/ts3_d20_f110_w075.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "dataset",
+            "shape": [
+              1,
+              1
+            ],
+            "type": "struct"
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/ts3_d20_f500_w075.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "dataset",
+            "shape": [
+              1,
+              1
+            ],
+            "type": "struct"
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/ts3_d00_f500_w075.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "dataset",
+            "shape": [
+              1,
+              1
+            ],
+            "type": "struct"
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/ts3_d20_f500_w025.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "dataset",
+            "shape": [
+              1,
+              1
+            ],
+            "type": "struct"
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/ts3_d20_f110_w100.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "dataset",
+            "shape": [
+              1,
+              1
+            ],
+            "type": "struct"
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/ts3_d20_f110_w150.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "dataset",
+            "shape": [
+              1,
+              1
+            ],
+            "type": "struct"
+          }
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "MATLAB": 36,
+    "PDF": 1
+  },
+  "reader_limitations": [
+    {
+      "asset": "raw/ts3_d00_f110_w050.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d00_f110_w100.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d50_f110_w125.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d50_f110_w025.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d50_f110_w150.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d50_f110_w100.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d20_f110_w075.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d20_f500_w075.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d00_f500_w075.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d20_f500_w025.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d20_f110_w100.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d20_f110_w150.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d00_f110_w150.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d00_f500_w050.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d50_f110_w050.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d20_f500_w150.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d00_f500_w100.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d00_f500_w125.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d00_f500_w150.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d00_f110_w125.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d00_f500_w025.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d20_f500_w100.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d50_f110_w075.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d20_f500_w125.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d50_f500_w100.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d00_f110_w075.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d20_f110_w125.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d50_f500_w025.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d50_f500_w125.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d20_f110_w050.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d20_f110_w025.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d20_f500_w050.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d50_f500_w050.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d50_f500_w075.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d00_f110_w025.mat",
+      "note": "buffer is too small for requested array"
+    },
+    {
+      "asset": "raw/ts3_d50_f500_w150.mat",
+      "note": "buffer is too small for requested array"
+    }
+  ],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 65528375,
+  "expanded_source_equivalent_bytes": 65528375,
+  "installed_folder_bytes": 65564768,
+  "source_asset_count": 39,
+  "asset_paths": [
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d00_f110_w050.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d00_f110_w100.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d50_f110_w125.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d50_f110_w025.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d50_f110_w150.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d50_f110_w100.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d20_f110_w075.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d20_f500_w075.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d00_f500_w075.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d20_f500_w025.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d20_f110_w100.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d20_f110_w150.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d00_f110_w150.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d00_f500_w050.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d50_f110_w050.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d20_f500_w150.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d00_f500_w100.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d00_f500_w125.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d00_f500_w150.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d00_f110_w125.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d00_f500_w025.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d20_f500_w100.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d50_f110_w075.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d20_f500_w125.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d50_f500_w100.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d00_f110_w075.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d20_f110_w125.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d50_f500_w025.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d50_f500_w125.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d20_f110_w050.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d20_f110_w025.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d20_f500_w050.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d50_f500_w050.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d50_f500_w075.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d00_f110_w025.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/raw/ts3_d50_f500_w150.mat",
+    "scenarios/60_acoustics_ultrasonic_transmission/context/ts3_techdescr.pdf",
+    "scenarios/60_acoustics_ultrasonic_transmission/context/source_record.json",
+    "scenarios/60_acoustics_ultrasonic_transmission/context/SOURCE_FACTS.json"
+  ],
+  "local_folder": "scenarios/60_acoustics_ultrasonic_transmission",
+  "size_exception": false,
+  "modalities": [
+    "scientific_arrays_or_events"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 65592578,
+  "expanded_release_folder_equivalent_bytes": 65592578
+}

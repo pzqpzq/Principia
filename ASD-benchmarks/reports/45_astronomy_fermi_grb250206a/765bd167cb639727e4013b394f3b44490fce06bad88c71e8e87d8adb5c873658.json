@@ -1,0 +1,42 @@
+{
+  "bytes": 1586880,
+  "sha256": "35a02424f583796311efaac69c4245c1eabf2cfc7179b2806ad3b5847b8bf90f",
+  "format_extension": ".fit",
+  "checks": [],
+  "format": "FITS",
+  "HDUs": [
+    {
+      "name": "PRIMARY",
+      "shape": null,
+      "columns": null,
+      "units": null,
+      "header": {
+        "DATE-OBS": "2025-02-06T19:49:23",
+        "DATE-END": "2025-02-06T19:59:38",
+        "TSTART": "760564163.806468",
+        "TSTOP": "760564778.216548",
+        "TELESCOP": "GLAST",
+        "INSTRUME": "GBM"
+      }
+    },
+    {
+      "name": "HEALPIX",
+      "shape": [
+        192
+      ],
+      "columns": [
+        "PROBABILITY",
+        "SIGNIFICANCE"
+      ],
+      "units": [
+        "",
+        ""
+      ],
+      "header": {}
+    }
+  ],
+  "path": "raw/glg_healpix_all_bn250206827_v00.fit",
+  "scenario_id": "45_astronomy_fermi_grb250206a",
+  "verified_utc": "2026-09-14T16:00:18.914003+00:00",
+  "status": "pass"
+}

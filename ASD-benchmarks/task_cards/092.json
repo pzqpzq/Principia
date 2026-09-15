@@ -1,0 +1,235 @@
+{
+  "case_id": "P100-092",
+  "case_revision": 1,
+  "scenario_id": "92_communications_ble_antennas",
+  "title": "Bluetooth Low Energy Separate Channel Fingerprinting dataset with Frequency-Scanned Antennas and Monopole",
+  "domain": "Wireless sensing",
+  "question": "How do antenna configuration and environment affect received signal patterns across positions?",
+  "data_origin": "measured_or_observed",
+  "source_version": "14548531",
+  "source_url": "https://zenodo.org/records/14548531",
+  "identifiers": [
+    "10.5281/zenodo.14548531"
+  ],
+  "publisher": "López-Pastor, Jose A. (Centro Universitario de la Defensa en San Javier); Hernández-Mateos, Antonio D. (Universidad Politécnica de Cartagena); Gil-Martínez, Alejandro (Universidad Politécnica de Cartagena); Algaba-Brazález, Astrid (Ericsson (Sweden)); Gomez-Tornero, Jose Luis (Universidad Politécnica de Cartagena)",
+  "release_date": "2024-03-13",
+  "measurement_dates": "November 21, 2023–February 23, 2024; record/version dates differ within 2024.",
+  "variables_and_units": "position, antenna condition and eight beacon channels",
+  "independent_units": "measurement date and spatial block",
+  "validation_design": "measurement date and spatial block Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Complete 1,820 native TXT measurements, 14 condition folders, 130 positions and eight beacon channels.",
+  "prior_analysis_and_limits": "Spatial/date blocks prevent near-neighbor leakage. Environmental/furniture changes may coincide with acquisition dates. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/SC BLE Fingerprinting.zip!/Test_day_94_with_furnitures_23022024/Test_D94_x_-1_y_-1_23022024_WF.txt",
+      "structure": {
+        "first_lines": [
+          "01708691009543;P8;37;-37",
+          "01708691009546;P4;37;-33",
+          "01708691009547;P2;37;-37",
+          "01708691009548;P1;37;-53",
+          "01708691009548;P3;37;-38",
+          "01708691009548;P7;37;-39",
+          "01708691009548;P6;37;-47",
+          "01708691009549;P5;37;-44"
+        ]
+      }
+    },
+    {
+      "asset": "raw/SC BLE Fingerprinting.zip!/Test_day_94_with_furnitures_23022024/Test_D94_x_-1_y_-2_23022024_WF.txt",
+      "structure": {
+        "first_lines": [
+          "01708690970706;P8;37;-31",
+          "01708690970707;P3;37;-38",
+          "01708690970707;P2;37;-35",
+          "01708690970707;P5;37;-35",
+          "01708690970707;P7;37;-40",
+          "01708690970708;P6;37;-39",
+          "01708690970707;P4;37;-33",
+          "01708690970707;P1;37;-47"
+        ]
+      }
+    },
+    {
+      "asset": "raw/SC BLE Fingerprinting.zip!/Test_day_94_with_furnitures_23022024/Test_D94_x_-1_y_-3_23022024_WF.txt",
+      "structure": {
+        "first_lines": [
+          "01708690931529;P8;37;-31",
+          "01708690931535;P5;37;-43",
+          "01708690931534;P4;37;-36",
+          "01708690931534;P7;37;-40",
+          "01708690931534;P2;37;-37",
+          "01708690931535;P3;37;-46",
+          "01708690931535;P6;37;-44",
+          "01708690931535;P1;37;-48"
+        ]
+      }
+    },
+    {
+      "asset": "raw/SC BLE Fingerprinting.zip!/Test_day_94_with_furnitures_23022024/Test_D94_x_-1_y_-4_23022024_WF.txt",
+      "structure": {
+        "first_lines": [
+          "01708690892678;P7;37;-37",
+          "01708690892678;P4;37;-42",
+          "01708690892678;P5;37;-39",
+          "01708690892679;P6;37;-40",
+          "01708690892680;P1;37;-51",
+          "01708690892681;P3;37;-38",
+          "01708690892681;P8;37;-33",
+          "01708690892680;P2;37;-40"
+        ]
+      }
+    },
+    {
+      "asset": "raw/SC BLE Fingerprinting.zip!/Test_day_94_with_furnitures_23022024/Test_D94_x_-1_y_-5_23022024_WF.txt",
+      "structure": {
+        "first_lines": [
+          "01708690851834;P8;37;-34",
+          "01708690851837;P5;37;-42",
+          "01708690851838;P7;37;-39",
+          "01708690851838;P6;37;-37",
+          "01708690851839;P1;37;-47",
+          "01708690851839;P2;37;-40",
+          "01708690851839;P3;37;-39",
+          "01708690851839;P4;37;-37"
+        ]
+      }
+    },
+    {
+      "asset": "raw/SC BLE Fingerprinting.zip!/Test_day_94_with_furnitures_23022024/Test_D94_x_-1_y_-6_23022024_WF.txt",
+      "structure": {
+        "first_lines": [
+          "01708690817084;P4;37;-44",
+          "01708690817185;P8;37;-34",
+          "01708690817187;P6;37;-42",
+          "01708690817187;P1;37;-48",
+          "01708690817188;P2;37;-44",
+          "01708690817188;P3;37;-51",
+          "01708690817188;P5;37;-52",
+          "01708690817191;P7;37;-35"
+        ]
+      }
+    },
+    {
+      "asset": "raw/SC BLE Fingerprinting.zip!/Test_day_94_with_furnitures_23022024/Test_D94_x_-1_y_0_23022024_WF.txt",
+      "structure": {
+        "first_lines": [
+          "01708691068438;P8;37;-36",
+          "01708691068442;P1;37;-41",
+          "01708691068442;P5;37;-50",
+          "01708691068443;P2;37;-39",
+          "01708691068443;P3;37;-45",
+          "01708691068443;P7;37;-40",
+          "01708691068443;P4;37;-40",
+          "01708691068442;P6;37;-54"
+        ]
+      }
+    },
+    {
+      "asset": "raw/SC BLE Fingerprinting.zip!/Test_day_94_with_furnitures_23022024/Test_D94_x_-1_y_1_23022024_WF.txt",
+      "structure": {
+        "first_lines": [
+          "01708691113793;P2;37;-42",
+          "01708691113898;P8;37;-43",
+          "01708691113903;P6;37;-43",
+          "01708691113903;P5;37;-37",
+          "01708691113903;P4;37;-43",
+          "01708691113903;P3;37;-35",
+          "01708691113902;P1;37;-37",
+          "01708691113903;P7;37;-42"
+        ]
+      }
+    },
+    {
+      "asset": "raw/SC BLE Fingerprinting.zip!/Test_day_94_with_furnitures_23022024/Test_D94_x_-1_y_2_23022024_WF.txt",
+      "structure": {
+        "first_lines": [
+          "01708691178887;P2;37;-49",
+          "01708691178887;P1;37;-33",
+          "01708691178888;P8;37;-43",
+          "01708691178888;P4;37;-41",
+          "01708691178889;P3;37;-37",
+          "01708691178888;P6;37;-43",
+          "01708691178889;P7;37;-47",
+          "01708691178889;P5;37;-40"
+        ]
+      }
+    },
+    {
+      "asset": "raw/SC BLE Fingerprinting.zip!/Test_day_94_with_furnitures_23022024/Test_D94_x_-1_y_3_23022024_WF.txt",
+      "structure": {
+        "first_lines": [
+          "01708691219308;P8;37;-40",
+          "01708691219310;P6;37;-43",
+          "01708691219310;P5;37;-39",
+          "01708691219311;P7;37;-40",
+          "01708691219311;P4;37;-42",
+          "01708691219312;P1;37;-36",
+          "01708691219313;P2;37;-44",
+          "01708691219313;P3;37;-36"
+        ]
+      }
+    },
+    {
+      "asset": "raw/SC BLE Fingerprinting.zip!/Test_day_94_with_furnitures_23022024/Test_D94_x_-1_y_4_23022024_WF.txt",
+      "structure": {
+        "first_lines": [
+          "01708691260362;P3;37;-48",
+          "01708691260362;P5;37;-36",
+          "01708691260362;P7;37;-46",
+          "01708691260363;P8;37;-43",
+          "01708691260362;P2;37;-50",
+          "01708691260362;P4;37;-42",
+          "01708691260363;P1;37;-39",
+          "01708691260362;P6;37;-50"
+        ]
+      }
+    },
+    {
+      "asset": "raw/SC BLE Fingerprinting.zip!/Test_day_94_with_furnitures_23022024/Test_D94_x_-1_y_5_23022024_WF.txt",
+      "structure": {
+        "first_lines": [
+          "01708691308140;P8;37;-40",
+          "01708691308142;P3;37;-46",
+          "01708691308142;P1;37;-43",
+          "01708691308143;P6;37;-40",
+          "01708691308142;P2;37;-49",
+          "01708691308143;P7;37;-54",
+          "01708691308142;P5;37;-42",
+          "01708691308142;P4;37;-45"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "ZIP": 1,
+    "text_or_instrument_native": 1820
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 3145611,
+  "expanded_source_equivalent_bytes": 17943377,
+  "installed_folder_bytes": 3155365,
+  "source_asset_count": 2,
+  "asset_paths": [
+    "scenarios/92_communications_ble_antennas/raw/SC BLE Fingerprinting.zip",
+    "scenarios/92_communications_ble_antennas/context/source_record.json"
+  ],
+  "local_folder": "scenarios/92_communications_ble_antennas",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 3151827,
+  "expanded_release_folder_equivalent_bytes": 17949593
+}

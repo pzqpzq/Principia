@@ -1,0 +1,30 @@
+{
+  "scenario_id": "64_electronics_stretchable_lec",
+  "path": "raw/Archive_Stretchable_LEC/Stretchable LECs/Readme.txt",
+  "bytes": 1023,
+  "sha256": "1ad7d43be3590ea2d64762ec198659edefbb95f1ae1afcb37de0e8e7cd863641",
+  "checked_utc": "2026-09-15T06:45:34.543437+00:00",
+  "source_checksum_status": "verified",
+  "format": "text_or_instrument_native",
+  "signature_hex": "5468652070686f746f637572",
+  "line_count": 17,
+  "preview_lines": [
+    "The photocurrent of the devices were measurend with a SMU-controlled photodiode (V27 BPW21R 148) (data files which end with \"pt\"). Simultaneaously, the device was controlled by a SMU. Here, a voltage was applied and the current through the device was measured (data files which end with \"it\").",
+    "To calculate the luminance, the photodiode was calibrated with a luminance meter (LS-110, Konica Minolta). The following equation was therefore used:",
+    "L = (I_Ph-I_dark)*6.54199E8*(A_OLED/A_LEC,stretch)+2.45461E-9",
+    "With ",
+    "I_Ph: Photocurrent"
+  ],
+  "first_lines": [
+    "The photocurrent of the devices were measurend with a SMU-controlled photodiode (V27 BPW21R 148) (data files which end with \"pt\"). Simultaneaously, the device was controlled by a SMU. Here, a voltage was applied and the current through the device was measured (data files which end with \"it\").",
+    "To calculate the luminance, the photodiode was calibrated with a luminance meter (LS-110, Konica Minolta). The following equation was therefore used:",
+    "L = (I_Ph-I_dark)*6.54199E8*(A_OLED/A_LEC,stretch)+2.45461E-9",
+    "With ",
+    "I_Ph: Photocurrent",
+    "I_dark: Darkphotocurrent",
+    "A_OLED = 4 mm² (Area of OLED, used for calibration)",
+    "A_LEC,stretch: stretched emissive area"
+  ],
+  "encoding_replacement_count": 0,
+  "status": "pass"
+}

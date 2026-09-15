@@ -1,0 +1,42 @@
+[
+  {
+    "case_id": "P100-080",
+    "check": "publisher internal SHA256SUMS",
+    "verified_files": 708,
+    "manifest_member": "wearable-device-dataset-from-induced-stress-and-structured-exercise-sessions-1.0.1/SHA256SUMS.txt",
+    "status": "pass"
+  },
+  {
+    "case_id": "P100-075",
+    "check": "RNA/sample metadata alignment",
+    "genes": 28395,
+    "samples": 24,
+    "donors": 4,
+    "matrix_covariate_ids_match": true,
+    "native_stiffness_labels": [
+      "1000kpa",
+      "200kpa",
+      "30kpa"
+    ],
+    "status": "pass"
+  },
+  {
+    "case_id": "P100-086",
+    "check": "batch structure",
+    "rows": 50536,
+    "batches": 406,
+    "average_rows_per_batch": 124.47290640394088,
+    "reported_average_source_description": 154,
+    "source_inconsistency_retained": true,
+    "target": "hx",
+    "target_evidence": "Source data_loader.py Dataset_EFP_long/RAG default target",
+    "status": "pass_with_scope_limits"
+  },
+  {
+    "case_id": "P100-093",
+    "check": "FCS sample list alignment",
+    "listed_samples": 18,
+    "matched_native_FCS": 18,
+    "status": "pass"
+  }
+]

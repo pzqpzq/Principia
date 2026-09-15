@@ -1,0 +1,181 @@
+{
+  "created": "2025-08-21T08:48:02.114773+00:00",
+  "modified": "2025-08-21T08:48:04.306118+00:00",
+  "id": 16918146,
+  "conceptrecid": "14642254",
+  "doi": "10.5281/zenodo.16918146",
+  "conceptdoi": "10.5281/zenodo.14642254",
+  "doi_url": "https://doi.org/10.5281/zenodo.16918146",
+  "metadata": {
+    "title": "Dataset and computer code for \"The dynamics of cooperation in asymmetric public goods games\"",
+    "doi": "10.5281/zenodo.16918146",
+    "publication_date": "2025-08-21",
+    "description": "<h2><strong>Description of dataset </strong><strong>&ldquo;ThresholdPGG_ExperimentalData.xlsx&rdquo;</strong></h2>\n<p>These data were generated to investigate how players with different endowments and productivities cooperate in asymmetric threshold public goods games.</p>\n<p><strong>Experimental setting: </strong></p>\n<p>Five treatments: (1) Full equality (N=110), (2) Endowment inequality (N=118), (3) Productivity inequality (N=112), (4) Aligned inequality (N=104), (5) Misaligned inequality (N=110).</p>\n<p>Each participant is assigned to one treatment only. Each treatment includes two session: participants play Session 1 first and then Session 2. At the beginning of Session 1, participants are randomly matched in pairs, where in each pair one participant is assigned to Player 1 and the other is Player 2. They then play 20 rounds of the asymmetric threshold public goods game. Throughout a session, the pair of participants and their roles do not change. After Session 1, participants engage in Session 2. Again, they play 20 rounds of the asymmetric threshold public goods game but now with a different partner and in the opposite role. Finally, after completing both sessions, participants complete a survey on their perception of the fair contribution pattern and the minimum contribution they expect from their co-player for successful coordination.</p>\n<p>Each participant answers these questions twice: once from the perspective of Player 1 and once from the perspective of Player 2. However, in the <strong>full equality treatment</strong>, each participant answers only once because Player 1 and Player 2 are identical in this treatment. Nevertheless, in the dataset, their responses are recorded twice to maintain consistency with the data format used in other treatments (essentially duplicating the same response for both roles).</p>\n<p><strong>Structure of the Data:</strong></p>\n<p>Each treatment has two sheets: &ldquo;TreatmentName_Type 1&rdquo; and &ldquo;TreatmentName_Type 2&rdquo;.</p>\n<p>In \"TreatmentName_Type 1\" sheet, focus players are Type 1 who act as Player 1 in Session 1 and Player 2 in Session 2.&nbsp;</p>\n<p>In \"TreatmentName_Type 2\" sheet, focus players are Type 2 who act as Player 2 in Session 1 and Player 1 in Session 2.&nbsp;</p>\n<p>The data format across treatments is consistent.</p>\n<p>Each player's experimental data is represented by four rows:</p>\n<p>- The first two rows correspond to Session 1.</p>\n<p>- The last two rows correspond to Session 2.</p>\n<p>Missing data codes: None</p>\n<p>Abbreviations used: n/a; not applicable</p>\n<p>&nbsp;</p>\n<p><strong>Column Descriptions</strong>:</p>\n<p>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Column A</strong>: Participant ID.</p>\n<p>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Column B</strong>: Pairing information for each focal player in both games.</p>\n<p>3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Columns C to V (Contributions)</strong>:&nbsp;</p>\n<p>(1) Data is organized in blocks of four rows:</p>\n<p>-&nbsp; The first two rows in each block record contributions from both players in Session 1 (20 rounds).</p>\n<p>-&nbsp; The last two rows contributions from both players in Session 1 (20 rounds).</p>\n<p>(2) Within each block:</p>\n<p>-&nbsp; The first and third rows (Columns C&ndash;V) record Player 1's contributions in Session 1 and Session 2, respectively.</p>\n<p>-&nbsp; The second and fourth rows (Columns C&ndash;V) record Player 2's contributions in Session 1 and Session 2, respectively.</p>\n<p>4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Columns W to Z (Survey Responses)</strong>:</p>\n<p>(1) Columns W and X record Player 1's answers. Columns Y and Z record Player 2's answers.</p>\n<p>(2) In each block of four rows:</p>\n<p>-&nbsp; The first two rows record responses from both players in Session 1.</p>\n<p>-&nbsp; <strong>Column W</strong>: Player 1's perception of fair contributions.</p>\n<p>Top cell: The contribution Player 1 believes they should make.</p>\n<p>Bottom cell: The contribution Player 1 believes Player 2 should make.</p>\n<p>-&nbsp; <strong>Column Y</strong>: Player 2's perception of fair contributions.</p>\n<p>Top cell: The contribution Player 2 believes Player 1 should make.</p>\n<p>Bottom cell: The contribution Player 2 believes they should make.</p>\n<p>-&nbsp;&nbsp; <strong>Columns X and Z</strong>: Minimum contributions expected by Player 1 and Player 2, respectively, for successful coordination.</p>\n<p>(3) The last two rows follow the same format as the first two rows but represent responses from Session 2.</p>\n<p>&nbsp;</p>\n<h2><strong>Description of Dataset: </strong><strong>&ldquo;linearPGG_ExperimentalData.xlsx&rdquo;</strong></h2>\n<p>These data were generated to investigate how players with different endowments and productivities cooperate in asymmetric linear public goods games.</p>\n<p><strong>Experimental Setting:</strong></p>\n<p>Five treatments: (1) Full equality (N=114), (2) Endowment inequality (N=110), (3) Productivity inequality (N=110), (4) Aligned inequality (N=106), (5) Misaligned inequality (N=110).</p>\n<p>The session setup is same as in the threshold public goods game described earlier, but the survey was replaced with the following two questions:</p>\n<p>1.&nbsp;&nbsp;&nbsp;&nbsp; What is your preferred contribution pattern? (Specify contributions for both players).</p>\n<p>2.&nbsp;&nbsp;&nbsp;&nbsp; Given your co-player's contribution (from 0 to their endowment), how much would you contribute?</p>\n<p>Similar to the threshold public goods experiment, except for the <strong>full equality treatment</strong><strong>, </strong>each participant answered these questions twice, assuming the roles of Player 1 and Player 2, respectively. Although participants in the <strong>full equality treatment</strong> answered the questions only once, their responses were recorded twice in the dataset to maintain consistency with the data format used in other treatments (essentially duplicating the same response for both roles).</p>\n<p><strong>Structure of the Data:</strong></p>\n<p>The dataset contains 10 sheets, with two sheets for each treatment.</p>\n<p>Each treatment consists of two sheets. The data format across treatments is consistent.</p>\n<p>Each player's experimental data is represented by four rows:</p>\n<p>-&nbsp; The first two rows correspond to Session 1.</p>\n<p>-&nbsp; The last two rows correspond to Session 2.</p>\n<p>Missing data codes: None</p>\n<p>Abbreviations used: n/a; not applicable</p>\n<p>&nbsp;</p>\n<p><strong>Column Descriptions</strong>:</p>\n<p>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Column A</strong>: Participant ID.</p>\n<p>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Column B</strong>: Pairing information for each focal player in both sessions.</p>\n<p>3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Columns C to X</strong>:</p>\n<p>(1) Data is organized in blocks of four rows:</p>\n<p>-&nbsp; The first two rows in each block record contributions from both players in Session 1 (22 rounds).</p>\n<p>-&nbsp; The last two rows record contributions in Session 2 (21 rounds).</p>\n<p>(2) Within each block:</p>\n<p>-&nbsp; The first and third rows (Columns C&ndash;X) record Player 1's contributions in Session 1 and Session 2, respectively.</p>\n<p>-&nbsp; The second and fourth rows (Columns C&ndash;X) record Player 2's contributions in Session 1 and Session 2, respectively.</p>\n<p>4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Columns Y and Z</strong> (Preferred Contribution Patterns):</p>\n<p>(1) <strong>Column Y</strong>: The Player 1's preferred contribution pattern (from Player 1&rsquo;s perspective).</p>\n<p>(2) <strong>Column Z</strong>: The Player 2's preferred contribution pattern (from Player 2&rsquo;s perspective).</p>\n<p>(3) Both Column Y and Column Z record Player 1's contribution on the top row and Player 2's contribution on the bottom row.</p>\n<p>(4) In each block of four rows:</p>\n<p>-&nbsp; The first two rows record responses from both players of Session 1.</p>\n<p>-&nbsp; The last two rows record responses from both players of Session 2.</p>\n<p>5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Columns AA and Beyond</strong> (Conditional Contributions):</p>\n<p>(1) Column titles with \"CC_k\" indicate conditional contributions when the co-player contributes k.</p>\n<p>(2) In each block of four rows:</p>\n<p>-&nbsp; The first two rows record responses from the two players of Session 1:</p>\n<p>&nbsp; &nbsp; The first row corresponds to the Player 1's answer (from Player 1&rsquo;s perspective).</p>\n<p>&nbsp; &nbsp; The second row corresponds to the Player 2's answer (from Player 2&rsquo;s perspective).</p>\n<p>-&nbsp; The last two rows record responses from the two players of Session 2:</p>\n<p>&nbsp; &nbsp;The third row corresponds to the Player 1's answer (from Player 1&rsquo;s perspective).</p>\n<p>&nbsp; &nbsp;The fourth row corresponds to the Player 2's answer (from Player 2&rsquo;s perspective).</p>\n<p>&nbsp;</p>\n<h2><strong>Computer code used for evolutionary simulations</strong></h2>\n<p>we used the Matlab scripts&nbsp;LinearPGG_CreateDataIntrospection.m and ThresholdPGG_CreateDataIntrospection.m, which we ran with Matlab R2020b. Its usage is documented inline.</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<h2><span><span><span><span><strong><span lang=\"EN-US\">Description of Dataset: &ldquo;linearPGG_4P_ExperimentalData.mat&rdquo;</span></strong></span></span></span></span></h2>\n<p><span><span><span lang=\"EN-US\">This dataset contains individual contribution decisions from a laboratory public goods game experiment with 4-player groups. These data were generated to investigate how players with different endowments and productivities cooperate in 4-player linear public goods games.</span></span></span></p>\n<p><span><span><strong><span lang=\"EN-US\">Experimental Setting: </span></strong></span></span><span><span><span lang=\"EN-US\">The four-player games mirror the two-player design, with each possible role being duplicated (i.e., there are two players of each original type).&nbsp;</span></span></span></p>\n<p><span><span><strong><span lang=\"EN-US\">Data Structure</span></strong></span></span><span><span><strong><span>:</span></strong></span></span></p>\n<p><span><span><span lang=\"EN-US\">- Group Size: 4 players per group</span></span></span></p>\n<p><span><span><span lang=\"EN-US\">- Duration: 20 rounds per session</span></span></span></p>\n<p><span><span><span lang=\"EN-US\">- Sessions: 2 sessions per treatment</span></span></span></p>\n<p><span><span><span lang=\"EN-US\">- Treatments: full equality (FE), aligned inequality (AI), and misaligned inequality (MI)</span></span></span></p>\n<p><span><span><span lang=\"EN-US\">- #participants<span>: FE (N=100), AI (N=104), and MI (N=108).</span></span></span></span></p>\n<p><span><span><span lang=\"EN-US\">Missing data codes: None</span></span></span></p>\n<p><span><span><span lang=\"EN-US\">Abbreviations used: n/a; not applicable</span></span></span></p>\n<p><span><span><strong><span lang=\"EN-US\">Variable description:</span></strong></span></span></p>\n<p><span><span><strong><span lang=\"EN-US\">Treatment</span></strong></span></span><span><span><span lang=\"EN-US\">: Categorical variable indicating the experimental treatment condition. Takes values FE, AI, or MI corresponding to the three experimental treatments.</span></span></span></p>\n<p><span><span><strong><span lang=\"EN-US\">Session</span></strong></span></span><span><span><span lang=\"EN-US\">: Integer variable representing the session number within each treatment condition. Takes values 1 or 2, as each treatment was conducted across two (independent) sessions.</span></span></span></p>\n<p><span><span><strong><span lang=\"EN-US\">GroupID</span></strong></span></span><span><span><span lang=\"EN-US\">: Integer variable providing a unique group identifier across all treatments and sessions. Groups are numbered sequentially starting from 1, with each group containing exactly 4 participants.</span></span></span></p>\n<p><span><span><strong><span lang=\"EN-US\">PlayerID</span></strong></span></span><span><span><span lang=\"EN-US\">: Integer variable identifying individual players within each group. Takes values 1, 2, 3, or 4, representing each participant's position within their assigned group.</span></span></span></p>\n<p><span><span><strong><span lang=\"EN-US\">GlobalPlayerID</span></strong></span></span><span><span><span lang=\"EN-US\">: Integer variable providing a unique identifier for each participant-session combination in the dataset. Although the same individuals participated in both sessions within each treatment, they are assigned different GlobalPlayerIDs for Session 1 and Session 2 due to the re-randomization of groups. For example, if a treatment has 108 unique individuals, the dataset will contain 216 GlobalPlayerID values (108 &times; 2 sessions).</span></span></span></p>\n<p><span><span><strong><span lang=\"EN-US\">Round</span></strong></span></span><span><span><span lang=\"EN-US\">: Integer variable indicating the game round number. Takes values from 1 to 20, representing the sequential decision-making rounds within each session.</span></span></span></p>\n<p><span><span><strong><span lang=\"EN-US\">Contribution</span></strong></span></span><span><span><span lang=\"EN-US\">: Numeric variable recording each participant's contribution to the public good in each round. Values range from 0 to maximum possible contribution.</span></span></span></p>\n<p><span lang=\"EN-US\">&nbsp;</span></p>\n<p>&nbsp;</p>\n<h2><strong><span lang=\"EN-US\">Description of Dataset: &ldquo;linearPGG_4P_SurveyData.mat&rdquo;</span></strong></h2>\n<p><span lang=\"EN-US\">This dataset contains survey data from the 4-player linear public goods game experiment examining preferences and conditional responses across different treatment conditions.</span></p>\n<p><strong><span lang=\"EN-US\">Game Type</span></strong><span lang=\"EN-US\">: 4-player linear public goods game</span></p>\n<p><strong><span lang=\"EN-US\">Treatments</span></strong><span lang=\"EN-US\">: full equality (FE), aligned inequality (AI), and misaligned inequality (MI)</span></p>\n<p><strong><span lang=\"EN-US\">Player Roles</span></strong><span lang=\"EN-US\">: </span></p>\n<p><span lang=\"EN-US\">Role 1: Players 1 and 2 </span></p>\n<p><span lang=\"EN-US\">Role 2: Players 3 and 4</span></p>\n<p><span lang=\"EN-US\">Note: FE treatment has no role distinction</span></p>\n<p><strong><span lang=\"EN-US\">Data Files Structure:</span></strong></p>\n<p><strong><span lang=\"EN-US\">Preference Data Files</span></strong></p>\n<ul>\n<li><span lang=\"EN-US\">Preference_FE.mat: FE treatment, all participants</span></li>\n<li><span lang=\"EN-US\">Preference_AI_R1.mat: AI treatment, Role 1 participants</span></li>\n<li><span lang=\"EN-US\">Preference_AI_R2.mat: AI treatment, Role 2 participants</span></li>\n<li><span lang=\"EN-US\">Preference_MI_R1.mat: MI treatment, Role 1 participants</span></li>\n<li><span lang=\"EN-US\">Preference_MI_R2.mat: MI treatment, Role 2 participants</span></li>\n</ul>\n<p><strong><span lang=\"EN-US\">Structure</span></strong><span lang=\"EN-US\">: n &times; 4 matrix where:</span></p>\n<ul>\n<li><span lang=\"EN-US\">n = number of participants in the treatment condition</span></li>\n<li><span lang=\"EN-US\">Columns represent preferred contributions for Players 1, 2, 3, 4 respectively</span></li>\n<li><span lang=\"EN-US\">Values are integers representing contributions</span></li>\n</ul>\n<p><strong><span lang=\"EN-US\">Conditional Response Data Files</span></strong></p>\n<ul>\n<li><span lang=\"EN-US\">Survey_Conditional_FE.mat: Conditional responses for FE treatment</span></li>\n<li><span lang=\"EN-US\">Survey_Conditional_AI_R1.mat: Conditional responses for AI treatment, Role 1</span></li>\n<li><span lang=\"EN-US\">Survey_Conditional_AI_R2.mat: Conditional responses for AI treatment, Role 2</span></li>\n<li><span lang=\"EN-US\">Survey_Conditional_MI_R1.mat: Conditional responses for MI treatment, Role 1</span></li>\n<li><span lang=\"EN-US\">Survey_Conditional_MI_R2.mat: Conditional responses for MI treatment, Role 2</span></li>\n</ul>\n<p><strong><span lang=\"EN-US\">Structure</span></strong><span lang=\"EN-US\">: Each row corresponds to one participant's complete set of conditional responses. Responses are organized following the survey table structure (row-by-row, then column-by-column ordering). The survey is detailed in the Supporting Information.</span></p>\n<p><span lang=\"EN-US\">&nbsp;</span></p>\n<p><span lang=\"EN-US\">&nbsp;</span></p>\n<h2><strong><span lang=\"EN-US\">Description of Dataset: &ldquo;ThreholdPGG_4P_ExperimentalData.mat&rdquo;</span></strong></h2>\n<p><span lang=\"EN-US\">This dataset contains individual contribution decisions from a threshold public goods game experiment with 4-player groups. These data were generated to investigate how players with different endowments and productivities cooperate in 4-player threshold games.</span></p>\n<p><strong><span lang=\"EN-US\">Experimental Setting: </span></strong><span lang=\"EN-US\">The four-player games mirror the two-player design, with each possible role being duplicated (i.e., there are two players of each original type).&nbsp;</span></p>\n<p><strong><span lang=\"EN-US\">Data Structure</span></strong><strong><span>:</span></strong></p>\n<p><span lang=\"EN-US\">- Group Size: 4 players per group</span></p>\n<p><span lang=\"EN-US\">- Duration: 20 rounds per session</span></p>\n<p><span lang=\"EN-US\">- Sessions: 2 sessions per treatment</span></p>\n<p><span lang=\"EN-US\">- Treatments: full equality (FE), aligned inequality (AI), and misaligned inequality (MI)</span></p>\n<p><span lang=\"EN-US\">- #participants<span>: </span></span><span lang=\"EN-US\">FE (N=76), AI (N=100), and MI (N=100)<span>.</span></span></p>\n<p><span lang=\"EN-US\">Missing data codes: None</span></p>\n<p><span lang=\"EN-US\">Abbreviations used: n/a; not applicable</span></p>\n<p><strong><span lang=\"EN-US\">Variable Description:</span></strong></p>\n<p><strong><span lang=\"EN-US\">Treatment</span></strong><span lang=\"EN-US\">: Categorical variable indicating the experimental treatment condition. Takes values FE, AI, or MI corresponding to the three experimental treatments.</span></p>\n<p><span lang=\"EN-US\">Session: Integer variable representing the session number within each treatment condition. Takes values 1 or 2, as each treatment was conducted across two (independent) sessions.</span></p>\n<p><strong><span lang=\"EN-US\">GroupID</span></strong><span lang=\"EN-US\">: Integer variable providing a unique group identifier across all treatments and sessions. Groups are numbered sequentially starting from 1, with each group containing exactly 4 participants.</span></p>\n<p><strong><span lang=\"EN-US\">PlayerID</span></strong><span lang=\"EN-US\">: Integer variable identifying individual players within each group. Takes values 1, 2, 3, or 4, representing each participant's position within their assigned group.</span></p>\n<p><strong><span lang=\"EN-US\">GlobalPlayerID</span></strong><span lang=\"EN-US\">: Integer variable providing a unique identifier for each participant-session combination in the dataset. Although the same individuals participated in both sessions within each treatment, they are assigned different GlobalPlayerIDs for Session 1 and Session 2 due to the re-randomization of groups. For example, if a treatment has 100 unique individuals, the dataset will contain 200 GlobalPlayerID values (108 &times; 2 sessions).</span></p>\n<p><strong><span lang=\"EN-US\">Round</span></strong><span lang=\"EN-US\">: Integer variable indicating the game round number. Takes values from 1 to 20, representing the sequential decision-making rounds within each session.</span></p>\n<p><strong><span lang=\"EN-US\">Contribution</span></strong><span lang=\"EN-US\">: Numeric variable recording each participant's contribution to the public good in each round. Values range from 0 to maximum possible contribution.</span></p>\n<p><span lang=\"EN-US\">&nbsp;</span></p>\n<p><span lang=\"EN-US\">&nbsp;</span></p>\n<h2><span><strong><span lang=\"EN-US\">Description of Dataset: &ldquo;ThresholdPGG_4P_SurveyData.mat&rdquo;</span></strong></span></h2>\n<p><span><span><span lang=\"EN-US\">This dataset contains survey data from the 4-player threshold public goods game experiment examining fairness preferences and conditional responses across different treatment conditions.</span></span></span></p>\n<p><span><span><strong><span lang=\"EN-US\">Game Type</span></strong><span lang=\"EN-US\">: 4-player threshold public goods game</span></span></span></p>\n<p><span><span><strong><span lang=\"EN-US\">Treatments</span></strong><span lang=\"EN-US\">: full equality (FE), aligned inequality (AI), and misaligned inequality (MI)</span></span></span></p>\n<p><span><span><strong><span lang=\"EN-US\">Player Roles</span></strong><span lang=\"EN-US\">: </span></span></span></p>\n<p><span><span><span lang=\"EN-US\">Role 1: Players 1 and 2 </span></span></span></p>\n<p><span><span><span lang=\"EN-US\">Role 2: Players 3 and 4</span></span></span></p>\n<p><span><span><span lang=\"EN-US\">Note: FE treatment has no role distinction</span></span></span></p>\n<p><span><span><strong><span lang=\"EN-US\">Data Files Structure:</span></strong></span></span></p>\n<p><span><span><strong><span lang=\"EN-US\">Preference Data Files</span></strong></span></span></p>\n<ul>\n<li><span><span><span lang=\"EN-US\">Fair_FE.mat: FE treatment, all participants</span></span></span></li>\n<li><span><span><span lang=\"EN-US\">Fair_AI_R1.mat: AI treatment, Role 1 participants</span></span></span></li>\n<li><span><span><span lang=\"EN-US\">Fair_AI_R2.mat: AI treatment, Role 2 participants</span></span></span></li>\n<li><span><span><span lang=\"EN-US\">Fair_MI_R1.mat: MI treatment, Role 1 participants</span></span></span></li>\n<li><span><span><span lang=\"EN-US\">Fair_MI_R2.mat: MI treatment, Role 2 participants</span></span></span></li>\n</ul>\n<p><span><span><strong><span lang=\"EN-US\">Structure</span></strong><span lang=\"EN-US\">: n &times; 4 matrix where:</span></span></span></p>\n<ul>\n<li><span><span><span lang=\"EN-US\">n = number of participants in the treatment condition</span></span></span></li>\n<li><span><span><span lang=\"EN-US\">Columns represent preferred contributions for Players 1, 2, 3, 4 respectively</span></span></span></li>\n<li><span><span><span lang=\"EN-US\">Values are integers representing contributions</span></span></span></li>\n</ul>\n<p><span><span><strong><span lang=\"EN-US\">&nbsp;</span></strong></span></span></p>\n<p><span><span><strong><span lang=\"EN-US\">Conditional Response Data Files</span></strong></span></span></p>\n<ul>\n<li><span><span><span lang=\"EN-US\">Survey_Conditional_FE.mat: Conditional responses for FE treatment</span></span></span></li>\n<li><span><span><span lang=\"EN-US\">Survey_Conditional_AI_R1.mat: Conditional responses for AI treatment, Role 1</span></span></span></li>\n<li><span><span><span lang=\"EN-US\">Survey_Conditional_AI_R2.mat: Conditional responses for AI treatment, Role 2</span></span></span></li>\n<li><span><span><span lang=\"EN-US\">Survey_Conditional_MI_R1.mat: Conditional responses for MI treatment, Role 1</span></span></span></li>\n<li><span><span><span lang=\"EN-US\">Survey_Conditional_MI_R2.mat: Conditional responses for MI treatment, Role 2 </span></span></span></li>\n</ul>\n<p><span><span><strong><span lang=\"EN-US\">Structure</span></strong><span lang=\"EN-US\">: Each file contains an n &times; 2 matrix where:</span></span></span></p>\n<p><span><span><span lang=\"EN-US\">n = number of participants in the treatment condition.</span></span></span></p>\n<p><span><span><span lang=\"EN-US\">Each row corresponds to one participant's complete set of conditional responses.</span></span></span></p>\n<p><span><span><span lang=\"EN-US\">Column 1: Minimum collective contribution from the other 3 players </span></span></span></p>\n<p><span><span><span lang=\"EN-US\">Column 2: Participant's own contribution</span></span></span></p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Wang, Xiaomin",
+        "affiliation": "Beijing Normal University",
+        "orcid": "0000-0001-5820-7256"
+      },
+      {
+        "name": "Hilbe, Christian",
+        "affiliation": "Max Planck Institute for Evolutionary Biology"
+      },
+      {
+        "name": "Zhang, Boyu",
+        "affiliation": "Beijing Normal University"
+      }
+    ],
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 1,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "14642254"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Dataset and computer code for \"The dynamics of cooperation in asymmetric public goods games\"",
+  "links": {
+    "self": "https://zenodo.org/api/records/16918146",
+    "self_html": "https://zenodo.org/records/16918146",
+    "preview_html": "https://zenodo.org/records/16918146?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.16918146",
+    "self_doi": "https://doi.org/10.5281/zenodo.16918146",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.16918146",
+    "reserve_doi": "https://zenodo.org/api/records/16918146/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/14642254",
+    "parent_html": "https://zenodo.org/records/14642254",
+    "parent_doi": "https://doi.org/10.5281/zenodo.14642254",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.14642254",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:16918146/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:16918146/sequence/default",
+    "files": "https://zenodo.org/api/records/16918146/files",
+    "media_files": "https://zenodo.org/api/records/16918146/media-files",
+    "archive": "https://zenodo.org/api/records/16918146/files-archive",
+    "archive_media": "https://zenodo.org/api/records/16918146/media-files-archive",
+    "latest": "https://zenodo.org/api/records/16918146/versions/latest",
+    "latest_html": "https://zenodo.org/records/16918146/latest",
+    "versions": "https://zenodo.org/api/records/16918146/versions",
+    "draft": "https://zenodo.org/api/records/16918146/draft",
+    "access_links": "https://zenodo.org/api/records/16918146/access/links",
+    "access_grants": "https://zenodo.org/api/records/16918146/access/grants",
+    "access_users": "https://zenodo.org/api/records/16918146/access/users",
+    "access_request": "https://zenodo.org/api/records/16918146/access/request",
+    "access": "https://zenodo.org/api/records/16918146/access",
+    "communities": "https://zenodo.org/api/records/16918146/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/16918146/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/16918146/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/16918146/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/16918146/quota-increase",
+    "requests": "https://zenodo.org/api/records/16918146/requests"
+  },
+  "updated": "2025-08-21T08:48:04.306118+00:00",
+  "recid": "16918146",
+  "revision": 4,
+  "files": [
+    {
+      "id": "0dcbbeb0-87d4-4c22-9243-bfa90f91d8f7",
+      "key": "LinearPGG_4P_ExperimentalData.mat",
+      "size": 22347,
+      "checksum": "md5:42153952f8e6614d09c2d903fd97af62",
+      "links": {
+        "self": "https://zenodo.org/api/records/16918146/files/LinearPGG_4P_ExperimentalData.mat/content"
+      }
+    },
+    {
+      "id": "38b0ddb4-40ff-4f06-8a48-925a4ada7dd9",
+      "key": "ThresholdPGG_4P_SurveyData.mat",
+      "size": 2014,
+      "checksum": "md5:cec529fa674b3c3b7a17effa6e0fa347",
+      "links": {
+        "self": "https://zenodo.org/api/records/16918146/files/ThresholdPGG_4P_SurveyData.mat/content"
+      }
+    },
+    {
+      "id": "de19f671-387d-49b6-a170-7d870b22d9a4",
+      "key": "LinearPGG_ExperimentalData.xlsx",
+      "size": 504163,
+      "checksum": "md5:fc71d20de62c259629ceb56559d8a69e",
+      "links": {
+        "self": "https://zenodo.org/api/records/16918146/files/LinearPGG_ExperimentalData.xlsx/content"
+      }
+    },
+    {
+      "id": "27ebb744-9bb1-4c1d-8f6b-f5fab3bfe252",
+      "key": "ThresholdPGG_ExperimentalData.xlsx",
+      "size": 217396,
+      "checksum": "md5:c40171abb172da8e16b0839db98a2cf2",
+      "links": {
+        "self": "https://zenodo.org/api/records/16918146/files/ThresholdPGG_ExperimentalData.xlsx/content"
+      }
+    },
+    {
+      "id": "6ae3cc22-ce65-4772-af26-d49ba900ad64",
+      "key": "code_thresholdPGG.zip",
+      "size": 4158,
+      "checksum": "md5:8913fc6ed32a44f963b4ad338b28a986",
+      "links": {
+        "self": "https://zenodo.org/api/records/16918146/files/code_thresholdPGG.zip/content"
+      }
+    },
+    {
+      "id": "9fb978f4-0c7e-456a-acf9-636322f47cf1",
+      "key": "code_linearPGG.zip",
+      "size": 3990,
+      "checksum": "md5:667a9e35d580a8b86cf8f41e89e6af73",
+      "links": {
+        "self": "https://zenodo.org/api/records/16918146/files/code_linearPGG.zip/content"
+      }
+    },
+    {
+      "id": "7b236a15-f038-4e99-93e3-162eed1d3ea6",
+      "key": "LinearPGG_4P_SurveyData.mat",
+      "size": 7872,
+      "checksum": "md5:93a295b6743dc4e6785f98b5d6ae3ded",
+      "links": {
+        "self": "https://zenodo.org/api/records/16918146/files/LinearPGG_4P_SurveyData.mat/content"
+      }
+    },
+    {
+      "id": "9fed6fe9-67bf-4aca-a5e0-058602801f3b",
+      "key": "ThresholdPGG_4P_ExperimentalData.mat",
+      "size": 17159,
+      "checksum": "md5:6036f73c2f758ab3aeed6dcf4f74585b",
+      "links": {
+        "self": "https://zenodo.org/api/records/16918146/files/ThresholdPGG_4P_ExperimentalData.mat/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "1243950"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 324,
+    "unique_downloads": 309,
+    "views": 237,
+    "unique_views": 214,
+    "version_downloads": 277,
+    "version_unique_downloads": 266,
+    "version_unique_views": 168,
+    "version_views": 183
+  },
+  "state": "done",
+  "submitted": true
+}

@@ -1,0 +1,92 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "89_psychology_age_risk",
+  "domain": "Behavioral science",
+  "title": "Dataset : Contextual influences on risk-taking in children and adults",
+  "publisher": "Lacombe, Pénélope (Institute of Biology, University of Neuchatel, Neuchatel, Switzerland)",
+  "authoritative_landing_url": "https://zenodo.org/records/15412216",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/15412216",
+    "https://zenodo.org/api/records/15412216/files/raw%20data.csv/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.15412216"
+  ],
+  "release_or_version": "15412216",
+  "retrieval_finalized_utc": "2026-09-15T07:04:41.973673+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Acquisition dates unknown; May 2025 release.",
+  "source_publication_date": "2025-05-14",
+  "source_created_utc": "2025-05-14T15:38:10.678214+00:00",
+  "source_updated_utc": "2025-05-14T15:38:10.924834+00:00",
+  "source_inventory": [
+    {
+      "name": "raw data.csv",
+      "bytes": 2674600,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Complete source CSV for four experimental variants; retain supplied participant and condition encodings.",
+  "known_analyses_and_limitations": "Hold out participants and variants. Age associations are not causal effects; participant counts must come from source IDs, not row counts.",
+  "related_publications": [],
+  "independent_groups": "participant and experiment variant",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-089",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-089",
+      "scenario_id": "89_psychology_age_risk",
+      "path": "raw/raw data.csv",
+      "scenario_relative_path": "raw/raw data.csv",
+      "bytes": 2674600,
+      "sha256": "85b66b0a146872e817b183b6979c03201a8a0e89bc1e02937b383833a09bd1d9",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/15412216"
+      ],
+      "download_url": "https://zenodo.org/api/records/15412216/files/raw%20data.csv/content",
+      "source_checksum": "md5:97abc87d330098921b8381c67f4674b9",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:36:11.192045+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.15412216"
+      ],
+      "citation_url": "https://zenodo.org/records/15412216",
+      "source_version": "15412216",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15412216",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-089",
+      "scenario_id": "89_psychology_age_risk",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 6002,
+      "sha256": "d43f2c86435c85ba58cf34089863cb89cc053d0da73d7b5b5c8ffc2923b89dad",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/15412216"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:51.572445+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15412216"
+      ],
+      "citation_url": "https://zenodo.org/records/15412216",
+      "source_version": "15412216",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

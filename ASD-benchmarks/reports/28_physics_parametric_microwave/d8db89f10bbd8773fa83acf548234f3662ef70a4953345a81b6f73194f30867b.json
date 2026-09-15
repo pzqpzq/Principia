@@ -1,0 +1,56 @@
+{
+  "bytes": 22501018,
+  "sha256": "2e52886e9507a8a72ca5be5b1a1c691f640bd82378f774c33a784c963358f18a",
+  "format_extension": ".npz",
+  "checks": [
+    "all_member_CRCs",
+    "no_pickle_execution",
+    "publisher_md5"
+  ],
+  "format": "NPZ",
+  "arrays": [
+    {
+      "name": "omega_k",
+      "shape": [
+        96
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "phi_k",
+      "shape": [
+        96,
+        151
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "Ap_k",
+      "shape": [
+        96,
+        151
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "Sa_saved",
+      "shape": [
+        151,
+        96,
+        96
+      ],
+      "dtype": "complex128"
+    },
+    {
+      "name": "Sref_saved",
+      "shape": [
+        151
+      ],
+      "dtype": "float64"
+    }
+  ],
+  "path": "raw/Stargets_Image_PeaceFilmx2_96x151.npz",
+  "scenario_id": "28_physics_parametric_microwave",
+  "verified_utc": "2026-09-14T15:58:08.195387+00:00",
+  "status": "pass"
+}

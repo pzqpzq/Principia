@@ -1,0 +1,26 @@
+{
+  "bytes": 136276,
+  "sha256": "ff5c4de7cb072d6de88f77361dcdfa23d0e2d8afa554a5b38cd958560c8f31e5",
+  "format_extension": ".csv",
+  "checks": [
+    "publisher_sha256"
+  ],
+  "format": "text_or_instrument_native",
+  "signature_hex": "54696d65205b735d2c476175",
+  "delimiter": ",",
+  "header": [
+    "Time [s]",
+    "Gauge Pressure",
+    "Inspiratory Differential Pressure ",
+    "Expiratory Differential Pressure ",
+    "StartTime"
+  ],
+  "data_records": 6000,
+  "row_width_counts": {
+    "5": 6000
+  },
+  "path": "raw/PQ_rawData/Subject15_FEM_raw.csv",
+  "scenario_id": "32_medicine_cpap_pressure",
+  "verified_utc": "2026-09-14T15:58:09.640379+00:00",
+  "status": "pass"
+}

@@ -1,0 +1,39 @@
+{
+  "bytes": 3014,
+  "sha256": "4576a334f9ba0f98e9ce93dd05b47fe15a8897b8a2ae1e4f3b00f7b52ae2c23b",
+  "format_extension": ".npz",
+  "checks": [
+    "all_member_CRCs",
+    "no_pickle_execution",
+    "publisher_md5"
+  ],
+  "format": "NPZ",
+  "arrays": [
+    {
+      "name": "Sexp_abs_dB",
+      "shape": [
+        13,
+        13
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "gp_back",
+      "shape": [
+        37
+      ],
+      "dtype": "complex128"
+    },
+    {
+      "name": "omega_back",
+      "shape": [
+        37
+      ],
+      "dtype": "float64"
+    }
+  ],
+  "path": "raw/Sexp_abs_dB_13_best.npz",
+  "scenario_id": "28_physics_parametric_microwave",
+  "verified_utc": "2026-09-14T15:58:08.072968+00:00",
+  "status": "pass"
+}

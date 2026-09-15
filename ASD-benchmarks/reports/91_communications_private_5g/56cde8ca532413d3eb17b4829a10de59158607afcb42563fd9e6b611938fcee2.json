@@ -1,0 +1,512 @@
+{
+  "scenario_id": "91_communications_private_5g",
+  "path": "raw/data.zip",
+  "bytes": 27703,
+  "sha256": "89f952e2a0f299f728fe99a8ae0711c2d3a3e899f6df7ec4cd43bb63fcbd9330",
+  "checked_utc": "2026-09-15T06:46:27.163108+00:00",
+  "source_checksum_status": "verified",
+  "format": "ZIP",
+  "expanded_bytes": 80621,
+  "members": [
+    {
+      "name": "data/achieved_bandwidth_210.csv",
+      "bytes": 16409,
+      "sha256": "8fa312afa78345d4464c48a6dda19a3105a8f1cca83879edd911fbcb51a7df81",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "714964782c425f7461726765",
+        "delimiter": ",",
+        "header": [
+          "qIdx",
+          "B_target_Mbps",
+          "trial",
+          "achieved_Mbps_client",
+          "achieved_Mbps_server",
+          "jitter_ms_raw",
+          "loss_pct_raw",
+          "latency_avg_ms_raw",
+          "latency_min_ms_raw",
+          "latency_max_ms_raw",
+          "latency_stdev_ms_raw",
+          "latency_corrupted_flag",
+          "source_file"
+        ],
+        "data_records": 210,
+        "row_width_counts": {
+          "13": 210
+        },
+        "first_lines": [
+          "qIdx,B_target_Mbps,trial,achieved_Mbps_client,achieved_Mbps_server,jitter_ms_raw,loss_pct_raw,latency_avg_ms_raw,latency_min_ms_raw,latency_max_ms_raw,latency_stdev_ms_raw,latency_corrupted_flag,source_file",
+          "1,1,1,1.05,1.05,1.693,0,10.328,6.072,134.843,0.63,0,k1_latencyResult1.txt",
+          "1,1,2,1.05,1.05,0.776,0,7.681,5.937,209.434,0.63,0,k1_latencyResult2.txt",
+          "1,1,3,1.05,1.05,0.79,0,7.606,5.775,220.472,0.63,0,k1_latencyResult3.txt",
+          "1,1,4,1.05,1.05,0.656,0,6.864,5.466,39.491,0.63,0,k1_latencyResult4.txt",
+          "1,1,5,1.05,1.05,0.922,0,7.238,5.239,218.09,0.63,0,k1_latencyResult5.txt",
+          "1,10,1,10.5,10.5,0.451,0,10.642,7.268,19.359,0.2,0,k1_latency_10M_1.txt",
+          "1,10,2,10.5,10.5,0.434,0,10.742,7.45,21.563,0.2,0,k1_latency_10M_2.txt"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "data/bandwidth_trials_tcp_35.csv",
+      "bytes": 1979,
+      "sha256": "329a081e5423c0fdde3bbc12e30f575e6a90ac55dbac9f05411e2b3cbb162c1e",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "714964782c747269616c2c64",
+        "delimiter": ",",
+        "header": [
+          "qIdx",
+          "trial",
+          "date",
+          "time",
+          "tcp_throughput_Mbps",
+          "source_file"
+        ],
+        "data_records": 35,
+        "row_width_counts": {
+          "6": 35
+        },
+        "first_lines": [
+          "qIdx,trial,date,time,tcp_throughput_Mbps,source_file",
+          "1,1,2025-07-01,11:16:58,656.0,k1_bandwidthResult1.txt",
+          "1,2,2025-07-01,11:18:32,659.0,k1_bandwidthResult2.txt",
+          "1,3,2025-07-01,11:20:05,644.0,k1_bandwidthResult3.txt",
+          "1,4,2025-07-01,11:21:26,656.0,k1_bandwidthResult4.txt",
+          "1,5,2025-07-01,11:25:48,643.0,k1_bandwidthResult5.txt",
+          "2,1,2025-06-27,15:23:28,635.0,k2_bandwidthResult1.txt",
+          "2,2,2025-06-27,15:25:22,650.0,k2_bandwidthResult2.txt"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "data/fig5b_threshold_exceedance.csv",
+      "bytes": 1398,
+      "sha256": "b61c5e7f1ff08df12ccdeb48669b83cd9aa52f8ba40d16a931c0a3494901b15b",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "425f4d6270732c6e5f747269",
+        "delimiter": ",",
+        "header": [
+          "B_Mbps",
+          "n_trials",
+          "threshold_ms",
+          "n_exceeding",
+          "proportion",
+          "Wilson95_lower",
+          "Wilson95_upper"
+        ],
+        "data_records": 24,
+        "row_width_counts": {
+          "7": 24
+        },
+        "first_lines": [
+          "B_Mbps,n_trials,threshold_ms,n_exceeding,proportion,Wilson95_lower,Wilson95_upper",
+          "1,35,10,1,0.0285714285714286,0.0050614918554442,0.145330872336137",
+          "1,35,20,0,0,6.25263041117705e-18,0.098900992324404",
+          "1,35,30,0,0,6.25263041117705e-18,0.098900992324404",
+          "1,35,50,0,0,6.25263041117705e-18,0.098900992324404",
+          "10,35,10,16,0.457142857142857,0.304660192884072,0.618102749315162",
+          "10,35,20,0,0,6.25263041117705e-18,0.098900992324404",
+          "10,35,30,0,0,6.25263041117705e-18,0.098900992324404"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "data/latency_210.csv",
+      "bytes": 5556,
+      "sha256": "f5818d0e8ad14685c11a5179ce05f561adc1a5cc87ab610ef7325ac856b6d06d",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "714964782c425f4d6270732c",
+        "delimiter": ",",
+        "header": [
+          "qIdx",
+          "B_Mbps",
+          "trial",
+          "latency_ms",
+          "jitter_ms",
+          "stdev_ms"
+        ],
+        "data_records": 210,
+        "row_width_counts": {
+          "6": 210
+        },
+        "first_lines": [
+          "qIdx,B_Mbps,trial,latency_ms,jitter_ms,stdev_ms",
+          "1,1,1,10.328,1.693,0.63",
+          "1,1,2,7.681,0.776,0.63",
+          "1,1,3,7.606,0.79,0.63",
+          "1,1,4,6.864,0.656,0.63",
+          "1,1,5,7.238,0.922,0.63",
+          "1,10,1,10.642,0.451,0.2",
+          "1,10,2,10.742,0.434,0.2"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "data/latency_trials_raw_210.csv",
+      "bytes": 22700,
+      "sha256": "7f31b97b5020025f348bce64fa8b1e77cc0f7152c80fe6a03ea933ca0af87d6e",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "714964782c7461726765745f",
+        "delimiter": ",",
+        "header": [
+          "qIdx",
+          "target_Mbps",
+          "trial",
+          "date",
+          "time",
+          "achieved_Mbps",
+          "latency_avg_ms",
+          "latency_min_ms",
+          "latency_max_ms",
+          "latency_stdev_ms",
+          "jitter_ms",
+          "lost_pkts",
+          "total_pkts",
+          "loss_pct",
+          "out_of_order",
+          "valid_owd",
+          "source_file"
+        ],
+        "data_records": 210,
+        "row_width_counts": {
+          "17": 210
+        },
+        "first_lines": [
+          "qIdx,target_Mbps,trial,date,time,achieved_Mbps,latency_avg_ms,latency_min_ms,latency_max_ms,latency_stdev_ms,jitter_ms,lost_pkts,total_pkts,loss_pct,out_of_order,valid_owd,source_file",
+          "1,1,1,2025-06-27,11:30:52,1.05,10.328,6.072,134.843,0.63,1.693,0,5352,0.0,1,1,k1_latencyResult1.txt",
+          "1,1,2,2025-06-27,11:32:55,1.05,7.681,5.937,209.434,0.63,0.776,0,5352,0.0,1,1,k1_latencyResult2.txt",
+          "1,1,3,2025-06-27,11:34:40,1.05,7.606,5.775,220.472,0.63,0.79,0,5351,0.0,1,1,k1_latencyResult3.txt",
+          "1,1,4,2025-06-27,11:36:10,1.05,6.864,5.466,39.491,0.63,0.656,0,5350,0.0,1,1,k1_latencyResult4.txt",
+          "1,1,5,2025-06-27,11:40:12,1.05,7.238,5.239,218.09,0.63,0.922,0,5353,0.0,2,1,k1_latencyResult5.txt",
+          "1,10,1,2025-07-01,13:40:45,10.5,10.642,7.268,19.359,0.2,0.451,0,53489,0.0,0,1,k1_latency_10M_1.txt",
+          "1,10,2,2025-07-01,13:42:54,10.5,10.742,7.45,21.563,0.2,0.434,0,53474,0.0,0,1,k1_latency_10M_2.txt"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "data/latency_with_achieved_bw_210.csv",
+      "bytes": 10159,
+      "sha256": "127dec6af4c14ac33a81de4e27461562737c6bedd889248aa3bb505b79b6f0bc",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "714964782c425f4d6270732c",
+        "delimiter": ",",
+        "header": [
+          "qIdx",
+          "B_Mbps",
+          "trial",
+          "latency_ms",
+          "jitter_ms",
+          "stdev_ms",
+          "achieved_Mbps_client",
+          "achieved_Mbps_server",
+          "jitter_ms_raw",
+          "loss_pct_raw",
+          "latency_corrupted_flag"
+        ],
+        "data_records": 210,
+        "row_width_counts": {
+          "11": 210
+        },
+        "first_lines": [
+          "qIdx,B_Mbps,trial,latency_ms,jitter_ms,stdev_ms,achieved_Mbps_client,achieved_Mbps_server,jitter_ms_raw,loss_pct_raw,latency_corrupted_flag",
+          "1,1,1,10.328,1.693,0.63,1.05,1.05,1.693,0,0",
+          "1,1,2,7.681,0.776,0.63,1.05,1.05,0.776,0,0",
+          "1,1,3,7.606,0.79,0.63,1.05,1.05,0.79,0,0",
+          "1,1,4,6.864,0.656,0.63,1.05,1.05,0.656,0,0",
+          "1,1,5,7.238,0.922,0.63,1.05,1.05,0.922,0,0",
+          "1,10,1,10.642,0.451,0.2,10.5,10.5,0.451,0,0",
+          "1,10,2,10.742,0.434,0.2,10.5,10.5,0.434,0,0"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "data/stage5_cell_summary.csv",
+      "bytes": 3795,
+      "sha256": "4bbfc6e8eb7be93969fc574c89cbc72fda3f39142f9f70b9a9d4d1296f5c42e4",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "714964782c425f4d6270732c",
+        "delimiter": ",",
+        "header": [
+          "qIdx",
+          "B_Mbps",
+          "latency_mean_ms",
+          "jitter_mean_ms",
+          "jitter_sd_ms",
+          "loss_pct_mean",
+          "loss_pct_max",
+          "P95_est_mean_ms",
+          "P99_est_mean_ms",
+          "observed_max_mean_ms",
+          "observed_max_worst_ms"
+        ],
+        "data_records": 42,
+        "row_width_counts": {
+          "11": 42
+        },
+        "first_lines": [
+          "qIdx,B_Mbps,latency_mean_ms,jitter_mean_ms,jitter_sd_ms,loss_pct_mean,loss_pct_max,P95_est_mean_ms,P99_est_mean_ms,observed_max_mean_ms,observed_max_worst_ms",
+          "1,1,7.9434,0.9674,0.416422621863894,0,0,8.979687,9.408969,164.466,220.472",
+          "1,10,10.6614,0.446,0.00764852927038918,0,0,10.99038,11.12666,20.0946,21.563",
+          "1,50,14.2395,0.1834,0.00350713558335004,0.05594,0.11,14.387541,14.448867,166.9504,376.748",
+          "1,100,11.043,0.0896,0.00357770876399967,0.046112,0.088,11.1466287,11.1895569,284.8468,504.999",
+          "1,200,15.6248,0.0514,0.00114017542509914,0.1492,0.21,15.6988205,15.7294835,300.57,443.095",
+          "1,500,30.2122,0.035,0,0.51,0.71,30.2582572,30.2773364,484.8406,531.169",
+          "2,1,3.9834,0.7962,0.0738288561471733,0,0,5.019687,5.448969,86.358,225.187"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "data/stage5_trial_level.csv",
+      "bytes": 14127,
+      "sha256": "d012d519565045d4efedee979fb455e6f6cdecf3a5087e254bd62384d54fcc8f",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "714964782c425f4d6270732c",
+        "delimiter": ",",
+        "header": [
+          "qIdx",
+          "B_Mbps",
+          "trial",
+          "latency_avg_ms",
+          "latency_stdev_ms",
+          "latency_min_ms",
+          "latency_max_ms",
+          "jitter_ms",
+          "loss_pct",
+          "P95_est_ms",
+          "P99_est_ms",
+          "was_corrupted_and_fixed"
+        ],
+        "data_records": 210,
+        "row_width_counts": {
+          "12": 210
+        },
+        "first_lines": [
+          "qIdx,B_Mbps,trial,latency_avg_ms,latency_stdev_ms,latency_min_ms,latency_max_ms,jitter_ms,loss_pct,P95_est_ms,P99_est_ms,was_corrupted_and_fixed",
+          "1,1,1,10.328,0.63,6.072,134.843,1.693,0,11.364287,11.793569,0",
+          "1,1,2,7.681,0.63,5.937,209.434,0.776,0,8.717287,9.146569,0",
+          "1,1,3,7.606,0.63,5.775,220.472,0.79,0,8.642287,9.071569,0",
+          "1,1,4,6.864,0.63,5.466,39.491,0.656,0,7.900287,8.329569,0",
+          "1,1,5,7.238,0.63,5.239,218.09,0.922,0,8.274287,8.703569,0",
+          "1,10,1,10.642,0.2,7.268,19.359,0.451,0,10.97098,11.10726,0",
+          "1,10,2,10.742,0.2,7.45,21.563,0.434,0,11.07098,11.20726,0"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "data/table3_jitter_summary.csv",
+      "bytes": 999,
+      "sha256": "449d95e8748faa1831be1b4e01702b9c43c4e5042801f0093cb06f7523f890a1",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "425f4d6270732c6e2c6d6561",
+        "delimiter": ",",
+        "header": [
+          "B_Mbps",
+          "n",
+          "mean_ms",
+          "sd_ms",
+          "median_ms",
+          "Q1_ms",
+          "Q3_ms",
+          "IQR_ms",
+          "P90_ms",
+          "P95_ms",
+          "min_ms",
+          "max_ms",
+          "mean_CI95_lower_ms",
+          "mean_CI95_upper_ms",
+          "median_CI95_lower_ms",
+          "median_CI95_upper_ms"
+        ],
+        "data_records": 6,
+        "row_width_counts": {
+          "16": 6
+        },
+        "first_lines": [
+          "B_Mbps,n,mean_ms,sd_ms,median_ms,Q1_ms,Q3_ms,IQR_ms,P90_ms,P95_ms,min_ms,max_ms,mean_CI95_lower_ms,mean_CI95_upper_ms,median_CI95_lower_ms,median_CI95_upper_ms",
+          "1,35,0.829342857142857,0.181558764244389,0.781,0.758,0.818,0.0599999999999999,0.9064,1.0373,0.656,1.693,0.782314285714286,0.891029285714286,0.773,0.797",
+          "10,35,0.525314285714286,0.0538334968040463,0.527,0.4655,0.567,0.1015,0.5856,0.5961,0.434,0.648,0.5198,0.531514285714286,0.526,0.534",
+          "50,35,0.192171428571429,0.0112889475211135,0.188,0.1835,0.2,0.0165,0.2092,0.2136,0.177,0.217,0.190885714285714,0.193542857142857,0.187,0.189",
+          "100,35,0.0997142857142857,0.00761411780286898,0.104,0.0935,0.106,0.0125,0.107,0.1076,0.087,0.109,0.0992,0.100285714285714,0.102,0.105",
+          "200,35,0.0597142857142857,0.00578319791735165,0.062,0.053,0.063,0.01,0.0662,0.0673,0.05,0.068,0.0592285714285714,0.0602,0.062,0.063",
+          "500,35,0.0351142857142857,0.000582662679703553,0.035,0.035,0.035,0,0.036,0.036,0.034,0.036,0.0349428571428572,0.0352857142857143,0.035,0.035"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "data/table3_maximum_delay_summary.csv",
+      "bytes": 1091,
+      "sha256": "c768c1ae611cd3150b93e213728abd08ed7b2b02a29665ebf4fa3409187083ff",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "425f4d6270732c6e2c6d6561",
+        "delimiter": ",",
+        "header": [
+          "B_Mbps",
+          "n",
+          "mean_ms",
+          "sd_ms",
+          "median_ms",
+          "Q1_ms",
+          "Q3_ms",
+          "IQR_ms",
+          "P90_ms",
+          "P95_ms",
+          "min_ms",
+          "max_ms",
+          "mean_CI95_lower_ms",
+          "mean_CI95_upper_ms",
+          "median_CI95_lower_ms",
+          "median_CI95_upper_ms"
+        ],
+        "data_records": 6,
+        "row_width_counts": {
+          "16": 6
+        },
+        "first_lines": [
+          "B_Mbps,n,mean_ms,sd_ms,median_ms,Q1_ms,Q3_ms,IQR_ms,P90_ms,P95_ms,min_ms,max_ms,mean_CI95_lower_ms,mean_CI95_upper_ms,median_CI95_lower_ms,median_CI95_upper_ms",
+          "1,35,186.148285714286,123.160819192911,192.442,66.2525,265.327,199.0745,345.6936,399.8229,11.236,466.626,153.293422857143,221.353900714286,134.942,220.472",
+          "10,35,189.674971428571,151.585360130752,148.558,54.5175,322.8985,268.381,396.0406,444.078,19.237,451.329,149.552269285714,230.678633571428,84.335,267.834",
+          "50,35,246.572542857143,151.672378395467,213.875,137.489,344.915,207.426,499.2716,507.9285,23.914,516.888,200.491029285714,293.501129285714,165.041,281.234",
+          "100,35,257.868114285714,167.461785665508,195.297,136.857,405.8825,269.0255,506.2052,524.7954,33.128,550.445,206.776339285714,310.135705,152.152,287.023",
+          "200,35,265.501914285714,149.212620288944,237.835,160.7975,340.936,180.1385,502.3066,531.9916,39.167,600.193,221.716701428571,311.218385714286,215.576,289.272",
+          "500,35,318.8404,140.656763972403,271.593,204.2075,424.7975,220.59,506.6506,516.3402,128.861,703.294,287.842724285714,351.926642857143,233.596,387.096"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "data/table3_packet_loss_summary.csv",
+      "bytes": 791,
+      "sha256": "c6d267ac615166a0a29225c7fe40045add43ae32402033eaf9b04c319e63fe93",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "425f4d6270732c6e2c6d6561",
+        "delimiter": ",",
+        "header": [
+          "B_Mbps",
+          "n",
+          "mean_loss_pct",
+          "median_loss_pct",
+          "Q1_pct",
+          "Q3_pct",
+          "IQR_pct",
+          "P90_pct",
+          "P95_pct",
+          "min_pct",
+          "max_pct",
+          "n_trials_any_loss",
+          "pct_trials_any_loss",
+          "Wilson95_lower",
+          "Wilson95_upper"
+        ],
+        "data_records": 6,
+        "row_width_counts": {
+          "15": 6
+        },
+        "first_lines": [
+          "B_Mbps,n,mean_loss_pct,median_loss_pct,Q1_pct,Q3_pct,IQR_pct,P90_pct,P95_pct,min_pct,max_pct,n_trials_any_loss,pct_trials_any_loss,Wilson95_lower,Wilson95_upper",
+          "1,35,0,0,0,0,0,0,0,0,0,0,0,6.25263041117705e-18,0.098900992324404",
+          "10,35,0.04284,0,0,0.0335,0.0335,0.166,0.18,0,0.36,13,0.371428571428571,0.231658195033657,0.536630631564047",
+          "50,35,0.0561077142857143,0.062,0.0017,0.0905,0.0888,0.122,0.149,0,0.19,30,0.857142857142857,0.706244459134048,0.937397689205663",
+          "100,35,0.0402205714285714,0.043,0.0075,0.0615,0.054,0.0838,0.0892,0,0.11,33,0.942857142857143,0.813929425798351,0.984186838142891",
+          "200,35,0.107085714285714,0.096,0.0675,0.13,0.0625,0.19,0.193,0.032,0.21,35,1,0.901099007675596,1",
+          "500,35,0.304257142857143,0.17,0.12,0.485,0.365,0.562,0.654,0.083,0.96,35,1,0.901099007675596,1"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "data/table3_trial_latency_bootstrap_ci.csv",
+      "bytes": 955,
+      "sha256": "2f3ec1614d3788eb7fffab268c0ea2ebf4ab38b508526ec59c4a686bf84c3143",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "425f4d6270732c7374617469",
+        "delimiter": ",",
+        "header": [
+          "B_Mbps",
+          "statistic",
+          "point_estimate_ms",
+          "CI95_lower_ms",
+          "CI95_upper_ms"
+        ],
+        "data_records": 24,
+        "row_width_counts": {
+          "5": 24
+        },
+        "first_lines": [
+          "B_Mbps,statistic,point_estimate_ms,CI95_lower_ms,CI95_upper_ms",
+          "1,mean,5.37668571428572,5.17853571428571,5.60337285714286",
+          "1,median,4.931,4.85,5.124",
+          "1,P90,7.0884,6.864,7.651",
+          "1,P95,7.6285,6.9762,10.328",
+          "10,mean,9.61588571428571,9.103765,10.0965457142857",
+          "10,median,9.86,9.18,10.642",
+          "10,P90,11.4886,10.906,12.019"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "data/table3_trial_latency_summary.csv",
+      "bytes": 662,
+      "sha256": "1ced0e755914cc6e5af9149181d1224b7d2f59a677401277a634153f23f40dd3",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "425f4d6270732c6e2c6d6561",
+        "delimiter": ",",
+        "header": [
+          "B_Mbps",
+          "n",
+          "mean_ms",
+          "sd_ms",
+          "median_ms",
+          "Q1_ms",
+          "Q3_ms",
+          "IQR_ms",
+          "P90_ms",
+          "P95_ms",
+          "min_ms",
+          "max_ms"
+        ],
+        "data_records": 6,
+        "row_width_counts": {
+          "12": 6
+        },
+        "first_lines": [
+          "B_Mbps,n,mean_ms,sd_ms,median_ms,Q1_ms,Q3_ms,IQR_ms,P90_ms,P95_ms,min_ms,max_ms",
+          "1,35,5.37668571428572,1.34706196135556,4.931,4.5845,5.733,1.1485,7.0884,7.6285,3.809,10.328",
+          "10,35,9.61588571428571,1.78309675715541,9.86,8.8135,10.761,1.9475,11.4886,11.9105,4.827,12.215",
+          "50,35,14.1357285714286,1.3367370960161,14.063,13.481,14.862,1.381,15.7408,16.4294,9.889,17.049",
+          "100,35,12.7412571428571,1.41870990159157,12.516,11.923,13.79,1.867,14.5302,14.9211,8.99,15.202",
+          "200,35,14.1733142857143,2.0263786994571,14.218,12.8725,14.9005,2.028,16.3834,17.9568,9.553,19.403",
+          "500,35,29.6228857142857,4.73304026636423,29.229,26.461,31.4235,4.9625,34.6842,38.6978,22.427,43.809"
+        ],
+        "encoding_replacement_count": 0
+      }
+    }
+  ],
+  "checks": [
+    "all_member_CRCs",
+    "safe_paths_no_symlinks"
+  ],
+  "member_count": 13,
+  "status": "pass"
+}

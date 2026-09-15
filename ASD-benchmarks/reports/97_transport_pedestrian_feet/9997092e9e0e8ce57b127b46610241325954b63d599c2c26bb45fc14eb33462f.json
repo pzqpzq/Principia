@@ -1,0 +1,708 @@
+{
+  "scenario_id": "97_transport_pedestrian_feet",
+  "path": "raw/Data.zip",
+  "bytes": 56086516,
+  "sha256": "757596b9d182482df15b9306330f7a6c4eb6db9ca45674a41c45de57358ca205",
+  "checked_utc": "2026-09-15T06:46:32.398104+00:00",
+  "source_checksum_status": "verified",
+  "format": "ZIP",
+  "expanded_bytes": 57699292,
+  "members": [
+    {
+      "name": "Experimental run at a high density.mp4",
+      "bytes": 27279262,
+      "sha256": "c7a7a4060238119ea8f21b9c709a64a8fefb3ea00f5aa5f72922020991f68213",
+      "structure": {
+        "format": "video",
+        "probe": {
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "h264",
+              "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+              "profile": "Baseline",
+              "codec_type": "video",
+              "codec_tag_string": "avc1",
+              "codec_tag": "0x31637661",
+              "width": 720,
+              "height": 1080,
+              "coded_width": 720,
+              "coded_height": 1080,
+              "closed_captions": 0,
+              "has_b_frames": 0,
+              "sample_aspect_ratio": "1:1",
+              "display_aspect_ratio": "2:3",
+              "pix_fmt": "yuv420p",
+              "level": 31,
+              "color_range": "tv",
+              "chroma_location": "left",
+              "refs": 1,
+              "is_avc": "true",
+              "nal_length_size": "4",
+              "r_frame_rate": "24000/1001",
+              "avg_frame_rate": "58272000/2430427",
+              "time_base": "1/24000",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 2430427,
+              "duration": "101.267792",
+              "bit_rate": "1994244",
+              "bits_per_raw_sample": "8",
+              "nb_frames": "2428",
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0
+              },
+              "tags": {
+                "creation_time": "2024-12-22T05:33:37.000000Z",
+                "language": "eng",
+                "handler_name": "Mainconcept MP4 Video Media Handler",
+                "vendor_id": "[0][0][0][0]",
+                "encoder": "AVC Coding"
+              }
+            },
+            {
+              "index": 1,
+              "codec_name": "aac",
+              "codec_long_name": "AAC (Advanced Audio Coding)",
+              "profile": "LC",
+              "codec_type": "audio",
+              "codec_tag_string": "mp4a",
+              "codec_tag": "0x6134706d",
+              "sample_fmt": "fltp",
+              "sample_rate": "48000",
+              "channels": 2,
+              "channel_layout": "stereo",
+              "bits_per_sample": 0,
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "time_base": "1/48000",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 4860856,
+              "duration": "101.267833",
+              "bit_rate": "157375",
+              "nb_frames": "4749",
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0
+              },
+              "tags": {
+                "creation_time": "2024-12-22T05:33:37.000000Z",
+                "language": "eng",
+                "handler_name": "Mainconcept MP4 Sound Media Handler",
+                "vendor_id": "[0][0][0][0]"
+              }
+            }
+          ],
+          "format": {
+            "nb_streams": 2,
+            "nb_programs": 0,
+            "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+            "format_long_name": "QuickTime / MOV",
+            "start_time": "0.000000",
+            "duration": "101.312000",
+            "size": "27279262",
+            "bit_rate": "2154079",
+            "probe_score": 100,
+            "tags": {
+              "major_brand": "M4V ",
+              "minor_version": "1",
+              "compatible_brands": "M4V mp42isom",
+              "creation_time": "2024-12-22T05:33:37.000000Z"
+            }
+          }
+        },
+        "coverage": "container and stream headers; not every decoded frame"
+      }
+    },
+    {
+      "name": "Experimental run at a low density.mp4",
+      "bytes": 4798419,
+      "sha256": "69e526c8ff16999f92a0a5b1d655136832d768a9f6a706ac17829653ef6895bb",
+      "structure": {
+        "format": "video",
+        "probe": {
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "h264",
+              "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+              "profile": "Baseline",
+              "codec_type": "video",
+              "codec_tag_string": "avc1",
+              "codec_tag": "0x31637661",
+              "width": 720,
+              "height": 1080,
+              "coded_width": 720,
+              "coded_height": 1080,
+              "closed_captions": 0,
+              "has_b_frames": 0,
+              "sample_aspect_ratio": "1:1",
+              "display_aspect_ratio": "2:3",
+              "pix_fmt": "yuv420p",
+              "level": 31,
+              "color_range": "tv",
+              "chroma_location": "left",
+              "refs": 1,
+              "is_avc": "true",
+              "nal_length_size": "4",
+              "r_frame_rate": "24000/1001",
+              "avg_frame_rate": "24000/1001",
+              "time_base": "1/24000",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 427427,
+              "duration": "17.809458",
+              "bit_rate": "1991254",
+              "bits_per_raw_sample": "8",
+              "nb_frames": "427",
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0
+              },
+              "tags": {
+                "creation_time": "2024-12-22T05:01:49.000000Z",
+                "language": "eng",
+                "handler_name": "Mainconcept MP4 Video Media Handler",
+                "vendor_id": "[0][0][0][0]",
+                "encoder": "AVC Coding"
+              }
+            },
+            {
+              "index": 1,
+              "codec_name": "aac",
+              "codec_long_name": "AAC (Advanced Audio Coding)",
+              "profile": "LC",
+              "codec_type": "audio",
+              "codec_tag_string": "mp4a",
+              "codec_tag": "0x6134706d",
+              "sample_fmt": "fltp",
+              "sample_rate": "48000",
+              "channels": 2,
+              "channel_layout": "stereo",
+              "bits_per_sample": 0,
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "time_base": "1/48000",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 854854,
+              "duration": "17.809458",
+              "bit_rate": "157375",
+              "nb_frames": "837",
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0
+              },
+              "tags": {
+                "creation_time": "2024-12-22T05:01:49.000000Z",
+                "language": "eng",
+                "handler_name": "Mainconcept MP4 Sound Media Handler",
+                "vendor_id": "[0][0][0][0]"
+              }
+            }
+          ],
+          "format": {
+            "nb_streams": 2,
+            "nb_programs": 0,
+            "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+            "format_long_name": "QuickTime / MOV",
+            "start_time": "0.000000",
+            "duration": "17.856000",
+            "size": "4798419",
+            "bit_rate": "2149829",
+            "probe_score": 100,
+            "tags": {
+              "major_brand": "M4V ",
+              "minor_version": "1",
+              "compatible_brands": "M4V mp42isom",
+              "creation_time": "2024-12-22T05:01:49.000000Z"
+            }
+          }
+        },
+        "coverage": "container and stream headers; not every decoded frame"
+      }
+    },
+    {
+      "name": "Experimental run at a medium density.mp4",
+      "bytes": 10738919,
+      "sha256": "807d29d7a2efa56b32375145e297d23a8cd5cbdf5b2a9d70c061ca5ef8f11df2",
+      "structure": {
+        "format": "video",
+        "probe": {
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "h264",
+              "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+              "profile": "Baseline",
+              "codec_type": "video",
+              "codec_tag_string": "avc1",
+              "codec_tag": "0x31637661",
+              "width": 720,
+              "height": 1080,
+              "coded_width": 720,
+              "coded_height": 1080,
+              "closed_captions": 0,
+              "has_b_frames": 0,
+              "sample_aspect_ratio": "1:1",
+              "display_aspect_ratio": "2:3",
+              "pix_fmt": "yuv420p",
+              "level": 31,
+              "color_range": "tv",
+              "chroma_location": "left",
+              "refs": 1,
+              "is_avc": "true",
+              "nal_length_size": "4",
+              "r_frame_rate": "24000/1001",
+              "avg_frame_rate": "24000/1001",
+              "time_base": "1/24000",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 956956,
+              "duration": "39.873167",
+              "bit_rate": "1992725",
+              "bits_per_raw_sample": "8",
+              "nb_frames": "956",
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0
+              },
+              "tags": {
+                "creation_time": "2024-12-22T05:26:37.000000Z",
+                "language": "eng",
+                "handler_name": "Mainconcept MP4 Video Media Handler",
+                "vendor_id": "[0][0][0][0]",
+                "encoder": "AVC Coding"
+              }
+            },
+            {
+              "index": 1,
+              "codec_name": "aac",
+              "codec_long_name": "AAC (Advanced Audio Coding)",
+              "profile": "LC",
+              "codec_type": "audio",
+              "codec_tag_string": "mp4a",
+              "codec_tag": "0x6134706d",
+              "sample_fmt": "fltp",
+              "sample_rate": "48000",
+              "channels": 2,
+              "channel_layout": "stereo",
+              "bits_per_sample": 0,
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "time_base": "1/48000",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 1913912,
+              "duration": "39.873167",
+              "bit_rate": "157375",
+              "nb_frames": "1871",
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0
+              },
+              "tags": {
+                "creation_time": "2024-12-22T05:26:37.000000Z",
+                "language": "eng",
+                "handler_name": "Mainconcept MP4 Sound Media Handler",
+                "vendor_id": "[0][0][0][0]"
+              }
+            }
+          ],
+          "format": {
+            "nb_streams": 2,
+            "nb_programs": 0,
+            "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+            "format_long_name": "QuickTime / MOV",
+            "start_time": "0.000000",
+            "duration": "39.914667",
+            "size": "10738919",
+            "bit_rate": "2152375",
+            "probe_score": 100,
+            "tags": {
+              "major_brand": "M4V ",
+              "minor_version": "1",
+              "compatible_brands": "M4V mp42isom",
+              "creation_time": "2024-12-22T05:26:37.000000Z"
+            }
+          }
+        },
+        "coverage": "container and stream headers; not every decoded frame"
+      }
+    },
+    {
+      "name": "F2A_Density-Stop_duration.dat",
+      "bytes": 165234,
+      "sha256": "3c9a15ab313097c184880e9dabf1d10b739c39cb9f74a179f8debcbbdf0f2620",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F2B_Density-Speed.dat",
+      "bytes": 280307,
+      "sha256": "97009b4b72a9248dea2e636dedb688c1bf5047712373fcd2f33b80278fe1ca60",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F2C_Density-Flow_rate.dat",
+      "bytes": 281306,
+      "sha256": "6aa5cf864df3582fc18c999f3f62ef4af834613e7e4ae3359e03d4ffe443c70f",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F2D_Specific_volume-Speed.dat",
+      "bytes": 279691,
+      "sha256": "ebf4e738fae9a592da6385bf45a98de19ca37631dfb59684938bb29a129ce712",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F3A_Density-Flow_rate.dat",
+      "bytes": 182371,
+      "sha256": "a6d3ea3cf7b5a4e4f55d338fb201e8a0b4c66390a32fa3227cdff76c4de48aa4",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F3A_Density-Speed.dat",
+      "bytes": 181394,
+      "sha256": "ff99e6e708d326c87763703a6275d2c7124198f347b2294bdae8897c740fa404",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F3A_Specific_volume-Speed.dat",
+      "bytes": 180931,
+      "sha256": "dfa116a1a818f3030c559c05a79ec8de812f0c0e490a3bdb2653c10357d0100c",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F3B_Density-Flow_rate.dat",
+      "bytes": 577208,
+      "sha256": "14f10cd9712f1c85217a4d6c496c4aee71fa4794c40005ba1a822afe19ef94a3",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F3B_Density-Speed.dat",
+      "bytes": 1151307,
+      "sha256": "8c8698ad27e5d050d934a2ccad2073961bb82842507fcbc90720e41fcc309ed2",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F3B_Specific_volume-Speed.dat",
+      "bytes": 576360,
+      "sha256": "73078cd9b3dfcb93d5d6271a94868dd7bc975847062811d6f2fcc746a28c1b1c",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F3C_Density-Flow_rate.dat",
+      "bytes": 502815,
+      "sha256": "5b5bda8a54ce8e7762d185d23e693c978d9965ff10c00f13298de68380c22dfb",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F3C_Density-Speed.dat",
+      "bytes": 1004519,
+      "sha256": "3f18d1303cc4dfd71915abfc0c338482841d51484fb0a168249c86e8dffd7b87",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F3C_Specific_volume-Speed.dat",
+      "bytes": 502906,
+      "sha256": "bb7521a0594da3632132a63b86d932f40e68340272213e50d81b3ec2fb817533",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F3D_Density-Flow_rate.dat",
+      "bytes": 13440,
+      "sha256": "5ec8e4a03313e2634154b35f0b1eddb7bba41ef1de8ed4eb090224a81072deac",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F3D_Density-Speed.dat",
+      "bytes": 26668,
+      "sha256": "67b2620c3171f5c652f808f74537556f89eebd65ba6ace7bd8037478bfba8293",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F3D_Specific_volume-Speed.dat",
+      "bytes": 13419,
+      "sha256": "f30ca8173c634d7a3c7d638a1d8b540841a8a86039e1bad994e04f2449ae48a2",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F3E_Density-Flow_rate.dat",
+      "bytes": 2349698,
+      "sha256": "0849b0b5c206a8c125c040ec4033dbc3cfa66df280644bc7b272dd4ac692c587",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F3E_Density-Speed.dat",
+      "bytes": 2350516,
+      "sha256": "bd62b7c0d41fee9f8574a832ae16813abef533cb2acb83967a4d04c7f75a7bb7",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F3E_Specific_volume-Speed.dat",
+      "bytes": 2354220,
+      "sha256": "f4274f502dde78e6297ae77d26dc62e9c53aa080bde8b0e52b0a16dc7151c4ca",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F4A_Specific_volume-Step_length.dat",
+      "bytes": 279538,
+      "sha256": "33f690fede941bdb912fe2adf7a0ba25035f7a262f0a32364855d7bdebd9fed1",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F4B_Specific_volume-Step_frequency.dat",
+      "bytes": 169220,
+      "sha256": "c1989e79994507f4cf161a1ec34e59f32c1889ddafefead71be69e26b3b319a3",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F4C_Specific_volume-Directional_angle.dat",
+      "bytes": 282419,
+      "sha256": "a0e5e3aa77a9c705a6cf56d70506589145321aaa6faaedfd04eec22e78142881",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F5B_Density-Synchronization_proportion.dat",
+      "bytes": 21941,
+      "sha256": "3161e3297378e6ed8a645d97b30cd916698d5357b86cd2a7adc765829c19b76d",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F5C_Density-Phase_difference.dat",
+      "bytes": 29412,
+      "sha256": "31e83d55c1dbacdee5955f4b2602104655f32b8344bbf4de97a63ee92572d194",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F5D_Relative_position.dat",
+      "bytes": 31740,
+      "sha256": "4932dfdbf483b7125e8a3801014de837a4275586d9b6ad6d1c1ff722eadd4dd7",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F5E_Angle.dat",
+      "bytes": 16130,
+      "sha256": "58c1b9242f1812187d99a7d7718cbf867047bc1dbeafd8a384d0045bf50e2ce7",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F5G_Density-Buffer_distance.dat",
+      "bytes": 279983,
+      "sha256": "b039db6792a749c307ccf752b8f64e8b7fd31210b027ebd81571e5b03bd1a1a7",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F6A_Specific_volume-Step_duration.dat",
+      "bytes": 158632,
+      "sha256": "ddb376f69fa6eb963d9479cff8dcfd0b39db827bca79c8b23784fa571ba446d7",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F6B_Specific_volume-Step_cycle_duration.dat",
+      "bytes": 165117,
+      "sha256": "33202045a706c49651e4de2156299f4f94553113a5d26655e6fd4b5907ae627e",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "F6C_Density-Synchronization_proportion.dat",
+      "bytes": 25292,
+      "sha256": "219579f53492f04944d6ae4b01002875856d625ae438bf3dbb8ce97783ef64ce",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "FS1A_Speed-Step_length.dat",
+      "bytes": 279599,
+      "sha256": "69f90ed7a8c8ccec28fcca6f0f26fc534da7e01e92bcd14ac20c9842463cad81",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "FS1B_Speed-Step_frequency.dat",
+      "bytes": 168652,
+      "sha256": "1a46794d50f886bbbc90d9eacaa24dde78603df30331bf1d841b33293aeab0f5",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "FS2A_Mass_distribution.dat",
+      "bytes": 280,
+      "sha256": "e4ee0a32f791558d2fd5690448b08b6cf8335a419f3a274f64a03370599c9018",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    },
+    {
+      "name": "FS2B_Radius_distribution.dat",
+      "bytes": 427,
+      "sha256": "6bfdb005adaf80b35afc37cd6b2e47d289d5f1d1a005027bb79b6ada289e3178",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "4d41544c414220352e30204d"
+      }
+    }
+  ],
+  "checks": [
+    "all_member_CRCs",
+    "safe_paths_no_symlinks"
+  ],
+  "member_count": 37,
+  "status": "pass"
+}

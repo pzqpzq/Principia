@@ -1,0 +1,1897 @@
+{
+  "case_id": "P100-026",
+  "case_revision": 1,
+  "scenario_id": "26_chemistry_ag_zeolite_catalysis",
+  "title": "Silver zeolite methanol dehydrogenation experiments",
+  "domain": "catalysis",
+  "question": "How do catalyst descriptors and reactor settings relate to conversion and selectivity?",
+  "data_origin": "measured_or_observed",
+  "source_version": "15691695",
+  "source_url": "https://zenodo.org/records/15691695",
+  "identifiers": [
+    "10.5281/zenodo.15691695"
+  ],
+  "publisher": "Zenodo; originating researchers: Palkovits, Regina; Simitsis, Natalia (RWTH Aachen University); Mebrahtu, Chalachew (RWTH Aachen University); Müller, Felix (RWTH Aachen University); Zobel, Mirijam (Forschungszentrum Jülich)",
+  "release_date": "2025-06-18",
+  "measurement_dates": "Instrument headers include 2023 measurements (for example physisorption on 2023-02-17); complete campaign dates not asserted. Released 2025-06-18; deposited 2025-06-20.",
+  "variables_and_units": "Variables and units are preserved in native column headers, instrument metadata and source dictionaries; see evidence anchors below.",
+  "independent_units": "Catalyst batch and full reactor run/condition.",
+  "validation_design": "Catalyst batch and full reactor run/condition. Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Source characterization includes instrument reductions, baseline-corrected products and figure-oriented catalytic tables alongside some raw exports. Instrument headers preserve original units and sample identifiers.",
+  "prior_analysis_and_limits": "DOI 10.1039/d5cy00544b already reports Ag/Hbeta-catalyzed methanol dehydrogenation. Multiple characterizations of one catalyst are not independent catalysts. A broad claim needs additional synthesis batches; original 7z is retained without a duplicate extracted tree. Ag-zeolite characterization and reactor measurements in original 7z; source publication already analyzes activity/selectivity.",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/Figure S10_TG_Ag20-Hbeta-calc.txt",
+      "structure": {
+        "first_lines": [
+          "#EXPORTTYPE:DATA ALL\t\t\t\t\t\t\t\t",
+          "#FILE:NMS-cat-0050-calc.ngb-ds5\t\t\t\t\t\t\t\t",
+          "#FORMAT:NETZSCH5\t\t\t\t\t\t\t\t",
+          "#FTYPE:ANSI\t\t\t\t\t\t\t\t",
+          "#IDENTITY:NA01\t\t\t\t\t\t\t\t",
+          "#DECIMAL:POINT\t\t\t\t\t\t\t\t",
+          "#SEPARATOR:SEMICOLON\t\t\t\t\t\t\t\t",
+          "#MTYPE:DSC\t\t\t\t\t\t\t\t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/Figure S10_TG_Ag20-Hbeta-spent.txt",
+      "structure": {
+        "first_lines": [
+          "#EXPORTTYPE:DATA ALL\t\t\t\t\t\t\t\t",
+          "#FILE:NMS-CAT-0050-spent.ngb-ds5\t\t\t\t\t\t\t\t",
+          "#FORMAT:NETZSCH5\t\t\t\t\t\t\t\t",
+          "#FTYPE:ANSI\t\t\t\t\t\t\t\t",
+          "#IDENTITY:HFB-003\t\t\t\t\t\t\t\t",
+          "#DECIMAL:POINT\t\t\t\t\t\t\t\t",
+          "#SEPARATOR:SEMICOLON\t\t\t\t\t\t\t\t",
+          "#MTYPE:DSC\t\t\t\t\t\t\t\t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/Figure S11_XPS_3d_Ag20-Hbeta-calc.txt",
+      "structure": {
+        "first_lines": [
+          "Name\t\tAg 3d (5/2)\tAg 3d (3/2)\t\t",
+          "Position\t\t368.97\t375.0\t\t",
+          "FWHM\t\t1.57\t1.56\t\t",
+          "Area\t\t24345.45\t16483.07\t\t",
+          "Lineshape\t\tGL(50)\tGL(50)\t\t",
+          "\t\t\t\t\t",
+          "B.E.\tRaw data\tAg 3d5/2 fit\tAg 3d3/2 fit\tBaseline\tEnvelope",
+          "3.83E+02\t4.00E+03\t4.00E+03\t4.00E+03\t4.00E+03\t4.00E+03"
+        ]
+      }
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/Figure S11_XPS_3d_Ag20-Hbeta-red.txt",
+      "structure": {
+        "first_lines": [
+          "Name\t\tAg 3d\tAg 3d\t\t",
+          "Position\t\t368.44\t374.4\t\t",
+          "FWHM\t\t1.44\t1.43\t\t",
+          "Area\t\t16405.54\t10992.03\t\t",
+          "Lineshape\t\tGL(50)\tGL(50)\t\t",
+          "\t\t\t\t\t",
+          "B.E.\traw data\tAg 3d5/2 fit\tAg 3d3/2 fit\tBaseline\tEnvelope",
+          "3.83E+02\t3.65E+03\t3.65E+03\t3.65E+03\t3.65E+03\t3.65E+03"
+        ]
+      }
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/Figure S11_XPS_3d_Ag20-Hbeta-spent.txt",
+      "structure": {
+        "first_lines": [
+          "Name\t\tAg 3d\tAg 3d\t\t",
+          "Position\t\t368.55\t374.6\t\t",
+          "FWHM\t\t1.55\t1.48\t\t",
+          "Area\t\t10517.84\t6747.43\t\t",
+          "Lineshape\t\tGL(50)\tGL(50)\t\t",
+          "\t\t\t\t\t",
+          "B.E.\tRaw data\tAg 3d5/2 fit\tAg 3d3/2 fit\tBaseline\tEnvelope",
+          "3.83E+02\t3.71E+03\t3.71E+03\t3.71E+03\t3.71E+03\t3.71E+03"
+        ]
+      }
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/Figure S11_XPS_C1s_Ag20-Hbeta-calc.txt",
+      "structure": {
+        "first_lines": [
+          "Name\t\tC 1s, C-C C-H\tC 1s, C-O\tC 1s, C=O\tC 1s, O-C=O\t\t",
+          "Position\t\t284.81\t286.31\t287.81\t288.81\t\t",
+          "FWHM\t\t1.37\t1.37\t1.37\t1.37\t\t",
+          "Area\t\t12495.32\t2709.27\t63.28\t1670.57\t\t",
+          "Lineshape\t\tLA(50)\tLA(50)\tLA(50)\tLA(50)\t\t",
+          "\t\t\t\t\t\t\t",
+          "B.E.\tRaw data\tC 1s:C 1s, C-C C-H\tC 1s:C 1s, C-O\tC 1s:C 1s, C=O\tC 1s:C 1s, O-C=O\tBaseline\tEnvelope",
+          "3.03E+02\t3.03E+03\t3.03E+03\t3.03E+03\t3.03E+03\t3.03E+03\t3.03E+03\t3.03E+03"
+        ]
+      }
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/Figure S11_XPS_C1s_Ag20-Hbeta-red.txt",
+      "structure": {
+        "first_lines": [
+          "Name\t\tC 1s, C-C C-H\tC 1s, C-O\tC 1s, C=O\tC 1s, O-C=O\t\t",
+          "Position\t\t284.91\t286.41\t287.91\t289.41\t\t",
+          "FWHM\t\t1.65\t1.65\t1.65\t1.65\t\t",
+          "Area\t\t3679.51\t675.35\t268.75\t61.64\t\t",
+          "Lineshape\t\tLA(50)\tLA(50)\tLA(50)\tLA(50)\t\t",
+          "\t\t\t\t\t\t\t",
+          "B.E.\tRaw data\tC 1s:C 1s, C-C C-H\tC 1s:C 1s, C-O\tC 1s:C 1s, C=O\tC 1s:C 1s, O-C=O\tBaseline\tEnvelope",
+          "3.03E+02\t2.58E+03\t2.58E+03\t2.58E+03\t2.58E+03\t2.58E+03\t2.58E+03\t2.58E+03"
+        ]
+      }
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/Figure S11_XPS_C1s_Ag20-Hbeta-spent.txt",
+      "structure": {
+        "first_lines": [
+          "Name\t\tC 1s, C-C C-H\tC 1s, C-O\tC 1s, C=O\tC 1s, O-C=O\t\t",
+          "Position\t\t284.8\t286.3\t287.8\t288.6\t\t",
+          "FWHM\t\t1.19\t1.19\t1.19\t1.19\t\t",
+          "Area\t\t25148.13\t5729.53\t0\t4621.42\t\t",
+          "Lineshape\t\tLA(50)\tLA(50)\tLA(50)\tLA(50)\t\t",
+          "\t\t\t\t\t\t\t",
+          "B.E.\tRaw data\tC 1s:C 1s, C-C C-H\tC 1s:C 1s, C-O\tC 1s:C 1s, C=O\tC 1s:C 1s, O-C=O\tBaseline\tEnvelope",
+          "3.03E+02\t3.22E+03\t3.23E+03\t3.22E+03\t3.22E+03\t3.22E+03\t3.22E+03\t3.23E+03"
+        ]
+      }
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/Figure S11_XPS_MNN_Ag20-Hbeta-calc.txt",
+      "structure": {
+        "first_lines": [
+          "Name\t\tC 1s, C-C C-H\tC 1s, C-O\tC 1s, C=O\tC 1s, O-C=O\t\t",
+          "Position\t\t284.81\t286.31\t287.81\t288.81\t\t",
+          "FWHM\t\t1.37\t1.37\t1.37\t1.37\t\t",
+          "Area\t\t12495.32\t2709.27\t63.28\t1670.57\t\t",
+          "Lineshape\t\tLA(50)\tLA(50)\tLA(50)\tLA(50)\t\t",
+          "\t\t\t\t\t\t\t",
+          "B.E.\tRaw data\tC 1s:C 1s, C-C C-H\tC 1s:C 1s, C-O\tC 1s:C 1s, C=O\tC 1s:C 1s, O-C=O\tBaseline\tEnvelope",
+          "3.03E+02\t3.03E+03\t3.03E+03\t3.03E+03\t3.03E+03\t3.03E+03\t3.03E+03\t3.03E+03"
+        ]
+      }
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/Figure S11_XPS_MNN_Ag20-Hbeta-red.txt",
+      "structure": {
+        "first_lines": [
+          "Name\t\t\tAg MNNa\tAg MNNa\tAg MNNa\t\t",
+          "Position\t\t\t352.2\t357.54\t347.84\t\t",
+          "FWHM\t\t\t3.88\t3.88\t3.88\t\t",
+          "Area\t\t\t6107.27\t4510.78\t1185.07\t\t",
+          "Lineshape\t\t\tGL(50)\tGL(50)\tGL(50)\t\t",
+          "\t\t\t\t\t\t\t",
+          "B.E.\tKE\tRaw data\tAg M5N45N45\tAg M4N45N45\tAg MNNa\tBaseline\tEnvelope",
+          "1.18E+03\t306.88\t1.64E+04\t1.64E+04\t1.64E+04\t1.64E+04\t1.64E+04\t1.64E+04"
+        ]
+      }
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/Figure S11_XPS_MNN_Ag20-Hbeta-spent.txt",
+      "structure": {
+        "first_lines": [
+          "Name\t\tAg MNNa\tAg MNNa\tAg MNNa\t\t\t",
+          "Position\t\t352.0\t348.39\t356.94\t\t\t",
+          "FWHM\t\t3.71\t3.71\t3.71\t\t\t",
+          "Area\t\t3056.71\t718.23\t2097.11\t\t\t",
+          "Lineshape\t\tLA(1,643)\tGL(50)\tGL(50)\t\t\t",
+          "\t\t\t\t\t\t\t",
+          "B.E.\tKE\tRaw data\tAg M5N45N45\tMNN anderes\tAg M4N45N45\tBaseline\tEnvelope",
+          "1.18E+03\t306.85\t1.22E+04\t1.22E+04\t1.22E+04\t1.22E+04\t1.22E+04\t1.22E+04"
+        ]
+      }
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/Figure S1_phyisorption_Ag1-Hbeta (Isotherm).txt",
+      "structure": {
+        "first_lines": [
+          "                      Quantachrome QuadraWin - Data Acquisition and Reduction",
+          "                                         for QuadraSorb SI",
+          "                      �2000-11, Quantachrome Instruments. All rights reserved.",
+          "                                            version 5.04",
+          "",
+          "Analysis                                          Report",
+          "Operator:      operator       Date:2/17/2023      Operator: operator            Date:2023/03/31",
+          "Sample ID:     NMS-Ag1-Hbeta-D     Filename:      NMS-Ag1-Hbeta-Deal8.qps"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "7Z": 1,
+    "preserved_native": 415,
+    "text_or_instrument_native": 41
+  },
+  "reader_limitations": [
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/exsitu_AgHBea_PDF/06_20AgHbea_100s_Desy.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/exsitu_AgHBea_PDF/08_Ag20_reduced_200s_Desy.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/exsitu_AgHBea_PDF/10_Ag20_Spent_200s_Desy.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/exsitu_AgHBea_PDF/12_Ag20_redspent_200s_Desy.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_0.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_1.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_10.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_100.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_101.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_102.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_103.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_104.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_105.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_106.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_107.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_108.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_109.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_11.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_110.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_111.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_112.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_113.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_114.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_115.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_116.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_117.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_118.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_119.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_12.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_120.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_121.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_122.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_123.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_124.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_125.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_126.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_127.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_128.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_129.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_13.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_130.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_131.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_132.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_133.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_134.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_135.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_136.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_137.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_138.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_139.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_14.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_140.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_141.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_142.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_143.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_144.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_145.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_146.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_147.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_148.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_149.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_15.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_150.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_151.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_152.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_153.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_154.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_155.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_156.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_157.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_158.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_159.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_16.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_160.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_161.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_162.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_163.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_164.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_165.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_166.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_167.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_168.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_169.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_17.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_170.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_171.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_172.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_173.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_174.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_175.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_176.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_177.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_178.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_179.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_18.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_180.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_181.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_182.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_183.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_184.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_185.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_186.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_187.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_188.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_189.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_19.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_190.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_191.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_192.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_193.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_194.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_195.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_196.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_197.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_198.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_199.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_2.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_20.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_200.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_201.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_202.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_203.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_204.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_205.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_206.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_207.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_208.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_209.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_21.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_210.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_211.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_212.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_213.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_214.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_215.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_216.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_217.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_218.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_219.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_22.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_220.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_221.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_222.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_223.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_224.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_225.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_226.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_227.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_228.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_229.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_23.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_230.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_231.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_232.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_233.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_234.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_235.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_236.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_237.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_238.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_239.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_24.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_240.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_241.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_242.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_243.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_244.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_245.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_246.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_247.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_248.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_249.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_25.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_250.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_251.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_252.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_253.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_254.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_255.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_256.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_257.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_258.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_259.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_26.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_260.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_261.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_262.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_263.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_264.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_265.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_266.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_267.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_268.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_269.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_27.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_270.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_271.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_272.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_273.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_274.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_275.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_276.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_277.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_278.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_279.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_28.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_280.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_281.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_282.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_283.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_284.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_285.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_286.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_29.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_3.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_30.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_31.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_32.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_33.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_34.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_35.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_36.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_37.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_38.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_39.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_4.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_40.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_41.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_42.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_43.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_44.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_45.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_46.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_47.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_48.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_49.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_5.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_50.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_51.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_52.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_53.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_54.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_55.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_56.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_57.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_58.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_59.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_6.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_60.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_61.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_62.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_63.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_64.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_65.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_66.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_67.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_68.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_69.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_7.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_70.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_71.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_72.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_73.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_74.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_75.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_76.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_77.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_78.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_79.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_8.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_80.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_81.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_82.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_83.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_84.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_85.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_86.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_87.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_88.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_89.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_9.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_90.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_91.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_92.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_93.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_94.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_95.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_96.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_97.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_98.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55388_tth_det2_norm_99.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_0.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_1.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_10.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_100.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_101.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_102.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_103.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_104.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_105.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_106.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_107.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_108.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_109.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_11.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_110.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_111.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_112.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_113.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_114.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_115.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_116.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_117.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_118.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_119.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_12.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_120.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_121.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_122.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_123.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_13.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_14.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_15.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_16.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_17.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_18.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_19.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_2.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_20.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_21.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_22.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_23.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_24.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_25.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_26.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_27.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_28.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_29.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_3.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_30.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_31.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_32.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_33.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_34.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_35.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_36.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_37.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_38.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_39.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_4.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_40.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_41.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_42.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_43.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_44.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_45.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_46.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_47.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_48.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_49.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_5.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_50.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_51.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_52.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_53.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_54.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_55.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_56.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_57.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_58.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_59.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_6.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_60.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_61.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_62.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_63.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_64.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_65.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_66.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_67.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_68.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_69.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_7.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_70.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_71.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_72.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_73.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_74.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_75.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_76.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_77.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_78.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_79.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_8.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_80.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_81.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_82.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_83.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_84.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_85.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_86.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_87.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_88.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_89.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_9.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_90.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_91.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_92.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_93.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_94.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_95.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_96.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_97.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_98.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/zenodo raw data.7z!/zenodo raw data/insitu_AgHBea_PDF/i15-1-55389_tth_det2_norm_99.gr",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    }
+  ],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "source_asset_bytes": 24982620,
+  "expanded_source_equivalent_bytes": 102703372,
+  "installed_folder_bytes": 25000477,
+  "source_asset_count": 2,
+  "asset_paths": [
+    "scenarios/26_chemistry_ag_zeolite_catalysis/context/zenodo_record.json",
+    "scenarios/26_chemistry_ag_zeolite_catalysis/raw/zenodo raw data.7z"
+  ],
+  "local_folder": "scenarios/26_chemistry_ag_zeolite_catalysis",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 24990014,
+  "expanded_release_folder_equivalent_bytes": 102710766
+}

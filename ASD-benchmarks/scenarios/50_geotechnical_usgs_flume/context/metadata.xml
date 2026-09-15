@@ -1,0 +1,298 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--Record created using version 2.0.8 of the USGS Metadata Wizard tool. (https://github.com/DOI-USGS/fort-pymdwizard)-->
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Maciej K. Obryk</origin>
+        <origin>Emily C. Bedinger</origin>
+        <origin>Alexandra M. Iezzi</origin>
+        <origin>Emily H. Bryant</origin>
+        <pubdate>20250429</pubdate>
+        <title>Swath laser, laser rangefinder, and high-precision analog laser data from gate release and natural release experiments conducted in April 2024 and October 2022, respectively, at the USGS debris-flow flume, HJ Andrews Experimental Forest, Blue River, Oregon</title>
+        <geoform>tabular digital data</geoform>
+        <onlink>https://doi.org/10.5066/P1HXHGZN</onlink>
+        <lworkcit>
+          <citeinfo>
+            <origin>Maciej K. Obryk</origin>
+            <origin>Emily C. Bedinger</origin>
+            <origin>Alexandra M. Iezzi</origin>
+            <origin>Emily H. Bryant</origin>
+            <origin>Kate E. Allstadt</origin>
+            <origin>David L. George</origin>
+            <origin>Benjamin B. Mirus</origin>
+            <pubdate>20250502</pubdate>
+            <title>Utility of a swath laser rangefinder for characterizing mass movement flow depth and landslide initiation </title>
+            <geoform>publication</geoform>
+            <onlink>https://doi.org/10.1007/s10346-025-02533-8</onlink>
+          </citeinfo>
+        </lworkcit>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>The swath laser was tested at the large-scale experimental USGS debris flow flume facility as a potential tool for mass movement detection. The tests were conducted during gate release experiments, where a large volume of sediment was released from a hopper; and during natural release experiments, where a sediment prism was watered until wide-spread Coulomb failure occurred. During the gate release experiments, the swath laser measured arrival time and flow depth and data were compared with co-located laser rangefinder and the flume's analog laser (benchmark laser). During the natural release experiments, the swath laser measured geomorphic changes associated with the failure.</abstract>
+      <purpose>Data were collected to test the utility of the swath laser in mass movement detection.</purpose>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <mdattim>
+          <sngdate>
+            <caldate>20221005</caldate>
+          </sngdate>
+          <sngdate>
+            <caldate>20221006</caldate>
+          </sngdate>
+          <sngdate>
+            <caldate>20240405</caldate>
+          </sngdate>
+          <sngdate>
+            <caldate>20240406</caldate>
+          </sngdate>
+          <sngdate>
+            <caldate>20240408</caldate>
+          </sngdate>
+          <sngdate>
+            <caldate>20240410</caldate>
+          </sngdate>
+          <sngdate>
+            <caldate>20240411</caldate>
+          </sngdate>
+        </mdattim>
+      </timeinfo>
+      <current>ground condition</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <descgeog>USGS Debris Flow Flume in the H.J. Andrews Experimental Forest</descgeog>
+      <bounding>
+        <westbc>-122.254400</westbc>
+        <eastbc>-122.250066</eastbc>
+        <northbc>44.218416</northbc>
+        <southbc>44.215709</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>debris flow</themekey>
+        <themekey>flume</themekey>
+        <themekey>lasers</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Metadata Identifier</themekt>
+        <themekey>USGS:66e20550d34ecba8b8677aa9</themekey>
+      </theme>
+    </keywords>
+    <accconst>None.  Please see 'Distribution Info' for details.</accconst>
+    <useconst>None.  Users are advised to read the dataset's metadata thoroughly to understand appropriate use and data limitations.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Maciej K Obryk</cntper>
+          <cntorg>USGS - ALASKA REGION</cntorg>
+        </cntperp>
+        <cntpos>Research Hydrologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>1300 SE Cardinal Ct</address>
+          <city>Vancouver</city>
+          <state>WA</state>
+          <postal>98683</postal>
+        </cntaddr>
+        <cntvoice>360-993-8929</cntvoice>
+        <cntemail>mobryk@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>No formal attribute accuracy tests were conducted.</attraccr>
+    </attracc>
+    <logic>No formal logical accuracy tests were conducted.</logic>
+    <complete>Data set is considered complete for the information presented. Users are advised to read the rest of the metadata record carefully for additional details.</complete>
+    <lineage>
+      <procstep>
+        <procdesc>No processing has been performed on data in this repository. Data processing for all lasers is described in a linked publication. In addition, a Matlab swath laser data processing script is included in this repository.</procdesc>
+        <procdate>20240913</procdate>
+        <proccont>
+          <cntinfo>
+            <cntperp>
+              <cntper>Maciej K Obryk</cntper>
+              <cntorg>USGS - ALASKA REGION</cntorg>
+            </cntperp>
+            <cntpos>Research Hydrologist</cntpos>
+            <cntaddr>
+              <addrtype>mailing and physical</addrtype>
+              <address>1300 SE Cardinal Ct.</address>
+              <city>Vancouver</city>
+              <state>WA</state>
+              <postal>98683</postal>
+            </cntaddr>
+            <cntvoice>360-993-8929</cntvoice>
+            <cntemail>mobryk@usgs.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>flume_laser_all_gate_releases.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing data.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Time</attrlabl>
+        <attrdef>Timestamp</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0</rdommin>
+            <rdommax>13.999</rdommax>
+            <attrunit>seconds</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>33 m laser - 05/04/2024</attrlabl>
+        <attrdef>Flow depth</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv><rdom>
+            <rdommin>-0.000754237</rdommin>
+            <rdommax>0.363835174</rdommax>
+            <attrunit>m</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>33 m laser - 06/04/2024</attrlabl>
+        <attrdef>Flow depth</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv><rdom>
+            <rdommin>-0.0108967</rdommin>
+            <rdommax>0.177678256</rdommax>
+            <attrunit>m</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>33 m laser - 08/04/2024</attrlabl>
+        <attrdef>Flow depth</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv><rdom>
+            <rdommin>-0.001033994</rdommin>
+            <rdommax>0.142614223</rdommax>
+            <attrunit>m</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>33 m laser - 10/04/2024</attrlabl>
+        <attrdef>Flow depth</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv><rdom>
+            <rdommin>-0.000548297</rdommin>
+            <rdommax>0.251638168</rdommax>
+            <attrunit>m</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>33 m laser - 11/04/2024</attrlabl>
+        <attrdef>Flow depth</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv><rdom>
+            <rdommin>-0.000654773</rdommin>
+            <rdommax>0.287780494</rdommax>
+            <attrunit>m</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>laser_rangefinder_all_gate_releases.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing data.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>TIMESTAMP (UTC)</attrlabl>
+        <attrdef>Timestamp  (YYYY/MM/DD HH:MM) (local time, 7 hours behind UTC)</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Date/time provided in UTC.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Distance</attrlabl>
+        <attrdef>Distance from the laser rangefinder.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv><rdom>
+            <rdommin>0</rdommin>
+            <rdommax>2.994</rdommax>
+            <attrunit>m</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <overview>
+      <eaover>The structure of the swath laser files (.ubh) can be viewed in a text editor and is also defined in the Matlab processing script.</eaover>
+      <eadetcit>https://doi.org/10.5066/P1HXHGZN</eadetcit>
+    </overview>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntperp>
+          <cntper>GS ScienceBase</cntper>
+          <cntorg>U.S. Geological Survey</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>Denver Federal Center, Building 810, Mail Stop 302</address>
+          <city>Denver</city>
+          <state>CO</state>
+          <postal>80225</postal>
+          <country>United States</country>
+        </cntaddr>
+        <cntvoice>1-888-275-8747</cntvoice>
+        <cntemail>sciencebase@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), no warranty expressed or implied is made regarding the display or utility of the data for other purposes, nor on all computer systems, nor shall the act of distribution constitute any such warranty.</distliab>
+    <stdorder>
+      <digform><digtinfo>
+          <formname>Digital Data</formname>
+        </digtinfo>
+        <digtopt><onlinopt><computer><networka><networkr>https://doi.org/10.5066/P1HXHGZN</networkr></networka></computer></onlinopt></digtopt></digform>
+      <fees>None</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>20250505</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Maciej K Obryk</cntper>
+          <cntorg>USGS - ALASKA REGION</cntorg>
+        </cntperp>
+        <cntpos>Research Hydrologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>1300 SE Cardinal Ct.</address>
+          <city>Vancouver</city>
+          <state>WA</state>
+          <postal>98683</postal>
+        </cntaddr>
+        <cntvoice>360-993-8929</cntvoice>
+        <cntemail>mobryk@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Biological Data Profile of the Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001.1-1999</metstdv>
+  </metainfo>
+</metadata>

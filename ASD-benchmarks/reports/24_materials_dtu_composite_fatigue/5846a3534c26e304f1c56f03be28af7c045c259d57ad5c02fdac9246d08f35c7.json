@@ -1,0 +1,89 @@
+{
+  "bytes": 9855,
+  "sha256": "d7976aa3e43c596a1f6dd7340555477b003bc5bcdaabfe508095382df9cfe0d0",
+  "format_extension": ".xlsx",
+  "checks": [
+    "publisher_md5"
+  ],
+  "format": "Excel_OpenXML",
+  "sheets": [
+    {
+      "name": "Sheet1",
+      "rows": 6,
+      "columns": 9,
+      "first_rows": [
+        [
+          "Specimen",
+          "Width \n [mm]",
+          "Thickness \n [mm]",
+          "E-modulus \n [GPa]",
+          "Max stress \n [MPa]",
+          "Linear strain \n [%]",
+          "Uniform strain \n [%]",
+          "Estimated strain \n [%]",
+          "Comments"
+        ],
+        [
+          "EAQ01-01",
+          "25.24",
+          "4.25",
+          "37.583586805648835",
+          "999.7201920387807",
+          "2.6599914404351694",
+          "3.250851471612157",
+          "1.4745824942377697",
+          null
+        ],
+        [
+          "EAQ01-02",
+          "25.29",
+          "4.34",
+          "37.697700336408595",
+          "1014.0482476999526",
+          "2.6899472345812585",
+          "3.3357495750319255",
+          "1.4963264492342814",
+          null
+        ],
+        [
+          "Average",
+          null,
+          null,
+          "=AVERAGE(D2:D3)",
+          "=AVERAGE(E2:E3)",
+          "=AVERAGE(F2:F3)",
+          "=AVERAGE(G2:G3)",
+          null,
+          null
+        ],
+        [
+          "Std dev.",
+          null,
+          null,
+          "=STDEV(D2:D3)",
+          "=STDEV(E2:E3)",
+          "=STDEV(F2:F3)",
+          "=STDEV(G2:G3)",
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "name": "Sheet2",
+      "rows": 1,
+      "columns": 1,
+      "first_rows": []
+    },
+    {
+      "name": "Sheet3",
+      "rows": 1,
+      "columns": 1,
+      "first_rows": []
+    }
+  ],
+  "path": "raw/EQA01 StaticTestResults.xlsx",
+  "scenario_id": "24_materials_dtu_composite_fatigue",
+  "verified_utc": "2026-09-14T15:58:01.845760+00:00",
+  "status": "pass"
+}

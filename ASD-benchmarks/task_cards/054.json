@@ -1,0 +1,236 @@
+{
+  "case_id": "P100-054",
+  "case_revision": 1,
+  "scenario_id": "54_materials_microfracture",
+  "title": "Data set: Enhanced crack stability in micro scale fracture testing via optimized bridge notches",
+  "domain": "Fracture mechanics",
+  "question": "How do notch geometry and specimen response constrain small-scale fracture behavior?",
+  "data_origin": "measured_or_observed",
+  "source_version": "15581944",
+  "source_url": "https://zenodo.org/records/15581944",
+  "identifiers": [
+    "10.5281/zenodo.15581944"
+  ],
+  "publisher": "Okotete, Eloho (Karlsruhe Institute of Technology); Muslija, Alban (Karlsruhe Institute of Technology); Hohmann, Judith (Karlsruhe Institute of Technology); Kohl, Manfred (Karlsruhe Institute of Technology); Brinckmann, Steffen (Forschungszentrum Jülich); Lee, Subin (Karlsruhe Institute of Technology); Kirchlechner, Christoph (Karlsruhe Institute of Technology)",
+  "release_date": "2025-06-03",
+  "measurement_dates": "Campaign dates unknown.",
+  "variables_and_units": "cantilever displacement, force and fracture geometry",
+  "independent_units": "specimens and notch geometries",
+  "validation_design": "specimens and notch geometries Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Experimental text exports and author analysis workbook support the source fracture publication.",
+  "prior_analysis_and_limits": "Hold out entire specimens/geometries. Published toughness estimates and fitted parameters must not be treated as unseen target laws. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/Data for publication.zip!/Data for publication/Experimental data file (txt)/2_D18.txt",
+      "structure": {
+        "first_lines": [
+          "Wed Oct 25 10:15:07 2023",
+          "",
+          "Number of Points = 13166",
+          "Depth (nm)\tLoad (�N)\tTime (s)\tDepth (V)\tLoad (V)",
+          "1.030808\t1.917138\t0.000000\t-0.000008\t0.634166",
+          "1.042405\t1.890396\t0.005000\t-0.000010\t0.634134",
+          "1.231222\t1.747815\t0.010001\t-0.000050\t0.634139",
+          "0.818370\t2.037931\t0.015001\t0.000037\t0.634090"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Data for publication.zip!/Data for publication/Experimental data file (txt)/2_D19.txt",
+      "structure": {
+        "first_lines": [
+          "Wed Oct 25 10:18:54 2023",
+          "",
+          "Number of Points = 11955",
+          "Depth (nm)\tLoad (�N)\tTime (s)\tDepth (V)\tLoad (V)",
+          "2.472607\t1.801238\t0.000000\t0.000046\t0.709281",
+          "2.485354\t1.805237\t0.005001\t0.000044\t0.709303",
+          "2.521524\t1.791860\t0.010001\t0.000036\t0.709326",
+          "2.091443\t2.125614\t0.015002\t0.000126\t0.709331"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Data for publication.zip!/Data for publication/Experimental data file (txt)/2_D21.txt",
+      "structure": {
+        "first_lines": [
+          "Wed Oct 25 10:26:16 2023",
+          "",
+          "Number of Points = 12125",
+          "Depth (nm)\tLoad (�N)\tTime (s)\tDepth (V)\tLoad (V)",
+          "2.052243\t1.707771\t0.000000\t-0.000036\t0.588731",
+          "1.875220\t1.826875\t0.005001\t0.000002\t0.588698",
+          "1.935489\t1.778355\t0.010002\t-0.000011\t0.588694",
+          "1.943283\t1.776040\t0.015003\t-0.000013\t0.588701"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Data for publication.zip!/Data for publication/Experimental data file (txt)/2_D22.txt",
+      "structure": {
+        "first_lines": [
+          "Wed Oct 25 10:29:27 2023",
+          "",
+          "Number of Points = 13502",
+          "Depth (nm)\tLoad (�N)\tTime (s)\tDepth (V)\tLoad (V)",
+          "11.068381\t1.695864\t0.000000\t-0.000047\t0.612740",
+          "10.769618\t1.910929\t0.005001\t0.000016\t0.612712",
+          "10.633065\t2.013585\t0.010001\t0.000045\t0.612707",
+          "10.333660\t2.245444\t0.015002\t0.000107\t0.612710"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Data for publication.zip!/Data for publication/Experimental data file (txt)/C1.txt",
+      "structure": {
+        "first_lines": [
+          "Fri Aug 04 12:00:31 2023",
+          "",
+          "Number of Points = 24410",
+          "Depth (nm)\tLoad (�N)\tTime (s)\tDepth (V)\tLoad (V)",
+          "0.081661\t1.457556\t0.000000\t0.000134\t0.937955",
+          "0.345229\t1.308094\t0.005000\t0.000079\t0.938015",
+          "0.297565\t1.391785\t0.010001\t0.000088\t0.938070",
+          "0.195166\t1.477551\t0.015001\t0.000110\t0.938079"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Data for publication.zip!/Data for publication/Experimental data file (txt)/C11.txt",
+      "structure": {
+        "first_lines": [
+          "Mon Aug 14 11:24:43 2023",
+          "",
+          "Number of Points = 26271",
+          "Depth (nm)\tLoad (�N)\tTime (s)\tDepth (V)\tLoad (V)",
+          "0.543708\t1.955130\t0.000000\t0.000194\t0.655981",
+          "0.908375\t1.750731\t0.005000\t0.000118\t0.656107",
+          "1.055080\t1.669576\t0.010001\t0.000087\t0.656160",
+          "0.800613\t1.886881\t0.015001\t0.000140\t0.656196"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Data for publication.zip!/Data for publication/Experimental data file (txt)/C12.txt",
+      "structure": {
+        "first_lines": [
+          "Mon Aug 14 11:37:22 2023",
+          "",
+          "Number of Points = 29396",
+          "Depth (nm)\tLoad (�N)\tTime (s)\tDepth (V)\tLoad (V)",
+          "0.326344\t1.547135\t0.000000\t0.000238\t0.782456",
+          "0.353416\t1.609703\t0.005000\t0.000232\t0.782572",
+          "0.405272\t1.657510\t0.010001\t0.000221\t0.782694",
+          "0.449994\t1.691731\t0.015001\t0.000212\t0.782789"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Data for publication.zip!/Data for publication/Experimental data file (txt)/C13.txt",
+      "structure": {
+        "first_lines": [
+          "Mon Aug 14 11:43:55 2023",
+          "",
+          "Number of Points = 26085",
+          "Depth (nm)\tLoad (�N)\tTime (s)\tDepth (V)\tLoad (V)",
+          "0.504956\t1.555913\t0.000000\t0.000191\t0.805678",
+          "0.868735\t1.376759\t0.005000\t0.000115\t0.805813",
+          "0.553964\t1.651314\t0.010001\t0.000181\t0.805858",
+          "0.609466\t1.664361\t0.015001\t0.000169\t0.805933"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Data for publication.zip!/Data for publication/Experimental data file (txt)/C14.txt",
+      "structure": {
+        "first_lines": [
+          "Mon Aug 14 11:50:36 2023",
+          "",
+          "Number of Points = 27503",
+          "Depth (nm)\tLoad (�N)\tTime (s)\tDepth (V)\tLoad (V)",
+          "0.953637\t2.195923\t0.000000\t0.000208\t0.658440",
+          "0.857632\t2.309949\t0.005000\t0.000228\t0.658506",
+          "0.899589\t2.356485\t0.010000\t0.000219\t0.658637",
+          "1.251118\t2.146943\t0.015001\t0.000145\t0.658738"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Data for publication.zip!/Data for publication/Experimental data file (txt)/C15.txt",
+      "structure": {
+        "first_lines": [
+          "Mon Aug 14 11:57:57 2023",
+          "",
+          "Number of Points = 29817",
+          "Depth (nm)\tLoad (�N)\tTime (s)\tDepth (V)\tLoad (V)",
+          "0.862724\t1.793188\t0.000000\t0.000088\t0.651697",
+          "0.868678\t1.815110\t0.005000\t0.000087\t0.651741",
+          "0.516971\t2.108900\t0.010001\t0.000161\t0.651780",
+          "0.435537\t2.241947\t0.015001\t0.000178\t0.651898"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Data for publication.zip!/Data for publication/Experimental data file (txt)/C16.txt",
+      "structure": {
+        "first_lines": [
+          "Mon Aug 14 12:05:14 2023",
+          "",
+          "Number of Points = 28452",
+          "Depth (nm)\tLoad (�N)\tTime (s)\tDepth (V)\tLoad (V)",
+          "-0.227909\t2.046551\t0.000000\t0.000103\t0.663262",
+          "-0.156457\t2.024879\t0.005000\t0.000088\t0.663317",
+          "-0.269830\t2.150335\t0.010000\t0.000112\t0.663380",
+          "-0.201748\t2.118494\t0.015001\t0.000098\t0.663413"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Data for publication.zip!/Data for publication/Experimental data file (txt)/C18.txt",
+      "structure": {
+        "first_lines": [
+          "Mon Sep 04 07:11:44 2023",
+          "",
+          "Number of Points = 29602",
+          "Depth (nm)\tLoad (�N)\tTime (s)\tDepth (V)\tLoad (V)",
+          "-0.264717\t1.969699\t0.000000\t0.000031\t0.813540",
+          "-0.366405\t2.042796\t0.005000\t0.000053\t0.813534",
+          "-0.277631\t2.002000\t0.010001\t0.000034\t0.813571",
+          "-0.510538\t2.147186\t0.015001\t0.000083\t0.813525"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "ZIP": 1,
+    "text_or_instrument_native": 108,
+    "Excel_OpenXML": 1
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 36684810,
+  "expanded_source_equivalent_bytes": 125400390,
+  "installed_folder_bytes": 36692064,
+  "source_asset_count": 2,
+  "asset_paths": [
+    "scenarios/54_materials_microfracture/raw/Data for publication.zip",
+    "scenarios/54_materials_microfracture/context/source_record.json"
+  ],
+  "local_folder": "scenarios/54_materials_microfracture",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 36691079,
+  "expanded_release_folder_equivalent_bytes": 125406659
+}

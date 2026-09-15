@@ -1,0 +1,504 @@
+{
+  "scenario_id": "09_neuroscience_dandi_001176",
+  "path": "raw/sub-16/sub-16_ses-16-3-1-Ach-M1_behavior+ophys.nwb",
+  "bytes": 7880355,
+  "sha256": "17520a6770693e86e1b181ea9cd8aa6ca9d92ffc934b1862908f2ae5fd18022c",
+  "checked_utc": "2026-09-15T06:40:05.033394+00:00",
+  "format": "NWB/HDF5",
+  "datasets": [
+    {
+      "name": "acquisition/EyeTracking/eye_position/data",
+      "shape": [
+        37768,
+        2
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "conversion": "1.0",
+        "offset": "0.0",
+        "resolution": "-1.0",
+        "unit": "px"
+      }
+    },
+    {
+      "name": "acquisition/EyeTracking/eye_position/reference_frame",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "acquisition/PupilTracking/pupil_raw_radius/data",
+      "shape": [
+        37768
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "conversion": "1.0",
+        "offset": "0.0",
+        "resolution": "-1.0",
+        "unit": "px"
+      }
+    },
+    {
+      "name": "acquisition/PupilTracking/pupil_raw_radius/timestamps",
+      "shape": [
+        37768
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "interval": "1",
+        "unit": "seconds"
+      }
+    },
+    {
+      "name": "acquisition/imageMeanIntensity/data",
+      "shape": [
+        54000,
+        2
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "conversion": "1.0",
+        "offset": "0.0",
+        "resolution": "-1.0",
+        "unit": "intensity"
+      }
+    },
+    {
+      "name": "acquisition/imageMeanIntensity/timestamps",
+      "shape": [
+        54000
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "interval": "1",
+        "unit": "seconds"
+      }
+    },
+    {
+      "name": "acquisition/treadmill_velocity/data",
+      "shape": [
+        188800
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "conversion": "1.0",
+        "offset": "0.0",
+        "resolution": "-1.0",
+        "unit": "cm/s"
+      }
+    },
+    {
+      "name": "acquisition/treadmill_velocity/timestamps",
+      "shape": [
+        188800
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "interval": "1",
+        "unit": "seconds"
+      }
+    },
+    {
+      "name": "file_create_date",
+      "shape": [
+        1
+      ],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "general/experiment_description",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "general/experimenter",
+      "shape": [
+        1
+      ],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "general/institution",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "general/keywords",
+      "shape": [
+        3
+      ],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "general/lab",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "general/optophysiology/ImagingChannel_1/chan2/description",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "general/optophysiology/ImagingChannel_1/chan2/emission_lambda",
+      "shape": [],
+      "dtype": "float64",
+      "attributes": {}
+    },
+    {
+      "name": "general/optophysiology/ImagingChannel_1/description",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "general/optophysiology/ImagingChannel_1/excitation_lambda",
+      "shape": [],
+      "dtype": "float64",
+      "attributes": {}
+    },
+    {
+      "name": "general/optophysiology/ImagingChannel_1/grid_spacing",
+      "shape": [
+        2
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "unit": "meters"
+      }
+    },
+    {
+      "name": "general/optophysiology/ImagingChannel_1/imaging_rate",
+      "shape": [],
+      "dtype": "float64",
+      "attributes": {}
+    },
+    {
+      "name": "general/optophysiology/ImagingChannel_1/indicator",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "general/optophysiology/ImagingChannel_1/location",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "general/optophysiology/ImagingChannel_1/origin_coords",
+      "shape": [
+        3
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "unit": "meters"
+      }
+    },
+    {
+      "name": "general/session_id",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "general/subject/age",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {
+        "reference": "birth"
+      }
+    },
+    {
+      "name": "general/subject/date_of_birth",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "general/subject/description",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "general/subject/sex",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "general/subject/species",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "general/subject/subject_id",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "identifier",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "processing/ophys/Fluorescence/RoiResponseSeries1/data",
+      "shape": [
+        54000,
+        1
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "conversion": "1.0",
+        "offset": "0.0",
+        "resolution": "-1.0",
+        "unit": "n.a."
+      }
+    },
+    {
+      "name": "processing/ophys/Fluorescence/RoiResponseSeries1/rois",
+      "shape": [
+        1
+      ],
+      "dtype": "int64",
+      "attributes": {
+        "description": "all rois in channel 1",
+        "namespace": "hdmf-common",
+        "neurodata_type": "DynamicTableRegion",
+        "object_id": "6fb3b6c4-119d-4a55-9866-83117fd63153",
+        "table": "<HDF5 object reference>"
+      }
+    },
+    {
+      "name": "processing/ophys/Fluorescence/RoiResponseSeries1/timestamps",
+      "shape": [
+        54000
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "interval": "1",
+        "unit": "seconds"
+      }
+    },
+    {
+      "name": "processing/ophys/ImageSegmentation/PlaneSegmentation1/id",
+      "shape": [
+        1
+      ],
+      "dtype": "int64",
+      "attributes": {
+        "namespace": "hdmf-common",
+        "neurodata_type": "ElementIdentifiers",
+        "object_id": "0c722a86-eaf3-4b47-a27c-54653f963267"
+      }
+    },
+    {
+      "name": "processing/ophys/ImageSegmentation/PlaneSegmentation1/image_mask",
+      "shape": [
+        1,
+        512,
+        512
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "description": "The image masks for each ROI.",
+        "namespace": "hdmf-common",
+        "neurodata_type": "VectorData",
+        "object_id": "927c8305-7df3-4cec-9195-43367a782d1a"
+      }
+    },
+    {
+      "name": "processing/ophys/ImageSegmentation/PlaneSegmentation1/mask_type",
+      "shape": [
+        1
+      ],
+      "dtype": "object",
+      "attributes": {
+        "description": "The classification of mask as soma or artifact.",
+        "namespace": "hdmf-common",
+        "neurodata_type": "VectorData",
+        "object_id": "b97defa4-79cd-4a38-83bc-c44a8059a426"
+      }
+    },
+    {
+      "name": "processing/ophys/SummaryImages_chan1/average",
+      "shape": [
+        512,
+        512
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "description": "average image for the stack ",
+        "namespace": "core",
+        "neurodata_type": "GrayscaleImage",
+        "object_id": "e7acb729-84cb-4543-8616-46744b1085c2"
+      }
+    },
+    {
+      "name": "processing/ophys/SummaryImages_chan1/correlation",
+      "shape": [
+        512,
+        512
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "description": "summary image for the stack using locally spatial correlations",
+        "namespace": "core",
+        "neurodata_type": "GrayscaleImage",
+        "object_id": "a36642f8-d80e-4a84-a4e6-588dd4914282"
+      }
+    },
+    {
+      "name": "session_description",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "session_start_time",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "specifications/core/2.7.0/namespace",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "specifications/core/2.7.0/nwb.base",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "specifications/core/2.7.0/nwb.behavior",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "specifications/core/2.7.0/nwb.device",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "specifications/core/2.7.0/nwb.ecephys",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "specifications/core/2.7.0/nwb.epoch",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "specifications/core/2.7.0/nwb.file",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "specifications/core/2.7.0/nwb.icephys",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "specifications/core/2.7.0/nwb.image",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "specifications/core/2.7.0/nwb.misc",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "specifications/core/2.7.0/nwb.ogen",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "specifications/core/2.7.0/nwb.ophys",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "specifications/core/2.7.0/nwb.retinotopy",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "specifications/hdmf-common/1.8.0/base",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "specifications/hdmf-common/1.8.0/namespace",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "specifications/hdmf-common/1.8.0/sparse",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "specifications/hdmf-common/1.8.0/table",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "specifications/hdmf-experimental/0.5.0/experimental",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "specifications/hdmf-experimental/0.5.0/namespace",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "specifications/hdmf-experimental/0.5.0/resources",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    },
+    {
+      "name": "timestamps_reference_time",
+      "shape": [],
+      "dtype": "object",
+      "attributes": {}
+    }
+  ],
+  "coverage": "HDF5 structure and sampled arrays; full NWB schema validation not run",
+  "status": "pass"
+}

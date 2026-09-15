@@ -1,0 +1,329 @@
+{
+  "case_id": "P100-068",
+  "case_revision": 1,
+  "scenario_id": "68_physics_acoustic_levitation",
+  "title": "Sparse identification of nonlinear dynamics applied to the levitation of acoustically large objects",
+  "domain": "Nonlinear dynamics",
+  "question": "How well do dynamical relationships predict successive observed oscillation cycles within this levitation experiment?",
+  "data_origin": "measured_or_observed",
+  "source_version": "16033764",
+  "source_url": "https://zenodo.org/records/16033764",
+  "identifiers": [
+    "10.5281/zenodo.16033764"
+  ],
+  "publisher": "Akbarzade, Mehdi",
+  "release_date": "2025-07-17",
+  "measurement_dates": "Acquisition dates not specified in deposit metadata.",
+  "variables_and_units": "droplet position, time and forcing conditions",
+  "independent_units": "complete oscillation cycles within one experimental system",
+  "validation_design": "complete oscillation cycles within one experimental system Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Original RAR data and analysis scripts. Published work already applies SINDy and a Duffing-type interpretation; code is not a discovery oracle.",
+  "prior_analysis_and_limits": "Single-system validation only. Fit on complete earlier cycles and test later cycles with boundary gaps. A restatement of the supplied fitted model is reproduction. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/MATLAB Code PSD AND TIME SERIES DATA.txt",
+      "structure": {
+        "first_lines": [
+          "MATLAB Code: PSD AND TIME SERIES DATA",
+          "",
+          "clc",
+          "clear all",
+          "close all",
+          "fmax = 500;",
+          " ",
+          "% Initialize variables."
+        ]
+      }
+    },
+    {
+      "asset": "raw/MATLAB Code SINDy.txt",
+      "structure": {
+        "first_lines": [
+          "MATLAB Code: SINDy",
+          "",
+          "clear all, close all, clc",
+          "figpath = '../figures/';",
+          "addpath('./utils');",
+          " ",
+          "%% generate Data",
+          "polyorder = 4;  % search space up to fifth order polynomials"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Data.rar!/Data/data1142de.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "t",
+            "shape": [
+              999,
+              1
+            ],
+            "type": "double"
+          },
+          {
+            "name": "denoised_s",
+            "shape": [
+              1,
+              999
+            ],
+            "type": "double"
+          }
+        ],
+        "struct_fields": []
+      }
+    },
+    {
+      "asset": "raw/Data.rar!/Data/data1142n.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "t",
+            "shape": [
+              999,
+              1
+            ],
+            "type": "double"
+          },
+          {
+            "name": "noisy_s",
+            "shape": [
+              999,
+              1
+            ],
+            "type": "double"
+          }
+        ],
+        "struct_fields": []
+      }
+    },
+    {
+      "asset": "raw/Data.rar!/Data/data1143de.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "t",
+            "shape": [
+              999,
+              1
+            ],
+            "type": "double"
+          },
+          {
+            "name": "denoised_s",
+            "shape": [
+              1,
+              999
+            ],
+            "type": "double"
+          }
+        ],
+        "struct_fields": []
+      }
+    },
+    {
+      "asset": "raw/Data.rar!/Data/data1143n.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "t",
+            "shape": [
+              999,
+              1
+            ],
+            "type": "double"
+          },
+          {
+            "name": "noisy_s",
+            "shape": [
+              999,
+              1
+            ],
+            "type": "double"
+          }
+        ],
+        "struct_fields": []
+      }
+    },
+    {
+      "asset": "raw/Data.rar!/Data/data1144de.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "t",
+            "shape": [
+              999,
+              1
+            ],
+            "type": "double"
+          },
+          {
+            "name": "denoised_s",
+            "shape": [
+              1,
+              999
+            ],
+            "type": "double"
+          }
+        ],
+        "struct_fields": []
+      }
+    },
+    {
+      "asset": "raw/Data.rar!/Data/data1144n.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "t",
+            "shape": [
+              999,
+              1
+            ],
+            "type": "double"
+          },
+          {
+            "name": "noisy_s",
+            "shape": [
+              999,
+              1
+            ],
+            "type": "double"
+          }
+        ],
+        "struct_fields": []
+      }
+    },
+    {
+      "asset": "raw/Data.rar!/Data/data1145de.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "t",
+            "shape": [
+              999,
+              1
+            ],
+            "type": "double"
+          },
+          {
+            "name": "denoised_s",
+            "shape": [
+              1,
+              999
+            ],
+            "type": "double"
+          }
+        ],
+        "struct_fields": []
+      }
+    },
+    {
+      "asset": "raw/Data.rar!/Data/data1145n.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "t",
+            "shape": [
+              999,
+              1
+            ],
+            "type": "double"
+          },
+          {
+            "name": "noisy_s",
+            "shape": [
+              999,
+              1
+            ],
+            "type": "double"
+          }
+        ],
+        "struct_fields": []
+      }
+    },
+    {
+      "asset": "raw/Data.rar!/Data/data1146de.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "t",
+            "shape": [
+              999,
+              1
+            ],
+            "type": "double"
+          },
+          {
+            "name": "denoised_s",
+            "shape": [
+              1,
+              999
+            ],
+            "type": "double"
+          }
+        ],
+        "struct_fields": []
+      }
+    },
+    {
+      "asset": "raw/Data.rar!/Data/data1146n.mat",
+      "structure": {
+        "variables": [
+          {
+            "name": "t",
+            "shape": [
+              999,
+              1
+            ],
+            "type": "double"
+          },
+          {
+            "name": "noisy_s",
+            "shape": [
+              999,
+              1
+            ],
+            "type": "double"
+          }
+        ],
+        "struct_fields": []
+      }
+    }
+  ],
+  "format_counts": {
+    "text_or_instrument_native": 3,
+    "RAR": 1,
+    "MATLAB": 62
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 348200,
+  "expanded_source_equivalent_bytes": 1026977,
+  "installed_folder_bytes": 356511,
+  "source_asset_count": 4,
+  "asset_paths": [
+    "scenarios/68_physics_acoustic_levitation/raw/MATLAB Code PSD AND TIME SERIES DATA.txt",
+    "scenarios/68_physics_acoustic_levitation/raw/MATLAB Code SINDy.txt",
+    "scenarios/68_physics_acoustic_levitation/raw/Data.rar",
+    "scenarios/68_physics_acoustic_levitation/context/source_record.json"
+  ],
+  "local_folder": "scenarios/68_physics_acoustic_levitation",
+  "size_exception": false,
+  "modalities": [
+    "scientific_arrays_or_events",
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 357446,
+  "expanded_release_folder_equivalent_bytes": 1036223
+}

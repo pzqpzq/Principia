@@ -1,0 +1,296 @@
+{
+  "created": "2025-12-02T09:40:09.920720+00:00",
+  "modified": "2025-12-02T09:40:11.546801+00:00",
+  "id": 17282065,
+  "conceptrecid": "17282064",
+  "doi": "10.5281/zenodo.17282065",
+  "conceptdoi": "10.5281/zenodo.17282064",
+  "doi_url": "https://doi.org/10.5281/zenodo.17282065",
+  "metadata": {
+    "title": "Power Consumption and Network Traffic Telemetry Datasets of Carrier-Grade Network Equipment for Smart Energy-aware Zero-touch Traffic Engineering",
+    "doi": "10.5281/zenodo.17282065",
+    "publication_date": "2025-12-02",
+    "description": "<p>To develop a model that characterizes the energy consumption of network equipment, we conducted a series of experiments in a physical network laboratory at Telef&oacute;nica Innovaci&oacute;n Digital premises. The experiments were carried out on two different router models from different manufacturers (i.e., router models A and B) and were designed to explore how varying network conditions&mdash;such as traffic load, packet length, and flow patterns&mdash;influence instantaneous power consumption, from which energy usage over time can be inferred.</p>\n<p>Three types of experiments were conducted to generate the datasets, which are described in detail below:</p>\n<ul>\n<li><em><strong>TC3.2_traffic_load_variation</strong></em> (<strong>Experiment 1</strong>): In this type of experiment the traffic load was varied in a ramp pattern, from 0% to 100% and then decreasing back to 0%, with the packet length remaining fixed (1500 bytes). The rate of traffic load variation is 300 seconds.</li>\n<li><em><strong>TC3.2_traffic_load_packet_length_variation</strong></em> (<strong>Experiment 2</strong>): In this type experiment both traffic load and packet length were varied simultaneously in a ramp pattern. The traffic load was ramped from 0% to 100% and back to 0%, while the packet length varied from 62 bytes to 1500 bytes and back to 62 bytes at each traffic load variation. The rate of packet length variation is 300 seconds and the rate of traffic load variation is 1,500 seconds.</li>\n<li><em><strong>TC3.2_multiple_traffic_flows</strong></em> (<strong>Experiment 3</strong>): In this type of experiment four concurrent traffic flows were created, each with distinct packet lengths (62 bytes, 1300 bytes, 1500 bytes, and a random length between 62 bytes and 1300 bytes). The total traffic load varied from 0% to 100% and back to 0%, following a ramp pattern. Each flow contributed a specific percentage to the total traffic load: the first flow accounted for 40%, the second flow for 5%, the third for 25%, and the fourth for 30%. The rate of traffic load variation is 1,500 seconds.</li>\n</ul>\n<p>Each experiment type was repeated three times, with a total experimental duration of five hours for Experiment 1 and 27.5 hours for each of Experiments 2 and 3. Every iteration of each experiment for each router model constitutes an individual dataset (e.g.,&nbsp;<em>TC3.2_traffic_load_variation_modelA_iteration1</em> dataset for the first iteration of Experiment 1 regarding router model A). All the experiments were performed for router model A, whereas only the Experiments 2 and 3 were run for router model B. Energy consumption was characterized by measuring the instantaneous power consumed by the network equipment, with samples collected every five seconds. In total, 3,600 samples were obtained for Experiment 1&mdash;conducted exclusively on router model A&mdash;and 19,800 samples for each of Experiments 2 and 3, both carried out on router models A and B.</p>\n<p>The features of the datasets are as follows:</p>\n<ul>\n<li><strong>DateTime</strong>: the date and time at which the energy consumption and traffic throughput were measured.</li>\n<li><strong>Time_s</strong>: the time in seconds since the experiment began.</li>\n<li><strong>Throughput_Percentage</strong>: the percentage of traffic throughput for the network equipment interfaces.</li>\n<li><strong>Throughput_Gbps</strong>: the traffic throughput occupancy in gigabits per second for the network equipment interfaces.</li>\n<li><strong>PacketSize_B</strong>: the packet size used for each traffic measurement. For the <em>TC3.2_traffic_load_variation </em>datasets, the packet size is fixed at 1500 bytes. For the <em>TC3.2_traffic_load_packet_length_variation</em> datasets, the packet size varies among 62, 160, 640, 1300, 1500 bytes. For the <em>TC3.2_multiple_traffic_flows</em> datasets, the average packet size is 669.1 bytes.</li>\n<li><strong>Power_Consumption</strong>: the instantaneous power consumed by the network equipment at a specific moment under different network conditions.</li>\n<li><strong>Packet_Rate</strong>: the packet rate is the number of packets carried on the network interfaces of the network equipment during each traffic measurement.</li>\n</ul>\n<p>These datasets serve as a valuable basis for modeling energy consumption under varying network conditions. In ACROSS European project, a Network Digital Twin (NDT) approach was employed to emulate realistic network conditions and traffic patterns, enabling the analysis and optimization of energy efficiency in the network. This work is being developed in a test case called <em>\"TC3.2 &ndash; Smart Energy-aware Zero-touch TE\"</em>, which aims to convert network telemetry events into intelligent zero-touch traffic engineering (TE) decisions by taking into account energy consumption considerations. The NDT solution of TC3.2 uses Artificial Intelligence (AI) inference models to infer the energy consumption associated with the traffic profiles carried on the network by each network node. A traffic generator solution injects these traffic profiles into an emulated network environment, and the NDT framework monitors network telemetry statistics to feed the AI inference models. Based on energy consumption predictions, the NDT automates TE mechanisms to implement an energy-aware dynamic routing solution on real networks, enabling traffic to be forwarded along the most energy-efficient path.</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Lentisco, Carlos M.",
+        "affiliation": "Universidad Politécnica de Madrid",
+        "orcid": "0000-0002-7444-0872"
+      },
+      {
+        "name": "De la Osa Mostazo, David",
+        "affiliation": "Telefónica Innovación Digital (Spain)",
+        "orcid": "0009-0003-0904-5088"
+      },
+      {
+        "name": "Karamchandani Batra, Amit",
+        "affiliation": "Universidad Politécnica de Madrid",
+        "orcid": "0000-0002-0311-6610"
+      },
+      {
+        "name": "González Sánchez, Daniel",
+        "affiliation": "Universidad Politécnica de Madrid",
+        "orcid": "0000-0002-7691-0030"
+      },
+      {
+        "name": "de la Cal García, Luis",
+        "affiliation": "Universidad Politécnica de Madrid",
+        "orcid": "0000-0002-1798-8743"
+      },
+      {
+        "name": "Bellido Triana, Luis",
+        "affiliation": "Universidad Politécnica de Madrid",
+        "orcid": "0000-0001-9591-0928"
+      },
+      {
+        "name": "Mozo Velasco, Bonifacio Alberto",
+        "affiliation": "Universidad Politécnica de Madrid",
+        "orcid": "0000-0001-9743-8604"
+      },
+      {
+        "name": "Pastor Perales, Antonio",
+        "affiliation": "Telefónica Innovación Digital (Spain)",
+        "orcid": "0000-0003-2849-9782"
+      },
+      {
+        "name": "R. Lopez, Diego",
+        "affiliation": "Telefónica Innovación Digital (Spain)",
+        "orcid": "0000-0002-8326-2000"
+      }
+    ],
+    "keywords": [
+      "energy efficiency",
+      "network telemetry",
+      "Traffic Engineering",
+      "Network Digital Twin",
+      "Artificial Intelligence"
+    ],
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "grants": [
+      {
+        "code": "101097122",
+        "internal_id": "10.13039/501100000780::101097122",
+        "funder": {
+          "name": "European Commission",
+          "doi": "10.13039/501100000780",
+          "acronym": "EC"
+        },
+        "title": "ACROSS - Automated zero-touch cross-layer provisioning framework for 5G and beyond vertical services",
+        "url": "https://cordis.europa.eu/project/id/101097122"
+      }
+    ],
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "17282064"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Power Consumption and Network Traffic Telemetry Datasets of Carrier-Grade Network Equipment for Smart Energy-aware Zero-touch Traffic Engineering",
+  "links": {
+    "self": "https://zenodo.org/api/records/17282065",
+    "self_html": "https://zenodo.org/records/17282065",
+    "preview_html": "https://zenodo.org/records/17282065?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.17282065",
+    "self_doi": "https://doi.org/10.5281/zenodo.17282065",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.17282065",
+    "reserve_doi": "https://zenodo.org/api/records/17282065/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/17282064",
+    "parent_html": "https://zenodo.org/records/17282064",
+    "parent_doi": "https://doi.org/10.5281/zenodo.17282064",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.17282064",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:17282065/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:17282065/sequence/default",
+    "files": "https://zenodo.org/api/records/17282065/files",
+    "media_files": "https://zenodo.org/api/records/17282065/media-files",
+    "archive": "https://zenodo.org/api/records/17282065/files-archive",
+    "archive_media": "https://zenodo.org/api/records/17282065/media-files-archive",
+    "latest": "https://zenodo.org/api/records/17282065/versions/latest",
+    "latest_html": "https://zenodo.org/records/17282065/latest",
+    "versions": "https://zenodo.org/api/records/17282065/versions",
+    "draft": "https://zenodo.org/api/records/17282065/draft",
+    "access_links": "https://zenodo.org/api/records/17282065/access/links",
+    "access_grants": "https://zenodo.org/api/records/17282065/access/grants",
+    "access_users": "https://zenodo.org/api/records/17282065/access/users",
+    "access_request": "https://zenodo.org/api/records/17282065/access/request",
+    "access": "https://zenodo.org/api/records/17282065/access",
+    "communities": "https://zenodo.org/api/records/17282065/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/17282065/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/17282065/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/17282065/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/17282065/quota-increase",
+    "requests": "https://zenodo.org/api/records/17282065/requests"
+  },
+  "updated": "2025-12-02T09:40:11.546801+00:00",
+  "recid": "17282065",
+  "revision": 4,
+  "files": [
+    {
+      "id": "bed38492-215b-45c4-8631-df0a919e402f",
+      "key": "TC3.2_traffic_load_packet_length_variation_modelA_iteration1.csv",
+      "size": 334338,
+      "checksum": "md5:b5a2ef4bf36229bc81c8aa9c571a4da1",
+      "links": {
+        "self": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelA_iteration1.csv/content"
+      }
+    },
+    {
+      "id": "0304ca6d-eff3-4037-9645-b56317992187",
+      "key": "TC3.2_traffic_load_variation_modelA_iteration1.csv",
+      "size": 66725,
+      "checksum": "md5:0264645db4c6a85f90c165ffcd37cc7e",
+      "links": {
+        "self": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_variation_modelA_iteration1.csv/content"
+      }
+    },
+    {
+      "id": "fe9bf06f-c468-4162-964c-4ca0ce4d4236",
+      "key": "TC3.2_multiple_traffic_flows_modelB_iteration1.csv",
+      "size": 391900,
+      "checksum": "md5:5695447b47cc5382d15b7966fe5fad93",
+      "links": {
+        "self": "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelB_iteration1.csv/content"
+      }
+    },
+    {
+      "id": "9a0d04af-1dc0-43fb-8f13-dd759bc3f0ea",
+      "key": "TC3.2_traffic_load_packet_length_variation_modelB_iteration3.csv",
+      "size": 412600,
+      "checksum": "md5:cbb7400ae26d8ce92d9e501104fa5d26",
+      "links": {
+        "self": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelB_iteration3.csv/content"
+      }
+    },
+    {
+      "id": "a91bbedd-8ef8-4b15-8b47-198aa15db008",
+      "key": "TC3.2_traffic_load_packet_length_variation_modelA_iteration3.csv",
+      "size": 335456,
+      "checksum": "md5:5e3a1e6409b0ee846cf013ea95a2c3ed",
+      "links": {
+        "self": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelA_iteration3.csv/content"
+      }
+    },
+    {
+      "id": "e9db29df-bebb-4008-8378-04e3d6073579",
+      "key": "TC3.2_multiple_traffic_flows_modelA_iteration1.csv",
+      "size": 352633,
+      "checksum": "md5:dec360a0d74fa56913df391255e0c7b2",
+      "links": {
+        "self": "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelA_iteration1.csv/content"
+      }
+    },
+    {
+      "id": "8d8adff7-c175-4e39-88dc-07934710ef8d",
+      "key": "TC3.2_traffic_load_packet_length_variation_modelB_iteration2.csv",
+      "size": 373019,
+      "checksum": "md5:88a301377cd754c050225a76200e7545",
+      "links": {
+        "self": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelB_iteration2.csv/content"
+      }
+    },
+    {
+      "id": "86681c73-54f4-4de6-a3be-2eb46a87de28",
+      "key": "TC3.2_traffic_load_variation_modelA_iteration2.csv",
+      "size": 67222,
+      "checksum": "md5:4c199ba3e108a9e72a9c311c47d9f991",
+      "links": {
+        "self": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_variation_modelA_iteration2.csv/content"
+      }
+    },
+    {
+      "id": "4b0c8ad8-44ac-4d08-9bc4-97d66ccf903d",
+      "key": "TC3.2_multiple_traffic_flows_modelA_iteration3.csv",
+      "size": 352528,
+      "checksum": "md5:c1b85f600e42c3ef81b21f55cc03e100",
+      "links": {
+        "self": "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelA_iteration3.csv/content"
+      }
+    },
+    {
+      "id": "28d378f1-5ed5-4f4d-84a2-8b70eb83c787",
+      "key": "TC3.2_multiple_traffic_flows_modelB_iteration2.csv",
+      "size": 391824,
+      "checksum": "md5:1735c4cc2266ae3c6e5d79cacd72177e",
+      "links": {
+        "self": "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelB_iteration2.csv/content"
+      }
+    },
+    {
+      "id": "f5d75024-a7e9-4ec6-bee5-cf63d3abd2f2",
+      "key": "TC3.2_multiple_traffic_flows_modelB_iteration3.csv",
+      "size": 391805,
+      "checksum": "md5:22514adfb98ca9283b82e39c22caedb4",
+      "links": {
+        "self": "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelB_iteration3.csv/content"
+      }
+    },
+    {
+      "id": "c6cca50d-d0a2-4e1f-a983-add1ed84fc64",
+      "key": "TC3.2_traffic_load_variation_modelA_iteration3.csv",
+      "size": 67242,
+      "checksum": "md5:6e9d0aea1654638cab9439901d9f5190",
+      "links": {
+        "self": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_variation_modelA_iteration3.csv/content"
+      }
+    },
+    {
+      "id": "c1fe7f87-3ed1-4a6d-82a0-7a4e5ae9eb50",
+      "key": "TC3.2_multiple_traffic_flows_modelA_iteration2.csv",
+      "size": 343560,
+      "checksum": "md5:9827fc7b34e37a5e5a378b1e3e3e3961",
+      "links": {
+        "self": "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelA_iteration2.csv/content"
+      }
+    },
+    {
+      "id": "03fb577f-a5e7-4101-8576-fe36546dd51e",
+      "key": "TC3.2_traffic_load_packet_length_variation_modelA_iteration2.csv",
+      "size": 340741,
+      "checksum": "md5:b2f4f39bc9df3337d46905ef30f3ee63",
+      "links": {
+        "self": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelA_iteration2.csv/content"
+      }
+    },
+    {
+      "id": "751683d8-2e63-4473-9b51-c9f2651c8901",
+      "key": "TC3.2_traffic_load_packet_length_variation_modelB_iteration1.csv",
+      "size": 373044,
+      "checksum": "md5:c3b518b935acf6f26cbfc48406a7f813",
+      "links": {
+        "self": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelB_iteration1.csv/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "386424"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 601,
+    "unique_downloads": 527,
+    "views": 278,
+    "unique_views": 236,
+    "version_downloads": 601,
+    "version_unique_downloads": 527,
+    "version_unique_views": 236,
+    "version_views": 278
+  },
+  "state": "done",
+  "submitted": true
+}

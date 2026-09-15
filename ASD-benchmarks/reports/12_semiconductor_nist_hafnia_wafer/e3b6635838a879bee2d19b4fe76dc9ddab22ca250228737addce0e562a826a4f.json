@@ -1,0 +1,42 @@
+{
+  "scenario_id": "12_semiconductor_nist_hafnia_wafer",
+  "path": "raw/CHIPS-6-02-25-00-set/25-02/data/raw/se/CHIPS-6-02-35-02-parameters.csv",
+  "bytes": 10553,
+  "sha256": "45e91437ac7a4785360b31169e9e7be57682cddc59aa01bc97ed5dd00a8a57ff",
+  "checked_utc": "2026-09-15T06:40:05.794141+00:00",
+  "format": "text_or_instrument_native",
+  "signature_hex": "582028636d292c592028636d",
+  "delimiter": ",",
+  "header": [
+    "X (cm)",
+    "Y (cm)",
+    "MSE",
+    "Absolute MSE",
+    "Thickness # 1 (nm)",
+    "A",
+    "B",
+    "C",
+    "n of Cauchy @ 632.8 nm",
+    "Thickness # 1 (nm) Error",
+    "A Error",
+    "B Error",
+    "C Error",
+    "n of Cauchy @ 632.8 nm Error"
+  ],
+  "data_records": 119,
+  "row_width_counts": {
+    "14": 119
+  },
+  "first_lines": [
+    "X (cm),Y (cm),MSE,Absolute MSE,Thickness # 1 (nm),A,B,C,n of Cauchy @ 632.8 nm,Thickness # 1 (nm) Error,A Error,B Error,C Error,n of Cauchy @ 632.8 nm Error",
+    "-2.75,9,6.09,0,9.34,2.25,-0.02333,0.00098059,2.19785,0.014,0.0177,0.00653,0.00049868,0",
+    "-1,9,6.359,0,9.01,2.248,-0.01928,0.00059796,2.20386,0.014,0.0191,0.007095,0.00054292,0",
+    "0,9,6.379,0,8.98,2.248,-0.01926,0.00059023,2.20396,0.014,0.0192,0.007139,0.00054629,0",
+    "1,9,6.442,0,8.96,2.25,-0.01908,0.00056229,2.20547,0.014,0.0194,0.007215,0.00055243,0",
+    "2.75,9,6.39,0,8.86,2.245,-0.01802,0.00048971,2.20312,0.014,0.0196,0.007283,0.00055705,0",
+    "5.25,8,6.269,0,9.07,2.248,-0.02186,0.00079949,2.19805,0.014,0.0189,0.006969,0.00053195,0",
+    "2.75,8,6.346,0,8.96,2.248,-0.0182,0.000513,2.20533,0.014,0.0192,0.007122,0.00054527,0"
+  ],
+  "encoding_replacement_count": 0,
+  "status": "pass"
+}

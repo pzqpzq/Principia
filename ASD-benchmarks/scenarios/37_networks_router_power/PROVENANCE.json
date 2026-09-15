@@ -1,0 +1,532 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "37_networks_router_power",
+  "domain": "computer networking",
+  "title": "Carrier-router power under packet and load changes",
+  "publisher": "Zenodo; originating researchers: Lentisco, Carlos M. (Universidad Politécnica de Madrid); De la Osa Mostazo, David (Telefónica Innovación Digital (Spain)); Karamchandani Batra, Amit (Universidad Politécnica de Madrid); González Sánchez, Daniel (Universidad Politécnica de Madrid); de la Cal García, Luis (Universidad Politécnica de Madrid); Bellido Triana, Luis (Universidad Politécnica de Madrid); Mozo Velasco, Bonifacio Alberto (Universidad Politécnica de Madrid); Pastor Perales, Antonio (Telefónica Innovación Digital (Spain)); R. Lopez, Diego (Telefónica Innovación Digital (Spain))",
+  "authoritative_landing_url": "https://zenodo.org/records/17282065",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/17282065",
+    "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelA_iteration1.csv/content",
+    "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_variation_modelA_iteration1.csv/content",
+    "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelB_iteration1.csv/content",
+    "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelB_iteration3.csv/content",
+    "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelA_iteration3.csv/content",
+    "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelA_iteration1.csv/content",
+    "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelB_iteration2.csv/content",
+    "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_variation_modelA_iteration2.csv/content",
+    "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelA_iteration3.csv/content",
+    "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelB_iteration2.csv/content",
+    "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelB_iteration3.csv/content",
+    "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_variation_modelA_iteration3.csv/content",
+    "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelA_iteration2.csv/content",
+    "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelA_iteration2.csv/content",
+    "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelB_iteration1.csv/content",
+    "https://zenodo.org/api/records/17282065"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.17282065"
+  ],
+  "release_or_version": "17282065",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "deterministic_selection_rule": "Complete source record unless otherwise specified.",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": {
+    "description": "Physical lab experiments released 2025-10-06; native DateTime columns give run-specific observation times.",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": "2025-12-02",
+  "source_created_utc": "2025-12-02T09:40:09.920720+00:00",
+  "source_updated_utc": "2025-12-02T09:40:11.546801+00:00",
+  "source_inventory": [
+    {
+      "name": "TC3.2_traffic_load_packet_length_variation_modelA_iteration1.csv",
+      "bytes": 334338,
+      "selected": true
+    },
+    {
+      "name": "TC3.2_traffic_load_variation_modelA_iteration1.csv",
+      "bytes": 66725,
+      "selected": true
+    },
+    {
+      "name": "TC3.2_multiple_traffic_flows_modelB_iteration1.csv",
+      "bytes": 391900,
+      "selected": true
+    },
+    {
+      "name": "TC3.2_traffic_load_packet_length_variation_modelB_iteration3.csv",
+      "bytes": 412600,
+      "selected": true
+    },
+    {
+      "name": "TC3.2_traffic_load_packet_length_variation_modelA_iteration3.csv",
+      "bytes": 335456,
+      "selected": true
+    },
+    {
+      "name": "TC3.2_multiple_traffic_flows_modelA_iteration1.csv",
+      "bytes": 352633,
+      "selected": true
+    },
+    {
+      "name": "TC3.2_traffic_load_packet_length_variation_modelB_iteration2.csv",
+      "bytes": 373019,
+      "selected": true
+    },
+    {
+      "name": "TC3.2_traffic_load_variation_modelA_iteration2.csv",
+      "bytes": 67222,
+      "selected": true
+    },
+    {
+      "name": "TC3.2_multiple_traffic_flows_modelA_iteration3.csv",
+      "bytes": 352528,
+      "selected": true
+    },
+    {
+      "name": "TC3.2_multiple_traffic_flows_modelB_iteration2.csv",
+      "bytes": 391824,
+      "selected": true
+    },
+    {
+      "name": "TC3.2_multiple_traffic_flows_modelB_iteration3.csv",
+      "bytes": 391805,
+      "selected": true
+    },
+    {
+      "name": "TC3.2_traffic_load_variation_modelA_iteration3.csv",
+      "bytes": 67242,
+      "selected": true
+    },
+    {
+      "name": "TC3.2_multiple_traffic_flows_modelA_iteration2.csv",
+      "bytes": 343560,
+      "selected": true
+    },
+    {
+      "name": "TC3.2_traffic_load_packet_length_variation_modelA_iteration2.csv",
+      "bytes": 340741,
+      "selected": true
+    },
+    {
+      "name": "TC3.2_traffic_load_packet_length_variation_modelB_iteration1.csv",
+      "bytes": 373044,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Instrument/lab-measurement CSV exports with source traffic-control settings; energy is not directly a separate measured response unless time integration is performed later.",
+  "known_analyses_and_limitations": "The source was collected for network-equipment energy modeling. Throughput, packet size and packet rate have structural dependencies. Run histories and repeated rows cannot be treated as independent laboratory replicates.",
+  "related_publications": [],
+  "pinned_commit": null,
+  "source_context_request_failures": [],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-037",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-037",
+      "scenario_id": "37_networks_router_power",
+      "path": "context/zenodo_record.json",
+      "scenario_relative_path": "context/zenodo_record.json",
+      "bytes": 17034,
+      "sha256": "84895b72d1bc2bc31718e123b87e21f0617f0a0f4d3dda5c729dd71f28f9bb37",
+      "role": "parsed_source_metadata_snapshot",
+      "source_urls": [
+        "https://zenodo.org/api/records/17282065"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:40:23.569449+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17282065"
+      ],
+      "citation_url": "https://zenodo.org/records/17282065",
+      "source_version": "17282065",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-037",
+      "scenario_id": "37_networks_router_power",
+      "path": "raw/TC3.2_multiple_traffic_flows_modelA_iteration1.csv",
+      "scenario_relative_path": "raw/TC3.2_multiple_traffic_flows_modelA_iteration1.csv",
+      "bytes": 352633,
+      "sha256": "c28ef54ff14446dc3e07e2ad9c1e31e8a495ab7d275bd8a9073729b9de5363d9",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelA_iteration1.csv/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelA_iteration1.csv/content",
+      "source_checksum": "md5:dec360a0d74fa56913df391255e0c7b2",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:47:54.469432+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17282065"
+      ],
+      "citation_url": "https://zenodo.org/records/17282065",
+      "source_version": "17282065",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17282065",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-037",
+      "scenario_id": "37_networks_router_power",
+      "path": "raw/TC3.2_multiple_traffic_flows_modelA_iteration2.csv",
+      "scenario_relative_path": "raw/TC3.2_multiple_traffic_flows_modelA_iteration2.csv",
+      "bytes": 343560,
+      "sha256": "b5d47aaabf76f21784a68f45262f568f619b69ce1805c456f83c993ca8a1a89c",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelA_iteration2.csv/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelA_iteration2.csv/content",
+      "source_checksum": "md5:9827fc7b34e37a5e5a378b1e3e3e3961",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:48:08.551979+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17282065"
+      ],
+      "citation_url": "https://zenodo.org/records/17282065",
+      "source_version": "17282065",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17282065",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-037",
+      "scenario_id": "37_networks_router_power",
+      "path": "raw/TC3.2_multiple_traffic_flows_modelA_iteration3.csv",
+      "scenario_relative_path": "raw/TC3.2_multiple_traffic_flows_modelA_iteration3.csv",
+      "bytes": 352528,
+      "sha256": "ecb98a077f4b203c47cc90064a7abbc6620f1011db12a2e17b953b36edae5310",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelA_iteration3.csv/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelA_iteration3.csv/content",
+      "source_checksum": "md5:c1b85f600e42c3ef81b21f55cc03e100",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:48:00.784332+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17282065"
+      ],
+      "citation_url": "https://zenodo.org/records/17282065",
+      "source_version": "17282065",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17282065",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-037",
+      "scenario_id": "37_networks_router_power",
+      "path": "raw/TC3.2_multiple_traffic_flows_modelB_iteration1.csv",
+      "scenario_relative_path": "raw/TC3.2_multiple_traffic_flows_modelB_iteration1.csv",
+      "bytes": 391900,
+      "sha256": "c149f0fef4f6c0434e38eb45e9582c1e9f24a8a7415e91457bd353488cd7ef52",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelB_iteration1.csv/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelB_iteration1.csv/content",
+      "source_checksum": "md5:5695447b47cc5382d15b7966fe5fad93",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:47:46.915093+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17282065"
+      ],
+      "citation_url": "https://zenodo.org/records/17282065",
+      "source_version": "17282065",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17282065",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-037",
+      "scenario_id": "37_networks_router_power",
+      "path": "raw/TC3.2_multiple_traffic_flows_modelB_iteration2.csv",
+      "scenario_relative_path": "raw/TC3.2_multiple_traffic_flows_modelB_iteration2.csv",
+      "bytes": 391824,
+      "sha256": "b1d1dddca4f6b7618f1d2f8cfc01beabdb83b594dd0bf8fd2c6cd171e0cca283",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelB_iteration2.csv/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelB_iteration2.csv/content",
+      "source_checksum": "md5:1735c4cc2266ae3c6e5d79cacd72177e",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:48:03.767240+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17282065"
+      ],
+      "citation_url": "https://zenodo.org/records/17282065",
+      "source_version": "17282065",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17282065",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-037",
+      "scenario_id": "37_networks_router_power",
+      "path": "raw/TC3.2_multiple_traffic_flows_modelB_iteration3.csv",
+      "scenario_relative_path": "raw/TC3.2_multiple_traffic_flows_modelB_iteration3.csv",
+      "bytes": 391805,
+      "sha256": "b6e0cace871984a211160e079824b6269a12afbd4f38bdf4142d424275543680",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelB_iteration3.csv/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelB_iteration3.csv/content",
+      "source_checksum": "md5:22514adfb98ca9283b82e39c22caedb4",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:48:14.381162+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17282065"
+      ],
+      "citation_url": "https://zenodo.org/records/17282065",
+      "source_version": "17282065",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17282065",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-037",
+      "scenario_id": "37_networks_router_power",
+      "path": "raw/TC3.2_traffic_load_packet_length_variation_modelA_iteration1.csv",
+      "scenario_relative_path": "raw/TC3.2_traffic_load_packet_length_variation_modelA_iteration1.csv",
+      "bytes": 334338,
+      "sha256": "20579db698833a940acb58899adf07f6871359fd9231232fde35204583a598c8",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelA_iteration1.csv/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelA_iteration1.csv/content",
+      "source_checksum": "md5:b5a2ef4bf36229bc81c8aa9c571a4da1",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:47:42.704959+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17282065"
+      ],
+      "citation_url": "https://zenodo.org/records/17282065",
+      "source_version": "17282065",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17282065",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-037",
+      "scenario_id": "37_networks_router_power",
+      "path": "raw/TC3.2_traffic_load_packet_length_variation_modelA_iteration2.csv",
+      "scenario_relative_path": "raw/TC3.2_traffic_load_packet_length_variation_modelA_iteration2.csv",
+      "bytes": 340741,
+      "sha256": "d99ee716a7af802caef5175f82d459a7a921edb1e670176cbbbb0287fa7f60f9",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelA_iteration2.csv/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelA_iteration2.csv/content",
+      "source_checksum": "md5:b2f4f39bc9df3337d46905ef30f3ee63",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:48:11.025818+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17282065"
+      ],
+      "citation_url": "https://zenodo.org/records/17282065",
+      "source_version": "17282065",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17282065",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-037",
+      "scenario_id": "37_networks_router_power",
+      "path": "raw/TC3.2_traffic_load_packet_length_variation_modelA_iteration3.csv",
+      "scenario_relative_path": "raw/TC3.2_traffic_load_packet_length_variation_modelA_iteration3.csv",
+      "bytes": 335456,
+      "sha256": "347e0803dd1df7f8cb216b13b5948ed82dcb96c53cb7505e34409eab39ad13c1",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelA_iteration3.csv/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelA_iteration3.csv/content",
+      "source_checksum": "md5:5e3a1e6409b0ee846cf013ea95a2c3ed",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:47:51.816847+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17282065"
+      ],
+      "citation_url": "https://zenodo.org/records/17282065",
+      "source_version": "17282065",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17282065",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-037",
+      "scenario_id": "37_networks_router_power",
+      "path": "raw/TC3.2_traffic_load_packet_length_variation_modelB_iteration1.csv",
+      "scenario_relative_path": "raw/TC3.2_traffic_load_packet_length_variation_modelB_iteration1.csv",
+      "bytes": 373044,
+      "sha256": "de7ea1b23944365abdcc6aa7f5f98d137e9c9fb89170ceb9dca3e2a3b5da7f0d",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelB_iteration1.csv/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelB_iteration1.csv/content",
+      "source_checksum": "md5:c3b518b935acf6f26cbfc48406a7f813",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:48:13.674766+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17282065"
+      ],
+      "citation_url": "https://zenodo.org/records/17282065",
+      "source_version": "17282065",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17282065",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-037",
+      "scenario_id": "37_networks_router_power",
+      "path": "raw/TC3.2_traffic_load_packet_length_variation_modelB_iteration2.csv",
+      "scenario_relative_path": "raw/TC3.2_traffic_load_packet_length_variation_modelB_iteration2.csv",
+      "bytes": 373019,
+      "sha256": "139a34137988f7889566436f18e7b7b0ab67115df8edd37fa3bd39ab1485548e",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelB_iteration2.csv/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelB_iteration2.csv/content",
+      "source_checksum": "md5:88a301377cd754c050225a76200e7545",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:47:56.703739+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17282065"
+      ],
+      "citation_url": "https://zenodo.org/records/17282065",
+      "source_version": "17282065",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17282065",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-037",
+      "scenario_id": "37_networks_router_power",
+      "path": "raw/TC3.2_traffic_load_packet_length_variation_modelB_iteration3.csv",
+      "scenario_relative_path": "raw/TC3.2_traffic_load_packet_length_variation_modelB_iteration3.csv",
+      "bytes": 412600,
+      "sha256": "74d5373610b6143c7d10c2273f8229ed57c7d7905ea0e8579a7a38f8b7892c73",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelB_iteration3.csv/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelB_iteration3.csv/content",
+      "source_checksum": "md5:cbb7400ae26d8ce92d9e501104fa5d26",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:47:49.348976+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17282065"
+      ],
+      "citation_url": "https://zenodo.org/records/17282065",
+      "source_version": "17282065",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17282065",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-037",
+      "scenario_id": "37_networks_router_power",
+      "path": "raw/TC3.2_traffic_load_variation_modelA_iteration1.csv",
+      "scenario_relative_path": "raw/TC3.2_traffic_load_variation_modelA_iteration1.csv",
+      "bytes": 66725,
+      "sha256": "93c4c088682987e0f3773eab78e7998c859d582b31a2d73375ecf22605fd0043",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_variation_modelA_iteration1.csv/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_variation_modelA_iteration1.csv/content",
+      "source_checksum": "md5:0264645db4c6a85f90c165ffcd37cc7e",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:47:44.494053+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17282065"
+      ],
+      "citation_url": "https://zenodo.org/records/17282065",
+      "source_version": "17282065",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17282065",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-037",
+      "scenario_id": "37_networks_router_power",
+      "path": "raw/TC3.2_traffic_load_variation_modelA_iteration2.csv",
+      "scenario_relative_path": "raw/TC3.2_traffic_load_variation_modelA_iteration2.csv",
+      "bytes": 67222,
+      "sha256": "26815c57c06ff7018bf5b6084d4f7dfdcd74349d7f38335a0f76a75d3defee93",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_variation_modelA_iteration2.csv/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_variation_modelA_iteration2.csv/content",
+      "source_checksum": "md5:4c199ba3e108a9e72a9c311c47d9f991",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:47:58.684321+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17282065"
+      ],
+      "citation_url": "https://zenodo.org/records/17282065",
+      "source_version": "17282065",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17282065",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-037",
+      "scenario_id": "37_networks_router_power",
+      "path": "raw/TC3.2_traffic_load_variation_modelA_iteration3.csv",
+      "scenario_relative_path": "raw/TC3.2_traffic_load_variation_modelA_iteration3.csv",
+      "bytes": 67242,
+      "sha256": "8a83967bcb24679de3d683e2b1181b4e130cb8b58ed8ef2352e6627be515251d",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_variation_modelA_iteration3.csv/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_variation_modelA_iteration3.csv/content",
+      "source_checksum": "md5:6e9d0aea1654638cab9439901d9f5190",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:48:06.123469+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17282065"
+      ],
+      "citation_url": "https://zenodo.org/records/17282065",
+      "source_version": "17282065",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17282065",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

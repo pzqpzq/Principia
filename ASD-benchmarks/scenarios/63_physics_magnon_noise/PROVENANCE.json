@@ -1,0 +1,86 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "63_physics_magnon_noise",
+  "domain": "Spintronics",
+  "title": "Magnon shot noise measurements",
+  "publisher": "University of Konstanz researchers",
+  "authoritative_landing_url": "https://kondata.uni-konstanz.de/radar/en/dataset/iRRYHMPwMObNsUOM",
+  "authoritative_source_urls": [
+    "https://kondata.uni-konstanz.de/radar/en/dataset/iRRYHMPwMObNsUOM",
+    "https://kondata.uni-konstanz.de/radar-backend/archives/iRRYHMPwMObNsUOM/versions/1/content"
+  ],
+  "identifiers": [
+    "10.48606/iRRYHMPwMObNsUOM"
+  ],
+  "release_or_version": "1",
+  "retrieval_finalized_utc": "2026-09-15T07:04:34.244476+00:00",
+  "license_or_access_terms": "CC-BY-4.0",
+  "deterministic_selection_rule": "complete specified source selection",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Campaign dates unknown; source analysis published 2024 and dataset released April 2025.",
+  "source_publication_date": "2025-04-14",
+  "source_created_utc": null,
+  "source_updated_utc": null,
+  "source_inventory": [],
+  "author_preprocessing": "Five HDF5 figure datasets and README; experimental spectra are processed for a published magnon shot-noise study.",
+  "known_analyses_and_limitations": "One 74 nm YIG film. Validation is within-system across complete conditions; no independent-film replication is available.",
+  "related_publications": [],
+  "independent_groups": "field, frequency and termination settings within one 74 nm YIG film",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-063",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-063",
+      "scenario_id": "63_physics_magnon_noise",
+      "path": "raw/iRRYHMPwMObNsUOM.tar",
+      "scenario_relative_path": "raw/iRRYHMPwMObNsUOM.tar",
+      "bytes": 2485248,
+      "sha256": "8575eb92da7a9600641dee09cea62e67adf9bd837edd2086acd65eca72c6c12e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://kondata.uni-konstanz.de/radar/en/dataset/iRRYHMPwMObNsUOM"
+      ],
+      "download_url": "https://kondata.uni-konstanz.de/radar-backend/archives/iRRYHMPwMObNsUOM/versions/1/content",
+      "source_checksum": "md5:cd76a52e437ccba391b0458c11a6c3de",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:36:00.931300+00:00",
+      "license_or_terms": "CC-BY-4.0",
+      "citation_identifiers": [
+        "10.48606/iRRYHMPwMObNsUOM"
+      ],
+      "citation_url": "https://kondata.uni-konstanz.de/radar/en/dataset/iRRYHMPwMObNsUOM",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://kondata.uni-konstanz.de/radar/en/dataset/iRRYHMPwMObNsUOM",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-063",
+      "scenario_id": "63_physics_magnon_noise",
+      "path": "context/SOURCE_FACTS.json",
+      "scenario_relative_path": "context/SOURCE_FACTS.json",
+      "bytes": 944,
+      "sha256": "eb1ef2c24b3205bad6fad936e4628dd63b5fed4107541a70ffd2c0c2ee16ba7e",
+      "role": "curator_factual_source_profile",
+      "source_urls": [
+        "https://kondata.uni-konstanz.de/radar/en/dataset/iRRYHMPwMObNsUOM"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "curator serialization, not a publisher file",
+      "retrieved_utc": "2026-09-15T07:04:34.244476+00:00",
+      "license_or_terms": "CC-BY-4.0 (proposed release terms for curator documentation; pending owner acceptance)",
+      "citation_identifiers": [
+        "10.48606/iRRYHMPwMObNsUOM"
+      ],
+      "citation_url": "https://kondata.uni-konstanz.de/radar/en/dataset/iRRYHMPwMObNsUOM",
+      "source_version": "1",
+      "replay_note": "Reconstruct exact curator metadata from frozen release copy.",
+      "rights_evidence_url": "https://kondata.uni-konstanz.de/radar/en/dataset/iRRYHMPwMObNsUOM",
+      "rights_evidence_scope": "Factual identifiers, file inventory and attribution; curator serialization."
+    }
+  ]
+}

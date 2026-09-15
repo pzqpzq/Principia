@@ -1,0 +1,384 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "23_tribology_inm_finger_liquid",
+  "domain": "tribology and biomechanics",
+  "title": "Finger-pad friction during viscous liquid spreading",
+  "publisher": "Zenodo; originating researchers: Fehlberg, Maja; Schmidt, Dominik Sebastian; Saikumar, Sairam (Leibniz Association); Cavdan, Müge (Justus-Liebig-Universität Gießen); Drewing, Knut; Bennewitz, Roland (INM - Leibniz-Institut für Neue Materialien)",
+  "authoritative_landing_url": "https://zenodo.org/records/15365365",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/15365365",
+    "https://zenodo.org/api/records/15365365/files/participant_hydration_size.dat/content",
+    "https://zenodo.org/api/records/15365365/files/raw_data_position_force.dat/content",
+    "https://zenodo.org/api/records/15365365/files/readme.txt/content",
+    "https://zenodo.org/api/records/15365365/files/HeightHerseyID04sample01.dat/content",
+    "https://zenodo.org/api/records/15365365/files/HeightHerseyID04sample12.dat/content",
+    "https://zenodo.org/api/records/15365365/files/HeightHerseyID08sample02.dat/content",
+    "https://zenodo.org/api/records/15365365/files/HeightHerseyID10sample11.dat/content",
+    "https://zenodo.org/api/records/15365365/files/viscosity%20vs%20shear%20rate.dat/content",
+    "https://zenodo.org/api/records/15365365/files/power%20law%20fit%20parameter.dat/content",
+    "https://zenodo.org/api/records/15365365/files/friction%20data.dat/content",
+    "https://zenodo.org/api/records/15365365"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.15365365"
+  ],
+  "release_or_version": "15365365",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "deterministic_selection_rule": "Complete source record unless otherwise specified.",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": {
+    "description": "Acquisition dates not established from the public record; publication field 2025-05-08, deposit creation 2025-05-21.",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": "2025-05-08",
+  "source_created_utc": "2025-05-21T10:55:43.319541+00:00",
+  "source_updated_utc": "2025-07-02T07:51:10.850892+00:00",
+  "source_inventory": [
+    {
+      "name": "participant_hydration_size.dat",
+      "bytes": 269,
+      "selected": true
+    },
+    {
+      "name": "raw_data_position_force.dat",
+      "bytes": 12439336,
+      "selected": true
+    },
+    {
+      "name": "readme.txt",
+      "bytes": 1241,
+      "selected": true
+    },
+    {
+      "name": "HeightHerseyID04sample01.dat",
+      "bytes": 66595,
+      "selected": true
+    },
+    {
+      "name": "HeightHerseyID04sample12.dat",
+      "bytes": 55773,
+      "selected": true
+    },
+    {
+      "name": "HeightHerseyID08sample02.dat",
+      "bytes": 30817,
+      "selected": true
+    },
+    {
+      "name": "HeightHerseyID10sample11.dat",
+      "bytes": 51243,
+      "selected": true
+    },
+    {
+      "name": "viscosity vs shear rate.dat",
+      "bytes": 2767,
+      "selected": true
+    },
+    {
+      "name": "power law fit parameter.dat",
+      "bytes": 730,
+      "selected": true
+    },
+    {
+      "name": "friction data.dat",
+      "bytes": 24252,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Force/position exports coexist with computed friction and supplied power-law fit parameters. Area was measured from calibrated photographs in ImageJ; hydration is a corneometer instrument scale (0–120), not percent water.",
+  "known_analyses_and_limitations": "A Touch of Stribeck, Tribology Letters 73:91 (2025), DOI 10.1007/s11249-025-02024-w, already analyzes these measurements. Repeated strokes within a participant are dependent; parameter tables are derived, not additional experiments.",
+  "related_publications": [
+    {
+      "identifier": "10.1007/s11249-025-02024-w",
+      "relation": "isSupplementTo",
+      "resource_type": "publication",
+      "scheme": "doi"
+    }
+  ],
+  "pinned_commit": null,
+  "source_context_request_failures": [],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-023",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-023",
+      "scenario_id": "23_tribology_inm_finger_liquid",
+      "path": "context/zenodo_record.json",
+      "scenario_relative_path": "context/zenodo_record.json",
+      "bytes": 8703,
+      "sha256": "4092644f40e0177d0f205db51f317c264ef32e3dee4945d0c8a8a05ca488c5b3",
+      "role": "parsed_source_metadata_snapshot",
+      "source_urls": [
+        "https://zenodo.org/api/records/15365365"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:40:18.537316+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15365365"
+      ],
+      "citation_url": "https://zenodo.org/records/15365365",
+      "source_version": "15365365",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-023",
+      "scenario_id": "23_tribology_inm_finger_liquid",
+      "path": "raw/HeightHerseyID04sample01.dat",
+      "scenario_relative_path": "raw/HeightHerseyID04sample01.dat",
+      "bytes": 66595,
+      "sha256": "7c2cdb60402f05653ca9d7c4b0d059761ebcd516cea6986dac298a1e7fac1bcb",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15365365/files/HeightHerseyID04sample01.dat/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15365365/files/HeightHerseyID04sample01.dat/content",
+      "source_checksum": "md5:84a2103a0b3bd7cfb7bf64a249cfbf79",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:07.416196+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15365365"
+      ],
+      "citation_url": "https://zenodo.org/records/15365365",
+      "source_version": "15365365",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15365365",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-023",
+      "scenario_id": "23_tribology_inm_finger_liquid",
+      "path": "raw/HeightHerseyID04sample12.dat",
+      "scenario_relative_path": "raw/HeightHerseyID04sample12.dat",
+      "bytes": 55773,
+      "sha256": "35a2be20b59d092a74f024300d3360837cc31867a74e714218c70a0be8f412bd",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15365365/files/HeightHerseyID04sample12.dat/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15365365/files/HeightHerseyID04sample12.dat/content",
+      "source_checksum": "md5:33ee7d609ea9b3b466ee81785d3a0887",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:09.223359+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15365365"
+      ],
+      "citation_url": "https://zenodo.org/records/15365365",
+      "source_version": "15365365",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15365365",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-023",
+      "scenario_id": "23_tribology_inm_finger_liquid",
+      "path": "raw/HeightHerseyID08sample02.dat",
+      "scenario_relative_path": "raw/HeightHerseyID08sample02.dat",
+      "bytes": 30817,
+      "sha256": "6faa69c437c70bcda0045de93f879656659d59fe3edad45be693b024da430893",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15365365/files/HeightHerseyID08sample02.dat/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15365365/files/HeightHerseyID08sample02.dat/content",
+      "source_checksum": "md5:07da5c9ab7d8b6ff2884b8c430375e38",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:10.792799+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15365365"
+      ],
+      "citation_url": "https://zenodo.org/records/15365365",
+      "source_version": "15365365",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15365365",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-023",
+      "scenario_id": "23_tribology_inm_finger_liquid",
+      "path": "raw/HeightHerseyID10sample11.dat",
+      "scenario_relative_path": "raw/HeightHerseyID10sample11.dat",
+      "bytes": 51243,
+      "sha256": "4609ab679f09245bdfcebf58f9d65ea7849db4a4a4d9829c0c85ddc43f0e882d",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15365365/files/HeightHerseyID10sample11.dat/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15365365/files/HeightHerseyID10sample11.dat/content",
+      "source_checksum": "md5:c64d99e0a70e10e23d668e96391f3ae0",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:14.153608+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15365365"
+      ],
+      "citation_url": "https://zenodo.org/records/15365365",
+      "source_version": "15365365",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15365365",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-023",
+      "scenario_id": "23_tribology_inm_finger_liquid",
+      "path": "raw/friction data.dat",
+      "scenario_relative_path": "raw/friction data.dat",
+      "bytes": 24252,
+      "sha256": "2ef9eee3e0f3c3ac04dcd7c550ded2e12f3584288e6a31f9bd6388932b173b06",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15365365/files/friction%20data.dat/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15365365/files/friction%20data.dat/content",
+      "source_checksum": "md5:7e090c5ad6a24cf564a5fb72bd3bffa0",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:18.488592+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15365365"
+      ],
+      "citation_url": "https://zenodo.org/records/15365365",
+      "source_version": "15365365",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15365365",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-023",
+      "scenario_id": "23_tribology_inm_finger_liquid",
+      "path": "raw/participant_hydration_size.dat",
+      "scenario_relative_path": "raw/participant_hydration_size.dat",
+      "bytes": 269,
+      "sha256": "993754af15b720cb991ece2dc499fdc00c688034bf0cb59be655c0520c8a7eb6",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15365365/files/participant_hydration_size.dat/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15365365/files/participant_hydration_size.dat/content",
+      "source_checksum": "md5:4a3c19357bc8016cf01e1bd177566ca3",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:40:59.484191+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15365365"
+      ],
+      "citation_url": "https://zenodo.org/records/15365365",
+      "source_version": "15365365",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15365365",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-023",
+      "scenario_id": "23_tribology_inm_finger_liquid",
+      "path": "raw/power law fit parameter.dat",
+      "scenario_relative_path": "raw/power law fit parameter.dat",
+      "bytes": 730,
+      "sha256": "f8299edd76a5f2c0ff95959cdbf4629971e759108943117f92ab4c173dc29aaf",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15365365/files/power%20law%20fit%20parameter.dat/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15365365/files/power%20law%20fit%20parameter.dat/content",
+      "source_checksum": "md5:fa5e625ccbc2338bc36a33e7ff781988",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:16.889674+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15365365"
+      ],
+      "citation_url": "https://zenodo.org/records/15365365",
+      "source_version": "15365365",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15365365",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-023",
+      "scenario_id": "23_tribology_inm_finger_liquid",
+      "path": "raw/raw_data_position_force.dat",
+      "scenario_relative_path": "raw/raw_data_position_force.dat",
+      "bytes": 12439336,
+      "sha256": "a8bc041b1d684652f08ce65f2c7213b000fa98970ff2eebcdb1b3236c0547d28",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15365365/files/raw_data_position_force.dat/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15365365/files/raw_data_position_force.dat/content",
+      "source_checksum": "md5:96bd99bcccd8b2139d71229f8c7d9d20",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:32.774614+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15365365"
+      ],
+      "citation_url": "https://zenodo.org/records/15365365",
+      "source_version": "15365365",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15365365",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-023",
+      "scenario_id": "23_tribology_inm_finger_liquid",
+      "path": "raw/readme.txt",
+      "scenario_relative_path": "raw/readme.txt",
+      "bytes": 1241,
+      "sha256": "9c2186fb1902962ea7342943e7a5992c72d6f25b705b8314723689e404b5ec85",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15365365/files/readme.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15365365/files/readme.txt/content",
+      "source_checksum": "md5:f5bd2d01cb9bb41cf7d412551bcc7e63",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:02.500758+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15365365"
+      ],
+      "citation_url": "https://zenodo.org/records/15365365",
+      "source_version": "15365365",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15365365",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-023",
+      "scenario_id": "23_tribology_inm_finger_liquid",
+      "path": "raw/viscosity vs shear rate.dat",
+      "scenario_relative_path": "raw/viscosity vs shear rate.dat",
+      "bytes": 2767,
+      "sha256": "ed3f2e9c6800b7c620b1cd707f04ae46f6ef27ff4a42086a32ec0dab833b9abb",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15365365/files/viscosity%20vs%20shear%20rate.dat/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15365365/files/viscosity%20vs%20shear%20rate.dat/content",
+      "source_checksum": "md5:5657a62f110883a67f0010a84734859a",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:15.606724+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15365365"
+      ],
+      "citation_url": "https://zenodo.org/records/15365365",
+      "source_version": "15365365",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15365365",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

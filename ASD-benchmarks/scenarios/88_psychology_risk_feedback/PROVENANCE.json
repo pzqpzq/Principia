@@ -1,0 +1,99 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "88_psychology_risk_feedback",
+  "domain": "Decision science",
+  "title": "Release for manuscript submission of Nasioulas et al. 2025",
+  "publisher": "Nasioulas, Antonios; Potier, Elise; Cerrotti, Fabien; Lebreton, Mael; Palminteri, Stefano",
+  "authoritative_landing_url": "https://zenodo.org/records/17807047",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/17807047",
+    "https://zenodo.org/api/records/17807047/files/anasioulas/riskyDecisionMakingFeedback-v1.0.0.zip/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.17807047"
+  ],
+  "release_or_version": "17807047",
+  "retrieval_finalized_utc": "2026-09-15T07:04:41.946795+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Exact experiment dates unknown; December 2025 release.",
+  "source_publication_date": "2025-12-03",
+  "source_created_utc": "2025-12-03T18:50:58.580299+00:00",
+  "source_updated_utc": "2025-12-03T19:02:50.829234+00:00",
+  "source_inventory": [
+    {
+      "name": "anasioulas/riskyDecisionMakingFeedback-v1.0.0.zip",
+      "bytes": 1663590,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Pinned archive combines new Nasioulas study observations and explicitly older Erev comparison data plus source analysis.",
+  "known_analyses_and_limitations": "Participant and experiment holdouts. Do not merge older comparison study as new participants without provenance; published fitted choice models are known.",
+  "related_publications": [
+    {
+      "identifier": "https://github.com/anasioulas/riskyDecisionMakingFeedback/tree/v1.0.0",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "url"
+    }
+  ],
+  "independent_groups": "participant and experiment; older comparison study separately",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-088",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-088",
+      "scenario_id": "88_psychology_risk_feedback",
+      "path": "raw/anasioulas/riskyDecisionMakingFeedback-v1.0.0.zip",
+      "scenario_relative_path": "raw/anasioulas/riskyDecisionMakingFeedback-v1.0.0.zip",
+      "bytes": 1663590,
+      "sha256": "30c32b0a1d0c7c8c05598acbabc4e8c8d13c2e95843908f3ab6ce7cb6fef5dc9",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17807047"
+      ],
+      "download_url": "https://zenodo.org/api/records/17807047/files/anasioulas/riskyDecisionMakingFeedback-v1.0.0.zip/content",
+      "source_checksum": "md5:149443886d6b8f28d1632a52ed9abf4d",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:02.920274+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17807047"
+      ],
+      "citation_url": "https://zenodo.org/records/17807047",
+      "source_version": "17807047",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17807047",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-088",
+      "scenario_id": "88_psychology_risk_feedback",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 5366,
+      "sha256": "ba74ac5d5e9343a1a7705850c22b1613b126507b635719ff00695ce15cdbdbff",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/17807047"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:48.428594+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17807047"
+      ],
+      "citation_url": "https://zenodo.org/records/17807047",
+      "source_version": "17807047",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

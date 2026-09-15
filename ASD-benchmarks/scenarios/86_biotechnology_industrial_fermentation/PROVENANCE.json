@@ -1,0 +1,128 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "86_biotechnology_industrial_fermentation",
+  "domain": "Industrial fermentation",
+  "title": "Erythromycin fermentation process dataset",
+  "publisher": "Yan, Xuefeng (East China University of Science and Technology); Sun, Yifei (East China University of Science and Technology)",
+  "authoritative_landing_url": "https://zenodo.org/records/14619074",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/14619074",
+    "https://zenodo.org/api/records/14619074/files/EFP_long.csv/content",
+    "https://zenodo.org/api/records/14619074/files/data_loader.py/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.14619074"
+  ],
+  "release_or_version": "14619074",
+  "retrieval_finalized_utc": "2026-09-15T07:04:41.874915+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": {
+    "planned_source": "BLS ATUS 2025",
+    "planned_url": "https://www.bls.gov/tus/data/datafiles-2025.htm",
+    "reason": "HTTP 403 from public page and payload; public browser timed out",
+    "selection": "First three ordered measured-data reserves; preserves overall corpus breadth but reduces new survey and environmental additions."
+  },
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Description says 2022; retained rows span December 26, 2021 to November 14, 2022 in file order. Preserve mismatch.",
+  "source_publication_date": "2025-01-09",
+  "source_created_utc": "2025-01-09T02:49:47.786198+00:00",
+  "source_updated_utc": "2025-01-09T02:49:48.001194+00:00",
+  "source_inventory": [
+    {
+      "name": "EFP_long.csv",
+      "bytes": 8025512,
+      "selected": true
+    },
+    {
+      "name": "data_loader.py",
+      "bytes": 32389,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Historical industrial exports: 50,536 rows, 406 batches, and hx as the chemical-potency target selected by the source loader. Several process abbreviations and physical units are not defined in the deposit; no meanings are guessed.",
+  "known_analyses_and_limitations": "Keep all samples of each batch together. Restrict currently defensible modeling to documented target/time/batch structure and explicitly source-unit or dimensionless response; physical laws involving unmapped process variables need an additional verified dictionary. The description claims an average of 154 samples per batch, while the retained 50,536 rows imply about 124.5; preserve this inconsistency.",
+  "related_publications": [],
+  "independent_groups": "complete fermentation batches, chronological batch blocks",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-086",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-086",
+      "scenario_id": "86_biotechnology_industrial_fermentation",
+      "path": "raw/EFP_long.csv",
+      "scenario_relative_path": "raw/EFP_long.csv",
+      "bytes": 8025512,
+      "sha256": "e432d23998c61db6d35b6f95d54b4c94c17b3d7b85a0117b8526665e5d91cf3e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14619074"
+      ],
+      "download_url": "https://zenodo.org/api/records/14619074/files/EFP_long.csv/content",
+      "source_checksum": "md5:6f65e6af4bc8f5e750414372b8cf81ca",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:25:10.168607+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14619074"
+      ],
+      "citation_url": "https://zenodo.org/records/14619074",
+      "source_version": "14619074",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14619074",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-086",
+      "scenario_id": "86_biotechnology_industrial_fermentation",
+      "path": "raw/data_loader.py",
+      "scenario_relative_path": "raw/data_loader.py",
+      "bytes": 32389,
+      "sha256": "3f5f3bca0a48bd2cb6cc38b40af2cd0706b686b66420562deeee6816fbd7cc63",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14619074"
+      ],
+      "download_url": "https://zenodo.org/api/records/14619074/files/data_loader.py/content",
+      "source_checksum": "md5:fe7b1c368aaeb8c29c4f33512e78e962",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:37.268685+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14619074"
+      ],
+      "citation_url": "https://zenodo.org/records/14619074",
+      "source_version": "14619074",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14619074",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-086",
+      "scenario_id": "86_biotechnology_industrial_fermentation",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 5437,
+      "sha256": "396bd6fbfdd3f368ed2f1c157927ebf36458c98426c887b3c7e04320c9197344",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/14619074"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:21:50.480316+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14619074"
+      ],
+      "citation_url": "https://zenodo.org/records/14619074",
+      "source_version": "14619074",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

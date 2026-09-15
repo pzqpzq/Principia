@@ -1,0 +1,183 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "36_plant_biology_tomato_stress",
+  "domain": "plant physiology and agriculture",
+  "title": "Dwarf tomato stress imaging and phenotypic measurements",
+  "publisher": "Zenodo; originating researchers: Del Cioppo, Giorgia (University of Helsinki); Poque, Sylvain (University of Helsinki); Scalabrino, Simone (University of Molise); SCIPPA, GABRIELLA (University of Molise); Himanen, Kristiina (University of Helsinki); Trupiano, Dalila (University of Molise)",
+  "authoritative_landing_url": "https://zenodo.org/records/20638584",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/20638584",
+    "https://zenodo.org/api/records/20638584/files/Metadata.xlsx/content",
+    "https://zenodo.org/api/records/20638584/files/Tiny%20Tim_NPQ.zip/content",
+    "https://zenodo.org/api/records/20638584/files/Full_Dataset.xlsx/content",
+    "https://zenodo.org/api/records/20638584"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.20638584"
+  ],
+  "release_or_version": "20638584",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "deterministic_selection_rule": "Complete source-defined Tiny Tim NPQ imaging archive and both full original metadata/phenotype workbooks; other cultivar NPQ and both large RGB archives excluded. Workbooks retain all cultivars; images cover only Tiny Tim.",
+  "substitution": {
+    "original_scenario_id": "36_agriculture_harveststat_africa",
+    "original_title": "HarvestStat Africa subnational crop statistics",
+    "reason": "Dryad public individual-download endpoints returned HTTP 403; API payload endpoints required authorization; public browser navigation timed out. No successful payload transfer. Approved reserve used.",
+    "original_doi": "10.5061/dryad.vq83bk42w",
+    "reserve_record": 20638584,
+    "selected_utc": "2026-09-14T15:55:30.213042+00:00",
+    "additional_note": "Author GitHub repository was inspected, but does not offer the complete displayed Dryad raw archive; partial replication was not admitted as the planned complete bundle."
+  },
+  "data_origin": "measured_or_observed",
+  "measurement_dates": {
+    "description": "Metadata.xlsx spans 2023-11-27 to 2024-06-17 08:47:49; 347 records from 81 plant IDs. Released 2026-06-11.",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": "2026-06-11",
+  "source_created_utc": "2026-06-11T15:17:11.091359+00:00",
+  "source_updated_utc": "2026-06-13T15:14:07.528721+00:00",
+  "source_inventory": [
+    {
+      "name": "Metadata.xlsx",
+      "bytes": 25088,
+      "selected": true
+    },
+    {
+      "name": "Micro-Tom_RGB.zip",
+      "bytes": 2185680284,
+      "selected": false
+    },
+    {
+      "name": "Tiny Tim_RGB.zip",
+      "bytes": 959858907,
+      "selected": false
+    },
+    {
+      "name": "Tiny Tim_NPQ.zip",
+      "bytes": 127186962,
+      "selected": true
+    },
+    {
+      "name": "Micro-Tom_NPQ.zip",
+      "bytes": 140349024,
+      "selected": false
+    },
+    {
+      "name": "Full_Dataset.xlsx",
+      "bytes": 141796,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "NPQ pixel products and an integrated source-derived phenotypic table; RGB images and Micro-Tom NPQ images are omitted under the size limit. Supplied morphology/indices are already extracted, not instrument voltages.",
+  "known_analyses_and_limitations": "The data accompany Image-based biomarkers effectively predict salt and drought stress in dwarf tomatoes. Metadata and main workbook use potentially inconsistent DAS/DAG definitions/order; retain both and reconcile from protocol before analysis. One cultivar has included images; metadata for the other is not missing imagery to invent.",
+  "related_publications": [],
+  "pinned_commit": null,
+  "source_context_request_failures": [],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-036",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-036",
+      "scenario_id": "36_plant_biology_tomato_stress",
+      "path": "context/zenodo_record.json",
+      "scenario_relative_path": "context/zenodo_record.json",
+      "bytes": 8695,
+      "sha256": "ab65ae7a72dc16e7dfbcb1b528ff89c7a84a626005012da4b4a44b72b438ffd2",
+      "role": "parsed_source_metadata_snapshot",
+      "source_urls": [
+        "https://zenodo.org/api/records/20638584"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:55:30.212558+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.20638584"
+      ],
+      "citation_url": "https://zenodo.org/records/20638584",
+      "source_version": "20638584",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-036",
+      "scenario_id": "36_plant_biology_tomato_stress",
+      "path": "raw/Full_Dataset.xlsx",
+      "scenario_relative_path": "raw/Full_Dataset.xlsx",
+      "bytes": 141796,
+      "sha256": "77bcb77f1b003dba22b30ee562a145c9559fcc56c806290151623821d49c2001",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/20638584/files/Full_Dataset.xlsx/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/20638584/files/Full_Dataset.xlsx/content",
+      "source_checksum": "md5:6beffacd9ad5b6a020a0c1b7c8e6e8a0",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:55:38.836722+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.20638584"
+      ],
+      "citation_url": "https://zenodo.org/records/20638584",
+      "source_version": "20638584",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/20638584",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-036",
+      "scenario_id": "36_plant_biology_tomato_stress",
+      "path": "raw/Metadata.xlsx",
+      "scenario_relative_path": "raw/Metadata.xlsx",
+      "bytes": 25088,
+      "sha256": "446f83d4be672267efdd0128b4657a13f5d0599fcaf2e8ccb51a885b6c9d2f41",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/20638584/files/Metadata.xlsx/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/20638584/files/Metadata.xlsx/content",
+      "source_checksum": "md5:5c2776fcc2853ebc1df261c094532bed",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:55:35.064093+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.20638584"
+      ],
+      "citation_url": "https://zenodo.org/records/20638584",
+      "source_version": "20638584",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/20638584",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-036",
+      "scenario_id": "36_plant_biology_tomato_stress",
+      "path": "raw/Tiny Tim_NPQ.zip",
+      "scenario_relative_path": "raw/Tiny Tim_NPQ.zip",
+      "bytes": 127186962,
+      "sha256": "c799f563af849fd595ba54d46f601024303aa203a7feb68bb7cf6e059f58dd61",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/20638584/files/Tiny%20Tim_NPQ.zip/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/20638584/files/Tiny%20Tim_NPQ.zip/content",
+      "source_checksum": "md5:98f845cd7d524a76a073f0b795d7c63e",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:08:54.180938+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.20638584"
+      ],
+      "citation_url": "https://zenodo.org/records/20638584",
+      "source_version": "20638584",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/20638584",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

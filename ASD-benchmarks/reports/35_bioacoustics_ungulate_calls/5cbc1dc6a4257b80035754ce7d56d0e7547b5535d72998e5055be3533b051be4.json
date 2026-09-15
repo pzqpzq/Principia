@@ -1,0 +1,79 @@
+{
+  "path": "raw/Data S1.zip",
+  "scenario_id": "35_bioacoustics_ungulate_calls",
+  "sha256": "ec2883fb18dc354b7700e2a87813e4befa5d8b79c918ecc659026643609ec38d",
+  "bytes": 19330,
+  "format": "ZIP",
+  "expanded_bytes": 21681,
+  "members": [
+    {
+      "name": "Data S1.xlsx",
+      "bytes": 21681,
+      "sha256": "2e4cd4c8f3ad106e47d16b7feed2ac3d25bbff1d9c87d715e92388db20474f4a",
+      "structure": {
+        "format": "Excel_OpenXML",
+        "sheets": [
+          {
+            "name": "Feuil1",
+            "rows": 336,
+            "columns": 7,
+            "first_rows": [
+              [
+                "Data S1. Repartition of the calls according to animal identity (ID), species, call type, emotional valence, context of vocal production, and their respective nu",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "Animal ID",
+                "Species",
+                "Call type",
+                "Valence",
+                "Context",
+                "Nb of calls",
+                "Reference"
+              ],
+              [
+                "1140",
+                "Cow",
+                "Low- frequency (closed-mouth) and high-frequency (open mouth) calls",
+                "Negative",
+                "Full (physical and visual) separation from calf within acoustic range",
+                "40",
+                "Padilla de la Torre, M., Hillmann, E., and Briefer, E.F. (2015). Vocal expression of emotion in cattle. In Proc. 25th Int. Congress of the Bioacoustics Council,"
+              ],
+              [
+                "1140",
+                null,
+                null,
+                "Positive",
+                "Physical reunion with calf",
+                "2",
+                null
+              ],
+              [
+                "1140",
+                null,
+                null,
+                "Positive",
+                "Visual (but not physical) reunion with calf",
+                "2",
+                null
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "checks": [
+    "all_member_CRCs",
+    "safe_paths_no_symlinks"
+  ],
+  "member_count": 1,
+  "status": "pass",
+  "checked_utc": "2026-09-15T07:03:33.825055+00:00"
+}

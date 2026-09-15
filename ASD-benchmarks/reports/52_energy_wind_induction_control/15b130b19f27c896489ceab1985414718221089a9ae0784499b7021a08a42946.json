@@ -1,0 +1,36 @@
+{
+  "scenario_id": "52_energy_wind_induction_control",
+  "path": "raw/NoTurbine_ABL_Type_II.mat",
+  "bytes": 40247886,
+  "sha256": "cb09bbe085c8fac9d151db6f20a3aa5c57aa2d681129df1d6948ab8ef0fa035f",
+  "checked_utc": "2026-09-15T06:29:58.306301+00:00",
+  "source_checksum_status": "verified",
+  "format": "MATLAB",
+  "variables": [
+    {
+      "name": "NoTurbine_ABL_TypeII",
+      "shape": [
+        1,
+        1
+      ],
+      "type": "struct"
+    }
+  ],
+  "struct_fields": [
+    {
+      "name": "NoTurbine_ABL_TypeII",
+      "fields": [
+        "ABL022_Empty_0D",
+        "ABL022_Empty_2D",
+        "ABL022_Empty_5D",
+        "ABL022_Empty_7D",
+        "ABL022_Empty_9D",
+        "WindScanner_Position",
+        "WindScanner_azimuth",
+        "WindScanner_elevation",
+        "GridCentre_WT1hubHeight"
+      ]
+    }
+  ],
+  "status": "pass"
+}

@@ -1,0 +1,153 @@
+{
+  "created": "2026-04-15T10:44:46.229796+00:00",
+  "modified": "2026-04-15T10:47:10.690001+00:00",
+  "id": 19592341,
+  "conceptrecid": "17159655",
+  "doi": "10.5281/zenodo.19592341",
+  "conceptdoi": "10.5281/zenodo.17159655",
+  "doi_url": "https://doi.org/10.5281/zenodo.19592341",
+  "metadata": {
+    "title": "Individual locomotor bias drives counterclockwise motion in pedestrian crowds",
+    "doi": "10.5281/zenodo.19592341",
+    "publication_date": "2026-04-15",
+    "description": "<p>[*] SourceData.xlsx &mdash; Processed source data underlying each manuscript figure (Figures 1&ndash;8), organized one sheet per panel. Contains summary statistics, polarization distributions, velocity fields, social-norm survey counts, and individual-pedestrian laterality data derived from the raw experimental recordings.</p>\n<p>[*] ExperimentalData.zip &mdash; Raw trajectory data from all experiments, organized in four sub-folders:<br>- Spain/ (11 sessions, 63 CSV files) and Japan/ (10 sessions, 40 CSV files): crowd-walking experiments with adult pedestrians. Each file records per-frame pedestrian positions, velocities, and polarization (columns: Time, Id-Ped, X, Y, VX, VY, Pol).<br>- Teenagers/ (1 session) and Kids/ (4 sessions, 19 CSV files): equivalent recordings with younger age groups (same column format, without the Pol column).<br>- Individual/Trajectories/ (209 CSV files) and Individual/IndData-WithPolarization.xlsx: single-pedestrian experiment trajectories plus a participant-level spreadsheet with laterality attributes (handedness, footedness, eye dominance, sex, eye-patch condition) and individual polarization scores.</p>\n<p>[*] Codes.zip &mdash; Python scripts (figure_1e.py through figure_8.py, plus statistical_analysis.py) that reproduce all manuscript figures and statistical tests from SourceData.xlsx and ExperimentalData.zip.</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Echeverría-Huarte, Iñaki",
+        "affiliation": "Universidad de Navarra",
+        "orcid": "0000-0001-6992-0815"
+      },
+      {
+        "name": "Feliciani, Claudio",
+        "affiliation": "The University of Tokyo",
+        "orcid": "0000-0003-0718-8707"
+      },
+      {
+        "name": "Nishinari, Katsuhiro",
+        "affiliation": null,
+        "orcid": "0000-0003-3069-1757"
+      },
+      {
+        "name": "Sánchez, Angel",
+        "affiliation": "Grupo Interdisciplinar de Sistemas Complejos (GISC)",
+        "orcid": "0000-0003-1874-2881"
+      },
+      {
+        "name": "Garcimartín, Angel",
+        "affiliation": "Universidad de Navarra",
+        "orcid": "0000-0001-7156-4661"
+      },
+      {
+        "name": "Zuriguel, Iker",
+        "affiliation": "Universidad de Navarra",
+        "orcid": "0000-0002-4890-0476"
+      }
+    ],
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 2,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "17159655"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Individual locomotor bias drives counterclockwise motion in pedestrian crowds",
+  "links": {
+    "self": "https://zenodo.org/api/records/19592341",
+    "self_html": "https://zenodo.org/records/19592341",
+    "preview_html": "https://zenodo.org/records/19592341?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.19592341",
+    "self_doi": "https://doi.org/10.5281/zenodo.19592341",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.19592341",
+    "reserve_doi": "https://zenodo.org/api/records/19592341/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/17159655",
+    "parent_html": "https://zenodo.org/records/17159655",
+    "parent_doi": "https://doi.org/10.5281/zenodo.17159655",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.17159655",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:19592341/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:19592341/sequence/default",
+    "files": "https://zenodo.org/api/records/19592341/files",
+    "media_files": "https://zenodo.org/api/records/19592341/media-files",
+    "archive": "https://zenodo.org/api/records/19592341/files-archive",
+    "archive_media": "https://zenodo.org/api/records/19592341/media-files-archive",
+    "latest": "https://zenodo.org/api/records/19592341/versions/latest",
+    "latest_html": "https://zenodo.org/records/19592341/latest",
+    "versions": "https://zenodo.org/api/records/19592341/versions",
+    "draft": "https://zenodo.org/api/records/19592341/draft",
+    "access_links": "https://zenodo.org/api/records/19592341/access/links",
+    "access_grants": "https://zenodo.org/api/records/19592341/access/grants",
+    "access_users": "https://zenodo.org/api/records/19592341/access/users",
+    "access_request": "https://zenodo.org/api/records/19592341/access/request",
+    "access": "https://zenodo.org/api/records/19592341/access",
+    "communities": "https://zenodo.org/api/records/19592341/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/19592341/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/19592341/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/19592341/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/19592341/quota-increase",
+    "requests": "https://zenodo.org/api/records/19592341/requests"
+  },
+  "updated": "2026-04-15T10:47:10.690001+00:00",
+  "recid": "19592341",
+  "revision": 8,
+  "files": [
+    {
+      "id": "e6bc183c-6894-4a52-a9b6-d65ec794a7c4",
+      "key": "SourceData.xlsx",
+      "size": 33682353,
+      "checksum": "md5:2dd52274c7651aec5dc3ee0cfeb07118",
+      "links": {
+        "self": "https://zenodo.org/api/records/19592341/files/SourceData.xlsx/content"
+      }
+    },
+    {
+      "id": "0dc4153f-d521-4982-be80-997f71159ff6",
+      "key": "ExperimentalData.zip",
+      "size": 64727907,
+      "checksum": "md5:7bd3047e946e4ef8a14aa7e954989169",
+      "links": {
+        "self": "https://zenodo.org/api/records/19592341/files/ExperimentalData.zip/content"
+      }
+    },
+    {
+      "id": "561e645f-5260-4938-95bf-f0d3c8ce028e",
+      "key": "Codes.zip",
+      "size": 21124,
+      "checksum": "md5:32129b855ecbf3a14029bc19d047bee8",
+      "links": {
+        "self": "https://zenodo.org/api/records/19592341/files/Codes.zip/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "1414446"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 265,
+    "unique_downloads": 257,
+    "views": 575,
+    "unique_views": 514,
+    "version_downloads": 165,
+    "version_unique_downloads": 162,
+    "version_unique_views": 338,
+    "version_views": 377
+  },
+  "state": "done",
+  "submitted": true
+}

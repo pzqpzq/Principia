@@ -1,0 +1,92 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "79_veterinary_calf_breath",
+  "domain": "Veterinary chemistry",
+  "title": "Antibiotics Confound Breath-Based Respiratory Disease Detection in Calves - Dataset",
+  "publisher": "Langford, Ben (Centre for Ecology and Hydrology Edinburgh)",
+  "authoritative_landing_url": "https://zenodo.org/records/17940806",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/17940806",
+    "https://zenodo.org/api/records/17940806/files/DETECT_Data.xlsx/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.17940806"
+  ],
+  "release_or_version": "17940806",
+  "retrieval_finalized_utc": "2026-09-15T07:04:40.989556+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Date/time columns supplied in workbook; deposit December 2025, later modified April 2026.",
+  "source_publication_date": "2025-12-15",
+  "source_created_utc": "2025-12-15T15:39:08.594832+00:00",
+  "source_updated_utc": "2026-04-20T08:16:50.484718+00:00",
+  "source_inventory": [
+    {
+      "name": "DETECT_Data.xlsx",
+      "bytes": 450235,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "PTR-QiTOF-derived emission rates, not raw mass spectra. Units differ: most VOCs micrograms/animal/hour, formaldehyde milligrams/animal/hour, CO2 grams/animal/hour.",
+  "known_analyses_and_limitations": "Keep animals across repeated measurements and phases together where IDs match. Antibiotic treatment is a known confounder in the source paper.",
+  "related_publications": [],
+  "independent_groups": "animal and experiment, repeated observations grouped",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-079",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-079",
+      "scenario_id": "79_veterinary_calf_breath",
+      "path": "raw/DETECT_Data.xlsx",
+      "scenario_relative_path": "raw/DETECT_Data.xlsx",
+      "bytes": 450235,
+      "sha256": "e76013f47e2bf51dae50308acc8a9a69c5c473b09cbd9bbe8514446628f94ec5",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/17940806"
+      ],
+      "download_url": "https://zenodo.org/api/records/17940806/files/DETECT_Data.xlsx/content",
+      "source_checksum": "md5:07cc9fdbd2fb2dd3ad3bfef7d2d947cd",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:31:58.054959+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.17940806"
+      ],
+      "citation_url": "https://zenodo.org/records/17940806",
+      "source_version": "17940806",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/17940806",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-079",
+      "scenario_id": "79_veterinary_calf_breath",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 7268,
+      "sha256": "734c9cd9ae26d0323c39cd1cb52972fc29ddb3b9569e843a4502ea9e37cbca89",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/17940806"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:46.353264+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.17940806"
+      ],
+      "citation_url": "https://zenodo.org/records/17940806",
+      "source_version": "17940806",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

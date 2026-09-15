@@ -1,0 +1,105 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "25_electrochemistry_operando_xas",
+  "domain": "battery electrochemistry",
+  "title": "Operando XAS and battery electrochemistry",
+  "publisher": "Zenodo; originating researchers: Praetz, Sebastian (Technische Universität Berlin); Johansen, Morten; Schlesiger, Christopher; Kober, Delf (Technische Universität Berlin)",
+  "authoritative_landing_url": "https://zenodo.org/records/14922524",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/14922524",
+    "https://zenodo.org/api/records/14922524/files/data.zip/content",
+    "https://zenodo.org/api/records/14922524"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.14922524"
+  ],
+  "release_or_version": "14922524",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "deterministic_selection_rule": "Complete source record unless otherwise specified.",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": {
+    "description": "Full acquisition dates not established; source publication field 2025-02-25 and deposit creation 2025-07-17.",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": "2025-02-25",
+  "source_created_utc": "2025-07-17T18:31:04.204341+00:00",
+  "source_updated_utc": "2025-08-01T08:12:58.296863+00:00",
+  "source_inventory": [
+    {
+      "name": "data.zip",
+      "bytes": 6760031,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Authors report 300-second initial spectra and 3x/5x binning to 15–25-minute spectra. Some data are absorption mu(E), references and binned products; LFP unbinned series is also retained.",
+  "known_analyses_and_limitations": "The DANOISE operando XAS study is DOI 10.1039/D5JA00155B. Different spectra can summarize overlapping physical intervals. Time-to-spectrum assignment and electrode conditions must be checked before combining systems; calibrated spectra are not detector-event telemetry.",
+  "related_publications": [
+    {
+      "identifier": "10.1039/D5JA00155B",
+      "relation": "isPublishedIn",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    }
+  ],
+  "pinned_commit": null,
+  "source_context_request_failures": [],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-025",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-025",
+      "scenario_id": "25_electrochemistry_operando_xas",
+      "path": "context/zenodo_record.json",
+      "scenario_relative_path": "context/zenodo_record.json",
+      "bytes": 9452,
+      "sha256": "36bd8be731f6b418b275476402dedb1ac0e1600a230dd9d717633adef1b65ed8",
+      "role": "parsed_source_metadata_snapshot",
+      "source_urls": [
+        "https://zenodo.org/api/records/14922524"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:40:20.262975+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14922524"
+      ],
+      "citation_url": "https://zenodo.org/records/14922524",
+      "source_version": "14922524",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-025",
+      "scenario_id": "25_electrochemistry_operando_xas",
+      "path": "raw/data.zip",
+      "scenario_relative_path": "raw/data.zip",
+      "bytes": 6760031,
+      "sha256": "b8f4ecabcdbc033e16b2fd2fa431ce81c8a446c2cbb5ac401aca6656b0ee53de",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/14922524/files/data.zip/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/14922524/files/data.zip/content",
+      "source_checksum": "md5:d944463bb9aefb253459126aa012da0d",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:00.466854+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14922524"
+      ],
+      "citation_url": "https://zenodo.org/records/14922524",
+      "source_version": "14922524",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14922524",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

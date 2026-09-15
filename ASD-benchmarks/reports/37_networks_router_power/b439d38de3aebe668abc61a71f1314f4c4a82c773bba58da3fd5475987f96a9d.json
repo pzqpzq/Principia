@@ -1,0 +1,28 @@
+{
+  "bytes": 391900,
+  "sha256": "c149f0fef4f6c0434e38eb45e9582c1e9f24a8a7415e91457bd353488cd7ef52",
+  "format_extension": ".csv",
+  "checks": [
+    "publisher_md5"
+  ],
+  "format": "text_or_instrument_native",
+  "signature_hex": "4461746554696d653b54696d",
+  "delimiter": ";",
+  "header": [
+    "DateTime",
+    "Times_s",
+    "Throughput_Percentage",
+    "Throughput_Gbps",
+    "PacketSize_B",
+    "Power_Consumption",
+    "Packet_Rate"
+  ],
+  "data_records": 6585,
+  "row_width_counts": {
+    "7": 6585
+  },
+  "path": "raw/TC3.2_multiple_traffic_flows_modelB_iteration1.csv",
+  "scenario_id": "37_networks_router_power",
+  "verified_utc": "2026-09-14T15:58:13.466082+00:00",
+  "status": "pass"
+}

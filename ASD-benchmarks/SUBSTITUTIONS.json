@@ -1,0 +1,103 @@
+[
+  {
+    "number": 86,
+    "replacement": "86_biotechnology_industrial_fermentation",
+    "planned_source": "BLS ATUS 2025",
+    "planned_url": "https://www.bls.gov/tus/data/datafiles-2025.htm",
+    "reason": "HTTP 403 from public page and payload; public browser timed out",
+    "selection": "First three ordered measured-data reserves; preserves overall corpus breadth but reduces new survey and environmental additions.",
+    "phase": "expansion_51_100_and_benchmark_audit"
+  },
+  {
+    "number": 93,
+    "replacement": "93_biology_solute_carrier_facs",
+    "planned_source": "Potsdam Soil Moisture Observatory",
+    "planned_url": "https://b2share.eudat.eu/records/bxamy-4zh85",
+    "reason": "Repeated TLS connection failures for record and API",
+    "selection": "First three ordered measured-data reserves; preserves overall corpus breadth but reduces new survey and environmental additions.",
+    "phase": "expansion_51_100_and_benchmark_audit"
+  },
+  {
+    "number": 99,
+    "replacement": "99_neuroscience_hippocampal_calcium",
+    "planned_source": "EPA AQS 2025",
+    "planned_url": "https://aqs.epa.gov/aqsweb/airdata/download_files.html",
+    "reason": "Repeated SSL connection timeouts for index and daily ozone payload",
+    "selection": "First three ordered measured-data reserves; preserves overall corpus breadth but reduces new survey and environmental additions.",
+    "phase": "expansion_51_100_and_benchmark_audit"
+  },
+  {
+    "number": 5,
+    "replacement": "05_mathematics_graph_certificates",
+    "planned_source": "Original benchmark slot 05: GEO GSE303208",
+    "reason": "Public GEO access does not specify depositor data redistribution permission; article CC BY-NC-ND terms do not establish dataset rights. Original files preserved outside release candidate.",
+    "original_preserved": true,
+    "phase": "expansion_51_100_and_benchmark_audit"
+  },
+  {
+    "number": 19,
+    "kind": "coherent_release_selection_revision",
+    "original_preserved": true,
+    "excluded": [
+      "raw/FLAT_INV.zip",
+      "context/INV.txt"
+    ],
+    "reason": "Original bundle expands to 637,992,950 bytes; retain all three complete 2025\u20132026 archives, exclude all-history investigations.",
+    "phase": "expansion_51_100_and_benchmark_audit"
+  },
+  {
+    "original_scenario_id": "29_biology_calcium_signaling",
+    "original_title": "Starvation-induced calcium signaling",
+    "reason": "Dryad public individual-download endpoints returned HTTP 403; API payload endpoints required authorization; public browser navigation timed out. No successful payload transfer. Approved reserve used.",
+    "original_doi": "10.5061/dryad.cc2fqz6m4",
+    "reserve_record": 13335904,
+    "selected_utc": "2026-09-14T15:55:30.208447+00:00",
+    "number": 29,
+    "phase": "previous_expansion_21_50",
+    "accepted_scenario_id": "29_biophysics_peptide_barrels"
+  },
+  {
+    "original_scenario_id": "30_biotechnology_yeast_fermentation",
+    "original_title": "Temperature and competing yeast populations",
+    "reason": "Dryad public individual-download endpoints returned HTTP 403; API payload endpoints required authorization; public browser navigation timed out. No successful payload transfer. Approved reserve used.",
+    "original_doi": "10.5061/dryad.cfxpnvxp3",
+    "reserve_record": 17864405,
+    "selected_utc": "2026-09-14T15:55:30.210116+00:00",
+    "number": 30,
+    "phase": "previous_expansion_21_50",
+    "accepted_scenario_id": "30_nanomaterials_hbn_lubricants"
+  },
+  {
+    "original_scenario_id": "31_mechanobiology_matrix_rnaseq",
+    "original_title": "Cell response across engineered extracellular matrices",
+    "reason": "Dryad public individual-download endpoints returned HTTP 403; API payload endpoints required authorization; public browser navigation timed out. No successful payload transfer. Approved reserve used.",
+    "original_doi": "10.5061/dryad.dfn2z35fm",
+    "reserve_record": 14977295,
+    "selected_utc": "2026-09-14T15:55:30.211327+00:00",
+    "number": 31,
+    "phase": "previous_expansion_21_50",
+    "accepted_scenario_id": "31_quantum_computing_ibm_benchpress"
+  },
+  {
+    "original_scenario_id": "36_agriculture_harveststat_africa",
+    "original_title": "HarvestStat Africa subnational crop statistics",
+    "reason": "Dryad public individual-download endpoints returned HTTP 403; API payload endpoints required authorization; public browser navigation timed out. No successful payload transfer. Approved reserve used.",
+    "original_doi": "10.5061/dryad.vq83bk42w",
+    "reserve_record": 20638584,
+    "selected_utc": "2026-09-14T15:55:30.213042+00:00",
+    "additional_note": "Author GitHub repository was inspected, but does not offer the complete displayed Dryad raw archive; partial replication was not admitted as the planned complete bundle.",
+    "number": 36,
+    "phase": "previous_expansion_21_50",
+    "accepted_scenario_id": "36_plant_biology_tomato_stress"
+  },
+  {
+    "original_scenario_id": "49_hydrology_usgs_geysers",
+    "original_title": "Yellowstone geyser water, chemistry and meteorological campaign",
+    "original_doi": "10.5066/P1YA3AJZ",
+    "reason": "Four public JPEG attachments have persistent publisher MD5 mismatches despite matching byte counts. The mismatch was reproduced through the named-file route; the parent image also mismatched in the official all-files ZIP. Numerical files passed, but the planned full bundle did not meet strict checksum admission. Approved DLR reserve used.",
+    "selected_utc": "2026-09-14T16:18:42.350509+00:00",
+    "number": 49,
+    "phase": "previous_expansion_21_50",
+    "accepted_scenario_id": "49_battery_dlr_native_exports"
+  }
+]

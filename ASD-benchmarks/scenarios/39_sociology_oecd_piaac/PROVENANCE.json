@@ -1,0 +1,205 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "39_sociology_oecd_piaac",
+  "domain": "sociology and labor economics",
+  "title": "Adult skills, workplace use and earnings in USA and Japan",
+  "publisher": "OECD (PIAAC), national USA and Japan survey programs",
+  "authoritative_landing_url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+  "authoritative_source_urls": [
+    "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+    "https://webfs.oecd.org/piaac/cy2-puf-data/CSV/prgusap2.csv",
+    "https://webfs.oecd.org/piaac/cy2-puf-data/CSV/prgjpnp2.csv",
+    "https://www.oecd.org/content/dam/oecd/en/about/programmes/edu/piaac/data-materials/cycle-2/piaac-cy2-international-codebook.xlsx",
+    "https://www.oecd.org/content/dam/oecd/en/about/programmes/edu/piaac/data-materials/cycle-2/piaac-cy2-codebook-and-sql-codes-for-derived-variables.pdf",
+    "https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/12/survey-of-adult-skills-2023_1ab54c9e/3639d1e2-en.pdf",
+    "https://nces.ed.gov/surveys/piaac/2023/technical_notes.asp"
+  ],
+  "identifiers": [],
+  "release_or_version": "Cycle 2 public-use files; December 2024 release",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "OECD data terms with attribution and pass-through acknowledgment; Reader Companion CC BY 4.0, third-party cover credit retained",
+  "deterministic_selection_rule": "Complete USA and Japan CSV public-use files, plus official codebook/user-guide context; retain all plausible values, replicate weights, and missing-value codes.",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": {
+    "description": "Cycle 2 collection September 2022–August 2023; USA/Japan CSV release December 2024. Current retrieval freezes exact bytes; other countries received later revisions.",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": null,
+  "source_created_utc": null,
+  "source_updated_utc": null,
+  "source_inventory": null,
+  "author_preprocessing": "Anonymous public-use survey records: source weighting, proficiency estimation, derivation, coarsening and suppression have already occurred. These are not raw interview recordings.",
+  "known_analyses_and_limitations": "Existing OECD reports already study skills and earnings. Two countries are not global coverage; country-specific suppression and earnings coding affect comparability. OECD landing/terms pages were verified via public web retrieval but their direct local HTML downloads returned 403; local generated source notes identify that limitation.",
+  "related_publications": [],
+  "pinned_commit": null,
+  "source_context_request_failures": [
+    {
+      "url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+      "error": "HTTP Error 403: Forbidden",
+      "utc": "2026-09-14T15:49:31.828232+00:00"
+    }
+  ],
+  "unavailable_optional_context": [
+    {
+      "scenario_id": "39_sociology_oecd_piaac",
+      "path": "context/terms-conditions.html",
+      "url": "https://www.oecd.org/en/about/terms-conditions.html",
+      "role": "official_context"
+    },
+    {
+      "scenario_id": "39_sociology_oecd_piaac",
+      "path": "context/source_record.html",
+      "url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+      "role": "official_context"
+    }
+  ],
+  "license_evidence": {
+    "url": "https://www.oecd.org/en/about/terms-conditions.html",
+    "section": "3. Data / Permitted Use",
+    "verification": "Public web retrieval on 2026-09-14 succeeded; local HTTP clients returned 403. Data reuse and redistribution permitted with OECD attribution and pass-through acknowledgment, subject to additional third-party restrictions."
+  },
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-039",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-039",
+      "scenario_id": "39_sociology_oecd_piaac",
+      "path": "context/3639d1e2-en.pdf",
+      "scenario_relative_path": "context/3639d1e2-en.pdf",
+      "bytes": 3619063,
+      "sha256": "0f213ff4034c1fae94b06d334a7eb11be94a82d2fff782e507f39cb58994076f",
+      "role": "official_context",
+      "source_urls": [
+        "https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/12/survey-of-adult-skills-2023_1ab54c9e/3639d1e2-en.pdf"
+      ],
+      "download_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/12/survey-of-adult-skills-2023_1ab54c9e/3639d1e2-en.pdf",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:56:13.236100+00:00",
+      "license_or_terms": "OECD data terms with attribution and pass-through acknowledgment; Reader Companion CC BY 4.0, third-party cover credit retained",
+      "citation_identifiers": [],
+      "citation_url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+      "source_version": "Cycle 2 public-use files; December 2024 release",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-039",
+      "scenario_id": "39_sociology_oecd_piaac",
+      "path": "context/NCES_technical_notes.html",
+      "scenario_relative_path": "context/NCES_technical_notes.html",
+      "bytes": 118736,
+      "sha256": "3a6039ff5e0aa87fe8660e91a8b3e0945682cc056fe15fd7b5fc7c2b928f414a",
+      "role": "official_context",
+      "source_urls": [
+        "https://nces.ed.gov/surveys/piaac/2023/technical_notes.asp"
+      ],
+      "download_url": "https://nces.ed.gov/surveys/piaac/2023/technical_notes.asp",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:56:14.483092+00:00",
+      "license_or_terms": "OECD data terms with attribution and pass-through acknowledgment; Reader Companion CC BY 4.0, third-party cover credit retained",
+      "citation_identifiers": [],
+      "citation_url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+      "source_version": "Cycle 2 public-use files; December 2024 release",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-039",
+      "scenario_id": "39_sociology_oecd_piaac",
+      "path": "context/piaac-cy2-codebook-and-sql-codes-for-derived-variables.pdf",
+      "scenario_relative_path": "context/piaac-cy2-codebook-and-sql-codes-for-derived-variables.pdf",
+      "bytes": 1099044,
+      "sha256": "19043c850365611d715da279b9fba12d53a5decb7b845042df50350ee51d67d1",
+      "role": "official_context",
+      "source_urls": [
+        "https://www.oecd.org/content/dam/oecd/en/about/programmes/edu/piaac/data-materials/cycle-2/piaac-cy2-codebook-and-sql-codes-for-derived-variables.pdf"
+      ],
+      "download_url": "https://www.oecd.org/content/dam/oecd/en/about/programmes/edu/piaac/data-materials/cycle-2/piaac-cy2-codebook-and-sql-codes-for-derived-variables.pdf",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:56:12.681261+00:00",
+      "license_or_terms": "OECD data terms with attribution and pass-through acknowledgment; Reader Companion CC BY 4.0, third-party cover credit retained",
+      "citation_identifiers": [],
+      "citation_url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+      "source_version": "Cycle 2 public-use files; December 2024 release",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-039",
+      "scenario_id": "39_sociology_oecd_piaac",
+      "path": "context/piaac-cy2-international-codebook.xlsx",
+      "scenario_relative_path": "context/piaac-cy2-international-codebook.xlsx",
+      "bytes": 288096,
+      "sha256": "02bb30f84763ba27871daee7ee1133c3c98e26d716173272e313e596ce7908d2",
+      "role": "official_context",
+      "source_urls": [
+        "https://www.oecd.org/content/dam/oecd/en/about/programmes/edu/piaac/data-materials/cycle-2/piaac-cy2-international-codebook.xlsx"
+      ],
+      "download_url": "https://www.oecd.org/content/dam/oecd/en/about/programmes/edu/piaac/data-materials/cycle-2/piaac-cy2-international-codebook.xlsx",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:56:12.400987+00:00",
+      "license_or_terms": "OECD data terms with attribution and pass-through acknowledgment; Reader Companion CC BY 4.0, third-party cover credit retained",
+      "citation_identifiers": [],
+      "citation_url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+      "source_version": "Cycle 2 public-use files; December 2024 release",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-039",
+      "scenario_id": "39_sociology_oecd_piaac",
+      "path": "raw/prgjpnp2.csv",
+      "scenario_relative_path": "raw/prgjpnp2.csv",
+      "bytes": 47787872,
+      "sha256": "498bd1372de027006a424f26d9a1209a5c4437bb978144f7b9e8c0228e91729b",
+      "role": "official_data",
+      "source_urls": [
+        "https://webfs.oecd.org/piaac/cy2-puf-data/CSV/prgjpnp2.csv"
+      ],
+      "download_url": "https://webfs.oecd.org/piaac/cy2-puf-data/CSV/prgjpnp2.csv",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:02:57.450905+00:00",
+      "license_or_terms": "OECD data terms with attribution and pass-through acknowledgment; Reader Companion CC BY 4.0, third-party cover credit retained",
+      "citation_identifiers": [],
+      "citation_url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+      "source_version": "Cycle 2 public-use files; December 2024 release",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-039",
+      "scenario_id": "39_sociology_oecd_piaac",
+      "path": "raw/prgusap2.csv",
+      "scenario_relative_path": "raw/prgusap2.csv",
+      "bytes": 35241173,
+      "sha256": "f20a4677d9c4b03638f77e61bdf307fc282561bd129334ccf2179ef2b960641e",
+      "role": "official_data",
+      "source_urls": [
+        "https://webfs.oecd.org/piaac/cy2-puf-data/CSV/prgusap2.csv"
+      ],
+      "download_url": "https://webfs.oecd.org/piaac/cy2-puf-data/CSV/prgusap2.csv",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:00:47.686091+00:00",
+      "license_or_terms": "OECD data terms with attribution and pass-through acknowledgment; Reader Companion CC BY 4.0, third-party cover credit retained",
+      "citation_identifiers": [],
+      "citation_url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+      "source_version": "Cycle 2 public-use files; December 2024 release",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

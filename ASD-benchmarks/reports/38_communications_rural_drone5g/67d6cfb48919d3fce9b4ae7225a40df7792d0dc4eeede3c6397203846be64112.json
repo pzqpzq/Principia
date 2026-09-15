@@ -1,0 +1,38 @@
+{
+  "bytes": 29606,
+  "sha256": "d1bb7ce56e740981868c1c73f42e12495e12ee315a2cd1ea0481a70f61899640",
+  "format_extension": ".csv",
+  "checks": [
+    "publisher_md5"
+  ],
+  "format": "text_or_instrument_native",
+  "signature_hex": "5f697465726174696f6e5f2c",
+  "delimiter": ",",
+  "header": [
+    "_iteration_",
+    "timestamp",
+    "altitude (m)",
+    "climb (m/s)",
+    "groundspeed (m/s)",
+    "MAVlink received",
+    "MAVlink sent",
+    "MAVlink lost (%)",
+    "roll (rad)",
+    "pitch (rad)",
+    "yaw (rad)",
+    "satellites_visible",
+    "latitude (grad)",
+    "longitude (grad)",
+    "vertical prec (cm)",
+    "horizontal prec (cm)",
+    "vel prec (mm/s)"
+  ],
+  "data_records": 212,
+  "row_width_counts": {
+    "17": 212
+  },
+  "path": "raw/drontelemetry_fligth5.csv",
+  "scenario_id": "38_communications_rural_drone5g",
+  "verified_utc": "2026-09-14T15:58:15.021255+00:00",
+  "status": "pass"
+}

@@ -1,0 +1,89 @@
+{
+  "scenario_id": "75_biology_endothelial_mechanics",
+  "path": "raw/rawcount_AGRF_CAGRF21067088_H7WFGDRX2.rds",
+  "bytes": 3387122,
+  "sha256": "d05bbbea466d76ad19b2007e4a990ba528947d472085ecd72e9bd45bf2b28329",
+  "checked_utc": "2026-09-15T06:51:23.160889+00:00",
+  "source_checksum_status": "verified",
+  "format": "RDS",
+  "object_type": "dict",
+  "shape": null,
+  "columns": null,
+  "names": [
+    "counts",
+    "annotation",
+    "targets",
+    "stat"
+  ],
+  "components": [
+    {
+      "name": "counts",
+      "type": "DataArray",
+      "shape": [
+        28395,
+        24
+      ],
+      "columns": null
+    },
+    {
+      "name": "annotation",
+      "type": "DataFrame",
+      "shape": [
+        28395,
+        6
+      ],
+      "columns": [
+        "GeneID",
+        "Chr",
+        "Start",
+        "End",
+        "Strand",
+        "Length"
+      ]
+    },
+    {
+      "name": "targets",
+      "type": "ndarray",
+      "shape": [
+        24
+      ],
+      "columns": null
+    },
+    {
+      "name": "stat",
+      "type": "DataFrame",
+      "shape": [
+        14,
+        25
+      ],
+      "columns": [
+        "Status",
+        "11_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "12_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "13_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "14_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "15_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "16_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "21_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "22_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "23_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "24_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "25_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "26_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "31_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "32_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "33_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "34_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "35_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "36_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "41_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "42_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "43_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "44_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "45_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam",
+        "46_AGRF_CAGRF21067088_H7WFGDRX2_merged.bam"
+      ]
+    }
+  ],
+  "status": "pass"
+}

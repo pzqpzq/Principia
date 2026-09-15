@@ -1,0 +1,450 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "69_robotics_gearbox_thermal",
+  "domain": "Robotics thermodynamics",
+  "title": "Replication Data for: \"Lubricant Temperature Observer for Gearboxes in Industrial Robots\"",
+  "publisher": "[{'authorName': {'typeName': 'authorName', 'multiple': False, 'typeClass': 'primitive', 'value': 'Bauer, Christian Johannes Eugen'}, 'authorAffiliation': {'typeName': 'authorAffiliation', 'multiple': False, 'typeClass': 'primitive', 'value': 'https://ror.org/04vnq7t77', 'expandedvalue': {'scheme': 'http://www.grid.ac/ontology/', 'termName': 'University of Stuttgart', '@type': 'https://schema.org/Organization'}}, 'authorIdentifierScheme': {'typeName': 'authorIdentifierScheme', 'multiple': False, 'typeClass': 'controlledVocabulary', 'value': 'ORCID'}, 'authorIdentifier': {'typeName': 'authorIdentifier', 'multiple': False, 'typeClass': 'primitive', 'value': 'https://orcid.org/0009-0002-7979-3877', 'expandedvalue': {'personName': 'Bauer, Christian Johannes Eugen', '@id': 'https://orcid.org/0009-0002-7979-3877', 'scheme': 'ORCID', '@type': 'https://schema.org/Person'}}}, {'authorName': {'typeName': 'authorName', 'multiple': False, 'typeClass': 'primitive', 'value': 'Neher, Markus'}, 'authorAffiliation': {'typeName': 'authorAffiliation', 'multiple': False, 'typeClass': 'primitive', 'value': 'https://ror.org/04vnq7t77', 'expandedvalue': {'scheme': 'http://www.grid.ac/ontology/', 'termName': 'University of Stuttgart', '@type': 'https://schema.org/Organization'}}}]",
+  "authoritative_landing_url": "https://doi.org/10.18419/DARUS-5015",
+  "authoritative_source_urls": [
+    "https://doi.org/10.18419/DARUS-5015",
+    "https://darus.uni-stuttgart.de/api/access/datafile/381732?format=original",
+    "https://darus.uni-stuttgart.de/api/access/datafile/381734?format=original",
+    "https://darus.uni-stuttgart.de/api/access/datafile/381739?format=original",
+    "https://darus.uni-stuttgart.de/api/access/datafile/381735?format=original",
+    "https://darus.uni-stuttgart.de/api/access/datafile/381729?format=original",
+    "https://darus.uni-stuttgart.de/api/access/datafile/381726?format=original",
+    "https://darus.uni-stuttgart.de/api/access/datafile/381733?format=original",
+    "https://darus.uni-stuttgart.de/api/access/datafile/381736?format=original",
+    "https://darus.uni-stuttgart.de/api/access/datafile/381740?format=original",
+    "https://darus.uni-stuttgart.de/api/access/datafile/381738?format=original",
+    "https://darus.uni-stuttgart.de/api/access/datafile/381730?format=original",
+    "https://darus.uni-stuttgart.de/api/access/datafile/381728?format=original",
+    "https://darus.uni-stuttgart.de/api/access/datafile/381737?format=original",
+    "https://darus.uni-stuttgart.de/api/access/datafile/381727?format=original",
+    "https://darus.uni-stuttgart.de/api/access/datafile/381731?format=original"
+  ],
+  "identifiers": [
+    "doi:10.18419/DARUS-5015"
+  ],
+  "release_or_version": "1.0",
+  "retrieval_finalized_utc": "2026-09-15T07:04:36.374984+00:00",
+  "license_or_access_terms": "CC BY 4.0",
+  "deterministic_selection_rule": "complete specified source selection",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Acquisition dates unknown; source release July 2025.",
+  "source_publication_date": "2025-07-24",
+  "source_created_utc": null,
+  "source_updated_utc": null,
+  "source_inventory": [],
+  "author_preprocessing": "All original identification/validation CSVs and two MATLAB scripts retained. Source text says five columns but enumerates six; original columns resolve the discrepancy.",
+  "known_analyses_and_limitations": "One industrial robot joint. Respect identification versus heat-up/long-term/cool-down validation runs; do not mix rows across them or claim cross-joint transfer.",
+  "related_publications": [],
+  "independent_groups": "complete identification and validation runs within one robot joint",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-069",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-069",
+      "scenario_id": "69_robotics_gearbox_thermal",
+      "path": "raw/validation/cool-down/cool-down.csv",
+      "scenario_relative_path": "raw/validation/cool-down/cool-down.csv",
+      "bytes": 26352157,
+      "sha256": "15e528f36e97640645fed9c4071360b8e03ec145674b97d3383881a152cab1c3",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.18419/DARUS-5015"
+      ],
+      "download_url": "https://darus.uni-stuttgart.de/api/access/datafile/381732?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:24:47.524724+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.18419/DARUS-5015"
+      ],
+      "citation_url": "https://doi.org/10.18419/DARUS-5015",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.18419/DARUS-5015",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-069",
+      "scenario_id": "69_robotics_gearbox_thermal",
+      "path": "raw/plot_figures.m",
+      "scenario_relative_path": "raw/plot_figures.m",
+      "bytes": 4105,
+      "sha256": "e8426ec026721ae50a49f8cedd5197d1b6a16845d6ddaffd81232b67ad7353b1",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.18419/DARUS-5015"
+      ],
+      "download_url": "https://darus.uni-stuttgart.de/api/access/datafile/381734?format=original",
+      "source_checksum": "md5:9cba81623be8d38f06b34783badb3a85",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:20:24.709253+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.18419/DARUS-5015"
+      ],
+      "citation_url": "https://doi.org/10.18419/DARUS-5015",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.18419/DARUS-5015",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-069",
+      "scenario_id": "69_robotics_gearbox_thermal",
+      "path": "raw/read_data.m",
+      "scenario_relative_path": "raw/read_data.m",
+      "bytes": 3043,
+      "sha256": "16ab4b7736ca5b32853065becc342339ea3537ec41c267938031eb59bd7b3ae8",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.18419/DARUS-5015"
+      ],
+      "download_url": "https://darus.uni-stuttgart.de/api/access/datafile/381739?format=original",
+      "source_checksum": "md5:be851997a3ab9f9bf39b2d13b21bd1f4",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:20:25.004928+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.18419/DARUS-5015"
+      ],
+      "citation_url": "https://doi.org/10.18419/DARUS-5015",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.18419/DARUS-5015",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-069",
+      "scenario_id": "69_robotics_gearbox_thermal",
+      "path": "raw/validation/heat-up/theta_dot=0p3142.csv",
+      "scenario_relative_path": "raw/validation/heat-up/theta_dot=0p3142.csv",
+      "bytes": 55194653,
+      "sha256": "0f23964a51604f8df3759e0047581bfe9747285dd68e52fd8d7c6243592c850e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.18419/DARUS-5015"
+      ],
+      "download_url": "https://darus.uni-stuttgart.de/api/access/datafile/381735?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:32:07.106770+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.18419/DARUS-5015"
+      ],
+      "citation_url": "https://doi.org/10.18419/DARUS-5015",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.18419/DARUS-5015",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-069",
+      "scenario_id": "69_robotics_gearbox_thermal",
+      "path": "raw/validation/heat-up/theta_dot=0p6283.csv",
+      "scenario_relative_path": "raw/validation/heat-up/theta_dot=0p6283.csv",
+      "bytes": 5413972,
+      "sha256": "99b2e1b1d1f74eef3afa19c7c87fe2a6cd28a94dc1774628cad45c4f5c1d3f46",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.18419/DARUS-5015"
+      ],
+      "download_url": "https://darus.uni-stuttgart.de/api/access/datafile/381729?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:21:23.264259+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.18419/DARUS-5015"
+      ],
+      "citation_url": "https://doi.org/10.18419/DARUS-5015",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.18419/DARUS-5015",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-069",
+      "scenario_id": "69_robotics_gearbox_thermal",
+      "path": "raw/validation/heat-up/theta_dot=0p9425.csv",
+      "scenario_relative_path": "raw/validation/heat-up/theta_dot=0p9425.csv",
+      "bytes": 54967809,
+      "sha256": "6c96d52aef7859e475c69547c1f0e206c219618cb353ad2628fd5b9129d6fcf9",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.18419/DARUS-5015"
+      ],
+      "download_url": "https://darus.uni-stuttgart.de/api/access/datafile/381726?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:31:18.826670+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.18419/DARUS-5015"
+      ],
+      "citation_url": "https://doi.org/10.18419/DARUS-5015",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.18419/DARUS-5015",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-069",
+      "scenario_id": "69_robotics_gearbox_thermal",
+      "path": "raw/identification/theta_dot=0p9425.csv",
+      "scenario_relative_path": "raw/identification/theta_dot=0p9425.csv",
+      "bytes": 74510524,
+      "sha256": "9020ae9bb340ed5d04d5b2647678bfd04b5356de08b4b8477767a05fa8369a6b",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.18419/DARUS-5015"
+      ],
+      "download_url": "https://darus.uni-stuttgart.de/api/access/datafile/381733?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:34:39.096902+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.18419/DARUS-5015"
+      ],
+      "citation_url": "https://doi.org/10.18419/DARUS-5015",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.18419/DARUS-5015",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-069",
+      "scenario_id": "69_robotics_gearbox_thermal",
+      "path": "raw/validation/long-term/theta_dot_1=0p6283_theta_dot_2=0p9425.csv",
+      "scenario_relative_path": "raw/validation/long-term/theta_dot_1=0p6283_theta_dot_2=0p9425.csv",
+      "bytes": 36596654,
+      "sha256": "8e62c6b9aed68c589f6fb16fb2c4b18158ff325dec5870606f651bd02831ae88",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.18419/DARUS-5015"
+      ],
+      "download_url": "https://darus.uni-stuttgart.de/api/access/datafile/381736?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:25:13.607958+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.18419/DARUS-5015"
+      ],
+      "citation_url": "https://doi.org/10.18419/DARUS-5015",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.18419/DARUS-5015",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-069",
+      "scenario_id": "69_robotics_gearbox_thermal",
+      "path": "raw/validation/long-term/theta_dot_1=1p2566_theta_dot_2=0p3142.csv",
+      "scenario_relative_path": "raw/validation/long-term/theta_dot_1=1p2566_theta_dot_2=0p3142.csv",
+      "bytes": 36144164,
+      "sha256": "1e17f06bfc59f3b526dceca385f9a19c3d3518cafd84cc32d776c6c9140c8e18",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.18419/DARUS-5015"
+      ],
+      "download_url": "https://darus.uni-stuttgart.de/api/access/datafile/381740?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:26:59.413591+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.18419/DARUS-5015"
+      ],
+      "citation_url": "https://doi.org/10.18419/DARUS-5015",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.18419/DARUS-5015",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-069",
+      "scenario_id": "69_robotics_gearbox_thermal",
+      "path": "raw/identification/theta_dot=1p0996.csv",
+      "scenario_relative_path": "raw/identification/theta_dot=1p0996.csv",
+      "bytes": 50572267,
+      "sha256": "632ffc0280b5ce6f955edd7c21402e20e3508096c6df8481d3faed7ae9eb9ee6",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.18419/DARUS-5015"
+      ],
+      "download_url": "https://darus.uni-stuttgart.de/api/access/datafile/381738?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:34:35.780881+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.18419/DARUS-5015"
+      ],
+      "citation_url": "https://doi.org/10.18419/DARUS-5015",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.18419/DARUS-5015",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-069",
+      "scenario_id": "69_robotics_gearbox_thermal",
+      "path": "raw/validation/heat-up/theta_dot=1p2566.csv",
+      "scenario_relative_path": "raw/validation/heat-up/theta_dot=1p2566.csv",
+      "bytes": 5338470,
+      "sha256": "2189fc93bbdfabcd97b47050d0695bd21de07e87ad48d0380fbfdd061911d35e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.18419/DARUS-5015"
+      ],
+      "download_url": "https://darus.uni-stuttgart.de/api/access/datafile/381730?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:26:13.029787+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.18419/DARUS-5015"
+      ],
+      "citation_url": "https://doi.org/10.18419/DARUS-5015",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.18419/DARUS-5015",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-069",
+      "scenario_id": "69_robotics_gearbox_thermal",
+      "path": "raw/identification/theta_dot=1p2566.csv",
+      "scenario_relative_path": "raw/identification/theta_dot=1p2566.csv",
+      "bytes": 36863869,
+      "sha256": "13073cd82822c5a40ff84dcd7670d6da0e1d2783d8cbb2185cbe15f47ab2822a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.18419/DARUS-5015"
+      ],
+      "download_url": "https://darus.uni-stuttgart.de/api/access/datafile/381728?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:33:21.198078+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.18419/DARUS-5015"
+      ],
+      "citation_url": "https://doi.org/10.18419/DARUS-5015",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.18419/DARUS-5015",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-069",
+      "scenario_id": "69_robotics_gearbox_thermal",
+      "path": "raw/identification/theta_dot=1p4137.csv",
+      "scenario_relative_path": "raw/identification/theta_dot=1p4137.csv",
+      "bytes": 33316512,
+      "sha256": "9208ddef27fa1912ad36ab2112ac5b1e1374a50d02f2cb2ac7f7b5186c2fbd89",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.18419/DARUS-5015"
+      ],
+      "download_url": "https://darus.uni-stuttgart.de/api/access/datafile/381737?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:33:31.437668+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.18419/DARUS-5015"
+      ],
+      "citation_url": "https://doi.org/10.18419/DARUS-5015",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.18419/DARUS-5015",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-069",
+      "scenario_id": "69_robotics_gearbox_thermal",
+      "path": "raw/validation/heat-up/theta_dot=1p5708.csv",
+      "scenario_relative_path": "raw/validation/heat-up/theta_dot=1p5708.csv",
+      "bytes": 54565302,
+      "sha256": "a867f21befd4e4852be3182291075211399917a0047e6ce309fbfe097b9eba1c",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.18419/DARUS-5015"
+      ],
+      "download_url": "https://darus.uni-stuttgart.de/api/access/datafile/381727?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:39:25.721424+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.18419/DARUS-5015"
+      ],
+      "citation_url": "https://doi.org/10.18419/DARUS-5015",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.18419/DARUS-5015",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-069",
+      "scenario_id": "69_robotics_gearbox_thermal",
+      "path": "raw/identification/theta_dot=1p5708.csv",
+      "scenario_relative_path": "raw/identification/theta_dot=1p5708.csv",
+      "bytes": 26914578,
+      "sha256": "d8627372598e7002f15703e1befe1f08f53cc1a697d25e2ea3899fadbff6eb7a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://doi.org/10.18419/DARUS-5015"
+      ],
+      "download_url": "https://darus.uni-stuttgart.de/api/access/datafile/381731?format=original",
+      "source_checksum": null,
+      "source_checksum_scope": "ingested TAB; not the retained original CSV",
+      "retrieved_utc": "2026-09-15T06:36:57.065419+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        "doi:10.18419/DARUS-5015"
+      ],
+      "citation_url": "https://doi.org/10.18419/DARUS-5015",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.18419/DARUS-5015",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-069",
+      "scenario_id": "69_robotics_gearbox_thermal",
+      "path": "context/SOURCE_FACTS.json",
+      "scenario_relative_path": "context/SOURCE_FACTS.json",
+      "bytes": 7378,
+      "sha256": "2cb7e0d219231a371eb432962430f3b392c98225d742ad67e9d493ee78cd44a8",
+      "role": "curator_factual_source_profile",
+      "source_urls": [
+        "https://doi.org/10.18419/DARUS-5015"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "curator serialization, not a publisher file",
+      "retrieved_utc": "2026-09-15T07:04:36.374984+00:00",
+      "license_or_terms": "CC-BY-4.0 (proposed release terms for curator documentation; pending owner acceptance)",
+      "citation_identifiers": [
+        "doi:10.18419/DARUS-5015"
+      ],
+      "citation_url": "https://doi.org/10.18419/DARUS-5015",
+      "source_version": "1.0",
+      "replay_note": "Reconstruct exact curator metadata from frozen release copy.",
+      "rights_evidence_url": "https://doi.org/10.18419/DARUS-5015",
+      "rights_evidence_scope": "Factual identifiers, file inventory and attribution; curator serialization."
+    }
+  ]
+}

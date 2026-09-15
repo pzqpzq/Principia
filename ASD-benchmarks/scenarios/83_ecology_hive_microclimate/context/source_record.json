@@ -1,0 +1,185 @@
+{
+  "created": "2026-05-26T17:17:25.341140+00:00",
+  "modified": "2026-05-26T17:17:25.881558+00:00",
+  "id": 20399470,
+  "conceptrecid": "20399469",
+  "doi": "10.5281/zenodo.20399470",
+  "conceptdoi": "10.5281/zenodo.20399469",
+  "doi_url": "https://doi.org/10.5281/zenodo.20399470",
+  "metadata": {
+    "title": "Hive Monitoring (Apis mellifera and Stingless Bees) and Rainfall Data - Federal University of Ceará (UFC) Apiary - Brazil",
+    "doi": "10.5281/zenodo.20399470",
+    "publication_date": "2026-05-26",
+    "description": "<p><strong>General Description</strong> This dataset contains environmental and biometric monitoring records of beehives maintained at the Federal University of Cear&aacute; (UFC) apiary. The objective of this data collection is to evaluate the internal conditions (temperature, humidity, and weight) of two categories of bees: <em>Apis mellifera</em> (Africanized honeybees) and Meliponini (stingless bees).</p>\n<p>To complement the study on the climatic influence on hive development, the repository also includes regional rainfall (precipitation) data collected across different timeframes.</p>\n<p><strong>Dataset Content</strong> The dataset consists of 5 CSV files, categorized into internal hive monitoring and external rainfall data:</p>\n<p><strong>1. Stingless Bees (Meliponini) Monitoring</strong></p>\n<ul>\n<li>\n<p><strong><code>DadosMeliponas.csv</code></strong>: Temperature, humidity, and weight data from stingless bee hives collected between <strong>September 2025 and March 2026</strong> (34,881 records).</p>\n</li>\n</ul>\n<p><strong>2. <em>Apis mellifera</em> Monitoring</strong></p>\n<ul>\n<li>\n<p><strong><code>dadosColmeia1Apis.csv</code></strong>: Biometric and climatic data from hive 1. Data collected between <strong>February and March 2025</strong> (3,116 records).</p>\n</li>\n<li>\n<p><strong><code>dadosColmeia2Apis.csv</code></strong>: Biometric and climatic data from hive 2. Data collected between <strong>December 2024 and February 2025</strong> (7,066 records).</p>\n</li>\n</ul>\n<p><strong>3. Rainfall (Precipitation) Data</strong></p>\n<ul>\n<li>\n<p><strong><code>Dados Pluviom&eacute;tricos (jan25-mai25).csv</code></strong>: Rainfall records from the study's coverage area, spanning from <strong>January to May 2025</strong> (151 records).</p>\n</li>\n<li>\n<p><strong><code>Dados Pluviom&eacute;tricos Set25-Mar26.csv</code></strong>: Rainfall records from the coverage area, spanning from <strong>September 2025 to April 2026</strong> (232 records).</p>\n</li>\n</ul>\n<p><strong>Data Dictionary (Variables)</strong></p>\n<p>For the <strong>Hive files (<code>DadosMeliponas</code>, <code>dadosColmeia1Apis</code>, <code>dadosColmeia2Apis</code>)</strong>:</p>\n<ul>\n<li>\n<p><code>time</code>: Date and time of data collection (Timestamp).</p>\n</li>\n<li>\n<p><code>id</code>: Unique identifier of the record in the database.</p>\n</li>\n<li>\n<p><code>id_sensor</code>: Numeric identifier of the sensor or monitored hive.</p>\n</li>\n<li>\n<p><code>temperature</code>: Internal hive temperature (&deg;C).</p>\n</li>\n<li>\n<p><code>humidity</code>: Internal hive relative humidity (%).</p>\n</li>\n<li>\n<p><code>weight</code>: Current measured hive weight (kg).</p>\n</li>\n<li>\n<p><code>ext_temperature</code>: External ambient temperature (&deg;C).</p>\n</li>\n<li>\n<p><code>ext_humidity</code>: External ambient relative humidity (%).</p>\n</li>\n<li>\n<p><code>voltage</code>: Sensor system/battery operating voltage (Volts) - <em>Present only in the Stingless Bees (Meliponas) data</em>.</p>\n</li>\n</ul>\n<p>For the <strong>Rainfall files</strong>:</p>\n<ul>\n<li>\n<p><code>id</code>: Unique identifier of the record in the station's system.</p>\n</li>\n<li>\n<p><code>valor</code>: Recorded rainfall volume (millimeters - mm).</p>\n</li>\n<li>\n<p><code>data</code>: Date of measurement (YYYY-MM-DD).</p>\n</li>\n<li>\n<p><code>posto</code>: Collection station identifier.</p>\n</li>\n</ul>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "JUCÁ DOS SANTOS, FELIPE",
+        "affiliation": "Universidade Federal do Ceará",
+        "orcid": "0000-0001-6693-8366"
+      },
+      {
+        "name": "abrahao bomfim, isac gabriel",
+        "affiliation": "Universidade Federal do Ceará",
+        "orcid": "0000-0001-5813-1896"
+      },
+      {
+        "name": "G. Gomes, Danielo",
+        "affiliation": "Universidade Federal do Ceará",
+        "orcid": "0000-0002-8285-4629"
+      },
+      {
+        "name": "Coelho, Alexandre",
+        "affiliation": null,
+        "orcid": "0000-0001-8715-849X"
+      },
+      {
+        "name": "Rafael Braga, Antonio",
+        "affiliation": "Universidade Federal do Ceará",
+        "orcid": "0000-0001-9105-9056"
+      },
+      {
+        "name": "Cavalcante, Marcelo Casimiro",
+        "affiliation": "University for International Integration of the Afro-Brazilian Lusophony",
+        "orcid": "0000-0001-7950-0515"
+      },
+      {
+        "name": "Freitas, Breno M.",
+        "affiliation": "Universidade Federal do Ceará",
+        "orcid": "0000-0002-9932-2207"
+      }
+    ],
+    "keywords": [
+      "Precision Apiculture",
+      "Apis Mellifera",
+      "Scaptotrigona Depilis",
+      "Beehive",
+      "Stingless Bee",
+      "Honey Bee"
+    ],
+    "language": "eng",
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "20399469"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Hive Monitoring (Apis mellifera and Stingless Bees) and Rainfall Data - Federal University of Ceará (UFC) Apiary - Brazil",
+  "links": {
+    "self": "https://zenodo.org/api/records/20399470",
+    "self_html": "https://zenodo.org/records/20399470",
+    "preview_html": "https://zenodo.org/records/20399470?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.20399470",
+    "self_doi": "https://doi.org/10.5281/zenodo.20399470",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.20399470",
+    "reserve_doi": "https://zenodo.org/api/records/20399470/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/20399469",
+    "parent_html": "https://zenodo.org/records/20399469",
+    "parent_doi": "https://doi.org/10.5281/zenodo.20399469",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.20399469",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:20399470/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:20399470/sequence/default",
+    "files": "https://zenodo.org/api/records/20399470/files",
+    "media_files": "https://zenodo.org/api/records/20399470/media-files",
+    "archive": "https://zenodo.org/api/records/20399470/files-archive",
+    "archive_media": "https://zenodo.org/api/records/20399470/media-files-archive",
+    "latest": "https://zenodo.org/api/records/20399470/versions/latest",
+    "latest_html": "https://zenodo.org/records/20399470/latest",
+    "versions": "https://zenodo.org/api/records/20399470/versions",
+    "draft": "https://zenodo.org/api/records/20399470/draft",
+    "access_links": "https://zenodo.org/api/records/20399470/access/links",
+    "access_grants": "https://zenodo.org/api/records/20399470/access/grants",
+    "access_users": "https://zenodo.org/api/records/20399470/access/users",
+    "access_request": "https://zenodo.org/api/records/20399470/access/request",
+    "access": "https://zenodo.org/api/records/20399470/access",
+    "communities": "https://zenodo.org/api/records/20399470/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/20399470/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/20399470/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/20399470/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/20399470/quota-increase",
+    "requests": "https://zenodo.org/api/records/20399470/requests"
+  },
+  "updated": "2026-05-26T17:17:25.881558+00:00",
+  "recid": "20399470",
+  "revision": 4,
+  "files": [
+    {
+      "id": "8846e598-2367-45f1-ad3a-953f1ca08db4",
+      "key": "dadosColmeia1Apis.csv",
+      "size": 268775,
+      "checksum": "md5:84206d6ca170906019874e0ed5f27650",
+      "links": {
+        "self": "https://zenodo.org/api/records/20399470/files/dadosColmeia1Apis.csv/content"
+      }
+    },
+    {
+      "id": "736fee32-5dc2-46e6-9d98-fec68cdd00fa",
+      "key": "DadosMeliponas.csv",
+      "size": 3378627,
+      "checksum": "md5:e1315f0db0f3505362d2feacb7ac9c67",
+      "links": {
+        "self": "https://zenodo.org/api/records/20399470/files/DadosMeliponas.csv/content"
+      }
+    },
+    {
+      "id": "24bd40c6-23ae-450b-aa9b-0b12149fa67a",
+      "key": "dadosColmeia2Apis.csv",
+      "size": 609522,
+      "checksum": "md5:064d28fd61b0578ac19c1399d88cde14",
+      "links": {
+        "self": "https://zenodo.org/api/records/20399470/files/dadosColmeia2Apis.csv/content"
+      }
+    },
+    {
+      "id": "11a3e703-961f-4515-9586-a17e844a7222",
+      "key": "Dados Pluviométricos Set25-Mar26.csv",
+      "size": 6310,
+      "checksum": "md5:7f5a382b91571da0d22ec2dc49a62158",
+      "links": {
+        "self": "https://zenodo.org/api/records/20399470/files/Dados%20Pluviom%C3%A9tricos%20Set25-Mar26.csv/content"
+      }
+    },
+    {
+      "id": "e61b7ec0-fd6c-4b42-bc03-0a639bd9b03f",
+      "key": "Dados Pluviométricos (jan25-mai25).csv",
+      "size": 4140,
+      "checksum": "md5:bd2e825c82894c4449d2d77e56656473",
+      "links": {
+        "self": "https://zenodo.org/api/records/20399470/files/Dados%20Pluviom%C3%A9tricos%20(jan25-mai25).csv/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "1445047"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 70,
+    "unique_downloads": 64,
+    "views": 76,
+    "unique_views": 69,
+    "version_downloads": 70,
+    "version_unique_downloads": 64,
+    "version_unique_views": 69,
+    "version_views": 76
+  },
+  "state": "done",
+  "submitted": true
+}

@@ -1,0 +1,31 @@
+{
+  "scenario_id": "73_agriculture_rumen_fermentation",
+  "path": "raw/12_legend_invitro_gasdata_01.csv",
+  "bytes": 951,
+  "sha256": "f8163c9d68089a76e712840b2a4b1a620495bb3cb9ab0f0c355f6687e04e11b3",
+  "checked_utc": "2026-09-15T06:30:17.014913+00:00",
+  "source_checksum_status": "verified",
+  "format": "text_or_instrument_native",
+  "signature_hex": "efbbbf22506172616d657465",
+  "delimiter": ";",
+  "header": [
+    "Parameter",
+    "Definition"
+  ],
+  "data_records": 20,
+  "row_width_counts": {
+    "2": 20
+  },
+  "first_lines": [
+    "\"Parameter\";\"Definition\"",
+    "\"DG\";\"run (1-4)\"",
+    "\"Flask\";\"flask randomly allocated to the substrates (1-25)\"",
+    "\"GasProduction\";\"gas produced in psi, measured by the ANKOM gas production system\"",
+    "\"Timepoint\";\"Time in minutes were the gasvolume was evaluated by the system\"",
+    "\"replicate\";\"replicate per run\"",
+    "\"Algae\";\"algae used as the substrate added at 4% to the base diet\"",
+    "\"Alge_1\";\"Colaconema spp.\""
+  ],
+  "encoding_replacement_count": 0,
+  "status": "pass"
+}

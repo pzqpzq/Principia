@@ -1,0 +1,319 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "67_environment_microplastic_settling",
+  "domain": "Environmental fluid mechanics",
+  "title": "Dataset on settling dynamics of microplastic particles sinking through exopolymer-induced rheological stratification",
+  "publisher": "[{'institution': {'id': 'ca614e41-aa2e-5da1-8603-f313c8f9d1d2', 'name': 'Polska Akademia Nauk Instytut Geofizyki', 'ror_id': 'https://ror.org/04rc9d057'}, 'contribution': 'MM conceived and designed the study, lead the preparation and conducting settling experiments, processed the results, took part in analysis of rheologica data, prepared dataset for publication', 'profile_id': '52a3853f-3a8e-330d-b58e-cd0ada829c73', 'first_name': 'Magdalena', 'last_name': 'Mrokowska', 'orcid_id': '0000-0002-3135-7315'}, {'institution': {'id': '600d1152-335e-5c42-a542-9b02f7e6d562', 'name': 'Politechnika Warszawska Wydzial Chemiczny'}, 'contribution': 'KD took part in conducting, analysis and preparation for sharing of the rheological measurements, took part in preparing and conducting settling experiments and data analysis', 'first_name': 'Karolina', 'last_name': 'Dzień'}, {'institution': {'id': '600d1152-335e-5c42-a542-9b02f7e6d562', 'name': 'Politechnika Warszawska Wydzial Chemiczny'}, 'contribution': 'AKM designed and took part in conducting and analysis of rheological measurements', 'first_name': 'Anna', 'last_name': 'Krztoń-Maziopa', 'orcid_id': '0000-0002-0223-0614'}]; [{'id': '600d1152-335e-5c42-a542-9b02f7e6d562', 'name': 'Politechnika Warszawska Wydzial Chemiczny'}, {'id': 'ca614e41-aa2e-5da1-8603-f313c8f9d1d2', 'name': 'Polska Akademia Nauk Instytut Geofizyki', 'ror_id': 'https://ror.org/04rc9d057'}]",
+  "authoritative_landing_url": "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+  "authoritative_source_urls": [
+    "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+    "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/77f7e2df-c41c-449b-9053-b8c2f2811713/file_downloaded",
+    "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/ab47af4d-9ed1-4aa0-8d6c-9215d0d0dfc4/file_downloaded",
+    "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/4a4cd24e-48e5-47f3-bfda-f4d6307f41d9/file_downloaded",
+    "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/b93187c9-27a5-4d9a-bc3c-655bc936e6fa/file_downloaded",
+    "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/7eedff48-6058-427a-b729-cad0cb04a035/file_downloaded",
+    "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/6c088692-025f-4933-90e1-dea6e07018b3/file_downloaded",
+    "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/4c8cbef5-2b7b-42f9-87d4-35893feebbb4/file_downloaded"
+  ],
+  "identifiers": [
+    {
+      "id": "10.17632/ccm9k8pjft.1",
+      "status": "allocated",
+      "prefix": "10.17632"
+    }
+  ],
+  "release_or_version": "1",
+  "retrieval_finalized_utc": "2026-09-15T07:04:34.826275+00:00",
+  "license_or_access_terms": "CC BY 4.0",
+  "deterministic_selection_rule": "complete specified source selection",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Measurement files were created in 2024; deposit release March 2025.",
+  "source_publication_date": "2025-03-17T16:34:00.917Z",
+  "source_created_utc": null,
+  "source_updated_utc": null,
+  "source_inventory": [
+    {
+      "name": "Density_and_refractive_index_profiles.zip",
+      "bytes": 11201,
+      "selected": true
+    },
+    {
+      "name": "MPs_sinking_dynamics.zip",
+      "bytes": 2617479,
+      "selected": true
+    },
+    {
+      "name": "README_Density_and_refractive_index_profiles.txt",
+      "bytes": 454,
+      "selected": true
+    },
+    {
+      "name": "README_MPs_sinking_dynamics.txt",
+      "bytes": 1351,
+      "selected": true
+    },
+    {
+      "name": "README_rheological_data.txt",
+      "bytes": 1614,
+      "selected": true
+    },
+    {
+      "name": "README_sample_videos.txt",
+      "bytes": 956,
+      "selected": true
+    },
+    {
+      "name": "Rheological_data.zip",
+      "bytes": 33121,
+      "selected": true
+    },
+    {
+      "name": "Sample_videos.zip",
+      "bytes": 344431301,
+      "selected": false
+    }
+  ],
+  "author_preprocessing": "Numerical PTV trajectories, density/refractive-index profiles and rheology. Complete numerical archives retained; sample-video archive omitted by modality rule.",
+  "known_analyses_and_limitations": "Group particle and entire experiment; nine configurations span Newtonian and non-Newtonian layers. PTV positions are extracted measurements, not raw video pixels.",
+  "related_publications": [],
+  "independent_groups": "particle, fluid and entire experiment",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-067",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-067",
+      "scenario_id": "67_environment_microplastic_settling",
+      "path": "raw/Density_and_refractive_index_profiles.zip",
+      "scenario_relative_path": "raw/Density_and_refractive_index_profiles.zip",
+      "bytes": 11201,
+      "sha256": "877812f87a6bc66d24d6242cd5013f1b8632d561b1c7727efcb33be22f1425f5",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/ccm9k8pjft/1"
+      ],
+      "download_url": "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/77f7e2df-c41c-449b-9053-b8c2f2811713/file_downloaded",
+      "source_checksum": "sha256:877812f87a6bc66d24d6242cd5013f1b8632d561b1c7727efcb33be22f1425f5",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:19:39.535586+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        {
+          "id": "10.17632/ccm9k8pjft.1",
+          "status": "allocated",
+          "prefix": "10.17632"
+        }
+      ],
+      "citation_url": "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-067",
+      "scenario_id": "67_environment_microplastic_settling",
+      "path": "raw/MPs_sinking_dynamics.zip",
+      "scenario_relative_path": "raw/MPs_sinking_dynamics.zip",
+      "bytes": 2617479,
+      "sha256": "e776125e0623382e824c7c72aa20a44abe85d93abfb2da1b63feaaf274a7fcbf",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/ccm9k8pjft/1"
+      ],
+      "download_url": "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/ab47af4d-9ed1-4aa0-8d6c-9215d0d0dfc4/file_downloaded",
+      "source_checksum": "sha256:e776125e0623382e824c7c72aa20a44abe85d93abfb2da1b63feaaf274a7fcbf",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:19:41.487553+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        {
+          "id": "10.17632/ccm9k8pjft.1",
+          "status": "allocated",
+          "prefix": "10.17632"
+        }
+      ],
+      "citation_url": "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-067",
+      "scenario_id": "67_environment_microplastic_settling",
+      "path": "raw/README_Density_and_refractive_index_profiles.txt",
+      "scenario_relative_path": "raw/README_Density_and_refractive_index_profiles.txt",
+      "bytes": 454,
+      "sha256": "e5faa87038fe3e96cff360c3c56a86730339bec5dadee4b3c36abea0746c4055",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/ccm9k8pjft/1"
+      ],
+      "download_url": "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/4a4cd24e-48e5-47f3-bfda-f4d6307f41d9/file_downloaded",
+      "source_checksum": "sha256:e5faa87038fe3e96cff360c3c56a86730339bec5dadee4b3c36abea0746c4055",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:19:39.643518+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        {
+          "id": "10.17632/ccm9k8pjft.1",
+          "status": "allocated",
+          "prefix": "10.17632"
+        }
+      ],
+      "citation_url": "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-067",
+      "scenario_id": "67_environment_microplastic_settling",
+      "path": "raw/README_MPs_sinking_dynamics.txt",
+      "scenario_relative_path": "raw/README_MPs_sinking_dynamics.txt",
+      "bytes": 1351,
+      "sha256": "d973cd1efa42c15d04aec54705bbf58f357803c3225526d04241c0a0d2cf0614",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/ccm9k8pjft/1"
+      ],
+      "download_url": "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/b93187c9-27a5-4d9a-bc3c-655bc936e6fa/file_downloaded",
+      "source_checksum": "sha256:d973cd1efa42c15d04aec54705bbf58f357803c3225526d04241c0a0d2cf0614",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:19:39.500584+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        {
+          "id": "10.17632/ccm9k8pjft.1",
+          "status": "allocated",
+          "prefix": "10.17632"
+        }
+      ],
+      "citation_url": "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-067",
+      "scenario_id": "67_environment_microplastic_settling",
+      "path": "raw/README_rheological_data.txt",
+      "scenario_relative_path": "raw/README_rheological_data.txt",
+      "bytes": 1614,
+      "sha256": "3b91e4b2d56aa348b6efbbbc6f61ac02aee73465398a339ba8e336dd70621198",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/ccm9k8pjft/1"
+      ],
+      "download_url": "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/7eedff48-6058-427a-b729-cad0cb04a035/file_downloaded",
+      "source_checksum": "sha256:3b91e4b2d56aa348b6efbbbc6f61ac02aee73465398a339ba8e336dd70621198",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:19:39.562412+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        {
+          "id": "10.17632/ccm9k8pjft.1",
+          "status": "allocated",
+          "prefix": "10.17632"
+        }
+      ],
+      "citation_url": "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-067",
+      "scenario_id": "67_environment_microplastic_settling",
+      "path": "raw/README_sample_videos.txt",
+      "scenario_relative_path": "raw/README_sample_videos.txt",
+      "bytes": 956,
+      "sha256": "cc0d5431c8d96474dd3776f5f6f1aebb7d691b002d4833e4aac8b5744fd73afc",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/ccm9k8pjft/1"
+      ],
+      "download_url": "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/6c088692-025f-4933-90e1-dea6e07018b3/file_downloaded",
+      "source_checksum": "sha256:cc0d5431c8d96474dd3776f5f6f1aebb7d691b002d4833e4aac8b5744fd73afc",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:19:39.132224+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        {
+          "id": "10.17632/ccm9k8pjft.1",
+          "status": "allocated",
+          "prefix": "10.17632"
+        }
+      ],
+      "citation_url": "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-067",
+      "scenario_id": "67_environment_microplastic_settling",
+      "path": "raw/Rheological_data.zip",
+      "scenario_relative_path": "raw/Rheological_data.zip",
+      "bytes": 33121,
+      "sha256": "1ffadfc79e1088fbc22613677383181358c308b51eb471d97a23ccea1d95e5f7",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/ccm9k8pjft/1"
+      ],
+      "download_url": "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/4c8cbef5-2b7b-42f9-87d4-35893feebbb4/file_downloaded",
+      "source_checksum": "sha256:1ffadfc79e1088fbc22613677383181358c308b51eb471d97a23ccea1d95e5f7",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:19:41.752903+00:00",
+      "license_or_terms": "CC BY 4.0",
+      "citation_identifiers": [
+        {
+          "id": "10.17632/ccm9k8pjft.1",
+          "status": "allocated",
+          "prefix": "10.17632"
+        }
+      ],
+      "citation_url": "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+      "source_version": "1",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-067",
+      "scenario_id": "67_environment_microplastic_settling",
+      "path": "context/SOURCE_FACTS.json",
+      "scenario_relative_path": "context/SOURCE_FACTS.json",
+      "bytes": 6204,
+      "sha256": "3ffe24404e3d7ae57ec42cb1e9ea741acfbff0e85cf12b3546d32d1a5a39cf7e",
+      "role": "curator_factual_source_profile",
+      "source_urls": [
+        "https://data.mendeley.com/datasets/ccm9k8pjft/1"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "curator serialization, not a publisher file",
+      "retrieved_utc": "2026-09-15T07:04:34.826275+00:00",
+      "license_or_terms": "CC-BY-4.0 (proposed release terms for curator documentation; pending owner acceptance)",
+      "citation_identifiers": [
+        {
+          "id": "10.17632/ccm9k8pjft.1",
+          "status": "allocated",
+          "prefix": "10.17632"
+        }
+      ],
+      "citation_url": "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+      "source_version": "1",
+      "replay_note": "Reconstruct exact curator metadata from frozen release copy.",
+      "rights_evidence_url": "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+      "rights_evidence_scope": "Factual identifiers, file inventory and attribution; curator serialization."
+    }
+  ]
+}

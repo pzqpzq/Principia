@@ -1,0 +1,181 @@
+{
+  "case_id": "P100-083",
+  "case_revision": 1,
+  "scenario_id": "83_ecology_hive_microclimate",
+  "title": "Hive Monitoring (Apis mellifera and Stingless Bees) and Rainfall Data - Federal University of Ceará (UFC) Apiary - Brazil",
+  "domain": "Animal ecology",
+  "question": "How do outside conditions relate to internal hive temperature and humidity over time?",
+  "data_origin": "measured_or_observed",
+  "source_version": "20399470",
+  "source_url": "https://zenodo.org/records/20399470",
+  "identifiers": [
+    "10.5281/zenodo.20399470"
+  ],
+  "publisher": "JUCÁ DOS SANTOS, FELIPE (Universidade Federal do Ceará); abrahao bomfim, isac gabriel (Universidade Federal do Ceará); G. Gomes, Danielo (Universidade Federal do Ceará); Coelho, Alexandre; Rafael Braga, Antonio (Universidade Federal do Ceará); Cavalcante, Marcelo Casimiro (University for International Integration of the Afro-Brazilian Lusophony); Freitas, Breno M. (Universidade Federal do Ceará)",
+  "release_date": "2026-05-26",
+  "measurement_dates": "December 2024–April 2026 in source sensor periods.",
+  "variables_and_units": "internal/external temperature, humidity and rainfall",
+  "independent_units": "hive and complete time blocks, species/season confounding",
+  "validation_design": "hive and complete time blocks, species/season confounding Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Five native sensor/rainfall CSVs; two identified Apis hives and a stingless-bee series from a different window.",
+  "prior_analysis_and_limits": "Block by hive and time. Species and season are confounded; a cross-species difference cannot be isolated from this record alone. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/dadosColmeia1Apis.csv",
+      "structure": {
+        "header": [
+          "id",
+          "temperature",
+          "weight",
+          "ext_humidity",
+          "ext_temperature",
+          "humidity",
+          "id_sensor",
+          "time"
+        ],
+        "data_records": 3116,
+        "first_lines": [
+          "id,temperature,weight,ext_humidity,ext_temperature,humidity,id_sensor,time",
+          "48401,33.70000076,25.48043823,99.90000153,24.10000038,83.59999847,1,2025-03-02 04:34:25.129",
+          "48397,33.79999924,25.47482491,99.90000153,24.20000076,83.5,1,2025-03-02 04:24:02.709",
+          "48393,33.79999924,26.11814499,99.90000153,24.10000038,83.59999847,1,2025-03-02 04:13:40.28",
+          "48389,33.79999924,25.98857689,99.90000153,24.10000038,83.5,1,2025-03-02 04:03:17.854",
+          "48385,33.79999924,26.11382294,99.90000153,23.89999962,83.40000153,1,2025-03-02 03:52:55.421",
+          "48381,33.79999924,26.20671844,99.90000153,24.0,83.59999847,1,2025-03-02 03:42:32.993",
+          "48377,33.70000076,26.18875885,99.90000153,24.0,83.70000458,1,2025-03-02 03:32:10.564"
+        ]
+      }
+    },
+    {
+      "asset": "raw/DadosMeliponas.csv",
+      "structure": {
+        "header": [
+          "time",
+          "id",
+          "temperature",
+          "weight",
+          "voltage",
+          "ext_humidity",
+          "ext_temperature",
+          "humidity",
+          "id_sensor"
+        ],
+        "data_records": 34881,
+        "first_lines": [
+          "time,id,temperature,weight,voltage,ext_humidity,ext_temperature,humidity,id_sensor",
+          "2025-09-01 00:00:59.614,105581,32.0,7.097877502,2.863310575,89.90000153,26.20000076,78.80000305,2",
+          "2025-09-01 00:07:49.583,105582,31.5,4.626339912,4.38538599,90.0,26.20000076,88.80000305,1",
+          "2025-09-01 00:09:58.125,105583,32.10000229,6.233709335,3.707233667,90.40000153,26.10000038,76.70000458,3",
+          "2025-09-01 00:11:30.921,105584,32.10000229,7.086750031,2.818100452,91.0,26.0,78.90000153,2",
+          "2025-09-01 00:18:21.470,105585,31.5,4.628119469,4.310035706,90.69999695,26.0,88.80000305,1",
+          "2025-09-01 00:20:28.781,105586,32.0,6.229845047,3.662023544,90.80000305,26.0,76.70000458,3",
+          "2025-09-01 00:22:02.205,105587,32.10000229,7.082805634,2.742749929,90.40000153,26.0,78.90000153,2"
+        ]
+      }
+    },
+    {
+      "asset": "raw/dadosColmeia2Apis.csv",
+      "structure": {
+        "header": [
+          "id",
+          "temperature",
+          "weight",
+          "ext_humidity",
+          "ext_temperature",
+          "humidity",
+          "id_sensor",
+          "time"
+        ],
+        "data_records": 7066,
+        "first_lines": [
+          "id,temperature,weight,ext_humidity,ext_temperature,humidity,id_sensor,time",
+          "41276,36.5,46.39582443,78.90000153,27.60000038,65.90000153,3,2025-02-10 05:45:07.463",
+          "41273,36.5,46.39141846,79.09999847,27.60000038,65.90000153,3,2025-02-10 05:39:07.189",
+          "41270,36.5,46.39484787,78.59999847,27.70000076,65.80000305,3,2025-02-10 05:33:06.922",
+          "41267,36.5,46.39378357,78.0,27.79999924,65.90000153,3,2025-02-10 05:27:06.656",
+          "41264,36.70000076,46.38064194,78.09999847,27.89999962,65.90000153,3,2025-02-10 05:21:06.395",
+          "41261,36.70000076,46.37641525,78.19999695,28.0,66.09999847,3,2025-02-10 05:15:06.123",
+          "41258,36.60000229,46.36416626,78.90000153,28.0,66.30000305,3,2025-02-10 04:51:05.722"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Dados Pluviométricos Set25-Mar26.csv",
+      "structure": {
+        "header": [
+          "id",
+          "valor",
+          "data",
+          "posto"
+        ],
+        "data_records": 232,
+        "first_lines": [
+          "id;valor;data;posto",
+          "6293030;0.4;2026-04-20;363",
+          "6292532;87.4;2026-04-19;363",
+          "6291918;0.8;2026-04-18;363",
+          "6291917;1.0;2026-04-17;363",
+          "6290997;1.2;2026-04-16;363",
+          "6290996;0.0;2026-04-15;363",
+          "6289825;25.2;2026-04-14;363"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Dados Pluviométricos (jan25-mai25).csv",
+      "structure": {
+        "header": [
+          "id",
+          "valor",
+          "data",
+          "posto"
+        ],
+        "data_records": 151,
+        "first_lines": [
+          "id;valor;data;posto",
+          "6024362;0.0;2025-01-01;363",
+          "6024363;0.0;2025-01-02;363",
+          "6024364;1.8;2025-01-03;363",
+          "6024365;0.0;2025-01-04;363",
+          "6024366;0.0;2025-01-05;363",
+          "6024367;0.0;2025-01-06;363",
+          "6024368;0.0;2025-01-07;363"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "text_or_instrument_native": 5
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 4277555,
+  "expanded_source_equivalent_bytes": 4277555,
+  "installed_folder_bytes": 4292031,
+  "source_asset_count": 6,
+  "asset_paths": [
+    "scenarios/83_ecology_hive_microclimate/raw/dadosColmeia1Apis.csv",
+    "scenarios/83_ecology_hive_microclimate/raw/DadosMeliponas.csv",
+    "scenarios/83_ecology_hive_microclimate/raw/dadosColmeia2Apis.csv",
+    "scenarios/83_ecology_hive_microclimate/raw/Dados Pluviométricos Set25-Mar26.csv",
+    "scenarios/83_ecology_hive_microclimate/raw/Dados Pluviométricos (jan25-mai25).csv",
+    "scenarios/83_ecology_hive_microclimate/context/source_record.json"
+  ],
+  "local_folder": "scenarios/83_ecology_hive_microclimate",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 4290301,
+  "expanded_release_folder_equivalent_bytes": 4290301
+}

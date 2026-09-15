@@ -1,0 +1,753 @@
+{
+  "created": "2025-08-19T13:46:57.162374+00:00",
+  "modified": "2025-08-19T13:47:15.908832+00:00",
+  "id": 15665325,
+  "conceptrecid": "15665324",
+  "doi": "10.5281/zenodo.15665325",
+  "conceptdoi": "10.5281/zenodo.15665324",
+  "doi_url": "https://doi.org/10.5281/zenodo.15665325",
+  "metadata": {
+    "title": "Tension-tension fatigue dataset for a non-crimp glass fiber fabric reinforced epoxy manufactured using three different cure-profiles",
+    "doi": "10.5281/zenodo.15665325",
+    "publication_date": "2025-06-15",
+    "description": "<p>The data-set contains tension-tension fatigue test (and a few static tensile test) performed on test samples extracted from three different laminates cured following three different cure profiles</p>\n<ul>\n<li>EQA01: 40C in 20 h + 75C in 5 h</li>\n<li>EQA02: 75C in 3.3 h</li>\n<li>EQA03: 110C in 3.3 h</li>\n</ul>\n<p>The overall files</p>\n<ul>\n<li>EQA0x-StaticTestResults.xlsx:&nbsp; The static test overview for that case</li>\n<li>EQA0x-Testplan Fatigue R=01.xlsx: The fatigue test overview for that case</li>\n</ul>\n<p>Data-files</p>\n<ul>\n<li>xxx.sta.txt: The static tensile test data</li>\n<li>xxx.ten.txt: The initial upload (initial tensile test) performed before the fatigue test</li>\n<li>xxx.fat.txt: Values extracted from the individual fatigue test</li>\n</ul>\n<p>The EQA02 dataset has been used in the publication:</p>\n<p><span lang=\"EN-US\">Morten Fogtmann Kristiansen, Steffen Rasmussen, Lars Pilgaard Mikkelsen, Transforming load controlled fatigue test data into a strain based SN-curve: Results for unidirectional non-crimp glass fiber/epoxy composites tested in tension-tension. <span>&nbsp;</span>45<sup>th</sup> Ris&oslash; Symposium, Sept. 1-4, 2025, Ris&oslash;, Denmark</span></p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Mikkelsen, Lars Pilgaard",
+        "affiliation": "Technical University of Denmark",
+        "orcid": "0000-0002-6323-4395"
+      },
+      {
+        "name": "Rasmussen, Steffen",
+        "affiliation": "Technical University of Denmark",
+        "orcid": "0000-0001-8197-8243"
+      }
+    ],
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "15665324"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Tension-tension fatigue dataset for a non-crimp glass fiber fabric reinforced epoxy manufactured using three different cure-profiles",
+  "links": {
+    "self": "https://zenodo.org/api/records/15665325",
+    "self_html": "https://zenodo.org/records/15665325",
+    "preview_html": "https://zenodo.org/records/15665325?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.15665325",
+    "self_doi": "https://doi.org/10.5281/zenodo.15665325",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.15665325",
+    "reserve_doi": "https://zenodo.org/api/records/15665325/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/15665324",
+    "parent_html": "https://zenodo.org/records/15665324",
+    "parent_doi": "https://doi.org/10.5281/zenodo.15665324",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.15665324",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:15665325/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:15665325/sequence/default",
+    "files": "https://zenodo.org/api/records/15665325/files",
+    "media_files": "https://zenodo.org/api/records/15665325/media-files",
+    "thumbnails": {
+      "10": "https://zenodo.org/api/iiif/record:15665325:EQA01-07.png/full/%5E10,/0/default.jpg",
+      "50": "https://zenodo.org/api/iiif/record:15665325:EQA01-07.png/full/%5E50,/0/default.jpg",
+      "100": "https://zenodo.org/api/iiif/record:15665325:EQA01-07.png/full/%5E100,/0/default.jpg",
+      "250": "https://zenodo.org/api/iiif/record:15665325:EQA01-07.png/full/%5E250,/0/default.jpg",
+      "750": "https://zenodo.org/api/iiif/record:15665325:EQA01-07.png/full/%5E750,/0/default.jpg",
+      "1200": "https://zenodo.org/api/iiif/record:15665325:EQA01-07.png/full/%5E1200,/0/default.jpg"
+    },
+    "archive": "https://zenodo.org/api/records/15665325/files-archive",
+    "archive_media": "https://zenodo.org/api/records/15665325/media-files-archive",
+    "latest": "https://zenodo.org/api/records/15665325/versions/latest",
+    "latest_html": "https://zenodo.org/records/15665325/latest",
+    "versions": "https://zenodo.org/api/records/15665325/versions",
+    "draft": "https://zenodo.org/api/records/15665325/draft",
+    "access_links": "https://zenodo.org/api/records/15665325/access/links",
+    "access_grants": "https://zenodo.org/api/records/15665325/access/grants",
+    "access_users": "https://zenodo.org/api/records/15665325/access/users",
+    "access_request": "https://zenodo.org/api/records/15665325/access/request",
+    "access": "https://zenodo.org/api/records/15665325/access",
+    "communities": "https://zenodo.org/api/records/15665325/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/15665325/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/15665325/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/15665325/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/15665325/quota-increase",
+    "requests": "https://zenodo.org/api/records/15665325/requests"
+  },
+  "updated": "2025-08-19T13:47:15.908832+00:00",
+  "recid": "15665325",
+  "revision": 4,
+  "files": [
+    {
+      "id": "c3c42fe2-3732-4cef-81a0-7a19a4d83fce",
+      "key": "EQA01-12.fat.txt",
+      "size": 284553,
+      "checksum": "md5:6b27dda0ccc3e559eb53c9922dc1c198",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01-12.fat.txt/content"
+      }
+    },
+    {
+      "id": "1c3da684-1ae4-4465-a69a-c031c44e115a",
+      "key": "EQA01-12.ten.txt",
+      "size": 100468,
+      "checksum": "md5:9b3113354862585672a59db572deeedf",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01-12.ten.txt/content"
+      }
+    },
+    {
+      "id": "165f7a41-721d-432e-8f86-960652d6e84f",
+      "key": "EQA01 Testplan Fatigue R=01.xlsx",
+      "size": 164416,
+      "checksum": "md5:dd2a764d1840643978917ee006b3d4a9",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01%20Testplan%20Fatigue%20R=01.xlsx/content"
+      }
+    },
+    {
+      "id": "e8edccda-8251-4cff-9240-514b99cdffa2",
+      "key": "EQA01-05.fat.txt",
+      "size": 135685,
+      "checksum": "md5:4a0aa7aad26ea436f09b9b2745e4cc05",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01-05.fat.txt/content"
+      }
+    },
+    {
+      "id": "7b6de316-5d31-43e9-95b8-2d9bc5508f49",
+      "key": "EQA01-06.fat.txt",
+      "size": 72919,
+      "checksum": "md5:53acdeae8b5ace826fdc005f3d7d109d",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01-06.fat.txt/content"
+      }
+    },
+    {
+      "id": "9ad36720-cfe0-4390-9184-6579f4836068",
+      "key": "EQA01-09.ten.txt",
+      "size": 120021,
+      "checksum": "md5:ae797a90bf0f9670ed280b41305119f4",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01-09.ten.txt/content"
+      }
+    },
+    {
+      "id": "94b464f3-435a-4d2f-a79b-2784beaf9d85",
+      "key": "EQA01-10.fat.txt",
+      "size": 419920,
+      "checksum": "md5:a3b26a914fd5c18922b7b364fc9d527d",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01-10.fat.txt/content"
+      }
+    },
+    {
+      "id": "0ec3973d-af7e-487e-a4a4-7eacc9f01a93",
+      "key": "EQA03-10.ten.txt",
+      "size": 106517,
+      "checksum": "md5:734abca8739df2cbace1c5d8f2ddd9c5",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-10.ten.txt/content"
+      }
+    },
+    {
+      "id": "4573d188-f1c9-4690-86dc-9830c39b5b95",
+      "key": "EQA01 StaticTestResults.xlsx",
+      "size": 9855,
+      "checksum": "md5:804cf9f3858a8a83699c6b7df02b94f3",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01%20StaticTestResults.xlsx/content"
+      }
+    },
+    {
+      "id": "a72c0aa7-cec9-4e75-94a4-58bae476646d",
+      "key": "EQA02-01.sta.txt",
+      "size": 355593,
+      "checksum": "md5:9cee8aa735c476d9a55d27ae04810eeb",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02-01.sta.txt/content"
+      }
+    },
+    {
+      "id": "989513d5-affe-4b47-8d42-1978e70166b2",
+      "key": "EQA02-06.ten.txt",
+      "size": 134832,
+      "checksum": "md5:0be48e1ec9145f5867cff5064904ed46",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02-06.ten.txt/content"
+      }
+    },
+    {
+      "id": "a5f97492-038c-4815-b69f-1997f03ba274",
+      "key": "EQA03-05.fat.txt",
+      "size": 411415,
+      "checksum": "md5:c75cf73bd863487eb36c61584e04ce90",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-05.fat.txt/content"
+      }
+    },
+    {
+      "id": "dc5cb204-3884-4797-ae82-43ccfcf9089d",
+      "key": "EQA03-07.fat.txt",
+      "size": 98461,
+      "checksum": "md5:b340f66748b57cfa4ed53c351bb40c08",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-07.fat.txt/content"
+      }
+    },
+    {
+      "id": "9e615e32-963c-4204-bed5-10227599be79",
+      "key": "EQA03-11.ten.txt",
+      "size": 96021,
+      "checksum": "md5:f7453597e9606c4685ce2c9b925728c4",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-11.ten.txt/content"
+      }
+    },
+    {
+      "id": "3b32c158-d83d-4f7b-9499-f338c0637134",
+      "key": "EQA01-03.fat.txt",
+      "size": 29676,
+      "checksum": "md5:fa48eee4b57e6474d73e1bd8bec77b23",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01-03.fat.txt/content"
+      }
+    },
+    {
+      "id": "51ece708-0b3b-4cbe-9a34-f26ba9d6ed71",
+      "key": "EQA03 Testplan Fatigue R=01.xlsx",
+      "size": 154216,
+      "checksum": "md5:315480b6f8a09d0bba08779230aa0f88",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03%20Testplan%20Fatigue%20R=01.xlsx/content"
+      }
+    },
+    {
+      "id": "a61201c2-8fba-47cb-a069-2ee18bd17cae",
+      "key": "EQA01-07.png",
+      "size": 46657,
+      "checksum": "md5:a4e1b0da1da4201497183fb7c73b0432",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01-07.png/content"
+      }
+    },
+    {
+      "id": "29cb990e-d7ff-4ea9-b1b6-44539ff36e01",
+      "key": "EQA03-12.ten.txt",
+      "size": 90923,
+      "checksum": "md5:80dad9c41dad71dd66cfb4e14cde96e3",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-12.ten.txt/content"
+      }
+    },
+    {
+      "id": "ef3f0206-e9a2-477b-9e3d-87254b72971f",
+      "key": "EAQ01-01.sta.txt",
+      "size": 388427,
+      "checksum": "md5:08f35ff721e59dc073fcef1356deb21e",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EAQ01-01.sta.txt/content"
+      }
+    },
+    {
+      "id": "b920f88c-8a34-4541-934d-3d63e3c1b3db",
+      "key": "EQA03-09.fat.txt",
+      "size": 8716,
+      "checksum": "md5:2863b29943b650f09189bb5cda4023d9",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-09.fat.txt/content"
+      }
+    },
+    {
+      "id": "c6b91b8a-6d21-468e-ba3d-7ddec2b7a390",
+      "key": "EAQ01-01.png",
+      "size": 46489,
+      "checksum": "md5:ac2005688f16bb517a914d358c9aa9ae",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EAQ01-01.png/content"
+      }
+    },
+    {
+      "id": "d2c670fa-e698-4024-8593-d51b6de17c07",
+      "key": "EQA01-10.ten.txt",
+      "size": 88058,
+      "checksum": "md5:623b6b8931672ba08253ece9be13fcae",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01-10.ten.txt/content"
+      }
+    },
+    {
+      "id": "53c05c21-b307-496f-b772-9906b629eff6",
+      "key": "EQA02-02.png",
+      "size": 46668,
+      "checksum": "md5:5cbc1c79e551395c2c200ae3a73d4c8c",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02-02.png/content"
+      }
+    },
+    {
+      "id": "0d737f7f-fee5-4286-b05f-decbb6bae388",
+      "key": "EQA02-03.fat.txt",
+      "size": 23503,
+      "checksum": "md5:ee0983e8bbeaf7d46deaa5d6bb5391d2",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02-03.fat.txt/content"
+      }
+    },
+    {
+      "id": "69b4816d-26c3-4684-ba03-37c011c2f101",
+      "key": "EQA03-09.ten.txt",
+      "size": 124877,
+      "checksum": "md5:49c0276b55a685b00eac5c5940499efb",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-09.ten.txt/content"
+      }
+    },
+    {
+      "id": "25d02aae-335f-491e-ba88-f69088cad3fb",
+      "key": "EQA03-06.ten.txt",
+      "size": 88981,
+      "checksum": "md5:52e06cd93e07bdcab1cdc897ef4c293d",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-06.ten.txt/content"
+      }
+    },
+    {
+      "id": "a4c6c1c6-968a-4608-9ffb-635261ea09e0",
+      "key": "EQA03-08.ten.txt",
+      "size": 69823,
+      "checksum": "md5:df7fa0320a930030ee7290d8fe13dc33",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-08.ten.txt/content"
+      }
+    },
+    {
+      "id": "f7264b40-591f-47d9-bab8-2fd5d2b99348",
+      "key": "EQA03-07.ten.txt",
+      "size": 75834,
+      "checksum": "md5:bb716a44f4b08906e4b3ba2d9b03908a",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-07.ten.txt/content"
+      }
+    },
+    {
+      "id": "35ea830c-3de5-4c69-a816-2e27b0d9c27b",
+      "key": "EQA01-06.ten.txt",
+      "size": 100800,
+      "checksum": "md5:6858bd095ce62a157ca33daa8c3215e2",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01-06.ten.txt/content"
+      }
+    },
+    {
+      "id": "c052a992-a3ca-4e65-8780-1030c7010719",
+      "key": "EQA03-08.fat.txt",
+      "size": 413953,
+      "checksum": "md5:d572cae86caff0d2f4c578d7fd572ca1",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-08.fat.txt/content"
+      }
+    },
+    {
+      "id": "9aadfcda-6ec7-4a13-8f84-4f1c267d8cee",
+      "key": "EQA03-11.fat.txt",
+      "size": 73327,
+      "checksum": "md5:be3f54b81d6f80328ba75ebfbf82d9da",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-11.fat.txt/content"
+      }
+    },
+    {
+      "id": "4dc5b51e-e667-40e9-be96-6b0ff9de20b9",
+      "key": "EQA03-10.fat.txt",
+      "size": 12110,
+      "checksum": "md5:ba4e42b103df8e8f2511ec06a18bf22d",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-10.fat.txt/content"
+      }
+    },
+    {
+      "id": "6141065f-14e6-4d8c-bc9c-83fb4a3abcb2",
+      "key": "EQA03-12.fat.txt",
+      "size": 30838,
+      "checksum": "md5:a6b64ea3409de3d1f876d375f0d5ea69",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-12.fat.txt/content"
+      }
+    },
+    {
+      "id": "48123322-c3a0-4818-95ff-c28cc25c05ae",
+      "key": "EAQ01-02.png",
+      "size": 44547,
+      "checksum": "md5:96e195b7c8f6eda41493373bd6ec4e42",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EAQ01-02.png/content"
+      }
+    },
+    {
+      "id": "538dd750-c3e3-49af-8e59-30a87817a6d2",
+      "key": "EQA01-05.ten.txt",
+      "size": 113734,
+      "checksum": "md5:250302b2931939abbf253245ca7996ad",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01-05.ten.txt/content"
+      }
+    },
+    {
+      "id": "99e9573a-37c8-406a-8cf3-e1c99d18045e",
+      "key": "EQA02-04.fat.txt",
+      "size": 42116,
+      "checksum": "md5:bd471c916f3b6cac026adc8e0b3c54e0",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02-04.fat.txt/content"
+      }
+    },
+    {
+      "id": "8ae673cf-b293-42c2-848e-5f69392d152e",
+      "key": "EQA02-05.fat.txt",
+      "size": 34224,
+      "checksum": "md5:bda7facd17c81b923e90c1b4c0abe70f",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02-05.fat.txt/content"
+      }
+    },
+    {
+      "id": "b7ab10c9-f620-4916-8c83-035d8b467dde",
+      "key": "EQA03-03.png",
+      "size": 45193,
+      "checksum": "md5:81da68fafcc91bbf4936f8845a6499b9",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-03.png/content"
+      }
+    },
+    {
+      "id": "510e9123-32b6-4f44-b85d-557e0f853b57",
+      "key": "EQA01-07.sta.txt",
+      "size": 395035,
+      "checksum": "md5:341e2d480fdbfaa14c7481edeba491b9",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01-07.sta.txt/content"
+      }
+    },
+    {
+      "id": "ec5bd11d-b2bb-4900-b6fc-025a533980f7",
+      "key": "EAQ01-02.sta.txt",
+      "size": 391107,
+      "checksum": "md5:2a629a98469bcda6caf7306d2f7c333c",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EAQ01-02.sta.txt/content"
+      }
+    },
+    {
+      "id": "75e04014-726f-4b3f-bc96-f6caf80c7af6",
+      "key": "EQA01 FatigueResults.xlsx",
+      "size": 10073,
+      "checksum": "md5:f450aaaa9396f8fbc2aba5f64235d19c",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01%20FatigueResults.xlsx/content"
+      }
+    },
+    {
+      "id": "755f5649-9dac-46fd-94e8-1ece0e262439",
+      "key": "EQA01-04.ten.txt",
+      "size": 107046,
+      "checksum": "md5:3554f951f83939051df6f49e80238982",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01-04.ten.txt/content"
+      }
+    },
+    {
+      "id": "19bb935c-2c07-495a-849a-d040f1020b23",
+      "key": "EQA01-04.fat.txt",
+      "size": 73120,
+      "checksum": "md5:383068d7256cf80aa612bbbc33ed6c91",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01-04.fat.txt/content"
+      }
+    },
+    {
+      "id": "effbc10d-b112-462e-a576-27bf0b21965c",
+      "key": "EQA01-11.ten.txt",
+      "size": 125738,
+      "checksum": "md5:89ff7254848f3135014c7c28d6f609c3",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01-11.ten.txt/content"
+      }
+    },
+    {
+      "id": "113eb230-4d35-4b05-ad9d-8726f7fdbb63",
+      "key": "EQA02-12.png",
+      "size": 45566,
+      "checksum": "md5:d501e24c475fbbb1119018f06b2fac45",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02-12.png/content"
+      }
+    },
+    {
+      "id": "50aa579e-eb95-4352-8958-fdc7b89eb34c",
+      "key": "EQA01-03.ten.txt",
+      "size": 136378,
+      "checksum": "md5:fcf858b6e93555d258c8c0ed70aed084",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01-03.ten.txt/content"
+      }
+    },
+    {
+      "id": "01acf309-efc7-4b46-8b68-ee77f7e4a179",
+      "key": "EQA01-11.fat.txt",
+      "size": 116147,
+      "checksum": "md5:8c9b6f5aae23569638b6dd5cb5456349",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01-11.fat.txt/content"
+      }
+    },
+    {
+      "id": "6c3c5d27-013a-47f1-9cf6-60b310590161",
+      "key": "EQA02-03.ten.txt",
+      "size": 97106,
+      "checksum": "md5:3df248badc45a7870d73a4b635f7107f",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02-03.ten.txt/content"
+      }
+    },
+    {
+      "id": "35ea7398-7ff9-4e32-88f0-b84c25293594",
+      "key": "EQA02-12.sta.txt",
+      "size": 402854,
+      "checksum": "md5:baa68eef9a317b3a1ac74d016975ce76",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02-12.sta.txt/content"
+      }
+    },
+    {
+      "id": "23cd7687-340a-476d-8d5d-3f74f73c29b7",
+      "key": "EQA01-09.fat.txt",
+      "size": 82587,
+      "checksum": "md5:8b31da27097ea890144d060ba1357cb0",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA01-09.fat.txt/content"
+      }
+    },
+    {
+      "id": "49851b73-e28c-48ad-8556-be88fec9592e",
+      "key": "EQA02-01.png",
+      "size": 45965,
+      "checksum": "md5:45edc1a3f47198985449cd77a0710998",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02-01.png/content"
+      }
+    },
+    {
+      "id": "b9d4f50f-53c1-45eb-904d-843361fa7213",
+      "key": "EQA02 FatigueResults.xlsx",
+      "size": 9811,
+      "checksum": "md5:95e56bd0a4196327288565f184829972",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02%20FatigueResults.xlsx/content"
+      }
+    },
+    {
+      "id": "4da22750-34c6-4a27-b36f-ba7e33e545ad",
+      "key": "EQA02-02.sta.txt",
+      "size": 378625,
+      "checksum": "md5:2e5ce0149c087e7a4932befdfd04c0d9",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02-02.sta.txt/content"
+      }
+    },
+    {
+      "id": "8c352256-58c8-4448-9df2-1e222858d3b3",
+      "key": "EQA02 StaticTestResults.xlsx",
+      "size": 9951,
+      "checksum": "md5:5ea0b4eeff65b817302be89d0435f1cd",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02%20StaticTestResults.xlsx/content"
+      }
+    },
+    {
+      "id": "ab0a253b-ce95-4f0e-864c-0d6de2c812b7",
+      "key": "EQA02 Testplan Fatigue R=01.xlsx",
+      "size": 158723,
+      "checksum": "md5:d81687793efbf2098a576412f220f102",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02%20Testplan%20Fatigue%20R=01.xlsx/content"
+      }
+    },
+    {
+      "id": "eb164cd2-cedb-43cb-a9cc-1937b36ac67a",
+      "key": "EQA02-10.fat.txt",
+      "size": 133860,
+      "checksum": "md5:4fcc0455c662707cef028bb49c4ef932",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02-10.fat.txt/content"
+      }
+    },
+    {
+      "id": "1bcca05c-2bea-4f1a-a563-d4ba0ec7f60c",
+      "key": "EQA02-11.fat.txt",
+      "size": 515425,
+      "checksum": "md5:4f33d1659a12e3cd77d7be08c253ee1e",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02-11.fat.txt/content"
+      }
+    },
+    {
+      "id": "fb2a66dc-e218-447d-a927-13f46e397f31",
+      "key": "EQA02-10.ten.txt",
+      "size": 75321,
+      "checksum": "md5:f657b3d613721a46149ede0531e08392",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02-10.ten.txt/content"
+      }
+    },
+    {
+      "id": "94171ba4-77d2-4b45-9849-1f89bfb66002",
+      "key": "EQA02-11.ten.txt",
+      "size": 75852,
+      "checksum": "md5:218da8f6fd7c1f8bdee88057ba33efc8",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02-11.ten.txt/content"
+      }
+    },
+    {
+      "id": "72d99b15-51d3-4f24-990c-5f8596418038",
+      "key": "EQA02-04.ten.txt",
+      "size": 92625,
+      "checksum": "md5:166b6235845762a6fe545bb5358dc129",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02-04.ten.txt/content"
+      }
+    },
+    {
+      "id": "f3cc4333-dadd-43d2-8b90-125cd5cf860b",
+      "key": "EQA02-06.fat.txt",
+      "size": 56974,
+      "checksum": "md5:789758b5dd55cef6eef35cf051f52fac",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02-06.fat.txt/content"
+      }
+    },
+    {
+      "id": "3f4d705b-fa01-4ef6-8223-47363f5fd8c0",
+      "key": "EQA02-05.ten.txt",
+      "size": 95803,
+      "checksum": "md5:be27064b43f7252c2ad1103f7bbe3cf7",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02-05.ten.txt/content"
+      }
+    },
+    {
+      "id": "85c5fbac-50e4-48a3-b64d-e1b4d34e808b",
+      "key": "EQA03-02.png",
+      "size": 45476,
+      "checksum": "md5:4f9b1a45dc66d07fb17af3389604afca",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-02.png/content"
+      }
+    },
+    {
+      "id": "4e798e31-54e5-4bbf-8454-1ef6925f3c67",
+      "key": "EQA03-06.fat.txt",
+      "size": 58515,
+      "checksum": "md5:133106c4f469f3d48b34f810f4c5947c",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-06.fat.txt/content"
+      }
+    },
+    {
+      "id": "cb9aa991-a411-4b9c-8e0d-b1346a2fffab",
+      "key": "EQA02-09.fat.txt",
+      "size": 63514,
+      "checksum": "md5:150ba18707a465798dac3b7ac248bb57",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02-09.fat.txt/content"
+      }
+    },
+    {
+      "id": "653a2df2-fd24-44b8-a241-32f7841c2b6e",
+      "key": "EQA02-09.ten.txt",
+      "size": 80593,
+      "checksum": "md5:4098b7c7f2e4889c4002a67a87694dd1",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA02-09.ten.txt/content"
+      }
+    },
+    {
+      "id": "d1b8f7e2-1498-4329-a474-6083e900313a",
+      "key": "EQA03-05.ten.txt",
+      "size": 76625,
+      "checksum": "md5:948c3f02c09f6b7c6013a97cf208f272",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-05.ten.txt/content"
+      }
+    },
+    {
+      "id": "959dc06b-d43f-4856-8059-0dfd09d1d984",
+      "key": "EQA03-01.png",
+      "size": 45565,
+      "checksum": "md5:d50506fb2e30928378c242134ce7a026",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-01.png/content"
+      }
+    },
+    {
+      "id": "fae3a165-d3e5-4871-87cb-cc897ddefaf0",
+      "key": "EQA03-01.sta.txt",
+      "size": 407766,
+      "checksum": "md5:468978e181088edaf855da6e67fff598",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-01.sta.txt/content"
+      }
+    },
+    {
+      "id": "69359b72-38f3-4ce2-8e12-d8c95d4be7c3",
+      "key": "EQA03-02.sta.txt",
+      "size": 397693,
+      "checksum": "md5:47b960dc7b7c00d601fc9835fbd45a8a",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-02.sta.txt/content"
+      }
+    },
+    {
+      "id": "ce67a728-c557-4c0d-aee9-8e00ece342ce",
+      "key": "EQA03-03.sta.txt",
+      "size": 402465,
+      "checksum": "md5:97adcf9dd1ed3ed93492702e6e83b589",
+      "links": {
+        "self": "https://zenodo.org/api/records/15665325/files/EQA03-03.sta.txt/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "48693"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 988,
+    "unique_downloads": 980,
+    "views": 101,
+    "unique_views": 84,
+    "version_downloads": 988,
+    "version_unique_downloads": 980,
+    "version_unique_views": 84,
+    "version_views": 101
+  },
+  "state": "done",
+  "submitted": true
+}

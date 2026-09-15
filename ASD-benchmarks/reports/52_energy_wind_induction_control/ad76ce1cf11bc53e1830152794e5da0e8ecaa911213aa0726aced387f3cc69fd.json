@@ -1,0 +1,43 @@
+{
+  "scenario_id": "52_energy_wind_induction_control",
+  "path": "raw/WT1_ABL_Type_II.mat",
+  "bytes": 140903013,
+  "sha256": "326d1ae3f5617149559edb35b85ffffa5cd6705d77ba90772205f93be7e69041",
+  "checked_utc": "2026-09-15T06:45:28.923154+00:00",
+  "source_checksum_status": "verified",
+  "format": "MATLAB",
+  "variables": [
+    {
+      "name": "WT1_ABL_TypeII",
+      "shape": [
+        1,
+        1
+      ],
+      "type": "struct"
+    }
+  ],
+  "struct_fields": [
+    {
+      "name": "WT1_ABL_TypeII",
+      "fields": [
+        "ABL022_A2_St025_2D",
+        "ABL022_A2_St025_4D",
+        "ABL022_A2_St025_5D",
+        "ABL022_A2_St030_2D",
+        "ABL022_A2_St030_4D",
+        "ABL022_A2_St030_5D",
+        "ABL022_A2_St040_2D",
+        "ABL022_A2_St040_4D",
+        "ABL022_A2_St040_5D",
+        "ABL022_Greedy_2D",
+        "ABL022_Greedy_4D",
+        "ABL022_Greedy_5D",
+        "WindScanner_Position",
+        "WindScanner_azimuth",
+        "WindScanner_elevation",
+        "GridCentre_WT1hubHeight"
+      ]
+    }
+  ],
+  "status": "pass"
+}

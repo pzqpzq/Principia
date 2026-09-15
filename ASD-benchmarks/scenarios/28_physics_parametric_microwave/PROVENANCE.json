@@ -1,0 +1,687 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "28_physics_parametric_microwave",
+  "domain": "microwave physics",
+  "title": "Inverse parametric microwave scattering",
+  "publisher": "Zenodo; originating researchers: Lingua, Fabio (KTH - Royal Institute of Technology); Cortinovis, Michele; Haviland, David B.",
+  "authoritative_landing_url": "https://zenodo.org/records/18938314",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/18938314",
+    "https://zenodo.org/api/records/18938314/files/PeaceFilmx2_BW_96x151.png/content",
+    "https://zenodo.org/api/records/18938314/files/S_tar_dB_13_best.npz/content",
+    "https://zenodo.org/api/records/18938314/files/Figures_InversePumpProblem_Fig2.ipynb/content",
+    "https://zenodo.org/api/records/18938314/files/Figures_InversePumpProblem_Fig4.ipynb/content",
+    "https://zenodo.org/api/records/18938314/files/Sexp_abs_dB_13_best.npz/content",
+    "https://zenodo.org/api/records/18938314/files/Inverse_Pump_Problem_Analysis.ipynb/content",
+    "https://zenodo.org/api/records/18938314/files/Stargets_Image_PeaceFilmx2_96x151.npz/content",
+    "https://zenodo.org/api/records/18938314/files/Folders.zip/content",
+    "https://zenodo.org/api/records/18938314/files/Readme.txt/content",
+    "https://zenodo.org/api/records/18938314/files/Img2Scattering.ipynb/content",
+    "https://zenodo.org/api/records/18938314/files/Figures_InversePumpProblem_Fig3.ipynb/content",
+    "https://zenodo.org/api/records/18938314/files/Error_vs_N_2025-10-01_22_56.npz/content",
+    "https://zenodo.org/api/records/18938314/files/PyPump.py/content",
+    "https://zenodo.org/api/records/18938314/files/Sexp_abs_dB_3.npz/content",
+    "https://zenodo.org/api/records/18938314/files/Error_vs_N_stat2025-10-07_06_08.npz/content",
+    "https://zenodo.org/api/records/18938314/files/Data_Img.hdf5/content",
+    "https://zenodo.org/api/records/18938314/files/2025-11.hdf5/content",
+    "https://zenodo.org/api/records/18938314/files/Figures_InversePumpProblem_Fig5.ipynb/content",
+    "https://zenodo.org/api/records/18938314/files/myPy_functions.py/content",
+    "https://zenodo.org/api/records/18938314/files/inverse_problem_visualize_&_savedata.ipynb/content",
+    "https://zenodo.org/api/records/18938314"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.18938314"
+  ],
+  "release_or_version": "1.0",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "deterministic_selection_rule": "Complete source record unless otherwise specified.",
+  "substitution": null,
+  "data_origin": "mixed_measured_and_computational",
+  "measurement_dates": {
+    "description": "Experimental HDF5 groups include 2025-11-14 and 2025-11-21; numerical NPZ filenames include October 2025. Released 2026-03-10, created 2026-03-11.",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": "2026-03-10",
+  "source_created_utc": "2026-03-11T14:51:26.099657+00:00",
+  "source_updated_utc": "2026-06-18T15:17:22.930357+00:00",
+  "source_inventory": [
+    {
+      "name": "PeaceFilmx2_BW_96x151.png",
+      "bytes": 60869,
+      "selected": true
+    },
+    {
+      "name": "S_tar_dB_13_best.npz",
+      "bytes": 1622,
+      "selected": true
+    },
+    {
+      "name": "Figures_InversePumpProblem_Fig2.ipynb",
+      "bytes": 319730,
+      "selected": true
+    },
+    {
+      "name": "Figures_InversePumpProblem_Fig4.ipynb",
+      "bytes": 192186,
+      "selected": true
+    },
+    {
+      "name": "Sexp_abs_dB_13_best.npz",
+      "bytes": 3014,
+      "selected": true
+    },
+    {
+      "name": "Inverse_Pump_Problem_Analysis.ipynb",
+      "bytes": 1433299,
+      "selected": true
+    },
+    {
+      "name": "Stargets_Image_PeaceFilmx2_96x151.npz",
+      "bytes": 22501018,
+      "selected": true
+    },
+    {
+      "name": "Folders.zip",
+      "bytes": 4364,
+      "selected": true
+    },
+    {
+      "name": "Readme.txt",
+      "bytes": 2665,
+      "selected": true
+    },
+    {
+      "name": "Img2Scattering.ipynb",
+      "bytes": 205949,
+      "selected": true
+    },
+    {
+      "name": "Figures_InversePumpProblem_Fig3.ipynb",
+      "bytes": 235739,
+      "selected": true
+    },
+    {
+      "name": "Error_vs_N_2025-10-01_22_56.npz",
+      "bytes": 3843342,
+      "selected": true
+    },
+    {
+      "name": "PyPump.py",
+      "bytes": 42635,
+      "selected": true
+    },
+    {
+      "name": "Sexp_abs_dB_3.npz",
+      "bytes": 9494,
+      "selected": true
+    },
+    {
+      "name": "Error_vs_N_stat2025-10-07_06_08.npz",
+      "bytes": 32002960,
+      "selected": true
+    },
+    {
+      "name": "Data_Img.hdf5",
+      "bytes": 2561928,
+      "selected": true
+    },
+    {
+      "name": "2025-11.hdf5",
+      "bytes": 907472,
+      "selected": true
+    },
+    {
+      "name": "Figures_InversePumpProblem_Fig5.ipynb",
+      "bytes": 661966,
+      "selected": true
+    },
+    {
+      "name": "myPy_functions.py",
+      "bytes": 101262,
+      "selected": true
+    },
+    {
+      "name": "inverse_problem_visualize_&_savedata.ipynb",
+      "bytes": 138725,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Measured, extracted and numerical target/scattering products coexist. The image is an experimental target, not a camera measurement. Notebook outputs are source content; no source code was executed.",
+  "known_analyses_and_limitations": "The inverse pump/scattering method is already described in arXiv:2512.15453. The README repeats two entries and uses a target-image filename that differs from the deposited filename. Small numbers of hardware sessions limit transfer claims.",
+  "related_publications": [],
+  "pinned_commit": null,
+  "source_context_request_failures": [],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-028",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "context/zenodo_record.json",
+      "scenario_relative_path": "context/zenodo_record.json",
+      "bytes": 17608,
+      "sha256": "1a3980f1855cf74e605d4e1b1e0ed5bdeef38b1e83402b6d2805649f57d4e066",
+      "role": "parsed_source_metadata_snapshot",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:40:21.857208+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "raw/2025-11.hdf5",
+      "scenario_relative_path": "raw/2025-11.hdf5",
+      "bytes": 907472,
+      "sha256": "686e64a5c6c2c9adb836a27a4c27709566345aa3d8d209a61563a4e0d043cd10",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314/files/2025-11.hdf5/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/18938314/files/2025-11.hdf5/content",
+      "source_checksum": "md5:c81957104dc1c1a745e319365b61c6cb",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:46:02.083414+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18938314",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "raw/Data_Img.hdf5",
+      "scenario_relative_path": "raw/Data_Img.hdf5",
+      "bytes": 2561928,
+      "sha256": "6ac7ab23fbcf2860c776e6c1f384275b84c7217bfabd764884148b7a6ee29be6",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314/files/Data_Img.hdf5/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/18938314/files/Data_Img.hdf5/content",
+      "source_checksum": "md5:9410171b71bca3f8c6e72e022bb1c7fc",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:45:58.720864+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18938314",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "raw/Error_vs_N_2025-10-01_22_56.npz",
+      "scenario_relative_path": "raw/Error_vs_N_2025-10-01_22_56.npz",
+      "bytes": 3843342,
+      "sha256": "f768435f9d55f3be383267af4b36642e84e7de566d81eb665e6dade0c869a6cf",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314/files/Error_vs_N_2025-10-01_22_56.npz/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/18938314/files/Error_vs_N_2025-10-01_22_56.npz/content",
+      "source_checksum": "md5:8ae3897a4751f0ca373abb61da9f3553",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:44:09.012815+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18938314",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "raw/Error_vs_N_stat2025-10-07_06_08.npz",
+      "scenario_relative_path": "raw/Error_vs_N_stat2025-10-07_06_08.npz",
+      "bytes": 32002960,
+      "sha256": "cf2c4a3f3bb10cd23a5a2d1c7803e1bc4cfe3d7122163b212a1709451f7634fb",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314/files/Error_vs_N_stat2025-10-07_06_08.npz/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/18938314/files/Error_vs_N_stat2025-10-07_06_08.npz/content",
+      "source_checksum": "md5:f72babab6f1bcdccba47cfb36f901f44",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:47:38.860948+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18938314",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "raw/Figures_InversePumpProblem_Fig2.ipynb",
+      "scenario_relative_path": "raw/Figures_InversePumpProblem_Fig2.ipynb",
+      "bytes": 319730,
+      "sha256": "64ece71bd23211b490c1916c14b369874f9bc7ee7469a7a1333ccc1ec2cf2b67",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314/files/Figures_InversePumpProblem_Fig2.ipynb/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/18938314/files/Figures_InversePumpProblem_Fig2.ipynb/content",
+      "source_checksum": "md5:070c1665271d7fceb3f068838612bc1f",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:22.876287+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18938314",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "raw/Figures_InversePumpProblem_Fig3.ipynb",
+      "scenario_relative_path": "raw/Figures_InversePumpProblem_Fig3.ipynb",
+      "bytes": 235739,
+      "sha256": "ee01aea384587c5778f818537f2929b2a556316f00a0ecf2d2eba0e87a4f18c1",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314/files/Figures_InversePumpProblem_Fig3.ipynb/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/18938314/files/Figures_InversePumpProblem_Fig3.ipynb/content",
+      "source_checksum": "md5:47a99866bf7a8b500f5439c79e1dfa99",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:53.028950+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18938314",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "raw/Figures_InversePumpProblem_Fig4.ipynb",
+      "scenario_relative_path": "raw/Figures_InversePumpProblem_Fig4.ipynb",
+      "bytes": 192186,
+      "sha256": "2cacb7ae7dc620ba6a5d00b9886e3ee633db9a2e92745ce1cc75dfef42a6ef09",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314/files/Figures_InversePumpProblem_Fig4.ipynb/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/18938314/files/Figures_InversePumpProblem_Fig4.ipynb/content",
+      "source_checksum": "md5:04323d9372455b7d20dbc0e7f51e0da8",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:23.584417+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18938314",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "raw/Figures_InversePumpProblem_Fig5.ipynb",
+      "scenario_relative_path": "raw/Figures_InversePumpProblem_Fig5.ipynb",
+      "bytes": 661966,
+      "sha256": "dad15cf71d75b9d65c0d619368d803defe2f00d1b0f3d4090b7c7b5b2f9ba6ec",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314/files/Figures_InversePumpProblem_Fig5.ipynb/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/18938314/files/Figures_InversePumpProblem_Fig5.ipynb/content",
+      "source_checksum": "md5:2d1d15189f96e94615326f219674bde0",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:46:08.857821+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18938314",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "raw/Folders.zip",
+      "scenario_relative_path": "raw/Folders.zip",
+      "bytes": 4364,
+      "sha256": "38fc933e647ca56c0db7a6609053dfb9ab509ee0a0e390ad71576b744075b0f5",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314/files/Folders.zip/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/18938314/files/Folders.zip/content",
+      "source_checksum": "md5:67aa3d48d2a75110d956dcffe7aa53cd",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:45.061996+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18938314",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "raw/Img2Scattering.ipynb",
+      "scenario_relative_path": "raw/Img2Scattering.ipynb",
+      "bytes": 205949,
+      "sha256": "558cc05332bdbcdee4ccef4ef9564f5a8ec1ba5ccb6fb9e5d5c0dad5e25cb6c7",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314/files/Img2Scattering.ipynb/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/18938314/files/Img2Scattering.ipynb/content",
+      "source_checksum": "md5:f66da223d8e6ad4c391c12709cbeae26",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:48.760279+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18938314",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "raw/Inverse_Pump_Problem_Analysis.ipynb",
+      "scenario_relative_path": "raw/Inverse_Pump_Problem_Analysis.ipynb",
+      "bytes": 1433299,
+      "sha256": "6f11187031bcf581da9c8cb75d025eb909c9f2a9d5a0726a877e741db51ef096",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314/files/Inverse_Pump_Problem_Analysis.ipynb/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/18938314/files/Inverse_Pump_Problem_Analysis.ipynb/content",
+      "source_checksum": "md5:562f4f25ed7d9cc482bcc6881685de50",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:43.681222+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18938314",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "raw/PeaceFilmx2_BW_96x151.png",
+      "scenario_relative_path": "raw/PeaceFilmx2_BW_96x151.png",
+      "bytes": 60869,
+      "sha256": "0bc9948de4098a4ad4046f2a1dcf34c9939a619fab850a0cd1fe152fc3c35eae",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314/files/PeaceFilmx2_BW_96x151.png/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/18938314/files/PeaceFilmx2_BW_96x151.png/content",
+      "source_checksum": "md5:9416def0e0141b96240281191d66cb75",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:20.640324+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18938314",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "raw/PyPump.py",
+      "scenario_relative_path": "raw/PyPump.py",
+      "bytes": 42635,
+      "sha256": "4a16cb7658df11f6735d5d29799ef5b8ed1f902012cba68e090b4c1a548fb4ff",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314/files/PyPump.py/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/18938314/files/PyPump.py/content",
+      "source_checksum": "md5:aa9ad968da297c67ab93c0b8f8c90693",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:44:10.556052+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18938314",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "raw/Readme.txt",
+      "scenario_relative_path": "raw/Readme.txt",
+      "bytes": 2665,
+      "sha256": "540559528c98f54dae726dc2ed61bc73b80ffc92eb117a3734e48cb38f0cf666",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314/files/Readme.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/18938314/files/Readme.txt/content",
+      "source_checksum": "md5:1665f6e2a87cd80b576d940bdb262b07",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:46.601199+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18938314",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "raw/S_tar_dB_13_best.npz",
+      "scenario_relative_path": "raw/S_tar_dB_13_best.npz",
+      "bytes": 1622,
+      "sha256": "3953327744ca7799099dd4c69bef94316a266313b60981cc1d8ceb553070abd8",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314/files/S_tar_dB_13_best.npz/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/18938314/files/S_tar_dB_13_best.npz/content",
+      "source_checksum": "md5:0d526465cb3a2aae53d15bfd05af94eb",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:21.242227+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18938314",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "raw/Sexp_abs_dB_13_best.npz",
+      "scenario_relative_path": "raw/Sexp_abs_dB_13_best.npz",
+      "bytes": 3014,
+      "sha256": "4576a334f9ba0f98e9ce93dd05b47fe15a8897b8a2ae1e4f3b00f7b52ae2c23b",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314/files/Sexp_abs_dB_13_best.npz/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/18938314/files/Sexp_abs_dB_13_best.npz/content",
+      "source_checksum": "md5:506b3fdfad1cea49ba648345dc0a5222",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:43:24.257557+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18938314",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "raw/Sexp_abs_dB_3.npz",
+      "scenario_relative_path": "raw/Sexp_abs_dB_3.npz",
+      "bytes": 9494,
+      "sha256": "4f34dcc2c485acad2738d7c2b1c573475148cf450d7a768b433bb05e6238a929",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314/files/Sexp_abs_dB_3.npz/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/18938314/files/Sexp_abs_dB_3.npz/content",
+      "source_checksum": "md5:03c3592a4a72fb5639db3373393c75dd",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:44:12.292581+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18938314",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "raw/Stargets_Image_PeaceFilmx2_96x151.npz",
+      "scenario_relative_path": "raw/Stargets_Image_PeaceFilmx2_96x151.npz",
+      "bytes": 22501018,
+      "sha256": "2e52886e9507a8a72ca5be5b1a1c691f640bd82378f774c33a784c963358f18a",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314/files/Stargets_Image_PeaceFilmx2_96x151.npz/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/18938314/files/Stargets_Image_PeaceFilmx2_96x151.npz/content",
+      "source_checksum": "md5:8928c529ede22e900b47ee023dcb4869",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:46:03.308760+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18938314",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "raw/inverse_problem_visualize_&_savedata.ipynb",
+      "scenario_relative_path": "raw/inverse_problem_visualize_&_savedata.ipynb",
+      "bytes": 138725,
+      "sha256": "04070cf0f47e2a4aa2cfd5f1bdae964a1657f6c17dc04c39e0e29d064960b267",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314/files/inverse_problem_visualize_&_savedata.ipynb/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/18938314/files/inverse_problem_visualize_&_savedata.ipynb/content",
+      "source_checksum": "md5:ca90922d9c44941e0b46905e2ae41e69",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:46:08.870226+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18938314",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-028",
+      "scenario_id": "28_physics_parametric_microwave",
+      "path": "raw/myPy_functions.py",
+      "scenario_relative_path": "raw/myPy_functions.py",
+      "bytes": 101262,
+      "sha256": "ebb8ff8e81f130d48ece7b9f78c0a57865122b74250a3b48f6627f3c2116f040",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/18938314/files/myPy_functions.py/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/18938314/files/myPy_functions.py/content",
+      "source_checksum": "md5:dc45646fabdd0c34ee27647854a05ffa",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:46:05.113574+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18938314"
+      ],
+      "citation_url": "https://zenodo.org/records/18938314",
+      "source_version": "1.0",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18938314",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

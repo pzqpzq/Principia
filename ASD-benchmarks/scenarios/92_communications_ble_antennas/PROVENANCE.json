@@ -1,0 +1,92 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "92_communications_ble_antennas",
+  "domain": "Wireless sensing",
+  "title": "Bluetooth Low Energy Separate Channel Fingerprinting dataset with Frequency-Scanned Antennas and Monopole",
+  "publisher": "López-Pastor, Jose A. (Centro Universitario de la Defensa en San Javier); Hernández-Mateos, Antonio D. (Universidad Politécnica de Cartagena); Gil-Martínez, Alejandro (Universidad Politécnica de Cartagena); Algaba-Brazález, Astrid (Ericsson (Sweden)); Gomez-Tornero, Jose Luis (Universidad Politécnica de Cartagena)",
+  "authoritative_landing_url": "https://zenodo.org/records/14548531",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/14548531",
+    "https://zenodo.org/api/records/14548531/files/SC%20BLE%20Fingerprinting.zip/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.14548531"
+  ],
+  "release_or_version": "14548531",
+  "retrieval_finalized_utc": "2026-09-15T07:04:42.419784+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "November 21, 2023–February 23, 2024; record/version dates differ within 2024.",
+  "source_publication_date": "2024-03-13",
+  "source_created_utc": "2024-12-23T15:57:27.220140+00:00",
+  "source_updated_utc": "2024-12-23T15:57:27.350711+00:00",
+  "source_inventory": [
+    {
+      "name": "SC BLE Fingerprinting.zip",
+      "bytes": 3137684,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Complete 1,820 native TXT measurements, 14 condition folders, 130 positions and eight beacon channels.",
+  "known_analyses_and_limitations": "Spatial/date blocks prevent near-neighbor leakage. Environmental/furniture changes may coincide with acquisition dates.",
+  "related_publications": [],
+  "independent_groups": "measurement date and spatial block",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-092",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-092",
+      "scenario_id": "92_communications_ble_antennas",
+      "path": "raw/SC BLE Fingerprinting.zip",
+      "scenario_relative_path": "raw/SC BLE Fingerprinting.zip",
+      "bytes": 3137684,
+      "sha256": "e40b4cccc1df4f7a88af7aaff4a1d5f46cbffe17eb15a7c8091759fab2e97532",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14548531"
+      ],
+      "download_url": "https://zenodo.org/api/records/14548531/files/SC%20BLE%20Fingerprinting.zip/content",
+      "source_checksum": "md5:38e8362859af7c01a46e7f0393f7ff5e",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:35:20.730759+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14548531"
+      ],
+      "citation_url": "https://zenodo.org/records/14548531",
+      "source_version": "14548531",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14548531",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-092",
+      "scenario_id": "92_communications_ble_antennas",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 7927,
+      "sha256": "c0a0e29a63fb4abc41f4383265b6c50c11300889461b74291c0fb6f98f3e16a5",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/14548531"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:49.376939+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14548531"
+      ],
+      "citation_url": "https://zenodo.org/records/14548531",
+      "source_version": "14548531",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

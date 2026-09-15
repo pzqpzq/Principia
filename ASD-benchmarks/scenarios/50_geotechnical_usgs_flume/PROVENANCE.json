@@ -1,0 +1,169 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "50_geotechnical_usgs_flume",
+  "domain": "geotechnical monitoring",
+  "title": "USGS debris-flow gate-release laser measurements",
+  "publisher": "U.S. Geological Survey",
+  "authoritative_landing_url": "https://doi.org/10.5066/P1HXHGZN",
+  "authoritative_source_urls": [
+    "https://doi.org/10.5066/P1HXHGZN",
+    "https://www.sciencebase.gov/catalog/file/get/66e20550d34ecba8b8677aa9?f=__disk__53%2F72%2Fdd%2F5372dd8385e2941c11e6a40a02e6643431486dfb",
+    "https://www.sciencebase.gov/catalog/file/get/66e20550d34ecba8b8677aa9?f=__disk__d1%2F4f%2Fbd%2Fd14fbd4728f23a719f6810ac0a770539de0d0d24",
+    "https://www.sciencebase.gov/catalog/file/get/66e20550d34ecba8b8677aa9?f=__disk__aa%2Fb0%2Fa4%2Faab0a4f0fcd1634a8aa3b1007f10b43978a13a50",
+    "https://www.sciencebase.gov/catalog/file/get/66e20550d34ecba8b8677aa9?f=__disk__80%2F67%2Fca%2F8067caadd824ca6bccb39f3a1754f9ea7df5ff30"
+  ],
+  "identifiers": [
+    "10.5066/P1HXHGZN"
+  ],
+  "release_or_version": "2025-04-29",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "CC0 / U.S. government public-domain data",
+  "deterministic_selection_rule": "Two complete all-gate-release laser CSVs, metadata and original processing script. Large swath UBH and natural-release files excluded; script is context and is not executed.",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": {
+    "description": "Source campaign dates include 2022-10-05/06 and 2024-04-05/06/08/10/11; specific gate-release dates are preserved in the retained records.",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": null,
+  "source_created_utc": null,
+  "source_updated_utc": null,
+  "source_inventory": null,
+  "author_preprocessing": "Source laser-derived time-series tables, not untouched swath UBH binary. Large UBH and natural-release files are excluded. The provided MATLAB code was retained as context, not executed.",
+  "known_analyses_and_limitations": "The USGS source already evaluates swath-laser monitoring at the flume. Cross-instrument agreement alone is validation, not a new constitutive debris-flow law. Unobserved material/initial-condition details constrain mechanism claims.",
+  "related_publications": [],
+  "pinned_commit": null,
+  "source_context_request_failures": [],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-050",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-050",
+      "scenario_id": "50_geotechnical_usgs_flume",
+      "path": "context/66e20550d34ecba8b8677aa9.json",
+      "scenario_relative_path": "context/66e20550d34ecba8b8677aa9.json",
+      "bytes": 29867,
+      "sha256": "6f1836d2fc7bb1cc75b2af79e7c3baac4e113c3cfc27fcf25fe9bf0ea5c726b0",
+      "role": "parsed_source_metadata_snapshot",
+      "source_urls": [
+        "https://www.sciencebase.gov/catalog/item/66e20550d34ecba8b8677aa9?format=json"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:47:03.079561+00:00",
+      "license_or_terms": "CC0 / U.S. government public-domain data",
+      "citation_identifiers": [
+        "10.5066/P1HXHGZN"
+      ],
+      "citation_url": "https://doi.org/10.5066/P1HXHGZN",
+      "source_version": "2025-04-29",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.5066/P1HXHGZN",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-050",
+      "scenario_id": "50_geotechnical_usgs_flume",
+      "path": "context/metadata.xml",
+      "scenario_relative_path": "context/metadata.xml",
+      "bytes": 11699,
+      "sha256": "71779612b609b30a40dec1189406925ea407ae23eec4b51c7ee968129c4425d3",
+      "role": "official_data",
+      "source_urls": [
+        "https://www.sciencebase.gov/catalog/file/get/66e20550d34ecba8b8677aa9?f=__disk__80%2F67%2Fca%2F8067caadd824ca6bccb39f3a1754f9ea7df5ff30"
+      ],
+      "download_url": "https://www.sciencebase.gov/catalog/file/get/66e20550d34ecba8b8677aa9?f=__disk__80%2F67%2Fca%2F8067caadd824ca6bccb39f3a1754f9ea7df5ff30",
+      "source_checksum": "md5:4b719ce930239977e5f0c2a6b7cb2570",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:04:20.501918+00:00",
+      "license_or_terms": "CC0 / U.S. government public-domain data",
+      "citation_identifiers": [
+        "10.5066/P1HXHGZN"
+      ],
+      "citation_url": "https://doi.org/10.5066/P1HXHGZN",
+      "source_version": "2025-04-29",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.5066/P1HXHGZN",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-050",
+      "scenario_id": "50_geotechnical_usgs_flume",
+      "path": "context/swath_laser_processing_script.m",
+      "scenario_relative_path": "context/swath_laser_processing_script.m",
+      "bytes": 7081,
+      "sha256": "6ebdbe9dd0fa991e45eee2d6a9a4073b1468d42838216667d3e76e80bddee2ed",
+      "role": "official_data",
+      "source_urls": [
+        "https://www.sciencebase.gov/catalog/file/get/66e20550d34ecba8b8677aa9?f=__disk__aa%2Fb0%2Fa4%2Faab0a4f0fcd1634a8aa3b1007f10b43978a13a50"
+      ],
+      "download_url": "https://www.sciencebase.gov/catalog/file/get/66e20550d34ecba8b8677aa9?f=__disk__aa%2Fb0%2Fa4%2Faab0a4f0fcd1634a8aa3b1007f10b43978a13a50",
+      "source_checksum": "md5:4231be319d76ef819bb13459b20c1f92",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:04:20.343876+00:00",
+      "license_or_terms": "CC0 / U.S. government public-domain data",
+      "citation_identifiers": [
+        "10.5066/P1HXHGZN"
+      ],
+      "citation_url": "https://doi.org/10.5066/P1HXHGZN",
+      "source_version": "2025-04-29",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.5066/P1HXHGZN",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-050",
+      "scenario_id": "50_geotechnical_usgs_flume",
+      "path": "raw/flume_laser_all_gate_releases.csv",
+      "scenario_relative_path": "raw/flume_laser_all_gate_releases.csv",
+      "bytes": 922316,
+      "sha256": "a43e1cd58d0731b1f381d74ace0d4ddfde3ae6c88c60dd947d21a1ebef6ce08a",
+      "role": "official_data",
+      "source_urls": [
+        "https://www.sciencebase.gov/catalog/file/get/66e20550d34ecba8b8677aa9?f=__disk__53%2F72%2Fdd%2F5372dd8385e2941c11e6a40a02e6643431486dfb"
+      ],
+      "download_url": "https://www.sciencebase.gov/catalog/file/get/66e20550d34ecba8b8677aa9?f=__disk__53%2F72%2Fdd%2F5372dd8385e2941c11e6a40a02e6643431486dfb",
+      "source_checksum": "md5:0bc1c698f045a11f4b615ef01fd7c7a4",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:03:36.567049+00:00",
+      "license_or_terms": "CC0 / U.S. government public-domain data",
+      "citation_identifiers": [
+        "10.5066/P1HXHGZN"
+      ],
+      "citation_url": "https://doi.org/10.5066/P1HXHGZN",
+      "source_version": "2025-04-29",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.5066/P1HXHGZN",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-050",
+      "scenario_id": "50_geotechnical_usgs_flume",
+      "path": "raw/laser_rangefinder_all_gate_releases.csv",
+      "scenario_relative_path": "raw/laser_rangefinder_all_gate_releases.csv",
+      "bytes": 14423914,
+      "sha256": "e55470bbdd9b82471b9a774a2acfc120b29a4df80db2270f6fe34011826b941b",
+      "role": "official_data",
+      "source_urls": [
+        "https://www.sciencebase.gov/catalog/file/get/66e20550d34ecba8b8677aa9?f=__disk__d1%2F4f%2Fbd%2Fd14fbd4728f23a719f6810ac0a770539de0d0d24"
+      ],
+      "download_url": "https://www.sciencebase.gov/catalog/file/get/66e20550d34ecba8b8677aa9?f=__disk__d1%2F4f%2Fbd%2Fd14fbd4728f23a719f6810ac0a770539de0d0d24",
+      "source_checksum": "md5:a17ffed5017500bbeb96b06b36195c9a",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:04:32.853274+00:00",
+      "license_or_terms": "CC0 / U.S. government public-domain data",
+      "citation_identifiers": [
+        "10.5066/P1HXHGZN"
+      ],
+      "citation_url": "https://doi.org/10.5066/P1HXHGZN",
+      "source_version": "2025-04-29",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://doi.org/10.5066/P1HXHGZN",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

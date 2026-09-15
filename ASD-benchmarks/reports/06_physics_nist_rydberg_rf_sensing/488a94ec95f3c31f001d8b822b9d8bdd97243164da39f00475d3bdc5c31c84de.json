@@ -1,0 +1,34 @@
+{
+  "scenario_id": "06_physics_nist_rydberg_rf_sensing",
+  "path": "raw/FIG5c_BeatnoteAmp_vs_AppliedSignalRFPower_Ion.csv",
+  "bytes": 4396,
+  "sha256": "0b8aa167f1301e88bd9cfeb436cc298cb8a3266332d67ee28a4bc3c5fd0d4a84",
+  "checked_utc": "2026-09-15T06:39:51.730858+00:00",
+  "format": "text_or_instrument_native",
+  "signature_hex": "52465f706f7765725f454954",
+  "delimiter": ",",
+  "header": [
+    "RF_power_EITBeatNoteData",
+    "Amplitude_EITBeatNoteData",
+    "RF_power_MeasuredNoiseFloor",
+    "Amplitude_MeasuredNoiseFloor",
+    "RF_power_fit",
+    "Amplitude_fit"
+  ],
+  "data_records": 52,
+  "row_width_counts": {
+    "6": 52
+  },
+  "first_lines": [
+    "RF_power_EITBeatNoteData,Amplitude_EITBeatNoteData,RF_power_MeasuredNoiseFloor,Amplitude_MeasuredNoiseFloor,RF_power_fit,Amplitude_fit",
+    "-70,-81.1832002,-96.2986869116451,-90.9986869116451,-96.2986869116451,-106.954001161493",
+    "-65,-77.7527998,-95.2986869116451,-90.9986869116451,-95.2986869116451,-106.004044593493",
+    "-60,-73.0624008,-94.2986869116451,-90.9986869116451,-94.2986869116451,-105.054088025493",
+    "-55,-67.7744016,-93.2986869116451,-90.9986869116451,-93.2986869116451,-104.104131457493",
+    "-50,-62.9119994,-92.2986869116451,-90.9986869116451,-92.2986869116451,-103.154174889493",
+    "-45,-57.8968004,-91.2986869116451,-90.9986869116451,-91.2986869116451,-102.204218321493",
+    "NaN,NaN,-90.2986869116451,-90.9986869116451,-90.2986869116451,-101.254261753493"
+  ],
+  "encoding_replacement_count": 0,
+  "status": "pass"
+}

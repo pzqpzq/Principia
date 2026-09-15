@@ -1,0 +1,181 @@
+{
+  "case_id": "P100-018",
+  "case_revision": 1,
+  "scenario_id": "18_climate_noaa_storm_events_2025",
+  "title": "NOAA Storm Events 2025 details, fatalities, and locations",
+  "domain": "climate",
+  "question": "How do storm-event characteristics relate to reported damage and impacts?",
+  "data_origin": "measured_or_observed",
+  "source_version": "2025 files created 2026-08-19",
+  "source_url": "https://www.ncei.noaa.gov/stormevents/ftp.jsp",
+  "identifiers": [],
+  "publisher": "NOAA National Centers for Environmental Information",
+  "release_date": "See source record; legacy retrieval vintage recorded",
+  "measurement_dates": "Not fully established in the legacy metadata; source filenames/headers and public context preserve available dates. Release dates are not substituted for measurement dates.",
+  "variables_and_units": "Variables and units are preserved in native column headers, instrument metadata and source dictionaries; see evidence anchors below.",
+  "independent_units": "Storm episode/region and temporal blocks; linked details/location/fatality tables.",
+  "validation_design": "Storm episode/region and temporal blocks; linked details/location/fatality tables. Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "NOAA 2025 storm reports, revised 2026 snapshot. Reporting differences, zero versus unknown losses, and linked duplicates must be preserved.",
+  "prior_analysis_and_limits": "NOAA 2025 storm reports, revised 2026 snapshot. Reporting differences, zero versus unknown losses, and linked duplicates must be preserved. NOAA 2025 storm reports, revised 2026 snapshot. Reporting differences, zero versus unknown losses, and linked duplicates must be preserved.",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/StormEvents_fatalities-ftp_v1.0_d2025_c20260819.csv.gz!/(decompressed)",
+      "structure": {
+        "header": [
+          "FAT_YEARMONTH",
+          "FAT_DAY",
+          "FAT_TIME",
+          "FATALITY_ID",
+          "EVENT_ID",
+          "FATALITY_TYPE",
+          "FATALITY_DATE",
+          "FATALITY_AGE",
+          "FATALITY_SEX",
+          "FATALITY_LOCATION"
+        ],
+        "data_records": 895,
+        "first_lines": [
+          "FAT_YEARMONTH,FAT_DAY,FAT_TIME,FATALITY_ID,EVENT_ID,FATALITY_TYPE,FATALITY_DATE,FATALITY_AGE,FATALITY_SEX,FATALITY_LOCATION",
+          "202512,4,0,60389,1296292,\"I\",\"12/04/2025 00:00:00\",40,\"M\",\"Vehicle/Towed Trailer\"",
+          "202512,1,0,60391,1296789,\"I\",\"12/01/2025 00:00:00\",35,\"F\",\"Boating\"",
+          "202512,3,0,60393,1297305,\"D\",\"12/03/2025 00:00:00\",32,\"M\",\"In Water\"",
+          "202512,25,0,60553,1298352,\"I\",\"12/25/2025 00:00:00\",75,\"F\",\"Vehicle/Towed Trailer\"",
+          "202512,26,0,60562,1298509,\"D\",\"12/26/2025 00:00:00\",44,\"M\",\"In Water\"",
+          "202512,28,0,60564,1298713,\"D\",\"12/28/2025 00:00:00\",39,\"M\",\"In Water\"",
+          "202512,4,0,61251,1299337,\"I\",\"12/04/2025 00:00:00\",32,\"F\",\"Vehicle/Towed Trailer\""
+        ]
+      }
+    },
+    {
+      "asset": "raw/StormEvents_locations-ftp_v1.0_d2025_c20260819.csv.gz!/(decompressed)",
+      "structure": {
+        "header": [
+          "YEARMONTH",
+          "EPISODE_ID",
+          "EVENT_ID",
+          "LOCATION_INDEX",
+          "RANGE",
+          "AZIMUTH",
+          "LOCATION",
+          "LATITUDE",
+          "LONGITUDE",
+          "LAT2",
+          "LON2"
+        ],
+        "data_records": 51504,
+        "first_lines": [
+          "YEARMONTH,EPISODE_ID,EVENT_ID,LOCATION_INDEX,RANGE,AZIMUTH,LOCATION,LATITUDE,LONGITUDE,LAT2,LON2",
+          "202508,204641,1287936,2,3.54,\"SSE\",\"SINKING COVE\",35.0015,-85.9601,3590,8557606",
+          "202508,203789,1269348,1,2.9,\"E\",\"BLEASES XRDS\",34.044,-81.7699,342640,8146194",
+          "202508,203789,1269349,1,.8,\"WSW\",\"DOUGLAS\",34.6637,-80.8118,3439822,8048708",
+          "202508,204612,1275986,2,0,\"N\",\"TURKEY\",34.4,-100.88,3424000,10052800",
+          "202508,204612,1275988,1,3.66,\"SSE\",\"DOUD\",33.5237,-101.8991,3331422,10153946",
+          "202508,204638,1275618,1,.88,\"NE\",\"HERINGTON\",38.68,-96.94,3840800,9656400",
+          "202508,204638,1275619,1,0,\"N\",\"JUNCTION CITY\",39.03,-96.83,391800,9649800"
+        ]
+      }
+    },
+    {
+      "asset": "raw/StormEvents_details-ftp_v1.0_d2025_c20260819.csv.gz!/(decompressed)",
+      "structure": {
+        "header": [
+          "BEGIN_YEARMONTH",
+          "BEGIN_DAY",
+          "BEGIN_TIME",
+          "END_YEARMONTH",
+          "END_DAY",
+          "END_TIME",
+          "EPISODE_ID",
+          "EVENT_ID",
+          "STATE",
+          "STATE_FIPS",
+          "YEAR",
+          "MONTH_NAME",
+          "EVENT_TYPE",
+          "CZ_TYPE",
+          "CZ_FIPS",
+          "CZ_NAME",
+          "WFO",
+          "BEGIN_DATE_TIME",
+          "CZ_TIMEZONE",
+          "END_DATE_TIME",
+          "INJURIES_DIRECT",
+          "INJURIES_INDIRECT",
+          "DEATHS_DIRECT",
+          "DEATHS_INDIRECT",
+          "DAMAGE_PROPERTY",
+          "DAMAGE_CROPS",
+          "SOURCE",
+          "MAGNITUDE",
+          "MAGNITUDE_TYPE",
+          "FLOOD_CAUSE",
+          "CATEGORY",
+          "TOR_F_SCALE",
+          "TOR_LENGTH",
+          "TOR_WIDTH",
+          "TOR_OTHER_WFO",
+          "TOR_OTHER_CZ_STATE",
+          "TOR_OTHER_CZ_FIPS",
+          "TOR_OTHER_CZ_NAME",
+          "BEGIN_RANGE",
+          "BEGIN_AZIMUTH",
+          "BEGIN_LOCATION",
+          "END_RANGE",
+          "END_AZIMUTH",
+          "END_LOCATION",
+          "BEGIN_LAT",
+          "BEGIN_LON",
+          "END_LAT",
+          "END_LON",
+          "EPISODE_NARRATIVE",
+          "EVENT_NARRATIVE",
+          "DATA_SOURCE"
+        ],
+        "data_records": 72360,
+        "first_lines": [
+          "BEGIN_YEARMONTH,BEGIN_DAY,BEGIN_TIME,END_YEARMONTH,END_DAY,END_TIME,EPISODE_ID,EVENT_ID,STATE,STATE_FIPS,YEAR,MONTH_NAME,EVENT_TYPE,CZ_TYPE,CZ_FIPS,CZ_NAME,WFO,BEGIN_DATE_TIME,CZ_TIMEZONE,END_DATE_TIME,INJURIES_DIRECT,INJURIES_INDIRECT,DEATHS_DIRECT,DEATHS_INDIRECT,DAMAGE_PROPERTY,DAMAGE_CROPS,SOURCE,MAGNITUDE,MAGNITUDE_TYPE,FLOOD_CAUSE,CATEGORY,TOR_F_SCALE,TOR_LENGTH,TOR_WIDTH,TOR_OTHER_WFO,TOR_OTHER_CZ_STATE,TOR_OTHER_CZ_FIPS,TOR_OTHER_CZ_NAME,BEGIN_RANGE,BEGIN_AZIMUTH,BEGIN_LOCATION,END_RANGE,END_AZIMUTH,END_LOCATION,BEGIN_LAT,BEGIN_LON,END_LAT,END_LON,EPISODE_NARRATIVE,EVENT_NARRATIVE,DATA_SOURCE",
+          "202503,31,1104,202503,31,1106,201366,1252415,\"GEORGIA\",13,2025,\"March\",\"Thunderstorm Wind\",\"C\",45,\"CARROLL\",\"FFC\",\"31-MAR-25 11:04:00\",\"EST-5\",\"31-MAR-25 11:06:00\",\"0\",\"0\",\"0\",\"0\",\"1.00K\",,\"Emergency Manager\",\"52.00\",\"EG\",,,,,,,,,,\"2.22\",\"W\",\"TYUS\",\"2.22\",\"W\",\"TYUS\",\"33.4757\",\"-85.238\",\"33.4757\",\"-85.238\",\"A cold-front initiated a line of thunderstorms across north and central GA through the afternoon hours of the 31st. Storms brought damaging winds along the I20 corridor and south as well as six quick spin-up tornadoes. The strongest being an EF1 between McDonough and Stockbridge crossing Hwy 75. There were also a couple reports of quarter size hail southeast of Macon.\",\"Tree down at the intersection of highway 5 and old columbus road.\",\"CSV\"",
+          "202503,30,1552,202503,30,1555,200337,1241136,\"MICHIGAN\",26,2025,\"March\",\"Tornado\",\"C\",27,\"CASS\",\"IWX\",\"30-MAR-25 15:52:00\",\"EST-5\",\"30-MAR-25 15:55:00\",\"0\",\"0\",\"0\",\"0\",\"100.00K\",\"0.00K\",\"NWS Storm Survey\",,,,,\"EF1\",\"2.59\",\"100\",,,,,\"1.24\",\"SW\",\"EDWARDSBURG\",\"1.47\",\"NNE\",\"EDWARDSBURG\",\"41.79\",\"-86.1\",\"41.82\",\"-86.07\",\"A cold front pushed into the area during the afternoon and evening hours, interacting with  decent shear and MLCAPE to allow for numerous thunderstorm development. Pockets of damaging winds occurred along with a total of six confirmed tornadoes (three in far southern Lower Michigan and three in northern Indiana).\",\"A brief EF-1 tornado was confirmed in Edwardsburg, MI on March 30th, 2025. The tornado started in a field west of Conrad Rd, snapping and uprooting trees as it moved northeast towards the Edwardsburg Primary School, where EF-0 damage was noted. The tornado continued to the northeast and intensified, where several homes and businesses sustained damage on the east side of Pleasant Lake. The Starboard Choice Marina building sustained roof damage, a boat lift and dock were removed from the lake and flipped over, and a few boats were damaged as well, including one that was flipped and lifted over a fence. The most intense damage was seen along Dailey Road, where numerous large trees were snapped and uprooted, with estimated peak wind speeds of 90 mph. Overall, the tornado was on the ground for 3 minutes and had a peak intensity of EF-1. There were also areas of straight-line wind damage noted throughout Edwardsburg, indicative that the tornado was likely embedded within the line of storms that moved through.\",\"CSV\"",
+          "202501,5,1800,202501,6,2227,197733,1222851,\"VIRGINIA\",51,2025,\"January\",\"Winter Storm\",\"Z\",56,\"SPOTSYLVANIA\",\"LWX\",\"05-JAN-25 18:00:00\",\"EST-5\",\"06-JAN-25 22:27:00\",\"0\",\"0\",\"0\",\"0\",,,\"Trained Spotter\",,,,,,,,,,,,,,,,,,,,,,\"An area of low pressure tracked across southern Virginia bringing the first widespread accumulating snow of the season. Snow overspread the area during the late evening hours of January 5th into the overnight. Snow overspread the area during the late evening hours of January 5th into the overnight. This continued steady through mid-morning. A lull occurred during the afternoon with a few snow showers. Another round of snow on the back side of the upper level low moved in during the evening bringing additional accumulations. This resulted in a swath of 6 to 12 inches of snow, with the higher totals in the northern Shenandoah Valley east towards Prince William County. Winds gusted to 45 mph resulting in blowing snow at the end of the storm.\",\"\",\"CSV\"",
+          "202501,3,1300,202501,3,1900,197761,1223112,\"MARYLAND\",24,2025,\"January\",\"Winter Weather\",\"Z\",506,\"CENTRAL AND SOUTHEAST HOWARD\",\"LWX\",\"03-JAN-25 13:00:00\",\"EST-5\",\"03-JAN-25 19:00:00\",\"0\",\"0\",\"0\",\"0\",,,\"Trained Spotter\",,,,,,,,,,,,,,,,,,,,,,\"An area of low pressure moved off into New England bringing a cold front through Maryland. Upslope snow showers and squalls ensued in western Maryland bringing accumulations of six to ten inches. Snow showers and squalls along the front impacted portions of the rest of the state bringing accumulations of a coating to two inches.\",\"\",\"CSV\"",
+          "202501,3,1300,202501,3,1900,197761,1223113,\"MARYLAND\",24,2025,\"January\",\"Winter Weather\",\"Z\",504,\"CENTRAL AND SOUTHEAST MONTGOMERY\",\"LWX\",\"03-JAN-25 13:00:00\",\"EST-5\",\"03-JAN-25 19:00:00\",\"0\",\"0\",\"0\",\"0\",,,\"Trained Spotter\",,,,,,,,,,,,,,,,,,,,,,\"An area of low pressure moved off into New England bringing a cold front through Maryland. Upslope snow showers and squalls ensued in western Maryland bringing accumulations of six to ten inches. Snow showers and squalls along the front impacted portions of the rest of the state bringing accumulations of a coating to two inches.\",\"\",\"CSV\"",
+          "202501,3,1300,202501,3,1900,197761,1223114,\"MARYLAND\",24,2025,\"January\",\"Winter Weather\",\"Z\",503,\"NORTHWEST MONTGOMERY\",\"LWX\",\"03-JAN-25 13:00:00\",\"EST-5\",\"03-JAN-25 19:00:00\",\"0\",\"0\",\"0\",\"0\",,,\"Trained Spotter\",,,,,,,,,,,,,,,,,,,,,,\"An area of low pressure moved off into New England bringing a cold front through Maryland. Upslope snow showers and squalls ensued in western Maryland bringing accumulations of six to ten inches. Snow showers and squalls along the front impacted portions of the rest of the state bringing accumulations of a coating to two inches.\",\"\",\"CSV\"",
+          "202501,3,1547,202501,3,1619,197761,1223150,\"MARYLAND\",24,2025,\"January\",\"Winter Weather\",\"Z\",14,\"ANNE ARUNDEL\",\"LWX\",\"03-JAN-25 15:47:00\",\"EST-5\",\"03-JAN-25 16:19:00\",\"0\",\"0\",\"0\",\"0\",\"0.00K\",\"0.00K\",\"Trained Spotter\",,,,,,,,,,,,,,,,,,,,,,\"An area of low pressure moved off into New England bringing a cold front through Maryland. Upslope snow showers and squalls ensued in western Maryland bringing accumulations of six to ten inches. Snow showers and squalls along the front impacted portions of the rest of the state bringing accumulations of a coating to two inches.\",\"Snow squall with rapid drop is visibility below one quarter of a mile, winds greater than 25 mph, and quick accumulation of snow on roadways.\",\"CSV\""
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "GZIP": 3,
+    "text_or_instrument_native": 3
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Original development corpus (source-aware)",
+  "license_or_terms": "U.S. Government public data",
+  "source_asset_bytes": 14142963,
+  "expanded_source_equivalent_bytes": 75484386,
+  "installed_folder_bytes": 14154834,
+  "source_asset_count": 4,
+  "asset_paths": [
+    "scenarios/18_climate_noaa_storm_events_2025/context/Storm-Data-Bulk-csv-Format.pdf",
+    "scenarios/18_climate_noaa_storm_events_2025/raw/StormEvents_details-ftp_v1.0_d2025_c20260819.csv.gz",
+    "scenarios/18_climate_noaa_storm_events_2025/raw/StormEvents_fatalities-ftp_v1.0_d2025_c20260819.csv.gz",
+    "scenarios/18_climate_noaa_storm_events_2025/raw/StormEvents_locations-ftp_v1.0_d2025_c20260819.csv.gz"
+  ],
+  "local_folder": "scenarios/18_climate_noaa_storm_events_2025",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 14151827,
+  "expanded_release_folder_equivalent_bytes": 75493250
+}

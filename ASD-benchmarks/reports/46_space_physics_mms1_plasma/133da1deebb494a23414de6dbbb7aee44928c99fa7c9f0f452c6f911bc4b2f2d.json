@@ -1,0 +1,472 @@
+{
+  "bytes": 90703826,
+  "sha256": "225bff7e10bc8b593f9f7980a68c84dc55c25c6ba9af0676ce61bad7c9ccded0",
+  "format_extension": ".cdf",
+  "checks": [],
+  "format": "NASA_CDF",
+  "variables": [
+    {
+      "name": "Epoch",
+      "last_record": 1382399,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "Interval centered time tag (TBC)",
+        "FIELDNAM": "Time since Jan 1, 1958",
+        "FILLVAL": "-9223372036854775808",
+        "LABLAXIS": "mms1_fgm_srvy_Epoch",
+        "UNITS": "ns",
+        "VALIDMIN": "315576066184000000",
+        "VALIDMAX": "946728069183000000",
+        "VAR_TYPE": "support_data",
+        "SCALETYP": "linear",
+        "MONOTON": "INCREASE",
+        "TIME_BASE": "J2000",
+        "TIME_SCALE": "Terrestrial Time",
+        "REFERENCE_POSITION": "Rotating Earth Geoid",
+        "SI_CONVERSION": "1.0e-9>s",
+        "DELTA_PLUS_VAR": "mms1_fgm_bdeltahalf_srvy_l2",
+        "DELTA_MINUS_VAR": "mms1_fgm_bdeltahalf_srvy_l2"
+      },
+      "start_utc": "['2025-06-01T00:00:03.096066640']",
+      "end_utc": "['2025-06-02T00:00:04.163324279']"
+    },
+    {
+      "name": "mms1_fgm_b_gse_srvy_l2",
+      "last_record": 1382399,
+      "dimensions": [
+        4
+      ],
+      "attributes": {
+        "CATDESC": "Magnetic field vector in Geocentric Solar Ecliptic (GSE) cartesian coordinates plus Btotal (8 or 16 S/s)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "Magnetic field vector in GSE plus Btotal (8 or 16 S/s)",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E13.5",
+        "LABL_PTR_1": "label_b_gse",
+        "UNITS": "nT",
+        "VALIDMIN": "[-17000. -17000. -17000.      0.]",
+        "VALIDMAX": "[17000. 17000. 17000. 17000.]",
+        "VAR_TYPE": "data",
+        "SCALETYP": "linear",
+        "COORDINATE_SYSTEM": "GSE",
+        "SI_CONVERSION": "1.0e-9>T",
+        "TENSOR_ORDER": "1",
+        "REPRESENTATION_1": "represent_vec_tot"
+      }
+    },
+    {
+      "name": "mms1_fgm_b_gsm_srvy_l2",
+      "last_record": 1382399,
+      "dimensions": [
+        4
+      ],
+      "attributes": {
+        "CATDESC": "Magnetic field vector in Geocentric Solar Magnetospheric (GSM) cartesian coordinates plus Btotal (8 or 16 S/s)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "Magnetic field vector in GSM plus Btotal (8 or 16 S/s)",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E13.5",
+        "LABL_PTR_1": "label_b_gsm",
+        "UNITS": "nT",
+        "VALIDMIN": "[-17000. -17000. -17000.      0.]",
+        "VALIDMAX": "[17000. 17000. 17000. 17000.]",
+        "VAR_TYPE": "data",
+        "SCALETYP": "linear",
+        "COORDINATE_SYSTEM": "GSM",
+        "SI_CONVERSION": "1.0e-9>T",
+        "TENSOR_ORDER": "1",
+        "REPRESENTATION_1": "represent_vec_tot"
+      }
+    },
+    {
+      "name": "mms1_fgm_b_dmpa_srvy_l2",
+      "last_record": 1382399,
+      "dimensions": [
+        4
+      ],
+      "attributes": {
+        "CATDESC": "Magnetic field vector in Despun MPA-aligned cartesian coordinates plus Btotal (8 or 16 S/s)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "Magnetic field vector in DMPA plus Btotal (8 or 16 S/s)",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E13.5",
+        "LABL_PTR_1": "label_b_dmpa",
+        "UNITS": "nT",
+        "VALIDMIN": "[-17000. -17000. -17000.      0.]",
+        "VALIDMAX": "[17000. 17000. 17000. 17000.]",
+        "VAR_TYPE": "data",
+        "SCALETYP": "linear",
+        "VAR_NOTES": "During nominal operatins in the region of interest, DMPA is within 3 degrees of GSE.  ",
+        "COORDINATE_SYSTEM": "DMPA>Despun Major Principal Axis",
+        "SI_CONVERSION": "1.0e-9>T",
+        "TENSOR_ORDER": "1",
+        "REPRESENTATION_1": "represent_vec_tot"
+      }
+    },
+    {
+      "name": "mms1_fgm_b_bcs_srvy_l2",
+      "last_record": 1382399,
+      "dimensions": [
+        4
+      ],
+      "attributes": {
+        "CATDESC": "Magnetic field vector in Body Coordinate System cartesian coordinates plus Btotal (8 or 16 S/s)",
+        "DEPEND_0": "Epoch",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "Magnetic field vector in BCS plus Btotal (8 or 16 S/s)",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E13.5",
+        "LABL_PTR_1": "label_b_bcs",
+        "UNITS": "nT",
+        "VALIDMIN": "[-17000. -17000. -17000.      0.]",
+        "VALIDMAX": "[17000. 17000. 17000. 17000.]",
+        "VAR_TYPE": "data",
+        "SCALETYP": "linear",
+        "COORDINATE_SYSTEM": "BCS>Body Coordinate System",
+        "SI_CONVERSION": "1.0e-9>T",
+        "TENSOR_ORDER": "1",
+        "REPRESENTATION_1": "represent_vec_tot"
+      }
+    },
+    {
+      "name": "mms1_fgm_flag_srvy_l2",
+      "last_record": 1382399,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "0 = No identified problems, non-zero = blank out the data",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "mms1_fgm_flag_srvy_l2",
+        "FILLVAL": "4294967295",
+        "FORMAT": "Z10.8",
+        "LABLAXIS": "mms1_fgm_flag_srvy_l2",
+        "UNITS": " ",
+        "VALIDMIN": "0",
+        "VALIDMAX": "4294967281",
+        "VAR_TYPE": "support_data",
+        "SCALETYP": "linear",
+        "VAR_NOTES": "bit definitions: \n    0: TBD, 1: TBD, 2: user flagged, 3: TBD, \n    4: B1 saturated, 5: B2 saturated, 6: B3 saturated, 7: range-change glitch, \n    8-31: TBD",
+        "SI_CONVERSION": " > "
+      }
+    },
+    {
+      "name": "Epoch_state",
+      "last_record": 2883,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "Default time",
+        "FIELDNAM": "Epoch_state",
+        "FILLVAL": "-9223372036854775808",
+        "LABLAXIS": "Epoch_state",
+        "UNITS": "ns",
+        "VALIDMIN": "-315575942816000000",
+        "VALIDMAX": "946728069183000000",
+        "VAR_TYPE": "support_data",
+        "SCALETYP": "linear",
+        "MONOTON": "INCREASE",
+        "TIME_BASE": "J2000",
+        "TIME_SCALE": "Terrestrial Time",
+        "REFERENCE_POSITION": "Rotating Earth Geoid",
+        "SI_CONVERSION": "1.0e-9>s",
+        "DELTA_PLUS_VAR": "mms1_fgm_rdeltahalf_srvy_l2",
+        "DELTA_MINUS_VAR": "mms1_fgm_rdeltahalf_srvy_l2"
+      }
+    },
+    {
+      "name": "mms1_fgm_r_gse_srvy_l2",
+      "last_record": 2883,
+      "dimensions": [
+        4
+      ],
+      "attributes": {
+        "CATDESC": "Definitive Position in GSE coordinates, 30 second",
+        "DEPEND_0": "Epoch_state",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "mms1_fgm_r_gse_srvy_l2",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "label_r_gse",
+        "UNITS": "km",
+        "VALIDMIN": "-1000000.0",
+        "VALIDMAX": "1000000.0",
+        "VAR_TYPE": "data",
+        "SCALETYP": "linear",
+        "COORDINATE_SYSTEM": "GSE",
+        "SI_CONVERSION": "1.0e3>m",
+        "TENSOR_ORDER": "1",
+        "REPRESENTATION_1": "represent_vec_tot"
+      }
+    },
+    {
+      "name": "mms1_fgm_r_gsm_srvy_l2",
+      "last_record": 2883,
+      "dimensions": [
+        4
+      ],
+      "attributes": {
+        "CATDESC": "Definitive Position in GSM coordinates, 30 second",
+        "DEPEND_0": "Epoch_state",
+        "DISPLAY_TYPE": "time_series",
+        "FIELDNAM": "mms1_fgm_r_gsm_srvy_l2",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E12.2",
+        "LABL_PTR_1": "label_r_gsm",
+        "UNITS": "km",
+        "VALIDMIN": "-1000000.0",
+        "VALIDMAX": "1000000.0",
+        "VAR_TYPE": "data",
+        "SCALETYP": "linear",
+        "COORDINATE_SYSTEM": "GSM",
+        "SI_CONVERSION": "1.0e3>m",
+        "TENSOR_ORDER": "1",
+        "REPRESENTATION_1": "represent_vec_tot"
+      }
+    },
+    {
+      "name": "label_b_gse",
+      "last_record": 0,
+      "dimensions": [
+        4
+      ],
+      "attributes": {
+        "CATDESC": "labels for GSE components of B",
+        "FIELDNAM": "label B GSE",
+        "FORMAT": "A11",
+        "LABLAXIS": "label_b_gse",
+        "VAR_TYPE": "metadata"
+      }
+    },
+    {
+      "name": "label_b_gsm",
+      "last_record": 0,
+      "dimensions": [
+        4
+      ],
+      "attributes": {
+        "CATDESC": "labels for GSM components of B",
+        "FIELDNAM": "label B GSM",
+        "FORMAT": "A11",
+        "LABLAXIS": "label_b_gsm",
+        "VAR_TYPE": "metadata"
+      }
+    },
+    {
+      "name": "label_b_dmpa",
+      "last_record": 0,
+      "dimensions": [
+        4
+      ],
+      "attributes": {
+        "CATDESC": "labels for DMPA components of B",
+        "FIELDNAM": "label B DMPA",
+        "FORMAT": "A11",
+        "LABLAXIS": "label_b_dmpa",
+        "VAR_TYPE": "metadata"
+      }
+    },
+    {
+      "name": "label_b_bcs",
+      "last_record": 0,
+      "dimensions": [
+        4
+      ],
+      "attributes": {
+        "CATDESC": "labels for BCS components of B",
+        "FIELDNAM": "label B BCS",
+        "FORMAT": "A11",
+        "LABLAXIS": "label_b_bcs",
+        "VAR_TYPE": "metadata"
+      }
+    },
+    {
+      "name": "label_r_gse",
+      "last_record": 0,
+      "dimensions": [
+        4
+      ],
+      "attributes": {
+        "CATDESC": "labels for GSE components of position vector",
+        "FIELDNAM": "label R GSE",
+        "FORMAT": "A11",
+        "LABLAXIS": "label_r_gse",
+        "VAR_TYPE": "metadata"
+      }
+    },
+    {
+      "name": "label_r_gsm",
+      "last_record": 0,
+      "dimensions": [
+        4
+      ],
+      "attributes": {
+        "CATDESC": "labels for GSM components of position vector",
+        "FIELDNAM": "label R GSM",
+        "FORMAT": "A11",
+        "LABLAXIS": "label_r_gsm",
+        "VAR_TYPE": "metadata"
+      }
+    },
+    {
+      "name": "represent_vec_tot",
+      "last_record": 0,
+      "dimensions": [
+        4
+      ],
+      "attributes": {
+        "CATDESC": "representation for vector plus total",
+        "FIELDNAM": "representation for vector plus total",
+        "FORMAT": "A2",
+        "LABLAXIS": "represent_vec_tot",
+        "VAR_TYPE": "metadata"
+      }
+    },
+    {
+      "name": "mms1_fgm_hirange_srvy_l2",
+      "last_record": 1382399,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "1 = High Range, 0 = Low Range",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "mms1_fgm_hirange_srvy_l2",
+        "FILLVAL": "255",
+        "FORMAT": "I5",
+        "LABLAXIS": "mms1_fgm_hirange_srvy_l2",
+        "UNITS": " ",
+        "VALIDMIN": "0",
+        "VALIDMAX": "2",
+        "VAR_TYPE": "support_data",
+        "SCALETYP": "linear",
+        "SI_CONVERSION": " > "
+      }
+    },
+    {
+      "name": "mms1_fgm_bdeltahalf_srvy_l2",
+      "last_record": 1382399,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "Delta from center time to sample start/finish, sec",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "mms1_fgm_bdeltahalf_srvy_l2",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E13.5",
+        "LABLAXIS": "mms1_fgm_bdeltahalf_srvy_l2",
+        "UNITS": "s",
+        "VALIDMIN": "0.001",
+        "VALIDMAX": "1.0",
+        "VAR_TYPE": "support_data",
+        "SCALETYP": "log",
+        "SI_CONVERSION": "1>s"
+      }
+    },
+    {
+      "name": "mms1_fgm_stemp_srvy_l2",
+      "last_record": 1382399,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "Sensor Temperature smoothed four times with 6-pt boxcar filter (/edge_truncate), linear interpolated to mag times, !C then smoothed with 798-pt boxcar",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "mms1_fgm_stemp_srvy_l2",
+        "FILLVAL": "nan",
+        "FORMAT": "E13.5",
+        "LABLAXIS": "mms1_fgm_stemp_srvy_l2",
+        "UNITS": "C",
+        "VALIDMIN": "-1000.0",
+        "VALIDMAX": "1000.0",
+        "VAR_TYPE": "support_data",
+        "SCALETYP": "linear",
+        "VAR_NOTES": "Sensor Temperature smoothed four times with 6-pt boxcar filter (/edge_truncate), linear interpolated to mag times, !C then smoothed with 798-pt boxcar.  t_maxgap = 240; t_bmaxgap = 240",
+        "SI_CONVERSION": "1>s^-1 "
+      }
+    },
+    {
+      "name": "mms1_fgm_etemp_srvy_l2",
+      "last_record": 1382399,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "Electronics Temperature smoothed four times with6-pt boxcar filter (/edge_truncate), linear interpolated to mag times, !C then smoothed with 798-pt boxcar",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "mms1_fgm_etemp_srvy_l2",
+        "FILLVAL": "nan",
+        "FORMAT": "E13.5",
+        "LABLAXIS": "mms1_fgm_etemp_srvy_l2",
+        "UNITS": "C",
+        "VALIDMIN": "-1000.0",
+        "VALIDMAX": "1000.0",
+        "VAR_TYPE": "support_data",
+        "SCALETYP": "linear",
+        "VAR_NOTES": "Electronics Temperature smoothed four times with6-pt boxcar filter (/edge_truncate), linear interpolated to mag times, !C then smoothed with 798-pt boxcar.  t_maxgap = 240; t_bmaxgap = 240",
+        "SI_CONVERSION": " > "
+      }
+    },
+    {
+      "name": "mms1_fgm_mode_srvy_l2",
+      "last_record": 1382399,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "median rate (Samples/s) of the current instrument mode (NOT necessarily the rate of the L2 data, which may have been downsampled)",
+        "DEPEND_0": "Epoch",
+        "FIELDNAM": "mms1_fgm_mode_srvy_l2",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E13.5",
+        "LABLAXIS": "mms1_fgm_mode_srvy_l2",
+        "UNITS": "Samples/s",
+        "VALIDMIN": "2.0",
+        "VALIDMAX": "200.0",
+        "VAR_TYPE": "support_data",
+        "SCALETYP": "log",
+        "VAR_NOTES": "Mode of source data, expressed as nominal rate in Hz: 8 = slow, 16 = fast, 128 = brst/f128.  Note that f128 data (commissioning mode) is decimated to 16 S/s in srvy mode"
+      }
+    },
+    {
+      "name": "mms1_fgm_rdeltahalf_srvy_l2",
+      "last_record": 2883,
+      "dimensions": [],
+      "attributes": {
+        "CATDESC": "Median delta between ephemeris samples / 2, sec.",
+        "DEPEND_0": "Epoch_state",
+        "FIELDNAM": "mms1_fgm_rdeltahalf_srvy_l2",
+        "FILLVAL": "-1e+31",
+        "FORMAT": "E13.5",
+        "LABLAXIS": "mms1_fgm_rdeltahalf_srvy_l2",
+        "UNITS": "s",
+        "VALIDMIN": "1.0",
+        "VALIDMAX": "100.0",
+        "VAR_TYPE": "support_data",
+        "SCALETYP": "log",
+        "SI_CONVERSION": "1>s"
+      }
+    }
+  ],
+  "attributes": {
+    "Project": "['STP>Solar-Terrestrial Physics']",
+    "Source_name": "['MMS1>MMS Satellite Number 1']",
+    "Discipline": "['Space Physics>Magnetospheric Science']",
+    "Data_type": "['srvy_l2']",
+    "Descriptor": "['FGM>Flux Gate Magnetometer']",
+    "File_naming_convention": "['source_descriptor_datatype_yyyyMMdd']",
+    "Data_version": "['5.512.0']",
+    "PI_name": "['J. Burch, C. Russell, W. Magnus']",
+    "PI_affiliation": "['SWRI, UCLA, IWF']",
+    "TEXT": "['The Fluxgate Magnetometers (FGM) on Magnetospheric Multiscale consist of a traditional Analog Fluxgate Magnetometer (AFG), and a Digital Fluxgate magnetometer (DFG). The dual magnetometers are operated as a single instrument providing a single intercalibrated data product. Range changes occur at different times on the two instruments so the gains checked each periapsis can be carried out unambiguously to apoapsis. Cross correlation of calibration parameters can separate causes of the any appar",
+    "Instrument_type": "['Magnetic Fields (space)']",
+    "Mission_group": "['MMS']",
+    "Logical_source": "['mms1_fgm_srvy_l2']",
+    "Logical_file_id": "['mms1_fgm_srvy_l2_20250601_v5.512.0']",
+    "Logical_source_description": "['Level2 Flux Gate Magnetometer Combined Fast/Slow Survey DC Magnetic Field for MMS Satellite Number 1']",
+    "Time_resolution": "['0.0625 to 0.125 sec']",
+    "Rules_of_use": "['See MMS Data Rights and Rules for Use https://lasp.colorado.edu/galaxy/display/mms/MMS+Data+Rights+and+Rules+for+Data+Use']",
+    "Generated_by": "['UCLA']",
+    "Generation_date": "['20250803']",
+    "MODS": "[\"version X=5:  * Y-version number comes from cal file entries. \\n              * Ensures there are 2 ephemeris points before/after data to enable proper spline.  \\n              * Fix to depend_0 of rdeltahalf:  fixes bug when reading position data.\\n              * L-vector for DMPA2GSE transformation is smoothed with a gaussian filter, instead \\n                of using a single average value for the day.  This short-term filter avoids  \\n                introduding artificial jumps at 00:00 ",
+    "LINK_TEXT": "['MMS home page', 'SMART package home page', 'Science Data Center', 'FGM team home page', 'FGM team']",
+    "LINK_TITLE": "['at GSFC', 'at SWRI', 'at LASP', 'at UCLA', 'at IWF']",
+    "HTTP_LINK": "['http://mms.gsfc.nasa.gov/', 'http://mms.space.swri.edu/index.html', 'https://lasp.colorado.edu/mms/sdc', 'http://www-spc.igpp.ucla.edu/ssc/mms', 'http://www.iwf.oeaw.ac.at']",
+    "Parents": "['CDF>mms1_afg_fast_l1a_20250601_v1.7.5', 'CDF>mms1_fields_hk_l1b_10e_20250601_v0.5.5', 'MMS1_DEFATT_2025151_2025152.V00', 'MMS1_DEFATT_2025152_2025153.V00', 'MMS1_DEFEPH_2025151_2025152.V01', 'MMS1_DEFEPH_2025152_2025153.V01', 'CDF>mms1_afg_lorangecal_l2pre_20100101_v14.512.0']"
+  },
+  "path": "raw/fgm/srvy/l2/2025/06/mms1_fgm_srvy_l2_20250601_v5.512.0.cdf",
+  "scenario_id": "46_space_physics_mms1_plasma",
+  "verified_utc": "2026-09-14T16:12:49.854427+00:00",
+  "status": "pass"
+}

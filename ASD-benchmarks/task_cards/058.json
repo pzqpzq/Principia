@@ -1,0 +1,215 @@
+{
+  "case_id": "P100-058",
+  "case_revision": 1,
+  "scenario_id": "58_polymer_pdlla_rheology",
+  "title": "Differential scanning calorimetry, gel permeation chromatography and linear rheology measurements of poly(D,L-lactide) (Aldrich 805734)",
+  "domain": "Polymer physics",
+  "question": "How consistently do calorimetry, chromatography and rheology characterize this polymer under changing temperature and deformation?",
+  "data_origin": "measured_or_observed",
+  "source_version": "17294879",
+  "source_url": "https://zenodo.org/records/17294879",
+  "identifiers": [
+    "10.5281/zenodo.17294879"
+  ],
+  "publisher": "Bacova, Petra (Universidad de Cádiz); García Laynez, María del Carmen; Vlassopoulos, Dimitris (University of Crete); Molina, Sergio I. (Universidad de Cadiz Campus de Rio San Pedro)",
+  "release_date": "2025-10-08",
+  "measurement_dates": "Rheology performed in summer 2024; DSC/GPC dates remain source-file specific.",
+  "variables_and_units": "DSC heat flow, GPC and rheology",
+  "independent_units": "temperature/frequency sweeps within one polymer batch",
+  "validation_design": "temperature/frequency sweeps within one polymer batch Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Native instrument exports plus text versions; DSC/GPC calibration context and manufacturer certificate supplied. Rheology was not corrected for rheometer compliance.",
+  "prior_analysis_and_limits": "One polymer batch. Validate across complete temperature/frequency sweeps; compliance artifacts may mimic constitutive effects. Native proprietary formats may need vendor software. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/GPC/PDLLA_DMF_MW_distribution.xlsx",
+      "structure": {
+        "sheets": [
+          {
+            "name": "Hoja1",
+            "rows": 83,
+            "columns": 4,
+            "first_rows": [
+              [
+                "tR(min)",
+                "Mw (g/mol)",
+                "logMw",
+                "I-I0"
+              ],
+              [
+                "24.739",
+                "33701",
+                "4.527645",
+                "0.11702129"
+              ],
+              [
+                "25.004",
+                "29651",
+                "4.472045",
+                "0.17319149"
+              ],
+              [
+                "25.186",
+                "27142",
+                "4.433649",
+                "0.21531919"
+              ],
+              [
+                "25.329",
+                "25313",
+                "4.403339",
+                "0.255116945"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "ZIP": 1,
+    "preserved_native": 28,
+    "text_or_instrument_native": 1,
+    "Excel_OpenXML": 1,
+    "PDF": 3
+  },
+  "reader_limitations": [
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/DSC/DSC_PDLLA15k.001",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/GPC/PDLLA_DMF_30-10-20204.arw",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DFS_gap0.879_T40_smax0.1",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DFS_gap0.879_T40_smax0.1.TAD02",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DFS_gap0.879_T45_smax0.22",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DFS_gap0.879_T45_smax0.22.TAD02",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DFS_gap0.879_T50_smax0.4",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DFS_gap0.879_T50_smax0.4.TAD02",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DFS_gap0.879_T55_smax1.5",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DFS_gap0.879_T55_smax1.5.TAD02",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DFS_gap0.879_T60_smax2.6",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DFS_gap0.879_T60_smax2.6.TAD02",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DFS_gap0.879_T65_smax3.5",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DFS_gap0.879_T65_smax3.5.TAD02",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DFS_gap0.879_T70_smax5.0",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DFS_gap0.879_T70_smax5.0.TAD02",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DFS_gap0.879_T75_smax13",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DFS_gap0.879_T75_smax13.TAD02",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DFS_gap0.879_T80_smax25",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DFS_gap0.879_T80_smax25.TAD02",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DSS_T45.TAD05",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DSS_T50.TAD05",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DSS_T55.TAD05",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DSS_T60.TAD05",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DSS_T65.TAD05",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DSS_T70.TAD05",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DSS_T75.TAD05",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    },
+    {
+      "asset": "raw/PDLLA15k_DSC_GPC_rheo.zip!/PDLLA15k_DSC_GPC_rheo/rheology/DSS_T80.TAD05",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    }
+  ],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 1132505,
+  "expanded_source_equivalent_bytes": 2796004,
+  "installed_folder_bytes": 1142323,
+  "source_asset_count": 2,
+  "asset_paths": [
+    "scenarios/58_polymer_pdlla_rheology/raw/PDLLA15k_DSC_GPC_rheo.zip",
+    "scenarios/58_polymer_pdlla_rheology/context/source_record.json"
+  ],
+  "local_folder": "scenarios/58_polymer_pdlla_rheology",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 1139115,
+  "expanded_release_folder_equivalent_bytes": 2802614
+}

@@ -1,0 +1,46 @@
+{
+  "scenario_id": "18_climate_noaa_storm_events_2025",
+  "path": "raw/StormEvents_locations-ftp_v1.0_d2025_c20260819.csv.gz",
+  "bytes": 1206372,
+  "sha256": "64847e91cf90e3bffbb8338f91b95bc6e527ff1f1b999b80336f24dc1187dc22",
+  "checked_utc": "2026-09-15T06:40:09.999317+00:00",
+  "format": "GZIP",
+  "expanded_bytes": 3974228,
+  "checks": [
+    "gzip_CRC"
+  ],
+  "inner": {
+    "format": "text_or_instrument_native",
+    "signature_hex": "594541524d4f4e54482c4550",
+    "delimiter": ",",
+    "header": [
+      "YEARMONTH",
+      "EPISODE_ID",
+      "EVENT_ID",
+      "LOCATION_INDEX",
+      "RANGE",
+      "AZIMUTH",
+      "LOCATION",
+      "LATITUDE",
+      "LONGITUDE",
+      "LAT2",
+      "LON2"
+    ],
+    "data_records": 51504,
+    "row_width_counts": {
+      "11": 51504
+    },
+    "first_lines": [
+      "YEARMONTH,EPISODE_ID,EVENT_ID,LOCATION_INDEX,RANGE,AZIMUTH,LOCATION,LATITUDE,LONGITUDE,LAT2,LON2",
+      "202508,204641,1287936,2,3.54,\"SSE\",\"SINKING COVE\",35.0015,-85.9601,3590,8557606",
+      "202508,203789,1269348,1,2.9,\"E\",\"BLEASES XRDS\",34.044,-81.7699,342640,8146194",
+      "202508,203789,1269349,1,.8,\"WSW\",\"DOUGLAS\",34.6637,-80.8118,3439822,8048708",
+      "202508,204612,1275986,2,0,\"N\",\"TURKEY\",34.4,-100.88,3424000,10052800",
+      "202508,204612,1275988,1,3.66,\"SSE\",\"DOUD\",33.5237,-101.8991,3331422,10153946",
+      "202508,204638,1275618,1,.88,\"NE\",\"HERINGTON\",38.68,-96.94,3840800,9656400",
+      "202508,204638,1275619,1,0,\"N\",\"JUNCTION CITY\",39.03,-96.83,391800,9649800"
+    ],
+    "encoding_replacement_count": 0
+  },
+  "status": "pass"
+}

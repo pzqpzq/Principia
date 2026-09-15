@@ -1,0 +1,22 @@
+{
+  "bytes": 2133,
+  "sha256": "50817bdf0fdc6e9a686588c26b4d5cf34e29b5f998894e9f004911a9b2b620d4",
+  "format_extension": ".md",
+  "checks": [
+    "pinned_Git_blob_SHA1"
+  ],
+  "format": "text_or_instrument_native",
+  "signature_hex": "232051756164726174696320",
+  "line_count": 31,
+  "preview_lines": [
+    "# Quadratic Seidel-APSP Model",
+    "",
+    "This directory contains the quadratically-constrained Seidel All-Pairs Shortest Path formulation for the Network Topology Design problem.",
+    "",
+    "This formulation uses a set of binary variables to represent the shortest path lengths, while the rest of the formulation remains the same as in the [multicommodity flow formulation](./../flow_mip/). This formulation is called Seidel due to the fact that it uses Seidel's model for all-pair shortest paths."
+  ],
+  "path": "raw/10-topology/models/seidel_quadratic/README.md",
+  "scenario_id": "44_mathematics_qoblib_topology",
+  "verified_utc": "2026-09-14T15:58:17.657490+00:00",
+  "status": "pass"
+}

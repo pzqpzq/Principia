@@ -1,0 +1,180 @@
+{
+  "created": "2026-06-11T15:17:11.091359+00:00",
+  "modified": "2026-06-13T15:14:07.528721+00:00",
+  "id": 20638584,
+  "conceptrecid": "20638583",
+  "doi": "10.5281/zenodo.20638584",
+  "conceptdoi": "10.5281/zenodo.20638583",
+  "doi_url": "https://doi.org/10.5281/zenodo.20638584",
+  "metadata": {
+    "title": "Raw imaging data and integrated phenotypic dataset associated with \"Image-based biomarkers effectively predict salt and drought stress in dwarf tomatoes (Solanum lycopersicum L.)\"",
+    "doi": "10.5281/zenodo.20638584",
+    "publication_date": "2026-06-11",
+    "description": "<p>This repository contains the datasets generated within the NaPPI (National Plant Phenotyping Infrastructure) facility during experiments aimed at characterizing tomato responses to drought and salinity stress. The repository includes both the raw imaging data and the integrated phenotypic dataset used in the associated publication.</p>\n<p>The raw imaging dataset comprises RGB images (.png) and NPQ chlorophyll fluorescence images (.tif) acquired on the cultivars Micro-Tom and Tiny Tim under control, drought, and salt stress conditions. Both imaging modalities support pixel-wise analysis workflows and integrated multi-modal phenotyping approaches.</p>\n<p>The RGB images represent the original, unprocessed data used for the extraction of morphological traits and RGB-derived color indices described in the associated publication. The chlorophyll fluorescence images retain pixel-level information on photosynthetic performance and enable direct analysis of stress-induced physiological responses without requiring proprietary file formats.</p>\n<p>In addition to the raw images, the repository includes the complete integrated phenotypic dataset used for statistical analyses. This dataset contains image-derived traits, laboratory-derived measurements, environmental variables (including temperature, photosynthetically active radiation, and relative humidity), and associated experimental metadata. Metadata include cultivar, treatment, time point (days after sowing, DAS; days after germination, DAG), experiment identifiers, and biological replicate identifiers (Plant ID). Each row corresponds to a single biological sample, and columns report the individual variables used in downstream statistical, machine learning, and multivariate analyses.</p>\n<p>The metadata structure enables direct linkage between raw images, processed measurements, and experimental records, ensuring full traceability and reproducibility of the study.&nbsp;Computational workflows, example outputs, and additional reproducibility resources are provided separately in the associated software repository.</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Del Cioppo, Giorgia",
+        "affiliation": "University of Helsinki",
+        "orcid": "0009-0009-0300-852X"
+      },
+      {
+        "name": "Poque, Sylvain",
+        "affiliation": "University of Helsinki",
+        "orcid": "0000-0002-5368-0738"
+      },
+      {
+        "name": "Scalabrino, Simone",
+        "affiliation": "University of Molise",
+        "orcid": "0000-0003-1764-9685"
+      },
+      {
+        "name": "SCIPPA, GABRIELLA",
+        "affiliation": "University of Molise",
+        "orcid": "0000-0003-0573-1235"
+      },
+      {
+        "name": "Himanen, Kristiina",
+        "affiliation": "University of Helsinki",
+        "orcid": "0000-0003-4975-9467"
+      },
+      {
+        "name": "Trupiano, Dalila",
+        "affiliation": "University of Molise",
+        "orcid": "0000-0002-3907-2816"
+      }
+    ],
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "20638583"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Raw imaging data and integrated phenotypic dataset associated with \"Image-based biomarkers effectively predict salt and drought stress in dwarf tomatoes (Solanum lycopersicum L.)\"",
+  "links": {
+    "self": "https://zenodo.org/api/records/20638584",
+    "self_html": "https://zenodo.org/records/20638584",
+    "preview_html": "https://zenodo.org/records/20638584?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.20638584",
+    "self_doi": "https://doi.org/10.5281/zenodo.20638584",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.20638584",
+    "reserve_doi": "https://zenodo.org/api/records/20638584/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/20638583",
+    "parent_html": "https://zenodo.org/records/20638583",
+    "parent_doi": "https://doi.org/10.5281/zenodo.20638583",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.20638583",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:20638584/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:20638584/sequence/default",
+    "files": "https://zenodo.org/api/records/20638584/files",
+    "media_files": "https://zenodo.org/api/records/20638584/media-files",
+    "archive": "https://zenodo.org/api/records/20638584/files-archive",
+    "archive_media": "https://zenodo.org/api/records/20638584/media-files-archive",
+    "latest": "https://zenodo.org/api/records/20638584/versions/latest",
+    "latest_html": "https://zenodo.org/records/20638584/latest",
+    "versions": "https://zenodo.org/api/records/20638584/versions",
+    "draft": "https://zenodo.org/api/records/20638584/draft",
+    "access_links": "https://zenodo.org/api/records/20638584/access/links",
+    "access_grants": "https://zenodo.org/api/records/20638584/access/grants",
+    "access_users": "https://zenodo.org/api/records/20638584/access/users",
+    "access_request": "https://zenodo.org/api/records/20638584/access/request",
+    "access": "https://zenodo.org/api/records/20638584/access",
+    "communities": "https://zenodo.org/api/records/20638584/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/20638584/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/20638584/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/20638584/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/20638584/quota-increase",
+    "requests": "https://zenodo.org/api/records/20638584/requests"
+  },
+  "updated": "2026-06-13T15:14:07.528721+00:00",
+  "recid": "20638584",
+  "revision": 8,
+  "files": [
+    {
+      "id": "51444c8a-0961-4ef4-ba3e-b2c4f3f40265",
+      "key": "Metadata.xlsx",
+      "size": 25088,
+      "checksum": "md5:5c2776fcc2853ebc1df261c094532bed",
+      "links": {
+        "self": "https://zenodo.org/api/records/20638584/files/Metadata.xlsx/content"
+      }
+    },
+    {
+      "id": "c8c9a44f-febd-4837-9cf6-cc667a6ac3f6",
+      "key": "Micro-Tom_RGB.zip",
+      "size": 2185680284,
+      "checksum": "md5:f780d4790b555d9f1f83f8e676075218",
+      "links": {
+        "self": "https://zenodo.org/api/records/20638584/files/Micro-Tom_RGB.zip/content"
+      }
+    },
+    {
+      "id": "443c71fe-3478-40b5-9e22-8ae2a456bcfe",
+      "key": "Tiny Tim_RGB.zip",
+      "size": 959858907,
+      "checksum": "md5:32b0d8c4dbd1b1df105c0664a0f5ca49",
+      "links": {
+        "self": "https://zenodo.org/api/records/20638584/files/Tiny%20Tim_RGB.zip/content"
+      }
+    },
+    {
+      "id": "4eff3a69-20d8-42a7-a422-82db516c2252",
+      "key": "Tiny Tim_NPQ.zip",
+      "size": 127186962,
+      "checksum": "md5:98f845cd7d524a76a073f0b795d7c63e",
+      "links": {
+        "self": "https://zenodo.org/api/records/20638584/files/Tiny%20Tim_NPQ.zip/content"
+      }
+    },
+    {
+      "id": "93b095a1-4d0c-423c-9d37-93818db4fa25",
+      "key": "Micro-Tom_NPQ.zip",
+      "size": 140349024,
+      "checksum": "md5:613a909ba40b70b70f3cfdaab917e74a",
+      "links": {
+        "self": "https://zenodo.org/api/records/20638584/files/Micro-Tom_NPQ.zip/content"
+      }
+    },
+    {
+      "id": "1b1fdc4c-83aa-47df-bf95-910c10ba9925",
+      "key": "Full_Dataset.xlsx",
+      "size": 141796,
+      "checksum": "md5:6beffacd9ad5b6a020a0c1b7c8e6e8a0",
+      "links": {
+        "self": "https://zenodo.org/api/records/20638584/files/Full_Dataset.xlsx/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "1682936"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 158,
+    "unique_downloads": 115,
+    "views": 171,
+    "unique_views": 125,
+    "version_downloads": 158,
+    "version_unique_downloads": 115,
+    "version_unique_views": 125,
+    "version_views": 171
+  },
+  "state": "done",
+  "submitted": true
+}

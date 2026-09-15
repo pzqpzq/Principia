@@ -1,0 +1,120 @@
+{
+  "bytes": 3843342,
+  "sha256": "f768435f9d55f3be383267af4b36642e84e7de566d81eb665e6dade0c869a6cf",
+  "format_extension": ".npz",
+  "checks": [
+    "all_member_CRCs",
+    "no_pickle_execution",
+    "publisher_md5"
+  ],
+  "format": "NPZ",
+  "arrays": [
+    {
+      "name": "Nvec",
+      "shape": [
+        10
+      ],
+      "dtype": "int64"
+    },
+    {
+      "name": "norm_noise",
+      "shape": [
+        10,
+        4000
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "S0",
+      "shape": [
+        10,
+        4000
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "S0_nn",
+      "shape": [
+        10,
+        4000
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "S0nn",
+      "shape": [
+        10,
+        4000
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "SN_over_S0",
+      "shape": [
+        10,
+        4000
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "Sgen0_sypm_test",
+      "shape": [
+        10,
+        4000
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "Sgen_sypm_test",
+      "shape": [
+        10,
+        4000
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "Srec_sypm_test",
+      "shape": [
+        10,
+        4000
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "Er_vs_N",
+      "shape": [
+        10,
+        4000
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "Er_vs_S",
+      "shape": [
+        10,
+        4000
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "Er_vs_Nrel",
+      "shape": [
+        10,
+        4000
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "Er_vs_Srel",
+      "shape": [
+        10,
+        4000
+      ],
+      "dtype": "float64"
+    }
+  ],
+  "path": "raw/Error_vs_N_2025-10-01_22_56.npz",
+  "scenario_id": "28_physics_parametric_microwave",
+  "verified_utc": "2026-09-14T15:58:08.229674+00:00",
+  "status": "pass"
+}

@@ -1,0 +1,41 @@
+{
+  "scenario_id": "89_psychology_age_risk",
+  "path": "raw/raw data.csv",
+  "bytes": 2674600,
+  "sha256": "85b66b0a146872e817b183b6979c03201a8a0e89bc1e02937b383833a09bd1d9",
+  "checked_utc": "2026-09-15T06:46:26.665661+00:00",
+  "source_checksum_status": "verified",
+  "format": "text_or_instrument_native",
+  "signature_hex": "5375626a6563742c4167652c",
+  "delimiter": ",",
+  "header": [
+    "Subject",
+    "Age",
+    "Sex",
+    "Protocol",
+    "Session",
+    "Block",
+    "Trial",
+    "Risk+AF8-Option",
+    "Risk+AF8-Prob",
+    "Hidden",
+    "Choice",
+    "EV"
+  ],
+  "data_records": 27667,
+  "row_width_counts": {
+    "12": 27667
+  },
+  "first_lines": [
+    "Subject,Age,Sex,Protocol,Session,Block,Trial,Risk+AF8-Option,Risk+AF8-Prob,Hidden,Choice,EV",
+    "f3bbc7cf7420c9e4b089c363b2db5f23312b46062e61a4f9ac789e67bbf3d71d,adult,F,E1.1,1,1,1,6,0.5,1,1,3",
+    "f3bbc7cf7420c9e4b089c363b2db5f23312b46062e61a4f9ac789e67bbf3d71d,adult,F,E1.1,1,1,2,6,0.5,0,1,3",
+    "f3bbc7cf7420c9e4b089c363b2db5f23312b46062e61a4f9ac789e67bbf3d71d,adult,F,E1.1,1,1,3,6,0.5,1,1,3",
+    "f3bbc7cf7420c9e4b089c363b2db5f23312b46062e61a4f9ac789e67bbf3d71d,adult,F,E1.1,1,1,4,6,0.5,0,1,3",
+    "f3bbc7cf7420c9e4b089c363b2db5f23312b46062e61a4f9ac789e67bbf3d71d,adult,F,E1.1,1,1,5,6,0.5,0,1,3",
+    "f3bbc7cf7420c9e4b089c363b2db5f23312b46062e61a4f9ac789e67bbf3d71d,adult,F,E1.1,1,1,6,6,0.5,1,1,3",
+    "f3bbc7cf7420c9e4b089c363b2db5f23312b46062e61a4f9ac789e67bbf3d71d,adult,F,E1.1,1,1,7,6,0.5,1,1,3"
+  ],
+  "encoding_replacement_count": 0,
+  "status": "pass"
+}

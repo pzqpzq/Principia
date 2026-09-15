@@ -1,0 +1,1022 @@
+{
+  "case_id": "P100-093",
+  "case_revision": 1,
+  "scenario_id": "93_biology_solute_carrier_facs",
+  "title": "Flow cytometry FCS files: Cell surface VVL staining of MFSD5, SLC30A8 and SLC30A8-D110N-D224N OE cells",
+  "domain": "Membrane transporter biology",
+  "question": "How do transporter expression and mutations alter cellular lectin-staining distributions across samples?",
+  "data_origin": "measured_or_observed",
+  "source_version": "14720967",
+  "source_url": "https://zenodo.org/records/14720967",
+  "identifiers": [
+    "10.5281/zenodo.14720967"
+  ],
+  "publisher": "Teoh, Shao Thing (CeMM Research Center for Molecular Medicine)",
+  "release_date": "2025-01-22",
+  "measurement_dates": "Sample list and acquisition naming dated August 23, 2023; released January 2025.",
+  "variables_and_units": "FACS scatter/fluorescence and sample annotations",
+  "independent_units": "biological replicate and perturbation; events nested within samples",
+  "validation_design": "biological replicate and perturbation; events nested within samples Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Eighteen native FCS files plus sample list for MFSD5, SLC30A8 wild-type and transport-deficient mutations; source study already compares VVL staining.",
+  "prior_analysis_and_limits": "Events nested within samples. Use sample/biological replicate groups; if independent cultures cannot be verified, limit inference to within-sample distributional characterization. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/Specimen_001_A2_A02.fcs",
+      "structure": {
+        "channels": 7,
+        "channel_metadata": {
+          "1": {
+            "pnn": "FSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "2": {
+            "pnn": "FSC-H",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "3": {
+            "pnn": "FSC-W",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "4": {
+            "pnn": "SSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "5": {
+            "pnn": "B/E AF 488-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "6": {
+            "pnn": "YG/D PE-TexasRed-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "7": {
+            "pnn": "Time",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          }
+        },
+        "events": 22557
+      }
+    },
+    {
+      "asset": "raw/Specimen_001_B1_B01.fcs",
+      "structure": {
+        "channels": 7,
+        "channel_metadata": {
+          "1": {
+            "pnn": "FSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "2": {
+            "pnn": "FSC-H",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "3": {
+            "pnn": "FSC-W",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "4": {
+            "pnn": "SSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "5": {
+            "pnn": "B/E AF 488-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "6": {
+            "pnn": "YG/D PE-TexasRed-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "7": {
+            "pnn": "Time",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          }
+        },
+        "events": 10458
+      }
+    },
+    {
+      "asset": "raw/Specimen_001_C1_C01.fcs",
+      "structure": {
+        "channels": 7,
+        "channel_metadata": {
+          "1": {
+            "pnn": "FSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "2": {
+            "pnn": "FSC-H",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "3": {
+            "pnn": "FSC-W",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "4": {
+            "pnn": "SSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "5": {
+            "pnn": "B/E AF 488-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "6": {
+            "pnn": "YG/D PE-TexasRed-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "7": {
+            "pnn": "Time",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          }
+        },
+        "events": 9018
+      }
+    },
+    {
+      "asset": "raw/Specimen_001_C2_C02.fcs",
+      "structure": {
+        "channels": 7,
+        "channel_metadata": {
+          "1": {
+            "pnn": "FSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "2": {
+            "pnn": "FSC-H",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "3": {
+            "pnn": "FSC-W",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "4": {
+            "pnn": "SSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "5": {
+            "pnn": "B/E AF 488-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "6": {
+            "pnn": "YG/D PE-TexasRed-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "7": {
+            "pnn": "Time",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          }
+        },
+        "events": 13021
+      }
+    },
+    {
+      "asset": "raw/Specimen_001_F4_F04.fcs",
+      "structure": {
+        "channels": 7,
+        "channel_metadata": {
+          "1": {
+            "pnn": "FSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "2": {
+            "pnn": "FSC-H",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "3": {
+            "pnn": "FSC-W",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "4": {
+            "pnn": "SSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "5": {
+            "pnn": "B/E AF 488-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "6": {
+            "pnn": "YG/D PE-TexasRed-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "7": {
+            "pnn": "Time",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          }
+        },
+        "events": 15257
+      }
+    },
+    {
+      "asset": "raw/Specimen_001_D3_D03.fcs",
+      "structure": {
+        "channels": 7,
+        "channel_metadata": {
+          "1": {
+            "pnn": "FSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "2": {
+            "pnn": "FSC-H",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "3": {
+            "pnn": "FSC-W",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "4": {
+            "pnn": "SSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "5": {
+            "pnn": "B/E AF 488-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "6": {
+            "pnn": "YG/D PE-TexasRed-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "7": {
+            "pnn": "Time",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          }
+        },
+        "events": 21011
+      }
+    },
+    {
+      "asset": "raw/Specimen_001_E1_E01.fcs",
+      "structure": {
+        "channels": 7,
+        "channel_metadata": {
+          "1": {
+            "pnn": "FSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "2": {
+            "pnn": "FSC-H",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "3": {
+            "pnn": "FSC-W",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "4": {
+            "pnn": "SSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "5": {
+            "pnn": "B/E AF 488-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "6": {
+            "pnn": "YG/D PE-TexasRed-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "7": {
+            "pnn": "Time",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          }
+        },
+        "events": 19309
+      }
+    },
+    {
+      "asset": "raw/Specimen_001_D1_D01.fcs",
+      "structure": {
+        "channels": 7,
+        "channel_metadata": {
+          "1": {
+            "pnn": "FSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "2": {
+            "pnn": "FSC-H",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "3": {
+            "pnn": "FSC-W",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "4": {
+            "pnn": "SSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "5": {
+            "pnn": "B/E AF 488-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "6": {
+            "pnn": "YG/D PE-TexasRed-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "7": {
+            "pnn": "Time",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          }
+        },
+        "events": 18886
+      }
+    },
+    {
+      "asset": "raw/Specimen_001_E2_E02.fcs",
+      "structure": {
+        "channels": 7,
+        "channel_metadata": {
+          "1": {
+            "pnn": "FSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "2": {
+            "pnn": "FSC-H",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "3": {
+            "pnn": "FSC-W",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "4": {
+            "pnn": "SSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "5": {
+            "pnn": "B/E AF 488-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "6": {
+            "pnn": "YG/D PE-TexasRed-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "7": {
+            "pnn": "Time",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          }
+        },
+        "events": 15912
+      }
+    },
+    {
+      "asset": "raw/Specimen_001_E3_E03.fcs",
+      "structure": {
+        "channels": 7,
+        "channel_metadata": {
+          "1": {
+            "pnn": "FSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "2": {
+            "pnn": "FSC-H",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "3": {
+            "pnn": "FSC-W",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "4": {
+            "pnn": "SSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "5": {
+            "pnn": "B/E AF 488-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "6": {
+            "pnn": "YG/D PE-TexasRed-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "7": {
+            "pnn": "Time",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          }
+        },
+        "events": 20896
+      }
+    },
+    {
+      "asset": "raw/Specimen_001_F3_F03.fcs",
+      "structure": {
+        "channels": 7,
+        "channel_metadata": {
+          "1": {
+            "pnn": "FSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "2": {
+            "pnn": "FSC-H",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "3": {
+            "pnn": "FSC-W",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "4": {
+            "pnn": "SSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "5": {
+            "pnn": "B/E AF 488-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "6": {
+            "pnn": "YG/D PE-TexasRed-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "7": {
+            "pnn": "Time",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          }
+        },
+        "events": 20458
+      }
+    },
+    {
+      "asset": "raw/Specimen_001_B2_B02.fcs",
+      "structure": {
+        "channels": 7,
+        "channel_metadata": {
+          "1": {
+            "pnn": "FSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "2": {
+            "pnn": "FSC-H",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "3": {
+            "pnn": "FSC-W",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "4": {
+            "pnn": "SSC-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "5": {
+            "pnn": "B/E AF 488-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "6": {
+            "pnn": "YG/D PE-TexasRed-A",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          },
+          "7": {
+            "pnn": "Time",
+            "pns": "",
+            "pne": [
+              0.0,
+              0.0
+            ],
+            "png": 1.0,
+            "pnr": 262144.0
+          }
+        },
+        "events": 16322
+      }
+    }
+  ],
+  "format_counts": {
+    "FCS": 18,
+    "Excel_OpenXML": 1
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 8750684,
+  "expanded_source_equivalent_bytes": 8750684,
+  "installed_folder_bytes": 8775972,
+  "source_asset_count": 20,
+  "asset_paths": [
+    "scenarios/93_biology_solute_carrier_facs/raw/Specimen_001_A2_A02.fcs",
+    "scenarios/93_biology_solute_carrier_facs/raw/Specimen_001_B1_B01.fcs",
+    "scenarios/93_biology_solute_carrier_facs/raw/Specimen_001_C1_C01.fcs",
+    "scenarios/93_biology_solute_carrier_facs/raw/Specimen_001_C2_C02.fcs",
+    "scenarios/93_biology_solute_carrier_facs/raw/Specimen_001_F4_F04.fcs",
+    "scenarios/93_biology_solute_carrier_facs/raw/Specimen_001_D3_D03.fcs",
+    "scenarios/93_biology_solute_carrier_facs/raw/Specimen_001_E1_E01.fcs",
+    "scenarios/93_biology_solute_carrier_facs/raw/Specimen_001_D1_D01.fcs",
+    "scenarios/93_biology_solute_carrier_facs/raw/Specimen_001_E2_E02.fcs",
+    "scenarios/93_biology_solute_carrier_facs/raw/Specimen_001_E3_E03.fcs",
+    "scenarios/93_biology_solute_carrier_facs/raw/Specimen_001_F3_F03.fcs",
+    "scenarios/93_biology_solute_carrier_facs/raw/Specimen_001_B2_B02.fcs",
+    "scenarios/93_biology_solute_carrier_facs/raw/Specimen_001_D4_D04.fcs",
+    "scenarios/93_biology_solute_carrier_facs/raw/Specimen_001_E4_E04.fcs",
+    "scenarios/93_biology_solute_carrier_facs/raw/Specimen_001_F1_F01.fcs",
+    "scenarios/93_biology_solute_carrier_facs/raw/Specimen_001_F2_F02.fcs",
+    "scenarios/93_biology_solute_carrier_facs/raw/Specimen_001_D2_D02.fcs",
+    "scenarios/93_biology_solute_carrier_facs/raw/20230823 sample list.xlsx",
+    "scenarios/93_biology_solute_carrier_facs/raw/Specimen_001_A1_A01.fcs",
+    "scenarios/93_biology_solute_carrier_facs/context/source_record.json"
+  ],
+  "local_folder": "scenarios/93_biology_solute_carrier_facs",
+  "size_exception": false,
+  "modalities": [
+    "instrument_signals_or_cell_events",
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 8785997,
+  "expanded_release_folder_equivalent_bytes": 8785997
+}

@@ -1,0 +1,117 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "53_manufacturing_screw_friction",
+  "domain": "Industrial manufacturing",
+  "title": "Industrial screw driving dataset collection: Time series data for process monitoring and anomaly detection",
+  "publisher": "West, Nikolai (Technical University Dortmund); Deuse, Jochen (Technical University Dortmund)",
+  "authoritative_landing_url": "https://zenodo.org/records/16031381",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/16031381",
+    "https://zenodo.org/api/records/16031381/files/s02_variations-in-surface-friction.zip/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.16031381"
+  ],
+  "release_or_version": "16031381",
+  "retrieval_finalized_utc": "2026-09-15T07:04:32.625154+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "screw",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Acquisition timestamps, where present, are within the native JSON; full campaign dates unknown.",
+  "source_publication_date": "2025-07-17",
+  "source_created_utc": "2025-07-21T08:30:33.264096+00:00",
+  "source_updated_utc": "2025-07-21T08:30:33.599363+00:00",
+  "source_inventory": [
+    {
+      "name": "s04_variations-in-assembly-conditions-2.zip",
+      "bytes": 61107763,
+      "selected": false
+    },
+    {
+      "name": "s06_variations-in-lower-workpiece-fabrication.zip",
+      "bytes": 83080694,
+      "selected": false
+    },
+    {
+      "name": "s05_variations-in-upper-workpiece-fabrication.zip",
+      "bytes": 26702174,
+      "selected": false
+    },
+    {
+      "name": "s01_variations-in-thread-degradation.zip",
+      "bytes": 29004994,
+      "selected": false
+    },
+    {
+      "name": "s02_variations-in-surface-friction.zip",
+      "bytes": 83946972,
+      "selected": true
+    },
+    {
+      "name": "s03_variations-in-assembly-conditions-1.zip",
+      "bytes": 12588378,
+      "selected": false
+    }
+  ],
+  "author_preprocessing": "Native industrial traces and labels, sampled at 833.33 Hz; publisher reports greater than 95% completeness. No curator cleaning.",
+  "known_analyses_and_limitations": "Use complete operations and component/reuse groups; adjacent repeated screw operations may share material history. Preserve all eight conditions and failed operations.",
+  "related_publications": [],
+  "independent_groups": "complete screw-driving runs and surface conditions",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-053",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-053",
+      "scenario_id": "53_manufacturing_screw_friction",
+      "path": "raw/s02_variations-in-surface-friction.zip",
+      "scenario_relative_path": "raw/s02_variations-in-surface-friction.zip",
+      "bytes": 83946972,
+      "sha256": "098322d9cc5ab9969d17ac49d317c2fe398fc906205cb681938d7b9481e7bcae",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/16031381"
+      ],
+      "download_url": "https://zenodo.org/api/records/16031381/files/s02_variations-in-surface-friction.zip/content",
+      "source_checksum": "md5:0bc948a6e8c6e83f72dbe36973131558",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:33:20.806530+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.16031381"
+      ],
+      "citation_url": "https://zenodo.org/records/16031381",
+      "source_version": "16031381",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/16031381",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-053",
+      "scenario_id": "53_manufacturing_screw_friction",
+      "path": "context/SOURCE_FACTS.json",
+      "scenario_relative_path": "context/SOURCE_FACTS.json",
+      "bytes": 1787,
+      "sha256": "222d8f155ded63ca0802cd37e72fc4d70942ac216650b6f8b32717fd3091e7bc",
+      "role": "curator_factual_source_profile",
+      "source_urls": [
+        "https://zenodo.org/records/16031381"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "curator serialization, not a publisher file",
+      "retrieved_utc": "2026-09-15T07:04:32.625154+00:00",
+      "license_or_terms": "CC-BY-4.0 (proposed release terms for curator documentation; pending owner acceptance)",
+      "citation_identifiers": [
+        "10.5281/zenodo.16031381"
+      ],
+      "citation_url": "https://zenodo.org/records/16031381",
+      "source_version": "16031381",
+      "replay_note": "Reconstruct exact curator metadata from frozen release copy.",
+      "rights_evidence_url": "https://zenodo.org/records/16031381",
+      "rights_evidence_scope": "Factual identifiers, file inventory and attribution; curator serialization."
+    }
+  ]
+}

@@ -1,0 +1,303 @@
+{
+  "case_id": "P100-067",
+  "case_revision": 1,
+  "scenario_id": "67_environment_microplastic_settling",
+  "title": "Dataset on settling dynamics of microplastic particles sinking through exopolymer-induced rheological stratification",
+  "domain": "Environmental fluid mechanics",
+  "question": "How do particle shape and fluid stratification affect settling trajectories and transition behavior?",
+  "data_origin": "measured_or_observed",
+  "source_version": "1",
+  "source_url": "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+  "identifiers": [
+    {
+      "id": "10.17632/ccm9k8pjft.1",
+      "status": "allocated",
+      "prefix": "10.17632"
+    }
+  ],
+  "publisher": "[{'institution': {'id': 'ca614e41-aa2e-5da1-8603-f313c8f9d1d2', 'name': 'Polska Akademia Nauk Instytut Geofizyki', 'ror_id': 'https://ror.org/04rc9d057'}, 'contribution': 'MM conceived and designed the study, lead the preparation and conducting settling experiments, processed the results, took part in analysis of rheologica data, prepared dataset for publication', 'profile_id': '52a3853f-3a8e-330d-b58e-cd0ada829c73', 'first_name': 'Magdalena', 'last_name': 'Mrokowska', 'orcid_id': '0000-0002-3135-7315'}, {'institution': {'id': '600d1152-335e-5c42-a542-9b02f7e6d562', 'name': 'Politechnika Warszawska Wydzial Chemiczny'}, 'contribution': 'KD took part in conducting, analysis and preparation for sharing of the rheological measurements, took part in preparing and conducting settling experiments and data analysis', 'first_name': 'Karolina', 'last_name': 'Dzień'}, {'institution': {'id': '600d1152-335e-5c42-a542-9b02f7e6d562', 'name': 'Politechnika Warszawska Wydzial Chemiczny'}, 'contribution': 'AKM designed and took part in conducting and analysis of rheological measurements', 'first_name': 'Anna', 'last_name': 'Krztoń-Maziopa', 'orcid_id': '0000-0002-0223-0614'}]; [{'id': '600d1152-335e-5c42-a542-9b02f7e6d562', 'name': 'Politechnika Warszawska Wydzial Chemiczny'}, {'id': 'ca614e41-aa2e-5da1-8603-f313c8f9d1d2', 'name': 'Polska Akademia Nauk Instytut Geofizyki', 'ror_id': 'https://ror.org/04rc9d057'}]",
+  "release_date": "2025-03-17T16:34:00.917Z",
+  "measurement_dates": "Measurement files were created in 2024; deposit release March 2025.",
+  "variables_and_units": "particle positions, time, density profiles and rheology",
+  "independent_units": "particle, fluid and entire experiment",
+  "validation_design": "particle, fluid and entire experiment Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Numerical PTV trajectories, density/refractive-index profiles and rheology. Complete numerical archives retained; sample-video archive omitted by modality rule.",
+  "prior_analysis_and_limits": "Group particle and entire experiment; nine configurations span Newtonian and non-Newtonian layers. PTV positions are extracted measurements, not raw video pixels. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/Density_and_refractive_index_profiles.zip!/Density_and_refractive_index_profiles/Density_and_RI_measured/README_density_and_RI_measured.txt",
+      "structure": {
+        "first_lines": [
+          "1. Title of Dataset: Density_and_RI_measured",
+          "",
+          "Data were collected in the Laboratory of Hydrodynamic Micromodels, Institute of Geophysica, Polish Academy of Sciences",
+          "",
+          "2. Folder List: ",
+          "",
+          "Folder contains data files for experimental sets:",
+          "set1_1.csv, set1_2.csv, set1_3.csv, set2_1.csv, set2_2.csv, set2_3.csv, set3_1.csv, set3_2.csv, set3_3.csv"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Density_and_refractive_index_profiles.zip!/Density_and_refractive_index_profiles/Density_and_RI_measured/set1_1.csv",
+      "structure": {
+        "header": [
+          "Var1",
+          "Var2",
+          "Var3"
+        ],
+        "data_records": 18,
+        "first_lines": [
+          "Var1,Var2,Var3",
+          "-0.03233,1023.6,1.3387",
+          "-0.02733,1023.6,1.3387",
+          "-0.0232123529411765,1024,1.3387",
+          "-0.0190947058823529,1024,1.3387",
+          "-0.0149770588235294,1024.1,1.3387",
+          "-0.0108594117647059,1024,1.3387",
+          "-0.00674176470588235,1024.1,1.3387"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Density_and_refractive_index_profiles.zip!/Density_and_refractive_index_profiles/Density_and_RI_measured/set1_2.csv",
+      "structure": {
+        "header": [
+          "Var1",
+          "Var2"
+        ],
+        "data_records": 18,
+        "first_lines": [
+          "Var1,Var2",
+          "-0.02172,1023.5",
+          "-0.01672,1023.5",
+          "-0.0126023529411765,1023.5",
+          "-0.00848470588235294,1023.7",
+          "-0.00436705882352941,1024",
+          "-0.00024941176470588,1023.7",
+          "0.00386823529411764,1024.3"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Density_and_refractive_index_profiles.zip!/Density_and_refractive_index_profiles/Density_and_RI_measured/set1_3.csv",
+      "structure": {
+        "header": [
+          "Var1",
+          "Var2",
+          "Var3"
+        ],
+        "data_records": 18,
+        "first_lines": [
+          "Var1,Var2,Var3",
+          "-0.02171,1024.4,1.3394",
+          "-0.01671,1024.4,1.3394",
+          "-0.0125923529411765,1024.3,1.3394",
+          "-0.00847470588235294,1024,1.3394",
+          "-0.00435705882352942,1023.6,1.3393",
+          "-0.000239411764705884,1024.5,1.3395",
+          "0.00387823529411765,1025.6,1.3396"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Density_and_refractive_index_profiles.zip!/Density_and_refractive_index_profiles/Density_and_RI_measured/set2_1.csv",
+      "structure": {
+        "header": [
+          "Var1",
+          "Var2",
+          "Var3"
+        ],
+        "data_records": 18,
+        "first_lines": [
+          "Var1,Var2,Var3",
+          "-0.0402,1024.9,1.3392",
+          "-0.0352,1024.6,1.3389",
+          "-0.0310823529411765,1024.6,1.3389",
+          "-0.0269647058823529,1024.6,1.3389",
+          "-0.0228470588235294,1024.7,1.339",
+          "-0.0187294117647059,1024.6,1.3389",
+          "-0.0146117647058824,1024.6,1.3389"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Density_and_refractive_index_profiles.zip!/Density_and_refractive_index_profiles/Density_and_RI_measured/set2_2.csv",
+      "structure": {
+        "header": [
+          "Var1",
+          "Var2",
+          "Var3"
+        ],
+        "data_records": 18,
+        "first_lines": [
+          "Var1,Var2,Var3",
+          "-0.0139,1024.9,1.339",
+          "-0.0089,1024.8,1.3389",
+          "-0.00478235294117647,1024.8,1.3389",
+          "-0.000664705882352939,1025.4,1.339",
+          "0.00345294117647059,1026.8,1.3394",
+          "0.00757058823529412,1026.8,1.3395",
+          "0.0116882352941176,1028.6,1.3398"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Density_and_refractive_index_profiles.zip!/Density_and_refractive_index_profiles/Density_and_RI_measured/set2_3.csv",
+      "structure": {
+        "header": [
+          "Var1",
+          "Var2",
+          "Var3"
+        ],
+        "data_records": 18,
+        "first_lines": [
+          "Var1,Var2,Var3",
+          "-0.0276,1024.6,1.3389",
+          "-0.0226,1024.5,1.3387",
+          "-0.0184823529411765,1024.6,1.3388",
+          "-0.0143647058823529,1024.5,1.3388",
+          "-0.0102470588235294,1024.6,1.3389",
+          "-0.00612941176470588,1024.8,1.3389",
+          "-0.00201176470588235,1028.6,1.34"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Density_and_refractive_index_profiles.zip!/Density_and_refractive_index_profiles/Density_and_RI_measured/set3_1.csv",
+      "structure": {
+        "header": [
+          "Var1",
+          "Var2",
+          "Var3"
+        ],
+        "data_records": 18,
+        "first_lines": [
+          "Var1,Var2,Var3",
+          "-0.01338,1028.6,1.3401",
+          "-0.00838,1029.2,1.3403",
+          "-0.00426235294117647,1029.2,1.3402",
+          "-0.000144705882352939,1029.7,1.3402",
+          "0.00397294117647059,1030.3,1.3405",
+          "0.00809058823529412,1033.4,1.3411",
+          "0.0122082352941176,1035.9,1.3416"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Density_and_refractive_index_profiles.zip!/Density_and_refractive_index_profiles/Density_and_RI_measured/set3_2.csv",
+      "structure": {
+        "header": [
+          "Var1",
+          "Var2",
+          "Var3"
+        ],
+        "data_records": 18,
+        "first_lines": [
+          "Var1,Var2,Var3",
+          "-0.005,1029.6,1.3403",
+          "0,1030.4,1.3406",
+          "0.00411764705882353,1030.4,1.3404",
+          "0.00823529411764706,1030.6,1.3406",
+          "0.0123529411764706,1031.9,1.3408",
+          "0.0164705882352941,1034.3,1.3414",
+          "0.0205882352941177,1036,1.3417"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Density_and_refractive_index_profiles.zip!/Density_and_refractive_index_profiles/Density_and_RI_measured/set3_3.csv",
+      "structure": {
+        "header": [
+          "Var1",
+          "Var2",
+          "Var3"
+        ],
+        "data_records": 18,
+        "first_lines": [
+          "Var1,Var2,Var3",
+          "-0.03394,1030.7,1.3402",
+          "-0.02894,1030.8,1.3402",
+          "-0.0248223529411765,1030.9,1.3402",
+          "-0.0207047058823529,1031,1.3402",
+          "-0.0165870588235294,1031.6,1.3404",
+          "-0.0124694117647059,1030.8,1.3403",
+          "-0.00835176470588236,1031.1,1.3403"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Density_and_refractive_index_profiles.zip!/Density_and_refractive_index_profiles/Density_RI_fitted/README_density_RI_fitted.txt",
+      "structure": {
+        "first_lines": [
+          "1. Title of Dataset: Density_and_RI_fitted",
+          "Data were collected in the Laboratory of Hydrodynamic Micromodels, Institute of Geophysica, Polish Academy of Sciences",
+          "",
+          "2. Folder List: ",
+          "",
+          "Folder contains data files for experimental sets:",
+          "set1_1.csv, set1_2.csv, set1_3.csv, set2_1.csv, set2_2.csv, set2_3.csv, set3_1.csv, set3_2.csv, set3_3.csv",
+          "\t"
+        ]
+      }
+    },
+    {
+      "asset": "raw/Density_and_refractive_index_profiles.zip!/Density_and_refractive_index_profiles/Density_RI_fitted/set1_1.csv",
+      "structure": {
+        "header": [
+          "-0.032",
+          "1023.602"
+        ],
+        "data_records": 70,
+        "first_lines": [
+          "-0.032,1023.602",
+          "-0.031,1023.611",
+          "-0.030,1023.620",
+          "-0.029,1023.631",
+          "-0.028,1023.642",
+          "-0.027,1023.654",
+          "-0.026,1023.667",
+          "-0.025,1023.681"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "ZIP": 3,
+    "text_or_instrument_native": 860
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "CC BY 4.0",
+  "source_asset_bytes": 2672380,
+  "expanded_source_equivalent_bytes": 7403887,
+  "installed_folder_bytes": 2703029,
+  "source_asset_count": 8,
+  "asset_paths": [
+    "scenarios/67_environment_microplastic_settling/raw/Density_and_refractive_index_profiles.zip",
+    "scenarios/67_environment_microplastic_settling/raw/MPs_sinking_dynamics.zip",
+    "scenarios/67_environment_microplastic_settling/raw/README_Density_and_refractive_index_profiles.txt",
+    "scenarios/67_environment_microplastic_settling/raw/README_MPs_sinking_dynamics.txt",
+    "scenarios/67_environment_microplastic_settling/raw/README_rheological_data.txt",
+    "scenarios/67_environment_microplastic_settling/raw/README_sample_videos.txt",
+    "scenarios/67_environment_microplastic_settling/raw/Rheological_data.zip",
+    "scenarios/67_environment_microplastic_settling/context/SOURCE_FACTS.json"
+  ],
+  "local_folder": "scenarios/67_environment_microplastic_settling",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 2691472,
+  "expanded_release_folder_equivalent_bytes": 7422979
+}

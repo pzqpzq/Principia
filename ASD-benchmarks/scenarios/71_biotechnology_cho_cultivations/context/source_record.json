@@ -1,0 +1,139 @@
+{
+  "created": "2026-08-11T15:29:36.103184+00:00",
+  "modified": "2026-08-11T15:29:36.278521+00:00",
+  "id": 20829178,
+  "conceptrecid": "20829177",
+  "doi": "10.5281/zenodo.20829178",
+  "conceptdoi": "10.5281/zenodo.20829177",
+  "doi_url": "https://doi.org/10.5281/zenodo.20829178",
+  "metadata": {
+    "title": "Dataset Based on Chinese Hamster Ovary (CHO) Cultivations including Turbidity, Permittivity, O2 and CO2 Measurements",
+    "doi": "10.5281/zenodo.20829178",
+    "publication_date": "2026-08-11",
+    "description": "<p class=\"MsoNormal\">The dataset comprises 24 cultivations of Chinese Hamster Ovary (CHO)-K1 cells, each with a duration of 161.5 &ndash; 328.5 h, conducted under varying process parameters in parallel bioreactor systems at 0.55 &ndash; 0.8 L scale (working volume). A total of 48 variables are provided, comprising 38 continuous inline variables and 10 offline variables sampled up to two times per day.</p>\n<p class=\"MsoNormal\">The main archive (Dataset.zip) is organized into two primary subfolders: individual raw data tables and time-axis aligned raw data tables. The folder individual raw data tables contains 12 .xlsx files corresponding to the 12 experiments, each performed in two parallel reactors. These include nine batch experiments and three fed-batch experiments. The folder time-axis aligned raw data tables contains a total of 48 .csv files (12 experiments &times; 2 reactors &times; 2 measurement types).</p>\n<p class=\"MsoNormal\">For each experiment (referred to as &lsquo;EXP&rsquo; in the datasets), a single Excel (.xlsx) file is provided containing the unprocessed raw data. Each file contains 16 worksheets, each corresponding to specific data and to a specific reactor (referred to as &lsquo;R&rsquo; in the datasets). Within each worksheet, the time axis starts at the point of inoculation, which is defined as 0 hours. The Excel files are named according to the experiment number and the process mode used.</p>\n<p class=\"MsoNormal\">Since the individual sensor systems exhibited slight deviations from their nominal sampling intervals, small temporal offsets accumulated over time across data streams. To correct for this drift and obtain a temporally consistent dataset, all inline signals were aligned to a common master time axis. Accordingly, in addition to the individual raw data tables, time-axis-aligned raw data tables are also provided. For each experiment (EXP) and reactor (R), two comma-separated value (.csv) files are available: one containing inline measurement data and one containing offline measurement data. The .csv files use commas as delimiters between values within a row and periods as decimal separators. File names encode the experiment number, process mode, reactor identifier, and measurement type.</p>\n<p class=\"MsoNormal\">The dataset is suitable for the development and evaluation of data-driven, mechanistic, and hybrid modeling approaches, including soft sensors, as commonly applied in bioprocess engineering. For meaningful interpretation, inline sensor data should be considered in conjunction with the corresponding offline reference measurements provided in this dataset. As with other complex bioprocess datasets, careful preprocessing, and domain-informed interpretation are essential to avoid misinterpretation of sensor signals and inferred process states.</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Uhlendorff, Selina",
+        "affiliation": "Institute for Life Science Technologies (ILT.NRW), OWL University of Applied Sciences and Arts, Lemgo, Germany",
+        "orcid": "0000-0002-0502-8032"
+      },
+      {
+        "name": "Fulek, Ruwen",
+        "affiliation": "Institute Industrial IT (inIT), OWL University of Applied Sciences and Arts, Lemgo, Germany"
+      },
+      {
+        "name": "Eimler, Jonas",
+        "affiliation": "Institute for Life Science Technologies (ILT.NRW), OWL University of Applied Sciences and Arts, Lemgo, Germany"
+      },
+      {
+        "name": "Pein-Hackelbusch, Miriam",
+        "affiliation": "Institute for Life Science Technologies (ILT.NRW), OWL University of Applied Sciences and Arts, Lemgo, Germany",
+        "orcid": "0000-0002-7920-0595"
+      },
+      {
+        "name": "Frahm, Björn",
+        "affiliation": "Biotechnology and Bioprocess Engineering, OWL University of Applied Sciences and Arts, Lemgo, Germany",
+        "orcid": "0000-0003-4046-7804"
+      }
+    ],
+    "version": "Version v1",
+    "language": "eng",
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "grants": [
+      {
+        "code": "13FH045KX2",
+        "internal_id": "04pz7b180::13FH045KX2",
+        "funder": {
+          "name": "Federal Ministry of Education and Research"
+        }
+      }
+    ],
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "20829177"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Dataset Based on Chinese Hamster Ovary (CHO) Cultivations including Turbidity, Permittivity, O2 and CO2 Measurements",
+  "links": {
+    "self": "https://zenodo.org/api/records/20829178",
+    "self_html": "https://zenodo.org/records/20829178",
+    "preview_html": "https://zenodo.org/records/20829178?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.20829178",
+    "self_doi": "https://doi.org/10.5281/zenodo.20829178",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.20829178",
+    "reserve_doi": "https://zenodo.org/api/records/20829178/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/20829177",
+    "parent_html": "https://zenodo.org/records/20829177",
+    "parent_doi": "https://doi.org/10.5281/zenodo.20829177",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.20829177",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:20829178/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:20829178/sequence/default",
+    "files": "https://zenodo.org/api/records/20829178/files",
+    "media_files": "https://zenodo.org/api/records/20829178/media-files",
+    "archive": "https://zenodo.org/api/records/20829178/files-archive",
+    "archive_media": "https://zenodo.org/api/records/20829178/media-files-archive",
+    "latest": "https://zenodo.org/api/records/20829178/versions/latest",
+    "latest_html": "https://zenodo.org/records/20829178/latest",
+    "versions": "https://zenodo.org/api/records/20829178/versions",
+    "draft": "https://zenodo.org/api/records/20829178/draft",
+    "access_links": "https://zenodo.org/api/records/20829178/access/links",
+    "access_grants": "https://zenodo.org/api/records/20829178/access/grants",
+    "access_users": "https://zenodo.org/api/records/20829178/access/users",
+    "access_request": "https://zenodo.org/api/records/20829178/access/request",
+    "access": "https://zenodo.org/api/records/20829178/access",
+    "communities": "https://zenodo.org/api/records/20829178/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/20829178/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/20829178/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/20829178/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/20829178/quota-increase",
+    "requests": "https://zenodo.org/api/records/20829178/requests"
+  },
+  "updated": "2026-08-11T15:29:36.278521+00:00",
+  "recid": "20829178",
+  "revision": 4,
+  "files": [
+    {
+      "id": "fc7f99cf-ff51-4ee7-b8cb-db4a34a52c94",
+      "key": "Dataset.zip",
+      "size": 227627771,
+      "checksum": "md5:71b2a35b7df2ed11644ec9f177453772",
+      "links": {
+        "self": "https://zenodo.org/api/records/20829178/files/Dataset.zip/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "1588017"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 194,
+    "unique_downloads": 51,
+    "views": 109,
+    "unique_views": 94,
+    "version_downloads": 194,
+    "version_unique_downloads": 51,
+    "version_unique_views": 94,
+    "version_views": 109
+  },
+  "state": "done",
+  "submitted": true
+}

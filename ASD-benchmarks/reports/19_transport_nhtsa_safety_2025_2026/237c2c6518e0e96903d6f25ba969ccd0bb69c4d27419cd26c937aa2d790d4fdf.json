@@ -1,0 +1,50 @@
+{
+  "scenario_id": "19_transport_nhtsa_safety_2025_2026",
+  "path": "raw/RCL_FROM_2025_2026.zip",
+  "bytes": 92005,
+  "sha256": "46cd58c85495ba3164eda0884b91e02c255507759cc15c0c68fef166ea43f09f",
+  "checked_utc": "2026-09-15T06:40:16.466243+00:00",
+  "format": "ZIP",
+  "expanded_bytes": 1298913,
+  "members": [
+    {
+      "name": "RCL_FROM_2025_2026.csv",
+      "bytes": 1298913,
+      "sha256": "8d179f7195a5b72e6128859dd1843b6e99fee335d0b2f18f7aab28688835057b",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "224e48545341204944222c22",
+        "delimiter": ",",
+        "header": [
+          "NHTSA ID",
+          "DOCUMENT NAME",
+          "MAKE",
+          "MODEL",
+          "MODEL YEAR",
+          "SUMMARY"
+        ],
+        "data_records": 4740,
+        "row_width_counts": {
+          "6": 4740
+        },
+        "first_lines": [
+          "\"NHTSA ID\",\"DOCUMENT NAME\",\"MAKE\",\"MODEL\",\"MODEL YEAR\",\"SUMMARY\"",
+          "\"25C004\",\"RCONL-25C004-6999.pdf\",\"DISNEY BABY\",\"MAGICSQUAD\",\"9999\",\"This is the final registered owner notification letter included in the recall kit.\"",
+          "\"25C004\",\"RCMN-25C004-8745.pdf\",\"DISNEY BABY\",\"MAGICSQUAD\",\"9999\",\"This is the notification letter being sent to Dorel's retail customers.\"",
+          "\"25C004\",\"RCONL-25C004-6999.pdf\",\"SAFETY 1ST\",\"BOOST & GO\",\"9999\",\"This is the final registered owner notification letter included in the recall kit.\"",
+          "\"25C004\",\"RCMN-25C004-8745.pdf\",\"SAFETY 1ST\",\"BOOST & GO\",\"9999\",\"This is the notification letter being sent to Dorel's retail customers.\"",
+          "\"25C004\",\"RCMN-25C004-8745.pdf\",\"SAFETY 1ST\",\"BOOST & GO ESSENTIAL\",\"9999\",\"This is the notification letter being sent to Dorel's retail customers.\"",
+          "\"25C004\",\"RCONL-25C004-6999.pdf\",\"SAFETY 1ST\",\"BOOST & GO ESSENTIAL\",\"9999\",\"This is the final registered owner notification letter included in the recall kit.\"",
+          "\"25C004\",\"RCMN-25C004-8745.pdf\",\"SAFETY 1ST\",\"COMFORT RIDE\",\"9999\",\"This is the notification letter being sent to Dorel's retail customers.\""
+        ],
+        "encoding_replacement_count": 0
+      }
+    }
+  ],
+  "checks": [
+    "all_member_CRCs",
+    "safe_paths_no_symlinks"
+  ],
+  "member_count": 1,
+  "status": "pass"
+}

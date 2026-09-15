@@ -1,0 +1,84 @@
+{
+  "case_id": "P100-053",
+  "case_revision": 1,
+  "scenario_id": "53_manufacturing_screw_friction",
+  "title": "Industrial screw driving dataset collection: Time series data for process monitoring and anomaly detection",
+  "domain": "Industrial manufacturing",
+  "question": "How do surface treatments change the torque–angle evolution and repeatability of screw driving?",
+  "data_origin": "measured_or_observed",
+  "source_version": "16031381",
+  "source_url": "https://zenodo.org/records/16031381",
+  "identifiers": [
+    "10.5281/zenodo.16031381"
+  ],
+  "publisher": "West, Nikolai (Technical University Dortmund); Deuse, Jochen (Technical University Dortmund)",
+  "release_date": "2025-07-17",
+  "measurement_dates": "Acquisition timestamps, where present, are within the native JSON; full campaign dates unknown.",
+  "variables_and_units": "time, torque, angle, gradient and condition labels",
+  "independent_units": "complete screw-driving runs and surface conditions",
+  "validation_design": "complete screw-driving runs and surface conditions Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Native industrial traces and labels, sampled at 833.33 Hz; publisher reports greater than 95% completeness. No curator cleaning.",
+  "prior_analysis_and_limits": "Use complete operations and component/reuse groups; adjacent repeated screw operations may share material history. Preserve all eight conditions and failed operations. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/s02_variations-in-surface-friction.zip!/labels.csv",
+      "structure": {
+        "header": [
+          "run_id",
+          "file_name",
+          "class_value",
+          "workpiece_id",
+          "workpiece_date",
+          "workpiece_usage",
+          "workpiece_result",
+          "workpiece_location",
+          "scenario_condition",
+          "scenario_exception"
+        ],
+        "data_records": 12500,
+        "first_lines": [
+          "run_id,file_name,class_value,workpiece_id,workpiece_date,workpiece_usage,workpiece_result,workpiece_location,scenario_condition,scenario_exception",
+          "1603638,Ch_000001603638.json,001_control-group,30000000009264,2023-07-12 14:02:53,0,OK,left,normal,0",
+          "1603639,Ch_000001603639.json,001_control-group,30000000009264,2023-07-12 14:02:57,0,OK,right,normal,0",
+          "1603642,Ch_000001603642.json,001_control-group,30000000009264,2023-07-12 14:03:30,1,OK,left,normal,0",
+          "1603643,Ch_000001603643.json,001_control-group,30000000009264,2023-07-12 14:03:34,1,OK,right,normal,0",
+          "1603646,Ch_000001603646.json,001_control-group,30000000009264,2023-07-12 14:05:51,2,OK,left,normal,0",
+          "1603647,Ch_000001603647.json,001_control-group,30000000009264,2023-07-12 14:05:56,2,OK,right,normal,0",
+          "1603650,Ch_000001603650.json,001_control-group,30000000009264,2023-07-12 14:06:43,3,OK,left,normal,0"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "ZIP": 1,
+    "JSON": 12500,
+    "text_or_instrument_native": 2
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 83948759,
+  "expanded_source_equivalent_bytes": 305865487,
+  "installed_folder_bytes": 83981185,
+  "source_asset_count": 2,
+  "asset_paths": [
+    "scenarios/53_manufacturing_screw_friction/raw/s02_variations-in-surface-friction.zip",
+    "scenarios/53_manufacturing_screw_friction/context/SOURCE_FACTS.json"
+  ],
+  "local_folder": "scenarios/53_manufacturing_screw_friction",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 83955557,
+  "expanded_release_folder_equivalent_bytes": 305872285
+}

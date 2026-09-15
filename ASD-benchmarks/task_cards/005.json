@@ -1,0 +1,353 @@
+{
+  "case_id": "P100-005",
+  "case_revision": 2,
+  "scenario_id": "05_mathematics_graph_certificates",
+  "title": "Dataset for \"A Computational Search for Minimal Obstruction Graphs for the Lovász-Schrijver SDP Hierarchy\"",
+  "domain": "Combinatorial optimization",
+  "question": "How do graph structure and relaxation depth constrain exact obstruction certificates?",
+  "data_origin": "computational_experiment",
+  "source_version": "15483991",
+  "source_url": "https://zenodo.org/records/15483991",
+  "identifiers": [
+    "10.5281/zenodo.15483991"
+  ],
+  "publisher": "[{'name': 'Au, Yu Hin', 'affiliation': 'University of Saskatchewan', 'orcid': '0009-0002-5685-1640'}, {'name': 'Tunçel, Levent', 'affiliation': 'University of Waterloo'}]",
+  "release_date": "2025-05-30",
+  "measurement_dates": "No measurement date; computational dataset published May 2025.",
+  "variables_and_units": "graphs, semidefinite relaxation levels and exact rank certificates",
+  "independent_units": "graph instances and exact certificates; separate generation from checking",
+  "validation_design": "graph instances and exact certificates; separate generation from checking Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Exact graph/certificate packages and source verification code; published search results are disclosed.",
+  "prior_analysis_and_limits": "Independent graph instances and exact certificate checks. Third-level certificate archive excluded by size; no claim of verifying omitted certificates. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/LS_+^2 certificate packages.zip!/LS_+^2 certificate packages/Cert_G_{17,2}/Edges.csv",
+      "structure": {
+        "header": [
+          "1",
+          "2"
+        ],
+        "data_records": 25,
+        "first_lines": [
+          "1,2",
+          "2,3",
+          "3,4",
+          "4,5",
+          "5,6",
+          "6,7",
+          "7,8",
+          "8,9"
+        ]
+      }
+    },
+    {
+      "asset": "raw/LS_+^2 certificate packages.zip!/LS_+^2 certificate packages/Cert_G_{17,2}/Facet.csv",
+      "structure": {
+        "header": [
+          "1"
+        ],
+        "data_records": 13,
+        "first_lines": [
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1"
+        ]
+      }
+    },
+    {
+      "asset": "raw/LS_+^2 certificate packages.zip!/LS_+^2 certificate packages/Cert_G_{17,2}/U.csv",
+      "structure": {
+        "header": [
+          "-1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "data_records": 13,
+        "first_lines": [
+          "-1,0,0,0,0,0,0,0,0,0,0,0,0,0",
+          "-0,9,-11,-27,9,49,21,-43,-48,11,45,13,-20,-7",
+          "0,-43,-51,6,46,22,-15,-14,-1,-12,-19,14,47,19",
+          "-0,-10,8,34,33,-11,-51,-34,21,48,22,-15,-26,-18",
+          "0,-36,23,37,-1,-17,6,9,-23,-28,22,52,7,-51",
+          "-0,-28,-79,-33,-54,-30,26,6,65,59,34,59,-11,-14",
+          "-0,1,21,20,-68,-1,-60,-55,14,-48,41,39,10,87",
+          "-0,63,-33,66,9,-26,50,-67,-2,-5,-71,45,-33,5"
+        ]
+      }
+    },
+    {
+      "asset": "raw/LS_+^2 certificate packages.zip!/LS_+^2 certificate packages/Cert_G_{17,2}/Ue1.csv",
+      "structure": {
+        "header": [
+          "-0",
+          "-0",
+          "0",
+          "0",
+          "-0",
+          "-0",
+          "0"
+        ],
+        "data_records": 6,
+        "first_lines": [
+          "-0,-0,0,0,-0,-0,0",
+          "11,-6,-6,-5,-2,-5,-2",
+          "-9,-22,-22,8,21,8,21",
+          "0,-36,36,13,40,-13,-40",
+          "-9,20,20,-52,40,-52,40",
+          "-0,-49,49,-48,-29,48,29",
+          "146,53,53,59,65,59,65"
+        ]
+      }
+    },
+    {
+      "asset": "raw/LS_+^2 certificate packages.zip!/LS_+^2 certificate packages/Cert_G_{17,2}/Ue10.csv",
+      "structure": {
+        "header": [
+          "0",
+          "0",
+          "-0",
+          "-0",
+          "0",
+          "0",
+          "-0"
+        ],
+        "data_records": 6,
+        "first_lines": [
+          "0,0,-0,-0,0,0,-0",
+          "11,-2,-5,-2,-5,-6,-6",
+          "9,-21,-8,-21,-8,22,22",
+          "-0,-40,-13,40,13,36,-36",
+          "-9,40,-52,40,-52,20,20",
+          "0,-29,-48,29,48,-49,49",
+          "146,65,59,65,59,53,53"
+        ]
+      }
+    },
+    {
+      "asset": "raw/LS_+^2 certificate packages.zip!/LS_+^2 certificate packages/Cert_G_{17,2}/Ue11.csv",
+      "structure": {
+        "header": [
+          "0",
+          "-0",
+          "-0",
+          "0",
+          "0",
+          "-0",
+          "0"
+        ],
+        "data_records": 6,
+        "first_lines": [
+          "0,-0,-0,0,0,-0,0",
+          "11,-6,-5,-5,-2,-2,-6",
+          "9,22,-8,-8,-21,-21,22",
+          "-0,36,13,-13,40,-40,-36",
+          "-9,20,-52,-52,40,40,20",
+          "-0,-49,48,-48,29,-29,49",
+          "146,53,59,59,65,65,53"
+        ]
+      }
+    },
+    {
+      "asset": "raw/LS_+^2 certificate packages.zip!/LS_+^2 certificate packages/Cert_G_{17,2}/Ue12.csv",
+      "structure": {
+        "header": [
+          "-0",
+          "-0",
+          "0",
+          "0",
+          "-0",
+          "-0",
+          "0"
+        ],
+        "data_records": 6,
+        "first_lines": [
+          "-0,-0,0,0,-0,-0,0",
+          "11,-6,-6,-5,-2,-5,-2",
+          "-9,-22,-22,8,21,8,21",
+          "0,-36,36,13,40,-13,-40",
+          "-9,20,20,-52,40,-52,40",
+          "-0,-49,49,-48,-29,48,29",
+          "146,53,53,59,65,59,65"
+        ]
+      }
+    },
+    {
+      "asset": "raw/LS_+^2 certificate packages.zip!/LS_+^2 certificate packages/Cert_G_{17,2}/Ue13.csv",
+      "structure": {
+        "header": [
+          "-0",
+          "-0",
+          "0",
+          "0",
+          "-0",
+          "-0",
+          "0"
+        ],
+        "data_records": 6,
+        "first_lines": [
+          "-0,-0,0,0,-0,-0,0",
+          "11,-6,-6,-5,-2,-5,-2",
+          "-9,-22,-22,8,21,8,21",
+          "0,-36,36,13,40,-13,-40",
+          "-9,20,20,-52,40,-52,40",
+          "-0,-49,49,-48,-29,48,29",
+          "146,53,53,59,65,59,65"
+        ]
+      }
+    },
+    {
+      "asset": "raw/LS_+^2 certificate packages.zip!/LS_+^2 certificate packages/Cert_G_{17,2}/Ue2.csv",
+      "structure": {
+        "header": [
+          "-0",
+          "-0",
+          "0",
+          "0",
+          "-0",
+          "-0",
+          "0"
+        ],
+        "data_records": 6,
+        "first_lines": [
+          "-0,-0,0,0,-0,-0,0",
+          "11,-6,-6,-5,-2,-5,-2",
+          "-9,-22,-22,8,21,8,21",
+          "0,-36,36,13,40,-13,-40",
+          "-9,20,20,-52,40,-52,40",
+          "-0,-49,49,-48,-29,48,29",
+          "146,53,53,59,65,59,65"
+        ]
+      }
+    },
+    {
+      "asset": "raw/LS_+^2 certificate packages.zip!/LS_+^2 certificate packages/Cert_G_{17,2}/Ue3.csv",
+      "structure": {
+        "header": [
+          "0",
+          "-0",
+          "-0",
+          "-0",
+          "-0",
+          "-0",
+          "-0"
+        ],
+        "data_records": 6,
+        "first_lines": [
+          "0,-0,-0,-0,-0,-0,-0",
+          "-3,2,2,16,12,-11,-11",
+          "-0,-22,22,-0,-0,-12,12",
+          "8,26,26,14,-46,-12,-12",
+          "-0,31,-31,-0,0,-58,58",
+          "-9,39,39,-61,34,-18,-18",
+          "130,48,48,42,60,54,54"
+        ]
+      }
+    },
+    {
+      "asset": "raw/LS_+^2 certificate packages.zip!/LS_+^2 certificate packages/Cert_G_{17,2}/Ue4.csv",
+      "structure": {
+        "header": [
+          "-0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "data_records": 6,
+        "first_lines": [
+          "-0,0,0,0,0,0,0",
+          "-0,-6,-10,6,10,11,-11",
+          "1,16,-5,16,-5,-10,-10",
+          "0,27,9,-27,-9,25,-25",
+          "-14,9,-25,9,-25,26,26",
+          "-0,30,-39,-30,39,-20,20",
+          "98,37,32,37,32,46,46"
+        ]
+      }
+    },
+    {
+      "asset": "raw/LS_+^2 certificate packages.zip!/LS_+^2 certificate packages/Cert_G_{17,2}/Ue5.csv",
+      "structure": {
+        "header": [
+          "-0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "data_records": 6,
+        "first_lines": [
+          "-0,0,0,0,0,0,0",
+          "0,-11,-10,10,-6,6,11",
+          "1,-10,-5,-5,16,16,-10",
+          "0,25,-9,9,-27,27,-25",
+          "-14,26,-25,-25,9,9,26",
+          "-0,-20,39,-39,-30,30,20",
+          "98,46,32,32,37,37,46"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "ZIP": 5,
+    "text_or_instrument_native": 760,
+    "preserved_native": 1
+  },
+  "reader_limitations": [
+    {
+      "asset": "raw/LS_+^2 certificate packages.zip!/LS_+^2 certificate packages/Cert_G_{7,7}/.~lock.Edges.csv#",
+      "note": "Signature and bytes preserved; specialized native reader not exercised in this audit."
+    }
+  ],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 272018,
+  "expanded_source_equivalent_bytes": 358054,
+  "installed_folder_bytes": 284165,
+  "source_asset_count": 6,
+  "asset_paths": [
+    "scenarios/05_mathematics_graph_certificates/raw/LS_+^2 certificate packages.zip",
+    "scenarios/05_mathematics_graph_certificates/raw/Tables of graphs.zip",
+    "scenarios/05_mathematics_graph_certificates/raw/LS_+ certificate packages.zip",
+    "scenarios/05_mathematics_graph_certificates/raw/Code.zip",
+    "scenarios/05_mathematics_graph_certificates/raw/List of 4-minimal graphs.zip",
+    "scenarios/05_mathematics_graph_certificates/context/source_record.json"
+  ],
+  "local_folder": "scenarios/05_mathematics_graph_certificates",
+  "size_exception": false,
+  "modalities": [
+    "computational_or_mathematical_records",
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 285008,
+  "expanded_release_folder_equivalent_bytes": 371044
+}

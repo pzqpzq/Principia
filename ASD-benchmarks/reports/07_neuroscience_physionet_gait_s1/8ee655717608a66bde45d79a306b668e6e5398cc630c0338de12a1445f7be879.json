@@ -1,0 +1,52 @@
+{
+  "scenario_id": "07_neuroscience_physionet_gait_s1",
+  "path": "raw/subject-info.csv",
+  "bytes": 6612,
+  "sha256": "9a35a596e70da691fb0b81853bbe8e8be191708f750f0c7a65784c0b7bae1f59",
+  "checked_utc": "2026-09-15T06:40:02.283001+00:00",
+  "format": "text_or_instrument_native",
+  "signature_hex": "5375626a6563742c494d5041",
+  "delimiter": ",",
+  "header": [
+    "Subject",
+    "IMPAIRED/HEALTHY",
+    "GENDER",
+    "DOB",
+    "Age",
+    "HEIGHT(mm)",
+    "BMI",
+    "WEIGHT(kg)",
+    "FOOT LENGTH (mm)",
+    "L-UPPER ARM",
+    "L-LOWER ARM",
+    "L-UPPER LEG",
+    "L-LOWER LEG",
+    "L-LEG",
+    "NECK",
+    "SHOULDER",
+    "C-CHEST",
+    "C-WAIST",
+    "C-HIP",
+    "C-THIGH",
+    "C-ANKLE",
+    "C-UPPER ARM",
+    "C-WRIST",
+    "Normal Speed (m/s)"
+  ],
+  "data_records": 64,
+  "row_width_counts": {
+    "24": 64
+  },
+  "first_lines": [
+    "Subject,IMPAIRED/HEALTHY,GENDER,DOB,Age,HEIGHT(mm),BMI,WEIGHT(kg),FOOT LENGTH (mm),L-UPPER ARM,L-LOWER ARM,L-UPPER LEG,L-LOWER LEG,L-LEG,NECK,SHOULDER,C-CHEST,C-WAIST,C-HIP,C-THIGH,C-ANKLE,C-UPPER ARM,C-WRIST,Normal Speed (m/s)",
+    "S1,H,M,07/11/2002,22,1790,33.39,107,265,340,320,510,390,900,170,260,1190,990,1090,670,330,430,210,1.02",
+    "S2,H,M,10/09/2001,23,1660,18.51,51,250,330,290,510,460,930,130,220,800,760,830,370,260,260,180,0.92",
+    "S3,H,M,19/06/2002,22,1710,37.62,110,250,375,280,565,440,945,130,230,1220,1200,1280,670,300,430,230,0.99",
+    "S4,H,M,23/12/1987,37,1750,36.51,111.8,310,380,350,560,470,1030,220,265,1180,1225,1280,680,310,395,205,1.02",
+    "S5,H,M,13/04/1997,27,1740,24.05,72.8,270,360,310,520,490,960,160,220,880,870,970,550,280,340,200,1.00",
+    "S6,H,M,09/06/1996,28,1800,24.69,80,280,350,310,550,470,960,150,230,950,870,940,620,280,330,200,1.10",
+    "S7,H,M,20/07/1999,25,1760,24.73,76.6,260,310,320,580,460,1010,150,200,910,890,950,600,280,310,200,1.05"
+  ],
+  "encoding_replacement_count": 0,
+  "status": "pass"
+}

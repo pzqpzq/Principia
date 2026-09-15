@@ -1,0 +1,728 @@
+
+
+
+
+
+<!-- #set var="title" value="NOAA Global Monitoring Laboratory - Global Radiation and Aerosols" -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+    <meta name="author" content="GML Web Team">
+    <meta name="google-site-verification" content="Uw6vHMCxBq921LJnURIx4fwUDt0DsjhZHWHFFAA8qMw" />
+
+    
+
+
+    <meta name="keywords" content="noaa, national oceanic and atmospheric administration, earth system research, esrl, gml, gmd, climate, air quality, numerical modeling, global warming, climate change, ozone, co2, aerosols">
+
+
+
+
+    <meta name="description" content="GML conducts research on greenhouse gas and carbon cycle feedbacks, changes in aerosols, and surface radiation, and recovery of stratospheric ozone.">
+    <meta property="og:description" content="GML conducts research on greenhouse gas and carbon cycle feedbacks, changes in aerosols, and surface radiation, and recovery of stratospheric ozone.">
+
+
+
+    <title>SURFRAD - NOAA Global Monitoring Division</title>
+    <meta property="og:title" content="SURFRAD - NOAA Global Monitoring Division" >
+
+
+    <meta property="og:type" content="website" >
+    <meta property="og:url" content="https://gml.noaa.gov/grad/surfrad/index.html" >
+    <meta property="og:image" content="https://gml.noaa.gov/images/noaalogo2.png" >
+
+
+
+    <!-- Bootstrap -->
+<!--
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+-->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/gmd.min.css">
+
+    <!-- more css -->
+    <!--
+    <link href="/css/gmd.css" rel="stylesheet" media="all">
+    <link href="/css/header.css" rel="stylesheet" media="all">
+    <link href="/css/footer.css" rel="stylesheet" media="all">
+    <link href="/css/colors.css" rel="stylesheet" media="all">
+    -->
+    <!--    <link href="/css/buttons.css" rel="stylesheet" media="all"> -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+<!--<link href="/css/collapse.css" rel="stylesheet" media="all"> -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="/js/html5shiv.js"></script>
+      <script src="/js/respond.js"></script>
+    <![endif]-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<!--
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+-->
+
+    <script src="/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </head>
+  <body>
+    <a class="sr-only sr-only-focusable" href="#main">Skip to main content</a>
+
+    <!-- TOP GREY BAR -->
+<style>
+.img10 {
+	width: 45px;
+}
+
+.usa-banner {
+	font-size: 0.8rem;
+	padding: 2px 2rem;
+	background-color: #f0f0f0;
+}
+
+</style>
+	<section  class="usa-banner" aria-label="Official government website">
+	<div>
+		<img src="/images/flags/smallflags/UNST0001.GIF" width='20px' height="11" class="left gap" alt="U.S. Flag"><span class="ml-3">An official website of the United States government</span> <a href="#top-grey-exp" class='ml-2 dropdown-toggle' data-toggle="collapse" aria-expanded="false" role="button">Here's how you know</a>
+	</div>
+	
+	 <div id="top-grey-exp" class="collapse px-3 pt-3" style='background-color: #f0f0f0'>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="media ml-4">
+					<img src="/images/icon-dot-gov.svg" alt="icon dot gov" class="img10">
+					<div class="media-body ml-3">
+						<strong>Official websites use .gov</strong>
+						<p>A <strong>.gov</strong> website belongs to an official government organization in the United States.</p>
+					</div>
+				</div>
+			</div>	
+			<div class="col-md-6">
+				<div class="media ml-4">
+					<img src="/images/icon-https.svg" alt="icon https" class="img10">
+					<div class="media-body ml-3">
+					<strong>Secure .gov websites use HTTPS</strong>
+						<p>A lock (<span class='fas fa-lock'></span>) or <strong>https://</strong> means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.</p>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</section>
+
+
+    
+<div id="major_header" role="banner">
+
+    <div id="search" class="d-none d-md-block float-right" role="search">
+        <form action="https://search.noaa.gov/search">
+	    <div class="form-group mb-1">
+		<input type="hidden" name="affiliate" value="noaa_esrl_gmd">
+		<input type="hidden" name="v:project" value="firstgov" >
+		<div class="input-group mb-1">
+		    <input type="text" name="query" id="query-field" autocomplete="off" class='form-control input-xs' placeholder="Search GML...">
+		    <div class="input-group-append">
+			<button type="submit" id='searchbutton' class="btn btn-secondary btn-sm"><i class="fa fa-search"></i><span class='sr-only'>Search</span></button>
+		    </div>
+		    <label for="query-field" class="sr-only"> Search GML:</label>
+		</div>
+	    </div>
+        </form>
+    </div>
+
+    <a href="https://www.noaa.gov" title="NOAA">
+        <img src="/images/noaa_small.webp" class="header_logo" alt='noaa logo' style="width: 50px; height: 50px;">
+    </a>
+
+    <div id='navbar-brand-title'>
+	<a href="/" title="GML" class="lab">Global Monitoring Laboratory</a><br>
+    </div>
+</div>
+<!--
+<div class='highlight p-3'>
+
+Important Notice: Planned Migration<br>
+Planned DMZ Outage Thursday August 14th, Noon to 1PM MDT.  Access to GML's website will be limited, and access to sftp, rtdata, aftp, awftp, and OM will be unavailable.
+</div>
+-->
+<div class="clearfix"></div>
+
+    
+<nav class="navbar navbar-gmd navbar-expand-lg navbar-dark sticky-topxxx" aria-label="Main navigation">
+  <a class="navbar-brand d-lg-none" href="#">Menu</a> 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+<div class="container">
+
+  <div id="navbarNavDropdown" class="collapse navbar-collapse majornav">
+    <ul class="navbar-nav ml-auto mr-auto">
+
+	<li class="nav-item">
+<a href="/" class='nav-link' title='GML Home Page'>
+<span class='fa fa-home'></span><span class='d-lg-none'> Home</span>
+</a>
+</li>
+
+	<li class="nav-item dropdown">
+		<a href="#" class="nav-link dropdown-toggle" id="navbarabout" data-toggle="dropdown">About</a>
+		 <div class="dropdown-menu shadow collapse" aria-labelledby="navbarabout">
+			<a href="/about/aboutgml.html" class="dropdown-item">About GML</a>
+			<a class="dropdown-item" href="/review/">Science Reviews</a>
+			<a class="dropdown-item" href="/safety/">Safety Program</a>
+			<!--			<a href="http://www.esrl.noaa.gov/about/jobs.html" class="dropdown-item">Employment</a> -->
+			<a href="/about/jobs.html" class="dropdown-item">Employment</a>
+			<a href="https://www.boulder.noaa.gov/outreach/tour-noaa-boulder/" class="dropdown-item">Visiting</a>
+			<a href="/about/contacts.html" class="dropdown-item">Contact Us</a>
+			<!--			<a href="https://sites.google.com/a/noaa.gov/oar-esrl-gmd-intranet/"  class="dropdown-item">Intranet</a> -->
+			<a href="https://sites.google.com/noaa.gov/oar-gml-intranet/home"  class="dropdown-item">Intranet</a>
+		</div>
+	</li>
+
+	<li class="nav-item dropdown">
+		<a href="#" class="nav-link dropdown-toggle" id="navbarpeople" data-toggle="dropdown">People</a>
+		 <div class="dropdown-menu shadow collapse" aria-labelledby="navbarpeople">
+			<a href="/about/orgchart.html" class="dropdown-item">Organization</a>
+			<a href="/about/stafflist.html" class="dropdown-item">Staff</a>
+			<a href="/about/employees.html" class="dropdown-item">Employee Spotlight</a>
+		</div>
+	</li>
+
+	<li class="nav-item dropdown">
+		<a href="#" class="nav-link dropdown-toggle" id="navbarresearch" data-toggle="dropdown">Research</a>
+		<div class="dropdown-menu shadow" aria-labelledby="navbarresearch">
+			<a class="dropdown-item" href="/about/research.html">Research Overview</a>
+			<a class="dropdown-item" href="/ccgg/">Carbon Cycle Greenhouse Gases</a>
+			<a class="dropdown-item" href="/hats/">Greenhouse gases and Ozone-depleting Substances</a>
+			<a class="dropdown-item" href="/ozwv/">Ozone and Water Vapor</a>
+			<a class="dropdown-item" href="/grad/">Global Radiation, Aerosols and Clouds</a>
+			<a class="dropdown-item" href="/publications/">Publications</a>
+			<span class="menu-header ml-2">Calibration Facilities</span>
+            <a class="dropdown-item" href="/ccl/">WMO Central Calibration Laboratory</a>
+            <a class="dropdown-item" href="/grad/calfacil/">Central UV Calibration Facility</a>
+            <a class="dropdown-item" href="/grad/srf.html">Broadband Solar Calibration Facility</a>
+            <a class="dropdown-item" href="/ozwv/dobson/">World Dobson Ozone Calibration Centre</a>
+
+		</div>
+	</li>
+
+	<li class="nav-item dropdown mega-dropdown">
+		<a href="#" class="nav-link dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Observing Networks</a>
+		<div class="dropdown-menu shadow mega-dropdown-menu wide-menuxx">
+<div class="row">
+<div class="col col-lg-3 bro">
+			<span class="menu-header ml-2">Overview</span>
+	<a class="dropdown-item" href="/about/networks.html">Observations Overview</a>
+	<a class="dropdown-item" href="/dv/site/">Measurement Sites</a>
+			<a class="dropdown-item" href="/about/campaigns.html">Field Campaigns</a>	
+</div>
+		<div class="col col-lg-4 bro">
+			<span class="menu-header ml-2">Atmospheric Baseline Observatories</span>
+			<a class="dropdown-item" href="/obop/">Observatory Operations</a>
+			<a class="dropdown-item" href="/obop/brw/">Barrow, Alaska</a>
+			<a class="dropdown-item" href="/obop/mlo/">Mauna Loa, Hawaii</a>
+			<a class="dropdown-item" href="/obop/smo/">American Samoa</a>
+			<a class="dropdown-item" href="/obop/spo/">South Pole</a>
+		</div>
+		<div class="col col-lg-5">
+			<span class="menu-header ml-2">Observing Networks</span>
+			<a class="dropdown-item" href="/ccgg/about.html">Greenhouse Gas Reference Network</a>
+			<a class="dropdown-item" href="/hats/flask/flasks.html">Halocarbons and Trace Gases</a>
+			<a class="dropdown-item" href="/grad/field.html">Surface Radiation</a>
+			<a class="dropdown-item" href="/aero/net/">Federated Aerosol Network</a>
+			<a class="dropdown-item" href="/ozwv/network.php">Ozone</a>
+			<a class="dropdown-item" href="/ozwv/wvap/">Water Vapor</a>
+		</div>
+</div>
+</div>
+
+        </li>
+<!--
+	<li class="nav-item dropdown">
+		<a href="#" class="nav-link dropdown-toggle" id="navbardata" data-toggle="dropdown">Data</a>
+		<div class="dropdown-menu shadow" aria-labelledby="navbarpeople">
+			<span class="menu-header ml-2">Data</span>
+			<a class="dropdown-item" href="/data/">Data Portal</a>
+			<a class="dropdown-item" href="/dv/site/">Measurement Sites</a>
+			<a class="dropdown-item" href="/ccgg/obspack/">ObsPack</a>
+			<span class="menu-header ml-2">Visualization &amp; Tools</span>
+			<a class="dropdown-item" href="/dv/iadv/">Data Viewer</a>
+			<a class="dropdown-item" href="/grad/solcalc/">Solar Calculator</a>
+			<a class="dropdown-item" href="/dv/spo_oz/">South Pole Ozone Hole</a>
+		</div>
+        </li>
+-->
+
+	<li class="nav-item dropdown mega-dropdown">
+		<a href="#" class="nav-link dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Data &amp; Products</a>
+		
+
+<div class="dropdown-menu shadow mega-dropdown-menu">
+    <div class="row">
+        <div class="col bro">
+		<span class="menu-header ml-2">Data</span>
+                        <a class="dropdown-item" href="/data/">Data &amp; Products Portal</a>
+                        <a class="dropdown-item" href="/data/data.php">Data Finder</a>
+                        <a class="dropdown-item" href="/ccgg/obspack/">ObsPack Data Products</a>
+                        <a class="dropdown-item" href="/dv/site/">Measurement Sites</a>
+        </div>
+        <div class="col bro">
+                        <span class="menu-header ml-2">Visualization &amp; Tools</span>
+			<!--<a class="dropdown-item" href="/grad/solcalc/">Solar Calculator</a>-->
+                        <a class="dropdown-item" href="/dv/iadv/">Data Viewer</a>
+                        <a class="dropdown-item" href="/dv/spo_oz/">South Pole Ozone Hole</a>
+            <a class="dropdown-item" href="/grad/mloapt.html">Mauna Loa Apparent Transmission</a>
+            <a class="dropdown-item" href="/grad/snomelt.html">Barrow Snow Melt Dates</a>
+        </div>
+        <div class="col">
+
+            <span class="menu-header ml-2">Products</span>
+            <a class="dropdown-item" href="/aggi/">Greenhouse Gas Index</a>
+            <a class="dropdown-item" href="/odgi/">Ozone Depletion Index</a>
+            <a class="dropdown-item" href="/ccgg/trends/">Trends in CO<sub>2</sub>, CH<sub>4</sub>, N<sub>2</sub>O, SF<sub>6</sub></a>
+            <a class="dropdown-item" href="/modeling.html">Modeling</a>
+        </div>
+    </div>
+</div>
+
+        </li>
+
+	<li class="nav-item dropdown">
+		<a href="#" class="nav-link dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Information</a>
+    
+		<div class="dropdown-menu shadow dropdown-menu-right">
+			<a class="dropdown-item" href="/news/">News</a>
+			<a class="dropdown-item" href="/about/seminars.php">Seminars</a>
+			<a class="dropdown-item" href="/education/">Education/Outreach</a>
+			<a class="dropdown-item" href="/interns/">Student Opportunities</a>
+			<a class="dropdown-item" href="/education/faq_cat-1.html">FAQ's</a>
+			<a class="dropdown-item" href="/publications/">Publications</a>
+
+                        <span class="menu-header">Webcams</span>
+                        <a class="dropdown-item" href="/obop/spo/livecamera.html">South Pole Webcam</a>
+                        <a class="dropdown-item" href="/obop/mlo/livecam/livecam.html">Mauna Loa Webcams</a>
+                        <a class="dropdown-item" href="/obop/brw/livecamera.html">Barrow Webcam</a>
+
+			<span class="menu-header">Global Monitoring Annual Conference</span>
+			<a class="dropdown-item" href="/gmac/">GMAC Conference</a>
+		</div>
+	</li>
+
+    </ul>
+    <div id="search" class="d-lg-none">
+        <form action="https://search.usa.gov/search">
+            <div class="form-group mb-1">
+                <input type="hidden" name="affiliate" value="noaa_esrl_gmd">
+                <input type="hidden" name="v:project" value="firstgov" >
+                <div class="input-group mb-1">
+                    <input type="text" name="query" id="query-field2" autocomplete="off" class='form-control input-xs' placeholder="Search GML...">
+                    <div class="input-group-append">
+                        <button type="submit" id='searchbutton' class="btn btn-secondary btn-sm"><i class="fa fa-search"></i><span class='sr-only'>Search</span></button>
+                    </div>
+                    <label for="query-field2" class="sr-only"> Search GML:</label>
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
+  </div>
+</nav>
+
+
+
+    <div id="main" role="main">
+
+    <div class="container-md">
+
+    <!--include virtual="/nav/inclement_weather.html"-->
+    <!--include virtual="/nav/shutdown.html"-->
+    <!--include virtual="/nav/outage.html"-->
+
+
+
+    <nav class="navbar navbar-expand">
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+		<a href="/grad/">
+		<span class="fa fa-home"></span>
+		<span class='d-none d-md-inline'>Global Radiation and Aerosols</span>
+		<span class='d-md-none'>GRAD</span>
+		</a>
+	</li>
+
+	
+
+        <li class="breadcrumb-item active">SURFRAD</li>
+    </ol>
+
+    
+<ul class="nav navbar-nav ml-auto subnav">
+
+    <li class="nav-item dropdown mega-dropdown">
+        <button class="btn btn-outline-dark btn-sm dropdown-toggle" data-toggle="dropdown">
+                GRAD Menu <b class="caret"></b>
+        </button>
+
+<div class="dropdown-menu dropdown-menu-right group-dropdown-menu shadow">
+
+	<div class="row">
+		<div class="text-center ml-2 ml-lg-3">
+			<a class="btn btn-gml-icon" href="/grad/">
+			<i class="fas fa-home"></i>
+			<div class="icon-label">Home</div></a>
+		</div>
+		<div class="text-center">
+			<a class="btn btn-gml-icon" href="/dv/site/index.php?program=grad">
+			<i class="fas fa-globe-americas"></i>
+			<div class="icon-label">Sites</div></a>
+		</div>
+		<div class="text-center">
+			<a class="btn btn-gml-icon" href="/data/data.php?category=Radiation,Aerosols">
+			<i class="fas fa-database"></i>
+			<div class='icon-label'>Datasets</div></a>
+		</div>					
+		<div class="text-center">
+			<a class="btn btn-gml-icon" href="/dv/iadv/?map_program=grad">
+			<i class="fas fa-chart-line"></i>
+			 <div class='icon-label'>Data Viewer</div></a>
+		</div>
+		<div class="text-center">
+			<a class="btn btn-gml-icon" href="/bin/news.php?code=grad">
+			<i class="fas fa-newspaper"></i>
+			 <div class='icon-label'>News</div></a>
+		</div>
+	</div><!--/.row-->
+
+
+    <div class="row no-gutters icon-label">
+        <div class="col">
+		<span class="menu-header ml-2">Networks</span>
+		<a class='dropdown-item' href='/aero/net/stations.html'>Aerosol Network</a>
+		<a class='dropdown-item' href="/grad/bsrn.html">Baseline Network</a>
+		<a class='dropdown-item' href="/grad/surfrad/index.html">SURFRAD Network</a>
+		<a class='dropdown-item' href="/grad/solrad/index.html">SOLRAD Network</a>
+		<a class='dropdown-item' href="https://gml.noaa.gov/grad/neubrew/">NEUBrew Network</a>
+		<a class='dropdown-item' href="https://gml.noaa.gov/grad/antuv/">Antarctic UV Network</a>
+	</div>
+
+        <div class="col">
+		<span class="menu-header ml-2">Data</span>
+            <a class="dropdown-item" href="/grad/surfrad/dataplot.html">SURFRAD Data Plots</a>
+            <a class="dropdown-item" href="/grad/solrad/solradpick.html">SOLRAD Data Plots</a>
+            <a class="dropdown-item" href="/grad/baseline/dataplot.html">Baseline Radiation Plots</a>
+            <a class="dropdown-item" href="/aero/net/getplot.php">Recent Aerosol Plots</a>
+            <a class="dropdown-item" href="/grad/obs/obsplot.php">Recent Radiation Plots</a>
+            <a class="dropdown-item" href="/dv/data.html">Data Archive</a>
+	</div>
+
+        <div class="col">
+		<span class="menu-header ml-2">Climate Products</span>
+                <a class="dropdown-item" href='/grad/solcalc/'>Solar Calculator</a>
+		<a class='dropdown-item' href="/grad/mloapt.html">MLO Apparent Transmission</a>
+		<a class='dropdown-item' href="/grad/pacificarctic.html">Pacific Arctic Climate</a>
+		<a class='dropdown-item' href="/grad/snomelt.html">Barrow's Annual Snow Cycle</a>
+	</div>
+
+        <div class="col">
+		<span class="menu-header ml-2">Field Campaigns</span>
+		<a class='dropdown-item' href="/grad/splash.html">NOAA SPLASH Study</a>
+		<a class='dropdown-item' href="/grad/wfip.html">Wind Forecasting (WFIP-2)</a>
+		<a class='dropdown-item' href="/grad/wfip3.html">Wind Forecasting (WFIP-3)</a>
+		<a class='dropdown-item' href="/grad/cpex.html">Cloud Properties Experiment (CPEX)</a>
+	</div>
+
+        <div class="col">
+		<span class="menu-header ml-2">Instrumentation</span>
+		<a class='dropdown-item' href='/aero/instrumentation/instrum.html'>Aerosol Instrumentation</a>
+		<a class='dropdown-item' href="/grad/instruments.html">Radiation Instruments</a>
+		<a class='dropdown-item' href="/grad/srf.html">Broadband Solar Calibration</a>
+		<a class='dropdown-item' href="/grad/calfacil/">Central UV Calibration Facility</a>
+		<a class='dropdown-item' href="/grad/info.html">Additional Information</a>
+	</div>
+
+
+    </div>
+</div>
+
+</li>
+</ul>
+
+    </nav>
+
+
+
+
+
+
+<script>
+function SetNavBarId(p) {
+   $(p).addClass("active");
+}
+</script>
+
+
+</div>
+<div class="container-fluid mb-3">
+
+<div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2">
+      
+<div class="sidebar">
+
+	<h4>Information</h4>
+	<a id="surf_m1" class="list-group-item list-group-item-condensed list-group-item-action" href="/grad/surfrad/index.html">SURFRAD Home</A> 
+	<a id="surf_m2" class="list-group-item list-group-item-condensed list-group-item-action" href="/grad/surfrad/overview.html">Overview</A> 
+	<a id="surf_m3" class="list-group-item list-group-item-condensed list-group-item-action" href="/grad/surfrad/sitepage.html"> Stations</A> 
+	<a id="surf_m4" class="list-group-item list-group-item-condensed list-group-item-action" href="/grad/surfrad/getcals.html"> Calibrations</A> 
+	<a id="surf_m5" class="list-group-item list-group-item-condensed list-group-item-action" href="/grad/surfrad/aod/"> Aerosol Optical Depth</a> 
+	<a id="surf_m6" class="list-group-item list-group-item-condensed list-group-item-action" href="/grad/solrad/index.html">SOLRAD Network</A> 
+	<a id="surf_m7" class="list-group-item list-group-item-condensed list-group-item-action" href="/grad/surfrad/netlinks.html"> Other US Networks</A> 
+
+	<h4 class='mt-3'>Data</h4>
+	<a id="surf_m8" class="list-group-item list-group-item-condensed list-group-item-action" href="/grad/surfrad/dataplot.html"> Radiation Plots</a> 
+	<a id="surf_m9" class="list-group-item list-group-item-condensed list-group-item-action" href="/grad/surfrad/metplot.html"> Meteorology Plots</a> 
+	<a id="surf_m10" class="list-group-item list-group-item-condensed list-group-item-action" href="/grad/surfrad/aod/aodpick.html">Aerosol Optical Depth Plots</a> 
+	<a id="surf_m11" class="list-group-item list-group-item-condensed list-group-item-action" href="/grad/surfrad/aveform.html"> Monthly Means</a> 
+	<a id="surf_m12" class="list-group-item list-group-item-condensed list-group-item-action" href="/grad/surfrad/sndform.html"> Soundings</a> 
+	<a id="surf_m13" class="list-group-item list-group-item-condensed list-group-item-action" href="/grad/surfrad/tsipics.html">Total Sky Imager</A> 
+	<a id="surf_m14" class="list-group-item list-group-item-condensed list-group-item-action" href="/aftp/data/radiation/surfrad/"> Data Download</a> 
+	<a id="surf_m15" class="list-group-item list-group-item-condensed list-group-item-action" href="/grad/surfrad/problems.html"> Problems</A> 
+</div>
+
+    </div>
+
+    <div class="col-12 col-md-9 col-xl-8 pr-3 pl-3 bd-content" role="main">
+
+
+
+<link href="/css/flexslider.css" rel="stylesheet" media="screen">
+<script src="/js/jquery.flexslider-min.js"></script>
+
+
+<div class="pageheader">SURFRAD (Surface Radiation Budget) Network</div>
+
+<div class='row'>
+    <div class='col-md-8'>
+
+    <div class="flexslider" style="max-width: 475px;">
+                <ul class="slides" style="max-width: 467px;">
+                        <li><a href="images/Bondville_Illinois.JPG"><img src="images/bnd_ss.jpg" alt="image1"></a>
+<div class="imgcaption"> Bondville, Illinois </div>
+</li>
+                        <li><a href="images/Desert_Rock_Nevada.JPG"><img src="images/drn_ss.jpg" alt="image2"></a>
+<div class="imgcaption"> Desert Rock, Nevada </div>
+</li>
+                        <li><a href="images/Fort_Peck_Montana.JPG"><img src="images/fpk_ss.jpg" alt="image3"></a>
+<div class="imgcaption"> Fort Peck, Montana </div>
+</li>
+                        <li><a href="images/Goodwin Creek_Mississippi.jpg"><img src="images/gcm_ss.jpg" alt="image4"></a>
+<div class="imgcaption"> Goodwin Creek, Mississippi </div>
+</li>
+                        <li><a href="images/Penn_State_Pennsylvania.jpg"><img src="images/psu_ss.jpg" alt="image5"></a>
+<div class="imgcaption"> Penn State University, Pennsylvannia </div>
+</li>
+                        <li><a href="images/Sioux_Falls_South Dakota.JPG"><img src="images/sxf_ss.jpg" alt="image6"></a>
+<div class="imgcaption"> Sioux Falls, South Dakota </div>
+</li>
+                        <li><a href="images/Table Mountain_Colorado.JPG"><img src="images/tmt_ss.jpg" alt="image7"></a>
+<div class="imgcaption"> Table Mountain, Colorado </div>
+</li>
+                </ul>
+        </div>
+
+    </div>
+    <div class='col-md-4'>
+<a href="SURFRAD_Impact Analysis_Final2020.pdf" class="btn-gml-icon" aria-label="SURFRAD Impact Analysis">
+<span class="fa-stack fa-2x">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fas fa-file-pdf fa-stack-1x fa-inverse"></i>
+                                </span>
+                        SURFRAD Impact Analysis
+</a>
+    </div>
+</div>
+
+
+<hr>
+</p>
+For more detail on notices, please go <a href="problems.html">here.</a>
+</p>
+
+<p><span class="mediumred"><b>NOTICE:</b></span>
+From 16-Oct 2018 to 13-May-2019 the reported erythemal UVB measurement for the Bondville SURFRAD station was artificially high by about 10% because the calibration constant was transcribed erroneously into the processing software. That error has been corrected and all affected Bondville data files and products, including the daily files, monthly averages, QcRad3, and RadFlux, have been regenerated using the correct UVB calibration constant. 
+</p>
+
+<p><span class="mediumred"><b>NOTICE:</b></span>
+From 20-Apr 2017 to 24-Sep-2017 the direct-normal solar measurement at the Desert Rock SURFRAD station was artificially low by about 10% because the calibration constant was transcribed erroneously into the processing software. That error has been corrected and all affected Desert Rock data files and products, including the monthly averages, QcRad3, and RadFlux, have been regenerated using the correct calibration constant. 
+</p>
+
+<p><span class="mediumred"><b>NOTICE:</b></span>
+From 13-July 2016 to 19-Sep-2017 the station pressure measurement at the Penn State SURFRAD station was off by ~ -10 mb. That has been corrected and all affected data files and products have been regenerated using the correct station pressure. 
+</p>
+
+<p><span class="mediumred"><b>NOTICE:</b></span>
+On 29 Dec. 2016 the output of SURFRAD data changed to include 2 decimal for the reported pyrgeometer case and dome temperatures. Only formatted reads will be affected by this change. Most users will not have to modify their SURFRAD read code because free format reads will not be affected. Since most modern programming languages require only a “separator” designation in their read statements, free format reads are the default. Initially this change will affect SURFRAD data files from 29 Dec. 2016 onward, but soon all historical SURFRAD data will be reprocessed to include the change. 
+</p>
+
+<p><span class="mediumred"><b>NOTICE:</b></span>
+The global pyranometer measurement at Fort Peck from 25 September 2014 through 22 September 2015 may be anomalously low. Please use [direct x cso(SZA)] + diffuse for global horizontal solar irradiance for that period. In practice, it is always best to use direct + diffuse in lieu of a single pyranometer measurement for global horizontal solar irradiance.
+</p>
+
+
+<p><span class="mediumred"><b>NOTICE:</b></span>
+From 22 August 2010 through 13 Sept. 2010, the upwelling infrared measurement at the Desert Rock SURFRAD site was
+intermittently (and mostly) bad due to corrosion on contacts at the 10-m tower. The erroneous upwelling IR values that
+were produced were so small that they did not reach the lower limit of the QC plot and therefore did not show up.
+Consequently, the SURFRAD QC analyst assumed that those data were marked as missing in the data files that were
+distributed. However, the bad values remained in the archived data files. On 6 July 2016, the all of the erroneous
+upwelling IR data from Desert Rock for that ~3 week period during late summer of 2010 were marked as missing and good
+data files were produced. SURFRAD data users should replace their Desert Rock data files for the affected period in
+2010 with the new reprocessed files that were placed in the SURFRAD FTP archive on 6 July 2016.</p>
+
+
+<p><span class="mediumred"><b>NOTICE:</b></span>
+From 22 August 2014 through 4 Sept. 2015, the albedo at Table Mt. was consistently low by 1-2% compared to other years. The calibration of the pyranometer that was used during that period was checked and its responsivity value was found to be too great by 0.0164. On 16 Sept. 2015, the Table Mountain calibration  file was adjusted and the upwelling solar recomputed over the affected period. The new data files were written to the FTP site on 16 Sept. 2015. 
+</p>
+
+<p><span class="mediumred"><b>NOTICE:</b></span>
+On 19 November 2014 the wind monitor was replaced at the Goodwin Creek SURFRAD site.  When the replacement wind monitor was mounted, it was rotated 128 degrees clockwise from its proper alignment. Consequently, the wind direction reported in the SURFRAD processed data files was off by +128 deg. from 19 November 2014 through 11 May 2015. On 27 May 2015 all of the wind data during that ~6-month period was corrected and new daily data files with the proper wind direction were generated. 
+</p>
+
+
+<p><span class="mediumred"><b>NOTICE:</b></span>
+As of 1 Jan. 2015, SOLRAD network radiation data will be reported at a one-minute frequency.
+</p>
+
+<p><span class="mediumred"><b>NOTICE:</b></span>
+The calibration value assigned to the quantum sensor that measured photosynthetically active radiation (PAR) at the Bondville SURFRAD station from 13-Jun-2014 through 13-Aug-2014 was found to be bad. A new calibration was assigned and all data during its two-month deployment were reprocessed. See the “Problems” page for more details.
+</p>
+
+<p><span class="mediumred"><b>NOTICE:</b></span>
+The quantum sensor that measures photosynthetically active radiation (PAR) at the Penn State SURFRAD station lost approximately 4% sensitivity on 22 Sept. 2013.  That sensor was replaced on 14 Nov. 2013 after which the PAR measurements increased to more normal values.  On 21 Nov. 2013, the QC values of the Penn State SURFRAD PAR measurements over the affected period (22-Sept to 14-Nov. 2013) were set to bad (1), however, the PAR values were kept in the data files, i.e., not set to missing. 
+</p>
+
+<p><span class="mediumred"><b>NOTICE:</b></span>
+The clock in the Table Mountain SURFRAD station data logger drifted linearly from late October 2012 to 5 May 2013. On 5 May 2013 the clock time was found to be fast by nearly four minutes, and the problem was fixed. A linear correction has been applied to the time in all Table Mountain raw data files for that period and those files have been reprocessed. The new time-corrected data files were uploaded to the SURFRAD FTP site on 15 August 2013. 
+</p>
+
+<p><span class="mediumred"><b>NOTICE:</b></span>
+The station pressure at Penn State drifted by about 0.4 mb per year  between 11-April-2003 and 18-June-2012. Those data have been corrected and new Penn State SURFRAD daily files have been generated with corrected pressure for the affected period. 
+</p>
+
+<p><span class="mediumred"><b>NOTICE:</b></span>
+The README file that describes the SURFRAD data files has been updated. Please download the latest version from any of the individual station FTP data directories, e.g.,
+
+<a href="/aftp/data/radiation/surfrad/Bondville_IL">/aftp/data/radiation/surfrad/Bondville_IL</a>. 
+<!-- See the <a href="./problems.html">problems</a> link for details. -->
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+ $('.flexslider').flexslider({
+            animation: "fade"
+          });
+
+});
+
+SetNavBarId("#surf_m1")
+
+</script>
+
+
+</div>   <!-- end column -->
+
+
+</div>  <!-- end row -->
+
+</div>  <!-- close container -->
+</div>  <!-- close main section -->
+
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-secondary_section">
+<div class="container-md">
+    <div class="row">
+	<div class="col-md-8">
+            <div class="media">
+                <img class="footer-logo mr-3 d-none d-sm-block" src="/webdata/logos/noaa-emblem.webp" alt="NOAA logo with wording" width=74 height=74>
+                <div class="media-body">
+			<p>
+                        <a class="footer-logo-heading mt-0" href="/">Global Monitoring Laboratory</a> <br>
+			&raquo; <a href="https://www.commerce.gov/">U.S. Department of Commerce</a> <br>
+			&raquo; <a href="https://www.noaa.gov/">National Oceanic &amp; Atmospheric Administration</a> <br>
+			&raquo; <a href="https://research.noaa.gov/">NOAA Research</a>
+			</p>
+	        </div>
+	    </div>
+            <div class='mt-2'>
+			<p>
+	        <a href="https://www.noaa.gov/protecting-your-privacy">Privacy Policy</a> &nbsp;| &nbsp;
+                <a href="https://www.noaa.gov/accessibility">Accessibility</a> &nbsp;| &nbsp;
+                <a href="/about/disclaimer.html">Disclaimer</a> &nbsp;| &nbsp;
+                <a href="https://www.noaa.gov/disclaimer">Disclaimer for External Links</a> &nbsp;| &nbsp;
+                <a href="https://www.noaa.gov/information-technology/foia">FOIA</a> &nbsp;| &nbsp;
+                <a href="https://www.usa.gov">Usa.gov</a>
+			</p>
+            </div>
+       </div>
+       <div class="col-md-4 footer-right-section">
+           <p>
+                <a href="https://www.facebook.com/NOAAResearch" title="NOAA Research Facebook" aria-label="NOAA Research Facebook">&nbsp;<i class="fab fa-facebook-f fa-1x social"></i></a>
+                <a href="https://instagram.com/noaaresearch" title="NOAA Research Instagram" aria-label="NOAA Research Instagram">&nbsp;<i class="fab fa-instagram fa-1x social"></i></a>
+		<br>
+		<a href="/sitemap/">Site Contents</a><br>
+		<a href="/about/contacts.html">Contact Us</a> &nbsp;| &nbsp;<a href="mailto:webmaster.gml@noaa.gov">Webmaster</a><br>
+	        <a href="/survey/">Take Our Survey</a>
+           </p>
+       </div>
+    </div>
+
+</div>
+</div>
+
+</footer>
+
+
+
+
+<script async="" type="text/javascript" id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&amp;subagency=NOAA"></script>
+<script async src="https://siteimproveanalytics.com/js/siteanalyze_6294131.js"></script>
+
+
+
+
+</body>
+
+
+</html>
+
+
+

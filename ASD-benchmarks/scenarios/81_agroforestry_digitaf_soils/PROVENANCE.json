@@ -1,0 +1,322 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "81_agroforestry_digitaf_soils",
+  "domain": "Agroforestry",
+  "title": "Methods to Verify and Account for the Carbon and Soil Health Benefits of Agroforestry - Annex to Deliverable 3.5 ( DigitAF EU Project) : Soil Dataset (Machine readable).",
+  "publisher": "den Herder, Michael (European Forest Institute); Cumplido-Marin, Laura; Burgess, Paul (Cranfield University); Aynekulu, Ermias; Fabrizio Giuseppe Cella; Houska, Jakub (Landscape Research Institute); Hübner, Rico (Deutscher Fachverband für Agroforstwirtschaft (DeFAF) e.V.); Lojka, Bohdan (Czech University of Life Sciences Prague); Mantino, Alberto; Nauta, Silke; Palma, Joao (Moinhos de Vento Agroecology Research Centre); Pardon, Paul; Smith, Joanne (Moinhos de Vento Agroecology Research Centre); Ripamonti, Alice (University of Pisa); Rolo, Victor (University of Extremadura); Serra, Andrea; Rønn-Andersen, Kristoffer; Skok, Andrej; Thissen, Waas",
+  "authoritative_landing_url": "https://zenodo.org/records/21204617",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/21204617",
+    "https://zenodo.org/api/records/21204617/files/italy_site_map.png/content",
+    "https://zenodo.org/api/records/21204617/files/DigitAF_Soil_All_LLs_Data.xlsx/content",
+    "https://zenodo.org/api/records/21204617/files/portugal_site_map.png/content",
+    "https://zenodo.org/api/records/21204617/files/finland_site_map.png/content",
+    "https://zenodo.org/api/records/21204617/files/spain_site_map.png/content",
+    "https://zenodo.org/api/records/21204617/files/uk_site_map.png/content",
+    "https://zenodo.org/api/records/21204617/files/convertdata2machinereadable.py/content",
+    "https://zenodo.org/api/records/21204617/files/digitaf_soil_dataset_final.json/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.21204617"
+  ],
+  "release_or_version": "21204617",
+  "retrieval_finalized_utc": "2026-09-15T07:04:41.505100+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Measurement dates are site-specific in source metadata; release June 2026.",
+  "source_publication_date": "2026-06-30",
+  "source_created_utc": "2026-07-05T14:54:47.534266+00:00",
+  "source_updated_utc": "2026-07-05T14:54:48.219048+00:00",
+  "source_inventory": [
+    {
+      "name": "italy_site_map.png",
+      "bytes": 503522,
+      "selected": true
+    },
+    {
+      "name": "DigitAF_Soil_All_LLs_Data.xlsx",
+      "bytes": 25609776,
+      "selected": true
+    },
+    {
+      "name": "portugal_site_map.png",
+      "bytes": 676503,
+      "selected": true
+    },
+    {
+      "name": "finland_site_map.png",
+      "bytes": 837725,
+      "selected": true
+    },
+    {
+      "name": "spain_site_map.png",
+      "bytes": 349894,
+      "selected": true
+    },
+    {
+      "name": "uk_site_map.png",
+      "bytes": 3220568,
+      "selected": true
+    },
+    {
+      "name": "convertdata2machinereadable.py",
+      "bytes": 13475,
+      "selected": true
+    },
+    {
+      "name": "digitaf_soil_dataset_final.json",
+      "bytes": 389331,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Original workbook, author JSON conversion/code and five maps, spanning eight-country Living Labs.",
+  "known_analyses_and_limitations": "Hold out sites/Living Labs. Sampling protocols differ; JSON and workbook are alternative representations, not extra samples.",
+  "related_publications": [
+    {
+      "identifier": "10.5281/zenodo.20529635",
+      "relation": "isPartOf",
+      "resource_type": "publication-deliverable",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.20529901",
+      "relation": "isDocumentedBy",
+      "resource_type": "publication-deliverable",
+      "scheme": "doi"
+    }
+  ],
+  "independent_groups": "site/Living Lab and sampling campaign",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-081",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-081",
+      "scenario_id": "81_agroforestry_digitaf_soils",
+      "path": "raw/italy_site_map.png",
+      "scenario_relative_path": "raw/italy_site_map.png",
+      "bytes": 503522,
+      "sha256": "e2251157853eb6ead9e36a7a3a13bcb6714733048d1995166406835a3f522ca4",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/21204617"
+      ],
+      "download_url": "https://zenodo.org/api/records/21204617/files/italy_site_map.png/content",
+      "source_checksum": "md5:823ed85cd06509641ebf40f62b4ab3fb",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:33:01.037996+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.21204617"
+      ],
+      "citation_url": "https://zenodo.org/records/21204617",
+      "source_version": "21204617",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/21204617",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-081",
+      "scenario_id": "81_agroforestry_digitaf_soils",
+      "path": "raw/DigitAF_Soil_All_LLs_Data.xlsx",
+      "scenario_relative_path": "raw/DigitAF_Soil_All_LLs_Data.xlsx",
+      "bytes": 25609776,
+      "sha256": "1ef5ef519343df43aca49634f1290709cb6270860798a8a239ef278aff16523d",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/21204617"
+      ],
+      "download_url": "https://zenodo.org/api/records/21204617/files/DigitAF_Soil_All_LLs_Data.xlsx/content",
+      "source_checksum": "md5:136cec1eb259eec4edd812d2d56ae872",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:44:02.121539+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.21204617"
+      ],
+      "citation_url": "https://zenodo.org/records/21204617",
+      "source_version": "21204617",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/21204617",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-081",
+      "scenario_id": "81_agroforestry_digitaf_soils",
+      "path": "raw/portugal_site_map.png",
+      "scenario_relative_path": "raw/portugal_site_map.png",
+      "bytes": 676503,
+      "sha256": "58194c9d6cce5aa2bb8cee30bfe2b1e3cb6fe7505ccc41d11853a2335611e176",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/21204617"
+      ],
+      "download_url": "https://zenodo.org/api/records/21204617/files/portugal_site_map.png/content",
+      "source_checksum": "md5:7a2309c69823d17cff7636f56696b7a2",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:33:27.097842+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.21204617"
+      ],
+      "citation_url": "https://zenodo.org/records/21204617",
+      "source_version": "21204617",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/21204617",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-081",
+      "scenario_id": "81_agroforestry_digitaf_soils",
+      "path": "raw/finland_site_map.png",
+      "scenario_relative_path": "raw/finland_site_map.png",
+      "bytes": 837725,
+      "sha256": "fb6699c49160a097a82b681cb536a8c78aa15dc78050cc1f7e18fd2b12ea4930",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/21204617"
+      ],
+      "download_url": "https://zenodo.org/api/records/21204617/files/finland_site_map.png/content",
+      "source_checksum": "md5:d2a8fc579d2a3b8a79a1398fb46854a4",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:33:30.762153+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.21204617"
+      ],
+      "citation_url": "https://zenodo.org/records/21204617",
+      "source_version": "21204617",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/21204617",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-081",
+      "scenario_id": "81_agroforestry_digitaf_soils",
+      "path": "raw/spain_site_map.png",
+      "scenario_relative_path": "raw/spain_site_map.png",
+      "bytes": 349894,
+      "sha256": "c2c04ea45318830ba5e011f5ba169f951dde4541e77a66f6a99af8ce2307e11b",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/21204617"
+      ],
+      "download_url": "https://zenodo.org/api/records/21204617/files/spain_site_map.png/content",
+      "source_checksum": "md5:aad73dd27b1b5fa27df7885f8fca8292",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:33:32.932861+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.21204617"
+      ],
+      "citation_url": "https://zenodo.org/records/21204617",
+      "source_version": "21204617",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/21204617",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-081",
+      "scenario_id": "81_agroforestry_digitaf_soils",
+      "path": "raw/uk_site_map.png",
+      "scenario_relative_path": "raw/uk_site_map.png",
+      "bytes": 3220568,
+      "sha256": "2ec6e8b868f1c492164cbb52b58f83f5818cb7a173bf483d356b66140bb5497e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/21204617"
+      ],
+      "download_url": "https://zenodo.org/api/records/21204617/files/uk_site_map.png/content",
+      "source_checksum": "md5:7a50a2c218b5fee72b08c2e576d62c1d",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:34:09.037570+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.21204617"
+      ],
+      "citation_url": "https://zenodo.org/records/21204617",
+      "source_version": "21204617",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/21204617",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-081",
+      "scenario_id": "81_agroforestry_digitaf_soils",
+      "path": "raw/convertdata2machinereadable.py",
+      "scenario_relative_path": "raw/convertdata2machinereadable.py",
+      "bytes": 13475,
+      "sha256": "1ed931541e7aa82528b6f55cdd6b2b6c21a1f7e1dad2a62a0f1a25cb107b889c",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/21204617"
+      ],
+      "download_url": "https://zenodo.org/api/records/21204617/files/convertdata2machinereadable.py/content",
+      "source_checksum": "md5:0377778b962cde3c09b8bd7867db2609",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:33:37.971520+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.21204617"
+      ],
+      "citation_url": "https://zenodo.org/records/21204617",
+      "source_version": "21204617",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/21204617",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-081",
+      "scenario_id": "81_agroforestry_digitaf_soils",
+      "path": "raw/digitaf_soil_dataset_final.json",
+      "scenario_relative_path": "raw/digitaf_soil_dataset_final.json",
+      "bytes": 389331,
+      "sha256": "06891ec0ac2d386fd3ff7375d0dc289ce7ac2eaeac928bd2a8b5a2cffb2ab309",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/21204617"
+      ],
+      "download_url": "https://zenodo.org/api/records/21204617/files/digitaf_soil_dataset_final.json/content",
+      "source_checksum": "md5:93e839bb7e1a5e335f93729e465d3aae",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:33:45.869886+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.21204617"
+      ],
+      "citation_url": "https://zenodo.org/records/21204617",
+      "source_version": "21204617",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/21204617",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-081",
+      "scenario_id": "81_agroforestry_digitaf_soils",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 12155,
+      "sha256": "b820df311590472f1727f685645b045c3df06cbc6c8f0bf34c9e870c230140e9",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/21204617"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:47.128001+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.21204617"
+      ],
+      "citation_url": "https://zenodo.org/records/21204617",
+      "source_version": "21204617",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

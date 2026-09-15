@@ -1,0 +1,559 @@
+{
+  "role": "curator_factual_source_profile",
+  "not_scientific_measurements": true,
+  "title": "CPAP respiratory pressure measurements",
+  "publisher": "University of Canterbury; PhysioNet",
+  "source_url": "https://www.physionet.org/content/respiratory-heartrate-dataset/1.0.0/",
+  "source_version": "1.0.0; 2024-03-20",
+  "identifiers": [],
+  "retrieved_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_terms": "CC BY 4.0",
+  "native_selection": "All 60 PQ_rawData raw trial CSVs, all source Code files, LICENSE.txt, README.txt and subject-info.csv; EIT/HRM and processed datasets excluded.",
+  "source_inventory": null,
+  "files": [
+    {
+      "scenario_relative_path": "context/source_SHA256SUMS.txt",
+      "bytes": 30220,
+      "sha256": "e463d8351c734df9d286d26cfb64d82ac56684678449ad42ba570fea84296011",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/SHA256SUMS.txt",
+      "source_checksum": null,
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/Code/DataCollection_PQ.m",
+      "bytes": 5309,
+      "sha256": "efda25c76ee042251305cccddc7da9f5fd86aa111f44916fadcfeb9f5d9a5321",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/Code/DataCollection_PQ.m",
+      "source_checksum": "sha256:efda25c76ee042251305cccddc7da9f5fd86aa111f44916fadcfeb9f5d9a5321",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/Code/DataProcessing.m",
+      "bytes": 13549,
+      "sha256": "f21035cdaba15475bb1dddd55450aaf2ec5897bd39453d1044627813dc186725",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/Code/DataProcessing.m",
+      "source_checksum": "sha256:f21035cdaba15475bb1dddd55450aaf2ec5897bd39453d1044627813dc186725",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/Code/FigureGeneration.m",
+      "bytes": 4188,
+      "sha256": "9bf389b42cd76abb51c77b0524a240785c1a1bc6f8968df46d6fc97027318187",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/Code/FigureGeneration.m",
+      "source_checksum": "sha256:9bf389b42cd76abb51c77b0524a240785c1a1bc6f8968df46d6fc97027318187",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/Code/read_binData.m",
+      "bytes": 1821,
+      "sha256": "cc09fef3ce2a7a0e2bb62f9ece90418db2992b790b178d7c731f16e191fa60fc",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/Code/read_binData.m",
+      "source_checksum": "sha256:cc09fef3ce2a7a0e2bb62f9ece90418db2992b790b178d7c731f16e191fa60fc",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/LICENSE.txt",
+      "bytes": 14842,
+      "sha256": "9a78e7f22742dde9f66ae235ec793ba2212019dc4d0ced75c4da09ced0b35fb2",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/LICENSE.txt",
+      "source_checksum": "sha256:9a78e7f22742dde9f66ae235ec793ba2212019dc4d0ced75c4da09ced0b35fb2",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject10_FEM_raw.csv",
+      "bytes": 137115,
+      "sha256": "781ce4ac3b535c9a2ed77a61356fa8fea80a04d50108e8768028709618ba201d",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject10_FEM_raw.csv",
+      "source_checksum": "sha256:781ce4ac3b535c9a2ed77a61356fa8fea80a04d50108e8768028709618ba201d",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject10_PEEP_BH_raw.csv",
+      "bytes": 825335,
+      "sha256": "dd173ec8be3bca5626a4e38f44ed3f5a97aa7dd5a27a23d87e7e5a29f074b87a",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject10_PEEP_BH_raw.csv",
+      "source_checksum": "sha256:dd173ec8be3bca5626a4e38f44ed3f5a97aa7dd5a27a23d87e7e5a29f074b87a",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject10_PEEP_raw.csv",
+      "bytes": 825286,
+      "sha256": "a14da9a22be92018251b690d46baacf0979db2706bbc605b5e0c410a54098b0b",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject10_PEEP_raw.csv",
+      "source_checksum": "sha256:a14da9a22be92018251b690d46baacf0979db2706bbc605b5e0c410a54098b0b",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject11_FEM_raw.csv",
+      "bytes": 136763,
+      "sha256": "58a1519846c8779345ca2e6c6175132a941d9e06270dfdd61e317c6e51604080",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject11_FEM_raw.csv",
+      "source_checksum": "sha256:58a1519846c8779345ca2e6c6175132a941d9e06270dfdd61e317c6e51604080",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject11_PEEP_BH_raw.csv",
+      "bytes": 825971,
+      "sha256": "f6d18cf3a2aafcc86ab719736e351832da72591824cfb2d3306a2ce9224a3206",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject11_PEEP_BH_raw.csv",
+      "source_checksum": "sha256:f6d18cf3a2aafcc86ab719736e351832da72591824cfb2d3306a2ce9224a3206",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject11_PEEP_raw.csv",
+      "bytes": 825205,
+      "sha256": "a8fa2572ac2081f6c80a9f02bb73cb14b147d2139963d7035c4880d80ef5602f",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject11_PEEP_raw.csv",
+      "source_checksum": "sha256:a8fa2572ac2081f6c80a9f02bb73cb14b147d2139963d7035c4880d80ef5602f",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject12_FEM_raw.csv",
+      "bytes": 136165,
+      "sha256": "f342a3d64c05c60dc5328d5755c456af287aa9f19a65645757892bdc3944bcc6",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject12_FEM_raw.csv",
+      "source_checksum": "sha256:f342a3d64c05c60dc5328d5755c456af287aa9f19a65645757892bdc3944bcc6",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject12_PEEP_BH_raw.csv",
+      "bytes": 825101,
+      "sha256": "978733fa80228e0bce635917189ec8028371257f8d735366db84b8bfbb829a01",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject12_PEEP_BH_raw.csv",
+      "source_checksum": "sha256:978733fa80228e0bce635917189ec8028371257f8d735366db84b8bfbb829a01",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject12_PEEP_raw.csv",
+      "bytes": 825087,
+      "sha256": "2210e954739095a29e5e01066da747a59ded29841ad241994382bf2d82065a4f",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject12_PEEP_raw.csv",
+      "source_checksum": "sha256:2210e954739095a29e5e01066da747a59ded29841ad241994382bf2d82065a4f",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject13_FEM_raw.csv",
+      "bytes": 103860,
+      "sha256": "461fb2b9f5d1c5e9c254cd3cc4fc0f8c39295181b4a3568a352967513216c26d",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject13_FEM_raw.csv",
+      "source_checksum": "sha256:461fb2b9f5d1c5e9c254cd3cc4fc0f8c39295181b4a3568a352967513216c26d",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject13_PEEP_BH_raw.csv",
+      "bytes": 826981,
+      "sha256": "6c6eb10c51344ec1968084423d738b8d7b0ff54e9809c054f6d7cf8304ecbbc9",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject13_PEEP_BH_raw.csv",
+      "source_checksum": "sha256:6c6eb10c51344ec1968084423d738b8d7b0ff54e9809c054f6d7cf8304ecbbc9",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject13_PEEP_raw.csv",
+      "bytes": 826772,
+      "sha256": "b4687ce32a27e7f5378815863f5a3efb4b009dadf9dd8ef575e24aefd797b724",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject13_PEEP_raw.csv",
+      "source_checksum": "sha256:b4687ce32a27e7f5378815863f5a3efb4b009dadf9dd8ef575e24aefd797b724",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject14_FEM_raw.csv",
+      "bytes": 136888,
+      "sha256": "e53fdadf5dab72afa55539050516f5ee73f4de1321dfb51a1a73793d7e158608",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject14_FEM_raw.csv",
+      "source_checksum": "sha256:e53fdadf5dab72afa55539050516f5ee73f4de1321dfb51a1a73793d7e158608",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject14_PEEP_BH_raw.csv",
+      "bytes": 825158,
+      "sha256": "09460296a3fb173d1a5e3d019bdc98d8aca5a7d4cf30f570b99df246886e4fd3",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject14_PEEP_BH_raw.csv",
+      "source_checksum": "sha256:09460296a3fb173d1a5e3d019bdc98d8aca5a7d4cf30f570b99df246886e4fd3",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject14_PEEP_raw.csv",
+      "bytes": 825145,
+      "sha256": "998561e3722e73dab29e6894f66870aaaf35967386bf1535423e7c744c4559a8",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject14_PEEP_raw.csv",
+      "source_checksum": "sha256:998561e3722e73dab29e6894f66870aaaf35967386bf1535423e7c744c4559a8",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject15_FEM_raw.csv",
+      "bytes": 136276,
+      "sha256": "ff5c4de7cb072d6de88f77361dcdfa23d0e2d8afa554a5b38cd958560c8f31e5",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject15_FEM_raw.csv",
+      "source_checksum": "sha256:ff5c4de7cb072d6de88f77361dcdfa23d0e2d8afa554a5b38cd958560c8f31e5",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject15_PEEP_BH_raw.csv",
+      "bytes": 828115,
+      "sha256": "0228a7a70459ba4076840f37d59801cade761fa2e4f7804c4d7654ae569437f2",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject15_PEEP_BH_raw.csv",
+      "source_checksum": "sha256:0228a7a70459ba4076840f37d59801cade761fa2e4f7804c4d7654ae569437f2",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject15_PEEP_raw.csv",
+      "bytes": 824265,
+      "sha256": "b35fb6d1d27587c7fd8b6e1d40b4c870eaeeb88f8ddbef178bd5a03d1c3799ff",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject15_PEEP_raw.csv",
+      "source_checksum": "sha256:b35fb6d1d27587c7fd8b6e1d40b4c870eaeeb88f8ddbef178bd5a03d1c3799ff",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject16_FEM_raw.csv",
+      "bytes": 137145,
+      "sha256": "729dd0d11b5f24fb38a34578b488e88a42647327cdfd1b372f21f950e305126d",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject16_FEM_raw.csv",
+      "source_checksum": "sha256:729dd0d11b5f24fb38a34578b488e88a42647327cdfd1b372f21f950e305126d",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject16_PEEP_BH_raw.csv",
+      "bytes": 825196,
+      "sha256": "fc485b49c0728225706e16db62b4ba6a7304cee479d17ec06b9ac09107fd10a0",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject16_PEEP_BH_raw.csv",
+      "source_checksum": "sha256:fc485b49c0728225706e16db62b4ba6a7304cee479d17ec06b9ac09107fd10a0",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject16_PEEP_raw.csv",
+      "bytes": 825281,
+      "sha256": "cbda5d0fcd6504cc0b529f91ee305610502129d2147f171ebb02456b697b34c6",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject16_PEEP_raw.csv",
+      "source_checksum": "sha256:cbda5d0fcd6504cc0b529f91ee305610502129d2147f171ebb02456b697b34c6",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject17_FEM_raw.csv",
+      "bytes": 135826,
+      "sha256": "7e2f9b0ebae03cbf27b98fd5c756a1f7af72a80857de287d7746908a61003807",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject17_FEM_raw.csv",
+      "source_checksum": "sha256:7e2f9b0ebae03cbf27b98fd5c756a1f7af72a80857de287d7746908a61003807",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject17_PEEP_BH_raw.csv",
+      "bytes": 825383,
+      "sha256": "cf776b2fee410840dc0de454f878a650ebe4a6b0053fce8ced9e30b0df48ed1d",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject17_PEEP_BH_raw.csv",
+      "source_checksum": "sha256:cf776b2fee410840dc0de454f878a650ebe4a6b0053fce8ced9e30b0df48ed1d",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject17_PEEP_raw.csv",
+      "bytes": 825766,
+      "sha256": "6d92687600cf7648ec40c1f34df9187c118484029ba6011d1c4cc8537dfd489a",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject17_PEEP_raw.csv",
+      "source_checksum": "sha256:6d92687600cf7648ec40c1f34df9187c118484029ba6011d1c4cc8537dfd489a",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject18_FEM_raw.csv",
+      "bytes": 135230,
+      "sha256": "6da6ee3b4a5f5a6f81281140d0bcdb2a93c5127e61dfb8c8c7ad0156b9845458",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject18_FEM_raw.csv",
+      "source_checksum": "sha256:6da6ee3b4a5f5a6f81281140d0bcdb2a93c5127e61dfb8c8c7ad0156b9845458",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject18_PEEP_BH_raw.csv",
+      "bytes": 825435,
+      "sha256": "893b3619762c3dba6e3e1113b7a830c77b03b9e15cdbdfd6d749c9076aecda68",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject18_PEEP_BH_raw.csv",
+      "source_checksum": "sha256:893b3619762c3dba6e3e1113b7a830c77b03b9e15cdbdfd6d749c9076aecda68",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject18_PEEP_raw.csv",
+      "bytes": 825145,
+      "sha256": "449f928b34223560806fdc04ad73e96ab87af93e7daa9d64c369dedd08acac5b",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject18_PEEP_raw.csv",
+      "source_checksum": "sha256:449f928b34223560806fdc04ad73e96ab87af93e7daa9d64c369dedd08acac5b",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject19_FEM_raw.csv",
+      "bytes": 136771,
+      "sha256": "c3a9b097f9f00116b4678d344e9fb4421411f43c0aeb5a61020a691e5cc854dd",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject19_FEM_raw.csv",
+      "source_checksum": "sha256:c3a9b097f9f00116b4678d344e9fb4421411f43c0aeb5a61020a691e5cc854dd",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject19_PEEP_BH_raw.csv",
+      "bytes": 826289,
+      "sha256": "d26f2871a74cc09af7f4e2b275c2dd2d38e16d368724cb4fea2dff3e9ca1a174",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject19_PEEP_BH_raw.csv",
+      "source_checksum": "sha256:d26f2871a74cc09af7f4e2b275c2dd2d38e16d368724cb4fea2dff3e9ca1a174",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject19_PEEP_raw.csv",
+      "bytes": 824752,
+      "sha256": "75d9c30aba65ee1b4d9faa8f48e51546c435c2b912cde3ee57ce2a26d4ad720b",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject19_PEEP_raw.csv",
+      "source_checksum": "sha256:75d9c30aba65ee1b4d9faa8f48e51546c435c2b912cde3ee57ce2a26d4ad720b",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject1_FEM_raw.csv",
+      "bytes": 138943,
+      "sha256": "0928b23f80825715f7c110e001efb5a926486b57a74d66af85e06f0b3b0e0a27",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject1_FEM_raw.csv",
+      "source_checksum": "sha256:0928b23f80825715f7c110e001efb5a926486b57a74d66af85e06f0b3b0e0a27",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject1_PEEP_BH_raw.csv",
+      "bytes": 825604,
+      "sha256": "ee81fee5ef28be26306ceea660824863aa3d11ff120b2718a49fd97659836806",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject1_PEEP_BH_raw.csv",
+      "source_checksum": "sha256:ee81fee5ef28be26306ceea660824863aa3d11ff120b2718a49fd97659836806",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject1_PEEP_raw.csv",
+      "bytes": 824662,
+      "sha256": "946486dabe11e10ec3c69f92fe7124584239481b0d4d47fb0596d959fc7fa17d",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject1_PEEP_raw.csv",
+      "source_checksum": "sha256:946486dabe11e10ec3c69f92fe7124584239481b0d4d47fb0596d959fc7fa17d",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject20_FEM_raw.csv",
+      "bytes": 135319,
+      "sha256": "c8b36928b4faf43fa9e2c8334157517aa931114828f085f906da4175609cc090",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject20_FEM_raw.csv",
+      "source_checksum": "sha256:c8b36928b4faf43fa9e2c8334157517aa931114828f085f906da4175609cc090",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject20_PEEP_BH_raw.csv",
+      "bytes": 825238,
+      "sha256": "89d49b384d2c2514aa292e41e2a7e9f6bb63221dbfdb5aebb2d3d0c4c2ba0768",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject20_PEEP_BH_raw.csv",
+      "source_checksum": "sha256:89d49b384d2c2514aa292e41e2a7e9f6bb63221dbfdb5aebb2d3d0c4c2ba0768",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject20_PEEP_raw.csv",
+      "bytes": 826323,
+      "sha256": "1861d71a520dc54310cfa7483e94e38b025729d8bab7e10e32839a02fd2a94b7",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject20_PEEP_raw.csv",
+      "source_checksum": "sha256:1861d71a520dc54310cfa7483e94e38b025729d8bab7e10e32839a02fd2a94b7",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject2_FEM_raw.csv",
+      "bytes": 135576,
+      "sha256": "00607ee23d3fcc05f43f02496ef791883d8504264a04f520c73f74a4a6946900",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject2_FEM_raw.csv",
+      "source_checksum": "sha256:00607ee23d3fcc05f43f02496ef791883d8504264a04f520c73f74a4a6946900",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject2_PEEP_BH_raw.csv",
+      "bytes": 825144,
+      "sha256": "e1b05181c2f351fbe549772fb598960ea22028cc51245b478ee88a1e4750f85d",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject2_PEEP_BH_raw.csv",
+      "source_checksum": "sha256:e1b05181c2f351fbe549772fb598960ea22028cc51245b478ee88a1e4750f85d",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject2_PEEP_raw.csv",
+      "bytes": 827103,
+      "sha256": "de51cc1153d1d5b31d2c0d7361b9641880da62077a60fef52467ca1b6cce87fd",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject2_PEEP_raw.csv",
+      "source_checksum": "sha256:de51cc1153d1d5b31d2c0d7361b9641880da62077a60fef52467ca1b6cce87fd",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject3_FEM_raw.csv",
+      "bytes": 135991,
+      "sha256": "376043539ac272ea6ee8fc8fdf0b471c8441ad6cf05a635ce678dd14e8b93454",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject3_FEM_raw.csv",
+      "source_checksum": "sha256:376043539ac272ea6ee8fc8fdf0b471c8441ad6cf05a635ce678dd14e8b93454",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject3_PEEP_BH_raw.csv",
+      "bytes": 825344,
+      "sha256": "3cf67537032514397002d0913717a607b51a60046da79691326f887177e25c43",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject3_PEEP_BH_raw.csv",
+      "source_checksum": "sha256:3cf67537032514397002d0913717a607b51a60046da79691326f887177e25c43",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject3_PEEP_raw.csv",
+      "bytes": 825172,
+      "sha256": "b61b449033be5ba917cad6785f0e8fd49fe1c9b81099aa23e31f7cbf9e5fcf3c",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject3_PEEP_raw.csv",
+      "source_checksum": "sha256:b61b449033be5ba917cad6785f0e8fd49fe1c9b81099aa23e31f7cbf9e5fcf3c",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject4_FEM_raw.csv",
+      "bytes": 135264,
+      "sha256": "aa2a8b5e40cf0effe5bfc64c5a84989dbbd50a007ef15d365cbacdfb1c0549b9",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject4_FEM_raw.csv",
+      "source_checksum": "sha256:aa2a8b5e40cf0effe5bfc64c5a84989dbbd50a007ef15d365cbacdfb1c0549b9",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject4_PEEP_BH_raw.csv",
+      "bytes": 825115,
+      "sha256": "1675e95318945d66a4a41483770c53cfd8c0d1efa337bc975037c5592d15fef0",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject4_PEEP_BH_raw.csv",
+      "source_checksum": "sha256:1675e95318945d66a4a41483770c53cfd8c0d1efa337bc975037c5592d15fef0",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject4_PEEP_raw.csv",
+      "bytes": 827114,
+      "sha256": "54b94b7d99b36be8fff13cc9cd51e109060fe25d79c3b1644636309c57daa7d5",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject4_PEEP_raw.csv",
+      "source_checksum": "sha256:54b94b7d99b36be8fff13cc9cd51e109060fe25d79c3b1644636309c57daa7d5",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject5_FEM_raw.csv",
+      "bytes": 137083,
+      "sha256": "8283e194d3399acc166e29e0fa3fbd70fc15dd08e64b43e989e23b242abd1957",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject5_FEM_raw.csv",
+      "source_checksum": "sha256:8283e194d3399acc166e29e0fa3fbd70fc15dd08e64b43e989e23b242abd1957",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject5_PEEP_BH_raw.csv",
+      "bytes": 826902,
+      "sha256": "cd306607453682f88446e087cb7581ca3d9ce8fc6fefc1dabf2f37f548b61683",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject5_PEEP_BH_raw.csv",
+      "source_checksum": "sha256:cd306607453682f88446e087cb7581ca3d9ce8fc6fefc1dabf2f37f548b61683",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject5_PEEP_raw.csv",
+      "bytes": 825515,
+      "sha256": "71919a77a93c0a39689e8c29385442e784930a261430d44e4cae54c3791a3fe6",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject5_PEEP_raw.csv",
+      "source_checksum": "sha256:71919a77a93c0a39689e8c29385442e784930a261430d44e4cae54c3791a3fe6",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject6_FEM_raw.csv",
+      "bytes": 135778,
+      "sha256": "4cd1e9c778e24ac83a9cf340dbb8426e06a35b82153f522d4e45556681b4430a",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject6_FEM_raw.csv",
+      "source_checksum": "sha256:4cd1e9c778e24ac83a9cf340dbb8426e06a35b82153f522d4e45556681b4430a",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject6_PEEP_BH_raw.csv",
+      "bytes": 825616,
+      "sha256": "c945e7e00f70ff0d05dfce632d2cb2587342c7c5ddef8ee5841e68b103923c10",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject6_PEEP_BH_raw.csv",
+      "source_checksum": "sha256:c945e7e00f70ff0d05dfce632d2cb2587342c7c5ddef8ee5841e68b103923c10",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject6_PEEP_raw.csv",
+      "bytes": 825136,
+      "sha256": "b6d7fcf1b4d111ca66a3f0c9952b768ad3a2807435229e35c573806f13bea596",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject6_PEEP_raw.csv",
+      "source_checksum": "sha256:b6d7fcf1b4d111ca66a3f0c9952b768ad3a2807435229e35c573806f13bea596",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject7_FEM_raw.csv",
+      "bytes": 136125,
+      "sha256": "ba83ab896825c887dfa7062a92bb3de3a8b94c0926e55bfdd0f6ccf5c8cce9c6",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject7_FEM_raw.csv",
+      "source_checksum": "sha256:ba83ab896825c887dfa7062a92bb3de3a8b94c0926e55bfdd0f6ccf5c8cce9c6",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject7_PEEP_BH_raw.csv",
+      "bytes": 825222,
+      "sha256": "10f78c3db21e9759b77ae922f996b2b0d024d9bee05ce3ab0049025fde153a85",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject7_PEEP_BH_raw.csv",
+      "source_checksum": "sha256:10f78c3db21e9759b77ae922f996b2b0d024d9bee05ce3ab0049025fde153a85",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject7_PEEP_raw.csv",
+      "bytes": 825222,
+      "sha256": "f2f2a2ca27bd141964872c87a590a462c20a02fc74e40c8ea70142f51eec2af5",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject7_PEEP_raw.csv",
+      "source_checksum": "sha256:f2f2a2ca27bd141964872c87a590a462c20a02fc74e40c8ea70142f51eec2af5",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject8_FEM_raw.csv",
+      "bytes": 135302,
+      "sha256": "7d222a3d88d19ffc4ec2931cf7b075ae110be15f000a0e9a3acb1c19702ff53f",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject8_FEM_raw.csv",
+      "source_checksum": "sha256:7d222a3d88d19ffc4ec2931cf7b075ae110be15f000a0e9a3acb1c19702ff53f",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject8_PEEP_BH_raw.csv",
+      "bytes": 825202,
+      "sha256": "e15f7713c3aed2ac8e161d5ec836e5516a2c8a6495a8e571feb5ea40d67e390b",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject8_PEEP_BH_raw.csv",
+      "source_checksum": "sha256:e15f7713c3aed2ac8e161d5ec836e5516a2c8a6495a8e571feb5ea40d67e390b",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject8_PEEP_raw.csv",
+      "bytes": 825265,
+      "sha256": "0ad4d16deeeeeaab803017676ef9a042b68529ec080c0207a97e808a2531c5a0",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject8_PEEP_raw.csv",
+      "source_checksum": "sha256:0ad4d16deeeeeaab803017676ef9a042b68529ec080c0207a97e808a2531c5a0",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject9_FEM_raw.csv",
+      "bytes": 135721,
+      "sha256": "f0e73aa0e860f6c5d5c444460833d46e25012c2775284c07caf3912e62fb4ead",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject9_FEM_raw.csv",
+      "source_checksum": "sha256:f0e73aa0e860f6c5d5c444460833d46e25012c2775284c07caf3912e62fb4ead",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject9_PEEP_BH_raw.csv",
+      "bytes": 824463,
+      "sha256": "941623261bb9c11b980e2e1ca6df4438bb0280b333bd06c11bbe3f4267cb6cca",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject9_PEEP_BH_raw.csv",
+      "source_checksum": "sha256:941623261bb9c11b980e2e1ca6df4438bb0280b333bd06c11bbe3f4267cb6cca",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/PQ_rawData/Subject9_PEEP_raw.csv",
+      "bytes": 825059,
+      "sha256": "e7e94b52927ecf423d927802dc5487f503754bbf21a4550c8bae6b868aa0bb7a",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/PQ_rawData/Subject9_PEEP_raw.csv",
+      "source_checksum": "sha256:e7e94b52927ecf423d927802dc5487f503754bbf21a4550c8bae6b868aa0bb7a",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/README.txt",
+      "bytes": 6708,
+      "sha256": "4ea31ef7082e86918a793796327c890730437a94747b8db90dad0ba3f185dc70",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/README.txt",
+      "source_checksum": "sha256:4ea31ef7082e86918a793796327c890730437a94747b8db90dad0ba3f185dc70",
+      "license_or_terms": "CC BY 4.0"
+    },
+    {
+      "scenario_relative_path": "raw/subject-info.csv",
+      "bytes": 29445,
+      "sha256": "1a249d59743742c495f2367579c376d9ba8f5bcfe9c656575e7f491aa2030b84",
+      "download_url": "https://www.physionet.org/files/respiratory-heartrate-dataset/1.0.0/subject-info.csv",
+      "source_checksum": "sha256:1a249d59743742c495f2367579c376d9ba8f5bcfe9c656575e7f491aa2030b84",
+      "license_or_terms": "CC BY 4.0"
+    }
+  ]
+}

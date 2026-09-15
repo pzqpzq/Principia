@@ -1,0 +1,908 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "70_geophysics_earthquake_microscopy",
+  "domain": "Laboratory geophysics",
+  "title": "Imaging Localized Slip-induced Frictional Heating during Laboratory Earthquakes Using Magnetic Microscopy",
+  "publisher": "Gong, Zheng (Harvard University)",
+  "authoritative_landing_url": "https://zenodo.org/records/14776881",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/14776881",
+    "https://zenodo.org/api/records/14776881/files/CSH%201-D%20diffusion%20mcmc.csv/content",
+    "https://zenodo.org/api/records/14776881/files/CSHmaxT.mat/content",
+    "https://zenodo.org/api/records/14776881/files/CSL%201-D%20diffusion%20mcmc.csv/content",
+    "https://zenodo.org/api/records/14776881/files/IRM%20acquisition%20data.csv/content",
+    "https://zenodo.org/api/records/14776881/files/CSL_QDMtemps.csv/content",
+    "https://zenodo.org/api/records/14776881/files/CSH_deconvo.csv/content",
+    "https://zenodo.org/api/records/14776881/files/CSH_QDMtemps.csv/content",
+    "https://zenodo.org/api/records/14776881/files/CSLmaxT.mat/content",
+    "https://zenodo.org/api/records/14776881/files/CSH_FOV5_all.csv/content",
+    "https://zenodo.org/api/records/14776881/files/CSL_deconvo.csv/content",
+    "https://zenodo.org/api/records/14776881/files/CSL_FOV4_all.csv/content",
+    "https://zenodo.org/api/records/14776881/files/CSH_FOV5_Bz_uc0.mat/content",
+    "https://zenodo.org/api/records/14776881/files/CSL_FOV4_Bz_uc0.mat/content",
+    "https://zenodo.org/api/records/14776881/files/CSLbulkdemag.csv/content",
+    "https://zenodo.org/api/records/14776881/files/CSL_FOV4_temp6.csv/content",
+    "https://zenodo.org/api/records/14776881/files/CSH_FOV5_temp2.csv/content",
+    "https://zenodo.org/api/records/14776881/files/CSL_FOV4_temp9.csv/content",
+    "https://zenodo.org/api/records/14776881/files/CSH_FOV5_temp11.csv/content",
+    "https://zenodo.org/api/records/14776881/files/CSH_FOV5_temp3.csv/content",
+    "https://zenodo.org/api/records/14776881/files/CSH_FOV5_temp4.csv/content",
+    "https://zenodo.org/api/records/14776881/files/CSH_FOV5_temp9.csv/content",
+    "https://zenodo.org/api/records/14776881/files/CSH_FOV5_temp12.csv/content",
+    "https://zenodo.org/api/records/14776881/files/CSH_FOV5_temp6.csv/content",
+    "https://zenodo.org/api/records/14776881/files/read-me.docx/content",
+    "https://zenodo.org/api/records/14776881/files/CSL_FOV4_temp2.csv/content",
+    "https://zenodo.org/api/records/14776881/files/CSL_FOV4_temp4.csv/content",
+    "https://zenodo.org/api/records/14776881/files/CSL_FOV4_temp5.csv/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.14776881"
+  ],
+  "release_or_version": "14776881",
+  "retrieval_finalized_utc": "2026-09-15T07:04:38.372294+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "quake",
+  "substitution": null,
+  "data_origin": "mixed_measured_and_computational",
+  "measurement_dates": "Campaign dates unknown; released 2025.",
+  "source_publication_date": "2025-01-31",
+  "source_created_utc": "2025-01-31T11:41:27.625470+00:00",
+  "source_updated_utc": "2025-01-31T11:41:30.306409+00:00",
+  "source_inventory": [
+    {
+      "name": "CSH_QDMpano.mat",
+      "bytes": 246346889,
+      "selected": false
+    },
+    {
+      "name": "CSL_QDMpano.mat",
+      "bytes": 293556100,
+      "selected": false
+    },
+    {
+      "name": "CSH 1-D diffusion mcmc.csv",
+      "bytes": 856293,
+      "selected": true
+    },
+    {
+      "name": "CSHmaxT.mat",
+      "bytes": 28040,
+      "selected": true
+    },
+    {
+      "name": "CSL 1-D diffusion mcmc.csv",
+      "bytes": 857776,
+      "selected": true
+    },
+    {
+      "name": "IRM acquisition data.csv",
+      "bytes": 487,
+      "selected": true
+    },
+    {
+      "name": "CSL_QDMtemps.csv",
+      "bytes": 239,
+      "selected": true
+    },
+    {
+      "name": "CSH_deconvo.csv",
+      "bytes": 2451261,
+      "selected": true
+    },
+    {
+      "name": "CSH_QDMtemps.csv",
+      "bytes": 242,
+      "selected": true
+    },
+    {
+      "name": "CSLmaxT.mat",
+      "bytes": 27017,
+      "selected": true
+    },
+    {
+      "name": "CSH_FOV5_all.csv",
+      "bytes": 952,
+      "selected": true
+    },
+    {
+      "name": "CSL_deconvo.csv",
+      "bytes": 2434609,
+      "selected": true
+    },
+    {
+      "name": "CSL_FOV4_all.csv",
+      "bytes": 1140,
+      "selected": true
+    },
+    {
+      "name": "CSH_FOV5_Bz_uc0.mat",
+      "bytes": 37282213,
+      "selected": true
+    },
+    {
+      "name": "CSL_FOV4_Bz_uc0.mat",
+      "bytes": 37193839,
+      "selected": true
+    },
+    {
+      "name": "CSLbulkdemag.csv",
+      "bytes": 265,
+      "selected": true
+    },
+    {
+      "name": "CSL_FOV4_temp6.csv",
+      "bytes": 383,
+      "selected": true
+    },
+    {
+      "name": "CSH_FOV5_temp2.csv",
+      "bytes": 313,
+      "selected": true
+    },
+    {
+      "name": "CSL_FOV4_temp9.csv",
+      "bytes": 601,
+      "selected": true
+    },
+    {
+      "name": "CSH_FOV5_temp11.csv",
+      "bytes": 169,
+      "selected": true
+    },
+    {
+      "name": "CSH_FOV5_temp3.csv",
+      "bytes": 222,
+      "selected": true
+    },
+    {
+      "name": "CSH_FOV5_temp4.csv",
+      "bytes": 381,
+      "selected": true
+    },
+    {
+      "name": "CSH_FOV5_temp9.csv",
+      "bytes": 240,
+      "selected": true
+    },
+    {
+      "name": "CSH_FOV5_temp12.csv",
+      "bytes": 311,
+      "selected": true
+    },
+    {
+      "name": "CSH_FOV5_temp6.csv",
+      "bytes": 168,
+      "selected": true
+    },
+    {
+      "name": "read-me.docx",
+      "bytes": 17314,
+      "selected": true
+    },
+    {
+      "name": "CSL_FOV4_temp2.csv",
+      "bytes": 599,
+      "selected": true
+    },
+    {
+      "name": "CSL_FOV4_temp4.csv",
+      "bytes": 312,
+      "selected": true
+    },
+    {
+      "name": "CSL_FOV4_temp5.csv",
+      "bytes": 598,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Field-of-view magnetic maps, deconvolution/inversion/MCMC products and temperature context. Two large panorama MAT files omitted.",
+  "known_analyses_and_limitations": "Two surfaces provide limited independent replication. Derived temperature/inversion fields must not be treated as independent confirmation of their input magnetic maps.",
+  "related_publications": [],
+  "independent_groups": "two experimental friction surfaces and field-of-view regions",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-070",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSH 1-D diffusion mcmc.csv",
+      "scenario_relative_path": "raw/CSH 1-D diffusion mcmc.csv",
+      "bytes": 856293,
+      "sha256": "9e958da523db4a8a61446d9246a8170f5ad714a499bee780e691a8718bd0c48a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSH%201-D%20diffusion%20mcmc.csv/content",
+      "source_checksum": "md5:ac18d39a2f1978e2c435f95581dad3fe",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:06.469767+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSHmaxT.mat",
+      "scenario_relative_path": "raw/CSHmaxT.mat",
+      "bytes": 28040,
+      "sha256": "6207c1458e1cd9d8baa6212325271ee352ba37afc0084c19b2cc417afcedb57e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSHmaxT.mat/content",
+      "source_checksum": "md5:d3f4e51969a135b425a1b442d2545e3d",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:06.454157+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSL 1-D diffusion mcmc.csv",
+      "scenario_relative_path": "raw/CSL 1-D diffusion mcmc.csv",
+      "bytes": 857776,
+      "sha256": "3dd0b4f5fde376c82e9f5e5968aa2ffc8c6b5043c2156b74247855c69011a14a",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSL%201-D%20diffusion%20mcmc.csv/content",
+      "source_checksum": "md5:4b10180c5ba80f5e8e14b2fb526f449c",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:10.535205+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/IRM acquisition data.csv",
+      "scenario_relative_path": "raw/IRM acquisition data.csv",
+      "bytes": 487,
+      "sha256": "ef888b8d43a0f8e15fa18c28b0246a50b3f0d56fbd0ff9cba27d90608c268195",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/IRM%20acquisition%20data.csv/content",
+      "source_checksum": "md5:3f21459c99b004531e8600cce6fdad8d",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:07.902301+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSL_QDMtemps.csv",
+      "scenario_relative_path": "raw/CSL_QDMtemps.csv",
+      "bytes": 239,
+      "sha256": "d05316247d5084cf36e87783490fe2b2e9aad7b23197fb44e3a51792abbb7c99",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSL_QDMtemps.csv/content",
+      "source_checksum": "md5:097291a616c329d09e6b43b5d09000da",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:09.290059+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSH_deconvo.csv",
+      "scenario_relative_path": "raw/CSH_deconvo.csv",
+      "bytes": 2451261,
+      "sha256": "cceb33f7ee8000e671a5cd0352b0b51123151eb6f2facdfc4fe923c4cf0cbace",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSH_deconvo.csv/content",
+      "source_checksum": "md5:4f7914fd390ba11d434de5d4f57627f7",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:12.498629+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSH_QDMtemps.csv",
+      "scenario_relative_path": "raw/CSH_QDMtemps.csv",
+      "bytes": 242,
+      "sha256": "c12d47e90d7278ebec4769b6cde1dc251c3eb76a169d32505bb0e3c8151c750b",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSH_QDMtemps.csv/content",
+      "source_checksum": "md5:f50ae527b9411e645f020882f0a10253",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:11.967541+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSLmaxT.mat",
+      "scenario_relative_path": "raw/CSLmaxT.mat",
+      "bytes": 27017,
+      "sha256": "1b5c84f254f7f782aa5fedcc1dc0fe61d7de3f64c224270f325bab417fd3ea1d",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSLmaxT.mat/content",
+      "source_checksum": "md5:1261e33efc92ef296c86974a121ec5df",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:13.802100+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSH_FOV5_all.csv",
+      "scenario_relative_path": "raw/CSH_FOV5_all.csv",
+      "bytes": 952,
+      "sha256": "956da4269bc29636761bf3a204674c2919ca79722ae3ab748bdf152f8fd8f320",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSH_FOV5_all.csv/content",
+      "source_checksum": "md5:8d61583413816ea7d5662f996fa67837",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:13.823339+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSL_deconvo.csv",
+      "scenario_relative_path": "raw/CSL_deconvo.csv",
+      "bytes": 2434609,
+      "sha256": "1fa0b63260ba75d25f59f986d54d8513c1cbb10bf8d6b070c33b25986a3a57ff",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSL_deconvo.csv/content",
+      "source_checksum": "md5:d7b14f4d64c40b1dd54bddb5b992c73f",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:21.157136+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSL_FOV4_all.csv",
+      "scenario_relative_path": "raw/CSL_FOV4_all.csv",
+      "bytes": 1140,
+      "sha256": "7bcf2c371e1f190a29cdb383630ad3187fc73661b71e5fef9388b5241c618c03",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSL_FOV4_all.csv/content",
+      "source_checksum": "md5:281d7f0e1135d732123b9d6753f13f4d",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:15.244993+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSH_FOV5_Bz_uc0.mat",
+      "scenario_relative_path": "raw/CSH_FOV5_Bz_uc0.mat",
+      "bytes": 37282213,
+      "sha256": "38574d68b3536acca8d4cc74f0e1fc33493be859bd32cbdd1448bb0b0ec0b8ff",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSH_FOV5_Bz_uc0.mat/content",
+      "source_checksum": "md5:b7039a0e1b2563debc16b536ba6aa2c8",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:31:10.252724+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSL_FOV4_Bz_uc0.mat",
+      "scenario_relative_path": "raw/CSL_FOV4_Bz_uc0.mat",
+      "bytes": 37193839,
+      "sha256": "60f0899261d293349c81ab8614bd0499b020e932a50a2f32d1329ff7ecf4e662",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSL_FOV4_Bz_uc0.mat/content",
+      "source_checksum": "md5:3579604caf36b2af3fe027175c16eedf",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:30:53.691906+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSLbulkdemag.csv",
+      "scenario_relative_path": "raw/CSLbulkdemag.csv",
+      "bytes": 265,
+      "sha256": "713c8bfc08cb89d8d396855ae63aedef56684cbe3e3404cea7c7555cf46d0957",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSLbulkdemag.csv/content",
+      "source_checksum": "md5:5d788c3504726e2b455f9ef65d9d18ba",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:43.033639+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSL_FOV4_temp6.csv",
+      "scenario_relative_path": "raw/CSL_FOV4_temp6.csv",
+      "bytes": 383,
+      "sha256": "f8de21752d3f9fed33d54579ad0e5dfb32eed49a17bc8190d67f3dee7a6a3b58",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSL_FOV4_temp6.csv/content",
+      "source_checksum": "md5:5c3645d3d0f37118dcb198cfcfb687ca",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:45.336420+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSH_FOV5_temp2.csv",
+      "scenario_relative_path": "raw/CSH_FOV5_temp2.csv",
+      "bytes": 313,
+      "sha256": "210cb260e1633f36317ae17cc765859084edcd54312a2b148d1204ca8d3aaa6e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSH_FOV5_temp2.csv/content",
+      "source_checksum": "md5:cdcfc4a1b567f159415bf1e859e3e82c",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:46.722294+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSL_FOV4_temp9.csv",
+      "scenario_relative_path": "raw/CSL_FOV4_temp9.csv",
+      "bytes": 601,
+      "sha256": "902ed3b0c26579892372cc2910c714ac92fbfd89688a6439688ce8b754873315",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSL_FOV4_temp9.csv/content",
+      "source_checksum": "md5:fa6f85030c24e6c495d83f87ccaffdf7",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:48.274309+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSH_FOV5_temp11.csv",
+      "scenario_relative_path": "raw/CSH_FOV5_temp11.csv",
+      "bytes": 169,
+      "sha256": "117069c28c6b8084cc515c3592b504653d2a9cf5835b3edb888e52178456790e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSH_FOV5_temp11.csv/content",
+      "source_checksum": "md5:1a2c12392eb2cf1b4ac73ce4b967e2f9",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:49.852713+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSH_FOV5_temp3.csv",
+      "scenario_relative_path": "raw/CSH_FOV5_temp3.csv",
+      "bytes": 222,
+      "sha256": "e2ab91961ef94c2ca7cd7a14eb3118facd7ae022254e4a559caf84dd62c49798",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSH_FOV5_temp3.csv/content",
+      "source_checksum": "md5:1b073c7178e3982dd9aa5cf5bf911207",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:52.261662+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSH_FOV5_temp4.csv",
+      "scenario_relative_path": "raw/CSH_FOV5_temp4.csv",
+      "bytes": 381,
+      "sha256": "47ed082bc800a09723b55131fb5bf1f42d249cd984c1b83e76100a5ea3a37243",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSH_FOV5_temp4.csv/content",
+      "source_checksum": "md5:13693a53810238feb7a2a8f9b3b2e195",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:53.672764+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSH_FOV5_temp9.csv",
+      "scenario_relative_path": "raw/CSH_FOV5_temp9.csv",
+      "bytes": 240,
+      "sha256": "aeeeb4e2b3251e2e41a6e49941cd2a7404a09459a2cff68715c95992d58a1a0c",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSH_FOV5_temp9.csv/content",
+      "source_checksum": "md5:245925465acef15a98525571a3c6b21d",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:54.995767+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSH_FOV5_temp12.csv",
+      "scenario_relative_path": "raw/CSH_FOV5_temp12.csv",
+      "bytes": 311,
+      "sha256": "46bb0c4afe8f1f73ea0ca9a52a25ed20148db8d99e442c02cc4239d913474850",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSH_FOV5_temp12.csv/content",
+      "source_checksum": "md5:7412bbc2314b94fa55ec249dfc404d75",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:56.725862+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSH_FOV5_temp6.csv",
+      "scenario_relative_path": "raw/CSH_FOV5_temp6.csv",
+      "bytes": 168,
+      "sha256": "bfb2242c4091efa6a7f123ab1a402be7c8816ad37cfc9820cf072fc787bf16f6",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSH_FOV5_temp6.csv/content",
+      "source_checksum": "md5:f3fab19d74901036f1bfaeb0e12f4c6f",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:58.106632+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/read-me.docx",
+      "scenario_relative_path": "raw/read-me.docx",
+      "bytes": 17314,
+      "sha256": "9fc7f036cd936c4478b3e3be312e26dc47745f36c9b7d47403f718bb3941560b",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/read-me.docx/content",
+      "source_checksum": "md5:7333677a08df1bee2f549ab7c7e2fdfd",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:23:59.540604+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSL_FOV4_temp2.csv",
+      "scenario_relative_path": "raw/CSL_FOV4_temp2.csv",
+      "bytes": 599,
+      "sha256": "c5b46226fe0cda22f329647c68149d291a265413eb38abc093ef900020ec0a22",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSL_FOV4_temp2.csv/content",
+      "source_checksum": "md5:6aa9c8033f6095c1accc9dd3c8af485c",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:01.107145+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSL_FOV4_temp4.csv",
+      "scenario_relative_path": "raw/CSL_FOV4_temp4.csv",
+      "bytes": 312,
+      "sha256": "2cba19827c1f68153a256e3e51d99738c6446cecec6a796dd6f228bd896d1996",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSL_FOV4_temp4.csv/content",
+      "source_checksum": "md5:f1881e906ff0821fd120dfa3fd9556b3",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:02.451236+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "raw/CSL_FOV4_temp5.csv",
+      "scenario_relative_path": "raw/CSL_FOV4_temp5.csv",
+      "bytes": 598,
+      "sha256": "458126668b17a22a5cbca1628b5fb1bda29def1756b3d9f1bf61b25ae5b7ba85",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/14776881"
+      ],
+      "download_url": "https://zenodo.org/api/records/14776881/files/CSL_FOV4_temp5.csv/content",
+      "source_checksum": "md5:a3533bd8f74b2efe726722421f029084",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:24:03.846384+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14776881",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-070",
+      "scenario_id": "70_geophysics_earthquake_microscopy",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 12638,
+      "sha256": "ed8cb85e1c31cefe4e54c8a1349af28160f1f968212361fabab1fd833769fd34",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/14776881"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:43.213679+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14776881"
+      ],
+      "citation_url": "https://zenodo.org/records/14776881",
+      "source_version": "14776881",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

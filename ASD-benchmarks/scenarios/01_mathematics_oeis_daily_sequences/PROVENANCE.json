@@ -1,0 +1,99 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "01_mathematics_oeis_daily_sequences",
+  "domain": "mathematics",
+  "title": "OEIS daily sequence corpus",
+  "publisher": "OEIS Foundation Inc.",
+  "authoritative_landing_url": "https://oeis.org/wiki/Download",
+  "authoritative_source_urls": [
+    "https://oeis.org/stripped.gz",
+    "https://oeis.org/names.gz",
+    "https://oeis.org/wiki/Download"
+  ],
+  "identifiers": [],
+  "release_or_version": "rolling snapshot",
+  "retrieval_finalized_utc": "2026-08-23T14:14:09.390874Z",
+  "license_or_access_terms": "CC BY-SA 4.0",
+  "deterministic_selection_rule": "Freeze stripped.gz and names.gz in one retrieval window; no sequence-level selection.",
+  "substitution": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-001",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-001",
+      "scenario_id": "01_mathematics_oeis_daily_sequences",
+      "path": "context/OEIS_Download.html",
+      "scenario_relative_path": "context/OEIS_Download.html",
+      "bytes": 17657,
+      "sha256": "01435e0a70c6cc9e4c66312ce985b2e5e33429a98fddaa88b83ba067907823bd",
+      "role": "official_context_or_source_metadata",
+      "source_urls": [
+        "https://oeis.org/stripped.gz",
+        "https://oeis.org/names.gz",
+        "https://oeis.org/wiki/Download"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-08-23T14:14:09.390874Z",
+      "license_or_terms": "CC BY-SA 4.0",
+      "citation_identifiers": [],
+      "citation_url": "https://oeis.org/wiki/Download",
+      "source_version": "rolling snapshot",
+      "replay_note": "Frozen local asset with source record references; exact remote asset URL was not recorded in legacy schema. Replay from an intact release copy is supported.",
+      "rights_evidence_url": "https://oeis.org/wiki/Download",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-001",
+      "scenario_id": "01_mathematics_oeis_daily_sequences",
+      "path": "raw/names.gz",
+      "scenario_relative_path": "raw/names.gz",
+      "bytes": 7558398,
+      "sha256": "a01c8e0bb3dfbfa575d0493527e2bcd16b29f13175208f46cd093a12518065b9",
+      "role": "official_payload",
+      "source_urls": [
+        "https://oeis.org/stripped.gz",
+        "https://oeis.org/names.gz",
+        "https://oeis.org/wiki/Download"
+      ],
+      "download_url": "https://oeis.org/names.gz",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-08-23T14:14:09.390874Z",
+      "license_or_terms": "CC BY-SA 4.0",
+      "citation_identifiers": [],
+      "citation_url": "https://oeis.org/wiki/Download",
+      "source_version": "rolling snapshot",
+      "replay_note": "explicit filename match to original recorded source URL",
+      "rights_evidence_url": "https://oeis.org/wiki/Download",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-001",
+      "scenario_id": "01_mathematics_oeis_daily_sequences",
+      "path": "raw/stripped.gz",
+      "scenario_relative_path": "raw/stripped.gz",
+      "bytes": 31870432,
+      "sha256": "cdfb3ed740deed9b62da9c58dca54ef77c1b555ff5fc2f53dd09e8afe040ee12",
+      "role": "official_payload",
+      "source_urls": [
+        "https://oeis.org/stripped.gz",
+        "https://oeis.org/names.gz",
+        "https://oeis.org/wiki/Download"
+      ],
+      "download_url": "https://oeis.org/stripped.gz",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-08-23T14:14:09.390874Z",
+      "license_or_terms": "CC BY-SA 4.0",
+      "citation_identifiers": [],
+      "citation_url": "https://oeis.org/wiki/Download",
+      "source_version": "rolling snapshot",
+      "replay_note": "explicit filename match to original recorded source URL",
+      "rights_evidence_url": "https://oeis.org/wiki/Download",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

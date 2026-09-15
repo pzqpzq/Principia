@@ -1,0 +1,114 @@
+{
+  "bytes": 32002960,
+  "sha256": "cf2c4a3f3bb10cd23a5a2d1c7803e1bc4cfe3d7122163b212a1709451f7634fb",
+  "format_extension": ".npz",
+  "checks": [
+    "all_member_CRCs",
+    "no_pickle_execution",
+    "publisher_md5"
+  ],
+  "format": "NPZ",
+  "arrays": [
+    {
+      "name": "Nvec",
+      "shape": [
+        10
+      ],
+      "dtype": "int64"
+    },
+    {
+      "name": "norm_noise_stat",
+      "shape": [
+        10,
+        400,
+        100
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "S0_stat",
+      "shape": [
+        10,
+        400,
+        100
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "SN_over_S0_stat",
+      "shape": [
+        10,
+        400,
+        100
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "Sgen0_sypm_test_stat",
+      "shape": [
+        10,
+        400,
+        100
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "Sgen_sypm_test_stat",
+      "shape": [
+        10,
+        400,
+        100
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "Srec_sypm_test_stat",
+      "shape": [
+        10,
+        400,
+        100
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "Er_vs_N_stat",
+      "shape": [
+        10,
+        400,
+        100
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "Er_vs_S_stat",
+      "shape": [
+        10,
+        400,
+        100
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "Er_vs_Nrel_stat",
+      "shape": [
+        10,
+        400,
+        100
+      ],
+      "dtype": "float64"
+    },
+    {
+      "name": "Er_vs_Srel_stat",
+      "shape": [
+        10,
+        400,
+        100
+      ],
+      "dtype": "float64"
+    }
+  ],
+  "path": "raw/Error_vs_N_stat2025-10-07_06_08.npz",
+  "scenario_id": "28_physics_parametric_microwave",
+  "verified_utc": "2026-09-14T15:58:08.391964+00:00",
+  "status": "pass"
+}

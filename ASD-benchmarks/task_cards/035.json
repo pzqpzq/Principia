@@ -1,0 +1,183 @@
+{
+  "case_id": "P100-035",
+  "case_revision": 1,
+  "scenario_id": "35_bioacoustics_ungulate_calls",
+  "title": "Ungulate vocalizations and production context",
+  "domain": "bioacoustics and animal welfare",
+  "question": "How do acoustic relationships transfer across animals and recording contexts?",
+  "data_origin": "measured_or_observed",
+  "source_version": "14636641",
+  "source_url": "https://zenodo.org/records/14636641",
+  "identifiers": [
+    "10.5281/zenodo.14636641"
+  ],
+  "publisher": "Zenodo; originating researchers: Lefèvre, Romain Adrien (University of Copenhagen); Sypherd, Ciara Cleo-Rose (Harvard University); Mandel-Briefer, Élodie Floriane (University of Copenhagen)",
+  "release_date": "2025",
+  "measurement_dates": "Multiple original studies and acquisition periods, not one 2025 recording campaign. Deposit 2025.",
+  "variables_and_units": "Variables and units are preserved in native column headers, instrument metadata and source dictionaries; see evidence anchors below.",
+  "independent_units": "Animal, species and complete call/recording group.",
+  "validation_design": "Animal, species and complete call/recording group. Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Extracted/segmented animal contact calls rather than continuous microphone streams; source contextual labels and original filenames are retained. The source spelling WidlBoar is not corrected.",
+  "prior_analysis_and_limits": "The source study is DOI 10.1016/j.isci.2025.111834 (PMC11847267). Valence is a context-derived label, not direct access to animal internal state. Animal, study and recording conditions may confound acoustic associations. 3,181 extracted ungulate WAV calls and metadata; call extraction is author preprocessing. Calls from one animal are dependent.",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/Data S1.zip!/Data S1.xlsx",
+      "structure": {
+        "sheets": [
+          {
+            "name": "Feuil1",
+            "rows": 336,
+            "columns": 7,
+            "first_rows": [
+              [
+                "Data S1. Repartition of the calls according to animal identity (ID), species, call type, emotional valence, context of vocal production, and their respective nu",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "Animal ID",
+                "Species",
+                "Call type",
+                "Valence",
+                "Context",
+                "Nb of calls",
+                "Reference"
+              ],
+              [
+                "1140",
+                "Cow",
+                "Low- frequency (closed-mouth) and high-frequency (open mouth) calls",
+                "Negative",
+                "Full (physical and visual) separation from calf within acoustic range",
+                "40",
+                "Padilla de la Torre, M., Hillmann, E., and Briefer, E.F. (2015). Vocal expression of emotion in cattle. In Proc. 25th Int. Congress of the Bioacoustics Council,"
+              ],
+              [
+                "1140",
+                null,
+                null,
+                "Positive",
+                "Physical reunion with calf",
+                "2",
+                null
+              ],
+              [
+                "1140",
+                null,
+                null,
+                "Positive",
+                "Visual (but not physical) reunion with calf",
+                "2",
+                null
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/SoundsDatabase.zip!/SoundsDatabase/1140-Cow-FullSeparation-Negative-1094.wav",
+      "structure": {
+        "channels": 1
+      }
+    },
+    {
+      "asset": "raw/SoundsDatabase.zip!/SoundsDatabase/1140-Cow-FullSeparation-Negative-1168.wav",
+      "structure": {
+        "channels": 1
+      }
+    },
+    {
+      "asset": "raw/SoundsDatabase.zip!/SoundsDatabase/1140-Cow-FullSeparation-Negative-1185.wav",
+      "structure": {
+        "channels": 1
+      }
+    },
+    {
+      "asset": "raw/SoundsDatabase.zip!/SoundsDatabase/1140-Cow-FullSeparation-Negative-1216.wav",
+      "structure": {
+        "channels": 1
+      }
+    },
+    {
+      "asset": "raw/SoundsDatabase.zip!/SoundsDatabase/1140-Cow-FullSeparation-Negative-1289.wav",
+      "structure": {
+        "channels": 1
+      }
+    },
+    {
+      "asset": "raw/SoundsDatabase.zip!/SoundsDatabase/1140-Cow-FullSeparation-Negative-1339.wav",
+      "structure": {
+        "channels": 1
+      }
+    },
+    {
+      "asset": "raw/SoundsDatabase.zip!/SoundsDatabase/1140-Cow-FullSeparation-Negative-1374.wav",
+      "structure": {
+        "channels": 1
+      }
+    },
+    {
+      "asset": "raw/SoundsDatabase.zip!/SoundsDatabase/1140-Cow-FullSeparation-Negative-1385.wav",
+      "structure": {
+        "channels": 1
+      }
+    },
+    {
+      "asset": "raw/SoundsDatabase.zip!/SoundsDatabase/1140-Cow-FullSeparation-Negative-1435.wav",
+      "structure": {
+        "channels": 1
+      }
+    },
+    {
+      "asset": "raw/SoundsDatabase.zip!/SoundsDatabase/1140-Cow-FullSeparation-Negative-1450.wav",
+      "structure": {
+        "channels": 1
+      }
+    },
+    {
+      "asset": "raw/SoundsDatabase.zip!/SoundsDatabase/1140-Cow-FullSeparation-Negative-1490.wav",
+      "structure": {
+        "channels": 1
+      }
+    }
+  ],
+  "format_counts": {
+    "ZIP": 2,
+    "Excel_OpenXML": 1,
+    "WAVE": 3181
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "source_asset_bytes": 286881010,
+  "expanded_source_equivalent_bytes": 336436475,
+  "installed_folder_bytes": 287355662,
+  "source_asset_count": 3,
+  "asset_paths": [
+    "scenarios/35_bioacoustics_ungulate_calls/context/zenodo_record.json",
+    "scenarios/35_bioacoustics_ungulate_calls/raw/Data S1.zip",
+    "scenarios/35_bioacoustics_ungulate_calls/raw/SoundsDatabase.zip"
+  ],
+  "local_folder": "scenarios/35_bioacoustics_ungulate_calls",
+  "size_exception": true,
+  "modalities": [
+    "audio",
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 286889574,
+  "expanded_release_folder_equivalent_bytes": 336445039
+}

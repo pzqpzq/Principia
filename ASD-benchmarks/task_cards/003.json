@@ -1,0 +1,219 @@
+{
+  "case_id": "P100-003",
+  "case_revision": 1,
+  "scenario_id": "03_physics_gwosc_o4a_h1_strain",
+  "title": "GWOSC O4a H1 strain and detector-quality masks",
+  "domain": "physics",
+  "question": "How do noise-spectrum and transient properties vary within this detector interval?",
+  "data_origin": "measured_or_observed",
+  "source_version": "O4a 4 kHz R1",
+  "source_url": "https://gwosc.org/O4/O4a/",
+  "identifiers": [],
+  "publisher": "Gravitational Wave Open Science Center",
+  "release_date": "See source record; legacy retrieval vintage recorded",
+  "measurement_dates": "Not fully established in the legacy metadata; source filenames/headers and public context preserve available dates. Release dates are not substituted for measurement dates.",
+  "variables_and_units": "Variables and units are preserved in native column headers, instrument metadata and source dictionaries; see evidence anchors below.",
+  "independent_units": "Contiguous time blocks with guard intervals within one 4096-second H1 record.",
+  "validation_design": "Contiguous time blocks with guard intervals within one 4096-second H1 record. Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Calibrated O4a strain and quality masks. One detector interval cannot establish detector/population transfer.",
+  "prior_analysis_and_limits": "Calibrated O4a strain and quality masks. One detector interval cannot establish detector/population transfer. Calibrated O4a strain and quality masks. One detector interval cannot establish detector/population transfer.",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/H-H1_GWOSC_O4a_4KHZ_R1-1388511232-4096.hdf5",
+      "structure": {
+        "datasets": [
+          {
+            "name": "meta/Description",
+            "shape": [],
+            "dtype": "object",
+            "attributes": {}
+          },
+          {
+            "name": "meta/DescriptionURL",
+            "shape": [],
+            "dtype": "object",
+            "attributes": {}
+          },
+          {
+            "name": "meta/Detector",
+            "shape": [],
+            "dtype": "object",
+            "attributes": {}
+          },
+          {
+            "name": "meta/Duration",
+            "shape": [],
+            "dtype": "int64",
+            "attributes": {}
+          },
+          {
+            "name": "meta/FrameType",
+            "shape": [],
+            "dtype": "object",
+            "attributes": {}
+          },
+          {
+            "name": "meta/GPSstart",
+            "shape": [],
+            "dtype": "int64",
+            "attributes": {}
+          },
+          {
+            "name": "meta/Observatory",
+            "shape": [],
+            "dtype": "object",
+            "attributes": {}
+          },
+          {
+            "name": "meta/StrainChannel",
+            "shape": [],
+            "dtype": "object",
+            "attributes": {}
+          },
+          {
+            "name": "meta/Type",
+            "shape": [],
+            "dtype": "object",
+            "attributes": {}
+          },
+          {
+            "name": "meta/UTCstart",
+            "shape": [],
+            "dtype": "object",
+            "attributes": {}
+          },
+          {
+            "name": "quality/injections/GWOSCmeta",
+            "shape": [],
+            "dtype": "object",
+            "attributes": {}
+          },
+          {
+            "name": "quality/injections/InjDescriptions",
+            "shape": [
+              5
+            ],
+            "dtype": "object",
+            "attributes": {}
+          },
+          {
+            "name": "quality/injections/InjShortnames",
+            "shape": [
+              5
+            ],
+            "dtype": "object",
+            "attributes": {}
+          },
+          {
+            "name": "quality/injections/Injmask",
+            "shape": [
+              4096
+            ],
+            "dtype": "uint32",
+            "attributes": {
+              "Bits": "5",
+              "Description": "A bitmask encoded as an integer-valued timeseries. The first \"Bits\" bits might be used, for each there is an entry in \"Bits\", \"Shortnames\", \"Descriptions\", one for each bit.",
+              "Npoints": "4096",
+              "Xlabel": "GPS time",
+              "Xspacing": "1.0",
+              "Xstart": "1388511232",
+              "Xunits": "second",
+              "Ylabel": "Injmask"
+            }
+          },
+          {
+            "name": "quality/simple/DQDescriptions",
+            "shape": [
+              9
+            ],
+            "dtype": "object",
+            "attributes": {}
+          },
+          {
+            "name": "quality/simple/DQShortnames",
+            "shape": [
+              9
+            ],
+            "dtype": "object",
+            "attributes": {}
+          },
+          {
+            "name": "quality/simple/DQmask",
+            "shape": [
+              4096
+            ],
+            "dtype": "uint32",
+            "attributes": {
+              "Bits": "9",
+              "Description": "A bitmask encoded as an integer-valued timeseries. The first \"Bits\" bits might be used, for each there is an entry in \"Bits\", \"Shortnames\", \"Descriptions\", one for each bit.",
+              "Npoints": "4096",
+              "Xlabel": "GPS time",
+              "Xspacing": "1.0",
+              "Xstart": "1388511232",
+              "Xunits": "second",
+              "Ylabel": "DQmask"
+            }
+          },
+          {
+            "name": "quality/simple/GWOSCmeta",
+            "shape": [],
+            "dtype": "object",
+            "attributes": {}
+          },
+          {
+            "name": "strain/GWOSCmeta",
+            "shape": [],
+            "dtype": "object",
+            "attributes": {}
+          },
+          {
+            "name": "strain/Strain",
+            "shape": [
+              16777216
+            ],
+            "dtype": "float64",
+            "attributes": {
+              "Npoints": "16777216",
+              "Xlabel": "GPS time",
+              "Xspacing": "0.000244140625",
+              "Xstart": "1388511232",
+              "Xunits": "second",
+              "Ylabel": "Strain",
+              "Yunits": ""
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "HDF5": 1
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Original development corpus (source-aware)",
+  "license_or_terms": "CC BY 4.0",
+  "source_asset_bytes": 129226326,
+  "expanded_source_equivalent_bytes": 129226326,
+  "installed_folder_bytes": 129236959,
+  "source_asset_count": 2,
+  "asset_paths": [
+    "scenarios/03_physics_gwosc_o4a_h1_strain/context/strain_file_api.json",
+    "scenarios/03_physics_gwosc_o4a_h1_strain/raw/H-H1_GWOSC_O4a_4KHZ_R1-1388511232-4096.hdf5"
+  ],
+  "local_folder": "scenarios/03_physics_gwosc_o4a_h1_strain",
+  "size_exception": true,
+  "modalities": [
+    "scientific_arrays_or_events"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 129231730,
+  "expanded_release_folder_equivalent_bytes": 129231730
+}

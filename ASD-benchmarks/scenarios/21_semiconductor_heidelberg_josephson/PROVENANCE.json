@@ -1,0 +1,98 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "21_semiconductor_heidelberg_josephson",
+  "domain": "semiconductor fabrication",
+  "title": "Josephson junction fabrication and characterization",
+  "publisher": "Zenodo; originating researchers: Stoll, Alexander (University of Heidelberg); Reifenberger, Andreas; Hengstler, Daniel (Heidelberg University); Fleischmann, Andreas (Heidelberg University); Enss, Christian",
+  "authoritative_landing_url": "https://zenodo.org/records/22113590",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/22113590",
+    "https://zenodo.org/api/records/22113590/files/Data.zip/content",
+    "https://zenodo.org/api/records/22113590"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.22113590"
+  ],
+  "release_or_version": "22113590",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "deterministic_selection_rule": "Complete source record unless otherwise specified.",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": {
+    "description": "Acquisition dates are not established for the full experiment; source publication field is 2026 and deposit creation is 2026-08-26.",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": "2026",
+  "source_created_utc": "2026-08-26T14:40:36.955055+00:00",
+  "source_updated_utc": "2026-08-28T07:45:17.373990+00:00",
+  "source_inventory": [
+    {
+      "name": "Data.zip",
+      "bytes": 61178566,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Instrument-export waveforms and source result tables; the deposited film-stress measurements are context for the junction campaign.",
+  "known_analyses_and_limitations": "The source explicitly says these data were thoroughly analyzed for a Superconducting Science and Technology submission. A recent deposit is not an unstudied experiment. Pair gen/sig files by complete path; two wafers do not support broad process-population claims.",
+  "related_publications": [],
+  "pinned_commit": null,
+  "source_context_request_failures": [],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-021",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-021",
+      "scenario_id": "21_semiconductor_heidelberg_josephson",
+      "path": "context/zenodo_record.json",
+      "scenario_relative_path": "context/zenodo_record.json",
+      "bytes": 5809,
+      "sha256": "e92db5a6b802461b9533800f18bfde8af78b6a882adb0e37a42462781e650961",
+      "role": "parsed_source_metadata_snapshot",
+      "source_urls": [
+        "https://zenodo.org/api/records/22113590"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:40:19.257533+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.22113590"
+      ],
+      "citation_url": "https://zenodo.org/records/22113590",
+      "source_version": "22113590",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-021",
+      "scenario_id": "21_semiconductor_heidelberg_josephson",
+      "path": "raw/Data.zip",
+      "scenario_relative_path": "raw/Data.zip",
+      "bytes": 61178566,
+      "sha256": "4bab60cb35e9f5b2dc8c37fd0076d0aa0e806960bd940088d17edd2264ac6c02",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/22113590/files/Data.zip/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/22113590/files/Data.zip/content",
+      "source_checksum": "md5:ce28c92158ae7097237a6c368b07d2f1",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:48:04.167321+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.22113590"
+      ],
+      "citation_url": "https://zenodo.org/records/22113590",
+      "source_version": "22113590",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/22113590",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

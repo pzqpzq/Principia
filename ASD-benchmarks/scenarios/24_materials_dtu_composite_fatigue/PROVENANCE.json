@@ -1,0 +1,2268 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "24_materials_dtu_composite_fatigue",
+  "domain": "structural materials",
+  "title": "Glass-fiber composite fatigue under different cure profiles",
+  "publisher": "Zenodo; originating researchers: Mikkelsen, Lars Pilgaard (Technical University of Denmark); Rasmussen, Steffen (Technical University of Denmark)",
+  "authoritative_landing_url": "https://zenodo.org/records/15665325",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/15665325",
+    "https://zenodo.org/api/records/15665325/files/EQA01-12.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA01-12.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA01%20Testplan%20Fatigue%20R=01.xlsx/content",
+    "https://zenodo.org/api/records/15665325/files/EQA01-05.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA01-06.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA01-09.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA01-10.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-10.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA01%20StaticTestResults.xlsx/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02-01.sta.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02-06.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-05.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-07.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-11.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA01-03.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03%20Testplan%20Fatigue%20R=01.xlsx/content",
+    "https://zenodo.org/api/records/15665325/files/EQA01-07.png/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-12.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EAQ01-01.sta.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-09.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EAQ01-01.png/content",
+    "https://zenodo.org/api/records/15665325/files/EQA01-10.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02-02.png/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02-03.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-09.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-06.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-08.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-07.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA01-06.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-08.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-11.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-10.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-12.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EAQ01-02.png/content",
+    "https://zenodo.org/api/records/15665325/files/EQA01-05.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02-04.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02-05.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-03.png/content",
+    "https://zenodo.org/api/records/15665325/files/EQA01-07.sta.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EAQ01-02.sta.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA01%20FatigueResults.xlsx/content",
+    "https://zenodo.org/api/records/15665325/files/EQA01-04.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA01-04.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA01-11.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02-12.png/content",
+    "https://zenodo.org/api/records/15665325/files/EQA01-03.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA01-11.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02-03.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02-12.sta.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA01-09.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02-01.png/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02%20FatigueResults.xlsx/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02-02.sta.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02%20StaticTestResults.xlsx/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02%20Testplan%20Fatigue%20R=01.xlsx/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02-10.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02-11.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02-10.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02-11.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02-04.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02-06.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02-05.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-02.png/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-06.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02-09.fat.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA02-09.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-05.ten.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-01.png/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-01.sta.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-02.sta.txt/content",
+    "https://zenodo.org/api/records/15665325/files/EQA03-03.sta.txt/content",
+    "https://zenodo.org/api/records/15665325"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.15665325"
+  ],
+  "release_or_version": "15665325",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "deterministic_selection_rule": "Complete source record unless otherwise specified.",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": {
+    "description": "Exact complete measurement calendar not asserted; source publication field 2025-06-15 and deposit creation 2025-08-19.",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": "2025-06-15",
+  "source_created_utc": "2025-08-19T13:46:57.162374+00:00",
+  "source_updated_utc": "2025-08-19T13:47:15.908832+00:00",
+  "source_inventory": [
+    {
+      "name": "EQA01-12.fat.txt",
+      "bytes": 284553,
+      "selected": true
+    },
+    {
+      "name": "EQA01-12.ten.txt",
+      "bytes": 100468,
+      "selected": true
+    },
+    {
+      "name": "EQA01 Testplan Fatigue R=01.xlsx",
+      "bytes": 164416,
+      "selected": true
+    },
+    {
+      "name": "EQA01-05.fat.txt",
+      "bytes": 135685,
+      "selected": true
+    },
+    {
+      "name": "EQA01-06.fat.txt",
+      "bytes": 72919,
+      "selected": true
+    },
+    {
+      "name": "EQA01-09.ten.txt",
+      "bytes": 120021,
+      "selected": true
+    },
+    {
+      "name": "EQA01-10.fat.txt",
+      "bytes": 419920,
+      "selected": true
+    },
+    {
+      "name": "EQA03-10.ten.txt",
+      "bytes": 106517,
+      "selected": true
+    },
+    {
+      "name": "EQA01 StaticTestResults.xlsx",
+      "bytes": 9855,
+      "selected": true
+    },
+    {
+      "name": "EQA02-01.sta.txt",
+      "bytes": 355593,
+      "selected": true
+    },
+    {
+      "name": "EQA02-06.ten.txt",
+      "bytes": 134832,
+      "selected": true
+    },
+    {
+      "name": "EQA03-05.fat.txt",
+      "bytes": 411415,
+      "selected": true
+    },
+    {
+      "name": "EQA03-07.fat.txt",
+      "bytes": 98461,
+      "selected": true
+    },
+    {
+      "name": "EQA03-11.ten.txt",
+      "bytes": 96021,
+      "selected": true
+    },
+    {
+      "name": "EQA01-03.fat.txt",
+      "bytes": 29676,
+      "selected": true
+    },
+    {
+      "name": "EQA03 Testplan Fatigue R=01.xlsx",
+      "bytes": 154216,
+      "selected": true
+    },
+    {
+      "name": "EQA01-07.png",
+      "bytes": 46657,
+      "selected": true
+    },
+    {
+      "name": "EQA03-12.ten.txt",
+      "bytes": 90923,
+      "selected": true
+    },
+    {
+      "name": "EAQ01-01.sta.txt",
+      "bytes": 388427,
+      "selected": true
+    },
+    {
+      "name": "EQA03-09.fat.txt",
+      "bytes": 8716,
+      "selected": true
+    },
+    {
+      "name": "EAQ01-01.png",
+      "bytes": 46489,
+      "selected": true
+    },
+    {
+      "name": "EQA01-10.ten.txt",
+      "bytes": 88058,
+      "selected": true
+    },
+    {
+      "name": "EQA02-02.png",
+      "bytes": 46668,
+      "selected": true
+    },
+    {
+      "name": "EQA02-03.fat.txt",
+      "bytes": 23503,
+      "selected": true
+    },
+    {
+      "name": "EQA03-09.ten.txt",
+      "bytes": 124877,
+      "selected": true
+    },
+    {
+      "name": "EQA03-06.ten.txt",
+      "bytes": 88981,
+      "selected": true
+    },
+    {
+      "name": "EQA03-08.ten.txt",
+      "bytes": 69823,
+      "selected": true
+    },
+    {
+      "name": "EQA03-07.ten.txt",
+      "bytes": 75834,
+      "selected": true
+    },
+    {
+      "name": "EQA01-06.ten.txt",
+      "bytes": 100800,
+      "selected": true
+    },
+    {
+      "name": "EQA03-08.fat.txt",
+      "bytes": 413953,
+      "selected": true
+    },
+    {
+      "name": "EQA03-11.fat.txt",
+      "bytes": 73327,
+      "selected": true
+    },
+    {
+      "name": "EQA03-10.fat.txt",
+      "bytes": 12110,
+      "selected": true
+    },
+    {
+      "name": "EQA03-12.fat.txt",
+      "bytes": 30838,
+      "selected": true
+    },
+    {
+      "name": "EAQ01-02.png",
+      "bytes": 44547,
+      "selected": true
+    },
+    {
+      "name": "EQA01-05.ten.txt",
+      "bytes": 113734,
+      "selected": true
+    },
+    {
+      "name": "EQA02-04.fat.txt",
+      "bytes": 42116,
+      "selected": true
+    },
+    {
+      "name": "EQA02-05.fat.txt",
+      "bytes": 34224,
+      "selected": true
+    },
+    {
+      "name": "EQA03-03.png",
+      "bytes": 45193,
+      "selected": true
+    },
+    {
+      "name": "EQA01-07.sta.txt",
+      "bytes": 395035,
+      "selected": true
+    },
+    {
+      "name": "EAQ01-02.sta.txt",
+      "bytes": 391107,
+      "selected": true
+    },
+    {
+      "name": "EQA01 FatigueResults.xlsx",
+      "bytes": 10073,
+      "selected": true
+    },
+    {
+      "name": "EQA01-04.ten.txt",
+      "bytes": 107046,
+      "selected": true
+    },
+    {
+      "name": "EQA01-04.fat.txt",
+      "bytes": 73120,
+      "selected": true
+    },
+    {
+      "name": "EQA01-11.ten.txt",
+      "bytes": 125738,
+      "selected": true
+    },
+    {
+      "name": "EQA02-12.png",
+      "bytes": 45566,
+      "selected": true
+    },
+    {
+      "name": "EQA01-03.ten.txt",
+      "bytes": 136378,
+      "selected": true
+    },
+    {
+      "name": "EQA01-11.fat.txt",
+      "bytes": 116147,
+      "selected": true
+    },
+    {
+      "name": "EQA02-03.ten.txt",
+      "bytes": 97106,
+      "selected": true
+    },
+    {
+      "name": "EQA02-12.sta.txt",
+      "bytes": 402854,
+      "selected": true
+    },
+    {
+      "name": "EQA01-09.fat.txt",
+      "bytes": 82587,
+      "selected": true
+    },
+    {
+      "name": "EQA02-01.png",
+      "bytes": 45965,
+      "selected": true
+    },
+    {
+      "name": "EQA02 FatigueResults.xlsx",
+      "bytes": 9811,
+      "selected": true
+    },
+    {
+      "name": "EQA02-02.sta.txt",
+      "bytes": 378625,
+      "selected": true
+    },
+    {
+      "name": "EQA02 StaticTestResults.xlsx",
+      "bytes": 9951,
+      "selected": true
+    },
+    {
+      "name": "EQA02 Testplan Fatigue R=01.xlsx",
+      "bytes": 158723,
+      "selected": true
+    },
+    {
+      "name": "EQA02-10.fat.txt",
+      "bytes": 133860,
+      "selected": true
+    },
+    {
+      "name": "EQA02-11.fat.txt",
+      "bytes": 515425,
+      "selected": true
+    },
+    {
+      "name": "EQA02-10.ten.txt",
+      "bytes": 75321,
+      "selected": true
+    },
+    {
+      "name": "EQA02-11.ten.txt",
+      "bytes": 75852,
+      "selected": true
+    },
+    {
+      "name": "EQA02-04.ten.txt",
+      "bytes": 92625,
+      "selected": true
+    },
+    {
+      "name": "EQA02-06.fat.txt",
+      "bytes": 56974,
+      "selected": true
+    },
+    {
+      "name": "EQA02-05.ten.txt",
+      "bytes": 95803,
+      "selected": true
+    },
+    {
+      "name": "EQA03-02.png",
+      "bytes": 45476,
+      "selected": true
+    },
+    {
+      "name": "EQA03-06.fat.txt",
+      "bytes": 58515,
+      "selected": true
+    },
+    {
+      "name": "EQA02-09.fat.txt",
+      "bytes": 63514,
+      "selected": true
+    },
+    {
+      "name": "EQA02-09.ten.txt",
+      "bytes": 80593,
+      "selected": true
+    },
+    {
+      "name": "EQA03-05.ten.txt",
+      "bytes": 76625,
+      "selected": true
+    },
+    {
+      "name": "EQA03-01.png",
+      "bytes": 45565,
+      "selected": true
+    },
+    {
+      "name": "EQA03-01.sta.txt",
+      "bytes": 407766,
+      "selected": true
+    },
+    {
+      "name": "EQA03-02.sta.txt",
+      "bytes": 397693,
+      "selected": true
+    },
+    {
+      "name": "EQA03-03.sta.txt",
+      "bytes": 402465,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": ".sta.txt contains static testing, .ten.txt the initial tensile loading, and .fat.txt author-extracted fatigue values. Excel means, standard deviations and formulas remain source bytes.",
+  "known_analyses_and_limitations": "EQA02 was used in the 45th Riso Symposium 2025 strain-based SN-curve work. EAQ/EQA spelling variations occur in source identifiers. Cure profile and laminate are confounded; individual time points are not independent specimens.",
+  "related_publications": [],
+  "pinned_commit": null,
+  "source_context_request_failures": [],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-024",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "context/zenodo_record.json",
+      "scenario_relative_path": "context/zenodo_record.json",
+      "bytes": 26850,
+      "sha256": "1a100cc88b1dd1dcf7ffa99fce712f3072235199819a38c03ce2dd4113e70855",
+      "role": "parsed_source_metadata_snapshot",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:40:20.184446+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EAQ01-01.png",
+      "scenario_relative_path": "raw/EAQ01-01.png",
+      "bytes": 46489,
+      "sha256": "8737023f348ce846c61a13bfe97e07ecdd4c60573caaa610f31e7f3dd8b3c972",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EAQ01-01.png/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EAQ01-01.png/content",
+      "source_checksum": "md5:ac2005688f16bb517a914d358c9aa9ae",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:57.375522+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EAQ01-01.sta.txt",
+      "scenario_relative_path": "raw/EAQ01-01.sta.txt",
+      "bytes": 388427,
+      "sha256": "6d289b810847ce594532a7c464498634ccd37df3c683d8d5b4f08cb012513583",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EAQ01-01.sta.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EAQ01-01.sta.txt/content",
+      "source_checksum": "md5:08f35ff721e59dc073fcef1356deb21e",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:55.498809+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EAQ01-02.png",
+      "scenario_relative_path": "raw/EAQ01-02.png",
+      "bytes": 44547,
+      "sha256": "1acfc016d88d247d570e6fa2a791b86484368ee9e31b949216a3583e55e4ea2f",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EAQ01-02.png/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EAQ01-02.png/content",
+      "source_checksum": "md5:96e195b7c8f6eda41493373bd6ec4e42",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:10.134060+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EAQ01-02.sta.txt",
+      "scenario_relative_path": "raw/EAQ01-02.sta.txt",
+      "bytes": 391107,
+      "sha256": "248e91ad53bb2c33ac84edddf3a13adadd54a047e3c51e2e290c4822d094a54c",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EAQ01-02.sta.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EAQ01-02.sta.txt/content",
+      "source_checksum": "md5:2a629a98469bcda6caf7306d2f7c333c",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:16.481522+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01 FatigueResults.xlsx",
+      "scenario_relative_path": "raw/EQA01 FatigueResults.xlsx",
+      "bytes": 10073,
+      "sha256": "4ab77f45ffa30ba6053697d0692d2221e9b9fb34cb403e38fbd26e1b40b97b1c",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01%20FatigueResults.xlsx/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01%20FatigueResults.xlsx/content",
+      "source_checksum": "md5:f450aaaa9396f8fbc2aba5f64235d19c",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:17.051971+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01 StaticTestResults.xlsx",
+      "scenario_relative_path": "raw/EQA01 StaticTestResults.xlsx",
+      "bytes": 9855,
+      "sha256": "d7976aa3e43c596a1f6dd7340555477b003bc5bcdaabfe508095382df9cfe0d0",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01%20StaticTestResults.xlsx/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01%20StaticTestResults.xlsx/content",
+      "source_checksum": "md5:804cf9f3858a8a83699c6b7df02b94f3",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:38.824597+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01 Testplan Fatigue R=01.xlsx",
+      "scenario_relative_path": "raw/EQA01 Testplan Fatigue R=01.xlsx",
+      "bytes": 164416,
+      "sha256": "d7a6a1093992cd9306e144bc5ab4366a658d3257015beab8a0c6d13f4841422f",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01%20Testplan%20Fatigue%20R=01.xlsx/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01%20Testplan%20Fatigue%20R=01.xlsx/content",
+      "source_checksum": "md5:dd2a764d1840643978917ee006b3d4a9",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:27.141965+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01-03.fat.txt",
+      "scenario_relative_path": "raw/EQA01-03.fat.txt",
+      "bytes": 29676,
+      "sha256": "83af0fdf81d150302fe7091ba45beb5c05e2abeb32a7b49f635f29e0090c2260",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01-03.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01-03.fat.txt/content",
+      "source_checksum": "md5:fa48eee4b57e6474d73e1bd8bec77b23",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:51.484856+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01-03.ten.txt",
+      "scenario_relative_path": "raw/EQA01-03.ten.txt",
+      "bytes": 136378,
+      "sha256": "4accf043788f04881abd6aaa65b1e003c060739e6a10daab8e98d055bd25affa",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01-03.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01-03.ten.txt/content",
+      "source_checksum": "md5:fcf858b6e93555d258c8c0ed70aed084",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:22.080880+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01-04.fat.txt",
+      "scenario_relative_path": "raw/EQA01-04.fat.txt",
+      "bytes": 73120,
+      "sha256": "b03fb44a3aa4c394710c55a3d5897d0a3e3937222a81139e2c3e40fc5df9b709",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01-04.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01-04.fat.txt/content",
+      "source_checksum": "md5:383068d7256cf80aa612bbbc33ed6c91",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:18.802687+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01-04.ten.txt",
+      "scenario_relative_path": "raw/EQA01-04.ten.txt",
+      "bytes": 107046,
+      "sha256": "e5b7aab778a6677e1b1e754455d2d8cff8f37d7278c262c6ffee3d5b420df5f7",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01-04.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01-04.ten.txt/content",
+      "source_checksum": "md5:3554f951f83939051df6f49e80238982",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:18.207863+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01-05.fat.txt",
+      "scenario_relative_path": "raw/EQA01-05.fat.txt",
+      "bytes": 135685,
+      "sha256": "38fe2938557fc62c6e294a14bab7e560a9eb23ee23d2b3d07e8cffb13788b7f5",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01-05.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01-05.fat.txt/content",
+      "source_checksum": "md5:4a0aa7aad26ea436f09b9b2745e4cc05",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:29.330776+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01-05.ten.txt",
+      "scenario_relative_path": "raw/EQA01-05.ten.txt",
+      "bytes": 113734,
+      "sha256": "4da9d1d2b47cb7ea6af7344efa732b7914e85f0a7ba97c6cd6182f376cb631f2",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01-05.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01-05.ten.txt/content",
+      "source_checksum": "md5:250302b2931939abbf253245ca7996ad",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:12.255435+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01-06.fat.txt",
+      "scenario_relative_path": "raw/EQA01-06.fat.txt",
+      "bytes": 72919,
+      "sha256": "390926f0bfebff98e5c949176fa421ab32fb8593c3128b3a8a235c6b4334cd0d",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01-06.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01-06.fat.txt/content",
+      "source_checksum": "md5:53acdeae8b5ace826fdc005f3d7d109d",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:31.066360+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01-06.ten.txt",
+      "scenario_relative_path": "raw/EQA01-06.ten.txt",
+      "bytes": 100800,
+      "sha256": "7641e6c06d1279797ad3928927a60e323618842e5d76b3bf0ae6f8ec55ea9444",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01-06.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01-06.ten.txt/content",
+      "source_checksum": "md5:6858bd095ce62a157ca33daa8c3215e2",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:05.521692+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01-07.png",
+      "scenario_relative_path": "raw/EQA01-07.png",
+      "bytes": 46657,
+      "sha256": "1b51ccba9b1b9288841622eba5de7e8d48cae5256802f01f0bad5c4de29b2457",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01-07.png/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01-07.png/content",
+      "source_checksum": "md5:a4e1b0da1da4201497183fb7c73b0432",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:53.211488+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01-07.sta.txt",
+      "scenario_relative_path": "raw/EQA01-07.sta.txt",
+      "bytes": 395035,
+      "sha256": "1a07fe74c6d5890930e9d97ec43596bbcc6335ee2fc185deaab9a59b7b006273",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01-07.sta.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01-07.sta.txt/content",
+      "source_checksum": "md5:341e2d480fdbfaa14c7481edeba491b9",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:15.621319+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01-09.fat.txt",
+      "scenario_relative_path": "raw/EQA01-09.fat.txt",
+      "bytes": 82587,
+      "sha256": "a25c5e62b0bda019c4d11f8f7f10e70fb8041e55f3bb18720137591b54eb6788",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01-09.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01-09.fat.txt/content",
+      "source_checksum": "md5:8b31da27097ea890144d060ba1357cb0",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:25.696473+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01-09.ten.txt",
+      "scenario_relative_path": "raw/EQA01-09.ten.txt",
+      "bytes": 120021,
+      "sha256": "ff3b7cbb04472b7f73c4d58cfc86c7deb11e8de284747cb546b744a697197422",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01-09.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01-09.ten.txt/content",
+      "source_checksum": "md5:ae797a90bf0f9670ed280b41305119f4",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:32.906074+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01-10.fat.txt",
+      "scenario_relative_path": "raw/EQA01-10.fat.txt",
+      "bytes": 419920,
+      "sha256": "b6bc15d28c0395cf42e9455f61b423a9a9b642fba8584f2ba593abd44a06e04a",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01-10.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01-10.fat.txt/content",
+      "source_checksum": "md5:a3b26a914fd5c18922b7b364fc9d527d",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:35.416473+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01-10.ten.txt",
+      "scenario_relative_path": "raw/EQA01-10.ten.txt",
+      "bytes": 88058,
+      "sha256": "555966d52b93fa6cb3236dc73cbc92f8c10a4eb7b33b7bf939873ab509810350",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01-10.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01-10.ten.txt/content",
+      "source_checksum": "md5:623b6b8931672ba08253ece9be13fcae",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:59.036090+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01-11.fat.txt",
+      "scenario_relative_path": "raw/EQA01-11.fat.txt",
+      "bytes": 116147,
+      "sha256": "e980fca06fc8ee3b57614be28bca65cb3ba5704be9346299c717d59053176bdc",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01-11.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01-11.fat.txt/content",
+      "source_checksum": "md5:8c9b6f5aae23569638b6dd5cb5456349",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:22.314602+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01-11.ten.txt",
+      "scenario_relative_path": "raw/EQA01-11.ten.txt",
+      "bytes": 125738,
+      "sha256": "c0c135e131287859b193fa3e39766ff7562a1676e29beca0c4d1a83378fb986a",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01-11.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01-11.ten.txt/content",
+      "source_checksum": "md5:89ff7254848f3135014c7c28d6f609c3",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:20.091850+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01-12.fat.txt",
+      "scenario_relative_path": "raw/EQA01-12.fat.txt",
+      "bytes": 284553,
+      "sha256": "7d1978ed0af731278b8ad8294c24a556048ee614f25f6e7da51e13f31a707fc2",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01-12.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01-12.fat.txt/content",
+      "source_checksum": "md5:6b27dda0ccc3e559eb53c9922dc1c198",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:22.483982+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA01-12.ten.txt",
+      "scenario_relative_path": "raw/EQA01-12.ten.txt",
+      "bytes": 100468,
+      "sha256": "ded1acd46e263a7e1806d87430d28f27eed82fa2abe4ac905dab372d4f317e92",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA01-12.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA01-12.ten.txt/content",
+      "source_checksum": "md5:9b3113354862585672a59db572deeedf",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:24.201585+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02 FatigueResults.xlsx",
+      "scenario_relative_path": "raw/EQA02 FatigueResults.xlsx",
+      "bytes": 9811,
+      "sha256": "c6905bf3c0f9330a04c2f92a63f077fdc2aaa042f6242213c0f13970b216d844",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02%20FatigueResults.xlsx/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02%20FatigueResults.xlsx/content",
+      "source_checksum": "md5:95e56bd0a4196327288565f184829972",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:29.008079+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02 StaticTestResults.xlsx",
+      "scenario_relative_path": "raw/EQA02 StaticTestResults.xlsx",
+      "bytes": 9951,
+      "sha256": "036087004d6b6e87e7fb4b2bf513ac33788faae21b0edb4641fa3c32c07e7260",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02%20StaticTestResults.xlsx/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02%20StaticTestResults.xlsx/content",
+      "source_checksum": "md5:5ea0b4eeff65b817302be89d0435f1cd",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:31.376330+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02 Testplan Fatigue R=01.xlsx",
+      "scenario_relative_path": "raw/EQA02 Testplan Fatigue R=01.xlsx",
+      "bytes": 158723,
+      "sha256": "e19a655c2d97e5765d1d7260f277d3bae3050ecde5fae17b5c967503f71d08ab",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02%20Testplan%20Fatigue%20R=01.xlsx/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02%20Testplan%20Fatigue%20R=01.xlsx/content",
+      "source_checksum": "md5:d81687793efbf2098a576412f220f102",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:31.870109+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02-01.png",
+      "scenario_relative_path": "raw/EQA02-01.png",
+      "bytes": 45965,
+      "sha256": "9258a762ae9f922c7427b8a7a93b8415cb287559a256935199ccc3c4ede34339",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02-01.png/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02-01.png/content",
+      "source_checksum": "md5:45edc1a3f47198985449cd77a0710998",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:27.302893+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02-01.sta.txt",
+      "scenario_relative_path": "raw/EQA02-01.sta.txt",
+      "bytes": 355593,
+      "sha256": "85a8dfcd24eb61068fba09d8f5bf2820d8a2d3f7b974f432c8a4e787b46cd67a",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02-01.sta.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02-01.sta.txt/content",
+      "source_checksum": "md5:9cee8aa735c476d9a55d27ae04810eeb",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:43.261010+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02-02.png",
+      "scenario_relative_path": "raw/EQA02-02.png",
+      "bytes": 46668,
+      "sha256": "21f545cee768bf5226cacac7636513bb36ea26a9faa466132e98343958602cf3",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02-02.png/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02-02.png/content",
+      "source_checksum": "md5:5cbc1c79e551395c2c200ae3a73d4c8c",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:00.183154+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02-02.sta.txt",
+      "scenario_relative_path": "raw/EQA02-02.sta.txt",
+      "bytes": 378625,
+      "sha256": "68ec69703297691a9804c5d61fb8bb5d9081e50619dea8688b67c3b25449297f",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02-02.sta.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02-02.sta.txt/content",
+      "source_checksum": "md5:2e5ce0149c087e7a4932befdfd04c0d9",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:29.941665+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02-03.fat.txt",
+      "scenario_relative_path": "raw/EQA02-03.fat.txt",
+      "bytes": 23503,
+      "sha256": "4d812869f6fdaec384f636532f90f218034a0dbe3b1a8f7a73641c8584ade8e0",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02-03.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02-03.fat.txt/content",
+      "source_checksum": "md5:ee0983e8bbeaf7d46deaa5d6bb5391d2",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:00.816232+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02-03.ten.txt",
+      "scenario_relative_path": "raw/EQA02-03.ten.txt",
+      "bytes": 97106,
+      "sha256": "cc49929b180c31ca695a3c3da10163a944cbdb85a2990ce05e082fd38edaeddb",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02-03.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02-03.ten.txt/content",
+      "source_checksum": "md5:3df248badc45a7870d73a4b635f7107f",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:23.782186+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02-04.fat.txt",
+      "scenario_relative_path": "raw/EQA02-04.fat.txt",
+      "bytes": 42116,
+      "sha256": "4f47b6b16a8226aaaea2e96159aa5d7cee13350e4b317fb40b45295beee585a1",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02-04.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02-04.fat.txt/content",
+      "source_checksum": "md5:bd471c916f3b6cac026adc8e0b3c54e0",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:11.816091+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02-04.ten.txt",
+      "scenario_relative_path": "raw/EQA02-04.ten.txt",
+      "bytes": 92625,
+      "sha256": "21133371741969ba31e5b97412308756626efc3ce7358ec80a484b3500584a9b",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02-04.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02-04.ten.txt/content",
+      "source_checksum": "md5:166b6235845762a6fe545bb5358dc129",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:36.355980+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02-05.fat.txt",
+      "scenario_relative_path": "raw/EQA02-05.fat.txt",
+      "bytes": 34224,
+      "sha256": "b8584971a50dbd3fe759cd299b558bbdc566a084ad1106a1c2eeb89413e6d623",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02-05.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02-05.fat.txt/content",
+      "source_checksum": "md5:bda7facd17c81b923e90c1b4c0abe70f",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:13.468871+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02-05.ten.txt",
+      "scenario_relative_path": "raw/EQA02-05.ten.txt",
+      "bytes": 95803,
+      "sha256": "03aaf6e1eccb3c5d7abe369efbda54178bfe99b0cae30077638c7d0c681f032a",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02-05.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02-05.ten.txt/content",
+      "source_checksum": "md5:be27064b43f7252c2ad1103f7bbe3cf7",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:37.960241+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02-06.fat.txt",
+      "scenario_relative_path": "raw/EQA02-06.fat.txt",
+      "bytes": 56974,
+      "sha256": "d7bd8a91d9a6709990ff26e35f8e5047f505505daf244983148c1c05c7a2ce3a",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02-06.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02-06.fat.txt/content",
+      "source_checksum": "md5:789758b5dd55cef6eef35cf051f52fac",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:36.250230+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02-06.ten.txt",
+      "scenario_relative_path": "raw/EQA02-06.ten.txt",
+      "bytes": 134832,
+      "sha256": "989c7d560df24975d41155b1e8c19d5f336625ebd47ff98cd47ba64dad102307",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02-06.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02-06.ten.txt/content",
+      "source_checksum": "md5:0be48e1ec9145f5867cff5064904ed46",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:45.232148+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02-09.fat.txt",
+      "scenario_relative_path": "raw/EQA02-09.fat.txt",
+      "bytes": 63514,
+      "sha256": "7f741749471d902ec71bf6ffaa89a51dcca372634ca86b9d10d36e1cdf62ae70",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02-09.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02-09.fat.txt/content",
+      "source_checksum": "md5:150ba18707a465798dac3b7ac248bb57",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:40.140430+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02-09.ten.txt",
+      "scenario_relative_path": "raw/EQA02-09.ten.txt",
+      "bytes": 80593,
+      "sha256": "9fa98371c86b57e0524a2da8d791c6ad90a972831adccdf992a9f618ab7f1544",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02-09.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02-09.ten.txt/content",
+      "source_checksum": "md5:4098b7c7f2e4889c4002a67a87694dd1",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:39.626682+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02-10.fat.txt",
+      "scenario_relative_path": "raw/EQA02-10.fat.txt",
+      "bytes": 133860,
+      "sha256": "3fdb10f63c0e412102329d33ba9e15364ae6d53512afb02054fde2d48cfec732",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02-10.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02-10.fat.txt/content",
+      "source_checksum": "md5:4fcc0455c662707cef028bb49c4ef932",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:33.201171+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02-10.ten.txt",
+      "scenario_relative_path": "raw/EQA02-10.ten.txt",
+      "bytes": 75321,
+      "sha256": "5f3bb8313da958e018b8f90c65b03d75e56561261844a3a32989bc7d9a55d2d0",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02-10.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02-10.ten.txt/content",
+      "source_checksum": "md5:f657b3d613721a46149ede0531e08392",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:34.532474+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02-11.fat.txt",
+      "scenario_relative_path": "raw/EQA02-11.fat.txt",
+      "bytes": 515425,
+      "sha256": "77e6a3696755972c03e0c571e291fa58c424baa582750477af12099d9771fd7c",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02-11.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02-11.fat.txt/content",
+      "source_checksum": "md5:4f33d1659a12e3cd77d7be08c253ee1e",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:34.450828+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02-11.ten.txt",
+      "scenario_relative_path": "raw/EQA02-11.ten.txt",
+      "bytes": 75852,
+      "sha256": "4b3d509510db039270347d8a0aaf12a28af03c99cf32c68d893daa425644e8fc",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02-11.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02-11.ten.txt/content",
+      "source_checksum": "md5:218da8f6fd7c1f8bdee88057ba33efc8",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:35.300005+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02-12.png",
+      "scenario_relative_path": "raw/EQA02-12.png",
+      "bytes": 45566,
+      "sha256": "4b57dc34803fa314e9507946d3bd58c14433592bec86dc0e5d54b1de37120dd3",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02-12.png/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02-12.png/content",
+      "source_checksum": "md5:d501e24c475fbbb1119018f06b2fac45",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:20.384464+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA02-12.sta.txt",
+      "scenario_relative_path": "raw/EQA02-12.sta.txt",
+      "bytes": 402854,
+      "sha256": "3fac17b871e22f0561e55ef072cdd7de8cc7b980f758514be0609574abdce5d8",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA02-12.sta.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA02-12.sta.txt/content",
+      "source_checksum": "md5:baa68eef9a317b3a1ac74d016975ce76",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:27.323579+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03 Testplan Fatigue R=01.xlsx",
+      "scenario_relative_path": "raw/EQA03 Testplan Fatigue R=01.xlsx",
+      "bytes": 154216,
+      "sha256": "d1428e3ecc46988bd13f1f58337b38b4c9ec13196f7a76e7ef0d855f77e8fd65",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03%20Testplan%20Fatigue%20R=01.xlsx/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03%20Testplan%20Fatigue%20R=01.xlsx/content",
+      "source_checksum": "md5:315480b6f8a09d0bba08779230aa0f88",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:53.020613+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-01.png",
+      "scenario_relative_path": "raw/EQA03-01.png",
+      "bytes": 45565,
+      "sha256": "8040c00af59d7aca440f5e95f0c83fd8eab203e664cebf37e73e28375b8d6405",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-01.png/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-01.png/content",
+      "source_checksum": "md5:d50506fb2e30928378c242134ce7a026",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:41.247469+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-01.sta.txt",
+      "scenario_relative_path": "raw/EQA03-01.sta.txt",
+      "bytes": 407766,
+      "sha256": "420a0921ef7785041109aaaaa537d8067f443cf717c87f609a026a94f32cf95f",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-01.sta.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-01.sta.txt/content",
+      "source_checksum": "md5:468978e181088edaf855da6e67fff598",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:42.266045+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-02.png",
+      "scenario_relative_path": "raw/EQA03-02.png",
+      "bytes": 45476,
+      "sha256": "20029263e1962b1f4c5b515c3e6864c5915d511913552646ef8361f7768c4696",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-02.png/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-02.png/content",
+      "source_checksum": "md5:4f9b1a45dc66d07fb17af3389604afca",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:37.921133+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-02.sta.txt",
+      "scenario_relative_path": "raw/EQA03-02.sta.txt",
+      "bytes": 397693,
+      "sha256": "ed1353483e5fc618789596c18faf854b5fb437b77bcfd0bfbc39e43dee9134a3",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-02.sta.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-02.sta.txt/content",
+      "source_checksum": "md5:47b960dc7b7c00d601fc9835fbd45a8a",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:42.639734+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-03.png",
+      "scenario_relative_path": "raw/EQA03-03.png",
+      "bytes": 45193,
+      "sha256": "e7742849a68e04355cee5072a302625f0931030f4589363f9d9abd792063ed6d",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-03.png/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-03.png/content",
+      "source_checksum": "md5:81da68fafcc91bbf4936f8845a6499b9",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:13.834302+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-03.sta.txt",
+      "scenario_relative_path": "raw/EQA03-03.sta.txt",
+      "bytes": 402465,
+      "sha256": "420829b175efdab8b931680c444be70d2a22f8e7bb33e87ab3748dad62d55099",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-03.sta.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-03.sta.txt/content",
+      "source_checksum": "md5:97adcf9dd1ed3ed93492702e6e83b589",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:43.347503+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-05.fat.txt",
+      "scenario_relative_path": "raw/EQA03-05.fat.txt",
+      "bytes": 411415,
+      "sha256": "49eaad0b3185cefdfb77dfb4aaf30f0fea79bf0a6524b4604a56f81f749376c2",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-05.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-05.fat.txt/content",
+      "source_checksum": "md5:c75cf73bd863487eb36c61584e04ce90",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:47.589295+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-05.ten.txt",
+      "scenario_relative_path": "raw/EQA03-05.ten.txt",
+      "bytes": 76625,
+      "sha256": "8a13cc09f85c182db515427aaa0c3cb6adc7ae1b64a7921abe09ba79fab45cc0",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-05.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-05.ten.txt/content",
+      "source_checksum": "md5:948c3f02c09f6b7c6013a97cf208f272",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:39.654213+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-06.fat.txt",
+      "scenario_relative_path": "raw/EQA03-06.fat.txt",
+      "bytes": 58515,
+      "sha256": "473c015aa91d94ca71534678585b57089a3d38f626be82a9ae31f104d36ae785",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-06.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-06.fat.txt/content",
+      "source_checksum": "md5:133106c4f469f3d48b34f810f4c5947c",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:37.971461+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-06.ten.txt",
+      "scenario_relative_path": "raw/EQA03-06.ten.txt",
+      "bytes": 88981,
+      "sha256": "779ab95c06fb2848148596ff1ecf51bbb9efa08ff5f5e642f583af1d3f0f022f",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-06.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-06.ten.txt/content",
+      "source_checksum": "md5:52e06cd93e07bdcab1cdc897ef4c293d",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:02.550907+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-07.fat.txt",
+      "scenario_relative_path": "raw/EQA03-07.fat.txt",
+      "bytes": 98461,
+      "sha256": "64bce6e143c8a23b5ae1fb89f4349ea97cf5b73d76e2423b4d8b25376a6c44b7",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-07.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-07.fat.txt/content",
+      "source_checksum": "md5:b340f66748b57cfa4ed53c351bb40c08",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:49.309490+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-07.ten.txt",
+      "scenario_relative_path": "raw/EQA03-07.ten.txt",
+      "bytes": 75834,
+      "sha256": "9dabe8fdaaac33d6972b4f7c9277da66bbc30846262c9364497ea3c84e491a4b",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-07.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-07.ten.txt/content",
+      "source_checksum": "md5:bb716a44f4b08906e4b3ba2d9b03908a",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:04.251621+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-08.fat.txt",
+      "scenario_relative_path": "raw/EQA03-08.fat.txt",
+      "bytes": 413953,
+      "sha256": "c143877c8e55b28c173040b150d9ddda3a95ba1d21f80bdc5041ac503eb346eb",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-08.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-08.fat.txt/content",
+      "source_checksum": "md5:d572cae86caff0d2f4c578d7fd572ca1",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:06.998410+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-08.ten.txt",
+      "scenario_relative_path": "raw/EQA03-08.ten.txt",
+      "bytes": 69823,
+      "sha256": "cb90d6057cd074176028f3c22099ba5ba63752f2143fc3f4cf1592ce9ff48da7",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-08.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-08.ten.txt/content",
+      "source_checksum": "md5:df7fa0320a930030ee7290d8fe13dc33",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:03.575967+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-09.fat.txt",
+      "scenario_relative_path": "raw/EQA03-09.fat.txt",
+      "bytes": 8716,
+      "sha256": "f470945208b83349bc6926f203bc95e39244d0a127c59acaf96d6ade09f3ffa8",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-09.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-09.fat.txt/content",
+      "source_checksum": "md5:2863b29943b650f09189bb5cda4023d9",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:56.517266+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-09.ten.txt",
+      "scenario_relative_path": "raw/EQA03-09.ten.txt",
+      "bytes": 124877,
+      "sha256": "4bd17aea39ad98b29d44670c2ca4110f11babb95a654ae76e49baafa33166552",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-09.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-09.ten.txt/content",
+      "source_checksum": "md5:49c0276b55a685b00eac5c5940499efb",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:01.939137+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-10.fat.txt",
+      "scenario_relative_path": "raw/EQA03-10.fat.txt",
+      "bytes": 12110,
+      "sha256": "7f26d067278e3d3215d2d9b0288f383db98eb0d147045cd11c977e0110ad8e02",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-10.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-10.fat.txt/content",
+      "source_checksum": "md5:ba4e42b103df8e8f2511ec06a18bf22d",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:08.426141+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-10.ten.txt",
+      "scenario_relative_path": "raw/EQA03-10.ten.txt",
+      "bytes": 106517,
+      "sha256": "e8faa3be9724ecba36c11b1827bbe34167cad1ea8392e0ee88144351b9b2d216",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-10.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-10.ten.txt/content",
+      "source_checksum": "md5:734abca8739df2cbace1c5d8f2ddd9c5",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:37.448431+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-11.fat.txt",
+      "scenario_relative_path": "raw/EQA03-11.fat.txt",
+      "bytes": 73327,
+      "sha256": "e0ccc4c2f0d4de41b4197df039cfebc071ddaff40d9e8f6ee932499af4952631",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-11.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-11.fat.txt/content",
+      "source_checksum": "md5:be3f54b81d6f80328ba75ebfbf82d9da",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:07.376785+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-11.ten.txt",
+      "scenario_relative_path": "raw/EQA03-11.ten.txt",
+      "bytes": 96021,
+      "sha256": "dd810819c3e9be1fcb92e34acf991abc41263f0407d2972c7af057999e4b5c29",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-11.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-11.ten.txt/content",
+      "source_checksum": "md5:f7453597e9606c4685ce2c9b925728c4",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:51.034178+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-12.fat.txt",
+      "scenario_relative_path": "raw/EQA03-12.fat.txt",
+      "bytes": 30838,
+      "sha256": "406ccef58b603e102d954771b311fdec7318f1a405d94418860e89c1cca332ca",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-12.fat.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-12.fat.txt/content",
+      "source_checksum": "md5:a6b64ea3409de3d1f876d375f0d5ea69",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:42:08.854078+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-024",
+      "scenario_id": "24_materials_dtu_composite_fatigue",
+      "path": "raw/EQA03-12.ten.txt",
+      "scenario_relative_path": "raw/EQA03-12.ten.txt",
+      "bytes": 90923,
+      "sha256": "0270dac24520cf8344e65cef74728492b4d9794c072573dc5b09275c32f3190c",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/15665325/files/EQA03-12.ten.txt/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/15665325/files/EQA03-12.ten.txt/content",
+      "source_checksum": "md5:80dad9c41dad71dd66cfb4e14cde96e3",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:41:55.079471+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15665325"
+      ],
+      "citation_url": "https://zenodo.org/records/15665325",
+      "source_version": "15665325",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15665325",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

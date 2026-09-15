@@ -1,0 +1,109 @@
+{
+  "case_id": "P100-098",
+  "case_revision": 1,
+  "scenario_id": "98_mathematics_krw_polytopes",
+  "title": "Dataset of Kantorovich-Rubinstein-Wasserstein Polytopes of Metric Spaces on up to 6 Points",
+  "domain": "Combinatorial mathematics",
+  "question": "How do exact polytope properties vary across metric instances and dimensions?",
+  "data_origin": "computational_experiment",
+  "source_version": "19496811",
+  "source_url": "https://zenodo.org/records/19496811",
+  "identifiers": [
+    "10.5281/zenodo.19496811"
+  ],
+  "publisher": "Delucchi, Emanuele (University of Applied Sciences and Arts of Southern Switzerland); Kühne, Lukas (Bielefeld University); Mühlherr, Leonie (Bielefeld University); Rambau, Jörg (University of Bayreuth)",
+  "release_date": "2026-04-12",
+  "measurement_dates": "Computational release April 2026; no measurement date applies.",
+  "variables_and_units": "exact combinatorial objects, triangulations and computation results",
+  "independent_units": "metric/polytope instances and dimension",
+  "validation_design": "metric/polytope instances and dimension Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Exact computational objects, TOPCOM outputs, Julia/OSCAR files and notebook/PDF; largest dimension-six archive excluded because it expands beyond 500 MB.",
+  "prior_analysis_and_limits": "Use exact verification/counterexamples by independent instances, not statistical row sampling. Scripts are source context, not executed during acquisition. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [],
+  "format_counts": {
+    "preserved_native": 10,
+    "ZIP": 2,
+    "PDF": 1,
+    "JSON": 1
+  },
+  "reader_limitations": [
+    {
+      "asset": "raw/read_triangulations.jl",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/triangulations_6.jl.zip!/triangulations_6.jl",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/wasserstein_arrangement_code.jl",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Polytopes_generic_metrics_5.mrdi",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/Polytopes_strict_metrics_5.mrdi",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/rootpoly_center_4.regular.results",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/rootpoly_center_5.regular.results",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/rootpoly_center_6.regular.results.zip!/rootpoly_center_6.regular.results",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/triangulations_4.jl",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    },
+    {
+      "asset": "raw/triangulations_5.jl",
+      "note": "Preserved signature and bytes; specialized native interpretation not implemented in this audit."
+    }
+  ],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "cc-by-4.0",
+  "source_asset_bytes": 8088909,
+  "expanded_source_equivalent_bytes": 237303626,
+  "installed_folder_bytes": 8108844,
+  "source_asset_count": 13,
+  "asset_paths": [
+    "scenarios/98_mathematics_krw_polytopes/raw/read_triangulations.jl",
+    "scenarios/98_mathematics_krw_polytopes/raw/triangulations_6.jl.zip",
+    "scenarios/98_mathematics_krw_polytopes/raw/wasserstein_arrangement_code.pdf",
+    "scenarios/98_mathematics_krw_polytopes/raw/wasserstein_arrangement_code.jl",
+    "scenarios/98_mathematics_krw_polytopes/raw/Polytopes_generic_metrics_5.mrdi",
+    "scenarios/98_mathematics_krw_polytopes/raw/Polytopes_strict_metrics_5.mrdi",
+    "scenarios/98_mathematics_krw_polytopes/raw/wasserstein_arrangement_code.ipynb",
+    "scenarios/98_mathematics_krw_polytopes/raw/rootpoly_center_4.regular.results",
+    "scenarios/98_mathematics_krw_polytopes/raw/rootpoly_center_5.regular.results",
+    "scenarios/98_mathematics_krw_polytopes/raw/rootpoly_center_6.regular.results.zip",
+    "scenarios/98_mathematics_krw_polytopes/raw/triangulations_4.jl",
+    "scenarios/98_mathematics_krw_polytopes/raw/triangulations_5.jl",
+    "scenarios/98_mathematics_krw_polytopes/context/source_record.json"
+  ],
+  "local_folder": "scenarios/98_mathematics_krw_polytopes",
+  "size_exception": false,
+  "modalities": [
+    "computational_or_mathematical_records",
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 8112927,
+  "expanded_release_folder_equivalent_bytes": 237327644
+}

@@ -1,0 +1,495 @@
+{
+  "_schema": "https://data.nist.gov/od/dm/nerdm-schema/v0.7#",
+  "@context": [
+    "https://data.nist.gov/od/dm/nerdm-pub-context.jsonld",
+    {
+      "@base": "ark:/88434/mds2-3702"
+    }
+  ],
+  "@type": [
+    "nrdp:DataPublication",
+    "nrdp:PublicDataResource",
+    "dcat:Dataset"
+  ],
+  "_extensionSchemas": [
+    "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/PublicDataResource"
+  ],
+  "@id": "ark:/88434/mds2-3702",
+  "ediid": "ark:/88434/mds2-3702",
+  "version": "1.0.4",
+  "doi": "doi:10.18434/mds2-3702",
+  "title": "Advanced Characterization of the Cure Kinetics of a Liquid Encapsulant",
+  "contactPoint": {
+    "fn": "Anthony Kotula",
+    "hasEmail": "mailto:anthony.kotula@nist.gov"
+  },
+  "modified": "2025-02-10 00:00:00",
+  "status": "available",
+  "landingPage": "https://data.nist.gov/od/id/mds2-3702",
+  "description": [
+    "The data are associated with figures in A. P. Kotula, R. Tao, J. Tu, Y. Lee, G. A. Holmes, Advanced Characterization of the Cure Kinetics of a Liquid Encapsulant, 2025 IEEE 75th Electronic Components and Technology Conference (ECTC), Dallas, Texas, May 27 - 30, 2025."
+  ],
+  "keyword": [
+    "microelectronics encapsulation",
+    "optoelectronics",
+    "cure kinetics",
+    "rheology",
+    "advanced packaging",
+    "CHIPS metrology"
+  ],
+  "topic": [
+    {
+      "@type": "Concept",
+      "scheme": "https://data.nist.gov/od/dm/nist-themes/v1.1",
+      "tag": "Chemistry: Chemical thermodynamics and chemical properties"
+    },
+    {
+      "@type": "Concept",
+      "scheme": "https://data.nist.gov/od/dm/nist-themes/v1.1",
+      "tag": "Chemistry: Thermochemical properties"
+    },
+    {
+      "@type": "Concept",
+      "scheme": "https://data.nist.gov/od/dm/nist-themes/v1.1",
+      "tag": "Chemistry: Chemical engineering and processing"
+    },
+    {
+      "@type": "Concept",
+      "scheme": "https://data.nist.gov/od/dm/nist-themes/v1.1",
+      "tag": "Chemistry: Analytical chemistry"
+    },
+    {
+      "@type": "Concept",
+      "scheme": "https://data.nist.gov/od/dm/nist-themes/v1.1",
+      "tag": "Materials: Composites"
+    },
+    {
+      "@type": "Concept",
+      "scheme": "https://data.nist.gov/od/dm/nist-themes/v1.1",
+      "tag": "Materials: Polymers"
+    },
+    {
+      "@type": "Concept",
+      "scheme": "https://data.nist.gov/od/dm/nist-themes/v1.1",
+      "tag": "Materials: Materials characterization"
+    },
+    {
+      "@type": "Concept",
+      "tag": "Metrology:Optical, photometry, and laser metrology"
+    },
+    {
+      "scheme": "https://data.nist.gov/od/dm/nist-themes-chipsmetrology/v1.0",
+      "tag": "Advanced Packaging: Materials and Substrates",
+      "@type": "Concept"
+    },
+    {
+      "scheme": "https://data.nist.gov/od/dm/nist-themes-chipsmetrology/v1.0",
+      "tag": "Metrology: Spectroscopy",
+      "@type": "Concept"
+    },
+    {
+      "scheme": "https://data.nist.gov/od/dm/nist-themes-chipsmetrology/v1.0",
+      "tag": "Microelectronics: Component: Polymer",
+      "@type": "Concept"
+    },
+    {
+      "scheme": "https://data.nist.gov/od/dm/nist-themes-chipsmetrology/v1.0",
+      "tag": "Metrology: Grand Challenge: 3-Enabling Metrology for Integrating Components in Advanced Packaging",
+      "@type": "Concept"
+    }
+  ],
+  "accessLevel": "public",
+  "license": "https://www.nist.gov/open/license",
+  "publisher": {
+    "name": "National Institute of Standards and Technology",
+    "@type": "org:Organization"
+  },
+  "language": [
+    "en"
+  ],
+  "bureauCode": [
+    "006:55"
+  ],
+  "programCode": [
+    "006:052"
+  ],
+  "theme": [
+    "Chemistry: Chemical thermodynamics and chemical properties",
+    "Chemistry: Thermochemical properties",
+    "Chemistry: Chemical engineering and processing",
+    "Chemistry: Analytical chemistry",
+    "Materials: Composites",
+    "Materials: Polymers",
+    "Materials: Materials characterization",
+    "Metrology:Optical, photometry, and laser metrology"
+  ],
+  "_editStatus": "done",
+  "components": [
+    {
+      "accessURL": "https://pages.nist.gov/CHIPS-AWACKSM-data",
+      "description": "The CADRE website provides an access point to the project\u2019s published datasets. It aims to provide researchers a means to quickly understand the scope of the work and explore data relevant to semiconductor packaging materials and processing.",
+      "title": "CHIPS-AWACKSM Data Repository Explorer (CADRE)",
+      "@type": [
+        "nrdp:AccessPage",
+        "dcat:Distribution"
+      ],
+      "@id": "#CHIPS-AWACKSM-data",
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/AccessPage"
+      ]
+    },
+    {
+      "@id": "cmps/Figure 1-Conversion rate.xlsx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "Figure 1-Conversion rate.xlsx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3702/Figure%201-Conversion%20rate.xlsx",
+      "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size": 78181,
+      "checksum": {
+        "hash": "7441a4e0eaa847fed632465d7f258eb3692936d9fa42612ed80328b7ddac91c2",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/Figure_5-Normalized_IR_absorbance.xlsx.sha256",
+      "@type": [
+        "nrdp:ChecksumFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "filepath": "Figure_5-Normalized_IR_absorbance.xlsx.sha256",
+      "downloadURL": "https://data.nist.gov/od/ds/ark:/88434/mds2-3702/Figure_5-Normalized_IR_absorbance.xlsx.sha256",
+      "algorithm": {
+        "tag": "sha256",
+        "@type": "Thing"
+      },
+      "describes": "cmps/Figure_5-Normalized_IR_absorbance.xlsx",
+      "description": "SHA-256 checksum value for Figure_5-Normalized_IR_absorbance.xlsx",
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/ChecksumFile"
+      ],
+      "mediaType": "text/plain",
+      "size": 64,
+      "checksum": {
+        "hash": "cd7a29342c6ac79440fbf4a9a120026868e0ac18fc1e446274fd88127def3a17",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      },
+      "valid": true
+    },
+    {
+      "@id": "cmps/Figure 3-Residue heat.xlsx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "Figure 3-Residue heat.xlsx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3702/Figure%203-Residue%20heat.xlsx",
+      "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size": 4159814,
+      "checksum": {
+        "hash": "04c64012febcd10c7f09828467a97030950b079aacb1a5502738c8bb7586a09b",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/Figure 6-Raman spectra.xlsx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "Figure 6-Raman spectra.xlsx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3702/Figure%206-Raman%20spectra.xlsx",
+      "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size": 76417,
+      "checksum": {
+        "hash": "dfc0050af024dec31b6b7a004c2eb2cde8bca4b8783f1f60b41e7327844ee4e8",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/Figure 2-Conversion.xlsx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "Figure 2-Conversion.xlsx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3702/Figure%202-Conversion.xlsx",
+      "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size": 70606,
+      "checksum": {
+        "hash": "1525b4c90c7e640bf1bd340491051869a4a1c6de189bd64a457a0a619974de1c",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/3702_README.txt",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "3702_README.txt",
+      "downloadURL": "https://data.nist.gov/od/ds/ark:/88434/mds2-3702/3702_README.txt",
+      "mediaType": "text/plain",
+      "size": 3437,
+      "checksum": {
+        "hash": "106a76e611cd0e2eabbea10f83697246f28bc5b29176067e345724cd61528268",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/Figure 7-Rheo-Raman data.xlsx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "Figure 7-Rheo-Raman data.xlsx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3702/Figure%207-Rheo-Raman%20data.xlsx",
+      "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size": 32275,
+      "checksum": {
+        "hash": "c05e9db336ac3e7e37df1251e43477364298b396342d254110a3e7817ce477c1",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/Figure 4-FTIR spectra.xlsx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "Figure 4-FTIR spectra.xlsx",
+      "downloadURL": "https://data.nist.gov/od/ds/mds2-3702/Figure%204-FTIR%20spectra.xlsx",
+      "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size": 864311,
+      "checksum": {
+        "hash": "23b73f7c1743f52110185c67aa2172dd0bf823c8b6601da46b248ef286d7cfaf",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/Figure_5-Normalized_IR_absorbance.xlsx",
+      "@type": [
+        "nrdp:DataFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/DataFile"
+      ],
+      "filepath": "Figure_5-Normalized_IR_absorbance.xlsx",
+      "downloadURL": "https://data.nist.gov/od/ds/ark:/88434/mds2-3702/Figure_5-Normalized_IR_absorbance.xlsx",
+      "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size": 20780,
+      "checksum": {
+        "hash": "f8312efd2ca054e018feb33ff98728b5426a6f9be8e8c2248517c062f1f7df3d",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      }
+    },
+    {
+      "@id": "cmps/3702_README.txt.sha256",
+      "@type": [
+        "nrdp:ChecksumFile",
+        "nrdp:DownloadableFile",
+        "dcat:Distribution"
+      ],
+      "filepath": "3702_README.txt.sha256",
+      "downloadURL": "https://data.nist.gov/od/ds/ark:/88434/mds2-3702/3702_README.txt.sha256",
+      "algorithm": {
+        "tag": "sha256",
+        "@type": "Thing"
+      },
+      "describes": "cmps/3702_README.txt",
+      "description": "SHA-256 checksum value for 3702_README.txt",
+      "_extensionSchemas": [
+        "https://data.nist.gov/od/dm/nerdm-schema/pub/v0.7#/definitions/ChecksumFile"
+      ],
+      "mediaType": "text/plain",
+      "size": 64,
+      "checksum": {
+        "hash": "d0a3168b773fb42610fbb47d9af1d408a39557eac6447d4acc516b9756cb6856",
+        "algorithm": {
+          "tag": "sha256",
+          "@type": "Thing"
+        }
+      },
+      "valid": true
+    }
+  ],
+  "authors": [
+    {
+      "familyName": "Tao",
+      "fn": "Ran  Tao",
+      "givenName": "Ran",
+      "middleName": "",
+      "affiliation": [
+        {
+          "title": "National Institute of Standards and Technology",
+          "@type": "org:Organization",
+          "@id": "ror:05xpvk416"
+        }
+      ],
+      "orcid": "0000-0002-5208-7895",
+      "@type": "foaf:Person"
+    },
+    {
+      "familyName": "Kotula",
+      "fn": "Anthony P. Kotula",
+      "givenName": "Anthony",
+      "middleName": "P.",
+      "affiliation": [
+        {
+          "title": "National Institute of Standards and Technology",
+          "@type": "org:Organization",
+          "@id": "ror:05xpvk416"
+        }
+      ],
+      "orcid": "0000-0002-0830-2869",
+      "@type": "foaf:Person"
+    },
+    {
+      "familyName": "Tu",
+      "fn": "Jianwei  Tu",
+      "givenName": "Jianwei",
+      "middleName": "",
+      "affiliation": [
+        {
+          "title": "National Institute of Standards and Technology",
+          "@type": "org:Organization",
+          "@id": "ror:05xpvk416"
+        }
+      ],
+      "orcid": "0000-0001-5670-139X",
+      "@type": "foaf:Person"
+    },
+    {
+      "familyName": "Lee",
+      "fn": "Young Jong Lee",
+      "givenName": "Young",
+      "middleName": "Jong",
+      "affiliation": [
+        {
+          "title": "National Institute of Standards and Technology",
+          "@type": "org:Organization",
+          "@id": "ror:05xpvk416"
+        }
+      ],
+      "orcid": "0000-0001-7754-3001",
+      "@type": "foaf:Person"
+    }
+  ],
+  "annotated": "2026-07-31T19:04:05.121079",
+  "revised": "2025-05-15T19:51:00.999671",
+  "issued": null,
+  "firstIssued": "2025-05-15T19:51:00.999671",
+  "releaseHistory": {
+    "@id": "ark:/88434/mds2-3702/pdr:v",
+    "@type": [
+      "nrdr:ReleaseHistory"
+    ],
+    "hasRelease": [
+      {
+        "version": "1.0.0",
+        "issued": "2025-02-10",
+        "@id": "ark:/88434/mds2-3702/pdr:v/1.0.0",
+        "location": "https://data.nist.gov/od/id/ark:/88434/mds2-3702/pdr:v/1.0.0",
+        "description": "initial release"
+      },
+      {
+        "version": "1.0.1",
+        "issued": "2025-06-23",
+        "@id": "ark:/88434/mds2-3702/pdr:v/1.0.1",
+        "location": "https://data.nist.gov/od/id/ark:/88434/mds2-3702/pdr:v/1.0.1",
+        "description": "curator: added to CHIPS Metrology collection"
+      },
+      {
+        "version": "1.0.2",
+        "issued": "2025-06-23",
+        "@id": "ark:/88434/mds2-3702/pdr:v/1.0.2",
+        "location": "https://data.nist.gov/od/id/ark:/88434/mds2-3702/pdr:v/1.0.2",
+        "description": "curator: fix topic tagging"
+      },
+      {
+        "version": "1.0.3",
+        "issued": "2025-10-13",
+        "@id": "ark:/88434/mds2-3702/pdr:v/1.0.3",
+        "location": "https://data.nist.gov/od/id/ark:/88434/mds2-3702/pdr:v/1.0.3",
+        "description": "curator: fix chips metrology topic typo"
+      },
+      {
+        "version": "1.0.4",
+        "issued": "2025-02-10 00:00:00",
+        "@id": "ark:/88434/mds2-3702/pdr:v/1.0.4",
+        "location": "https://data.nist.gov/od/id/ark:/88434/mds2-3702/pdr:v/1.0.4",
+        "description": "metadata update"
+      }
+    ]
+  },
+  "isPartOf": [
+    {
+      "@type": [
+        "nrda:ScienceTheme",
+        "nrdp:PublicDataResource"
+      ],
+      "@id": "ark:/88434/pdr0-0002",
+      "title": "CHIPS Metrology Data"
+    }
+  ]
+}

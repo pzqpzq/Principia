@@ -1,0 +1,905 @@
+{
+  "scenario_id": "85_biotechnology_yarrowia_cofeeding",
+  "path": "raw/DATA.zip",
+  "bytes": 2296181,
+  "sha256": "5c06acaf42c1f930100d53ea506ec0a8bc542fec45ef5af4cd59311069364ed2",
+  "checked_utc": "2026-09-15T06:46:26.484995+00:00",
+  "source_checksum_status": "verified",
+  "format": "ZIP",
+  "expanded_bytes": 2990101,
+  "members": [
+    {
+      "name": "DATA/13C_labeling_aminoacids_Y-4972.csv",
+      "bytes": 2358,
+      "sha256": "2f5ec3d2db981e54faad4997f4f334deb676fc16763fe517c14bca54098741fc",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "737562737472617465733b47",
+        "delimiter": ";",
+        "header": [
+          "substrates",
+          "Gly-57-0 1",
+          "Gly-57-0 2",
+          "Gly-57-1 1",
+          "Gly-57-1 2",
+          "Gly-57-2 1",
+          "Gly-57-2 2",
+          "Ser-57-0 1",
+          "Ser-57-0 2",
+          "Ser-57-1 1",
+          "Ser-57-1 2",
+          "Ser-57-2 1",
+          "Ser-57-2 2",
+          "Ser-57-3 1",
+          "Ser-57-3 2",
+          "Ala-57-0 1",
+          "Ala-57-0 2",
+          "Ala-57-1 1",
+          "Ala-57-1 2",
+          "Ala-57-2 1",
+          "Ala-57-2 2",
+          "Ala-57-3 1",
+          "Ala-57-3 2",
+          "Val-57-0 1",
+          "Val-57-0 2",
+          "Val-57-1 1",
+          "Val-57-1 2",
+          "Val-57-2 1",
+          "Val-57-2 2",
+          "Val-57-3 1",
+          "Val-57-3 2",
+          "Val-57-4 1",
+          "Val-57-4 2",
+          "Val-57-5 1",
+          "Val-57-5 2",
+          "Asp-57-0 1",
+          "Asp-57-0 2",
+          "Asp-57-1 1",
+          "Asp-57-1 2",
+          "Asp-57-2 1",
+          "Asp-57-2 2",
+          "Asp-57-3 1",
+          "Asp-57-3 2",
+          "Asp-57-4 1",
+          "Asp-57-4 2",
+          "Glu-57-0 1",
+          "Glu-57-0 2",
+          "Glu-57-1 1",
+          "Glu-57-1 2",
+          "Glu-57-2 1",
+          "Glu-57-2 2",
+          "Glu-57-3 1",
+          "Glu-57-3 2",
+          "Glu-57-4 1",
+          "Glu-57-4 2",
+          "Glu-57-5 1",
+          "Glu-57-5 2",
+          "Phe-57-0 1",
+          "Phe-57-0 2",
+          "Phe-57-1 1",
+          "Phe-57-1 2",
+          "Phe-57-2 1",
+          "Phe-57-2 2",
+          "Phe-57-3 1",
+          "Phe-57-3 2",
+          "Phe-57-4 1",
+          "Phe-57-4 2",
+          "Phe-57-5 1",
+          "Phe-57-5 2",
+          "Phe-57-6 1",
+          "Phe-57-6 2",
+          "Phe-57-7 1",
+          "Phe-57-7 2",
+          "Phe-57-8 1",
+          "Phe-57-8 2",
+          "Phe-57-9 1",
+          "Phe-57-9 2",
+          "Thr-57-0 1",
+          "Thr-57-0 2",
+          "Thr-57-1 1",
+          "Thr-57-1 2",
+          "Thr-57-2 1",
+          "Thr-57-2 2",
+          "Thr-57-3 1",
+          "Thr-57-3 2",
+          "Thr-57-4 1",
+          "Thr-57-4 2",
+          "Pro-159-0 1",
+          "Pro-159-0 2",
+          "Pro-159-1 1",
+          "Pro-159-1 2",
+          "Pro-159-2 1",
+          "Pro-159-2 2",
+          "Pro-159-3 1",
+          "Pro-159-3 2",
+          "Pro-159-4 1",
+          "Pro-159-4 2"
+        ],
+        "data_records": 5,
+        "row_width_counts": {
+          "97": 5
+        },
+        "first_lines": [
+          "substrates;Gly-57-0 1;Gly-57-0 2;Gly-57-1 1;Gly-57-1 2;Gly-57-2 1;Gly-57-2 2;Ser-57-0 1;Ser-57-0 2;Ser-57-1 1;Ser-57-1 2;Ser-57-2 1;Ser-57-2 2;Ser-57-3 1;Ser-57-3 2;Ala-57-0 1;Ala-57-0 2;Ala-57-1 1;Ala-57-1 2;Ala-57-2 1;Ala-57-2 2;Ala-57-3 1;Ala-57-3 2;Val-57-0 1;Val-57-0 2;Val-57-1 1;Val-57-1 2;Val-57-2 1;Val-57-2 2;Val-57-3 1;Val-57-3 2;Val-57-4 1;Val-57-4 2;Val-57-5 1;Val-57-5 2;Asp-57-0 1;Asp-57-0 2;Asp-57-1 1;Asp-57-1 2;Asp-57-2 1;Asp-57-2 2;Asp-57-3 1;Asp-57-3 2;Asp-57-4 1;Asp-57-4 2;Glu-57-0 1;Glu-57-0 2;Glu-57-1 1;Glu-57-1 2;Glu-57-2 1;Glu-57-2 2;Glu-57-3 1;Glu-57-3 2;Glu-57-4 1;Glu-57-4 2;Glu-57-5 1;Glu-57-5 2;Phe-57-0 1;Phe-57-0 2;Phe-57-1 1;Phe-57-1 2;Phe-57-2 1;Phe-57-2 2;Phe-57-3 1;Phe-57-3 2;Phe-57-4 1;Phe-57-4 2;Phe-57-5 1;Phe-57-5 2;Phe-57-6 1;Phe-57-6 2;Phe-57-7 1;Phe-57-7 2;Phe-57-8 1;Phe-57-8 2;Phe-57-9 1;Phe-57-9 2;Thr-57-0 1;Thr-57-0 2;Thr-57-1 1;Thr-57-1 2;Thr-57-2 1;Thr-57-2 2;Thr-57-3 1;Thr-57-3 2;Thr-57-4 1;Thr-57-4 2;Pro-159-0 1;Pro-159-0 2;Pro-159-1 1;Pro-159-1 2;Pro-159-2 1;Pro-159-2 2;Pro-159-3 1;Pro-159-3 2;Pro-159-4 1;Pro-159-4 2",
+          "1,2-13C2-Ac;0.38;0.45;0.11;0.11;0.51;0.43;0.29;0.27;0.18;0.18;0.20;0.21;0.32;0.34;0.10;0.09;0.09;0.10;0.14;0.16;0.66;0.66;0.02;0.05;0.02;0.02;0.04;0.04;0.09;0.09;0.18;0.18;0.64;0.62;0.02;0.04;0.03;0.03;0.12;0.13;0.12;0.10;0.71;0.70;0.02;0.04;0.02;0.02;0.04;0.04;0.13;0.09;0.13;0.13;0.66;0.68;0.01;0.04;0.00;0.00;0.00;0.00;0.00;0.00;0.01;0.01;0.02;0.02;0.05;0.05;0.14;0.13;0.24;0.23;0.52;0.51;0.01;0.03;0.01;0.01;0.09;0.08;0.08;0.08;0.81;0.80;0.03;0.05;0.03;0.01;0.07;0.02;0.13;0.12;0.74;0.80",
+          "1,2-13C2-EG;0.46;0.45;0.13;0.13;0.41;0.41;0.34;0.31;0.22;0.22;0.19;0.21;0.24;0.26;0.68;0.66;0.15;0.14;0.10;0.11;0.07;0.08;0.64;0.61;0.20;0.20;0.09;0.10;0.04;0.04;0.02;0.02;0.01;0.03;0.72;0.73;0.12;0.09;0.13;0.13;0.02;0.03;0.01;0.03;0.70;0.69;0.14;0.14;0.10;0.09;0.03;0.04;0.02;0.02;0.01;0.01;0.55;0.50;0.24;0.21;0.13;0.13;0.05;0.03;0.02;0.02;0.00;0.07;0.00;0.00;0.00;0.02;0.00;0.01;0.00;0.01;0.80;0.80;0.09;0.07;0.10;0.10;0.00;0.02;0.00;0.01;0.83;0.81;0.16;0.15;0.01;0.01;0.00;0.01;0.00;0.02",
+          ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+          ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+          ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "DATA/13C_labeling_aminoacids_YM4B510.csv",
+      "bytes": 3065,
+      "sha256": "87118911c5ed8dfaec639295432821a852f7319e86802440166c601305240272",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "73747261696e733b476c792d",
+        "delimiter": ";",
+        "header": [
+          "strains",
+          "Gly-57-0 1",
+          "Gly-57-0 2",
+          "Gly-57-0 3",
+          "Gly-57-1 1",
+          "Gly-57-1 2",
+          "Gly-57-1 3",
+          "Gly-57-2 1",
+          "Gly-57-2 2",
+          "Gly-57-2 3",
+          "Ser-57-0 1",
+          "Ser-57-0 2",
+          "Ser-57-0 3",
+          "Ser-57-1 1",
+          "Ser-57-1 2",
+          "Ser-57-1 3",
+          "Ser-57-2 1",
+          "Ser-57-2 2",
+          "Ser-57-2 3",
+          "Ser-57-3 1",
+          "Ser-57-3 2",
+          "Ser-57-3 3",
+          "Ala-57-0 1",
+          "Ala-57-0 2",
+          "Ala-57-0 3",
+          "Ala-57-1 1",
+          "Ala-57-1 2",
+          "Ala-57-1 3",
+          "Ala-57-2 1",
+          "Ala-57-2 2",
+          "Ala-57-2 3",
+          "Ala-57-3 1",
+          "Ala-57-3 2",
+          "Ala-57-3 3",
+          "Val-57-0 1",
+          "Val-57-0 2",
+          "Val-57-0 3",
+          "Val-57-1 1",
+          "Val-57-1 2",
+          "Val-57-1 3",
+          "Val-57-2 1",
+          "Val-57-2 2",
+          "Val-57-2 3",
+          "Val-57-3 1",
+          "Val-57-3 2",
+          "Val-57-3 3",
+          "Val-57-4 1",
+          "Val-57-4 2",
+          "Val-57-4 3",
+          "Val-57-5 1",
+          "Val-57-5 2",
+          "Val-57-5 3",
+          "Asp-57-0 1",
+          "Asp-57-0 2",
+          "Asp-57-0 3",
+          "Asp-57-1 1",
+          "Asp-57-1 2",
+          "Asp-57-1 3",
+          "Asp-57-2 1",
+          "Asp-57-2 2",
+          "Asp-57-2 3",
+          "Asp-57-3 1",
+          "Asp-57-3 2",
+          "Asp-57-3 3",
+          "Asp-57-4 1",
+          "Asp-57-4 2",
+          "Asp-57-4 3",
+          "Glu-57-0 1",
+          "Glu-57-0 2",
+          "Glu-57-0 3",
+          "Glu-57-1 1",
+          "Glu-57-1 2",
+          "Glu-57-1 3",
+          "Glu-57-2 1",
+          "Glu-57-2 2",
+          "Glu-57-2 3",
+          "Glu-57-3 1",
+          "Glu-57-3 2",
+          "Glu-57-3 3",
+          "Glu-57-4 1",
+          "Glu-57-4 2",
+          "Glu-57-4 3",
+          "Glu-57-5 1",
+          "Glu-57-5 2",
+          "Glu-57-5 3",
+          "Phe-57-0 1",
+          "Phe-57-0 2",
+          "Phe-57-0 3",
+          "Phe-57-1 1",
+          "Phe-57-1 2",
+          "Phe-57-1 3",
+          "Phe-57-2 1",
+          "Phe-57-2 2",
+          "Phe-57-2 3",
+          "Phe-57-3 1",
+          "Phe-57-3 2",
+          "Phe-57-3 3",
+          "Phe-57-4 1",
+          "Phe-57-4 2",
+          "Phe-57-4 3",
+          "Phe-57-5 1",
+          "Phe-57-5 2",
+          "Phe-57-5 3",
+          "Phe-57-6 1",
+          "Phe-57-6 2",
+          "Phe-57-6 3",
+          "Phe-57-7 1",
+          "Phe-57-7 2",
+          "Phe-57-7 3",
+          "Phe-57-8 1",
+          "Phe-57-8 2",
+          "Phe-57-8 3",
+          "Phe-57-9 1",
+          "Phe-57-9 2",
+          "Phe-57-9 3",
+          "Thr-57-0 1",
+          "Thr-57-0 2",
+          "Thr-57-0 3",
+          "Thr-57-1 1",
+          "Thr-57-1 2",
+          "Thr-57-1 3",
+          "Thr-57-2 1",
+          "Thr-57-2 2",
+          "Thr-57-2 3",
+          "Thr-57-3 1",
+          "Thr-57-3 2",
+          "Thr-57-3 3",
+          "Thr-57-4 1",
+          "Thr-57-4 2",
+          "Thr-57-4 3",
+          "Pro-159-0 1",
+          "Pro-159-0 2",
+          "Pro-159-0 3",
+          "Pro-159-1 1",
+          "Pro-159-1 2",
+          "Pro-159-1 3",
+          "Pro-159-2 1",
+          "Pro-159-2 2",
+          "Pro-159-2 3",
+          "Pro-159-3 1",
+          "Pro-159-3 2",
+          "Pro-159-3 3",
+          "Pro-159-4 1",
+          "Pro-159-4 2",
+          "Pro-159-4 3"
+        ],
+        "data_records": 2,
+        "row_width_counts": {
+          "145": 2
+        },
+        "first_lines": [
+          "strains;Gly-57-0 1;Gly-57-0 2;Gly-57-0 3;Gly-57-1 1;Gly-57-1 2;Gly-57-1 3;Gly-57-2 1;Gly-57-2 2;Gly-57-2 3;Ser-57-0 1;Ser-57-0 2;Ser-57-0 3;Ser-57-1 1;Ser-57-1 2;Ser-57-1 3;Ser-57-2 1;Ser-57-2 2;Ser-57-2 3;Ser-57-3 1;Ser-57-3 2;Ser-57-3 3;Ala-57-0 1;Ala-57-0 2;Ala-57-0 3;Ala-57-1 1;Ala-57-1 2;Ala-57-1 3;Ala-57-2 1;Ala-57-2 2;Ala-57-2 3;Ala-57-3 1;Ala-57-3 2;Ala-57-3 3;Val-57-0 1;Val-57-0 2;Val-57-0 3;Val-57-1 1;Val-57-1 2;Val-57-1 3;Val-57-2 1;Val-57-2 2;Val-57-2 3;Val-57-3 1;Val-57-3 2;Val-57-3 3;Val-57-4 1;Val-57-4 2;Val-57-4 3;Val-57-5 1;Val-57-5 2;Val-57-5 3;Asp-57-0 1;Asp-57-0 2;Asp-57-0 3;Asp-57-1 1;Asp-57-1 2;Asp-57-1 3;Asp-57-2 1;Asp-57-2 2;Asp-57-2 3;Asp-57-3 1;Asp-57-3 2;Asp-57-3 3;Asp-57-4 1;Asp-57-4 2;Asp-57-4 3;Glu-57-0 1;Glu-57-0 2;Glu-57-0 3;Glu-57-1 1;Glu-57-1 2;Glu-57-1 3;Glu-57-2 1;Glu-57-2 2;Glu-57-2 3;Glu-57-3 1;Glu-57-3 2;Glu-57-3 3;Glu-57-4 1;Glu-57-4 2;Glu-57-4 3;Glu-57-5 1;Glu-57-5 2;Glu-57-5 3;Phe-57-0 1;Phe-57-0 2;Phe-57-0 3;Phe-57-1 1;Phe-57-1 2;Phe-57-1 3;Phe-57-2 1;Phe-57-2 2;Phe-57-2 3;Phe-57-3 1;Phe-57-3 2;Phe-57-3 3;Phe-57-4 1;Phe-57-4 2;Phe-57-4 3;Phe-57-5 1;Phe-57-5 2;Phe-57-5 3;Phe-57-6 1;Phe-57-6 2;Phe-57-6 3;Phe-57-7 1;Phe-57-7 2;Phe-57-7 3;Phe-57-8 1;Phe-57-8 2;Phe-57-8 3;Phe-57-9 1;Phe-57-9 2;Phe-57-9 3;Thr-57-0 1;Thr-57-0 2;Thr-57-0 3;Thr-57-1 1;Thr-57-1 2;Thr-57-1 3;Thr-57-2 1;Thr-57-2 2;Thr-57-2 3;Thr-57-3 1;Thr-57-3 2;Thr-57-3 3;Thr-57-4 1;Thr-57-4 2;Thr-57-4 3;Pro-159-0 1;Pro-159-0 2;Pro-159-0 3;Pro-159-1 1;Pro-159-1 2;Pro-159-1 3;Pro-159-2 1;Pro-159-2 2;Pro-159-2 3;Pro-159-3 1;Pro-159-3 2;Pro-159-3 3;Pro-159-4 1;Pro-159-4 2;Pro-159-4 3",
+          "Y-4972;0.38;0.42;0.43;0.13;0.12;0.12;0.48;0.46;0.45;0.24;0.27;0.30;0.18;0.18;0.17;0.22;0.21;0.20;0.35;0.34;0.33;0.07;0.10;0.11;0.09;0.09;0.09;0.16;0.16;0.15;0.68;0.65;0.65;0.02;0.05;0.04;0.02;0.02;0.02;0.04;0.04;0.04;0.09;0.09;0.09;0.21;0.20;0.20;0.63;0.61;0.62;0.03;0.08;0.11;0.05;0.03;0.04;0.12;0.13;0.11;0.12;0.12;0.11;0.68;0.65;0.63;0.03;0.07;0.10;0.02;0.02;0.02;0.04;0.04;0.04;0.09;0.08;0.08;0.15;0.15;0.14;0.68;0.65;0.63;0.01;0.04;0.02;0.00;0.00;0.00;0.00;0.00;0.00;0.00;0.00;0.00;0.00;0.01;0.00;0.01;0.01;0.01;0.05;0.05;0.05;0.14;0.13;0.13;0.26;0.25;0.26;0.52;0.51;0.51;0.01;0.03;0.06;0.01;0.01;0.00;0.08;0.08;0.08;0.11;0.11;0.10;0.79;0.76;0.76;0.01;0.02;0.02;0.01;0.01;0.01;0.03;0.02;0.02;0.16;0.15;0.15;0.80;0.80;0.79",
+          "?YlAGX1;0.21;0.22;0.21;0.12;0.07;0.08;0.67;0.71;0.71;0.12;0.12;0.10;0.07;0.08;0.08;0.10;0.11;0.11;0.72;0.70;0.72;0.04;0.04;0.02;0.04;0.05;0.04;0.10;0.11;0.10;0.82;0.81;0.83;0.02;0.02;0.01;0.00;0.00;0.00;0.01;0.01;0.01;0.03;0.04;0.03;0.13;0.14;0.13;0.80;0.80;0.81;0.07;0.05;0.02;0.02;0.03;0.02;0.06;0.07;0.07;0.08;0.09;0.09;0.76;0.76;0.79;0.07;0.05;0.02;0.00;0.00;0.00;0.01;0.01;0.01;0.04;0.05;0.05;0.10;0.11;0.12;0.77;0.77;0.79;0.02;0.02;0.01;0.00;0.00;0.00;0.00;0.00;0.00;0.00;0.00;0.00;0.00;0.00;0.00;0.00;0.01;0.00;0.02;0.02;0.02;0.08;0.08;0.07;0.20;0.21;0.19;0.67;0.67;0.70;0.04;0.04;0.02;0.00;0.00;0.01;0.04;0.05;0.06;0.07;0.08;0.07;0.85;0.83;0.85;0.02;0.02;0.01;0.00;0.00;0.00;0.02;0.02;0.02;0.10;0.12;0.10;0.87;0.84;0.87"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "DATA/13C_labeling_GA.csv",
+      "bytes": 149,
+      "sha256": "b100bfc39396cb6b74e1410a383270899764f70ff53f9b36720ba3e9ba73fb7f",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "737562737472617465733b6d",
+        "delimiter": ";",
+        "header": [
+          "substrates",
+          "m+0 1",
+          "m+0 2",
+          "m+1 1",
+          "m+1 2",
+          "m+2 1",
+          "m+2 1",
+          "",
+          "",
+          ""
+        ],
+        "data_records": 2,
+        "row_width_counts": {
+          "10": 2
+        },
+        "first_lines": [
+          "substrates;m+0 1;m+0 2;m+1 1;m+1 2;m+2 1;m+2 1;;;",
+          "1,2-13C2-Ac;100.70;97.00;-1.00;3.00;0.32;0.00;;;",
+          "1,2-13C2-EG;3.10;2.30;2.74;2.70;94.20;95.00;;;"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "DATA/Bioreactor_Ace10+EG50.csv",
+      "bytes": 482,
+      "sha256": "1cc6ef7c6c1f8f4d73fd75af34f03bf40fa5fa0ef146614338d9108eccfad53c",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d652028686f75727329",
+        "delimiter": ";",
+        "header": [
+          "Time (hours)",
+          "Acetate (g/L) 1",
+          "Acetate (g/L) 2",
+          "Ethylene glycol (g/L) 1",
+          "Ethylene glycol (g/L) 2",
+          "Glycolic Acid (g/L) 1",
+          "Glycolic Acid (g/L) 2",
+          "Biomass (g/L DCW) 1",
+          "Biomass (g/L DCW) 2"
+        ],
+        "data_records": 6,
+        "row_width_counts": {
+          "9": 6
+        },
+        "first_lines": [
+          "Time (hours);Acetate (g/L) 1;Acetate (g/L) 2;Ethylene glycol (g/L) 1;Ethylene glycol (g/L) 2;Glycolic Acid (g/L) 1;Glycolic Acid (g/L) 2;Biomass (g/L DCW) 1;Biomass (g/L DCW) 2",
+          "0.00;10.81;9.19;48.23;51.77;0.00;0.00;0.10;0.10",
+          "24.00;7.37;6.03;38.81;41.33;9.25;10.61;1.55;1.05",
+          "24.10;17.80;15.20;41.87;38.13;8.98;10.98;1.55;1.05",
+          "48.00;7.71;5.65;11.75;14.45;39.55;37.95;2.95;3.85",
+          "48.10;17.67;14.93;11.69;14.31;39.73;37.23;2.95;3.85",
+          "66.00;0.00;0.00;0.00;0.00;47.40;49.42;6.90;5.50"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "DATA/Bioreactor_Ace50+EG10.csv",
+      "bytes": 482,
+      "sha256": "1cc6ef7c6c1f8f4d73fd75af34f03bf40fa5fa0ef146614338d9108eccfad53c",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d652028686f75727329",
+        "delimiter": ";",
+        "header": [
+          "Time (hours)",
+          "Acetate (g/L) 1",
+          "Acetate (g/L) 2",
+          "Ethylene glycol (g/L) 1",
+          "Ethylene glycol (g/L) 2",
+          "Glycolic Acid (g/L) 1",
+          "Glycolic Acid (g/L) 2",
+          "Biomass (g/L DCW) 1",
+          "Biomass (g/L DCW) 2"
+        ],
+        "data_records": 6,
+        "row_width_counts": {
+          "9": 6
+        },
+        "first_lines": [
+          "Time (hours);Acetate (g/L) 1;Acetate (g/L) 2;Ethylene glycol (g/L) 1;Ethylene glycol (g/L) 2;Glycolic Acid (g/L) 1;Glycolic Acid (g/L) 2;Biomass (g/L DCW) 1;Biomass (g/L DCW) 2",
+          "0.00;10.81;9.19;48.23;51.77;0.00;0.00;0.10;0.10",
+          "24.00;7.37;6.03;38.81;41.33;9.25;10.61;1.55;1.05",
+          "24.10;17.80;15.20;41.87;38.13;8.98;10.98;1.55;1.05",
+          "48.00;7.71;5.65;11.75;14.45;39.55;37.95;2.95;3.85",
+          "48.10;17.67;14.93;11.69;14.31;39.73;37.23;2.95;3.85",
+          "66.00;0.00;0.00;0.00;0.00;47.40;49.42;6.90;5.50"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "DATA/Figure 2.png",
+      "bytes": 653143,
+      "sha256": "d7579cd191de6353b8858d943cca72a171965dea1c1a5f045a574d964c82161a",
+      "structure": {
+        "format": "PNG",
+        "size": [
+          4195,
+          6374
+        ],
+        "mode": "RGB",
+        "frames": 1
+      }
+    },
+    {
+      "name": "DATA/Figure 3.png",
+      "bytes": 241817,
+      "sha256": "4d04afd36bdbccc83d95587b8927eed9b3da8f273bf65079572732fae870a9dc",
+      "structure": {
+        "format": "PNG",
+        "size": [
+          2947,
+          5990
+        ],
+        "mode": "RGB",
+        "frames": 1
+      }
+    },
+    {
+      "name": "DATA/Figure 4.png",
+      "bytes": 297586,
+      "sha256": "68733a83bd61a39f485d5e27e2097471829918ca27ee1bdb4ac33cc3a1bb9a6c",
+      "structure": {
+        "format": "PNG",
+        "size": [
+          1193,
+          1269
+        ],
+        "mode": "RGBA",
+        "frames": 1
+      }
+    },
+    {
+      "name": "DATA/Figure 6.png",
+      "bytes": 512520,
+      "sha256": "681419454250a6411da920e13c7e964a20a78f60ac96490b85c526a96c371c92",
+      "structure": {
+        "format": "PNG",
+        "size": [
+          3464,
+          5187
+        ],
+        "mode": "RGB",
+        "frames": 1
+      }
+    },
+    {
+      "name": "DATA/Figure S1.png",
+      "bytes": 255461,
+      "sha256": "4a5af84710be902c7246630ea6a4672fed2f8e886cd487fab98f6b396af3190c",
+      "structure": {
+        "format": "PNG",
+        "size": [
+          6128,
+          2566
+        ],
+        "mode": "RGB",
+        "frames": 1
+      }
+    },
+    {
+      "name": "DATA/Figure S2.png",
+      "bytes": 331168,
+      "sha256": "fa8f85f44b5d7bc71034f5a45a52239d9bee6ba9e5a8a6306e528a4e016b5892",
+      "structure": {
+        "format": "PNG",
+        "size": [
+          3939,
+          3035
+        ],
+        "mode": "RGB",
+        "frames": 1
+      }
+    },
+    {
+      "name": "DATA/Figure S4.png",
+      "bytes": 405588,
+      "sha256": "71a3951180f2d7ddb3b764c4310d1e2d57b04259a1692f5f4030fc59e1239b61",
+      "structure": {
+        "format": "PNG",
+        "size": [
+          5342,
+          4002
+        ],
+        "mode": "RGB",
+        "frames": 1
+      }
+    },
+    {
+      "name": "DATA/Flask_EG_OD0.1.csv",
+      "bytes": 400,
+      "sha256": "db6699476d028d6ee9f3d13d5a5bd5ae865277cfc3758cde84f3371beda9c0c8",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d652028686f75727329",
+        "delimiter": ";",
+        "header": [
+          "Time (hours)",
+          "Ethylene Glycol (g/L) 1",
+          "Ethylene Glycol (g/L) 2",
+          "Glycolic Acid (g/L) 1",
+          "Glycolic Acid (g/L) 2",
+          "pH 1",
+          "pH 2"
+        ],
+        "data_records": 16,
+        "row_width_counts": {
+          "7": 16
+        },
+        "first_lines": [
+          "Time (hours);Ethylene Glycol (g/L) 1;Ethylene Glycol (g/L) 2;Glycolic Acid (g/L) 1;Glycolic Acid (g/L) 2;pH 1;pH 2",
+          "0.00;19.80;19.66;0.00;0.00;7.00;7.00",
+          "70.00;17.91;18.04;2.08;1.99;7.00;7.00",
+          "94.00;18.89;18.52;2.18;2.05;7.00;7.00",
+          "120.00;18.88;17.99;2.62;2.11;6.50;6.50",
+          "144.00;19.08;18.74;2.35;2.20;6.50;6.50",
+          ";;;;;;",
+          ";;;;;;"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "DATA/Flask_EG_OD0.5.csv",
+      "bytes": 234,
+      "sha256": "146807c530a12d285ee309c013a882116ff886778ace76dfb12419675ff936d5",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d652028686f75727329",
+        "delimiter": ";",
+        "header": [
+          "Time (hours)",
+          "Ethylene Glycol (g/L) 1",
+          "Ethylene Glycol (g/L) 2",
+          "Glycolic Acid (g/L) 1",
+          "Glycolic Acid (g/L) 2",
+          "pH 1",
+          "pH 2"
+        ],
+        "data_records": 3,
+        "row_width_counts": {
+          "7": 3
+        },
+        "first_lines": [
+          "Time (hours);Ethylene Glycol (g/L) 1;Ethylene Glycol (g/L) 2;Glycolic Acid (g/L) 1;Glycolic Acid (g/L) 2;pH 1;pH 2",
+          "0.00;20.50;22.00;0.00;0.00;7.00;7.00",
+          "120.00;19.35;19.28;2.89;2.93;5.50;5.50",
+          "144.00;18.88;18.59;3.14;3.10;5.50;5.50"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "DATA/Growth_Flask_Ace+EG.csv",
+      "bytes": 823,
+      "sha256": "6261da64bbc6ae7f609fc1163d83e37bea5b8b0ff84f680072e832b8c306ca87",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d652028686f75727329",
+        "delimiter": ";",
+        "header": [
+          "Time (hours)",
+          "pH 1",
+          "pH 2",
+          "pH 3",
+          "Biomass (g/L DCW) 1",
+          "Biomass (g/L DCW) 2",
+          "Biomass (g/L DCW) 3",
+          "Acetate (g/L) 1",
+          "Acetate (g/L) 2",
+          "Acetate (g/L) 3",
+          "Ethylene Glycol (g/L) 1",
+          "Ethylene Glycol (g/L) 2",
+          "Ethylene Glycol (g/L) 3",
+          "Glycolic Acid (g/L) 1",
+          "Glycolic Acid (g/L) 2",
+          "Glycolic Acid (g/L) 3"
+        ],
+        "data_records": 8,
+        "row_width_counts": {
+          "16": 8
+        },
+        "first_lines": [
+          "Time (hours);pH 1;pH 2;pH 3;Biomass (g/L DCW) 1;Biomass (g/L DCW) 2;Biomass (g/L DCW) 3;Acetate (g/L) 1;Acetate (g/L) 2;Acetate (g/L) 3;Ethylene Glycol (g/L) 1;Ethylene Glycol (g/L) 2;Ethylene Glycol (g/L) 3;Glycolic Acid (g/L) 1;Glycolic Acid (g/L) 2;Glycolic Acid (g/L) 3",
+          "0.00;8.50;8.50;8.50;0.03;0.03;0.03;21.05;22.10;20.10;20.66;22.27;18.89;0.00;0.00;0.00",
+          "70.00;8.50;8.50;7.00;2.93;3.20;1.78;7.17;6.14;12.06;8.93;9.06;13.03;9.40;9.86;5.35",
+          "120.00;9.00;9.00;7.00;4.76;5.37;4.75;0.00;0.00;5.88;4.96;4.72;9.38;14.72;15.54;9.80",
+          "140.00;7.50;7.50;7.00;2.35;3.26;4.46;0.00;0.00;0.00;3.30;3.34;8.25;16.12;16.85;11.63",
+          "168.00;7.50;7.50;7.00;3.26;3.47;4.68;0.00;0.00;0.00;2.22;2.60;8.09;17.47;19.02;12.25",
+          "237.00;7.50;7.50;6.00;3.60;3.30;3.26;0.00;0.00;0.00;1.86;1.91;4.73;18.77;19.21;21.19",
+          ";;;;;;;;;;;;;;;"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "DATA/Growth_Flask_Ace.csv",
+      "bytes": 1128,
+      "sha256": "082ca85b062acaf0be5c9f80c4b8b5b8af54edab491d0b02c4fb6cd9746b799f",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d652028686f75727329",
+        "delimiter": ";",
+        "header": [
+          "Time (hours)",
+          "pH 1",
+          "pH 2",
+          "pH 3",
+          "pH 4",
+          "pH 5",
+          "pH 6",
+          "pH 7",
+          "pH 8",
+          "Biomass (g/L DCW) 1",
+          "Biomass (g/L DCW) 2",
+          "Biomass (g/L DCW) 3",
+          "Biomass (g/L DCW) 4",
+          "Biomass (g/L DCW) 5",
+          "Biomass (g/L DCW) 6",
+          "Biomass (g/L DCW) 7",
+          "Biomass (g/L DCW) 8",
+          "Acetate (g/L) 1",
+          "Acetate (g/L) 2",
+          "Acetate (g/L) 3",
+          "Acetate (g/L) 4",
+          "Acetate (g/L) 5",
+          "Acetate (g/L) 6",
+          "Acetate (g/L) 7",
+          "Acetate (g/L) 8"
+        ],
+        "data_records": 6,
+        "row_width_counts": {
+          "25": 6
+        },
+        "first_lines": [
+          "Time (hours);pH 1;pH 2;pH 3;pH 4;pH 5;pH 6;pH 7;pH 8;Biomass (g/L DCW) 1;Biomass (g/L DCW) 2;Biomass (g/L DCW) 3;Biomass (g/L DCW) 4;Biomass (g/L DCW) 5;Biomass (g/L DCW) 6;Biomass (g/L DCW) 7;Biomass (g/L DCW) 8;Acetate (g/L) 1;Acetate (g/L) 2;Acetate (g/L) 3;Acetate (g/L) 4;Acetate (g/L) 5;Acetate (g/L) 6;Acetate (g/L) 7;Acetate (g/L) 8",
+          "0.00;8.50;8.50;8.50;8.50;8.50;8.50;8.50;8.50;0.04;0.04;0.04;0.04;0.04;0.04;0.04;0.04;20.00;20.00;20.00;21.40;21.40;20.00;20.00;19.66",
+          "23.00;8.50;9.00;9.00;NaN�;NaN�;8.00;NaN�;8.50;0.24;0.06;0.04;NaN�;NaN�;0.36;NaN�;0.30;14.38;15.76;18.24;NaN�;NaN�;13.66;NaN�;13.19",
+          "46.00;9.00;9.50;9.50;NaN�;NaN�;NaN�;8.50;9.00;1.09;0.81;0.69;NaN�;NaN�;NaN�;0.46;0.55;9.60;10.28;14.95;NaN�;NaN�;NaN�;9.83;10.11",
+          "70.00;9.50;9.50;10.00;9.50;9.50;NaN�;9.00;NaN�;1.84;3.43;4.26;1.41;1.91;NaN�;0.84;NaN�;8.90;5.75;7.99;7.52;6.36;NaN�;7.33;NaN�",
+          "120.00;NaN�;NaN�;NaN�;12.00;11.50;NaN�;NaN�;NaN�;NaN�;NaN�;NaN�;2.12;1.80;NaN�;NaN�;NaN�;NaN�;NaN�;NaN�;5.14;4.13;NaN�;NaN�;NaN�",
+          "144.00;NaN�;NaN�;NaN�;12.00;12.00;NaN�;11.00;11.50;NaN�;NaN�;NaN�;2.06;2.09;NaN�;1.85;1.73;NaN�;NaN�;NaN�;4.61;3.36;NaN�;3.01;3.80"
+        ],
+        "encoding_replacement_count": 54
+      }
+    },
+    {
+      "name": "DATA/Growth_Flask_Glu+EG.csv",
+      "bytes": 606,
+      "sha256": "08fe607d2eca31c22ad735002c34cc9cae1f554e27bca09ae3ddfa7260a51e9b",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d652028686f75727329",
+        "delimiter": ";",
+        "header": [
+          "Time (hours)",
+          "pH 1",
+          "pH 2",
+          "Biomass (g/L DCW) 1",
+          "Biomass (g/L DCW) 2",
+          "Glucose (g/L) 1",
+          "Glucose (g/L) 2",
+          "Ethylene Glycol (g/L) 1",
+          "Ethylene Glycol (g/L) 2",
+          "Glycolic Acid (g/L) 1",
+          "Glycolic Acid (g/L) 2"
+        ],
+        "data_records": 7,
+        "row_width_counts": {
+          "11": 7
+        },
+        "first_lines": [
+          "Time (hours);pH 1;pH 2;Biomass (g/L DCW) 1;Biomass (g/L DCW) 2;Glucose (g/L) 1;Glucose (g/L) 2;Ethylene Glycol (g/L) 1;Ethylene Glycol (g/L) 2;Glycolic Acid (g/L) 1;Glycolic Acid (g/L) 2",
+          "0.00;7.00;7.00;0.03;0.03;19.30;19.28;19.88;20.39;0.00;0.00",
+          "70.00;3.50;3.50;8.03;7.71;0.00;0.00;14.41;13.85;2.66;2.41",
+          "94.00;3.00;3.00;6.97;7.29;0.00;0.00;13.20;13.81;3.90;3.54",
+          "120.00;4.00;4.00;5.43;6.87;0.00;0.00;12.13;12.88;4.90;4.54",
+          "144.00;4.00;4.00;2.44;4.00;0.00;0.00;11.83;12.16;5.50;5.26",
+          "170.00;3.00;3.00;5.43;5.96;0.00;0.00;11.80;12.50;5.71;5.53",
+          "238.00;2.50;2.50;4.51;4.96;0.00;0.00;12.78;12.96;6.15;6.00"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "DATA/MFA_data.csv",
+      "bytes": 367,
+      "sha256": "a2f076277bcc4f12b5ded1a67139fb26e6d4c5332daafbffd90e81605cad8eb5",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "6d7520313b6d7520323b7120",
+        "delimiter": ";",
+        "header": [
+          "mu 1",
+          "mu 2",
+          "q Acetate (mmol/[g*h]) 1",
+          "q Acetate (mmol/[g*h]) 2",
+          "q Ethylene glycol (mmol/[g*h]) 1",
+          "q Ethylene glycol (mmol/[g*h]) 2",
+          "q Glycolic Acid (mmol/[g*h]) 1",
+          "q Glycolic Acid (mmol/[g*h]) 2"
+        ],
+        "data_records": 16,
+        "row_width_counts": {
+          "8": 16
+        },
+        "first_lines": [
+          "mu 1;mu 2;q Acetate (mmol/[g*h]) 1;q Acetate (mmol/[g*h]) 2;q Ethylene glycol (mmol/[g*h]) 1;q Ethylene glycol (mmol/[g*h]) 2;q Glycolic Acid (mmol/[g*h]) 1;q Glycolic Acid (mmol/[g*h]) 2",
+          "0.078;0.097;5.40;5.42;5.48;5.27;2.62;3.20",
+          ";;;;;;;",
+          ";;;;;;;",
+          ";;;;;;;",
+          ";;;;;;;",
+          ";;;;;;;",
+          ";;;;;;;"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "DATA/RNA_Seq_data.csv",
+      "bytes": 281172,
+      "sha256": "03d3a9ebebe613d146a085c849b3444757aa6913519d32faafcf998f584898ac",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "67656e655f69643b62617365",
+        "delimiter": ";",
+        "header": [
+          "gene_id",
+          "baseMean",
+          "log2FoldChange",
+          "pvalue",
+          "padj",
+          "prot_id"
+        ],
+        "data_records": 4190,
+        "row_width_counts": {
+          "6": 4190
+        },
+        "first_lines": [
+          "gene_id;baseMean;log2FoldChange;pvalue;padj;prot_id",
+          "YALI1_E34586g;5625.06;7.32;0.000000000000;0.000000000000;AOW06124",
+          "YALI1_A14922g;23.38;7.08;0.000000000223;0.000000001794;AOW00661",
+          "YALI1_F25388g;12.13;6.86;0.000000011986;0.000000074654;AOW07402",
+          "YALI1_C32461g;913.89;6.17;0.000000000000;0.000000000000;AOW03311",
+          "YALI1_E26592g;166.33;6.02;0.000000000000;0.000000000000;AOW05798",
+          "YALI1_C22282g;11.07;6.00;0.000000113139;0.000000613155;AOW02933",
+          "YALI1_B24970g;10.96;5.98;0.000000315732;0.000001610766;AOW01919"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "DATA/Toxicity_EG_Biomass.csv",
+      "bytes": 467,
+      "sha256": "5aef7528a3bda240fdd01e9890c950cb2e7adda7c31e724eda1b65c9187ec2a5",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d652028686f75727329",
+        "delimiter": ";",
+        "header": [
+          "Time (hours)",
+          "Biomass (g/L DCW) EG 0 g/L  1",
+          "Biomass (g/L DCW) EG 0 g/L  2",
+          "Biomass (g/L DCW) EG 15 g/L  1",
+          "Biomass (g/L DCW) EG 15 g/L  2",
+          "Biomass (g/L DCW) EG 30 g/L  1",
+          "Biomass (g/L DCW) EG 30 g/L  2",
+          "Biomass (g/L DCW) EG 60 g/L  1",
+          "Biomass (g/L DCW) EG 60 g/L  2"
+        ],
+        "data_records": 6,
+        "row_width_counts": {
+          "9": 6
+        },
+        "first_lines": [
+          "Time (hours);Biomass (g/L DCW) EG 0 g/L  1;Biomass (g/L DCW) EG 0 g/L  2;Biomass (g/L DCW) EG 15 g/L  1;Biomass (g/L DCW) EG 15 g/L  2;Biomass (g/L DCW) EG 30 g/L  1;Biomass (g/L DCW) EG 30 g/L  2;Biomass (g/L DCW) EG 60 g/L  1;Biomass (g/L DCW) EG 60 g/L  2",
+          "0.00;0.03;0.03;0.03;0.03;0.03;0.03;0.03;0.03",
+          "23.00;3.03;2.98;1.60;2.03;1.34;2.62;2.95;2.76",
+          "47.00;5.01;5.34;5.25;5.65;3.19;5.93;3.88;5.09",
+          "77.00;4.79;6.14;4.83;5.87;5.44;4.13;4.88;5.38",
+          ";;;;;;;;",
+          ";;;;;;;;"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "DATA/Toxicity_EG_pH.csv",
+      "bytes": 319,
+      "sha256": "a919d7d86b1d5bc3566efc594199607556adf51670178a3b9ca06dafc1331189",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d652028686f75727329",
+        "delimiter": ";",
+        "header": [
+          "Time (hours)",
+          "pH EG 0 g/L 1",
+          "pH EG 0 g/L 2",
+          "pH EG 15 g/L 1",
+          "pH EG 15 g/L 2",
+          "pH EG 30 g/L 1",
+          "pH EG 30 g/L 2",
+          "pH EG 60 g/L 1",
+          "pH EG 60 g/L 2"
+        ],
+        "data_records": 4,
+        "row_width_counts": {
+          "9": 4
+        },
+        "first_lines": [
+          "Time (hours);pH EG 0 g/L 1;pH EG 0 g/L 2;pH EG 15 g/L 1;pH EG 15 g/L 2;pH EG 30 g/L 1;pH EG 30 g/L 2;pH EG 60 g/L 1;pH EG 60 g/L 2",
+          "0.00;6.20;6.20;6.20;6.20;6.20;6.20;6.20;6.20",
+          "23.00;1.00;1.00;1.50;1.00;1.50;1.00;1.50;1.50",
+          "47.00;1.00;1.00;1.00;1.00;1.00;1.00;1.00;1.00",
+          "77.00;1.00;1.00;1.00;1.00;1.00;1.00;1.00;1.00"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "DATA/Toxicity_GA_Biomass.csv",
+      "bytes": 447,
+      "sha256": "c6e0ef5e750f17a23b87db1fa0c144cd8a3440c2ec2fc260c1409570838d96db",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d652028686f75727329",
+        "delimiter": ";",
+        "header": [
+          "Time (hours)",
+          "Biomass (g/L DCW) GA 0 g/L  1",
+          "Biomass (g/L DCW) GA 0 g/L  2",
+          "Biomass (g/L DCW) GA 15 g/L  1",
+          "Biomass (g/L DCW) GA 15 g/L  2",
+          "Biomass (g/L DCW) GA 30 g/L  1",
+          "Biomass (g/L DCW) GA 30 g/L  2",
+          "Biomass (g/L DCW) GA 60 g/L  1",
+          "Biomass (g/L DCW) GA 60 g/L  2"
+        ],
+        "data_records": 4,
+        "row_width_counts": {
+          "9": 4
+        },
+        "first_lines": [
+          "Time (hours);Biomass (g/L DCW) GA 0 g/L  1;Biomass (g/L DCW) GA 0 g/L  2;Biomass (g/L DCW) GA 15 g/L  1;Biomass (g/L DCW) GA 15 g/L  2;Biomass (g/L DCW) GA 30 g/L  1;Biomass (g/L DCW) GA 30 g/L  2;Biomass (g/L DCW) GA 60 g/L  1;Biomass (g/L DCW) GA 60 g/L  2",
+          "0.00;0.03;0.03;0.03;0.03;0.03;0.03;0.03;0.03",
+          "23.00;2.47;2.98;1.47;2.05;5.00;2.55;0.40;0.93",
+          "47.00;3.62;5.34;3.67;4.73;5.72;5.80;3.34;3.83",
+          "77.00;4.79;6.14;4.29;6.06;7.33;5.81;3.41;3.72"
+        ],
+        "encoding_replacement_count": 0
+      }
+    },
+    {
+      "name": "DATA/Toxicity_GA_pH.csv",
+      "bytes": 319,
+      "sha256": "c8b8e213005de49699c04a08219ccd7ad0c871b74ae6087fb1d6ed4ff5d68480",
+      "structure": {
+        "format": "text_or_instrument_native",
+        "signature_hex": "54696d652028686f75727329",
+        "delimiter": ";",
+        "header": [
+          "Time (hours)",
+          "pH GA 0 g/L 1",
+          "pH GA 0 g/L 2",
+          "pH GA 15 g/L 1",
+          "pH GA 15 g/L 2",
+          "pH GA 30 g/L 1",
+          "pH GA 30 g/L 2",
+          "pH GA 60 g/L 1",
+          "pH GA 60 g/L 2"
+        ],
+        "data_records": 4,
+        "row_width_counts": {
+          "9": 4
+        },
+        "first_lines": [
+          "Time (hours);pH GA 0 g/L 1;pH GA 0 g/L 2;pH GA 15 g/L 1;pH GA 15 g/L 2;pH GA 30 g/L 1;pH GA 30 g/L 2;pH GA 60 g/L 1;pH GA 60 g/L 2",
+          "0.00;6.20;6.20;6.20;6.20;6.20;6.20;6.20;6.20",
+          "23.00;1.00;1.00;5.00;5.00;5.50;6.00;6.00;6.50",
+          "47.00;1.00;1.00;5.00;5.00;5.50;5.50;5.50;6.00",
+          "77.00;1.00;1.00;6.50;5.00;5.50;5.50;5.50;5.50"
+        ],
+        "encoding_replacement_count": 0
+      }
+    }
+  ],
+  "checks": [
+    "all_member_CRCs",
+    "safe_paths_no_symlinks"
+  ],
+  "member_count": 23,
+  "status": "pass"
+}

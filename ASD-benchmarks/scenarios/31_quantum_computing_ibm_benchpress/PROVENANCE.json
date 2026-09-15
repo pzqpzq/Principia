@@ -1,0 +1,105 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "31_quantum_computing_ibm_benchpress",
+  "domain": "quantum computing",
+  "title": "Quantum circuit compilation benchmark experiments",
+  "publisher": "Zenodo; originating researchers: IBM Quantum; Nation, Paul (IBM Research)",
+  "authoritative_landing_url": "https://zenodo.org/records/14977295",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/14977295",
+    "https://zenodo.org/api/records/14977295/files/published_results.zip/content",
+    "https://zenodo.org/api/records/14977295"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.14977295"
+  ],
+  "release_or_version": "14977295",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "deterministic_selection_rule": "Complete source record, all released files.",
+  "substitution": {
+    "original_scenario_id": "31_mechanobiology_matrix_rnaseq",
+    "original_title": "Cell response across engineered extracellular matrices",
+    "reason": "Dryad public individual-download endpoints returned HTTP 403; API payload endpoints required authorization; public browser navigation timed out. No successful payload transfer. Approved reserve used.",
+    "original_doi": "10.5061/dryad.dfn2z35fm",
+    "reserve_record": 14977295,
+    "selected_utc": "2026-09-14T15:55:30.211327+00:00"
+  },
+  "data_origin": "computational_experiment",
+  "measurement_dates": {
+    "description": "2025-03-06 deposit; benchmark JSON datetime fields record individual computational executions (including 2024), distinct from release date.",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": "2025-03-06",
+  "source_created_utc": "2025-03-06T00:37:10.414818+00:00",
+  "source_updated_utc": "2025-03-06T00:37:10.628226+00:00",
+  "source_inventory": [
+    {
+      "name": "published_results.zip",
+      "bytes": 1289241,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Computational timing/compilation experiments summarized by the source benchmarking harness; repeated timings and failures are retained. No quantum hardware shots are claimed.",
+  "known_analyses_and_limitations": "Benchpress 1.0 results were used in a Nature Computational Science publication. Circuit inputs and full compiler environments are not bundled in this result archive; commit/environment metadata is retained for reconstruction. Timing variation depends on hardware and software versions.",
+  "related_publications": [],
+  "pinned_commit": null,
+  "source_context_request_failures": [],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-031",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-031",
+      "scenario_id": "31_quantum_computing_ibm_benchpress",
+      "path": "context/zenodo_record.json",
+      "scenario_relative_path": "context/zenodo_record.json",
+      "bytes": 4630,
+      "sha256": "015362979c2f28669bf79772437911081ea1b64e616b84f16f8553390ebfabee",
+      "role": "parsed_source_metadata_snapshot",
+      "source_urls": [
+        "https://zenodo.org/api/records/14977295"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:55:30.210934+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14977295"
+      ],
+      "citation_url": "https://zenodo.org/records/14977295",
+      "source_version": "14977295",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-031",
+      "scenario_id": "31_quantum_computing_ibm_benchpress",
+      "path": "raw/published_results.zip",
+      "scenario_relative_path": "raw/published_results.zip",
+      "bytes": 1289241,
+      "sha256": "df77a8c7b297601469777559c5d9d84254e463e8cfb1a150e9d92c186629a7e8",
+      "role": "official_data",
+      "source_urls": [
+        "https://zenodo.org/api/records/14977295/files/published_results.zip/content"
+      ],
+      "download_url": "https://zenodo.org/api/records/14977295/files/published_results.zip/content",
+      "source_checksum": "md5:eb6703c65b09d35cd92c570027c4d37f",
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:55:37.061664+00:00",
+      "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "citation_identifiers": [
+        "10.5281/zenodo.14977295"
+      ],
+      "citation_url": "https://zenodo.org/records/14977295",
+      "source_version": "14977295",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/14977295",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "41_energy_eia930_grid_2025",
+  "domain": "electric-power systems",
+  "title": "Hourly electric-grid balance and forecasts",
+  "publisher": "U.S. Energy Information Administration",
+  "authoritative_landing_url": "https://www.eia.gov/electricity/gridmonitor/dashboard/electric_overview/US48/US48",
+  "authoritative_source_urls": [
+    "https://www.eia.gov/electricity/gridmonitor/dashboard/electric_overview/US48/US48",
+    "https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_2025_Jan_Jun.csv",
+    "https://www.eia.gov/about/copyrights_reuse.php",
+    "https://www.eia.gov/electricity/gridmonitor/about"
+  ],
+  "identifiers": [],
+  "release_or_version": "EIA-930 January-June 2025; frozen retrieval snapshot",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "Public domain; EIA attribution",
+  "deterministic_selection_rule": "Complete official January-June 2025 balance CSV; all balancing authorities and published fields retained.",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": {
+    "description": "2025-01-01 through 2025-06-30 hourly reporting window, with source local/UTC endpoint fields.",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": null,
+  "source_created_utc": null,
+  "source_updated_utc": null,
+  "source_inventory": null,
+  "author_preprocessing": "Published balancing-authority operational products include author/agency imputations and adjustments. All variants are preserved; no additional imputation or correction was performed.",
+  "known_analyses_and_limitations": "EIA grid accounting is already documented. Demand-generation-interchange equalities are accounting identities, not discoveries. Timestamp conventions, reporting gaps and fuel-category revisions may introduce apparent relationships.",
+  "related_publications": [],
+  "pinned_commit": null,
+  "source_context_request_failures": [],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-041",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-041",
+      "scenario_id": "41_energy_eia930_grid_2025",
+      "path": "context/data_documentation.html",
+      "scenario_relative_path": "context/data_documentation.html",
+      "bytes": 43510,
+      "sha256": "2b869fca488b1a2284fe69e482a392b60bcea8f3b5bea33fb0cde189fb17b8eb",
+      "role": "official_context",
+      "source_urls": [
+        "https://www.eia.gov/electricity/gridmonitor/about"
+      ],
+      "download_url": "https://www.eia.gov/electricity/gridmonitor/about",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:46:47.350007+00:00",
+      "license_or_terms": "Public domain; EIA attribution",
+      "citation_identifiers": [],
+      "citation_url": "https://www.eia.gov/electricity/gridmonitor/dashboard/electric_overview/US48/US48",
+      "source_version": "EIA-930 January-June 2025; frozen retrieval snapshot",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://www.eia.gov/electricity/gridmonitor/dashboard/electric_overview/US48/US48",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-041",
+      "scenario_id": "41_energy_eia930_grid_2025",
+      "path": "context/reuse_policy.html",
+      "scenario_relative_path": "context/reuse_policy.html",
+      "bytes": 52301,
+      "sha256": "ddf08d4d288d9cf84966fab526163afaddab2bf9de99d30e0f43d2f9b812e995",
+      "role": "official_context",
+      "source_urls": [
+        "https://www.eia.gov/about/copyrights_reuse.php"
+      ],
+      "download_url": "https://www.eia.gov/about/copyrights_reuse.php",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:46:37.175808+00:00",
+      "license_or_terms": "Public domain; EIA attribution",
+      "citation_identifiers": [],
+      "citation_url": "https://www.eia.gov/electricity/gridmonitor/dashboard/electric_overview/US48/US48",
+      "source_version": "EIA-930 January-June 2025; frozen retrieval snapshot",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://www.eia.gov/electricity/gridmonitor/dashboard/electric_overview/US48/US48",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-041",
+      "scenario_id": "41_energy_eia930_grid_2025",
+      "path": "raw/EIA930_BALANCE_2025_Jan_Jun.csv",
+      "scenario_relative_path": "raw/EIA930_BALANCE_2025_Jan_Jun.csv",
+      "bytes": 47565054,
+      "sha256": "fac4bb991dfa1dab3b4b35300ccab54ac99be13a40ce91954db8ddafb2816242",
+      "role": "official_data",
+      "source_urls": [
+        "https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_2025_Jan_Jun.csv"
+      ],
+      "download_url": "https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_2025_Jan_Jun.csv",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T15:56:21.421432+00:00",
+      "license_or_terms": "Public domain; EIA attribution",
+      "citation_identifiers": [],
+      "citation_url": "https://www.eia.gov/electricity/gridmonitor/dashboard/electric_overview/US48/US48",
+      "source_version": "EIA-930 January-June 2025; frozen retrieval snapshot",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://www.eia.gov/electricity/gridmonitor/dashboard/electric_overview/US48/US48",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "scenario_id": "06_physics_nist_rydberg_rf_sensing",
+  "path": "raw/FIG5a_Measured_Efield_vs_AppliedSignalRFPower_for_EIT_ION.csv",
+  "bytes": 1123,
+  "sha256": "c0dff10f6bf391fe26d127acaaf94d6e6c1e088fb0498637229a1e8917f0186a",
+  "checked_utc": "2026-09-15T06:40:01.576056+00:00",
+  "format": "text_or_instrument_native",
+  "signature_hex": "4549545f7371727428505f73",
+  "delimiter": ",",
+  "header": [
+    "EIT_sqrt(P_sig) (mW^1/2)",
+    "EIT_ E_RF (V/m)",
+    "Fit_EIT_sqrt(P_sig) (mW^1/2)",
+    "Fit_EIT_ E_RF (V/m)",
+    "Ion_sqrt(P_sig) (mW^1/2)",
+    "Ion_ E_RF (V/m)",
+    "Fit_Ion_sqrt(P_sig) (mW^1/2)",
+    "Ion_EIT_ E_RF (V/m)"
+  ],
+  "data_records": 11,
+  "row_width_counts": {
+    "8": 11
+  },
+  "first_lines": [
+    "EIT_sqrt(P_sig) (mW^1/2),EIT_ E_RF (V/m),Fit_EIT_sqrt(P_sig) (mW^1/2),Fit_EIT_ E_RF (V/m),Ion_sqrt(P_sig) (mW^1/2),Ion_ E_RF (V/m),Fit_Ion_sqrt(P_sig) (mW^1/2),Ion_EIT_ E_RF (V/m)",
+    "0.001,0,0.001,0.037059346,0.001,0,0.001,0.025979224",
+    "0.630957344,0.47953341,0.630957344,0.52694904,0.794328235,0.60990972,0.794328235,0.685074506",
+    "0.794328235,0.623392976,0.794328235,0.653995285,1,0.871300196,1,0.855946138",
+    "1,0.815205948,1,0.813937032,1.258925412,1.176254856,1.258925412,1.071060777",
+    "1.258925412,1.102926386,1.258925412,1.015291761,1.584893192,1.350514956,1.584893192,1.341874063",
+    "1.584893192,1.294741319,1.584893192,1.268782346,1.995262315,1.655445131,1.995262315,1.682807791",
+    "1.995262315,1.630413203,1.995262315,1.587908086,2.511886432,2.134677888,2.511886432,2.112017925"
+  ],
+  "encoding_replacement_count": 0,
+  "status": "pass"
+}

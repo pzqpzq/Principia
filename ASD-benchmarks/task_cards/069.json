@@ -1,0 +1,356 @@
+{
+  "case_id": "P100-069",
+  "case_revision": 1,
+  "scenario_id": "69_robotics_gearbox_thermal",
+  "title": "Replication Data for: \"Lubricant Temperature Observer for Gearboxes in Industrial Robots\"",
+  "domain": "Robotics thermodynamics",
+  "question": "How does operating history influence lubricant and housing temperatures in this robot joint?",
+  "data_origin": "measured_or_observed",
+  "source_version": "1.0",
+  "source_url": "https://doi.org/10.18419/DARUS-5015",
+  "identifiers": [
+    "doi:10.18419/DARUS-5015"
+  ],
+  "publisher": "[{'authorName': {'typeName': 'authorName', 'multiple': False, 'typeClass': 'primitive', 'value': 'Bauer, Christian Johannes Eugen'}, 'authorAffiliation': {'typeName': 'authorAffiliation', 'multiple': False, 'typeClass': 'primitive', 'value': 'https://ror.org/04vnq7t77', 'expandedvalue': {'scheme': 'http://www.grid.ac/ontology/', 'termName': 'University of Stuttgart', '@type': 'https://schema.org/Organization'}}, 'authorIdentifierScheme': {'typeName': 'authorIdentifierScheme', 'multiple': False, 'typeClass': 'controlledVocabulary', 'value': 'ORCID'}, 'authorIdentifier': {'typeName': 'authorIdentifier', 'multiple': False, 'typeClass': 'primitive', 'value': 'https://orcid.org/0009-0002-7979-3877', 'expandedvalue': {'personName': 'Bauer, Christian Johannes Eugen', '@id': 'https://orcid.org/0009-0002-7979-3877', 'scheme': 'ORCID', '@type': 'https://schema.org/Person'}}}, {'authorName': {'typeName': 'authorName', 'multiple': False, 'typeClass': 'primitive', 'value': 'Neher, Markus'}, 'authorAffiliation': {'typeName': 'authorAffiliation', 'multiple': False, 'typeClass': 'primitive', 'value': 'https://ror.org/04vnq7t77', 'expandedvalue': {'scheme': 'http://www.grid.ac/ontology/', 'termName': 'University of Stuttgart', '@type': 'https://schema.org/Organization'}}}]",
+  "release_date": "2025-07-24",
+  "measurement_dates": "Acquisition dates unknown; source release July 2025.",
+  "variables_and_units": "time, load/housing/environment temperatures, angular speed and friction torque",
+  "independent_units": "complete identification and validation runs within one robot joint",
+  "validation_design": "complete identification and validation runs within one robot joint Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "All original identification/validation CSVs and two MATLAB scripts retained. Source text says five columns but enumerates six; original columns resolve the discrepancy.",
+  "prior_analysis_and_limits": "One industrial robot joint. Respect identification versus heat-up/long-term/cool-down validation runs; do not mix rows across them or claim cross-joint transfer. ",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/validation/cool-down/cool-down.csv",
+      "structure": {
+        "header": [
+          "t",
+          "T_L",
+          "T_H",
+          "T_E",
+          "theta_dot",
+          "tau_f"
+        ],
+        "data_records": 432001,
+        "first_lines": [
+          "t,T_L,T_H,T_E,theta_dot,tau_f",
+          "0,51.15,42.28,26.89,-1.57252420275437,-2.78993572723224",
+          "0.100000000000023,51.19,42.28,26.89,-1.56980148912126,-2.78957648007767",
+          "0.200000000000045,51.12,42.27,26.88,-1.57122567779089,-2.78976439397391",
+          "0.300000000000068,51.15,42.27,26.88,-1.57000045665599,-2.78960273275435",
+          "0.400000000000091,51.17,42.28,26.89,-1.57032508789686,-2.78964556606893",
+          "0.5,51.17,42.28,26.89,-1.57174927656649,-2.78983347996517",
+          "0.600000000000023,51.15,42.27,26.89,-1.5721995715135,-2.78989289391765"
+        ]
+      }
+    },
+    {
+      "asset": "raw/validation/heat-up/theta_dot=0p3142.csv",
+      "structure": {
+        "header": [
+          "t",
+          "T_L",
+          "T_H",
+          "T_E",
+          "theta_dot",
+          "tau_f"
+        ],
+        "data_records": 864001,
+        "first_lines": [
+          "t,T_L,T_H,T_E,theta_dot,tau_f",
+          "0,20.99,20.98,20.56,0.0114039813325309,1.87900276629095",
+          "0.00249999999999773,20.99,20.98,20.56,0.0085556039932762,1.88265136460887",
+          "0.00499999999999545,20.99,20.98,20.56,0.00848230016469244,1.88272499247562",
+          "0.00750000000000028,21.02,20.98,20.56,0.0108803825569327,1.88109998245751",
+          "0.00999999999999801,21.02,20.98,20.56,0.0113411494794592,1.88042255657574",
+          "0.0124999999999957,21.02,20.98,20.56,0.0121789075204164,1.87910870619173",
+          "0.0150000000000006,21.02,20.98,20.56,0.0123778750551438,1.87878195391823"
+        ]
+      }
+    },
+    {
+      "asset": "raw/validation/heat-up/theta_dot=0p6283.csv",
+      "structure": {
+        "header": [
+          "t",
+          "T_L",
+          "T_H",
+          "T_E",
+          "theta_dot",
+          "tau_f"
+        ],
+        "data_records": 86401,
+        "first_lines": [
+          "t,T_L,T_H,T_E,theta_dot,tau_f",
+          "0,19.95,19.84,20.79,0.0106918869977173,1.83589825062095",
+          "0.0249999999999986,19.95,19.84,20.79,0.0149016211535276,1.82768468268738",
+          "0.0499999999999972,19.93,19.85,20.79,0.0145141580595848,1.8285196025227",
+          "0.0749999999999957,19.97,19.85,20.77,0.0208601752198362,1.81380428024027",
+          "0.100000000000001,19.9,19.83,20.77,0.0207345115136926,1.8141075874505",
+          "0.125,19.97,19.83,20.79,0.0263056024860585,1.80081765544578",
+          "0.149999999999999,19.94,19.84,20.79,0.028305749808844,1.79627687178107"
+        ]
+      }
+    },
+    {
+      "asset": "raw/validation/heat-up/theta_dot=0p9425.csv",
+      "structure": {
+        "header": [
+          "t",
+          "T_L",
+          "T_H",
+          "T_E",
+          "theta_dot",
+          "tau_f"
+        ],
+        "data_records": 864001,
+        "first_lines": [
+          "t,T_L,T_H,T_E,theta_dot,tau_f",
+          "0,21.01,21.02,20.74,0.0100426245159754,1.88180423211905",
+          "0.00249999999999773,20.99,21.02,20.74,0.0102311200751908,1.88067921522026",
+          "0.00499999999999545,20.99,21.02,20.74,0.0100426245159754,1.88092717751115",
+          "0.00750000000000028,20.99,21.02,20.74,0.00978082512817622,1.8812610941953",
+          "0.00999999999999801,20.99,21.02,20.74,0.0104929194629899,1.88032462313705",
+          "0.0124999999999957,20.99,21.02,20.74,0.0121160756673446,1.87788105630582",
+          "0.0150000000000006,20.99,21.02,20.74,0.0117286125734019,1.87850058418587"
+        ]
+      }
+    },
+    {
+      "asset": "raw/identification/theta_dot=0p9425.csv",
+      "structure": {
+        "header": [
+          "t",
+          "T_L",
+          "T_H",
+          "T_E",
+          "theta_dot",
+          "tau_f"
+        ],
+        "data_records": 1162088,
+        "first_lines": [
+          "t,T_L,T_H,T_E,theta_dot,tau_f",
+          "0,19.41,19.25,20,-0.0111421819447318,-1.83177741494683",
+          "0.00250000000001194,19.41,19.25,20,-0.0119171081326173,-1.83181482051305",
+          "0.00500000000000966,19.41,19.25,20,-0.0103672557568463,-1.83181482051305",
+          "0.00750000000000739,19.41,19.25,20,-0.0107547188507891,-1.83181482051305",
+          "0.0100000000000051,19.41,19.25,20,-0.0111421819447318,-1.83181482051305",
+          "0.0125000000000028,19.41,19.25,20,-0.010168288222119,-1.83181482051305",
+          "0.0150000000000006,19.41,19.25,20,-0.0111421819447318,-1.83181482051305"
+        ]
+      }
+    },
+    {
+      "asset": "raw/validation/long-term/theta_dot_1=0p6283_theta_dot_2=0p9425.csv",
+      "structure": {
+        "header": [
+          "t",
+          "T_L",
+          "T_H",
+          "T_E",
+          "theta_dot",
+          "tau_f"
+        ],
+        "data_records": 576001,
+        "first_lines": [
+          "t,T_L,T_H,T_E,theta_dot,tau_f",
+          "0,19.95,19.84,20.79,0.0106918869977173,1.83589825062095",
+          "0.0249999999999986,19.95,19.84,20.79,0.0149016211535276,1.82768468268738",
+          "0.0499999999999972,19.93,19.85,20.79,0.0145141580595848,1.8285196025227",
+          "0.0749999999999957,19.97,19.85,20.77,0.0208601752198362,1.81380428024027",
+          "0.100000000000001,19.9,19.83,20.77,0.0207345115136926,1.8141075874505",
+          "0.125,19.97,19.83,20.79,0.0263056024860585,1.80081765544578",
+          "0.149999999999999,19.94,19.84,20.79,0.028305749808844,1.79627687178107"
+        ]
+      }
+    },
+    {
+      "asset": "raw/validation/long-term/theta_dot_1=1p2566_theta_dot_2=0p3142.csv",
+      "structure": {
+        "header": [
+          "t",
+          "T_L",
+          "T_H",
+          "T_E",
+          "theta_dot",
+          "tau_f"
+        ],
+        "data_records": 576001,
+        "first_lines": [
+          "t,T_L,T_H,T_E,theta_dot,tau_f",
+          "0,20.77,20.76,21.26,0.0148387893004558,1.86307102941662",
+          "0.0249999999999986,20.77,20.77,21.26,0.0130899693899575,1.86640076907509",
+          "0.0499999999999972,20.77,20.77,21.28,0.0205983758320371,1.85035767546873",
+          "0.0750000000000028,20.76,20.77,21.28,0.0207973433667644,1.84942695418232",
+          "0.100000000000001,20.76,20.77,21.28,0.0275308236209586,1.83325899469784",
+          "0.125,20.75,20.76,21.28,0.028630381049715,1.83019434052745",
+          "0.149999999999999,20.76,20.76,21.28,0.0316148940706253,1.8237718420289"
+        ]
+      }
+    },
+    {
+      "asset": "raw/identification/theta_dot=1p0996.csv",
+      "structure": {
+        "header": [
+          "t",
+          "T_L",
+          "T_H",
+          "T_E",
+          "theta_dot",
+          "tau_f"
+        ],
+        "data_records": 827997,
+        "first_lines": [
+          "t,T_L,T_H,T_E,theta_dot,tau_f",
+          "0,20.7,20.71,21.15,0.0120532438142728,1.8635288484283",
+          "0.00249999999999773,20.7,20.71,21.15,0.0129538337083019,1.8635288484283",
+          "0.00500000000000256,20.7,20.71,21.15,0.0119171081326173,1.8635288484283",
+          "0.00750000000000028,20.7,20.71,21.15,0.0116553087448181,1.8635614565418",
+          "0.00999999999999801,20.7,20.71,21.15,0.00971799327510443,1.86365131070727",
+          "0.0125000000000028,20.7,20.71,21.15,0.00848230016469244,1.86378315174946",
+          "0.0150000000000006,20.7,20.71,21.15,0.00712094334813686,1.8639042593349"
+        ]
+      }
+    },
+    {
+      "asset": "raw/validation/heat-up/theta_dot=1p2566.csv",
+      "structure": {
+        "header": [
+          "t",
+          "T_L",
+          "T_H",
+          "T_E",
+          "theta_dot",
+          "tau_f"
+        ],
+        "data_records": 86401,
+        "first_lines": [
+          "t,T_L,T_H,T_E,theta_dot,tau_f",
+          "0,20.77,20.76,21.26,0.0148387893004558,1.86307102941662",
+          "0.0249999999999986,20.77,20.77,21.26,0.0130899693899575,1.86640076907509",
+          "0.0499999999999972,20.77,20.77,21.28,0.0205983758320371,1.85035767546873",
+          "0.0750000000000028,20.76,20.77,21.28,0.0207973433667644,1.84942695418232",
+          "0.100000000000001,20.76,20.77,21.28,0.0275308236209586,1.83325899469784",
+          "0.125,20.75,20.76,21.28,0.028630381049715,1.83019434052745",
+          "0.149999999999999,20.76,20.76,21.28,0.0316148940706253,1.8237718420289"
+        ]
+      }
+    },
+    {
+      "asset": "raw/identification/theta_dot=1p2566.csv",
+      "structure": {
+        "header": [
+          "t",
+          "T_L",
+          "T_H",
+          "T_E",
+          "theta_dot",
+          "tau_f"
+        ],
+        "data_records": 607691,
+        "first_lines": [
+          "t,T_L,T_H,T_E,theta_dot,tau_f",
+          "0,21.08,20.62,19.98,0.0102311200751908,1.86878525447349",
+          "0.00249999999999773,21.08,20.62,19.98,0.0103044239037745,1.8689938896694",
+          "0.00499999999999545,21.08,20.62,20,0.0102311200751908,1.86913358527011",
+          "0.00750000000000028,21.08,20.62,20,0.0125663706143592,1.86938434806411",
+          "0.00999999999999801,21.08,20.62,20,0.0115924768917463,1.86981204995407",
+          "0.0124999999999957,21.08,20.62,20,0.0112678456508754,1.87066463612618",
+          "0.0150000000000006,21.08,20.62,20,0.012629202467431,1.87141364870414"
+        ]
+      }
+    },
+    {
+      "asset": "raw/identification/theta_dot=1p4137.csv",
+      "structure": {
+        "header": [
+          "t",
+          "T_L",
+          "T_H",
+          "T_E",
+          "theta_dot",
+          "tau_f"
+        ],
+        "data_records": 547384,
+        "first_lines": [
+          "t,T_L,T_H,T_E,theta_dot,tau_f",
+          "0,19.35,19.26,20.04,0.010168288222119,1.83181482051305",
+          "0.00249999999999773,19.35,19.26,20.04,0.0106918869977173,1.83181482051305",
+          "0.00499999999999545,19.35,19.26,20.04,0.0117914444264737,1.83252788417832",
+          "0.00750000000000739,19.35,19.26,20.04,0.0113411494794592,1.83348603718991",
+          "0.0100000000000051,19.35,19.26,20.04,0.0115924768917463,1.83348603718991",
+          "0.0125000000000028,19.35,19.26,20.04,0.0112050137978036,1.83384716354937",
+          "0.0150000000000006,19.35,19.26,20.04,0.0110165182385882,1.83408770118423"
+        ]
+      }
+    },
+    {
+      "asset": "raw/validation/heat-up/theta_dot=1p5708.csv",
+      "structure": {
+        "header": [
+          "t",
+          "T_L",
+          "T_H",
+          "T_E",
+          "theta_dot",
+          "tau_f"
+        ],
+        "data_records": 864001,
+        "first_lines": [
+          "t,T_L,T_H,T_E,theta_dot,tau_f",
+          "0,19.25,19.12,19.79,0.0103044239037745,1.83653597930548",
+          "0.00249999999999773,19.25,19.12,19.79,0.00848230016469244,1.83917557955736",
+          "0.00500000000000966,19.25,19.12,19.79,0.008618435846348,1.8390008385628",
+          "0.00750000000000739,19.25,19.12,19.79,0.0109432144100044,1.83547179868399",
+          "0.0100000000000051,19.25,19.12,19.79,0.0103672557568463,1.83643423247183",
+          "0.0125000000000028,19.25,19.12,19.79,0.0114039813325309,1.83466513817271",
+          "0.0150000000000006,19.25,19.12,19.79,0.0101054563690472,1.83685380040639"
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "text_or_instrument_native": 15
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "CC BY 4.0",
+  "source_asset_bytes": 496765457,
+  "expanded_source_equivalent_bytes": 496765457,
+  "installed_folder_bytes": 496807507,
+  "source_asset_count": 16,
+  "asset_paths": [
+    "scenarios/69_robotics_gearbox_thermal/raw/validation/cool-down/cool-down.csv",
+    "scenarios/69_robotics_gearbox_thermal/raw/plot_figures.m",
+    "scenarios/69_robotics_gearbox_thermal/raw/read_data.m",
+    "scenarios/69_robotics_gearbox_thermal/raw/validation/heat-up/theta_dot=0p3142.csv",
+    "scenarios/69_robotics_gearbox_thermal/raw/validation/heat-up/theta_dot=0p6283.csv",
+    "scenarios/69_robotics_gearbox_thermal/raw/validation/heat-up/theta_dot=0p9425.csv",
+    "scenarios/69_robotics_gearbox_thermal/raw/identification/theta_dot=0p9425.csv",
+    "scenarios/69_robotics_gearbox_thermal/raw/validation/long-term/theta_dot_1=0p6283_theta_dot_2=0p9425.csv",
+    "scenarios/69_robotics_gearbox_thermal/raw/validation/long-term/theta_dot_1=1p2566_theta_dot_2=0p3142.csv",
+    "scenarios/69_robotics_gearbox_thermal/raw/identification/theta_dot=1p0996.csv",
+    "scenarios/69_robotics_gearbox_thermal/raw/validation/heat-up/theta_dot=1p2566.csv",
+    "scenarios/69_robotics_gearbox_thermal/raw/identification/theta_dot=1p2566.csv",
+    "scenarios/69_robotics_gearbox_thermal/raw/identification/theta_dot=1p4137.csv",
+    "scenarios/69_robotics_gearbox_thermal/raw/validation/heat-up/theta_dot=1p5708.csv",
+    "scenarios/69_robotics_gearbox_thermal/raw/identification/theta_dot=1p5708.csv",
+    "scenarios/69_robotics_gearbox_thermal/context/SOURCE_FACTS.json"
+  ],
+  "local_folder": "scenarios/69_robotics_gearbox_thermal",
+  "size_exception": true,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 496793395,
+  "expanded_release_folder_equivalent_bytes": 496793395
+}

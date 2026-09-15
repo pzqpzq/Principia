@@ -5,17 +5,17 @@
 
 <p align="center">
   <a href="./Principia-v1.4.2/"><img alt="Principia v1.4.2 source release" src="https://img.shields.io/badge/Principia-v1.4.2-111827?style=flat-square&amp;logo=github"></a>
-  <a href="#five-projects-ready-to-explore"><img alt="Five included demo projects" src="https://img.shields.io/badge/demo_projects-5-0F766E?style=flat-square"></a>
-  <a href="./scenario/"><img alt="Twenty independent public scenarios" src="https://img.shields.io/badge/public_scenarios-20-2563EB?style=flat-square"></a>
+  <a href="#five-demo-projects"><img alt="Five included demo projects" src="https://img.shields.io/badge/demo_projects-5-0F766E?style=flat-square"></a>
+  <a href="./ASD-benchmarks/"><img alt="Principia ASD Benchmark: 100 scientific scenarios" src="https://img.shields.io/badge/ASD_benchmark-100_scenarios-2563EB?style=flat-square"></a>
   <a href="./Principia-v1.4.2/core-v1.4.2/LICENSE"><img alt="MIT licensed application" src="https://img.shields.io/badge/code-MIT-0F766E?style=flat-square"></a>
   <a href="https://arxiv.org/abs/2606.29354"><img alt="ICML 2026 research" src="https://img.shields.io/badge/ICML-2026-6D4AFF?style=flat-square"></a>
 </p>
 
 <p align="center">
   <a href="#start-v142-locally">Quick start</a> ·
-  <a href="#five-projects-ready-to-explore">Included projects</a> ·
+  <a href="#five-demo-projects">Included projects</a> ·
   <a href="#from-local-data-to-an-inspectable-rule">Discovery workflow</a> ·
-  <a href="#twenty-independent-public-test-scenarios">Public scenarios</a> ·
+  <a href="#principia-100-scientific-discovery-benchmark">ASD benchmark</a> ·
   <a href="#principia-v141">v1.4.1</a> ·
   <a href="#research-foundations">Research</a>
 </p>
@@ -131,28 +131,30 @@ Demos initialize **once in an empty workspace**. Existing projects are preserved
 
 Raw files remain in the selected folders. Remote analysis can send bounded profiles, excerpts, or previews after per-run permission; it is not a promise of zero network egress. No author credentials or original demo datasets are packaged with the application. A new computation on a demo requires reconnecting the relevant public data. See [ASD](./Principia-v1.4.2/core-v1.4.2/docs/v1.4.2/data-discovery.md), [privacy](./Principia-v1.4.2/core-v1.4.2/docs/v1.4/privacy-and-security.md), and [storage](./Principia-v1.4.2/core-v1.4.2/docs/v1.4.2/storage-policy.md).
 
-## Twenty independent public test scenarios
+## Principia-100 scientific discovery benchmark
 
-The separate [`scenario/`](./scenario/) collection covers **twenty independent datasets** and a broad range of scientific formats. Each folder includes source and licensing records, checksums, official data or metadata, a scenario description, and a research brief. These are inputs for exploration and reproducibility; the collection is not a claim of uniform discovery quality across all domains.
+**[Principia-100](./ASD-benchmarks/) brings 100 source-verifiable scientific scenarios to autonomous discovery: native data, practical research questions, and a protocol for testing the resulting equations.** It is a core part of Principia's research ecosystem and is also usable with other discovery systems.
 
-| Area | Public scenarios and providers |
+<p align="center">
+  <a href="./ASD-benchmarks/"><img src="./ASD-benchmarks/assets/principia-100.svg" alt="Principia-100: 100 scientific scenarios connecting native data, equations, and evidence" width="100%"></a>
+</p>
+
+The collection spans **semiconductor devices, materials, physics, biology, medicine, environmental science, society, computing and mathematics**. It retains heterogeneous source formats: spreadsheets, instrument logs, scientific arrays, images, audio, video, spatial records and computational trajectories. Every case includes source attribution, reuse terms, checksums, a neutral brief and a scientific task card with validation units and limitations.
+
+| What is included | Why it matters |
 | :--- | :--- |
-| **Mathematics & astronomy** | [Integer sequences · OEIS](./scenario/01_mathematics_oeis_daily_sequences/) · [Stellar light curves · MAST](./scenario/02_astronomy_mast_tars_sector96/) |
-| **Physics** | [Gravitational-wave strain · GWOSC](./scenario/03_physics_gwosc_o4a_h1_strain/) · [Four-lepton events · ATLAS/CERN](./scenario/04_particle_physics_atlas_4lep_2015/) · [Rydberg RF sensing · NIST](./scenario/06_physics_nist_rydberg_rf_sensing/) |
-| **Biology & neuroscience** | [Multiomics · GEO](./scenario/05_biology_geo_gse303208_multiomics/) · [Multimodal gait · PhysioNet](./scenario/07_neuroscience_physionet_gait_s1/) · [Neural recordings · DANDI](./scenario/09_neuroscience_dandi_001176/) |
-| **Medical imaging** | [Breast MRI · TCIA/IDC](./scenario/08_medical_imaging_tcia_ea1141/) |
-| **Computing** | [Vulnerability records · NVD](./scenario/10_computer_security_nvd_recent_snapshot/) · [Inference benchmarks · MLPerf](./scenario/11_ai_mlperf_inference_v6_0/) |
-| **Materials & manufacturing** | [Hafnia wafer metrology · NIST](./scenario/12_semiconductor_nist_hafnia_wafer/) · [Encapsulant cure · NIST](./scenario/13_materials_nist_encapsulant_cure/) |
-| **Society & economics** | [Household trends · Census HTOPS](./scenario/14_sociology_census_htops_2026/) · [Household finances · Federal Reserve SHED](./scenario/15_economics_federal_reserve_shed_2025/) · [Prices and employment · BLS CPI/CES](./scenario/16_economics_bls_cpi_ces_2026/) |
-| **Earth, climate & transport** | [Earthquakes · USGS](./scenario/17_geography_usgs_comcat_2026_07/) · [Storm events · NOAA](./scenario/18_climate_noaa_storm_events_2025/) · [Vehicle safety · NHTSA](./scenario/19_transport_nhtsa_safety_2025_2026/) · [Sea-surface temperature anomalies · NOAA](./scenario/20_ocean_noaa_coral_ssta_20260816/) |
+| **100 scenarios · 1,685 frozen scientific assets** | Study realistic research folders with source-native organization and documented processing. |
+| **85 measured/observed cases**, plus clearly labeled mixed, computational and reference cases | Examine a broad range of evidence without confusing simulation with observation. |
+| **100 task cards and an evaluation protocol** | Test executable relationships with uncertainty, baselines, falsifying controls and appropriate held-out groups. |
+| **A catalog, source/license registers and replay tools** | Choose cases, trace evidence and reconstruct the exact released inputs. |
 
-Keep the scenarios separate when comparing discovery runs. Generated research briefs provide context, not measured evidence. Dataset access and reuse follow each publisher's terms, independently of the application's MIT license. **The private TJ scenario is not included.**
+Start with [membrane permeation](./ASD-benchmarks/task_cards/061.md), [industrial screw driving](./ASD-benchmarks/task_cards/053.md), [CHO bioreactor cultivations](./ASD-benchmarks/task_cards/071.md), or [Arctic ocean profiles](./ASD-benchmarks/task_cards/094.md). Download a selected case, connect it through **New research → Add data**, and use its `USER_BRIEF.txt` as a starting research goal. For a formal benchmark study, follow the input allowlist and freeze the case-specific validation design first.
 
-To add a single scenario to the sparse checkout above, for example:
+**[Explore all 100 →](./ASD-benchmarks/CATALOG.md)** · **[Download selected cases](./ASD-benchmarks/DOWNLOAD.md)** · **[Read the protocol](./ASD-benchmarks/EVALUATION_PROTOCOL.md)**
 
-```bash
-git sparse-checkout add scenario/06_physics_nist_rydberg_rf_sensing
-```
+The full benchmark is about **4.80 GB** and uses **Git LFS** for large assets; it is optional and separate from the application installation above. This is an **open, source-aware corpus**: published analyses are disclosed, the original 20 scenarios were used during Principia development, and native-reader support is distinguished from application ingestion. Reproduction, validated extension, novelty candidate and justified abstention are separate outcomes. The release supplies research inputs and evaluation standards, without claiming 100 unknown laws or an aggregate discovery score.
+
+Dataset reuse follows the [source-specific terms](./ASD-benchmarks/LICENSES.md). The earlier [`scenario/`](./scenario/) directory remains a historical collection; use the versioned `ASD-benchmarks/` corpus for new benchmark studies.
 
 ## Built for inspection and continued work
 

@@ -1,0 +1,379 @@
+{
+  "case_id": "P100-008",
+  "case_revision": 1,
+  "scenario_id": "08_medical_imaging_tcia_ea1141",
+  "title": "EA1141 paired breast MR and mammography DICOM series",
+  "domain": "medical imaging",
+  "question": "How consistent are geometric and intensity relationships across retained imaging series?",
+  "data_origin": "measured_or_observed",
+  "source_version": "EA1141 v2; IDC index current at retrieval",
+  "source_url": "https://www.cancerimagingarchive.net/collection/ea1141/",
+  "identifiers": [
+    "doi:10.7937/2BAS-HR33",
+    "EA1141-1004399"
+  ],
+  "publisher": "The Cancer Imaging Archive / NCI Imaging Data Commons",
+  "release_date": "See source record; legacy retrieval vintage recorded",
+  "measurement_dates": "Not fully established in the legacy metadata; source filenames/headers and public context preserve available dates. Release dates are not substituted for measurement dates.",
+  "variables_and_units": "Variables and units are preserved in native column headers, instrument metadata and source dictionaries; see evidence anchors below.",
+  "independent_units": "Series and spatial regions within the single selected patient.",
+  "validation_design": "Series and spatial regions within the single selected patient. Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Deidentified TCIA/IDC DICOM data and reconstruction metadata. Single-patient imaging case; no diagnostic-performance claim.",
+  "prior_analysis_and_limits": "Deidentified TCIA/IDC DICOM data and reconstruction metadata. Single-patient imaging case; no diagnostic-performance claim. Deidentified TCIA/IDC DICOM data and reconstruction metadata. Single-patient imaging case; no diagnostic-performance claim.",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/df3e7dbf-8d75-478a-8822-d1e1102fdf91.dcm",
+      "structure": {
+        "tags": {
+          "Modality": "MR",
+          "SOPInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.290831426936828913316838186349",
+          "SeriesInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495",
+          "StudyInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.261495847462034161390005504013",
+          "Rows": "480",
+          "Columns": "480",
+          "PixelSpacing": "[0.84337347745895, 0.84337347745895]",
+          "SliceThickness": "3",
+          "ImagePositionPatient": "[-199.45302906632, -242.90767899155, -62.740802764892]",
+          "ImageOrientationPatient": "[1, 0, 0, 0, 1, 0]",
+          "BitsAllocated": "16",
+          "BitsStored": "12",
+          "PhotometricInterpretation": "MONOCHROME2",
+          "NumberOfFrames": "1"
+        }
+      }
+    },
+    {
+      "asset": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/db7dc0fd-cd77-4d5b-91d5-7bbd9686de08.dcm",
+      "structure": {
+        "tags": {
+          "Modality": "MR",
+          "SOPInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.320983657737608052284084572407",
+          "SeriesInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495",
+          "StudyInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.261495847462034161390005504013",
+          "Rows": "480",
+          "Columns": "480",
+          "PixelSpacing": "[0.84337347745895, 0.84337347745895]",
+          "SliceThickness": "3",
+          "ImagePositionPatient": "[-199.45302906632, -242.90767899155, -38.740802764892]",
+          "ImageOrientationPatient": "[1, 0, 0, 0, 1, 0]",
+          "BitsAllocated": "16",
+          "BitsStored": "12",
+          "PhotometricInterpretation": "MONOCHROME2",
+          "NumberOfFrames": "1"
+        }
+      }
+    },
+    {
+      "asset": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/208f2bc3-818f-497c-9e43-f6114b65f399.dcm",
+      "structure": {
+        "tags": {
+          "Modality": "MR",
+          "SOPInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.102724290737719805800008282945",
+          "SeriesInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495",
+          "StudyInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.261495847462034161390005504013",
+          "Rows": "480",
+          "Columns": "480",
+          "PixelSpacing": "[0.84337347745895, 0.84337347745895]",
+          "SliceThickness": "3",
+          "ImagePositionPatient": "[-199.45302906632, -242.90767899155, 30.2591972351074]",
+          "ImageOrientationPatient": "[1, 0, 0, 0, 1, 0]",
+          "BitsAllocated": "16",
+          "BitsStored": "12",
+          "PhotometricInterpretation": "MONOCHROME2",
+          "NumberOfFrames": "1"
+        }
+      }
+    },
+    {
+      "asset": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/80abeec8-363e-4b3f-b64c-3440412ad11b.dcm",
+      "structure": {
+        "tags": {
+          "Modality": "MR",
+          "SOPInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.808922953625373930636047590635",
+          "SeriesInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495",
+          "StudyInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.261495847462034161390005504013",
+          "Rows": "480",
+          "Columns": "480",
+          "PixelSpacing": "[0.84337347745895, 0.84337347745895]",
+          "SliceThickness": "3",
+          "ImagePositionPatient": "[-199.45302906632, -242.90767899155, 51.2591972351074]",
+          "ImageOrientationPatient": "[1, 0, 0, 0, 1, 0]",
+          "BitsAllocated": "16",
+          "BitsStored": "12",
+          "PhotometricInterpretation": "MONOCHROME2",
+          "NumberOfFrames": "1"
+        }
+      }
+    },
+    {
+      "asset": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/855c14d4-a81c-4d79-9315-5affc4879060.dcm",
+      "structure": {
+        "tags": {
+          "Modality": "MR",
+          "SOPInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.139740090155430149910569534743",
+          "SeriesInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495",
+          "StudyInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.261495847462034161390005504013",
+          "Rows": "480",
+          "Columns": "480",
+          "PixelSpacing": "[0.84337347745895, 0.84337347745895]",
+          "SliceThickness": "3",
+          "ImagePositionPatient": "[-199.45302906632, -242.90767899155, -32.740802764892]",
+          "ImageOrientationPatient": "[1, 0, 0, 0, 1, 0]",
+          "BitsAllocated": "16",
+          "BitsStored": "12",
+          "PhotometricInterpretation": "MONOCHROME2",
+          "NumberOfFrames": "1"
+        }
+      }
+    },
+    {
+      "asset": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/19527d46-e97b-4b32-937c-d9646d831b2a.dcm",
+      "structure": {
+        "tags": {
+          "Modality": "MR",
+          "SOPInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.279165385860477720245059781721",
+          "SeriesInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495",
+          "StudyInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.261495847462034161390005504013",
+          "Rows": "480",
+          "Columns": "480",
+          "PixelSpacing": "[0.84337347745895, 0.84337347745895]",
+          "SliceThickness": "3",
+          "ImagePositionPatient": "[-199.45302906632, -242.90767899155, 33.2591972351074]",
+          "ImageOrientationPatient": "[1, 0, 0, 0, 1, 0]",
+          "BitsAllocated": "16",
+          "BitsStored": "12",
+          "PhotometricInterpretation": "MONOCHROME2",
+          "NumberOfFrames": "1"
+        }
+      }
+    },
+    {
+      "asset": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/e8c34349-0692-4f65-b0ff-c06a0bb09f7c.dcm",
+      "structure": {
+        "tags": {
+          "Modality": "MR",
+          "SOPInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.276123836235370391364156285391",
+          "SeriesInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495",
+          "StudyInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.261495847462034161390005504013",
+          "Rows": "480",
+          "Columns": "480",
+          "PixelSpacing": "[0.84337347745895, 0.84337347745895]",
+          "SliceThickness": "3",
+          "ImagePositionPatient": "[-199.45302906632, -242.90767899155, 3.25919771194458]",
+          "ImageOrientationPatient": "[1, 0, 0, 0, 1, 0]",
+          "BitsAllocated": "16",
+          "BitsStored": "12",
+          "PhotometricInterpretation": "MONOCHROME2",
+          "NumberOfFrames": "1"
+        }
+      }
+    },
+    {
+      "asset": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/b788fcbc-16e9-4712-8d8c-2e0e3b102031.dcm",
+      "structure": {
+        "tags": {
+          "Modality": "MR",
+          "SOPInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.110143780258848561077383107415",
+          "SeriesInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495",
+          "StudyInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.261495847462034161390005504013",
+          "Rows": "480",
+          "Columns": "480",
+          "PixelSpacing": "[0.84337347745895, 0.84337347745895]",
+          "SliceThickness": "3",
+          "ImagePositionPatient": "[-199.45302906632, -242.90767899155, 75.2592010498046]",
+          "ImageOrientationPatient": "[1, 0, 0, 0, 1, 0]",
+          "BitsAllocated": "16",
+          "BitsStored": "12",
+          "PhotometricInterpretation": "MONOCHROME2",
+          "NumberOfFrames": "1"
+        }
+      }
+    },
+    {
+      "asset": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/790fa529-b8d9-4022-a65a-1f5b8636f6a9.dcm",
+      "structure": {
+        "tags": {
+          "Modality": "MR",
+          "SOPInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.269340684726992070284637302042",
+          "SeriesInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495",
+          "StudyInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.261495847462034161390005504013",
+          "Rows": "480",
+          "Columns": "480",
+          "PixelSpacing": "[0.84337347745895, 0.84337347745895]",
+          "SliceThickness": "3",
+          "ImagePositionPatient": "[-199.45302906632, -242.90767899155, -83.740798950195]",
+          "ImageOrientationPatient": "[1, 0, 0, 0, 1, 0]",
+          "BitsAllocated": "16",
+          "BitsStored": "12",
+          "PhotometricInterpretation": "MONOCHROME2",
+          "NumberOfFrames": "1"
+        }
+      }
+    },
+    {
+      "asset": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/ec685177-e469-4fee-af08-2111f48d6275.dcm",
+      "structure": {
+        "tags": {
+          "Modality": "MR",
+          "SOPInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.309175347569972936000819081063",
+          "SeriesInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495",
+          "StudyInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.261495847462034161390005504013",
+          "Rows": "480",
+          "Columns": "480",
+          "PixelSpacing": "[0.84337347745895, 0.84337347745895]",
+          "SliceThickness": "3",
+          "ImagePositionPatient": "[-199.45302906632, -242.90767899155, 69.2592010498046]",
+          "ImageOrientationPatient": "[1, 0, 0, 0, 1, 0]",
+          "BitsAllocated": "16",
+          "BitsStored": "12",
+          "PhotometricInterpretation": "MONOCHROME2",
+          "NumberOfFrames": "1"
+        }
+      }
+    },
+    {
+      "asset": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/68413971-60c5-4add-ad65-7bedf6b691ec.dcm",
+      "structure": {
+        "tags": {
+          "Modality": "MR",
+          "SOPInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.130592617110171678074152108811",
+          "SeriesInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495",
+          "StudyInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.261495847462034161390005504013",
+          "Rows": "480",
+          "Columns": "480",
+          "PixelSpacing": "[0.84337347745895, 0.84337347745895]",
+          "SliceThickness": "3",
+          "ImagePositionPatient": "[-199.45302906632, -242.90767899155, -17.740802764892]",
+          "ImageOrientationPatient": "[1, 0, 0, 0, 1, 0]",
+          "BitsAllocated": "16",
+          "BitsStored": "12",
+          "PhotometricInterpretation": "MONOCHROME2",
+          "NumberOfFrames": "1"
+        }
+      }
+    },
+    {
+      "asset": "raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/9a49130c-9b12-4cc9-a535-6362e0890e7f.dcm",
+      "structure": {
+        "tags": {
+          "Modality": "MR",
+          "SOPInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.141628685972941286602915857207",
+          "SeriesInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495",
+          "StudyInstanceUID": "1.3.6.1.4.1.14519.5.2.1.1620.1225.261495847462034161390005504013",
+          "Rows": "480",
+          "Columns": "480",
+          "PixelSpacing": "[0.84337347745895, 0.84337347745895]",
+          "SliceThickness": "3",
+          "ImagePositionPatient": "[-199.45302906632, -242.90767899155, -50.740802764892]",
+          "ImageOrientationPatient": "[1, 0, 0, 0, 1, 0]",
+          "BitsAllocated": "16",
+          "BitsStored": "12",
+          "PhotometricInterpretation": "MONOCHROME2",
+          "NumberOfFrames": "1"
+        }
+      }
+    }
+  ],
+  "format_counts": {
+    "DICOM": 71
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Original development corpus (source-aware)",
+  "license_or_terms": "CC BY 4.0",
+  "source_asset_bytes": 59837954,
+  "expanded_source_equivalent_bytes": 59837954,
+  "installed_folder_bytes": 59906998,
+  "source_asset_count": 74,
+  "asset_paths": [
+    "scenarios/08_medical_imaging_tcia_ea1141/context/idc_deterministic_selection.json",
+    "scenarios/08_medical_imaging_tcia_ea1141/context/mg_uid_file_urls.json",
+    "scenarios/08_medical_imaging_tcia_ea1141/context/mr_uid_file_urls.json",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MG_1.3.6.1.4.1.14519.5.2.1.1620.1225.118330849799489129360385109830/f9d3cf2d-7930-4423-896c-7d51dcd36a0b.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/060fae75-c189-42b9-85b6-93e64a8be0f4.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/0a63d038-e58f-4763-b3cf-4c7e5b7fa716.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/163e8977-8a63-47a7-95bf-92c5febe7915.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/1709e648-a70b-435c-9cb8-abc84b0fe64e.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/18b0b5b1-5ff0-440f-9bbe-1f8f08a6e4d4.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/19527d46-e97b-4b32-937c-d9646d831b2a.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/19f6132a-fcc4-499a-a8bb-2f6acfac7fde.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/1b37ddd2-54b9-4058-a915-00c27da93136.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/1c6a720a-dd65-4f71-8648-67bec4b93995.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/1eccd6eb-92bc-45ea-8ad1-c1fb1b3bbec8.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/208f2bc3-818f-497c-9e43-f6114b65f399.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/25b5bf38-bafa-46a2-8b75-f104d729e68a.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/2a0b85bf-4444-4b0a-8ce1-5aa24a7503ad.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/2a6a5b9f-e7e3-42bf-95a9-04ca6c5e10d9.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/2dfedaf3-2230-4d22-ac51-2c435eba7d36.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/2e1e9394-9bdb-44fb-85b6-add86b85b5f6.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/37b0f5e9-2430-4022-9562-6992ddccddc2.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/3b1768a2-366a-4645-b9a8-af315a2c96c7.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/3d47efa8-68cd-4ec3-86b7-49cf01707e9b.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/3eede498-a7f7-41c8-a8c1-ba112a47c3e2.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/4658bf6e-20d6-484b-a33d-8d05c840f82d.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/4aa9cb2c-9880-42a2-883d-2d795a1e4ced.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/4d999c14-e723-430c-ae89-f017cd7a334a.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/4eef58b3-2caf-4e4b-a24f-122a0165456c.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/56a26940-4a42-4781-8111-40f04a239bd6.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/5b2d1df3-e1ae-407f-977d-b6f4e2e39e9f.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/5cb3f7ec-26c7-4b2a-acdc-5891958573f9.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/5d756e79-07e0-4563-9d04-5539322afaee.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/68413971-60c5-4add-ad65-7bedf6b691ec.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/690bb02d-ce58-4dec-950b-9643b462698e.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/6aeac970-c685-4bb8-a98d-710dd2b01fde.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/76cd0438-7871-437c-bd24-1c733cc03ebc.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/790fa529-b8d9-4022-a65a-1f5b8636f6a9.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/7f752b93-e22f-4373-ba0c-32da9b32af2e.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/7f9809e7-59e1-4969-85b2-1cb744df6c11.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/80abeec8-363e-4b3f-b64c-3440412ad11b.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/827f0d68-5dd6-4b46-b483-1874a8b41372.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/850840da-af12-473c-9c3d-de82031e3b92.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/855c14d4-a81c-4d79-9315-5affc4879060.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/9607526a-fffe-49bf-bdfe-4c92223add76.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/97b26eb1-08a7-4c59-8922-b1e7ccdbdc89.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/9a49130c-9b12-4cc9-a535-6362e0890e7f.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/9dff6199-ff11-4688-bd05-c8814c253fe3.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/a39b7315-5bac-4150-baac-522c3f96a41c.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/a530d8fa-e651-44e4-be78-4aa0e4dd7f72.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/aaee4531-7d8b-4aef-9b95-abddc724bae0.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/af06b0ba-0d60-4895-b581-d1ef618f18f1.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/b788fcbc-16e9-4712-8d8c-2e0e3b102031.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/bf97fcf7-db9a-4c89-b180-209b2ca2bf57.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/c092a1f1-bdf8-4656-8530-312bc05bb7b3.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/c3ae39ba-086d-4069-aaee-cae762f835d8.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/c4984167-e82d-49f9-aea1-ae1415586860.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/c977a902-8c27-4c34-a3d4-66cf10f75ae6.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/cc6130aa-eb1b-4be0-b461-c54ae4208424.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/d3d2b941-1bd5-46a4-9da7-12e54503f7bd.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/d52d28dd-1920-420c-91d4-5ab73dbbba87.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/d6ecf216-72b3-4189-ae67-24765a1023e0.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/d952e512-c240-4b07-81c5-39a3562f9a68.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/da273a96-7b66-45d1-bf91-b5dc208836a6.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/db7dc0fd-cd77-4d5b-91d5-7bbd9686de08.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/df3e7dbf-8d75-478a-8822-d1e1102fdf91.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/e714a46e-21df-4f6d-be3b-73f5f8b495fa.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/e8c34349-0692-4f65-b0ff-c06a0bb09f7c.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/ec685177-e469-4fee-af08-2111f48d6275.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/eebc16a9-8dbe-4e12-8b04-5d81efb5c5d3.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/f08cd721-939d-4fde-b571-4ce727ad9fd7.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/f5983fe5-8042-492b-8a9e-5a9b693764b8.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/f71ce949-e15c-40a2-9a22-4bfd2e191df7.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/fa12a3cc-ae40-4568-b211-e07b29bbf271.dcm",
+    "scenarios/08_medical_imaging_tcia_ea1141/raw/MR_1.3.6.1.4.1.14519.5.2.1.1620.1225.258654674967444881519890820495/fbb22020-6432-48fe-a53b-1248baf03bf6.dcm"
+  ],
+  "local_folder": "scenarios/08_medical_imaging_tcia_ea1141",
+  "size_exception": false,
+  "modalities": [
+    "source_native_other"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 59976214,
+  "expanded_release_folder_equivalent_bytes": 59976214
+}

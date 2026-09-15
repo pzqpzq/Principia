@@ -1,0 +1,193 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "77_genetics_one_step_tagging",
+  "domain": "Genome engineering",
+  "title": "ONE-STEP tagging: a versatile method for rapid site-specific integration by simultaneous reagent delivery",
+  "publisher": "Migliori, Valentina; Bruntraeger, Michaela; Gyulev, Ivan; Lichou, Florence (Wellcome Sanger Institute); Burgold, Thomas; Gitterman, Daniel (Wellcome Sanger Institute); Iwama, Sho (Wellcome Sanger Institute); Trinh, Andrew (University of Cambridge); Washer, Sam (University of Oxford); Jones, Carla P (Wellcome Sanger Institute); Trynka, Gosia (Wellcome Sanger Institute); Bassett, Andrew (Wellcome Sanger Institute)",
+  "authoritative_landing_url": "https://zenodo.org/records/15772077",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/15772077",
+    "https://zenodo.org/api/records/15772077/files/FCS%20FILES%20NAR-20250731T144808Z-1-001.zip/content",
+    "https://zenodo.org/api/records/15772077/files/Data%20excel%20from%20all%20figure%20in%20paper%20for%20statistical%20analysis_T-TEST_ADDED.xlsx/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.15772077"
+  ],
+  "release_or_version": "15772077",
+  "retrieval_finalized_utc": "2026-09-15T07:04:40.668047+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "facs",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "FACS archive dated July 2025; experiments include earlier source-dated runs.",
+  "source_publication_date": "2025-06-30",
+  "source_created_utc": "2025-08-01T16:27:26.100575+00:00",
+  "source_updated_utc": "2025-08-01T16:27:26.839336+00:00",
+  "source_inventory": [
+    {
+      "name": "read-coverage-plotter-v1.py",
+      "bytes": 3530,
+      "selected": false
+    },
+    {
+      "name": "FCS FILES NAR-20250731T144808Z-1-001.zip",
+      "bytes": 80879991,
+      "selected": true
+    },
+    {
+      "name": "Data excel from all figure in paper for statistical analysis_T-TEST_ADDED.xlsx",
+      "bytes": 517083,
+      "selected": true
+    },
+    {
+      "name": "merged_FAY23219_pass.fastq.gz",
+      "bytes": 71914955,
+      "selected": false
+    },
+    {
+      "name": "merged_FAZ56558_pass.fastq.gz",
+      "bytes": 39697084,
+      "selected": false
+    },
+    {
+      "name": "m84047_250501_103416_s3.hifi_reads.bc2033.bam",
+      "bytes": 581030061,
+      "selected": false
+    },
+    {
+      "name": "m84047_250501_103416_s3.hifi_reads.bc2034.bam",
+      "bytes": 186412395,
+      "selected": false
+    },
+    {
+      "name": "Representative_minicircle_ligations_traces_2025-02-11.7z",
+      "bytes": 143769,
+      "selected": false
+    },
+    {
+      "name": "read-classifier-v1.py",
+      "bytes": 3935,
+      "selected": false
+    },
+    {
+      "name": "gel_02082024.7z",
+      "bytes": 15675704,
+      "selected": false
+    },
+    {
+      "name": "EP29012024_Editing and HDR efficiency-20250801T124908Z-1-001.zip",
+      "bytes": 9869175,
+      "selected": false
+    },
+    {
+      "name": "BenchlingExport_-_2025-08-01.zip",
+      "bytes": 152932061,
+      "selected": false
+    },
+    {
+      "name": "crispresso_analysis_v1.py",
+      "bytes": 3325,
+      "selected": false
+    },
+    {
+      "name": "Alleles_frequency_tables.7z",
+      "bytes": 71117190,
+      "selected": false
+    },
+    {
+      "name": "Miseq_Tagging_Data.7z",
+      "bytes": 1213280077,
+      "selected": false
+    },
+    {
+      "name": "Figure6_images.7z",
+      "bytes": 31431056,
+      "selected": false
+    }
+  ],
+  "author_preprocessing": "Complete FCS modality archive and matching author statistical workbook. Sequencing and other modalities excluded by coherent modality selection.",
+  "known_analyses_and_limitations": "Group samples by biological replicate, target locus and cargo. Individual FACS events are subsamples; published summary statistics are prior analysis.",
+  "related_publications": [],
+  "independent_groups": "biological replicate, target locus and cargo",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-077",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-077",
+      "scenario_id": "77_genetics_one_step_tagging",
+      "path": "raw/FCS FILES NAR-20250731T144808Z-1-001.zip",
+      "scenario_relative_path": "raw/FCS FILES NAR-20250731T144808Z-1-001.zip",
+      "bytes": 80879991,
+      "sha256": "bf121054fdcc565c12eb9db23e2687ea2c9921dae1efba055bde049f55df9588",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/15772077"
+      ],
+      "download_url": "https://zenodo.org/api/records/15772077/files/FCS%20FILES%20NAR-20250731T144808Z-1-001.zip/content",
+      "source_checksum": "md5:26c18df06dd152b24d908d3096571ee3",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:49.129601+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.15772077"
+      ],
+      "citation_url": "https://zenodo.org/records/15772077",
+      "source_version": "15772077",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15772077",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-077",
+      "scenario_id": "77_genetics_one_step_tagging",
+      "path": "raw/Data excel from all figure in paper for statistical analysis_T-TEST_ADDED.xlsx",
+      "scenario_relative_path": "raw/Data excel from all figure in paper for statistical analysis_T-TEST_ADDED.xlsx",
+      "bytes": 517083,
+      "sha256": "b02f9e88eac4b214007c2eeff8a994419d5363225a94da0f847331ee70698334",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/15772077"
+      ],
+      "download_url": "https://zenodo.org/api/records/15772077/files/Data%20excel%20from%20all%20figure%20in%20paper%20for%20statistical%20analysis_T-TEST_ADDED.xlsx/content",
+      "source_checksum": "md5:4527424f34843a1905a9ecec3ffeacb5",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:30:57.945664+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.15772077"
+      ],
+      "citation_url": "https://zenodo.org/records/15772077",
+      "source_version": "15772077",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/15772077",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-077",
+      "scenario_id": "77_genetics_one_step_tagging",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 12847,
+      "sha256": "ab18df130547c6f1d3eadd036bdc8a7bccad13c9a1f58150dd27f508c1cf5942",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/15772077"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:45.165491+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.15772077"
+      ],
+      "citation_url": "https://zenodo.org/records/15772077",
+      "source_version": "15772077",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

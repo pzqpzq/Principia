@@ -1,0 +1,57 @@
+{
+  "bytes": 4364,
+  "sha256": "38fc933e647ca56c0db7a6609053dfb9ab509ee0a0e390ad71576b744075b0f5",
+  "format_extension": ".zip",
+  "checks": [
+    "all_member_CRCs",
+    "safe_member_paths_no_symlinks",
+    "publisher_md5"
+  ],
+  "format": "ZIP",
+  "expanded_bytes": 4420,
+  "members": [
+    {
+      "name": "Scattering/pump_scheme_3/pump_arrays.npz",
+      "bytes": 1372,
+      "crc32": "4388e5f4",
+      "structure": {
+        "format": "preserved_native",
+        "signature_hex": "504b03042d000000080000002100e249"
+      }
+    },
+    {
+      "name": "Scattering/pump_scheme_3/pump_back.npz",
+      "bytes": 805,
+      "crc32": "2a1113c7",
+      "structure": {
+        "format": "preserved_native",
+        "signature_hex": "504b03042d00000008000000210058fe"
+      }
+    },
+    {
+      "name": "Pumping Scheme NonRec/pump_scheme_13/pump_arrays.npz",
+      "bytes": 1410,
+      "crc32": "d46747f6",
+      "structure": {
+        "format": "preserved_native",
+        "signature_hex": "504b03042d00000008000000210072b4"
+      }
+    },
+    {
+      "name": "Pumping Scheme NonRec/pump_scheme_13/pump_back.npz",
+      "bytes": 833,
+      "crc32": "89bcb4ac",
+      "structure": {
+        "format": "preserved_native",
+        "signature_hex": "504b03042d0000000800000021005274"
+      }
+    }
+  ],
+  "member_format_counts": {
+    ".npz": 4
+  },
+  "path": "raw/Folders.zip",
+  "scenario_id": "28_physics_parametric_microwave",
+  "verified_utc": "2026-09-14T15:58:08.197134+00:00",
+  "status": "pass"
+}

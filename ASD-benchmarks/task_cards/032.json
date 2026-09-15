@@ -1,0 +1,275 @@
+{
+  "case_id": "P100-032",
+  "case_revision": 1,
+  "scenario_id": "32_medicine_cpap_pressure",
+  "title": "CPAP respiratory pressure measurements",
+  "domain": "respiratory medicine",
+  "question": "How do pressure settings affect respiratory dynamics across trials?",
+  "data_origin": "measured_or_observed",
+  "source_version": "1.0.0; 2024-03-20",
+  "source_url": "https://www.physionet.org/content/respiratory-heartrate-dataset/1.0.0/",
+  "identifiers": [],
+  "publisher": "University of Canterbury; PhysioNet",
+  "release_date": null,
+  "measurement_dates": "PhysioNet version 1.0.0 published 2024-03-20; StartTime fields preserve per-trial acquisition timestamps.",
+  "variables_and_units": "Variables and units are preserved in native column headers, instrument metadata and source dictionaries; see evidence anchors below.",
+  "independent_units": "Participant, calibration and all repeated pressure trials.",
+  "validation_design": "Participant, calibration and all repeated pressure trials. Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Raw sensor/ADC exports require the source calibration code to interpret pressure/flow. Separate source processed tables, EIT and HRM are deliberately excluded. No calibration was applied during collection.",
+  "prior_analysis_and_limits": "Source Code documents sensor conversions and experimental protocols. PEEP settings and maneuver names are not independent subjects. Resistance/compliance may not both be identifiable without defensible flow reconstruction and timing. Raw pressure recordings and calibration/context for 60 trials; pressure-only inference requires identifiable physiological assumptions.",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/PQ_rawData/Subject4_FEM_raw.csv",
+      "structure": {
+        "header": [
+          "Time [s]",
+          "Gauge Pressure",
+          "Inspiratory Differential Pressure ",
+          "Expiratory Differential Pressure ",
+          "StartTime"
+        ],
+        "data_records": 6000
+      }
+    },
+    {
+      "asset": "raw/PQ_rawData/Subject11_PEEP_BH_raw.csv",
+      "structure": {
+        "header": [
+          "Time [s]",
+          "Gauge Pressure",
+          "Inspiratory Differential Pressure ",
+          "Expiratory Differential Pressure ",
+          "StartTime"
+        ],
+        "data_records": 35000
+      }
+    },
+    {
+      "asset": "raw/PQ_rawData/Subject6_PEEP_raw.csv",
+      "structure": {
+        "header": [
+          "Time [s]",
+          "Gauge Pressure",
+          "Inspiratory Differential Pressure ",
+          "Expiratory Differential Pressure ",
+          "StartTime"
+        ],
+        "data_records": 35000
+      }
+    },
+    {
+      "asset": "raw/PQ_rawData/Subject1_PEEP_raw.csv",
+      "structure": {
+        "header": [
+          "Time [s]",
+          "Gauge Pressure",
+          "Inspiratory Differential Pressure ",
+          "Expiratory Differential Pressure ",
+          "StartTime"
+        ],
+        "data_records": 35000
+      }
+    },
+    {
+      "asset": "raw/PQ_rawData/Subject9_PEEP_BH_raw.csv",
+      "structure": {
+        "header": [
+          "Time [s]",
+          "Gauge Pressure",
+          "Inspiratory Differential Pressure ",
+          "Expiratory Differential Pressure ",
+          "StartTime"
+        ],
+        "data_records": 35000
+      }
+    },
+    {
+      "asset": "raw/PQ_rawData/Subject6_PEEP_BH_raw.csv",
+      "structure": {
+        "header": [
+          "Time [s]",
+          "Gauge Pressure",
+          "Inspiratory Differential Pressure ",
+          "Expiratory Differential Pressure ",
+          "StartTime"
+        ],
+        "data_records": 35000
+      }
+    },
+    {
+      "asset": "raw/PQ_rawData/Subject2_PEEP_BH_raw.csv",
+      "structure": {
+        "header": [
+          "Time [s]",
+          "Gauge Pressure",
+          "Inspiratory Differential Pressure ",
+          "Expiratory Differential Pressure ",
+          "StartTime"
+        ],
+        "data_records": 35000
+      }
+    },
+    {
+      "asset": "raw/PQ_rawData/Subject10_PEEP_BH_raw.csv",
+      "structure": {
+        "header": [
+          "Time [s]",
+          "Gauge Pressure",
+          "Inspiratory Differential Pressure ",
+          "Expiratory Differential Pressure ",
+          "StartTime"
+        ],
+        "data_records": 35000
+      }
+    },
+    {
+      "asset": "raw/PQ_rawData/Subject1_FEM_raw.csv",
+      "structure": {
+        "header": [
+          "Time [s]",
+          "Gauge Pressure",
+          "Inspiratory Differential Pressure ",
+          "Expiratory Differential Pressure ",
+          "StartTime"
+        ],
+        "data_records": 6000
+      }
+    },
+    {
+      "asset": "raw/PQ_rawData/Subject3_FEM_raw.csv",
+      "structure": {
+        "header": [
+          "Time [s]",
+          "Gauge Pressure",
+          "Inspiratory Differential Pressure ",
+          "Expiratory Differential Pressure ",
+          "StartTime"
+        ],
+        "data_records": 6000
+      }
+    },
+    {
+      "asset": "raw/PQ_rawData/Subject7_FEM_raw.csv",
+      "structure": {
+        "header": [
+          "Time [s]",
+          "Gauge Pressure",
+          "Inspiratory Differential Pressure ",
+          "Expiratory Differential Pressure ",
+          "StartTime"
+        ],
+        "data_records": 6000
+      }
+    },
+    {
+      "asset": "raw/PQ_rawData/Subject19_FEM_raw.csv",
+      "structure": {
+        "header": [
+          "Time [s]",
+          "Gauge Pressure",
+          "Inspiratory Differential Pressure ",
+          "Expiratory Differential Pressure ",
+          "StartTime"
+        ],
+        "data_records": 6000
+      }
+    }
+  ],
+  "format_counts": {
+    "text_or_instrument_native": 67
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "CC BY 4.0",
+  "source_asset_bytes": 35852809,
+  "expanded_source_equivalent_bytes": 35852809,
+  "installed_folder_bytes": 36004396,
+  "source_asset_count": 69,
+  "asset_paths": [
+    "scenarios/32_medicine_cpap_pressure/context/source_SHA256SUMS.txt",
+    "scenarios/32_medicine_cpap_pressure/raw/Code/DataCollection_PQ.m",
+    "scenarios/32_medicine_cpap_pressure/raw/Code/DataProcessing.m",
+    "scenarios/32_medicine_cpap_pressure/raw/Code/FigureGeneration.m",
+    "scenarios/32_medicine_cpap_pressure/raw/Code/read_binData.m",
+    "scenarios/32_medicine_cpap_pressure/raw/LICENSE.txt",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject10_FEM_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject10_PEEP_BH_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject10_PEEP_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject11_FEM_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject11_PEEP_BH_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject11_PEEP_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject12_FEM_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject12_PEEP_BH_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject12_PEEP_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject13_FEM_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject13_PEEP_BH_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject13_PEEP_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject14_FEM_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject14_PEEP_BH_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject14_PEEP_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject15_FEM_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject15_PEEP_BH_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject15_PEEP_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject16_FEM_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject16_PEEP_BH_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject16_PEEP_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject17_FEM_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject17_PEEP_BH_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject17_PEEP_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject18_FEM_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject18_PEEP_BH_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject18_PEEP_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject19_FEM_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject19_PEEP_BH_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject19_PEEP_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject1_FEM_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject1_PEEP_BH_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject1_PEEP_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject20_FEM_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject20_PEEP_BH_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject20_PEEP_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject2_FEM_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject2_PEEP_BH_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject2_PEEP_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject3_FEM_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject3_PEEP_BH_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject3_PEEP_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject4_FEM_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject4_PEEP_BH_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject4_PEEP_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject5_FEM_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject5_PEEP_BH_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject5_PEEP_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject6_FEM_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject6_PEEP_BH_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject6_PEEP_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject7_FEM_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject7_PEEP_BH_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject7_PEEP_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject8_FEM_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject8_PEEP_BH_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject8_PEEP_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject9_FEM_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject9_PEEP_BH_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/PQ_rawData/Subject9_PEEP_raw.csv",
+    "scenarios/32_medicine_cpap_pressure/raw/README.txt",
+    "scenarios/32_medicine_cpap_pressure/raw/subject-info.csv",
+    "scenarios/32_medicine_cpap_pressure/context/SOURCE_FACTS.json"
+  ],
+  "local_folder": "scenarios/32_medicine_cpap_pressure",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 35974483,
+  "expanded_release_folder_equivalent_bytes": 35974483
+}

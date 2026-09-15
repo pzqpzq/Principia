@@ -1,0 +1,595 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "73_agriculture_rumen_fermentation",
+  "domain": "Animal nutrition",
+  "title": "Dataset for publication \"Impact of algae species from the Baltic Sea region on ruminal fermentation parameters and Methane Mitigation using an in vitro gas production system\"",
+  "publisher": "Brunnbauer, Sophia (Friedrich-Loeffler-Institut); Meyer, Ulrich (Friedrich-Loeffler-Institut); Kluess, Jeannette (Friedrich-Loeffler-Institut); Billenkamp, Fabian (Friedrich-Loeffler-Institut); Visscher, Christian (University of Veterinary Medicine Hannover, Foundation); Reich, Marlene (Universität Greifswald); Schweder, Thomas (Universität Greifswald); Schulz, Christian (University of Rostock); Paschen, Mathias (University of Rostock); Dänicke, Sven (Friedrich-Loeffler-Institut); von Soosten, Dirk (Friedrich-Loeffler-Institut)",
+  "authoritative_landing_url": "https://zenodo.org/records/18335590",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/18335590",
+    "https://zenodo.org/api/records/18335590/files/12_legend_invitro_gasdata_01.csv/content",
+    "https://zenodo.org/api/records/18335590/files/14_legend_invitro_gasdata_02.csv/content",
+    "https://zenodo.org/api/records/18335590/files/16_legend_invitro_gasdata_03.csv/content",
+    "https://zenodo.org/api/records/18335590/files/09_invitro_fermentationData_03.csv/content",
+    "https://zenodo.org/api/records/18335590/files/06_legend_invitro_fermentationData_01.csv/content",
+    "https://zenodo.org/api/records/18335590/files/13_invitro_gasdata_02.csv/content",
+    "https://zenodo.org/api/records/18335590/files/03_invitro_SCFA_03.csv/content",
+    "https://zenodo.org/api/records/18335590/files/04_legend_invitro_SCFA_01-03.csv/content",
+    "https://zenodo.org/api/records/18335590/files/01_invitro_SCFA_01.csv/content",
+    "https://zenodo.org/api/records/18335590/files/02_invitro_SCFA_02.csv/content",
+    "https://zenodo.org/api/records/18335590/files/00_invitro_data_overwiev.csv/content",
+    "https://zenodo.org/api/records/18335590/files/11_invitro_gasdata_01.csv/content",
+    "https://zenodo.org/api/records/18335590/files/05_invitro_fermentationData_01.csv/content",
+    "https://zenodo.org/api/records/18335590/files/08_legend_invitro_fermentationData_02.csv/content",
+    "https://zenodo.org/api/records/18335590/files/10_legend_invitro_fermentationData_03.csv/content",
+    "https://zenodo.org/api/records/18335590/files/15_invitro_gasdata_03.csv/content",
+    "https://zenodo.org/api/records/18335590/files/07_invitro_fermentationData_02.csv/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.18335590"
+  ],
+  "release_or_version": "18335590",
+  "retrieval_finalized_utc": "2026-09-15T07:04:39.922506+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "full",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": "Campaign dates unknown; publication field January 2026 differs from later record creation.",
+  "source_publication_date": "2026-01-22",
+  "source_created_utc": "2026-03-25T14:36:15.658950+00:00",
+  "source_updated_utc": "2026-03-25T14:36:16.738874+00:00",
+  "source_inventory": [
+    {
+      "name": "12_legend_invitro_gasdata_01.csv",
+      "bytes": 951,
+      "selected": true
+    },
+    {
+      "name": "14_legend_invitro_gasdata_02.csv",
+      "bytes": 963,
+      "selected": true
+    },
+    {
+      "name": "16_legend_invitro_gasdata_03.csv",
+      "bytes": 821,
+      "selected": true
+    },
+    {
+      "name": "09_invitro_fermentationData_03.csv",
+      "bytes": 20716,
+      "selected": true
+    },
+    {
+      "name": "06_legend_invitro_fermentationData_01.csv",
+      "bytes": 1501,
+      "selected": true
+    },
+    {
+      "name": "13_invitro_gasdata_02.csv",
+      "bytes": 461002,
+      "selected": true
+    },
+    {
+      "name": "03_invitro_SCFA_03.csv",
+      "bytes": 8037,
+      "selected": true
+    },
+    {
+      "name": "04_legend_invitro_SCFA_01-03.csv",
+      "bytes": 1698,
+      "selected": true
+    },
+    {
+      "name": "01_invitro_SCFA_01.csv",
+      "bytes": 13589,
+      "selected": true
+    },
+    {
+      "name": "02_invitro_SCFA_02.csv",
+      "bytes": 14232,
+      "selected": true
+    },
+    {
+      "name": "00_invitro_data_overwiev.csv",
+      "bytes": 2765,
+      "selected": true
+    },
+    {
+      "name": "11_invitro_gasdata_01.csv",
+      "bytes": 448237,
+      "selected": true
+    },
+    {
+      "name": "05_invitro_fermentationData_01.csv",
+      "bytes": 40241,
+      "selected": true
+    },
+    {
+      "name": "08_legend_invitro_fermentationData_02.csv",
+      "bytes": 1517,
+      "selected": true
+    },
+    {
+      "name": "10_legend_invitro_fermentationData_03.csv",
+      "bytes": 1114,
+      "selected": true
+    },
+    {
+      "name": "15_invitro_gasdata_03.csv",
+      "bytes": 224876,
+      "selected": true
+    },
+    {
+      "name": "07_invitro_fermentationData_02.csv",
+      "bytes": 43352,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Seventeen native CSV tables/legends spanning three trials, four macroalgae and two microalgae treatments.",
+  "known_analyses_and_limitations": "Hold out entire trial/vessel replicate. Differences in protocol across trials constrain pooling and causal comparisons.",
+  "related_publications": [
+    {
+      "identifier": "10.3390/ruminants6010018",
+      "relation": "isReferencedBy",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    }
+  ],
+  "independent_groups": "trial, algae treatment and vessel replicate",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-073",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-073",
+      "scenario_id": "73_agriculture_rumen_fermentation",
+      "path": "raw/12_legend_invitro_gasdata_01.csv",
+      "scenario_relative_path": "raw/12_legend_invitro_gasdata_01.csv",
+      "bytes": 951,
+      "sha256": "f8163c9d68089a76e712840b2a4b1a620495bb3cb9ab0f0c355f6687e04e11b3",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18335590"
+      ],
+      "download_url": "https://zenodo.org/api/records/18335590/files/12_legend_invitro_gasdata_01.csv/content",
+      "source_checksum": "md5:b0de844826eefbaaef79650632dfa417",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:28:38.736641+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18335590"
+      ],
+      "citation_url": "https://zenodo.org/records/18335590",
+      "source_version": "18335590",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18335590",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-073",
+      "scenario_id": "73_agriculture_rumen_fermentation",
+      "path": "raw/14_legend_invitro_gasdata_02.csv",
+      "scenario_relative_path": "raw/14_legend_invitro_gasdata_02.csv",
+      "bytes": 963,
+      "sha256": "dd292845539046d374d23dd383cd69e6fb9248e76198950f9b77577c6faac5c3",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18335590"
+      ],
+      "download_url": "https://zenodo.org/api/records/18335590/files/14_legend_invitro_gasdata_02.csv/content",
+      "source_checksum": "md5:5c7b9336694560a8505484952c088a54",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:28:40.041660+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18335590"
+      ],
+      "citation_url": "https://zenodo.org/records/18335590",
+      "source_version": "18335590",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18335590",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-073",
+      "scenario_id": "73_agriculture_rumen_fermentation",
+      "path": "raw/16_legend_invitro_gasdata_03.csv",
+      "scenario_relative_path": "raw/16_legend_invitro_gasdata_03.csv",
+      "bytes": 821,
+      "sha256": "17bf2f2adbec3e6c4878fbf373202a635219f1dcd3f39f7833475b1de77970ce",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18335590"
+      ],
+      "download_url": "https://zenodo.org/api/records/18335590/files/16_legend_invitro_gasdata_03.csv/content",
+      "source_checksum": "md5:62b45f411390fb83b6dad020ac0702a9",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:28:41.686503+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18335590"
+      ],
+      "citation_url": "https://zenodo.org/records/18335590",
+      "source_version": "18335590",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18335590",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-073",
+      "scenario_id": "73_agriculture_rumen_fermentation",
+      "path": "raw/09_invitro_fermentationData_03.csv",
+      "scenario_relative_path": "raw/09_invitro_fermentationData_03.csv",
+      "bytes": 20716,
+      "sha256": "ec1260fd1926747d68d1269c1cb48117695aa8207122a575d602711c1cfa986d",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18335590"
+      ],
+      "download_url": "https://zenodo.org/api/records/18335590/files/09_invitro_fermentationData_03.csv/content",
+      "source_checksum": "md5:60883dda33ea738bc429fd1bef69801f",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:28:43.695143+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18335590"
+      ],
+      "citation_url": "https://zenodo.org/records/18335590",
+      "source_version": "18335590",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18335590",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-073",
+      "scenario_id": "73_agriculture_rumen_fermentation",
+      "path": "raw/06_legend_invitro_fermentationData_01.csv",
+      "scenario_relative_path": "raw/06_legend_invitro_fermentationData_01.csv",
+      "bytes": 1501,
+      "sha256": "0928f232ab2cd989945072d1c645d646bdb82d1d6603e3f841d22fd02b47ec49",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18335590"
+      ],
+      "download_url": "https://zenodo.org/api/records/18335590/files/06_legend_invitro_fermentationData_01.csv/content",
+      "source_checksum": "md5:6c7af08e4a964bc865b12b700a4ed892",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:28:45.414842+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18335590"
+      ],
+      "citation_url": "https://zenodo.org/records/18335590",
+      "source_version": "18335590",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18335590",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-073",
+      "scenario_id": "73_agriculture_rumen_fermentation",
+      "path": "raw/13_invitro_gasdata_02.csv",
+      "scenario_relative_path": "raw/13_invitro_gasdata_02.csv",
+      "bytes": 461002,
+      "sha256": "c2753dce2d70bde85bc99eaa1c8dc48874df9ade55574d5db21b1125b12ce377",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18335590"
+      ],
+      "download_url": "https://zenodo.org/api/records/18335590/files/13_invitro_gasdata_02.csv/content",
+      "source_checksum": "md5:d151ada8e769533540367ba75d3e4feb",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:28:53.292621+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18335590"
+      ],
+      "citation_url": "https://zenodo.org/records/18335590",
+      "source_version": "18335590",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18335590",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-073",
+      "scenario_id": "73_agriculture_rumen_fermentation",
+      "path": "raw/03_invitro_SCFA_03.csv",
+      "scenario_relative_path": "raw/03_invitro_SCFA_03.csv",
+      "bytes": 8037,
+      "sha256": "9581110098ce6ca898b97f8117e2a6d971056ee9c42e14046973bd8dc6e6af16",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18335590"
+      ],
+      "download_url": "https://zenodo.org/api/records/18335590/files/03_invitro_SCFA_03.csv/content",
+      "source_checksum": "md5:d8e63ea5ffbe8a826f534ba30645add1",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:28:55.034462+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18335590"
+      ],
+      "citation_url": "https://zenodo.org/records/18335590",
+      "source_version": "18335590",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18335590",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-073",
+      "scenario_id": "73_agriculture_rumen_fermentation",
+      "path": "raw/04_legend_invitro_SCFA_01-03.csv",
+      "scenario_relative_path": "raw/04_legend_invitro_SCFA_01-03.csv",
+      "bytes": 1698,
+      "sha256": "3e9b5075d7f8cd32dd9d05bfb753f7b3bfbb5c38973032e5c91c174155fbcb39",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18335590"
+      ],
+      "download_url": "https://zenodo.org/api/records/18335590/files/04_legend_invitro_SCFA_01-03.csv/content",
+      "source_checksum": "md5:31e7d40d4191be33980eade058ae4fdf",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:28:56.833370+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18335590"
+      ],
+      "citation_url": "https://zenodo.org/records/18335590",
+      "source_version": "18335590",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18335590",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-073",
+      "scenario_id": "73_agriculture_rumen_fermentation",
+      "path": "raw/01_invitro_SCFA_01.csv",
+      "scenario_relative_path": "raw/01_invitro_SCFA_01.csv",
+      "bytes": 13589,
+      "sha256": "ba18f435d5743b9329586c87a8abe5a2a2e858c00552352acbaa231e99282900",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18335590"
+      ],
+      "download_url": "https://zenodo.org/api/records/18335590/files/01_invitro_SCFA_01.csv/content",
+      "source_checksum": "md5:4bce06011a3a2a2e7941ec550d395144",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:28:58.277871+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18335590"
+      ],
+      "citation_url": "https://zenodo.org/records/18335590",
+      "source_version": "18335590",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18335590",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-073",
+      "scenario_id": "73_agriculture_rumen_fermentation",
+      "path": "raw/02_invitro_SCFA_02.csv",
+      "scenario_relative_path": "raw/02_invitro_SCFA_02.csv",
+      "bytes": 14232,
+      "sha256": "c4874f6481efce88fd39b951345921f31ee703e281810fc9d7efa956cb35b922",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18335590"
+      ],
+      "download_url": "https://zenodo.org/api/records/18335590/files/02_invitro_SCFA_02.csv/content",
+      "source_checksum": "md5:cc14b2e82f2158f1025e9d0790101f48",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:28:59.773248+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18335590"
+      ],
+      "citation_url": "https://zenodo.org/records/18335590",
+      "source_version": "18335590",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18335590",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-073",
+      "scenario_id": "73_agriculture_rumen_fermentation",
+      "path": "raw/00_invitro_data_overwiev.csv",
+      "scenario_relative_path": "raw/00_invitro_data_overwiev.csv",
+      "bytes": 2765,
+      "sha256": "d8149907cfe60de9f1244e5a90820308761e53e5226942f04a65007f9bdcc323",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18335590"
+      ],
+      "download_url": "https://zenodo.org/api/records/18335590/files/00_invitro_data_overwiev.csv/content",
+      "source_checksum": "md5:9e8594bdef729c3e0ee7ad56f9819a04",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:29:01.142279+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18335590"
+      ],
+      "citation_url": "https://zenodo.org/records/18335590",
+      "source_version": "18335590",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18335590",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-073",
+      "scenario_id": "73_agriculture_rumen_fermentation",
+      "path": "raw/11_invitro_gasdata_01.csv",
+      "scenario_relative_path": "raw/11_invitro_gasdata_01.csv",
+      "bytes": 448237,
+      "sha256": "7182c973b866d2eee0408d346a3507aa352e934349b1fdc62b1f958a72e38169",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18335590"
+      ],
+      "download_url": "https://zenodo.org/api/records/18335590/files/11_invitro_gasdata_01.csv/content",
+      "source_checksum": "md5:b7b52ec124c9c2b0c8e852e723a67403",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:29:03.562524+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18335590"
+      ],
+      "citation_url": "https://zenodo.org/records/18335590",
+      "source_version": "18335590",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18335590",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-073",
+      "scenario_id": "73_agriculture_rumen_fermentation",
+      "path": "raw/05_invitro_fermentationData_01.csv",
+      "scenario_relative_path": "raw/05_invitro_fermentationData_01.csv",
+      "bytes": 40241,
+      "sha256": "a7395ed92a14062ea2229b45d036139de3c8a9eaf70d8a88132867a8d71930ed",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18335590"
+      ],
+      "download_url": "https://zenodo.org/api/records/18335590/files/05_invitro_fermentationData_01.csv/content",
+      "source_checksum": "md5:a3c718750c5aad03aae0589241fccecd",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:29:05.339201+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18335590"
+      ],
+      "citation_url": "https://zenodo.org/records/18335590",
+      "source_version": "18335590",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18335590",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-073",
+      "scenario_id": "73_agriculture_rumen_fermentation",
+      "path": "raw/08_legend_invitro_fermentationData_02.csv",
+      "scenario_relative_path": "raw/08_legend_invitro_fermentationData_02.csv",
+      "bytes": 1517,
+      "sha256": "65defd05ae289753b32e5f5f410fe3055f809eef69a71cb8171a18b31a9752a2",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18335590"
+      ],
+      "download_url": "https://zenodo.org/api/records/18335590/files/08_legend_invitro_fermentationData_02.csv/content",
+      "source_checksum": "md5:cd1c68cd50508821953c9746f54937d2",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:29:06.675907+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18335590"
+      ],
+      "citation_url": "https://zenodo.org/records/18335590",
+      "source_version": "18335590",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18335590",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-073",
+      "scenario_id": "73_agriculture_rumen_fermentation",
+      "path": "raw/10_legend_invitro_fermentationData_03.csv",
+      "scenario_relative_path": "raw/10_legend_invitro_fermentationData_03.csv",
+      "bytes": 1114,
+      "sha256": "7247f68856c10cb2c45f71b3d2730b82dc7653b3a680f3f379719ac85d2a8300",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18335590"
+      ],
+      "download_url": "https://zenodo.org/api/records/18335590/files/10_legend_invitro_fermentationData_03.csv/content",
+      "source_checksum": "md5:55048889c4f5fd56a028327a122d8817",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:29:08.091082+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18335590"
+      ],
+      "citation_url": "https://zenodo.org/records/18335590",
+      "source_version": "18335590",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18335590",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-073",
+      "scenario_id": "73_agriculture_rumen_fermentation",
+      "path": "raw/15_invitro_gasdata_03.csv",
+      "scenario_relative_path": "raw/15_invitro_gasdata_03.csv",
+      "bytes": 224876,
+      "sha256": "5acc36695d280daa151f8c96e1077163de7ba8c8b125bc566eb2fa87cad35d6c",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18335590"
+      ],
+      "download_url": "https://zenodo.org/api/records/18335590/files/15_invitro_gasdata_03.csv/content",
+      "source_checksum": "md5:59e37e6f2971ff9ad7a3101fbbd8831a",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:29:13.435473+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18335590"
+      ],
+      "citation_url": "https://zenodo.org/records/18335590",
+      "source_version": "18335590",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18335590",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-073",
+      "scenario_id": "73_agriculture_rumen_fermentation",
+      "path": "raw/07_invitro_fermentationData_02.csv",
+      "scenario_relative_path": "raw/07_invitro_fermentationData_02.csv",
+      "bytes": 43352,
+      "sha256": "f1cf369a96b28d6f4160546b128886cfd496ca9a4949be05bd44895d6d94ef7e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/18335590"
+      ],
+      "download_url": "https://zenodo.org/api/records/18335590/files/07_invitro_fermentationData_02.csv/content",
+      "source_checksum": "md5:13ef627cb9f80822d6240f2bc2ec4a03",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:29:15.459524+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.18335590"
+      ],
+      "citation_url": "https://zenodo.org/records/18335590",
+      "source_version": "18335590",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/18335590",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-073",
+      "scenario_id": "73_agriculture_rumen_fermentation",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 12019,
+      "sha256": "90ab9009af8ea2bab9fd2f24350769dbb24acfaab0abf6ee917c58bf07161128",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/18335590"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:44.931873+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.18335590"
+      ],
+      "citation_url": "https://zenodo.org/records/18335590",
+      "source_version": "18335590",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

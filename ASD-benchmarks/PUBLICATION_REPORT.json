@@ -1,0 +1,35 @@
+{
+  "schema": "principia.publication-report/v1",
+  "version": "0.1.0",
+  "release_date": "2026-09-15",
+  "status": "publication_preflight_verified",
+  "owner_acceptance": "received; publication to pzqpzq/Principia/ASD-benchmarks explicitly authorized",
+  "accepted_candidate_release_manifest_sha256": "10b8748d62d2cbdc0d85bfea6e909dc17733bd08d90c8eb910e18e9631939b93",
+  "base_repository_commit": "d01ed544be853383d67618f6213e0b7c8934934f",
+  "scientific_assets": 1685,
+  "scientific_bytes": 4671654376,
+  "source_bytes_equal_accepted_candidate": true,
+  "scenario_files_equal_accepted_candidate": true,
+  "original_local_release_modified": false,
+  "private_marker_and_unintended_file_scan": "pass",
+  "benchmark_schema_validation": "pass",
+  "corruption_and_replay_tests": "pass",
+  "lfs_pointer_corruption_tests": "pass",
+  "lfs_pointer_source_hash_and_size_match": 244,
+  "origin_counts": {
+    "curated_mathematical_reference": 1,
+    "measured_or_observed": 85,
+    "computational_experiment": 6,
+    "mixed_measured_and_computational": 8
+  },
+  "new_scientific_analyses_performed": false,
+  "scientific_limitations": "Retained in DATASET_CARD.md, EVALUATION_PROTOCOL.md, task cards and native-reader reports.",
+  "git_lfs": {
+    "source_files": 244,
+    "native_bytes": 4430938903,
+    "threshold_bytes": 1048576,
+    "note": "Git stores pointer blobs for these files. RELEASE_MANIFEST.json hashes resolved payload bytes. CI verifies pointers separately; it does not claim remote payload verification."
+  },
+  "public_edition_changes": "Overview, catalog navigation, download guide, contributor guide, SVG banner, publication metadata, finalized curator licenses, integrity tooling and CI. Scientific source assets and scenario inputs are unchanged.",
+  "publication_verification": "The Git commit identifies this manifest. Repository push and public download verification are performed after sealing; no preflight check is a claim of remote availability."
+}

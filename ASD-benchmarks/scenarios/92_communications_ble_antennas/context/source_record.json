@@ -1,0 +1,130 @@
+{
+  "created": "2024-12-23T15:57:27.220140+00:00",
+  "modified": "2024-12-23T15:57:27.350711+00:00",
+  "id": 14548531,
+  "conceptrecid": "10721782",
+  "doi": "10.5281/zenodo.14548531",
+  "conceptdoi": "10.5281/zenodo.10721782",
+  "doi_url": "https://doi.org/10.5281/zenodo.14548531",
+  "metadata": {
+    "title": "Bluetooth Low Energy Separate Channel Fingerprinting dataset with Frequency-Scanned Antennas and Monopole",
+    "doi": "10.5281/zenodo.14548531",
+    "publication_date": "2024-03-13",
+    "description": "<p><span>This dataset contains Bluetooth Low Energy Separate Channel (SC BLE) Fingerprinting (FP) data recorded in an indoor facility. The dataset includes Received Signal Strength Information (RSSI) data collected from two independent location systems: one created with four BLE beacons connected to four traditional monopole antennas, and the other four beacons connected to two dual-port Frequency-Scanned Leaky Wave Antennas (FS LWA). Both systems are installed covering the same 7m x 5m area located in a basement zone.&nbsp;</span></p>\n<p><span>The dataset includes a reference radiomap file for each point equidistant 50cm to generate Fingerprinting techniques. The calibrated radiomap files are included in the Calibration_21112023 folder. In the name of each file, the {x, y} position where the data were recorded is included, with a total of 130 reference points. The data labelled as P1 and P2 are the RSSI recorded from beacons connected to FS LWA1, while P3 and P4 data corresponds to RSSI obtained from beacons of FS LWA2. Finally, P5, P6, P7 and P8 data sets belong to beacons connected to individual monopole antennas. Each calibration file contains 100 samples of RSSI received from the corresponding beacons at each one of the 130 reference points forming the calibration grid.&nbsp;</span></p>\n<p><span>The dataset also includes test samples for different days. These days are labelled as day 1, 8, 15, 22, 29, 51, 86 and 94 after the calibration day 0. This way, the variation of the different SC FP BLE antenna systems&rsquo; performance over time, can be studied. This classification of the data as a function of time, is categorized in the folders with the names Test_day_XX_date. As done with the reference calibration information for day 0, a file with the RSSI collected in each reference point (within a total of 130 grid points) can be found in each folder. The name of the file indicates the reference point where the data were collected. </span></p>\n<p><span>Different to the reference calibration data of day 0 (where 100 RSSI samples were considered for each one of the 130 calibrated {x, y} positions), the test data obtained in different subsequent days is composed by ten samples of RSSI for each one of the 130 test point.&nbsp;</span></p>\n<p><span>Moreover, to test the performance of the systems when some modifications occur where the calibration was performed, some data tests are collected adding several offices' furniture on the days 15, 22, 29, 51 and 94 after the calibration procedure performed at day 0. These data are stored in folders with the name Test_day_XX_with_furnitures_date. Similar to the previous test data, the name of the file includes 130 reference {x,y} points, with 10 RSSI samples each, and for the corresponding eight beacons (P1..P8), which are labelled for both monopole (P5, P6, P7 and P8) and FS LWA antenna systems (P1 and P2 for FS LWA1 and P3 and P4 for FS LWA2). <span>&nbsp;</span></span></p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "López-Pastor, Jose A.",
+        "affiliation": "Centro Universitario de la Defensa en San Javier",
+        "orcid": "0000-0001-8266-8669"
+      },
+      {
+        "name": "Hernández-Mateos, Antonio D.",
+        "affiliation": "Universidad Politécnica de Cartagena",
+        "orcid": "0009-0005-0199-7812"
+      },
+      {
+        "name": "Gil-Martínez, Alejandro",
+        "affiliation": "Universidad Politécnica de Cartagena",
+        "orcid": "0000-0001-7583-3224"
+      },
+      {
+        "name": "Algaba-Brazález, Astrid",
+        "affiliation": "Ericsson (Sweden)",
+        "orcid": "0000-0001-7583-3224"
+      },
+      {
+        "name": "Gomez-Tornero, Jose Luis",
+        "affiliation": "Universidad Politécnica de Cartagena",
+        "orcid": "0000-0003-0488-3990"
+      }
+    ],
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 1,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "10721782"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Bluetooth Low Energy Separate Channel Fingerprinting dataset with Frequency-Scanned Antennas and Monopole",
+  "links": {
+    "self": "https://zenodo.org/api/records/14548531",
+    "self_html": "https://zenodo.org/records/14548531",
+    "preview_html": "https://zenodo.org/records/14548531?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.14548531",
+    "self_doi": "https://doi.org/10.5281/zenodo.14548531",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.14548531",
+    "reserve_doi": "https://zenodo.org/api/records/14548531/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/10721782",
+    "parent_html": "https://zenodo.org/records/10721782",
+    "parent_doi": "https://doi.org/10.5281/zenodo.10721782",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.10721782",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:14548531/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:14548531/sequence/default",
+    "files": "https://zenodo.org/api/records/14548531/files",
+    "media_files": "https://zenodo.org/api/records/14548531/media-files",
+    "archive": "https://zenodo.org/api/records/14548531/files-archive",
+    "archive_media": "https://zenodo.org/api/records/14548531/media-files-archive",
+    "latest": "https://zenodo.org/api/records/14548531/versions/latest",
+    "latest_html": "https://zenodo.org/records/14548531/latest",
+    "versions": "https://zenodo.org/api/records/14548531/versions",
+    "draft": "https://zenodo.org/api/records/14548531/draft",
+    "access_links": "https://zenodo.org/api/records/14548531/access/links",
+    "access_grants": "https://zenodo.org/api/records/14548531/access/grants",
+    "access_users": "https://zenodo.org/api/records/14548531/access/users",
+    "access_request": "https://zenodo.org/api/records/14548531/access/request",
+    "access": "https://zenodo.org/api/records/14548531/access",
+    "communities": "https://zenodo.org/api/records/14548531/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/14548531/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/14548531/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/14548531/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/14548531/quota-increase",
+    "requests": "https://zenodo.org/api/records/14548531/requests"
+  },
+  "updated": "2024-12-23T15:57:27.350711+00:00",
+  "recid": "14548531",
+  "revision": 4,
+  "files": [
+    {
+      "id": "ce37ce7c-52db-41c4-ad9e-e7bc0e9b7749",
+      "key": "SC BLE Fingerprinting.zip",
+      "size": 3137684,
+      "checksum": "md5:38e8362859af7c01a46e7f0393f7ff5e",
+      "links": {
+        "self": "https://zenodo.org/api/records/14548531/files/SC%20BLE%20Fingerprinting.zip/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "86718"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 164,
+    "unique_downloads": 151,
+    "views": 1013,
+    "unique_views": 942,
+    "version_downloads": 109,
+    "version_unique_downloads": 100,
+    "version_unique_views": 620,
+    "version_views": 655
+  },
+  "state": "done",
+  "submitted": true
+}

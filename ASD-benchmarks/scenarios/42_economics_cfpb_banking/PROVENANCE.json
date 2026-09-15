@@ -1,0 +1,192 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "scenario_id": "42_economics_cfpb_banking",
+  "domain": "financial inclusion",
+  "title": "National Age-Friendly Banking Survey",
+  "publisher": "Consumer Financial Protection Bureau",
+  "authoritative_landing_url": "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/",
+  "authoritative_source_urls": [
+    "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/",
+    "https://files.consumerfinance.gov/f/documents/cfpb_nafbs-puf-unlabeled_2026-02.csv",
+    "https://files.consumerfinance.gov/f/documents/cfpb_nafbs-puf-labeled_2026-02.csv",
+    "https://files.consumerfinance.gov/f/documents/cfpb_nafbs-puf-data-dictionary_2026-03.pdf",
+    "https://files.consumerfinance.gov/f/documents/cfpb_nafbs-puf-technical-report_2026-03.pdf",
+    "https://www.consumerfinance.gov/privacy/website-privacy-policy/"
+  ],
+  "identifiers": [],
+  "release_or_version": "March 2026 public-use release; collected January-February 2024",
+  "retrieval_finalized_utc": "2026-09-14T16:29:13.689556+00:00",
+  "license_or_access_terms": "U.S. government public-domain data",
+  "deterministic_selection_rule": "Both original coded/labeled representations plus full source dictionary and technical report; no respondent filtering.",
+  "substitution": null,
+  "data_origin": "measured_or_observed",
+  "measurement_dates": {
+    "description": "Survey fieldwork January 9–February 9, 2024; public-use files released March 2026.",
+    "status": "documented where explicit; otherwise unknown, never inferred from release"
+  },
+  "source_publication_date": null,
+  "source_created_utc": null,
+  "source_updated_utc": null,
+  "source_inventory": null,
+  "author_preprocessing": "Deidentified, weighted and recoded public-use survey products. The two CSVs describe the same respondents, not two independent samples. Financial values may be categories or ranges.",
+  "known_analyses_and_limitations": "The technical report contains published summary statistics. Cross-sectional associations cannot establish whether digital banking causes service access changes. Initially failed direct downloads were recovered from the same public URLs using the system HTTP client.",
+  "related_publications": [],
+  "pinned_commit": null,
+  "source_context_request_failures": [
+    {
+      "url": "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/",
+      "error": "HTTP Error 403: Forbidden",
+      "utc": "2026-09-14T15:49:31.720774+00:00"
+    },
+    {
+      "url": "https://www.consumerfinance.gov/privacy/website-privacy-policy/",
+      "error": "HTTP Error 403: Forbidden",
+      "utc": "2026-09-14T15:49:32.631570+00:00"
+    }
+  ],
+  "unavailable_optional_context": [],
+  "license_evidence": null,
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "case_id": "P100-042",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-042",
+      "scenario_id": "42_economics_cfpb_banking",
+      "path": "context/cfpb_nafbs-puf-data-dictionary_2026-03.pdf",
+      "scenario_relative_path": "context/cfpb_nafbs-puf-data-dictionary_2026-03.pdf",
+      "bytes": 922156,
+      "sha256": "7129d1b4a359ac117beef3e536cf399ff0a10d557aedc1d5168ab5a934dbe316",
+      "role": "official_context",
+      "source_urls": [
+        "https://files.consumerfinance.gov/f/documents/cfpb_nafbs-puf-data-dictionary_2026-03.pdf"
+      ],
+      "download_url": "https://files.consumerfinance.gov/f/documents/cfpb_nafbs-puf-data-dictionary_2026-03.pdf",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:00:07.970179+00:00",
+      "license_or_terms": "U.S. government public-domain data",
+      "citation_identifiers": [],
+      "citation_url": "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/",
+      "source_version": "March 2026 public-use release; collected January-February 2024",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-042",
+      "scenario_id": "42_economics_cfpb_banking",
+      "path": "context/cfpb_nafbs-puf-technical-report_2026-03.pdf",
+      "scenario_relative_path": "context/cfpb_nafbs-puf-technical-report_2026-03.pdf",
+      "bytes": 1230858,
+      "sha256": "cf827f28f5f43f0b373c7ca08a8a89325c6e28130388dead153a92dd65a6525d",
+      "role": "official_context",
+      "source_urls": [
+        "https://files.consumerfinance.gov/f/documents/cfpb_nafbs-puf-technical-report_2026-03.pdf"
+      ],
+      "download_url": "https://files.consumerfinance.gov/f/documents/cfpb_nafbs-puf-technical-report_2026-03.pdf",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:00:09.899806+00:00",
+      "license_or_terms": "U.S. government public-domain data",
+      "citation_identifiers": [],
+      "citation_url": "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/",
+      "source_version": "March 2026 public-use release; collected January-February 2024",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-042",
+      "scenario_id": "42_economics_cfpb_banking",
+      "path": "context/reuse_policy.html",
+      "scenario_relative_path": "context/reuse_policy.html",
+      "bytes": 156401,
+      "sha256": "a580088d7fa716b7f40e9863d3f04b1bc61c1e968f4aa3e3ec09886d74e84355",
+      "role": "official_context",
+      "source_urls": [
+        "https://www.consumerfinance.gov/privacy/website-privacy-policy/"
+      ],
+      "download_url": "https://www.consumerfinance.gov/privacy/website-privacy-policy/",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:00:13.447734+00:00",
+      "license_or_terms": "U.S. government public-domain data",
+      "citation_identifiers": [],
+      "citation_url": "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/",
+      "source_version": "March 2026 public-use release; collected January-February 2024",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-042",
+      "scenario_id": "42_economics_cfpb_banking",
+      "path": "context/source_record.html",
+      "scenario_relative_path": "context/source_record.html",
+      "bytes": 144220,
+      "sha256": "f31f0fe6f29d5c26a6b7f493712d57a1f44a3df8dbe35ce12a48ef3b9f4ec46e",
+      "role": "official_context",
+      "source_urls": [
+        "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/"
+      ],
+      "download_url": "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:00:12.280731+00:00",
+      "license_or_terms": "U.S. government public-domain data",
+      "citation_identifiers": [],
+      "citation_url": "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/",
+      "source_version": "March 2026 public-use release; collected January-February 2024",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-042",
+      "scenario_id": "42_economics_cfpb_banking",
+      "path": "raw/cfpb_nafbs-puf-labeled_2026-02.csv",
+      "scenario_relative_path": "raw/cfpb_nafbs-puf-labeled_2026-02.csv",
+      "bytes": 4206604,
+      "sha256": "e51d88f45498dbebce911af6f3157eefbfe98951c19e08542bf2fc0b805fd542",
+      "role": "official_data",
+      "source_urls": [
+        "https://files.consumerfinance.gov/f/documents/cfpb_nafbs-puf-labeled_2026-02.csv"
+      ],
+      "download_url": "https://files.consumerfinance.gov/f/documents/cfpb_nafbs-puf-labeled_2026-02.csv",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:00:06.025722+00:00",
+      "license_or_terms": "U.S. government public-domain data",
+      "citation_identifiers": [],
+      "citation_url": "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/",
+      "source_version": "March 2026 public-use release; collected January-February 2024",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-042",
+      "scenario_id": "42_economics_cfpb_banking",
+      "path": "raw/cfpb_nafbs-puf-unlabeled_2026-02.csv",
+      "scenario_relative_path": "raw/cfpb_nafbs-puf-unlabeled_2026-02.csv",
+      "bytes": 1513275,
+      "sha256": "2fb9d16e891c0af87d3acb227f297520c0fa07ca09ef7b1cf9665e3ae8d35a00",
+      "role": "official_data",
+      "source_urls": [
+        "https://files.consumerfinance.gov/f/documents/cfpb_nafbs-puf-unlabeled_2026-02.csv"
+      ],
+      "download_url": "https://files.consumerfinance.gov/f/documents/cfpb_nafbs-puf-unlabeled_2026-02.csv",
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-14T16:00:03.902012+00:00",
+      "license_or_terms": "U.S. government public-domain data",
+      "citation_identifiers": [],
+      "citation_url": "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/",
+      "source_version": "March 2026 public-use release; collected January-February 2024",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

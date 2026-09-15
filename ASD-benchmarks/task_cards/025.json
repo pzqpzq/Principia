@@ -1,0 +1,218 @@
+{
+  "case_id": "P100-025",
+  "case_revision": 1,
+  "scenario_id": "25_electrochemistry_operando_xas",
+  "title": "Operando XAS and battery electrochemistry",
+  "domain": "battery electrochemistry",
+  "question": "How do electrochemical history and spectral response relate during battery cycling?",
+  "data_origin": "measured_or_observed",
+  "source_version": "14922524",
+  "source_url": "https://zenodo.org/records/14922524",
+  "identifiers": [
+    "10.5281/zenodo.14922524"
+  ],
+  "publisher": "Zenodo; originating researchers: Praetz, Sebastian (Technische Universität Berlin); Johansen, Morten; Schlesiger, Christopher; Kober, Delf (Technische Universität Berlin)",
+  "release_date": "2025-02-25",
+  "measurement_dates": "Full acquisition dates not established; source publication field 2025-02-25 and deposit creation 2025-07-17.",
+  "variables_and_units": "Variables and units are preserved in native column headers, instrument metadata and source dictionaries; see evidence anchors below.",
+  "independent_units": "Cell, cycle and complete electrochemical segment.",
+  "validation_design": "Cell, cycle and complete electrochemical segment. Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "Authors report 300-second initial spectra and 3x/5x binning to 15–25-minute spectra. Some data are absorption mu(E), references and binned products; LFP unbinned series is also retained.",
+  "prior_analysis_and_limits": "The DANOISE operando XAS study is DOI 10.1039/D5JA00155B. Different spectra can summarize overlapping physical intervals. Time-to-spectrum assignment and electrode conditions must be checked before combining systems; calibrated spectra are not detector-event telemetry. Operando XAS/electrochemistry and structural context; calibrated spectra and author structural analyses are distinct products.",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/data.zip!/F6M4-spectra-assignment.xlsx",
+      "structure": {
+        "sheets": [
+          {
+            "name": "Tabelle1",
+            "rows": 6,
+            "columns": 6,
+            "first_rows": [
+              [
+                null,
+                "seconds total",
+                "senconds segment",
+                null,
+                "3x-Binning spectra",
+                "5x-Binning spectra"
+              ],
+              [
+                "rest-pre",
+                "600",
+                "600",
+                null,
+                "001",
+                "001"
+              ],
+              [
+                "charge",
+                "42693",
+                "41792",
+                null,
+                "002-047",
+                "002-028"
+              ],
+              [
+                "rest-1",
+                "44493",
+                "1800",
+                null,
+                "048-049",
+                "029"
+              ],
+              [
+                "discharge",
+                "89069",
+                "44575",
+                null,
+                "050-098",
+                "030-059"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/data.zip!/FMM-spectra-assigment.xlsx",
+      "structure": {
+        "sheets": [
+          {
+            "name": "Tabelle1",
+            "rows": 25,
+            "columns": 6,
+            "first_rows": [
+              [
+                null,
+                "seconds total",
+                "senconds segment",
+                null,
+                "3x-Binning spectra",
+                "5x-Binning spectra"
+              ],
+              [
+                "pre-rest",
+                "600",
+                "600",
+                null,
+                "001",
+                "001"
+              ],
+              [
+                "charge",
+                "40101",
+                "39500",
+                null,
+                "002-045",
+                "002-027"
+              ],
+              [
+                "rest-1",
+                "41902",
+                "1800",
+                null,
+                "046-047",
+                "028"
+              ],
+              [
+                "discharge",
+                "62212",
+                "20309",
+                null,
+                "048-069",
+                "029-041"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/data.zip!/LFP-spectra-assignment.xlsx",
+      "structure": {
+        "sheets": [
+          {
+            "name": "Tabelle1",
+            "rows": 6,
+            "columns": 6,
+            "first_rows": [
+              [
+                null,
+                "seconds total",
+                "senconds segment",
+                null,
+                "1xBinning spectra",
+                "3x-Binning spectra"
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "charge",
+                "31981",
+                "31981",
+                null,
+                "001-107",
+                "001-036"
+              ],
+              [
+                "rest-1",
+                "39181",
+                "7200",
+                null,
+                "108-131",
+                "037-044"
+              ],
+              [
+                "discharge",
+                "50866",
+                "11684",
+                null,
+                "132-170",
+                "045-057"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "ZIP": 1,
+    "Excel_OpenXML": 3,
+    "text_or_instrument_native": 22
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "source_asset_bytes": 6769483,
+  "expanded_source_equivalent_bytes": 34577445,
+  "installed_folder_bytes": 6786819,
+  "source_asset_count": 2,
+  "asset_paths": [
+    "scenarios/25_electrochemistry_operando_xas/context/zenodo_record.json",
+    "scenarios/25_electrochemistry_operando_xas/raw/data.zip"
+  ],
+  "local_folder": "scenarios/25_electrochemistry_operando_xas",
+  "size_exception": false,
+  "modalities": [
+    "tables_logs_or_structured_text"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 6776567,
+  "expanded_release_folder_equivalent_bytes": 34584529
+}

@@ -1,0 +1,61 @@
+{
+  "scenario_id": "70_geophysics_earthquake_microscopy",
+  "path": "raw/CSL_FOV4_Bz_uc0.mat",
+  "bytes": 37193839,
+  "sha256": "60f0899261d293349c81ab8614bd0499b020e932a50a2f32d1329ff7ecf4e662",
+  "checked_utc": "2026-09-15T06:45:45.839574+00:00",
+  "source_checksum_status": "verified",
+  "format": "MATLAB",
+  "variables": [
+    {
+      "name": "Bt",
+      "shape": [
+        1200,
+        1920
+      ],
+      "type": "double"
+    },
+    {
+      "name": "Bz",
+      "shape": [
+        1200,
+        1920
+      ],
+      "type": "double"
+    },
+    {
+      "name": "corners",
+      "shape": [
+        2,
+        2
+      ],
+      "type": "double"
+    },
+    {
+      "name": "h",
+      "shape": [
+        1,
+        1
+      ],
+      "type": "double"
+    },
+    {
+      "name": "newLED",
+      "shape": [
+        1200,
+        1920
+      ],
+      "type": "double"
+    },
+    {
+      "name": "step",
+      "shape": [
+        1,
+        1
+      ],
+      "type": "double"
+    }
+  ],
+  "struct_fields": [],
+  "status": "pass"
+}

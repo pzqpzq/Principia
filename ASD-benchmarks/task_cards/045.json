@@ -1,0 +1,2988 @@
+{
+  "case_id": "P100-045",
+  "case_revision": 1,
+  "scenario_id": "45_astronomy_fermi_grb250206a",
+  "title": "Fermi GBM GRB250206A spectra and responses",
+  "domain": "astronomy",
+  "question": "How do energy and time relate to spectral and pulse behavior within the selected burst?",
+  "data_origin": "measured_or_observed",
+  "source_version": "GRB250206A / bn250206827; 2025-02-06",
+  "source_url": "https://heasarc.gsfc.nasa.gov/FTP/fermi/data/gbm/triggers/2025/bn250206827/current/",
+  "identifiers": [],
+  "publisher": "NASA Fermi Gamma-ray Burst Monitor / HEASARC",
+  "release_date": null,
+  "measurement_dates": "GRB250206A / bn250206827 on 2025-02-06; FITS HDUs retain exact DATE-OBS/DATE-END and time-reference fields.",
+  "variables_and_units": "Variables and units are preserved in native column headers, instrument metadata and source dictionaries; see evidence anchors below.",
+  "independent_units": "Detector and contiguous energy/time blocks within one GRB.",
+  "validation_design": "Detector and contiguous energy/time blocks within one GRB. Verify identifiers before allocating groups; the partition is not executed or frozen by this acquisition.",
+  "author_preprocessing": "NASA calibrated/binned count and response products, not raw spacecraft packets. TTE events are intentionally omitted. Detector response and temporal binning constrain resolvable timescales.",
+  "prior_analysis_and_limits": "This is one burst already reported in GCN circular 39290; detectors are complementary views, not independent bursts. Exact identities relating hardness definitions are not discoveries. Response folding is required for physical spectral interpretation. Fermi GRB250206A native spectra/responses/context; TTE excluded. Single-burst findings require external validation before population claims.",
+  "missingness": "Native blanks, sentinels, absent records and source quality flags are preserved. No imputation performed by the curator. Exact missingness semantics come from source dictionaries/headers; no universal missing-value rule is imposed.",
+  "calibration": "Use the retained source calibration files/standards and instrument metadata where provided. Absence of an explicit calibration record is not replaced by an assumed calibration.",
+  "source_evidence": [
+    {
+      "asset": "raw/glg_cspec_n0_bn250206827_v00.pha",
+      "structure": {
+        "HDUs": [
+          {
+            "name": "PRIMARY",
+            "shape": null,
+            "columns": null,
+            "units": null,
+            "header": {
+              "DATE-OBS": "2025-02-06T18:44:56",
+              "DATE-END": "2025-02-06T20:58:18",
+              "TSTART": "760560296.359584",
+              "TSTOP": "760568298.31128",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_00",
+              "DATATYPE": "CSPEC"
+            }
+          },
+          {
+            "name": "EBOUNDS",
+            "shape": [
+              128
+            ],
+            "columns": [
+              "CHANNEL",
+              "E_MIN",
+              "E_MAX"
+            ],
+            "units": [
+              "none",
+              "keV",
+              "keV"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T18:44:56",
+              "DATE-END": "2025-02-06T20:58:18",
+              "TSTART": "760560296.359584",
+              "TSTOP": "760568298.31128",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_00"
+            }
+          },
+          {
+            "name": "SPECTRUM",
+            "shape": [
+              1948
+            ],
+            "columns": [
+              "COUNTS",
+              "EXPOSURE",
+              "QUALITY",
+              "TIME",
+              "ENDTIME"
+            ],
+            "units": [
+              "count",
+              "s",
+              "",
+              "s",
+              "s"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T18:44:56",
+              "DATE-END": "2025-02-06T20:58:18",
+              "TSTART": "760560296.359584",
+              "TSTOP": "760568298.31128",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_00"
+            }
+          },
+          {
+            "name": "GTI",
+            "shape": [
+              3
+            ],
+            "columns": [
+              "START",
+              "STOP"
+            ],
+            "units": [
+              "s",
+              "s"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T18:44:56",
+              "DATE-END": "2025-02-06T20:58:18",
+              "TSTART": "760560296.359584",
+              "TSTOP": "760568298.31128",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_00"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/glg_ctime_n3_bn250206827_v00.pha",
+      "structure": {
+        "HDUs": [
+          {
+            "name": "PRIMARY",
+            "shape": null,
+            "columns": null,
+            "units": null,
+            "header": {
+              "DATE-OBS": "2025-02-06T19:34:56",
+              "DATE-END": "2025-02-06T20:08:17",
+              "TSTART": "760563296.71895",
+              "TSTOP": "760565297.819008",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_03",
+              "DATATYPE": "CTIME"
+            }
+          },
+          {
+            "name": "EBOUNDS",
+            "shape": [
+              8
+            ],
+            "columns": [
+              "CHANNEL",
+              "E_MIN",
+              "E_MAX"
+            ],
+            "units": [
+              "none",
+              "keV",
+              "keV"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:34:56",
+              "DATE-END": "2025-02-06T20:08:17",
+              "TSTART": "760563296.71895",
+              "TSTOP": "760565297.819008",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_03"
+            }
+          },
+          {
+            "name": "SPECTRUM",
+            "shape": [
+              14830
+            ],
+            "columns": [
+              "COUNTS",
+              "EXPOSURE",
+              "QUALITY",
+              "TIME",
+              "ENDTIME"
+            ],
+            "units": [
+              "count",
+              "s",
+              "",
+              "s",
+              "s"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:34:56",
+              "DATE-END": "2025-02-06T20:08:17",
+              "TSTART": "760563296.71895",
+              "TSTOP": "760565297.819008",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_03"
+            }
+          },
+          {
+            "name": "GTI",
+            "shape": [
+              1
+            ],
+            "columns": [
+              "START",
+              "STOP"
+            ],
+            "units": [
+              "s",
+              "s"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:34:56",
+              "DATE-END": "2025-02-06T20:08:17",
+              "TSTART": "760563296.71895",
+              "TSTOP": "760565297.819008",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_03"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/glg_ctime_n2_bn250206827_v01.rsp",
+      "structure": {
+        "HDUs": [
+          {
+            "name": "PRIMARY",
+            "shape": null,
+            "columns": null,
+            "units": null,
+            "header": {
+              "DATE-OBS": "2025-02-06T19:49:24",
+              "DATE-END": "2025-02-06T19:59:38",
+              "TSTART": "760564163.8065",
+              "TSTOP": "760564778.2165",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_02"
+            }
+          },
+          {
+            "name": "EBOUNDS",
+            "shape": [
+              8
+            ],
+            "columns": [
+              "CHANNEL",
+              "E_MIN",
+              "E_MAX"
+            ],
+            "units": [
+              "",
+              "keV",
+              "keV"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:49:24",
+              "DATE-END": "2025-02-06T19:59:38",
+              "TSTART": "760564163.8065",
+              "TSTOP": "760564778.2165",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_02"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:49:24",
+              "DATE-END": "2025-02-06T19:59:38",
+              "TSTART": "760564163.8065",
+              "TSTOP": "760564778.2165",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_02"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/glg_cspec_na_bn250206827_v01.rsp",
+      "structure": {
+        "HDUs": [
+          {
+            "name": "PRIMARY",
+            "shape": null,
+            "columns": null,
+            "units": null,
+            "header": {
+              "DATE-OBS": "2025-02-06T19:49:24",
+              "DATE-END": "2025-02-06T19:59:38",
+              "TSTART": "760564163.8065",
+              "TSTOP": "760564778.2165",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_10"
+            }
+          },
+          {
+            "name": "EBOUNDS",
+            "shape": [
+              128
+            ],
+            "columns": [
+              "CHANNEL",
+              "E_MIN",
+              "E_MAX"
+            ],
+            "units": [
+              "",
+              "keV",
+              "keV"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:49:24",
+              "DATE-END": "2025-02-06T19:59:38",
+              "TSTART": "760564163.8065",
+              "TSTOP": "760564778.2165",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_10"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:49:24",
+              "DATE-END": "2025-02-06T19:59:38",
+              "TSTART": "760564163.8065",
+              "TSTOP": "760564778.2165",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_10"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/glg_ctime_n7_bn250206827_v01.rsp2",
+      "structure": {
+        "HDUs": [
+          {
+            "name": "PRIMARY",
+            "shape": null,
+            "columns": null,
+            "units": null,
+            "header": {
+              "DATE-OBS": "2025-02-06T19:49:32",
+              "DATE-END": "2025-02-06T19:59:38",
+              "TSTART": "760564171.9985",
+              "TSTOP": "760564778.2165",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "EBOUNDS",
+            "shape": [
+              8
+            ],
+            "columns": [
+              "CHANNEL",
+              "E_MIN",
+              "E_MAX"
+            ],
+            "units": [
+              "",
+              "keV",
+              "keV"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:49:32",
+              "DATE-END": "2025-02-06T19:59:38",
+              "TSTART": "760564171.9985",
+              "TSTOP": "760564778.2165",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:49:32",
+              "DATE-END": "2025-02-06T19:50:21",
+              "TSTART": "760564171.9985",
+              "TSTOP": "760564221.1513",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:50:21",
+              "DATE-END": "2025-02-06T19:51:10",
+              "TSTART": "760564221.1513",
+              "TSTOP": "760564270.3041",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:51:10",
+              "DATE-END": "2025-02-06T19:52:00",
+              "TSTART": "760564270.3041",
+              "TSTOP": "760564320.481",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:52:00",
+              "DATE-END": "2025-02-06T19:52:57",
+              "TSTART": "760564320.481",
+              "TSTOP": "760564376.8019",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:52:57",
+              "DATE-END": "2025-02-06T19:53:38",
+              "TSTART": "760564376.8019",
+              "TSTOP": "760564417.7626",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:53:38",
+              "DATE-END": "2025-02-06T19:53:54",
+              "TSTART": "760564417.7626",
+              "TSTOP": "760564434.1469",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:53:54",
+              "DATE-END": "2025-02-06T19:54:11",
+              "TSTART": "760564434.1469",
+              "TSTOP": "760564450.5312",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:54:11",
+              "DATE-END": "2025-02-06T19:54:19",
+              "TSTART": "760564450.5312",
+              "TSTOP": "760564458.7233",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:54:19",
+              "DATE-END": "2025-02-06T19:54:27",
+              "TSTART": "760564458.7233",
+              "TSTOP": "760564466.9154",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:54:27",
+              "DATE-END": "2025-02-06T19:54:35",
+              "TSTART": "760564466.9154",
+              "TSTOP": "760564475.1076",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:54:35",
+              "DATE-END": "2025-02-06T19:54:51",
+              "TSTART": "760564475.1076",
+              "TSTOP": "760564491.4918",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:54:51",
+              "DATE-END": "2025-02-06T19:55:08",
+              "TSTART": "760564491.4918",
+              "TSTOP": "760564507.8761",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:55:08",
+              "DATE-END": "2025-02-06T19:55:24",
+              "TSTART": "760564507.8761",
+              "TSTOP": "760564524.2604",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:55:24",
+              "DATE-END": "2025-02-06T19:55:41",
+              "TSTART": "760564524.2604",
+              "TSTOP": "760564540.6447",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:55:41",
+              "DATE-END": "2025-02-06T19:55:57",
+              "TSTART": "760564540.6447",
+              "TSTOP": "760564557.0289",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:55:57",
+              "DATE-END": "2025-02-06T19:56:13",
+              "TSTART": "760564557.0289",
+              "TSTOP": "760564573.4132",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:56:13",
+              "DATE-END": "2025-02-06T19:56:30",
+              "TSTART": "760564573.4132",
+              "TSTOP": "760564589.7975",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:56:30",
+              "DATE-END": "2025-02-06T19:56:46",
+              "TSTART": "760564589.7975",
+              "TSTOP": "760564606.1817",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:56:46",
+              "DATE-END": "2025-02-06T19:57:03",
+              "TSTART": "760564606.1817",
+              "TSTOP": "760564622.566",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:57:03",
+              "DATE-END": "2025-02-06T19:57:19",
+              "TSTART": "760564622.566",
+              "TSTOP": "760564638.9503",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:57:19",
+              "DATE-END": "2025-02-06T19:57:35",
+              "TSTART": "760564638.9503",
+              "TSTOP": "760564655.3345",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:57:35",
+              "DATE-END": "2025-02-06T19:57:52",
+              "TSTART": "760564655.3345",
+              "TSTOP": "760564671.7188",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:57:52",
+              "DATE-END": "2025-02-06T19:58:08",
+              "TSTART": "760564671.7188",
+              "TSTOP": "760564688.1031",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:58:08",
+              "DATE-END": "2025-02-06T19:58:24",
+              "TSTART": "760564688.1031",
+              "TSTOP": "760564704.4873",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:58:24",
+              "DATE-END": "2025-02-06T19:58:41",
+              "TSTART": "760564704.4873",
+              "TSTOP": "760564720.8716",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:58:41",
+              "DATE-END": "2025-02-06T19:58:57",
+              "TSTART": "760564720.8716",
+              "TSTOP": "760564737.2559",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:58:57",
+              "DATE-END": "2025-02-06T19:59:14",
+              "TSTART": "760564737.2559",
+              "TSTOP": "760564753.6401",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:59:14",
+              "DATE-END": "2025-02-06T19:59:30",
+              "TSTART": "760564753.6401",
+              "TSTOP": "760564770.0244",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:59:30",
+              "DATE-END": "2025-02-06T19:59:38",
+              "TSTART": "760564770.0244",
+              "TSTOP": "760564778.2165",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_07"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/glg_ctime_n4_bn250206827_v01.rsp",
+      "structure": {
+        "HDUs": [
+          {
+            "name": "PRIMARY",
+            "shape": null,
+            "columns": null,
+            "units": null,
+            "header": {
+              "DATE-OBS": "2025-02-06T19:49:24",
+              "DATE-END": "2025-02-06T19:59:38",
+              "TSTART": "760564163.8065",
+              "TSTOP": "760564778.2165",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_04"
+            }
+          },
+          {
+            "name": "EBOUNDS",
+            "shape": [
+              8
+            ],
+            "columns": [
+              "CHANNEL",
+              "E_MIN",
+              "E_MAX"
+            ],
+            "units": [
+              "",
+              "keV",
+              "keV"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:49:24",
+              "DATE-END": "2025-02-06T19:59:38",
+              "TSTART": "760564163.8065",
+              "TSTOP": "760564778.2165",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_04"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:49:24",
+              "DATE-END": "2025-02-06T19:59:38",
+              "TSTART": "760564163.8065",
+              "TSTOP": "760564778.2165",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_04"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/glg_ctime_na_bn250206827_v00.pha",
+      "structure": {
+        "HDUs": [
+          {
+            "name": "PRIMARY",
+            "shape": null,
+            "columns": null,
+            "units": null,
+            "header": {
+              "DATE-OBS": "2025-02-06T19:34:56",
+              "DATE-END": "2025-02-06T20:08:17",
+              "TSTART": "760563296.71895",
+              "TSTOP": "760565297.819008",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_10",
+              "DATATYPE": "CTIME"
+            }
+          },
+          {
+            "name": "EBOUNDS",
+            "shape": [
+              8
+            ],
+            "columns": [
+              "CHANNEL",
+              "E_MIN",
+              "E_MAX"
+            ],
+            "units": [
+              "none",
+              "keV",
+              "keV"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:34:56",
+              "DATE-END": "2025-02-06T20:08:17",
+              "TSTART": "760563296.71895",
+              "TSTOP": "760565297.819008",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_10"
+            }
+          },
+          {
+            "name": "SPECTRUM",
+            "shape": [
+              14830
+            ],
+            "columns": [
+              "COUNTS",
+              "EXPOSURE",
+              "QUALITY",
+              "TIME",
+              "ENDTIME"
+            ],
+            "units": [
+              "count",
+              "s",
+              "",
+              "s",
+              "s"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:34:56",
+              "DATE-END": "2025-02-06T20:08:17",
+              "TSTART": "760563296.71895",
+              "TSTOP": "760565297.819008",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_10"
+            }
+          },
+          {
+            "name": "GTI",
+            "shape": [
+              1
+            ],
+            "columns": [
+              "START",
+              "STOP"
+            ],
+            "units": [
+              "s",
+              "s"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:34:56",
+              "DATE-END": "2025-02-06T20:08:17",
+              "TSTART": "760563296.71895",
+              "TSTOP": "760565297.819008",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_10"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/glg_ctime_nb_bn250206827_v01.rsp2",
+      "structure": {
+        "HDUs": [
+          {
+            "name": "PRIMARY",
+            "shape": null,
+            "columns": null,
+            "units": null,
+            "header": {
+              "DATE-OBS": "2025-02-06T19:49:32",
+              "DATE-END": "2025-02-06T19:59:38",
+              "TSTART": "760564171.9985",
+              "TSTOP": "760564778.2165",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "EBOUNDS",
+            "shape": [
+              8
+            ],
+            "columns": [
+              "CHANNEL",
+              "E_MIN",
+              "E_MAX"
+            ],
+            "units": [
+              "",
+              "keV",
+              "keV"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:49:32",
+              "DATE-END": "2025-02-06T19:59:38",
+              "TSTART": "760564171.9985",
+              "TSTOP": "760564778.2165",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:49:32",
+              "DATE-END": "2025-02-06T19:50:21",
+              "TSTART": "760564171.9985",
+              "TSTOP": "760564221.1513",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:50:21",
+              "DATE-END": "2025-02-06T19:51:10",
+              "TSTART": "760564221.1513",
+              "TSTOP": "760564270.3041",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:51:10",
+              "DATE-END": "2025-02-06T19:52:00",
+              "TSTART": "760564270.3041",
+              "TSTOP": "760564320.481",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:52:00",
+              "DATE-END": "2025-02-06T19:52:57",
+              "TSTART": "760564320.481",
+              "TSTOP": "760564376.8019",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:52:57",
+              "DATE-END": "2025-02-06T19:53:38",
+              "TSTART": "760564376.8019",
+              "TSTOP": "760564417.7626",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:53:38",
+              "DATE-END": "2025-02-06T19:53:54",
+              "TSTART": "760564417.7626",
+              "TSTOP": "760564434.1469",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:53:54",
+              "DATE-END": "2025-02-06T19:54:11",
+              "TSTART": "760564434.1469",
+              "TSTOP": "760564450.5312",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:54:11",
+              "DATE-END": "2025-02-06T19:54:19",
+              "TSTART": "760564450.5312",
+              "TSTOP": "760564458.7233",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:54:19",
+              "DATE-END": "2025-02-06T19:54:27",
+              "TSTART": "760564458.7233",
+              "TSTOP": "760564466.9154",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:54:27",
+              "DATE-END": "2025-02-06T19:54:35",
+              "TSTART": "760564466.9154",
+              "TSTOP": "760564475.1076",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:54:35",
+              "DATE-END": "2025-02-06T19:54:51",
+              "TSTART": "760564475.1076",
+              "TSTOP": "760564491.4918",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:54:51",
+              "DATE-END": "2025-02-06T19:55:08",
+              "TSTART": "760564491.4918",
+              "TSTOP": "760564507.8761",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:55:08",
+              "DATE-END": "2025-02-06T19:55:24",
+              "TSTART": "760564507.8761",
+              "TSTOP": "760564524.2604",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:55:24",
+              "DATE-END": "2025-02-06T19:55:41",
+              "TSTART": "760564524.2604",
+              "TSTOP": "760564540.6447",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:55:41",
+              "DATE-END": "2025-02-06T19:55:57",
+              "TSTART": "760564540.6447",
+              "TSTOP": "760564557.0289",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:55:57",
+              "DATE-END": "2025-02-06T19:56:13",
+              "TSTART": "760564557.0289",
+              "TSTOP": "760564573.4132",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:56:13",
+              "DATE-END": "2025-02-06T19:56:30",
+              "TSTART": "760564573.4132",
+              "TSTOP": "760564589.7975",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:56:30",
+              "DATE-END": "2025-02-06T19:56:46",
+              "TSTART": "760564589.7975",
+              "TSTOP": "760564606.1817",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:56:46",
+              "DATE-END": "2025-02-06T19:57:03",
+              "TSTART": "760564606.1817",
+              "TSTOP": "760564622.566",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:57:03",
+              "DATE-END": "2025-02-06T19:57:19",
+              "TSTART": "760564622.566",
+              "TSTOP": "760564638.9503",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:57:19",
+              "DATE-END": "2025-02-06T19:57:35",
+              "TSTART": "760564638.9503",
+              "TSTOP": "760564655.3345",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:57:35",
+              "DATE-END": "2025-02-06T19:57:52",
+              "TSTART": "760564655.3345",
+              "TSTOP": "760564671.7188",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:57:52",
+              "DATE-END": "2025-02-06T19:58:08",
+              "TSTART": "760564671.7188",
+              "TSTOP": "760564688.1031",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:58:08",
+              "DATE-END": "2025-02-06T19:58:24",
+              "TSTART": "760564688.1031",
+              "TSTOP": "760564704.4873",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:58:24",
+              "DATE-END": "2025-02-06T19:58:41",
+              "TSTART": "760564704.4873",
+              "TSTOP": "760564720.8716",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:58:41",
+              "DATE-END": "2025-02-06T19:58:57",
+              "TSTART": "760564720.8716",
+              "TSTOP": "760564737.2559",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:58:57",
+              "DATE-END": "2025-02-06T19:59:14",
+              "TSTART": "760564737.2559",
+              "TSTOP": "760564753.6401",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:59:14",
+              "DATE-END": "2025-02-06T19:59:30",
+              "TSTART": "760564753.6401",
+              "TSTOP": "760564770.0244",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          },
+          {
+            "name": "SPECRESP MATRIX",
+            "shape": [
+              140
+            ],
+            "columns": [
+              "ENERG_LO",
+              "ENERG_HI",
+              "N_GRP",
+              "F_CHAN",
+              "N_CHAN",
+              "MATRIX"
+            ],
+            "units": [
+              "keV",
+              "keV",
+              "",
+              "",
+              "",
+              "cm**2"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:59:30",
+              "DATE-END": "2025-02-06T19:59:38",
+              "TSTART": "760564770.0244",
+              "TSTOP": "760564778.2165",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_11"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/glg_cspec_n8_bn250206827_v00.pha",
+      "structure": {
+        "HDUs": [
+          {
+            "name": "PRIMARY",
+            "shape": null,
+            "columns": null,
+            "units": null,
+            "header": {
+              "DATE-OBS": "2025-02-06T18:44:56",
+              "DATE-END": "2025-02-06T20:58:18",
+              "TSTART": "760560296.359584",
+              "TSTOP": "760568298.31128",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_08",
+              "DATATYPE": "CSPEC"
+            }
+          },
+          {
+            "name": "EBOUNDS",
+            "shape": [
+              128
+            ],
+            "columns": [
+              "CHANNEL",
+              "E_MIN",
+              "E_MAX"
+            ],
+            "units": [
+              "none",
+              "keV",
+              "keV"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T18:44:56",
+              "DATE-END": "2025-02-06T20:58:18",
+              "TSTART": "760560296.359584",
+              "TSTOP": "760568298.31128",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_08"
+            }
+          },
+          {
+            "name": "SPECTRUM",
+            "shape": [
+              1948
+            ],
+            "columns": [
+              "COUNTS",
+              "EXPOSURE",
+              "QUALITY",
+              "TIME",
+              "ENDTIME"
+            ],
+            "units": [
+              "count",
+              "s",
+              "",
+              "s",
+              "s"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T18:44:56",
+              "DATE-END": "2025-02-06T20:58:18",
+              "TSTART": "760560296.359584",
+              "TSTOP": "760568298.31128",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_08"
+            }
+          },
+          {
+            "name": "GTI",
+            "shape": [
+              3
+            ],
+            "columns": [
+              "START",
+              "STOP"
+            ],
+            "units": [
+              "s",
+              "s"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T18:44:56",
+              "DATE-END": "2025-02-06T20:58:18",
+              "TSTART": "760560296.359584",
+              "TSTOP": "760568298.31128",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_08"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/glg_ctime_n5_bn250206827_v00.pha",
+      "structure": {
+        "HDUs": [
+          {
+            "name": "PRIMARY",
+            "shape": null,
+            "columns": null,
+            "units": null,
+            "header": {
+              "DATE-OBS": "2025-02-06T19:34:56",
+              "DATE-END": "2025-02-06T20:08:17",
+              "TSTART": "760563296.71895",
+              "TSTOP": "760565297.819008",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_05",
+              "DATATYPE": "CTIME"
+            }
+          },
+          {
+            "name": "EBOUNDS",
+            "shape": [
+              8
+            ],
+            "columns": [
+              "CHANNEL",
+              "E_MIN",
+              "E_MAX"
+            ],
+            "units": [
+              "none",
+              "keV",
+              "keV"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:34:56",
+              "DATE-END": "2025-02-06T20:08:17",
+              "TSTART": "760563296.71895",
+              "TSTOP": "760565297.819008",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_05"
+            }
+          },
+          {
+            "name": "SPECTRUM",
+            "shape": [
+              14830
+            ],
+            "columns": [
+              "COUNTS",
+              "EXPOSURE",
+              "QUALITY",
+              "TIME",
+              "ENDTIME"
+            ],
+            "units": [
+              "count",
+              "s",
+              "",
+              "s",
+              "s"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:34:56",
+              "DATE-END": "2025-02-06T20:08:17",
+              "TSTART": "760563296.71895",
+              "TSTOP": "760565297.819008",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_05"
+            }
+          },
+          {
+            "name": "GTI",
+            "shape": [
+              1
+            ],
+            "columns": [
+              "START",
+              "STOP"
+            ],
+            "units": [
+              "s",
+              "s"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:34:56",
+              "DATE-END": "2025-02-06T20:08:17",
+              "TSTART": "760563296.71895",
+              "TSTOP": "760565297.819008",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_05"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/glg_ctime_n9_bn250206827_v00.pha",
+      "structure": {
+        "HDUs": [
+          {
+            "name": "PRIMARY",
+            "shape": null,
+            "columns": null,
+            "units": null,
+            "header": {
+              "DATE-OBS": "2025-02-06T19:34:56",
+              "DATE-END": "2025-02-06T20:08:17",
+              "TSTART": "760563296.71895",
+              "TSTOP": "760565297.819008",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_09",
+              "DATATYPE": "CTIME"
+            }
+          },
+          {
+            "name": "EBOUNDS",
+            "shape": [
+              8
+            ],
+            "columns": [
+              "CHANNEL",
+              "E_MIN",
+              "E_MAX"
+            ],
+            "units": [
+              "none",
+              "keV",
+              "keV"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:34:56",
+              "DATE-END": "2025-02-06T20:08:17",
+              "TSTART": "760563296.71895",
+              "TSTOP": "760565297.819008",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_09"
+            }
+          },
+          {
+            "name": "SPECTRUM",
+            "shape": [
+              14830
+            ],
+            "columns": [
+              "COUNTS",
+              "EXPOSURE",
+              "QUALITY",
+              "TIME",
+              "ENDTIME"
+            ],
+            "units": [
+              "count",
+              "s",
+              "",
+              "s",
+              "s"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:34:56",
+              "DATE-END": "2025-02-06T20:08:17",
+              "TSTART": "760563296.71895",
+              "TSTOP": "760565297.819008",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_09"
+            }
+          },
+          {
+            "name": "GTI",
+            "shape": [
+              1
+            ],
+            "columns": [
+              "START",
+              "STOP"
+            ],
+            "units": [
+              "s",
+              "s"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:34:56",
+              "DATE-END": "2025-02-06T20:08:17",
+              "TSTART": "760563296.71895",
+              "TSTOP": "760565297.819008",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "NAI_09"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "asset": "raw/glg_ctime_b1_bn250206827_v00.pha",
+      "structure": {
+        "HDUs": [
+          {
+            "name": "PRIMARY",
+            "shape": null,
+            "columns": null,
+            "units": null,
+            "header": {
+              "DATE-OBS": "2025-02-06T19:34:56",
+              "DATE-END": "2025-02-06T20:08:17",
+              "TSTART": "760563296.71895",
+              "TSTOP": "760565297.819008",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "BGO_01",
+              "DATATYPE": "CTIME"
+            }
+          },
+          {
+            "name": "EBOUNDS",
+            "shape": [
+              8
+            ],
+            "columns": [
+              "CHANNEL",
+              "E_MIN",
+              "E_MAX"
+            ],
+            "units": [
+              "none",
+              "keV",
+              "keV"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:34:56",
+              "DATE-END": "2025-02-06T20:08:17",
+              "TSTART": "760563296.71895",
+              "TSTOP": "760565297.819008",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "BGO_01"
+            }
+          },
+          {
+            "name": "SPECTRUM",
+            "shape": [
+              14830
+            ],
+            "columns": [
+              "COUNTS",
+              "EXPOSURE",
+              "QUALITY",
+              "TIME",
+              "ENDTIME"
+            ],
+            "units": [
+              "count",
+              "s",
+              "",
+              "s",
+              "s"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:34:56",
+              "DATE-END": "2025-02-06T20:08:17",
+              "TSTART": "760563296.71895",
+              "TSTOP": "760565297.819008",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "BGO_01"
+            }
+          },
+          {
+            "name": "GTI",
+            "shape": [
+              1
+            ],
+            "columns": [
+              "START",
+              "STOP"
+            ],
+            "units": [
+              "s",
+              "s"
+            ],
+            "header": {
+              "DATE-OBS": "2025-02-06T19:34:56",
+              "DATE-END": "2025-02-06T20:08:17",
+              "TSTART": "760563296.71895",
+              "TSTOP": "760565297.819008",
+              "TELESCOP": "GLAST",
+              "INSTRUME": "GBM",
+              "DETNAM": "BGO_01"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "format_counts": {
+    "GIF": 11,
+    "FITS": 88,
+    "PNG": 1,
+    "PDF": 5
+  },
+  "reader_limitations": [],
+  "eligibility": {
+    "corpus": "accepted_with_documented_scope",
+    "scientific_validation": "design specified; no discoveries evaluated",
+    "principia_ingestion": "not tested in this campaign",
+    "novelty": "no unseen-law guarantee; independent adjudication required"
+  },
+  "exposure": "Open source-aware; source literature and supplied analyses accessible",
+  "license_or_terms": "Public domain; Fermi/HEASARC acknowledgment",
+  "source_asset_bytes": 64245141,
+  "expanded_source_equivalent_bytes": 64245141,
+  "installed_folder_bytes": 64391324,
+  "source_asset_count": 108,
+  "asset_paths": [
+    "scenarios/45_astronomy_fermi_grb250206a/context/data_policy.html",
+    "scenarios/45_astronomy_fermi_grb250206a/context/original_event_report.html",
+    "scenarios/45_astronomy_fermi_grb250206a/context/source_directory.html",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_bcat_all_bn250206827_v00.fit",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_b0_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_b0_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_b0_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_b1_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_b1_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_b1_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n0_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n0_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n0_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n1_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n1_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n1_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n2_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n2_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n2_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n3_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n3_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n3_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n4_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n4_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n4_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n5_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n5_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n5_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n6_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n6_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n6_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n7_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n7_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n7_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n8_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n8_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n8_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n9_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n9_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_n9_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_na_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_na_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_na_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_nb_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_nb_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_cspec_nb_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_b0_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_b0_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_b0_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_b1_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_b1_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_b1_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n0_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n0_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n0_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n1_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n1_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n1_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n2_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n2_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n2_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n3_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n3_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n3_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n4_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n4_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n4_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n5_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n5_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n5_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n6_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n6_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n6_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n7_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n7_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n7_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n8_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n8_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n8_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n9_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n9_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_n9_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_na_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_na_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_na_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_nb_bn250206827_v00.pha",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_nb_bn250206827_v01.rsp",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_ctime_nb_bn250206827_v01.rsp2",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_healpix_all_bn250206827_v00.fit",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_lc_all_bn250206827_v00.gif",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_lc_chan12_bn250206827_v00.pdf",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_lc_chan34_bn250206827_v00.pdf",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_lc_chan567_bn250206827_v00.pdf",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_lc_chantot_bn250206827_v00.pdf",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_lc_hires12_bn250206827_v00.gif",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_lc_hires34_bn250206827_v00.gif",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_lc_hires567_bn250206827_v00.gif",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_lc_lores12_bn250206827_v00.gif",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_lc_lores34_bn250206827_v00.gif",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_lc_lores567_bn250206827_v00.gif",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_lc_medres12_bn250206827_v00.gif",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_lc_medres34_bn250206827_v00.gif",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_lc_medres567_bn250206827_v00.gif",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_lc_tot_bn250206827_v00.pdf",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_lc_zxradec_bn250206827_v00.gif",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_skymap_all_bn250206827_v00.png",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_tcat_all_bn250206827_v00.fit",
+    "scenarios/45_astronomy_fermi_grb250206a/raw/glg_trigdat_all_bn250206827_v01.fit"
+  ],
+  "local_folder": "scenarios/45_astronomy_fermi_grb250206a",
+  "size_exception": false,
+  "modalities": [
+    "images",
+    "scientific_arrays_or_events"
+  ],
+  "unit_interpretation": "Use exact source field/sheet/channel labels and units in source_evidence and per-file reports; unknown units remain unresolved, not inferred from a variable name.",
+  "release_folder_bytes": 64440568,
+  "expanded_release_folder_equivalent_bytes": 64440568
+}

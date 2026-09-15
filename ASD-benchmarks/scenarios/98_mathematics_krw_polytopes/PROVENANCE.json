@@ -1,0 +1,438 @@
+{
+  "schema": "principia.local-scenario/v1",
+  "benchmark_profile": "principia.benchmark-scenario/v2",
+  "scenario_id": "98_mathematics_krw_polytopes",
+  "domain": "Combinatorial mathematics",
+  "title": "Dataset of Kantorovich-Rubinstein-Wasserstein Polytopes of Metric Spaces on up to 6 Points",
+  "publisher": "Delucchi, Emanuele (University of Applied Sciences and Arts of Southern Switzerland); Kühne, Lukas (Bielefeld University); Mühlherr, Leonie (Bielefeld University); Rambau, Jörg (University of Bayreuth)",
+  "authoritative_landing_url": "https://zenodo.org/records/19496811",
+  "authoritative_source_urls": [
+    "https://zenodo.org/records/19496811",
+    "https://zenodo.org/api/records/19496811/files/read_triangulations.jl/content",
+    "https://zenodo.org/api/records/19496811/files/triangulations_6.jl.zip/content",
+    "https://zenodo.org/api/records/19496811/files/wasserstein_arrangement_code.pdf/content",
+    "https://zenodo.org/api/records/19496811/files/wasserstein_arrangement_code.jl/content",
+    "https://zenodo.org/api/records/19496811/files/Polytopes_generic_metrics_5.mrdi/content",
+    "https://zenodo.org/api/records/19496811/files/Polytopes_strict_metrics_5.mrdi/content",
+    "https://zenodo.org/api/records/19496811/files/wasserstein_arrangement_code.ipynb/content",
+    "https://zenodo.org/api/records/19496811/files/rootpoly_center_4.regular.results/content",
+    "https://zenodo.org/api/records/19496811/files/rootpoly_center_5.regular.results/content",
+    "https://zenodo.org/api/records/19496811/files/rootpoly_center_6.regular.results.zip/content",
+    "https://zenodo.org/api/records/19496811/files/triangulations_4.jl/content",
+    "https://zenodo.org/api/records/19496811/files/triangulations_5.jl/content"
+  ],
+  "identifiers": [
+    "10.5281/zenodo.19496811"
+  ],
+  "release_or_version": "19496811",
+  "retrieval_finalized_utc": "2026-09-15T07:04:43.921847+00:00",
+  "license_or_access_terms": "cc-by-4.0",
+  "deterministic_selection_rule": "poly",
+  "substitution": null,
+  "data_origin": "computational_experiment",
+  "measurement_dates": "Computational release April 2026; no measurement date applies.",
+  "source_publication_date": "2026-04-12",
+  "source_created_utc": "2026-04-17T12:31:18.698793+00:00",
+  "source_updated_utc": "2026-04-17T12:31:19.817131+00:00",
+  "source_inventory": [
+    {
+      "name": "read_triangulations.jl",
+      "bytes": 5574,
+      "selected": true
+    },
+    {
+      "name": "triangulations_6.jl.zip",
+      "bytes": 2848842,
+      "selected": true
+    },
+    {
+      "name": "wasserstein_arrangement_code.pdf",
+      "bytes": 90940,
+      "selected": true
+    },
+    {
+      "name": "wasserstein_arrangement_code.jl",
+      "bytes": 9533,
+      "selected": true
+    },
+    {
+      "name": "Polytopes_generic_metrics_5.mrdi",
+      "bytes": 69842,
+      "selected": true
+    },
+    {
+      "name": "Polytopes_strict_metrics_6.mrdi.zip",
+      "bytes": 59497873,
+      "selected": false
+    },
+    {
+      "name": "Polytopes_strict_metrics_5.mrdi",
+      "bytes": 1037132,
+      "selected": true
+    },
+    {
+      "name": "wasserstein_arrangement_code.ipynb",
+      "bytes": 68649,
+      "selected": true
+    },
+    {
+      "name": "rootpoly_center_4.regular.results",
+      "bytes": 6701,
+      "selected": true
+    },
+    {
+      "name": "rootpoly_center_5.regular.results",
+      "bytes": 19966,
+      "selected": true
+    },
+    {
+      "name": "rootpoly_center_6.regular.results.zip",
+      "bytes": 3905299,
+      "selected": true
+    },
+    {
+      "name": "triangulations_4.jl",
+      "bytes": 230,
+      "selected": true
+    },
+    {
+      "name": "triangulations_5.jl",
+      "bytes": 12563,
+      "selected": true
+    }
+  ],
+  "author_preprocessing": "Exact computational objects, TOPCOM outputs, Julia/OSCAR files and notebook/PDF; largest dimension-six archive excluded because it expands beyond 500 MB.",
+  "known_analyses_and_limitations": "Use exact verification/counterexamples by independent instances, not statistical row sampling. Scripts are source context, not executed during acquisition.",
+  "related_publications": [],
+  "independent_groups": "metric/polytope instances and dimension",
+  "no_curator_scientific_preprocessing": true,
+  "case_id": "P100-098",
+  "case_revision": 1,
+  "files": [
+    {
+      "case_id": "P100-098",
+      "scenario_id": "98_mathematics_krw_polytopes",
+      "path": "raw/read_triangulations.jl",
+      "scenario_relative_path": "raw/read_triangulations.jl",
+      "bytes": 5574,
+      "sha256": "5c0b3f95993251cfea0e983e4f07e3e77f70bb11b5771822a0af6f8fa41642b9",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19496811"
+      ],
+      "download_url": "https://zenodo.org/api/records/19496811/files/read_triangulations.jl/content",
+      "source_checksum": "md5:051b2d1a8e2a907fbdb270cadb5fac3f",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:10.336736+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19496811"
+      ],
+      "citation_url": "https://zenodo.org/records/19496811",
+      "source_version": "19496811",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19496811",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-098",
+      "scenario_id": "98_mathematics_krw_polytopes",
+      "path": "raw/triangulations_6.jl.zip",
+      "scenario_relative_path": "raw/triangulations_6.jl.zip",
+      "bytes": 2848842,
+      "sha256": "c3ab7a7fc724b52715cb89e5bbce7bada78ee750de64bb687a3533d020b34aef",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19496811"
+      ],
+      "download_url": "https://zenodo.org/api/records/19496811/files/triangulations_6.jl.zip/content",
+      "source_checksum": "md5:f342d1decca987e02ff42ac8d595cfd1",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:15.155646+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19496811"
+      ],
+      "citation_url": "https://zenodo.org/records/19496811",
+      "source_version": "19496811",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19496811",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-098",
+      "scenario_id": "98_mathematics_krw_polytopes",
+      "path": "raw/wasserstein_arrangement_code.pdf",
+      "scenario_relative_path": "raw/wasserstein_arrangement_code.pdf",
+      "bytes": 90940,
+      "sha256": "f534f19ae81fa99ad9bd6c959e140c7de05b646a2a95277d754b5d9e8f007a25",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19496811"
+      ],
+      "download_url": "https://zenodo.org/api/records/19496811/files/wasserstein_arrangement_code.pdf/content",
+      "source_checksum": "md5:e6c1f84a3f3ddc0aa154f7094b1fed42",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:03.386320+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19496811"
+      ],
+      "citation_url": "https://zenodo.org/records/19496811",
+      "source_version": "19496811",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19496811",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-098",
+      "scenario_id": "98_mathematics_krw_polytopes",
+      "path": "raw/wasserstein_arrangement_code.jl",
+      "scenario_relative_path": "raw/wasserstein_arrangement_code.jl",
+      "bytes": 9533,
+      "sha256": "d77816969998a8675fea674dacd36915f6cd1c7480d6638ba4aa2ab1f600b92e",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19496811"
+      ],
+      "download_url": "https://zenodo.org/api/records/19496811/files/wasserstein_arrangement_code.jl/content",
+      "source_checksum": "md5:04b5d891f9275249aebfb0af29e3e32c",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:08.416085+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19496811"
+      ],
+      "citation_url": "https://zenodo.org/records/19496811",
+      "source_version": "19496811",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19496811",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-098",
+      "scenario_id": "98_mathematics_krw_polytopes",
+      "path": "raw/Polytopes_generic_metrics_5.mrdi",
+      "scenario_relative_path": "raw/Polytopes_generic_metrics_5.mrdi",
+      "bytes": 69842,
+      "sha256": "d5013e6b42e6332e22f7a8572de72086d8a9b436b8650db99a1bd937ae5429be",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19496811"
+      ],
+      "download_url": "https://zenodo.org/api/records/19496811/files/Polytopes_generic_metrics_5.mrdi/content",
+      "source_checksum": "md5:6634536a2895875fe3a428b06935319a",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:05.259866+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19496811"
+      ],
+      "citation_url": "https://zenodo.org/records/19496811",
+      "source_version": "19496811",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19496811",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-098",
+      "scenario_id": "98_mathematics_krw_polytopes",
+      "path": "raw/Polytopes_strict_metrics_5.mrdi",
+      "scenario_relative_path": "raw/Polytopes_strict_metrics_5.mrdi",
+      "bytes": 1037132,
+      "sha256": "608e96002dd710c927da618585238cb08c7d852bb479085685390049fc0fa744",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19496811"
+      ],
+      "download_url": "https://zenodo.org/api/records/19496811/files/Polytopes_strict_metrics_5.mrdi/content",
+      "source_checksum": "md5:50e08cde7336a4282dc3390a91799078",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:07.065507+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19496811"
+      ],
+      "citation_url": "https://zenodo.org/records/19496811",
+      "source_version": "19496811",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19496811",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-098",
+      "scenario_id": "98_mathematics_krw_polytopes",
+      "path": "raw/wasserstein_arrangement_code.ipynb",
+      "scenario_relative_path": "raw/wasserstein_arrangement_code.ipynb",
+      "bytes": 68649,
+      "sha256": "c43dacab3578ad3e1585018289cabe1f37d03963e42dea6c49d6fdd5426e06ac",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19496811"
+      ],
+      "download_url": "https://zenodo.org/api/records/19496811/files/wasserstein_arrangement_code.ipynb/content",
+      "source_checksum": "md5:0344d4033c95c1ff4b49dd1d778d8a70",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:05.128203+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19496811"
+      ],
+      "citation_url": "https://zenodo.org/records/19496811",
+      "source_version": "19496811",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19496811",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-098",
+      "scenario_id": "98_mathematics_krw_polytopes",
+      "path": "raw/rootpoly_center_4.regular.results",
+      "scenario_relative_path": "raw/rootpoly_center_4.regular.results",
+      "bytes": 6701,
+      "sha256": "1d831a95a11ba6c745538ae8c79fbaa4062c8b947491582ab087af857debdaaa",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19496811"
+      ],
+      "download_url": "https://zenodo.org/api/records/19496811/files/rootpoly_center_4.regular.results/content",
+      "source_checksum": "md5:4940720d4f51d8a67d82810a9ff95276",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:09.853288+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19496811"
+      ],
+      "citation_url": "https://zenodo.org/records/19496811",
+      "source_version": "19496811",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19496811",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-098",
+      "scenario_id": "98_mathematics_krw_polytopes",
+      "path": "raw/rootpoly_center_5.regular.results",
+      "scenario_relative_path": "raw/rootpoly_center_5.regular.results",
+      "bytes": 19966,
+      "sha256": "6d8acf5735c38ab93c490953c1a8fddd8c2f02c6de0f370b36188d546784c688",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19496811"
+      ],
+      "download_url": "https://zenodo.org/api/records/19496811/files/rootpoly_center_5.regular.results/content",
+      "source_checksum": "md5:ea2520f9024c31610f5cc9606ed62dd1",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:08.236121+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19496811"
+      ],
+      "citation_url": "https://zenodo.org/records/19496811",
+      "source_version": "19496811",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19496811",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-098",
+      "scenario_id": "98_mathematics_krw_polytopes",
+      "path": "raw/rootpoly_center_6.regular.results.zip",
+      "scenario_relative_path": "raw/rootpoly_center_6.regular.results.zip",
+      "bytes": 3905299,
+      "sha256": "ce22dac0814fc000c746310f73b94ba6cb4d0d45c26facd53907de7a65720552",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19496811"
+      ],
+      "download_url": "https://zenodo.org/api/records/19496811/files/rootpoly_center_6.regular.results.zip/content",
+      "source_checksum": "md5:e62437264037c3123c6b00bc91387cda",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:21.345574+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19496811"
+      ],
+      "citation_url": "https://zenodo.org/records/19496811",
+      "source_version": "19496811",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19496811",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-098",
+      "scenario_id": "98_mathematics_krw_polytopes",
+      "path": "raw/triangulations_4.jl",
+      "scenario_relative_path": "raw/triangulations_4.jl",
+      "bytes": 230,
+      "sha256": "344acaea74d6127613a31c0114c3f973b5c29bba7897e88a7b1854dd0208ce01",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19496811"
+      ],
+      "download_url": "https://zenodo.org/api/records/19496811/files/triangulations_4.jl/content",
+      "source_checksum": "md5:012b4acba50d2a58e151e370ccacd354",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:13.485065+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19496811"
+      ],
+      "citation_url": "https://zenodo.org/records/19496811",
+      "source_version": "19496811",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19496811",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-098",
+      "scenario_id": "98_mathematics_krw_polytopes",
+      "path": "raw/triangulations_5.jl",
+      "scenario_relative_path": "raw/triangulations_5.jl",
+      "bytes": 12563,
+      "sha256": "c2185d8bcbe80f2181e5bf684782e9b3c6c17d1c00b30d9cf018983baa9d3c03",
+      "role": "source_native_asset",
+      "source_urls": [
+        "https://zenodo.org/records/19496811"
+      ],
+      "download_url": "https://zenodo.org/api/records/19496811/files/triangulations_5.jl/content",
+      "source_checksum": "md5:e59c6423cf424f028666c3e93dbbb63e",
+      "source_checksum_scope": "retained source file bytes",
+      "retrieved_utc": "2026-09-15T06:42:08.445117+00:00",
+      "license_or_terms": "cc-by-4.0",
+      "citation_identifiers": [
+        "10.5281/zenodo.19496811"
+      ],
+      "citation_url": "https://zenodo.org/records/19496811",
+      "source_version": "19496811",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://zenodo.org/records/19496811",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    },
+    {
+      "case_id": "P100-098",
+      "scenario_id": "98_mathematics_krw_polytopes",
+      "path": "context/source_record.json",
+      "scenario_relative_path": "context/source_record.json",
+      "bytes": 13638,
+      "sha256": "a66f0a00ce125ead9f2b4ad86c96770a66b2341a532cf0014bb90da882d3a219",
+      "role": "frozen_source_metadata",
+      "source_urls": [
+        "https://zenodo.org/api/records/19496811"
+      ],
+      "download_url": null,
+      "source_checksum": null,
+      "source_checksum_scope": "retained source bytes when publisher provides a matching checksum",
+      "retrieved_utc": "2026-09-15T06:16:51.868623+00:00",
+      "license_or_terms": "CC0-1.0 (repository metadata; excludes email addresses)",
+      "citation_identifiers": [
+        "10.5281/zenodo.19496811"
+      ],
+      "citation_url": "https://zenodo.org/records/19496811",
+      "source_version": "19496811",
+      "replay_note": "Frozen source asset; exact bytes required. Mutable sources may no longer reproduce this hash.",
+      "rights_evidence_url": "https://about.zenodo.org/policies/",
+      "rights_evidence_scope": "Source record license for deposited files; repository metadata policy for explicitly labeled metadata. More specific embedded notices remain controlling."
+    }
+  ]
+}

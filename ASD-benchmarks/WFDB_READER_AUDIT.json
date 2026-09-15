@@ -1,0 +1,623 @@
+{
+  "case_id": "P100-033",
+  "status": "pass",
+  "asset_sha256": "9b910fc884f63eca1c5d3a00c5710f838e0053dce94f8a02196bd0adc2ffa33c",
+  "signal_records_decoded": 11616,
+  "annotation_files_decoded": 3888,
+  "signal_samples_per_channel_sum": 43392096,
+  "signal_name_sets": [
+    "ACC_X",
+    "ACC_Y",
+    "ACC_Z",
+    "ECG",
+    "PPG_B",
+    "PPG_G",
+    "PPG_R",
+    null
+  ],
+  "unit_sets": [
+    "a.u.",
+    "mg",
+    "uV"
+  ],
+  "sampling_rates_Hz": [
+    100.0,
+    1000.0,
+    30.0
+  ],
+  "coverage": "All digital signal arrays and QRS annotations decoded successfully by the complete archive audit. All ZIP CRCs and safe paths passed. No scientific conversion or clinical interpretation.",
+  "reporting_recovery": "Both full decoder maps completed before the final metadata sort failed on mixed null/string labels. The summary was rebuilt independently from all native headers, preserving unknown labels as null. Annotation-event aggregate is not asserted because its intermediate list was not retained.",
+  "checked_utc": "2026-09-15T07:25:51.535170+00:00",
+  "header_channel_count_distribution": {
+    "10000": 48,
+    "300": 48,
+    "3": 7680,
+    "1": 3840
+  },
+  "header_sample_count_distribution": {
+    "1": 96,
+    "1000": 3840,
+    "10000": 3840,
+    "300": 3840
+  },
+  "header_layout_anomalies": [
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/100001/100001_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/100001/100001_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/100002/100002_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/100002/100002_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/100003/100003_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/100003/100003_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/100004/100004_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/100004/100004_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/101001/101001_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/101001/101001_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/101002/101002_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/101002/101002_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/101003/101003_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/101003/101003_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/101004/101004_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/101004/101004_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/102001/102001_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/102001/102001_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/102002/102002_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/102002/102002_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/102003/102003_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/102003/102003_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/102004/102004_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/102004/102004_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/103001/103001_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/103001/103001_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/103002/103002_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/103002/103002_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/103003/103003_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/103003/103003_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/103004/103004_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/103004/103004_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/104001/104001_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/104001/104001_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/104002/104002_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/104002/104002_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/104003/104003_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/104003/104003_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/104004/104004_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/104004/104004_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/105001/105001_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/105001/105001_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/105002/105002_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/105002/105002_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/105003/105003_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/105003/105003_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/105004/105004_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/105004/105004_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/106001/106001_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/106001/106001_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/106002/106002_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/106002/106002_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/106003/106003_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/106003/106003_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/106004/106004_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/106004/106004_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/107001/107001_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/107001/107001_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/107002/107002_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/107002/107002_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/107003/107003_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/107003/107003_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/107004/107004_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/107004/107004_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/108001/108001_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/108001/108001_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/108002/108002_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/108002/108002_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/108003/108003_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/108003/108003_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/108004/108004_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/108004/108004_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/109001/109001_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/109001/109001_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/109002/109002_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/109002/109002_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/109003/109003_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/109003/109003_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/109004/109004_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/109004/109004_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/110001/110001_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/110001/110001_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/110002/110002_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/110002/110002_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/110003/110003_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/110003/110003_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/110004/110004_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/110004/110004_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/111001/111001_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/111001/111001_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/111002/111002_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/111002/111002_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/111003/111003_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/111003/111003_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/111004/111004_ECG.hea",
+      "declared_channels": 10000,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 1000.0
+    },
+    {
+      "member": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0/111004/111004_PPG.hea",
+      "declared_channels": 300,
+      "declared_samples_per_channel": 1,
+      "sampling_rate_Hz": 30.0
+    }
+  ],
+  "scientific_caution": "Some source headers declare many channels and a single sample. Preserve the native layout; do not interpret it as a conventional time-series orientation or silently transpose. Use unaffected recordings or justify interpretation against source documentation.",
+  "header_parser_evidence": "https://wfdb.io/spec/header-files.html"
+}

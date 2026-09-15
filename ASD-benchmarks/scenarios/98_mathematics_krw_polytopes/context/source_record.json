@@ -1,0 +1,298 @@
+{
+  "created": "2026-04-17T12:31:18.698793+00:00",
+  "modified": "2026-04-17T12:31:19.817131+00:00",
+  "id": 19496811,
+  "conceptrecid": "12773906",
+  "doi": "10.5281/zenodo.19496811",
+  "conceptdoi": "10.5281/zenodo.12773906",
+  "doi_url": "https://doi.org/10.5281/zenodo.19496811",
+  "metadata": {
+    "title": "Dataset of Kantorovich-Rubinstein-Wasserstein Polytopes of Metric Spaces on up to 6 Points",
+    "doi": "10.5281/zenodo.19496811",
+    "publication_date": "2026-04-12",
+    "description": "<p>We present a complete list of all combinatorial types of generic Kantorovich-Rubinstein-Wasserstein (KRW) polytopes associated with metric spaces on up to 6 points that are generic in the sense of Gordon and Petrov. These polytopes and their properties are described in detail in the preprint \"Combinatorial invariants of finite metric spaces and the Wasserstein arrangement\".</p>\n<p>The catalog of KRW polytopes was computed using certain regular triangulations of the full root polytope. These regular triangulations were enumerated up to symmetry by J&ouml;rg Rambau using the new <em>topcom</em> package.</p>\n<p>The provided data consists of:</p>\n<ul>\n<li>The files ending in \".result\" contain the original&nbsp;<em>topcom</em> output including the specific regular triangulations of the root polytope.</li>\n<li>&nbsp;<em>julia</em> files that contain these triangulations (\"triangulations_x.jl\"), one triangulation per line.</li>\n<li>An&nbsp;<em>OSCAR</em> script (\"read_triangulations.jl\") that reads these triangulations and produces sample metrics associated with each of these triangulations.</li>\n<li>A Jupyter notebook (\"wasserstein_arrangement_code.ipynb\") with <em>OSCAR</em> code to compute KRW polytopes as well as code to determine the representatives for the combinatorial types. For convenience, we also included the notebook as a <em>julia script</em>&nbsp;as well as a pdf of the notebook.&nbsp;</li>\n<li><em>JSON</em> files saved as .mrdi containing the collection of all KRW polytopes of strict and generic metrics for $n=5$ and all generic metrics for $n=6$ together with their corresponding metrics (one per combinatorial type). These files can be loaded in <em>OSCAR</em> via&nbsp;\n<pre class=\"language-python\"><code>load(\"Polytopes_generic_metrics_5.mrdi\")</code></pre>\n</li>\n</ul>\n<p>We used <em>julia</em> Version 1.12.6 with these packages:</p>\n<ul>\n<li>OSCAR v1.7.2</li>\n<li>CountingChambers v0.2.3</li>\n<li>Graphs v1.14.0</li>\n</ul>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Delucchi, Emanuele",
+        "affiliation": "University of Applied Sciences and Arts of Southern Switzerland",
+        "orcid": "0000-0003-3430-1517"
+      },
+      {
+        "name": "Kühne, Lukas",
+        "affiliation": "Bielefeld University",
+        "orcid": "0000-0001-6393-5610"
+      },
+      {
+        "name": "Mühlherr, Leonie",
+        "affiliation": "Bielefeld University",
+        "orcid": "0009-0000-9900-7242"
+      },
+      {
+        "name": "Rambau, Jörg",
+        "affiliation": "University of Bayreuth",
+        "orcid": "0000-0002-8026-2312"
+      }
+    ],
+    "keywords": [
+      "Regular Triangulations",
+      "KRW Polytopes",
+      "Finite Metric Spaces"
+    ],
+    "dates": [
+      {
+        "type": "updated",
+        "description": "Added code to generate data of all generic KRW polytopes for n=5"
+      }
+    ],
+    "version": "v2",
+    "references": [
+      "E. Delucchi, L. Kühne, and L. Mühlherr: Combinatorial invariants of finite metric spaces and the Wasserstein arrangement, 2026, https://arxiv.org/abs/2408.15584.",
+      "OSCAR - Open Source Computer Algebra Research system, Version 1.7.2, The OSCAR Team, 2026. (https://www.oscar-system.org)",
+      "W. Decker, C. Eder, C. Fieker, M. Horn, M. Joswig, eds. The Computer Algebra System OSCAR: Algorithms and Examples, Algorithms and Computation in Mathematics, Springer, 2025. (https://link.springer.com/book/9783031621260)",
+      "J. Rambau: Symmetric lexicographic subset reverse search for the enumeration of circuits, cocircuits, and triangulations up to symmetry, 2023, https://www.wm.uni-bayreuth.de/de/team/rambau_joerg/TOPCOM/SymLexSubsetRS-2.pdf",
+      "E. Gawrilow and M. Joswig. polymake: a framework for analyzing convex polytopes. Polytopes—combinatorics and computation (Oberwolfach, 1997), 43–73, DMV Sem., 29, Birkhäuser, Basel, 2000.",
+      "J. Gordon and F. Petrov: Combinatorics of the Lipschitz polytope, 2017,  Arnold Math. J. 3.2."
+    ],
+    "language": "eng",
+    "custom": {
+      "code:programmingLanguage": [
+        {
+          "id": "julia",
+          "title": {
+            "en": "Julia"
+          }
+        }
+      ],
+      "code:developmentStatus": {
+        "id": "active",
+        "title": {
+          "en": "Active"
+        }
+      }
+    },
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "grants": [
+      {
+        "code": "491392403 – TRR 358",
+        "internal_id": "018mejw64::491392403 – TRR 358",
+        "funder": {
+          "name": "Deutsche Forschungsgemeinschaft"
+        },
+        "title": "CRC 358 Integral Structures in Geometry and Representation Theory",
+        "url": "https://trr358.math.uni-bielefeld.de"
+      },
+      {
+        "code": "SPP 2458 -- 539866293",
+        "internal_id": "018mejw64::SPP 2458 -- 539866293",
+        "funder": {
+          "name": "Deutsche Forschungsgemeinschaft"
+        },
+        "title": "SPP 2458 Combinatorial Synergies",
+        "url": "https://www.combinatorial-synergies.de"
+      }
+    ],
+    "relations": {
+      "version": [
+        {
+          "index": 1,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "12773906"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Dataset of Kantorovich-Rubinstein-Wasserstein Polytopes of Metric Spaces on up to 6 Points",
+  "links": {
+    "self": "https://zenodo.org/api/records/19496811",
+    "self_html": "https://zenodo.org/records/19496811",
+    "preview_html": "https://zenodo.org/records/19496811?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.19496811",
+    "self_doi": "https://doi.org/10.5281/zenodo.19496811",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.19496811",
+    "reserve_doi": "https://zenodo.org/api/records/19496811/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/12773906",
+    "parent_html": "https://zenodo.org/records/12773906",
+    "parent_doi": "https://doi.org/10.5281/zenodo.12773906",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.12773906",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:19496811/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:19496811/sequence/default",
+    "files": "https://zenodo.org/api/records/19496811/files",
+    "media_files": "https://zenodo.org/api/records/19496811/media-files",
+    "thumbnails": {
+      "10": "https://zenodo.org/api/iiif/record:19496811:wasserstein_arrangement_code.pdf/full/%5E10,/0/default.jpg",
+      "50": "https://zenodo.org/api/iiif/record:19496811:wasserstein_arrangement_code.pdf/full/%5E50,/0/default.jpg",
+      "100": "https://zenodo.org/api/iiif/record:19496811:wasserstein_arrangement_code.pdf/full/%5E100,/0/default.jpg",
+      "250": "https://zenodo.org/api/iiif/record:19496811:wasserstein_arrangement_code.pdf/full/%5E250,/0/default.jpg",
+      "750": "https://zenodo.org/api/iiif/record:19496811:wasserstein_arrangement_code.pdf/full/%5E750,/0/default.jpg",
+      "1200": "https://zenodo.org/api/iiif/record:19496811:wasserstein_arrangement_code.pdf/full/%5E1200,/0/default.jpg"
+    },
+    "archive": "https://zenodo.org/api/records/19496811/files-archive",
+    "archive_media": "https://zenodo.org/api/records/19496811/media-files-archive",
+    "latest": "https://zenodo.org/api/records/19496811/versions/latest",
+    "latest_html": "https://zenodo.org/records/19496811/latest",
+    "versions": "https://zenodo.org/api/records/19496811/versions",
+    "draft": "https://zenodo.org/api/records/19496811/draft",
+    "access_links": "https://zenodo.org/api/records/19496811/access/links",
+    "access_grants": "https://zenodo.org/api/records/19496811/access/grants",
+    "access_users": "https://zenodo.org/api/records/19496811/access/users",
+    "access_request": "https://zenodo.org/api/records/19496811/access/request",
+    "access": "https://zenodo.org/api/records/19496811/access",
+    "communities": "https://zenodo.org/api/records/19496811/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/19496811/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/19496811/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/19496811/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/19496811/quota-increase",
+    "requests": "https://zenodo.org/api/records/19496811/requests"
+  },
+  "updated": "2026-04-17T12:31:19.817131+00:00",
+  "recid": "19496811",
+  "revision": 4,
+  "files": [
+    {
+      "id": "56c9305c-af50-4820-aa61-04ed696569e2",
+      "key": "read_triangulations.jl",
+      "size": 5574,
+      "checksum": "md5:051b2d1a8e2a907fbdb270cadb5fac3f",
+      "links": {
+        "self": "https://zenodo.org/api/records/19496811/files/read_triangulations.jl/content"
+      }
+    },
+    {
+      "id": "0860da69-de9a-42a4-b430-c6178c7d653b",
+      "key": "triangulations_6.jl.zip",
+      "size": 2848842,
+      "checksum": "md5:f342d1decca987e02ff42ac8d595cfd1",
+      "links": {
+        "self": "https://zenodo.org/api/records/19496811/files/triangulations_6.jl.zip/content"
+      }
+    },
+    {
+      "id": "b1f45943-8e91-41de-b26a-5e1e6f0ccc0a",
+      "key": "wasserstein_arrangement_code.pdf",
+      "size": 90940,
+      "checksum": "md5:e6c1f84a3f3ddc0aa154f7094b1fed42",
+      "links": {
+        "self": "https://zenodo.org/api/records/19496811/files/wasserstein_arrangement_code.pdf/content"
+      }
+    },
+    {
+      "id": "9a40402c-a96b-42a5-ae19-a6b4ddc59d97",
+      "key": "wasserstein_arrangement_code.jl",
+      "size": 9533,
+      "checksum": "md5:04b5d891f9275249aebfb0af29e3e32c",
+      "links": {
+        "self": "https://zenodo.org/api/records/19496811/files/wasserstein_arrangement_code.jl/content"
+      }
+    },
+    {
+      "id": "79fa891b-f155-4b46-8469-4754d4dadfb9",
+      "key": "Polytopes_generic_metrics_5.mrdi",
+      "size": 69842,
+      "checksum": "md5:6634536a2895875fe3a428b06935319a",
+      "links": {
+        "self": "https://zenodo.org/api/records/19496811/files/Polytopes_generic_metrics_5.mrdi/content"
+      }
+    },
+    {
+      "id": "03757f4a-e29a-4430-a2a5-9215166b5b49",
+      "key": "Polytopes_strict_metrics_6.mrdi.zip",
+      "size": 59497873,
+      "checksum": "md5:152b799e8ad8646879c4366ef3969ce4",
+      "links": {
+        "self": "https://zenodo.org/api/records/19496811/files/Polytopes_strict_metrics_6.mrdi.zip/content"
+      }
+    },
+    {
+      "id": "15ddf538-2b43-44f3-85a0-c40f1b99d5e7",
+      "key": "Polytopes_strict_metrics_5.mrdi",
+      "size": 1037132,
+      "checksum": "md5:50e08cde7336a4282dc3390a91799078",
+      "links": {
+        "self": "https://zenodo.org/api/records/19496811/files/Polytopes_strict_metrics_5.mrdi/content"
+      }
+    },
+    {
+      "id": "fa8c18a5-6171-4db5-b48a-54ba5f614161",
+      "key": "wasserstein_arrangement_code.ipynb",
+      "size": 68649,
+      "checksum": "md5:0344d4033c95c1ff4b49dd1d778d8a70",
+      "links": {
+        "self": "https://zenodo.org/api/records/19496811/files/wasserstein_arrangement_code.ipynb/content"
+      }
+    },
+    {
+      "id": "787fd8f9-707f-469b-b18f-54b18aa6ac64",
+      "key": "rootpoly_center_4.regular.results",
+      "size": 6701,
+      "checksum": "md5:4940720d4f51d8a67d82810a9ff95276",
+      "links": {
+        "self": "https://zenodo.org/api/records/19496811/files/rootpoly_center_4.regular.results/content"
+      }
+    },
+    {
+      "id": "fa54e9dc-5204-42bc-a8b5-6f5078f2b4e5",
+      "key": "rootpoly_center_5.regular.results",
+      "size": 19966,
+      "checksum": "md5:ea2520f9024c31610f5cc9606ed62dd1",
+      "links": {
+        "self": "https://zenodo.org/api/records/19496811/files/rootpoly_center_5.regular.results/content"
+      }
+    },
+    {
+      "id": "fbb23390-5b2e-4434-98c5-700468b5959a",
+      "key": "rootpoly_center_6.regular.results.zip",
+      "size": 3905299,
+      "checksum": "md5:e62437264037c3123c6b00bc91387cda",
+      "links": {
+        "self": "https://zenodo.org/api/records/19496811/files/rootpoly_center_6.regular.results.zip/content"
+      }
+    },
+    {
+      "id": "4761164b-0123-4ddb-9d8b-73eb8618fa59",
+      "key": "triangulations_4.jl",
+      "size": 230,
+      "checksum": "md5:012b4acba50d2a58e151e370ccacd354",
+      "links": {
+        "self": "https://zenodo.org/api/records/19496811/files/triangulations_4.jl/content"
+      }
+    },
+    {
+      "id": "1b6f689c-4400-4aac-947a-eefce78c8f03",
+      "key": "triangulations_5.jl",
+      "size": 12563,
+      "checksum": "md5:e59c6423cf424f028666c3e93dbbb63e",
+      "links": {
+        "self": "https://zenodo.org/api/records/19496811/files/triangulations_5.jl/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "1158541"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 451,
+    "unique_downloads": 448,
+    "views": 131,
+    "unique_views": 128,
+    "version_downloads": 236,
+    "version_unique_downloads": 234,
+    "version_unique_views": 40,
+    "version_views": 41
+  },
+  "state": "done",
+  "submitted": true
+}
