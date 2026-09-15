@@ -1,4 +1,4 @@
-# Principia-100 evaluation protocol · v0.1.0
+# Principia-100 evaluation protocol · v0.1.1
 
 Status: owner-accepted public protocol. It defines future evaluation; no discovery runs, system comparisons or scores accompany the corpus release.
 

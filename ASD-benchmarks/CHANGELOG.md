@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.1 — download compatibility, 2026-09-15
+
+- Download selected LFS payloads during sparse checkout. This avoids the whole-tree blob scan performed by `git lfs pull` with some older Git versions in partial clones.
+- Correct the PowerShell ordering so skip-smudge is cleared before selecting cases.
+- Preserve all scientific source assets, case revisions and the published 0.1.0 tag; this is a documentation and distribution patch.
+- The repository also excludes benchmark tags from the legacy v1.3 workflow. The initial tag exposed that workflow's missing historical application directory; the independent benchmark integrity workflow passed.
+
 ## 0.1.0 — public release, 2026-09-15
 
 - Publish the 100 owner-accepted scenarios under `ASD-benchmarks/`, with all 1,685 scientific assets unchanged from the accepted candidate.

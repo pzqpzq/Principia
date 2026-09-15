@@ -1,11 +1,11 @@
 {
   "schema": "principia.publication-report/v1",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "release_date": "2026-09-15",
   "status": "publication_preflight_verified",
   "owner_acceptance": "received; publication to pzqpzq/Principia/ASD-benchmarks explicitly authorized",
   "accepted_candidate_release_manifest_sha256": "10b8748d62d2cbdc0d85bfea6e909dc17733bd08d90c8eb910e18e9631939b93",
-  "base_repository_commit": "d01ed544be853383d67618f6213e0b7c8934934f",
+  "base_repository_commit": "2a1712195f1ba5dbeb2584292b379a7654349c96",
   "scientific_assets": 1685,
   "scientific_bytes": 4671654376,
   "source_bytes_equal_accepted_candidate": true,
@@ -30,6 +30,8 @@
     "threshold_bytes": 1048576,
     "note": "Git stores pointer blobs for these files. RELEASE_MANIFEST.json hashes resolved payload bytes. CI verifies pointers separately; it does not claim remote payload verification."
   },
+  "previous_public_tag": "asd-benchmark-v0.1.0",
+  "distribution_patch": "Use sparse checkout with automatic LFS smudging; original scientific assets are unchanged.",
   "public_edition_changes": "Overview, catalog navigation, download guide, contributor guide, SVG banner, publication metadata, finalized curator licenses, integrity tooling and CI. Scientific source assets and scenario inputs are unchanged.",
   "publication_verification": "The Git commit identifies this manifest. Repository push and public download verification are performed after sealing; no preflight check is a claim of remote availability."
 }

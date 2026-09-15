@@ -2,7 +2,7 @@
 
 ## Identity and status
 
-Principia-100, version 0.1.0, is the owner-accepted public research corpus and evaluation protocol released on 2026-09-15. It contains 100 scenarios under `scenarios/`, with immutable asset hashes and a versioned release manifest.
+Principia-100, version 0.1.1, is the owner-accepted public research corpus and evaluation protocol released on 2026-09-15. It contains 100 scenarios under `scenarios/`, with immutable asset hashes and a versioned release manifest.
 
 The unit of collection is a coherent scientific scenario with source data and context. It is not one file, one observation, one discipline or one discovered rule. Stable benchmark IDs are P100-001 through P100-100. Case revisions distinguish source replacements from a change to the original local folder.
 

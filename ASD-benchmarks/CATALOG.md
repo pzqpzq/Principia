@@ -1,6 +1,6 @@
 # Principia-100 catalog
 
-**100 scenarios · v0.1.0 · 2026-09-15**
+**100 scenarios · v0.1.1 · 2026-09-15**
 
 [Overview](README.md) · [Download guide](DOWNLOAD.md) · [CSV](CATALOG.csv) · [JSON](CATALOG.json) · [Protocol](EVALUATION_PROTOCOL.md)
 

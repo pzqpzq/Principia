@@ -1,6 +1,6 @@
 # Reproduction and validation tools
 
-Run from the `ASD-benchmarks/` directory after downloading the required Git LFS objects. Basic integrity/replay tools require Python 3.9+ and only the standard library. They do not run publisher analysis code.
+Run from the `ASD-benchmarks/` directory after downloading the required Git LFS objects using [DOWNLOAD.md](DOWNLOAD.md). Basic integrity/replay tools require Python 3.9+ and only the standard library. They do not run publisher analysis code.
 
 ```sh
 python3 tools/validate_release.py .

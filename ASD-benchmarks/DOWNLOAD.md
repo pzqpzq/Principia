@@ -4,7 +4,7 @@
 
 The full benchmark is about **4.80 GB** stored, including **4.43 GB in Git LFS**. Choose individual cases when possible. All commands below select only the benchmark, leaving the application and historical datasets out of the checkout. Install [Git](https://git-scm.com/downloads) and [Git LFS](https://git-lfs.com/) first.
 
-The immutable version tag is `asd-benchmark-v0.1.0`. Record it, or the resolved commit, with every study. To follow later changes deliberately, use `main` instead.
+The immutable version tag is `asd-benchmark-v0.1.1`. Record it, or the resolved commit, with every study. To follow later changes deliberately, use `main` instead.
 
 ## One case
 
@@ -13,35 +13,32 @@ This example selects case 61, a small membrane-permeation experiment. Run in a n
 ```bash
 git lfs install
 GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 --filter=blob:none --sparse \
-  --branch asd-benchmark-v0.1.0 https://github.com/pzqpzq/Principia.git
+  --branch asd-benchmark-v0.1.1 https://github.com/pzqpzq/Principia.git
 cd Principia
-GIT_LFS_SKIP_SMUDGE=1 git sparse-checkout set \
+git sparse-checkout set \
   ASD-benchmarks/tools ASD-benchmarks/schemas \
   ASD-benchmarks/scenarios/61_chemistry_membrane_permeation
-git lfs pull --include="ASD-benchmarks/scenarios/61_chemistry_membrane_permeation/**" --exclude=""
 cd ASD-benchmarks
 python3 tools/replay.py --root . --mode verify --case P100-061
 ```
 
-The sparse checkout also includes the collection's top-level manifests and documentation. To add another case, run from the repository root, substituting the folder name from the catalog:
+Sparse checkout automatically downloads the LFS files belonging to the selected case. The skip-smudge setting applies only to the initial clone, which keeps unrelated directories out of the download. The checkout also includes the collection's top-level manifests and documentation. To add another case, run from the repository root, substituting the folder name from the catalog:
 
 ```bash
-GIT_LFS_SKIP_SMUDGE=1 git sparse-checkout add \
+git sparse-checkout add \
   ASD-benchmarks/scenarios/53_manufacturing_screw_friction
-git lfs pull --include="ASD-benchmarks/scenarios/53_manufacturing_screw_friction/**" --exclude=""
 ```
 
-If Principia is already installed using a sparse checkout, use the same `sparse-checkout add` and `git lfs pull` commands in that repository. Check the version you have selected before comparing results.
+If Principia is already installed using a sparse checkout, install Git LFS and use the same `sparse-checkout add` command in that repository. Check the version you have selected before comparing results.
 
 ## All 100 cases
 
 ```bash
 git lfs install
 GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 --filter=blob:none --sparse \
-  --branch asd-benchmark-v0.1.0 https://github.com/pzqpzq/Principia.git
+  --branch asd-benchmark-v0.1.1 https://github.com/pzqpzq/Principia.git
 cd Principia
-GIT_LFS_SKIP_SMUDGE=1 git sparse-checkout set ASD-benchmarks
-git lfs pull --include="ASD-benchmarks/**" --exclude=""
+git sparse-checkout set ASD-benchmarks
 cd ASD-benchmarks
 python3 tools/validate_release.py .
 python3 tools/replay.py --root . --mode verify
@@ -54,13 +51,15 @@ The working files occupy about 4.80 GB; Git's object stores also use disk space.
 
 ## Windows PowerShell
 
-Set the skip-smudge variable before clone and sparse-checkout commands:
+Apply skip-smudge to the initial clone only, and clear it **before** selecting cases:
 
 ```powershell
+git lfs install
 $env:GIT_LFS_SKIP_SMUDGE = '1'
-# Run the git clone and git sparse-checkout commands above as single lines.
+git clone --depth 1 --filter=blob:none --sparse --branch asd-benchmark-v0.1.1 https://github.com/pzqpzq/Principia.git
 Remove-Item Env:GIT_LFS_SKIP_SMUDGE
-git lfs pull --include="ASD-benchmarks/**" --exclude=""
+cd Principia
+git sparse-checkout set ASD-benchmarks/tools ASD-benchmarks/schemas ASD-benchmarks/scenarios/61_chemistry_membrane_permeation
 ```
 
 Use `python` in place of `python3` if that is how Python 3.9+ is installed. Preserve filenames and bytes; `.gitattributes` prevents automatic newline conversion.
@@ -69,7 +68,7 @@ Use `python` in place of `python3` if that is how Python 3.9+ is installed. Pres
 
 `tools/replay.py --mode verify --case P100-061` verifies one case's scientific assets. `tools/validate_release.py .` verifies the exact complete release, including curatorial files. It intentionally fails on missing files, changed bytes or extra files; store analysis outputs outside the release directory.
 
-A file starting with `version https://git-lfs.github.com/spec/v1` is an **LFS pointer**, not scientific data. Run the relevant `git lfs pull` command and then verify again. GitHub-generated source ZIPs may contain pointers instead of payloads; the Git LFS procedure above is the supported route. LFS availability depends on the repository's hosting quota; report a failed download with its case ID and error message.
+A file starting with `version https://git-lfs.github.com/spec/v1` is an **LFS pointer**, not scientific data. If this occurs, check that Git LFS is installed and `GIT_LFS_SKIP_SMUDGE` is unset. Use a fresh directory with the commands above, then verify again. GitHub-generated source ZIPs may contain pointers instead of payloads; the selective checkout procedure above is the supported route. On some older Git versions, running `git lfs pull` in a partial clone scans unrelated repository blobs; the documented procedure avoids that scan by downloading LFS objects during checkout. LFS availability depends on the repository's hosting quota; report a failed download with its case ID and error message.
 
 For an audit of a checkout that intentionally omits LFS payloads, use:
 

@@ -6,7 +6,7 @@
 <p align="center"><strong>100 scientific scenarios for discovering relationships that can be tested.</strong></p>
 <p align="center">
   <a href="CATALOG.md"><img alt="100 scenarios" src="https://img.shields.io/badge/scenarios-100-2563EB?style=flat-square"></a>
-  <a href="DATASET_CARD.md"><img alt="Version 0.1.0" src="https://img.shields.io/badge/version-0.1.0-0F766E?style=flat-square"></a>
+  <a href="DATASET_CARD.md"><img alt="Version 0.1.1" src="https://img.shields.io/badge/version-0.1.1-0F766E?style=flat-square"></a>
   <a href="EVALUATION_PROTOCOL.md"><img alt="Open, source-aware evaluation" src="https://img.shields.io/badge/evaluation-source--aware-6D28D9?style=flat-square"></a>
   <a href="LICENSES.md"><img alt="Source-specific data licenses" src="https://img.shields.io/badge/data_licenses-source--specific-475569?style=flat-square"></a>
 </p>
@@ -28,7 +28,7 @@ The collection is a core part of [Principia](../README.md), and can also support
 
 ## At a glance
 
-| Property | Release v0.1.0 |
+| Property | Release v0.1.1 |
 | :--- | :--- |
 | **Scope** | 100 scenarios, stable IDs `P100-001`–`P100-100`, with 100 task cards |
 | **Data origins** | 85 measured/observed cases, 8 mixed measured/computational cases, 6 computational experiments, 1 mathematical reference corpus |
@@ -125,7 +125,7 @@ Some planned datasets were replaced because access or reuse requirements could n
 
 ## Cite and reuse
 
-Cite **Principia contributors (2026), _Principia-100: A Source-Aware Corpus for Quantitative Scientific Discovery_, v0.1.0**, link to this repository, and record the release tag or commit and the case IDs used. [CITATION.cff](CITATION.cff) supplies machine-readable corpus citation metadata. **Also cite the original dataset authors and versions** listed in [CITATIONS.json](CITATIONS.json).
+Cite **Principia contributors (2026), _Principia-100: A Source-Aware Corpus for Quantitative Scientific Discovery_, v0.1.1**, link to this repository, and record the release tag or commit and the case IDs used. [CITATION.cff](CITATION.cff) supplies machine-readable corpus citation metadata. **Also cite the original dataset authors and versions** listed in [CITATIONS.json](CITATIONS.json).
 
 Third-party data keep their **source-specific licenses and terms**. Curator-written documentation is [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); curator tooling is [MIT](tools/LICENSE). These do not override publisher licenses or embedded notices. Read [LICENSES.md](LICENSES.md) before redistribution or commercial reuse.
 

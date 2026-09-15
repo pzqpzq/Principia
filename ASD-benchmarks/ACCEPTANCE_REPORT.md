@@ -1,6 +1,6 @@
 # Acceptance report — Principia-100 local release candidate
 
-**Acquisition verification passed; owner acceptance was received on 2026-09-15.** Public version 0.1.0 preserves the accepted scientific assets. The results below describe acquisition-stage verification; see `PUBLICATION_REPORT.json` for publication checks.
+**Acquisition verification passed; owner acceptance was received on 2026-09-15.** Public version 0.1.1 preserves the accepted scientific assets. The results below describe acquisition-stage verification; see `PUBLICATION_REPORT.json` for publication checks.
 
 ## Delivered
 
